@@ -1,0 +1,49 @@
+{
+  "id": "exemplo-guerreiro-5",
+  "nome": "Guerreiro de exemplo",
+  "grupo": "Arquétipo",
+  "nivel": 5,
+  "build": "Fighter 5 (Champion), espada longa + escudo, Dueling, For 18",
+  "corpo": {
+    "ca": 20,
+    "pv": 49
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "2 ataques por round; Action Surge em 1 de 4 rounds (2 ataques extras por luta)",
+      "dano": {
+        "ataques": [
+          {
+            "n": 2,
+            "bonus": 7,
+            "dano": "1d8+6",
+            "crit_em": 19
+          },
+          {
+            "n": 0.5,
+            "bonus": 7,
+            "dano": "1d8+6",
+            "crit_em": 19,
+            "nota": "Action Surge: 2 ataques ÷ 4 rounds"
+          }
+        ]
+      },
+      "defesa": {},
+      "controle": {
+        "atencao": {
+          "papel": "tank",
+          "soft": 0.15,
+          "dpr": 18.6
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    }
+  ]
+}

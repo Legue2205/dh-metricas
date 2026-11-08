@@ -1,0 +1,78 @@
+{
+  "id": "kael-7",
+  "nome": "Kael",
+  "grupo": "Party",
+  "nivel": 7,
+  "build": "Way of the Blood Monk 7 (homebrew), Des 18",
+  "corpo": {
+    "ca": 17,
+    "pv": 79
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Moeda ativa: Flurry subindo o combo, cura líquida ~5/round; 1 Stunning Strike por turno no 1º acerto (CD 14)",
+      "dano": {
+        "medido": [
+          39.5,
+          37.0,
+          29.8,
+          27.5,
+          22.8,
+          18.1,
+          13.6,
+          9.7,
+          8.1
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {
+        "pv_efetivo": 79
+      },
+      "controle": {
+        "atencao": {
+          "papel": "striker",
+          "soft": 0.15,
+          "dpr": 29.8
+        },
+        "fontes": [
+          {
+            "tipo": "ataque_com_save",
+            "nome": "Stunning Strike",
+            "bonus": [
+              9,
+              9,
+              7,
+              7
+            ],
+            "cd": 14,
+            "save": "Con",
+            "penalidade_por_round": 1
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "so-sobreviver",
+      "principal": false,
+      "hipotese": "Só sobreviver: Martial Arts para curar, sem Flurry nem combo (~10/round)",
+      "defesa": {
+        "pv_efetivo": 99
+      }
+    },
+    {
+      "id": "patient-defense",
+      "principal": false,
+      "hipotese": "Patient Defense todo round: desvantagem nos ataques contra ele; cura líquida ~4",
+      "defesa": {
+        "pv_efetivo": 75,
+        "adv": -1
+      }
+    }
+  ]
+}

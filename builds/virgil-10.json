@@ -1,0 +1,146 @@
+{
+  "id": "virgil-10",
+  "nome": "Virgil",
+  "grupo": "NPC",
+  "nivel": 10,
+  "build": "Bard 10 (Eloquence)",
+  "corpo": {
+    "ca": 12,
+    "pv": 53
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Luta prioritária: R1 Hold Person 4º (3 alvos) + UW; R2 Synaptic Static; R3 Psychic Lance + UW; R4 Command 3º (3 alvos)",
+      "defesa": {},
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "acc_m": [
+            0.8,
+            0.9,
+            1.0
+          ],
+          "conc": true,
+          "dpr": 7.2
+        },
+        "fontes": [
+          {
+            "tipo": "plano",
+            "nome": "Plano do Virgil",
+            "cd": 17,
+            "penalidade": {
+              "nome": "Unsettling Words",
+              "dado": 10
+            },
+            "acoes": [
+              {
+                "round": 1,
+                "magia": "hold_person",
+                "alvos": 3,
+                "penalidade": "primeiro"
+              },
+              {
+                "round": 2,
+                "magia": "synaptic_static",
+                "alvos": 4,
+                "escala_area": true
+              },
+              {
+                "round": 3,
+                "magia": "psychic_lance",
+                "alvos": 1,
+                "selecao": "livre",
+                "penalidade": "todos"
+              },
+              {
+                "round": 4,
+                "magia": "command",
+                "alvos": 3
+              }
+            ],
+            "penalidade_manutencao": {
+              "rounds": [
+                2,
+                4
+              ]
+            },
+            "solo": {
+              "magia": "hold_person",
+              "penalidade_lancamento": true,
+              "penalidade_manutencao": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "nao-humanoides",
+      "principal": false,
+      "hipotese": "Inimigos não humanoides: Banishment 4º em 2 alvos no lugar do Hold Person",
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "acc_m": [
+            0.8,
+            0.9,
+            1.0
+          ],
+          "conc": true,
+          "dpr": 7.2
+        },
+        "fontes": [
+          {
+            "tipo": "plano",
+            "nome": "Plano do Virgil",
+            "cd": 17,
+            "penalidade": {
+              "nome": "Unsettling Words",
+              "dado": 10
+            },
+            "acoes": [
+              {
+                "round": 1,
+                "magia": "banishment",
+                "alvos": 2,
+                "penalidade": "primeiro"
+              },
+              {
+                "round": 2,
+                "magia": "synaptic_static",
+                "alvos": 4,
+                "escala_area": true
+              },
+              {
+                "round": 3,
+                "magia": "psychic_lance",
+                "alvos": 1,
+                "selecao": "livre",
+                "penalidade": "todos"
+              },
+              {
+                "round": 4,
+                "magia": "command",
+                "alvos": 3
+              }
+            ],
+            "penalidade_manutencao": {
+              "rounds": [
+                2,
+                4
+              ]
+            },
+            "solo": {
+              "magia": "banishment",
+              "penalidade_lancamento": true,
+              "penalidade_manutencao": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

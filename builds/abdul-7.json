@@ -1,0 +1,71 @@
+{
+  "id": "abdul-7",
+  "nome": "Abdul",
+  "grupo": "Party",
+  "nivel": 7,
+  "build": "Paladin 7 (Conquest), Heavy Armor Master, Sentinel, Tunnel Fighter, Car 14",
+  "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
+  "corpo": {
+    "ca": 21,
+    "pv": 63,
+    "red": 3
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Luta normal: 2 smites por luta, reação em 50%; Conquering Presence no round 1 (CD 13); Lay on Hands fora",
+      "dano": {
+        "medido": [
+          25.5,
+          24.4,
+          21.3,
+          20.3,
+          18.2,
+          16.2,
+          14.0,
+          11.6,
+          10.2
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {},
+      "controle": {
+        "atencao": {
+          "papel": "tank",
+          "soft": 0.15,
+          "dpr": 21.3,
+          "hard": {
+            "sentinela": 8
+          }
+        },
+        "fontes": [
+          {
+            "tipo": "area",
+            "nome": "Conquering Presence",
+            "magia": "conquering_presence",
+            "cd": 13,
+            "so_corpo_a_corpo": true
+          },
+          {
+            "tipo": "sentinela",
+            "nome": "Corpo (Sentinel + Tunnel Fighter)",
+            "bonus": 8
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "postura-tanque",
+      "principal": false,
+      "hipotese": "Postura de tanque: Lay on Hands 35 na luta",
+      "defesa": {
+        "pv_efetivo": 98
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "jamal-9",
+  "nome": "Jamal",
+  "grupo": "NPC",
+  "nivel": 9,
+  "build": "Barbarian 9 (Path of the Beast), meio-orc, Defesa sem Armadura",
+  "corpo": {
+    "ca": 15,
+    "pv": 95,
+    "res": 0.5,
+    "adv": 1
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Fúria + Reckless (ataques contra ele com vantagem), CA 15, 95 PV",
+      "defesa": {
+        "resist": true,
+        "adv": 1
+      },
+      "controle": {
+        "atencao": {
+          "papel": "striker",
+          "soft": 0.3,
+          "dpr": 46.5
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sem-reckless",
+      "principal": false,
+      "hipotese": "Fúria sem Reckless (alvo dele em Hold Person já dá vantagem)",
+      "corpo": {
+        "adv": 0
+      },
+      "defesa": {
+        "resist": true
+      },
+      "controle": {
+        "atencao": {
+          "papel": "striker",
+          "soft": 0.15,
+          "dpr": 46.5
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    }
+  ]
+}

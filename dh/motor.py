@@ -42,7 +42,9 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
                impressao=imp, versao=VERSAO, modo=modo, linhas={})
     for l in b['linhas']:
         if linhas and l['id'] not in linhas: continue
-        res['linhas'][l['id']] = dict(hipotese=l.get('hipotese', ''), principal=bool(l.get('principal')),
+        pr = l.get('principal', False)
+        pr = list(pr) if isinstance(pr, list) else (['dano', 'defesa', 'controle'] if pr else [])
+        res['linhas'][l['id']] = dict(hipotese=l.get('hipotese', ''), principal=pr,
                                       **avaliar_linha(b, l, modo, regua, eixos))
     res['segundos'] = round(time.time() - t0, 1)
     if not eixos and not linhas:
@@ -53,7 +55,7 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
 
 def principal(res, eixo):
     """Resultado do eixo na linha principal (ou na 1ª linha que tiver o eixo)."""
-    ls = list(res['linhas'].values())
-    for l in sorted(ls, key=lambda l: not l['principal']):
-        if eixo in l: return l[eixo]
-    return None
+    ls = [l for l in res['linhas'].values() if eixo in l]
+    for l in ls:
+        if eixo in l['principal']: return l[eixo]
+    return None  # sem linha principal nesse eixo (a planilha também deixa em branco)

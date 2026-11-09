@@ -38,8 +38,11 @@ def boss(cr, ac, adv, resist, red):
 
 
 def horda(cr, ac, adv, resist, red):
-    n = 4 + cr / 2
-    return n * _atk(3 + cr / 3, ac, _i(cr, 2) / n, adv, resist, red, False)
+    """Horda: o dano por round do CR dividido entre 3 e 10 atacantes de (4 + CR/2) de dano cada.
+    O nº de atacantes importa para quem tem redução fixa (Heavy Armor Master): mais golpes menores = mais redução.
+    (A reconstrução de 03/11 usava 4 + CR/2 atacantes e superestimava o Abdul: 10,69 em vez de 9,89.)"""
+    D = _i(cr, 2); n = max(3, min(10, round(D / (4 + cr / 2))))
+    return n * _atk(3 + cr / 3, ac, D / n, adv, resist, red, False)
 
 
 def _resolve(fn, pv, ac, adv, resist, red):
@@ -55,7 +58,10 @@ def avaliar(spec, corpo):
     """spec: {"pv_efetivo", "ca", "adv" (−1/0/1: ataques contra ele), "resist" (bool), "red"}; o que faltar vem do corpo."""
     pv = spec.get('pv_efetivo', corpo['pv']); ac = spec.get('ca', corpo['ca'])
     adv = spec.get('adv', 0); resist = spec.get('resist', False); red = spec.get('red', corpo.get('red', 0))
-    bl, du = _resolve(horda, pv, ac, adv, resist, red), _resolve(boss, pv, ac, adv, resist, red)
+    if 'medido' in spec:  # linhas cuja mecânica o motor ainda não modela (Shield, Absorb Elements, "barrado"…)
+        bl, du = spec['medido']['blindagem'], spec['medido']['durabilidade']
+    else:
+        bl, du = _resolve(horda, pv, ac, adv, resist, red), _resolve(boss, pv, ac, adv, resist, red)
     nb = round(interp_degraus(bl, LIM_BLINDAGEM, NIVEIS), 1)
     nd = round(interp_degraus(du, LIM_DURABILIDADE, NIVEIS), 1)
     lb, ld = letra(nb), letra(nd)

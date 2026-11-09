@@ -1,0 +1,110 @@
+{
+  "id": "amadeus-7",
+  "nome": "Amadeus",
+  "grupo": "Party",
+  "nivel": 7,
+  "build": "Wizard 7 (Necromancy)",
+  "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
+  "corpo": {
+    "ca": 16,
+    "pv": 62
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "7 esqueletos com meia cobertura + Chill Touch; Web ou Bestow Curse (CD 14)",
+      "dano": {
+        "medido": [
+          43.8,
+          40.8,
+          31.9,
+          28.9,
+          22.9,
+          17.0,
+          11.1,
+          11.1,
+          11.1
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {
+        "medido": {
+          "blindagem": 3.8,
+          "durabilidade": 2.8
+        },
+        "nota": "Mage Armor (CA 14), Shield 2×, Inspiring Leader 9, Counterspell 1×: reações fora do motor"
+      },
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "acc_m": [
+            0.8,
+            0.9,
+            1.0
+          ],
+          "conc": true,
+          "dpr": 31.9,
+          "esqueletos": true
+        },
+        "fontes": [
+          {
+            "tipo": "melhor_de",
+            "nome": "Magia (Web ou Bestow Curse)",
+            "opcoes": [
+              {
+                "tipo": "area",
+                "magia": "web",
+                "cd": 14
+              },
+              {
+                "tipo": "alvo_unico",
+                "cd": 14,
+                "slots": [
+                  3,
+                  3,
+                  3,
+                  2
+                ],
+                "magias": [
+                  "bestow_curse",
+                  "ray_of_enfeeblement"
+                ],
+                "modo": "melhor",
+                "sobre": {
+                  "ray_of_enfeeblement": {
+                    "ataque": 6
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "esqueletos",
+            "nome": "Corpo (7 esqueletos)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vantagem-externa",
+      "principal": false,
+      "hipotese": "Vantagem externa em tudo",
+      "dano": {
+        "medido": [
+          59.3,
+          56.7,
+          47.3,
+          43.7,
+          35.3,
+          25.8,
+          15.0,
+          15.1,
+          15.1
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      }
+    }
+  ]
+}

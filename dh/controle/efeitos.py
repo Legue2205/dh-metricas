@@ -2,6 +2,7 @@
 
 Cada fonte é um dicionário com "tipo". Tipos disponíveis (ver README para exemplos):
   ameaca            corpo que atrai ataques (taunt soft)
+  terreno           terreno difícil grande (Plant Growth)
   sentinela         taunt hard por ataque de oportunidade que para o movimento (Sentinel)
   parada_oa         taunt hard por probabilidade fixa de parar quem passa
   area              magia/efeito em área da biblioteca (Web, Hypnotic Pattern, Conquering Presence…)
@@ -39,6 +40,12 @@ def _sentinela(f, E, topo, t):
 
 def _parada_oa(f, E, topo, t):
     return np.array([c['wb'] * TOPO[topo]['cruza'] * f.get('p', C.H['p_disengage']) if c['melee'] else 0 for c in E])
+
+
+def _terreno(f, E, topo, t):
+    """Terreno difícil em área grande (Plant Growth): fração fixa do turno dos inimigos corpo a corpo."""
+    if len(E) <= 1: return C.zero(E)
+    return np.array([f.get('fator', 0.5) * TOPO[topo][f.get('chave_topo', 'pg')] if c['melee'] else 0 for c in E])
 
 
 def _area(f, E, topo, t):
@@ -194,7 +201,7 @@ def _plano(f, E, topo, t):
     return neg.mean(1) / R
 
 
-TIPOS = dict(ameaca=_ameaca, sentinela=_sentinela, parada_oa=_parada_oa, area=_area, alvo_unico=_alvo_unico,
+TIPOS = dict(ameaca=_ameaca, terreno=_terreno, sentinela=_sentinela, parada_oa=_parada_oa, area=_area, alvo_unico=_alvo_unico,
              alvo_unico_direto=_alvo_unico_direto, ataque_com_save=_ataque_com_save, melhor_de=_melhor_de,
              plano=_plano, esqueletos=_esqueletos, agarrao=_agarrao, ancestral_protectors=_ancestral,
              command_fixo=_command_fixo, ataque_nega_turno=_ataque_nega_turno)

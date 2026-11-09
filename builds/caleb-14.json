@@ -1,0 +1,138 @@
+{
+  "id": "caleb-14",
+  "nome": "Caleb",
+  "grupo": "NPC",
+  "nivel": 14,
+  "build": "Barbarian 3 (Berserker) / Rogue 11 (Inquisitive), escudo",
+  "corpo": {
+    "ca": 18,
+    "pv": 109,
+    "res": 0.5,
+    "adv": 1
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Fúria + Reckless (2 Sneaks por round), CA 18, Uncanny Dodge, Evasion",
+      "dano": {
+        "medido": [
+          49.5,
+          48.5,
+          44.4,
+          42.9,
+          39.1,
+          34.7,
+          29.6,
+          24.0,
+          20.9
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {
+        "medido": {
+          "blindagem": 11.42,
+          "durabilidade": 10.59
+        },
+        "nota": "Uncanny Dodge + Evasion fora do motor"
+      },
+      "controle": {
+        "atencao": {
+          "papel": "tank",
+          "soft": 0.3,
+          "dpr": 44.4
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rapieira-2",
+      "principal": false,
+      "hipotese": "Rapieira +2",
+      "dano": {
+        "medido": [
+          52.5,
+          52.4,
+          50.1,
+          48.7,
+          45.3,
+          41.3,
+          36.5,
+          31.3,
+          28.4
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      }
+    },
+    {
+      "id": "tanque",
+      "principal": false,
+      "hipotese": "Combo tanque: Fúria + Dodge todo round, sem Reckless",
+      "corpo": {
+        "adv": -1
+      },
+      "defesa": {
+        "medido": {
+          "blindagem": 20.85,
+          "durabilidade": 17.0
+        },
+        "nota": "Dodge + Uncanny Dodge fora do motor"
+      },
+      "controle": {
+        "atencao": {
+          "papel": "tank",
+          "soft": 0.15,
+          "dpr": 30.0,
+          "hard": {
+            "p": 0.5
+          }
+        },
+        "fontes": [
+          {
+            "tipo": "parada_oa",
+            "nome": "Ataque de oportunidade com Sneak",
+            "p": 0.5
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "utilitario",
+      "principal": false,
+      "hipotese": "Utilitário: sem Reckless nem Dodge",
+      "corpo": {
+        "adv": 0
+      },
+      "controle": {
+        "atencao": {
+          "papel": "tank",
+          "soft": 0.15,
+          "dpr": 38.0,
+          "hard": {
+            "p": 0.5
+          }
+        },
+        "fontes": [
+          {
+            "tipo": "parada_oa",
+            "nome": "Ataque de oportunidade com Sneak",
+            "p": 0.5
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    }
+  ]
+}

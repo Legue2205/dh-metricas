@@ -1,0 +1,91 @@
+{
+  "id": "ravin-7",
+  "nome": "Ravin",
+  "grupo": "Party",
+  "nivel": 7,
+  "build": "Bladesinger 6 / Warlock 1 (pacto homebrew do Deus da Morte)",
+  "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
+  "corpo": {
+    "ca": 20.85,
+    "pv": 55
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Espada + Booming Blade; Bladesong + carga; Hypnotic Pattern (CD 16); barrado",
+      "dano": {
+        "medido": [
+          27.1,
+          25.6,
+          21.1,
+          19.7,
+          16.8,
+          14.0,
+          11.3,
+          8.5,
+          7.1
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {
+        "medido": {
+          "blindagem": 9.87,
+          "durabilidade": 7.74
+        },
+        "nota": "Shield 2×, Absorb Elements, Counterspell e o estado 'barrado': fora do motor"
+      },
+      "controle": {
+        "atencao": {
+          "papel": "striker",
+          "soft": 0.15,
+          "dpr": 21.1
+        },
+        "fontes": [
+          {
+            "tipo": "area",
+            "nome": "Hypnotic Pattern",
+            "magia": "hypnotic_pattern",
+            "cd": 16,
+            "so_grupos": true
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sem-barrado",
+      "principal": false,
+      "hipotese": "Sem barrado (comparação)",
+      "defesa": {
+        "medido": {
+          "blindagem": 6.09,
+          "durabilidade": 3.54
+        },
+        "nota": "Shield e afins fora do motor"
+      }
+    },
+    {
+      "id": "pico-haste",
+      "principal": false,
+      "hipotese": "Pico: Haste pré-conjurado + barrado + carga no Inflict Wounds",
+      "dano": {
+        "medido": [
+          42.7,
+          40.3,
+          33.2,
+          30.9,
+          26.3,
+          21.7,
+          17.2,
+          12.8,
+          10.6
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      }
+    }
+  ]
+}

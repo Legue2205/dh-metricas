@@ -1,0 +1,82 @@
+{
+  "id": "aprendiz-11",
+  "nome": "O Aprendiz",
+  "grupo": "NPC",
+  "nivel": 11,
+  "build": "Barbarian 6 (Berserker) / Monk 3 (Tranquility UA) / Fighter 2, GWM",
+  "corpo": {
+    "ca": 18,
+    "pv": 125.5,
+    "res": 0.5,
+    "adv": 1
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Fúria + Reckless, espada grande comum, GWM; Mindless Rage, Second Wind",
+      "dano": {
+        "medido": [
+          69.1,
+          66.8,
+          57.8,
+          54.1,
+          45.5,
+          35.4,
+          30.0,
+          24.5,
+          21.5
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {
+        "resist": true,
+        "adv": 1
+      },
+      "controle": {
+        "atencao": {
+          "papel": "striker",
+          "soft": 0.3,
+          "dpr": 57.8
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "espada-2",
+      "principal": false,
+      "hipotese": "Espada grande +2",
+      "dano": {
+        "medido": [
+          78.0,
+          76.5,
+          69.4,
+          66.2,
+          58.4,
+          49.0,
+          39.2,
+          34.0,
+          31.0
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      }
+    },
+    {
+      "id": "defensivo",
+      "principal": false,
+      "hipotese": "Defensivo: Fúria sem Reckless, Patient Defense (3 ki), Mãos Curadoras 30 + Second Wind",
+      "defesa": {
+        "medido": {
+          "blindagem": 21.4,
+          "durabilidade": 17.9
+        },
+        "nota": "Patient Defense só em 3 rounds + curas: fora do motor"
+      }
+    }
+  ]
+}

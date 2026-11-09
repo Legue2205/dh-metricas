@@ -1,0 +1,139 @@
+{
+  "id": "marcus-7",
+  "nome": "Marcus Oliver",
+  "grupo": "Party",
+  "nivel": 7,
+  "build": "Bard 7 (College of Valor), Lucky",
+  "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
+  "corpo": {
+    "ca": 17,
+    "pv": 45
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": [
+        "defesa"
+      ],
+      "hipotese": "Espada +1d4; Plant Growth + Fear ou Polymorph (CD 16); Lucky 1 de 3",
+      "dano": {
+        "medido": [
+          21.2,
+          20.0,
+          16.4,
+          15.2,
+          12.8,
+          10.4,
+          8.0,
+          5.6,
+          4.4
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {},
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": true,
+          "soft": 0.1,
+          "conc": true,
+          "dpr": 16.4
+        },
+        "fontes": [
+          {
+            "tipo": "terreno",
+            "nome": "Plant Growth",
+            "fator": 0.5,
+            "chave_topo": "pg"
+          },
+          {
+            "tipo": "melhor_de",
+            "nome": "Concentração (Fear ou Polymorph)",
+            "opcoes": [
+              {
+                "tipo": "area",
+                "magia": "fear",
+                "cd": 16,
+                "atraso": 1
+              },
+              {
+                "tipo": "alvo_unico",
+                "cd": 16,
+                "slots": [
+                  4,
+                  3,
+                  3,
+                  3
+                ],
+                "magias": [
+                  "polymorph",
+                  "fear"
+                ],
+                "modo": "combinar"
+              }
+            ]
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "com-suggestion",
+      "principal": false,
+      "hipotese": "Com Suggestion na rotação de alvo único",
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": true,
+          "soft": 0.1,
+          "conc": true,
+          "dpr": 16.4
+        },
+        "fontes": [
+          {
+            "tipo": "terreno",
+            "nome": "Plant Growth",
+            "fator": 0.5,
+            "chave_topo": "pg"
+          },
+          {
+            "tipo": "melhor_de",
+            "nome": "Concentração (Fear ou Polymorph)",
+            "opcoes": [
+              {
+                "tipo": "area",
+                "magia": "fear",
+                "cd": 16,
+                "atraso": 1
+              },
+              {
+                "tipo": "alvo_unico",
+                "cd": 16,
+                "slots": [
+                  4,
+                  3,
+                  3,
+                  3
+                ],
+                "magias": [
+                  "polymorph",
+                  "fear",
+                  "suggestion"
+                ],
+                "modo": "combinar"
+              }
+            ]
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    }
+  ],
+  "pendente": "As linhas de controle 'luta prioritária, orçamento real' (principal na planilha) e 'média do dia' foram feitas num script que não está no Drive: reescrever como plano."
+}

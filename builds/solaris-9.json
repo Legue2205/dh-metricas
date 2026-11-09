@@ -1,0 +1,89 @@
+{
+  "id": "solaris-9",
+  "nome": "Solaris Vollkan",
+  "grupo": "NPC",
+  "nivel": 9,
+  "build": "Wizard 9 (Evocation), Int 18, Fey Touched (Hex), Resilient (Con), War Caster",
+  "corpo": {
+    "ca": 17,
+    "pv": 56
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Hex no round 1, depois Scorching Ray 2º ×3; Wall of Force (cúpula ou alvo único)",
+      "dano": {
+        "medido": [
+          24.3,
+          23.1,
+          19.6,
+          18.4,
+          16.0,
+          13.7,
+          11.3,
+          8.9,
+          7.7
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {
+        "medido": {
+          "blindagem": 4.51,
+          "durabilidade": 3.21
+        },
+        "nota": "Mage Armor (CA 15), Shield 2×, Absorb Elements, Counterspell: reações fora do motor"
+      },
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "acc_m": [
+            0.3,
+            0.4,
+            0.8
+          ],
+          "conc": true,
+          "dpr": 25.0
+        },
+        "fontes": [
+          {
+            "tipo": "melhor_de",
+            "nome": "Wall of Force",
+            "opcoes": [
+              {
+                "tipo": "area",
+                "magia": "wall_of_force",
+                "cd": 16
+              },
+              {
+                "tipo": "alvo_unico_direto",
+                "magia": "wall_of_force",
+                "cd": 16
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "pico",
+      "principal": false,
+      "hipotese": "Hex no round 1, depois Scorching Ray 4º ×3 (5 raios, pico)",
+      "dano": {
+        "medido": [
+          39.3,
+          37.3,
+          31.4,
+          29.4,
+          25.4,
+          21.5,
+          17.6,
+          13.7,
+          11.7
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      }
+    }
+  ]
+}

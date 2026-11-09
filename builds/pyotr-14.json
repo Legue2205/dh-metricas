@@ -1,0 +1,82 @@
+{
+  "id": "pyotr-14",
+  "nome": "Pyotr",
+  "grupo": "NPC",
+  "nivel": 14,
+  "build": "Warlock 14 (Fiend), Pact of the Blade, arco longo do pacto +1, Con 8",
+  "corpo": {
+    "ca": 17,
+    "pv": 44
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Summon Fiend (Diabo) no round 1, depois arco; Hurl Through Hell; Command 5º em 5 alvos",
+      "dano": {
+        "medido": [
+          48.6,
+          46.1,
+          36.8,
+          33.6,
+          27.5,
+          21.2,
+          15.0,
+          8.8,
+          8.0
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {},
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "acc_m": [
+            0.8,
+            0.9,
+            1.0
+          ],
+          "conc": true,
+          "dpr": 29.8
+        },
+        "fontes": [
+          {
+            "tipo": "ataque_nega_turno",
+            "nome": "Hurl Through Hell",
+            "bonus": 10
+          },
+          {
+            "tipo": "command_fixo",
+            "nome": "Command (5º, 5 alvos)",
+            "cd": 12,
+            "alvos": 5
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "maximo",
+      "principal": false,
+      "hipotese": "Crown + Summon Fiend pré; Fireball ×2 + Hurl na 1ª flechada (máximo)",
+      "dano": {
+        "medido": [
+          82.9,
+          79.3,
+          68.1,
+          64.4,
+          56.9,
+          49.0,
+          40.8,
+          32.0,
+          31.1
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      }
+    }
+  ]
+}

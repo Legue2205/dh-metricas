@@ -1,0 +1,46 @@
+{
+  "id": "miau-8",
+  "nome": "Miau",
+  "grupo": "NPC",
+  "nivel": 8,
+  "build": "Barbarian 5 (Ancestral Guardian) / Rogue 3 (Thief)",
+  "corpo": {
+    "ca": 15,
+    "pv": 47,
+    "res": 0.5
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Fúria, CA 15 (escondido não conta: foco total); Ancestral Protectors",
+      "defesa": {
+        "resist": true
+      },
+      "controle": {
+        "atencao": {
+          "papel": "atirador",
+          "front": false,
+          "acc_m": [
+            0.1,
+            0.15,
+            0.6
+          ],
+          "acc_r": [
+            0.3,
+            0.2,
+            0.7
+          ],
+          "dpr": 25.0
+        },
+        "fontes": [
+          {
+            "tipo": "ancestral_protectors",
+            "nome": "Ancestral Protectors",
+            "bonus": 8
+          }
+        ]
+      }
+    }
+  ]
+}

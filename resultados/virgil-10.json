@@ -3,14 +3,18 @@
  "nome": "Virgil",
  "grupo": "NPC",
  "nivel": 10,
- "build": "Bard 10 (Eloquence)",
- "impressao": "57422eb3fe",
+ "build": "Bard 10 (Eloquence), Resilient (Sab)",
+ "impressao": "da62575757",
  "versao": "0.1.0",
  "modo": "completo",
  "linhas": {
   "principal": {
    "hipotese": "Luta prioritária: R1 Hold Person 4º (3 alvos) + UW; R2 Synaptic Static; R3 Psychic Lance + UW; R4 Command 3º (3 alvos)",
-   "principal": true,
+   "principal": [
+    "dano",
+    "defesa",
+    "controle"
+   ],
    "defesa": {
     "pv_efetivo": 53,
     "ca": 12,
@@ -66,7 +70,7 @@
   },
   "nao-humanoides": {
    "hipotese": "Inimigos não humanoides: Banishment 4º em 2 alvos no lugar do Hold Person",
-   "principal": false,
+   "principal": [],
    "controle": {
     "nivel_eq": 6.55,
     "rank": "B-",
@@ -108,7 +112,22 @@
     "nivel_absoluto": 7.95,
     "rank_absoluto": "B"
    }
+  },
+  "couro-batido": {
+   "hipotese": "CA 13 com couro batido por baixo",
+   "principal": [],
+   "defesa": {
+    "pv_efetivo": 53,
+    "ca": 13,
+    "blindagem": 2.62,
+    "durabilidade": 2.09,
+    "nivel_blindagem": 2.7,
+    "nivel_durabilidade": 2.9,
+    "nivel_eq": 2.9,
+    "rank": "D",
+    "perfil": "Equilibrado"
+   }
   }
  },
- "segundos": 3.3
+ "segundos": 2.6
 }

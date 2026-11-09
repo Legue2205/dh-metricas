@@ -1,0 +1,86 @@
+{
+  "id": "john-7",
+  "nome": "John",
+  "grupo": "Party",
+  "nivel": 7,
+  "build": "Ranger 7 (Hunter, Horde Breaker), Steady Aim por troca de feature, Elven Accuracy, Sharpshooter",
+  "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
+  "corpo": {
+    "ca": 16,
+    "pv": 46
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Steady Aim em 50% dos turnos; Ensnaring Strike (CD 13); Fey Ancestry",
+      "dano": {
+        "medido": [
+          41.6,
+          40.4,
+          36.0,
+          34.2,
+          30.7,
+          26.4,
+          21.4,
+          15.7,
+          12.5
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {},
+      "controle": {
+        "atencao": {
+          "papel": "atirador",
+          "front": false,
+          "acc_m": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "dpr": 36.0
+        },
+        "fontes": [
+          {
+            "tipo": "alvo_unico",
+            "nome": "Ensnaring Strike",
+            "cd": 13,
+            "slots": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "magias": [
+              "ensnaring_strike"
+            ],
+            "sobre": {
+              "ensnaring_strike": {
+                "ataque": 12
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "vantagem-externa",
+      "principal": false,
+      "hipotese": "Vantagem externa em tudo",
+      "dano": {
+        "medido": [
+          46.2,
+          45.9,
+          44.4,
+          43.4,
+          40.7,
+          36.7,
+          31.2,
+          23.8,
+          19.3
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      }
+    }
+  ]
+}

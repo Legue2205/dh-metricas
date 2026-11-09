@@ -36,7 +36,10 @@ def validar(b):
     if e: return e
     for k in ('ca', 'pv'):
         if k not in b['corpo']: e.append(f'corpo: falta "{k}"')
-    if not any(l.get('principal') for l in b['linhas']): e.append('nenhuma linha com "principal": true')
+    if not any(l.get('principal') for l in b['linhas']): e.append('nenhuma linha com "principal" (true ou lista de eixos)')
+    for l in b['linhas']:
+        pr = l.get('principal')
+        if isinstance(pr, list) and not set(pr) <= set(EIXOS): e.append(f"linha {l.get('id')}: principal deve listar eixos de {EIXOS}")
     ids = [l.get('id') for l in b['linhas']]
     if len(ids) != len(set(ids)): e.append('ids de linha repetidos')
     for l in b['linhas']:

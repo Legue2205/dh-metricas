@@ -1,0 +1,88 @@
+{
+  "id": "lucius-15",
+  "nome": "Lucius",
+  "grupo": "NPC",
+  "nivel": 15,
+  "build": "Champion 15, 2 lanças de mitril +2, Pegasus",
+  "corpo": {
+    "ca": 20,
+    "pv": 144.5
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Montado (CA 20), contra alvo Médio (crítico x3, só Piercer)",
+      "dano": {
+        "medido": [
+          88.7,
+          88.7,
+          88.6,
+          88.5,
+          87.8,
+          86.1,
+          83.1,
+          78.5,
+          75.5
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {},
+      "controle": {
+        "atencao": {
+          "papel": "striker",
+          "soft": 0.15,
+          "dpr": 88.6
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "alvo-grande",
+      "principal": false,
+      "hipotese": "Montado, contra alvo Grande",
+      "dano": {
+        "medido": [
+          69.8,
+          69.8,
+          66.7,
+          63.5,
+          57.4,
+          51.2,
+          45.1,
+          38.9,
+          35.8
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      }
+    },
+    {
+      "id": "desmontado",
+      "principal": false,
+      "hipotese": "Desmontado (CA 19, 2 ataques)",
+      "corpo": {
+        "ca": 19
+      },
+      "dano": {
+        "medido": [
+          35.6,
+          35.6,
+          34.0,
+          32.4,
+          29.3,
+          26.1,
+          23.0,
+          19.8,
+          18.3
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "defesa": {}
+    }
+  ]
+}

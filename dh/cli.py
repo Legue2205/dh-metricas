@@ -3,7 +3,7 @@
   python -m dh validar builds/*.json
   python -m dh rapido  builds/kael-7.json            # N=2000, sem absoluto: segundos
   python -m dh completo builds/kael-7.json           # N=8000 + controle absoluto (10 níveis)
-  python -m dh linhas  builds/kael-7.json            # linhas prontas para colar nas planilhas (TSV)
+  python -m dh linhas  builds/kael-7.json            # linhas para colar (TSV); com --json: células por planilha
   python -m dh painel                                # resumo de todos os resultados salvos
   python -m dh regua 7 9 10                          # pré-calcula a régua de controle desses níveis
 Opções: --forcar (ignora o cache de resultados), --eixo dano|defesa|controle, --linha <id>, --json
@@ -26,7 +26,8 @@ def _resumo(res):
     print(f"\n{res['nome']} ({res['id']}, nível {res['nivel']}) — modo {res['modo']}"
           f"{' (cache)' if res.get('_cache') else ''}, {res.get('segundos', 0)} s")
     for lid, l in res['linhas'].items():
-        print(f"  [{lid}{' *' if l['principal'] else ''}] {l['hipotese'][:90]}")
+        marca = '' if not l['principal'] else (' *' if len(l['principal']) == 3 else ' *' + '/'.join(l['principal']))
+        print(f"  [{lid}{marca}] {l['hipotese'][:90]}")
         if 'dano' in l:
             d = l['dano']; dp = d['dpr']
             print(f"    Dano     {d['rank']:>2}  nível eq {_fmt(d['nivel_eq'])}  ({d['perfil']})  "
@@ -50,20 +51,20 @@ def _linhas(b, res):
               'Ranks de defesa › Personagens (A:H, depois O:P)': [],
               'Ranks de controle › Controle total (A:J, M, O, Q:S, V:W)': []}
     for lid, l in res['linhas'].items():
-        sim = 'Sim' if l['principal'] else 'Não'
+        sim = lambda eixo: 'Sim' if eixo in l['principal'] else 'Não'
         rotulo = nome if lid == 'principal' else f"{nome} ({lid.replace('-', ' ')})"
         if 'dano' in l:
             blocos['Ranks de dano › Personagens (A:M, depois S:T)'].append(
-                [nome, grupo, bld, l['hipotese'], *[_fmt(v) for v in l['dano']['dpr'].values()], '|', sim, b['id']])
+                [nome, grupo, bld, l['hipotese'], *[_fmt(v) for v in l['dano']['dpr'].values()], '|', sim('dano'), b['id']])
         if 'defesa' in l:
             d = l['defesa']
             blocos['Ranks de defesa › Personagens (A:H, depois O:P)'].append(
                 [nome, grupo, bld, l['hipotese'], _fmt(d['pv_efetivo']), _fmt(d['ca']), _fmt(d['blindagem'], 2),
-                 _fmt(d['durabilidade'], 2), '|', sim, b['id']])
+                 _fmt(d['durabilidade'], 2), '|', sim('defesa'), b['id']])
         if 'controle' in l:
             c = l['controle']
             blocos['Ranks de controle › Controle total (A:J, M, O, Q:S, V:W)'].append(
-                [rotulo, grupo, sim, str(b['nivel']), *[_fmt(c['por_tipo'][t], 2) for t in PESO_TIPO], '|',
+                [rotulo, grupo, sim('controle'), str(b['nivel']), *[_fmt(c['por_tipo'][t], 2) for t in PESO_TIPO], '|',
                  _fmt(c['nivel_campo'], 2), '|', _fmt(c['nivel_atencao'], 2), '|', _fmt(c['vidas_total'], 3),
                  _fmt(c['vidas_campo'], 3), _fmt(c['vidas_atencao'], 3), '|', b['id'],
                  _fmt(c.get('nivel_absoluto'), 2)])
@@ -119,7 +120,10 @@ def main(argv=None):
             b, res = motor.avaliar(f, modo, a.forcar, a.eixo, a.linha)
         except ErroBuild as e:
             print(e, file=sys.stderr); return 1
-        if a.json: print(json.dumps(res, ensure_ascii=False, indent=1))
+        if a.comando == 'linhas' and a.json:
+            from .planilhas import itens
+            print(json.dumps(itens(b, res), ensure_ascii=False))
+        elif a.json: print(json.dumps(res, ensure_ascii=False, indent=1))
         elif a.comando == 'linhas': _linhas(b, res)
         else: _resumo(res)
     return 0

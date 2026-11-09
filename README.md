@@ -43,7 +43,8 @@ tests/               paridade com as planilhas
 2. `python -m dh validar builds/<id>.json`
 3. `python -m dh rapido builds/<id>.json` para conferir; `completo` quando for para a planilha.
 4. `python -m dh linhas builds/<id>.json` e colar cada bloco na planilha indicada (as colunas de
-   fórmula ficam como estão). O Painel da planilha central já pega pelo ID.
+   fórmula ficam como estão). Com `--json`, sai a lista {planilha, aba, células} que o Claude escreve
+   direto pelo conector do Sheets (procedimento em `dh/planilhas.py`). O Painel central já pega pelo ID.
 
 Só a build nova roda. A régua do conjurador de referência (a parte cara do controle) já está em `cache/`.
 
@@ -81,7 +82,14 @@ Uma linha pode ter só alguns eixos (ex.: uma linha só de defesa para "postura 
 ### defesa
 
 `{"pv_efetivo": 98, "ca": 21, "adv": -1, "resist": true, "red": 3}` — tudo opcional (vem do `corpo`).
-`adv: -1` = ataques contra ele com desvantagem (Dodge, Patient Defense).
+`adv: -1` = ataques contra ele com desvantagem (Dodge, Patient Defense). `red` = redução fixa por golpe
+(Heavy Armor Master), que não vale contra boss de CR 10+ (golpes mágicos).
+
+Para o que o motor ainda não modela (Shield, Absorb Elements, Uncanny Dodge, Evasion, "barrado"):
+`"defesa": {"medido": {"blindagem": 9.87, "durabilidade": 7.74}, "nota": "por quê"}`.
+
+`"principal"` numa linha pode ser `true` (todos os eixos dela) ou uma lista, ex. `["defesa"]`, quando a
+linha principal da planilha difere por eixo. Uma linha pode sobrescrever o corpo: `"corpo": {"adv": -1}`.
 
 ### controle
 
@@ -108,6 +116,7 @@ Uma linha pode ter só alguns eixos (ex.: uma linha só de defesa para "postura 
  "solo": {"magia": "hold_person"}}
 ```
 
+Outros tipos: `terreno` (Plant Growth), `parada_oa` (Caleb), `alvo_unico_direto` (Wall of Force num alvo).
 Casos especiais já registrados: `esqueletos`, `agarrao`, `ancestral_protectors`, `command_fixo`,
 `ataque_nega_turno`. Mecânica nova = um tipo novo em `controle/efeitos.py` + um teste, nunca código
 solto num chat.
@@ -116,20 +125,24 @@ Magia nova: uma linha em `controle/magias.json` (`peso` = fração do turno nega
 `fim_turno` | `inicio_turno` | `luta` | `escape` | `um_turno`). Mudar a biblioteca invalida a régua
 (o hash muda) e ela é refeita na próxima execução (~30 s para os 10 níveis).
 
-## Paridade com as planilhas (08/11/2026)
+## Paridade com as planilhas (09/11/2026)
+
+Builds migradas: Abdul, Kael, Amadeus, John, Tin Bin, Ravin, Marcus, Fjord, Miau, Caleb, Lucius,
+O Aprendiz, Pyotr, Solaris, Jamal, Virgil (+ um guerreiro de exemplo com dano calculado).
 
 | Eixo | Situação |
 |---|---|
-| Dano: nível eq a partir dos 9 DPRs | idêntico (John, Kael, Abdul, Lucius, Pyotr, Amadeus) |
+| Dano: nível eq a partir dos 9 DPRs | idêntico em todas as linhas testadas |
 | Dano: DPR a partir dos ataques | motor novo em fórmula fechada; as linhas antigas entram como `medido` |
-| Defesa | idêntico nas linhas sem reação (Kael ×3, Fjord, arquétipos). **Diverge** onde a planilha somou coisas que o motor não modela: Shield/Absorb Elements (Mago 5, Amadeus) e a blindagem do Abdul (10,69 aqui contra 9,89 lá; a durabilidade bate) |
-| Controle relativo | dentro do ruído de Monte Carlo (Abdul 4,8 × 4,9; Kael 3,5 × 3,6; Virgil 6,5 × 6,5; Virgil não humanoides 6,5 × 6,6) |
-| Controle absoluto | Abdul 4,9 × 5,02; Kael 3,1 × 3,12; Virgil 7,1 × 7,18 |
+| Defesa | idêntica em todas as linhas sem reação (incluindo o Heavy Armor Master do Abdul, depois de corrigir o nº de atacantes da horda). Linhas com Shield/Uncanny Dodge/Evasion/barrado entram como `medido` |
+| Controle relativo e absoluto | 14 builds dentro de 0,4 nível. **Divergem**: Ravin (7,2 × 7,7, só no encontro Minions + minibosses, onde a régua é extrapolada acima do teto) e Solaris (8,8 × 7,5, valor da planilha veio de uma versão anterior do script) |
 
 ## Ainda fora do repo (próximos passos)
 
 - Área, Suporte, Resiliência e Vontade: os motores não estavam salvos no Drive; continuam na planilha.
-- Migrar as outras builds (John, Tin Bin, Amadeus, Ravin, Marcus, NPCs) para `builds/`.
-- Defesa: modelar reações (Shield, Absorb Elements, Uncanny Dodge) para fechar as divergências.
-- Escrever direto nas planilhas a partir de `resultados/` (hoje: `dh linhas` + colar).
+- Marcus: as linhas de controle "luta prioritária, orçamento real" e "média do dia" eram de um script
+  que não está no Drive; reescrever como `plano`.
+- Migrar arquétipos e monstros de referência (hoje só nas planilhas).
+- Defesa: modelar reações (Shield, Absorb Elements, Uncanny Dodge, Evasion) e trocar os `medido`.
+- Dano: rotações com recursos e GWM/SS condicional à CA no motor de fórmula fechada.
 - Ligar a skill `dnd-build-rapido` a este repo, para que ela gere o `build.json` em vez do formato próprio dela.

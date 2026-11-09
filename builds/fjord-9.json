@@ -1,0 +1,50 @@
+{
+  "id": "fjord-9",
+  "nome": "Fjord, o Grande",
+  "grupo": "NPC",
+  "nivel": 9,
+  "build": "Barbarian 5 (Giant) / Monk 4 (Kensei), Tough",
+  "corpo": {
+    "ca": 18,
+    "pv": 78,
+    "res": 0.5
+  },
+  "linhas": [
+    {
+      "id": "principal",
+      "principal": true,
+      "hipotese": "Fúria + Agile Parry (CA 18), sem Reckless; agarrão a 10 ft",
+      "defesa": {
+        "resist": true
+      },
+      "controle": {
+        "atencao": {
+          "papel": "tank",
+          "soft": 0.15,
+          "dpr": 30.0,
+          "agarra": true
+        },
+        "fontes": [
+          {
+            "tipo": "agarrao",
+            "nome": "Agarrão a 10 ft",
+            "bonus": 7
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "patient-defense",
+      "principal": false,
+      "hipotese": "Postura defensiva: Patient Defense nos 4 rounds",
+      "defesa": {
+        "resist": true,
+        "adv": -1
+      }
+    }
+  ]
+}

@@ -66,7 +66,7 @@ atenção + absoluto), área, suporte, orçamento de recursos, CLI (`validar`, `
 12. Só se precisar: back-end/banco.
 
 
-## Proposta: plano de orçamento do dia (10/11, aguardando confirmação)
+## Plano de orçamento do dia (decidido em 10/11)
 
 Pedido do usuário: a decisão de como gastar os recursos é qualitativa e deve ser tomada **na discussão da
 build**, escrita no JSON, e não por fração automática nem por agente no workflow.
@@ -88,11 +88,15 @@ build**, escrita no JSON, e não por fração automática nem por agente no work
 Etapas: (a) formato do plano + livro-caixa + agregação, reaproveitando os eixos por combate como hoje;
 (b) modelo de ação round a round unificado, em que uma ação alimenta dano, controle, área e suporte ao mesmo tempo.
 
-Perguntas: peso dos prioritários na média (2:1? 1:1?); definição do `dia_longo`; orçamento estourado é sempre
-erro ou existe uma tag explícita `hypercharged`?
+Decisões do usuário (10/11):
+- Média do dia: **prioritário pesa 2, não prioritário pesa 1**.
+- `dia_longo`: **8 combates, 2 descansos curtos** (entre o 3º e o 4º e entre o 6º e o 7º).
+- Estourar o orçamento é **erro**, exceto em linhas com a tag explícita **`hypercharged`** (hipótese de acesso a
+  mais recursos), que declaram quanto a mais têm.
+- Em aberto: quais dos 8 combates do `dia_longo` são prioritários (sugestão: alternar, 4 P e 4 NP).
 
 ## Perguntas em aberto para o usuário
 - Incluir ação/concentração no orçamento agora?
 
 ## Próximo passo
-Fase 1, item 1 (invocações) e item 2 (ação/concentração); depois Fase 2, itens 8–9 (site).
+Plano de orçamento do dia, etapa (a); depois invocações e ação/concentração (Fase 1, itens 1–2); depois o site (itens 8–9).

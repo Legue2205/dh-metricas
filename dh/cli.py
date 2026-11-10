@@ -4,7 +4,7 @@
   python -m dh rapido  builds/kael-7.json            # N=2000, sem absoluto: segundos
   python -m dh completo builds/kael-7.json           # N=8000 + controle absoluto (10 níveis)
   python -m dh linhas  builds/kael-7.json            # linhas para colar (TSV); com --json: células por planilha
-  python -m dh painel                                # resumo de todos os resultados salvos
+  python -m dh painel [padrao|combate_unico|dia_longo] # resumo de todos os resultados, pelo plano do dia
   python -m dh regua 7 9 10                          # pré-calcula a régua de controle desses níveis
 Opções: --forcar (ignora o cache de resultados), --eixo dano|defesa|controle, --linha <id>, --json
 """
@@ -27,7 +27,7 @@ def _resumo(res):
           f"{' (cache)' if res.get('_cache') else ''}, {res.get('segundos', 0)} s")
     for lid, l in res['linhas'].items():
         marca = '' if not l['principal'] else (' *' if len(l['principal']) == 3 else ' *' + '/'.join(l['principal']))
-        print(f"  [{lid}{marca}] ({l.get('orcamento', {}).get('tag', '-')}) {l['hipotese'][:80]}")
+        print(f"  [{lid}{marca}] {l['hipotese'][:90]}")
         if 'dano' in l:
             d = l['dano']; dp = d['dpr']
             print(f"    Dano     {d['rank']:>2}  nível eq {_fmt(d['nivel_eq'])}  ({d['perfil']})  "
@@ -49,13 +49,25 @@ def _resumo(res):
         o = l.get('orcamento', {})
         if o.get('reacao') or o.get('espacos_por_eixo'):
             esp = '; '.join(f"{e}: " + ', '.join(f"{v:g}×{k}º" for k, v in sorted(g.items())) for e, g in o['espacos_por_eixo'].items())
-            print(f"    Recursos     tag {o['tag']} · reação livre {_fmt(float(o['reacao_livre']), 2)}" + (f" · espaços: {esp}" if esp else ''))
+            print(f"    Recursos     reação livre {_fmt(float(o['reacao_livre']), 2)}" + (f" · espaços: {esp}" if esp else ''))
         if 'controle' in l:
             c = l['controle']
             ab = f"  absoluto {_fmt(c['nivel_absoluto'])} ({c['rank_absoluto']})" if 'nivel_absoluto' in c else ''
             print(f"    Controle {c['rank']:>2}  nível eq {_fmt(c['nivel_eq'])}  campo {_fmt(c['nivel_campo'])} · "
                   f"atenção {_fmt(c['nivel_atencao'])} · vidas {c['vidas_total']:+.2f}{ab}")
             print('             por encontro: ' + ' · '.join(f"{t.split(' ')[0]} {_fmt(v)}" for t, v in c['por_tipo'].items()))
+
+
+def _planos(res):
+    for tag, p in res.get('planos', {}).items():
+        hy = f" · hypercharged ×{p['hypercharged']:g}" if p['hypercharged'] != 1 else ''
+        print(f"  PLANO {tag}{hy}: " + ' → '.join(f"{c['linha']}({c['categoria']})" for c in p['combates']))
+        sb = p['sobra']; esp = ', '.join(f"{v:g}×{k}º" for k, v in sb.get('espacos', {}).items())
+        resto = ', '.join(f"{v:g} {k}" for k, v in sb.items() if k != 'espacos')
+        print('    sobra para utilidade: ' + (', '.join(x for x in (esp, resto) if x) or 'nada'))
+        for e, v in p['eixos'].items():
+            print(f"    {e:12s} dia {v['rank']:>2} {_fmt(float(v['nivel_eq']))}   " +
+                  ' · '.join(f"{k} {_fmt(float(x))}" for k, x in v['por_categoria'].items()))
 
 
 def _linhas(b, res):
@@ -120,13 +132,17 @@ def main(argv=None):
         import pathlib
         cols = [('Dano', 'dano', None), ('Defesa', 'defesa', None), ('Resil.', 'saves', 'resiliencia'),
                 ('Vontade', 'saves', 'vontade'), ('Controle', 'controle', None), ('Área', 'area', None), ('Suporte', 'suporte', None)]
-        print(f"{'ID':20s} {'nv':>3s}  " + '  '.join(f'{c[0]:>8s}' for c in cols))
+        tag = (a.alvos or ['padrao'])[0]
+        print(f"Plano do dia: {tag}. Builds marcadas com ~ ainda não têm esse plano (mostra a linha principal).")
+        print(f"{'ID':21s} {'nv':>3s}  " + '  '.join(f'{c[0]:>8s}' for c in cols))
         for f in sorted(pathlib.Path(motor.RESULTADOS).glob('*.json')):
-            r = json.loads(f.read_text(encoding='utf-8'))
+            r = json.loads(f.read_text(encoding='utf-8')); p = r.get('planos', {}).get(tag)
             cel = []
-            for _, eixo, sub in cols:
-                n = motor.nota(motor.principal(r, eixo), sub); cel.append(f"{_fmt(float(n[0]))} {n[1]}" if n else '-')
-            print(f"{r['id']:20s} {r['nivel']:>3d}  " + '  '.join(f'{x:>8s}' for x in cel))
+            for _, eixo, sb in cols:
+                if p: x = p['eixos'].get(sb or eixo); n = (x['nivel_eq'], x['rank']) if x else None
+                else: n = motor.nota(motor.principal(r, eixo), sb)
+                cel.append(f"{_fmt(float(n[0]))} {n[1]}" if n else '-')
+            print(f"{('' if p else '~') + r['id']:21s} {r['nivel']:>3d}  " + '  '.join(f'{x:>8s}' for x in cel))
         return 0
 
     modo = 'completo' if a.comando == 'completo' else 'rapido'
@@ -140,7 +156,7 @@ def main(argv=None):
             print(json.dumps(itens(b, res), ensure_ascii=False))
         elif a.json: print(json.dumps(res, ensure_ascii=False, indent=1))
         elif a.comando == 'linhas': _linhas(b, res)
-        else: _resumo(res)
+        else: _resumo(res); _planos(res)
     return 0
 
 

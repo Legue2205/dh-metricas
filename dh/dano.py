@@ -70,7 +70,7 @@ def _ataque(a, ca):
     return max(op, key=lambda x: x[2])
 
 
-def dpr(spec, ca, lutas_dia=4):
+def dpr(spec, ca, lutas_dia=4, invocacoes=()):
     if 'medido' in spec: return spec['medido'][CAS.index(ca)]
     total = 0.0; nenhum = 1.0; pc = []
     for a in spec.get('ataques', []):          # n pode ser fracionário (ex.: Action Surge = 2 ataques ÷ 4 rounds)
@@ -86,10 +86,13 @@ def dpr(spec, ca, lutas_dia=4):
         usos = x['usos'] if 'usos' in x else x['usos_dia'] / lutas_dia   # recurso diário repartido pelas lutas
         total += min(1.0, usos / R) * algum * (avg + crit_rel * dad)
     if 'automatico' in spec: total += dados(spec['automatico'])[0]
+    for inv in invocacoes:                     # criaturas invocadas atacam por conta própria
+        if 'ataque' in inv: total += inv['quantidade'] * inv['ataque'].get('n', 1) * _ataque(inv['ataque'], ca)[2]
     return round(total, 1)
 
 
-def avaliar(spec, lutas_dia=4):
-    lista = [dpr(spec, ca, lutas_dia) for ca in CAS]
+def avaliar(spec, lutas_dia=4, invocacoes=()):
+    """invocacoes só somam quando o dano é calculado; em 'medido' já estão dentro do número."""
+    lista = [dpr(spec, ca, lutas_dia, invocacoes) for ca in CAS]
     nv, perfil = nivel_equivalente(lista)
     return dict(dpr={f'CA {ca}': v for ca, v in zip(CAS, lista)}, nivel_eq=nv, rank=letra(nv), perfil=perfil)

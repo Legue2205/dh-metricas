@@ -5,7 +5,7 @@ from pathlib import Path
 
 from .controle.campo import MAGIAS
 from .controle.efeitos import TIPOS as TIPOS_FONTE
-from . import orcamento
+from . import orcamento, planos
 from .defesa import REACOES
 from .suporte import MODELOS
 
@@ -32,8 +32,20 @@ def _magias_usadas(f):
     for op in f.get('opcoes', []): yield from _magias_usadas(op)
 
 
+def resolver(b):
+    """Linhas com "herda": "<id>" recebem os eixos e campos que não declararam da linha-mãe (idempotente)."""
+    linhas = {l['id']: l for l in b.get('linhas', []) if 'id' in l}
+    for l in b.get('linhas', []):
+        visto = set()
+        while 'herda' in l and l['herda'] in linhas and l['herda'] not in visto:
+            mae = linhas[l['herda']]; visto.add(l.pop('herda')); l['herdou'] = mae['id']
+            for k, v in mae.items():
+                if k not in l and k not in ('id', 'principal', 'hipotese', 'herdou'): l[k] = json.loads(json.dumps(v))
+    return b
+
+
 def validar(b):
-    e = []
+    e = []; resolver(b)
     for k in ('id', 'nome', 'grupo', 'nivel', 'corpo', 'linhas'):
         if k not in b: e.append(f'falta "{k}"')
     if e: return e
@@ -70,7 +82,9 @@ def validar(b):
                 if f.get('tipo') not in TIPOS_FONTE: e.append(f'{nome}: fonte de tipo desconhecido "{f.get("tipo")}"')
                 for m in _magias_usadas(f):
                     if m not in MAGIAS: e.append(f'{nome}: magia "{m}" não está em magias.json')
-    if not e: e += orcamento.checar(b, MAGIAS)[0]
+    for l in b['linhas']:
+        if 'herda' in l: e.append(f"linha {l.get('id')}: herda de linha inexistente \"{l['herda']}\"")
+    if not e: e += orcamento.checar(b, MAGIAS)[0] + planos.checar(b, MAGIAS)
     return e
 
 

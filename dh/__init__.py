@@ -1,2 +1,2 @@
 """Motores de métricas de builds de D&D 5e (2014) — DragonHeist."""
-VERSAO = '0.2.0'
+VERSAO = '0.3.0'

@@ -20,7 +20,7 @@ rodar motores, guardar resultados, atualizar o painel) é automático, sem o Cla
 | 5 | Uma linha = uma hipótese: reação e espaços de magia não contam duas vezes (`orcamento.py`). Reação duplicada = erro; espaços estourados = aviso "eixos não somam" | 10/11 |
 | 6 | Shield/Uncanny Dodge são recursos finitos com decisão informada (vê o ataque/dano, pesa o resto do round). Counterspell conta em controle e em saves, não em blindagem | 10/11 |
 | 7 | Padrão: 4 lutas por dia (2 prioritárias que gastam o dobro de uma comum), 2 por descanso curto, 4 rounds por luta | 10/11 |
-| 7b | **Tags de orçamento automáticas por linha** (menor em que a linha cabe): `comum` (1/6 dos espaços do dia) < `prioritaria` (1/3) < `combate_unico` (dia inteiro) < `hypercharged_1.5` < `hypercharged_2.0` … (degraus de 0,5 dia). Substitui o aviso "eixos não somam" | 10/11 |
+| 7b | (substituída pelo plano do dia, abaixo) ~~Tags de orçamento automáticas por linha~~ (menor em que a linha cabe): `comum` (1/6 dos espaços do dia) < `prioritaria` (1/3) < `combate_unico` (dia inteiro) < `hypercharged_1.5` < `hypercharged_2.0` … (degraus de 0,5 dia). Substitui o aviso "eixos não somam" | 10/11 |
 | 8 | **Armazenamento = o próprio Git** (`builds/` entrada, `resultados/` saída). Sem banco de dados por enquanto | 10/11 (confirmada) |
 | 9 | **Automação = GitHub Actions**: a cada push roda testes + `dh completo` e commita `resultados/` e `PAINEL.md` | 10/11 (confirmada) |
 | 10 | **Front-end = site estático** gerado dos `resultados/*.json` (Cloudflare Pages ou GitHub Pages). Sem back-end: os motores são Python/numpy com Monte Carlo, ruins para funções serverless da Vercel/Cloudflare | 10/11 (confirmada) |
@@ -44,7 +44,7 @@ atenção + absoluto), área, suporte, orçamento de recursos, CLI (`validar`, `
 ## Próximos passos (em ordem)
 
 ### Fase 1 — motor geral completo e flexível
-1. **Invocações/summons como cidadãos de primeira classe.** Hoje os esqueletos do Amadeus aparecem em três
+1. ~~Invocações~~ **feito em 10/11**: `invocacoes` na linha alimenta controle de corpo, atenção e dano calculado. Texto original: Invocações/summons como cidadãos de primeira classe. Hoje os esqueletos do Amadeus aparecem em três
    lugares soltos (dano `medido`, fonte `esqueletos` do controle, `atencao.esqueletos`). Criar no JSON
    `"invocacoes": [{"nome", "quantidade", "pv", "ca", "ataque": {...}}]` na linha (hipótese de quantos tem) e
    fazer dano, controle de corpo e atenção lerem dali.
@@ -93,10 +93,16 @@ Decisões do usuário (10/11):
 - `dia_longo`: **8 combates, 2 descansos curtos** (entre o 3º e o 4º e entre o 6º e o 7º).
 - Estourar o orçamento é **erro**, exceto em linhas com a tag explícita **`hypercharged`** (hipótese de acesso a
   mais recursos), que declaram quanto a mais têm.
-- Em aberto: quais dos 8 combates do `dia_longo` são prioritários (sugestão: alternar, 4 P e 4 NP).
+- `dia_longo`, pesos: **1 1 2 · SR · 1 2 2 · SR · 2 4** (1 = não prioritário, 2 = moderado, 4 = boss fight).
+- **Etapa (a) implementada em 10/11** (`dh/planos.py`, herança de linhas com `herda`, livro-caixa, média do dia
+  e por categoria, `dh painel [tag]`). Kael e Tin Bin já têm plano (trivial). Falta a etapa (b).
 
 ## Perguntas em aberto para o usuário
 - Incluir ação/concentração no orçamento agora?
 
 ## Próximo passo
-Plano de orçamento do dia, etapa (a); depois invocações e ação/concentração (Fase 1, itens 1–2); depois o site (itens 8–9).
+1. **Com o usuário:** escrever o plano do dia de cada conjurador (começar pelo Marcus: linhas "marcial" e
+   "caster", com o que ele conjura em cada combate). É discussão de build, não código.
+2. Site estático (`dh site`) + GitHub Pages pelo workflow (Fase 2, itens 8–9).
+3. Ação/ação bônus/concentração no orçamento; etapa (b) do plano (ação round a round unificada).
+4. Dano calculado no lugar dos `medido`.

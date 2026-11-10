@@ -39,7 +39,7 @@ def ficha(spec, corpo):
              dpr=spec['dpr'])
     for k in ('res', 'adv', 'red'):
         if corpo.get(k): f[k] = corpo[k]
-    for k in ('soft', 'conc', 'esqueletos', 'agarra'):
+    for k in ('soft', 'conc', 'esqueletos', 'agarra', 'inv_pv', 'inv_ca'):
         if k in spec: f[k] = spec[k]
     for k in ('acc_m', 'acc_r'):
         if k in spec: f[k] = tuple(spec[k])
@@ -107,7 +107,7 @@ def vida(E, party, ti, neg=None, detalhe=False):
                 red = 0 if e['cr'] >= 10 else p.get('red', 0)
                 dmg = na * p_acerto(e['atk'], p['ca'], p.get('adv', 0)) * max(0, d * p.get('res', 1) - red)
                 dano[j] += P[j] * dmg * (1 - neg[ie])
-                if p.get('skel'): p['pv'] = max(0, H['skel_pv'] - dano[j])
+                if p.get('skel'): p['pv'] = max(0, p['pv0'] - dano[j])
     tot = sum(perda(dano[j] / p['pv']) for j, p in enumerate(party) if not p.get('skel'))
     if detalhe:
         return tot, [perda(dano[j] / p['pv']) for j, p in enumerate(party) if not p.get('skel')]
@@ -118,5 +118,6 @@ def party_com(membro, L):
     party = [ref(pp, L) for pp in PAPEIS]
     party[PAPEIS.index(membro['papel'])] = membro
     if membro.get('esqueletos'):
-        party.append(dict(nome='Esqueletos', skel=True, pv=H['skel_pv'], ca=16, front=True, dpr=0))
+        pv = membro.get('inv_pv', H['skel_pv'])
+        party.append(dict(nome='Invocações', skel=True, pv=pv, pv0=pv, ca=membro.get('inv_ca', 16), front=True, dpr=0))
     return party

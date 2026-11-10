@@ -3,7 +3,7 @@ import json
 import time
 from pathlib import Path
 
-from . import VERSAO, area, dano, defesa, orcamento, saves, suporte
+from . import VERSAO, area, base, dano, defesa, orcamento, planos, saves, suporte
 from .build import carregar, impressao
 from .controle import atencao, campo, efeitos, total
 
@@ -17,7 +17,8 @@ def avaliar_linha(b, linha, modo='rapido', regua=None, eixos=None):
     out = {}; livre = orcamento.reacao_livre(linha)
     lutas = b.get('recursos', {}).get('lutas_dia', 4)
     def quer(e): return e in linha and (not eixos or e in eixos)
-    if quer('dano'): out['dano'] = dano.avaliar(linha['dano'], lutas)
+    inv = linha.get('invocacoes', [])
+    if quer('dano'): out['dano'] = dano.avaliar(linha['dano'], lutas, inv)
     if quer('defesa'): out['defesa'] = defesa.avaliar(linha['defesa'], corpo, livre)
     if quer('saves'): out['saves'] = saves.avaliar(linha['saves'], corpo, livre)
     if quer('area'): out['area'] = area.avaliar(linha['area'], modo)
@@ -26,8 +27,13 @@ def avaliar_linha(b, linha, modo='rapido', regua=None, eixos=None):
     if 'controle' in linha and (not eixos or 'controle' in eixos):
         campo.configurar(cfg['N'], 11)
         c = linha['controle']
-        fn = efeitos.compilar(c.get('fontes', []), corpo, b['nivel'])
-        ficha = atencao.ficha(c['atencao'], corpo)
+        corpos = [i for i in inv if i.get('corpo', True)]   # invocações que ocupam espaço e atraem ataques
+        fontes = c.get('fontes', []) + [dict(tipo='esqueletos', nome=f"Corpo ({i['quantidade']} {i['nome']})",
+                                             pv=i['quantidade'] * i['pv'], ca_alvo=i['ca'] + i.get('cobertura', 0)) for i in corpos]
+        fn = efeitos.compilar(fontes, corpo, b['nivel'])
+        at = dict(c['atencao'])
+        if corpos: at.update(esqueletos=True, inv_pv=sum(i['quantidade'] * i['pv'] for i in corpos), inv_ca=corpos[0]['ca'])
+        ficha = atencao.ficha(at, corpo)
         out['controle'] = total.avaliar(fn, ficha, b['nivel'], absoluto=cfg['absoluto'], regua=regua)
     return out
 
@@ -50,6 +56,7 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
         pr = list(pr) if isinstance(pr, list) else (['dano', 'defesa', 'controle', 'saves', 'area', 'suporte'] if pr else [])
         res['linhas'][l['id']] = dict(hipotese=l.get('hipotese', ''), principal=pr,
                                       **avaliar_linha(b, l, modo, regua, eixos))
+    if not eixos and not linhas: res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
     res['segundos'] = round(time.time() - t0, 1)
     if not eixos and not linhas:
         RESULTADOS.mkdir(exist_ok=True)

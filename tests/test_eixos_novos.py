@@ -63,11 +63,62 @@ def test_reacao_nao_duplica():
     assert any('usa a reação' in e for e in validar(y))
 
 
-def test_tags_de_orcamento():
-    b = json.loads((B / 'amadeus-7.json').read_text(encoding='utf-8'))
-    L = {l['id']: l for l in b['linhas']}
-    assert orcamento.tag(L['principal'], b, MAGIAS)[0] == 'hypercharged_1.5'   # 5 espaços de 3º+ contra 4 no dia
-    assert orcamento.tag(L['shield-total'], b, MAGIAS)[0] == 'combate_unico'    # 4 Shields de 1º numa luta
-    assert orcamento.fracoes({}) == {'comum': 1 / 6, 'prioritaria': 1 / 3, 'combate_unico': 1.0}
-    erros, avisos = orcamento.checar(b, MAGIAS)
-    assert erros == [] and any('hypercharged' in a for a in avisos)
+def _caster():
+    """Build sintética: bardo que luta de espada nos combates comuns e gasta feitiços nos prioritários."""
+    at = {"papel": "conjurador", "front": True, "conc": True, "dpr": 16}
+    return {"id": "t", "nome": "T", "grupo": "Teste", "nivel": 7, "corpo": {"ca": 17, "pv": 45},
+            "recursos": {"espacos": {"1": 4, "2": 3, "3": 3, "4": 1}, "outros": {"inspiracao": {"qtd": 3, "volta": "curto"}}},
+            "linhas": [
+                {"id": "marcial", "principal": True, "hipotese": "espada; abre com 1 feitiço de 1º",
+                 "dano": {"ataques": [{"n": 2, "bonus": 7, "dano": "1d8+4"}]},
+                 "controle": {"atencao": at, "fontes": [{"tipo": "ameaca"}], "usa": {"espacos": {"1": 1}}}},
+                {"id": "caster", "herda": "marcial", "hipotese": "um feitiço por round", "usa": {"inspiracao": 2},
+                 "dano": {"ataques": [{"n": 1, "bonus": 7, "dano": "1d8+4"}]},
+                 "controle": {"atencao": dict(at, front=False), "fontes": [
+                     {"tipo": "alvo_unico", "cd": 15, "slots": [3, 2], "magias": ["hold_person"]}]}}],
+            "planos": {"padrao": {"combates": ["marcial", "caster", "marcial", "caster"]}}}
+
+
+def test_plano_livro_caixa_e_media():
+    from dh import planos
+    from dh.base import letra
+    b = _caster(); assert validar(b) == []
+    erros, combates, sobra = planos.livro_caixa(b, 'padrao', MAGIAS)
+    assert erros == [] and [c['categoria'] for c in combates] == ['np', 'p', 'np', 'p']
+    assert sobra['espacos'] == {'1': 2, '2': 1, '3': 1, '4': 1} and sobra['inspiracao'] == 1   # sobra para utilidade
+    res = {'marcial': {'dano': {'nivel_eq': 6.0}, 'controle': {'nivel_eq': 1.0}},
+           'caster': {'dano': {'nivel_eq': 3.0}, 'controle': {'nivel_eq': 7.0}, 'area': {'nivel_eq': 4.0}}}
+    e = planos.agregar(b, res, MAGIAS, letra)['padrao']['eixos']
+    assert e['dano'] == dict(nivel_eq=4.0, rank='C', por_categoria={'np': 6.0, 'p': 3.0})     # prioritário pesa 2
+    assert e['controle']['nivel_eq'] == 5.0 and e['controle']['por_categoria'] == {'np': 1.0, 'p': 7.0}
+    assert e['area']['por_categoria'] == {'np': 0.0, 'p': 4.0}                                 # não fez área no comum
+
+
+def test_plano_estouro_e_hypercharged():
+    b = _caster(); assert validar(b) == []
+    b['linhas'][1]['controle']['fontes'][0]['slots'] = [3, 3, 3]             # 6 de 3º+ no dia contra 4: não cabe
+    assert any('faltam' in e and 'nível 3+' in e for e in validar(b))
+    b['planos']['padrao']['hypercharged'] = 2
+    assert validar(b) == []
+    b['planos']['dia_longo'] = {'combates': ['marcial'] * 7}
+    assert any('precisa de 8 combates' in e for e in validar(b))
+
+
+def test_descanso_curto_devolve():
+    from dh import planos
+    b = _caster(); b['recursos'] = {"espacos": {"3": 2}, "espacos_volta": "curto", "outros": {"inspiracao": {"qtd": 2, "volta": "curto"}}}
+    b['linhas'][0]['controle']['usa'] = {}
+    b['planos'] = {'padrao': {'combates': ['marcial', 'caster', 'marcial', 'caster']}}   # 2 de 3º antes e 2 depois do descanso
+    assert planos.livro_caixa(b, 'padrao', MAGIAS)[0] == []
+
+
+def test_invocacoes():
+    from dh.dano import avaliar
+    spec = {"ataques": [{"n": 1, "bonus": 6, "dano": "2d8"}]}
+    inv = [{"nome": "esqueletos", "quantidade": 7, "pv": 19, "ca": 16, "ataque": {"bonus": 4, "dano": "1d6+5"}}]
+    assert avaliar(spec, 4, inv)['dpr']['CA 15'] > avaliar(spec)['dpr']['CA 15'] + 25
+    from dh import motor
+    _, r = motor.avaliar(B / 'amadeus-7.json', 'rapido', forcar=True, eixos=['controle'], linhas=['principal'])
+    c = r['linhas']['principal']['controle']                                 # paridade mantida lendo de "invocacoes"
+    assert abs(c['nivel_eq'] - 6.0) <= 0.4 and abs(c['nivel_atencao'] - 3.8) <= 0.4
+    assert any('esqueletos' in k for k in c['negacao_por_fonte']['Horda'])

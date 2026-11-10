@@ -21,7 +21,8 @@ Só precisa de Python 3.10+ e numpy (`pip install -e .`).
 dh/
   base.py            tabelas comuns: CR do Monster Manual, perfis, topologias, encontros do DMG, rampa de letras
   build.py           carregar / validar build.json, impressão digital
-  orcamento.py       recursos por hipótese: reação e espaços de magia não contam duas vezes
+  orcamento.py       recursos por hipótese: a reação não conta duas vezes; soma o gasto de cada linha
+  planos.py          plano do dia: livro-caixa de recursos, média do dia e por categoria de combate
   saves.py           Resiliência e Vontade (Monte Carlo contra um conjurador pleno)
   area.py            fração da horda removida → nível eq
   suporte.py         dano equivalente por round (fórmula fechada)
@@ -137,11 +138,40 @@ Nenhum recurso é contado duas vezes dentro de uma linha (`dh/orcamento.py`):
   A soma das frações não passa de 1 (erro). O que sobra é o que Shield, Uncanny Dodge, Absorb Elements e
   Counterspell podem usar. Fontes de controle que usam reação (`sentinela`, `parada_oa`, `counterspell`,
   `atencao.hard`) exigem um uso declarado com `"controle"` em `eixos` (erro se faltar).
-- **Espaços de magia.** Com `"recursos": {"espacos": {"1": 4, "3": 3}}` na build, soma-se o gasto de todos os
-  eixos da linha numa luta e a linha recebe a **tag** do menor orçamento em que cabe: `comum` (1/6 do dia) <
-  `prioritaria` (1/3) < `combate_unico` (dia inteiro) < `hypercharged_1.5` < `hypercharged_2.0`…
-  Ajustável: `lutas_dia` (4), `prioritarias` (2), `peso_prioritaria` (2).
+- **Espaços de magia e outros recursos** são decididos no **plano do dia** (abaixo), não por fração automática.
 - Recursos diários no dano e no suporte: `usos_dia` (repartido pelas lutas) em vez de `usos`.
+
+## Plano de orçamento do dia (`dh/planos.py`)
+
+A decisão de como gastar recursos é da build e fica escrita no JSON. **Tag = premissa diária**:
+
+| Tag | Combates (peso) |
+|---|---|
+| `padrao` | NP(1) · P(2) · descanso curto · NP(1) · P(2) |
+| `combate_unico` | 1 combate, todos os recursos |
+| `dia_longo` | 1 · 1 · 2 · SR · 1 · 2 · 2 · SR · 2 · 4 (1 = não prioritário, 2 = moderado, 4 = boss) |
+
+```jsonc
+"recursos": {"espacos": {"1": 4, "2": 3, "3": 3, "4": 1},        // "espacos_volta": "curto" para pacto
+             "outros": {"furia": {"qtd": 3, "volta": "longo"}, "ki": {"qtd": 7, "volta": "curto"}}},
+"linhas": [{"id": "marcial", ...},
+           {"id": "caster", "herda": "marcial", "usa": {"furia": 1}, "controle": {...}}],   // herda o que não declarar
+"planos": {"padrao": {"combates": ["marcial", "caster", "marcial", {"linha": "caster", "nota": "gasta o que sobrou"}]},
+           "combate_unico": {"combates": ["caster"], "hypercharged": 1.5}}   // hypercharged = acesso a mais recursos
+```
+
+- Cada combate aponta para uma linha (hipótese). O **livro-caixa** desconta o que a linha gasta (espaços lidos
+  dos eixos + `usa`), devolve no descanso curto o que tem `volta: curto`, e **recusa** o plano se faltar recurso
+  (a não ser com `hypercharged`). `"gasta": {...}` no combate sobrescreve o gasto lido da linha.
+- O que sobra no fim do dia aparece como **sobra para utilidade** (gastar 100% é permitido; fica visível).
+- Resultado por eixo: **média do dia** ponderada pelo peso e a **média por categoria** (np, p, mod, boss).
+  Eixo ausente em alguns combates conta 0 neles. `dh painel [tag]` compara as builds na mesma tag.
+
+## Invocações
+
+`"invocacoes": [{"nome": "esqueletos", "quantidade": 7, "pv": 19, "ca": 16, "cobertura": 2,
+"ataque": {"bonus": 4, "dano": "1d6+5"}}]` na linha (é a hipótese de quantas criaturas há). Entram sozinhas no
+controle de corpo (atraem ataques até o PV acabar), na atenção e, quando o dano é calculado, no DPR.
 
 ## Os outros eixos
 
@@ -186,7 +216,8 @@ O Aprendiz, Pyotr, Solaris, Jamal, Virgil (+ um guerreiro de exemplo com dano ca
 
 ## Pendências
 
-- Ação e concentração ainda não entram no orçamento (só reação e espaços).
+- Ação e concentração ainda não entram no orçamento (só reação, espaços e recursos nomeados).
+- **Planos do dia dos conjuradores** (Marcus, Amadeus, Ravin, Solaris, Virgil, Pyotr, John, Abdul): decidir na discussão de cada build.
 - Ravin: defesa com "barrado" segue `medido` (o `defesa2.py` original não foi recuperado).
 - Marcus: planos de controle "luta prioritária"/"média do dia" e linhas de suporte dia/comum/prioritária.
 - Saves de Caleb, Lucius, Jamal e Virgil; arquétipos e monstros de referência.

@@ -18,7 +18,7 @@ jobs:
       - run: python -m pytest -q
       - run: python -m dh completo 'builds/*.json' > /dev/null
       - run: |
-          { echo '# Painel (gerado automaticamente)'; echo; echo '```'; python -m dh painel; echo '```'; } > PAINEL.md
+          { echo '# Painel (gerado automaticamente)'; echo; echo '```'; python -m dh painel; echo; python -m dh painel dia_longo; echo '```'; } > PAINEL.md
       - run: |
           git config user.name "dh-bot"; git config user.email "dh-bot@users.noreply.github.com"
           git add resultados cache PAINEL.md

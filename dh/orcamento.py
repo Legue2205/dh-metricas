@@ -8,11 +8,9 @@ Uma linha = uma hipótese de luta. Regras checadas:
     (reacao_livre) é o que as reações de defesa (Shield, Uncanny Dodge, Absorb Elements, Counterspell) podem usar.
     Fontes de controle que dependem de reação (sentinela, parada_oa, counterspell) exigem um uso declarado
     com "controle" em eixos.
-  ESPAÇOS DE MAGIA. Se a build declara "recursos": {"espacos": {"1": 4, "2": 3, ...}}, soma-se o que todos
-    os eixos da linha gastam numa luta e a linha recebe a TAG do menor orçamento em que cabe:
-      comum (1/6 do dia) < prioritaria (1/3) < combate_unico (dia inteiro) < hypercharged_1.5 < hypercharged_2.0 ...
-    (dia padrão: 4 lutas, 2 prioritárias que gastam o dobro de uma comum; ajustável em "recursos"). Eixos sem leitura automática declaram
-    "usa": {"espacos": {"3": 1}} dentro do eixo.
+  ESPAÇOS DE MAGIA e outros recursos: quem decide é o plano do dia da build (ver planos.py). Aqui só se soma
+    o que cada linha gasta numa luta: lido das fontes de controle, reações de defesa, saves e áreas ("slot"),
+    mais "usa": {"espacos": {"3": 1}} dentro de um eixo e "usa": {"furia": 1} na linha.
 """
 FONTES_REACAO = ('sentinela', 'parada_oa', 'counterspell')
 
@@ -65,44 +63,6 @@ def espacos_gastos(linha, corpo, magias):
     return out
 
 
-TAGS_BASE = ('comum', 'prioritaria', 'combate_unico')
-
-
-def fracoes(rec):
-    """Fração dos espaços do dia que cabe em cada tipo de luta. Padrão: 4 lutas, 2 prioritárias e 2 comuns,
-    a prioritária gasta o dobro de uma comum -> comum 1/6, prioritária 1/3; combate único = o dia inteiro."""
-    lutas = rec.get('lutas_dia', 4); pri = rec.get('prioritarias', 2); peso = rec.get('peso_prioritaria', 2)
-    unid = pri * peso + (lutas - pri)
-    return {'comum': 1 / unid, 'prioritaria': peso / unid, 'combate_unico': 1.0}
-
-
-def multiplicador(linha, b, magias):
-    """Quantos 'dias de espaços' a linha precisa numa luta (0 = não gasta espaço)."""
-    esp = {int(k): v for k, v in b.get('recursos', {}).get('espacos', {}).items()}
-    gasto = {}
-    for g in espacos_gastos(linha, b['corpo'], magias).values():
-        for k, v in g.items(): gasto[int(k)] = gasto.get(int(k), 0) + v
-    m = 0.0
-    for nv in gasto:  # gasto de nível >= nv tem que caber nos espaços >= nv
-        precisa = sum(v for k, v in gasto.items() if k >= nv); tem = sum(v for k, v in esp.items() if k >= nv)
-        m = max(m, precisa / tem if tem else float('inf'))
-    return m
-
-
-def tag(linha, b, magias):
-    """Menor hipótese de orçamento em que a linha cabe: comum < prioritaria < combate_unico < hypercharged_1.5
-    < hypercharged_2.0 < ... (degraus de 0,5 dia). Build sem 'recursos.espacos' declarados: 'sem_espacos'."""
-    if not b.get('recursos', {}).get('espacos'): return 'sem_espacos', None
-    m = multiplicador(linha, b, magias)
-    if m == 0: return 'comum', 0.0
-    for t, f in fracoes(b['recursos']).items():
-        if m <= f + 1e-9: return t, round(m, 3)
-    if m == float('inf'): return 'impossivel', m
-    k = 1.5
-    while m > k + 1e-9: k += 0.5
-    return f'hypercharged_{k:.1f}', round(m, 3)
-
-
 def checar(b, magias):
     """(erros, avisos). Erro: reação contada duas vezes. Espaços não geram erro: viram a tag de orçamento."""
     erros = []; avisos = []
@@ -125,13 +85,10 @@ def checar(b, magias):
         hard = l.get('controle', {}).get('atencao', {}).get('hard')
         if hard and not tem('controle'):
             erros.append(f'{nome}: controle.atencao.hard (parar inimigos com a reação) exige um uso de reação com "controle"')
-        t, m = tag(l, b, magias)
-        if t.startswith('hypercharged') or t == 'impossivel':
-            avisos.append(f'{nome}: precisa de {m:g}× os espaços do dia numa luta -> {t}')
     return erros, avisos
 
 
 def resumo(linha, b, magias):
-    t, m = tag(linha, b, magias)
-    return dict(tag=t, dias_de_espacos=m, reacao=linha.get('reacao', []),
-                reacao_livre=round(reacao_livre(linha), 2), espacos_por_eixo=espacos_gastos(linha, b['corpo'], magias))
+    return dict(reacao=linha.get('reacao', []), reacao_livre=round(reacao_livre(linha), 2),
+                espacos_por_eixo=espacos_gastos(linha, b['corpo'], magias),
+                outros={k: v for k, v in linha.get('usa', {}).items() if k != 'espacos'})

@@ -5,6 +5,7 @@
   python -m dh completo builds/kael-7.json           # N=8000 + controle absoluto (10 níveis)
   python -m dh linhas  builds/kael-7.json            # linhas para colar (TSV); com --json: células por planilha
   python -m dh painel [padrao|combate_unico|dia_longo] # resumo de todos os resultados, pelo plano do dia
+  python -m dh site                                  # gera docs/index.html (site estático) a partir de resultados/
   python -m dh regua 7 9 10                          # pré-calcula a régua de controle desses níveis
 Opções: --forcar (ignora o cache de resultados), --eixo dano|defesa|controle, --linha <id>, --json
 """
@@ -102,14 +103,14 @@ def _linhas(b, res):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(prog='dh', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua'])
+    ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua', 'site'])
     ap.add_argument('alvos', nargs='*')
     ap.add_argument('--forcar', action='store_true')
     ap.add_argument('--eixo', action='append')
     ap.add_argument('--linha', action='append')
     ap.add_argument('--json', action='store_true')
     a = ap.parse_args(argv)
-    arquivos = [f for p in a.alvos for f in sorted(glob.glob(p))] if a.comando not in ('regua', 'painel') else []
+    arquivos = [f for p in a.alvos for f in sorted(glob.glob(p))] if a.comando not in ('regua', 'painel', 'site') else []
 
     if a.comando == 'validar':
         ok = True
@@ -119,6 +120,10 @@ def main(argv=None):
             for e in erros: print('      -', e)
             for e in av: print('      ~', e)
         return 0 if ok else 1
+
+    if a.comando == 'site':
+        from .site import gerar
+        print('site gerado em', gerar()); return 0
 
     if a.comando == 'regua':
         from .controle.total import Regua

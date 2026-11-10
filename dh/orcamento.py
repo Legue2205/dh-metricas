@@ -8,6 +8,9 @@ Uma linha = uma hipótese de luta. Regras checadas:
     (reacao_livre) é o que as reações de defesa (Shield, Uncanny Dodge, Absorb Elements, Counterspell) podem usar.
     Fontes de controle que dependem de reação (sentinela, parada_oa, counterspell) exigem um uso declarado
     com "controle" em eixos.
+  AÇÃO BÔNUS: mesmo formato da reação ("acao_bonus": [{"uso", "fracao", "eixos"}]); a soma não passa de 1.
+  CONCENTRAÇÃO: uma por vez. Fontes de controle com magia de concentração contam uma cada; dano, área e
+    suporte declaram "concentracao": "<nome>". Duas distintas na mesma linha = erro.
   ESPAÇOS DE MAGIA e outros recursos: quem decide é o plano do dia da build (ver planos.py). Aqui só se soma
     o que cada linha gasta numa luta: lido das fontes de controle, reações de defesa, saves e áreas ("slot"),
     mais "usa": {"espacos": {"3": 1}} dentro de um eixo e "usa": {"furia": 1} na linha.
@@ -63,16 +66,51 @@ def espacos_gastos(linha, corpo, magias):
     return out
 
 
+def _conc_fonte(f, magias):
+    ids = set()
+    for k in ('magia',):
+        if f.get(k): ids.add(f[k])
+    ids.update(f.get('magias', []))
+    ids.update(a['magia'] for a in f.get('acoes', []))
+    if 'solo' in f: ids.add(f['solo']['magia'])
+    out = {i for i in ids if magias.get(i, {}).get('conc')}
+    for o in f.get('opcoes', []): out |= _conc_fonte(o, magias)
+    return out
+
+
+def concentracoes(linha, magias):
+    """Concentrações distintas que a linha mantém ao mesmo tempo. Cada fonte de controle conta uma (as magias
+    dentro dela se revezam); dano, área e suporte declaram "concentracao": "<nome>" (o mesmo nome = a mesma)."""
+    toks = []
+    for f in linha.get('controle', {}).get('fontes', []):
+        c = _conc_fonte(f, magias)
+        if c: toks.append('|'.join(sorted(c)))
+    nomes = []
+    d = linha.get('dano')
+    if isinstance(d, dict) and d.get('concentracao'): nomes.append(d['concentracao'])
+    nomes += [f['concentracao'] for f in (linha.get('suporte') or {}).get('fontes', []) if f.get('concentracao')]
+    nomes += [a['concentracao'] for a in linha.get('area', []) if isinstance(a, dict) and a.get('concentracao')]
+    for n in nomes:
+        if not any(n in t.split('|') for t in toks): toks.append(n)
+    return toks
+
+
 def checar(b, magias):
     """(erros, avisos). Erro: reação contada duas vezes. Espaços não geram erro: viram a tag de orçamento."""
     erros = []; avisos = []
     for l in b['linhas']:
         nome = f"linha {l.get('id')}"
+        for chave, rot in (('reacao', 'a reação'), ('acao_bonus', 'a ação bônus')):
+            us = l.get(chave, [])
+            if sum(u.get('fracao', 1.0) for u in us) > 1 + 1e-9:
+                erros.append(f'{nome}: {rot} está contada mais de uma vez (soma das frações > 1)')
+            for u in us:
+                if not u.get('eixos'): erros.append(f'{nome}: uso de {chave} "{u.get("uso")}" sem "eixos"')
+        conc = concentracoes(l, magias)
+        if len(conc) > 1:
+            erros.append(f'{nome}: mais de uma concentração ao mesmo tempo ({"; ".join(conc)}); '
+                         f'separe em linhas ou junte as opções num "melhor_de"')
         usos = l.get('reacao', [])
-        if sum(u.get('fracao', 1.0) for u in usos) > 1 + 1e-9:
-            erros.append(f'{nome}: a reação está contada mais de uma vez (soma das frações > 1)')
-        for u in usos:
-            if not u.get('eixos'): erros.append(f'{nome}: uso de reação "{u.get("uso")}" sem "eixos"')
         def tem(eixo): return any(eixo in u.get('eixos', []) for u in usos)
         def fontes(fs):
             for f in fs:
@@ -89,6 +127,6 @@ def checar(b, magias):
 
 
 def resumo(linha, b, magias):
-    return dict(reacao=linha.get('reacao', []), reacao_livre=round(reacao_livre(linha), 2),
+    return dict(reacao=linha.get('reacao', []), acao_bonus=linha.get('acao_bonus', []), concentracao=concentracoes(linha, magias), reacao_livre=round(reacao_livre(linha), 2),
                 espacos_por_eixo=espacos_gastos(linha, b['corpo'], magias),
                 outros={k: v for k, v in linha.get('usa', {}).items() if k != 'espacos'})

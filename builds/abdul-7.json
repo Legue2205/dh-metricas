@@ -27,7 +27,38 @@
       "principal": true,
       "hipotese": "Luta normal: 2 smites por luta, reação em 50%; Conquering Presence no round 1 (CD 13); Lay on Hands fora",
       "dano": {
-        "medido": [
+        "ataques": [
+          {
+            "n": 2,
+            "bonus": 8,
+            "dano": "1d6+5"
+          },
+          {
+            "n": 0.5,
+            "bonus": 8,
+            "dano": "1d6+5",
+            "nota": "ataque de oportunidade (reação em 50% dos rounds)"
+          }
+        ],
+        "por_luta": [
+          {
+            "usos": 1,
+            "dano": "3d8",
+            "nota": "smite de 2º"
+          },
+          {
+            "usos": 1,
+            "dano": "2d8",
+            "nota": "smite de 1º"
+          }
+        ],
+        "usa": {
+          "espacos": {
+            "1": 1,
+            "2": 1
+          }
+        },
+        "conferencia": [
           25.5,
           24.4,
           21.3,
@@ -37,8 +68,7 @@
           14.0,
           11.6,
           10.2
-        ],
-        "fonte": "planilha de dano (sem motor salvo)"
+        ]
       },
       "defesa": {},
       "controle": {

@@ -28,9 +28,37 @@
     {
       "id": "principal",
       "principal": true,
-      "hipotese": "Steady Aim em 50% dos turnos; Ensnaring Strike (CD 13); Fey Ancestry",
+      "hipotese": "Hunter's Mark fixo + Steady Aim em 50% dos turnos; Fey Ancestry",
       "dano": {
-        "medido": [
+        "ataques": [
+          {
+            "n": 1,
+            "bonus": 12,
+            "dano": "1d8+4+1d6",
+            "poder": [
+              -5,
+              10
+            ],
+            "elven_accuracy": true,
+            "vantagem": 0.625,
+            "nota": "round 1 com vantagem; depois Steady Aim em 50% dos turnos"
+          },
+          {
+            "n": 1,
+            "bonus": 12,
+            "dano": "1d8+4+1d6",
+            "poder": [
+              -5,
+              10
+            ],
+            "elven_accuracy": true,
+            "vantagem": 0.25,
+            "nota": "vantagem só no round 1"
+          }
+        ],
+        "concentracao": "hunters_mark",
+        "nota": "arco +12 d8+4, Sharpshooter, Hunter's Mark +1d6 (conjurado no round 1, nunca movido)",
+        "conferencia": [
           41.6,
           40.4,
           36.0,
@@ -40,10 +68,87 @@
           21.4,
           15.7,
           12.5
-        ],
-        "fonte": "planilha de dano (sem motor salvo)"
+        ]
       },
       "defesa": {},
+      "controle": {
+        "atencao": {
+          "papel": "atirador",
+          "front": false,
+          "acc_m": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "dpr": 36.0
+        },
+        "fontes": []
+      },
+      "saves": {},
+      "area": [
+        {
+          "nome": "Horde Breaker",
+          "tipo": "cleave_ataque",
+          "bonus": 7,
+          "dano": "1d8+14",
+          "p": [
+            0.4,
+            0.75,
+            1.0
+          ]
+        }
+      ],
+      "acao_bonus": [
+        {
+          "uso": "Steady Aim",
+          "fracao": 0.5,
+          "eixos": [
+            "dano"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ensnaring-strike",
+      "herda": "principal",
+      "principal": false,
+      "hipotese": "Concentração em Ensnaring Strike (CD 13) no lugar do Hunter's Mark; sem Steady Aim no round em que conjura",
+      "dano": {
+        "ataques": [
+          {
+            "n": 1,
+            "bonus": 12,
+            "dano": "1d8+4",
+            "poder": [
+              -5,
+              10
+            ],
+            "elven_accuracy": true,
+            "vantagem": 0.25
+          },
+          {
+            "n": 1,
+            "bonus": 12,
+            "dano": "1d8+4",
+            "poder": [
+              -5,
+              10
+            ],
+            "elven_accuracy": true,
+            "vantagem": 0.25
+          }
+        ],
+        "nota": "sem Hunter's Mark; ação bônus vai para o Ensnaring Strike"
+      },
+      "acao_bonus": [
+        {
+          "uso": "Ensnaring Strike",
+          "fracao": 1.0,
+          "eixos": [
+            "controle"
+          ]
+        }
+      ],
       "controle": {
         "atencao": {
           "papel": "atirador",
@@ -77,20 +182,6 @@
           }
         ]
       },
-      "saves": {},
-      "area": [
-        {
-          "nome": "Horde Breaker",
-          "tipo": "cleave_ataque",
-          "bonus": 7,
-          "dano": "1d8+14",
-          "p": [
-            0.4,
-            0.75,
-            1.0
-          ]
-        }
-      ],
       "suporte": {
         "fontes": [
           {

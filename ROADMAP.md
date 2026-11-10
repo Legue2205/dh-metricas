@@ -100,9 +100,19 @@ Decisões do usuário (10/11):
 ## Perguntas em aberto para o usuário
 - Incluir ação/concentração no orçamento agora?
 
+## Feito em 10/11 (noite)
+- **Site estático** (`dh site` → `docs/index.html`), regenerado pelo workflow. Falta só ligar o GitHub Pages
+  (Settings → Pages → Deploy from a branch → `main` / `/docs`): ação do usuário.
+- **Orçamento:** ação bônus (declarada) e concentração (uma por linha; detecta magias de concentração do controle).
+  Conflitos reais encontrados e resolvidos dividindo linhas: John (Hunter's Mark × Ensnaring Strike) e
+  Solaris (Hex × Wall of Force).
+- **Dano calculado** (em vez de `medido`) para John, Tin Bin, Abdul, Marcus e Amadeus (este com os esqueletos
+  vindo de `invocacoes`); os valores antigos ficam em `conferencia` e são testados. Recursos "no acerto" por
+  luta (smites) agora usam E[min(usos, acertos)]. Tin Bin subiu de 9,8 (B+) para 10,0 (A-) por 0,3 de DPR.
+
 ## Próximo passo
-1. **Com o usuário:** escrever o plano do dia de cada conjurador (começar pelo Marcus: linhas "marcial" e
-   "caster", com o que ele conjura em cada combate). É discussão de build, não código.
-2. Site estático (`dh site`) + GitHub Pages pelo workflow (Fase 2, itens 8–9).
-3. Ação/ação bônus/concentração no orçamento; etapa (b) do plano (ação round a round unificada).
-4. Dano calculado no lugar dos `medido`.
+1. **Com o usuário:** plano do dia de cada conjurador (começar pelo Marcus: linhas "marcial" e "caster").
+2. Etapa (b): ação principal no orçamento / modelo round a round unificado (depende dos planos acima).
+3. Gancho genérico de "bônus que escala durante a luta" (combo do Kael, carga do Ravin) para tirar os últimos
+   `medido` da party; ataques dos NPCs (exige ler as fichas, que são grandes).
+4. `dh linhas`/exportação para o Sheets com os eixos novos (opcional: o site já substitui).

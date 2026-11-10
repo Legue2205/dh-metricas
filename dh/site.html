@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DragonHeist — métricas de builds</title>
+<style>
+:root{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--line:#e4e3df;--card:#f4f3f0;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100}
+@media(prefers-color-scheme:dark){:root{--bg:#1a1a19;--ink:#f0efec;--ink2:#c3c2b7;--line:#383835;--card:#242423;--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:20px 14px 60px}h1{font-size:21px;margin:0 0 2px}h2{font-size:17px;margin:26px 0 8px}
+p.sub{color:var(--ink2);margin:0 0 14px}.filtros{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+button.t{border:1px solid var(--line);background:none;color:var(--ink);padding:6px 12px;border-radius:16px;cursor:pointer;font:inherit}
+button.t[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.rol{overflow-x:auto}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}
+th{color:var(--ink2);font-weight:500;cursor:pointer;user-select:none}tbody tr{cursor:pointer}tbody tr:hover,tbody tr.sel{background:var(--card)}
+.rk{display:inline-block;min-width:26px;font-weight:600}.sem{color:var(--ink2)}
+.card{background:var(--card);border-radius:10px;padding:14px;margin-top:10px}
+.eixo{display:grid;grid-template-columns:92px 1fr 150px;gap:10px;align-items:center;margin:7px 0}
+.eixo .v{color:var(--ink2);font-size:13px;text-align:right}svg{display:block;width:100%;height:22px;overflow:visible}
+.leg{display:flex;gap:14px;flex-wrap:wrap;color:var(--ink2);font-size:13px;margin:6px 0 10px}.leg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
+.leg i.b{border-radius:2px;width:14px;height:8px}ul{margin:6px 0;padding-left:18px}li{margin:3px 0}small{color:var(--ink2)}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);padding:4px 8px;border-radius:6px;font-size:12px;display:none;z-index:9}
+</style></head><body><main>
+<h1>DragonHeist — métricas de builds</h1>
+<p class="sub">Nível equivalente e letra por eixo. Gerado automaticamente do repositório <a href="https://github.com/Legue2205/dh-metricas" style="color:inherit">dh-metricas</a>.</p>
+<div class="filtros" id="tags" role="group" aria-label="Plano do dia"></div>
+<p class="sub" id="nota"></p>
+<div class="rol"><table><thead><tr id="cab"></tr></thead><tbody id="corpo"></tbody></table></div>
+<div id="det"></div><div id="tip"></div>
+</main><script>
+const D=/*DADOS*/null;
+const EIXOS=[['dano','Dano'],['defesa','Defesa'],['resiliencia','Resiliência'],['vontade','Vontade'],['controle','Controle'],['area','Área'],['suporte','Suporte']];
+const CORES={np:'var(--s2)',p:'var(--s3)',mod:'var(--s3)',boss:'var(--s4)'};
+const NOMES={padrao:'Dia padrão (4 combates)',combate_unico:'Combate único',dia_longo:'Dia longo (8 combates)'};
+let tag='padrao',ord=null,sel=null;
+const f=x=>x==null?'–':x.toFixed(1).replace('.',',');
+function nota(b,e){const p=b.planos&&b.planos[tag];
+  if(p){const x=p.eixos[e];return x?{n:x.nivel_eq,r:x.rank,c:x.por_categoria}:null}
+  for(const l of Object.values(b.linhas)){const k=(e=='resiliencia'||e=='vontade')?'saves':e;
+    if(l.principal.includes(k)&&l[k]){const x=k=='saves'?l[k][e]:l[k];if(x.nivel_eq!=null)return{n:x.nivel_eq,r:x.rank}}}
+  return null}
+function desenha(){
+  document.getElementById('tags').innerHTML=D.tags.map(t=>`<button class="t" aria-pressed="${t==tag}" data-t="${t}">${NOMES[t]}</button>`).join('');
+  document.getElementById('nota').textContent='Builds com ~ ainda não têm plano para esta premissa: mostram a linha principal.';
+  document.getElementById('cab').innerHTML='<th data-o="id">Build</th><th data-o="nv">Nv</th>'+EIXOS.map(e=>`<th data-o="${e[0]}">${e[1]}</th>`).join('');
+  let bs=[...D.builds];
+  if(ord)bs.sort((a,b)=>ord=='id'?a.nome.localeCompare(b.nome):ord=='nv'?b.nivel-a.nivel:((nota(b,ord)||{n:-1}).n-(nota(a,ord)||{n:-1}).n));
+  document.getElementById('corpo').innerHTML=bs.map(b=>`<tr data-id="${b.id}" class="${b.id==sel?'sel':''}"><td>${b.planos&&b.planos[tag]?'':'<span class="sem">~</span>'}${b.nome} <small>${b.grupo}</small></td><td>${b.nivel}</td>`+
+    EIXOS.map(e=>{const n=nota(b,e[0]);return n?`<td><span class="rk">${n.r}</span> ${f(n.n)}</td>`:'<td class="sem">–</td>'}).join('')+'</tr>').join('');
+  detalhe()}
+function detalhe(){const el=document.getElementById('det'),b=D.builds.find(x=>x.id==sel);if(!b){el.innerHTML='';return}
+  const p=b.planos&&b.planos[tag];let h=`<h2>${b.nome} <small>nível ${b.nivel} · ${b.build||''}</small></h2><div class="card">`;
+  const cats=p?[...new Set(p.combates.map(c=>c.categoria))]:[];
+  h+='<div class="leg"><span><i class="b" style="background:var(--s1)"></i>'+(p?'média do dia':'linha principal')+'</span>'+cats.map(c=>`<span><i style="background:${CORES[c]}"></i>${D.categorias[c]}</span>`).join('')+'</div>';
+  for(const e of EIXOS){const n=nota(b,e[0]);if(!n)continue;const W=n.n/20*100;
+    h+=`<div class="eixo"><div>${e[1]}</div><svg viewBox="0 0 100 22" preserveAspectRatio="none"><line x1="0" x2="100" y1="11" y2="11" stroke="var(--line)" vector-effect="non-scaling-stroke"/>`+
+     `<rect x="0" y="6" width="${W}" height="10" rx="1" fill="var(--s1)" data-tip="${e[1]}: ${p?'dia ':''}${n.r} ${f(n.n)}"/>`+
+     (n.c?Object.entries(n.c).map(([c,v])=>`<g data-tip="${e[1]}, ${D.categorias[c]}: ${f(v)}"><rect x="${v/20*100-3}" y="0" width="6" height="22" fill="transparent"/><line x1="${v/20*100}" x2="${v/20*100}" y1="1" y2="21" stroke="var(--bg)" stroke-width="5" vector-effect="non-scaling-stroke"/><line x1="${v/20*100}" x2="${v/20*100}" y1="1" y2="21" stroke="${CORES[c]}" stroke-width="3" vector-effect="non-scaling-stroke"/></g>`).join(''):'')+
+     `</svg><div class="v"><b style="color:var(--ink)">${n.r} ${f(n.n)}</b>${n.c?' · '+Object.entries(n.c).map(([c,v])=>c+' '+f(v)).join(' · '):''}</div></div>`}
+  if(p){const sb=p.sobra,esp=Object.entries(sb.espacos||{}).map(([k,v])=>`${v}×${k}º`),o=Object.entries(sb).filter(([k])=>k!='espacos').map(([k,v])=>`${v} ${k}`);
+    h+=`<p><b>Plano:</b> ${p.combates.map(c=>`${c.linha} <small>(${c.categoria})</small>`).join(' → ')}${p.hypercharged!=1?` · <b>hypercharged ×${p.hypercharged}</b>`:''}<br><b>Sobra para utilidade:</b> ${[...esp,...o].join(', ')||'nada'}</p>`}
+  h+='<b>Hipóteses (linhas)</b><ul>'+Object.entries(b.linhas).map(([id,l])=>`<li><b>${id}</b>: ${l.hipotese||''} <small>${EIXOS.map(e=>{const k=(e[0]=='resiliencia'||e[0]=='vontade')?'saves':e[0];const x=l[k]&&(k=='saves'?l[k][e[0]]:l[k]);return x&&x.nivel_eq!=null?`${e[1]} ${x.rank} ${f(x.nivel_eq)}`:null}).filter(Boolean).join(' · ')}</small></li>`).join('')+'</ul></div>';
+  el.innerHTML=h}
+document.addEventListener('click',ev=>{const t=ev.target.closest('[data-t]'),o=ev.target.closest('[data-o]'),r=ev.target.closest('tr[data-id]');
+  if(t){tag=t.dataset.t;desenha()}else if(o){ord=o.dataset.o;desenha()}else if(r){sel=sel==r.dataset.id?null:r.dataset.id;desenha();if(sel)document.getElementById('det').scrollIntoView({behavior:'smooth',block:'nearest'})}});
+const tip=document.getElementById('tip');
+document.addEventListener('mousemove',ev=>{const g=ev.target.closest('[data-tip]');if(g){tip.textContent=g.dataset.tip;tip.style.display='block';tip.style.left=Math.min(ev.clientX+12,innerWidth-200)+'px';tip.style.top=ev.clientY+14+'px'}else tip.style.display='none'});
+desenha();
+</script></body></html>

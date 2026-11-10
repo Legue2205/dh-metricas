@@ -58,7 +58,7 @@ def _ignorar():
     ('kael-7.json', 3.6, 3.0, 1.1),
     ('virgil-10.json', 6.5, 6.5, 0.5),
     ('amadeus-7.json', 6.0, 4.3, 3.8),
-    ('john-7.json', 0.7, 1.7, 0.0),
+    ('john-7.json:ensnaring-strike', 0.7, 1.7, 0.0),
     ('tinbin-7.json', 0.4, 0.1, 0.3),
     ('fjord-9.json', 5.7, 5.2, 3.6),
     ('miau-8.json', 4.5, 4.1, 0.8),
@@ -71,8 +71,9 @@ def _ignorar():
     pytest.param('solaris-9.json', 7.5, 6.9, 1.6, marks=pytest.mark.xfail(reason='Chefe/Dupla divergem; o valor da planilha veio de uma versão anterior do script, não reproduzível')),
 ])
 def test_controle(arq, total, campo, aten):
-    _, r = motor.avaliar(B / arq, 'rapido', forcar=True, eixos=['controle'], linhas=['principal'])
-    c = r['linhas']['principal']['controle']
+    arq, _, lid = arq.partition(':'); lid = lid or 'principal'
+    _, r = motor.avaliar(B / arq, 'rapido', forcar=True, eixos=['controle'], linhas=[lid])
+    c = r['linhas'][lid]['controle']
     assert abs(c['nivel_eq'] - total) <= 0.4
     assert abs(c['nivel_campo'] - campo) <= 0.4
     assert abs(c['nivel_atencao'] - aten) <= 0.4

@@ -70,6 +70,17 @@ def _ataque(a, ca):
     return max(op, key=lambda x: x[2])
 
 
+def _usados(usos, pc, natq):
+    """Quantos usos 'no acerto' (smite etc.) saem numa luta de R rounds: E[min(usos, acertos)].
+    O recurso é guardado para o próximo acerto, então só se perde se os acertos da luta não bastarem."""
+    from math import ceil, comb, floor
+    media = R * sum(p for p, _ in pc)
+    if media <= 0: return 0.0
+    n = max(1, ceil(R * natq), ceil(media)); p = min(1.0, media / n)
+    def e(u): return sum(min(u, k) * comb(n, k) * p ** k * (1 - p) ** (n - k) for k in range(n + 1))
+    lo = floor(usos); return e(lo) + (usos - lo) * (e(lo + 1) - e(lo))
+
+
 def dpr(spec, ca, lutas_dia=4, invocacoes=()):
     if 'medido' in spec: return spec['medido'][CAS.index(ca)]
     total = 0.0; nenhum = 1.0; pc = []
@@ -84,7 +95,7 @@ def dpr(spec, ca, lutas_dia=4, invocacoes=()):
     for x in spec.get('por_luta', []):         # smites e afins: usos por luta espalhados nos R rounds
         avg, dad = dados(x['dano'])
         usos = x['usos'] if 'usos' in x else x['usos_dia'] / lutas_dia   # recurso diário repartido pelas lutas
-        total += min(1.0, usos / R) * algum * (avg + crit_rel * dad)
+        total += _usados(usos, pc, sum(a.get('n', 1) for a in spec.get('ataques', []))) / R * (avg + crit_rel * dad)
     if 'automatico' in spec: total += dados(spec['automatico'])[0]
     for inv in invocacoes:                     # criaturas invocadas atacam por conta própria
         if 'ataque' in inv: total += inv['quantidade'] * inv['ataque'].get('n', 1) * _ataque(inv['ataque'], ca)[2]

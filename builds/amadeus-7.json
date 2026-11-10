@@ -29,7 +29,9 @@
       "principal": true,
       "hipotese": "7 esqueletos com meia cobertura + Chill Touch; Web ou Bestow Curse (CD 14); Shield: 4 espaços de 1º no dia = 1 por luta",
       "dano": {
-        "medido": [
+        "automatico": "6.9",
+        "nota": "Chill Touch do cajado: 2d8, save de Sab (CD 14, alvo +2), metade no sucesso",
+        "conferencia": [
           43.8,
           40.8,
           31.9,
@@ -39,8 +41,7 @@
           11.1,
           11.1,
           11.1
-        ],
-        "fonte": "planilha de dano (sem motor salvo)"
+        ]
       },
       "defesa": {
         "pv_efetivo": 53,
@@ -148,7 +149,21 @@
           "pv": 19,
           "ca": 16,
           "cobertura": 2,
-          "nota": "hipótese: 7 esqueletos com meia cobertura; o ataque deles já está no dano medido"
+          "nota": "hipótese: 7 esqueletos (limite = nível), com meia cobertura",
+          "ataque": {
+            "bonus": 2,
+            "dano": "1d6+5",
+            "nota": "+4, menos 2 da meia cobertura que o alvo recebe contra a horda"
+          }
+        }
+      ],
+      "acao_bonus": [
+        {
+          "uso": "comandar a horda",
+          "fracao": 1.0,
+          "eixos": [
+            "dano"
+          ]
         }
       ]
     },

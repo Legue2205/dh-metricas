@@ -22,6 +22,7 @@ dh/
   base.py            tabelas comuns: CR do Monster Manual, perfis, topologias, encontros do DMG, rampa de letras
   build.py           carregar / validar build.json, impressão digital
   orcamento.py       recursos por hipótese: a reação não conta duas vezes; soma o gasto de cada linha
+  site.py / site.html  site estático gerado dos resultados
   planos.py          plano do dia: livro-caixa de recursos, média do dia e por categoria de combate
   saves.py           Resiliência e Vontade (Monte Carlo contra um conjurador pleno)
   area.py            fração da horda removida → nível eq
@@ -134,6 +135,8 @@ Magia nova: uma linha em `controle/magias.json` (`peso` = fração do turno nega
 
 Nenhum recurso é contado duas vezes dentro de uma linha (`dh/orcamento.py`):
 
+- **Ação bônus e concentração.** `"acao_bonus": [...]` no mesmo formato da reação; concentração: uma por linha
+  (fontes de controle com magia de concentração contam sozinhas; dano, área e suporte declaram `"concentracao": "nome"`).
 - **Reação.** A linha declara onde a gasta: `"reacao": [{"uso": "2º Sneak", "fracao": 1.0, "eixos": ["dano"]}]`.
   A soma das frações não passa de 1 (erro). O que sobra é o que Shield, Uncanny Dodge, Absorb Elements e
   Counterspell podem usar. Fontes de controle que usam reação (`sentinela`, `parada_oa`, `counterspell`,
@@ -166,6 +169,12 @@ A decisão de como gastar recursos é da build e fica escrita no JSON. **Tag = p
 - O que sobra no fim do dia aparece como **sobra para utilidade** (gastar 100% é permitido; fica visível).
 - Resultado por eixo: **média do dia** ponderada pelo peso e a **média por categoria** (np, p, mod, boss).
   Eixo ausente em alguns combates conta 0 neles. `dh painel [tag]` compara as builds na mesma tag.
+
+## Site
+
+`python -m dh site` gera `docs/index.html` (um arquivo, sem servidor): tabela por premissa de dia, ordenável,
+e o detalhe de cada build com a média do dia e os valores por categoria de combate. O workflow regenera a
+cada push. Publicação: GitHub Pages, branch `main`, pasta `/docs` → https://legue2205.github.io/dh-metricas/
 
 ## Invocações
 
@@ -216,10 +225,10 @@ O Aprendiz, Pyotr, Solaris, Jamal, Virgil (+ um guerreiro de exemplo com dano ca
 
 ## Pendências
 
-- Ação e concentração ainda não entram no orçamento (só reação, espaços e recursos nomeados).
+- Ação principal ainda não entra no orçamento (reação, ação bônus, concentração, espaços e recursos nomeados já entram).
 - **Planos do dia dos conjuradores** (Marcus, Amadeus, Ravin, Solaris, Virgil, Pyotr, John, Abdul): decidir na discussão de cada build.
 - Ravin: defesa com "barrado" segue `medido` (o `defesa2.py` original não foi recuperado).
 - Marcus: planos de controle "luta prioritária"/"média do dia" e linhas de suporte dia/comum/prioritária.
 - Saves de Caleb, Lucius, Jamal e Virgil; arquétipos e monstros de referência.
-- Linhas de dano `medido` → calculadas (exige os ataques de cada ficha).
+- Dano ainda `medido`: Kael (combo) e Ravin (carga), que pedem um gancho genérico de "bônus que escala"; e os NPCs (faltam os ataques das fichas).
 - `dh linhas` ainda só gera dano, defesa e controle para as planilhas.

@@ -122,3 +122,23 @@ def test_invocacoes():
     c = r['linhas']['principal']['controle']                                 # paridade mantida lendo de "invocacoes"
     assert abs(c['nivel_eq'] - 6.0) <= 0.4 and abs(c['nivel_atencao'] - 3.8) <= 0.4
     assert any('esqueletos' in k for k in c['negacao_por_fonte']['Horda'])
+
+
+@pytest.mark.parametrize('arq,tol', [('john-7', 0.03), ('tinbin-7', 0.045), ('abdul-7', 0.08), ('marcus-7', 0.01), ('amadeus-7', 0.01)])
+def test_dano_calculado_bate_com_o_medido(arq, tol):
+    """O dano saiu de 'medido' para 'ataques'; os 9 DPRs antigos ficam em 'conferencia'. (John: só até CA 22;
+    acima disso o motor desliga o Sharpshooter, que rende mais, e a planilha não desligava.)"""
+    from dh import dano
+    b = json.loads((B / f'{arq}.json').read_text(encoding='utf-8')); l = b['linhas'][0]
+    v = list(dano.avaliar(l['dano'], 4, l.get('invocacoes', []))['dpr'].values()); c = l['dano']['conferencia']
+    n = 7 if arq == 'john-7' else 9
+    assert max(abs(x - y) / y for x, y in zip(v[:n], c[:n])) <= tol
+
+
+def test_concentracao_e_acao_bonus():
+    b = _caster(); b['linhas'][1]['dano']['concentracao'] = 'hex'            # Hex + Hold Person na mesma linha
+    assert any('mais de uma concentração' in e for e in validar(b))
+    b['linhas'][1]['dano']['concentracao'] = 'hold_person'                   # a mesma concentração em dois eixos: ok
+    assert validar(b) == []
+    b['linhas'][0]['acao_bonus'] = [{"uso": "a", "fracao": 0.7, "eixos": ["dano"]}, {"uso": "b", "fracao": 0.5, "eixos": ["controle"]}]
+    assert any('ação bônus está contada mais de uma vez' in e for e in validar(b))

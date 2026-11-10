@@ -27,7 +27,29 @@
       "principal": true,
       "hipotese": "Action Surge em 50% das lutas; Uncanny Dodge, Second Wind",
       "dano": {
-        "medido": [
+        "ataques": [
+          {
+            "n": 2,
+            "bonus": 10,
+            "dano": "2d4+7",
+            "vantagem": 0.25,
+            "nota": "2 adagas (Nick); Assassinate: vantagem no round 1"
+          },
+          {
+            "n": 0.25,
+            "bonus": 10,
+            "dano": "2d4+7",
+            "vantagem": 1.0,
+            "nota": "Action Surge no round 1 em 50% das lutas: 2 ataques ÷ 4 rounds ÷ 2"
+          }
+        ],
+        "por_turno": [
+          {
+            "dano": "3d6",
+            "nota": "Sneak Attack"
+          }
+        ],
+        "conferencia": [
           37.9,
           38.0,
           34.7,
@@ -37,8 +59,7 @@
           24.0,
           20.1,
           18.1
-        ],
-        "fonte": "planilha de dano (sem motor salvo)"
+        ]
       },
       "defesa": {
         "pv_efetivo": 54.5,

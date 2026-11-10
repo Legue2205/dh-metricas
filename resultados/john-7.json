@@ -4,12 +4,12 @@
  "grupo": "Party",
  "nivel": 7,
  "build": "Ranger 7 (Hunter, Horde Breaker), Steady Aim por troca de feature, Elven Accuracy, Sharpshooter",
- "impressao": "72934278a1",
+ "impressao": "9e1918a6ca",
  "versao": "0.3.0",
  "modo": "completo",
  "linhas": {
   "principal": {
-   "hipotese": "Steady Aim em 50% dos turnos; Ensnaring Strike (CD 13); Fey Ancestry",
+   "hipotese": "Hunter's Mark fixo + Steady Aim em 50% dos turnos; Fey Ancestry",
    "principal": [
     "dano",
     "defesa",
@@ -20,18 +20,161 @@
    ],
    "dano": {
     "dpr": {
-     "CA 11": 41.6,
-     "CA 12": 40.4,
+     "CA 11": 41.7,
+     "CA 12": 40.3,
      "CA 15": 36.0,
-     "CA 16": 34.2,
+     "CA 16": 34.3,
      "CA 18": 30.7,
      "CA 20": 26.4,
-     "CA 22": 21.4,
-     "CA 24": 15.7,
-     "CA 25": 12.5
+     "CA 22": 21.5,
+     "CA 24": 16.4,
+     "CA 25": 15.1
     },
     "nivel_eq": 9.4,
     "rank": "B+",
+    "perfil": "Equilibrado"
+   },
+   "defesa": {
+    "pv_efetivo": 46,
+    "ca": 16,
+    "blindagem": 3.07,
+    "durabilidade": 2.3,
+    "nivel_blindagem": 3.2,
+    "nivel_durabilidade": 3.3,
+    "nivel_eq": 3.3,
+    "rank": "C-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.74,
+     "rank": "C+",
+     "turnos_livres": [
+      3.76,
+      3.7,
+      3.62,
+      1.85,
+      1.74,
+      1.75,
+      1.17,
+      1.23,
+      0.93,
+      0.57
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.43,
+     "rank": "C",
+     "turnos_livres": [
+      3.02,
+      1.76,
+      1.38,
+      1.45,
+      1.03,
+      0.58,
+      1.08,
+      1.96,
+      1.36,
+      1.06
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "melhor": "Horde Breaker",
+    "areas": [
+     {
+      "nome": "Horde Breaker",
+      "tipo": "cleave_ataque",
+      "nivel_eq": 4.47,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.53,
+       "padrao": 4.47,
+       "agrupada": 4.37
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [
+     {
+      "uso": "Steady Aim",
+      "fracao": 0.5,
+      "eixos": [
+       "dano"
+      ]
+     }
+    ],
+    "concentracao": [
+     "hunters_mark"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.0,
+    "rank_campo": "F",
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.206,
+    "vidas_campo": 0.0,
+    "vidas_atencao": -0.206,
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "(nenhuma)": 0.0
+     },
+     "Party de elite": {
+      "(nenhuma)": 0.0
+     },
+     "Horda + chefe": {
+      "(nenhuma)": 0.0
+     },
+     "Horda": {
+      "(nenhuma)": 0.0
+     },
+     "Dupla": {
+      "(nenhuma)": 0.0
+     },
+     "Chefe sozinho": {
+      "(nenhuma)": 0.0
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
+  },
+  "ensnaring-strike": {
+   "hipotese": "Concentração em Ensnaring Strike (CD 13) no lugar do Hunter's Mark; sem Steady Aim no round em que conjura",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 33.5,
+     "CA 12": 32.0,
+     "CA 15": 27.5,
+     "CA 16": 26.0,
+     "CA 18": 22.6,
+     "CA 20": 19.0,
+     "CA 22": 15.1,
+     "CA 24": 10.7,
+     "CA 25": 9.1
+    },
+    "nivel_eq": 7.1,
+    "rank": "B",
     "perfil": "Equilibrado"
    },
    "defesa": {
@@ -118,6 +261,18 @@
    },
    "orcamento": {
     "reacao": [],
+    "acao_bonus": [
+     {
+      "uso": "Ensnaring Strike",
+      "fracao": 1.0,
+      "eixos": [
+       "controle"
+      ]
+     }
+    ],
+    "concentracao": [
+     "ensnaring_strike"
+    ],
     "reacao_livre": 1.0,
     "espacos_por_eixo": {
      "controle": {
@@ -189,6 +344,8 @@
    },
    "orcamento": {
     "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
     "reacao_livre": 1.0,
     "espacos_por_eixo": {},
     "outros": {}
@@ -196,5 +353,5 @@
   }
  },
  "planos": {},
- "segundos": 2.1
+ "segundos": 4.0
 }

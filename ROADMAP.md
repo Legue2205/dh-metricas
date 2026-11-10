@@ -49,10 +49,10 @@ atenção + absoluto), área, suporte, orçamento de recursos, CLI (`validar`, `
    fazer dano, controle de corpo e atenção lerem dali.
 2. **Ação, ação bônus e concentração no orçamento** (hoje só reação e espaços).
 3. **Dano calculado para todas as builds** (trocar `medido` por `ataques`); rotações com recursos.
-4. **Ganchos para mecânicas exóticas**: campo genérico por eixo (ex.: `golpes_extras_a_0pv` para o "barrado"
-   do Ravin, já possível via `defesa2.py`: PV efetivo += n × dano de um golpe).
+4. **Ganchos para mecânicas exóticas**: `golpes_extras_a_0pv` (o "barrado" do Ravin) já existe na defesa;
+   seguir o mesmo padrão (campo genérico no JSON) para o que aparecer.
 5. Resolver os avisos de espaços (decisão do usuário: marcar "luta prioritária" ou dividir linhas).
-6. Pendências de dados: saves de Jamal e Virgil; planos e suporte do Marcus; arquétipos e monstros.
+6. Pendências de dados: saves de Jamal e Virgil (Caleb e Lucius já entraram); planos e suporte do Marcus; arquétipos e monstros.
 
 ### Fase 2 — automação (sem Claude no meio)
 7. Workflow do GitHub Actions (`.github/workflows/metricas.yml`, já no repo): conferir que roda e commita.

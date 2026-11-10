@@ -102,7 +102,15 @@ def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7):
     return float(total.mean())
 
 
-def _resolve_sim(tipo, pv, ac, advs, resist, red, reacoes, livre_p):
+def _golpe(tipo, cr, resist, red):
+    """Dano de um golpe (para mecânicas do tipo 'aguenta N golpes a 0 PV')."""
+    D = _i(cr, 2)
+    if tipo == 'horda': n = max(3, min(10, round(D / (4 + cr / 2)))); magico = False
+    else: n = 2 if cr <= 4 else (3 if cr <= 16 else 4); magico = cr >= 10
+    return max(0.0, D / n - (0 if magico else red)) * (0.5 if resist else 1)
+
+
+def _resolve_sim(tipo, pv, ac, advs, resist, red, reacoes, livre_p, extras=0):
     import itertools
     def melhor(cr):   # a política (preços) é otimizada: o jogador escolhe o limiar que mais poupa dano
         return min(_sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, pr)
@@ -110,16 +118,16 @@ def _resolve_sim(tipo, pv, ac, advs, resist, red, reacoes, livre_p):
     lo, hi = 0.0, 30.0
     for _ in range(22):
         m = (lo + hi) / 2
-        if melhor(m) <= pv: lo = m
+        if melhor(m) <= pv + extras * _golpe(tipo, m, resist, red): lo = m
         else: hi = m
     return round(lo, 2)
 
 
-def _resolve_rounds(fn, pv, ac, advs, resist, red):
+def _resolve_rounds(fn, pv, ac, advs, resist, red, extras=0):
     lo, hi = 0.0, 30.0
     for _ in range(60):
         m = (lo + hi) / 2
-        if sum(fn(m, ac, a, resist, red) for a in advs) <= pv: lo = m
+        if sum(fn(m, ac, a, resist, red) for a in advs) <= pv + extras * _golpe(fn.__name__, m, resist, red): lo = m
         else: hi = m
     return round(lo, 2)
 
@@ -136,11 +144,12 @@ def avaliar(spec, corpo, reacao_livre=1.0):
     else:
         advs = spec.get('adv_por_round', [adv] * 4)
         reacoes = spec.get('reacoes', []) if reacao_livre > 0 else []
+        ex = spec.get('golpes_extras_a_0pv', 0)   # ex.: 'barrado': continua de pé por N golpes depois de zerar
         if reacoes:
-            bl = _resolve_sim('horda', pv, ac, advs, resist, red, reacoes, reacao_livre)
-            du = _resolve_sim('boss', pv, ac, advs, resist, red, reacoes, reacao_livre)
+            bl = _resolve_sim('horda', pv, ac, advs, resist, red, reacoes, reacao_livre, ex)
+            du = _resolve_sim('boss', pv, ac, advs, resist, red, reacoes, reacao_livre, ex)
         else:
-            bl, du = _resolve_rounds(horda, pv, ac, advs, resist, red), _resolve_rounds(boss, pv, ac, advs, resist, red)
+            bl, du = _resolve_rounds(horda, pv, ac, advs, resist, red, ex), _resolve_rounds(boss, pv, ac, advs, resist, red, ex)
     nb = round(interp_degraus(bl, LIM_BLINDAGEM, NIVEIS), 1)
     nd = round(interp_degraus(du, LIM_DURABILIDADE, NIVEIS), 1)
     lb, ld = letra(nb), letra(nd)

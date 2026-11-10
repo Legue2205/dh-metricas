@@ -32,7 +32,7 @@
     {
       "id": "principal",
       "principal": true,
-      "hipotese": "Espada + Booming Blade; Bladesong + carga; Hypnotic Pattern (CD 16); barrado",
+      "hipotese": "Espada + Booming Blade; Bladesong + carga; Hypnotic Pattern (CD 16); barrado; Shield 1 por luta (dia padrão)",
       "dano": {
         "medido": [
           27.1,
@@ -48,11 +48,14 @@
         "fonte": "planilha de dano (sem motor salvo)"
       },
       "defesa": {
-        "medido": {
-          "blindagem": 9.87,
-          "durabilidade": 7.74
-        },
-        "nota": "Shield 2×, Absorb Elements, Counterspell e o estado 'barrado': fora do motor"
+        "pv_efetivo": 31,
+        "reacoes": [
+          {
+            "tipo": "shield",
+            "usos_luta": 1
+          }
+        ],
+        "golpes_extras_a_0pv": 3
       },
       "controle": {
         "atencao": {
@@ -112,11 +115,13 @@
       "principal": false,
       "hipotese": "Sem barrado (comparação)",
       "defesa": {
-        "medido": {
-          "blindagem": 6.09,
-          "durabilidade": 3.54
-        },
-        "nota": "Shield e afins fora do motor"
+        "pv_efetivo": 31,
+        "reacoes": [
+          {
+            "tipo": "shield",
+            "usos_luta": 1
+          }
+        ]
       },
       "saves": {}
     },

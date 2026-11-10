@@ -30,11 +30,14 @@
         "fonte": "planilha de dano (sem motor salvo)"
       },
       "defesa": {
-        "medido": {
-          "blindagem": 11.42,
-          "durabilidade": 10.59
-        },
-        "nota": "Uncanny Dodge + Evasion fora do motor"
+        "resist": true,
+        "adv": 1,
+        "reacoes": [
+          {
+            "tipo": "uncanny_dodge"
+          }
+        ],
+        "nota": "a reação vai para o 2º Sneak: Uncanny Dodge não conta nesta hipótese"
       },
       "controle": {
         "atencao": {
@@ -48,7 +51,16 @@
             "nome": "Corpo (ameaça)"
           }
         ]
-      }
+      },
+      "reacao": [
+        {
+          "uso": "2º Sneak Attack fora do turno (ataque de reação)",
+          "fracao": 1.0,
+          "eixos": [
+            "dano"
+          ]
+        }
+      ]
     },
     {
       "id": "rapieira-2",
@@ -77,11 +89,13 @@
         "adv": -1
       },
       "defesa": {
-        "medido": {
-          "blindagem": 20.85,
-          "durabilidade": 17.0
-        },
-        "nota": "Dodge + Uncanny Dodge fora do motor"
+        "resist": true,
+        "adv": -1,
+        "reacoes": [
+          {
+            "tipo": "uncanny_dodge"
+          }
+        ]
       },
       "controle": {
         "atencao": {
@@ -103,7 +117,16 @@
             "nome": "Corpo (ameaça)"
           }
         ]
-      }
+      },
+      "reacao": [
+        {
+          "uso": "ataque de oportunidade com Sneak",
+          "fracao": 0.5,
+          "eixos": [
+            "controle"
+          ]
+        }
+      ]
     },
     {
       "id": "utilitario",
@@ -132,7 +155,16 @@
             "nome": "Corpo (ameaça)"
           }
         ]
-      }
+      },
+      "reacao": [
+        {
+          "uso": "ataque de oportunidade com Sneak",
+          "fracao": 0.5,
+          "eixos": [
+            "controle"
+          ]
+        }
+      ]
     }
   ]
 }

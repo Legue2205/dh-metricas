@@ -5,9 +5,12 @@ from pathlib import Path
 
 from .controle.campo import MAGIAS
 from .controle.efeitos import TIPOS as TIPOS_FONTE
+from . import orcamento
+from .defesa import REACOES
+from .suporte import MODELOS
 
 PAPEIS = {'tank', 'striker', 'atirador', 'conjurador'}
-EIXOS = ('dano', 'defesa', 'controle')
+EIXOS = ('dano', 'defesa', 'controle', 'saves', 'area', 'suporte')
 
 
 class ErroBuild(ValueError):
@@ -44,7 +47,15 @@ def validar(b):
     if len(ids) != len(set(ids)): e.append('ids de linha repetidos')
     for l in b['linhas']:
         nome = f"linha {l.get('id')}"
-        if not any(x in l for x in EIXOS): e.append(f'{nome}: nenhum eixo (dano/defesa/controle)')
+        if not any(x in l for x in EIXOS): e.append(f'{nome}: nenhum eixo ({"/".join(EIXOS)})')
+        for r in (l.get('defesa') or {}).get('reacoes', []):
+            if r.get('tipo') not in REACOES: e.append(f'{nome}: reação de defesa desconhecida "{r.get("tipo")}"')
+        if 'saves' in l and 'sv' not in l['saves'] and 'sv' not in b['corpo'].get('saves', {}):
+            e.append(f'{nome}: saves sem os bônus "sv" (ponha em corpo.saves.sv)')
+        for f in (l.get('suporte') or {}).get('fontes', []):
+            if f.get('modelo') not in MODELOS: e.append(f'{nome}: suporte com modelo desconhecido "{f.get("modelo")}"')
+            if f.get('lado') not in ('of', 'def'): e.append(f'{nome}: fonte de suporte sem "lado" (of/def)')
+        if l.get('cenario', 'dia_padrao') not in ('dia_padrao', 'luta_prioritaria'): e.append(f'{nome}: cenario inválido')
         d = l.get('dano')
         if d is not None:
             if 'medido' in d and len(d['medido']) != 9: e.append(f'{nome}: dano.medido precisa de 9 valores (CA 11…25)')
@@ -60,7 +71,12 @@ def validar(b):
                 if f.get('tipo') not in TIPOS_FONTE: e.append(f'{nome}: fonte de tipo desconhecido "{f.get("tipo")}"')
                 for m in _magias_usadas(f):
                     if m not in MAGIAS: e.append(f'{nome}: magia "{m}" não está em magias.json')
+    if not e: e += orcamento.checar(b, MAGIAS)[0]
     return e
+
+
+def avisos(b):
+    return orcamento.checar(b, MAGIAS)[1]
 
 
 def impressao(b):

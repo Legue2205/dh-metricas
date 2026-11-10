@@ -4,8 +4,8 @@
  "grupo": "Party",
  "nivel": 7,
  "build": "Ranger 7 (Hunter, Horde Breaker), Steady Aim por troca de feature, Elven Accuracy, Sharpshooter",
- "impressao": "f9d09e8888",
- "versao": "0.1.0",
+ "impressao": "72934278a1",
+ "versao": "0.2.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -13,7 +13,10 @@
    "principal": [
     "dano",
     "defesa",
-    "controle"
+    "controle",
+    "saves",
+    "area",
+    "suporte"
    ],
    "dano": {
     "dpr": {
@@ -40,7 +43,89 @@
     "nivel_durabilidade": 3.3,
     "nivel_eq": 3.3,
     "rank": "C-",
-    "perfil": "Equilibrado"
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.74,
+     "rank": "C+",
+     "turnos_livres": [
+      3.76,
+      3.7,
+      3.62,
+      1.85,
+      1.74,
+      1.75,
+      1.17,
+      1.23,
+      0.93,
+      0.57
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.43,
+     "rank": "C",
+     "turnos_livres": [
+      3.02,
+      1.76,
+      1.38,
+      1.45,
+      1.03,
+      0.58,
+      1.08,
+      1.96,
+      1.36,
+      1.06
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "melhor": "Horde Breaker",
+    "areas": [
+     {
+      "nome": "Horde Breaker",
+      "tipo": "cleave_ataque",
+      "nivel_eq": 4.47,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.53,
+       "padrao": 4.47,
+       "agrupada": 4.37
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 4.53,
+    "defensivo": 0,
+    "total": 4.53,
+    "nivel_ofensivo": 1.5,
+    "nivel_defensivo": 0.0,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Amplificador",
+    "fonte_principal": "Ensnaring Strike (abertura)",
+    "fontes": [
+     {
+      "nome": "Ensnaring Strike (abertura)",
+      "lado": "of",
+      "valor": 4.53
+     }
+    ]
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": false,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "controle": {
+      "1": 4
+     }
+    }
    },
    "controle": {
     "nivel_eq": 0.75,
@@ -102,8 +187,15 @@
     "nivel_eq": 11.4,
     "rank": "A",
     "perfil": "Preciso"
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {}
    }
   }
  },
- "segundos": 1.0
+ "segundos": 1.9
 }

@@ -4,8 +4,8 @@
  "grupo": "Party",
  "nivel": 7,
  "build": "Bladesinger 6 / Warlock 1 (pacto homebrew do Deus da Morte)",
- "impressao": "268d07eb80",
- "versao": "0.1.0",
+ "impressao": "840e45d570",
+ "versao": "0.2.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -13,7 +13,10 @@
    "principal": [
     "dano",
     "defesa",
-    "controle"
+    "controle",
+    "saves",
+    "area",
+    "suporte"
    ],
    "dano": {
     "dpr": {
@@ -40,7 +43,89 @@
     "nivel_durabilidade": 11.8,
     "nivel_eq": 11.8,
     "rank": "A",
-    "perfil": "Durável"
+    "perfil": "Durável",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 16.35,
+     "rank": "S",
+     "turnos_livres": [
+      3.82,
+      3.64,
+      3.62,
+      3.32,
+      2.89,
+      2.85,
+      3.06,
+      3.36,
+      3.59,
+      3.37
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.55,
+     "rank": "A",
+     "turnos_livres": [
+      3.56,
+      2.8,
+      2.51,
+      2.31,
+      1.86,
+      1.53,
+      1.77,
+      1.72,
+      1.49,
+      1.5
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 8.5,
+    "rank": "B+",
+    "melhor": "Lightning Bolt com carga",
+    "areas": [
+     {
+      "nome": "Lightning Bolt com carga",
+      "tipo": "explosao",
+      "nivel_eq": 8.49,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 8.5,
+       "padrao": 8.49,
+       "agrupada": 10.53
+      }
+     },
+     {
+      "nome": "Thunderclap com espadada",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.09,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 0.41,
+       "padrao": 4.09,
+       "agrupada": 4.24
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": false,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "controle": {
+      "3": 1
+     },
+     "saves": {
+      "1": 1,
+      "3": 1
+     },
+     "area": {
+      "3": 1
+     }
+    }
    },
    "controle": {
     "nivel_eq": 7.2,
@@ -102,7 +187,54 @@
     "nivel_durabilidade": 5.0,
     "nivel_eq": 6.3,
     "rank": "B-",
-    "perfil": "Blindado"
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.4,
+     "rank": "B-",
+     "turnos_livres": [
+      3.82,
+      3.63,
+      3.6,
+      2.93,
+      1.8,
+      1.74,
+      1.82,
+      1.62,
+      1.27,
+      1.0
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.54,
+     "rank": "A",
+     "turnos_livres": [
+      3.56,
+      2.8,
+      2.51,
+      2.31,
+      1.86,
+      1.53,
+      1.76,
+      1.68,
+      1.46,
+      1.42
+     ]
+    }
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": false,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1,
+      "3": 1
+     }
+    }
    }
   },
   "pico-haste": {
@@ -123,8 +255,48 @@
     "nivel_eq": 8.0,
     "rank": "B+",
     "perfil": "Equilibrado"
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {}
+   }
+  },
+  "haste-em-aliado": {
+   "hipotese": "Concentração em Haste num aliado",
+   "principal": [],
+   "suporte": {
+    "ofensivo": 11.38,
+    "defensivo": 0,
+    "total": 11.38,
+    "nivel_ofensivo": 6.1,
+    "nivel_defensivo": 0.0,
+    "nivel_eq": 4.4,
+    "rank": "C",
+    "perfil": "Amplificador",
+    "fonte_principal": "Haste",
+    "fontes": [
+     {
+      "nome": "Haste",
+      "lado": "of",
+      "valor": 11.38
+     }
+    ]
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": false,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "suporte": {
+      "3": 1
+     }
+    }
    }
   }
  },
- "segundos": 0.8
+ "segundos": 2.8
 }

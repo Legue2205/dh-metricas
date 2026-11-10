@@ -7,13 +7,27 @@
   "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
   "corpo": {
     "ca": 17,
-    "pv": 45
+    "pv": 45,
+    "saves": {
+      "sv": {
+        "for": 0,
+        "des": 5,
+        "con": 1,
+        "int": 0,
+        "sab": 0,
+        "car": 7
+      },
+      "rerolagens": 1,
+      "conjurador": true
+    }
   },
   "linhas": [
     {
       "id": "principal",
       "principal": [
-        "defesa"
+        "defesa",
+        "saves",
+        "area"
       ],
       "hipotese": "Espada +1d4; Plant Growth + Fear ou Polymorph (CD 16); Lucky 1 de 3",
       "dano": {
@@ -78,6 +92,38 @@
             "nome": "Corpo (ameaça)"
           }
         ]
+      },
+      "saves": {},
+      "area": [
+        {
+          "nome": "Shatter",
+          "usos": [
+            {
+              "alvos": 2,
+              "dano": "3d8",
+              "cd": 16,
+              "slot": 2
+            }
+          ]
+        }
+      ],
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Bardic Inspiration d8",
+            "lado": "of",
+            "modelo": "bonus_por_uso",
+            "usos_descanso_curto": 4,
+            "bonus": 4.5
+          },
+          {
+            "nome": "Healing Word",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_luta": 1,
+            "pv": 13
+          }
+        ]
       }
     },
     {
@@ -135,5 +181,14 @@
       }
     }
   ],
-  "pendente": "As linhas de controle 'luta prioritária, orçamento real' (principal na planilha) e 'média do dia' foram feitas num script que não está no Drive: reescrever como plano."
+  "pendente": "As linhas de controle 'luta prioritária, orçamento real' (principal na planilha) e 'média do dia' foram feitas num script que não está no Drive: reescrever como plano. Suporte: as linhas 'dia', 'comum', 'prioritária' e 'faerie-fire' da especificação ainda não foram migradas (têm valores fixos com pendência).",
+  "recursos": {
+    "espacos": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 1
+    },
+    "lutas_dia": 4
+  }
 }

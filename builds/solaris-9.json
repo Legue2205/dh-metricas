@@ -6,7 +6,24 @@
   "build": "Wizard 9 (Evocation), Int 18, Fey Touched (Hex), Resilient (Con), War Caster",
   "corpo": {
     "ca": 17,
-    "pv": 56
+    "pv": 56,
+    "saves": {
+      "sv": {
+        "for": -1,
+        "des": 2,
+        "con": 6,
+        "int": 8,
+        "sab": 4,
+        "car": -1
+      },
+      "pv": 56,
+      "ca": 15,
+      "absorb": 1,
+      "contra": 1,
+      "contra_mod": 4,
+      "conjurador": true,
+      "ataques": 1
+    }
   },
   "linhas": [
     {
@@ -28,11 +45,14 @@
         "fonte": "planilha de dano (sem motor salvo)"
       },
       "defesa": {
-        "medido": {
-          "blindagem": 4.51,
-          "durabilidade": 3.21
-        },
-        "nota": "Mage Armor (CA 15), Shield 2×, Absorb Elements, Counterspell: reações fora do motor"
+        "pv_efetivo": 56,
+        "ca": 15,
+        "reacoes": [
+          {
+            "tipo": "shield",
+            "usos_luta": 1
+          }
+        ]
       },
       "controle": {
         "atencao": {
@@ -64,7 +84,38 @@
             ]
           }
         ]
-      }
+      },
+      "saves": {},
+      "area": [
+        {
+          "nome": "Luta comum: Fireball nv 3",
+          "usos": [
+            {
+              "alvos": 4,
+              "seletiva": true,
+              "dano": "8d6",
+              "cd": 16,
+              "slot": 3
+            }
+          ]
+        },
+        {
+          "nome": "Wall of Fire em linha",
+          "usos": [
+            {
+              "alvos": 2,
+              "seletiva": true,
+              "dano": "5d8",
+              "cd": 16,
+              "slot": 4,
+              "extra_sem_save": {
+                "dano": "5d8",
+                "prob": 0.5
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "pico",
@@ -84,6 +135,51 @@
         ],
         "fonte": "planilha de dano (sem motor salvo)"
       }
+    },
+    {
+      "id": "area-prioritaria",
+      "principal": false,
+      "cenario": "luta_prioritaria",
+      "hipotese": "Luta prioritária: Fireball nv 5, 4, 4",
+      "area": [
+        {
+          "nome": "Fireball nv 5, 4, 4",
+          "tipo": "prioritaria",
+          "usos": [
+            {
+              "alvos": 4,
+              "seletiva": true,
+              "dano": "10d6",
+              "cd": 16,
+              "slot": 5
+            },
+            {
+              "alvos": 4,
+              "seletiva": true,
+              "dano": "9d6",
+              "cd": 16,
+              "slot": 4
+            },
+            {
+              "alvos": 4,
+              "seletiva": true,
+              "dano": "9d6",
+              "cd": 16,
+              "slot": 4
+            }
+          ]
+        }
+      ]
     }
-  ]
+  ],
+  "recursos": {
+    "espacos": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 1
+    },
+    "lutas_dia": 4
+  }
 }

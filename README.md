@@ -21,6 +21,10 @@ Só precisa de Python 3.10+ e numpy (`pip install -e .`).
 dh/
   base.py            tabelas comuns: CR do Monster Manual, perfis, topologias, encontros do DMG, rampa de letras
   build.py           carregar / validar build.json, impressão digital
+  orcamento.py       recursos por hipótese: reação e espaços de magia não contam duas vezes
+  saves.py           Resiliência e Vontade (Monte Carlo contra um conjurador pleno)
+  area.py            fração da horda removida → nível eq
+  suporte.py         dano equivalente por round (fórmula fechada)
   dano.py            DPR em 9 CAs (fórmula fechada ou "medido") → nível eq pelas rampas da planilha de dano
   defesa.py          Blindagem (horda) e Durabilidade (boss) → nível eq
   controle/
@@ -125,7 +129,45 @@ Magia nova: uma linha em `controle/magias.json` (`peso` = fração do turno nega
 `fim_turno` | `inicio_turno` | `luta` | `escape` | `um_turno`). Mudar a biblioteca invalida a régua
 (o hash muda) e ela é refeita na próxima execução (~30 s para os 10 níveis).
 
-## Paridade com as planilhas (09/11/2026)
+## Uma linha = uma hipótese (orçamento de recursos)
+
+Nenhum recurso é contado duas vezes dentro de uma linha (`dh/orcamento.py`):
+
+- **Reação.** A linha declara onde a gasta: `"reacao": [{"uso": "2º Sneak", "fracao": 1.0, "eixos": ["dano"]}]`.
+  A soma das frações não passa de 1 (erro). O que sobra é o que Shield, Uncanny Dodge, Absorb Elements e
+  Counterspell podem usar. Fontes de controle que usam reação (`sentinela`, `parada_oa`, `counterspell`,
+  `atencao.hard`) exigem um uso declarado com `"controle"` em `eixos` (erro se faltar).
+- **Espaços de magia.** Com `"recursos": {"espacos": {"1": 4, "3": 3}, "lutas_dia": 4}` na build, o validador
+  soma o gasto de todos os eixos da linha numa luta. `"cenario": "dia_padrao"` (padrão) = espaços ÷ lutas;
+  `"luta_prioritaria"` = tudo numa luta. Estouro vira **AVISO** e a linha sai marcada "eixos não somam".
+- Recursos diários no dano e no suporte: `usos_dia` (repartido pelas lutas) em vez de `usos`.
+
+## Os outros eixos
+
+**Defesa com reações** — `"defesa": {"reacoes": [{"tipo": "shield", "usos_luta": 1}, {"tipo": "uncanny_dodge"},
+{"tipo": "reduz_dano", "valor": 8}]}`. Simulação golpe a golpe: o personagem vê o total do ataque (Shield) e o
+dano rolado (Uncanny Dodge) antes de decidir, pesa os golpes que ainda vêm no round, e o limiar de uso é
+otimizado. `adv_por_round: [-1,-1,-1,0]` para posturas que não duram a luta toda.
+
+**Saves** (Resiliência e Vontade) — bônus em `corpo.saves.sv`; a linha só sobrescreve:
+`"saves": {"cura_round": 5, "ataques": 4}`. Campos: `adv`, `evasion`, `res`, `imune`, `absorb`, `contra`
+(+ `contra_mod`, `contra_nivel`), `rerolagens`, `stillness`, `conjurador`, `barrado`, `bonus_prob`.
+
+**Área** — lista de áreas; vale a melhor na horda padrão (saem também esparsa e agrupada):
+`{"nome": "Fireball", "usos": [{"alvos": 4, "dano": "8d6", "cd": 14, "slot": 3}]}`, `"tipo": "prioritaria"`
+(compara com 3 usos da referência), `cleave_ataque`, `cleave_save`. Opções do uso: `seletiva`, `metade`,
+`dobra_maior_dado`, `extra_sem_save`.
+
+**Suporte** — `{"fontes": [{"nome", "lado": "of"|"def", "modelo", ...}]}`; modelos: `vantagem`,
+`bonus_continuo`, `bonus_por_uso`, `ataque_extra`, `dano_por_acerto`, `cura`, `pv_temporario`, `aura_saves`,
+`valor_por_luta`, `fixo`.
+
+**Dano** — novos campos de ataque: `"elven_accuracy": true`, `"poder": [-5, 10]` (GWM/Sharpshooter: usa o modo
+que rende mais em cada CA); `por_luta` aceita `usos_dia`.
+
+**Controle** — nova fonte `counterspell` (`usos_luta`, `slot`, `mod`): nega turnos de conjuradores inimigos.
+
+## Paridade com as planilhas (10/11/2026)
 
 Builds migradas: Abdul, Kael, Amadeus, John, Tin Bin, Ravin, Marcus, Fjord, Miau, Caleb, Lucius,
 O Aprendiz, Pyotr, Solaris, Jamal, Virgil (+ um guerreiro de exemplo com dano calculado).
@@ -136,13 +178,17 @@ O Aprendiz, Pyotr, Solaris, Jamal, Virgil (+ um guerreiro de exemplo com dano ca
 | Dano: DPR a partir dos ataques | motor novo em fórmula fechada; as linhas antigas entram como `medido` |
 | Defesa | idêntica em todas as linhas sem reação (incluindo o Heavy Armor Master do Abdul, depois de corrigir o nº de atacantes da horda). Linhas com Shield/Uncanny Dodge/Evasion/barrado entram como `medido` |
 | Controle relativo e absoluto | 14 builds dentro de 0,4 nível. **Divergem**: Ravin (7,2 × 7,7, só no encontro Minions + minibosses, onde a régua é extrapolada acima do teto) e Solaris (8,8 × 7,5, valor da planilha veio de uma versão anterior do script) |
+| Saves | idêntico (Abdul 6,07 / 8,03; motor copiado do original, mesmas sementes) |
+| Área | idêntico (Fireball do Amadeus 8,1; Shatter 4,02) |
+| Suporte | idêntico à especificação (régua e linhas de checagem) |
+| Defesa com reações | **modelo novo** (política ótima de Shield/Uncanny Dodge, usos finitos): não é para bater com a planilha antiga |
 
-## Ainda fora do repo (próximos passos)
+## Pendências
 
-- Área, Suporte, Resiliência e Vontade: os motores não estavam salvos no Drive; continuam na planilha.
-- Marcus: as linhas de controle "luta prioritária, orçamento real" e "média do dia" eram de um script
-  que não está no Drive; reescrever como `plano`.
-- Migrar arquétipos e monstros de referência (hoje só nas planilhas).
-- Defesa: modelar reações (Shield, Absorb Elements, Uncanny Dodge, Evasion) e trocar os `medido`.
-- Dano: rotações com recursos e GWM/SS condicional à CA no motor de fórmula fechada.
-- Ligar a skill `dnd-build-rapido` a este repo, para que ela gere o `build.json` em vez do formato próprio dela.
+- **Conflitos de espaços** apontados por `dh validar` (AVISO): decidir, linha a linha, o cenário ou dividir em linhas.
+- Ação e concentração ainda não entram no orçamento (só reação e espaços).
+- Ravin: defesa com "barrado" segue `medido` (o `defesa2.py` original não foi recuperado).
+- Marcus: planos de controle "luta prioritária"/"média do dia" e linhas de suporte dia/comum/prioritária.
+- Saves de Caleb, Lucius, Jamal e Virgil; arquétipos e monstros de referência.
+- Linhas de dano `medido` → calculadas (exige os ataques de cada ficha).
+- `dh linhas` ainda só gera dano, defesa e controle para as planilhas.

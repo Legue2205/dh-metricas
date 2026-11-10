@@ -4,8 +4,8 @@
  "grupo": "NPC",
  "nivel": 10,
  "build": "Bard 10 (Eloquence), Resilient (Sab)",
- "impressao": "da62575757",
- "versao": "0.1.0",
+ "impressao": "a911011893",
+ "versao": "0.2.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -13,7 +13,10 @@
    "principal": [
     "dano",
     "defesa",
-    "controle"
+    "controle",
+    "saves",
+    "area",
+    "suporte"
    ],
    "defesa": {
     "pv_efetivo": 53,
@@ -24,7 +27,49 @@
     "nivel_durabilidade": 2.7,
     "nivel_eq": 2.7,
     "rank": "D",
-    "perfil": "Equilibrado"
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "suporte": {
+    "ofensivo": 31.1,
+    "defensivo": 1.27,
+    "total": 32.37,
+    "nivel_ofensivo": 13.2,
+    "nivel_defensivo": 2.1,
+    "nivel_eq": 10.2,
+    "rank": "A-",
+    "perfil": "Amplificador",
+    "fonte_principal": "Hold Person no chefe (abertura)",
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d10 + Unfailing",
+      "lado": "of",
+      "valor": 6.2
+     },
+     {
+      "nome": "Healing Word nv 1",
+      "lado": "def",
+      "valor": 1.27
+     },
+     {
+      "nome": "Hold Person no chefe (abertura)",
+      "lado": "of",
+      "valor": 24.9
+     }
+    ]
+   },
+   "orcamento": {
+    "cenario": "luta_prioritaria",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "controle": {
+      "4": 2,
+      "5": 1,
+      "3": 1
+     }
+    }
    },
    "controle": {
     "nivel_eq": 6.51,
@@ -71,6 +116,19 @@
   "nao-humanoides": {
    "hipotese": "Inimigos não humanoides: Banishment 4º em 2 alvos no lugar do Hold Person",
    "principal": [],
+   "orcamento": {
+    "cenario": "luta_prioritaria",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "controle": {
+      "4": 2,
+      "5": 1,
+      "3": 1
+     }
+    }
+   },
    "controle": {
     "nivel_eq": 6.55,
     "rank": "B-",
@@ -125,9 +183,17 @@
     "nivel_durabilidade": 2.9,
     "nivel_eq": 2.9,
     "rank": "D",
-    "perfil": "Equilibrado"
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {}
    }
   }
  },
- "segundos": 2.6
+ "segundos": 3.5
 }

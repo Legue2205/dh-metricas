@@ -6,7 +6,26 @@
   "build": "Warlock 14 (Fiend), Pact of the Blade, arco longo do pacto +1, Con 8",
   "corpo": {
     "ca": 17,
-    "pv": 44
+    "pv": 44,
+    "saves": {
+      "sv": {
+        "for": 2,
+        "des": 4,
+        "con": -1,
+        "int": 1,
+        "sab": 5,
+        "car": 4
+      },
+      "res": [
+        "fogo"
+      ],
+      "contra": 1,
+      "contra_mod": -1,
+      "contra_nivel": 5,
+      "rerolagens": 1,
+      "conjurador": true,
+      "ataques": 2
+    }
   },
   "linhas": [
     {
@@ -57,7 +76,27 @@
             "nome": "Corpo (ameaça)"
           }
         ]
-      }
+      },
+      "saves": {},
+      "area": [
+        {
+          "nome": "Luta comum: 2 Fireballs nv 5",
+          "usos": [
+            {
+              "alvos": 4,
+              "dano": "10d6",
+              "cd": 12,
+              "slot": 5
+            },
+            {
+              "alvos": 4,
+              "dano": "10d6",
+              "cd": 12,
+              "slot": 5
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "maximo",
@@ -77,6 +116,45 @@
         ],
         "fonte": "planilha de dano (sem motor salvo)"
       }
+    },
+    {
+      "id": "area-prioritaria",
+      "principal": false,
+      "cenario": "luta_prioritaria",
+      "hipotese": "Luta prioritária: 3 Fireballs nv 5",
+      "area": [
+        {
+          "nome": "3 Fireballs nv 5",
+          "tipo": "prioritaria",
+          "usos": [
+            {
+              "alvos": 4,
+              "dano": "10d6",
+              "cd": 12,
+              "slot": 5
+            },
+            {
+              "alvos": 4,
+              "dano": "10d6",
+              "cd": 12,
+              "slot": 5
+            },
+            {
+              "alvos": 4,
+              "dano": "10d6",
+              "cd": 12,
+              "slot": 5
+            }
+          ]
+        }
+      ]
     }
-  ]
+  ],
+  "recursos": {
+    "espacos": {
+      "5": 9
+    },
+    "lutas_dia": 4,
+    "nota": "3 espaços de pacto de 5º por descanso curto, 2 descansos curtos"
+  }
 }

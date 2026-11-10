@@ -4,14 +4,16 @@
  "grupo": "Party",
  "nivel": 7,
  "build": "Bard 7 (College of Valor), Lucky",
- "impressao": "28c097eddd",
- "versao": "0.1.0",
+ "impressao": "a34861f027",
+ "versao": "0.2.0",
  "modo": "completo",
  "linhas": {
   "principal": {
    "hipotese": "Espada +1d4; Plant Growth + Fear ou Polymorph (CD 16); Lucky 1 de 3",
    "principal": [
-    "defesa"
+    "defesa",
+    "saves",
+    "area"
    ],
    "dano": {
     "dpr": {
@@ -38,7 +40,98 @@
     "nivel_durabilidade": 3.6,
     "nivel_eq": 3.6,
     "rank": "C-",
-    "perfil": "Equilibrado"
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.93,
+     "rank": "C+",
+     "turnos_livres": [
+      3.74,
+      3.67,
+      3.58,
+      1.93,
+      1.78,
+      1.74,
+      1.34,
+      1.47,
+      1.05,
+      0.71
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.26,
+     "rank": "C",
+     "turnos_livres": [
+      3.17,
+      1.75,
+      1.3,
+      1.21,
+      1.36,
+      1.2,
+      0.97,
+      0.72,
+      1.05,
+      0.71
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.0,
+    "rank": "C",
+    "melhor": "Shatter",
+    "areas": [
+     {
+      "nome": "Shatter",
+      "tipo": "explosao",
+      "nivel_eq": 4.02,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.02,
+       "padrao": 4.02,
+       "agrupada": 4.02
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 2.25,
+    "defensivo": 2.93,
+    "total": 5.18,
+    "nivel_ofensivo": 0.6,
+    "nivel_defensivo": 4.4,
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word",
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "valor": 2.25
+     },
+     {
+      "nome": "Healing Word",
+      "lado": "def",
+      "valor": 2.93
+     }
+    ]
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": false,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "controle": {
+      "4": 1,
+      "3": 3
+     },
+     "area": {
+      "2": 1
+     }
+    }
    },
    "controle": {
     "nivel_eq": 7.38,
@@ -97,6 +190,18 @@
   "com-suggestion": {
    "hipotese": "Com Suggestion na rotação de alvo único",
    "principal": [],
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": false,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "controle": {
+      "4": 1,
+      "3": 3
+     }
+    }
+   },
    "controle": {
     "nivel_eq": 7.58,
     "rank": "B",
@@ -152,5 +257,5 @@
    }
   }
  },
- "segundos": 1.8
+ "segundos": 3.2
 }

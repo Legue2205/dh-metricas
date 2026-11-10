@@ -6,7 +6,20 @@
   "build": "Way of the Blood Monk 7 (homebrew), Des 18",
   "corpo": {
     "ca": 17,
-    "pv": 79
+    "pv": 79,
+    "saves": {
+      "sv": {
+        "for": 2,
+        "des": 7,
+        "con": 3,
+        "int": 1,
+        "sab": 3,
+        "car": -1
+      },
+      "pv": 59,
+      "evasion": true,
+      "stillness": true
+    }
   },
   "linhas": [
     {
@@ -55,6 +68,22 @@
             "nome": "Corpo (ameaça)"
           }
         ]
+      },
+      "saves": {
+        "cura_round": 5,
+        "ataques": 4
+      },
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Stunning Strike (abertura)",
+            "lado": "of",
+            "modelo": "vantagem",
+            "alvos": 3,
+            "fracao": 0.34,
+            "nota": "fração dos turnos do chefe atordoado, do eixo de controle"
+          }
+        ]
       }
     },
     {
@@ -63,6 +92,10 @@
       "hipotese": "Só sobreviver: Martial Arts para curar, sem Flurry nem combo (~10/round)",
       "defesa": {
         "pv_efetivo": 99
+      },
+      "saves": {
+        "cura_round": 10,
+        "ataques": 3
       }
     },
     {
@@ -72,6 +105,13 @@
       "defesa": {
         "pv_efetivo": 75,
         "adv": -1
+      },
+      "saves": {
+        "adv": [
+          "des"
+        ],
+        "cura_round": 4,
+        "ataques": 2
       }
     }
   ]

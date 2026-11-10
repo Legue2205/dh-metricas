@@ -8,7 +8,28 @@
     "ca": 18,
     "pv": 125.5,
     "res": 0.5,
-    "adv": 1
+    "adv": 1,
+    "saves": {
+      "sv": {
+        "for": 9,
+        "des": 4,
+        "con": 8,
+        "int": -1,
+        "sab": 3,
+        "car": -1
+      },
+      "adv": [
+        "for",
+        "des"
+      ],
+      "res": [
+        "fisico"
+      ],
+      "imune": [
+        "encanto",
+        "medo"
+      ]
+    }
   },
   "linhas": [
     {
@@ -45,6 +66,9 @@
             "nome": "Corpo (ameaça)"
           }
         ]
+      },
+      "saves": {
+        "ataques": 3
       }
     },
     {
@@ -71,11 +95,18 @@
       "principal": false,
       "hipotese": "Defensivo: Fúria sem Reckless, Patient Defense (3 ki), Mãos Curadoras 30 + Second Wind",
       "defesa": {
-        "medido": {
-          "blindagem": 21.4,
-          "durabilidade": 17.9
-        },
-        "nota": "Patient Defense só em 3 rounds + curas: fora do motor"
+        "pv_efetivo": 155.5,
+        "resist": true,
+        "adv_por_round": [
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      },
+      "saves": {
+        "pv": 155.5,
+        "ataques": 2
       }
     }
   ]

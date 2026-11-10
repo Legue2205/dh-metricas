@@ -7,7 +7,26 @@
   "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
   "corpo": {
     "ca": 20.85,
-    "pv": 55
+    "pv": 55,
+    "saves": {
+      "sv": {
+        "for": 0,
+        "des": 2,
+        "con": 2,
+        "int": 8,
+        "sab": 3,
+        "car": -1
+      },
+      "pv": 31,
+      "res": [
+        "psiquico"
+      ],
+      "absorb": 1,
+      "contra": 1,
+      "contra_mod": 5,
+      "conjurador": true,
+      "bonus_prob": 0.85
+    }
   },
   "linhas": [
     {
@@ -54,7 +73,39 @@
             "nome": "Corpo (ameaça)"
           }
         ]
-      }
+      },
+      "saves": {
+        "barrado": 3
+      },
+      "area": [
+        {
+          "nome": "Lightning Bolt com carga",
+          "usos": [
+            {
+              "alvos": 4,
+              "dano": "8d6",
+              "dobra_maior_dado": true,
+              "cd": 16,
+              "slot": 3
+            }
+          ]
+        },
+        {
+          "nome": "Thunderclap com espadada",
+          "tipo": "cleave_save",
+          "dano": "2d6",
+          "cd": 16,
+          "alvos": [
+            1,
+            2,
+            3
+          ],
+          "custo_ataque": {
+            "bonus": 9,
+            "dano": "1d8"
+          }
+        }
+      ]
     },
     {
       "id": "sem-barrado",
@@ -66,7 +117,8 @@
           "durabilidade": 3.54
         },
         "nota": "Shield e afins fora do motor"
-      }
+      },
+      "saves": {}
     },
     {
       "id": "pico-haste",
@@ -86,6 +138,34 @@
         ],
         "fonte": "planilha de dano (sem motor salvo)"
       }
+    },
+    {
+      "id": "haste-em-aliado",
+      "principal": false,
+      "hipotese": "Concentração em Haste num aliado",
+      "suporte": {
+        "usa": {
+          "espacos": {
+            "3": 1
+          }
+        },
+        "fontes": [
+          {
+            "nome": "Haste",
+            "lado": "of",
+            "modelo": "ataque_extra",
+            "alvos": 1
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "recursos": {
+    "espacos": {
+      "1": 5,
+      "2": 3,
+      "3": 3
+    },
+    "lutas_dia": 4
+  }
 }

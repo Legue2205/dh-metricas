@@ -4,8 +4,8 @@
  "grupo": "NPC",
  "nivel": 14,
  "build": "Warlock 14 (Fiend), Pact of the Blade, arco longo do pacto +1, Con 8",
- "impressao": "b783268eda",
- "versao": "0.1.0",
+ "impressao": "185704007a",
+ "versao": "0.2.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -13,7 +13,10 @@
    "principal": [
     "dano",
     "defesa",
-    "controle"
+    "controle",
+    "saves",
+    "area",
+    "suporte"
    ],
    "dano": {
     "dpr": {
@@ -40,7 +43,74 @@
     "nivel_durabilidade": 3.4,
     "nivel_eq": 3.5,
     "rank": "C-",
-    "perfil": "Equilibrado"
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 13.26,
+     "rank": "A+",
+     "turnos_livres": [
+      3.92,
+      3.76,
+      3.74,
+      3.17,
+      2.79,
+      2.89,
+      2.43,
+      1.44,
+      1.21,
+      0.86
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 16.85,
+     "rank": "S",
+     "turnos_livres": [
+      3.88,
+      3.36,
+      2.9,
+      2.8,
+      3.01,
+      2.61,
+      2.43,
+      1.74,
+      1.67,
+      1.33
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 8.9,
+    "rank": "B+",
+    "melhor": "Luta comum: 2 Fireballs nv 5",
+    "areas": [
+     {
+      "nome": "Luta comum: 2 Fireballs nv 5",
+      "tipo": "explosao",
+      "nivel_eq": 8.93,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 8.93,
+       "padrao": 8.93,
+       "agrupada": 14.39
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": false,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "5": 1
+     },
+     "area": {
+      "5": 2
+     }
+    }
    },
    "controle": {
     "nivel_eq": 2.97,
@@ -114,8 +184,48 @@
     "nivel_eq": 13.7,
     "rank": "A+",
     "perfil": "Equilibrado"
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {}
+   }
+  },
+  "area-prioritaria": {
+   "hipotese": "Luta prioritária: 3 Fireballs nv 5",
+   "principal": [],
+   "area": {
+    "nivel_eq": 8.4,
+    "rank": "B+",
+    "melhor": "3 Fireballs nv 5",
+    "areas": [
+     {
+      "nome": "3 Fireballs nv 5",
+      "tipo": "prioritaria",
+      "nivel_eq": 8.42,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 8.42,
+       "padrao": 8.42,
+       "agrupada": 10.3
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "cenario": "luta_prioritaria",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "area": {
+      "5": 3
+     }
+    }
    }
   }
  },
- "segundos": 0.8
+ "segundos": 3.4
 }

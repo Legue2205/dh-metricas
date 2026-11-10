@@ -8,7 +8,18 @@
   "corpo": {
     "ca": 17,
     "pv": 54.5,
-    "res": 0.85
+    "res": 0.85,
+    "saves": {
+      "sv": {
+        "for": -1,
+        "des": 8,
+        "con": 1,
+        "int": 3,
+        "sab": 3,
+        "car": 0
+      },
+      "ataques": 2
+    }
   },
   "linhas": [
     {
@@ -30,11 +41,12 @@
         "fonte": "planilha de dano (sem motor salvo)"
       },
       "defesa": {
-        "medido": {
-          "blindagem": 5.08,
-          "durabilidade": 4.33
-        },
-        "nota": "Uncanny Dodge: o motor de defesa ainda não modela reações"
+        "pv_efetivo": 54.5,
+        "reacoes": [
+          {
+            "tipo": "uncanny_dodge"
+          }
+        ]
       },
       "controle": {
         "atencao": {
@@ -48,7 +60,8 @@
             "nome": "Corpo (ameaça)"
           }
         ]
-      }
+      },
+      "saves": {}
     },
     {
       "id": "vantagem-externa",

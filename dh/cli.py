@@ -15,7 +15,7 @@ import sys
 
 from . import motor
 from .base import NIVEIS_TESTE, PESO_TIPO, TIPOS
-from .build import ErroBuild, carregar, validar
+from .build import ErroBuild, avisos, carregar, validar
 
 
 def _fmt(x, c=1):
@@ -36,6 +36,20 @@ def _resumo(res):
             d = l['defesa']
             print(f"    Defesa   {d['rank']:>2}  nível eq {_fmt(d['nivel_eq'])}  ({d['perfil']})  "
                   f"blindagem CR {_fmt(d['blindagem'], 2)} · durabilidade CR {_fmt(d['durabilidade'], 2)}")
+        if 'saves' in l:
+            v = l['saves']
+            print(f"    Saves        Resiliência {v['resiliencia']['rank']} ({_fmt(v['resiliencia']['nivel_eq'])}) · "
+                  f"Vontade {v['vontade']['rank']} ({_fmt(v['vontade']['nivel_eq'])})")
+        if 'area' in l and l['area']['nivel_eq'] is not None:
+            a_ = l['area']
+            print(f"    Área     {a_['rank']:>2}  nível eq {_fmt(a_['nivel_eq'])}  ({a_['melhor']})")
+        if 'suporte' in l:
+            u = l['suporte']
+            print(f"    Suporte  {u['rank']:>2}  nível eq {_fmt(u['nivel_eq'])}  ({u['perfil']}; of {_fmt(u['ofensivo'])} · def {_fmt(u['defensivo'])})")
+        o = l.get('orcamento', {})
+        if o.get('reacao') or o.get('espacos_por_eixo'):
+            esp = '; '.join(f"{e}: " + ', '.join(f"{v:g}×{k}º" for k, v in sorted(g.items())) for e, g in o['espacos_por_eixo'].items())
+            print(f"    Recursos     {o['cenario']}{'' if o.get('soma_eixos', True) else ' · EIXOS NÃO SOMAM (espaços disputados)'} · reação livre {_fmt(float(o['reacao_livre']), 2)}" + (f" · espaços: {esp}" if esp else ''))
         if 'controle' in l:
             c = l['controle']
             ab = f"  absoluto {_fmt(c['nivel_absoluto'])} ({c['rank_absoluto']})" if 'nivel_absoluto' in c else ''
@@ -88,9 +102,10 @@ def main(argv=None):
     if a.comando == 'validar':
         ok = True
         for f in arquivos:
-            erros = validar(json.load(open(f, encoding='utf-8')))
-            print(('OK    ' if not erros else 'ERRO  ') + f); ok &= not erros
+            b = json.load(open(f, encoding='utf-8')); erros = validar(b); av = [] if erros else avisos(b)
+            print(('ERRO  ' if erros else 'AVISO ' if av else 'OK    ') + f); ok &= not erros
             for e in erros: print('      -', e)
+            for e in av: print('      ~', e)
         return 0 if ok else 1
 
     if a.comando == 'regua':
@@ -103,15 +118,15 @@ def main(argv=None):
 
     if a.comando == 'painel':
         import pathlib
-        print(f"{'ID':22s} {'nv':>3s}  {'Dano':>9s}  {'Defesa':>9s}  {'Controle':>9s}  {'Ctrl abs':>9s}")
+        cols = [('Dano', 'dano', None), ('Defesa', 'defesa', None), ('Resil.', 'saves', 'resiliencia'),
+                ('Vontade', 'saves', 'vontade'), ('Controle', 'controle', None), ('Área', 'area', None), ('Suporte', 'suporte', None)]
+        print(f"{'ID':20s} {'nv':>3s}  " + '  '.join(f'{c[0]:>8s}' for c in cols))
         for f in sorted(pathlib.Path(motor.RESULTADOS).glob('*.json')):
             r = json.loads(f.read_text(encoding='utf-8'))
             cel = []
-            for eixo in ('dano', 'defesa', 'controle'):
-                x = motor.principal(r, eixo); cel.append(f"{_fmt(x['nivel_eq'])} {x['rank']}" if x else '-')
-            c = motor.principal(r, 'controle')
-            cel.append(f"{_fmt(c['nivel_absoluto'])} {c['rank_absoluto']}" if c and 'nivel_absoluto' in c else '-')
-            print(f"{r['id']:22s} {r['nivel']:>3d}  " + '  '.join(f'{x:>9s}' for x in cel))
+            for _, eixo, sub in cols:
+                n = motor.nota(motor.principal(r, eixo), sub); cel.append(f"{_fmt(float(n[0]))} {n[1]}" if n else '-')
+            print(f"{r['id']:20s} {r['nivel']:>3d}  " + '  '.join(f'{x:>8s}' for x in cel))
         return 0
 
     modo = 'completo' if a.comando == 'completo' else 'rapido'

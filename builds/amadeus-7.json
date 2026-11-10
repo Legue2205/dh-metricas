@@ -7,13 +7,27 @@
   "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
   "corpo": {
     "ca": 16,
-    "pv": 62
+    "pv": 62,
+    "saves": {
+      "sv": {
+        "for": -1,
+        "des": 1,
+        "con": 2,
+        "int": 6,
+        "sab": 4,
+        "car": 2
+      },
+      "pv": 53,
+      "ca": 14,
+      "conjurador": true,
+      "contra_mod": 3
+    }
   },
   "linhas": [
     {
       "id": "principal",
       "principal": true,
-      "hipotese": "7 esqueletos com meia cobertura + Chill Touch; Web ou Bestow Curse (CD 14)",
+      "hipotese": "7 esqueletos com meia cobertura + Chill Touch; Web ou Bestow Curse (CD 14); Shield: 4 espaços de 1º no dia = 1 por luta",
       "dano": {
         "medido": [
           43.8,
@@ -29,11 +43,14 @@
         "fonte": "planilha de dano (sem motor salvo)"
       },
       "defesa": {
-        "medido": {
-          "blindagem": 3.8,
-          "durabilidade": 2.8
-        },
-        "nota": "Mage Armor (CA 14), Shield 2×, Inspiring Leader 9, Counterspell 1×: reações fora do motor"
+        "pv_efetivo": 53,
+        "ca": 14,
+        "reacoes": [
+          {
+            "tipo": "shield",
+            "usos_luta": 1
+          }
+        ]
       },
       "controle": {
         "atencao": {
@@ -85,6 +102,49 @@
             "nome": "Corpo (7 esqueletos)"
           }
         ]
+      },
+      "saves": {
+        "contra": 1
+      },
+      "area": [
+        {
+          "nome": "Fireball",
+          "usos": [
+            {
+              "alvos": 4,
+              "dano": "8d6",
+              "cd": 14,
+              "slot": 3
+            }
+          ]
+        }
+      ],
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Inspiring Leader",
+            "lado": "def",
+            "modelo": "pv_temporario",
+            "usos_descanso_curto": 1,
+            "alvos": 3,
+            "pv": 9
+          },
+          {
+            "nome": "Máscara (Crusader's Mantle)",
+            "lado": "of",
+            "modelo": "dano_por_acerto",
+            "usos_dia": 1,
+            "alvos": 3,
+            "dano_extra": 2.5
+          },
+          {
+            "nome": "Cure Wounds (Magic Initiate)",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_dia": 1,
+            "pv": 5.5
+          }
+        ]
       }
     },
     {
@@ -105,6 +165,31 @@
         ],
         "fonte": "planilha de dano (sem motor salvo)"
       }
+    },
+    {
+      "id": "shield-total",
+      "principal": false,
+      "cenario": "luta_prioritaria",
+      "hipotese": "Queima os 4 espaços de 1º em Shield numa luta só",
+      "defesa": {
+        "pv_efetivo": 53,
+        "ca": 14,
+        "reacoes": [
+          {
+            "tipo": "shield",
+            "usos_luta": 4
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "recursos": {
+    "espacos": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 1
+    },
+    "lutas_dia": 4
+  }
 }

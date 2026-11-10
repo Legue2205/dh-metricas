@@ -3,7 +3,7 @@ import json
 import time
 from pathlib import Path
 
-from . import VERSAO, dano, defesa
+from . import VERSAO, area, dano, defesa, orcamento, saves, suporte
 from .build import carregar, impressao
 from .controle import atencao, campo, efeitos, total
 
@@ -14,11 +14,16 @@ MODOS = {'rapido': dict(N=2000, absoluto=False), 'completo': dict(N=8000, absolu
 
 def avaliar_linha(b, linha, modo='rapido', regua=None, eixos=None):
     cfg = MODOS[modo]; corpo = dict(b['corpo'], **linha.get('corpo', {}))
-    out = {}
-    if 'dano' in linha and (not eixos or 'dano' in eixos):
-        out['dano'] = dano.avaliar(linha['dano'])
-    if 'defesa' in linha and (not eixos or 'defesa' in eixos):
-        out['defesa'] = defesa.avaliar(linha['defesa'], corpo)
+    out = {}; livre = orcamento.reacao_livre(linha)
+    lutas = b.get('recursos', {}).get('lutas_dia', 4)
+    def quer(e): return e in linha and (not eixos or e in eixos)
+    if quer('dano'): out['dano'] = dano.avaliar(linha['dano'], lutas)
+    if quer('defesa'): out['defesa'] = defesa.avaliar(linha['defesa'], corpo, livre)
+    if quer('saves'): out['saves'] = saves.avaliar(linha['saves'], corpo, livre)
+    if quer('area'): out['area'] = area.avaliar(linha['area'], modo)
+    if quer('suporte'): out['suporte'] = suporte.avaliar(linha['suporte'], b['nivel'])
+    conflito = any(a.startswith(f"linha {linha['id']}:") for a in orcamento.checar(b, campo.MAGIAS)[1])
+    out['orcamento'] = orcamento.resumo(linha, corpo, campo.MAGIAS, not conflito)
     if 'controle' in linha and (not eixos or 'controle' in eixos):
         campo.configurar(cfg['N'], 11)
         c = linha['controle']
@@ -43,7 +48,7 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
     for l in b['linhas']:
         if linhas and l['id'] not in linhas: continue
         pr = l.get('principal', False)
-        pr = list(pr) if isinstance(pr, list) else (['dano', 'defesa', 'controle'] if pr else [])
+        pr = list(pr) if isinstance(pr, list) else (['dano', 'defesa', 'controle', 'saves', 'area', 'suporte'] if pr else [])
         res['linhas'][l['id']] = dict(hipotese=l.get('hipotese', ''), principal=pr,
                                       **avaliar_linha(b, l, modo, regua, eixos))
     res['segundos'] = round(time.time() - t0, 1)
@@ -59,3 +64,10 @@ def principal(res, eixo):
     for l in ls:
         if eixo in l['principal']: return l[eixo]
     return None  # sem linha principal nesse eixo (a planilha também deixa em branco)
+
+
+def nota(x, sub=None):
+    """(nível eq, letra) de um resultado de eixo; saves tem dois sub-eixos."""
+    if x is None: return None
+    if sub: x = x[sub]
+    return (x['nivel_eq'], x['rank']) if x.get('nivel_eq') is not None else None

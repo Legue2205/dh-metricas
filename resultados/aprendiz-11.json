@@ -4,8 +4,8 @@
  "grupo": "NPC",
  "nivel": 11,
  "build": "Barbarian 6 (Berserker) / Monk 3 (Tranquility UA) / Fighter 2, GWM",
- "impressao": "ec090b76ba",
- "versao": "0.1.0",
+ "impressao": "d406e52621",
+ "versao": "0.2.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -13,7 +13,10 @@
    "principal": [
     "dano",
     "defesa",
-    "controle"
+    "controle",
+    "saves",
+    "area",
+    "suporte"
    ],
    "dano": {
     "dpr": {
@@ -40,7 +43,49 @@
     "nivel_durabilidade": 15.4,
     "nivel_eq": 15.4,
     "rank": "A+",
-    "perfil": "Equilibrado"
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "turnos_livres": [
+      3.99,
+      3.87,
+      3.81,
+      2.96,
+      3.35,
+      3.5,
+      3.71,
+      3.69,
+      3.33,
+      2.8
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.08,
+     "rank": "A",
+     "turnos_livres": [
+      3.18,
+      2.18,
+      1.85,
+      2.57,
+      1.71,
+      0.86,
+      2.15,
+      1.8,
+      1.51,
+      2.05
+     ]
+    }
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {}
    },
    "controle": {
     "nivel_eq": 3.58,
@@ -102,23 +147,72 @@
     "nivel_eq": 13.9,
     "rank": "A+",
     "perfil": "Equilibrado"
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {}
    }
   },
   "defensivo": {
    "hipotese": "Defensivo: Fúria sem Reckless, Patient Defense (3 ki), Mãos Curadoras 30 + Second Wind",
    "principal": [],
    "defesa": {
-    "pv_efetivo": 125.5,
+    "pv_efetivo": 155.5,
     "ca": 18,
-    "blindagem": 21.4,
+    "blindagem": 22.18,
     "durabilidade": 17.9,
     "nivel_blindagem": 20.0,
     "nivel_durabilidade": 20.0,
     "nivel_eq": 20.0,
     "rank": "S",
-    "perfil": "Equilibrado"
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "turnos_livres": [
+      3.99,
+      3.87,
+      3.81,
+      2.96,
+      3.39,
+      3.54,
+      3.81,
+      3.83,
+      3.6,
+      3.18
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.16,
+     "rank": "A",
+     "turnos_livres": [
+      3.16,
+      2.18,
+      1.85,
+      2.67,
+      1.78,
+      0.88,
+      2.15,
+      1.8,
+      1.51,
+      2.14
+     ]
+    }
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {}
    }
   }
  },
- "segundos": 1.0
+ "segundos": 2.3
 }

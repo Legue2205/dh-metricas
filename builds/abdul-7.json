@@ -8,7 +8,18 @@
   "corpo": {
     "ca": 21,
     "pv": 63,
-    "red": 3
+    "red": 3,
+    "saves": {
+      "sv": {
+        "for": 6,
+        "des": 1,
+        "con": 5,
+        "int": 1,
+        "sab": 5,
+        "car": 7
+      },
+      "ataques": 2
+    }
   },
   "linhas": [
     {
@@ -57,6 +68,34 @@
             "nome": "Corpo (ameaça)"
           }
         ]
+      },
+      "reacao": [
+        {
+          "uso": "ataque de oportunidade (Sentinel)",
+          "fracao": 0.5,
+          "eixos": [
+            "dano",
+            "controle"
+          ]
+        }
+      ],
+      "saves": {},
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Aura of Protection",
+            "lado": "def",
+            "modelo": "aura_saves",
+            "bonus": 2
+          },
+          {
+            "nome": "Lay on Hands nos aliados",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_dia": 1,
+            "pv": 35
+          }
+        ]
       }
     },
     {
@@ -65,7 +104,39 @@
       "hipotese": "Postura de tanque: Lay on Hands 35 na luta",
       "defesa": {
         "pv_efetivo": 98
+      },
+      "saves": {
+        "pv": 98
+      }
+    },
+    {
+      "id": "lay-on-hands-aliados",
+      "principal": false,
+      "hipotese": "Lay on Hands 35 inteiro nos aliados numa luta (não soma com a postura de tanque)",
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Aura of Protection",
+            "lado": "def",
+            "modelo": "aura_saves",
+            "bonus": 2
+          },
+          {
+            "nome": "Lay on Hands 35 numa luta",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_luta": 1,
+            "pv": 35
+          }
+        ]
       }
     }
-  ]
+  ],
+  "recursos": {
+    "espacos": {
+      "1": 4,
+      "2": 3
+    },
+    "lutas_dia": 4
+  }
 }

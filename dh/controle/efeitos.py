@@ -9,6 +9,7 @@ Cada fonte é um dicionário com "tipo". Tipos disponíveis (ver README para exe
   alvo_unico        magias de alvo único relançadas com os espaços dados (modo combinar ou melhor)
   alvo_unico_direto efeito de alvo único sem relançar (ex.: Wall of Force num alvo)
   ataque_com_save   save no acerto (Stunning Strike e afins)
+  counterspell      nega turnos de conjuradores inimigos (usos finitos; gasta reação e espaço)
   melhor_de         escolhe a opção que mais nega (ex.: concentração exclusiva Fear OU Polymorph)
   plano             roteiro round a round (Virgil), executado por um motor genérico
   esqueletos, agarrao, ancestral_protectors, command_fixo, ataque_nega_turno   (casos especiais registrados)
@@ -125,6 +126,20 @@ def _command_fixo(f, E, topo, t):
     return v
 
 
+def _counterspell(f, E, topo, t):
+    """Nega o turno de inimigos conjuradores: usos finitos por luta, repartidos entre eles.
+    Espaço >= nível da magia inimiga anula direto; abaixo, teste de habilidade (CD 10 + nível)."""
+    conj = [i for i, c in enumerate(E) if c['papel'] == 'Conjurador']
+    v = C.zero(E)
+    if not conj: return v
+    slot, mod = f.get('slot', 3), f.get('mod', 0)
+    for i in conj:
+        nv = min(9, max(1, int(-(-E[i]['cr'] // 2))))          # maior círculo típico de um conjurador desse CR
+        p = 1.0 if nv <= slot else min(1.0, max(0.0, (21 - (10 + nv - mod)) / 20))
+        v[i] = min(R, f.get('usos_luta', 1) / len(conj)) / R * p * f.get('fracao_conjurando', 0.75)
+    return v
+
+
 def _ataque_nega_turno(f, E, topo, t):
     return C.unico(E, lambda c: p_acerto(f['bonus'], c['ca']) * f.get('turnos', 1) / R)
 
@@ -204,7 +219,7 @@ def _plano(f, E, topo, t):
 TIPOS = dict(ameaca=_ameaca, terreno=_terreno, sentinela=_sentinela, parada_oa=_parada_oa, area=_area, alvo_unico=_alvo_unico,
              alvo_unico_direto=_alvo_unico_direto, ataque_com_save=_ataque_com_save, melhor_de=_melhor_de,
              plano=_plano, esqueletos=_esqueletos, agarrao=_agarrao, ancestral_protectors=_ancestral,
-             command_fixo=_command_fixo, ataque_nega_turno=_ataque_nega_turno)
+             command_fixo=_command_fixo, counterspell=_counterspell, ataque_nega_turno=_ataque_nega_turno)
 
 
 def _avalia_fonte(f, E, topo, t):

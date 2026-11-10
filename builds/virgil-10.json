@@ -40,25 +40,29 @@
                 "round": 1,
                 "magia": "hold_person",
                 "alvos": 3,
-                "penalidade": "primeiro"
+                "penalidade": "primeiro",
+                "slot": 4
               },
               {
                 "round": 2,
                 "magia": "synaptic_static",
                 "alvos": 4,
-                "escala_area": true
+                "escala_area": true,
+                "slot": 5
               },
               {
                 "round": 3,
                 "magia": "psychic_lance",
                 "alvos": 1,
                 "selecao": "livre",
-                "penalidade": "todos"
+                "penalidade": "todos",
+                "slot": 4
               },
               {
                 "round": 4,
                 "magia": "command",
-                "alvos": 3
+                "alvos": 3,
+                "slot": 3
               }
             ],
             "penalidade_manutencao": {
@@ -72,6 +76,32 @@
               "penalidade_lancamento": true,
               "penalidade_manutencao": true
             }
+          }
+        ]
+      },
+      "cenario": "luta_prioritaria",
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Bardic Inspiration d10 + Unfailing",
+            "lado": "of",
+            "modelo": "fixo",
+            "valor": 6.2,
+            "nota": "0,87 de conversão × dano por acerto 28,46 ÷ 4 rounds"
+          },
+          {
+            "nome": "Healing Word nv 1",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_luta": 0.75,
+            "pv": 7.5
+          },
+          {
+            "nome": "Hold Person no chefe (abertura)",
+            "lado": "of",
+            "modelo": "vantagem",
+            "alvos": 3,
+            "fracao": 0.641
           }
         ]
       }
@@ -106,25 +136,29 @@
                 "round": 1,
                 "magia": "banishment",
                 "alvos": 2,
-                "penalidade": "primeiro"
+                "penalidade": "primeiro",
+                "slot": 4
               },
               {
                 "round": 2,
                 "magia": "synaptic_static",
                 "alvos": 4,
-                "escala_area": true
+                "escala_area": true,
+                "slot": 5
               },
               {
                 "round": 3,
                 "magia": "psychic_lance",
                 "alvos": 1,
                 "selecao": "livre",
-                "penalidade": "todos"
+                "penalidade": "todos",
+                "slot": 4
               },
               {
                 "round": 4,
                 "magia": "command",
-                "alvos": 3
+                "alvos": 3,
+                "slot": 3
               }
             ],
             "penalidade_manutencao": {
@@ -140,7 +174,8 @@
             }
           }
         ]
-      }
+      },
+      "cenario": "luta_prioritaria"
     },
     {
       "id": "couro-batido",
@@ -151,5 +186,15 @@
       },
       "defesa": {}
     }
-  ]
+  ],
+  "recursos": {
+    "espacos": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2
+    },
+    "lutas_dia": 4
+  }
 }

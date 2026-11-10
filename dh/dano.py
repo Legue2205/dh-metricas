@@ -51,18 +51,26 @@ def dados(expr):
     return tot, dad
 
 
-def _ataque(a, ca):
+def _ataque1(a, ca, bonus, fixo):
     avg, dad = dados(a['dano'])
     if 'dados_crit' in a: dad = dados(a['dados_crit'])[1]
     c0 = (21 - a.get('crit_em', 20)) / 20; v = a.get('vantagem', 0.0)
-    p0 = p_acerto(a['bonus'], ca)
-    p = (1 - v) * p0 + v * (1 - (1 - p0) ** 2)
-    c = (1 - v) * c0 + v * (1 - (1 - c0) ** 2)
+    k = 3 if a.get('elven_accuracy') else 2            # dados rolados quando há vantagem
+    p0 = p_acerto(bonus, ca)
+    p = (1 - v) * p0 + v * (1 - (1 - p0) ** k)
+    c = (1 - v) * c0 + v * (1 - (1 - c0) ** k)
     c = min(c, p)
-    return p, c, p * avg + c * dad
+    return p, c, p * (avg + fixo) + c * dad
 
 
-def dpr(spec, ca):
+def _ataque(a, ca):
+    """Com "poder": [-5, 10] (GWM/Sharpshooter), usa o modo que rende mais contra aquela CA."""
+    op = [_ataque1(a, ca, a['bonus'], 0)]
+    if 'poder' in a: op.append(_ataque1(a, ca, a['bonus'] + a['poder'][0], a['poder'][1]))
+    return max(op, key=lambda x: x[2])
+
+
+def dpr(spec, ca, lutas_dia=4):
     if 'medido' in spec: return spec['medido'][CAS.index(ca)]
     total = 0.0; nenhum = 1.0; pc = []
     for a in spec.get('ataques', []):          # n pode ser fracionário (ex.: Action Surge = 2 ataques ÷ 4 rounds)
@@ -75,12 +83,13 @@ def dpr(spec, ca):
         total += x.get('prob', 1.0) * algum * (avg + crit_rel * dad)
     for x in spec.get('por_luta', []):         # smites e afins: usos por luta espalhados nos R rounds
         avg, dad = dados(x['dano'])
-        total += min(1.0, x['usos'] / R) * algum * (avg + crit_rel * dad)
+        usos = x['usos'] if 'usos' in x else x['usos_dia'] / lutas_dia   # recurso diário repartido pelas lutas
+        total += min(1.0, usos / R) * algum * (avg + crit_rel * dad)
     if 'automatico' in spec: total += dados(spec['automatico'])[0]
     return round(total, 1)
 
 
-def avaliar(spec):
-    lista = [dpr(spec, ca) for ca in CAS]
+def avaliar(spec, lutas_dia=4):
+    lista = [dpr(spec, ca, lutas_dia) for ca in CAS]
     nv, perfil = nivel_equivalente(lista)
     return dict(dpr={f'CA {ca}': v for ca, v in zip(CAS, lista)}, nivel_eq=nv, rank=letra(nv), perfil=perfil)

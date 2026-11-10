@@ -4,16 +4,19 @@
  "grupo": "Party",
  "nivel": 7,
  "build": "Wizard 7 (Necromancy)",
- "impressao": "d402a855cf",
- "versao": "0.1.0",
+ "impressao": "199dfb5cdf",
+ "versao": "0.2.0",
  "modo": "completo",
  "linhas": {
   "principal": {
-   "hipotese": "7 esqueletos com meia cobertura + Chill Touch; Web ou Bestow Curse (CD 14)",
+   "hipotese": "7 esqueletos com meia cobertura + Chill Touch; Web ou Bestow Curse (CD 14); Shield: 4 espaços de 1º no dia = 1 por luta",
    "principal": [
     "dano",
     "defesa",
-    "controle"
+    "controle",
+    "saves",
+    "area",
+    "suporte"
    ],
    "dano": {
     "dpr": {
@@ -32,15 +35,119 @@
     "perfil": "Equilibrado"
    },
    "defesa": {
-    "pv_efetivo": 62,
-    "ca": 16,
-    "blindagem": 3.8,
-    "durabilidade": 2.8,
-    "nivel_blindagem": 4.0,
-    "nivel_durabilidade": 4.1,
-    "nivel_eq": 4.1,
+    "pv_efetivo": 53,
+    "ca": 14,
+    "blindagem": 3.59,
+    "durabilidade": 3.0,
+    "nivel_blindagem": 3.8,
+    "nivel_durabilidade": 4.3,
+    "nivel_eq": 4.3,
     "rank": "C",
-    "perfil": "Equilibrado"
+    "perfil": "Durável",
+    "reacoes_usadas": [
+     "shield"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.74,
+     "rank": "B-",
+     "turnos_livres": [
+      3.77,
+      3.57,
+      3.56,
+      3.14,
+      1.9,
+      1.78,
+      1.94,
+      1.68,
+      1.32,
+      1.11
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.27,
+     "rank": "A",
+     "turnos_livres": [
+      3.63,
+      2.8,
+      2.43,
+      2.26,
+      1.81,
+      1.48,
+      1.66,
+      1.49,
+      1.33,
+      1.29
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 8.1,
+    "rank": "B+",
+    "melhor": "Fireball",
+    "areas": [
+     {
+      "nome": "Fireball",
+      "tipo": "explosao",
+      "nivel_eq": 8.1,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 8.1,
+       "padrao": 8.1,
+       "agrupada": 8.42
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 2.13,
+    "defensivo": 2.84,
+    "total": 4.97,
+    "nivel_ofensivo": 0.5,
+    "nivel_defensivo": 4.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Inspiring Leader",
+    "fontes": [
+     {
+      "nome": "Inspiring Leader",
+      "lado": "def",
+      "valor": 2.53
+     },
+     {
+      "nome": "Máscara (Crusader's Mantle)",
+      "lado": "of",
+      "valor": 2.13
+     },
+     {
+      "nome": "Cure Wounds (Magic Initiate)",
+      "lado": "def",
+      "valor": 0.31
+     }
+    ]
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": false,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "controle": {
+      "3": 3,
+      "2": 1
+     },
+     "defesa": {
+      "1": 1
+     },
+     "saves": {
+      "3": 1
+     },
+     "area": {
+      "3": 1
+     }
+    }
    },
    "controle": {
     "nivel_eq": 5.95,
@@ -108,8 +215,44 @@
     "nivel_eq": 10.8,
     "rank": "A-",
     "perfil": "Bruto"
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {}
+   }
+  },
+  "shield-total": {
+   "hipotese": "Queima os 4 espaços de 1º em Shield numa luta só",
+   "principal": [],
+   "defesa": {
+    "pv_efetivo": 53,
+    "ca": 14,
+    "blindagem": 5.76,
+    "durabilidade": 3.7,
+    "nivel_blindagem": 5.9,
+    "nivel_durabilidade": 5.3,
+    "nivel_eq": 5.9,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "shield"
+    ]
+   },
+   "orcamento": {
+    "cenario": "luta_prioritaria",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "defesa": {
+      "1": 4
+     }
+    }
    }
   }
  },
- "segundos": 1.2
+ "segundos": 4.6
 }

@@ -4,6 +4,8 @@ Motor reconstruído em 03/11 (patch do Jamal/Virgil) e conferido com a planilha 
 Blindagem/Durabilidade = maior CR de horda/boss que o personagem aguenta 4 rounds sem cair (busca binária).
 O nível equivalente segue a aba Rampas da planilha "Ranks de defesa".
 """
+import numpy as np
+
 from .base import interp_degraus, letra
 
 T_DMG = [(0, 3, 0.5), (0.125, 3, 2.5), (0.25, 3, 4.5), (0.5, 3, 7), (1, 3, 11.5), (2, 3, 17.5), (3, 4, 23.5),
@@ -54,17 +56,95 @@ def _resolve(fn, pv, ac, adv, resist, red):
     return round(lo, 2)
 
 
-def avaliar(spec, corpo):
-    """spec: {"pv_efetivo", "ca", "adv" (−1/0/1: ataques contra ele), "resist" (bool), "red"}; o que faltar vem do corpo."""
+# ---------------- reações (Shield, Uncanny Dodge, Parry): simulação golpe a golpe ----------------
+N_SIM = 4000
+GRADE = (0.0, 0.6, 1.0, 1.4, 2.0, 3.0)   # "preço" de guardar a reação, em múltiplos do dano médio de um golpe
+REACOES = ('shield', 'uncanny_dodge', 'reduz_dano')
+
+
+def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7):
+    """Dano médio em R rounds com reações. O personagem vê o total do ataque (Shield) e o dano rolado
+    (Uncanny Dodge / Parry) antes de decidir, e pesa os golpes que ainda faltam no round.
+    Shield: gasta um uso se o golpe entra na faixa [CA, CA+5) e (dano evitado agora + esperado nos próximos
+    golpes do round) >= preço. Redução: 1 por round, no golpe que passar do preço (ou no último do round)."""
+    rng = np.random.default_rng(seed); D = _i(cr, 2)
+    if tipo == 'horda': n = max(3, min(10, round(D / (4 + cr / 2)))); bonus = 3 + cr / 3; magico = False
+    else: n = 2 if cr <= 4 else (3 if cr <= 16 else 4); bonus = _i(cr, 1) + 3; magico = cr >= 10
+    d = D / n
+    def liq(x):
+        if not magico: x = np.maximum(0, x - red)
+        return x / 2 if resist else x
+    dbar = float(liq(np.array(d)))
+    p_faixa = sum(1 for f in range(2, 20) if ac <= f + bonus < ac + 5) / 20
+    usos = {}
+    for i, rc in enumerate(reacoes):
+        u = rc.get('usos_luta', 99); usos[i] = np.floor(u) + (rng.random(N_SIM) < u - np.floor(u))
+    total = np.zeros(N_SIM)
+    for r in range(4):
+        adv = advs[r]; livre = rng.random(N_SIM) < livre_p; escudo = np.zeros(N_SIM, bool)
+        for j in range(n):
+            a = rng.integers(1, 21, N_SIM)
+            if adv: b = rng.integers(1, 21, N_SIM); a = np.maximum(a, b) if adv > 0 else np.minimum(a, b)
+            crit = a == 20; tot = a + bonus
+            hit = crit | ((a != 1) & (tot >= ac + 5 * escudo))
+            dmg = liq(d * (rng.random(N_SIM) + rng.random(N_SIM)) * np.where(crit, 1.6, 1.0)); rest = n - 1 - j
+            for i, rc in enumerate(reacoes):
+                pode = livre & hit & (usos[i] > 0)
+                if rc['tipo'] == 'shield':
+                    usa = pode & ~crit & ~escudo & (tot < ac + 5) & (dmg + rest * p_faixa * dbar >= precos[i] * dbar)
+                    escudo |= usa; hit &= ~usa
+                else:
+                    usa = pode & ((dmg >= precos[i] * dbar) | (rest == 0))
+                    dmg = np.where(usa, dmg * rc.get('fator', 0.5) if rc['tipo'] == 'uncanny_dodge'
+                                   else np.maximum(0, dmg - rc.get('valor', 0)), dmg)
+                usos[i] -= usa; livre &= ~usa
+            total += hit * dmg
+    return float(total.mean())
+
+
+def _resolve_sim(tipo, pv, ac, advs, resist, red, reacoes, livre_p):
+    import itertools
+    def melhor(cr):   # a política (preços) é otimizada: o jogador escolhe o limiar que mais poupa dano
+        return min(_sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, pr)
+                   for pr in itertools.product(GRADE, repeat=len(reacoes)))
+    lo, hi = 0.0, 30.0
+    for _ in range(22):
+        m = (lo + hi) / 2
+        if melhor(m) <= pv: lo = m
+        else: hi = m
+    return round(lo, 2)
+
+
+def _resolve_rounds(fn, pv, ac, advs, resist, red):
+    lo, hi = 0.0, 30.0
+    for _ in range(60):
+        m = (lo + hi) / 2
+        if sum(fn(m, ac, a, resist, red) for a in advs) <= pv: lo = m
+        else: hi = m
+    return round(lo, 2)
+
+
+def avaliar(spec, corpo, reacao_livre=1.0):
+    """spec: {"pv_efetivo", "ca", "adv" (−1/0/1: ataques contra ele) ou "adv_por_round": [4 valores],
+    "resist", "red", "reacoes": [{"tipo": "shield", "usos_luta": 2} | {"tipo": "uncanny_dodge"} |
+    {"tipo": "reduz_dano", "valor": 8, "usos_luta": 99}]}; o que faltar vem do corpo.
+    reacao_livre: fração dos rounds em que a reação NÃO foi gasta em outro eixo da mesma hipótese."""
     pv = spec.get('pv_efetivo', corpo['pv']); ac = spec.get('ca', corpo['ca'])
     adv = spec.get('adv', 0); resist = spec.get('resist', False); red = spec.get('red', corpo.get('red', 0))
     if 'medido' in spec:  # linhas cuja mecânica o motor ainda não modela (Shield, Absorb Elements, "barrado"…)
         bl, du = spec['medido']['blindagem'], spec['medido']['durabilidade']
     else:
-        bl, du = _resolve(horda, pv, ac, adv, resist, red), _resolve(boss, pv, ac, adv, resist, red)
+        advs = spec.get('adv_por_round', [adv] * 4)
+        reacoes = spec.get('reacoes', []) if reacao_livre > 0 else []
+        if reacoes:
+            bl = _resolve_sim('horda', pv, ac, advs, resist, red, reacoes, reacao_livre)
+            du = _resolve_sim('boss', pv, ac, advs, resist, red, reacoes, reacao_livre)
+        else:
+            bl, du = _resolve_rounds(horda, pv, ac, advs, resist, red), _resolve_rounds(boss, pv, ac, advs, resist, red)
     nb = round(interp_degraus(bl, LIM_BLINDAGEM, NIVEIS), 1)
     nd = round(interp_degraus(du, LIM_DURABILIDADE, NIVEIS), 1)
     lb, ld = letra(nb), letra(nd)
     perfil = 'Equilibrado' if lb == ld else ('Blindado' if nb > nd else 'Durável')
     return dict(pv_efetivo=pv, ca=ac, blindagem=bl, durabilidade=du, nivel_blindagem=nb,
-                nivel_durabilidade=nd, nivel_eq=max(nb, nd), rank=letra(max(nb, nd)), perfil=perfil)
+                nivel_durabilidade=nd, nivel_eq=max(nb, nd), rank=letra(max(nb, nd)), perfil=perfil,
+                reacoes_usadas=[r['tipo'] for r in spec.get('reacoes', [])] if reacao_livre > 0 else [])

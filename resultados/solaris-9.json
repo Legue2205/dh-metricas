@@ -4,8 +4,8 @@
  "grupo": "NPC",
  "nivel": 9,
  "build": "Wizard 9 (Evocation), Int 18, Fey Touched (Hex), Resilient (Con), War Caster",
- "impressao": "38fed54e4d",
- "versao": "0.1.0",
+ "impressao": "a891fe8dac",
+ "versao": "0.2.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -13,7 +13,10 @@
    "principal": [
     "dano",
     "defesa",
-    "controle"
+    "controle",
+    "saves",
+    "area",
+    "suporte"
    ],
    "dano": {
     "dpr": {
@@ -33,14 +36,102 @@
    },
    "defesa": {
     "pv_efetivo": 56,
-    "ca": 17,
-    "blindagem": 4.51,
-    "durabilidade": 3.21,
-    "nivel_blindagem": 4.6,
-    "nivel_durabilidade": 4.6,
-    "nivel_eq": 4.6,
+    "ca": 15,
+    "blindagem": 4.39,
+    "durabilidade": 3.35,
+    "nivel_blindagem": 4.5,
+    "nivel_durabilidade": 4.8,
+    "nivel_eq": 4.8,
     "rank": "C",
-    "perfil": "Equilibrado"
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "shield"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.7,
+     "rank": "B+",
+     "turnos_livres": [
+      3.77,
+      3.59,
+      3.59,
+      3.28,
+      2.32,
+      2.11,
+      2.56,
+      2.45,
+      1.91,
+      1.54
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.37,
+     "rank": "A",
+     "turnos_livres": [
+      3.63,
+      2.85,
+      2.51,
+      2.31,
+      1.82,
+      1.44,
+      1.7,
+      1.6,
+      1.38,
+      1.37
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 8.2,
+    "rank": "B+",
+    "melhor": "Luta comum: Fireball nv 3",
+    "areas": [
+     {
+      "nome": "Luta comum: Fireball nv 3",
+      "tipo": "explosao",
+      "nivel_eq": 8.19,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 8.19,
+       "padrao": 8.19,
+       "agrupada": 8.8
+      }
+     },
+     {
+      "nome": "Wall of Fire em linha",
+      "tipo": "explosao",
+      "nivel_eq": 4.55,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.55,
+       "padrao": 4.55,
+       "agrupada": 4.55
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": false,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "controle": {
+      "5": 1
+     },
+     "defesa": {
+      "1": 1
+     },
+     "saves": {
+      "1": 1,
+      "3": 1
+     },
+     "area": {
+      "4": 1,
+      "3": 1
+     }
+    }
    },
    "controle": {
     "nivel_eq": 8.81,
@@ -102,8 +193,49 @@
     "nivel_eq": 7.7,
     "rank": "B",
     "perfil": "Equilibrado"
+   },
+   "orcamento": {
+    "cenario": "dia_padrao",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {}
+   }
+  },
+  "area-prioritaria": {
+   "hipotese": "Luta prioritária: Fireball nv 5, 4, 4",
+   "principal": [],
+   "area": {
+    "nivel_eq": 9.7,
+    "rank": "B+",
+    "melhor": "Fireball nv 5, 4, 4",
+    "areas": [
+     {
+      "nome": "Fireball nv 5, 4, 4",
+      "tipo": "prioritaria",
+      "nivel_eq": 9.72,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 9.77,
+       "padrao": 9.72,
+       "agrupada": 14.44
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "cenario": "luta_prioritaria",
+    "reacao": [],
+    "soma_eixos": true,
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "area": {
+      "4": 2,
+      "5": 1
+     }
+    }
    }
   }
  },
- "segundos": 0.8
+ "segundos": 4.0
 }

@@ -22,8 +22,7 @@ def avaliar_linha(b, linha, modo='rapido', regua=None, eixos=None):
     if quer('saves'): out['saves'] = saves.avaliar(linha['saves'], corpo, livre)
     if quer('area'): out['area'] = area.avaliar(linha['area'], modo)
     if quer('suporte'): out['suporte'] = suporte.avaliar(linha['suporte'], b['nivel'])
-    conflito = any(a.startswith(f"linha {linha['id']}:") for a in orcamento.checar(b, campo.MAGIAS)[1])
-    out['orcamento'] = orcamento.resumo(linha, corpo, campo.MAGIAS, not conflito)
+    out['orcamento'] = orcamento.resumo(linha, b, campo.MAGIAS)
     if 'controle' in linha and (not eixos or 'controle' in eixos):
         campo.configurar(cfg['N'], 11)
         c = linha['controle']

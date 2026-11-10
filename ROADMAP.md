@@ -19,13 +19,14 @@ rodar motores, guardar resultados, atualizar o painel) é automático, sem o Cla
 | 4 | Controle declarativo (`fontes`, `plano`) com biblioteca única `magias.json` | 08/11 |
 | 5 | Uma linha = uma hipótese: reação e espaços de magia não contam duas vezes (`orcamento.py`). Reação duplicada = erro; espaços estourados = aviso "eixos não somam" | 10/11 |
 | 6 | Shield/Uncanny Dodge são recursos finitos com decisão informada (vê o ataque/dano, pesa o resto do round). Counterspell conta em controle e em saves, não em blindagem | 10/11 |
-| 7 | Padrão: 4 lutas por dia, 2 por descanso curto, 4 rounds por luta. Cenários: `dia_padrao` e `luta_prioritaria` | 10/11 |
-| 8 | **Armazenamento = o próprio Git** (`builds/` entrada, `resultados/` saída). Sem banco de dados por enquanto | 10/11 (proposta) |
-| 9 | **Automação = GitHub Actions**: a cada push roda testes + `dh completo` e commita `resultados/` e `PAINEL.md` | 10/11 (proposta) |
-| 10 | **Front-end = site estático** gerado dos `resultados/*.json` (Cloudflare Pages ou GitHub Pages). Sem back-end: os motores são Python/numpy com Monte Carlo, ruins para funções serverless da Vercel/Cloudflare | 10/11 (proposta) |
-| 11 | Google Sheets vira opcional (espelho/exportação), não fonte da verdade | 10/11 (proposta) |
+| 7 | Padrão: 4 lutas por dia (2 prioritárias que gastam o dobro de uma comum), 2 por descanso curto, 4 rounds por luta | 10/11 |
+| 7b | **Tags de orçamento automáticas por linha** (menor em que a linha cabe): `comum` (1/6 dos espaços do dia) < `prioritaria` (1/3) < `combate_unico` (dia inteiro) < `hypercharged_1.5` < `hypercharged_2.0` … (degraus de 0,5 dia). Substitui o aviso "eixos não somam" | 10/11 |
+| 8 | **Armazenamento = o próprio Git** (`builds/` entrada, `resultados/` saída). Sem banco de dados por enquanto | 10/11 (confirmada) |
+| 9 | **Automação = GitHub Actions**: a cada push roda testes + `dh completo` e commita `resultados/` e `PAINEL.md` | 10/11 (confirmada) |
+| 10 | **Front-end = site estático** gerado dos `resultados/*.json` (Cloudflare Pages ou GitHub Pages). Sem back-end: os motores são Python/numpy com Monte Carlo, ruins para funções serverless da Vercel/Cloudflare | 10/11 (confirmada) |
+| 11 | Google Sheets vira opcional (espelho/exportação), não fonte da verdade | 10/11 (confirmada) |
 
-Itens 8–11 são a recomendação do Claude; o usuário ainda precisa confirmar.
+Itens 8–11 confirmados pelo usuário em 10/11. **Repo público → site no GitHub Pages.**
 
 ### Por que não app com back-end + banco agora
 - Os dados são poucos arquivos JSON versionados: o Git já dá histórico, diff e backup.
@@ -51,13 +52,13 @@ atenção + absoluto), área, suporte, orçamento de recursos, CLI (`validar`, `
 3. **Dano calculado para todas as builds** (trocar `medido` por `ataques`); rotações com recursos.
 4. **Ganchos para mecânicas exóticas**: `golpes_extras_a_0pv` (o "barrado" do Ravin) já existe na defesa;
    seguir o mesmo padrão (campo genérico no JSON) para o que aparecer.
-5. Resolver os avisos de espaços (decisão do usuário: marcar "luta prioritária" ou dividir linhas).
+5. ~~Avisos de espaços~~ → resolvido com as tags (7b).
 6. Pendências de dados: saves de Jamal e Virgil (Caleb e Lucius já entraram); planos e suporte do Marcus; arquétipos e monstros.
 
 ### Fase 2 — automação (sem Claude no meio)
-7. Workflow do GitHub Actions (`.github/workflows/metricas.yml`, já no repo): conferir que roda e commita.
+7. ~~Workflow do GitHub Actions~~: roda com sucesso a cada push (conferido em 10/11).
 8. `dh site`: gera `site/index.html` estático (painel, página por build, comparação) a partir de `resultados/`.
-9. Publicar: Cloudflare Pages (funciona com repo privado, grátis) ou GitHub Pages (repo público ou plano pago).
+9. Publicar no GitHub Pages (repo público), pelo próprio workflow.
 10. Opcional: `dh exportar-sheets` no CI para manter as planilhas como espelho.
 
 ### Fase 3 — aplicação
@@ -65,6 +66,7 @@ atenção + absoluto), área, suporte, orçamento de recursos, CLI (`validar`, `
 12. Só se precisar: back-end/banco.
 
 ## Perguntas em aberto para o usuário
-- Confirmar decisões 8–11. Repo público ou privado (define GitHub Pages × Cloudflare Pages)?
-- Avisos de espaços: "luta prioritária" ou dividir em linhas?
 - Incluir ação/concentração no orçamento agora?
+
+## Próximo passo
+Fase 1, item 1 (invocações) e item 2 (ação/concentração); depois Fase 2, itens 8–9 (site).

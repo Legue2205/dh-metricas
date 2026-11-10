@@ -8,11 +8,10 @@ Uma linha = uma hipótese de luta. Regras checadas:
     (reacao_livre) é o que as reações de defesa (Shield, Uncanny Dodge, Absorb Elements, Counterspell) podem usar.
     Fontes de controle que dependem de reação (sentinela, parada_oa, counterspell) exigem um uso declarado
     com "controle" em eixos.
-  ESPAÇOS DE MAGIA. Se a build declara "recursos": {"espacos": {"1": 4, "2": 3, ...}, "lutas_dia": 4},
-    soma-se o que cada eixo da linha gasta numa luta e compara-se com o que cabe nela:
-      "cenario": "dia_padrao" (padrão)  -> espaços do dia ÷ lutas_dia
-      "cenario": "luta_prioritaria"     -> todos os espaços do dia nesta luta
-    Um gasto pode usar espaço maior que o necessário. Eixos sem leitura automática declaram
+  ESPAÇOS DE MAGIA. Se a build declara "recursos": {"espacos": {"1": 4, "2": 3, ...}}, soma-se o que todos
+    os eixos da linha gastam numa luta e a linha recebe a TAG do menor orçamento em que cabe:
+      comum (1/6 do dia) < prioritaria (1/3) < combate_unico (dia inteiro) < hypercharged_1.5 < hypercharged_2.0 ...
+    (dia padrão: 4 lutas, 2 prioritárias que gastam o dobro de uma comum; ajustável em "recursos"). Eixos sem leitura automática declaram
     "usa": {"espacos": {"3": 1}} dentro do eixo.
 """
 FONTES_REACAO = ('sentinela', 'parada_oa', 'counterspell')
@@ -66,11 +65,47 @@ def espacos_gastos(linha, corpo, magias):
     return out
 
 
+TAGS_BASE = ('comum', 'prioritaria', 'combate_unico')
+
+
+def fracoes(rec):
+    """Fração dos espaços do dia que cabe em cada tipo de luta. Padrão: 4 lutas, 2 prioritárias e 2 comuns,
+    a prioritária gasta o dobro de uma comum -> comum 1/6, prioritária 1/3; combate único = o dia inteiro."""
+    lutas = rec.get('lutas_dia', 4); pri = rec.get('prioritarias', 2); peso = rec.get('peso_prioritaria', 2)
+    unid = pri * peso + (lutas - pri)
+    return {'comum': 1 / unid, 'prioritaria': peso / unid, 'combate_unico': 1.0}
+
+
+def multiplicador(linha, b, magias):
+    """Quantos 'dias de espaços' a linha precisa numa luta (0 = não gasta espaço)."""
+    esp = {int(k): v for k, v in b.get('recursos', {}).get('espacos', {}).items()}
+    gasto = {}
+    for g in espacos_gastos(linha, b['corpo'], magias).values():
+        for k, v in g.items(): gasto[int(k)] = gasto.get(int(k), 0) + v
+    m = 0.0
+    for nv in gasto:  # gasto de nível >= nv tem que caber nos espaços >= nv
+        precisa = sum(v for k, v in gasto.items() if k >= nv); tem = sum(v for k, v in esp.items() if k >= nv)
+        m = max(m, precisa / tem if tem else float('inf'))
+    return m
+
+
+def tag(linha, b, magias):
+    """Menor hipótese de orçamento em que a linha cabe: comum < prioritaria < combate_unico < hypercharged_1.5
+    < hypercharged_2.0 < ... (degraus de 0,5 dia). Build sem 'recursos.espacos' declarados: 'sem_espacos'."""
+    if not b.get('recursos', {}).get('espacos'): return 'sem_espacos', None
+    m = multiplicador(linha, b, magias)
+    if m == 0: return 'comum', 0.0
+    for t, f in fracoes(b['recursos']).items():
+        if m <= f + 1e-9: return t, round(m, 3)
+    if m == float('inf'): return 'impossivel', m
+    k = 1.5
+    while m > k + 1e-9: k += 0.5
+    return f'hypercharged_{k:.1f}', round(m, 3)
+
+
 def checar(b, magias):
-    """(erros, avisos). Erro: reação contada duas vezes. Aviso: os eixos da linha, somados, gastam mais espaços
-    do que cabem na luta: cada eixo vale sozinho, mas a linha não pode somar os eixos."""
-    erros = []; avisos = []; rec = b.get('recursos', {}); esp = {int(k): v for k, v in rec.get('espacos', {}).items()}
-    lutas = rec.get('lutas_dia', 4)
+    """(erros, avisos). Erro: reação contada duas vezes. Espaços não geram erro: viram a tag de orçamento."""
+    erros = []; avisos = []
     for l in b['linhas']:
         nome = f"linha {l.get('id')}"
         usos = l.get('reacao', [])
@@ -90,20 +125,13 @@ def checar(b, magias):
         hard = l.get('controle', {}).get('atencao', {}).get('hard')
         if hard and not tem('controle'):
             erros.append(f'{nome}: controle.atencao.hard (parar inimigos com a reação) exige um uso de reação com "controle"')
-        if esp:
-            gasto = {}
-            for g in espacos_gastos(l, b['corpo'], magias).values():
-                for k, v in g.items(): gasto[int(k)] = gasto.get(int(k), 0) + v
-            fator = 1.0 if l.get('cenario', 'dia_padrao') == 'luta_prioritaria' else 1.0 / lutas
-            for nv in sorted(gasto, reverse=True):   # gasto de nível >= nv tem que caber nos espaços >= nv
-                precisa = sum(v for k, v in gasto.items() if k >= nv); tem_ = sum(v for k, v in esp.items() if k >= nv) * fator
-                if precisa > tem_ + 1e-9:
-                    avisos.append(f'{nome}: gasta {precisa:g} espaço(s) de nível {nv}+ numa luta, mas cabem {tem_:g} '
-                                 f'({l.get("cenario", "dia_padrao")}); mude o cenário, corte um gasto ou divida em linhas')
-                    break
+        t, m = tag(l, b, magias)
+        if t.startswith('hypercharged') or t == 'impossivel':
+            avisos.append(f'{nome}: precisa de {m:g}× os espaços do dia numa luta -> {t}')
     return erros, avisos
 
 
-def resumo(linha, corpo, magias, soma_eixos=True):
-    return dict(cenario=linha.get('cenario', 'dia_padrao'), reacao=linha.get('reacao', []), soma_eixos=soma_eixos,
-                reacao_livre=round(reacao_livre(linha), 2), espacos_por_eixo=espacos_gastos(linha, corpo, magias))
+def resumo(linha, b, magias):
+    t, m = tag(linha, b, magias)
+    return dict(tag=t, dias_de_espacos=m, reacao=linha.get('reacao', []),
+                reacao_livre=round(reacao_livre(linha), 2), espacos_por_eixo=espacos_gastos(linha, b['corpo'], magias))

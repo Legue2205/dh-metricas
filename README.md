@@ -137,9 +137,10 @@ Nenhum recurso é contado duas vezes dentro de uma linha (`dh/orcamento.py`):
   A soma das frações não passa de 1 (erro). O que sobra é o que Shield, Uncanny Dodge, Absorb Elements e
   Counterspell podem usar. Fontes de controle que usam reação (`sentinela`, `parada_oa`, `counterspell`,
   `atencao.hard`) exigem um uso declarado com `"controle"` em `eixos` (erro se faltar).
-- **Espaços de magia.** Com `"recursos": {"espacos": {"1": 4, "3": 3}, "lutas_dia": 4}` na build, o validador
-  soma o gasto de todos os eixos da linha numa luta. `"cenario": "dia_padrao"` (padrão) = espaços ÷ lutas;
-  `"luta_prioritaria"` = tudo numa luta. Estouro vira **AVISO** e a linha sai marcada "eixos não somam".
+- **Espaços de magia.** Com `"recursos": {"espacos": {"1": 4, "3": 3}}` na build, soma-se o gasto de todos os
+  eixos da linha numa luta e a linha recebe a **tag** do menor orçamento em que cabe: `comum` (1/6 do dia) <
+  `prioritaria` (1/3) < `combate_unico` (dia inteiro) < `hypercharged_1.5` < `hypercharged_2.0`…
+  Ajustável: `lutas_dia` (4), `prioritarias` (2), `peso_prioritaria` (2).
 - Recursos diários no dano e no suporte: `usos_dia` (repartido pelas lutas) em vez de `usos`.
 
 ## Os outros eixos
@@ -185,7 +186,6 @@ O Aprendiz, Pyotr, Solaris, Jamal, Virgil (+ um guerreiro de exemplo com dano ca
 
 ## Pendências
 
-- **Conflitos de espaços** apontados por `dh validar` (AVISO): decidir, linha a linha, o cenário ou dividir em linhas.
 - Ação e concentração ainda não entram no orçamento (só reação e espaços).
 - Ravin: defesa com "barrado" segue `medido` (o `defesa2.py` original não foi recuperado).
 - Marcus: planos de controle "luta prioritária"/"média do dia" e linhas de suporte dia/comum/prioritária.

@@ -63,8 +63,11 @@ def test_reacao_nao_duplica():
     assert any('usa a reação' in e for e in validar(y))
 
 
-def test_espacos_disputados_viram_aviso():
+def test_tags_de_orcamento():
     b = json.loads((B / 'amadeus-7.json').read_text(encoding='utf-8'))
+    L = {l['id']: l for l in b['linhas']}
+    assert orcamento.tag(L['principal'], b, MAGIAS)[0] == 'hypercharged_1.5'   # 5 espaços de 3º+ contra 4 no dia
+    assert orcamento.tag(L['shield-total'], b, MAGIAS)[0] == 'combate_unico'    # 4 Shields de 1º numa luta
+    assert orcamento.fracoes({}) == {'comum': 1 / 6, 'prioritaria': 1 / 3, 'combate_unico': 1.0}
     erros, avisos = orcamento.checar(b, MAGIAS)
-    assert erros == [] and any('linha principal' in a for a in avisos)
-    assert not any('shield-total' in a for a in avisos)      # 4 Shields numa luta prioritária cabem
+    assert erros == [] and any('hypercharged' in a for a in avisos)

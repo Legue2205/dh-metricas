@@ -55,7 +55,6 @@ def validar(b):
         for f in (l.get('suporte') or {}).get('fontes', []):
             if f.get('modelo') not in MODELOS: e.append(f'{nome}: suporte com modelo desconhecido "{f.get("modelo")}"')
             if f.get('lado') not in ('of', 'def'): e.append(f'{nome}: fonte de suporte sem "lado" (of/def)')
-        if l.get('cenario', 'dia_padrao') not in ('dia_padrao', 'luta_prioritaria'): e.append(f'{nome}: cenario inválido')
         d = l.get('dano')
         if d is not None:
             if 'medido' in d and len(d['medido']) != 9: e.append(f'{nome}: dano.medido precisa de 9 valores (CA 11…25)')

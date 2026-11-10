@@ -27,7 +27,7 @@ def _resumo(res):
           f"{' (cache)' if res.get('_cache') else ''}, {res.get('segundos', 0)} s")
     for lid, l in res['linhas'].items():
         marca = '' if not l['principal'] else (' *' if len(l['principal']) == 3 else ' *' + '/'.join(l['principal']))
-        print(f"  [{lid}{marca}] {l['hipotese'][:90]}")
+        print(f"  [{lid}{marca}] ({l.get('orcamento', {}).get('tag', '-')}) {l['hipotese'][:80]}")
         if 'dano' in l:
             d = l['dano']; dp = d['dpr']
             print(f"    Dano     {d['rank']:>2}  nível eq {_fmt(d['nivel_eq'])}  ({d['perfil']})  "
@@ -49,7 +49,7 @@ def _resumo(res):
         o = l.get('orcamento', {})
         if o.get('reacao') or o.get('espacos_por_eixo'):
             esp = '; '.join(f"{e}: " + ', '.join(f"{v:g}×{k}º" for k, v in sorted(g.items())) for e, g in o['espacos_por_eixo'].items())
-            print(f"    Recursos     {o['cenario']}{'' if o.get('soma_eixos', True) else ' · EIXOS NÃO SOMAM (espaços disputados)'} · reação livre {_fmt(float(o['reacao_livre']), 2)}" + (f" · espaços: {esp}" if esp else ''))
+            print(f"    Recursos     tag {o['tag']} · reação livre {_fmt(float(o['reacao_livre']), 2)}" + (f" · espaços: {esp}" if esp else ''))
         if 'controle' in l:
             c = l['controle']
             ab = f"  absoluto {_fmt(c['nivel_absoluto'])} ({c['rank_absoluto']})" if 'nivel_absoluto' in c else ''

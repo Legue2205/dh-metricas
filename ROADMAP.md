@@ -65,6 +65,32 @@ atenção + absoluto), área, suporte, orçamento de recursos, CLI (`validar`, `
 11. Formulário no site para criar/editar build (gera JSON + commit pela API do GitHub).
 12. Só se precisar: back-end/banco.
 
+
+## Proposta: plano de orçamento do dia (10/11, aguardando confirmação)
+
+Pedido do usuário: a decisão de como gastar os recursos é qualitativa e deve ser tomada **na discussão da
+build**, escrita no JSON, e não por fração automática nem por agente no workflow.
+
+1. **Tag = premissa diária**, poucas: `padrao` (4 combates: NP1, P1, descanso curto, NP2, P2),
+   `combate_unico` (1 combate, todos os recursos) e `dia_longo` (a definir).
+2. **Plano do dia no JSON**: para cada tag, a sequência de combates; cada combate diz, round a round, o que o
+   personagem faz e com qual recurso ("R1 Faerie Fire 1º; R2–R4 espada"; "bárbaro: Fúria só nos prioritários").
+   Também a postura (linha de frente ou não), que muda o controle de corpo/atenção daquele combate.
+3. **Livro-caixa automático**: o validador desconta cada gasto do dia (espaços, pacto e ki voltam no descanso
+   curto, Fúria por descanso longo, etc.). Gastar o que não tem = **erro**. O que sobra aparece como
+   "sobra para utilidade". Gastar 100% é permitido (sem coeficiente de folga), mas fica visível que não há sobra.
+4. **Cada combate é avaliado em todos os eixos**, com os motores atuais, a partir do que foi gasto nele.
+5. **Resultado da tag padrão**: média do dia (ponderada, mais peso nos prioritários) **e** separados:
+   média dos prioritários e média dos não prioritários, para ver os "picos" (ex.: Marcus com mais dano no NP e
+   mais controle no P).
+6. As tags automáticas `comum/prioritaria/hypercharged` saem; a comparação entre builds é sempre na mesma tag.
+
+Etapas: (a) formato do plano + livro-caixa + agregação, reaproveitando os eixos por combate como hoje;
+(b) modelo de ação round a round unificado, em que uma ação alimenta dano, controle, área e suporte ao mesmo tempo.
+
+Perguntas: peso dos prioritários na média (2:1? 1:1?); definição do `dia_longo`; orçamento estourado é sempre
+erro ou existe uma tag explícita `hypercharged`?
+
 ## Perguntas em aberto para o usuário
 - Incluir ação/concentração no orçamento agora?
 

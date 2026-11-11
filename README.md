@@ -77,6 +77,10 @@ Uma linha pode ter só alguns eixos (ex.: uma linha só de defesa para "postura 
 
 ### dano
 
+Regra da mesa: o crítico **multiplica** o dado (×2; ×3 com Piercer) em vez de rolar dados extras. A média é a
+mesma, então o motor não muda; só efeitos que mexem num dado (rerrolagem do Piercer) ganham o multiplicador,
+e isso é declarado na build (`por_turno` com `"gatilho": "critico"`).
+
 ```jsonc
 "dano": {
   "ataques":   [{"n": 2, "bonus": 7, "dano": "1d8+6", "crit_em": 19, "vantagem": 0.0},

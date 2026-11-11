@@ -63,7 +63,7 @@ def _ignorar():
     ('fjord-9.json', 5.7, 5.2, 3.6),
     ('miau-8.json', 4.5, 4.1, 0.8),
     ('caleb-14.json', 0.8, 0.8, 0.7),
-    ('lucius-15.json', 2.2, 0.8, 1.5),
+    ('lucius-15.json:montado', 2.2, 0.8, 1.5),
     ('aprendiz-11.json', 3.6, 0.8, 3.1),
     ('pyotr-14.json', 3.0, 6.2, 0.0),
     ('jamal-9.json', 2.7, 0.7, 2.4),

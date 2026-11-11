@@ -4,6 +4,10 @@ Objetivo: adicionar ou mudar uma build gastando poucos tokens e sem divergir dos
 
 - **Nunca reescreva um motor numa conversa.** Os números vêm de `python -m dh …`. Se faltar mecânica,
   adicione um tipo de fonte em `dh/controle/efeitos.py` (ou uma magia em `magias.json`) com um teste em `tests/`.
+- **Fonte das builds:** a pasta do Drive "Builds RPG/Biblioteca de builds (md)", um `<id>.md` por build, no formato de
+  `prompts/prompt-build.md` (seção 3.3). Leia o .md, não o Google Doc (os Docs têm imagens e são grandes).
+  Mapeamento .md → JSON: Ficha → corpo/saves; Recursos do dia → recursos; Ataques → dano; Controle/Área/Suporte →
+  eixos; Modos de jogo → linhas; Plano do dia → planos; Resumo e textos → descricao.
 - **A ficha é lida uma vez.** Extraia o que importa para `builds/<id>.json` e trabalhe só com o JSON depois.
   Docs de personagem podem ter vários MB: leia só as seções de atributos, ataques, magias e features.
 - **Não leia as planilhas para descobrir a estrutura**: o layout está no README e em `dh linhas`.

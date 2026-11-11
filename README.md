@@ -45,6 +45,9 @@ tests/               paridade com as planilhas
 
 ## Caminho de uma build nova
 
+0. Gerar a build com o prompt padrão `prompts/prompt-build.md` (Gemini, Claude…): ele devolve a Saída Formal
+   para o Google Doc e um arquivo `<id>.md` para a pasta do Drive "Builds RPG/Biblioteca de builds (md)".
+
 1. Ler a ficha **uma vez** e escrever `builds/<id>.json` (copie um parecido).
 2. `python -m dh validar builds/<id>.json`
 3. `python -m dh rapido builds/<id>.json` para conferir; `completo` quando for para a planilha.

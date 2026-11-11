@@ -142,3 +142,28 @@ def test_concentracao_e_acao_bonus():
     assert validar(b) == []
     b['linhas'][0]['acao_bonus'] = [{"uso": "a", "fracao": 0.7, "eixos": ["dano"]}, {"uso": "b", "fracao": 0.5, "eixos": ["controle"]}]
     assert any('ação bônus está contada mais de uma vez' in e for e in validar(b))
+
+
+def test_perfil_de_corpo_e_defesas_compostas():
+    from dh import base
+    from dh.controle.total import perfil_corpo
+    assert perfil_corpo(0.67, -0.171, 0.841)[1] == 'Tank'           # Abdul, como na planilha
+    assert perfil_corpo(0.57, 0.40, 0.17)[1] == 'Fortaleza'
+    assert perfil_corpo(0.0, 0.2, -0.2)[1] == 'Redirecionador' and perfil_corpo(0.02, 0.01, 0.01)[1] == 'Neutro'
+    assert perfil_corpo(-0.3, 0.2, -0.5)[1] == 'Deixa na Mão' and perfil_corpo(-0.3, -0.5, 0.2)[1] == 'Alvo Frágil'
+    assert base.defesa_fisica(9, 6) == 8 and base.defesa_magica(9, 6) == 8
+    assert base.defesa_fisica(9, None) == 9 and base.defesa_magica(None, 6) is None
+
+
+def test_site_gera(tmp_path):
+    from dh import site
+    d = site.dados()
+    assert {e['tipo'] for e in d['entradas']['legado']} == {'principal', 'linha'}
+    k = next(e for e in d['entradas']['padrao'] if e['b'] == 'kael-7')
+    assert set(k['eixos']) >= {'dano', 'deff', 'defm', 'controle'} and 'c' in k['eixos']['dano']
+    assert '/*DADOS*/null' not in site.gerar(tmp_path / 'i.html').read_text(encoding='utf-8')
+
+
+def test_descricao_tem_tamanho_maximo():
+    b = _caster(); b['descricao'] = {'resumo': 'x' * 301}
+    assert any('máximo 300' in e for e in validar(b))

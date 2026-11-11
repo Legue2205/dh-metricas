@@ -1,68 +1,230 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DragonHeist — métricas de builds</title>
+<html lang="pt-BR" data-tema="escuro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DragonHeist — Salão das Builds</title>
 <style>
-:root{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--line:#e4e3df;--card:#f4f3f0;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100}
-@media(prefers-color-scheme:dark){:root{--bg:#1a1a19;--ink:#f0efec;--ink2:#c3c2b7;--line:#383835;--card:#242423;--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,sans-serif}
-main{max-width:1000px;margin:0 auto;padding:20px 14px 60px}h1{font-size:21px;margin:0 0 2px}h2{font-size:17px;margin:26px 0 8px}
-p.sub{color:var(--ink2);margin:0 0 14px}.filtros{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
-button.t{border:1px solid var(--line);background:none;color:var(--ink);padding:6px 12px;border-radius:16px;cursor:pointer;font:inherit}
-button.t[aria-pressed=true]{background:var(--ink);color:var(--bg)}
-.rol{overflow-x:auto}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
-th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}
-th{color:var(--ink2);font-weight:500;cursor:pointer;user-select:none}tbody tr{cursor:pointer}tbody tr:hover,tbody tr.sel{background:var(--card)}
-.rk{display:inline-block;min-width:26px;font-weight:600}.sem{color:var(--ink2)}
-.card{background:var(--card);border-radius:10px;padding:14px;margin-top:10px}
-.eixo{display:grid;grid-template-columns:92px 1fr 150px;gap:10px;align-items:center;margin:7px 0}
-.eixo .v{color:var(--ink2);font-size:13px;text-align:right}svg{display:block;width:100%;height:22px;overflow:visible}
-.leg{display:flex;gap:14px;flex-wrap:wrap;color:var(--ink2);font-size:13px;margin:6px 0 10px}.leg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
-.leg i.b{border-radius:2px;width:14px;height:8px}ul{margin:6px 0;padding-left:18px}li{margin:3px 0}small{color:var(--ink2)}
-#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);padding:4px 8px;border-radius:6px;font-size:12px;display:none;z-index:9}
+:root{--bg:#16120e;--bg2:#1c1712;--panel:#211b15;--panel2:#2b231b;--ink:#efe6d5;--ink2:#b9ad98;--line:#3d3227;--gold:#d9ad4a;
+ --c-dano:#e66767;--c-deff:#3987e5;--c-defm:#c98500;--c-controle:#9085e9;--c-area:#d95926;--c-suporte:#199e70;
+ --sa:#3987e5;--sb:#d95926;--bom:#3fae6a;--ruim:#e06a5f}
+[data-tema=claro]{--bg:#efe5cf;--bg2:#e8dcc0;--panel:#fbf6ea;--panel2:#f1e7d0;--ink:#2a2018;--ink2:#6b5d4a;--line:#d6c7a6;--gold:#8f6a0c;
+ --c-dano:#d03b3b;--c-deff:#2a78d6;--c-defm:#b07d00;--c-controle:#6250d6;--c-area:#c2410c;--c-suporte:#0f8f63;
+ --sa:#2a78d6;--sb:#c2410c;--bom:#1d7f45;--ruim:#b93a30}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);background-image:radial-gradient(circle at 20% -10%,var(--panel2),transparent 55%);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1180px;margin:0 auto;padding:0 14px 70px}
+header{display:flex;align-items:center;gap:14px;padding:18px 0 14px;border-bottom:2px solid var(--gold);margin-bottom:14px}
+header .brasao{font-size:34px;line-height:1}
+h1{font:600 26px/1.1 "Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;letter-spacing:.04em;margin:0;color:var(--gold);font-variant:small-caps}
+header p{margin:2px 0 0;color:var(--ink2);font-size:13px}
+header .dir{margin-left:auto}
+h2{font:600 20px/1.2 "Palatino Linotype",Palatino,Georgia,serif;margin:0;color:var(--gold)}
+button,select,input{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+button{cursor:pointer}button:hover{border-color:var(--gold)}
+input[type=number]{width:84px}input[type=search]{min-width:200px;flex:1}
+.abas{display:flex;gap:6px;flex-wrap:wrap}
+.aba{border-radius:10px 10px 0 0;border-bottom:none;padding:8px 14px;background:var(--bg2);color:var(--ink2)}
+.aba[aria-pressed=true]{background:var(--panel);color:var(--gold);border-color:var(--gold);font-weight:600}
+.aba small{opacity:.8}
+.painel{background:var(--panel);border:1px solid var(--line);border-radius:0 12px 12px 12px;padding:12px}
+.linha{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.linha label{color:var(--ink2);font-size:13px}
+.pill{border-radius:16px;padding:4px 11px;font-size:13px}
+.pill[aria-pressed=true]{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:600}
+.fchip{background:var(--panel2);border-color:var(--gold)}
+.cont{color:var(--ink2);font-size:13px;margin-left:auto}
+.rol{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--panel)}
+thead th{background:var(--panel2)!important;color:var(--ink2);font-weight:600;font-size:13px;cursor:pointer;user-select:none}
+thead th.on{color:var(--gold)}
+tbody tr{cursor:pointer}tbody tr:hover td,tbody tr.sel td{background:var(--panel2)}
+tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
+td small{color:var(--ink2)}.tag{font-size:11px;border:1px solid var(--line);border-radius:10px;padding:1px 7px;color:var(--ink2);margin-left:4px}
+.sem{color:var(--ink2);opacity:.6}
+.rk{display:inline-block;min-width:30px;text-align:center;border-radius:6px;padding:1px 5px;font-weight:700;font-size:13px;color:#fff;margin-right:4px}
+.rF{background:#5c5650}.rE{background:#857868}.rD{background:#a8672e}.rC{background:#2e8b57}.rB{background:#2a78d6}.rA{background:#7b4fd6}
+.rS{background:linear-gradient(#f3cd58,#cf9a1c);color:#1a1408;box-shadow:0 0 0 1px #f3cd58}
+#det{margin-top:18px}
+.topo{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start;margin-bottom:10px}
+.topo .t{flex:1;min-width:240px}.topo p{margin:4px 0 0;color:var(--ink2)}
+.duo{display:grid;grid-template-columns:minmax(280px,500px) 1fr;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+@media(max-width:760px){.duo{grid-template-columns:1fr}}
+svg.radar{width:100%;height:auto;display:block}
+.anel{fill:none;stroke:var(--line);stroke-width:1}.anelt{fill:var(--ink2);font-size:10px}.eixot{fill:var(--ink);font-size:12px}
+.leg{display:flex;gap:14px;flex-wrap:wrap;color:var(--ink2);font-size:13px;justify-content:center;margin-top:4px}
+.leg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.leg svg{width:26px;height:8px;margin-right:5px}
+.res{display:grid;gap:6px}
+.res .r{display:grid;grid-template-columns:120px 1fr;gap:8px;align-items:center;padding:5px 8px;border-left:4px solid var(--c);background:var(--panel2);border-radius:6px}
+.res .r small{color:var(--ink2)}
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-top:10px}
+summary{cursor:pointer;padding:10px 12px;font-weight:600;display:flex;gap:8px;align-items:center;list-style:none}
+summary::-webkit-details-marker{display:none}summary::after{content:"▸";margin-left:auto;color:var(--ink2)}details[open]>summary::after{content:"▾"}
+.corpo{padding:0 12px 12px}.corpo p{margin:0 0 8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:10px;margin-top:10px}
+.cards details{margin:0;border-top:4px solid var(--c)}
+.cards summary .ic{font-size:18px}.cards summary b{font-family:"Palatino Linotype",Palatino,Georgia,serif;font-size:17px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px;margin:8px 0}
+.st{background:var(--panel2);border-radius:8px;padding:6px 8px}.st>span{display:block;color:var(--ink2);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+.st b{font-size:14px;font-weight:600;white-space:normal}
+.sub{border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}.sub h4{margin:0 0 6px;font-size:14px;color:var(--ink2)}
+.bars{display:grid;gap:3px;margin:6px 0}
+.bar{display:grid;grid-template-columns:118px 1fr 44px;gap:8px;align-items:center;font-size:12px}
+.bar span{color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar div{height:9px;background:var(--panel2);border-radius:4px}.bar i{display:block;height:9px;background:var(--c);border-radius:0 4px 4px 0;min-width:2px}
+.bar b{text-align:right;font-weight:600}
+.vazio{color:var(--ink2);font-style:italic}
+.pos{color:var(--bom);font-weight:700}.neg{color:var(--ruim);font-weight:700}
+table.cmp td,table.cmp th{white-space:normal}table.cmp td:first-child{position:static}
+table.cmp tr.g td{background:var(--panel2);font-weight:700;border-left:4px solid var(--c);text-align:left}
+td.w{color:var(--bom);font-weight:700}td.l{color:var(--ruim)}
+ul.h{margin:6px 0 0;padding-left:18px}ul.h li{margin:4px 0}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);padding:4px 8px;border-radius:6px;font-size:12px;display:none;z-index:9;max-width:260px}
 </style></head><body><main>
-<h1>DragonHeist — métricas de builds</h1>
-<p class="sub">Nível equivalente e letra por eixo. Gerado automaticamente do repositório <a href="https://github.com/Legue2205/dh-metricas" style="color:inherit">dh-metricas</a>.</p>
-<div class="filtros" id="tags" role="group" aria-label="Plano do dia"></div>
-<p class="sub" id="nota"></p>
-<div class="rol"><table><thead><tr id="cab"></tr></thead><tbody id="corpo"></tbody></table></div>
+<header><div class="brasao">🐉</div><div><h1>DragonHeist · Salão das Builds</h1><p>Nível equivalente e rank por atributo. Gerado automaticamente do repositório <a href="https://github.com/Legue2205/dh-metricas" style="color:inherit">dh-metricas</a>.</p></div>
+<div class="dir"><button id="tema" title="Trocar tema">☀️ / 🌙</button></div></header>
+<div class="abas" id="abas" role="group" aria-label="Premissa do dia"></div>
+<div class="painel">
+ <div class="linha"><input type="search" id="busca" placeholder="Buscar por nome ou build…" aria-label="Buscar"><span id="grupos" class="linha" style="margin:0"></span>
+  <label id="lp" style="display:none"><input type="checkbox" id="sop" checked> Só linha principal</label></div>
+ <div class="linha"><label>Filtrar:</label><select id="fc" aria-label="Campo"></select><select id="fo" aria-label="Operador"><option>&gt;=</option><option>&lt;=</option><option>=</option></select>
+  <input type="number" id="fv" step="0.1" placeholder="valor" aria-label="Valor"><button id="fadd">+ filtro</button><span id="fchips" class="linha" style="margin:0"></span></div>
+ <div class="linha"><label>Ordenar por:</label><select id="oc" aria-label="Ordenar por"></select><button id="od"></button><span class="cont" id="cont"></span></div>
+ <div class="rol"><table><thead><tr id="cab"></tr></thead><tbody id="corpo"></tbody></table></div>
+</div>
 <div id="det"></div><div id="tip"></div>
 </main><script>
 const D=/*DADOS*/null;
-const EIXOS=[['dano','Dano'],['defesa','Defesa'],['resiliencia','Resiliência'],['vontade','Vontade'],['controle','Controle'],['area','Área'],['suporte','Suporte']];
-const CORES={np:'var(--s2)',p:'var(--s3)',mod:'var(--s3)',boss:'var(--s4)'};
-const NOMES={padrao:'Dia padrão (4 combates)',combate_unico:'Combate único',dia_longo:'Dia longo (8 combates)'};
-let tag='padrao',ord=null,sel=null;
-const f=x=>x==null?'–':x.toFixed(1).replace('.',',');
-function nota(b,e){const p=b.planos&&b.planos[tag];
-  if(p){const x=p.eixos[e];return x?{n:x.nivel_eq,r:x.rank,c:x.por_categoria}:null}
-  for(const l of Object.values(b.linhas)){const k=(e=='resiliencia'||e=='vontade')?'saves':e;
-    if(l.principal.includes(k)&&l[k]){const x=k=='saves'?l[k][e]:l[k];if(x.nivel_eq!=null)return{n:x.nivel_eq,r:x.rank}}}
-  return null}
-function desenha(){
-  document.getElementById('tags').innerHTML=D.tags.map(t=>`<button class="t" aria-pressed="${t==tag}" data-t="${t}">${NOMES[t]}</button>`).join('');
-  document.getElementById('nota').textContent='Builds com ~ ainda não têm plano para esta premissa: mostram a linha principal.';
-  document.getElementById('cab').innerHTML='<th data-o="id">Build</th><th data-o="nv">Nv</th>'+EIXOS.map(e=>`<th data-o="${e[0]}">${e[1]}</th>`).join('');
-  let bs=[...D.builds];
-  if(ord)bs.sort((a,b)=>ord=='id'?a.nome.localeCompare(b.nome):ord=='nv'?b.nivel-a.nivel:((nota(b,ord)||{n:-1}).n-(nota(a,ord)||{n:-1}).n));
-  document.getElementById('corpo').innerHTML=bs.map(b=>`<tr data-id="${b.id}" class="${b.id==sel?'sel':''}"><td>${b.planos&&b.planos[tag]?'':'<span class="sem">~</span>'}${b.nome} <small>${b.grupo}</small></td><td>${b.nivel}</td>`+
-    EIXOS.map(e=>{const n=nota(b,e[0]);return n?`<td><span class="rk">${n.r}</span> ${f(n.n)}</td>`:'<td class="sem">–</td>'}).join('')+'</tr>').join('');
-  detalhe()}
-function detalhe(){const el=document.getElementById('det'),b=D.builds.find(x=>x.id==sel);if(!b){el.innerHTML='';return}
-  const p=b.planos&&b.planos[tag];let h=`<h2>${b.nome} <small>nível ${b.nivel} · ${b.build||''}</small></h2><div class="card">`;
-  const cats=p?[...new Set(p.combates.map(c=>c.categoria))]:[];
-  h+='<div class="leg"><span><i class="b" style="background:var(--s1)"></i>'+(p?'média do dia':'linha principal')+'</span>'+cats.map(c=>`<span><i style="background:${CORES[c]}"></i>${D.categorias[c]}</span>`).join('')+'</div>';
-  for(const e of EIXOS){const n=nota(b,e[0]);if(!n)continue;const W=n.n/20*100;
-    h+=`<div class="eixo"><div>${e[1]}</div><svg viewBox="0 0 100 22" preserveAspectRatio="none"><line x1="0" x2="100" y1="11" y2="11" stroke="var(--line)" vector-effect="non-scaling-stroke"/>`+
-     `<rect x="0" y="6" width="${W}" height="10" rx="1" fill="var(--s1)" data-tip="${e[1]}: ${p?'dia ':''}${n.r} ${f(n.n)}"/>`+
-     (n.c?Object.entries(n.c).map(([c,v])=>`<g data-tip="${e[1]}, ${D.categorias[c]}: ${f(v)}"><rect x="${v/20*100-3}" y="0" width="6" height="22" fill="transparent"/><line x1="${v/20*100}" x2="${v/20*100}" y1="1" y2="21" stroke="var(--bg)" stroke-width="5" vector-effect="non-scaling-stroke"/><line x1="${v/20*100}" x2="${v/20*100}" y1="1" y2="21" stroke="${CORES[c]}" stroke-width="3" vector-effect="non-scaling-stroke"/></g>`).join(''):'')+
-     `</svg><div class="v"><b style="color:var(--ink)">${n.r} ${f(n.n)}</b>${n.c?' · '+Object.entries(n.c).map(([c,v])=>c+' '+f(v)).join(' · '):''}</div></div>`}
-  if(p){const sb=p.sobra,esp=Object.entries(sb.espacos||{}).map(([k,v])=>`${v}×${k}º`),o=Object.entries(sb).filter(([k])=>k!='espacos').map(([k,v])=>`${v} ${k}`);
-    h+=`<p><b>Plano:</b> ${p.combates.map(c=>`${c.linha} <small>(${c.categoria})</small>`).join(' → ')}${p.hypercharged!=1?` · <b>hypercharged ×${p.hypercharged}</b>`:''}<br><b>Sobra para utilidade:</b> ${[...esp,...o].join(', ')||'nada'}</p>`}
-  h+='<b>Hipóteses (linhas)</b><ul>'+Object.entries(b.linhas).map(([id,l])=>`<li><b>${id}</b>: ${l.hipotese||''} <small>${EIXOS.map(e=>{const k=(e[0]=='resiliencia'||e[0]=='vontade')?'saves':e[0];const x=l[k]&&(k=='saves'?l[k][e[0]]:l[k]);return x&&x.nivel_eq!=null?`${e[1]} ${x.rank} ${f(x.nivel_eq)}`:null}).filter(Boolean).join(' · ')}</small></li>`).join('')+'</ul></div>';
-  el.innerHTML=h}
-document.addEventListener('click',ev=>{const t=ev.target.closest('[data-t]'),o=ev.target.closest('[data-o]'),r=ev.target.closest('tr[data-id]');
-  if(t){tag=t.dataset.t;desenha()}else if(o){ord=o.dataset.o;desenha()}else if(r){sel=sel==r.dataset.id?null:r.dataset.id;desenha();if(sel)document.getElementById('det').scrollIntoView({behavior:'smooth',block:'nearest'})}});
-const tip=document.getElementById('tip');
-document.addEventListener('mousemove',ev=>{const g=ev.target.closest('[data-tip]');if(g){tip.textContent=g.dataset.tip;tip.style.display='block';tip.style.left=Math.min(ev.clientX+12,innerWidth-200)+'px';tip.style.top=ev.clientY+14+'px'}else tip.style.display='none'});
-desenha();
+const AX=[{k:'dano',n:'Dano',i:'⚔️',res:'dano'},{k:'deff',n:'Def. Física',i:'🛡️',res:'defesa'},{k:'defm',n:'Def. Mágica',i:'🔮',res:'saves'},
+ {k:'controle',n:'Controle',i:'🕸️',res:'controle'},{k:'area',n:'Área',i:'💥',res:'area'},{k:'suporte',n:'Suporte',i:'💚',res:'suporte'}];
+const ABAS={padrao:'Dia padrão',combate_unico:'Combate único',dia_longo:'Dia longo',legado:'Legado'};
+const NUM=[['nivel','Nível'],['pv','PV'],['ca','CA'],...AX.map(a=>[a.k,a.n]),['dpr15','DPR em CA 15']];
+const CAMPOS=[['nome','Nome'],...NUM];
+const TRACO={np:'2 3',p:'7 3',mod:'7 3',boss:'11 3 2 3'};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const f=(x,c=1)=>x==null?'–':Number(x).toFixed(c).replace('.',',');
+const sg=x=>x==null?'–':`<span class="${x>0.005?'pos':x<-0.005?'neg':''}">${x>0?'+':''}${f(x,2)}</span>`;
+const letra=n=>{let r='F';for(const [l,v] of D.rampa)if(n>=v-1e-9)r=l;return r};
+const chip=r=>r?`<span class="rk r${r[0]}">${r}</span>`:'';
+const nota=x=>x?chip(x.r)+f(x.n):'<span class="sem">–</span>';
+const S={aba:D.abas.reduce((m,a)=>D.entradas[a].length>D.entradas[m].length?a:m,D.abas[0]),busca:'',grupos:new Set(),sop:true,filtros:[],ord:'nome',dir:1,sel:null,cmp:null};
+const B=e=>D.builds[e.b];
+const LN=(e,res)=>{const id=e&&e.fonte[res];return id?B(e).linhas[id]:null};
+const R=(e,res)=>{const l=LN(e,res);return l?l.res[res]:null};
+const val=(e,c)=>c=='nome'?(B(e).nome+' '+e.rotulo).toLowerCase():c=='nivel'?B(e).nivel:c=='pv'?e.pv:c=='ca'?e.ca:c=='dpr15'?e.dpr15:(e.eixos[c]||{}).n;
+const nomeE=e=>B(e).nome+(e.tipo=='linha'?' · '+e.rotulo:'');
+
+function visiveis(){let es=D.entradas[S.aba];
+ if(S.aba=='legado')es=es.filter(e=>S.sop?e.tipo=='principal':e.tipo=='linha');
+ const q=S.busca.trim().toLowerCase();
+ es=es.filter(e=>(!q||(B(e).nome+' '+e.rotulo+' '+B(e).build).toLowerCase().includes(q))&&(!S.grupos.size||S.grupos.has(B(e).grupo))&&
+  S.filtros.every(F=>{const v=val(e,F.c);return v!=null&&(F.op=='>='?v>=F.v:F.op=='<='?v<=F.v:Math.abs(v-F.v)<0.05)}));
+ return [...es].sort((a,b)=>{const x=val(a,S.ord),y=val(b,S.ord);if(x==null)return y==null?0:1;if(y==null)return -1;return (typeof x=='string'?x.localeCompare(y):x-y)*S.dir})}
+
+function controles(){
+ $('#abas').innerHTML=D.abas.map(a=>`<button class="aba" aria-pressed="${a==S.aba}" data-aba="${a}">${ABAS[a]} <small>(${new Set(D.entradas[a].map(e=>e.b)).size})</small></button>`).join('');
+ const gs=[...new Set(Object.values(D.builds).map(b=>b.grupo))];
+ $('#grupos').innerHTML=gs.map(g=>`<button class="pill" aria-pressed="${S.grupos.has(g)}" data-g="${esc(g)}">${esc(g)}</button>`).join('');
+ $('#lp').style.display=S.aba=='legado'?'':'none';
+ $('#fchips').innerHTML=S.filtros.map((F,i)=>`<button class="pill fchip" data-rm="${i}" title="Remover filtro">${NUM.find(c=>c[0]==F.c)[1]} ${F.op.replace('>=','≥').replace('<=','≤')} ${f(F.v)} ✕</button>`).join('');
+ $('#oc').value=S.ord;$('#od').textContent=S.ord=='nome'?(S.dir>0?'A → Z':'Z → A'):(S.dir<0?'↓ maior primeiro':'↑ menor primeiro')}
+
+function tabela(){const es=visiveis();
+ $('#cab').innerHTML=`<th data-o="nome" class="${S.ord=='nome'?'on':''}">Build</th>`+NUM.slice(0,9).map(c=>`<th data-o="${c[0]}" class="${S.ord==c[0]?'on':''}">${c[1]}${S.ord==c[0]?(S.dir<0?' ↓':' ↑'):''}</th>`).join('');
+ $('#corpo').innerHTML=es.map(e=>{const b=B(e);return `<tr data-id="${esc(e.id)}" class="${e.id==S.sel?'sel':''}"><td><b>${esc(b.nome)}</b>${e.tipo=='linha'?` <small>· ${esc(e.rotulo)}${e.estrela?' ★':''}</small>`:''}<span class="tag">${esc(b.grupo)}</span></td><td>${b.nivel}</td><td>${f(e.pv,0)}</td><td>${f(e.ca,0)}</td>`+
+  AX.map(a=>`<td>${nota(e.eixos[a.k])}</td>`).join('')+'</tr>'}).join('')||`<tr><td colspan="10" class="vazio">Nenhuma build nesta visão. ${S.aba!='legado'?'As builds ganham entrada aqui quando o plano do dia delas é escrito; por enquanto estão em “Legado”.':'Afrouxe os filtros.'}</td></tr>`;
+ $('#cont').textContent=es.length+(es.length==1?' entrada':' entradas')}
+
+function radar(series,extra){const W=450,cx=225,cy=176,Rm=128,pt=(i,v)=>{const a=(-90+i*60)*Math.PI/180,r=Rm*Math.min(v,20)/20;return [(cx+r*Math.cos(a)).toFixed(1),(cy+r*Math.sin(a)).toFixed(1)]};
+ const pol=g=>AX.map((a,i)=>pt(i,g(a)).join(',')).join(' ');
+ let s=`<svg viewBox="0 0 ${W} 356" class="radar" role="img" aria-label="Radar dos seis atributos">`;
+ for(const [v,l] of [[4,'C'],[7,'B'],[11,'A'],[16,'S'],[20,'']]){s+=`<polygon points="${pol(()=>v)}" class="anel"/>`;if(l)s+=`<text x="${cx+4}" y="${cy-Rm*v/20+11}" class="anelt">${l}</text>`}
+ AX.forEach((a,i)=>{const [x,y]=pt(i,20),[lx,ly]=pt(i,22.8);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" class="anel"/><text x="${lx}" y="${+ly+4}" text-anchor="${Math.abs(lx-cx)<8?'middle':lx>cx?'start':'end'}" class="eixot"><tspan fill="var(--c-${a.k})">●</tspan> ${a.n}</text>`});
+ for(const x of extra||[])s+=`<polygon points="${pol(a=>x.v[a.k]||0)}" fill="none" stroke="var(--ink2)" stroke-width="1.5" stroke-dasharray="${x.traco}"/>`;
+ for(const sr of series){s+=`<polygon points="${pol(a=>(sr.eixos[a.k]||{n:0}).n)}" fill="${sr.cor}" fill-opacity=".2" stroke="${sr.cor}" stroke-width="2" stroke-linejoin="round"/>`;
+  AX.forEach((a,i)=>{const x=sr.eixos[a.k],[px,py]=pt(i,x?x.n:0);s+=`<circle cx="${px}" cy="${py}" r="4.5" fill="${sr.cor}" stroke="var(--panel)" stroke-width="2" data-tip="${esc(sr.nome)} · ${a.n}: ${x?x.r+' '+f(x.n):'sem nota'}"/><circle cx="${px}" cy="${py}" r="11" fill="transparent" data-tip="${esc(sr.nome)} · ${a.n}: ${x?x.r+' '+f(x.n):'sem nota'}"/>`})}
+ return s+'</svg>'}
+
+const st=(l,v)=>v==null||v===''?'':`<div class="st"><span>${l}</span><b>${v}</b></div>`;
+const bars=(rows,max)=>`<div class="bars">${rows.map(([l,v])=>`<div class="bar" data-tip="${esc(l)}: ${f(v)}"><span>${esc(l)}</span><div><i style="width:${Math.max(0,Math.min(100,v/max*100))}%"></i></div><b>${f(v)}</b></div>`).join('')}</div>`;
+const txt=t=>t?`<p>${esc(t)}</p>`:'';
+const nv=(n)=>n==null?null:`${chip(letra(n))}${f(n)}`;
+const mod=x=>x==null?'–':x>=50?'auto':(x>=0?'+':'')+x;
+
+function atq(a){return `${a.n&&a.n!=1?f(a.n,a.n%1?2:0)+'× ':''}+${a.bonus} · ${esc(a.dano)}${a.poder?` <small>(${a.poder[0]}/+${a.poder[1]} quando compensa)</small>`:''}${a.elven_accuracy?' <small>· Elven Accuracy</small>':''}${a.vantagem?` <small>· vantagem em ${Math.round(a.vantagem*100)}%</small>`:''}`}
+function cDano(e,d){const l=LN(e,'dano'),r=l&&l.res.dano;if(!r)return '';const s=l.spec.dano||{},dd=d.dano||{};
+ const ls=[...(s.ataques||[]).map(atq),...(s.por_turno||[]).map(x=>`1×/turno no 1º acerto: ${esc(x.dano)}`),...(s.por_luta||[]).map(x=>`${x.usos??x.usos_dia+'/dia'}× por luta no acerto: ${esc(x.dano)}`),
+  ...(s.automatico?[`sem rolagem: ${esc(s.automatico)} por round`]:[]),...l.spec.invocacoes.filter(i=>i.ataque).map(i=>`${i.quantidade}× ${esc(i.nome)}: +${i.ataque.bonus} · ${esc(i.ataque.dano)}`)];
+ return txt(dd.texto)+`<div class="stats">${st('Ataques por round',ls.join('<br>')||(r.medido?'DPR medido na planilha antiga':''))}${st('Vantagem',esc(dd.vantagem))}${st('Tipo de dano',esc(dd.tipo))}${st('Perfil',r.perfil)}${st('Rampa bruta (CA baixa)',nv(r.nivel_bruta))}${st('Rampa precisa (CA alta)',nv(r.nivel_precisa))}</div>`+
+  `<div class="sub"><h4>DPR por CA do alvo</h4>${bars(Object.entries(r.dpr),Math.max(...Object.values(r.dpr)))}</div>`}
+function cDeff(e,d){const l=LN(e,'defesa'),r=l&&l.res.defesa;if(!r)return '';const sv=LN(e,'saves'),s=sv&&sv.saves&&sv.saves.sv,rs=R(e,'saves'),sp=l.spec.defesa||{};
+ const ex=[sp.resist?'resistência a dano físico':'',sp.red||0?`redução ${sp.red} por golpe`:'',sp.adv==-1?'ataques contra ele com desvantagem':sp.adv==1?'ataques contra ele com vantagem':'',sp.golpes_extras_a_0pv?`${sp.golpes_extras_a_0pv} golpes extras a 0 PV`:'',...(r.reacoes_usadas||[]).map(x=>x.replace('_',' '))].filter(Boolean);
+ return txt((d.defesa||{}).texto)+`<div class="stats">${st('PV',f(l.pv,0)+(r.pv_efetivo!=l.pv?` <small>(efetivo ${f(r.pv_efetivo,0)})</small>`:''))}${st('CA',f(r.ca,r.ca%1?2:0))}${st('Blindagem (horda)',`CR ${f(r.blindagem,2)} → ${nv(r.nivel_blindagem)}`)}${st('Durabilidade (boss)',`CR ${f(r.durabilidade,2)} → ${nv(r.nivel_durabilidade)}`)}${st('Defesa (melhor das duas)',nv(r.nivel_eq))}${st('Resiliência',rs?nv(rs.resiliencia.nivel_eq):'sem saves cadastrados')}${st('Saves For / Des / Con',s?`${mod(s.for)} / ${mod(s.des)} / ${mod(s.con)}`:null)}${st('Contado no cálculo',ex.join('; '))}${st('Perfil',r.perfil)}</div>`}
+function cDefm(e,d){const l=LN(e,'saves'),r=l&&l.res.saves;if(!r)return '';const v=l.saves||{},s=v.sv||{};
+ const tr=[v.evasion?'Evasion':'',v.stillness?'Stillness of Mind':'',(v.adv||[]).length?'vantagem em '+v.adv.join(', '):'',v.adv_encanto?'vantagem contra encanto':'',(v.imune||[]).length?'imune a '+v.imune.join(', '):'',(v.res||[]).length?'resiste a '+v.res.join(', '):'',v.contra?`Counterspell ${v.contra}×`:'',v.absorb?`Absorb Elements ${v.absorb}×`:'',v.rerolagens?`${v.rerolagens} rerrolagem(ns) de save`:'',v.barrado?`aguenta ${v.barrado} danos a 0 PV`:''].filter(Boolean);
+ return `<div class="stats">${st('Vontade (Int/Sab/Car)',nv(r.vontade.nivel_eq))}${st('Resiliência (For/Des/Con)',nv(r.resiliencia.nivel_eq))}${st('Saves Int / Sab / Car',`${mod(s.int)} / ${mod(s.sab)} / ${mod(s.car)}`)}${st('Contado no cálculo',tr.join('; '))}</div><div class="sub"><h4>Turnos livres (de 4) contra um conjurador de cada nível</h4>${bars(r.vontade.turnos_livres.map((x,i)=>['nível '+[1,3,4,5,7,8,10,11,13,16][i],x]),4)}</div>`}
+function cCtrl(e,d){const l=LN(e,'controle'),r=l&&l.res.controle;if(!r)return '';const dc=d.controle||{},c=r.corpo||{};
+ const pap={tank:'Tank',striker:'Striker corpo a corpo',atirador:'Atirador',conjurador:'Conjurador'}[l.spec.papel]||'';
+ return txt(dc.texto)+`<div class="stats">${st('CD dos efeitos',l.spec.cds.join(' / '))}${st('Habilidade favorita',esc(dc.favorita))}${st('Outra favorita',esc(dc.favorita2))}${st('Controle total',nv(r.nivel_eq))}${st('Só campo (turnos negados)',nv(r.nivel_campo))}${st('Absoluto (10 níveis)',r.nivel_absoluto!=null?nv(r.nivel_absoluto):null)}${st('Fontes contadas',l.spec.fontes.map(esc).join('; '))}</div>`+
+  `<div class="sub"><h4>Por tipo de encontro</h4>${bars(Object.entries(r.por_tipo),20)}</div>`+
+  `<div class="sub"><h4>Controle de corpo</h4>${txt(dc.corpo)}<div class="stats">${st('Posição',esc(dc.posicao||pap))}${st('Perfil',c.perfil?`<span class="tag" style="font-size:13px;color:var(--ink);border-color:var(--c)">${esc(c.perfil)}</span>`:null)}${st('Nível (só corpo)',nv(r.nivel_atencao))}${st('T · todos',sg(c.T))}${st('S · a própria vida',sg(c.S))}${st('P · o resto da party',sg(c.P))}</div><small style="color:var(--ink2)">Em vidas de um personagem poupadas por luta, contra o membro de referência do mesmo papel. Positivo é bom.</small></div>`}
+function cArea(e,d){const l=LN(e,'area'),r=l&&l.res.area;if(!r||r.nivel_eq==null)return '';const da=d.area||{};
+ return txt(da.texto)+`<div class="stats">${st('Tipo de dano',esc(da.tipo))}${st('Melhor área',esc(r.melhor))}</div>`+r.areas.map(a=>{const s=l.spec.area.find(x=>(x.nome||x.tipo)==a.nome)||{},u=(s.usos||[])[0]||{};
+  return `<div class="sub"><h4>${esc(a.nome)}</h4><div class="stats">${st('Horda padrão',nv(a.variacoes.padrao))}${st('Esparsa',nv(a.variacoes.esparsa))}${st('Agrupada',nv(a.variacoes.agrupada))}${st('CD',u.cd||s.cd)}${st('Bônus de acerto',s.bonus!=null?'+'+s.bonus:null)}${st('Dano',esc(u.dano||s.dano))}${st('Alvos',Array.isArray(s.alvos)?s.alvos.join(' / '):u.alvos)}${st('Usos na luta',(s.usos||[]).length>1?s.usos.length:null)}</div></div>`}).join('')}
+function cSup(e,d){const l=LN(e,'suporte'),r=l&&l.res.suporte;if(!r)return '';
+ return txt((d.suporte||{}).texto)+`<div class="stats">${st('Dano dado aos aliados',`${f(r.ofensivo)} por round → ${nv(r.nivel_ofensivo)}`)}${st('PV poupados',`${f(r.defensivo)} por round → ${nv(r.nivel_defensivo)}`)}${st('Total',`${f(r.total)} por round`)}${st('Perfil',r.perfil)}${st('Fonte principal',esc(r.fonte_principal))}</div>`+
+  (r.fontes.length?`<div class="sub"><h4>Fontes (dano equivalente por round)</h4>${bars(r.fontes.map(x=>[x.nome,x.valor]),Math.max(1,...r.fontes.map(x=>x.valor)))}</div>`:'')}
+const CARD={dano:cDano,deff:cDeff,defm:cDefm,controle:cCtrl,area:cArea,suporte:cSup};
+
+const MET=[['','PV',e=>e.pv,0],['','CA',e=>e.ca,0],
+ ['dano','Dano (nível eq.)',e=>(e.eixos.dano||{}).n],['dano','DPR em CA 15',e=>e.dpr15],['dano','DPR em CA 20',e=>(R(e,'dano')||{dpr:{}}).dpr['CA 20']],['dano','Rampa bruta',e=>(R(e,'dano')||{}).nivel_bruta],['dano','Rampa precisa',e=>(R(e,'dano')||{}).nivel_precisa],
+ ['deff','Defesa Física (nível eq.)',e=>(e.eixos.deff||{}).n],['deff','Blindagem (CR da horda)',e=>(R(e,'defesa')||{}).blindagem,2],['deff','Durabilidade (CR do boss)',e=>(R(e,'defesa')||{}).durabilidade,2],['deff','Resiliência',e=>((R(e,'saves')||{}).resiliencia||{}).nivel_eq],
+ ['defm','Defesa Mágica (nível eq.)',e=>(e.eixos.defm||{}).n],['defm','Vontade',e=>((R(e,'saves')||{}).vontade||{}).nivel_eq],
+ ['controle','Controle (nível eq.)',e=>(e.eixos.controle||{}).n],['controle','Só campo',e=>(R(e,'controle')||{}).nivel_campo],['controle','Só corpo',e=>(R(e,'controle')||{}).nivel_atencao],['controle','Absoluto',e=>(R(e,'controle')||{}).nivel_absoluto],
+ ['controle','Corpo: T (todos)',e=>((R(e,'controle')||{}).corpo||{}).T,2],['controle','Corpo: S (própria vida)',e=>((R(e,'controle')||{}).corpo||{}).S,2],['controle','Corpo: P (party)',e=>((R(e,'controle')||{}).corpo||{}).P,2],
+ ['area','Área (nível eq.)',e=>(e.eixos.area||{}).n],
+ ['suporte','Suporte (nível eq.)',e=>(e.eixos.suporte||{}).n],['suporte','Dano dado aos aliados por round',e=>(R(e,'suporte')||{}).ofensivo],['suporte','PV poupados por round',e=>(R(e,'suporte')||{}).defensivo]];
+function comparacao(a,b){let g=null,h=`<div class="rol" style="margin-top:10px"><table class="cmp"><thead><tr><th>Métrica</th><th style="color:var(--sa)">■ ${esc(nomeE(a))}</th><th style="color:var(--sb)">■ ${esc(nomeE(b))}</th></tr></thead><tbody>`;
+ for(const [k,n,get,c] of MET){const x=get(a),y=get(b);if(x==null&&y==null)continue;
+  if(k!==g){g=k;const ax=AX.find(z=>z.k==k);h+=`<tr class="g" style="--c:${ax?`var(--c-${k})`:'var(--gold)'}"><td colspan="3">${ax?ax.i+' '+ax.n:'📋 Ficha'}</td></tr>`}
+  const w=x!=null&&y!=null&&Math.abs(x-y)>1e-9?(x>y?1:-1):0,cel=(v,s)=>`<td class="${s>0?'w':s<0?'l':''}">${s>0?'▲ ':s<0?'▼ ':''}${f(v,c??1)}</td>`;
+  h+=`<tr><td>${n}</td>${cel(x,w)}${cel(y,-w)}</tr>`}
+ return h+'</tbody></table></div><p style="color:var(--ink2);font-size:13px">▲ verde = melhor nesta métrica; ▼ vermelho = pior. Sem marca = empate ou sem nota em um dos lados.</p>'}
+
+function detalhe(){const el=$('#det'),es=D.entradas[S.aba],e=es.find(x=>x.id==S.sel);if(!e){el.innerHTML='';return}
+ const c=S.cmp?es.find(x=>x.id==S.cmp):null,b=B(e),d=b.descricao||{};
+ const ops=es.filter(x=>x.id!=e.id&&(S.aba!='legado'||x.tipo==(S.sop?'principal':'linha'))).sort((x,y)=>nomeE(x).localeCompare(nomeE(y)));
+ let h=`<div class="topo"><div class="t"><h2>${esc(nomeE(e))}</h2><p>Nível ${b.nivel} · ${esc(b.grupo)} · ${esc(b.build)}</p>${d.resumo?`<p style="color:var(--ink)">${esc(d.resumo)}</p>`:''}</div>
+  <select id="cmp" aria-label="Comparar com"><option value="">⚖️ Comparar com…</option>${ops.map(x=>`<option value="${esc(x.id)}" ${x.id==S.cmp?'selected':''}>${esc(nomeE(x))}</option>`).join('')}</select><button id="fechar">✕ Fechar</button></div>`;
+ const cats=c?[]:Object.keys((Object.values(e.eixos).find(x=>x.c)||{c:{}}).c);
+ const extra=cats.map(k=>({traco:TRACO[k],v:Object.fromEntries(AX.map(a=>[a.k,((e.eixos[a.k]||{}).c||{})[k]]))}));
+ const series=[{nome:nomeE(e),cor:'var(--sa)',eixos:e.eixos},...(c?[{nome:nomeE(c),cor:'var(--sb)',eixos:c.eixos}]:[])];
+ h+=`<div class="duo"><div>${radar(series,extra)}<div class="leg">${series.length>1||cats.length?series.map(s=>`<span><i style="background:${s.cor}"></i>${esc(s.nome)}${cats.length?' (média do dia)':''}</span>`).join(''):''}${cats.map(k=>`<span><svg viewBox="0 0 26 8"><line x1="0" x2="26" y1="4" y2="4" stroke="var(--ink2)" stroke-width="2" stroke-dasharray="${TRACO[k]}"/></svg>${D.categorias[k]}</span>`).join('')}</div></div>
+  <div class="res">${AX.map(a=>{const x=e.eixos[a.k],y=c&&c.eixos[a.k];return `<div class="r" style="--c:var(--c-${a.k})"><div>${a.i} ${a.n}</div><div>${nota(x)}${c?` <small>vs</small> ${nota(y)}`:x&&x.c?` <small>${Object.entries(x.c).map(([k,v])=>D.categorias[k]+' '+f(v)).join(' · ')}</small>`:''}</div></div>`}).join('')}</div></div>`;
+ if(c){h+=comparacao(e,c)}else{
+  h+=`<details open><summary>📜 Build e itens</summary><div class="corpo">${d.build||d.itens?txt(d.build)+(d.itens?`<p><b>Itens:</b> ${esc(d.itens)}</p>`:''):`<p>${esc(b.build)}</p><p class="vazio">Descrição ainda não escrita (campo "descricao" no JSON da build).</p>`}</div></details>`;
+  const ls=[...new Set(e.plano?e.plano.combates.map(x=>x.linha):Object.values(e.fonte))],p=e.plano;
+  h+=`<details open><summary>🗺️ Estratégia e orçamento</summary><div class="corpo">${txt(d.estrategia)}`+
+   (p?`${txt(p.descricao)}<p><b>Plano do dia:</b> ${p.combates.map(x=>`${esc(x.linha)} <small>(${D.categorias[x.categoria]}, peso ${x.peso})</small>`).join(' → ')}${p.hypercharged!=1?` · <b>hypercharged ×${p.hypercharged}</b>`:''}<br><b>Sobra para utilidade:</b> ${[...Object.entries(p.sobra.espacos||{}).map(([k,v])=>`${f(v,v%1?1:0)} espaço(s) de ${k}º`),...Object.entries(p.sobra).filter(([k])=>k!='espacos').map(([k,v])=>`${f(v,v%1?1:0)} ${esc(k)}`)].join(', ')||'nada'}</p>`:'')+
+   `<b>Hipóteses usadas</b><ul class="h">${ls.map(id=>{const l=b.linhas[id],o=l.res.orcamento||{},esp=Object.entries(o.espacos_por_eixo||{}).map(([k,g])=>k+' '+Object.entries(g).map(([n,q])=>`${f(q,q%1?2:0)}×${n}º`).join(', ')).join('; ');
+    return `<li><b>${esc(id)}</b>: ${esc(l.hipotese)}<br><small style="color:var(--ink2)">${[(o.reacao||[]).map(u=>`reação: ${esc(u.uso)} (${Math.round((u.fracao??1)*100)}%)`).join('; '),(o.acao_bonus||[]).map(u=>`ação bônus: ${esc(u.uso)}`).join('; '),(o.concentracao||[]).length?'concentração: '+o.concentracao.map(x=>esc(x.replace(/\|/g,' ou ').replace(/_/g,' '))).join(', '):'',esp?'espaços por luta: '+esp:''].filter(Boolean).join(' · ')}</small></li>`}).join('')}</ul></div></details>`;
+  h+='<div class="cards">'+AX.map(a=>{const x=e.eixos[a.k],corpo=CARD[a.k](e,d);return `<details style="--c:var(--c-${a.k})" ${corpo?'open':''}><summary><span class="ic">${a.i}</span><b>${a.n}</b> ${nota(x)}</summary><div class="corpo">${corpo||'<p class="vazio">Sem nota neste atributo.</p>'}</div></details>`}).join('')+'</div>'}
+ el.innerHTML=h}
+
+function tudo(){controles();tabela();detalhe()}
+$('#fc').innerHTML=NUM.map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('');$('#oc').innerHTML=CAMPOS.map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('');
+document.addEventListener('click',ev=>{const t=ev.target,a=t.closest('[data-aba]'),g=t.closest('[data-g]'),rm=t.closest('[data-rm]'),o=t.closest('th[data-o]'),r=t.closest('tr[data-id]');
+ if(a){S.aba=a.dataset.aba;S.sel=S.cmp=null}else if(g){S.grupos.has(g.dataset.g)?S.grupos.delete(g.dataset.g):S.grupos.add(g.dataset.g)}else if(rm){S.filtros.splice(+rm.dataset.rm,1)}
+ else if(o){if(S.ord==o.dataset.o)S.dir=-S.dir;else{S.ord=o.dataset.o;S.dir=S.ord=='nome'?1:-1}}
+ else if(r){S.sel=S.sel==r.dataset.id?null:r.dataset.id;S.cmp=null;tudo();if(S.sel)$('#det').scrollIntoView({behavior:'smooth',block:'start'});return}
+ else if(t.id=='fadd'){const v=parseFloat($('#fv').value.replace(',','.'));if(isNaN(v))return;S.filtros.push({c:$('#fc').value,op:$('#fo').value,v});$('#fv').value=''}
+ else if(t.id=='od'){S.dir=-S.dir}else if(t.id=='fechar'){S.sel=S.cmp=null}
+ else if(t.id=='tema'){const h=document.documentElement;h.dataset.tema=h.dataset.tema=='claro'?'escuro':'claro';try{localStorage.setItem('tema',h.dataset.tema)}catch(e){}return}else return;tudo()});
+document.addEventListener('change',ev=>{const t=ev.target;if(t.id=='sop'){S.sop=t.checked;S.sel=S.cmp=null}else if(t.id=='oc'){S.ord=t.value;S.dir=S.ord=='nome'?1:-1}else if(t.id=='cmp'){S.cmp=t.value||null}else return;tudo()});
+$('#busca').addEventListener('input',ev=>{S.busca=ev.target.value;tabela()});
+$('#fv').addEventListener('keydown',ev=>{if(ev.key=='Enter')$('#fadd').click()});
+const tip=$('#tip');document.addEventListener('mousemove',ev=>{const g=ev.target.closest('[data-tip]');if(g){tip.textContent=g.dataset.tip;tip.style.display='block';tip.style.left=Math.min(ev.clientX+12,innerWidth-270)+'px';tip.style.top=ev.clientY+14+'px'}else tip.style.display='none'});
+try{const t=localStorage.getItem('tema');if(t)document.documentElement.dataset.tema=t}catch(e){}
+tudo();
 </script></body></html>

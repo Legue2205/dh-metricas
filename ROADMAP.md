@@ -110,6 +110,14 @@ Decisões do usuário (10/11):
   vindo de `invocacoes`); os valores antigos ficam em `conferencia` e são testados. Recursos "no acerto" por
   luta (smites) agora usam E[min(usos, acertos)]. Tin Bin subiu de 9,8 (B+) para 10,0 (A-) por 0,3 de DPR.
 
+## Feito em 11/11
+- **Front-end novo** (`dh/site.html`): abas por premissa + Legado, busca, filtros numéricos, ordenação, tema
+  escuro/claro, ranks coloridos, radar de 6 atributos, cards por atributo com valores intermediários, comparação 1×1.
+- **Decisão:** eixos do painel = Dano, Defesa Física (2/3 Defesa + 1/3 Resiliência), Defesa Mágica (2/3 Vontade +
+  1/3 Resiliência), Controle, Área, Suporte. Sem saves cadastrados: Def. Física = Defesa, Def. Mágica sem nota.
+- Motor: `controle.corpo` (T/S/P + perfil), `dano.nivel_bruta/precisa`, campo `descricao` nas builds (tamanho máximo).
+  Descrições escritas para a party (7 builds); **NPCs ainda sem `descricao`**.
+
 ## Próximo passo
 1. **Com o usuário:** plano do dia de cada conjurador (começar pelo Marcus: linhas "marcial" e "caster").
 2. Etapa (b): ação principal no orçamento / modelo round a round unificado (depende dos planos acima).

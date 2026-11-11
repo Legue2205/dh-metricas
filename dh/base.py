@@ -135,3 +135,16 @@ def interp_degraus(x, limiares, niveis):
     if k == 0: return 0.5 * x / t[0]
     if k == n: return min(20.0, lv[-1] + (x - t[-1]) / (t[-1] - t[-2]) * (lv[-1] - lv[-2]))
     return lv[k - 1] + (x - t[k - 1]) / (t[k] - t[k - 1]) * (lv[k] - lv[k - 1])
+
+
+# ---------------- eixos compostos do painel ----------------
+def defesa_fisica(defesa, resiliencia):
+    """2/3 Defesa (blindagem/durabilidade) + 1/3 Resiliência. Sem saves cadastrados: só a Defesa."""
+    if defesa is None: return None
+    return defesa if resiliencia is None else (2 * defesa + resiliencia) / 3
+
+
+def defesa_magica(vontade, resiliencia):
+    """2/3 Vontade + 1/3 Resiliência. Sem saves cadastrados: sem nota."""
+    if vontade is None: return None
+    return vontade if resiliencia is None else (2 * vontade + resiliencia) / 3

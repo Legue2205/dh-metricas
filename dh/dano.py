@@ -106,4 +106,6 @@ def avaliar(spec, lutas_dia=4, invocacoes=()):
     """invocacoes só somam quando o dano é calculado; em 'medido' já estão dentro do número."""
     lista = [dpr(spec, ca, lutas_dia, invocacoes) for ca in CAS]
     nv, perfil = nivel_equivalente(lista)
-    return dict(dpr={f'CA {ca}': v for ca, v in zip(CAS, lista)}, nivel_eq=nv, rank=letra(nv), perfil=perfil)
+    return dict(dpr={f'CA {ca}': v for ca, v in zip(CAS, lista)}, nivel_eq=nv, rank=letra(nv), perfil=perfil,
+                nivel_bruta=round(_degraus(lista, BRUTA), 1), nivel_precisa=round(_degraus(lista, PRECISA), 1),
+                medido='medido' in spec)

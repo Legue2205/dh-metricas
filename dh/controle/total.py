@@ -98,28 +98,56 @@ def nivel(g, curva):
     return float(np.interp(g, curva, np.arange(1, 21)))
 
 
+# Perfil de controle de corpo: T = vidas poupadas pela atenção (todos), S = a própria vida, P = a vida do resto da party.
+PERFIS = {'T+S+P+≈': 'Bastião', 'T+S+P+S': 'Fortaleza', 'T+S+P+P': 'Guardião', 'T+S+P0': 'Resistente', 'T+S0P+': 'Protetor',
+          'T+S+P-': 'Esquiva Tática', 'T+S-P+': 'Tank', 'T0S0P0': 'Neutro', 'T0S+P-': 'Redirecionador', 'T0S-P+': 'Taunt',
+          'T-S-P0': 'Vulnerável', 'T-S0P-': 'Brecha', 'T-S-P-≈': 'Desastre', 'T-S-P-S': 'Peso Morto', 'T-S-P-P': 'Âncora',
+          'T-S+P-': 'Deixa na Mão', 'T-S-P+': 'Alvo Frágil'}
+LIMIAR_SP, LIMIAR_T, RAZAO_IGUAL = 0.05, 0.11, 0.5
+
+
+def perfil_corpo(t, s, p):
+    def sg(x, lim): return '+' if x > lim else '-' if x < -lim else '0'
+    ct, cs, cp = sg(t, LIMIAR_T), sg(s, LIMIAR_SP), sg(p, LIMIAR_SP)
+    chave = f'T{ct}S{cs}P{cp}'
+    if ct != '0' and cs == cp != '0':
+        r = min(abs(s), abs(p)) / max(abs(s), abs(p))
+        chave += '≈' if r >= RAZAO_IGUAL else ('S' if abs(s) > abs(p) else 'P')
+    return chave, PERFIS.get(chave, 'Neutro' if ct == '0' else chave)
+
+
+def _corpo(g):
+    t, s, p = g['vidas_atencao'], g['vidas_proprio'], g['vidas_party']
+    chave, nome = perfil_corpo(t, s, p)
+    return dict(T=round(t, 3), S=round(s, 3), P=round(p, 3), chave=chave, perfil=nome)
+
+
 def avaliar_nivel(fn, ficha, L, regua):
     """Controle total, só campo e só atenção de uma linha num nível L (party e encontros desse nível)."""
     out = {}
     for tipo in PESO_TIPO:
         E = encontro(tipo, L)
-        acc = {k: np.zeros(20) if k == 'curva' else 0.0 for k in ('curva', 'total', 'campo', 'aten')}
+        acc = {k: np.zeros(20) if k == 'curva' else 0.0 for k in ('curva', 'total', 'campo', 'aten', 'S', 'P')}
+        im = A.PAPEIS.index(ficha['papel'])
         fontes7 = {}
         for ti, tp in enumerate(TOPOS):
             w = TOPO[tp]['peso']
             pref = A.party_com(A.ref(ficha['papel'], L), L); px = A.party_com(ficha, L)
             fontes = fn(E, tp); neg = C.jv(*fontes.values())
-            base = A.vida(E, pref, ti)
+            base, fb = A.vida(E, pref, ti, detalhe=True)
+            sx, fx = A.vida(E, px, ti, detalhe=True)     # só atenção: ninguém perde turno, só muda o alvo
             acc['total'] += w * (base - A.vida(E, px, ti, neg))
             acc['campo'] += w * (base - A.vida(E, pref, ti, neg))
-            acc['aten'] += w * (base - A.vida(E, px, ti))
+            acc['aten'] += w * (base - sx)
+            acc['S'] += w * (fb[im] - fx[im]); acc['P'] += w * ((sum(fb) - fb[im]) - (sum(fx) - fx[im]))
             acc['curva'] += w * np.array([base - A.vida(E, pref, ti, regua.vetor(tipo, L, ti, k)) for k in range(1, 21)])
             if tp == 'Ruínas ou cidade': fontes7 = {k: round(C.tot(E, v), 4) for k, v in fontes.items()}
         out[tipo] = dict(vidas_total=acc['total'], vidas_campo=acc['campo'], vidas_atencao=acc['aten'],
+                         vidas_proprio=acc['S'], vidas_party=acc['P'],
                          nivel_total=nivel(acc['total'], acc['curva']), nivel_campo=nivel(acc['campo'], acc['curva']),
                          nivel_atencao=nivel(acc['aten'], acc['curva']), negacao_por_fonte=fontes7)
     geral = {k: sum(PESO_TIPO[t] * out[t][k] for t in PESO_TIPO)
-             for k in ('vidas_total', 'vidas_campo', 'vidas_atencao', 'nivel_total', 'nivel_campo', 'nivel_atencao')}
+             for k in ('vidas_total', 'vidas_campo', 'vidas_atencao', 'vidas_proprio', 'vidas_party', 'nivel_total', 'nivel_campo', 'nivel_atencao')}
     return geral, out
 
 
@@ -130,7 +158,7 @@ def avaliar(fn, ficha, L, absoluto=False, regua=None):
                nivel_campo=round(geral['nivel_campo'], 2), rank_campo=base.letra(geral['nivel_campo']),
                nivel_atencao=round(geral['nivel_atencao'], 2), rank_atencao=base.letra(geral['nivel_atencao']),
                vidas_total=round(geral['vidas_total'], 3), vidas_campo=round(geral['vidas_campo'], 3),
-               vidas_atencao=round(geral['vidas_atencao'], 3),
+               vidas_atencao=round(geral['vidas_atencao'], 3), corpo=_corpo(geral),
                por_tipo={t: round(v['nivel_total'], 2) for t, v in tipos.items()},
                negacao_por_fonte={t: v['negacao_por_fonte'] for t, v in tipos.items()})
     if absoluto:

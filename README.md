@@ -172,9 +172,39 @@ A decisão de como gastar recursos é da build e fica escrita no JSON. **Tag = p
 
 ## Site
 
-`python -m dh site` gera `docs/index.html` (um arquivo, sem servidor): tabela por premissa de dia, ordenável,
-e o detalhe de cada build com a média do dia e os valores por categoria de combate. O workflow regenera a
-cada push. Publicação: GitHub Pages, branch `main`, pasta `/docs` → https://legue2205.github.io/dh-metricas/
+`python -m dh site` gera `docs/index.html` (um arquivo, sem servidor; o workflow regenera a cada push).
+Publicação: GitHub Pages, branch `main`, pasta `/docs` → https://legue2205.github.io/dh-metricas/
+
+- **Abas**: Dia padrão, Combate único, Dia longo (só builds com plano do dia) e **Legado** (linha principal de
+  cada build, ou todas as linhas desmarcando "Só linha principal"). Uma build sai do Legado ao ganhar planos.
+- **Filtros**: busca por nome/build, grupo (Party, NPC…), e filtros numéricos empilháveis (`Nível ≥ 11`,
+  `PV ≥ 30` + `PV ≤ 60`, `Dano ≥ 5`…). **Ordenação** por qualquer coluna, crescente ou decrescente.
+- **Seis atributos** no radar: Dano, Defesa Física (2/3 Defesa + 1/3 Resiliência), Defesa Mágica (2/3 Vontade +
+  1/3 Resiliência), Controle, Área, Suporte. Ranks com cor fixa (F/E cinza, D bronze, C verde, B azul, A roxo, S ouro).
+- **Detalhe da build**: radar, "Build e itens", "Estratégia e orçamento" e um card por atributo com os valores
+  intermediários (ataques, DPR por CA, blindagem/durabilidade, saves, CDs, T/S/P e perfil de corpo, áreas, fontes de suporte).
+- **Comparação 1×1**: radares sobrepostos e tabela métrica a métrica (▲ verde / ▼ vermelho).
+
+### Textos da build (`descricao`)
+
+Opcional, com tamanho máximo validado (300 caracteres no `resumo`, 500 nos demais):
+
+```jsonc
+"descricao": {
+  "resumo": "o que é esta build, em uma ou duas frases",
+  "build": "níveis, raça, classe, talentos, homebrew", "itens": "...",
+  "estrategia": "onde se posiciona e o que faz ao longo do dia",
+  "dano":     {"texto": "...", "vantagem": "Reckless Attack", "tipo": "Cortante"},
+  "defesa":   {"texto": "..."},
+  "controle": {"texto": "...", "favorita": "Web", "favorita2": "Bestow Curse", "corpo": "...", "posicao": "Tank"},
+  "area":     {"texto": "...", "tipo": "Fogo"},
+  "suporte":  {"texto": "..."}
+}
+```
+Planos aceitam `"descricao"` própria. Bônus de acerto, fórmulas, CDs, PV, CA e saves aparecem sozinhos (vêm dos eixos).
+
+**Perfil de corpo** (`controle.corpo` no resultado): T = vidas poupadas pela atenção, S = a própria vida,
+P = o resto da party; o nome (Bastião, Fortaleza, Tank, Alvo Frágil, Deixa na Mão…) segue a tabela da planilha.
 
 ## Invocações
 

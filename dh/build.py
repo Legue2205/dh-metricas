@@ -44,8 +44,22 @@ def resolver(b):
     return b
 
 
+LIMITE_TEXTO = 500   # caracteres; "resumo" é mais curto
+LIMITE_RESUMO = 300
+
+
+def _textos(d, caminho='descricao'):
+    for k, v in d.items():
+        if isinstance(v, dict): yield from _textos(v, f'{caminho}.{k}')
+        elif isinstance(v, str): yield f'{caminho}.{k}', v, (LIMITE_RESUMO if k == 'resumo' else LIMITE_TEXTO)
+
+
 def validar(b):
     e = []; resolver(b)
+    for onde, txt, lim in _textos(b.get('descricao', {})):
+        if len(txt) > lim: e.append(f'{onde}: {len(txt)} caracteres (máximo {lim})')
+    for tag, p in b.get('planos', {}).items():
+        if len(p.get('descricao', '')) > LIMITE_TEXTO: e.append(f'planos.{tag}.descricao: máximo {LIMITE_TEXTO} caracteres')
     for k in ('id', 'nome', 'grupo', 'nivel', 'corpo', 'linhas'):
         if k not in b: e.append(f'falta "{k}"')
     if e: return e

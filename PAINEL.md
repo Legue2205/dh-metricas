@@ -12,7 +12,7 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~jamal-9                9         -   10,7 A-         -         -     2,7 D         -         -
 ~john-7                 7    9,4 B+    3,3 C-    5,7 C+     4,4 C     0,0 F     4,5 C         -
 kael-7                  7     7,3 B    6,3 B-   10,1 A-    8,2 B+    3,5 C-         -    3,8 C-
-~lucius-15             15    20,0 S   14,5 A+    20,0 S    20,0 S     2,2 D         -         -
+lucius-15              15    20,0 S   14,5 A+    20,0 S    20,0 S     2,2 D         -         -
 ~marcus-7               7         -    3,6 C-    5,9 C+     4,3 C         -     4,0 C         -
 ~miau-8                 8         -    6,6 B-    6,8 B-     2,5 D     4,5 C         -         -
 ~pyotr-14              14    8,9 B+    3,5 C-   13,3 A+    16,9 S     3,0 D    8,9 B+         -
@@ -32,7 +32,7 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~jamal-9                9         -   10,7 A-         -         -     2,7 D         -         -
 ~john-7                 7    9,4 B+    3,3 C-    5,7 C+     4,4 C     0,0 F     4,5 C         -
 kael-7                  7     7,3 B    6,3 B-   10,1 A-    8,2 B+    3,5 C-         -    3,8 C-
-~lucius-15             15    20,0 S   14,5 A+    20,0 S    20,0 S     2,2 D         -         -
+lucius-15              15    20,0 S   14,5 A+    20,0 S    20,0 S     2,2 D         -         -
 ~marcus-7               7         -    3,6 C-    5,9 C+     4,3 C         -     4,0 C         -
 ~miau-8                 8         -    6,6 B-    6,8 B-     2,5 D     4,5 C         -         -
 ~pyotr-14              14    8,9 B+    3,5 C-   13,3 A+    16,9 S     3,0 D    8,9 B+         -

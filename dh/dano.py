@@ -83,14 +83,16 @@ def _usados(usos, pc, natq):
 
 def dpr(spec, ca, lutas_dia=4, invocacoes=()):
     if 'medido' in spec: return spec['medido'][CAS.index(ca)]
-    total = 0.0; nenhum = 1.0; pc = []
+    total = 0.0; nenhum = 1.0; sem_crit = 1.0; pc = []
     for a in spec.get('ataques', []):          # n pode ser fracionário (ex.: Action Surge = 2 ataques ÷ 4 rounds)
         n = a.get('n', 1); p, c, e = _ataque(a, ca)
-        total += n * e; nenhum *= (1 - p) ** n; pc.append((n * p, n * c))
+        total += n * e; nenhum *= (1 - p) ** n; sem_crit *= (1 - c) ** n; pc.append((n * p, n * c))
     algum = 1 - nenhum
     crit_rel = (sum(c for _, c in pc) / sum(p for p, _ in pc)) if pc and sum(p for p, _ in pc) else 0.0
     for x in spec.get('por_turno', []):        # Sneak Attack e afins: 1× por turno no 1º acerto
         avg, dad = dados(x['dano'])
+        if x.get('gatilho') == 'critico':      # ex.: Piercer, dado extra no 1º crítico do turno (não dobra)
+            total += x.get('prob', 1.0) * (1 - sem_crit) * avg; continue
         total += x.get('prob', 1.0) * algum * (avg + crit_rel * dad)
     for x in spec.get('por_luta', []):         # smites e afins: usos por luta espalhados nos R rounds
         avg, dad = dados(x['dano'])

@@ -167,3 +167,10 @@ def test_site_gera(tmp_path):
 def test_descricao_tem_tamanho_maximo():
     b = _caster(); b['descricao'] = {'resumo': 'x' * 301}
     assert any('máximo 300' in e for e in validar(b))
+
+
+def test_por_turno_no_critico():
+    from dh.dano import dpr
+    base = {"ataques": [{"n": 4, "bonus": 12, "dano": "1d12+7", "crit_em": 18}]}
+    com = dict(base, por_turno=[{"dano": "1d12", "gatilho": "critico"}])
+    assert abs(dpr(com, 15) - dpr(base, 15) - 6.5 * (1 - 0.85 ** 4)) < 0.11

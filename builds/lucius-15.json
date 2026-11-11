@@ -1,9 +1,28 @@
 {
   "id": "lucius-15",
   "nome": "Lucius",
-  "grupo": "NPC",
+  "grupo": "Party",
   "nivel": 15,
-  "build": "Champion 15, 2 lanças de mitril +2, Pegasus",
+  "build": "Fighter 15 (Champion), meio-elfo; Mounted Combatant, Dual Wielder, Elven Accuracy, Piercer",
+  "descricao": {
+    "resumo": "Cavaleiro aéreo montado num Pegasus: 4 golpes de lança por turno com vantagem constante (Mounted Combatant), 3d20 por Elven Accuracy e crítico em 18–20.",
+    "build": "Fighter 15 (Champion), meio-elfo. For 10, Des 20, Con 14, Int 16, Sab 10, Car 8. Talentos: Mounted Combatant, Dual Wielder, Elven Accuracy, Piercer. Estilo Defense. Homebrew: lança com Finesse e Nick (4º ataque montado), só 2 ataques desmontado, Vazio de Assinatura (passa automaticamente em saves de Sab e Car).",
+    "itens": "2 lanças de mitril +2 (1d12 perfurante, Finesse homebrew). Pegasus (montaria, 59 PV, CA 12, voo 90 ft).",
+    "estrategia": "Sempre montado e no ar, atacando de cima com alcance de 10 ft. Action Surge no round 1 das lutas prioritárias (8 golpes); Second Wind quando apanha; Indomitable guardado para saves.",
+    "dano": {
+      "texto": "4 golpes de lança por ação montado (Extra Attack ×3 + Nick), com vantagem contra alvos Médios ou menores. Crítico em 18–20; Piercer soma um dado no crítico e rerrola um dado por turno.",
+      "vantagem": "Mounted Combatant (alvos Médios ou menores) + Elven Accuracy",
+      "tipo": "Perfurante"
+    },
+    "defesa": {
+      "texto": "CA 20 (couro batido + Des + Defense + Dual Wielder), 124 PV + Second Wind. Fey Ancestry, imune a sono mágico e (homebrew) a saves de Sab e Car. Indomitable 2 por dia."
+    },
+    "controle": {
+      "texto": "Sem controle de campo.",
+      "corpo": "Voa montado e ataca de cima: ameaça quem está perto, mas não segura ninguém.",
+      "posicao": "Striker aéreo montado"
+    }
+  },
   "corpo": {
     "ca": 20,
     "pv": 144.5,
@@ -24,13 +43,52 @@
       "nota": "99 = passa sempre (Vazio de Assinatura)"
     }
   },
+  "recursos": {
+    "outros": {
+      "action_surge": {
+        "qtd": 1,
+        "volta": "curto"
+      },
+      "second_wind": {
+        "qtd": 1,
+        "volta": "curto"
+      },
+      "indomitable": {
+        "qtd": 2,
+        "volta": "longo"
+      }
+    }
+  },
   "linhas": [
     {
-      "id": "principal",
+      "id": "montado",
       "principal": true,
-      "hipotese": "Montado (CA 20), contra alvo Médio (crítico x3, só Piercer)",
+      "hipotese": "Montado no Pegasus contra alvo Médio: 4 golpes com vantagem; sem Action Surge",
       "dano": {
-        "medido": [
+        "ataques": [
+          {
+            "n": 4,
+            "bonus": 12,
+            "dano": "1d12+7",
+            "crit_em": 18,
+            "vantagem": 1.0,
+            "elven_accuracy": true,
+            "nota": "4 por ação montado (Extra Attack ×3 + Nick)"
+          }
+        ],
+        "por_turno": [
+          {
+            "dano": "1d12",
+            "gatilho": "critico",
+            "nota": "Piercer: dado extra no crítico"
+          },
+          {
+            "dano": "1.5",
+            "nota": "Piercer: rerrola 1 dado de dano por turno (+1,5 em média num d12)"
+          }
+        ],
+        "nota": "conferência = linha antiga da planilha (com Action Surge e 'crítico ×3')",
+        "conferencia": [
           88.7,
           88.7,
           88.6,
@@ -40,10 +98,12 @@
           83.1,
           78.5,
           75.5
-        ],
-        "fonte": "planilha de dano (sem motor salvo)"
+        ]
       },
-      "defesa": {},
+      "defesa": {
+        "pv_efetivo": 144.5,
+        "nota": "124 PV + Second Wind (1d10+15)"
+      },
       "controle": {
         "atencao": {
           "papel": "striker",
@@ -58,15 +118,90 @@
         ]
       },
       "saves": {
+        "pv": 144.5,
         "ataques": 4
+      },
+      "invocacoes": [
+        {
+          "nome": "Pegasus",
+          "quantidade": 1,
+          "pv": 59,
+          "ca": 12,
+          "corpo": false,
+          "nota": "montaria controlada: não ataca (RAW) e não entra no controle de corpo"
+        }
+      ]
+    },
+    {
+      "id": "montado-surge",
+      "herda": "montado",
+      "principal": false,
+      "hipotese": "Montado, com Action Surge no round 1 (8 golpes no 1º turno)",
+      "usa": {
+        "action_surge": 1
+      },
+      "dano": {
+        "ataques": [
+          {
+            "n": 4,
+            "bonus": 12,
+            "dano": "1d12+7",
+            "crit_em": 18,
+            "vantagem": 1.0,
+            "elven_accuracy": true,
+            "nota": "ação normal"
+          },
+          {
+            "n": 1,
+            "bonus": 12,
+            "dano": "1d12+7",
+            "crit_em": 18,
+            "vantagem": 1.0,
+            "elven_accuracy": true,
+            "nota": "Action Surge: 4 golpes ÷ 4 rounds"
+          }
+        ],
+        "por_turno": [
+          {
+            "dano": "1d12",
+            "gatilho": "critico",
+            "nota": "Piercer: dado extra no crítico"
+          },
+          {
+            "dano": "1.5",
+            "nota": "Piercer: rerrola 1 dado de dano por turno (+1,5 em média num d12)"
+          }
+        ]
       }
     },
     {
       "id": "alvo-grande",
       "principal": false,
-      "hipotese": "Montado, contra alvo Grande",
+      "hipotese": "Montado, contra alvo Grande ou maior (sem a vantagem do Mounted Combatant)",
       "dano": {
-        "medido": [
+        "ataques": [
+          {
+            "n": 4,
+            "bonus": 12,
+            "dano": "1d12+7",
+            "crit_em": 18,
+            "vantagem": 0.0,
+            "elven_accuracy": true,
+            "nota": "sem vantagem"
+          }
+        ],
+        "por_turno": [
+          {
+            "dano": "1d12",
+            "gatilho": "critico",
+            "nota": "Piercer: dado extra no crítico"
+          },
+          {
+            "dano": "1.5",
+            "nota": "Piercer: rerrola 1 dado de dano por turno (+1,5 em média num d12)"
+          }
+        ],
+        "conferencia": [
           69.8,
           69.8,
           66.7,
@@ -76,19 +211,40 @@
           45.1,
           38.9,
           35.8
-        ],
-        "fonte": "planilha de dano (sem motor salvo)"
+        ]
       }
     },
     {
       "id": "desmontado",
       "principal": false,
-      "hipotese": "Desmontado (CA 19, 2 ataques)",
+      "hipotese": "Desmontado ou confinado (CA 19, 2 ataques, sem vantagem)",
       "corpo": {
         "ca": 19
       },
       "dano": {
-        "medido": [
+        "ataques": [
+          {
+            "n": 2,
+            "bonus": 12,
+            "dano": "1d12+7",
+            "crit_em": 18,
+            "vantagem": 0.0,
+            "elven_accuracy": true,
+            "nota": "homebrew: só 2 ataques desmontado"
+          }
+        ],
+        "por_turno": [
+          {
+            "dano": "1d12",
+            "gatilho": "critico",
+            "nota": "Piercer: dado extra no crítico"
+          },
+          {
+            "dano": "1.5",
+            "nota": "Piercer: rerrola 1 dado de dano por turno (+1,5 em média num d12)"
+          }
+        ],
+        "conferencia": [
           35.6,
           35.6,
           34.0,
@@ -98,14 +254,46 @@
           23.0,
           19.8,
           18.3
-        ],
-        "fonte": "planilha de dano (sem motor salvo)"
+        ]
       },
-      "defesa": {},
+      "defesa": {
+        "pv_efetivo": 144.5
+      },
       "saves": {
         "ca": 19,
+        "pv": 144.5,
         "ataques": 2
       }
     }
-  ]
+  ],
+  "planos": {
+    "padrao": {
+      "descricao": "Montado em todos os combates; Action Surge no round 1 dos dois prioritários (volta no descanso curto).",
+      "combates": [
+        "montado",
+        "montado-surge",
+        "montado",
+        "montado-surge"
+      ]
+    },
+    "combate_unico": {
+      "descricao": "Action Surge no round 1.",
+      "combates": [
+        "montado-surge"
+      ]
+    },
+    "dia_longo": {
+      "descricao": "Um Action Surge por trecho entre descansos curtos, sempre no combate mais pesado do trecho (o boss leva o último).",
+      "combates": [
+        "montado",
+        "montado",
+        "montado-surge",
+        "montado",
+        "montado-surge",
+        "montado",
+        "montado",
+        "montado-surge"
+      ]
+    }
+  }
 }

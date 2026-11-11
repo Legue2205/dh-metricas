@@ -1,15 +1,15 @@
 {
  "id": "lucius-15",
  "nome": "Lucius",
- "grupo": "NPC",
+ "grupo": "Party",
  "nivel": 15,
- "build": "Champion 15, 2 lanças de mitril +2, Pegasus",
- "impressao": "13286d9ad8",
+ "build": "Fighter 15 (Champion), meio-elfo; Mounted Combatant, Dual Wielder, Elven Accuracy, Piercer",
+ "impressao": "876fa51895",
  "versao": "0.4.0",
  "modo": "completo",
  "linhas": {
-  "principal": {
-   "hipotese": "Montado (CA 20), contra alvo Médio (crítico x3, só Piercer)",
+  "montado": {
+   "hipotese": "Montado no Pegasus contra alvo Médio: 4 golpes com vantagem; sem Action Surge",
    "principal": [
     "dano",
     "defesa",
@@ -20,22 +20,22 @@
    ],
    "dano": {
     "dpr": {
-     "CA 11": 88.7,
-     "CA 12": 88.7,
-     "CA 15": 88.6,
-     "CA 16": 88.5,
-     "CA 18": 87.8,
-     "CA 20": 86.1,
-     "CA 22": 83.1,
-     "CA 24": 78.5,
-     "CA 25": 75.5
+     "CA 11": 71.1,
+     "CA 12": 71.1,
+     "CA 15": 71.1,
+     "CA 16": 70.9,
+     "CA 18": 70.3,
+     "CA 20": 68.8,
+     "CA 22": 66.2,
+     "CA 24": 62.1,
+     "CA 25": 59.4
     },
     "nivel_eq": 20.0,
     "rank": "S",
-    "perfil": "Equilibrado",
-    "nivel_bruta": 17.3,
+    "perfil": "Preciso",
+    "nivel_bruta": 14.6,
     "nivel_precisa": 20.0,
-    "medido": true
+    "medido": false
    },
    "defesa": {
     "pv_efetivo": 144.5,
@@ -140,27 +140,154 @@
     "rank_absoluto": "C-"
    }
   },
-  "alvo-grande": {
-   "hipotese": "Montado, contra alvo Grande",
+  "montado-surge": {
+   "hipotese": "Montado, com Action Surge no round 1 (8 golpes no 1º turno)",
    "principal": [],
    "dano": {
     "dpr": {
-     "CA 11": 69.8,
-     "CA 12": 69.8,
-     "CA 15": 66.7,
-     "CA 16": 63.5,
-     "CA 18": 57.4,
-     "CA 20": 51.2,
-     "CA 22": 45.1,
-     "CA 24": 38.9,
-     "CA 25": 35.8
+     "CA 11": 87.5,
+     "CA 12": 87.5,
+     "CA 15": 87.4,
+     "CA 16": 87.2,
+     "CA 18": 86.4,
+     "CA 20": 84.6,
+     "CA 22": 81.3,
+     "CA 24": 76.2,
+     "CA 25": 72.9
     },
-    "nivel_eq": 14.9,
+    "nivel_eq": 20.0,
+    "rank": "S",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 17.1,
+    "nivel_precisa": 20.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 144.5,
+    "ca": 20,
+    "blindagem": 12.71,
+    "durabilidade": 9.46,
+    "nivel_blindagem": 14.4,
+    "nivel_durabilidade": 14.5,
+    "nivel_eq": 14.5,
     "rank": "A+",
     "perfil": "Equilibrado",
-    "nivel_bruta": 13.5,
-    "nivel_precisa": 14.9,
-    "medido": true
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "turnos_livres": [
+      3.93,
+      3.76,
+      3.68,
+      2.93,
+      3.19,
+      3.22,
+      3.71,
+      3.75,
+      3.35,
+      2.97
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "turnos_livres": [
+      4.0,
+      3.75,
+      3.53,
+      3.75,
+      3.9,
+      3.75,
+      3.53,
+      3.52,
+      3.72,
+      3.67
+     ]
+    }
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {
+     "action_surge": 1
+    }
+   },
+   "controle": {
+    "nivel_eq": 2.21,
+    "rank": "D",
+    "nivel_campo": 0.8,
+    "rank_campo": "E",
+    "nivel_atencao": 1.51,
+    "rank_atencao": "D",
+    "vidas_total": 0.156,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.128,
+    "corpo": {
+     "T": 0.128,
+     "S": 0.141,
+     "P": -0.013,
+     "chave": "T+S+P0",
+     "perfil": "Resistente"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 2.01,
+     "Party de elite": 2.07,
+     "Horda + chefe": 0.87,
+     "Horda": 2.02,
+     "Dupla": 2.34,
+     "Chefe sozinho": 3.15
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0165
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0096
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0112
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.022
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.009
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0108
+     }
+    },
+    "nivel_absoluto": 3.94,
+    "rank_absoluto": "C-"
+   }
+  },
+  "alvo-grande": {
+   "hipotese": "Montado, contra alvo Grande ou maior (sem a vantagem do Mounted Combatant)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 59.8,
+     "CA 12": 59.8,
+     "CA 15": 57.1,
+     "CA 16": 54.4,
+     "CA 18": 49.0,
+     "CA 20": 43.6,
+     "CA 22": 38.1,
+     "CA 24": 32.7,
+     "CA 25": 29.9
+    },
+    "nivel_eq": 13.4,
+    "rank": "A+",
+    "perfil": "Preciso",
+    "nivel_bruta": 12.3,
+    "nivel_precisa": 13.4,
+    "medido": false
    },
    "orcamento": {
     "reacao": [],
@@ -172,26 +299,26 @@
    }
   },
   "desmontado": {
-   "hipotese": "Desmontado (CA 19, 2 ataques)",
+   "hipotese": "Desmontado ou confinado (CA 19, 2 ataques, sem vantagem)",
    "principal": [],
    "dano": {
     "dpr": {
-     "CA 11": 35.6,
-     "CA 12": 35.6,
-     "CA 15": 34.0,
-     "CA 16": 32.4,
-     "CA 18": 29.3,
-     "CA 20": 26.1,
-     "CA 22": 23.0,
-     "CA 24": 19.8,
-     "CA 25": 18.3
+     "CA 11": 30.9,
+     "CA 12": 30.9,
+     "CA 15": 29.5,
+     "CA 16": 28.2,
+     "CA 18": 25.4,
+     "CA 20": 22.6,
+     "CA 22": 19.8,
+     "CA 24": 16.9,
+     "CA 25": 15.5
     },
-    "nivel_eq": 9.2,
-    "rank": "B+",
+    "nivel_eq": 7.9,
+    "rank": "B",
     "perfil": "Equilibrado",
-    "nivel_bruta": 8.5,
-    "nivel_precisa": 9.2,
-    "medido": true
+    "nivel_bruta": 7.4,
+    "nivel_precisa": 7.9,
+    "medido": false
    },
    "defesa": {
     "pv_efetivo": 144.5,
@@ -249,6 +376,286 @@
    }
   }
  },
- "planos": {},
- "segundos": 1.9
+ "planos": {
+  "padrao": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "montado",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {}
+     }
+    },
+    {
+     "linha": "montado-surge",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "action_surge": 1
+     }
+    },
+    {
+     "linha": "montado",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {}
+     }
+    },
+    {
+     "linha": "montado-surge",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "action_surge": 1
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {},
+    "second_wind": 1,
+    "indomitable": 2
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "por_categoria": {
+      "np": 20.0,
+      "p": 20.0
+     }
+    },
+    "defesa": {
+     "nivel_eq": 14.5,
+     "rank": "A+",
+     "por_categoria": {
+      "np": 14.5,
+      "p": 14.5
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "por_categoria": {
+      "np": 20.0,
+      "p": 20.0
+     }
+    },
+    "vontade": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "por_categoria": {
+      "np": 20.0,
+      "p": 20.0
+     }
+    },
+    "controle": {
+     "nivel_eq": 2.2,
+     "rank": "D",
+     "por_categoria": {
+      "np": 2.2,
+      "p": 2.2
+     }
+    }
+   }
+  },
+  "combate_unico": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "montado-surge",
+     "categoria": "p",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "action_surge": 1
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {},
+    "second_wind": 1,
+    "indomitable": 2
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "por_categoria": {
+      "p": 20.0
+     }
+    },
+    "defesa": {
+     "nivel_eq": 14.5,
+     "rank": "A+",
+     "por_categoria": {
+      "p": 14.5
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "por_categoria": {
+      "p": 20.0
+     }
+    },
+    "vontade": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "por_categoria": {
+      "p": 20.0
+     }
+    },
+    "controle": {
+     "nivel_eq": 2.2,
+     "rank": "D",
+     "por_categoria": {
+      "p": 2.2
+     }
+    }
+   }
+  },
+  "dia_longo": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "montado",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {}
+     }
+    },
+    {
+     "linha": "montado",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {}
+     }
+    },
+    {
+     "linha": "montado-surge",
+     "categoria": "mod",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "action_surge": 1
+     }
+    },
+    {
+     "linha": "montado",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {}
+     }
+    },
+    {
+     "linha": "montado-surge",
+     "categoria": "mod",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "action_surge": 1
+     }
+    },
+    {
+     "linha": "montado",
+     "categoria": "mod",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {}
+     }
+    },
+    {
+     "linha": "montado",
+     "categoria": "mod",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {}
+     }
+    },
+    {
+     "linha": "montado-surge",
+     "categoria": "boss",
+     "peso": 4,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "action_surge": 1
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {},
+    "second_wind": 1,
+    "indomitable": 2
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "por_categoria": {
+      "np": 20.0,
+      "mod": 20.0,
+      "boss": 20.0
+     }
+    },
+    "defesa": {
+     "nivel_eq": 14.5,
+     "rank": "A+",
+     "por_categoria": {
+      "np": 14.5,
+      "mod": 14.5,
+      "boss": 14.5
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "por_categoria": {
+      "np": 20.0,
+      "mod": 20.0,
+      "boss": 20.0
+     }
+    },
+    "vontade": {
+     "nivel_eq": 20.0,
+     "rank": "S",
+     "por_categoria": {
+      "np": 20.0,
+      "mod": 20.0,
+      "boss": 20.0
+     }
+    },
+    "controle": {
+     "nivel_eq": 2.2,
+     "rank": "D",
+     "por_categoria": {
+      "np": 2.2,
+      "mod": 2.2,
+      "boss": 2.2
+     }
+    }
+   }
+  }
+ },
+ "segundos": 3.1
 }

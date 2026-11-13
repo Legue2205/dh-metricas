@@ -110,9 +110,9 @@ A força de um conjurador é a caixa de ferramentas, não um dia fixo.
 2. **Anel externo = máximo de cada eixo entre as linhas; anel interno = mínimo.** O externo não é alcançável
    inteiro ao mesmo tempo ("pico: um eixo por vez"); a distância entre anéis = dependência de recurso/flexibilidade
    (caster: interno baixo, externo alto; marcial: anéis quase iguais).
-3. **Anel intermediário = linha "equilibrada"** (o antigo plano de orçamento): uso razoável/realista dos recursos
-   definido na discussão; desenhado como pontos com traçado suave entre os dois anéis. *Aceito em princípio
-   (13/11); detalhes ainda em discussão com o usuário.*
+3. **Anel intermediário = linha "equilibrada"** = o plano de orçamento do dia (mantido): uso razoável/realista
+   dos recursos definido na discussão. **É o ranking padrão da build**; mínimo e máximo são o contexto (teste de
+   estresse e potencial). Desenhado como pontos com traçado suave entre os dois anéis. Confirmado em 13/11.
 4. **Marca de custo por linha:** `gratuita` (postura, escolhida turno a turno, mistura cai entre os anéis) ou
    `gasta_recurso` (espaços etc.). Recursos dedicados (Second Wind) entram direto no eixo deles, em todas as linhas.
 5. **Fôlego** (eixo de volta, generalizado): quantas lutas por dia a build sustenta nas linhas que gastam recurso.
@@ -123,6 +123,19 @@ A força de um conjurador é a caixa de ferramentas, não um dia fixo.
    (média). Suporte passa a medir o valor na luta em que é usado.
 8. **Site:** radar com os dois anéis + intermediário; cada linha aparece por cima ao passar o dedo (para ver quais
    eixos trocam com quais).
+
+## Fluxo rápido por build (13/11)
+
+Pedido: adicionar uma build deve custar pouco esforço; o cerne é discutir a estratégia.
+1. **Contexto:** party já está em `builds/*.json` (não precisa de .md). Build nova: um `.md` curto na pasta do
+   Drive "Builds RPG/Biblioteca de builds .md" (~5 KB, barato de ler), gerado por `prompts/prompt-build.md`.
+2. **Resumo de 4 linhas** (ideia, o que faz, recursos, estratégia proposta) — lido do JSON/.md.
+3. **Discussão só da estratégia:** linhas-opção (máximos de cada eixo), mínimo realista, linha equilibrada.
+4. Claude gera o JSON, roda `dh validar`/`rapido`, commita; o CI faz o resto.
+Facilitadores planejados:
+- `prompt-build.md`: trocar "Modos de jogo" + "Plano do dia" por "Linhas-opção (gratuita/gasta recurso)" +
+  "Linha equilibrada", para a IA externa já trazer um rascunho da estratégia e a discussão virar revisão.
+- `dh resumo <id>`: imprime o card de 4 linhas + recursos + opções candidatas a partir do JSON (sem LLM).
 
 ## Perguntas em aberto para o usuário
 - Incluir ação/concentração no orçamento agora?
@@ -150,6 +163,7 @@ A força de um conjurador é a caixa de ferramentas, não um dia fixo.
    radar de anéis no site.
 2. Suporte: trocar a diluição por dia pelo valor na luta em que é usado.
 3. Motor de fôlego (a partir do livro-caixa de `planos.py`).
-4. **Com o usuário:** linhas-opção de cada conjurador (Ravin, Marcus…) e posturas do Caleb; linha equilibrada.
+4. **Com o usuário:** linhas-opção + linha equilibrada de cada build (pedido típico: "vamos criar o plano do
+   Marcus"), começando por Marcus, Amadeus, Abdul; posturas do Caleb. Antes: `dh resumo` e o prompt novo.
 5. Gancho genérico de "bônus que escala durante a luta" (combo do Kael, carga do Ravin); ataques dos NPCs.
 6. `dh linhas`/exportação para o Sheets com os eixos novos (opcional: o site já substitui).

@@ -97,6 +97,33 @@ Decisões do usuário (10/11):
 - **Etapa (a) implementada em 10/11** (`dh/planos.py`, herança de linhas com `herda`, livro-caixa, média do dia
   e por categoria, `dh painel [tag]`). Kael e Tin Bin já têm plano (trivial). Falta a etapa (b).
 
+## Modelo de anéis (decidido em 13/11) — substitui o plano do dia como fonte da nota
+
+Motivo: a pré-seleção rígida de magias tirava do conjurador a escolha situacional (Lightning Bolt contra horda
+alinhada, Hypnotic Pattern contra brutos de Sabedoria baixa, Web/Haste contra boss com resistência lendária).
+A força de um conjurador é a caixa de ferramentas, não um dia fixo.
+
+1. **Uma build = um conjunto de opções; cada opção é uma linha.** Magias (Ravin: sem espaço, Hypnotic Pattern,
+   Haste em si, Haste no aliado, Lightning Bolt) e posturas (Caleb: agressiva, defensiva, utilitária) são a mesma
+   coisa. Só entram linhas do jogo real da build (decididas na discussão), para o mínimo não despencar à toa. A
+   estratégia da build (Sorlock de Hex, caster de controle/suporte, híbrido) aparece na escolha das linhas.
+2. **Anel externo = máximo de cada eixo entre as linhas; anel interno = mínimo.** O externo não é alcançável
+   inteiro ao mesmo tempo ("pico: um eixo por vez"); a distância entre anéis = dependência de recurso/flexibilidade
+   (caster: interno baixo, externo alto; marcial: anéis quase iguais).
+3. **Anel intermediário = linha "equilibrada"** (o antigo plano de orçamento): uso razoável/realista dos recursos
+   definido na discussão; desenhado como pontos com traçado suave entre os dois anéis. *Aceito em princípio
+   (13/11); detalhes ainda em discussão com o usuário.*
+4. **Marca de custo por linha:** `gratuita` (postura, escolhida turno a turno, mistura cai entre os anéis) ou
+   `gasta_recurso` (espaços etc.). Recursos dedicados (Second Wind) entram direto no eixo deles, em todas as linhas.
+5. **Fôlego** (eixo de volta, generalizado): quantas lutas por dia a build sustenta nas linhas que gastam recurso.
+   Um número da build inteira (o tanque é um só). O livro-caixa de `planos.py` passa a servir para isso e para um
+   "dia de exemplo"/modus operandi; deixa de gerar a nota dos eixos.
+6. **"Uma linha = uma hipótese" vale na escala da luta** (ação, concentração, reação), não mais do dia.
+7. **Consistência dos eixos:** hoje área e controle medem pico por luta, mas suporte divide `usos_dia` pelas lutas
+   (média). Suporte passa a medir o valor na luta em que é usado.
+8. **Site:** radar com os dois anéis + intermediário; cada linha aparece por cima ao passar o dedo (para ver quais
+   eixos trocam com quais).
+
 ## Perguntas em aberto para o usuário
 - Incluir ação/concentração no orçamento agora?
 
@@ -119,8 +146,10 @@ Decisões do usuário (10/11):
   Descrições escritas para a party (7 builds); **NPCs ainda sem `descricao`**.
 
 ## Próximo passo
-1. **Com o usuário:** plano do dia de cada conjurador (começar pelo Marcus: linhas "marcial" e "caster").
-2. Etapa (b): ação principal no orçamento / modelo round a round unificado (depende dos planos acima).
-3. Gancho genérico de "bônus que escala durante a luta" (combo do Kael, carga do Ravin) para tirar os últimos
-   `medido` da party; ataques dos NPCs (exige ler as fichas, que são grandes).
-4. `dh linhas`/exportação para o Sheets com os eixos novos (opcional: o site já substitui).
+1. **Modelo de anéis:** marca `gratuita`/`gasta_recurso` nas linhas; agregação mín/máx/equilibrada por build;
+   radar de anéis no site.
+2. Suporte: trocar a diluição por dia pelo valor na luta em que é usado.
+3. Motor de fôlego (a partir do livro-caixa de `planos.py`).
+4. **Com o usuário:** linhas-opção de cada conjurador (Ravin, Marcus…) e posturas do Caleb; linha equilibrada.
+5. Gancho genérico de "bônus que escala durante a luta" (combo do Kael, carga do Ravin); ataques dos NPCs.
+6. `dh linhas`/exportação para o Sheets com os eixos novos (opcional: o site já substitui).

@@ -78,6 +78,34 @@ def _conc_fonte(f, magias):
     return out
 
 
+def _conc_com_topos(linha, magias):
+    """[(token, topos)] — topos = conjunto de topologias onde a concentração acontece (None = todas)."""
+    out = []
+    for f in linha.get('controle', {}).get('fontes', []):
+        c = _conc_fonte(f, magias)
+        if c: out.append(('|'.join(sorted(c)), frozenset(f['topos']) if 'topos' in f else None))
+    extras = []
+    d = linha.get('dano')
+    if isinstance(d, dict) and d.get('concentracao'): extras.append(d)
+    extras += [f for f in (linha.get('suporte') or {}).get('fontes', []) if f.get('concentracao')]
+    extras += [a for a in linha.get('area', []) if isinstance(a, dict) and a.get('concentracao')]
+    for x in extras:
+        n = x['concentracao']
+        if not any(n in t.split('|') for t, _ in out):
+            out.append((n, frozenset(x['topos']) if 'topos' in x else None))
+    return out
+
+
+def conflitos_concentracao(linha, magias):
+    """Pares de concentrações que podem estar ativas na mesma luta (topologias que se cruzam)."""
+    cs = _conc_com_topos(linha, magias); out = []
+    for i in range(len(cs)):
+        for j in range(i + 1, len(cs)):
+            a, b = cs[i][1], cs[j][1]
+            if a is None or b is None or a & b: out.append((cs[i][0], cs[j][0]))
+    return out
+
+
 def concentracoes(linha, magias):
     """Concentrações distintas que a linha mantém ao mesmo tempo. Cada fonte de controle conta uma (as magias
     dentro dela se revezam); dano, área e suporte declaram "concentracao": "<nome>" (o mesmo nome = a mesma)."""
@@ -106,10 +134,9 @@ def checar(b, magias):
                 erros.append(f'{nome}: {rot} está contada mais de uma vez (soma das frações > 1)')
             for u in us:
                 if not u.get('eixos'): erros.append(f'{nome}: uso de {chave} "{u.get("uso")}" sem "eixos"')
-        conc = concentracoes(l, magias)
-        if len(conc) > 1:
-            erros.append(f'{nome}: mais de uma concentração ao mesmo tempo ({"; ".join(conc)}); '
-                         f'separe em linhas ou junte as opções num "melhor_de"')
+        for a, c in conflitos_concentracao(l, magias):
+            erros.append(f'{nome}: mais de uma concentração ao mesmo tempo ({a}; {c}); '
+                         f'separe em linhas, junte as opções num "melhor_de" ou separe por "topos"')
         usos = l.get('reacao', [])
         def tem(eixo): return any(eixo in u.get('eixos', []) for u in usos)
         def fontes(fs):

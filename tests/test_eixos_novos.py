@@ -174,3 +174,27 @@ def test_por_turno_no_critico():
     base = {"ataques": [{"n": 4, "bonus": 12, "dano": "1d12+7", "crit_em": 18}]}
     com = dict(base, por_turno=[{"dano": "1d12", "gatilho": "critico"}])
     assert abs(dpr(com, 15) - dpr(base, 15) - 6.5 * (1 - 0.85 ** 4)) < 0.11
+
+
+def test_fonte_restrita_a_topologias():
+    import numpy as np
+    from dh.base import TOPOS
+    from dh.controle import efeitos
+    corpo = dict(ca=17, pv=45)
+    so = efeitos.compilar([{"tipo": "terreno", "nome": "PG", "fator": 0.5, "topos": [TOPOS[0]]}], corpo, 7)
+    livre = efeitos.compilar([{"tipo": "terreno", "nome": "PG", "fator": 0.5}], corpo, 7)
+    E = [dict(melee=True)] * 3
+    assert np.allclose(so(E, TOPOS[0])['PG'], livre(E, TOPOS[0])['PG'])
+    assert not so(E, TOPOS[2])['PG'].any() and livre(E, TOPOS[2])['PG'].any()
+    with pytest.raises(ValueError):
+        efeitos.compilar([{"tipo": "ameaca", "topos": ["Pântano"]}], corpo, 7)
+
+
+def test_concentracao_em_topologias_diferentes_nao_conflita():
+    from dh.base import TOPOS
+    l = {"id": "x", "controle": {"fontes": [{"tipo": "area", "magia": "fear", "cd": 16, "topos": [TOPOS[2]]}]},
+         "suporte": {"fontes": [{"nome": "FF", "lado": "of", "modelo": "vantagem", "fracao": 0.2,
+                                 "concentracao": "faerie_fire", "topos": [TOPOS[0], TOPOS[1]]}]}}
+    assert orcamento.conflitos_concentracao(l, MAGIAS) == []
+    l["suporte"]["fontes"][0]["topos"] = [TOPOS[2]]
+    assert len(orcamento.conflitos_concentracao(l, MAGIAS)) == 1

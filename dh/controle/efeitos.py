@@ -223,7 +223,10 @@ TIPOS = dict(ameaca=_ameaca, terreno=_terreno, sentinela=_sentinela, parada_oa=_
 
 
 def _avalia_fonte(f, E, topo, t):
-    return {f.get('nome', f['tipo']): TIPOS[f['tipo']](f, E, topo, t)}
+    """"topos": [...] na fonte = só vale nessas topologias (o personagem escolhe a magia pelo terreno)."""
+    nome = f.get('nome', f['tipo'])
+    if 'topos' in f and topo not in f['topos']: return {nome: C.zero(E)}
+    return {nome: TIPOS[f['tipo']](f, E, topo, t)}
 
 
 def compilar(fontes, corpo, nivel):
@@ -231,6 +234,8 @@ def compilar(fontes, corpo, nivel):
     t = _corpo_t(corpo, nivel)
     for f in fontes:
         if f['tipo'] not in TIPOS: raise ValueError(f"tipo de fonte desconhecido: {f['tipo']}")
+        for tp in f.get('topos', []):
+            if tp not in TOPO: raise ValueError(f"topologia desconhecida: {tp} (use {', '.join(TOPO)})")
 
     def fn(E, topo):
         out = {}

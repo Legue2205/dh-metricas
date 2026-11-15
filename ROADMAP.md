@@ -167,3 +167,13 @@ Facilitadores planejados:
    Marcus"), começando por Marcus, Amadeus, Abdul; posturas do Caleb. Antes: `dh resumo` e o prompt novo.
 5. Gancho genérico de "bônus que escala durante a luta" (combo do Kael, carga do Ravin); ataques dos NPCs.
 6. `dh linhas`/exportação para o Sheets com os eixos novos (opcional: o site já substitui).
+
+## Feito em 15/11
+- **Marcus: plano do dia padrão no motor** (linha equilibrada = anel intermediário): linhas `comum-escudo`,
+  `comum-marcial`, `prioritaria`, `prioritaria-polymorph` e `planos.padrao`/`combate_unico`. Livro-caixa fecha
+  com sobra de 1×3º (Healing Word); Inspiração entra como recurso `inspiracao` (4, volta no descanso curto).
+  Homebrew da mesa: espadada de ação bônus depois de feitiço de 1º (adiantamento do Battle Magic).
+- Motor: `"topos": [...]` numa fonte de controle (só vale nessas topologias) e no checador de concentração
+  (concentrações em topologias disjuntas não conflitam). Testes novos.
+- Pendente do Marcus: arcos mínimo e máximo (linhas-opção); suposição de que FF lançado de 2º ainda conta como
+  "feitiço de 1º" para a espadada (confirmar com o usuário).

@@ -8,7 +8,7 @@
     "resumo": "Bardo do Valor de espada mágica: bate de espada nas lutas comuns e vira controlador nas prioritárias (Plant Growth, Fear, Polymorph).",
     "build": "Bard 7 (College of Valor). Des 14, Con 12, Car 18. Lucky.",
     "itens": "Espada/violão que evolui com o personagem: espada +2 com +1d4 por criatura senciente a 10 ft (até 3d4); violão +1 na CD e Acorde Maior (sobe 1 nível da magia gastando Bardic Inspiration).",
-    "estrategia": "Plano do dia ainda não escrito. A ideia: espada com no máximo 1 feitiço nas lutas não prioritárias e 100% de feitiços nas prioritárias.",
+    "estrategia": "Lutas comuns: escudo e espada, Faerie Fire e Dissonant Whispers de 1º com espadada bônus (homebrew). Prioritárias: conjurador; Plant Growth em campo/cidade, Fear na dungeon, Shatter nv3 com Acorde, Inspirações. Luta 4: Polymorph no aliado da frente. Sobra 1 espaço de 3º para Healing Word.",
     "dano": {
       "texto": "2 golpes de espada a duas mãos (d10+4, +1d4 por criatura senciente próxima).",
       "vantagem": "Nenhuma",
@@ -214,9 +214,425 @@
           }
         ]
       }
+    },
+    {
+      "id": "comum-escudo",
+      "principal": false,
+      "hipotese": "Luta comum, postura marcial com escudo (CA 19): T1 Faerie Fire 1º + espadada; T2 2 espadadas + Insp.; T3 Dissonant Whispers 1º + espadada (+ AO); T4 2 espadadas",
+      "acao_bonus": [
+        {
+          "uso": "espadada após feitiço de 1º (homebrew, adiantamento do Battle Magic)",
+          "fracao": 0.5,
+          "eixos": [
+            "dano"
+          ]
+        },
+        {
+          "uso": "Bardic Inspiration",
+          "fracao": 0.25,
+          "eixos": [
+            "suporte"
+          ]
+        }
+      ],
+      "reacao": [
+        {
+          "uso": "ataque de oportunidade de quem foge do Dissonant Whispers",
+          "fracao": 0.15,
+          "eixos": [
+            "dano"
+          ]
+        }
+      ],
+      "dano": {
+        "ataques": [
+          {
+            "n": 1.5,
+            "bonus": 7,
+            "dano": "1d8+2d4+4",
+            "vantagem": 0.6,
+            "nota": "6 golpes em 4 rounds, Faerie Fire (CD 15, 60%) desde o T1"
+          },
+          {
+            "n": 0.15,
+            "bonus": 7,
+            "dano": "1d8+2d4+4",
+            "vantagem": 0.6,
+            "nota": "AO: 60% de falha no DW ÷ 4 rounds"
+          }
+        ],
+        "automatico": 2.1,
+        "concentracao": "faerie_fire",
+        "nota": "balinada 2d4 (alvo + tank aliado a 10 ft); DW em automatico: média por round"
+      },
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": true,
+          "soft": 0.1,
+          "conc": true,
+          "dpr": 17
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      },
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Bardic Inspiration d8",
+            "lado": "of",
+            "modelo": "bonus_por_uso",
+            "usos_luta": 1,
+            "bonus": 4.5
+          },
+          {
+            "nome": "Faerie Fire",
+            "lado": "of",
+            "modelo": "vantagem",
+            "alvos": 3,
+            "fracao": 0.55,
+            "concentracao": "faerie_fire",
+            "nota": "60% de falha × ~90% dos rounds"
+          }
+        ]
+      },
+      "defesa": {
+        "ca": 19
+      },
+      "corpo": {
+        "ca": 19
+      },
+      "saves": {}
+    },
+    {
+      "id": "comum-marcial",
+      "principal": false,
+      "hipotese": "Luta comum, postura marcial: T1 Faerie Fire 1º + espadada; T2 2 espadadas + Insp.; T3 Dissonant Whispers 1º + espadada (+ AO); T4 2 espadadas",
+      "acao_bonus": [
+        {
+          "uso": "espadada após feitiço de 1º (homebrew, adiantamento do Battle Magic)",
+          "fracao": 0.5,
+          "eixos": [
+            "dano"
+          ]
+        },
+        {
+          "uso": "Bardic Inspiration",
+          "fracao": 0.25,
+          "eixos": [
+            "suporte"
+          ]
+        }
+      ],
+      "reacao": [
+        {
+          "uso": "ataque de oportunidade de quem foge do Dissonant Whispers",
+          "fracao": 0.15,
+          "eixos": [
+            "dano"
+          ]
+        }
+      ],
+      "dano": {
+        "ataques": [
+          {
+            "n": 1.5,
+            "bonus": 7,
+            "dano": "1d10+2d4+4",
+            "vantagem": 0.6,
+            "nota": "6 golpes em 4 rounds, Faerie Fire (CD 15, 60%) desde o T1"
+          },
+          {
+            "n": 0.15,
+            "bonus": 7,
+            "dano": "1d10+2d4+4",
+            "vantagem": 0.6,
+            "nota": "AO: 60% de falha no DW ÷ 4 rounds"
+          }
+        ],
+        "automatico": 2.1,
+        "concentracao": "faerie_fire",
+        "nota": "balinada 2d4 (alvo + tank aliado a 10 ft); DW em automatico: média por round"
+      },
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": true,
+          "soft": 0.1,
+          "conc": true,
+          "dpr": 17
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      },
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Bardic Inspiration d8",
+            "lado": "of",
+            "modelo": "bonus_por_uso",
+            "usos_luta": 1,
+            "bonus": 4.5
+          },
+          {
+            "nome": "Faerie Fire",
+            "lado": "of",
+            "modelo": "vantagem",
+            "alvos": 3,
+            "fracao": 0.55,
+            "concentracao": "faerie_fire",
+            "nota": "60% de falha × ~90% dos rounds"
+          }
+        ]
+      },
+      "defesa": {},
+      "saves": {}
+    },
+    {
+      "id": "prioritaria",
+      "principal": false,
+      "hipotese": "Luta prioritária, postura de conjurador. Campo: PG+Insp / FF 2º+Insp / Shatter nv3 (Acorde) / Balinarco ×2. Cidade: PG+Insp / Shatter nv3 (Acorde) / FF 2º+espadada / espadada ×2+Insp. Dungeon: Fear+Insp / DW nv2 / espadada ×2 / espadada ×2+Insp",
+      "acao_bonus": [
+        {
+          "uso": "Bardic Inspiration",
+          "fracao": 0.5,
+          "eixos": [
+            "suporte"
+          ]
+        },
+        {
+          "uso": "Acorde Maior",
+          "fracao": 0.15,
+          "eixos": [
+            "dano",
+            "area"
+          ]
+        },
+        {
+          "uso": "espadada após FF (cidade)",
+          "fracao": 0.09,
+          "eixos": [
+            "dano"
+          ]
+        }
+      ],
+      "dano": {
+        "ataques": [
+          {
+            "n": 0.125,
+            "bonus": 5,
+            "dano": "1d8+2",
+            "vantagem": 0.65,
+            "nota": "Balinarco ×2 no campo (25%), com FF"
+          },
+          {
+            "n": 0.2625,
+            "bonus": 7,
+            "dano": "1d8+1d4+4",
+            "vantagem": 0.65,
+            "nota": "3 espadadas na cidade (35%), com FF; espada numa mão, violão na outra"
+          },
+          {
+            "n": 0.4,
+            "bonus": 7,
+            "dano": "1d8+1d4+4",
+            "nota": "4 espadadas na dungeon (40%)"
+          }
+        ],
+        "automatico": 3.38
+      },
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "soft": 0.1,
+          "conc": true,
+          "dpr": 10
+        },
+        "fontes": [
+          {
+            "tipo": "terreno",
+            "nome": "Plant Growth",
+            "fator": 0.5,
+            "chave_topo": "pg",
+            "topos": [
+              "Campo aberto",
+              "Ruínas ou cidade"
+            ]
+          },
+          {
+            "tipo": "area",
+            "nome": "Fear",
+            "magia": "fear",
+            "cd": 16,
+            "topos": [
+              "Sala de dungeon"
+            ]
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      },
+      "area": [
+        {
+          "nome": "Shatter nv3 (2º + Acorde)",
+          "usos": [
+            {
+              "alvos": 2,
+              "dano": "4d8",
+              "cd": 16,
+              "slot": 2
+            }
+          ]
+        }
+      ],
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Bardic Inspiration d8",
+            "lado": "of",
+            "modelo": "bonus_por_uso",
+            "usos_luta": 2,
+            "bonus": 4.5
+          },
+          {
+            "nome": "Faerie Fire",
+            "lado": "of",
+            "modelo": "vantagem",
+            "alvos": 3,
+            "fracao": 0.19,
+            "concentracao": "faerie_fire",
+            "topos": [
+              "Campo aberto",
+              "Ruínas ou cidade"
+            ],
+            "nota": "campo: T2, ~2,5 rounds; cidade: T3, ~1,5 round; 65% de falha"
+          }
+        ]
+      },
+      "defesa": {},
+      "saves": {}
+    },
+    {
+      "id": "prioritaria-polymorph",
+      "principal": false,
+      "hipotese": "Luta 4: prioritária com Polymorph no aliado da linha de frente (Giant Ape). Campo: PG / Polymorph / Shatter nv3 / Balinarco ×2. Cidade: PG / Shatter nv3 / Polymorph / espadada ×2. Dungeon: Fear / DW nv2 / Polymorph (o Fear cai) / espadada ×2",
+      "acao_bonus": [
+        {
+          "uso": "Bardic Inspiration",
+          "fracao": 0.5,
+          "eixos": [
+            "suporte"
+          ]
+        },
+        {
+          "uso": "Acorde Maior",
+          "fracao": 0.15,
+          "eixos": [
+            "dano",
+            "area"
+          ]
+        }
+      ],
+      "dano": {
+        "ataques": [
+          {
+            "n": 0.125,
+            "bonus": 5,
+            "dano": "1d8+2",
+            "nota": "Balinarco ×2 no campo"
+          },
+          {
+            "n": 0.375,
+            "bonus": 7,
+            "dano": "1d8+1d4+4",
+            "nota": "2 espadadas na cidade e na dungeon"
+          }
+        ],
+        "automatico": 3.38
+      },
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "soft": 0.1,
+          "conc": true,
+          "dpr": 9
+        },
+        "fontes": [
+          {
+            "tipo": "terreno",
+            "nome": "Plant Growth",
+            "fator": 0.5,
+            "chave_topo": "pg",
+            "topos": [
+              "Campo aberto",
+              "Ruínas ou cidade"
+            ]
+          },
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ],
+        "nota": "Fear da dungeon fica de fora: o Polymorph o derruba no T3 (conservador, ele vale ~2 rounds)"
+      },
+      "area": [
+        {
+          "nome": "Shatter nv3 (2º + Acorde)",
+          "usos": [
+            {
+              "alvos": 2,
+              "dano": "4d8",
+              "cd": 16,
+              "slot": 2
+            }
+          ]
+        }
+      ],
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Bardic Inspiration d8",
+            "lado": "of",
+            "modelo": "bonus_por_uso",
+            "usos_luta": 2,
+            "bonus": 4.5
+          },
+          {
+            "nome": "Polymorph no aliado (PV do Giant Ape)",
+            "lado": "def",
+            "modelo": "pv_temporario",
+            "alvos": 1,
+            "pv": 47,
+            "concentracao": "polymorph",
+            "nota": "~27 de dano/round no linha de frente (metade do dano inimigo da régua nv 7) × 1,75 round restante; o macaco tem 157"
+          },
+          {
+            "nome": "Polymorph no aliado (dano extra)",
+            "lado": "of",
+            "modelo": "valor_por_luta",
+            "usos_luta": 1,
+            "valor": 17,
+            "nota": "2 socos +9, 3d10+6 (~35 de DPR em CA 15) contra ~25 do aliado: +10/round × 1,75 round"
+          }
+        ]
+      },
+      "defesa": {},
+      "saves": {}
     }
   ],
-  "pendente": "As linhas de controle 'luta prioritária, orçamento real' (principal na planilha) e 'média do dia' foram feitas num script que não está no Drive: reescrever como plano. Suporte: as linhas 'dia', 'comum', 'prioritária' e 'faerie-fire' da especificação ainda não foram migradas (têm valores fixos com pendência).",
+  "pendente": "Arcos mínimo e máximo (linhas-opção) a discutir. Modelo de anéis ainda não implementado no site.",
   "recursos": {
     "espacos": {
       "1": 4,
@@ -224,6 +640,79 @@
       "3": 3,
       "4": 1
     },
+    "outros": {
+      "inspiracao": {
+        "qtd": 4,
+        "volta": "curto"
+      }
+    },
     "lutas_dia": 4
+  },
+  "planos": {
+    "padrao": {
+      "descricao": "Arco regular: escudo e espada nas comuns, conjurador nas prioritárias, Polymorph na luta 4. Sobra 1 espaço de 3º para Healing Word.",
+      "combates": [
+        {
+          "linha": "comum-escudo",
+          "gasta": {
+            "espacos": {
+              "1": 2
+            },
+            "inspiracao": 1
+          },
+          "nota": "FF + DW de 1º"
+        },
+        {
+          "linha": "prioritaria",
+          "gasta": {
+            "espacos": {
+              "2": 2,
+              "3": 1
+            },
+            "inspiracao": 3
+          },
+          "nota": "pior caso (campo/cidade): PG ou Fear de 3º, 2 de 2º; Insp. do T4 cortada no campo"
+        },
+        {
+          "linha": "comum-escudo",
+          "gasta": {
+            "espacos": {
+              "1": 2
+            },
+            "inspiracao": 1
+          },
+          "nota": "FF + DW de 1º"
+        },
+        {
+          "linha": "prioritaria-polymorph",
+          "gasta": {
+            "espacos": {
+              "2": 1,
+              "3": 1,
+              "4": 1
+            },
+            "inspiracao": 3
+          },
+          "nota": "PG/Fear + Shatter ou DW nv2 + Polymorph"
+        }
+      ]
+    },
+    "combate_unico": {
+      "descricao": "Uma luta só: a prioritária com Polymorph.",
+      "combates": [
+        {
+          "linha": "prioritaria-polymorph",
+          "gasta": {
+            "espacos": {
+              "2": 1,
+              "3": 1,
+              "4": 1
+            },
+            "inspiracao": 3
+          },
+          "nota": ""
+        }
+      ]
+    }
   }
 }

@@ -211,3 +211,16 @@ def test_aneis_minimo_equilibrado_maximo():
         if k in a['equilibrado']: assert a['interno'][k]['n'] - 0.05 <= a['equilibrado'][k]['n'] <= v['n'] + 0.05
     assert a['interno']['area']['n'] == 0.0          # linha sem área conta 0 (eixo ativo)
     assert a['linhas']['comum-escudo']['custo'] == 'gasta_recurso'
+
+
+def test_tatico_politicas():
+    from dh import tatico
+    spec = json.loads((B / 'tinbin-7.json').read_text(encoding='utf-8'))['tatico']
+    r = tatico.avaliar(spec, w=1.0, n=3000)
+    o, s, f = (r[p]['media'] for p in ('otima', 'sombras', 'frontline'))
+    assert s['escondido_fim_turno'] > 95 and f['escondido_fim_turno'] == 0
+    assert o['dpr'] - o['recebido_luta'] / 4 >= max(s['dpr'] - s['recebido_luta'] / 4, f['dpr'] - f['recebido_luta'] / 4) - 0.3
+    mais_cauteloso = tatico.avaliar(spec, w=2.0, politicas=('otima',), n=3000)['otima']['media']
+    assert mais_cauteloso['recebido_luta'] < o['recebido_luta']
+    with pytest.raises(ValueError):
+        tatico.Modelo({})

@@ -114,12 +114,13 @@ def _linhas(b, res):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(prog='dh', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua', 'site'])
+    ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua', 'site', 'tatico'])
     ap.add_argument('alvos', nargs='*')
     ap.add_argument('--forcar', action='store_true')
     ap.add_argument('--eixo', action='append')
     ap.add_argument('--linha', action='append')
     ap.add_argument('--json', action='store_true')
+    ap.add_argument('--w', type=float, action='append', help='tatico: peso do dano recebido (padrão 0.5, 1 e 2)')
     a = ap.parse_args(argv)
     arquivos = [f for p in a.alvos for f in sorted(glob.glob(p))] if a.comando not in ('regua', 'painel', 'site') else []
 
@@ -131,6 +132,26 @@ def main(argv=None):
             for e in erros: print('      -', e)
             for e in av: print('      ~', e)
         return 0 if ok else 1
+
+    if a.comando == 'tatico':
+        from . import tatico
+        for f in arquivos:
+            b = json.load(open(f, encoding='utf-8'))
+            if 'tatico' not in b: print(f'{f}: sem bloco "tatico"'); continue
+            for w in a.w or [0.5, 1.0, 2.0]:
+                r = tatico.avaliar(b['tatico'], w=w)
+                if a.json: print(json.dumps({'w': w, **r}, ensure_ascii=False)); continue
+                print(f"\n{b['nome']} — w = {w:g} (1 PV recebido vale {w:g} de dano)")
+                for pol, res in r.items():
+                    m = res['media']
+                    print(f"  {pol:9s} média: DPR {_fmt(m['dpr'])} · recebido/luta {_fmt(m['recebido_luta'])} · escondido no fim do turno {_fmt(m['escondido_fim_turno'])}%")
+                    if pol != 'otima': continue
+                    for t, v in res.items():
+                        if t == 'media': continue
+                        print(f"    {t}: DPR {_fmt(v['dpr'])} · recebido {_fmt(v['recebido_luta'])} · escondido {_fmt(v['escondido_fim_turno'])}%")
+                        print('      R1:   ' + ' · '.join(f"{k} {_fmt(x)}%" for k, x in v['acoes_r1'].items() if x >= 1))
+                        print('      R2-4: ' + ' · '.join(f"{k} {_fmt(x)}%" for k, x in v['acoes_r2_4'].items() if x >= 1))
+        return 0
 
     if a.comando == 'site':
         from .site import gerar

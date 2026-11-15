@@ -180,3 +180,15 @@ Facilitadores planejados:
   (concentrações em topologias disjuntas não conflitam). Testes novos.
 - Pendente do Marcus: arcos mínimo e máximo (linhas-opção); suposição de que FF lançado de 2º ainda conta como
   "feitiço de 1º" para a espadada (confirmar com o usuário).
+
+## Motor tático (15/11, noite)
+`dh/tatico.py` + `python -m dh tatico builds/<id>.json [--w 1]`: programação dinâmica turno a turno para quem alterna
+esconderijo e linha de frente (bloco `"tatico"` na build: ataques melee/arremesso/distância, deslocamento, sneak).
+Estado: distância ao alvo, esconderijo, escondido, distância alvo→esconderijo (por topologia), aliado colado, round 1
+com Assassinate. Ações: Melee/Thrower Lurker, Melee/Thrower Dasher, Frontline (Steady Aim / Hide e entra), Ranged
+Lurker, Sniper, Reposicionar, Aproximar. Objetivo: dano − w × dano recebido. Políticas: ótima, só sombras, só frontline.
+Primeiro uso: Tin Bin (Nick 2024 homebrew: 2 golpes na ação).
+Premissas a confirmar com o usuário: exposição (escondido 5%, longe 15%, colado 30% do dano inimigo da régua, ×0,85
+por Uncanny Dodge), distâncias iniciais e entre alvos por topologia, PV do alvo 60, aliado colado 20% no R1 e 70% depois.
+Próximo: (1) estado de PV gasto (o "luxo" de ir para a frente depois de rounds escondido); (2) Action Surge e manobras;
+(3) ligar o resultado às linhas da build (dano e exposição → defesa) para entrar nos anéis.

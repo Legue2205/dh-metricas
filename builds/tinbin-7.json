@@ -8,7 +8,7 @@
     "resumo": "Assassino de duas adagas: muito dano em alvo único, com pico no round 1.",
     "build": "Assassin 5 / Fighter 2 (Battle Master no nível 8, com Riposte). Two-Weapon Fighting e Nick (mastery de 2024 liberada na mesa): 2 ataques por ação.",
     "itens": "Adagas mágicas (+10 para acertar, 2d4+7).",
-    "estrategia": "Mesma abordagem em todo combate: 2 adagas por turno com Sneak Attack no 1º acerto; Assassinate dá vantagem no round 1. Action Surge em cerca de metade das lutas.",
+    "estrategia": "Entra e sai das sombras conforme a distância até o esconderijo, o aliado colado no alvo e o PV que sobra no dia (motor tático). Na party real é o 3º corpo a corpo: Melee Dasher na cidade e no campo, Melee Lurker na dungeon, Frontline quando sobra vida.",
     "dano": {
       "texto": "2 ataques de adaga por ação, Sneak Attack 3d6 uma vez por turno. Action Surge dobra a ação no round 1.",
       "vantagem": "Assassinate (round 1)",
@@ -43,7 +43,10 @@
   "linhas": [
     {
       "id": "principal",
-      "principal": true,
+      "principal": [
+        "defesa",
+        "saves"
+      ],
       "hipotese": "Action Surge em 50% das lutas; Uncanny Dodge, Second Wind",
       "dano": {
         "ataques": [
@@ -101,6 +104,86 @@
           }
         ]
       },
+      "saves": {},
+      "aneis": false
+    },
+    {
+      "id": "transicao-3o-melee",
+      "principal": [
+        "dano",
+        "controle"
+      ],
+      "custo": "gratuita",
+      "hipotese": "Estratégia com transições, como 3º corpo a corpo (tanque e striker na frente): Lurker/Dasher/Frontline conforme distância, aliado e PV do dia",
+      "tatico": {
+        "politica": "otima",
+        "composicao": "terceiro_melee"
+      },
+      "defesa": {
+        "pv_efetivo": 54.5,
+        "reacoes": [
+          {
+            "tipo": "uncanny_dodge"
+          }
+        ]
+      },
+      "saves": {}
+    },
+    {
+      "id": "transicao-2o-frontliner",
+      "principal": false,
+      "custo": "gratuita",
+      "hipotese": "Estratégia com transições, como 2º frontliner (só ele e o tanque na frente)",
+      "tatico": {
+        "politica": "otima",
+        "composicao": "segundo_frontliner"
+      },
+      "defesa": {
+        "pv_efetivo": 54.5,
+        "reacoes": [
+          {
+            "tipo": "uncanny_dodge"
+          }
+        ]
+      },
+      "saves": {}
+    },
+    {
+      "id": "sombras",
+      "principal": false,
+      "custo": "gratuita",
+      "hipotese": "Só nas sombras: Melee/Thrower/Ranged Lurker, sempre escondido no fim do turno",
+      "tatico": {
+        "politica": "sombras",
+        "composicao": "terceiro_melee"
+      },
+      "defesa": {
+        "pv_efetivo": 54.5,
+        "reacoes": [
+          {
+            "tipo": "uncanny_dodge"
+          }
+        ]
+      },
+      "saves": {}
+    },
+    {
+      "id": "frontline",
+      "principal": false,
+      "custo": "gratuita",
+      "hipotese": "Só frontline: colado no alvo, vantagem por Steady Aim ou Hide antes de entrar",
+      "tatico": {
+        "politica": "frontline",
+        "composicao": "terceiro_melee"
+      },
+      "defesa": {
+        "pv_efetivo": 54.5,
+        "reacoes": [
+          {
+            "tipo": "uncanny_dodge"
+          }
+        ]
+      },
       "saves": {}
     },
     {
@@ -120,37 +203,38 @@
           24.7
         ],
         "fonte": "planilha de dano (sem motor salvo)"
-      }
+      },
+      "aneis": false
     }
   ],
   "planos": {
     "padrao": {
       "combates": [
-        "principal",
-        "principal",
-        "principal",
-        "principal"
+        "transicao-3o-melee",
+        "transicao-3o-melee",
+        "transicao-3o-melee",
+        "transicao-3o-melee"
       ],
-      "descricao": "sem recurso diário relevante: mesma abordagem em todo combate"
+      "descricao": "Sem recurso diário relevante (Action Surge fora por ora): estratégia com transições como 3º corpo a corpo em todo combate."
     },
     "combate_unico": {
       "combates": [
-        "principal"
+        "transicao-3o-melee"
       ],
-      "descricao": "sem recurso diário relevante: mesma abordagem em todo combate"
+      "descricao": "Sem recurso diário relevante (Action Surge fora por ora): estratégia com transições como 3º corpo a corpo em todo combate."
     },
     "dia_longo": {
       "combates": [
-        "principal",
-        "principal",
-        "principal",
-        "principal",
-        "principal",
-        "principal",
-        "principal",
-        "principal"
+        "transicao-3o-melee",
+        "transicao-3o-melee",
+        "transicao-3o-melee",
+        "transicao-3o-melee",
+        "transicao-3o-melee",
+        "transicao-3o-melee",
+        "transicao-3o-melee",
+        "transicao-3o-melee"
       ],
-      "descricao": "sem recurso diário relevante: mesma abordagem em todo combate"
+      "descricao": "Sem recurso diário relevante (Action Surge fora por ora): estratégia com transições como 3º corpo a corpo em todo combate."
     }
   },
   "tatico": {

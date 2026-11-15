@@ -196,3 +196,14 @@ w dentro (razão de piscinas), w × 3 acima, queda = 60. Três composições fix
 escolhe; não otimizar para cada party possível.
 Próximo: (1) "deixa na mão": quanto dano o esconder-se empurra para a party (usar o motor de atenção/corpo, T/S/P);
 (2) ligar as políticas às linhas da build para entrar nos anéis; (3) Action Surge depois (decisão do usuário).
+
+## Corpo separado do Controle (15/11, 23h) — decisão do usuário
+- **Controle** = só turnos negados (`nivel_campo`). **Corpo** = 7º eixo (`nivel_atencao`) + perfil T/S/P estampado ao
+  lado do nome, junto com a **posição** na party de referência (Tanque, 2º marcial, Atirador/backliner, Conjurador).
+  Motores intactos (0 diferença nos números); muda o que planos, anéis e site mostram. Versão 0.5.0.
+- Atenção: `front` aceita fração e `oculto` (fração dos turnos inimigos em que não pode ser alvo).
+- Linha com `"tatico": {"politica", "composicao"}`: o motor tático gera o dano (9 CAs) e a ficha de atenção
+  (colado → front, escondido → oculto, composição → posição: 3º melee = atirador, 2º frontliner = striker, sem tanque = tank).
+- Tin Bin: linhas transicao-3o-melee (equilibrada), transicao-2o-frontliner, sombras, frontline; Action Surge fora.
+- Em aberto: parties de 5–6 (3º melee como posição própria); a exposição do motor tático vem de presets por composição,
+  não do motor de atenção (possível iteração: calibrar os presets pela atenção); nome melhor para "controle de corpo".

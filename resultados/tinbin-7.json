@@ -4,19 +4,15 @@
  "grupo": "Party",
  "nivel": 7,
  "build": "Assassin 5 / Battle Master 2",
- "impressao": "4ab3f3e82f",
- "versao": "0.4.0",
+ "impressao": "506f9eec15",
+ "versao": "0.5.0",
  "modo": "completo",
  "linhas": {
   "principal": {
    "hipotese": "Action Surge em 50% das lutas; Uncanny Dodge, Second Wind",
    "principal": [
-    "dano",
     "defesa",
-    "controle",
-    "saves",
-    "area",
-    "suporte"
+    "saves"
    ],
    "dano": {
     "dpr": {
@@ -142,6 +138,735 @@
     "rank_absoluto": "F"
    }
   },
+  "transicao-3o-melee": {
+   "hipotese": "Estratégia com transições, como 3º corpo a corpo (tanque e striker na frente): Lurker/Dasher/Frontline conforme distância, aliado e PV do dia",
+   "principal": [
+    "dano",
+    "controle"
+   ],
+   "tatico": {
+    "politica": "otima",
+    "composicao": "terceiro_melee",
+    "dpr": 28.1,
+    "recebido_luta": 17.8,
+    "escondido_fim_turno": 35.3,
+    "lutas_acima_do_orcamento": 29.5,
+    "colado_fim_turno": 14.9,
+    "acoes": {
+     "Sala de dungeon": {
+      "r1": {
+       "Melee Dasher": 49.2,
+       "Frontline": 40.6,
+       "Sniper": 9.3,
+       "Ranged Lurker": 0.8
+      },
+      "r2_4": {
+       "Melee Lurker": 58.6,
+       "Melee Dasher": 16.9,
+       "Frontline": 8.5,
+       "Ranged Lurker": 5.2,
+       "Thrower Dasher": 4.9,
+       "Sniper": 4.8,
+       "Thrower Lurker": 1.0
+      }
+     },
+     "Ruínas ou cidade": {
+      "r1": {
+       "Melee Dasher": 48.2,
+       "Frontline": 33.6,
+       "Ranged Lurker": 8.1,
+       "Sniper": 6.3,
+       "Reposicionar e esconder": 3.2,
+       "Thrower Lurker": 0.5
+      },
+      "r2_4": {
+       "Melee Dasher": 38.3,
+       "Melee Lurker": 18.3,
+       "Ranged Lurker": 10.6,
+       "Sniper": 9.7,
+       "Frontline": 9.4,
+       "Thrower Dasher": 8.0,
+       "Thrower Lurker": 5.3,
+       "Reposicionar e esconder": 0.3
+      }
+     },
+     "Campo aberto": {
+      "r1": {
+       "Sniper": 41.5,
+       "Ranged Lurker": 26.4,
+       "Frontline": 25.1,
+       "Thrower Dasher": 6.9
+      },
+      "r2_4": {
+       "Melee Dasher": 40.5,
+       "Sniper": 21.1,
+       "Ranged Lurker": 11.3,
+       "Thrower Dasher": 9.7,
+       "Frontline": 7.1,
+       "Melee Lurker": 6.5,
+       "Thrower Lurker": 3.6,
+       "Reposicionar e esconder": 0.1
+      }
+     }
+    }
+   },
+   "dano": {
+    "dpr": {
+     "CA 11": 30.7,
+     "CA 12": 30.5,
+     "CA 15": 28.1,
+     "CA 16": 27.1,
+     "CA 18": 24.9,
+     "CA 20": 22.3,
+     "CA 22": 19.4,
+     "CA 24": 16.0,
+     "CA 25": 14.1
+    },
+    "nivel_eq": 7.8,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.2,
+    "nivel_precisa": 7.8,
+    "medido": true
+   },
+   "defesa": {
+    "pv_efetivo": 54.5,
+    "ca": 17,
+    "blindagem": 5.81,
+    "durabilidade": 4.11,
+    "nivel_blindagem": 5.9,
+    "nivel_durabilidade": 6.1,
+    "nivel_eq": 6.1,
+    "rank": "B-",
+    "perfil": "Durável",
+    "reacoes_usadas": [
+     "uncanny_dodge"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.27,
+     "rank": "B-",
+     "turnos_livres": [
+      3.57,
+      3.72,
+      3.66,
+      2.31,
+      1.96,
+      1.91,
+      1.48,
+      1.58,
+      1.19,
+      0.87
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.49,
+     "rank": "C",
+     "turnos_livres": [
+      3.16,
+      1.8,
+      1.4,
+      1.33,
+      1.09,
+      0.76,
+      1.12,
+      0.83,
+      0.96,
+      1.13
+     ]
+    }
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.56,
+    "rank": "E",
+    "nivel_campo": 0.13,
+    "rank_campo": "F",
+    "nivel_atencao": 0.44,
+    "rank_atencao": "F",
+    "vidas_total": 0.098,
+    "vidas_campo": 0.023,
+    "vidas_atencao": 0.077,
+    "corpo": {
+     "T": 0.077,
+     "S": 0.156,
+     "P": -0.079,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.55,
+     "Party de elite": 0.69,
+     "Horda + chefe": 0.4,
+     "Horda": 0.42,
+     "Dupla": 0.49,
+     "Chefe sozinho": 0.64
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0117
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0068
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0068
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0153
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.007
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0082
+     }
+    },
+    "nivel_absoluto": 0.42,
+    "rank_absoluto": "F"
+   }
+  },
+  "transicao-2o-frontliner": {
+   "hipotese": "Estratégia com transições, como 2º frontliner (só ele e o tanque na frente)",
+   "principal": [],
+   "tatico": {
+    "politica": "otima",
+    "composicao": "segundo_frontliner",
+    "dpr": 24.9,
+    "recebido_luta": 16.3,
+    "escondido_fim_turno": 69.6,
+    "lutas_acima_do_orcamento": 5.1,
+    "colado_fim_turno": 1.0,
+    "acoes": {
+     "Sala de dungeon": {
+      "r1": {
+       "Melee Dasher": 46.3,
+       "Thrower Dasher": 31.8,
+       "Ranged Lurker": 10.1,
+       "Reposicionar e esconder": 5.5,
+       "Sniper": 3.9,
+       "Thrower Lurker": 2.4
+      },
+      "r2_4": {
+       "Melee Lurker": 57.0,
+       "Ranged Lurker": 18.8,
+       "Thrower Lurker": 14.2,
+       "Melee Dasher": 7.9,
+       "Sniper": 0.8,
+       "Reposicionar e esconder": 0.7,
+       "Thrower Dasher": 0.6
+      }
+     },
+     "Ruínas ou cidade": {
+      "r1": {
+       "Melee Dasher": 38.2,
+       "Ranged Lurker": 15.7,
+       "Reposicionar e esconder": 13.6,
+       "Frontline": 11.7,
+       "Sniper": 11.2,
+       "Thrower Lurker": 9.6
+      },
+      "r2_4": {
+       "Thrower Lurker": 32.3,
+       "Ranged Lurker": 25.6,
+       "Melee Dasher": 20.1,
+       "Melee Lurker": 17.2,
+       "Reposicionar e esconder": 2.9,
+       "Thrower Dasher": 1.2,
+       "Sniper": 0.7
+      }
+     },
+     "Campo aberto": {
+      "r1": {
+       "Thrower Dasher": 30.7,
+       "Ranged Lurker": 29.0,
+       "Sniper": 25.1,
+       "Reposicionar e esconder": 11.3,
+       "Aproximar (Dash)": 4.0
+      },
+      "r2_4": {
+       "Thrower Lurker": 33.8,
+       "Ranged Lurker": 32.2,
+       "Melee Dasher": 22.2,
+       "Melee Lurker": 6.1,
+       "Reposicionar e esconder": 3.6,
+       "Thrower Dasher": 1.8,
+       "Sniper": 0.2,
+       "Aproximar (Dash)": 0.0
+      }
+     }
+    }
+   },
+   "dano": {
+    "dpr": {
+     "CA 11": 27.2,
+     "CA 12": 26.9,
+     "CA 15": 24.9,
+     "CA 16": 24.0,
+     "CA 18": 22.2,
+     "CA 20": 19.9,
+     "CA 22": 17.2,
+     "CA 24": 14.1,
+     "CA 25": 12.4
+    },
+    "nivel_eq": 7.1,
+    "rank": "B",
+    "perfil": "Preciso",
+    "nivel_bruta": 6.5,
+    "nivel_precisa": 7.1,
+    "medido": true
+   },
+   "defesa": {
+    "pv_efetivo": 54.5,
+    "ca": 17,
+    "blindagem": 5.81,
+    "durabilidade": 4.11,
+    "nivel_blindagem": 5.9,
+    "nivel_durabilidade": 6.1,
+    "nivel_eq": 6.1,
+    "rank": "B-",
+    "perfil": "Durável",
+    "reacoes_usadas": [
+     "uncanny_dodge"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.27,
+     "rank": "B-",
+     "turnos_livres": [
+      3.57,
+      3.72,
+      3.66,
+      2.31,
+      1.96,
+      1.91,
+      1.48,
+      1.58,
+      1.19,
+      0.87
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.49,
+     "rank": "C",
+     "turnos_livres": [
+      3.16,
+      1.8,
+      1.4,
+      1.33,
+      1.09,
+      0.76,
+      1.12,
+      0.83,
+      0.96,
+      1.13
+     ]
+    }
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.52,
+    "rank": "E",
+    "nivel_campo": 0.13,
+    "rank_campo": "F",
+    "nivel_atencao": 0.41,
+    "rank_atencao": "F",
+    "vidas_total": 0.106,
+    "vidas_campo": 0.023,
+    "vidas_atencao": 0.088,
+    "corpo": {
+     "T": 0.088,
+     "S": 0.551,
+     "P": -0.464,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.9,
+     "Party de elite": 0.72,
+     "Horda + chefe": 0.35,
+     "Horda": 0.47,
+     "Dupla": 0.28,
+     "Chefe sozinho": 0.23
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0117
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0068
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0068
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0153
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.007
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0082
+     }
+    },
+    "nivel_absoluto": 0.41,
+    "rank_absoluto": "F"
+   }
+  },
+  "sombras": {
+   "hipotese": "Só nas sombras: Melee/Thrower/Ranged Lurker, sempre escondido no fim do turno",
+   "principal": [],
+   "tatico": {
+    "politica": "sombras",
+    "composicao": "terceiro_melee",
+    "dpr": 20.7,
+    "recebido_luta": 8.8,
+    "escondido_fim_turno": 99.7,
+    "lutas_acima_do_orcamento": 0.0,
+    "colado_fim_turno": 0.0,
+    "acoes": {
+     "Sala de dungeon": {
+      "r1": {
+       "Reposicionar e esconder": 71.0,
+       "Thrower Lurker": 14.7,
+       "Ranged Lurker": 14.3
+      },
+      "r2_4": {
+       "Melee Lurker": 54.6,
+       "Thrower Lurker": 24.5,
+       "Ranged Lurker": 20.9
+      }
+     },
+     "Ruínas ou cidade": {
+      "r1": {
+       "Reposicionar e esconder": 69.9,
+       "Ranged Lurker": 15.2,
+       "Thrower Lurker": 14.9
+      },
+      "r2_4": {
+       "Thrower Lurker": 53.7,
+       "Ranged Lurker": 30.1,
+       "Melee Lurker": 16.1
+      }
+     },
+     "Campo aberto": {
+      "r1": {
+       "Reposicionar e esconder": 63.9,
+       "Ranged Lurker": 30.5,
+       "Aproximar (Dash)": 5.5
+      },
+      "r2_4": {
+       "Thrower Lurker": 52.9,
+       "Ranged Lurker": 40.4,
+       "Melee Lurker": 6.3,
+       "Reposicionar e esconder": 0.4
+      }
+     }
+    }
+   },
+   "dano": {
+    "dpr": {
+     "CA 11": 22.5,
+     "CA 12": 22.2,
+     "CA 15": 20.7,
+     "CA 16": 20.0,
+     "CA 18": 18.4,
+     "CA 20": 16.6,
+     "CA 22": 14.2,
+     "CA 24": 11.5,
+     "CA 25": 10.0
+    },
+    "nivel_eq": 5.5,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.3,
+    "nivel_precisa": 5.5,
+    "medido": true
+   },
+   "defesa": {
+    "pv_efetivo": 54.5,
+    "ca": 17,
+    "blindagem": 5.81,
+    "durabilidade": 4.11,
+    "nivel_blindagem": 5.9,
+    "nivel_durabilidade": 6.1,
+    "nivel_eq": 6.1,
+    "rank": "B-",
+    "perfil": "Durável",
+    "reacoes_usadas": [
+     "uncanny_dodge"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.27,
+     "rank": "B-",
+     "turnos_livres": [
+      3.57,
+      3.72,
+      3.66,
+      2.31,
+      1.96,
+      1.91,
+      1.48,
+      1.58,
+      1.19,
+      0.87
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.49,
+     "rank": "C",
+     "turnos_livres": [
+      3.16,
+      1.8,
+      1.4,
+      1.33,
+      1.09,
+      0.76,
+      1.12,
+      0.83,
+      0.96,
+      1.13
+     ]
+    }
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.85,
+    "rank": "E",
+    "nivel_campo": 0.13,
+    "rank_campo": "F",
+    "nivel_atencao": 0.75,
+    "rank_atencao": "E",
+    "vidas_total": 0.139,
+    "vidas_campo": 0.023,
+    "vidas_atencao": 0.12,
+    "corpo": {
+     "T": 0.12,
+     "S": 0.51,
+     "P": -0.39,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.98,
+     "Party de elite": 2.12,
+     "Horda + chefe": 0.59,
+     "Horda": 0.55,
+     "Dupla": 0.41,
+     "Chefe sozinho": 0.41
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0117
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0068
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0068
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0153
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.007
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0082
+     }
+    },
+    "nivel_absoluto": 1.16,
+    "rank_absoluto": "D"
+   }
+  },
+  "frontline": {
+   "hipotese": "Só frontline: colado no alvo, vantagem por Steady Aim ou Hide antes de entrar",
+   "principal": [],
+   "tatico": {
+    "politica": "frontline",
+    "composicao": "terceiro_melee",
+    "dpr": 28.4,
+    "recebido_luta": 36.5,
+    "escondido_fim_turno": 0.0,
+    "lutas_acima_do_orcamento": 100.0,
+    "colado_fim_turno": 96.8,
+    "acoes": {
+     "Sala de dungeon": {
+      "r1": {
+       "Frontline": 100.0
+      },
+      "r2_4": {
+       "Frontline": 100.0
+      }
+     },
+     "Ruínas ou cidade": {
+      "r1": {
+       "Frontline": 100.0
+      },
+      "r2_4": {
+       "Frontline": 100.0
+      }
+     },
+     "Campo aberto": {
+      "r1": {
+       "Aproximar (Dash)": 51.0,
+       "Frontline": 49.0
+      },
+      "r2_4": {
+       "Frontline": 100.0
+      }
+     }
+    }
+   },
+   "dano": {
+    "dpr": {
+     "CA 11": 31.4,
+     "CA 12": 31.4,
+     "CA 15": 28.4,
+     "CA 16": 27.2,
+     "CA 18": 24.8,
+     "CA 20": 22.2,
+     "CA 22": 19.2,
+     "CA 24": 16.0,
+     "CA 25": 14.2
+    },
+    "nivel_eq": 7.8,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.2,
+    "nivel_precisa": 7.8,
+    "medido": true
+   },
+   "defesa": {
+    "pv_efetivo": 54.5,
+    "ca": 17,
+    "blindagem": 5.81,
+    "durabilidade": 4.11,
+    "nivel_blindagem": 5.9,
+    "nivel_durabilidade": 6.1,
+    "nivel_eq": 6.1,
+    "rank": "B-",
+    "perfil": "Durável",
+    "reacoes_usadas": [
+     "uncanny_dodge"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.27,
+     "rank": "B-",
+     "turnos_livres": [
+      3.57,
+      3.72,
+      3.66,
+      2.31,
+      1.96,
+      1.91,
+      1.48,
+      1.58,
+      1.19,
+      0.87
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.49,
+     "rank": "C",
+     "turnos_livres": [
+      3.16,
+      1.8,
+      1.4,
+      1.33,
+      1.09,
+      0.76,
+      1.12,
+      0.83,
+      0.96,
+      1.13
+     ]
+    }
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.92,
+    "rank": "E",
+    "nivel_campo": 0.13,
+    "rank_campo": "F",
+    "nivel_atencao": 0.49,
+    "rank_atencao": "F",
+    "vidas_total": 0.099,
+    "vidas_campo": 0.023,
+    "vidas_atencao": 0.076,
+    "corpo": {
+     "T": 0.076,
+     "S": -0.142,
+     "P": 0.218,
+     "chave": "T0S-P+",
+     "perfil": "Taunt"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.35,
+     "Party de elite": 0.53,
+     "Horda + chefe": 0.42,
+     "Horda": 0.45,
+     "Dupla": 0.71,
+     "Chefe sozinho": 2.02
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0117
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0068
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0068
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0153
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.007
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0082
+     }
+    },
+    "nivel_absoluto": 0.54,
+    "rank_absoluto": "E"
+   }
+  },
   "vantagem-externa": {
    "hipotese": "Vantagem externa em tudo",
    "principal": [],
@@ -179,7 +904,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -188,7 +913,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -197,7 +922,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -206,7 +931,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -220,11 +945,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 10.0,
-     "rank": "A-",
+     "nivel_eq": 7.8,
+     "rank": "B",
      "por_categoria": {
-      "np": 10.0,
-      "p": 10.0
+      "np": 7.8,
+      "p": 7.8
      }
     },
     "defesa": {
@@ -251,7 +976,15 @@
       "p": 4.5
      }
     },
-    "controle": {
+    "campo": {
+     "nivel_eq": 0.1,
+     "rank": "F",
+     "por_categoria": {
+      "np": 0.1,
+      "p": 0.1
+     }
+    },
+    "corpo": {
      "nivel_eq": 0.4,
      "rank": "F",
      "por_categoria": {
@@ -265,7 +998,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "p",
      "peso": 1,
      "nota": "",
@@ -279,10 +1012,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 10.0,
-     "rank": "A-",
+     "nivel_eq": 7.8,
+     "rank": "B",
      "por_categoria": {
-      "p": 10.0
+      "p": 7.8
      }
     },
     "defesa": {
@@ -306,7 +1039,14 @@
       "p": 4.5
      }
     },
-    "controle": {
+    "campo": {
+     "nivel_eq": 0.1,
+     "rank": "F",
+     "por_categoria": {
+      "p": 0.1
+     }
+    },
+    "corpo": {
      "nivel_eq": 0.4,
      "rank": "F",
      "por_categoria": {
@@ -319,7 +1059,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -328,7 +1068,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -337,7 +1077,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "mod",
      "peso": 2,
      "nota": "",
@@ -346,7 +1086,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -355,7 +1095,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "mod",
      "peso": 2,
      "nota": "",
@@ -364,7 +1104,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "mod",
      "peso": 2,
      "nota": "",
@@ -373,7 +1113,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "mod",
      "peso": 2,
      "nota": "",
@@ -382,7 +1122,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "transicao-3o-melee",
      "categoria": "boss",
      "peso": 4,
      "nota": "",
@@ -396,12 +1136,12 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 10.0,
-     "rank": "A-",
+     "nivel_eq": 7.8,
+     "rank": "B",
      "por_categoria": {
-      "np": 10.0,
-      "mod": 10.0,
-      "boss": 10.0
+      "np": 7.8,
+      "mod": 7.8,
+      "boss": 7.8
      }
     },
     "defesa": {
@@ -431,7 +1171,16 @@
       "boss": 4.5
      }
     },
-    "controle": {
+    "campo": {
+     "nivel_eq": 0.1,
+     "rank": "F",
+     "por_categoria": {
+      "np": 0.1,
+      "mod": 0.1,
+      "boss": 0.1
+     }
+    },
+    "corpo": {
      "nivel_eq": 0.4,
      "rank": "F",
      "por_categoria": {
@@ -443,5 +1192,5 @@
    }
   }
  },
- "segundos": 2.6
+ "segundos": 22.2
 }

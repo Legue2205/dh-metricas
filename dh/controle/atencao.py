@@ -39,7 +39,7 @@ def ficha(spec, corpo):
              dpr=spec['dpr'])
     for k in ('res', 'adv', 'red'):
         if corpo.get(k): f[k] = corpo[k]
-    for k in ('soft', 'conc', 'esqueletos', 'agarra', 'inv_pv', 'inv_ca'):
+    for k in ('soft', 'conc', 'esqueletos', 'agarra', 'inv_pv', 'inv_ca', 'oculto'):
         if k in spec: f[k] = spec[k]
     for k in ('acc_m', 'acc_r'):
         if k in spec: f[k] = tuple(spec[k])
@@ -60,22 +60,23 @@ def distribui(e, party, ti, grap=None):
     for p, v in zip(party, vals):
         if p.get('skel'):
             w.append(H['skel_peso'] * (1 - m) if (e['melee'] and p['pv'] > 0) else 0); continue
+        f = float(p['front'])                 # fração do tempo na linha de frente (bool = 0 ou 1)
         if e['melee']:
-            reach = 1.0 if p['front'] else p.get('acc_m', (1, 1, 1))[ti]
-            near = 1.0 if p['front'] else H['near_back']
+            reach = f + (1 - f) * p.get('acc_m', (1, 1, 1))[ti]
+            near = f + (1 - f) * H['near_back']
         else:
             reach = p.get('acc_r', (1, 1, 1))[ti]; near = 1.0
         pref = (1 - m) * near + m * v / mv
-        w.append(reach * pref * (1 + p.get('soft', 0) * (1 - m)))
+        w.append(reach * pref * (1 + p.get('soft', 0) * (1 - m)) * (1 - p.get('oculto', 0)))   # oculto: não pode ser alvo
     w = np.array(w); P = w / w.sum() if w.sum() > 0 else w
     if e['melee']:  # taunt hard: parte dos turnos que iam para a backline vai para quem tem 'hard'
         for k, p in enumerate(party):
             h = p.get('hard')
             if not h: continue
             stop = TOPO[TOPOS[ti]]['cruza'] * (h(e) if callable(h) else h)
-            back = [j for j, q in enumerate(party) if not q['front'] and not q.get('skel')]
-            mov = sum(P[j] for j in back) * stop
-            for j in back: P[j] *= (1 - stop)
+            back = [(j, 1 - float(q['front'])) for j, q in enumerate(party) if float(q['front']) < 1 and not q.get('skel')]
+            mov = sum(P[j] * b for j, b in back) * stop
+            for j, b in back: P[j] *= (1 - stop * b)
             P[k] += mov
     if grap is not None and e is grap[0]:  # agarrão: o agarrado só alcança quem o agarra
         k = grap[1]; reach = H['reach_grande'] if e['cr'] >= 5 else H['reach_pequeno']

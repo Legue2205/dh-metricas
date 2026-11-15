@@ -17,7 +17,7 @@ TAGS = {  # (categoria, peso) na ordem do dia; SR = descanso curto
     'dia_longo': [('np', 1), ('np', 1), ('mod', 2), SR, ('np', 1), ('mod', 2), ('mod', 2), SR, ('mod', 2), ('boss', 4)],
 }
 CATEGORIAS = {'np': 'não prioritário', 'p': 'prioritário', 'mod': 'moderado', 'boss': 'boss'}
-EIXOS = [('dano', None), ('defesa', None), ('saves', 'resiliencia'), ('saves', 'vontade'), ('controle', None),
+EIXOS = [('dano', None), ('defesa', None), ('saves', 'resiliencia'), ('saves', 'vontade'), ('controle', 'campo'), ('controle', 'corpo'),
          ('area', None), ('suporte', None)]
 
 
@@ -81,8 +81,12 @@ def checar(b, magias):
     return erros
 
 
+SUB_CONTROLE = {'campo': 'nivel_campo', 'corpo': 'nivel_atencao'}   # Controle (turnos negados) e Corpo (quem leva o dano)
+
+
 def _nota(x, sub):
     if x is None: return None
+    if sub in SUB_CONTROLE: return x.get(SUB_CONTROLE[sub])
     if sub: x = x[sub]
     return x.get('nivel_eq')
 

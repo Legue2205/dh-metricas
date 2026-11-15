@@ -44,11 +44,17 @@ def _cds(fontes):
     return out
 
 
+def _papel_tatico(b, spec):
+    if 'tatico' not in spec: return None
+    from .tatico import PADRAO, PAPEL
+    return PAPEL[spec['tatico'].get('composicao', b.get('tatico', {}).get('composicao', PADRAO['composicao']))]
+
+
 def _linha(b, spec, res):
     corpo = dict(b['corpo'], **spec.get('corpo', {}))
     sv = dict(corpo.get('saves', {})); sv.update(spec.get('saves') or {})
     c = spec.get('controle', {})
-    r = {k: res[k] for k in RES + ('orcamento',) if k in res}
+    r = {k: res[k] for k in RES + ('orcamento', 'tatico') if k in res}
     if 'controle' in r: r['controle'] = {k: v for k, v in r['controle'].items() if k != 'negacao_por_fonte'}
     return dict(hipotese=res.get('hipotese', ''), principal=res.get('principal', []), pv=corpo['pv'], ca=corpo['ca'],
                 saves=sv if 'saves' in spec else None, res=r,
@@ -56,7 +62,7 @@ def _linha(b, spec, res):
                           defesa=spec.get('defesa'), cds=sorted(_cds(c.get('fontes', []))),
                           fontes=[f.get('nome', f['tipo']) for f in c.get('fontes', [])]
                           + [f"Corpo ({i['quantidade']} {i['nome']})" for i in spec.get('invocacoes', []) if i.get('corpo', True)],
-                          papel=c.get('atencao', {}).get('papel')))
+                          papel=c.get('atencao', {}).get('papel') or _papel_tatico(b, spec)))
 
 
 def _entrada(b, linhas, fonte, **k):

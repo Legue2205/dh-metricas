@@ -12,22 +12,21 @@ se a linha não declarar "custo".
 """
 from . import base
 
-EIXOS = ('dano', 'deff', 'defm', 'controle', 'area', 'suporte')
-ATIVOS = ('dano', 'controle', 'area', 'suporte')
+EIXOS = ('dano', 'deff', 'defm', 'controle', 'corpo', 'area', 'suporte')
+ATIVOS = ('dano', 'controle', 'area', 'suporte')       # corpo é passivo: linha sem controle de corpo não conta 0
 
 
 def eixos(get):
     """get(chave, sub=None) -> nível equivalente ou None. Devolve {eixo: {n, r}} só dos eixos com nota."""
     r = get('saves', 'resiliencia')
     vals = dict(dano=get('dano'), deff=base.defesa_fisica(get('defesa'), r), defm=base.defesa_magica(get('saves', 'vontade'), r),
-                controle=get('controle'), area=get('area'), suporte=get('suporte'))
+                controle=get('controle', 'campo'), corpo=get('controle', 'corpo'), area=get('area'), suporte=get('suporte'))
     return {k: dict(n=round(x, 1), r=base.letra(x)) for k, x in vals.items() if x is not None}
 
 
 def _nv(res, k, sub=None):
-    x = (res or {}).get(k)
-    if x is None: return None
-    return (x[sub] if sub else x).get('nivel_eq')
+    from .planos import _nota
+    return _nota((res or {}).get(k), sub)
 
 
 def eixos_linha(res_linha):

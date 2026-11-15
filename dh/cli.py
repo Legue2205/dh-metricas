@@ -64,7 +64,7 @@ def _aneis(b, res):
     a = aneis.calcular(b, res)
     if not a: return
     eq = a['equilibrado'] or {}
-    nomes = dict(dano='dano', deff='def. física', defm='def. mágica', controle='controle', area='área', suporte='suporte')
+    nomes = dict(dano='dano', deff='def. física', defm='def. mágica', controle='controle', corpo='corpo', area='área', suporte='suporte')
     print('  ANÉIS (interno · equilibrado · externo): ' + ' | '.join(
         f"{nomes[k]} {_fmt(a['interno'][k]['n'])} · {_fmt(eq[k]['n']) if k in eq else '–'} · {_fmt(a['externo'][k]['n'])}"
         for k in a['externo']))

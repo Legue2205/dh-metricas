@@ -185,7 +185,7 @@ class Modelo:
                 acc += p
                 if u <= acc: return k
             return k
-        cont = {'r1': {}, 'r2_4': {}}; dano_t = rec_t = 0.0; escondido_fim = 0; acima = 0
+        cont = {'r1': {}, 'r2_4': {}}; dano_t = rec_t = 0.0; escondido_fim = 0; colado_fim = 0; acima = 0
         outros = {ca: 0.0 for ca in (cas or [])}; modelos = {ca: Modelo(self._spec_bruto(), ca) for ca in outros}
         for _ in range(n):
             x = sorteia(T['inicial']); H = sorteia(T['esconderijo'])
@@ -196,7 +196,7 @@ class Modelo:
                 _, nome, dmg, fim, exp, pt = Q(r, x, esc, hid, H, aliado, antes, round(g * 2) / 2)
                 g += self.recebido(exp)
                 k = 'r1' if r == 1 else 'r2_4'; cont[k][nome] = cont[k].get(nome, 0) + 1
-                dano_t += dmg; rec_t += self.recebido(exp); escondido_fim += fim['hid']
+                dano_t += dmg; rec_t += self.recebido(exp); escondido_fim += fim['hid']; colado_fim += exp == 'colado'
                 for ca, m in modelos.items():
                     outros[ca] += next((d for nm, d, *_ in m.acoes(x, esc, hid, H, aliado, antes) if nm == nome), 0.0)
                 x, esc, hid = fim['x'], fim['esc'], fim['hid']
@@ -205,7 +205,7 @@ class Modelo:
         pct = lambda d: {NOMES[k]: round(100 * v / sum(d.values()), 1) for k, v in sorted(d.items(), key=lambda kv: -kv[1])}
         return dict(dpr=round(dano_t / (n * R), 1), recebido_luta=round(rec_t / n, 1),
                     escondido_fim_turno=round(100 * escondido_fim / (n * R), 1),
-                    lutas_acima_do_orcamento=round(100 * acima / n, 1),
+                    lutas_acima_do_orcamento=round(100 * acima / n, 1), colado_fim_turno=round(100 * colado_fim / (n * R), 1),
                     acoes_r1=pct(cont['r1']), acoes_r2_4=pct(cont['r2_4']),
                     dpr_por_ca={f'CA {ca}': round(v / (n * R), 1) for ca, v in outros.items()})
 
@@ -221,6 +221,27 @@ def avaliar(spec, w=1.0, politicas=('otima', 'sombras', 'frontline'), n=20000, c
         res = {t: m.simular(t, w, pol, n, cas=cas) for t in m.c['topologias']}
         pesos = {t: TOPO[t]['peso'] for t in res}; tot = sum(pesos.values())
         media = {k: round(sum(pesos[t] * res[t][k] for t in res) / tot, 1)
-                 for k in ('dpr', 'recebido_luta', 'escondido_fim_turno', 'lutas_acima_do_orcamento')}
+                 for k in ('dpr', 'recebido_luta', 'escondido_fim_turno', 'lutas_acima_do_orcamento', 'colado_fim_turno')}
+        if cas: media['dpr_por_ca'] = {k: round(sum(pesos[t] * res[t]['dpr_por_ca'][k] for t in res) / tot, 1) for k in res[next(iter(pesos))]['dpr_por_ca']}
         res['media'] = media; out[pol] = res
     return out
+
+
+# Posição da party de referência que cada composição ocupa (motor de atenção):
+#   terceiro_melee: ele ocupa o lugar do atirador, mas pode ir para a frente (o striker de referência continua lá);
+#   segundo_frontliner: o lugar do striker; sem_tanque: o lugar do tanque (teste de estresse).
+PAPEL = {'terceiro_melee': 'atirador', 'segundo_frontliner': 'striker', 'sem_tanque': 'tank'}
+
+
+def linha(spec_build, spec_linha, cas):
+    """Bloco "tatico" de uma linha -> (dano medido nas CAs, atenção para o controle de corpo, resumo)."""
+    comp = spec_linha.get('composicao', spec_build.get('composicao', PADRAO['composicao']))
+    pol = spec_linha.get('politica', 'otima')
+    r = avaliar(spec_build, w=spec_linha.get('w', 1.0), politicas=(pol,), n=spec_linha.get('n', 6000), cas=cas,
+                composicao=comp)[pol]
+    m = r['media']
+    aten = dict(papel=PAPEL[comp], front=round(m['colado_fim_turno'] / 100, 3), oculto=round(m['escondido_fim_turno'] / 100, 3),
+                dpr=m['dpr'], soft=spec_linha.get('soft', 0.15), acc_m=[0.7, 0.8, 1.0])
+    resumo = dict(politica=pol, composicao=comp, **{k: v for k, v in m.items() if k != 'dpr_por_ca'},
+                  acoes={t: dict(r1=v['acoes_r1'], r2_4=v['acoes_r2_4']) for t, v in r.items() if t != 'media'})
+    return [m['dpr_por_ca'][f'CA {ca}'] for ca in cas], aten, resumo

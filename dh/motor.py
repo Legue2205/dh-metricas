@@ -12,9 +12,22 @@ RESULTADOS = RAIZ / 'resultados'
 MODOS = {'rapido': dict(N=2000, absoluto=False), 'completo': dict(N=8000, absoluto=True)}
 
 
+def _expande_tatico(b, linha):
+    """Linha com "tatico": o motor tático gera o dano (DPR nas 9 CAs) e a ficha de atenção (fração colado/oculto)."""
+    from . import tatico
+    linha = dict(linha)
+    dprs, aten, resumo = tatico.linha(b['tatico'], linha['tatico'], dano.CAS)
+    linha['dano'] = {'medido': dprs, 'fonte': 'motor tático'}
+    ctrl = dict(linha.get('controle') or {'fontes': [{'tipo': 'ameaca', 'nome': 'Corpo (ameaça)'}]})
+    ctrl['atencao'] = dict(aten, **(ctrl.get('atencao') or {}))
+    linha['controle'] = ctrl
+    return linha, resumo
+
+
 def avaliar_linha(b, linha, modo='rapido', regua=None, eixos=None):
     cfg = MODOS[modo]; corpo = dict(b['corpo'], **linha.get('corpo', {}))
     out = {}; livre = orcamento.reacao_livre(linha)
+    if 'tatico' in linha: linha, out['tatico'] = _expande_tatico(b, linha)
     lutas = b.get('recursos', {}).get('lutas_dia', 4)
     def quer(e): return e in linha and (not eixos or e in eixos)
     inv = linha.get('invocacoes', [])

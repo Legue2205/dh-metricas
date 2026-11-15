@@ -186,7 +186,7 @@ Publicação: GitHub Pages, branch `main`, pasta `/docs` → https://legue2205.g
   cada build, ou todas as linhas desmarcando "Só linha principal"). Uma build sai do Legado ao ganhar planos.
 - **Filtros**: busca por nome/build, grupo (Party, NPC…), e filtros numéricos empilháveis (`Nível ≥ 11`,
   `PV ≥ 30` + `PV ≤ 60`, `Dano ≥ 5`…). **Ordenação** por qualquer coluna, crescente ou decrescente.
-- **Seis atributos** no radar: Dano, Defesa Física (2/3 Defesa + 1/3 Resiliência), Defesa Mágica (2/3 Vontade +
+- **Sete atributos** no radar (Corpo separado do Controle em 15/11): Dano, Defesa Física (2/3 Defesa + 1/3 Resiliência), Defesa Mágica (2/3 Vontade +
   1/3 Resiliência), Controle, Área, Suporte. Ranks com cor fixa (F/E cinza, D bronze, C verde, B azul, A roxo, S ouro).
 - **Detalhe da build**: radar, "Build e itens", "Estratégia e orçamento" e um card por atributo com os valores
   intermediários (ataques, DPR por CA, blindagem/durabilidade, saves, CDs, T/S/P e perfil de corpo, áreas, fontes de suporte).

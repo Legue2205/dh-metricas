@@ -86,11 +86,13 @@ def test_plano_livro_caixa_e_media():
     erros, combates, sobra = planos.livro_caixa(b, 'padrao', MAGIAS)
     assert erros == [] and [c['categoria'] for c in combates] == ['np', 'p', 'np', 'p']
     assert sobra['espacos'] == {'1': 2, '2': 1, '3': 1, '4': 1} and sobra['inspiracao'] == 1   # sobra para utilidade
-    res = {'marcial': {'dano': {'nivel_eq': 6.0}, 'controle': {'nivel_eq': 1.0}},
-           'caster': {'dano': {'nivel_eq': 3.0}, 'controle': {'nivel_eq': 7.0}, 'area': {'nivel_eq': 4.0}}}
+    res = {'marcial': {'dano': {'nivel_eq': 6.0}, 'controle': {'nivel_eq': 1.5, 'nivel_campo': 1.0, 'nivel_atencao': 2.0}},
+           'caster': {'dano': {'nivel_eq': 3.0}, 'controle': {'nivel_eq': 7.5, 'nivel_campo': 7.0, 'nivel_atencao': 1.0},
+                      'area': {'nivel_eq': 4.0}}}
     e = planos.agregar(b, res, MAGIAS, letra)['padrao']['eixos']
     assert e['dano'] == dict(nivel_eq=4.0, rank='C', por_categoria={'np': 6.0, 'p': 3.0})     # prioritário pesa 2
-    assert e['controle']['nivel_eq'] == 5.0 and e['controle']['por_categoria'] == {'np': 1.0, 'p': 7.0}
+    assert e['campo']['nivel_eq'] == 5.0 and e['campo']['por_categoria'] == {'np': 1.0, 'p': 7.0}   # controle = só campo
+    assert e['corpo']['por_categoria'] == {'np': 2.0, 'p': 1.0}                                       # corpo separado
     assert e['area']['por_categoria'] == {'np': 0.0, 'p': 4.0}                                 # não fez área no comum
 
 

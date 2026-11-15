@@ -190,5 +190,9 @@ Lurker, Sniper, Reposicionar, Aproximar. Objetivo: dano − w × dano recebido. 
 Primeiro uso: Tin Bin (Nick 2024 homebrew: 2 golpes na ação).
 Premissas a confirmar com o usuário: exposição (escondido 5%, longe 15%, colado 30% do dano inimigo da régua, ×0,85
 por Uncanny Dodge), distâncias iniciais e entre alvos por topologia, PV do alvo 60, aliado colado 20% no R1 e 70% depois.
-Próximo: (1) estado de PV gasto (o "luxo" de ir para a frente depois de rounds escondido); (2) Action Surge e manobras;
-(3) ligar o resultado às linhas da build (dano e exposição → defesa) para entrar nos anéis.
+Feito (15/11, 22h): PV perdido na luta entra no estado; custo convexo pelo orçamento ((pv + recuperação)/lutas):
+w dentro (razão de piscinas), w × 3 acima, queda = 60. Três composições fixas (`terceiro_melee`, `segundo_frontliner`,
+`sem_tanque`) definem a exposição. Decisão do usuário: o motor mostra um cardápio (política × composição) e o jogador
+escolhe; não otimizar para cada party possível.
+Próximo: (1) "deixa na mão": quanto dano o esconder-se empurra para a party (usar o motor de atenção/corpo, T/S/P);
+(2) ligar as políticas às linhas da build para entrar nos anéis; (3) Action Surge depois (decisão do usuário).

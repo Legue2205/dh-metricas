@@ -20,8 +20,11 @@ golpe com vantagem ou com aliado colado; arremesso só até o alcance normal):
   aproximar      Dash duplo em direção ao alvo, sem atacar
 DANO de cada ação: dh.dano.dpr (mesmas fórmulas do eixo de dano).
 EXPOSIÇÃO: dano recebido no turno inimigo depois do dele = fração do dano inimigo da régua (escondido, exposto à
-distância ou colado no alvo). Objetivo: dano causado − w × dano recebido (w = 1: 1 PV dele vale 1 de dano,
-a mesma taxa do eixo de suporte).
+distância ou colado no alvo), conforme a COMPOSIÇÃO da party (3 cenários em COMPOSICOES).
+OBJETIVO: dano causado − custo do PV perdido. Custo convexo pelo orçamento de PV por luta ((pv + recuperação)/lutas):
+dentro dele 1 PV vale w (razão de piscinas: w > 1 quando os inimigos têm mais vida que a party, como hordas e dragões),
+acima vale w × excesso, e cair custa "queda". O PV já perdido na luta faz parte do estado: quem ficou escondido tem
+orçamento sobrando e pode ir para a frente depois (o "luxo").
 ALVO: morre (troca) com prob. (dano dele + dano dos aliados no alvo) / PV do alvo; o novo alvo tem nova distância e
 novo esconderijo; ele mantém o estado de escondido.
 Saída: dano por round, dano recebido por luta, % de cada ação (rounds 1 e 2–4 separados) por topologia.
@@ -37,13 +40,23 @@ PADRAO = dict(
     steady_aim=True, p_agir_antes=0.7, p_comeca_escondido=0.3,
     p_aliado={'r1': 0.2, 'depois': 0.7},
     dano_inimigo_round=54.5,                       # régua de suporte, nível 7 (dano inimigo por round contra a party)
-    exposicao={'escondido': 0.05, 'longe': 0.15, 'colado': 0.30}, reducao_exposto=0.85,   # Uncanny Dodge etc.
+    composicao='segundo_frontliner', reducao_exposto=1.0,   # reducao_exposto: Uncanny Dodge etc. (fator < 1)
+    # Orçamento de PV: (pv + recuperação do dia) / lutas. Dentro do orçamento, 1 PV custa w; acima, w × excesso;
+    # cair (PV acumulado ≥ pv) custa o valor de "queda". Isto dá o "luxo": quem ficou escondido pode ir para a frente.
+    pv=50, recuperacao_dia=20, lutas_dia=4, excesso=3.0, queda=60,
     alvo={'pv': 60, 'dano_aliados_colado': 25, 'dano_aliados_longe': 12},
     topologias={
         'Sala de dungeon': {'esconderijo': {15: 0.6, 30: 0.3, 50: 0.1}, 'inicial': {30: 0.5, 50: 0.5}, 'proximo': {10: 0.4, 25: 0.4, 45: 0.2}},
         'Ruínas ou cidade': {'esconderijo': {15: 0.4, 30: 0.4, 50: 0.2}, 'inicial': {40: 0.5, 70: 0.5}, 'proximo': {15: 0.3, 30: 0.4, 50: 0.3}},
         'Campo aberto': {'esconderijo': {15: 0.15, 30: 0.35, 50: 0.5}, 'inicial': {60: 0.5, 100: 0.5}, 'proximo': {20: 0.3, 40: 0.4, 60: 0.3}},
     })
+
+# Fração do dano inimigo por round que vai para ele, por situação no fim do turno e composição da party.
+COMPOSICOES = {
+    'terceiro_melee':     dict(escondido=0.04, longe=0.10, colado=0.20, nota='tanque + outro corpo a corpo na frente + ele + 1 de trás'),
+    'segundo_frontliner': dict(escondido=0.05, longe=0.15, colado=0.32, nota='tanque + ele na frente + 2 de trás'),
+    'sem_tanque':         dict(escondido=0.06, longe=0.20, colado=0.45, nota='ele é o único corpo a corpo'),
+}
 
 POLITICAS = {
     'otima': None,
@@ -116,8 +129,17 @@ class Modelo:
         return out
 
     def recebido(self, exp):
-        f = self.c['exposicao'][exp] * self.c['dano_inimigo_round']
+        expo = self.c.get('exposicao') or COMPOSICOES[self.c['composicao']]
+        f = expo[exp] * self.c['dano_inimigo_round']
         return f if exp == 'escondido' else f * self.c['reducao_exposto']
+
+    def orcamento(self):
+        return (self.c['pv'] + self.c['recuperacao_dia']) / self.c['lutas_dia']
+
+    def custo(self, g, w):
+        """Custo acumulado de ter perdido g PV na luta."""
+        B = self.orcamento(); c = w * min(g, B) + w * self.c['excesso'] * max(0.0, g - B)
+        return c + (self.c['queda'] if g >= self.c['pv'] else 0.0)
 
     def p_troca(self, dano, aliado):
         a = self.c['alvo']; return min(0.9, (dano + (a['dano_aliados_colado'] if aliado else a['dano_aliados_longe'])) / a['pv'])
@@ -127,24 +149,27 @@ class Modelo:
         T = self.c['topologias'][topo]; R = self.c['rounds']; perm = POLITICAS[politica]
         pa = self.c['p_aliado']
 
-        @lru_cache(maxsize=None)
-        def V(r, x, esc, hid, H):        # valor esperado antes de sortear o aliado do round r (r ≥ 2)
-            if r > R: return 0.0
-            p = pa['depois']
-            return p * Q(r, x, esc, hid, H, True, False)[0] + (1 - p) * Q(r, x, esc, hid, H, False, False)[0]
+        qg = lambda g: round(g * 2) / 2              # PV perdido, em passos de 0,5
 
         @lru_cache(maxsize=None)
-        def Q(r, x, esc, hid, H, aliado, antes):
+        def V(r, x, esc, hid, H, g):     # valor esperado antes de sortear o aliado do round r (r ≥ 2)
+            if r > R: return 0.0
+            p = pa['depois']
+            return p * Q(r, x, esc, hid, H, True, False, g)[0] + (1 - p) * Q(r, x, esc, hid, H, False, False, g)[0]
+
+        @lru_cache(maxsize=None)
+        def Q(r, x, esc, hid, H, aliado, antes, g=0.0):
             best = None
             for nome, dmg, fim, exp in self.acoes(x, esc, hid, H, aliado, antes):
                 if perm is not None and nome not in perm: continue
-                v = dmg - w * self.recebido(exp)
+                L = self.recebido(exp); g2 = qg(g + L)
+                v = dmg - (self.custo(g2, w) - self.custo(g, w))
                 pt = self.p_troca(dmg, aliado)
-                cont = (1 - pt) * V(r + 1, fim['x'], fim['esc'], fim['hid'], H)
+                cont = (1 - pt) * V(r + 1, fim['x'], fim['esc'], fim['hid'], H, g2)
                 if pt > 0 and r < R:
                     for xn, px in T['proximo'].items():
                         for Hn, ph in T['esconderijo'].items():
-                            cont += pt * px * ph * V(r + 1, xn, fim['esc'], fim['hid'], Hn)
+                            cont += pt * px * ph * V(r + 1, xn, fim['esc'], fim['hid'], Hn, g2)
                 v += cont
                 if best is None or v > best[0]: best = (v, nome, dmg, fim, exp, pt)
             return best
@@ -160,24 +185,27 @@ class Modelo:
                 acc += p
                 if u <= acc: return k
             return k
-        cont = {'r1': {}, 'r2_4': {}}; dano_t = rec_t = 0.0; escondido_fim = 0
+        cont = {'r1': {}, 'r2_4': {}}; dano_t = rec_t = 0.0; escondido_fim = 0; acima = 0
         outros = {ca: 0.0 for ca in (cas or [])}; modelos = {ca: Modelo(self._spec_bruto(), ca) for ca in outros}
         for _ in range(n):
             x = sorteia(T['inicial']); H = sorteia(T['esconderijo'])
-            hid = rnd.random() < self.c['p_comeca_escondido']; esc = hid
+            hid = rnd.random() < self.c['p_comeca_escondido']; esc = hid; g = 0.0
             for r in range(1, R + 1):
                 aliado = rnd.random() < (pa['r1'] if r == 1 else pa['depois'])
                 antes = r == 1 and rnd.random() < self.c['p_agir_antes']
-                _, nome, dmg, fim, exp, pt = Q(r, x, esc, hid, H, aliado, antes)
+                _, nome, dmg, fim, exp, pt = Q(r, x, esc, hid, H, aliado, antes, round(g * 2) / 2)
+                g += self.recebido(exp)
                 k = 'r1' if r == 1 else 'r2_4'; cont[k][nome] = cont[k].get(nome, 0) + 1
                 dano_t += dmg; rec_t += self.recebido(exp); escondido_fim += fim['hid']
                 for ca, m in modelos.items():
                     outros[ca] += next((d for nm, d, *_ in m.acoes(x, esc, hid, H, aliado, antes) if nm == nome), 0.0)
                 x, esc, hid = fim['x'], fim['esc'], fim['hid']
                 if rnd.random() < pt: x = sorteia(T['proximo']); H = sorteia(T['esconderijo'])
+            acima += g > self.orcamento()
         pct = lambda d: {NOMES[k]: round(100 * v / sum(d.values()), 1) for k, v in sorted(d.items(), key=lambda kv: -kv[1])}
         return dict(dpr=round(dano_t / (n * R), 1), recebido_luta=round(rec_t / n, 1),
                     escondido_fim_turno=round(100 * escondido_fim / (n * R), 1),
+                    lutas_acima_do_orcamento=round(100 * acima / n, 1),
                     acoes_r1=pct(cont['r1']), acoes_r2_4=pct(cont['r2_4']),
                     dpr_por_ca={f'CA {ca}': round(v / (n * R), 1) for ca, v in outros.items()})
 
@@ -185,12 +213,14 @@ class Modelo:
         return {k: v for k, v in self.c.items() if k != 'topologias'} | {'topologias': {t: {kk: {str(a): b for a, b in vv.items()} for kk, vv in d.items()} for t, d in self.c['topologias'].items()}}
 
 
-def avaliar(spec, w=1.0, politicas=('otima', 'sombras', 'frontline'), n=20000, cas=None):
+def avaliar(spec, w=1.0, politicas=('otima', 'sombras', 'frontline'), n=20000, cas=None, composicao=None):
     """{politica: {topologia: simulação, 'media': médias ponderadas pelo peso da topologia}}."""
+    if composicao: spec = dict(spec, composicao=composicao)
     m = Modelo(spec); out = {}
     for pol in politicas:
         res = {t: m.simular(t, w, pol, n, cas=cas) for t in m.c['topologias']}
         pesos = {t: TOPO[t]['peso'] for t in res}; tot = sum(pesos.values())
-        media = {k: round(sum(pesos[t] * res[t][k] for t in res) / tot, 1) for k in ('dpr', 'recebido_luta', 'escondido_fim_turno')}
+        media = {k: round(sum(pesos[t] * res[t][k] for t in res) / tot, 1)
+                 for k in ('dpr', 'recebido_luta', 'escondido_fim_turno', 'lutas_acima_do_orcamento')}
         res['media'] = media; out[pol] = res
     return out

@@ -120,7 +120,8 @@ def main(argv=None):
     ap.add_argument('--eixo', action='append')
     ap.add_argument('--linha', action='append')
     ap.add_argument('--json', action='store_true')
-    ap.add_argument('--w', type=float, action='append', help='tatico: peso do dano recebido (padrão 0.5, 1 e 2)')
+    ap.add_argument('--w', type=float, action='append', help='tatico: razão de piscinas, valor de 1 PV dentro do orçamento (padrão 1)')
+    ap.add_argument('--comp', action='append', help='tatico: composição (padrão: as três)')
     a = ap.parse_args(argv)
     arquivos = [f for p in a.alvos for f in sorted(glob.glob(p))] if a.comando not in ('regua', 'painel', 'site') else []
 
@@ -138,13 +139,16 @@ def main(argv=None):
         for f in arquivos:
             b = json.load(open(f, encoding='utf-8'))
             if 'tatico' not in b: print(f'{f}: sem bloco "tatico"'); continue
-            for w in a.w or [0.5, 1.0, 2.0]:
-                r = tatico.avaliar(b['tatico'], w=w)
-                if a.json: print(json.dumps({'w': w, **r}, ensure_ascii=False)); continue
-                print(f"\n{b['nome']} — w = {w:g} (1 PV recebido vale {w:g} de dano)")
+            for comp in a.comp or list(tatico.COMPOSICOES):
+              for w in a.w or [1.0]:
+                r = tatico.avaliar(b['tatico'], w=w, composicao=comp)
+                if a.json: print(json.dumps({'w': w, 'composicao': comp, **r}, ensure_ascii=False)); continue
+                print(f"\n{b['nome']} — {comp} ({tatico.COMPOSICOES[comp]['nota']}) · w = {w:g} · "
+                      f"orçamento {_fmt(tatico.Modelo(b['tatico']).orcamento())} PV por luta")
                 for pol, res in r.items():
                     m = res['media']
-                    print(f"  {pol:9s} média: DPR {_fmt(m['dpr'])} · recebido/luta {_fmt(m['recebido_luta'])} · escondido no fim do turno {_fmt(m['escondido_fim_turno'])}%")
+                    print(f"  {pol:9s} média: DPR {_fmt(m['dpr'])} · recebido/luta {_fmt(m['recebido_luta'])} · escondido no fim do turno "
+                          f"{_fmt(m['escondido_fim_turno'])}% · lutas acima do orçamento {_fmt(m['lutas_acima_do_orcamento'])}%")
                     if pol != 'otima': continue
                     for t, v in res.items():
                         if t == 'media': continue

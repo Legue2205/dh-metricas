@@ -219,8 +219,9 @@ def test_tatico_politicas():
     r = tatico.avaliar(spec, w=1.0, n=3000)
     o, s, f = (r[p]['media'] for p in ('otima', 'sombras', 'frontline'))
     assert s['escondido_fim_turno'] > 95 and f['escondido_fim_turno'] == 0
-    assert o['dpr'] - o['recebido_luta'] / 4 >= max(s['dpr'] - s['recebido_luta'] / 4, f['dpr'] - f['recebido_luta'] / 4) - 0.3
-    mais_cauteloso = tatico.avaliar(spec, w=2.0, politicas=('otima',), n=3000)['otima']['media']
-    assert mais_cauteloso['recebido_luta'] < o['recebido_luta']
+    assert s['dpr'] < o['dpr'] <= f['dpr'] + 0.5 and o['recebido_luta'] < f['recebido_luta']
+    esc = {c: tatico.avaliar(spec, politicas=('otima',), n=3000, composicao=c)['otima']['media']['escondido_fim_turno']
+           for c in ('terceiro_melee', 'sem_tanque')}
+    assert esc['sem_tanque'] > esc['terceiro_melee']          # frontline mais fraca, mais sombras
     with pytest.raises(ValueError):
         tatico.Modelo({})

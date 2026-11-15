@@ -7,7 +7,7 @@ Eixos do painel: Dano, Defesa Física, Defesa Mágica, Controle, Área, Suporte 
 import json
 from pathlib import Path
 
-from . import base
+from . import aneis, base
 from .build import carregar
 from .planos import CATEGORIAS, TAGS
 
@@ -16,18 +16,8 @@ MODELO = Path(__file__).with_name('site.html')
 RES = ('dano', 'defesa', 'saves', 'controle', 'area', 'suporte')
 
 
-def _eixos(get):
-    """get(chave, sub=None) -> nível equivalente ou None."""
-    r = get('saves', 'resiliencia')
-    vals = dict(dano=get('dano'), deff=base.defesa_fisica(get('defesa'), r), defm=base.defesa_magica(get('saves', 'vontade'), r),
-                controle=get('controle'), area=get('area'), suporte=get('suporte'))
-    return {k: dict(n=round(x, 1), r=base.letra(x)) for k, x in vals.items() if x is not None}
-
-
-def _nv(l, k, sub=None):
-    x = (l or {}).get(k)
-    if x is None: return None
-    return (x[sub] if sub else x).get('nivel_eq')
+_eixos = aneis.eixos
+_nv = aneis._nv
 
 
 def _plano_eixos(pe):
@@ -84,7 +74,7 @@ def dados():
         b = carregar(arq); specs = {l['id']: l for l in b['linhas']}
         linhas = {lid: _linha(b, specs[lid], r) for lid, r in res['linhas'].items() if lid in specs}
         builds[b['id']] = dict(nome=b['nome'], grupo=b['grupo'], nivel=b['nivel'], build=b.get('build', ''),
-                               descricao=b.get('descricao', {}), linhas=linhas)
+                               descricao=b.get('descricao', {}), linhas=linhas, aneis=aneis.calcular(b, res))
         # legado: principal por eixo
         fonte = {}
         for k in RES:

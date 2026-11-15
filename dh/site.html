@@ -53,6 +53,7 @@ svg.radar{width:100%;height:auto;display:block}
 .anel{fill:none;stroke:var(--line);stroke-width:1}.anelt{fill:var(--ink2);font-size:10px}.eixot{fill:var(--ink);font-size:12px}
 .leg{display:flex;gap:14px;flex-wrap:wrap;color:var(--ink2);font-size:13px;justify-content:center;margin-top:4px}
 .leg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.lns{margin:6px 0 0;line-height:2}.lns .pill{margin-right:4px}
 .leg svg{width:26px;height:8px;margin-right:5px}
 .res{display:grid;gap:6px}
 .res .r{display:grid;grid-template-columns:120px 1fr;gap:8px;align-items:center;padding:5px 8px;border-left:4px solid var(--c);background:var(--panel2);border-radius:6px}
@@ -108,7 +109,7 @@ const sg=x=>x==null?'–':`<span class="${x>0.005?'pos':x<-0.005?'neg':''}">${x>
 const letra=n=>{let r='F';for(const [l,v] of D.rampa)if(n>=v-1e-9)r=l;return r};
 const chip=r=>r?`<span class="rk r${r[0]}">${r}</span>`:'';
 const nota=x=>x?chip(x.r)+f(x.n):'<span class="sem">–</span>';
-const S={aba:D.abas.reduce((m,a)=>D.entradas[a].length>D.entradas[m].length?a:m,D.abas[0]),busca:'',grupos:new Set(),sop:true,filtros:[],ord:'nome',dir:1,sel:null,cmp:null};
+const S={aba:D.abas.reduce((m,a)=>D.entradas[a].length>D.entradas[m].length?a:m,D.abas[0]),busca:'',grupos:new Set(),sop:true,filtros:[],ord:'nome',dir:1,sel:null,cmp:null,ver:new Set()};
 const B=e=>D.builds[e.b];
 const LN=(e,res)=>{const id=e&&e.fonte[res];return id?B(e).linhas[id]:null};
 const R=(e,res)=>{const l=LN(e,res);return l?l.res[res]:null};
@@ -136,11 +137,19 @@ function tabela(){const es=visiveis();
   AX.map(a=>`<td>${nota(e.eixos[a.k])}</td>`).join('')+'</tr>'}).join('')||`<tr><td colspan="10" class="vazio">Nenhuma build nesta visão. ${S.aba!='legado'?'As builds ganham entrada aqui quando o plano do dia delas é escrito; por enquanto estão em “Legado”.':'Afrouxe os filtros.'}</td></tr>`;
  $('#cont').textContent=es.length+(es.length==1?' entrada':' entradas')}
 
-function radar(series,extra){const W=450,cx=225,cy=176,Rm=128,pt=(i,v)=>{const a=(-90+i*60)*Math.PI/180,r=Rm*Math.min(v,20)/20;return [(cx+r*Math.cos(a)).toFixed(1),(cy+r*Math.sin(a)).toFixed(1)]};
+function radar(series,extra,an){const vs=[...series.flatMap(sr=>Object.values(sr.eixos).map(x=>x.n)),...(an?Object.values(an.externo).map(x=>x.n):[]),...(extra||[]).flatMap(x=>Object.values(x.v).filter(v=>v!=null))];
+ const M=[7,11,16,20].find(m=>m>=Math.max(0,...vs)+0.5)||20;   // zoom: escala até o próximo degrau de letra (B, A, S)
+ const W=450,cx=225,cy=176,Rm=128,pt=(i,v)=>{const a=(-90+i*60)*Math.PI/180,r=Rm*Math.min(v,M)/M;return [(cx+r*Math.cos(a)).toFixed(1),(cy+r*Math.sin(a)).toFixed(1)]};
  const pol=g=>AX.map((a,i)=>pt(i,g(a)).join(',')).join(' ');
  let s=`<svg viewBox="0 0 ${W} 356" class="radar" role="img" aria-label="Radar dos seis atributos">`;
- for(const [v,l] of [[4,'C'],[7,'B'],[11,'A'],[16,'S'],[20,'']]){s+=`<polygon points="${pol(()=>v)}" class="anel"/>`;if(l)s+=`<text x="${cx+4}" y="${cy-Rm*v/20+11}" class="anelt">${l}</text>`}
- AX.forEach((a,i)=>{const [x,y]=pt(i,20),[lx,ly]=pt(i,22.8);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" class="anel"/><text x="${lx}" y="${+ly+4}" text-anchor="${Math.abs(lx-cx)<8?'middle':lx>cx?'start':'end'}" class="eixot"><tspan fill="var(--c-${a.k})">●</tspan> ${a.n}</text>`});
+ for(const [v,l] of [[2,'D'],[4,'C'],[7,'B'],[11,'A'],[16,'S'],[20,'']].filter(([v])=>v<=M)){s+=`<polygon points="${pol(()=>v)}" class="anel"/>`;if(l)s+=`<text x="${cx+4}" y="${cy-Rm*v/M+11}" class="anelt">${l}</text>`}
+ s+=`<text x="${W-4}" y="350" text-anchor="end" class="anelt">escala até ${M}</text>`;
+ AX.forEach((a,i)=>{const [x,y]=pt(i,M),[lx,ly]=pt(i,M*1.14);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" class="anel"/><text x="${lx}" y="${+ly+4}" text-anchor="${Math.abs(lx-cx)<8?'middle':lx>cx?'start':'end'}" class="eixot"><tspan fill="var(--c-${a.k})">●</tspan> ${a.n}</text>`});
+ if(an){const ring=g=>'M'+AX.map((a,i)=>pt(i,g(a)).join(',')).join('L')+'Z';
+  s+=`<path d="${ring(a=>(an.externo[a.k]||{n:0}).n)} ${ring(a=>(an.interno[a.k]||{n:0}).n)}" fill-rule="evenodd" fill="var(--sa)" fill-opacity=".13" stroke="none"/>`;
+  for(const [nm,lb,tr] of [['externo','máximo','5 3'],['interno','mínimo','2 3']])s+=`<polygon points="${pol(a=>(an[nm][a.k]||{n:0}).n)}" fill="none" stroke="var(--sa)" stroke-opacity=".75" stroke-width="1.4" stroke-dasharray="${tr}"/>`;
+  for(const ln of an.ver||[]){const l=an.linhas[ln];if(!l)continue;s+=`<polygon points="${pol(a=>(l.eixos[a.k]||{n:0}).n)}" fill="none" stroke="var(--sb)" stroke-width="2" stroke-linejoin="round"/>`;
+   AX.forEach((a,i)=>{const x=l.eixos[a.k],[px,py]=pt(i,x?x.n:0);s+=`<circle cx="${px}" cy="${py}" r="3.5" fill="var(--sb)" data-tip="${esc(ln)} · ${a.n}: ${x?x.r+' '+f(x.n):'0 (não faz)'}"/>`})}}
  for(const x of extra||[])s+=`<polygon points="${pol(a=>x.v[a.k]||0)}" fill="none" stroke="var(--ink2)" stroke-width="1.5" stroke-dasharray="${x.traco}"/>`;
  for(const sr of series){s+=`<polygon points="${pol(a=>(sr.eixos[a.k]||{n:0}).n)}" fill="${sr.cor}" fill-opacity=".2" stroke="${sr.cor}" stroke-width="2" stroke-linejoin="round"/>`;
   AX.forEach((a,i)=>{const x=sr.eixos[a.k],[px,py]=pt(i,x?x.n:0);s+=`<circle cx="${px}" cy="${py}" r="4.5" fill="${sr.cor}" stroke="var(--panel)" stroke-width="2" data-tip="${esc(sr.nome)} · ${a.n}: ${x?x.r+' '+f(x.n):'sem nota'}"/><circle cx="${px}" cy="${py}" r="11" fill="transparent" data-tip="${esc(sr.nome)} · ${a.n}: ${x?x.r+' '+f(x.n):'sem nota'}"/>`})}
@@ -200,8 +209,12 @@ function detalhe(){const el=$('#det'),es=D.entradas[S.aba],e=es.find(x=>x.id==S.
  const cats=c?[]:Object.keys((Object.values(e.eixos).find(x=>x.c)||{c:{}}).c);
  const extra=cats.map(k=>({traco:TRACO[k],v:Object.fromEntries(AX.map(a=>[a.k,((e.eixos[a.k]||{}).c||{})[k]]))}));
  const series=[{nome:nomeE(e),cor:'var(--sa)',eixos:e.eixos},...(c?[{nome:nomeE(c),cor:'var(--sb)',eixos:c.eixos}]:[])];
- h+=`<div class="duo"><div>${radar(series,extra)}<div class="leg">${series.length>1||cats.length?series.map(s=>`<span><i style="background:${s.cor}"></i>${esc(s.nome)}${cats.length?' (média do dia)':''}</span>`).join(''):''}${cats.map(k=>`<span><svg viewBox="0 0 26 8"><line x1="0" x2="26" y1="4" y2="4" stroke="var(--ink2)" stroke-width="2" stroke-dasharray="${TRACO[k]}"/></svg>${D.categorias[k]}</span>`).join('')}</div></div>
-  <div class="res">${AX.map(a=>{const x=e.eixos[a.k],y=c&&c.eixos[a.k];return `<div class="r" style="--c:var(--c-${a.k})"><div>${a.i} ${a.n}</div><div>${nota(x)}${c?` <small>vs</small> ${nota(y)}`:x&&x.c?` <small>${Object.entries(x.c).map(([k,v])=>D.categorias[k]+' '+f(v)).join(' · ')}</small>`:''}</div></div>`}).join('')}</div></div>`;
+ const an=!c&&b.aneis?{...b.aneis,ver:[...S.ver]}:null;
+ const anLeg=an?`<div class="leg"><span><svg viewBox="0 0 26 8"><rect x="0" y="1" width="26" height="6" fill="var(--sa)" fill-opacity=".25"/></svg>faixa entre o mínimo e o máximo das linhas</span>${an.equilibrado&&S.aba!='padrao'?'<span><svg viewBox="0 0 26 8"><line x1="0" x2="26" y1="4" y2="4" stroke="var(--ink)" stroke-width="2" stroke-dasharray="1 3"/></svg>equilibrado (plano padrão)</span>':''}</div>
+  <p class="lns"><small>Linhas-opção (toque para sobrepor):</small> ${Object.entries(an.linhas).map(([id,l])=>`<button class="pill" aria-pressed="${S.ver.has(id)}" data-ln="${esc(id)}" title="${esc(b.linhas[id].hipotese)}">${l.custo=='gratuita'?'♻️':'⚡'} ${esc(id)}</button>`).join('')}<br><small style="color:var(--ink2)">♻️ gratuita (postura, troca turno a turno) · ⚡ gasta recurso. O máximo não se alcança em todos os eixos ao mesmo tempo.</small></p>`:'';
+ if(an&&an.equilibrado&&S.aba!='padrao')extra.push({traco:'1 3',v:Object.fromEntries(AX.map(a=>[a.k,(an.equilibrado[a.k]||{}).n]))});
+ h+=`<div class="duo"><div>${radar(series,extra,an)}<div class="leg">${series.length>1||cats.length?series.map(s=>`<span><i style="background:${s.cor}"></i>${esc(s.nome)}${cats.length?' (média do dia)':''}</span>`).join(''):''}${cats.map(k=>`<span><svg viewBox="0 0 26 8"><line x1="0" x2="26" y1="4" y2="4" stroke="var(--ink2)" stroke-width="2" stroke-dasharray="${TRACO[k]}"/></svg>${D.categorias[k]}</span>`).join('')}</div>${anLeg}</div>
+  <div class="res">${AX.map(a=>{const x=e.eixos[a.k],y=c&&c.eixos[a.k];return `<div class="r" style="--c:var(--c-${a.k})"><div>${a.i} ${a.n}</div><div>${nota(x)}${c?` <small>vs</small> ${nota(y)}`:x&&x.c?` <small>${Object.entries(x.c).map(([k,v])=>D.categorias[k]+' '+f(v)).join(' · ')}</small>`:''}${an&&an.externo[a.k]?`<br><small>faixa ${f(an.interno[a.k].n)} – ${f(an.externo[a.k].n)}</small>`:''}</div></div>`}).join('')}</div></div>`;
  if(c){h+=comparacao(e,c)}else{
   h+=`<details open><summary>📜 Build e itens</summary><div class="corpo">${d.build||d.itens?txt(d.build)+(d.itens?`<p><b>Itens:</b> ${esc(d.itens)}</p>`:''):`<p>${esc(b.build)}</p><p class="vazio">Descrição ainda não escrita (campo "descricao" no JSON da build).</p>`}</div></details>`;
   const ls=[...new Set(e.plano?e.plano.combates.map(x=>x.linha):Object.values(e.fonte))],p=e.plano;
@@ -214,10 +227,10 @@ function detalhe(){const el=$('#det'),es=D.entradas[S.aba],e=es.find(x=>x.id==S.
 
 function tudo(){controles();tabela();detalhe()}
 $('#fc').innerHTML=NUM.map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('');$('#oc').innerHTML=CAMPOS.map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('');
-document.addEventListener('click',ev=>{const t=ev.target,a=t.closest('[data-aba]'),g=t.closest('[data-g]'),rm=t.closest('[data-rm]'),o=t.closest('th[data-o]'),r=t.closest('tr[data-id]');
+document.addEventListener('click',ev=>{const t=ev.target,ln=t.closest('[data-ln]');if(ln){S.ver.has(ln.dataset.ln)?S.ver.delete(ln.dataset.ln):S.ver.add(ln.dataset.ln);detalhe();return}const a=t.closest('[data-aba]'),g=t.closest('[data-g]'),rm=t.closest('[data-rm]'),o=t.closest('th[data-o]'),r=t.closest('tr[data-id]');
  if(a){S.aba=a.dataset.aba;S.sel=S.cmp=null}else if(g){S.grupos.has(g.dataset.g)?S.grupos.delete(g.dataset.g):S.grupos.add(g.dataset.g)}else if(rm){S.filtros.splice(+rm.dataset.rm,1)}
  else if(o){if(S.ord==o.dataset.o)S.dir=-S.dir;else{S.ord=o.dataset.o;S.dir=S.ord=='nome'?1:-1}}
- else if(r){S.sel=S.sel==r.dataset.id?null:r.dataset.id;S.cmp=null;tudo();if(S.sel)$('#det').scrollIntoView({behavior:'smooth',block:'start'});return}
+ else if(r){S.sel=S.sel==r.dataset.id?null:r.dataset.id;S.cmp=null;S.ver.clear();tudo();if(S.sel)$('#det').scrollIntoView({behavior:'smooth',block:'start'});return}
  else if(t.id=='fadd'){const v=parseFloat($('#fv').value.replace(',','.'));if(isNaN(v))return;S.filtros.push({c:$('#fc').value,op:$('#fo').value,v});$('#fv').value=''}
  else if(t.id=='od'){S.dir=-S.dir}else if(t.id=='fechar'){S.sel=S.cmp=null}
  else if(t.id=='tema'){const h=document.documentElement;h.dataset.tema=h.dataset.tema=='claro'?'escuro':'claro';try{localStorage.setItem('tema',h.dataset.tema)}catch(e){}return}else return;tudo()});

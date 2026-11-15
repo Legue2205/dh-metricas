@@ -59,6 +59,17 @@ def _resumo(res):
             print('             por encontro: ' + ' · '.join(f"{t.split(' ')[0]} {_fmt(v)}" for t, v in c['por_tipo'].items()))
 
 
+def _aneis(b, res):
+    from . import aneis
+    a = aneis.calcular(b, res)
+    if not a: return
+    eq = a['equilibrado'] or {}
+    nomes = dict(dano='dano', deff='def. física', defm='def. mágica', controle='controle', area='área', suporte='suporte')
+    print('  ANÉIS (interno · equilibrado · externo): ' + ' | '.join(
+        f"{nomes[k]} {_fmt(a['interno'][k]['n'])} · {_fmt(eq[k]['n']) if k in eq else '–'} · {_fmt(a['externo'][k]['n'])}"
+        for k in a['externo']))
+
+
 def _planos(res):
     for tag, p in res.get('planos', {}).items():
         hy = f" · hypercharged ×{p['hypercharged']:g}" if p['hypercharged'] != 1 else ''
@@ -161,7 +172,7 @@ def main(argv=None):
             print(json.dumps(itens(b, res), ensure_ascii=False))
         elif a.json: print(json.dumps(res, ensure_ascii=False, indent=1))
         elif a.comando == 'linhas': _linhas(b, res)
-        else: _resumo(res); _planos(res)
+        else: _resumo(res); _planos(res); _aneis(b, res)
     return 0
 
 

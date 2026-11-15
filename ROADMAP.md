@@ -159,8 +159,11 @@ Facilitadores planejados:
   Descrições escritas para a party (7 builds); **NPCs ainda sem `descricao`**.
 
 ## Próximo passo
-1. **Modelo de anéis:** marca `gratuita`/`gasta_recurso` nas linhas; agregação mín/máx/equilibrada por build;
-   radar de anéis no site.
+1. ~~**Modelo de anéis**~~ **feito em 15/11**: `dh/aneis.py` (mín/máx por eixo entre as linhas, equilibrado = plano
+   `padrao`; eixo ativo ausente = 0, passivo ausente = ignorado; `"aneis": false` exclui linha antiga; `custo`
+   declarado ou inferido). Site: faixa mín–máx, equilibrado pontilhado, botões para sobrepor cada linha, zoom
+   automático da escala. CLI imprime `ANÉIS`. Falta: linhas-opção revisadas de cada build (linhas parciais antigas,
+   como `so-sobreviver` do Kael sem `dano`, puxam o mínimo de dano para 0).
 2. Suporte: trocar a diluição por dia pelo valor na luta em que é usado.
 3. Motor de fôlego (a partir do livro-caixa de `planos.py`).
 4. **Com o usuário:** linhas-opção + linha equilibrada de cada build (pedido típico: "vamos criar o plano do

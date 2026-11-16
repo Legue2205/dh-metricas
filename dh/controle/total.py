@@ -167,3 +167,31 @@ def avaliar(fn, ficha, L, absoluto=False, regua=None):
         res['rank_absoluto'] = base.letra(res['nivel_absoluto'])
     regua.salva()
     return res
+
+
+# ---------- Régua de dia (16/11): o conjurador de referência também tem orçamento ----------
+# Espaços de um conjurador completo (PHB) por nível de personagem: [1º, 2º, ..., 9º].
+ESPACOS_FULL = {1: [2], 2: [3], 3: [4, 2], 4: [4, 3], 5: [4, 3, 2], 6: [4, 3, 3], 7: [4, 3, 3, 1], 8: [4, 3, 3, 2],
+                9: [4, 3, 3, 3, 1], 10: [4, 3, 3, 3, 2], 11: [4, 3, 3, 3, 2, 1], 12: [4, 3, 3, 3, 2, 1],
+                13: [4, 3, 3, 3, 2, 1, 1], 14: [4, 3, 3, 3, 2, 1, 1], 15: [4, 3, 3, 3, 2, 1, 1, 1],
+                16: [4, 3, 3, 3, 2, 1, 1, 1], 17: [4, 3, 3, 3, 2, 1, 1, 1, 1], 18: [4, 3, 3, 3, 3, 1, 1, 1, 1],
+                19: [4, 3, 3, 3, 3, 2, 1, 1, 1], 20: [4, 3, 3, 3, 3, 2, 2, 1, 1]}
+PESOS_DIA = (2, 2, 1, 1)        # dia padrão: 2 prioritárias (peso 2) e 2 comuns (peso 1)
+
+
+def ref_dia(L, pesos=PESOS_DIA):
+    """Pico médio do conjurador de referência de nível L num dia: um espaço de controle por luta, os maiores nas lutas
+    de maior peso; um espaço de nível s vale o pico de quem acabou de ganhá-lo (nível 2s − 1)."""
+    slots = sorted((s for s, q in enumerate(ESPACOS_FULL[L], 1) for _ in range(q)), reverse=True)
+    vals = [2 * s - 1 for s in slots[:len(pesos)]] + [0] * max(0, len(pesos) - len(slots))
+    return sum(w * v for w, v in zip(sorted(pesos, reverse=True), vals)) / sum(pesos)
+
+
+def nivel_dia(v):
+    """Converte um nível equivalente de pico (por luta) para a régua de dia: o nível L cujo dia de referência rende v."""
+    if v is None: return None
+    pts = [(0, 0.0)] + [(L, ref_dia(L)) for L in range(1, 21)]
+    if v >= pts[-1][1]: return 20.0 + (v - pts[-1][1])
+    for (l0, v0), (l1, v1) in zip(pts, pts[1:]):
+        if v0 <= v <= v1 and v1 > v0: return round(l0 + (l1 - l0) * (v - v0) / (v1 - v0), 2)
+    return 0.0

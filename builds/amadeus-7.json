@@ -35,7 +35,7 @@
   "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
   "corpo": {
     "ca": 16,
-    "pv": 62,
+    "pv": 48.5,
     "saves": {
       "sv": {
         "for": -1,
@@ -45,17 +45,19 @@
         "sab": 4,
         "car": 2
       },
-      "pv": 53,
+      "pv": 48.5,
       "ca": 14,
       "conjurador": true,
       "contra_mod": 3
-    }
+    },
+    "pv_real": 44,
+    "nota_pv": "44 de vida; 48,5 nos motores = 44 + metade do Líder Inspirador (9 PV temporários, 1 por descanso curto)"
   },
   "linhas": [
     {
       "id": "principal",
       "principal": true,
-      "hipotese": "7 esqueletos com meia cobertura + Chill Touch; Web ou Bestow Curse (CD 14); Shield: 4 espaços de 1º no dia = 1 por luta",
+      "hipotese": "7 esqueletos com meia cobertura + Chill Touch; Web ou Bestow Curse (CD 14); 3 Shields no dia (o 4º espaço de 1º vai para Mage Armor)",
       "dano": {
         "automatico": "6.9",
         "nota": "Chill Touch do cajado: 2d8, save de Sab (CD 14, alvo +2), metade no sucesso",
@@ -72,12 +74,12 @@
         ]
       },
       "defesa": {
-        "pv_efetivo": 53,
+        "pv_efetivo": 48.5,
         "ca": 14,
         "reacoes": [
           {
             "tipo": "shield",
-            "usos_luta": 1
+            "usos_luta": 0.75
           }
         ]
       },
@@ -196,6 +198,212 @@
       ]
     },
     {
+      "id": "web",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gasta_recurso",
+      "hipotese": "Luta comum: esqueletos + Chill Touch, Web de 2º (concentração livre)",
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "acc_m": [
+            0.8,
+            0.9,
+            1.0
+          ],
+          "conc": true,
+          "dpr": 31.9
+        },
+        "fontes": [
+          {
+            "tipo": "area",
+            "nome": "Web",
+            "magia": "web",
+            "cd": 14
+          }
+        ],
+        "usa": {
+          "espacos": {
+            "2": 1
+          }
+        }
+      },
+      "area": []
+    },
+    {
+      "id": "haste-fireball",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gasta_recurso",
+      "hipotese": "Prioritária: Haste no aliado da frente (concentração) + Fireball; esqueletos e Chill Touch",
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "acc_m": [
+            0.8,
+            0.9,
+            1.0
+          ],
+          "conc": true,
+          "dpr": 31.9
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      },
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Inspiring Leader",
+            "lado": "def",
+            "modelo": "pv_temporario",
+            "usos_descanso_curto": 1,
+            "alvos": 3,
+            "pv": 9
+          },
+          {
+            "nome": "Máscara (Crusader's Mantle)",
+            "lado": "of",
+            "modelo": "dano_por_acerto",
+            "usos_dia": 1,
+            "alvos": 3,
+            "dano_extra": 2.5
+          },
+          {
+            "nome": "Cure Wounds (Magic Initiate)",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_dia": 1,
+            "pv": 5.5
+          },
+          {
+            "nome": "Haste no aliado",
+            "lado": "of",
+            "modelo": "ataque_extra",
+            "alvos": 1,
+            "concentracao": "haste"
+          }
+        ],
+        "usa": {
+          "espacos": {
+            "3": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "greater-invisibility",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gasta_recurso",
+      "hipotese": "Prioritária: Greater Invisibility (4º, recuperado com Arcane Recovery) no aliado da frente; esqueletos e Chill Touch",
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "acc_m": [
+            0.8,
+            0.9,
+            1.0
+          ],
+          "conc": true,
+          "dpr": 31.9
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      },
+      "area": [],
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Inspiring Leader",
+            "lado": "def",
+            "modelo": "pv_temporario",
+            "usos_descanso_curto": 1,
+            "alvos": 3,
+            "pv": 9
+          },
+          {
+            "nome": "Máscara (Crusader's Mantle)",
+            "lado": "of",
+            "modelo": "dano_por_acerto",
+            "usos_dia": 1,
+            "alvos": 3,
+            "dano_extra": 2.5
+          },
+          {
+            "nome": "Cure Wounds (Magic Initiate)",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_dia": 1,
+            "pv": 5.5
+          },
+          {
+            "nome": "Greater Invisibility no aliado",
+            "lado": "of",
+            "modelo": "vantagem",
+            "alvos": 1,
+            "fracao": 0.9,
+            "concentracao": "greater_invisibility",
+            "nota": "só o lado ofensivo (vantagem nos ataques); a desvantagem contra ele ainda não é contada"
+          }
+        ],
+        "usa": {
+          "espacos": {
+            "4": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "so-esqueletos",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gratuita",
+      "hipotese": "Sem magias: esqueletos e Chill Touch (anel interno)",
+      "controle": {
+        "atencao": {
+          "papel": "conjurador",
+          "front": false,
+          "acc_m": [
+            0.8,
+            0.9,
+            1.0
+          ],
+          "conc": true,
+          "dpr": 31.9
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      },
+      "area": [],
+      "suporte": {
+        "fontes": [
+          {
+            "nome": "Inspiring Leader",
+            "lado": "def",
+            "modelo": "pv_temporario",
+            "usos_descanso_curto": 1,
+            "alvos": 3,
+            "pv": 9
+          }
+        ]
+      }
+    },
+    {
       "id": "vantagem-externa",
       "principal": false,
       "hipotese": "Vantagem externa em tudo",
@@ -219,7 +427,7 @@
       "principal": false,
       "hipotese": "Queima os 4 espaços de 1º em Shield numa luta só",
       "defesa": {
-        "pv_efetivo": 53,
+        "pv_efetivo": 48.5,
         "ca": 14,
         "reacoes": [
           {
@@ -235,8 +443,73 @@
       "1": 4,
       "2": 3,
       "3": 3,
-      "4": 1
+      "4": 2
     },
-    "lutas_dia": 4
+    "lutas_dia": 4,
+    "nota": "4º: o espaço de 4º + Arcane Recovery (devolve um 4º)"
+  },
+  "planos": {
+    "padrao": {
+      "descricao": "7 esqueletos mantidos com o 4º; taxa de 1×3º no meio do dia (cura 5 ou reergue 2). Haste + Fireball numa prioritária, Greater Invisibility na outra, Web nas comuns. Mage Armor + 3 Shields; Misty Step sobra.",
+      "combates": [
+        {
+          "linha": "web",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "2": 1,
+              "4": 1
+            }
+          },
+          "nota": "Mage Armor; manter os esqueletos (4º); Web"
+        },
+        {
+          "linha": "haste-fireball",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "3": 2
+            }
+          },
+          "nota": "Shield; Haste + Fireball"
+        },
+        {
+          "linha": "web",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "2": 1,
+              "3": 1
+            }
+          },
+          "nota": "Shield; Web; taxa dos esqueletos (3º)"
+        },
+        {
+          "linha": "greater-invisibility",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "4": 1
+            }
+          },
+          "nota": "Shield; Greater Invisibility (4º do Arcane Recovery)"
+        }
+      ]
+    },
+    "combate_unico": {
+      "descricao": "Uma luta só: Haste + Fireball.",
+      "combates": [
+        {
+          "linha": "haste-fireball",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "3": 2
+            }
+          },
+          "nota": ""
+        }
+      ]
+    }
   }
 }

@@ -86,6 +86,10 @@ SUB_CONTROLE = {'campo': 'nivel_campo', 'corpo': 'nivel_atencao'}   # Controle (
 
 def _nota(x, sub):
     if x is None: return None
+    if sub == 'campo':      # Controle na régua de dia (16/11): o conjurador de referência também tem orçamento
+        from .controle.total import nivel_dia
+        return nivel_dia(x.get('nivel_campo'))
+    if sub == 'campo_pico': return x.get('nivel_campo')
     if sub in SUB_CONTROLE: return x.get(SUB_CONTROLE[sub])
     if sub: x = x[sub]
     return x.get('nivel_eq')
@@ -103,6 +107,10 @@ def agregar(b, res_linhas, magias, letra):
             if all(v is None for v in vals): continue
             vals = [v or 0.0 for v in vals]; pesos = [c['peso'] for c in combates]
             dia = sum(p * v for p, v in zip(pesos, vals)) / sum(pesos)
+            if sub == 'campo':   # régua de dia: média dos picos do dia contra o dia do conjurador de referência
+                from .controle.total import nivel_dia
+                picos = [_nota(res_linhas[c['linha']].get(eixo), 'campo_pico') or 0.0 for c in combates]
+                dia = nivel_dia(sum(p * v for p, v in zip(pesos, picos)) / sum(pesos))
             cats = {}
             for c, v in zip(combates, vals): cats.setdefault(c['categoria'], []).append(v)
             eixos[sub or eixo] = dict(nivel_eq=round(dia, 1), rank=letra(dia),

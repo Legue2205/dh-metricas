@@ -153,6 +153,145 @@
       }
     },
     {
+      "id": "smite-comum",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gasta_recurso",
+      "hipotese": "Luta comum: 1 smite de 1º",
+      "dano": {
+        "ataques": [
+          {
+            "n": 2,
+            "bonus": 8,
+            "dano": "1d6+5"
+          },
+          {
+            "n": 0.5,
+            "bonus": 8,
+            "dano": "1d6+5",
+            "nota": "ataque de oportunidade (reação em 50% dos rounds)"
+          }
+        ],
+        "por_luta": [
+          {
+            "usos": 1,
+            "dano": "2d8",
+            "nota": "smite de 1º"
+          }
+        ],
+        "usa": {
+          "espacos": {
+            "1": 1
+          }
+        },
+        "nota": "1 smite por luta comum"
+      }
+    },
+    {
+      "id": "smite-prioritaria-3",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gasta_recurso",
+      "hipotese": "Luta prioritária (a 1ª do dia): 2 smites de 2º + 1 de 1º",
+      "dano": {
+        "ataques": [
+          {
+            "n": 2,
+            "bonus": 8,
+            "dano": "1d6+5"
+          },
+          {
+            "n": 0.5,
+            "bonus": 8,
+            "dano": "1d6+5",
+            "nota": "ataque de oportunidade (reação em 50% dos rounds)"
+          }
+        ],
+        "por_luta": [
+          {
+            "usos": 2,
+            "dano": "3d8",
+            "nota": "smite de 2º"
+          },
+          {
+            "usos": 1,
+            "dano": "2d8",
+            "nota": "smite de 1º"
+          }
+        ],
+        "usa": {
+          "espacos": {
+            "1": 1,
+            "2": 2
+          }
+        },
+        "nota": "3 smites"
+      }
+    },
+    {
+      "id": "smite-prioritaria-2",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gasta_recurso",
+      "hipotese": "Luta prioritária (a 2ª do dia): 1 smite de 2º + 1 de 1º",
+      "dano": {
+        "ataques": [
+          {
+            "n": 2,
+            "bonus": 8,
+            "dano": "1d6+5"
+          },
+          {
+            "n": 0.5,
+            "bonus": 8,
+            "dano": "1d6+5",
+            "nota": "ataque de oportunidade (reação em 50% dos rounds)"
+          }
+        ],
+        "por_luta": [
+          {
+            "usos": 1,
+            "dano": "3d8",
+            "nota": "smite de 2º"
+          },
+          {
+            "usos": 1,
+            "dano": "2d8",
+            "nota": "smite de 1º"
+          }
+        ],
+        "usa": {
+          "espacos": {
+            "1": 1,
+            "2": 1
+          }
+        },
+        "nota": "2 smites"
+      }
+    },
+    {
+      "id": "sem-smite",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gratuita",
+      "hipotese": "Sem espaços: só espada, Sentinel e aura (anel interno)",
+      "dano": {
+        "ataques": [
+          {
+            "n": 2,
+            "bonus": 8,
+            "dano": "1d6+5"
+          },
+          {
+            "n": 0.5,
+            "bonus": 8,
+            "dano": "1d6+5",
+            "nota": "ataque de oportunidade (reação em 50% dos rounds)"
+          }
+        ]
+      }
+    },
+    {
       "id": "postura-tanque",
       "principal": false,
       "hipotese": "Postura de tanque: Lay on Hands 35 na luta",
@@ -161,7 +300,9 @@
       },
       "saves": {
         "pv": 98
-      }
+      },
+      "herda": "principal",
+      "custo": "gasta_recurso"
     },
     {
       "id": "lay-on-hands-aliados",
@@ -183,7 +324,9 @@
             "pv": 35
           }
         ]
-      }
+      },
+      "herda": "principal",
+      "custo": "gasta_recurso"
     }
   ],
   "recursos": {
@@ -191,6 +334,75 @@
       "1": 4,
       "2": 3
     },
+    "outros": {
+      "lay_on_hands": {
+        "qtd": 35,
+        "volta": "longo"
+      }
+    },
     "lutas_dia": 4
+  },
+  "planos": {
+    "padrao": {
+      "descricao": "Todos os espaços em smite (4×1º, 3×2º): 1 por luta comum, 3 e 2 nas prioritárias. Lay on Hands 35 como cura do dia; as magias quase não entram.",
+      "combates": [
+        {
+          "linha": "smite-comum",
+          "gasta": {
+            "espacos": {
+              "1": 1
+            }
+          },
+          "nota": "1 smite de 1º"
+        },
+        {
+          "linha": "smite-prioritaria-3",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "2": 2
+            },
+            "lay_on_hands": 17.5
+          },
+          "nota": "2×2º + 1×1º"
+        },
+        {
+          "linha": "smite-comum",
+          "gasta": {
+            "espacos": {
+              "1": 1
+            }
+          },
+          "nota": "1 smite de 1º"
+        },
+        {
+          "linha": "smite-prioritaria-2",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "2": 1
+            },
+            "lay_on_hands": 17.5
+          },
+          "nota": "2º + 1º"
+        }
+      ]
+    },
+    "combate_unico": {
+      "descricao": "Uma luta só, com 3 smites.",
+      "combates": [
+        {
+          "linha": "smite-prioritaria-3",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "2": 2
+            },
+            "lay_on_hands": 35
+          },
+          "nota": ""
+        }
+      ]
+    }
   }
 }

@@ -57,7 +57,7 @@ def _ignorar():
     ('abdul-7.json', 4.9, 4.2, 4.1),
     ('kael-7.json', 3.6, 3.0, 1.1),
     ('virgil-10.json', 6.5, 6.5, 0.5),
-    ('amadeus-7.json', 6.0, 4.3, 3.8),
+    ('amadeus-7.json', 4.7, 4.25, 2.54),   # 16/11: PV efetivo 62 -> 48,5 (planilha: 6,0 / 4,3 / 3,8)
     ('john-7.json:ensnaring-strike', 0.7, 1.7, 0.0),
     ('tinbin-7.json', 0.4, 0.1, 0.3),
     ('fjord-9.json', 5.7, 5.2, 3.6),

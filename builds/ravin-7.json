@@ -141,6 +141,193 @@
       ]
     },
     {
+      "id": "comum-bladesong",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gratuita",
+      "hipotese": "Luta comum: espada + Booming Blade, Bladesong, Shield no momento crítico; sem espaços de 3º e sem barrado",
+      "controle": {
+        "atencao": {
+          "papel": "striker",
+          "soft": 0.15,
+          "dpr": 21.1
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      },
+      "area": [
+        {
+          "nome": "Thunderclap com espadada",
+          "tipo": "cleave_save",
+          "dano": "2d6",
+          "cd": 16,
+          "alvos": [
+            1,
+            2,
+            3
+          ],
+          "custo_ataque": {
+            "bonus": 9,
+            "dano": "1d8"
+          }
+        }
+      ],
+      "defesa": {
+        "pv_efetivo": 31,
+        "reacoes": [
+          {
+            "tipo": "shield",
+            "usos_luta": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "comum-sem-bladesong",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gratuita",
+      "hipotese": "Luta comum sem Bladesong (3 por dia): Mage Armor no lugar do Shield",
+      "controle": {
+        "atencao": {
+          "papel": "striker",
+          "soft": 0.15,
+          "dpr": 21.1
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      },
+      "area": [
+        {
+          "nome": "Thunderclap com espadada",
+          "tipo": "cleave_save",
+          "dano": "2d6",
+          "cd": 16,
+          "alvos": [
+            1,
+            2,
+            3
+          ],
+          "custo_ataque": {
+            "bonus": 9,
+            "dano": "1d8"
+          }
+        }
+      ],
+      "defesa": {
+        "pv_efetivo": 31,
+        "ca": 15.85,
+        "nota": "CA sem Bladesong suposta: 20,85 − 5 (Int); confirmar"
+      },
+      "corpo": {
+        "ca": 15.85
+      }
+    },
+    {
+      "id": "haste-lightning",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gasta_recurso",
+      "hipotese": "Prioritária: Haste nele + Lightning Bolt com carga (2×3º), Bladesong, Shield, barrado nos rounds 3–4 com Inflict Wounds",
+      "dano": {
+        "medido": [
+          42.7,
+          40.3,
+          33.2,
+          30.9,
+          26.3,
+          21.7,
+          17.2,
+          12.8,
+          10.6
+        ],
+        "fonte": "planilha de dano (sem motor salvo)"
+      },
+      "controle": {
+        "atencao": {
+          "papel": "striker",
+          "soft": 0.15,
+          "dpr": 21.1,
+          "conc": true
+        },
+        "fontes": [
+          {
+            "tipo": "ameaca",
+            "nome": "Corpo (ameaça)"
+          }
+        ]
+      },
+      "area": [
+        {
+          "nome": "Lightning Bolt com carga",
+          "usos": [
+            {
+              "alvos": 4,
+              "dano": "8d6",
+              "dobra_maior_dado": true,
+              "cd": 16,
+              "slot": 3
+            }
+          ]
+        },
+        {
+          "nome": "Thunderclap com espadada",
+          "tipo": "cleave_save",
+          "dano": "2d6",
+          "cd": 16,
+          "alvos": [
+            1,
+            2,
+            3
+          ],
+          "custo_ataque": {
+            "bonus": 9,
+            "dano": "1d8"
+          }
+        }
+      ],
+      "suporte": {
+        "usa": {
+          "espacos": {
+            "3": 1
+          }
+        },
+        "fontes": []
+      }
+    },
+    {
+      "id": "counterspell-hypnotic",
+      "herda": "principal",
+      "principal": false,
+      "custo": "gasta_recurso",
+      "hipotese": "Prioritária: Counterspell + Hypnotic Pattern (2×3º), Bladesong, Shield, barrado nos rounds 3–4 (Counterspell e Vortex Warp ainda fora das contas)",
+      "area": [
+        {
+          "nome": "Thunderclap com espadada",
+          "tipo": "cleave_save",
+          "dano": "2d6",
+          "cd": 16,
+          "alvos": [
+            1,
+            2,
+            3
+          ],
+          "custo_ataque": {
+            "bonus": 9,
+            "dano": "1d8"
+          }
+        }
+      ]
+    },
+    {
       "id": "sem-barrado",
       "principal": false,
       "hipotese": "Sem barrado (comparação)",
@@ -200,8 +387,89 @@
     "espacos": {
       "1": 5,
       "2": 3,
-      "3": 3
+      "3": 4
     },
-    "lutas_dia": 4
+    "outros": {
+      "bladesong": {
+        "qtd": 3,
+        "volta": "longo"
+      },
+      "barrado": {
+        "qtd": 2,
+        "volta": "longo"
+      }
+    },
+    "lutas_dia": 4,
+    "nota": "3º: 3 espaços + Arcane Recovery (devolve 1 de 3º)"
+  },
+  "planos": {
+    "padrao": {
+      "descricao": "2 espaços de 3º por prioritária (Haste + Lightning Bolt; Counterspell + Hypnotic Pattern), barrado nos rounds 3–4 das prioritárias; comuns com espada e cantrips; uma comum sem Bladesong, com Mage Armor. Misty Step ou Vortex Warp nas prioritárias.",
+      "combates": [
+        {
+          "linha": "comum-bladesong",
+          "gasta": {
+            "espacos": {
+              "1": 1
+            },
+            "bladesong": 1
+          },
+          "nota": "Shield"
+        },
+        {
+          "linha": "haste-lightning",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "2": 1,
+              "3": 2
+            },
+            "bladesong": 1,
+            "barrado": 1
+          },
+          "nota": "Shield; Misty Step; Haste + Lightning Bolt; barrado"
+        },
+        {
+          "linha": "comum-sem-bladesong",
+          "gasta": {
+            "espacos": {
+              "1": 1
+            }
+          },
+          "nota": "Mage Armor"
+        },
+        {
+          "linha": "counterspell-hypnotic",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "2": 1,
+              "3": 2
+            },
+            "bladesong": 1,
+            "barrado": 1
+          },
+          "nota": "Shield; Vortex Warp; Counterspell + Hypnotic Pattern; barrado"
+        }
+      ]
+    },
+    "combate_unico": {
+      "descricao": "Uma luta só: Haste + Lightning Bolt.",
+      "combates": [
+        {
+          "linha": "haste-lightning",
+          "gasta": {
+            "espacos": {
+              "1": 1,
+              "2": 1,
+              "3": 2
+            },
+            "bladesong": 1,
+            "barrado": 1
+          },
+          "nota": ""
+        }
+      ]
+    }
   }
 }

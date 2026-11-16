@@ -207,3 +207,16 @@ Próximo: (1) "deixa na mão": quanto dano o esconder-se empurra para a party (u
 - Tin Bin: linhas transicao-3o-melee (equilibrada), transicao-2o-frontliner, sombras, frontline; Action Surge fora.
 - Em aberto: parties de 5–6 (3º melee como posição própria); a exposição do motor tático vem de presets por composição,
   não do motor de atenção (possível iteração: calibrar os presets pela atenção); nome melhor para "controle de corpo".
+
+## 16/11 (madrugada) — régua de dia, planos da party
+- **Controle na régua de dia** (aprovado): todo número de Controle mostrado = `controle.total.nivel_dia(pico)`, o nível L
+  cujo conjurador de referência, gastando um espaço de controle por luta (maiores nas prioritárias, pesos 2-2-1-1),
+  rende esse pico médio. Plano: converte a média dos picos do dia. O pico por luta segue no card (régua antiga).
+- PV real no painel (`corpo.pv_real`): Ravin 31, Kael 59, Amadeus 44 (motores: 48,5 = 44 + metade do Líder Inspirador).
+- Abdul: todos os espaços em smite (1/2.../3/2 por luta), Lay on Hands 35 no livro-caixa; linhas herdam a principal.
+- Amadeus: 7 esqueletos (4º no início + 3º de taxa no meio do dia), Haste + Fireball, Greater Invisibility (4º do Arcane
+  Recovery), 2 Webs, Mage Armor + 3 Shields. Conflito avisado: 4 Shields não cabem com Mage Armor.
+- Ravin: 4×3º, 2 por prioritária (Haste + LB; Counterspell + HP), Bladesong 3/dia (uma comum sem, com Mage Armor; CA sem
+  Bladesong suposta 15,85), barrado 2/dia. Dano ainda medido da planilha; Counterspell e Vortex Warp fora das contas.
+- Pendente: suporte do Marcus (Healing Word "levantar", resgate de save para Inspiração/Countercharm, Song of Rest);
+  motor de vida do Kael (adiado); John (fica na comparação) precisa de plano; dano do Ravin por motor (precisa da ficha).

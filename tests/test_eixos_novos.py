@@ -91,7 +91,9 @@ def test_plano_livro_caixa_e_media():
                       'area': {'nivel_eq': 4.0}}}
     e = planos.agregar(b, res, MAGIAS, letra)['padrao']['eixos']
     assert e['dano'] == dict(nivel_eq=4.0, rank='C', por_categoria={'np': 6.0, 'p': 3.0})     # prioritário pesa 2
-    assert e['campo']['nivel_eq'] == 5.0 and e['campo']['por_categoria'] == {'np': 1.0, 'p': 7.0}   # controle = só campo
+    from dh.controle.total import nivel_dia                     # controle = só campo, na régua de dia
+    assert e['campo']['nivel_eq'] == round(nivel_dia(5.0), 1)
+    assert e['campo']['por_categoria'] == {'np': round(nivel_dia(1.0), 1), 'p': round(nivel_dia(7.0), 1)}
     assert e['corpo']['por_categoria'] == {'np': 2.0, 'p': 1.0}                                       # corpo separado
     assert e['area']['por_categoria'] == {'np': 0.0, 'p': 4.0}                                 # não fez área no comum
 
@@ -122,7 +124,8 @@ def test_invocacoes():
     from dh import motor
     _, r = motor.avaliar(B / 'amadeus-7.json', 'rapido', forcar=True, eixos=['controle'], linhas=['principal'])
     c = r['linhas']['principal']['controle']                                 # paridade mantida lendo de "invocacoes"
-    assert abs(c['nivel_eq'] - 6.0) <= 0.4 and abs(c['nivel_atencao'] - 3.8) <= 0.4
+    # 16/11: PV efetivo do Amadeus 62 -> 48,5 (44 + metade do Líder Inspirador): total 6,0 -> 4,7, corpo 3,8 -> 2,5
+    assert abs(c['nivel_eq'] - 4.7) <= 0.4 and abs(c['nivel_atencao'] - 2.5) <= 0.4
     assert any('esqueletos' in k for k in c['negacao_por_fonte']['Horda'])
 
 
@@ -227,3 +230,10 @@ def test_tatico_politicas():
     assert esc['sem_tanque'] > esc['terceiro_melee']          # frontline mais fraca, mais sombras
     with pytest.raises(ValueError):
         tatico.Modelo({})
+
+
+def test_regua_de_dia():
+    from dh.controle.total import ref_dia, nivel_dia
+    assert abs(ref_dia(7) - 34 / 6) < 1e-9          # 4º + 3º nas prioritárias, 3º + 3º nas comuns
+    assert all(ref_dia(L + 1) >= ref_dia(L) for L in range(1, 20))
+    assert abs(nivel_dia(ref_dia(7)) - 7) < 0.01 and nivel_dia(0) == 0.0

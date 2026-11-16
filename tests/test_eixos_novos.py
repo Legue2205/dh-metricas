@@ -210,11 +210,12 @@ def test_aneis_minimo_equilibrado_maximo():
     res = json.loads((B.parent / 'resultados' / 'marcus-7.json').read_text(encoding='utf-8'))
     b = json.loads((B / 'marcus-7.json').read_text(encoding='utf-8'))
     a = aneis.calcular(b, res)
-    assert set(a['linhas']) == {'comum-escudo', 'comum-marcial', 'prioritaria', 'prioritaria-polymorph'}  # "aneis": false fora
+    assert {'comum-escudo', 'comum-marcial', 'prioritaria', 'prioritaria-polymorph'} <= set(a['linhas'])
+    assert 'principal' not in a['linhas']                                   # "aneis": false fica de fora
     for k, v in a['externo'].items():
         assert a['interno'][k]['n'] <= v['n']
         if k in a['equilibrado']: assert a['interno'][k]['n'] - 0.05 <= a['equilibrado'][k]['n'] <= v['n'] + 0.05
-    assert a['interno']['area']['n'] == 0.0          # linha sem área conta 0 (eixo ativo)
+    assert a['interno']['area']['n'] == 0.0          # dia sem área conta 0 (eixo ativo)
     assert a['linhas']['comum-escudo']['custo'] == 'gasta_recurso'
 
 

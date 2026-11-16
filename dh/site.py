@@ -96,6 +96,7 @@ def dados():
                                                estrela=bool(l['principal']), eixos=_eixos(lambda k, s=None: _nv(l['res'], k, s))))
         # planos do dia
         for tag, p in res.get('planos', {}).items():
+            if tag not in TAGS: continue        # planos de foco alimentam os anéis, não viram aba
             ordem = sorted(p['combates'], key=lambda c: -c['peso'])
             fp = {}
             for k in RES:

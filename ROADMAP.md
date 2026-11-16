@@ -233,3 +233,20 @@ Próximo: (1) "deixa na mão": quanto dano o esconder-se empurra para a party (u
   antigo era Bladesong 20 + carga, não Shield diluído — não havia contagem dupla.) John: plano com comum (Steady Aim),
   prioritária de dano (Hunter's Mark, 1 troca) e de controle (3 Ensnaring Strikes), Cure Wounds 2×2º, Pass without Trace.
   Suporte: modelo `desvantagem_contra` (Greater Invisibility defensivo: 40% dos acertos contra o aliado da frente).
+
+## Plano de calibração (decidido em 16/11, noite)
+Biblioteca .md completa da party no Drive ("Biblioteca de builds .md": abdul, amadeus, john, kael, marcus, ravin,
+tinbin; o doc mestre de 01/11 vira histórico). Atributos confirmados em 16/11 (Tin Bin rolado, a confirmar).
+**MVP em 3 passos:**
+1. **Consistência de cada régua:** dentro de um eixo, quem faz mais tem nota maior (o usuário acha que já está).
+2. **Calibração grossa entre réguas com a party de referência** (2 anos de jogo com essas builds): comparar os
+   números com a percepção da mesa eixo a eixo, investigar o que falta (ex.: suporte do Marcus baixo → faltavam os
+   Healing Words) e acertar o viés entre eixos (ex.: suporte 7 não pode ser mais fácil que controle 7 ou dano 7).
+3. **Ajustes finais e generalização:** réguas agnósticas, valendo para builds novas. Fim do MVP.
+**Pós-MVP — fine tuning com fontes externas** (cada build com a tag da fonte):
+- RPGBot (~50 builds de várias classes, com os rankings dele): fonte principal de comparação.
+- 2ª opinião: D4 / D&D Deep Dive — builds desequilibradas, burst; esperar pico num eixo e o resto baixo.
+- 3ª opinião: Treant Monk — valoriza defesa, sustentação, agir no 1º turno e controle; builds sem build-up.
+**Motores pendentes:** Ravin (carga da espada: quando gastar, manter fora de fase para +1 CA no turno inimigo,
+Booming Blade para recarregar quando o 1º golpe erra, quando entrar no barrado e se gasta carga); Kael (vida:
+custos em PV, cura por acerto conforme CA e vantagem, limiar, Blood Dice no meio x depois da luta, moeda).

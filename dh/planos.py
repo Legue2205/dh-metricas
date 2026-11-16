@@ -34,6 +34,12 @@ def _gasto(linha, corpo, magias, entrada):
     return esp, {k: v for k, v in linha.get('usa', {}).items() if k != 'espacos'}
 
 
+def _seq(tag):
+    """Estrutura do dia do plano. "foco_<eixo>": o dia padrão com um único foco (anéis externo e interno)."""
+    if tag in TAGS: return TAGS[tag]
+    return TAGS['padrao'] if tag.startswith('foco_') else None
+
+
 def livro_caixa(b, tag, magias):
     """(erros, combates, sobra). combates: [{linha, categoria, peso, gasto}]."""
     plano = b['planos'][tag]; rec = b.get('recursos', {}); hyper = plano.get('hypercharged', 1)
@@ -41,12 +47,12 @@ def livro_caixa(b, tag, magias):
     cheio_e = {int(k): v * hyper for k, v in rec.get('espacos', {}).items()}
     cheio_o = {k: v['qtd'] * hyper for k, v in rec.get('outros', {}).items()}
     esp, out = dict(cheio_e), dict(cheio_o)
-    seq = [x for x in TAGS[tag] if x != SR]; ents = [_entrada(c) for c in plano.get('combates', [])]
+    seq = [x for x in _seq(tag) if x != SR]; ents = [_entrada(c) for c in plano.get('combates', [])]
     erros = []
     if len(ents) != len(seq):
         return [f'plano {tag}: precisa de {len(seq)} combates, tem {len(ents)}'], [], {}
     combates = []; i = 0
-    for passo in TAGS[tag]:
+    for passo in _seq(tag):
         if passo == SR:
             if rec.get('espacos_volta') == 'curto': esp = dict(cheio_e)
             for k, v in rec.get('outros', {}).items():
@@ -76,7 +82,7 @@ def livro_caixa(b, tag, magias):
 def checar(b, magias):
     erros = []
     for tag in b.get('planos', {}):
-        if tag not in TAGS: erros.append(f'plano "{tag}": tag desconhecida (use {", ".join(TAGS)})'); continue
+        if _seq(tag) is None: erros.append(f'plano "{tag}": tag desconhecida (use {", ".join(TAGS)})'); continue
         erros += livro_caixa(b, tag, magias)[0]
     return erros
 

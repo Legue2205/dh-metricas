@@ -55,12 +55,22 @@ def calcular(b, res):
         vs = [v for v in vs if v is not None]
         if not any(k in l['eixos'] for l in linhas.values()): continue   # a build não tem nota nesse eixo
         mn[k], mx[k] = min(vs), max(vs)
-    eq = None
-    p = res.get('planos', {}).get('padrao')
-    if p:
+    def dia(p):
         def get(k, sub=None):
             x = p['eixos'].get(sub or k)
             return None if x is None else x['nivel_eq']
-        eq = {k: v['n'] for k, v in eixos(get).items()}
+        return {k: v['n'] for k, v in eixos(get).items()}
+    planos = res.get('planos', {})
+    eq = dia(planos['padrao']) if 'padrao' in planos else None
+    focos = {t: dia(p) for t, p in planos.items() if t.startswith('foco_')}
+    if focos and eq is not None:
+        # Planos de foco (16/11): os anéis viram dias inteiros — externo = melhor dia focado no eixo, interno = pior dia.
+        dias = [eq] + list(focos.values()); mn, mx = {}, {}
+        for k in EIXOS:
+            vs = [d[k] if k in d else (0.0 if k in ATIVOS else None) for d in dias]
+            vs = [v for v in vs if v is not None]
+            if vs and any(k in d for d in dias): mn[k], mx[k] = min(vs), max(vs)
     fmt = lambda d: {k: dict(n=v, r=base.letra(v)) for k, v in d.items()}
-    return dict(interno=fmt(mn), externo=fmt(mx), equilibrado=fmt(eq) if eq is not None else None, linhas=linhas)
+    return dict(interno=fmt(mn), externo=fmt(mx), equilibrado=fmt(eq) if eq is not None else None, linhas=linhas,
+                fonte='planos de foco' if focos and eq is not None else 'linhas',
+                focos={t: fmt(d) for t, d in focos.items()})

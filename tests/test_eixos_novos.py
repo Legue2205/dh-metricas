@@ -267,3 +267,14 @@ def test_desvantagem_contra():
     v = S.valor({'modelo': 'desvantagem_contra', 'alvos': 1, 'fracao': 1}, 7)
     assert abs(v - 54.5 * 0.35 * 0.4) < 1e-6          # p = 0,6 -> com desvantagem 0,36: corta 40% dos acertos
     assert S.valor({'modelo': 'desvantagem_contra', 'alvos': 1, 'fracao': 0.5}, 7) == v / 2
+
+
+def test_aneis_por_planos_de_foco():
+    from dh import aneis
+    b = json.loads((B / 'marcus-7.json').read_text(encoding='utf-8'))
+    r = json.loads((B.parent / 'resultados' / 'marcus-7.json').read_text(encoding='utf-8'))
+    a = aneis.calcular(b, r)
+    assert a['fonte'] == 'planos de foco' and 'foco_suporte' in a['focos']
+    assert a['externo']['suporte']['n'] == max(d['suporte']['n'] for d in list(a['focos'].values()) + [a['equilibrado']] if 'suporte' in d)
+    for k, v in a['externo'].items():
+        assert a['interno'][k]['n'] <= a['equilibrado'].get(k, {'n': 0})['n'] + 1e-9 <= v['n'] + 1e-9

@@ -56,7 +56,8 @@
       "contra_mod": 5,
       "conjurador": true,
       "bonus_prob": 0.85
-    }
+    },
+    "nota_ca": "corpo.ca 20,85 = 19 com o Shield diluído nos rounds (convenção do motor de atenção, que não simula reações); a defesa usa 19 e simula o Shield"
   },
   "linhas": [
     {
@@ -85,7 +86,9 @@
             "usos_luta": 1
           }
         ],
-        "golpes_extras_a_0pv": 3
+        "golpes_extras_a_0pv": 3,
+        "ca": 19,
+        "nota": "CA 19 = 14 + Int (Bladesong); o Shield entra como reação na simulação, não na CA"
       },
       "controle": {
         "atencao": {
@@ -183,7 +186,9 @@
             "tipo": "shield",
             "usos_luta": 1
           }
-        ]
+        ],
+        "ca": 19,
+        "nota": "CA 19 = 14 + Int (Bladesong); o Shield entra como reação na simulação, não na CA"
       }
     },
     {
@@ -224,11 +229,11 @@
       ],
       "defesa": {
         "pv_efetivo": 31,
-        "ca": 15.85,
-        "nota": "CA sem Bladesong suposta: 20,85 − 5 (Int); confirmar"
+        "ca": 14,
+        "nota": "CA 14 sem Bladesong (confirmado)"
       },
       "corpo": {
-        "ca": 15.85
+        "ca": 14
       }
     },
     {
@@ -301,6 +306,18 @@
           }
         },
         "fontes": []
+      },
+      "defesa": {
+        "pv_efetivo": 31,
+        "ca": 21,
+        "reacoes": [
+          {
+            "tipo": "shield",
+            "usos_luta": 1
+          }
+        ],
+        "golpes_extras_a_0pv": 3,
+        "nota": "19 + 2 do Haste"
       }
     },
     {
@@ -338,7 +355,9 @@
             "tipo": "shield",
             "usos_luta": 1
           }
-        ]
+        ],
+        "ca": 19,
+        "nota": "CA 19 = 14 + Int (Bladesong); o Shield entra como reação na simulação, não na CA"
       },
       "saves": {}
     },

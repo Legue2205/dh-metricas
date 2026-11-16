@@ -260,3 +260,10 @@ def test_suporte_dado_multiuso_resgate_levantar():
         S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'mix': {'dano': 0.5}}, 7)
     assert S.valor({'modelo': 'resgate_condicao', 'p_evento': 0.4}, 7) == 2 * S.valor({'modelo': 'resgate_condicao', 'p_evento': 0.2}, 7)
     assert S.valor({'modelo': 'levantar', 'pv': 10}, 7) > S.valor({'modelo': 'cura', 'pv': 10}, 7)
+
+
+def test_desvantagem_contra():
+    from dh import suporte as S
+    v = S.valor({'modelo': 'desvantagem_contra', 'alvos': 1, 'fracao': 1}, 7)
+    assert abs(v - 54.5 * 0.35 * 0.4) < 1e-6          # p = 0,6 -> com desvantagem 0,36: corta 40% dos acertos
+    assert S.valor({'modelo': 'desvantagem_contra', 'alvos': 1, 'fracao': 0.5}, 7) == v / 2

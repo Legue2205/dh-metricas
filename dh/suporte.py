@@ -11,7 +11,9 @@ H = dict(ACERTO=0.65, ATIVO=0.875, ALIADOS=3, EF_CURA=0.9, EF_PVT=0.75, F_SAVE=0
          ESCOLHA=2.0,            # o jogador gasta o dado quando a rolagem parece perto: chance de virar ×2 frente a uma rolagem qualquer
          ACERTOS_INIM_ROUND=4,   # o dano inimigo do round chega em ~4 acertos (dano de um acerto inimigo = inim / 4)
          TURNOS_CONDICAO=1.5,    # save crítico falho (Hold Person, Hypnotic Pattern, medo): turnos do aliado perdidos
-         TURNOS_LEVANTAR=1.0)    # levantar um caído devolve ~1 turno do aliado além dos PV
+         TURNOS_LEVANTAR=1.0,    # levantar um caído devolve ~1 turno do aliado além dos PV
+         P_ACERTO_INIM=0.6,      # chance de um ataque inimigo acertar o aliado
+         PARCELA_FRENTE=0.35)    # parcela do dano inimigo que vai para um aliado da linha de frente
 MIX_PADRAO = {'dano': 0.30, 'acerto': 0.25, 'ca': 0.20, 'save_dano': 0.15, 'save_critico': 0.07, 'counterspell': 0.03}
 H['VANT'] = (1 - (1 - H['ACERTO']) ** 2) / H['ACERTO'] - 1
 # nível: (DPR do aliado, ataques, dano do inimigo por round, maior espaço, mod)
@@ -73,6 +75,10 @@ def valor(f, nivel):
         # Reação que refaz um save falho contra uma condição (Countercharm 2024: medo/encantamento, com vantagem).
         p_ok = 1 - (1 - f.get('p_save', 0.45)) ** (2 if f.get('vantagem', True) else 1)
         return f.get('p_evento', 0.2) * p_ok * H['TURNOS_CONDICAO'] * dpr / R
+    if m == 'desvantagem_contra':
+        # Ataques contra o aliado com desvantagem (Greater Invisibility, Blur...): PV que ele deixa de perder.
+        p = f.get('p_acerto', H['P_ACERTO_INIM']); corte = 1 - p * p / p    # acerto com desvantagem = p²
+        return al * f.get('fracao', 1) * inim * f.get('parcela', H['PARCELA_FRENTE']) * corte
     if m == 'levantar':
         # Cura num aliado caído: os PV + o turno que ele recupera.
         return u * (f['pv'] * H['EF_CURA'] + H['TURNOS_LEVANTAR'] * dpr) / R
@@ -81,7 +87,8 @@ def valor(f, nivel):
 
 
 MODELOS = ('vantagem', 'bonus_continuo', 'bonus_por_uso', 'ataque_extra', 'dano_por_acerto', 'cura', 'pv_temporario',
-           'aura_saves', 'valor_por_luta', 'fixo', 'dado_multiuso', 'resgate_condicao', 'levantar')
+           'aura_saves', 'valor_por_luta', 'fixo', 'dado_multiuso', 'resgate_condicao', 'levantar',
+           'desvantagem_contra')
 
 
 def avaliar(spec, nivel):

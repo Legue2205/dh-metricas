@@ -229,3 +229,7 @@ Próximo: (1) "deixa na mão": quanto dano o esconder-se empurra para a party (u
   erro em acerto, +CA, save de meio dano, save crítico, Counterspell; o jogador gasta perto do limite: chance ×2),
   `resgate_condicao` (Countercharm 2024: p_evento × reroll com vantagem × 1,5 turno do aliado), `levantar` (Healing Word num
   caído: PV + 1 turno do aliado). Song of Rest = `cura` 14 PV/dia. Marcus: suporte do dia C 4,9 → B 7,2. Iniciativa fora.
+- 16/11 (tarde): Lucius → NPC. Ravin: CA 19 com Bladesong, 21 com Haste, 14 sem (corrigida contagem dupla do Shield:
+  corpo.ca 20,85 já tinha o Shield diluído e a defesa simulava o Shield por cima). John: plano com comum (Steady Aim),
+  prioritária de dano (Hunter's Mark, 1 troca) e de controle (3 Ensnaring Strikes), Cure Wounds 2×2º, Pass without Trace.
+  Suporte: modelo `desvantagem_contra` (Greater Invisibility defensivo: 40% dos acertos contra o aliado da frente).

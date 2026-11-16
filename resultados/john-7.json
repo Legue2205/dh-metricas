@@ -4,8 +4,8 @@
  "grupo": "Party",
  "nivel": 7,
  "build": "Ranger 7 (Hunter, Horde Breaker), Steady Aim por troca de feature, Elven Accuracy, Sharpshooter",
- "impressao": "16c5458188",
- "versao": "0.7.0",
+ "impressao": "d419847ba8",
+ "versao": "0.7.1",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -166,6 +166,547 @@
      }
     },
     "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
+  },
+  "comum-steady": {
+   "hipotese": "Luta comum: sem magia, Steady Aim todo turno (vantagem no 1º tiro; os dois no round 1)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 35.8,
+     "CA 12": 35.0,
+     "CA 15": 32.1,
+     "CA 16": 30.9,
+     "CA 18": 28.1,
+     "CA 20": 24.7,
+     "CA 22": 20.3,
+     "CA 24": 15.0,
+     "CA 25": 12.3
+    },
+    "nivel_eq": 8.7,
+    "rank": "B+",
+    "perfil": "Preciso",
+    "nivel_bruta": 8.0,
+    "nivel_precisa": 8.7,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 46,
+    "ca": 16,
+    "blindagem": 3.07,
+    "durabilidade": 2.3,
+    "nivel_blindagem": 3.2,
+    "nivel_durabilidade": 3.3,
+    "nivel_eq": 3.3,
+    "rank": "C-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.74,
+     "rank": "C+",
+     "turnos_livres": [
+      3.76,
+      3.7,
+      3.62,
+      1.85,
+      1.74,
+      1.75,
+      1.17,
+      1.23,
+      0.93,
+      0.57
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.43,
+     "rank": "C",
+     "turnos_livres": [
+      3.02,
+      1.76,
+      1.38,
+      1.45,
+      1.03,
+      0.58,
+      1.08,
+      1.96,
+      1.36,
+      1.06
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "melhor": "Horde Breaker",
+    "areas": [
+     {
+      "nome": "Horde Breaker",
+      "tipo": "cleave_ataque",
+      "nivel_eq": 4.47,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.53,
+       "padrao": 4.47,
+       "agrupada": 4.37
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 1.24,
+    "total": 1.24,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 2.0,
+    "nivel_eq": 0.2,
+    "rank": "F",
+    "perfil": "Protetor",
+    "fonte_principal": "Cure Wounds nv2 (2×2º no dia)",
+    "fontes": [
+     {
+      "nome": "Cure Wounds nv2 (2×2º no dia)",
+      "lado": "def",
+      "valor": 1.24
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [
+     {
+      "uso": "Steady Aim",
+      "fracao": 1.0,
+      "eixos": [
+       "dano"
+      ]
+     }
+    ],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.0,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.206,
+    "vidas_campo": 0.0,
+    "vidas_atencao": -0.206,
+    "corpo": {
+     "T": -0.206,
+     "S": -0.313,
+     "P": 0.107,
+     "chave": "T-S-P+",
+     "perfil": "Alvo Frágil"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "(nenhuma)": 0.0
+     },
+     "Party de elite": {
+      "(nenhuma)": 0.0
+     },
+     "Horda + chefe": {
+      "(nenhuma)": 0.0
+     },
+     "Horda": {
+      "(nenhuma)": 0.0
+     },
+     "Dupla": {
+      "(nenhuma)": 0.0
+     },
+     "Chefe sozinho": {
+      "(nenhuma)": 0.0
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
+  },
+  "hm-dano": {
+   "hipotese": "Prioritária de dano: Hunter's Mark no alvo mais prioritário no turno 1 (2 tiros, provável vantagem), depois Steady Aim; 1 troca do HM quando o alvo morre (round 3 em metade das lutas)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 41.9,
+     "CA 12": 40.6,
+     "CA 15": 36.3,
+     "CA 16": 34.7,
+     "CA 18": 31.1,
+     "CA 20": 26.9,
+     "CA 22": 22.0,
+     "CA 24": 16.9,
+     "CA 25": 15.3
+    },
+    "nivel_eq": 9.6,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 9.2,
+    "nivel_precisa": 9.6,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 46,
+    "ca": 16,
+    "blindagem": 3.07,
+    "durabilidade": 2.3,
+    "nivel_blindagem": 3.2,
+    "nivel_durabilidade": 3.3,
+    "nivel_eq": 3.3,
+    "rank": "C-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.74,
+     "rank": "C+",
+     "turnos_livres": [
+      3.76,
+      3.7,
+      3.62,
+      1.85,
+      1.74,
+      1.75,
+      1.17,
+      1.23,
+      0.93,
+      0.57
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.43,
+     "rank": "C",
+     "turnos_livres": [
+      3.02,
+      1.76,
+      1.38,
+      1.45,
+      1.03,
+      0.58,
+      1.08,
+      1.96,
+      1.36,
+      1.06
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "melhor": "Horde Breaker",
+    "areas": [
+     {
+      "nome": "Horde Breaker",
+      "tipo": "cleave_ataque",
+      "nivel_eq": 4.47,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.53,
+       "padrao": 4.47,
+       "agrupada": 4.37
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 1.24,
+    "total": 1.24,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 2.0,
+    "nivel_eq": 0.2,
+    "rank": "F",
+    "perfil": "Protetor",
+    "fonte_principal": "Cure Wounds nv2 (2×2º no dia)",
+    "fontes": [
+     {
+      "nome": "Cure Wounds nv2 (2×2º no dia)",
+      "lado": "def",
+      "valor": 1.24
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [
+     {
+      "uso": "Hunter's Mark (conjurar e trocar)",
+      "fracao": 0.375,
+      "eixos": [
+       "dano"
+      ]
+     },
+     {
+      "uso": "Steady Aim",
+      "fracao": 0.625,
+      "eixos": [
+       "dano"
+      ]
+     }
+    ],
+    "concentracao": [
+     "hunters_mark"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "dano": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.0,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.206,
+    "vidas_campo": 0.0,
+    "vidas_atencao": -0.206,
+    "corpo": {
+     "T": -0.206,
+     "S": -0.313,
+     "P": 0.107,
+     "chave": "T-S-P+",
+     "perfil": "Alvo Frágil"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "(nenhuma)": 0.0
+     },
+     "Party de elite": {
+      "(nenhuma)": 0.0
+     },
+     "Horda + chefe": {
+      "(nenhuma)": 0.0
+     },
+     "Horda": {
+      "(nenhuma)": 0.0
+     },
+     "Dupla": {
+      "(nenhuma)": 0.0
+     },
+     "Chefe sozinho": {
+      "(nenhuma)": 0.0
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
+  },
+  "ensnaring-controle": {
+   "hipotese": "Prioritária de controle: 3 Ensnaring Strikes (ação bônus, sem Steady Aim nesses turnos); 1º tiro sem Sharpshooter para garantir o acerto, depois tiros pesados; alvo preso dá vantagem",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 28.4,
+     "CA 12": 27.8,
+     "CA 15": 25.5,
+     "CA 16": 24.4,
+     "CA 18": 22.1,
+     "CA 20": 19.4,
+     "CA 22": 16.2,
+     "CA 24": 12.5,
+     "CA 25": 10.6
+    },
+    "nivel_eq": 7.0,
+    "rank": "B",
+    "perfil": "Preciso",
+    "nivel_bruta": 6.6,
+    "nivel_precisa": 7.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 46,
+    "ca": 16,
+    "blindagem": 3.07,
+    "durabilidade": 2.3,
+    "nivel_blindagem": 3.2,
+    "nivel_durabilidade": 3.3,
+    "nivel_eq": 3.3,
+    "rank": "C-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.74,
+     "rank": "C+",
+     "turnos_livres": [
+      3.76,
+      3.7,
+      3.62,
+      1.85,
+      1.74,
+      1.75,
+      1.17,
+      1.23,
+      0.93,
+      0.57
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.43,
+     "rank": "C",
+     "turnos_livres": [
+      3.02,
+      1.76,
+      1.38,
+      1.45,
+      1.03,
+      0.58,
+      1.08,
+      1.96,
+      1.36,
+      1.06
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "melhor": "Horde Breaker",
+    "areas": [
+     {
+      "nome": "Horde Breaker",
+      "tipo": "cleave_ataque",
+      "nivel_eq": 4.47,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.53,
+       "padrao": 4.47,
+       "agrupada": 4.37
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 8.19,
+    "defensivo": 1.24,
+    "total": 9.43,
+    "nivel_ofensivo": 4.2,
+    "nivel_defensivo": 2.0,
+    "nivel_eq": 3.9,
+    "rank": "C-",
+    "perfil": "Amplificador",
+    "fonte_principal": "Ensnaring Strike (alvo preso: vantagem para a party)",
+    "fontes": [
+     {
+      "nome": "Ensnaring Strike (alvo preso: vantagem para a party)",
+      "lado": "of",
+      "valor": 8.19
+     },
+     {
+      "nome": "Cure Wounds nv2 (2×2º no dia)",
+      "lado": "def",
+      "valor": 1.24
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [
+     {
+      "uso": "Ensnaring Strike",
+      "fracao": 0.75,
+      "eixos": [
+       "controle"
+      ]
+     },
+     {
+      "uso": "Steady Aim",
+      "fracao": 0.25,
+      "eixos": [
+       "dano"
+      ]
+     }
+    ],
+    "concentracao": [
+     "ensnaring_strike"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "controle": {
+      "1": 3
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.71,
+    "rank": "E",
+    "nivel_campo": 1.65,
+    "rank_campo": "D",
+    "nivel_controle": 1.65,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.003,
+    "vidas_campo": 0.192,
+    "vidas_atencao": -0.206,
+    "corpo": {
+     "T": -0.206,
+     "S": -0.313,
+     "P": 0.107,
+     "chave": "T-S-P+",
+     "perfil": "Alvo Frágil"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.29,
+     "Horda": 0.0,
+     "Dupla": 0.86,
+     "Chefe sozinho": 2.07
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Ensnaring Strike ×3": 0.0476
+     },
+     "Party de elite": {
+      "Ensnaring Strike ×3": 0.0723
+     },
+     "Horda + chefe": {
+      "Ensnaring Strike ×3": 0.0848
+     },
+     "Horda": {
+      "Ensnaring Strike ×3": 0.0468
+     },
+     "Dupla": {
+      "Ensnaring Strike ×3": 0.1165
+     },
+     "Chefe sozinho": {
+      "Ensnaring Strike ×3": 0.105
+     }
+    },
+    "nivel_absoluto": 0.36,
     "rank_absoluto": "F"
    }
   },
@@ -377,6 +918,207 @@
    }
   }
  },
- "planos": {},
- "segundos": 4.1
+ "planos": {
+  "padrao": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "comum-steady",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "Pass without Trace antes; Cure Wounds (meio uso)",
+     "gasto": {
+      "espacos": {
+       "2": 1.5
+      }
+     }
+    },
+    {
+     "linha": "hm-dano",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "Hunter's Mark",
+     "gasto": {
+      "espacos": {
+       "1": 1,
+       "2": 0.5
+      }
+     }
+    },
+    {
+     "linha": "comum-steady",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "Cure Wounds (meio uso)",
+     "gasto": {
+      "espacos": {
+       "2": 0.5
+      }
+     }
+    },
+    {
+     "linha": "ensnaring-controle",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "3 Ensnaring Strikes",
+     "gasto": {
+      "espacos": {
+       "1": 3,
+       "2": 0.5
+      }
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {}
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 8.4,
+     "rank": "B+",
+     "por_categoria": {
+      "np": 8.7,
+      "p": 8.3
+     }
+    },
+    "defesa": {
+     "nivel_eq": 3.3,
+     "rank": "C-",
+     "por_categoria": {
+      "np": 3.3,
+      "p": 3.3
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 5.7,
+     "rank": "C+",
+     "por_categoria": {
+      "np": 5.7,
+      "p": 5.7
+     }
+    },
+    "vontade": {
+     "nivel_eq": 4.4,
+     "rank": "C",
+     "por_categoria": {
+      "np": 4.4,
+      "p": 4.4
+     }
+    },
+    "campo": {
+     "nivel_eq": 0.8,
+     "rank": "E",
+     "por_categoria": {
+      "np": 0.0,
+      "p": 1.3
+     }
+    },
+    "corpo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "np": 0.0,
+      "p": 0.0
+     }
+    },
+    "area": {
+     "nivel_eq": 4.5,
+     "rank": "C",
+     "por_categoria": {
+      "np": 4.5,
+      "p": 4.5
+     }
+    },
+    "suporte": {
+     "nivel_eq": 1.4,
+     "rank": "D",
+     "por_categoria": {
+      "np": 0.2,
+      "p": 2.0
+     }
+    }
+   }
+  },
+  "combate_unico": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "hm-dano",
+     "categoria": "p",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 1
+      }
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {
+     "1": 3,
+     "2": 3
+    }
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 9.6,
+     "rank": "B+",
+     "por_categoria": {
+      "p": 9.6
+     }
+    },
+    "defesa": {
+     "nivel_eq": 3.3,
+     "rank": "C-",
+     "por_categoria": {
+      "p": 3.3
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 5.7,
+     "rank": "C+",
+     "por_categoria": {
+      "p": 5.7
+     }
+    },
+    "vontade": {
+     "nivel_eq": 4.4,
+     "rank": "C",
+     "por_categoria": {
+      "p": 4.4
+     }
+    },
+    "campo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "p": 0.0
+     }
+    },
+    "corpo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "p": 0.0
+     }
+    },
+    "area": {
+     "nivel_eq": 4.5,
+     "rank": "C",
+     "por_categoria": {
+      "p": 4.5
+     }
+    },
+    "suporte": {
+     "nivel_eq": 0.2,
+     "rank": "F",
+     "por_categoria": {
+      "p": 0.2
+     }
+    }
+   }
+  }
+ },
+ "segundos": 10.8
 }

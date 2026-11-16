@@ -244,6 +244,13 @@
           "eixos": [
             "dano"
           ]
+        },
+        {
+          "uso": "Countercharm",
+          "fracao": 0.05,
+          "eixos": [
+            "suporte"
+          ]
         }
       ],
       "dano": {
@@ -285,11 +292,20 @@
       "suporte": {
         "fontes": [
           {
-            "nome": "Bardic Inspiration d8",
+            "nome": "Bardic Inspiration d8 (vários usos)",
             "lado": "of",
-            "modelo": "bonus_por_uso",
+            "modelo": "dado_multiuso",
+            "dado_medio": 4.5,
             "usos_luta": 1,
-            "bonus": 4.5
+            "mix": {
+              "dano": 0.3,
+              "acerto": 0.25,
+              "ca": 0.2,
+              "save_dano": 0.15,
+              "save_critico": 0.07,
+              "counterspell": 0.03
+            },
+            "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
           },
           {
             "nome": "Faerie Fire",
@@ -299,6 +315,22 @@
             "fracao": 0.55,
             "concentracao": "faerie_fire",
             "nota": "60% de falha × ~90% dos rounds"
+          },
+          {
+            "nome": "Countercharm (2024)",
+            "lado": "def",
+            "modelo": "resgate_condicao",
+            "p_evento": 0.2,
+            "p_save": 0.45,
+            "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
+          },
+          {
+            "nome": "Song of Rest",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_dia": 1,
+            "pv": 14,
+            "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice"
           }
         ]
       },
@@ -338,6 +370,13 @@
           "eixos": [
             "dano"
           ]
+        },
+        {
+          "uso": "Countercharm",
+          "fracao": 0.05,
+          "eixos": [
+            "suporte"
+          ]
         }
       ],
       "dano": {
@@ -379,11 +418,20 @@
       "suporte": {
         "fontes": [
           {
-            "nome": "Bardic Inspiration d8",
+            "nome": "Bardic Inspiration d8 (vários usos)",
             "lado": "of",
-            "modelo": "bonus_por_uso",
+            "modelo": "dado_multiuso",
+            "dado_medio": 4.5,
             "usos_luta": 1,
-            "bonus": 4.5
+            "mix": {
+              "dano": 0.3,
+              "acerto": 0.25,
+              "ca": 0.2,
+              "save_dano": 0.15,
+              "save_critico": 0.07,
+              "counterspell": 0.03
+            },
+            "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
           },
           {
             "nome": "Faerie Fire",
@@ -393,6 +441,22 @@
             "fracao": 0.55,
             "concentracao": "faerie_fire",
             "nota": "60% de falha × ~90% dos rounds"
+          },
+          {
+            "nome": "Countercharm (2024)",
+            "lado": "def",
+            "modelo": "resgate_condicao",
+            "p_evento": 0.2,
+            "p_save": 0.45,
+            "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
+          },
+          {
+            "nome": "Song of Rest",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_dia": 1,
+            "pv": 14,
+            "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice"
           }
         ]
       },
@@ -503,11 +567,20 @@
       "suporte": {
         "fontes": [
           {
-            "nome": "Bardic Inspiration d8",
+            "nome": "Bardic Inspiration d8 (vários usos)",
             "lado": "of",
-            "modelo": "bonus_por_uso",
+            "modelo": "dado_multiuso",
+            "dado_medio": 4.5,
             "usos_luta": 2,
-            "bonus": 4.5
+            "mix": {
+              "dano": 0.3,
+              "acerto": 0.25,
+              "ca": 0.2,
+              "save_dano": 0.15,
+              "save_critico": 0.07,
+              "counterspell": 0.03
+            },
+            "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
           },
           {
             "nome": "Faerie Fire",
@@ -521,12 +594,45 @@
               "Ruínas ou cidade"
             ],
             "nota": "campo: T2, ~2,5 rounds; cidade: T3, ~1,5 round; 65% de falha"
+          },
+          {
+            "nome": "Countercharm (2024)",
+            "lado": "def",
+            "modelo": "resgate_condicao",
+            "p_evento": 0.2,
+            "p_save": 0.45,
+            "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
+          },
+          {
+            "nome": "Song of Rest",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_dia": 1,
+            "pv": 14,
+            "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice"
+          },
+          {
+            "nome": "Healing Word num caído",
+            "lado": "def",
+            "modelo": "levantar",
+            "usos_luta": 0.5,
+            "pv": 19.5,
+            "nota": "o espaço de 3º que sobra no dia, em metade das prioritárias; nv3 ~19,5 PV (escala da mesa)"
           }
         ]
       },
       "defesa": {},
       "saves": {},
-      "custo": "gasta_recurso"
+      "custo": "gasta_recurso",
+      "reacao": [
+        {
+          "uso": "Countercharm",
+          "fracao": 0.05,
+          "eixos": [
+            "suporte"
+          ]
+        }
+      ]
     },
     {
       "id": "prioritaria-polymorph",
@@ -608,11 +714,20 @@
       "suporte": {
         "fontes": [
           {
-            "nome": "Bardic Inspiration d8",
+            "nome": "Bardic Inspiration d8 (vários usos)",
             "lado": "of",
-            "modelo": "bonus_por_uso",
+            "modelo": "dado_multiuso",
+            "dado_medio": 4.5,
             "usos_luta": 2,
-            "bonus": 4.5
+            "mix": {
+              "dano": 0.3,
+              "acerto": 0.25,
+              "ca": 0.2,
+              "save_dano": 0.15,
+              "save_critico": 0.07,
+              "counterspell": 0.03
+            },
+            "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
           },
           {
             "nome": "Polymorph no aliado (PV do Giant Ape)",
@@ -630,12 +745,45 @@
             "usos_luta": 1,
             "valor": 17,
             "nota": "2 socos +9, 3d10+6 (~35 de DPR em CA 15) contra ~25 do aliado: +10/round × 1,75 round"
+          },
+          {
+            "nome": "Countercharm (2024)",
+            "lado": "def",
+            "modelo": "resgate_condicao",
+            "p_evento": 0.2,
+            "p_save": 0.45,
+            "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
+          },
+          {
+            "nome": "Song of Rest",
+            "lado": "def",
+            "modelo": "cura",
+            "usos_dia": 1,
+            "pv": 14,
+            "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice"
+          },
+          {
+            "nome": "Healing Word num caído",
+            "lado": "def",
+            "modelo": "levantar",
+            "usos_luta": 0.5,
+            "pv": 19.5,
+            "nota": "o espaço de 3º que sobra no dia, em metade das prioritárias; nv3 ~19,5 PV (escala da mesa)"
           }
         ]
       },
       "defesa": {},
       "saves": {},
-      "custo": "gasta_recurso"
+      "custo": "gasta_recurso",
+      "reacao": [
+        {
+          "uso": "Countercharm",
+          "fracao": 0.05,
+          "eixos": [
+            "suporte"
+          ]
+        }
+      ]
     }
   ],
   "pendente": "Arcos mínimo e máximo (linhas-opção) a discutir. Modelo de anéis ainda não implementado no site.",
@@ -656,7 +804,7 @@
   },
   "planos": {
     "padrao": {
-      "descricao": "Arco regular: escudo e espada nas comuns, conjurador nas prioritárias, Polymorph na luta 4. Sobra 1 espaço de 3º para Healing Word.",
+      "descricao": "Arco regular: escudo e espada nas comuns, conjurador nas prioritárias, Polymorph na luta 4. O 3º que sobra vira Healing Word num caído.",
       "combates": [
         {
           "linha": "comum-escudo",
@@ -673,7 +821,7 @@
           "gasta": {
             "espacos": {
               "2": 2,
-              "3": 1
+              "3": 1.5
             },
             "inspiracao": 3
           },
@@ -694,7 +842,7 @@
           "gasta": {
             "espacos": {
               "2": 1,
-              "3": 1,
+              "3": 1.5,
               "4": 1
             },
             "inspiracao": 3

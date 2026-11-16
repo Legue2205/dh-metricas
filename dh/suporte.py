@@ -6,7 +6,13 @@ controle já mede (turnos negados, ataques desviados). A build lista fontes; cad
 from .base import R, letra
 
 H = dict(ACERTO=0.65, ATIVO=0.875, ALIADOS=3, EF_CURA=0.9, EF_PVT=0.75, F_SAVE=0.25, F_AURA=0.67, CUSTO_SAVE=1,
-         LUTAS_SR=2, LUTAS_DIA=4)
+         LUTAS_SR=2, LUTAS_DIA=4,
+         # 16/11 — dados de vários usos (Bardic Inspiration e afins), resgates e levantar caídos:
+         ESCOLHA=2.0,            # o jogador gasta o dado quando a rolagem parece perto: chance de virar ×2 frente a uma rolagem qualquer
+         ACERTOS_INIM_ROUND=4,   # o dano inimigo do round chega em ~4 acertos (dano de um acerto inimigo = inim / 4)
+         TURNOS_CONDICAO=1.5,    # save crítico falho (Hold Person, Hypnotic Pattern, medo): turnos do aliado perdidos
+         TURNOS_LEVANTAR=1.0)    # levantar um caído devolve ~1 turno do aliado além dos PV
+MIX_PADRAO = {'dano': 0.30, 'acerto': 0.25, 'ca': 0.20, 'save_dano': 0.15, 'save_critico': 0.07, 'counterspell': 0.03}
 H['VANT'] = (1 - (1 - H['ACERTO']) ** 2) / H['ACERTO'] - 1
 # nível: (DPR do aliado, ataques, dano do inimigo por round, maior espaço, mod)
 REGUA = {1: (8, 1, 14.5, 1, 3), 2: (10, 1, 20, 1, 3), 3: (12, 1, 25.5, 2, 3), 4: (15, 1, 31.5, 2, 4),
@@ -54,12 +60,28 @@ def valor(f, nivel):
     if m == 'pv_temporario': return u * al * f['pv'] * H['EF_PVT'] / R
     if m == 'aura_saves': return inim * H['F_SAVE'] * H['F_AURA'] * f['bonus'] * 0.05 * H['CUSTO_SAVE']
     if m == 'valor_por_luta': return u * f['valor'] / R
+    if m == 'dado_multiuso':
+        # Dado gasto a critério do jogador (Bardic Inspiration): mistura de usos; cada uso em dano equivalente.
+        d = f['dado_medio']; vira = min(1.0, 0.05 * d * H['ESCOLHA'])
+        golpe_inim = inim / H['ACERTOS_INIM_ROUND']; critico = H['TURNOS_CONDICAO'] * dpr
+        v = dict(dano=d, acerto=vira * dpa, ca=vira * golpe_inim, save_dano=vira * golpe_inim,
+                 save_critico=vira * critico, counterspell=vira * critico)
+        mix = f.get('mix', MIX_PADRAO)
+        if abs(sum(mix.values()) - 1) > 0.01: raise ValueError('dado_multiuso: "mix" precisa somar 1')
+        return u / R * sum(p * v[k] for k, p in mix.items())
+    if m == 'resgate_condicao':
+        # Reação que refaz um save falho contra uma condição (Countercharm 2024: medo/encantamento, com vantagem).
+        p_ok = 1 - (1 - f.get('p_save', 0.45)) ** (2 if f.get('vantagem', True) else 1)
+        return f.get('p_evento', 0.2) * p_ok * H['TURNOS_CONDICAO'] * dpr / R
+    if m == 'levantar':
+        # Cura num aliado caído: os PV + o turno que ele recupera.
+        return u * (f['pv'] * H['EF_CURA'] + H['TURNOS_LEVANTAR'] * dpr) / R
     if m == 'fixo': return f['valor']                      # valor por round medido fora (documente em "nota")
     raise ValueError(f'suporte: modelo desconhecido "{m}"')
 
 
 MODELOS = ('vantagem', 'bonus_continuo', 'bonus_por_uso', 'ataque_extra', 'dano_por_acerto', 'cura', 'pv_temporario',
-           'aura_saves', 'valor_por_luta', 'fixo')
+           'aura_saves', 'valor_por_luta', 'fixo', 'dado_multiuso', 'resgate_condicao', 'levantar')
 
 
 def avaliar(spec, nivel):

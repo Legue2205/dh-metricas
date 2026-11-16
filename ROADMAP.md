@@ -225,3 +225,7 @@ Próximo: (1) "deixa na mão": quanto dano o esconder-se empurra para a party (u
   `nivel_controle` (campo sem essas fontes) alimenta o eixo Controle; `nivel_campo` antigo fica no card. Abdul:
   Conquering Presence só nas prioritárias (Channel Divinity 1/descanso curto). Controle do dia: Abdul 4,9 → 2,5,
   Amadeus 2,9 → 2,3, Kael 4,2 → 3,9, Tin Bin e Lucius → 0. A revisar: hipóteses do Stunning Strike do Kael.
+- **Suporte: 3 modelos novos** (16/11, tarde): `dado_multiuso` (Bardic Inspiration: mistura de usos — dano certo, virar
+  erro em acerto, +CA, save de meio dano, save crítico, Counterspell; o jogador gasta perto do limite: chance ×2),
+  `resgate_condicao` (Countercharm 2024: p_evento × reroll com vantagem × 1,5 turno do aliado), `levantar` (Healing Word num
+  caído: PV + 1 turno do aliado). Song of Rest = `cura` 14 PV/dia. Marcus: suporte do dia C 4,9 → B 7,2. Iniciativa fora.

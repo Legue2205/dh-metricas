@@ -247,3 +247,16 @@ def test_controle_sem_fontes_de_corpo():
     assert fn.corpo == {"S", "A"}
     r = json.loads((B.parent / 'resultados' / 'abdul-7.json').read_text(encoding='utf-8'))['linhas']['principal']['controle']
     assert r['nivel_controle'] < r['nivel_campo']
+
+
+def test_suporte_dado_multiuso_resgate_levantar():
+    from dh import suporte as S
+    base = S.valor({'modelo': 'bonus_por_uso', 'bonus': 4.5, 'usos_luta': 1}, 7)
+    multi = S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'usos_luta': 1}, 7)
+    assert multi > base                                   # usos defensivos e saves valem mais que só +acerto
+    so_dano = S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'mix': {'dano': 1.0}}, 7)
+    assert abs(so_dano - 4.5 / 4) < 1e-9
+    with pytest.raises(ValueError):
+        S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'mix': {'dano': 0.5}}, 7)
+    assert S.valor({'modelo': 'resgate_condicao', 'p_evento': 0.4}, 7) == 2 * S.valor({'modelo': 'resgate_condicao', 'p_evento': 0.2}, 7)
+    assert S.valor({'modelo': 'levantar', 'pv': 10}, 7) > S.valor({'modelo': 'cura', 'pv': 10}, 7)

@@ -88,8 +88,8 @@ def _nota(x, sub):
     if x is None: return None
     if sub == 'campo':      # Controle na régua de dia (16/11): o conjurador de referência também tem orçamento
         from .controle.total import nivel_dia
-        return nivel_dia(x.get('nivel_campo'))
-    if sub == 'campo_pico': return x.get('nivel_campo')
+        return nivel_dia(x.get('nivel_controle', x.get('nivel_campo')))
+    if sub == 'campo_pico': return x.get('nivel_controle', x.get('nivel_campo'))
     if sub in SUB_CONTROLE: return x.get(SUB_CONTROLE[sub])
     if sub: x = x[sub]
     return x.get('nivel_eq')

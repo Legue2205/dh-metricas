@@ -241,4 +241,9 @@ def compilar(fontes, corpo, nivel):
         out = {}
         for f in fontes: out.update(_avalia_fonte(f, E, topo, t))
         return out or {'(nenhuma)': C.zero(E)}
+    # Fontes de corpo (ataques desviados para um corpo que aguenta): medidas no eixo Corpo (atenção), não no Controle.
+    fn.corpo = {f.get('nome', f['tipo']) for f in fontes if f['tipo'] in TIPOS_CORPO}
     return fn
+
+
+TIPOS_CORPO = {'ameaca', 'sentinela', 'parada_oa', 'esqueletos'}

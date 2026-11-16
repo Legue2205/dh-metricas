@@ -237,3 +237,13 @@ def test_regua_de_dia():
     assert abs(ref_dia(7) - 34 / 6) < 1e-9          # 4º + 3º nas prioritárias, 3º + 3º nas comuns
     assert all(ref_dia(L + 1) >= ref_dia(L) for L in range(1, 20))
     assert abs(nivel_dia(ref_dia(7)) - 7) < 0.01 and nivel_dia(0) == 0.0
+
+
+def test_controle_sem_fontes_de_corpo():
+    """Sentinel/ameaça/esqueletos desviam ataques (eixo Corpo); não entram no Controle (turnos negados)."""
+    from dh.controle import efeitos
+    fn = efeitos.compilar([{"tipo": "sentinela", "nome": "S"}, {"tipo": "ameaca", "nome": "A"},
+                           {"tipo": "area", "magia": "fear", "cd": 15, "nome": "F"}], dict(ca=20, pv=60), 7)
+    assert fn.corpo == {"S", "A"}
+    r = json.loads((B.parent / 'resultados' / 'abdul-7.json').read_text(encoding='utf-8'))['linhas']['principal']['controle']
+    assert r['nivel_controle'] < r['nivel_campo']

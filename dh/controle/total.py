@@ -127,7 +127,8 @@ def avaliar_nivel(fn, ficha, L, regua):
     out = {}
     for tipo in PESO_TIPO:
         E = encontro(tipo, L)
-        acc = {k: np.zeros(20) if k == 'curva' else 0.0 for k in ('curva', 'total', 'campo', 'aten', 'S', 'P')}
+        acc = {k: np.zeros(20) if k == 'curva' else 0.0 for k in ('curva', 'total', 'campo', 'ctrl', 'aten', 'S', 'P')}
+        corpo_nomes = getattr(fn, 'corpo', set())
         im = A.PAPEIS.index(ficha['papel'])
         fontes7 = {}
         for ti, tp in enumerate(TOPOS):
@@ -138,16 +139,20 @@ def avaliar_nivel(fn, ficha, L, regua):
             sx, fx = A.vida(E, px, ti, detalhe=True)     # só atenção: ninguém perde turno, só muda o alvo
             acc['total'] += w * (base - A.vida(E, px, ti, neg))
             acc['campo'] += w * (base - A.vida(E, pref, ti, neg))
+            so_ctrl = [v for k, v in fontes.items() if k not in corpo_nomes]    # sem as fontes de corpo (16/11)
+            acc['ctrl'] += w * (base - A.vida(E, pref, ti, C.jv(*so_ctrl) if so_ctrl else C.zero(E)))
             acc['aten'] += w * (base - sx)
             acc['S'] += w * (fb[im] - fx[im]); acc['P'] += w * ((sum(fb) - fb[im]) - (sum(fx) - fx[im]))
             acc['curva'] += w * np.array([base - A.vida(E, pref, ti, regua.vetor(tipo, L, ti, k)) for k in range(1, 21)])
             if tp == 'Ruínas ou cidade': fontes7 = {k: round(C.tot(E, v), 4) for k, v in fontes.items()}
-        out[tipo] = dict(vidas_total=acc['total'], vidas_campo=acc['campo'], vidas_atencao=acc['aten'],
+        out[tipo] = dict(vidas_total=acc['total'], vidas_campo=acc['campo'], vidas_atencao=acc['aten'], vidas_controle=acc['ctrl'],
+                         nivel_controle=nivel(acc['ctrl'], acc['curva']),
                          vidas_proprio=acc['S'], vidas_party=acc['P'],
                          nivel_total=nivel(acc['total'], acc['curva']), nivel_campo=nivel(acc['campo'], acc['curva']),
                          nivel_atencao=nivel(acc['aten'], acc['curva']), negacao_por_fonte=fontes7)
     geral = {k: sum(PESO_TIPO[t] * out[t][k] for t in PESO_TIPO)
-             for k in ('vidas_total', 'vidas_campo', 'vidas_atencao', 'vidas_proprio', 'vidas_party', 'nivel_total', 'nivel_campo', 'nivel_atencao')}
+             for k in ('vidas_total', 'vidas_campo', 'vidas_atencao', 'vidas_proprio', 'vidas_party', 'nivel_total', 'nivel_campo',
+                       'nivel_atencao', 'vidas_controle', 'nivel_controle')}
     return geral, out
 
 
@@ -156,6 +161,7 @@ def avaliar(fn, ficha, L, absoluto=False, regua=None):
     geral, tipos = avaliar_nivel(fn, ficha, L, regua)
     res = dict(nivel_eq=round(geral['nivel_total'], 2), rank=base.letra(geral['nivel_total']),
                nivel_campo=round(geral['nivel_campo'], 2), rank_campo=base.letra(geral['nivel_campo']),
+               nivel_controle=round(geral['nivel_controle'], 2),
                nivel_atencao=round(geral['nivel_atencao'], 2), rank_atencao=base.letra(geral['nivel_atencao']),
                vidas_total=round(geral['vidas_total'], 3), vidas_campo=round(geral['vidas_campo'], 3),
                vidas_atencao=round(geral['vidas_atencao'], 3), corpo=_corpo(geral),

@@ -220,3 +220,8 @@ Próximo: (1) "deixa na mão": quanto dano o esconder-se empurra para a party (u
   Bladesong suposta 15,85), barrado 2/dia. Dano ainda medido da planilha; Counterspell e Vortex Warp fora das contas.
 - Pendente: suporte do Marcus (Healing Word "levantar", resgate de save para Inspiração/Countercharm, Song of Rest);
   motor de vida do Kael (adiado); John (fica na comparação) precisa de plano; dano do Ravin por motor (precisa da ficha).
+- **Controle sem fontes de corpo** (16/11, 3h): `ameaca`, `sentinela`, `parada_oa` e `esqueletos` desviam ataques para um
+  corpo que aguenta — isso é o eixo Corpo (atenção). Antes entravam também no Controle (contagem dupla). Novo
+  `nivel_controle` (campo sem essas fontes) alimenta o eixo Controle; `nivel_campo` antigo fica no card. Abdul:
+  Conquering Presence só nas prioritárias (Channel Divinity 1/descanso curto). Controle do dia: Abdul 4,9 → 2,5,
+  Amadeus 2,9 → 2,3, Kael 4,2 → 3,9, Tin Bin e Lucius → 0. A revisar: hipóteses do Stunning Strike do Kael.

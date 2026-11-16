@@ -56,7 +56,8 @@ def _linha(b, spec, res):
     c = spec.get('controle', {})
     r = {k: res[k] for k in RES + ('orcamento', 'tatico') if k in res}
     if 'controle' in r: r['controle'] = {k: v for k, v in r['controle'].items() if k != 'negacao_por_fonte'}
-    return dict(hipotese=res.get('hipotese', ''), principal=res.get('principal', []), pv=corpo['pv'], ca=corpo['ca'],
+    return dict(hipotese=res.get('hipotese', ''), principal=res.get('principal', []), pv=corpo.get('pv_real', corpo['pv']),
+                pv_ef=corpo['pv'], ca=corpo['ca'],
                 saves=sv if 'saves' in spec else None, res=r,
                 spec=dict(dano=spec.get('dano'), invocacoes=spec.get('invocacoes', []), area=spec.get('area', []),
                           defesa=spec.get('defesa'), cds=sorted(_cds(c.get('fontes', []))),
@@ -68,7 +69,7 @@ def _linha(b, spec, res):
 def _entrada(b, linhas, fonte, **k):
     ld = linhas.get(fonte.get('defesa')) or {}
     dano = (linhas.get(fonte.get('dano')) or {}).get('res', {}).get('dano')
-    return dict(b=b['id'], fonte=fonte, pv=ld.get('pv', b['corpo']['pv']), ca=ld.get('ca', b['corpo']['ca']),
+    return dict(b=b['id'], fonte=fonte, pv=ld.get('pv', b['corpo'].get('pv_real', b['corpo']['pv'])), ca=ld.get('ca', b['corpo']['ca']),
                 dpr15=dano['dpr']['CA 15'] if dano else None, **k)
 
 

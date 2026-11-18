@@ -25,7 +25,7 @@ Objetivo: adicionar ou mudar uma build gastando poucos tokens e sem divergir dos
 
 ## Builds de referência em lote (RPGBot, D4, Treant Monk)
 - **Fonte da verdade = página bruta** colada pelo usuário no Drive (Google Doc só com texto, `RPGBot/<pasta>/<tipo>-<slug>`,
-  cabeçalho com URL, tipo de página, edição 2014 e data; o Claude cria o Doc com o cabeçalho e o usuário cola embaixo). Sem IA no meio. Pastas: `00-contexto`, `01-classes`, `02-subclasses`, `03-builds`
+  cabeçalho com URL, tipo de página, edição 2014 e data; o Claude cria o Doc com o cabeçalho de `prompts/cabecalho-rpgbot.md` e o usuário cola embaixo). Sem IA no meio. Pastas: `00-contexto`, `01-classes`, `02-subclasses`, `03-builds`
   (+ `03-builds/fichas` para as fichas que o Claude escreve), `04-magias`. Caminho: "Builds RPG/Biblioteca de builds .md/RPGBot"
   (ids no Drive: RPGBot `1lKVVcWgGsdgKL3SM4b0zCd1Jk9kvUabo`, 00 `176gRnD8hat1B7iZn-6TFgDO-MUs0I_Fz`,
   01 `1peNspj-DQ2g79p4JK9T1mDOsSVpa6VB9`, 02 `17c93G9-djeUvAlVOirWjksb-pzNi0ApK`, 03 `178DZsrFGY2JOpLLiBxX2Z9x80FXlO_wD`,

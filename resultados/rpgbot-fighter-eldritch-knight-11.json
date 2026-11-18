@@ -1,0 +1,1087 @@
+{
+ "id": "rpgbot-fighter-eldritch-knight-11",
+ "nome": "Eldritch Knight Fighter (RPGBot: A good Scottish name)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "build": "Fighter (Eldritch Knight), Custom Lineage, espada grande, Great Weapon Fighting; Slasher 1, War Caster 4, Fey Touched 6, For 20 no 8",
+ "impressao": "d950667beb",
+ "versao": "0.8.0",
+ "modo": "completo",
+ "linhas": {
+  "principal": {
+   "hipotese": "ataca com Booming Blade (o dano secundário só se o alvo se mover: não contado); Shield como reação",
+   "principal": [
+    "dano",
+    "defesa",
+    "controle",
+    "saves",
+    "area",
+    "suporte"
+   ],
+   "dano": {
+    "dpr": {
+     "CA 11": 43.8,
+     "CA 12": 41.8,
+     "CA 15": 35.8,
+     "CA 16": 33.7,
+     "CA 18": 29.6,
+     "CA 20": 25.4,
+     "CA 22": 21.0,
+     "CA 24": 16.5,
+     "CA 25": 14.2
+    },
+    "nivel_eq": 9.0,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 8.9,
+    "nivel_precisa": 9.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 92,
+    "ca": 18,
+    "blindagem": 9.0,
+    "durabilidade": 6.11,
+    "nivel_blindagem": 10.2,
+    "nivel_durabilidade": 9.7,
+    "nivel_eq": 10.2,
+    "rank": "A-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "shield"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.54,
+     "rank": "B+",
+     "turnos_livres": [
+      3.95,
+      3.44,
+      3.35,
+      2.75,
+      2.25,
+      2.15,
+      2.74,
+      2.51,
+      1.74,
+      1.52
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.17,
+     "rank": "D",
+     "turnos_livres": [
+      2.64,
+      1.14,
+      0.85,
+      0.67,
+      0.61,
+      0.47,
+      0.7,
+      0.69,
+      0.8,
+      1.05
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "melhor": "Sword Burst",
+    "areas": [
+     {
+      "nome": "Sword Burst",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.82,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.82,
+       "padrao": 4.82,
+       "agrupada": 4.82
+      }
+     },
+     {
+      "nome": "Rime's Binding Ice",
+      "tipo": "explosao",
+      "nivel_eq": 4.31,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.31,
+       "padrao": 4.31,
+       "agrupada": 4.31
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "defesa": {
+      "1": 1
+     },
+     "area": {
+      "2": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.63,
+    "rank": "E",
+    "nivel_campo": 0.71,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.005,
+    "vidas_campo": 0.021,
+    "vidas_atencao": -0.015,
+    "corpo": {
+     "T": -0.015,
+     "S": 0.096,
+     "P": -0.111,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.02,
+     "Party de elite": 0.09,
+     "Horda + chefe": 0.02,
+     "Horda": 0.06,
+     "Dupla": 0.0,
+     "Chefe sozinho": 2.01
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0107
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0162
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0065
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.008
+     }
+    },
+    "nivel_absoluto": 1.7,
+    "rank_absoluto": "D"
+   }
+  },
+  "sem-shield": {
+   "hipotese": "igual à principal, sem espaço para Shield",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 43.8,
+     "CA 12": 41.8,
+     "CA 15": 35.8,
+     "CA 16": 33.7,
+     "CA 18": 29.6,
+     "CA 20": 25.4,
+     "CA 22": 21.0,
+     "CA 24": 16.5,
+     "CA 25": 14.2
+    },
+    "nivel_eq": 9.0,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 8.9,
+    "nivel_precisa": 9.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 92,
+    "ca": 18,
+    "blindagem": 7.51,
+    "durabilidade": 5.17,
+    "nivel_blindagem": 8.3,
+    "nivel_durabilidade": 8.3,
+    "nivel_eq": 8.3,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.54,
+     "rank": "B+",
+     "turnos_livres": [
+      3.95,
+      3.44,
+      3.35,
+      2.75,
+      2.25,
+      2.15,
+      2.74,
+      2.51,
+      1.74,
+      1.52
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.17,
+     "rank": "D",
+     "turnos_livres": [
+      2.64,
+      1.14,
+      0.85,
+      0.67,
+      0.61,
+      0.47,
+      0.7,
+      0.69,
+      0.8,
+      1.05
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "melhor": "Sword Burst",
+    "areas": [
+     {
+      "nome": "Sword Burst",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.82,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.82,
+       "padrao": 4.82,
+       "agrupada": 4.82
+      }
+     },
+     {
+      "nome": "Rime's Binding Ice",
+      "tipo": "explosao",
+      "nivel_eq": 4.31,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.31,
+       "padrao": 4.31,
+       "agrupada": 4.31
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "area": {
+      "2": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.63,
+    "rank": "E",
+    "nivel_campo": 0.71,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.005,
+    "vidas_campo": 0.021,
+    "vidas_atencao": -0.015,
+    "corpo": {
+     "T": -0.015,
+     "S": 0.096,
+     "P": -0.111,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.02,
+     "Party de elite": 0.09,
+     "Horda + chefe": 0.02,
+     "Horda": 0.06,
+     "Dupla": 0.0,
+     "Chefe sozinho": 2.01
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0107
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0162
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0065
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.008
+     }
+    },
+    "nivel_absoluto": 1.7,
+    "rank_absoluto": "D"
+   }
+  },
+  "surge": {
+   "hipotese": "Action Surge + Shield",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 53.5,
+     "CA 12": 51.1,
+     "CA 15": 43.6,
+     "CA 16": 41.1,
+     "CA 18": 36.0,
+     "CA 20": 30.9,
+     "CA 22": 25.6,
+     "CA 24": 20.2,
+     "CA 25": 17.4
+    },
+    "nivel_eq": 10.5,
+    "rank": "A-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 10.5,
+    "nivel_precisa": 10.4,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 92,
+    "ca": 18,
+    "blindagem": 9.0,
+    "durabilidade": 6.11,
+    "nivel_blindagem": 10.2,
+    "nivel_durabilidade": 9.7,
+    "nivel_eq": 10.2,
+    "rank": "A-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "shield"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.54,
+     "rank": "B+",
+     "turnos_livres": [
+      3.95,
+      3.44,
+      3.35,
+      2.75,
+      2.25,
+      2.15,
+      2.74,
+      2.51,
+      1.74,
+      1.52
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.17,
+     "rank": "D",
+     "turnos_livres": [
+      2.64,
+      1.14,
+      0.85,
+      0.67,
+      0.61,
+      0.47,
+      0.7,
+      0.69,
+      0.8,
+      1.05
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "melhor": "Sword Burst",
+    "areas": [
+     {
+      "nome": "Sword Burst",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.82,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.82,
+       "padrao": 4.82,
+       "agrupada": 4.82
+      }
+     },
+     {
+      "nome": "Rime's Binding Ice",
+      "tipo": "explosao",
+      "nivel_eq": 4.31,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.31,
+       "padrao": 4.31,
+       "agrupada": 4.31
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "defesa": {
+      "1": 1
+     },
+     "area": {
+      "2": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.61,
+    "rank": "E",
+    "nivel_campo": 0.71,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.001,
+    "vidas_campo": 0.021,
+    "vidas_atencao": -0.02,
+    "corpo": {
+     "T": -0.02,
+     "S": 0.035,
+     "P": -0.055,
+     "chave": "T0S0P-",
+     "perfil": "Neutro"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.02,
+     "Dupla": 0.0,
+     "Chefe sozinho": 2.04
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0107
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0162
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0065
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.008
+     }
+    },
+    "nivel_absoluto": 1.81,
+    "rank_absoluto": "D"
+   }
+  }
+ },
+ "planos": {
+  "padrao": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "principal",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 1
+      }
+     }
+    },
+    {
+     "linha": "surge",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 1
+      },
+      "action_surge": 1
+     }
+    },
+    {
+     "linha": "principal",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 1
+      }
+     }
+    },
+    {
+     "linha": "surge",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 1
+      },
+      "action_surge": 1
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {
+     "2": 3
+    }
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 10.0,
+     "rank": "A-",
+     "por_categoria": {
+      "np": 9.0,
+      "p": 10.5
+     }
+    },
+    "defesa": {
+     "nivel_eq": 10.2,
+     "rank": "A-",
+     "por_categoria": {
+      "np": 10.2,
+      "p": 10.2
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 8.5,
+     "rank": "B+",
+     "por_categoria": {
+      "np": 8.5,
+      "p": 8.5
+     }
+    },
+    "vontade": {
+     "nivel_eq": 2.2,
+     "rank": "D",
+     "por_categoria": {
+      "np": 2.2,
+      "p": 2.2
+     }
+    },
+    "campo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "np": 0.0,
+      "p": 0.0
+     }
+    },
+    "corpo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "np": 0.0,
+      "p": 0.0
+     }
+    },
+    "area": {
+     "nivel_eq": 4.8,
+     "rank": "C",
+     "por_categoria": {
+      "np": 4.8,
+      "p": 4.8
+     }
+    }
+   }
+  },
+  "combate_unico": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "surge",
+     "categoria": "p",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 1
+      },
+      "action_surge": 1
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {
+     "1": 3,
+     "2": 3
+    }
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 10.5,
+     "rank": "A-",
+     "por_categoria": {
+      "p": 10.5
+     }
+    },
+    "defesa": {
+     "nivel_eq": 10.2,
+     "rank": "A-",
+     "por_categoria": {
+      "p": 10.2
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 8.5,
+     "rank": "B+",
+     "por_categoria": {
+      "p": 8.5
+     }
+    },
+    "vontade": {
+     "nivel_eq": 2.2,
+     "rank": "D",
+     "por_categoria": {
+      "p": 2.2
+     }
+    },
+    "campo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "p": 0.0
+     }
+    },
+    "corpo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "p": 0.0
+     }
+    },
+    "area": {
+     "nivel_eq": 4.8,
+     "rank": "C",
+     "por_categoria": {
+      "p": 4.8
+     }
+    }
+   }
+  }
+ },
+ "segundos": 7.3,
+ "premissas": {
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
+  "base.chefe.chefe_save": 2,
+  "base.chefe.lr_cr": 10,
+  "base.chefe.lr_n": 1,
+  "base.encontros": [
+   [
+    "Minions + minibosses",
+    0.25,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      4,
+      0.25
+     ],
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Party de elite",
+    0.15,
+    [
+     [
+      "Bruiser",
+      "Veterano agressor",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Artilheiro",
+      "Atirador",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Horda + chefe",
+    0.15,
+    [
+     [
+      "Minion",
+      "Soldado disciplinado",
+      6,
+      0.5
+     ],
+     [
+      "Chefe",
+      "Comandante",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Horda",
+    0.1,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      6,
+      1.0
+     ]
+    ]
+   ],
+   [
+    "Dupla",
+    0.05,
+    [
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.5
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Chefe sozinho",
+    0.3,
+    [
+     [
+      "Chefe",
+      "Chefe (perfil próprio)",
+      1,
+      1.0
+     ]
+    ]
+   ]
+  ],
+  "base.perfis_inimigos": {
+   "Instintivo": [
+    0.2,
+    0,
+    true
+   ],
+   "Fera": [
+    0.3,
+    1,
+    true
+   ],
+   "Oportunista": [
+    0.7,
+    2,
+    true
+   ],
+   "Soldado disciplinado": [
+    0.5,
+    2,
+    true
+   ],
+   "Atirador": [
+    0.0,
+    3,
+    false
+   ],
+   "Cavaleiro noviço": [
+    0.1,
+    1,
+    true
+   ],
+   "Veterano defensor": [
+    0.3,
+    2,
+    true
+   ],
+   "Veterano agressor": [
+    0.8,
+    2,
+    true
+   ],
+   "Conjurador tático": [
+    0.0,
+    3,
+    false
+   ],
+   "Comandante": [
+    0.2,
+    3,
+    true
+   ],
+   "Chefe (perfil próprio)": [
+    0.4,
+    2,
+    true
+   ]
+  },
+  "base.rounds_por_luta": 4,
+  "base.save_tipo": {
+   "For": 1,
+   "Con": 1,
+   "Des": 0.5,
+   "Int": 0,
+   "Sab": 0,
+   "Car": 0
+  },
+  "base.topologias": {
+   "Campo aberto": {
+    "peso": 0.25,
+    "area": 0.8,
+    "cruza": 0.3,
+    "alc_corpo_a_corpo_atras": 0.1,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Ruínas ou cidade": {
+    "peso": 0.35,
+    "area": 1.0,
+    "cruza": 0.6,
+    "alc_corpo_a_corpo_atras": 0.15,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Sala de dungeon": {
+    "peso": 0.4,
+    "area": 1.2,
+    "cruza": 0.9,
+    "alc_corpo_a_corpo_atras": 0.6,
+    "pg": 0.5,
+    "wall": 1.5
+   }
+  },
+  "controle.atencao.ca_dpr_auto": 16,
+  "controle.atencao.conc_bonus": 1.5,
+  "controle.atencao.near_back": 0.25,
+  "controle.atencao.reach_grande": 0.5,
+  "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_pv": 133,
+  "controle.campo.golpes_party": 2,
+  "controle.campo.p_disengage": 0.5,
+  "controle.campo.reach_grande": 0.5,
+  "controle.campo.reach_pequeno": 0.2,
+  "controle.campo.taunt_ameaca": 0.15,
+  "controle.campo.taunt_summon": 0.4,
+  "controle.padroes.counterspell_fracao_conjurando": 0.75,
+  "controle.padroes.sentinela_tentativas": 2,
+  "controle.padroes.terreno_fator": 0.5,
+  "controle.peso_no_controle.ameaca": 0.0,
+  "controle.peso_no_controle.esqueletos": 0.0,
+  "controle.peso_no_controle.parada_oa": 0.25,
+  "controle.peso_no_controle.sentinela": 0.25,
+  "defesa.chefe.acerto_extra": 3,
+  "defesa.chefe.ataques_por_cr": [
+   [
+    4,
+    2
+   ],
+   [
+    16,
+    3
+   ],
+   [
+    30,
+    4
+   ]
+  ],
+  "defesa.chefe.cr_arma_magica": 10,
+  "defesa.fator_critico": 0.6,
+  "defesa.horda.acerto": {
+   "base": 3,
+   "por_cr": 0.3333333333333333
+  },
+  "defesa.horda.atacantes": {
+   "min": 3,
+   "max": 10
+  },
+  "defesa.horda.dano_por_golpe": {
+   "base": 4,
+   "por_cr": 0.5
+  },
+  "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
+  "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "planos.dias": {
+   "padrao": [
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ]
+   ],
+   "combate_unico": [
+    [
+     "p",
+     1
+    ]
+   ],
+   "dia_longo": [
+    [
+     "np",
+     1
+    ],
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "mod",
+     2
+    ],
+    [
+     "boss",
+     4
+    ]
+   ]
+  }
+ }
+}

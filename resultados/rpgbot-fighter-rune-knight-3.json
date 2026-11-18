@@ -1,0 +1,884 @@
+{
+ "id": "rpgbot-fighter-rune-knight-3",
+ "nome": "Rune Knight Fighter (RPGBot: Attaxi of the Giant Tabaxi)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "build": "Fighter (Rune Knight), Tabaxi (MMoM), garras + Unarmed Fighting, agarrador; Skill Expert (Atletismo) 4, Tavern Brawler 6, Crusher 8",
+ "impressao": "5ad37be01b",
+ "versao": "0.8.0",
+ "modo": "completo",
+ "linhas": {
+  "principal": {
+   "hipotese": "agarra o alvo prioritário (custa ataques até o Tavern Brawler) e bate com as garras",
+   "principal": [
+    "dano",
+    "defesa",
+    "controle",
+    "saves",
+    "area",
+    "suporte"
+   ],
+   "dano": {
+    "dpr": {
+     "CA 11": 3.8,
+     "CA 12": 3.5,
+     "CA 15": 2.8,
+     "CA 16": 2.6,
+     "CA 18": 2.1,
+     "CA 20": 1.6,
+     "CA 22": 1.1,
+     "CA 24": 0.6,
+     "CA 25": 0.4
+    },
+    "nivel_eq": 0.5,
+    "rank": "E",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 0.5,
+    "nivel_precisa": 0.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 31,
+    "ca": 16,
+    "blindagem": 1.88,
+    "durabilidade": 1.31,
+    "nivel_blindagem": 1.9,
+    "nivel_durabilidade": 1.9,
+    "nivel_eq": 1.9,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 2.95,
+     "rank": "D",
+     "turnos_livres": [
+      3.82,
+      3.03,
+      2.84,
+      0.81,
+      1.03,
+      1.08,
+      0.97,
+      0.61,
+      0.29,
+      0.31
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 1.61,
+     "rank": "D",
+     "turnos_livres": [
+      2.7,
+      1.17,
+      0.85,
+      1.15,
+      0.8,
+      0.41,
+      0.62,
+      0.41,
+      0.57,
+      0.56
+     ]
+    }
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 3.56,
+    "rank": "C-",
+    "nivel_campo": 4.15,
+    "rank_campo": "C",
+    "nivel_controle": 4.11,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.621,
+    "vidas_campo": 0.722,
+    "vidas_atencao": -0.114,
+    "corpo": {
+     "T": -0.114,
+     "S": -0.108,
+     "P": -0.006,
+     "chave": "T-S-P0",
+     "perfil": "Vulnerável"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.37,
+     "Party de elite": 2.21,
+     "Horda + chefe": 4.05,
+     "Horda": 0.46,
+     "Dupla": 4.85,
+     "Chefe sozinho": 7.49
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Agarrão (Atletismo)": 0.1047,
+      "Corpo (ameaça)": 0.0111
+     },
+     "Party de elite": {
+      "Agarrão (Atletismo)": 0.1833,
+      "Corpo (ameaça)": 0.0058
+     },
+     "Horda + chefe": {
+      "Agarrão (Atletismo)": 0.2741,
+      "Corpo (ameaça)": 0.0066
+     },
+     "Horda": {
+      "Agarrão (Atletismo)": 0.1222,
+      "Corpo (ameaça)": 0.0147
+     },
+     "Dupla": {
+      "Agarrão (Atletismo)": 0.3638,
+      "Corpo (ameaça)": 0.0062
+     },
+     "Chefe sozinho": {
+      "Agarrão (Atletismo)": 0.6631,
+      "Corpo (ameaça)": 0.0083
+     }
+    },
+    "nivel_absoluto": 1.51,
+    "rank_absoluto": "D"
+   }
+  },
+  "gigante": {
+   "hipotese": "Giant's Might na luta (Grande, vantagem em For, +dado 1×/turno)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 6.2,
+     "CA 12": 5.8,
+     "CA 15": 4.5,
+     "CA 16": 4.1,
+     "CA 18": 3.3,
+     "CA 20": 2.6,
+     "CA 22": 1.8,
+     "CA 24": 1.0,
+     "CA 25": 0.6
+    },
+    "nivel_eq": 0.7,
+    "rank": "E",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 0.7,
+    "nivel_precisa": 0.7,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 31,
+    "ca": 16,
+    "blindagem": 1.88,
+    "durabilidade": 1.31,
+    "nivel_blindagem": 1.9,
+    "nivel_durabilidade": 1.9,
+    "nivel_eq": 1.9,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 2.95,
+     "rank": "D",
+     "turnos_livres": [
+      3.82,
+      3.03,
+      2.84,
+      0.81,
+      1.03,
+      1.08,
+      0.97,
+      0.61,
+      0.29,
+      0.31
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 1.61,
+     "rank": "D",
+     "turnos_livres": [
+      2.7,
+      1.17,
+      0.85,
+      1.15,
+      0.8,
+      0.41,
+      0.62,
+      0.41,
+      0.57,
+      0.56
+     ]
+    }
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 3.6,
+    "rank": "C-",
+    "nivel_campo": 4.15,
+    "rank_campo": "C",
+    "nivel_controle": 4.11,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.63,
+    "vidas_campo": 0.722,
+    "vidas_atencao": -0.105,
+    "corpo": {
+     "T": -0.105,
+     "S": -0.144,
+     "P": 0.039,
+     "chave": "T0S-P0",
+     "perfil": "Neutro"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.4,
+     "Party de elite": 2.32,
+     "Horda + chefe": 4.06,
+     "Horda": 0.49,
+     "Dupla": 4.88,
+     "Chefe sozinho": 7.5
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Agarrão (Atletismo)": 0.1047,
+      "Corpo (ameaça)": 0.0111
+     },
+     "Party de elite": {
+      "Agarrão (Atletismo)": 0.1833,
+      "Corpo (ameaça)": 0.0058
+     },
+     "Horda + chefe": {
+      "Agarrão (Atletismo)": 0.2741,
+      "Corpo (ameaça)": 0.0066
+     },
+     "Horda": {
+      "Agarrão (Atletismo)": 0.1222,
+      "Corpo (ameaça)": 0.0147
+     },
+     "Dupla": {
+      "Agarrão (Atletismo)": 0.3638,
+      "Corpo (ameaça)": 0.0062
+     },
+     "Chefe sozinho": {
+      "Agarrão (Atletismo)": 0.6631,
+      "Corpo (ameaça)": 0.0083
+     }
+    },
+    "nivel_absoluto": 1.46,
+    "rank_absoluto": "D"
+   }
+  },
+  "surge": {
+   "hipotese": "Giant's Might + Action Surge",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 7.8,
+     "CA 12": 7.3,
+     "CA 15": 5.8,
+     "CA 16": 5.3,
+     "CA 18": 4.3,
+     "CA 20": 3.4,
+     "CA 22": 2.3,
+     "CA 24": 1.4,
+     "CA 25": 0.8
+    },
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 0.9,
+    "nivel_precisa": 0.9,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 31,
+    "ca": 16,
+    "blindagem": 1.88,
+    "durabilidade": 1.31,
+    "nivel_blindagem": 1.9,
+    "nivel_durabilidade": 1.9,
+    "nivel_eq": 1.9,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 2.95,
+     "rank": "D",
+     "turnos_livres": [
+      3.82,
+      3.03,
+      2.84,
+      0.81,
+      1.03,
+      1.08,
+      0.97,
+      0.61,
+      0.29,
+      0.31
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 1.61,
+     "rank": "D",
+     "turnos_livres": [
+      2.7,
+      1.17,
+      0.85,
+      1.15,
+      0.8,
+      0.41,
+      0.62,
+      0.41,
+      0.57,
+      0.56
+     ]
+    }
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 3.63,
+    "rank": "C-",
+    "nivel_campo": 4.15,
+    "rank_campo": "C",
+    "nivel_controle": 4.11,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.636,
+    "vidas_campo": 0.722,
+    "vidas_atencao": -0.097,
+    "corpo": {
+     "T": -0.097,
+     "S": -0.172,
+     "P": 0.074,
+     "chave": "T0S-P+",
+     "perfil": "Taunt"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.43,
+     "Party de elite": 2.41,
+     "Horda + chefe": 4.06,
+     "Horda": 0.52,
+     "Dupla": 4.89,
+     "Chefe sozinho": 7.5
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Agarrão (Atletismo)": 0.1047,
+      "Corpo (ameaça)": 0.0111
+     },
+     "Party de elite": {
+      "Agarrão (Atletismo)": 0.1833,
+      "Corpo (ameaça)": 0.0058
+     },
+     "Horda + chefe": {
+      "Agarrão (Atletismo)": 0.2741,
+      "Corpo (ameaça)": 0.0066
+     },
+     "Horda": {
+      "Agarrão (Atletismo)": 0.1222,
+      "Corpo (ameaça)": 0.0147
+     },
+     "Dupla": {
+      "Agarrão (Atletismo)": 0.3638,
+      "Corpo (ameaça)": 0.0062
+     },
+     "Chefe sozinho": {
+      "Agarrão (Atletismo)": 0.6631,
+      "Corpo (ameaça)": 0.0083
+     }
+    },
+    "nivel_absoluto": 1.41,
+    "rank_absoluto": "D"
+   }
+  }
+ },
+ "planos": {
+  "padrao": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "principal",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {}
+     }
+    },
+    {
+     "linha": "surge",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "giants_might": 1,
+      "action_surge": 1
+     }
+    },
+    {
+     "linha": "principal",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {}
+     }
+    },
+    {
+     "linha": "surge",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "giants_might": 1,
+      "action_surge": 1
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {}
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 0.8,
+     "rank": "E",
+     "por_categoria": {
+      "np": 0.5,
+      "p": 0.9
+     }
+    },
+    "defesa": {
+     "nivel_eq": 1.9,
+     "rank": "D",
+     "por_categoria": {
+      "np": 1.9,
+      "p": 1.9
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 3.0,
+     "rank": "D",
+     "por_categoria": {
+      "np": 3.0,
+      "p": 3.0
+     }
+    },
+    "vontade": {
+     "nivel_eq": 1.6,
+     "rank": "D",
+     "por_categoria": {
+      "np": 1.6,
+      "p": 1.6
+     }
+    },
+    "campo": {
+     "nivel_eq": 4.9,
+     "rank": "C",
+     "por_categoria": {
+      "np": 4.9,
+      "p": 4.9
+     }
+    },
+    "corpo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "np": 0.0,
+      "p": 0.0
+     }
+    }
+   }
+  },
+  "combate_unico": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "surge",
+     "categoria": "p",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "giants_might": 1,
+      "action_surge": 1
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {},
+    "giants_might": 1
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 0.9,
+     "rank": "E",
+     "por_categoria": {
+      "p": 0.9
+     }
+    },
+    "defesa": {
+     "nivel_eq": 1.9,
+     "rank": "D",
+     "por_categoria": {
+      "p": 1.9
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 3.0,
+     "rank": "D",
+     "por_categoria": {
+      "p": 3.0
+     }
+    },
+    "vontade": {
+     "nivel_eq": 1.6,
+     "rank": "D",
+     "por_categoria": {
+      "p": 1.6
+     }
+    },
+    "campo": {
+     "nivel_eq": 4.9,
+     "rank": "C",
+     "por_categoria": {
+      "p": 4.9
+     }
+    },
+    "corpo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "p": 0.0
+     }
+    }
+   }
+  }
+ },
+ "segundos": 4.8,
+ "premissas": {
+  "base.chefe.chefe_save": 2,
+  "base.chefe.lr_cr": 10,
+  "base.chefe.lr_n": 1,
+  "base.encontros": [
+   [
+    "Minions + minibosses",
+    0.25,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      4,
+      0.25
+     ],
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Party de elite",
+    0.15,
+    [
+     [
+      "Bruiser",
+      "Veterano agressor",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Artilheiro",
+      "Atirador",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Horda + chefe",
+    0.15,
+    [
+     [
+      "Minion",
+      "Soldado disciplinado",
+      6,
+      0.5
+     ],
+     [
+      "Chefe",
+      "Comandante",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Horda",
+    0.1,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      6,
+      1.0
+     ]
+    ]
+   ],
+   [
+    "Dupla",
+    0.05,
+    [
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.5
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Chefe sozinho",
+    0.3,
+    [
+     [
+      "Chefe",
+      "Chefe (perfil próprio)",
+      1,
+      1.0
+     ]
+    ]
+   ]
+  ],
+  "base.perfis_inimigos": {
+   "Instintivo": [
+    0.2,
+    0,
+    true
+   ],
+   "Fera": [
+    0.3,
+    1,
+    true
+   ],
+   "Oportunista": [
+    0.7,
+    2,
+    true
+   ],
+   "Soldado disciplinado": [
+    0.5,
+    2,
+    true
+   ],
+   "Atirador": [
+    0.0,
+    3,
+    false
+   ],
+   "Cavaleiro noviço": [
+    0.1,
+    1,
+    true
+   ],
+   "Veterano defensor": [
+    0.3,
+    2,
+    true
+   ],
+   "Veterano agressor": [
+    0.8,
+    2,
+    true
+   ],
+   "Conjurador tático": [
+    0.0,
+    3,
+    false
+   ],
+   "Comandante": [
+    0.2,
+    3,
+    true
+   ],
+   "Chefe (perfil próprio)": [
+    0.4,
+    2,
+    true
+   ]
+  },
+  "base.rounds_por_luta": 4,
+  "base.save_tipo": {
+   "For": 1,
+   "Con": 1,
+   "Des": 0.5,
+   "Int": 0,
+   "Sab": 0,
+   "Car": 0
+  },
+  "base.topologias": {
+   "Campo aberto": {
+    "peso": 0.25,
+    "area": 0.8,
+    "cruza": 0.3,
+    "alc_corpo_a_corpo_atras": 0.1,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Ruínas ou cidade": {
+    "peso": 0.35,
+    "area": 1.0,
+    "cruza": 0.6,
+    "alc_corpo_a_corpo_atras": 0.15,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Sala de dungeon": {
+    "peso": 0.4,
+    "area": 1.2,
+    "cruza": 0.9,
+    "alc_corpo_a_corpo_atras": 0.6,
+    "pg": 0.5,
+    "wall": 1.5
+   }
+  },
+  "controle.atencao.ca_dpr_auto": 16,
+  "controle.atencao.conc_bonus": 1.5,
+  "controle.atencao.near_back": 0.25,
+  "controle.atencao.reach_grande": 0.5,
+  "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_pv": 133,
+  "controle.campo.golpes_party": 2,
+  "controle.campo.p_disengage": 0.5,
+  "controle.campo.reach_grande": 0.5,
+  "controle.campo.reach_pequeno": 0.2,
+  "controle.campo.taunt_ameaca": 0.15,
+  "controle.campo.taunt_summon": 0.4,
+  "controle.padroes.counterspell_fracao_conjurando": 0.75,
+  "controle.padroes.sentinela_tentativas": 2,
+  "controle.padroes.terreno_fator": 0.5,
+  "controle.peso_no_controle.ameaca": 0.0,
+  "controle.peso_no_controle.esqueletos": 0.0,
+  "controle.peso_no_controle.parada_oa": 0.25,
+  "controle.peso_no_controle.sentinela": 0.25,
+  "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
+  "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "planos.dias": {
+   "padrao": [
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ]
+   ],
+   "combate_unico": [
+    [
+     "p",
+     1
+    ]
+   ],
+   "dia_longo": [
+    [
+     "np",
+     1
+    ],
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "mod",
+     2
+    ],
+    [
+     "boss",
+     4
+    ]
+   ]
+  }
+ }
+}

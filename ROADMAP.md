@@ -250,3 +250,27 @@ tinbin; o doc mestre de 01/11 vira histórico). Atributos confirmados em 16/11 (
 **Motores pendentes:** Ravin (carga da espada: quando gastar, manter fora de fase para +1 CA no turno inimigo,
 Booming Blade para recarregar quando o 1º golpe erra, quando entrar no barrado e se gasta carga); Kael (vida:
 custos em PV, cura por acerto conforme CA e vantagem, limiar, Blood Dice no meio x depois da luta, moeda).
+
+## 18/11 — radar mais limpo + diagnóstico de área + o que falta para o fine tuning
+- **Radar:** nova ordem dos eixos (horário a partir do topo): Dano · Def. Física · Def. Mágica · Área · Controle ·
+  Suporte · Corpo. Físico em cima, arcano embaixo, Def. Mágica de transição; eixos que andam juntos ficam vizinhos
+  (menos "estrelas"). Faixa mín–máx sem os dois contornos tracejados. Linhas-opção: até 4, cada uma com cor própria
+  e legenda, desenhadas **por cima** da principal (que recua para um contorno fraco). Linhas NP/P/boss escondidas
+  atrás do botão "separar por tipo de combate".
+- **Área Marcus (2,8) × Amadeus (2,7) no dia padrão:** por luta a Fireball vale 8,1 (B+) e o Shatter nv3 4,2 (C) —
+  a Fireball pega 4 alvos e o Shatter 2. A diferença é só frequência: Amadeus solta 1 Fireball no dia (1 prioritária,
+  peso 2 de 6 → 8,1 × 2/6), Marcus solta Shatter nas 2 prioritárias (4,2 × 4/6). No anel externo Amadeus segue 8,1 × 4,5.
+  Em aberto: média do dia é média de *níveis* com zeros; avaliar converter pela régua de dia como no Controle.
+- **Gaps antes do fine tuning com o RPGBot** (ver "Plano de calibração"):
+  1. **Plano automático/heurístico** para builds externas (o plano hoje é escrito na discussão; 50 builds não dá).
+     Proposta: `dh plano-auto` gera linhas-opção padrão a partir de recursos + magias (maior espaço por eixo, sem
+     recurso, equilibrada pelos pesos 2-2-1-1) e marca a build como `plano: auto`.
+  2. **Importador**: prompt/rotina RPGBot → `.md` → JSON num nível fixo (5, 8, 11), com `fonte: rpgbot` e o link.
+  3. **Gabarito de calibração** (`calibracao/esperado.json`): o que a fonte diz de cada build por eixo (alto/médio/
+     baixo, ou ordem entre builds), e `dh calibrar` que mede concordância (correlação de postos, violações listadas).
+     Sem isso o fine tuning vira impressão visual.
+  4. **Cobertura de mecânicas**: aviso por build de features ignoradas pelos motores (Rage, Sneak Attack, Divine Smite,
+     Wild Shape, Spiritual Weapon…), para separar "métrica errada" de "mecânica não modelada".
+  5. **Dano calculado para todas** (sem `medido`) e rotações com recursos — builds externas não têm planilha.
+  6. Site: filtro por `fonte` e grupo "Referência externa" separado da party.
+  7. MVP passos 1–3 ainda abertos (consistência por régua, calibração com a party, generalização).

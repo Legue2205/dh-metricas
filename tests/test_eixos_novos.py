@@ -38,8 +38,11 @@ def test_suporte_regua_e_linhas():
     k = suporte.avaliar({'fontes': [{'lado': 'of', 'modelo': 'vantagem', 'alvos': 3, 'fracao': 0.34}]}, 7)
     assert (k['ofensivo'], k['nivel_eq'], k['rank']) == (9.28, 3.8, 'C-')
     a = suporte.avaliar({'fontes': [{'lado': 'def', 'modelo': 'aura_saves', 'bonus': 2},
-                                    {'lado': 'def', 'modelo': 'cura', 'usos_dia': 1, 'pv': 35}]}, 7)
+                                    {'lado': 'def', 'modelo': 'cura', 'usos_dia': 1, 'pv': 35, 'quando': 'entre_lutas'}]}, 7)
     assert (a['defensivo'], a['nivel_eq'], a['rank']) == (2.88, 0.5, 'E')
+    # 18/11: em combate, o uso diário conta inteiro na luta em que é usado (não ÷ 4)
+    c = suporte.avaliar({'fontes': [{'lado': 'def', 'modelo': 'cura', 'usos_dia': 1, 'pv': 35}]}, 7)
+    assert c['defensivo'] == round(35 * suporte.H['EF_CURA'] / 4, 2)
 
 
 def test_shield_e_uncanny_dodge():

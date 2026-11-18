@@ -1,0 +1,34 @@
+{
+ "_sobre": "Premissas (hipóteses de modelagem) com nome, valor e histórico. Os motores leem com dh.premissas.P(nome); builds podem usar {\"$p\": \"nome\"} em qualquer valor. Mudar um valor: python -m dh premissa <nome> <valor> --motivo \"...\". Resultados guardam as premissas que usaram; dh completo recalcula sozinho quem usou uma premissa alterada.",
+ "controle.peso_no_controle.sentinela": {
+  "valor": 0.5, "eixo": "controle", "desde": "2026-11-18",
+  "descricao": "Fração da negação do AO do Sentinel (velocidade 0) que também conta como Controle. O resto (taunt, diluição de dano) fica só no Corpo.",
+  "historico": [{"valor": 0.0, "ate": "2026-11-18", "motivo": "16/11: fontes de corpo fora do Controle (evitar contagem dupla)"},
+                {"valor": 0.5, "desde": "2026-11-18", "motivo": "usuário: negar movimento só precisando acertar a CA é controle real (como o Plant Growth), mas parte do valor já está no Corpo"}]
+ },
+ "controle.peso_no_controle.parada_oa": {
+  "valor": 0.5, "eixo": "controle", "desde": "2026-11-18",
+  "descricao": "Igual à do Sentinel, para paradas por ataque de oportunidade com probabilidade fixa.",
+  "historico": [{"valor": 0.0, "ate": "2026-11-18"}, {"valor": 0.5, "desde": "2026-11-18", "motivo": "mesma decisão do Sentinel"}]
+ },
+ "controle.peso_no_controle.ameaca": {
+  "valor": 0.0, "eixo": "controle", "desde": "2026-11-16",
+  "descricao": "Taunt soft (corpo que atrai ataques): só Corpo.", "historico": []
+ },
+ "controle.peso_no_controle.esqueletos": {
+  "valor": 0.0, "eixo": "controle", "desde": "2026-11-16",
+  "descricao": "Invocações que desviam ataques: só Corpo.", "historico": []
+ },
+ "suporte.lutas_dia": {
+  "valor": 4, "eixo": "suporte", "desde": "2026-11-10",
+  "descricao": "Lutas por dia para diluir recursos usados ENTRE lutas (\"quando\": \"entre_lutas\": Song of Rest, PV temporário de descanso).", "historico": []
+ },
+ "suporte.lutas_por_descanso_curto": {
+  "valor": 2, "eixo": "suporte", "desde": "2026-11-10",
+  "descricao": "Lutas por descanso curto: recurso por descanso curto usado em combate se espalha por essas lutas.", "historico": []
+ },
+ "plano.peso_prioritaria": {
+  "valor": 2, "eixo": "planos", "desde": "2026-11-10",
+  "descricao": "Peso de uma luta prioritária na média do dia (não prioritária = 1). Ainda lido de planos.TAGS; migrar.", "historico": [], "migrada": false
+ }
+}

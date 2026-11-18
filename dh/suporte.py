@@ -44,10 +44,21 @@ def _nivel(x, r):
 
 
 def _usos(f):
-    """Usos por luta: direto, ou a partir de usos por dia / por descanso curto."""
-    if 'usos_dia' in f: return f['usos_dia'] / H['LUTAS_DIA']
-    if 'usos_descanso_curto' in f: return f['usos_descanso_curto'] / H['LUTAS_SR']
-    return f.get('usos_luta', 1)
+    """Usos NA LUTA desta linha (18/11: suporte medido na luta em que é usado, como área e controle).
+    - "usos_luta": direto.
+    - "quando": "entre_lutas" (Song of Rest, PV temporário de descanso, cura depois da luta): o recurso não é gasto
+      numa luta específica, então se espalha: usos_dia ÷ lutas do dia, usos_descanso_curto ÷ lutas por descanso.
+    - em combate com "usos_descanso_curto": ÷ lutas por descanso (cada luta do descanso usa a sua parte).
+    - em combate com "usos_dia": todos nesta luta (no máximo um por round). O plano do dia não pode pôr essa fonte
+      em mais lutas do que ela tem usos (aviso do validador)."""
+    from .premissas import P
+    if 'usos_luta' in f: return f['usos_luta']
+    if f.get('quando') == 'entre_lutas':
+        if 'usos_dia' in f: return f['usos_dia'] / P('suporte.lutas_dia')
+        if 'usos_descanso_curto' in f: return f['usos_descanso_curto'] / P('suporte.lutas_por_descanso_curto')
+    if 'usos_descanso_curto' in f: return f['usos_descanso_curto'] / P('suporte.lutas_por_descanso_curto')
+    if 'usos_dia' in f: return min(f['usos_dia'], R)
+    return 1
 
 
 def valor(f, nivel):

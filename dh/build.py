@@ -18,7 +18,8 @@ class ErroBuild(ValueError):
 
 
 def carregar(caminho):
-    b = json.loads(Path(caminho).read_text(encoding='utf-8'))
+    from .premissas import resolver as _premissas
+    b = _premissas(json.loads(Path(caminho).read_text(encoding='utf-8')))
     erros = validar(b)
     if erros: raise ErroBuild(f'{caminho}:\n  - ' + '\n  - '.join(erros))
     return b
@@ -103,7 +104,23 @@ def validar(b):
 
 
 def avisos(b):
-    return orcamento.checar(b, MAGIAS)[1]
+    return orcamento.checar(b, MAGIAS)[1] + _avisos_suporte(b)
+
+
+def _avisos_suporte(b):
+    """Fonte de suporte em combate com usos por dia não pode aparecer em mais lutas do plano do que tem usos."""
+    out = []; linhas = {l['id']: l for l in b['linhas']}
+    for tag, p in b.get('planos', {}).items():
+        if not isinstance(p, dict): continue
+        cont = {}
+        for c in p.get('combates', []):
+            lid = c if isinstance(c, str) else c.get('linha')
+            for f in (linhas.get(lid, {}).get('suporte') or {}).get('fontes', []):
+                if 'usos_dia' in f and f.get('quando') != 'entre_lutas' and 'usos_luta' not in f:
+                    k = f.get('nome', f['modelo']); cont[k] = (cont.get(k, (0, f['usos_dia']))[0] + 1, f['usos_dia'])
+        for k, (n, u) in cont.items():
+            if n > u: out.append(f'plano {tag}: suporte "{k}" ({u:g}/dia, usado inteiro na luta) aparece em {n} lutas')
+    return out
 
 
 def impressao(b):

@@ -52,11 +52,14 @@ def avaliar_linha(b, linha, modo='rapido', regua=None, eixos=None):
 
 
 def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
+    from . import premissas
+    premissas.inicio()
     b = carregar(caminho); imp = impressao(b)
     arq = RESULTADOS / f"{b['id']}.json"
     if arq.exists() and not forcar and not eixos and not linhas:
         velho = json.loads(arq.read_text(encoding='utf-8'))
-        if velho.get('impressao') == imp and velho.get('versao') == VERSAO and (
+        pv = velho.get('premissas', {})
+        if velho.get('impressao') == imp and velho.get('versao') == VERSAO and premissas.atuais(pv) == pv and (
                 velho.get('modo') == modo or (velho.get('modo') == 'completo' and modo == 'rapido')):
             velho['_cache'] = True
             return b, velho
@@ -71,6 +74,7 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
                                       **avaliar_linha(b, l, modo, regua, eixos))
     if not eixos and not linhas: res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
     res['segundos'] = round(time.time() - t0, 1)
+    res['premissas'] = premissas.usadas()
     if not eixos and not linhas:
         RESULTADOS.mkdir(exist_ok=True)
         arq.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding='utf-8')

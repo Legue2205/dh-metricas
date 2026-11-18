@@ -139,7 +139,9 @@ def avaliar_nivel(fn, ficha, L, regua):
             sx, fx = A.vida(E, px, ti, detalhe=True)     # só atenção: ninguém perde turno, só muda o alvo
             acc['total'] += w * (base - A.vida(E, px, ti, neg))
             acc['campo'] += w * (base - A.vida(E, pref, ti, neg))
-            so_ctrl = [v for k, v in fontes.items() if k not in corpo_nomes]    # sem as fontes de corpo (16/11)
+            peso = getattr(fn, 'peso_ctrl', {})
+            so_ctrl = [v if k not in corpo_nomes else v * peso.get(k, 0.0) for k, v in fontes.items()
+                       if k not in corpo_nomes or peso.get(k, 0.0) > 0]   # fontes de corpo só com o peso da premissa (16/11, 18/11)
             acc['ctrl'] += w * (base - A.vida(E, pref, ti, C.jv(*so_ctrl) if so_ctrl else C.zero(E)))
             acc['aten'] += w * (base - sx)
             acc['S'] += w * (fb[im] - fx[im]); acc['P'] += w * ((sum(fb) - fb[im]) - (sum(fx) - fx[im]))

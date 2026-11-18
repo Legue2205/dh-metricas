@@ -23,3 +23,17 @@ def test_empate_declarado_nao_conta_e_faixa():
 def test_eixo_ausente_na_build_vale_zero():
     v = {'a': ({}, ''), 'b': ({'area': 4.0}, '')}
     assert calibrar.avaliar_eixo('area', {'ordem': ['b', 'a']}, v)['concordantes'] == 1
+
+
+def test_premissas_resolver_e_registro():
+    from dh import premissas
+    premissas.inicio()
+    v = premissas.resolver({'x': {'$p': 'controle.peso_no_controle.sentinela'}, 'y': [1, {'$p': 'suporte.lutas_dia'}]})
+    assert v == {'x': 0.5, 'y': [1, 4]}
+    assert set(premissas.usadas()) == {'controle.peso_no_controle.sentinela', 'suporte.lutas_dia'}
+
+
+def test_peso_de_corpo_no_controle():
+    from dh.controle import efeitos
+    fn = efeitos.compilar([{'tipo': 'sentinela', 'nome': 'S'}, {'tipo': 'ameaca', 'nome': 'A'}], {'ca': 18, 'pv': 60}, 7)
+    assert fn.peso_ctrl == {'S': 0.5, 'A': 0.0} and fn.corpo == {'S', 'A'}

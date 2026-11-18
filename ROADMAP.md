@@ -334,3 +334,34 @@ custos em PV, cura por acerto conforme CA e vantagem, limiar, Blood Dice no meio
 - **Antes do lote piloto (3 builds):** (a) decidir o item 4 acima; (b) site leve (índice + JSON por build sob demanda)
   quando passar de ~40 builds; (c) gabarito do RPGBot (`calibracao/rpgbot.json`) escrito a partir da análise de meta
   que o usuário vai colar; (d) faixas de dano nos patches de truque (escala por nível) conferidas no piloto.
+
+## 18/11 (noite 2) — premissas como pesos do modelo; regra do lote congelado
+**Decisões do usuário:**
+- Suporte medido na luta em que é usado (como área e controle). Feito: `usos_dia` em combate conta inteiro na luta
+  da linha; `"quando": "entre_lutas"` mantém a diluição (Song of Rest, Inspiring Leader, cura fora de combate). Aviso do
+  validador se o plano usar a fonte em mais lutas do que ela tem. Dados: Song of Rest (Marcus), Lay on Hands nos
+  aliados (Abdul), Inspiring Leader e Cure Wounds (Amadeus) = entre lutas; a Máscara (Crusader's Mantle, 1/dia) do
+  Amadeus ficou só na linha haste-fireball.
+- Sentinel/parada por AO: taunt e diluição ficam no Corpo; a negação de movimento entra no Controle com **peso 0,5**.
+- **Regra de ouro do lote: a régua não muda no meio de uma passada.** Nenhuma premissa muda enquanto um lote de
+  builds de referência está sendo importado; mudanças só entre passadas, registradas e com recálculo de tudo.
+- **Fine tuning como treino:** passada 1 (todas as builds com as premissas congeladas) → comparar com RPGBot (o que ele
+  diz de cada build + meta, num .md à parte) → achar padrões de erro → mudar premissas (com motivo) → recalcular →
+  medir de novo. Cada passada fica registrada.
+
+**Infraestrutura feita:**
+- `premissas/premissas.json` + `dh/premissas.py`: premissa nomeada (valor, eixo, descrição, histórico). Motor lê com
+  `P(nome)`; build usa `{"$p": "nome"}` em qualquer valor. `resultados/<id>.json` guarda as premissas usadas; mudou o
+  valor → só essas builds perdem o cache e `dh completo` recalcula (código, não tokens).
+- `dh premissa <nome> <valor> --motivo "…"` (grava histórico, lista afetadas, reescreve `HIPOTESES.md`);
+  `dh premissas [--md]` lista com quantas builds usam. `HIPOTESES.md` = a bíblia, gerada.
+- `dh calibrar --registrar "<rótulo>"` grava a rodada em `calibracao/historico.jsonl` (tau por eixo + snapshot das
+  premissas) — o log de treino.
+- `dh comparar [eixos] [--visao] [--grupo]`: builds × níveis por eixo (curva da progressão), texto ou `--json`.
+- VERSAO 0.8.0 (suporte e controle mudaram de semântica): tudo recalculado.
+
+**Próximo (migração das premissas):** a maioria das hipóteses ainda é constante no código (`suporte.H`,
+`campo.H`, `area` alvos/rounds, `tatico` exposições, pesos 2-1 dos planos, perfis/topologias). Migrar por eixo para
+`premissas.json` com `P()`, começando pelas que o fine tuning mais deve mexer: alvos por forma de área e fração do
+round 2+; `campo.H` (taunt, disengage); `suporte.H` (ACERTO, ATIVO, EF_CURA, ESCOLHA); pesos do dia; exposição do
+tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `premissas.json`.

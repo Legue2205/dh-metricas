@@ -115,3 +115,18 @@ def imprimir(r):
         for x in e['faixas']:
             print(f"      ✗ {x['build']}: {x['letra']} {_f(x['valor'])}, esperado {x['esperado'][0]}–{x['esperado'][1]}")
         if e['ausentes']: print('      ? sem resultado: ' + ', '.join(e['ausentes']))
+
+
+def registrar(rotulo, rodadas, arq=None):
+    """Grava uma linha por gabarito em calibracao/historico.jsonl: tau por eixo + as premissas vigentes (o "checkpoint")."""
+    import datetime
+    from . import premissas
+    arq = Path(arq or PASTA / 'historico.jsonl')
+    pr = {k: v['valor'] for k, v in premissas._dados().items() if not k.startswith('_')}
+    with arq.open('a', encoding='utf-8') as f:
+        for r in rodadas:
+            f.write(json.dumps(dict(rotulo=rotulo, data=datetime.date.today().isoformat(), gabarito=r['nome'], visao=r['visao'],
+                                    tau_medio=r['tau_medio'], tau={k: e.get('tau') for k, e in r['eixos'].items()},
+                                    invertidos={k: e['invertidos'] for k, e in r['eixos'].items()}, premissas=pr),
+                               ensure_ascii=False) + '\n')
+    return arq

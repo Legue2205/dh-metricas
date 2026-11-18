@@ -4,7 +4,7 @@
 Plano do dia: padrao. Builds marcadas com ~ ainda não têm esse plano (mostra a linha principal).
 ID                     nv      Dano    Defesa    Resil.   Vontade  Controle      Área   Suporte
 abdul-7                 7    5,7 C+   10,8 A-    6,1 B-    8,0 B+         -         -     0,5 E
-amadeus-7               7     7,6 B    3,7 C-    6,3 B-    12,3 A         -     2,7 D     4,8 C
+amadeus-7               7     7,6 B    3,7 C-    6,3 B-    12,3 A         -     2,7 D    5,0 C+
 ~aprendiz-11           11    12,2 A   15,4 A+    20,0 S    12,1 A    3,6 C-         -         -
 ~caleb-14              14    11,1 A   13,6 A+    20,0 S    12,1 A     0,8 E         -         -
 ~exemplo-guerreiro-5    5     4,6 C    5,5 C+         -         -     0,4 F         -         -
@@ -24,7 +24,7 @@ tinbin-7                7     7,8 B    6,1 B-    6,3 B-     4,5 C         -     
 Plano do dia: dia_longo. Builds marcadas com ~ ainda não têm esse plano (mostra a linha principal).
 ID                     nv      Dano    Defesa    Resil.   Vontade  Controle      Área   Suporte
 ~abdul-7                7    5,6 C+   10,8 A-    6,1 B-    8,0 B+     4,8 C         -     0,5 E
-~amadeus-7              7     7,6 B    3,7 C-    6,3 B-    12,3 A     4,7 C    8,1 B+     0,9 E
+~amadeus-7              7     7,6 B    3,7 C-    6,3 B-    12,3 A     4,7 C    8,1 B+     0,5 E
 ~aprendiz-11           11    12,2 A   15,4 A+    20,0 S    12,1 A    3,6 C-         -         -
 ~caleb-14              14    11,1 A   13,6 A+    20,0 S    12,1 A     0,8 E         -         -
 ~exemplo-guerreiro-5    5     4,6 C    5,5 C+         -         -     0,4 F         -         -

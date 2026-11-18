@@ -1,2261 +1,2277 @@
 {
-  "id": "marcus-7",
-  "nome": "Marcus Oliver",
-  "grupo": "Party",
-  "nivel": 7,
-  "build": "Bard 7 (College of Valor), Lucky",
-  "descricao": {
-    "resumo": "Bardo do Valor de espada mágica: bate de espada nas lutas comuns e vira controlador nas prioritárias (Plant Growth, Fear, Polymorph).",
-    "build": "Bard 7 (College of Valor). Des 14, Con 12, Car 18. Lucky.",
-    "itens": "Espada/violão que evolui com o personagem: espada +2 com +1d4 por criatura senciente a 10 ft (até 3d4); violão +1 na CD e Acorde Maior (sobe 1 nível da magia gastando Bardic Inspiration).",
-    "estrategia": "Lutas comuns: escudo e espada, Faerie Fire e Dissonant Whispers de 1º com espadada bônus (homebrew). Prioritárias: conjurador; Plant Growth em campo/cidade, Fear na dungeon, Shatter nv3 com Acorde, Inspirações. Luta 4: Polymorph no aliado da frente. Sobra 1 espaço de 3º para Healing Word.",
-    "dano": {
-      "texto": "2 golpes de espada a duas mãos (d10+4, +1d4 por criatura senciente próxima).",
-      "vantagem": "Nenhuma",
-      "tipo": "Cortante"
-    },
-    "defesa": {
-      "texto": "CA 17, 45 PV, Lucky (1 por luta)."
-    },
-    "controle": {
-      "texto": "Plant Growth sem concentração; Fear (área) ou Polymorph em alvo único, CD 16.",
-      "favorita": "Plant Growth",
-      "favorita2": "Polymorph",
-      "corpo": "Conjurador na linha de frente: se expõe para usar a espada.",
-      "posicao": "Conjurador na frente"
-    },
-    "area": {
-      "texto": "Shatter (3d8, CD 16).",
-      "tipo": "Trovão"
-    },
-    "suporte": {
-      "texto": "Bardic Inspiration d8 (4 por descanso curto) e Healing Word escalado da mesa."
-    }
+ "id": "marcus-7",
+ "nome": "Marcus Oliver",
+ "grupo": "Party",
+ "nivel": 7,
+ "build": "Bard 7 (College of Valor), Lucky",
+ "descricao": {
+  "resumo": "Bardo do Valor de espada mágica: bate de espada nas lutas comuns e vira controlador nas prioritárias (Plant Growth, Fear, Polymorph).",
+  "build": "Bard 7 (College of Valor). Des 14, Con 12, Car 18. Lucky.",
+  "itens": "Espada/violão que evolui com o personagem: espada +2 com +1d4 por criatura senciente a 10 ft (até 3d4); violão +1 na CD e Acorde Maior (sobe 1 nível da magia gastando Bardic Inspiration).",
+  "estrategia": "Lutas comuns: escudo e espada, Faerie Fire e Dissonant Whispers de 1º com espadada bônus (homebrew). Prioritárias: conjurador; Plant Growth em campo/cidade, Fear na dungeon, Shatter nv3 com Acorde, Inspirações. Luta 4: Polymorph no aliado da frente. Sobra 1 espaço de 3º para Healing Word.",
+  "dano": {
+   "texto": "2 golpes de espada a duas mãos (d10+4, +1d4 por criatura senciente próxima).",
+   "vantagem": "Nenhuma",
+   "tipo": "Cortante"
   },
-  "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
-  "corpo": {
-    "ca": 17,
-    "pv": 45,
-    "saves": {
-      "sv": {
-        "for": 0,
-        "des": 5,
-        "con": 1,
-        "int": 0,
-        "sab": 0,
-        "car": 7
-      },
-      "rerolagens": 1,
-      "conjurador": true
-    }
+  "defesa": {
+   "texto": "CA 17, 45 PV, Lucky (1 por luta)."
   },
-  "linhas": [
-    {
-      "id": "principal",
-      "principal": [
-        "defesa",
-        "saves",
-        "area"
-      ],
-      "hipotese": "Espada +1d4; Plant Growth + Fear ou Polymorph (CD 16); Lucky 1 de 3",
-      "dano": {
-        "ataques": [
-          {
-            "n": 2,
-            "bonus": 7,
-            "dano": "1d10+1d4+4",
-            "nota": "espada +2 a duas mãos, +1d4 (1 criatura senciente a 10 ft)"
-          }
-        ],
-        "conferencia": [
-          21.2,
-          20.0,
-          16.4,
-          15.2,
-          12.8,
-          10.4,
-          8.0,
-          5.6,
-          4.4
-        ]
-      },
-      "defesa": {},
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": true,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 16.4
-        },
-        "fontes": [
-          {
-            "tipo": "terreno",
-            "nome": "Plant Growth",
-            "fator": 0.5,
-            "chave_topo": "pg"
-          },
-          {
-            "tipo": "melhor_de",
-            "nome": "Concentração (Fear ou Polymorph)",
-            "opcoes": [
-              {
-                "tipo": "area",
-                "magia": "fear",
-                "cd": 16,
-                "atraso": 1
-              },
-              {
-                "tipo": "alvo_unico",
-                "cd": 16,
-                "slots": [
-                  4,
-                  3,
-                  3,
-                  3
-                ],
-                "magias": [
-                  "polymorph",
-                  "fear"
-                ],
-                "modo": "combinar"
-              }
-            ]
-          },
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "saves": {},
-      "area": [
-        {
-          "nome": "Shatter",
-          "usos": [
-            {
-              "alvos": 2,
-              "dano": "3d8",
-              "cd": 16,
-              "slot": 2
-            }
-          ]
-        }
-      ],
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "bonus_por_uso",
-            "usos_descanso_curto": 4,
-            "bonus": 4.5
-          },
-          {
-            "nome": "Healing Word",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_luta": 1,
-            "pv": 13
-          }
-        ]
-      },
-      "aneis": false
-    },
-    {
-      "id": "com-suggestion",
-      "principal": false,
-      "hipotese": "Com Suggestion na rotação de alvo único",
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": true,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 16.4
-        },
-        "fontes": [
-          {
-            "tipo": "terreno",
-            "nome": "Plant Growth",
-            "fator": 0.5,
-            "chave_topo": "pg"
-          },
-          {
-            "tipo": "melhor_de",
-            "nome": "Concentração (Fear ou Polymorph)",
-            "opcoes": [
-              {
-                "tipo": "area",
-                "magia": "fear",
-                "cd": 16,
-                "atraso": 1
-              },
-              {
-                "tipo": "alvo_unico",
-                "cd": 16,
-                "slots": [
-                  4,
-                  3,
-                  3,
-                  3
-                ],
-                "magias": [
-                  "polymorph",
-                  "fear",
-                  "suggestion"
-                ],
-                "modo": "combinar"
-              }
-            ]
-          },
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "aneis": false
-    },
-    {
-      "id": "comum-escudo",
-      "principal": false,
-      "hipotese": "Luta comum, postura marcial com escudo (CA 19): T1 Faerie Fire 1º + espadada; T2 2 espadadas + Insp.; T3 Dissonant Whispers 1º + espadada (+ AO); T4 2 espadadas",
-      "acao_bonus": [
-        {
-          "uso": "espadada após feitiço de 1º (homebrew, adiantamento do Battle Magic)",
-          "fracao": 0.5,
-          "eixos": [
-            "dano"
-          ]
-        },
-        {
-          "uso": "Bardic Inspiration",
-          "fracao": 0.25,
-          "eixos": [
-            "suporte"
-          ]
-        }
-      ],
-      "reacao": [
-        {
-          "uso": "ataque de oportunidade de quem foge do Dissonant Whispers",
-          "fracao": 0.15,
-          "eixos": [
-            "dano"
-          ]
-        },
-        {
-          "uso": "Countercharm",
-          "fracao": 0.05,
-          "eixos": [
-            "suporte"
-          ]
-        }
-      ],
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.5,
-            "bonus": 7,
-            "dano": "1d8+2d4+4",
-            "vantagem": 0.6,
-            "nota": "6 golpes em 4 rounds, Faerie Fire (CD 15, 60%) desde o T1"
-          },
-          {
-            "n": 0.15,
-            "bonus": 7,
-            "dano": "1d8+2d4+4",
-            "vantagem": 0.6,
-            "nota": "AO: 60% de falha no DW ÷ 4 rounds"
-          }
-        ],
-        "automatico": 2.1,
-        "concentracao": "faerie_fire",
-        "nota": "balinada 2d4 (alvo + tank aliado a 10 ft); DW em automatico: média por round"
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": true,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 17
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8 (vários usos)",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 1,
-            "mix": {
-              "dano": 0.3,
-              "acerto": 0.25,
-              "ca": 0.2,
-              "save_dano": 0.15,
-              "save_critico": 0.07,
-              "counterspell": 0.03
-            },
-            "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
-          },
-          {
-            "nome": "Faerie Fire",
-            "lado": "of",
-            "modelo": "vantagem",
-            "alvos": 3,
-            "fracao": 0.55,
-            "concentracao": "faerie_fire",
-            "nota": "60% de falha × ~90% dos rounds"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45,
-            "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14,
-            "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice"
-          }
-        ]
-      },
-      "defesa": {
-        "ca": 19
-      },
-      "corpo": {
-        "ca": 19
-      },
-      "saves": {},
-      "custo": "gasta_recurso"
-    },
-    {
-      "id": "comum-marcial",
-      "principal": false,
-      "hipotese": "Luta comum, postura marcial: T1 Faerie Fire 1º + espadada; T2 2 espadadas + Insp.; T3 Dissonant Whispers 1º + espadada (+ AO); T4 2 espadadas",
-      "acao_bonus": [
-        {
-          "uso": "espadada após feitiço de 1º (homebrew, adiantamento do Battle Magic)",
-          "fracao": 0.5,
-          "eixos": [
-            "dano"
-          ]
-        },
-        {
-          "uso": "Bardic Inspiration",
-          "fracao": 0.25,
-          "eixos": [
-            "suporte"
-          ]
-        }
-      ],
-      "reacao": [
-        {
-          "uso": "ataque de oportunidade de quem foge do Dissonant Whispers",
-          "fracao": 0.15,
-          "eixos": [
-            "dano"
-          ]
-        },
-        {
-          "uso": "Countercharm",
-          "fracao": 0.05,
-          "eixos": [
-            "suporte"
-          ]
-        }
-      ],
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.5,
-            "bonus": 7,
-            "dano": "1d10+2d4+4",
-            "vantagem": 0.6,
-            "nota": "6 golpes em 4 rounds, Faerie Fire (CD 15, 60%) desde o T1"
-          },
-          {
-            "n": 0.15,
-            "bonus": 7,
-            "dano": "1d10+2d4+4",
-            "vantagem": 0.6,
-            "nota": "AO: 60% de falha no DW ÷ 4 rounds"
-          }
-        ],
-        "automatico": 2.1,
-        "concentracao": "faerie_fire",
-        "nota": "balinada 2d4 (alvo + tank aliado a 10 ft); DW em automatico: média por round"
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": true,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 17
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8 (vários usos)",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 1,
-            "mix": {
-              "dano": 0.3,
-              "acerto": 0.25,
-              "ca": 0.2,
-              "save_dano": 0.15,
-              "save_critico": 0.07,
-              "counterspell": 0.03
-            },
-            "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
-          },
-          {
-            "nome": "Faerie Fire",
-            "lado": "of",
-            "modelo": "vantagem",
-            "alvos": 3,
-            "fracao": 0.55,
-            "concentracao": "faerie_fire",
-            "nota": "60% de falha × ~90% dos rounds"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45,
-            "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14,
-            "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice"
-          }
-        ]
-      },
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso"
-    },
-    {
-      "id": "prioritaria",
-      "principal": false,
-      "hipotese": "Luta prioritária, postura de conjurador. Campo: PG+Insp / FF 2º+Insp / Shatter nv3 (Acorde) / Balinarco ×2. Cidade: PG+Insp / Shatter nv3 (Acorde) / FF 2º+espadada / espadada ×2+Insp. Dungeon: Fear+Insp / DW nv2 / espadada ×2 / espadada ×2+Insp",
-      "acao_bonus": [
-        {
-          "uso": "Bardic Inspiration",
-          "fracao": 0.5,
-          "eixos": [
-            "suporte"
-          ]
-        },
-        {
-          "uso": "Acorde Maior",
-          "fracao": 0.15,
-          "eixos": [
-            "dano",
-            "area"
-          ]
-        },
-        {
-          "uso": "espadada após FF (cidade)",
-          "fracao": 0.09,
-          "eixos": [
-            "dano"
-          ]
-        }
-      ],
-      "dano": {
-        "ataques": [
-          {
-            "n": 0.125,
-            "bonus": 5,
-            "dano": "1d8+2",
-            "vantagem": 0.65,
-            "nota": "Balinarco ×2 no campo (25%), com FF"
-          },
-          {
-            "n": 0.2625,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "vantagem": 0.65,
-            "nota": "3 espadadas na cidade (35%), com FF; espada numa mão, violão na outra"
-          },
-          {
-            "n": 0.4,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "nota": "4 espadadas na dungeon (40%)"
-          }
-        ],
-        "automatico": 3.38
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": false,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 10
-        },
-        "fontes": [
-          {
-            "tipo": "terreno",
-            "nome": "Plant Growth",
-            "fator": 0.5,
-            "chave_topo": "pg",
-            "topos": [
-              "Campo aberto",
-              "Ruínas ou cidade"
-            ]
-          },
-          {
-            "tipo": "area",
-            "nome": "Fear",
-            "magia": "fear",
-            "cd": 16,
-            "topos": [
-              "Sala de dungeon"
-            ]
-          },
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "area": [
-        {
-          "nome": "Shatter nv3 (2º + Acorde)",
-          "usos": [
-            {
-              "alvos": 2,
-              "dano": "4d8",
-              "cd": 16,
-              "slot": 2
-            }
-          ]
-        }
-      ],
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8 (vários usos)",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 2,
-            "mix": {
-              "dano": 0.3,
-              "acerto": 0.25,
-              "ca": 0.2,
-              "save_dano": 0.15,
-              "save_critico": 0.07,
-              "counterspell": 0.03
-            },
-            "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
-          },
-          {
-            "nome": "Faerie Fire",
-            "lado": "of",
-            "modelo": "vantagem",
-            "alvos": 3,
-            "fracao": 0.19,
-            "concentracao": "faerie_fire",
-            "topos": [
-              "Campo aberto",
-              "Ruínas ou cidade"
-            ],
-            "nota": "campo: T2, ~2,5 rounds; cidade: T3, ~1,5 round; 65% de falha"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45,
-            "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14,
-            "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice"
-          },
-          {
-            "nome": "Healing Word num caído",
-            "lado": "def",
-            "modelo": "levantar",
-            "usos_luta": 0.5,
-            "pv": 19.5,
-            "nota": "o espaço de 3º que sobra no dia, em metade das prioritárias; nv3 ~19,5 PV (escala da mesa)"
-          }
-        ]
-      },
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "reacao": [
-        {
-          "uso": "Countercharm",
-          "fracao": 0.05,
-          "eixos": [
-            "suporte"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "prioritaria-polymorph",
-      "principal": false,
-      "hipotese": "Luta 4: prioritária com Polymorph no aliado da linha de frente (Giant Ape). Campo: PG / Polymorph / Shatter nv3 / Balinarco ×2. Cidade: PG / Shatter nv3 / Polymorph / espadada ×2. Dungeon: Fear / DW nv2 / Polymorph (o Fear cai) / espadada ×2",
-      "acao_bonus": [
-        {
-          "uso": "Bardic Inspiration",
-          "fracao": 0.5,
-          "eixos": [
-            "suporte"
-          ]
-        },
-        {
-          "uso": "Acorde Maior",
-          "fracao": 0.15,
-          "eixos": [
-            "dano",
-            "area"
-          ]
-        }
-      ],
-      "dano": {
-        "ataques": [
-          {
-            "n": 0.125,
-            "bonus": 5,
-            "dano": "1d8+2",
-            "nota": "Balinarco ×2 no campo"
-          },
-          {
-            "n": 0.375,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "nota": "2 espadadas na cidade e na dungeon"
-          }
-        ],
-        "automatico": 3.38
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": false,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 9
-        },
-        "fontes": [
-          {
-            "tipo": "terreno",
-            "nome": "Plant Growth",
-            "fator": 0.5,
-            "chave_topo": "pg",
-            "topos": [
-              "Campo aberto",
-              "Ruínas ou cidade"
-            ]
-          },
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ],
-        "nota": "Fear da dungeon fica de fora: o Polymorph o derruba no T3 (conservador, ele vale ~2 rounds)"
-      },
-      "area": [
-        {
-          "nome": "Shatter nv3 (2º + Acorde)",
-          "usos": [
-            {
-              "alvos": 2,
-              "dano": "4d8",
-              "cd": 16,
-              "slot": 2
-            }
-          ]
-        }
-      ],
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8 (vários usos)",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 2,
-            "mix": {
-              "dano": 0.3,
-              "acerto": 0.25,
-              "ca": 0.2,
-              "save_dano": 0.15,
-              "save_critico": 0.07,
-              "counterspell": 0.03
-            },
-            "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
-          },
-          {
-            "nome": "Polymorph no aliado (PV do Giant Ape)",
-            "lado": "def",
-            "modelo": "pv_temporario",
-            "alvos": 1,
-            "pv": 47,
-            "concentracao": "polymorph",
-            "nota": "~27 de dano/round no linha de frente (metade do dano inimigo da régua nv 7) × 1,75 round restante; o macaco tem 157"
-          },
-          {
-            "nome": "Polymorph no aliado (dano extra)",
-            "lado": "of",
-            "modelo": "valor_por_luta",
-            "usos_luta": 1,
-            "valor": 17,
-            "nota": "2 socos +9, 3d10+6 (~35 de DPR em CA 15) contra ~25 do aliado: +10/round × 1,75 round"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45,
-            "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14,
-            "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice"
-          },
-          {
-            "nome": "Healing Word num caído",
-            "lado": "def",
-            "modelo": "levantar",
-            "usos_luta": 0.5,
-            "pv": 19.5,
-            "nota": "o espaço de 3º que sobra no dia, em metade das prioritárias; nv3 ~19,5 PV (escala da mesa)"
-          }
-        ]
-      },
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "reacao": [
-        {
-          "uso": "Countercharm",
-          "fracao": 0.05,
-          "eixos": [
-            "suporte"
-          ]
-        }
-      ]
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "area-comum",
-      "herda": "comum-marcial",
-      "hipotese": "Foco área, luta comum: Faerie Fire 1º + espadas; Healing Word 1º quando precisa",
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Faerie Fire",
-            "lado": "of",
-            "modelo": "vantagem",
-            "alvos": 3,
-            "fracao": 0.55,
-            "concentracao": "faerie_fire"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          },
-          {
-            "nome": "Healing Word (cura)",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_luta": 0.5,
-            "pv": 6.5,
-            "nota": "Healing Word 1º (6,5)"
-          },
-          {
-            "nome": "Healing Word num caído",
-            "lado": "def",
-            "modelo": "levantar",
-            "usos_luta": 0.5,
-            "pv": 6.5,
-            "nota": "Healing Word 1º (6,5)"
-          }
-        ]
-      }
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "area-shatter-1",
-      "hipotese": "Foco área, 1ª prioritária: Shatter nos 4 rounds (3×2º e 1×3º, todos com Acorde Maior: nv 3, 3, 3, 4)",
-      "dano": {
-        "automatico": 15.78,
-        "nota": "o Shatter também pega o alvo principal"
-      },
-      "area": [
-        {
-          "nome": "Shatter ×4 com Acorde",
-          "tipo": "prioritaria",
-          "usos": [
-            {
-              "alvos": 2,
-              "dano": "4d8",
-              "cd": 16
-            },
-            {
-              "alvos": 2,
-              "dano": "4d8",
-              "cd": 16
-            },
-            {
-              "alvos": 2,
-              "dano": "4d8",
-              "cd": 16
-            },
-            {
-              "alvos": 2,
-              "dano": "5d8",
-              "cd": 16
-            }
-          ]
-        }
-      ],
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": false,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 10
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          }
-        ]
-      },
-      "acao_bonus": [
-        {
-          "uso": "Acorde Maior",
-          "fracao": 1.0,
-          "eixos": [
-            "area"
-          ]
-        }
-      ]
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "area-shatter-2",
-      "hipotese": "Foco área, 2ª prioritária: Shatter nv 4, 4, 5 (2×3º e 4º com Acorde); round 4 duas espadadas e a Inspiração que sobrou",
-      "dano": {
-        "ataques": [
-          {
-            "n": 0.5,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "vantagem": 0,
-            "nota": "round 4"
-          }
-        ],
-        "automatico": 14.85
-      },
-      "area": [
-        {
-          "nome": "Shatter ×3 com Acorde",
-          "tipo": "prioritaria",
-          "usos": [
-            {
-              "alvos": 2,
-              "dano": "5d8",
-              "cd": 16
-            },
-            {
-              "alvos": 2,
-              "dano": "5d8",
-              "cd": 16
-            },
-            {
-              "alvos": 2,
-              "dano": "6d8",
-              "cd": 16
-            }
-          ]
-        }
-      ],
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": false,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 10
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 1,
-            "mix": {
-              "dano": 0.4,
-              "acerto": 0.3,
-              "ca": 0.15,
-              "save_dano": 0.1,
-              "save_critico": 0.04,
-              "counterspell": 0.01
-            },
-            "nota": "a que sobrou, usada no fim"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          }
-        ]
-      },
-      "acao_bonus": [
-        {
-          "uso": "Acorde Maior",
-          "fracao": 0.75,
-          "eixos": [
-            "area"
-          ]
-        },
-        {
-          "uso": "Inspiração",
-          "fracao": 0.25,
-          "eixos": [
-            "suporte"
-          ]
-        }
-      ]
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "ctrl-maior",
-      "hipotese": "Foco controle: o maior controle do terreno (Plant Growth no campo e na cidade, Fear na dungeon); com Plant Growth sobra a concentração para Faerie Fire 1º; com Fear, Healing Word 1º. Espadadas nos turnos livres. Inspirações dadas antes da luta",
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.5,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "vantagem": 0.35,
-            "nota": "turnos livres com o violão numa mão"
-          }
-        ]
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": false,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 10
-        },
-        "fontes": [
-          {
-            "tipo": "terreno",
-            "nome": "Plant Growth",
-            "fator": 0.5,
-            "chave_topo": "pg",
-            "topos": [
-              "Campo aberto",
-              "Ruínas ou cidade"
-            ]
-          },
-          {
-            "tipo": "area",
-            "nome": "Fear",
-            "magia": "fear",
-            "cd": 16,
-            "topos": [
-              "Sala de dungeon"
-            ]
-          },
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 2,
-            "mix": {
-              "dano": 0.1,
-              "acerto": 0.2,
-              "ca": 0.25,
-              "save_dano": 0.2,
-              "save_critico": 0.18,
-              "counterspell": 0.07
-            },
-            "nota": "dadas antes da luta (pré-cache): usos mais críticos"
-          },
-          {
-            "nome": "Faerie Fire",
-            "lado": "of",
-            "modelo": "vantagem",
-            "alvos": 3,
-            "fracao": 0.58,
-            "concentracao": "faerie_fire",
-            "topos": [
-              "Campo aberto",
-              "Ruínas ou cidade"
-            ]
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          },
-          {
-            "nome": "Healing Word num caído",
-            "lado": "def",
-            "modelo": "levantar",
-            "usos_luta": 0.4,
-            "pv": 6.5,
-            "nota": "Healing Word 1º quando houve Fear (dungeon)"
-          }
-        ]
-      }
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "ctrl-maior-shatter",
-      "herda": "ctrl-maior",
-      "hipotese": "Foco controle numa luta de cidade: Plant Growth + os 3 Shatter de 2º para derrubar estruturas (terraforming)",
-      "dano": {
-        "ataques": [
-          {
-            "n": 0.75,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "vantagem": 0.35,
-            "nota": ""
-          }
-        ],
-        "automatico": 8.35
-      },
-      "area": [
-        {
-          "nome": "Shatter ×3 (2º)",
-          "tipo": "prioritaria",
-          "usos": [
-            {
-              "alvos": 2,
-              "dano": "3d8",
-              "cd": 16
-            },
-            {
-              "alvos": 2,
-              "dano": "3d8",
-              "cd": 16
-            },
-            {
-              "alvos": 2,
-              "dano": "3d8",
-              "cd": 16
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "ctrl-polymorph-chefe",
-      "hipotese": "Foco controle, última prioritária: Polymorph no chefe (4º) + Healing Word 1º",
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.5,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "vantagem": 0,
-            "nota": ""
-          }
-        ]
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": false,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 10
-        },
-        "fontes": [
-          {
-            "tipo": "alvo_unico",
-            "nome": "Polymorph no chefe",
-            "cd": 16,
-            "slots": [
-              4
-            ],
-            "magias": [
-              "polymorph"
-            ]
-          },
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 2,
-            "mix": {
-              "dano": 0.1,
-              "acerto": 0.2,
-              "ca": 0.25,
-              "save_dano": 0.2,
-              "save_critico": 0.18,
-              "counterspell": 0.07
-            },
-            "nota": "pré-cache"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          },
-          {
-            "nome": "Healing Word num caído",
-            "lado": "def",
-            "modelo": "levantar",
-            "usos_luta": 0.5,
-            "pv": 6.5,
-            "nota": ""
-          }
-        ]
-      }
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "sup-hw",
-      "hipotese": "Foco suporte sem Acorde: Faerie Fire 1º abrindo a luta, Healing Word (ação bônus) todo turno que precisar, espadadas com a ação",
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.5,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "vantagem": 0.35,
-            "nota": "ação livre enquanto o Healing Word usa a ação bônus"
-          }
-        ]
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": false,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 10
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Faerie Fire",
-            "lado": "of",
-            "modelo": "vantagem",
-            "alvos": 3,
-            "fracao": 0.58,
-            "concentracao": "faerie_fire"
-          },
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 2,
-            "mix": {
-              "dano": 0.1,
-              "acerto": 0.2,
-              "ca": 0.25,
-              "save_dano": 0.2,
-              "save_critico": 0.18,
-              "counterspell": 0.07
-            },
-            "nota": "1 antes da luta"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          },
-          {
-            "nome": "Healing Word (cura)",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_luta": 1.0,
-            "pv": 16.25,
-            "nota": "6 Healing Words no dia (3×2º, 3×3º)"
-          },
-          {
-            "nome": "Healing Word num caído",
-            "lado": "def",
-            "modelo": "levantar",
-            "usos_luta": 0.5,
-            "pv": 16.25,
-            "nota": "6 Healing Words no dia (3×2º, 3×3º)"
-          }
-        ]
-      }
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "sup-hw-polymorph",
-      "hipotese": "Foco suporte sem Acorde: Faerie Fire 1º abrindo a luta, Healing Word (ação bônus) todo turno que precisar, espadadas com a ação; Polymorph no aliado no momento crítico",
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.5,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "vantagem": 0.35,
-            "nota": "ação livre enquanto o Healing Word usa a ação bônus"
-          }
-        ]
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": false,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 10
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Faerie Fire",
-            "lado": "of",
-            "modelo": "vantagem",
-            "alvos": 3,
-            "fracao": 0.35,
-            "concentracao": "polymorph",
-            "nota": "mesma concentração, em sequência: o Faerie Fire cai quando ele lança o Polymorph (fração já reduzida)"
-          },
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 2,
-            "mix": {
-              "dano": 0.1,
-              "acerto": 0.2,
-              "ca": 0.25,
-              "save_dano": 0.2,
-              "save_critico": 0.18,
-              "counterspell": 0.07
-            },
-            "nota": "1 antes da luta"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          },
-          {
-            "nome": "Healing Word (cura)",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_luta": 1.0,
-            "pv": 16.25,
-            "nota": "6 Healing Words no dia (3×2º, 3×3º)"
-          },
-          {
-            "nome": "Healing Word num caído",
-            "lado": "def",
-            "modelo": "levantar",
-            "usos_luta": 0.5,
-            "pv": 16.25,
-            "nota": "6 Healing Words no dia (3×2º, 3×3º)"
-          },
-          {
-            "nome": "Polymorph no aliado quase caído (PV do Giant Ape)",
-            "lado": "def",
-            "modelo": "pv_temporario",
-            "alvos": 1,
-            "pv": 47,
-            "concentracao": "polymorph"
-          }
-        ]
-      }
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "sup-hw-acorde",
-      "hipotese": "Foco suporte com Acorde no Healing Word: Faerie Fire 1º abrindo a luta, Healing Word (ação bônus) todo turno que precisar, espadadas com a ação",
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.5,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "vantagem": 0.35,
-            "nota": "ação livre enquanto o Healing Word usa a ação bônus"
-          }
-        ]
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": false,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 10
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Faerie Fire",
-            "lado": "of",
-            "modelo": "vantagem",
-            "alvos": 3,
-            "fracao": 0.58,
-            "concentracao": "faerie_fire"
-          },
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 0.5,
-            "mix": {
-              "dano": 0.1,
-              "acerto": 0.2,
-              "ca": 0.25,
-              "save_dano": 0.2,
-              "save_critico": 0.18,
-              "counterspell": 0.07
-            },
-            "nota": "1 antes da luta; as outras vão para o Acorde"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          },
-          {
-            "nome": "Healing Word (cura)",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_luta": 1.0,
-            "pv": 22.75,
-            "nota": "6 Healing Words no dia (3×2º, 3×3º)"
-          },
-          {
-            "nome": "Healing Word num caído",
-            "lado": "def",
-            "modelo": "levantar",
-            "usos_luta": 0.5,
-            "pv": 22.75,
-            "nota": "6 Healing Words no dia (3×2º, 3×3º)"
-          }
-        ]
-      }
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "sup-hw-acorde-polymorph",
-      "hipotese": "Foco suporte com Acorde no Healing Word: Faerie Fire 1º abrindo a luta, Healing Word (ação bônus) todo turno que precisar, espadadas com a ação; Polymorph no aliado no momento crítico",
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.5,
-            "bonus": 7,
-            "dano": "1d8+1d4+4",
-            "vantagem": 0.35,
-            "nota": "ação livre enquanto o Healing Word usa a ação bônus"
-          }
-        ]
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": false,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 10
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Faerie Fire",
-            "lado": "of",
-            "modelo": "vantagem",
-            "alvos": 3,
-            "fracao": 0.35,
-            "concentracao": "polymorph",
-            "nota": "mesma concentração, em sequência: o Faerie Fire cai quando ele lança o Polymorph (fração já reduzida)"
-          },
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 0.5,
-            "mix": {
-              "dano": 0.1,
-              "acerto": 0.2,
-              "ca": 0.25,
-              "save_dano": 0.2,
-              "save_critico": 0.18,
-              "counterspell": 0.07
-            },
-            "nota": "1 antes da luta; as outras vão para o Acorde"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          },
-          {
-            "nome": "Healing Word (cura)",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_luta": 1.0,
-            "pv": 22.75,
-            "nota": "6 Healing Words no dia (3×2º, 3×3º)"
-          },
-          {
-            "nome": "Healing Word num caído",
-            "lado": "def",
-            "modelo": "levantar",
-            "usos_luta": 0.5,
-            "pv": 22.75,
-            "nota": "6 Healing Words no dia (3×2º, 3×3º)"
-          },
-          {
-            "nome": "Polymorph no aliado quase caído (PV do Giant Ape)",
-            "lado": "def",
-            "modelo": "pv_temporario",
-            "alvos": 1,
-            "pv": 47,
-            "concentracao": "polymorph"
-          }
-        ]
-      }
-    },
-    {
-      "defesa": {},
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "dano-dw",
-      "hipotese": "Foco dano (duas mãos): Dissonant Whispers (de 1º a 3º) com espadada bônus em ~3,3 rounds por luta; Inspirações nos aliados",
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.1675,
-            "bonus": 7,
-            "dano": "1d10+2d4+4",
-            "vantagem": 0,
-            "nota": "3,3 espadadas bônus + 2 nos turnos sem magia"
-          },
-          {
-            "n": 0.15,
-            "bonus": 7,
-            "dano": "1d10+2d4+4",
-            "vantagem": 0,
-            "nota": "AO de quem foge do DW"
-          }
-        ],
-        "automatico": 9.1
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": true,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 17
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 2,
-            "mix": {
-              "dano": 0.3,
-              "acerto": 0.25,
-              "ca": 0.2,
-              "save_dano": 0.15,
-              "save_critico": 0.07,
-              "counterspell": 0.03
-            },
-            "nota": "durante a luta"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          }
-        ]
-      }
-    },
-    {
-      "defesa": {
-        "ca": 19
-      },
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "dano-dw-escudo",
-      "hipotese": "Foco dano (escudo, CA 19): Dissonant Whispers (de 1º a 3º) com espadada bônus em ~3,3 rounds por luta; Inspirações nos aliados",
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.1675,
-            "bonus": 7,
-            "dano": "1d8+2d4+4",
-            "vantagem": 0,
-            "nota": "3,3 espadadas bônus + 2 nos turnos sem magia"
-          },
-          {
-            "n": 0.15,
-            "bonus": 7,
-            "dano": "1d8+2d4+4",
-            "vantagem": 0,
-            "nota": "AO de quem foge do DW"
-          }
-        ],
-        "automatico": 9.1
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": true,
-          "soft": 0.1,
-          "conc": true,
-          "dpr": 17
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 2,
-            "mix": {
-              "dano": 0.3,
-              "acerto": 0.25,
-              "ca": 0.2,
-              "save_dano": 0.15,
-              "save_critico": 0.07,
-              "counterspell": 0.03
-            },
-            "nota": "durante a luta"
-          },
-          {
-            "nome": "Countercharm (2024)",
-            "lado": "def",
-            "modelo": "resgate_condicao",
-            "p_evento": 0.2,
-            "p_save": 0.45
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          }
-        ]
-      },
-      "corpo": {
-        "ca": 19
-      }
-    },
-    {
-      "defesa": {
-        "ca": 12,
-        "pv_efetivo": 162.75,
-        "nota": "Giant Ape: CA 12, 157 PV em ~3 dos 4 rounds"
-      },
-      "saves": {},
-      "custo": "gasta_recurso",
-      "principal": false,
-      "id": "dano-ape",
-      "hipotese": "Foco dano, uma luta como Giant Ape: Polymorph nele mesmo no round 1, socos nos rounds 2–4",
-      "dano": {
-        "ataques": [
-          {
-            "n": 1.5,
-            "bonus": 9,
-            "dano": "3d10+6",
-            "nota": "2 socos nos rounds 2–4"
-          }
-        ]
-      },
-      "controle": {
-        "atencao": {
-          "papel": "conjurador",
-          "front": true,
-          "soft": 0.3,
-          "conc": true,
-          "dpr": 17
-        },
-        "fontes": [
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "corpo": {
-        "ca": 12,
-        "pv": 162.75
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Bardic Inspiration d8",
-            "lado": "of",
-            "modelo": "dado_multiuso",
-            "dado_medio": 4.5,
-            "usos_luta": 2,
-            "mix": {
-              "dano": 0.4,
-              "acerto": 0.3,
-              "ca": 0.15,
-              "save_dano": 0.1,
-              "save_critico": 0.04,
-              "counterspell": 0.01
-            },
-            "nota": "durante a luta"
-          },
-          {
-            "nome": "Song of Rest",
-            "lado": "def",
-            "modelo": "cura",
-            "usos_dia": 1,
-            "pv": 14
-          }
-        ]
-      }
-    }
-  ],
-  "pendente": "Arcos mínimo e máximo (linhas-opção) a discutir. Modelo de anéis ainda não implementado no site.",
-  "recursos": {
-    "espacos": {
-      "1": 4,
-      "2": 3,
-      "3": 3,
-      "4": 1
-    },
-    "outros": {
-      "inspiracao": {
-        "qtd": 4,
-        "volta": "curto"
-      }
-    },
-    "lutas_dia": 4
+  "controle": {
+   "texto": "Plant Growth sem concentração; Fear (área) ou Polymorph em alvo único, CD 16.",
+   "favorita": "Plant Growth",
+   "favorita2": "Polymorph",
+   "corpo": "Conjurador na linha de frente: se expõe para usar a espada.",
+   "posicao": "Conjurador na frente"
   },
-  "planos": {
-    "padrao": {
-      "descricao": "Arco regular: escudo e espada nas comuns, conjurador nas prioritárias, Polymorph na luta 4. O 3º que sobra vira Healing Word num caído.",
-      "combates": [
-        {
-          "linha": "comum-escudo",
-          "gasta": {
-            "espacos": {
-              "1": 2
-            },
-            "inspiracao": 1
-          },
-          "nota": "FF + DW de 1º"
-        },
-        {
-          "linha": "prioritaria",
-          "gasta": {
-            "espacos": {
-              "2": 2,
-              "3": 1.5
-            },
-            "inspiracao": 3
-          },
-          "nota": "pior caso (campo/cidade): PG ou Fear de 3º, 2 de 2º; Insp. do T4 cortada no campo"
-        },
-        {
-          "linha": "comum-escudo",
-          "gasta": {
-            "espacos": {
-              "1": 2
-            },
-            "inspiracao": 1
-          },
-          "nota": "FF + DW de 1º"
-        },
-        {
-          "linha": "prioritaria-polymorph",
-          "gasta": {
-            "espacos": {
-              "2": 1,
-              "3": 1.5,
-              "4": 1
-            },
-            "inspiracao": 3
-          },
-          "nota": "PG/Fear + Shatter ou DW nv2 + Polymorph"
-        }
-      ]
-    },
-    "combate_unico": {
-      "descricao": "Uma luta só: a prioritária com Polymorph.",
-      "combates": [
-        {
-          "linha": "prioritaria-polymorph",
-          "gasta": {
-            "espacos": {
-              "2": 1,
-              "3": 1,
-              "4": 1
-            },
-            "inspiracao": 3
-          },
-          "nota": ""
-        }
-      ]
-    },
-    "foco_area": {
-      "descricao": "Área ao máximo: Shatter em todos os rounds das prioritárias, todas as Inspirações no Acorde Maior (nv 3,3,3,4 e 4,4,5). Comuns: Faerie Fire + espadas + Healing Word 1º. Sobra 1 Inspiração (usada no fim).",
-      "combates": [
-        {
-          "linha": "area-comum",
-          "gasta": {
-            "espacos": {
-              "1": 2
-            },
-            "inspiracao": 0
-          },
-          "nota": ""
-        },
-        {
-          "linha": "area-shatter-1",
-          "gasta": {
-            "espacos": {
-              "2": 3,
-              "3": 1
-            },
-            "inspiracao": 4
-          },
-          "nota": ""
-        },
-        {
-          "linha": "area-comum",
-          "gasta": {
-            "espacos": {
-              "1": 2
-            },
-            "inspiracao": 0
-          },
-          "nota": ""
-        },
-        {
-          "linha": "area-shatter-2",
-          "gasta": {
-            "espacos": {
-              "3": 2,
-              "4": 1
-            },
-            "inspiracao": 4
-          },
-          "nota": ""
-        }
-      ]
-    },
-    "foco_controle": {
-      "descricao": "Controle ao máximo: uma concentração grande em toda luta (Plant Growth ou Fear de 3º, Polymorph no chefe na última); Faerie Fire ou Healing Word de 1º como secundário; os 3 Shatter de 2º numa luta de cidade; Inspirações antes da luta.",
-      "combates": [
-        {
-          "linha": "ctrl-maior",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "3": 1
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "ctrl-maior-shatter",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "2": 3,
-              "3": 1
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "ctrl-maior",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "3": 1
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "ctrl-polymorph-chefe",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "4": 1
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        }
-      ]
-    },
-    "foco_suporte": {
-      "descricao": "Suporte ao máximo sem Acorde no Healing Word: Faerie Fire 1º em toda luta, 6 Healing Words (3×2º, 3×3º), Inspirações antes da luta, Polymorph no aliado quase caído na última.",
-      "combates": [
-        {
-          "linha": "sup-hw",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "2": 1.5
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "sup-hw",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "2": 1.5
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "sup-hw",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "3": 1.5
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "sup-hw-polymorph",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "3": 1.5,
-              "4": 1
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        }
-      ]
-    },
-    "foco_suporte_acorde": {
-      "descricao": "Como o foco de suporte, mas com Acorde Maior em todos os Healing Words (hipótese do rework do Acorde): 6 Inspirações no Acorde, 2 dadas antes das lutas.",
-      "combates": [
-        {
-          "linha": "sup-hw-acorde",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "2": 1.5
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "sup-hw-acorde",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "2": 1.5
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "sup-hw-acorde",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "3": 1.5
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "sup-hw-acorde-polymorph",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "3": 1.5,
-              "4": 1
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        }
-      ]
-    },
-    "foco_dano": {
-      "descricao": "Dano ao máximo (duas mãos): Dissonant Whispers com espadada bônus em 3 lutas (10 espaços de 1º a 3º), Giant Ape na última; Faerie Fire fora (não paga o dano dele sozinho).",
-      "combates": [
-        {
-          "linha": "dano-dw",
-          "gasta": {
-            "espacos": {
-              "1": 2,
-              "2": 1,
-              "3": 1
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "dano-dw",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "2": 1,
-              "3": 1.5
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "dano-dw",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "2": 1,
-              "3": 0.5
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "dano-ape",
-          "gasta": {
-            "espacos": {
-              "4": 1
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        }
-      ]
-    },
-    "foco_dano_escudo": {
-      "descricao": "Dano ao máximo (escudo): Dissonant Whispers com espadada bônus em 3 lutas (10 espaços de 1º a 3º), Giant Ape na última; Faerie Fire fora (não paga o dano dele sozinho).",
-      "combates": [
-        {
-          "linha": "dano-dw-escudo",
-          "gasta": {
-            "espacos": {
-              "1": 2,
-              "2": 1,
-              "3": 1
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "dano-dw-escudo",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "2": 1,
-              "3": 1.5
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "dano-dw-escudo",
-          "gasta": {
-            "espacos": {
-              "1": 1,
-              "2": 1,
-              "3": 0.5
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        },
-        {
-          "linha": "dano-ape",
-          "gasta": {
-            "espacos": {
-              "4": 1
-            },
-            "inspiracao": 2
-          },
-          "nota": ""
-        }
-      ]
-    }
+  "area": {
+   "texto": "Shatter (3d8, CD 16).",
+   "tipo": "Trovão"
+  },
+  "suporte": {
+   "texto": "Bardic Inspiration d8 (4 por descanso curto) e Healing Word escalado da mesa."
   }
+ },
+ "ficha": "https://docs.google.com/document/d/12JBu7JuI4fIUQ4i9dXMErtgedsBzBxywmsUrYYgf6RM",
+ "corpo": {
+  "ca": 17,
+  "pv": 45,
+  "saves": {
+   "sv": {
+    "for": 0,
+    "des": 5,
+    "con": 1,
+    "int": 0,
+    "sab": 0,
+    "car": 7
+   },
+   "rerolagens": 1,
+   "conjurador": true
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "principal": [
+    "defesa",
+    "saves",
+    "area"
+   ],
+   "hipotese": "Espada +1d4; Plant Growth + Fear ou Polymorph (CD 16); Lucky 1 de 3",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d10+1d4+4",
+      "nota": "espada +2 a duas mãos, +1d4 (1 criatura senciente a 10 ft)"
+     }
+    ],
+    "conferencia": [
+     21.2,
+     20.0,
+     16.4,
+     15.2,
+     12.8,
+     10.4,
+     8.0,
+     5.6,
+     4.4
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": true,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 16.4
+    },
+    "fontes": [
+     {
+      "tipo": "terreno",
+      "nome": "Plant Growth",
+      "fator": 0.5,
+      "chave_topo": "pg"
+     },
+     {
+      "tipo": "melhor_de",
+      "nome": "Concentração (Fear ou Polymorph)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "magia": "fear",
+        "cd": 16,
+        "atraso": 1
+       },
+       {
+        "tipo": "alvo_unico",
+        "cd": 16,
+        "slots": [
+         4,
+         3,
+         3,
+         3
+        ],
+        "magias": [
+         "polymorph",
+         "fear"
+        ],
+        "modo": "combinar"
+       }
+      ]
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "area": [
+    {
+     "nome": "Shatter",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 16,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "bonus_por_uso",
+      "usos_descanso_curto": 4,
+      "bonus": 4.5
+     },
+     {
+      "nome": "Healing Word",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_luta": 1,
+      "pv": 13
+     }
+    ]
+   },
+   "aneis": false
+  },
+  {
+   "id": "com-suggestion",
+   "principal": false,
+   "hipotese": "Com Suggestion na rotação de alvo único",
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": true,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 16.4
+    },
+    "fontes": [
+     {
+      "tipo": "terreno",
+      "nome": "Plant Growth",
+      "fator": 0.5,
+      "chave_topo": "pg"
+     },
+     {
+      "tipo": "melhor_de",
+      "nome": "Concentração (Fear ou Polymorph)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "magia": "fear",
+        "cd": 16,
+        "atraso": 1
+       },
+       {
+        "tipo": "alvo_unico",
+        "cd": 16,
+        "slots": [
+         4,
+         3,
+         3,
+         3
+        ],
+        "magias": [
+         "polymorph",
+         "fear",
+         "suggestion"
+        ],
+        "modo": "combinar"
+       }
+      ]
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "aneis": false
+  },
+  {
+   "id": "comum-escudo",
+   "principal": false,
+   "hipotese": "Luta comum, postura marcial com escudo (CA 19): T1 Faerie Fire 1º + espadada; T2 2 espadadas + Insp.; T3 Dissonant Whispers 1º + espadada (+ AO); T4 2 espadadas",
+   "acao_bonus": [
+    {
+     "uso": "espadada após feitiço de 1º (homebrew, adiantamento do Battle Magic)",
+     "fracao": 0.5,
+     "eixos": [
+      "dano"
+     ]
+    },
+    {
+     "uso": "Bardic Inspiration",
+     "fracao": 0.25,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ],
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade de quem foge do Dissonant Whispers",
+     "fracao": 0.15,
+     "eixos": [
+      "dano"
+     ]
+    },
+    {
+     "uso": "Countercharm",
+     "fracao": 0.05,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ],
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d8+2d4+4",
+      "vantagem": 0.6,
+      "nota": "6 golpes em 4 rounds, Faerie Fire (CD 15, 60%) desde o T1"
+     },
+     {
+      "n": 0.15,
+      "bonus": 7,
+      "dano": "1d8+2d4+4",
+      "vantagem": 0.6,
+      "nota": "AO: 60% de falha no DW ÷ 4 rounds"
+     }
+    ],
+    "automatico": 2.1,
+    "concentracao": "faerie_fire",
+    "nota": "balinada 2d4 (alvo + tank aliado a 10 ft); DW em automatico: média por round"
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": true,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 17
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8 (vários usos)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 1,
+      "mix": {
+       "dano": 0.3,
+       "acerto": 0.25,
+       "ca": 0.2,
+       "save_dano": 0.15,
+       "save_critico": 0.07,
+       "counterspell": 0.03
+      },
+      "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
+     },
+     {
+      "nome": "Faerie Fire",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.55,
+      "concentracao": "faerie_fire",
+      "nota": "60% de falha × ~90% dos rounds"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45,
+      "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice",
+      "quando": "entre_lutas"
+     }
+    ]
+   },
+   "defesa": {
+    "ca": 19
+   },
+   "corpo": {
+    "ca": 19
+   },
+   "saves": {},
+   "custo": "gasta_recurso"
+  },
+  {
+   "id": "comum-marcial",
+   "principal": false,
+   "hipotese": "Luta comum, postura marcial: T1 Faerie Fire 1º + espadada; T2 2 espadadas + Insp.; T3 Dissonant Whispers 1º + espadada (+ AO); T4 2 espadadas",
+   "acao_bonus": [
+    {
+     "uso": "espadada após feitiço de 1º (homebrew, adiantamento do Battle Magic)",
+     "fracao": 0.5,
+     "eixos": [
+      "dano"
+     ]
+    },
+    {
+     "uso": "Bardic Inspiration",
+     "fracao": 0.25,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ],
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade de quem foge do Dissonant Whispers",
+     "fracao": 0.15,
+     "eixos": [
+      "dano"
+     ]
+    },
+    {
+     "uso": "Countercharm",
+     "fracao": 0.05,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ],
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d10+2d4+4",
+      "vantagem": 0.6,
+      "nota": "6 golpes em 4 rounds, Faerie Fire (CD 15, 60%) desde o T1"
+     },
+     {
+      "n": 0.15,
+      "bonus": 7,
+      "dano": "1d10+2d4+4",
+      "vantagem": 0.6,
+      "nota": "AO: 60% de falha no DW ÷ 4 rounds"
+     }
+    ],
+    "automatico": 2.1,
+    "concentracao": "faerie_fire",
+    "nota": "balinada 2d4 (alvo + tank aliado a 10 ft); DW em automatico: média por round"
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": true,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 17
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8 (vários usos)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 1,
+      "mix": {
+       "dano": 0.3,
+       "acerto": 0.25,
+       "ca": 0.2,
+       "save_dano": 0.15,
+       "save_critico": 0.07,
+       "counterspell": 0.03
+      },
+      "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
+     },
+     {
+      "nome": "Faerie Fire",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.55,
+      "concentracao": "faerie_fire",
+      "nota": "60% de falha × ~90% dos rounds"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45,
+      "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice",
+      "quando": "entre_lutas"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso"
+  },
+  {
+   "id": "prioritaria",
+   "principal": false,
+   "hipotese": "Luta prioritária, postura de conjurador. Campo: PG+Insp / FF 2º+Insp / Shatter nv3 (Acorde) / Balinarco ×2. Cidade: PG+Insp / Shatter nv3 (Acorde) / FF 2º+espadada / espadada ×2+Insp. Dungeon: Fear+Insp / DW nv2 / espadada ×2 / espadada ×2+Insp",
+   "acao_bonus": [
+    {
+     "uso": "Bardic Inspiration",
+     "fracao": 0.5,
+     "eixos": [
+      "suporte"
+     ]
+    },
+    {
+     "uso": "Acorde Maior",
+     "fracao": 0.15,
+     "eixos": [
+      "dano",
+      "area"
+     ]
+    },
+    {
+     "uso": "espadada após FF (cidade)",
+     "fracao": 0.09,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.125,
+      "bonus": 5,
+      "dano": "1d8+2",
+      "vantagem": 0.65,
+      "nota": "Balinarco ×2 no campo (25%), com FF"
+     },
+     {
+      "n": 0.2625,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "vantagem": 0.65,
+      "nota": "3 espadadas na cidade (35%), com FF; espada numa mão, violão na outra"
+     },
+     {
+      "n": 0.4,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "nota": "4 espadadas na dungeon (40%)"
+     }
+    ],
+    "automatico": 3.38
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 10
+    },
+    "fontes": [
+     {
+      "tipo": "terreno",
+      "nome": "Plant Growth",
+      "fator": 0.5,
+      "chave_topo": "pg",
+      "topos": [
+       "Campo aberto",
+       "Ruínas ou cidade"
+      ]
+     },
+     {
+      "tipo": "area",
+      "nome": "Fear",
+      "magia": "fear",
+      "cd": 16,
+      "topos": [
+       "Sala de dungeon"
+      ]
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter nv3 (2º + Acorde)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 16,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8 (vários usos)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2,
+      "mix": {
+       "dano": 0.3,
+       "acerto": 0.25,
+       "ca": 0.2,
+       "save_dano": 0.15,
+       "save_critico": 0.07,
+       "counterspell": 0.03
+      },
+      "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
+     },
+     {
+      "nome": "Faerie Fire",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.19,
+      "concentracao": "faerie_fire",
+      "topos": [
+       "Campo aberto",
+       "Ruínas ou cidade"
+      ],
+      "nota": "campo: T2, ~2,5 rounds; cidade: T3, ~1,5 round; 65% de falha"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45,
+      "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice",
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word num caído",
+      "lado": "def",
+      "modelo": "levantar",
+      "usos_luta": 0.5,
+      "pv": 19.5,
+      "nota": "o espaço de 3º que sobra no dia, em metade das prioritárias; nv3 ~19,5 PV (escala da mesa)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "reacao": [
+    {
+     "uso": "Countercharm",
+     "fracao": 0.05,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "prioritaria-polymorph",
+   "principal": false,
+   "hipotese": "Luta 4: prioritária com Polymorph no aliado da linha de frente (Giant Ape). Campo: PG / Polymorph / Shatter nv3 / Balinarco ×2. Cidade: PG / Shatter nv3 / Polymorph / espadada ×2. Dungeon: Fear / DW nv2 / Polymorph (o Fear cai) / espadada ×2",
+   "acao_bonus": [
+    {
+     "uso": "Bardic Inspiration",
+     "fracao": 0.5,
+     "eixos": [
+      "suporte"
+     ]
+    },
+    {
+     "uso": "Acorde Maior",
+     "fracao": 0.15,
+     "eixos": [
+      "dano",
+      "area"
+     ]
+    }
+   ],
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.125,
+      "bonus": 5,
+      "dano": "1d8+2",
+      "nota": "Balinarco ×2 no campo"
+     },
+     {
+      "n": 0.375,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "nota": "2 espadadas na cidade e na dungeon"
+     }
+    ],
+    "automatico": 3.38
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 9
+    },
+    "fontes": [
+     {
+      "tipo": "terreno",
+      "nome": "Plant Growth",
+      "fator": 0.5,
+      "chave_topo": "pg",
+      "topos": [
+       "Campo aberto",
+       "Ruínas ou cidade"
+      ]
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ],
+    "nota": "Fear da dungeon fica de fora: o Polymorph o derruba no T3 (conservador, ele vale ~2 rounds)"
+   },
+   "area": [
+    {
+     "nome": "Shatter nv3 (2º + Acorde)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 16,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8 (vários usos)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2,
+      "mix": {
+       "dano": 0.3,
+       "acerto": 0.25,
+       "ca": 0.2,
+       "save_dano": 0.15,
+       "save_critico": 0.07,
+       "counterspell": 0.03
+      },
+      "nota": "Valor: dano certo, virar erro em acerto, +CA contra um ataque, saves (meio dano ou crítico), Counterspell aliado"
+     },
+     {
+      "nome": "Polymorph no aliado (PV do Giant Ape)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "alvos": 1,
+      "pv": 47,
+      "concentracao": "polymorph",
+      "nota": "~27 de dano/round no linha de frente (metade do dano inimigo da régua nv 7) × 1,75 round restante; o macaco tem 157"
+     },
+     {
+      "nome": "Polymorph no aliado (dano extra)",
+      "lado": "of",
+      "modelo": "valor_por_luta",
+      "usos_luta": 1,
+      "valor": 17,
+      "nota": "2 socos +9, 3d10+6 (~35 de DPR em CA 15) contra ~25 do aliado: +10/round × 1,75 round"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45,
+      "nota": "reação: aliado a 30 ft falha save contra medo/encantamento e refaz com vantagem; ~20% das lutas trazem esse save"
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "nota": "1 descanso curto no dia: d6 para cada um dos 4 que gastam hit dice",
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word num caído",
+      "lado": "def",
+      "modelo": "levantar",
+      "usos_luta": 0.5,
+      "pv": 19.5,
+      "nota": "o espaço de 3º que sobra no dia, em metade das prioritárias; nv3 ~19,5 PV (escala da mesa)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "reacao": [
+    {
+     "uso": "Countercharm",
+     "fracao": 0.05,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ]
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "area-comum",
+   "herda": "comum-marcial",
+   "hipotese": "Foco área, luta comum: Faerie Fire 1º + espadas; Healing Word 1º quando precisa",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Faerie Fire",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.55,
+      "concentracao": "faerie_fire"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word (cura)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_luta": 0.5,
+      "pv": 6.5,
+      "nota": "Healing Word 1º (6,5)"
+     },
+     {
+      "nome": "Healing Word num caído",
+      "lado": "def",
+      "modelo": "levantar",
+      "usos_luta": 0.5,
+      "pv": 6.5,
+      "nota": "Healing Word 1º (6,5)"
+     }
+    ]
+   }
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "area-shatter-1",
+   "hipotese": "Foco área, 1ª prioritária: Shatter nos 4 rounds (3×2º e 1×3º, todos com Acorde Maior: nv 3, 3, 3, 4)",
+   "dano": {
+    "automatico": 15.78,
+    "nota": "o Shatter também pega o alvo principal"
+   },
+   "area": [
+    {
+     "nome": "Shatter ×4 com Acorde",
+     "tipo": "prioritaria",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 16
+      },
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 16
+      },
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 16
+      },
+      {
+       "alvos": 2,
+       "dano": "5d8",
+       "cd": 16
+      }
+     ]
+    }
+   ],
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 10
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     }
+    ]
+   },
+   "acao_bonus": [
+    {
+     "uso": "Acorde Maior",
+     "fracao": 1.0,
+     "eixos": [
+      "area"
+     ]
+    }
+   ]
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "area-shatter-2",
+   "hipotese": "Foco área, 2ª prioritária: Shatter nv 4, 4, 5 (2×3º e 4º com Acorde); round 4 duas espadadas e a Inspiração que sobrou",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "vantagem": 0,
+      "nota": "round 4"
+     }
+    ],
+    "automatico": 14.85
+   },
+   "area": [
+    {
+     "nome": "Shatter ×3 com Acorde",
+     "tipo": "prioritaria",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "5d8",
+       "cd": 16
+      },
+      {
+       "alvos": 2,
+       "dano": "5d8",
+       "cd": 16
+      },
+      {
+       "alvos": 2,
+       "dano": "6d8",
+       "cd": 16
+      }
+     ]
+    }
+   ],
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 10
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 1,
+      "mix": {
+       "dano": 0.4,
+       "acerto": 0.3,
+       "ca": 0.15,
+       "save_dano": 0.1,
+       "save_critico": 0.04,
+       "counterspell": 0.01
+      },
+      "nota": "a que sobrou, usada no fim"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     }
+    ]
+   },
+   "acao_bonus": [
+    {
+     "uso": "Acorde Maior",
+     "fracao": 0.75,
+     "eixos": [
+      "area"
+     ]
+    },
+    {
+     "uso": "Inspiração",
+     "fracao": 0.25,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ]
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "ctrl-maior",
+   "hipotese": "Foco controle: o maior controle do terreno (Plant Growth no campo e na cidade, Fear na dungeon); com Plant Growth sobra a concentração para Faerie Fire 1º; com Fear, Healing Word 1º. Espadadas nos turnos livres. Inspirações dadas antes da luta",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "vantagem": 0.35,
+      "nota": "turnos livres com o violão numa mão"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 10
+    },
+    "fontes": [
+     {
+      "tipo": "terreno",
+      "nome": "Plant Growth",
+      "fator": 0.5,
+      "chave_topo": "pg",
+      "topos": [
+       "Campo aberto",
+       "Ruínas ou cidade"
+      ]
+     },
+     {
+      "tipo": "area",
+      "nome": "Fear",
+      "magia": "fear",
+      "cd": 16,
+      "topos": [
+       "Sala de dungeon"
+      ]
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2,
+      "mix": {
+       "dano": 0.1,
+       "acerto": 0.2,
+       "ca": 0.25,
+       "save_dano": 0.2,
+       "save_critico": 0.18,
+       "counterspell": 0.07
+      },
+      "nota": "dadas antes da luta (pré-cache): usos mais críticos"
+     },
+     {
+      "nome": "Faerie Fire",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.58,
+      "concentracao": "faerie_fire",
+      "topos": [
+       "Campo aberto",
+       "Ruínas ou cidade"
+      ]
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word num caído",
+      "lado": "def",
+      "modelo": "levantar",
+      "usos_luta": 0.4,
+      "pv": 6.5,
+      "nota": "Healing Word 1º quando houve Fear (dungeon)"
+     }
+    ]
+   }
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "ctrl-maior-shatter",
+   "herda": "ctrl-maior",
+   "hipotese": "Foco controle numa luta de cidade: Plant Growth + os 3 Shatter de 2º para derrubar estruturas (terraforming)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "vantagem": 0.35,
+      "nota": ""
+     }
+    ],
+    "automatico": 8.35
+   },
+   "area": [
+    {
+     "nome": "Shatter ×3 (2º)",
+     "tipo": "prioritaria",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 16
+      },
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 16
+      },
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 16
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "ctrl-polymorph-chefe",
+   "hipotese": "Foco controle, última prioritária: Polymorph no chefe (4º) + Healing Word 1º",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "vantagem": 0,
+      "nota": ""
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 10
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Polymorph no chefe",
+      "cd": 16,
+      "slots": [
+       4
+      ],
+      "magias": [
+       "polymorph"
+      ]
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2,
+      "mix": {
+       "dano": 0.1,
+       "acerto": 0.2,
+       "ca": 0.25,
+       "save_dano": 0.2,
+       "save_critico": 0.18,
+       "counterspell": 0.07
+      },
+      "nota": "pré-cache"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word num caído",
+      "lado": "def",
+      "modelo": "levantar",
+      "usos_luta": 0.5,
+      "pv": 6.5,
+      "nota": ""
+     }
+    ]
+   }
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "sup-hw",
+   "hipotese": "Foco suporte sem Acorde: Faerie Fire 1º abrindo a luta, Healing Word (ação bônus) todo turno que precisar, espadadas com a ação",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "vantagem": 0.35,
+      "nota": "ação livre enquanto o Healing Word usa a ação bônus"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 10
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Faerie Fire",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.58,
+      "concentracao": "faerie_fire"
+     },
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2,
+      "mix": {
+       "dano": 0.1,
+       "acerto": 0.2,
+       "ca": 0.25,
+       "save_dano": 0.2,
+       "save_critico": 0.18,
+       "counterspell": 0.07
+      },
+      "nota": "1 antes da luta"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word (cura)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_luta": 1.0,
+      "pv": 16.25,
+      "nota": "6 Healing Words no dia (3×2º, 3×3º)"
+     },
+     {
+      "nome": "Healing Word num caído",
+      "lado": "def",
+      "modelo": "levantar",
+      "usos_luta": 0.5,
+      "pv": 16.25,
+      "nota": "6 Healing Words no dia (3×2º, 3×3º)"
+     }
+    ]
+   }
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "sup-hw-polymorph",
+   "hipotese": "Foco suporte sem Acorde: Faerie Fire 1º abrindo a luta, Healing Word (ação bônus) todo turno que precisar, espadadas com a ação; Polymorph no aliado no momento crítico",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "vantagem": 0.35,
+      "nota": "ação livre enquanto o Healing Word usa a ação bônus"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 10
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Faerie Fire",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.35,
+      "concentracao": "polymorph",
+      "nota": "mesma concentração, em sequência: o Faerie Fire cai quando ele lança o Polymorph (fração já reduzida)"
+     },
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2,
+      "mix": {
+       "dano": 0.1,
+       "acerto": 0.2,
+       "ca": 0.25,
+       "save_dano": 0.2,
+       "save_critico": 0.18,
+       "counterspell": 0.07
+      },
+      "nota": "1 antes da luta"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word (cura)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_luta": 1.0,
+      "pv": 16.25,
+      "nota": "6 Healing Words no dia (3×2º, 3×3º)"
+     },
+     {
+      "nome": "Healing Word num caído",
+      "lado": "def",
+      "modelo": "levantar",
+      "usos_luta": 0.5,
+      "pv": 16.25,
+      "nota": "6 Healing Words no dia (3×2º, 3×3º)"
+     },
+     {
+      "nome": "Polymorph no aliado quase caído (PV do Giant Ape)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "alvos": 1,
+      "pv": 47,
+      "concentracao": "polymorph"
+     }
+    ]
+   }
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "sup-hw-acorde",
+   "hipotese": "Foco suporte com Acorde no Healing Word: Faerie Fire 1º abrindo a luta, Healing Word (ação bônus) todo turno que precisar, espadadas com a ação",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "vantagem": 0.35,
+      "nota": "ação livre enquanto o Healing Word usa a ação bônus"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 10
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Faerie Fire",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.58,
+      "concentracao": "faerie_fire"
+     },
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 0.5,
+      "mix": {
+       "dano": 0.1,
+       "acerto": 0.2,
+       "ca": 0.25,
+       "save_dano": 0.2,
+       "save_critico": 0.18,
+       "counterspell": 0.07
+      },
+      "nota": "1 antes da luta; as outras vão para o Acorde"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word (cura)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_luta": 1.0,
+      "pv": 22.75,
+      "nota": "6 Healing Words no dia (3×2º, 3×3º)"
+     },
+     {
+      "nome": "Healing Word num caído",
+      "lado": "def",
+      "modelo": "levantar",
+      "usos_luta": 0.5,
+      "pv": 22.75,
+      "nota": "6 Healing Words no dia (3×2º, 3×3º)"
+     }
+    ]
+   }
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "sup-hw-acorde-polymorph",
+   "hipotese": "Foco suporte com Acorde no Healing Word: Faerie Fire 1º abrindo a luta, Healing Word (ação bônus) todo turno que precisar, espadadas com a ação; Polymorph no aliado no momento crítico",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d8+1d4+4",
+      "vantagem": 0.35,
+      "nota": "ação livre enquanto o Healing Word usa a ação bônus"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 10
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Faerie Fire",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.35,
+      "concentracao": "polymorph",
+      "nota": "mesma concentração, em sequência: o Faerie Fire cai quando ele lança o Polymorph (fração já reduzida)"
+     },
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 0.5,
+      "mix": {
+       "dano": 0.1,
+       "acerto": 0.2,
+       "ca": 0.25,
+       "save_dano": 0.2,
+       "save_critico": 0.18,
+       "counterspell": 0.07
+      },
+      "nota": "1 antes da luta; as outras vão para o Acorde"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word (cura)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_luta": 1.0,
+      "pv": 22.75,
+      "nota": "6 Healing Words no dia (3×2º, 3×3º)"
+     },
+     {
+      "nome": "Healing Word num caído",
+      "lado": "def",
+      "modelo": "levantar",
+      "usos_luta": 0.5,
+      "pv": 22.75,
+      "nota": "6 Healing Words no dia (3×2º, 3×3º)"
+     },
+     {
+      "nome": "Polymorph no aliado quase caído (PV do Giant Ape)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "alvos": 1,
+      "pv": 47,
+      "concentracao": "polymorph"
+     }
+    ]
+   }
+  },
+  {
+   "defesa": {},
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "dano-dw",
+   "hipotese": "Foco dano (duas mãos): Dissonant Whispers (de 1º a 3º) com espadada bônus em ~3,3 rounds por luta; Inspirações nos aliados",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.1675,
+      "bonus": 7,
+      "dano": "1d10+2d4+4",
+      "vantagem": 0,
+      "nota": "3,3 espadadas bônus + 2 nos turnos sem magia"
+     },
+     {
+      "n": 0.15,
+      "bonus": 7,
+      "dano": "1d10+2d4+4",
+      "vantagem": 0,
+      "nota": "AO de quem foge do DW"
+     }
+    ],
+    "automatico": 9.1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": true,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 17
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2,
+      "mix": {
+       "dano": 0.3,
+       "acerto": 0.25,
+       "ca": 0.2,
+       "save_dano": 0.15,
+       "save_critico": 0.07,
+       "counterspell": 0.03
+      },
+      "nota": "durante a luta"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     }
+    ]
+   }
+  },
+  {
+   "defesa": {
+    "ca": 19
+   },
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "dano-dw-escudo",
+   "hipotese": "Foco dano (escudo, CA 19): Dissonant Whispers (de 1º a 3º) com espadada bônus em ~3,3 rounds por luta; Inspirações nos aliados",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.1675,
+      "bonus": 7,
+      "dano": "1d8+2d4+4",
+      "vantagem": 0,
+      "nota": "3,3 espadadas bônus + 2 nos turnos sem magia"
+     },
+     {
+      "n": 0.15,
+      "bonus": 7,
+      "dano": "1d8+2d4+4",
+      "vantagem": 0,
+      "nota": "AO de quem foge do DW"
+     }
+    ],
+    "automatico": 9.1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": true,
+     "soft": 0.1,
+     "conc": true,
+     "dpr": 17
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2,
+      "mix": {
+       "dano": 0.3,
+       "acerto": 0.25,
+       "ca": 0.2,
+       "save_dano": 0.15,
+       "save_critico": 0.07,
+       "counterspell": 0.03
+      },
+      "nota": "durante a luta"
+     },
+     {
+      "nome": "Countercharm (2024)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_evento": 0.2,
+      "p_save": 0.45
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     }
+    ]
+   },
+   "corpo": {
+    "ca": 19
+   }
+  },
+  {
+   "defesa": {
+    "ca": 12,
+    "pv_efetivo": 162.75,
+    "nota": "Giant Ape: CA 12, 157 PV em ~3 dos 4 rounds"
+   },
+   "saves": {},
+   "custo": "gasta_recurso",
+   "principal": false,
+   "id": "dano-ape",
+   "hipotese": "Foco dano, uma luta como Giant Ape: Polymorph nele mesmo no round 1, socos nos rounds 2–4",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "3d10+6",
+      "nota": "2 socos nos rounds 2–4"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": true,
+     "soft": 0.3,
+     "conc": true,
+     "dpr": 17
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "corpo": {
+    "ca": 12,
+    "pv": 162.75
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration d8",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2,
+      "mix": {
+       "dano": 0.4,
+       "acerto": 0.3,
+       "ca": 0.15,
+       "save_dano": 0.1,
+       "save_critico": 0.04,
+       "counterspell": 0.01
+      },
+      "nota": "durante a luta"
+     },
+     {
+      "nome": "Song of Rest",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 14,
+      "quando": "entre_lutas"
+     }
+    ]
+   }
+  }
+ ],
+ "pendente": "Arcos mínimo e máximo (linhas-opção) a discutir. Modelo de anéis ainda não implementado no site.",
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 1
+  },
+  "outros": {
+   "inspiracao": {
+    "qtd": 4,
+    "volta": "curto"
+   }
+  },
+  "lutas_dia": 4
+ },
+ "planos": {
+  "padrao": {
+   "descricao": "Arco regular: escudo e espada nas comuns, conjurador nas prioritárias, Polymorph na luta 4. O 3º que sobra vira Healing Word num caído.",
+   "combates": [
+    {
+     "linha": "comum-escudo",
+     "gasta": {
+      "espacos": {
+       "1": 2
+      },
+      "inspiracao": 1
+     },
+     "nota": "FF + DW de 1º"
+    },
+    {
+     "linha": "prioritaria",
+     "gasta": {
+      "espacos": {
+       "2": 2,
+       "3": 1.5
+      },
+      "inspiracao": 3
+     },
+     "nota": "pior caso (campo/cidade): PG ou Fear de 3º, 2 de 2º; Insp. do T4 cortada no campo"
+    },
+    {
+     "linha": "comum-escudo",
+     "gasta": {
+      "espacos": {
+       "1": 2
+      },
+      "inspiracao": 1
+     },
+     "nota": "FF + DW de 1º"
+    },
+    {
+     "linha": "prioritaria-polymorph",
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "3": 1.5,
+       "4": 1
+      },
+      "inspiracao": 3
+     },
+     "nota": "PG/Fear + Shatter ou DW nv2 + Polymorph"
+    }
+   ]
+  },
+  "combate_unico": {
+   "descricao": "Uma luta só: a prioritária com Polymorph.",
+   "combates": [
+    {
+     "linha": "prioritaria-polymorph",
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "3": 1,
+       "4": 1
+      },
+      "inspiracao": 3
+     },
+     "nota": ""
+    }
+   ]
+  },
+  "foco_area": {
+   "descricao": "Área ao máximo: Shatter em todos os rounds das prioritárias, todas as Inspirações no Acorde Maior (nv 3,3,3,4 e 4,4,5). Comuns: Faerie Fire + espadas + Healing Word 1º. Sobra 1 Inspiração (usada no fim).",
+   "combates": [
+    {
+     "linha": "area-comum",
+     "gasta": {
+      "espacos": {
+       "1": 2
+      },
+      "inspiracao": 0
+     },
+     "nota": ""
+    },
+    {
+     "linha": "area-shatter-1",
+     "gasta": {
+      "espacos": {
+       "2": 3,
+       "3": 1
+      },
+      "inspiracao": 4
+     },
+     "nota": ""
+    },
+    {
+     "linha": "area-comum",
+     "gasta": {
+      "espacos": {
+       "1": 2
+      },
+      "inspiracao": 0
+     },
+     "nota": ""
+    },
+    {
+     "linha": "area-shatter-2",
+     "gasta": {
+      "espacos": {
+       "3": 2,
+       "4": 1
+      },
+      "inspiracao": 4
+     },
+     "nota": ""
+    }
+   ]
+  },
+  "foco_controle": {
+   "descricao": "Controle ao máximo: uma concentração grande em toda luta (Plant Growth ou Fear de 3º, Polymorph no chefe na última); Faerie Fire ou Healing Word de 1º como secundário; os 3 Shatter de 2º numa luta de cidade; Inspirações antes da luta.",
+   "combates": [
+    {
+     "linha": "ctrl-maior",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "3": 1
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "ctrl-maior-shatter",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 3,
+       "3": 1
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "ctrl-maior",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "3": 1
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "ctrl-polymorph-chefe",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "4": 1
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    }
+   ]
+  },
+  "foco_suporte": {
+   "descricao": "Suporte ao máximo sem Acorde no Healing Word: Faerie Fire 1º em toda luta, 6 Healing Words (3×2º, 3×3º), Inspirações antes da luta, Polymorph no aliado quase caído na última.",
+   "combates": [
+    {
+     "linha": "sup-hw",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1.5
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "sup-hw",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1.5
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "sup-hw",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "3": 1.5
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "sup-hw-polymorph",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "3": 1.5,
+       "4": 1
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    }
+   ]
+  },
+  "foco_suporte_acorde": {
+   "descricao": "Como o foco de suporte, mas com Acorde Maior em todos os Healing Words (hipótese do rework do Acorde): 6 Inspirações no Acorde, 2 dadas antes das lutas.",
+   "combates": [
+    {
+     "linha": "sup-hw-acorde",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1.5
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "sup-hw-acorde",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1.5
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "sup-hw-acorde",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "3": 1.5
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "sup-hw-acorde-polymorph",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "3": 1.5,
+       "4": 1
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    }
+   ]
+  },
+  "foco_dano": {
+   "descricao": "Dano ao máximo (duas mãos): Dissonant Whispers com espadada bônus em 3 lutas (10 espaços de 1º a 3º), Giant Ape na última; Faerie Fire fora (não paga o dano dele sozinho).",
+   "combates": [
+    {
+     "linha": "dano-dw",
+     "gasta": {
+      "espacos": {
+       "1": 2,
+       "2": 1,
+       "3": 1
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "dano-dw",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1,
+       "3": 1.5
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "dano-dw",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1,
+       "3": 0.5
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "dano-ape",
+     "gasta": {
+      "espacos": {
+       "4": 1
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    }
+   ]
+  },
+  "foco_dano_escudo": {
+   "descricao": "Dano ao máximo (escudo): Dissonant Whispers com espadada bônus em 3 lutas (10 espaços de 1º a 3º), Giant Ape na última; Faerie Fire fora (não paga o dano dele sozinho).",
+   "combates": [
+    {
+     "linha": "dano-dw-escudo",
+     "gasta": {
+      "espacos": {
+       "1": 2,
+       "2": 1,
+       "3": 1
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "dano-dw-escudo",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1,
+       "3": 1.5
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "dano-dw-escudo",
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1,
+       "3": 0.5
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    },
+    {
+     "linha": "dano-ape",
+     "gasta": {
+      "espacos": {
+       "4": 1
+      },
+      "inspiracao": 2
+     },
+     "nota": ""
+    }
+   ]
+  }
+ }
 }

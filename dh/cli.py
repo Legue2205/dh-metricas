@@ -114,16 +114,21 @@ def _linhas(b, res):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(prog='dh', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua', 'site', 'tatico', 'calibrar', 'expandir', 'plano-auto'])
+    ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua', 'site', 'tatico', 'calibrar', 'expandir', 'plano-auto', 'premissas', 'premissa', 'comparar'])
     ap.add_argument('alvos', nargs='*')
     ap.add_argument('--forcar', action='store_true')
     ap.add_argument('--eixo', action='append')
     ap.add_argument('--linha', action='append')
     ap.add_argument('--json', action='store_true')
+    ap.add_argument('--md', action='store_true', help='premissas: escreve HIPOTESES.md')
+    ap.add_argument('--motivo', default='', help='premissa: por que o valor mudou (vai para o histórico)')
+    ap.add_argument('--registrar', metavar='ROTULO', help='calibrar: grava a rodada em calibracao/historico.jsonl')
+    ap.add_argument('--visao', default='padrao', help='comparar: padrao | combate_unico | dia_longo | externo | interno')
+    ap.add_argument('--grupo', action='append', help='comparar: só estes grupos')
     ap.add_argument('--w', type=float, action='append', help='tatico: razão de piscinas, valor de 1 PV dentro do orçamento (padrão 1)')
     ap.add_argument('--comp', action='append', help='tatico: composição (padrão: as três)')
     a = ap.parse_args(argv)
-    arquivos = [f for p in a.alvos for f in sorted(glob.glob(p))] if a.comando not in ('regua', 'painel', 'site', 'calibrar', 'expandir') else []
+    arquivos = [f for p in a.alvos for f in sorted(glob.glob(p))] if a.comando not in ('regua', 'painel', 'site', 'calibrar', 'expandir', 'premissas', 'premissa', 'comparar') else []
 
     if a.comando == 'validar':
         ok = True
@@ -173,11 +178,35 @@ def main(argv=None):
     if a.comando == 'calibrar':
         from . import calibrar
         from .site import dados
-        d = dados()
+        d = dados(); rods = []
         for p, g in calibrar.carregar(a.alvos):
-            r = calibrar.avaliar(g, d)
+            r = calibrar.avaliar(g, d); rods.append(r)
             print(json.dumps(r, ensure_ascii=False)) if a.json else calibrar.imprimir(r)
+        if a.registrar: print('rodada gravada em', calibrar.registrar(a.registrar, rods))
         return 0
+
+    if a.comando in ('premissas', 'premissa'):
+        from . import premissas
+        if a.comando == 'premissa':
+            if len(a.alvos) != 2: print('uso: dh premissa <nome> <valor> --motivo "..."'); return 1
+            v = json.loads(a.alvos[1]); premissas.definir(a.alvos[0], v, a.motivo)
+            print(f'{a.alvos[0]} = {v}. Builds afetadas (recalcule com dh completo):')
+        import pathlib
+        uso = {}
+        for f in sorted(pathlib.Path(motor.RESULTADOS).glob('*.json')):
+            for n in json.loads(f.read_text(encoding='utf-8')).get('premissas', {}): uso.setdefault(n, []).append(f.stem)
+        if a.comando == 'premissa': print('  ' + ', '.join(uso.get(a.alvos[0], [])) or '  (nenhuma ainda registrada)'); premissas.recarregar()
+        if a.md or a.comando == 'premissa':
+            (pathlib.Path(motor.RAIZ) / 'HIPOTESES.md').write_text(premissas.markdown(uso), encoding='utf-8'); print('HIPOTESES.md atualizado')
+        if a.comando == 'premissas' and not a.md:
+            for n, v in premissas._dados().items():
+                if not n.startswith('_'): print(f"{n:45s} {str(v['valor']):>6s}  {len(uso.get(n, [])):3d} builds  {v.get('descricao', '')[:70]}")
+        return 0
+
+    if a.comando == 'comparar':
+        from . import comparar
+        from .site import dados
+        print(comparar.tabela(dados(), a.alvos or None, a.visao, a.grupo, a.json)); return 0
 
     if a.comando == 'site':
         from .site import gerar

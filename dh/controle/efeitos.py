@@ -243,6 +243,9 @@ def compilar(fontes, corpo, nivel):
         return out or {'(nenhuma)': C.zero(E)}
     # Fontes de corpo (ataques desviados para um corpo que aguenta): medidas no eixo Corpo (atenção), não no Controle.
     fn.corpo = {f.get('nome', f['tipo']) for f in fontes if f['tipo'] in TIPOS_CORPO}
+    # 18/11: parte da negação de uma fonte de corpo pode contar no Controle (premissa controle.peso_no_controle.<tipo>)
+    from ..premissas import P
+    fn.peso_ctrl = {f.get('nome', f['tipo']): P(f"controle.peso_no_controle.{f['tipo']}") for f in fontes if f['tipo'] in TIPOS_CORPO}
     return fn
 
 

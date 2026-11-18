@@ -395,3 +395,14 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - Refatoração neutra de novo: 119 notas idênticas; caches antigos apagados. **72 premissas; lista de pendentes vazia.**
 - **Critério de pronto do MVP atingido** no que depende de código. Próximo: lote piloto de 3 builds do RPGBot
   (precisa dos .md gerados com `prompts/prompt-rpgbot.md`).
+
+## 18/11 (noite 5) — ingestão do RPGBot decidida
+- **Formato:** página bruta colada no Drive (sem IA intermediária) é a fonte da verdade; o Claude lê uma vez e gera a
+  ficha compacta + `progressoes/<id>.json`. Motivo: no nosso desenho a build é lida só uma vez (as passadas de fine
+  tuning recalculam em código, sem tokens), então pagar a fidelidade uma vez compensa; e números calculados por outra
+  IA são o ponto mais frágil. `prompts/prompt-rpgbot.md` vira o formato da ficha que o Claude escreve.
+- **Ordem:** (0) contexto: Fundamental Math of Character Optimization, guia de DPR, guia geral de meta (com o FAQ) →
+  comparar nossas réguas (DPR, CA, PV, CD) com os alvos dele e montar o esqueleto de `calibracao/rpgbot.json`;
+  (1) guias de subclasses por classe (as notas por subclasse = gabarito); (2) piloto: 3 builds de guias de subclasse
+  (marcial, half-caster, full caster); (3) lotes de ~5. Guias de magias/Wild Shape/invocação só quando uma build precisar.
+- Cuidado: o RPGBot tem versões 2014 e 2024 das páginas; usar só 2014.

@@ -24,10 +24,17 @@ Objetivo: adicionar ou mudar uma build gastando poucos tokens e sem divergir dos
 - Avise o usuário em uma linha quando um passo for caro (ler fichas grandes, `dh completo` em tudo).
 
 ## Builds de referência em lote (RPGBot, D4, Treant Monk)
-- Fonte: `.md` compacto gerado por `prompts/prompt-rpgbot.md` (Drive: "Biblioteca de builds .md/rpgbot/"). Leia o .md,
-  **nunca o guia inteiro**. Texto do guia não entra no repo (público): só mecânica, descrição em palavras nossas e o link.
+- **Fonte da verdade = página bruta** colada pelo usuário no Drive (`RPGBot/<pasta>/<tipo>-<slug>.md`, 1ª linha com URL,
+  tipo de página e data). Sem IA no meio. Pastas: `00-contexto`, `02-subclasses`, `03-builds`, `04-magias`.
+- **A página bruta é lida uma vez.** Na ingestão o Claude escreve dois derivados: a ficha compacta
+  (`03-builds/fichas/<slug>.md`, formato de `prompts/prompt-rpgbot.md`) e `progressoes/<id>.json`. Passadas seguintes
+  usam só os derivados; volte ao bruto apenas para conferir algo que a calibração apontar.
+- Números (acerto, CD, PV, CA) são calculados pelo Claude a partir das escolhas do guia (atributos, feats, nível),
+  não copiados de resumo de outra IA.
+- Texto do guia não entra no repo (público): só mecânica, descrição em palavras nossas e o link.
 - Escreva `progressoes/<id>.json` (base no menor nível + patches cumulativos só com o que muda; modelo em
   `progressoes/exemplo-guerreiro.json`), com `"planos": {"padrao": "auto", "combate_unico": "auto"}` salvo se o guia
   orientar o orçamento. Cada linha-opção declara `"gasta"` por luta.
-- Fluxo do lote: escrever os N `.prog` → `dh expandir` → `dh validar 'builds/*.json'` → commit. Não rode `dh completo`
-  na conversa: o CI calcula. Gabarito da fonte em `calibracao/<fonte>.json`; `dh calibrar` depois do CI.
+- Fluxo do lote: ler os brutos → fichas + `.prog` → `dh expandir` → `dh validar 'builds/*.json'` → commit. Não rode
+  `dh completo` na conversa: o CI calcula. Gabarito da fonte em `calibracao/<fonte>.json`; `dh calibrar` depois do CI.
+- Lote realista: ~5 páginas brutas por conversa (15–30k tokens cada); avise o usuário se passar disso.

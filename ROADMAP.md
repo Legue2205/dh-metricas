@@ -274,3 +274,34 @@ custos em PV, cura por acerto conforme CA e vantagem, limiar, Blood Dice no meio
   5. **Dano calculado para todas** (sem `medido`) e rotações com recursos — builds externas não têm planilha.
   6. Site: filtro por `fonte` e grupo "Referência externa" separado da party.
   7. MVP passos 1–3 ainda abertos (consistência por régua, calibração com a party, generalização).
+
+## 18/11 (tarde) — gabarito pronto; pipeline do RPGBot decidido
+- Usuário: Amadeus usa mesmo ~1 Fireball por dia → área do dia padrão está certa, sem mudança.
+- **Gabarito** (`dh/calibrar.py`, `python -m dh calibrar [arquivos]`, testes em `tests/test_calibrar.py`):
+  `calibracao/<nome>.json` com, por eixo, `ordem` (do mais forte ao mais fraco, sublista = empate) e/ou `faixa`
+  (letra mín–máx por build); `visao` = padrao | combate_unico | dia_longo | externo | interno. Saída: tau de Kendall
+  por eixo, inversões com os números, faixas violadas; diferenças < `tolerancia` (0,5 nível) = empate técnico.
+  `calibracao/party-dh-7.json` criado vazio: **falta o usuário ditar a ordem da mesa por eixo**.
+- **Fatias de nível do RPGBot:** 3, 5, 7, 9, 11 (13 opcional; tirar o 3 se pesar).
+- **Pipeline decidido (a implementar):**
+  1. `.md` por build no Drive, **compacto e com a progressão inteira** (um só .md cobre 3–11: atributos, feats, magias
+     e features novas por fatia, rotação, o que o guia diz do orçamento). Texto do guia fica no Drive, não no repo
+     público; o JSON leva só mecânica, descrição parafraseada e o link.
+  2. **Progressão:** `builds/rpgbot/<id>.prog.json` = base + patches por nível (deep-merge); `dh expandir` gera
+     `<id>-<nv>.json`. Hipóteses (linhas) se reaproveitam; cada nível só soma o que muda.
+  3. **`dh plano-auto`:** monta o plano `padrao` a partir das linhas-opção e dos recursos (maiores gastos nas
+     prioritárias, livro-caixa fechando), grava `"auto": true` e um texto explicando as escolhas. Guia do RPGBot
+     com orçamento → usa o do guia.
+  4. **Lote:** 5–10 builds por prompt: ler os .md → escrever os .prog.json → `dh expandir` → `dh validar` → commit;
+     o CI calcula. Meta: o Claude só lê e escreve JSON, sem rodar motor na conversa.
+- **Capacidade:** hoje ~17 KB de resultado por build-nível; 250 build-níveis ≈ 5 MB no Git (folgado; limites do GitHub
+  são 100 MB por arquivo e ~1 GB recomendado por repo). CPU ~10–15 s por build-nível → ~1 h no CI se recalcular
+  tudo (Actions grátis em repo público, limite 6 h por job); o cache recalcula só o que mudou. Gargalo real: o site
+  embute tudo num HTML só → separar em índice leve + um JSON por build carregado sob demanda. Planilha não é necessária.
+- **Dano:** o motor existe (`ataques`/`por_turno`/`por_luta`, fórmula fechada). `medido` (vindo da planilha) sobra em
+  Ravin (3 linhas), Kael e uma linha de John, Tin Bin e Amadeus, mais NPCs. Builds do RPGBot entram 100% calculadas;
+  faltam ganchos genéricos: ataque poderoso (GWM/Sharpshooter −5/+10 decidido por CA), Sneak Attack 1×/turno com
+  chance de vantagem, Rage, ataque bônus (PAM/CBE), escala de truque por nível.
+- **Ordem até o fim do MVP:** (a) usuário dita a ordem da mesa → `dh calibrar` → investigar inversões;
+  (b) tirar `medido` do Ravin e do Kael (motores da carga e da vida) e ganchos de dano acima;
+  (c) suporte no valor da luta; (d) generalização. Depois: expandir, plano-auto, site leve, lote piloto de 3 builds.

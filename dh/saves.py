@@ -39,7 +39,7 @@ def M(nome, nivel, save, **k):
 #  'contido'  peso w até escapar (teste de For/Des no fim do turno)
 # conc=True: concentração. area=True: efeito se repete todo round enquanto ele concentra.
 # acao=True: a magia ocupa a ação do conjurador todo round (Eyebite, Dragon's Breath).
-MENTAIS = [
+MENTAIS_ANTIGO = [
     M("Sleep", 1, None, sono_hp=(5, 8), ef="sono", w=1, sono=True),
     M("Tasha's Hideous Laughter", 1, "sab", ef="fim", w=1, conc=True),
     M("Command", 1, "sab", ef="turno", w=1),
@@ -65,10 +65,10 @@ MENTAIS = [
     M("Antipathy (medo)", 8, "sab", ef="fim", w=1, medo=True, stillness=True),
     M("Maddening Darkness", 8, "sab", dano=(8, 8, 0), tipo="psiquico", metade=True, conc=True, area=True),
 ]
-CANTRIPS_MENTAIS = [M("Mind Sliver", 0, "int", dano=("cantrip", 6, 0), tipo="psiquico", nada_no_sucesso=True, sliver=True),
+CANTRIPS_MENTAIS_ANTIGO = [M("Mind Sliver", 0, "int", dano=("cantrip", 6, 0), tipo="psiquico", nada_no_sucesso=True, sliver=True),
                     M("Vicious Mockery", 0, "sab", dano=("cantrip", 4, 0), tipo="psiquico", nada_no_sucesso=True, ef="turno", w="mockery")]
 
-FISICAS = [
+FISICAS_ANTIGO = [
     M("Burning Hands", 1, "des", dano=(3, 6, 0), tipo="fogo", metade=True),
     M("Thunderwave", 1, "con", dano=(2, 8, 0), tipo="trovao", metade=True),
     M("Entangle", 1, "for", ef="contido", w=0.5, conc=True, escape="for"),
@@ -99,8 +99,16 @@ FISICAS = [
     M("Incendiary Cloud", 8, "des", dano=(10, 8, 0), tipo="fogo", metade=True, conc=True, area=True),
     M("Abi-Dalzim's Horrid Wilting", 8, "con", dano=(12, 8, 0), tipo="necrotico", metade=True),
 ]
-CANTRIPS_FISICOS = [M("Frostbite", 0, "con", dano=("cantrip", 6, 0), tipo="frio", nada_no_sucesso=True),
+CANTRIPS_FISICOS_ANTIGO = [M("Frostbite", 0, "con", dano=("cantrip", 6, 0), tipo="frio", nada_no_sucesso=True),
                     M("Sacred Flame", 0, "des", dano=("cantrip", 8, 0), tipo="radiante", nada_no_sucesso=True)]
+
+
+from .premissas import valor as _p
+_T = lambda ms: [{k: (tuple(v) if isinstance(v, list) else v) for k, v in m.items()} for m in ms]
+MENTAIS, FISICAS = _T(_p('saves.repertorio_mental')), _T(_p('saves.repertorio_fisico'))           # premissas
+CANTRIPS_MENTAIS, CANTRIPS_FISICOS = _T(_p('saves.truques_mentais')), _T(_p('saves.truques_fisicos'))
+_SLOW, _SLOW_M, _MOCK = _p('saves.peso.slow_conjurador'), _p('saves.peso.slow_marcial'), _p('saves.peso.mockery')
+_MOD_INIM = _p('saves.conjurador_inimigo.mod_por_nivel')
 
 
 @dataclass
@@ -124,7 +132,7 @@ class S:
     contra_nivel: int = 3          # nível do slot usado no Counterspell (anula automático até ele)
     rerolagens: int = 0
     stillness: bool = False       # Stillness of Mind
-    bonus_prob: float = 0.0       # chance de +1 em todos os saves (carga do Ravin)
+    bonus_prob: float = 0.0       # chance de +1 em todos os saves (ex.: carga de item)
     cura_round: float = 0.0       # cura própria por round enquanto age
     ataques: int = 2              # ataques por turno (ação + ação bônus), para pesar Slow e Vicious Mockery
 
@@ -134,10 +142,10 @@ def peso(d, m):
     w = m.get("w", 1)
     if w == "slow":       # uma ação OU ação bônus, 1 ataque só, sem reação, metade do movimento
         if d.conjurador:
-            return 0.6        # 50% de chance de a magia atrasar + perde a ação bônus
-        return min(0.9, max(0.25, 1 - 1 / d.ataques + 0.05))
+            return _SLOW      # 50% de chance de a magia atrasar + perde a ação bônus
+        return min(_SLOW_M['max'], max(_SLOW_M['min'], 1 - 1 / d.ataques + _SLOW_M['extra']))
     if w == "mockery":    # desvantagem no próximo ataque
-        return 0.05 if d.conjurador else 0.3 / d.ataques
+        return _MOCK['conjurador'] if d.conjurador else _MOCK['marcial'] / d.ataques
     return w
 
 
@@ -155,7 +163,7 @@ def tipos_de(t, size):
 
 def conj(L):
     p = 2 + (L - 1) // 4
-    mod = 3 if L <= 3 else 4 if L <= 7 else 5
+    mod = next(m for ate, m in _MOD_INIM if L <= ate)
     seq = []
     for nivel in range(len(SLOTS[L]), 0, -1):
         seq += [nivel] * SLOTS[L][nivel - 1]
@@ -476,7 +484,7 @@ def _arq_cache():
     import hashlib
     from pathlib import Path
     from .premissas import hash_prefixos
-    h = hashlib.sha1(Path(__file__).read_bytes() + hash_prefixos('base.').encode()).hexdigest()[:10]
+    h = hashlib.sha1(Path(__file__).read_bytes() + hash_prefixos('base.', 'saves.').encode()).hexdigest()[:10]
     return Path(__file__).resolve().parents[1] / 'cache' / f'saves-{h}.json'
 
 

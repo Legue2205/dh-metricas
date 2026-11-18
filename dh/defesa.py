@@ -26,6 +26,12 @@ def _i(cr, k):
 
 from .premissas import valor as _p
 FATOR_CRITICO = _p('defesa.fator_critico')
+_HG, _HA, _HB = _p('defesa.horda.dano_por_golpe'), _p('defesa.horda.atacantes'), _p('defesa.horda.acerto')
+_CH_AT, _CH_B, _CH_MAG = _p('defesa.chefe.ataques_por_cr'), _p('defesa.chefe.acerto_extra'), _p('defesa.chefe.cr_arma_magica')
+
+
+def _n_horda(D, cr): return max(_HA['min'], min(_HA['max'], round(D / (_HG['base'] + cr * _HG['por_cr']))))
+def _n_chefe(cr): return next(n for ate, n in _CH_AT if cr <= ate)
 
 
 def _atk(bonus, ac, d, adv, resist, red, magico, F=FATOR_CRITICO):
@@ -39,16 +45,16 @@ def _atk(bonus, ac, d, adv, resist, red, magico, F=FATOR_CRITICO):
 
 
 def boss(cr, ac, adv, resist, red):
-    n = 2 if cr <= 4 else (3 if cr <= 16 else 4); D = _i(cr, 2)
-    return n * _atk(_i(cr, 1) + 3, ac, D / n, adv, resist, red, cr >= 10)
+    n = _n_chefe(cr); D = _i(cr, 2)
+    return n * _atk(_i(cr, 1) + _CH_B, ac, D / n, adv, resist, red, cr >= _CH_MAG)
 
 
 def horda(cr, ac, adv, resist, red):
     """Horda: o dano por round do CR dividido entre 3 e 10 atacantes de (4 + CR/2) de dano cada.
     O nº de atacantes importa para quem tem redução fixa (Heavy Armor Master): mais golpes menores = mais redução.
     (A reconstrução de 03/11 usava 4 + CR/2 atacantes e superestimava o Abdul: 10,69 em vez de 9,89.)"""
-    D = _i(cr, 2); n = max(3, min(10, round(D / (4 + cr / 2))))
-    return n * _atk(3 + cr / 3, ac, D / n, adv, resist, red, False)
+    D = _i(cr, 2); n = _n_horda(D, cr)
+    return n * _atk(_HB['base'] + cr * _HB['por_cr'], ac, D / n, adv, resist, red, False)
 
 
 def _resolve(fn, pv, ac, adv, resist, red):
@@ -72,8 +78,8 @@ def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7):
     Shield: gasta um uso se o golpe entra na faixa [CA, CA+5) e (dano evitado agora + esperado nos próximos
     golpes do round) >= preço. Redução: 1 por round, no golpe que passar do preço (ou no último do round)."""
     rng = np.random.default_rng(seed); D = _i(cr, 2)
-    if tipo == 'horda': n = max(3, min(10, round(D / (4 + cr / 2)))); bonus = 3 + cr / 3; magico = False
-    else: n = 2 if cr <= 4 else (3 if cr <= 16 else 4); bonus = _i(cr, 1) + 3; magico = cr >= 10
+    if tipo == 'horda': n = _n_horda(D, cr); bonus = _HB['base'] + cr * _HB['por_cr']; magico = False
+    else: n = _n_chefe(cr); bonus = _i(cr, 1) + _CH_B; magico = cr >= _CH_MAG
     d = D / n
     def liq(x):
         if not magico: x = np.maximum(0, x - red)
@@ -109,8 +115,8 @@ def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7):
 def _golpe(tipo, cr, resist, red):
     """Dano de um golpe (para mecânicas do tipo 'aguenta N golpes a 0 PV')."""
     D = _i(cr, 2)
-    if tipo == 'horda': n = max(3, min(10, round(D / (4 + cr / 2)))); magico = False
-    else: n = 2 if cr <= 4 else (3 if cr <= 16 else 4); magico = cr >= 10
+    if tipo == 'horda': n = _n_horda(D, cr); magico = False
+    else: n = _n_chefe(cr); magico = cr >= _CH_MAG
     return max(0.0, D / n - (0 if magico else red)) * (0.5 if resist else 1)
 
 

@@ -30,12 +30,12 @@ PERFIL_ANTIGO = {
     'Conjurador tático': (0.0, 3, False), 'Comandante': (0.2, 3, True), 'Chefe (perfil próprio)': (0.4, 2, True),
 }
 
-# Topologias: peso, multiplicador de alvos em área, quem passa no alcance do tank, alcance da Miau,
+# Topologias: peso, multiplicador de alvos em área, quem passa no alcance do tank, chance de alcançar um inimigo de trás em corpo a corpo,
 # fator do Plant Growth, multiplicador de alvos do Wall of Force
 TOPO_ANTIGO = {
-    'Campo aberto': dict(peso=0.25, area=0.8, cruza=0.3, alc_miau=0.10, pg=1.0, wall=1.0),
-    'Ruínas ou cidade': dict(peso=0.35, area=1.0, cruza=0.6, alc_miau=0.15, pg=1.0, wall=1.0),
-    'Sala de dungeon': dict(peso=0.40, area=1.2, cruza=0.9, alc_miau=0.60, pg=0.5, wall=1.5),
+    'Campo aberto': dict(peso=0.25, area=0.8, cruza=0.3, alc_corpo_a_corpo_atras=0.10, pg=1.0, wall=1.0),
+    'Ruínas ou cidade': dict(peso=0.35, area=1.0, cruza=0.6, alc_corpo_a_corpo_atras=0.15, pg=1.0, wall=1.0),
+    'Sala de dungeon': dict(peso=0.40, area=1.2, cruza=0.9, alc_corpo_a_corpo_atras=0.60, pg=0.5, wall=1.5),
 }
 # 18/11: hipóteses migradas para premissas/premissas.json (os *_ANTIGO ficam só como referência; não são lidos)
 PERFIL = {k: tuple(v) for k, v in _p('base.perfis_inimigos').items()}

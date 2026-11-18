@@ -107,7 +107,7 @@ def _agarrao(f, E, topo, t):
 
 
 def _ancestral(f, E, topo, t):
-    pa = TOPO[topo]['alc_miau']; b = f.get('bonus', 8)
+    pa = TOPO[topo]['alc_corpo_a_corpo_atras']; b = f.get('bonus', 8)
 
     def g(c):
         p1 = p_acerto(b, c['ca']); p1a = p_acerto(b, c['ca'], 1); pn = p_acerto(c['atk'], 15)

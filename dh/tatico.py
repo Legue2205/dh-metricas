@@ -33,7 +33,7 @@ import random
 from functools import lru_cache
 
 from . import dano as D
-from .base import TOPO
+from .base import R as _R, TOPO
 
 PADRAO_ANTIGO = dict(
     deslocamento=30, rounds=4, ca=15,     # "ataques" (melee, arremesso, distancia) e "sneak" vêm da build
@@ -74,6 +74,7 @@ NOMES = dict(melee_lurker='Melee Lurker', melee_dasher='Melee Dasher', frontline
 
 def _cfg(spec):
     c = {k: (dict(v) if isinstance(v, dict) else v) for k, v in PADRAO.items()}
+    c['rounds'] = _R                      # premissa base.rounds_por_luta (spec pode sobrescrever)
     for k, v in (spec or {}).items(): c[k] = v
     c['topologias'] = {t: {kk: {int(a): b for a, b in vv.items()} for kk, vv in d.items()} for t, d in c['topologias'].items()}
     return c

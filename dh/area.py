@@ -87,10 +87,6 @@ def rank(neq):
 # ---------------------------------------------------------------------------
 def roll(n, die): return rng.integers(1, die + 1, (n, N)).sum(0) if n else np.zeros(N, int)
 def d6s(media): return roll(int(round(media / 3.5)), 6)
-def carga(n):                  # Ravin: a carga da espada dobra o maior dado da magia
-    r = rng.integers(1, 7, (n, N)); return r.sum(0) + r.max(0)
-def wall_of_fire():            # (5d8 com save ao conjurar, tique extra de 5d8 SEM save em 50% dos alvos)
-    return roll(5, 8), np.where(rng.random(N) < 0.5, roll(5, 8), 0)
 
 # ---------------------------------------------------------------------------
 # 3. Luta contra a horda
@@ -123,19 +119,6 @@ def ataque(b, ac, dano):       # dano(m): m = 2 no crítico
     hit = crit | ((a != 1) & (a + b >= ac)); m = np.where(crit, 2, 1)
     return np.where(hit, dano(m), 0)
 
-def cleave_horde_breaker(L, p=0.75):
-    """John: 2º alvo colado em p dos turnos; arco SS +7, d8+14; 4 rounds."""
-    return cleave_ataque(L, 7, '1d8+14', p)
-
-def cleave_thunderclap(L, k=2):
-    """Ravin: Thunderclap 2d6 (CD 16, Con, sem metade) em k inimigos colados,
-    menos o dado extra do Booming Blade (d8, ataque +9) que ele deixa de usar; 4 rounds."""
-    hp, ac, sv = CR[HORDA[L]]; tot = 0.0
-    for _ in range(4):
-        ok = rng.integers(1, 21, N) + sv >= 16
-        tc = np.minimum(np.where(ok, 0, roll(2, 6)), hp).mean() * k
-        tot += tc - ataque(9, ac, lambda m: roll(1, 8) * m).mean()
-    return tot / (NH * hp)
 
 # ---------------------------------------------------------------------------
 # 4. Régua e nível equivalente
@@ -177,7 +160,7 @@ def rola(expr, m=1):
 
 def _gerador(u):
     def g():
-        if u.get('dobra_maior_dado'):          # ex.: carga que dobra o maior dado da magia
+        if u.get('dobra_maior_dado'):          # ex.: item/efeito que dobra o maior dado da magia
             mm = re.fullmatch(r'(\d+)d(\d+)', u['dano']); r = rng.integers(1, int(mm.group(2)) + 1, (int(mm.group(1)), N))
             base = r.sum(0) + r.max(0)
         else:

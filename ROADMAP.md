@@ -382,3 +382,16 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   as **pendentes**: repertório de magias inimigas dos saves (a maior), modelo da horda/chefe na defesa, funções de área
   com nome de personagem (remover), `tatico.padrao.rounds` duplicado.
 - Critério de pronto do MVP: zerar a lista de pendentes; depois, lote piloto de 3 builds.
+
+## 18/11 (noite 4) — pendências da Bíblia zeradas
+- **Saves:** o repertório já existia no motor (24 magias mentais, 25 físicas, 2+2 truques, com efeito e peso); o que
+  faltava era tirá-lo do código. Agora são premissas `saves.repertorio_mental/fisico`, `saves.truques_*`,
+  `saves.peso.*` (Slow, Vicious Mockery) e `saves.conjurador_inimigo.mod_por_nivel`.
+- **Defesa:** horda (dano por golpe 4 + CR/2, 3–10 atacantes, acerto 3 + CR/3) e chefe (2/3/4 ataques até CR 4/16/30,
+  +3 de acerto, arma mágica a partir do CR 10) viraram premissas `defesa.horda.*` / `defesa.chefe.*`.
+- **Área:** removidas as funções legadas com nome de personagem (carga, Wall of Fire, Horde Breaker, Thunderclap);
+  as builds usam só os tipos genéricos. Chave de topologia `alc_miau` → `alc_corpo_a_corpo_atras`.
+- **Tático:** rounds vêm de `base.rounds_por_luta`.
+- Refatoração neutra de novo: 119 notas idênticas; caches antigos apagados. **72 premissas; lista de pendentes vazia.**
+- **Critério de pronto do MVP atingido** no que depende de código. Próximo: lote piloto de 3 builds do RPGBot
+  (precisa dos .md gerados com `prompts/prompt-rpgbot.md`).

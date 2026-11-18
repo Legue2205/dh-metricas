@@ -151,7 +151,7 @@
     "peso": 0.25,
     "area": 0.8,
     "cruza": 0.3,
-    "alc_miau": 0.1,
+    "alc_corpo_a_corpo_atras": 0.1,
     "pg": 1.0,
     "wall": 1.0
    },
@@ -159,7 +159,7 @@
     "peso": 0.35,
     "area": 1.0,
     "cruza": 0.6,
-    "alc_miau": 0.15,
+    "alc_corpo_a_corpo_atras": 0.15,
     "pg": 1.0,
     "wall": 1.0
    },
@@ -167,7 +167,7 @@
     "peso": 0.4,
     "area": 1.2,
     "cruza": 0.9,
-    "alc_miau": 0.6,
+    "alc_corpo_a_corpo_atras": 0.6,
     "pg": 0.5,
     "wall": 1.5
    }
@@ -706,7 +706,6 @@
  "tatico.padrao": {
   "valor": {
    "deslocamento": 30,
-   "rounds": 4,
    "ca": 15,
    "steady_aim": true,
    "p_agir_antes": 0.7,
@@ -781,7 +780,7 @@
   },
   "eixo": "tatico",
   "desde": "2026-11-18",
-  "descricao": "Premissas do motor tático (rogue/skirmisher): deslocamento, iniciativa, chance de começar escondido, aliado ao lado, orçamento de PV, distâncias por terreno.",
+  "descricao": "Premissas do motor tático (rogue/skirmisher): deslocamento, iniciativa, chance de começar escondido, aliado ao lado, orçamento de PV, distâncias por terreno. (Rounds: base.rounds_por_luta.)",
   "historico": []
  },
  "tatico.composicoes": {
@@ -850,10 +849,790 @@
   "Réguas (o 'zero' de cada eixo; mudam o significado das letras, não a hipótese): rampas de DPR (dano.TRONCO/BRUTA/PRECISA), limites de Defesa (defesa.LIM_*), régua de suporte (suporte.REGUA: DPR aliado, dano inimigo, maior espaço por nível), party de referência da atenção (controle.atencao.ref), letras (base.RAMPA).",
   "Parâmetros numéricos de simulação (precisão, não hipótese): N de simulações, sementes, grade de preços de reação (defesa.GRADE)."
  ],
- "_pendentes": [
-  "saves: listas de magias inimigas mentais e físicas (saves.MENTAIS/FISICAS) e o mix de quem as lança — é a hipótese central da Def. Mágica; migrar como premissa 'saves.repertorio_inimigo'.",
-  "defesa: modelo da horda atacante (nº de ataques por CR e bônus 3 + CR/3) e do chefe.",
-  "area: funções legadas com nome de personagem (cleave_horde_breaker, cleave_thunderclap, carga) ainda no código; as builds já usam os tipos genéricos — remover.",
-  "tatico.padrao.rounds duplica base.rounds_por_luta."
- ]
+ "_pendentes": [],
+ "saves.repertorio_mental": {
+  "valor": [
+   {
+    "sono_hp": [
+     5,
+     8
+    ],
+    "ef": "sono",
+    "w": 1,
+    "sono": true,
+    "nome": "Sleep",
+    "nivel": 1,
+    "save": null
+   },
+   {
+    "ef": "fim",
+    "w": 1,
+    "conc": true,
+    "nome": "Tasha's Hideous Laughter",
+    "nivel": 1,
+    "save": "sab"
+   },
+   {
+    "ef": "turno",
+    "w": 1,
+    "nome": "Command",
+    "nivel": 1,
+    "save": "sab"
+   },
+   {
+    "ef": "fim",
+    "w": 1,
+    "conc": true,
+    "humanoide": true,
+    "nome": "Hold Person",
+    "nivel": 2,
+    "save": "sab"
+   },
+   {
+    "ef": "fim",
+    "w": 1,
+    "conc": true,
+    "tick": [
+     1,
+     6,
+     "psiquico"
+    ],
+    "nome": "Phantasmal Force",
+    "nivel": 2,
+    "save": "int"
+   },
+   {
+    "ef": "luta",
+    "w": 1,
+    "conc": true,
+    "encanto": true,
+    "stillness": true,
+    "nome": "Suggestion",
+    "nivel": 2,
+    "save": "sab"
+   },
+   {
+    "ef": "fim",
+    "w": "slow",
+    "conc": true,
+    "nome": "Slow",
+    "nivel": 3,
+    "save": "sab"
+   },
+   {
+    "ef": "fim",
+    "w": 1,
+    "conc": true,
+    "medo": true,
+    "stillness": true,
+    "nome": "Fear",
+    "nivel": 3,
+    "save": "sab"
+   },
+   {
+    "ef": "sono",
+    "w": 1,
+    "conc": true,
+    "encanto": true,
+    "nome": "Hypnotic Pattern",
+    "nivel": 3,
+    "save": "sab"
+   },
+   {
+    "ef": "luta",
+    "w": 1,
+    "conc": true,
+    "nome": "Banishment",
+    "nivel": 4,
+    "save": "car"
+   },
+   {
+    "ef": "luta",
+    "w": 1,
+    "conc": true,
+    "nome": "Polymorph",
+    "nivel": 4,
+    "save": "sab"
+   },
+   {
+    "dano": [
+     7,
+     6,
+     0
+    ],
+    "tipo": "psiquico",
+    "metade": true,
+    "ef": "turno",
+    "w": 1,
+    "nome": "Raulothim's Psychic Lance",
+    "nivel": 4,
+    "save": "int"
+   },
+   {
+    "ef": "sono",
+    "w": 1,
+    "conc": true,
+    "humanoide": true,
+    "encanto": true,
+    "stillness": true,
+    "nome": "Dominate Person",
+    "nivel": 5,
+    "save": "sab"
+   },
+   {
+    "dano": [
+     8,
+     6,
+     0
+    ],
+    "tipo": "psiquico",
+    "metade": true,
+    "ef": "fim",
+    "w": 0.2,
+    "nome": "Synaptic Static",
+    "nivel": 5,
+    "save": "int"
+   },
+   {
+    "ef": "sono",
+    "w": 1,
+    "conc": true,
+    "encanto": true,
+    "vant_save": true,
+    "nome": "Modify Memory",
+    "nivel": 5,
+    "save": "sab"
+   },
+   {
+    "ef": "luta",
+    "w": 1,
+    "encanto": true,
+    "stillness": true,
+    "nome": "Mass Suggestion",
+    "nivel": 6,
+    "save": "sab"
+   },
+   {
+    "ef": "sono",
+    "w": 1,
+    "conc": true,
+    "acao": true,
+    "sono": true,
+    "nome": "Eyebite (dormir)",
+    "nivel": 6,
+    "save": "sab"
+   },
+   {
+    "dano": [
+     5,
+     10,
+     0
+    ],
+    "tipo": "psiquico",
+    "nada_no_sucesso": true,
+    "ef": "luta",
+    "w": 0.5,
+    "conc": true,
+    "nome": "Mental Prison",
+    "nivel": 6,
+    "save": "int"
+   },
+   {
+    "limiar": true,
+    "nome": "Divine Word",
+    "nivel": 7,
+    "save": "car"
+   },
+   {
+    "ataque": true,
+    "ef": "luta",
+    "w": 1,
+    "nome": "Plane Shift (ofensivo)",
+    "nivel": 7,
+    "save": "car"
+   },
+   {
+    "ef": "luta",
+    "w": 1,
+    "nome": "Symbol (atordoamento)",
+    "nivel": 7,
+    "save": "sab"
+   },
+   {
+    "dano": [
+     4,
+     6,
+     0
+    ],
+    "tipo": "psiquico",
+    "sempre_dano": true,
+    "ef": "luta",
+    "w": 0.3,
+    "w_conj": 1,
+    "nome": "Feeblemind",
+    "nivel": 8,
+    "save": "int"
+   },
+   {
+    "ef": "fim",
+    "w": 1,
+    "medo": true,
+    "stillness": true,
+    "nome": "Antipathy (medo)",
+    "nivel": 8,
+    "save": "sab"
+   },
+   {
+    "dano": [
+     8,
+     8,
+     0
+    ],
+    "tipo": "psiquico",
+    "metade": true,
+    "conc": true,
+    "area": true,
+    "nome": "Maddening Darkness",
+    "nivel": 8,
+    "save": "sab"
+   }
+  ],
+  "eixo": "saves",
+  "desde": "2026-11-18",
+  "descricao": "Magias mentais (Int/Sab/Car) do conjurador inimigo de referência, com o efeito e o peso (fração do turno perdida). Ele lança do maior espaço para o menor, escolhendo entre as magias do círculo. Base da Vontade / Def. Mágica.",
+  "historico": []
+ },
+ "saves.repertorio_fisico": {
+  "valor": [
+   {
+    "dano": [
+     3,
+     6,
+     0
+    ],
+    "tipo": "fogo",
+    "metade": true,
+    "nome": "Burning Hands",
+    "nivel": 1,
+    "save": "des"
+   },
+   {
+    "dano": [
+     2,
+     8,
+     0
+    ],
+    "tipo": "trovao",
+    "metade": true,
+    "nome": "Thunderwave",
+    "nivel": 1,
+    "save": "con"
+   },
+   {
+    "ef": "contido",
+    "w": 0.5,
+    "conc": true,
+    "escape": "for",
+    "nome": "Entangle",
+    "nivel": 1,
+    "save": "for"
+   },
+   {
+    "dano": [
+     3,
+     6,
+     0
+    ],
+    "tipo": "dragao",
+    "metade": true,
+    "conc": true,
+    "acao": true,
+    "nome": "Dragon's Breath",
+    "nivel": 2,
+    "save": "des"
+   },
+   {
+    "dano": [
+     3,
+     8,
+     0
+    ],
+    "tipo": "trovao",
+    "metade": true,
+    "nome": "Shatter",
+    "nivel": 2,
+    "save": "con"
+   },
+   {
+    "ef": "contido",
+    "w": 0.5,
+    "conc": true,
+    "area": true,
+    "escape": "for",
+    "nome": "Web",
+    "nivel": 2,
+    "save": "des"
+   },
+   {
+    "dano": [
+     8,
+     6,
+     0
+    ],
+    "tipo": "fogo",
+    "metade": true,
+    "nome": "Fireball",
+    "nivel": 3,
+    "save": "des"
+   },
+   {
+    "dano": [
+     8,
+     6,
+     0
+    ],
+    "tipo": "eletrico",
+    "metade": true,
+    "nome": "Lightning Bolt",
+    "nivel": 3,
+    "save": "des"
+   },
+   {
+    "dano": [
+     2,
+     6,
+     0
+    ],
+    "tipo": "acido",
+    "nada_no_sucesso": true,
+    "auto": [
+     2,
+     6,
+     "frio"
+    ],
+    "ef": "area_peso",
+    "w": 0.5,
+    "conc": true,
+    "area": true,
+    "nome": "Hunger of Hadar",
+    "nivel": 3,
+    "save": "des"
+   },
+   {
+    "dano": [
+     3,
+     6,
+     0
+    ],
+    "tipo": "fisico",
+    "nada_no_sucesso": true,
+    "ef": "contido",
+    "w": 0.75,
+    "conc": true,
+    "area": true,
+    "tick": [
+     3,
+     6,
+     "fisico"
+    ],
+    "escape": "forte",
+    "nome": "Evard's Black Tentacles",
+    "nivel": 4,
+    "save": "des"
+   },
+   {
+    "dano": [
+     5,
+     8,
+     0
+    ],
+    "tipo": "fogo",
+    "metade": true,
+    "conc": true,
+    "area": true,
+    "nome": "Wall of Fire (de pé nela)",
+    "nivel": 4,
+    "save": "des"
+   },
+   {
+    "dano": [
+     2,
+     8,
+     0
+    ],
+    "tipo": "fisico",
+    "metade": true,
+    "extra": [
+     4,
+     6,
+     "frio"
+    ],
+    "nome": "Ice Storm",
+    "nivel": 4,
+    "save": "des"
+   },
+   {
+    "ef": "contido",
+    "w": 0.75,
+    "conc": true,
+    "escape": "for",
+    "nome": "Watery Sphere",
+    "nivel": 4,
+    "save": "for"
+   },
+   {
+    "dano": [
+     5,
+     8,
+     0
+    ],
+    "tipo": "veneno",
+    "metade": true,
+    "conc": true,
+    "area": true,
+    "nome": "Cloudkill",
+    "nivel": 5,
+    "save": "con"
+   },
+   {
+    "dano": [
+     8,
+     8,
+     0
+    ],
+    "tipo": "frio",
+    "metade": true,
+    "nome": "Cone of Cold",
+    "nivel": 5,
+    "save": "con"
+   },
+   {
+    "dano": [
+     4,
+     8,
+     0
+    ],
+    "tipo": "radiante",
+    "metade": true,
+    "ef": "fim",
+    "w": 0.3,
+    "conc": true,
+    "nome": "Wall of Light",
+    "nivel": 5,
+    "save": "con"
+   },
+   {
+    "dano": [
+     10,
+     8,
+     0
+    ],
+    "tipo": "eletrico",
+    "metade": true,
+    "nome": "Chain Lightning",
+    "nivel": 6,
+    "save": "des"
+   },
+   {
+    "dano": [
+     10,
+     6,
+     40
+    ],
+    "tipo": "forca",
+    "nada_no_sucesso": true,
+    "nome": "Disintegrate",
+    "nivel": 6,
+    "save": "des"
+   },
+   {
+    "dano": [
+     8,
+     6,
+     0
+    ],
+    "tipo": "necrotico",
+    "metade": true,
+    "nome": "Circle of Death",
+    "nivel": 6,
+    "save": "con"
+   },
+   {
+    "dano": [
+     12,
+     6,
+     0
+    ],
+    "tipo": "fogo",
+    "metade": true,
+    "nome": "Delayed Blast Fireball",
+    "nivel": 7,
+    "save": "des"
+   },
+   {
+    "dano": [
+     7,
+     8,
+     30
+    ],
+    "tipo": "necrotico",
+    "metade": true,
+    "nome": "Finger of Death",
+    "nivel": 7,
+    "save": "con"
+   },
+   {
+    "dano": [
+     10,
+     6,
+     0
+    ],
+    "tipo": "prisma",
+    "metade": true,
+    "nome": "Prismatic Spray",
+    "nivel": 7,
+    "save": "des"
+   },
+   {
+    "dano": [
+     10,
+     6,
+     0
+    ],
+    "tipo": "fisico",
+    "metade": true,
+    "ef": "contido",
+    "w": 0.5,
+    "conc": true,
+    "area": true,
+    "escape": "for",
+    "nome": "Whirlwind",
+    "nivel": 7,
+    "save": "des"
+   },
+   {
+    "dano": [
+     12,
+     6,
+     0
+    ],
+    "tipo": "radiante",
+    "metade": true,
+    "ef": "fim",
+    "w": 0.3,
+    "nome": "Sunburst",
+    "nivel": 8,
+    "save": "con"
+   },
+   {
+    "dano": [
+     10,
+     8,
+     0
+    ],
+    "tipo": "fogo",
+    "metade": true,
+    "conc": true,
+    "area": true,
+    "nome": "Incendiary Cloud",
+    "nivel": 8,
+    "save": "des"
+   },
+   {
+    "dano": [
+     12,
+     8,
+     0
+    ],
+    "tipo": "necrotico",
+    "metade": true,
+    "nome": "Abi-Dalzim's Horrid Wilting",
+    "nivel": 8,
+    "save": "con"
+   }
+  ],
+  "eixo": "saves",
+  "desde": "2026-11-18",
+  "descricao": "Magias de For/Des/Con do conjurador inimigo de referência (dano e contenção). Base da Resiliência.",
+  "historico": []
+ },
+ "saves.truques_mentais": {
+  "valor": [
+   {
+    "dano": [
+     "cantrip",
+     6,
+     0
+    ],
+    "tipo": "psiquico",
+    "nada_no_sucesso": true,
+    "sliver": true,
+    "nome": "Mind Sliver",
+    "nivel": 0,
+    "save": "int"
+   },
+   {
+    "dano": [
+     "cantrip",
+     4,
+     0
+    ],
+    "tipo": "psiquico",
+    "nada_no_sucesso": true,
+    "ef": "turno",
+    "w": "mockery",
+    "nome": "Vicious Mockery",
+    "nivel": 0,
+    "save": "sab"
+   }
+  ],
+  "eixo": "saves",
+  "desde": "2026-11-18",
+  "descricao": "Truques mentais usados quando acabam os espaços (Mind Sliver, Vicious Mockery).",
+  "historico": []
+ },
+ "saves.truques_fisicos": {
+  "valor": [
+   {
+    "dano": [
+     "cantrip",
+     6,
+     0
+    ],
+    "tipo": "frio",
+    "nada_no_sucesso": true,
+    "nome": "Frostbite",
+    "nivel": 0,
+    "save": "con"
+   },
+   {
+    "dano": [
+     "cantrip",
+     8,
+     0
+    ],
+    "tipo": "radiante",
+    "nada_no_sucesso": true,
+    "nome": "Sacred Flame",
+    "nivel": 0,
+    "save": "des"
+   }
+  ],
+  "eixo": "saves",
+  "desde": "2026-11-18",
+  "descricao": "Truques de save físico usados quando acabam os espaços.",
+  "historico": []
+ },
+ "saves.peso.slow_conjurador": {
+  "valor": 0.6,
+  "eixo": "saves",
+  "desde": "2026-11-18",
+  "descricao": "Fração do turno que um conjurador perde sob Slow (50% de a magia atrasar + perde a ação bônus).",
+  "historico": []
+ },
+ "saves.peso.slow_marcial": {
+  "valor": {
+   "min": 0.25,
+   "max": 0.9,
+   "extra": 0.05
+  },
+  "eixo": "saves",
+  "desde": "2026-11-18",
+  "descricao": "Slow num marcial: 1 − 1/ataques + extra, entre min e max.",
+  "historico": []
+ },
+ "saves.peso.mockery": {
+  "valor": {
+   "conjurador": 0.05,
+   "marcial": 0.3
+  },
+  "eixo": "saves",
+  "desde": "2026-11-18",
+  "descricao": "Vicious Mockery: turno perdido por um conjurador; marcial = valor ÷ ataques por turno.",
+  "historico": []
+ },
+ "saves.conjurador_inimigo.mod_por_nivel": {
+  "valor": [
+   [
+    3,
+    3
+   ],
+   [
+    7,
+    4
+   ],
+   [
+    20,
+    5
+   ]
+  ],
+  "eixo": "saves",
+  "desde": "2026-11-18",
+  "descricao": "Modificador de conjuração do inimigo de referência: [até o nível, mod]. CD = 8 + proficiência + mod.",
+  "historico": []
+ },
+ "defesa.horda.dano_por_golpe": {
+  "valor": {
+   "base": 4,
+   "por_cr": 0.5
+  },
+  "eixo": "defesa",
+  "desde": "2026-11-18",
+  "descricao": "Horda: o dano por round do CR é dividido em golpes de (base + CR × por_cr).",
+  "historico": []
+ },
+ "defesa.horda.atacantes": {
+  "valor": {
+   "min": 3,
+   "max": 10
+  },
+  "eixo": "defesa",
+  "desde": "2026-11-18",
+  "descricao": "Horda: número de atacantes entre min e max (importa para redução fixa de dano).",
+  "historico": []
+ },
+ "defesa.horda.acerto": {
+  "valor": {
+   "base": 3,
+   "por_cr": 0.3333333333333333
+  },
+  "eixo": "defesa",
+  "desde": "2026-11-18",
+  "descricao": "Bônus de ataque da horda: base + CR × por_cr.",
+  "historico": []
+ },
+ "defesa.chefe.ataques_por_cr": {
+  "valor": [
+   [
+    4,
+    2
+   ],
+   [
+    16,
+    3
+   ],
+   [
+    30,
+    4
+   ]
+  ],
+  "eixo": "defesa",
+  "desde": "2026-11-18",
+  "descricao": "Ataques por round de um chefe: [até o CR, ataques].",
+  "historico": []
+ },
+ "defesa.chefe.acerto_extra": {
+  "valor": 3,
+  "eixo": "defesa",
+  "desde": "2026-11-18",
+  "descricao": "Bônus de ataque do chefe acima da coluna de acerto da tabela de dano.",
+  "historico": []
+ },
+ "defesa.chefe.cr_arma_magica": {
+  "valor": 10,
+  "eixo": "defesa",
+  "desde": "2026-11-18",
+  "descricao": "A partir deste CR os golpes do chefe ignoram redução de dano não mágica.",
+  "historico": []
+ }
 }

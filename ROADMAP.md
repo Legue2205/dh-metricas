@@ -406,3 +406,16 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   (1) guias de subclasses por classe (as notas por subclasse = gabarito); (2) piloto: 3 builds de guias de subclasse
   (marcial, half-caster, full caster); (3) lotes de ~5. Guias de magias/Wild Shape/invocação só quando uma build precisar.
 - Cuidado: o RPGBot tem versões 2014 e 2024 das páginas; usar só 2014.
+
+## 19/11 — protocolo da passada 1 (cega)
+- Decisão do usuário: **não ajustar nada ao RPGBot antes de medir.** Passada 1 = importar as builds dele com as
+  premissas atuais congeladas, gerar nossas notas, e só então comparar com o que ele diz. Divergências sistemáticas →
+  padrões de erro nossos *ou* a "opinião" dele (o que ele valoriza: controle, defesa…). RPGBot não é fonte da verdade.
+- **Cegueira:** as páginas de `02-subclasses` (notas dele por subclasse) são guardadas mas **não lidas** até a nossa
+  passada da classe terminar. Na ingestão das builds, extrair só mecânica e plano; opiniões do guia ficam no bruto.
+- Notas do RPGBot: 4 níveis por cor (vermelho = muito situacional, laranja = situacional, verde = bom, azul =
+  excelente), o mesmo sistema para features e subclasses. Cores somem no texto puro; colar a página de subclasses com
+  formatação (Ctrl+V) para tentar preservá-las; senão, inferir a nota pela justificativa (marcar como inferida).
+- Gabarito `calibracao/rpgbot.json` sai das notas de subclasse destiladas (nota + resumo da justificativa).
+- **Ordem: uma classe inteira por vez.** Piloto: Fighter (motor marcial mais maduro, subclasses mecanicamente
+  diferentes). Depois Wizard (testa área, controle e Def. Mágica).

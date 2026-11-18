@@ -25,6 +25,8 @@ def _hash_motor():
     for p in (Path(base.__file__), Path(C.__file__), C.ARQ_MAGIAS):
         h.update(p.read_bytes())
     h.update(str(N_REGUA).encode())
+    from ..premissas import hash_prefixos
+    h.update(hash_prefixos('base.', 'controle.campo', 'controle.atencao').encode())
     return h.hexdigest()[:10]
 
 

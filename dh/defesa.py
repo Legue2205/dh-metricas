@@ -24,7 +24,11 @@ def _i(cr, k):
     return T_DMG[-1][k]
 
 
-def _atk(bonus, ac, d, adv, resist, red, magico, F=0.6):
+from .premissas import valor as _p
+FATOR_CRITICO = _p('defesa.fator_critico')
+
+
+def _atk(bonus, ac, d, adv, resist, red, magico, F=FATOR_CRITICO):
     p = min(0.95, max(0.05, (21 - (ac - bonus)) / 20)); c = 0.05
     if adv == 1: p, c = 1 - (1 - p) ** 2, 1 - 0.95 ** 2
     if adv == -1: p, c = p * p, 0.0025

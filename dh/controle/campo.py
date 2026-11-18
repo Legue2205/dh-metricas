@@ -14,7 +14,8 @@ from ..base import R, SAVE_TIPO, TOPO, n_ataques, p_acerto, save
 
 ARQ_MAGIAS = Path(__file__).parent / 'magias.json'
 MAGIAS = {k: v for k, v in json.loads(ARQ_MAGIAS.read_text(encoding='utf-8')).items() if not k.startswith('_')}
-H = dict(golpes_party=2, taunt_ameaca=0.15, taunt_summon=0.4, p_disengage=0.5, reach_grande=0.5, reach_pequeno=0.2)
+from ..premissas import grupo as _grupo
+H = _grupo('controle.campo')   # premissas controle.campo.* (era: golpes_party=2, taunt_ameaca=0.15, taunt_summon=0.4, p_disengage=0.5, reach 0.5/0.2)
 FIM = {'fim_turno': 0, 'luta': 1, 'inicio_turno': 2, 'escape': 3}
 
 N = 8000

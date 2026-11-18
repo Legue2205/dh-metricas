@@ -1197,8 +1197,401 @@
    }
   }
  },
- "segundos": 23.1,
+ "segundos": 22.3,
  "premissas": {
-  "controle.peso_no_controle.ameaca": 0.0
+  "base.chefe.chefe_save": 2,
+  "base.chefe.lr_cr": 10,
+  "base.chefe.lr_n": 1,
+  "base.encontros": [
+   [
+    "Minions + minibosses",
+    0.25,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      4,
+      0.25
+     ],
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Party de elite",
+    0.15,
+    [
+     [
+      "Bruiser",
+      "Veterano agressor",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Artilheiro",
+      "Atirador",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Horda + chefe",
+    0.15,
+    [
+     [
+      "Minion",
+      "Soldado disciplinado",
+      6,
+      0.5
+     ],
+     [
+      "Chefe",
+      "Comandante",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Horda",
+    0.1,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      6,
+      1.0
+     ]
+    ]
+   ],
+   [
+    "Dupla",
+    0.05,
+    [
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.5
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Chefe sozinho",
+    0.3,
+    [
+     [
+      "Chefe",
+      "Chefe (perfil próprio)",
+      1,
+      1.0
+     ]
+    ]
+   ]
+  ],
+  "base.perfis_inimigos": {
+   "Instintivo": [
+    0.2,
+    0,
+    true
+   ],
+   "Fera": [
+    0.3,
+    1,
+    true
+   ],
+   "Oportunista": [
+    0.7,
+    2,
+    true
+   ],
+   "Soldado disciplinado": [
+    0.5,
+    2,
+    true
+   ],
+   "Atirador": [
+    0.0,
+    3,
+    false
+   ],
+   "Cavaleiro noviço": [
+    0.1,
+    1,
+    true
+   ],
+   "Veterano defensor": [
+    0.3,
+    2,
+    true
+   ],
+   "Veterano agressor": [
+    0.8,
+    2,
+    true
+   ],
+   "Conjurador tático": [
+    0.0,
+    3,
+    false
+   ],
+   "Comandante": [
+    0.2,
+    3,
+    true
+   ],
+   "Chefe (perfil próprio)": [
+    0.4,
+    2,
+    true
+   ]
+  },
+  "base.rounds_por_luta": 4,
+  "base.save_tipo": {
+   "For": 1,
+   "Con": 1,
+   "Des": 0.5,
+   "Int": 0,
+   "Sab": 0,
+   "Car": 0
+  },
+  "base.topologias": {
+   "Campo aberto": {
+    "peso": 0.25,
+    "area": 0.8,
+    "cruza": 0.3,
+    "alc_miau": 0.1,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Ruínas ou cidade": {
+    "peso": 0.35,
+    "area": 1.0,
+    "cruza": 0.6,
+    "alc_miau": 0.15,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Sala de dungeon": {
+    "peso": 0.4,
+    "area": 1.2,
+    "cruza": 0.9,
+    "alc_miau": 0.6,
+    "pg": 0.5,
+    "wall": 1.5
+   }
+  },
+  "controle.atencao.conc_bonus": 1.5,
+  "controle.atencao.near_back": 0.25,
+  "controle.atencao.reach_grande": 0.5,
+  "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_pv": 133,
+  "controle.campo.golpes_party": 2,
+  "controle.campo.p_disengage": 0.5,
+  "controle.campo.reach_grande": 0.5,
+  "controle.campo.reach_pequeno": 0.2,
+  "controle.campo.taunt_ameaca": 0.15,
+  "controle.campo.taunt_summon": 0.4,
+  "controle.peso_no_controle.ameaca": 0.0,
+  "controle.peso_no_controle.esqueletos": 0.0,
+  "controle.peso_no_controle.parada_oa": 0.25,
+  "controle.peso_no_controle.sentinela": 0.25,
+  "defesa.fator_critico": 0.6,
+  "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
+  "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "planos.dias": {
+   "padrao": [
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ]
+   ],
+   "combate_unico": [
+    [
+     "p",
+     1
+    ]
+   ],
+   "dia_longo": [
+    [
+     "np",
+     1
+    ],
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "mod",
+     2
+    ],
+    [
+     "boss",
+     4
+    ]
+   ]
+  },
+  "tatico.composicoes": {
+   "terceiro_melee": {
+    "escondido": 0.04,
+    "longe": 0.1,
+    "colado": 0.2,
+    "nota": "tanque + outro corpo a corpo na frente + ele + 1 de trás"
+   },
+   "segundo_frontliner": {
+    "escondido": 0.05,
+    "longe": 0.15,
+    "colado": 0.32,
+    "nota": "tanque + ele na frente + 2 de trás"
+   },
+   "sem_tanque": {
+    "escondido": 0.06,
+    "longe": 0.2,
+    "colado": 0.45,
+    "nota": "ele é o único corpo a corpo"
+   }
+  },
+  "tatico.padrao": {
+   "deslocamento": 30,
+   "rounds": 4,
+   "ca": 15,
+   "steady_aim": true,
+   "p_agir_antes": 0.7,
+   "p_comeca_escondido": 0.3,
+   "p_aliado": {
+    "r1": 0.2,
+    "depois": 0.7
+   },
+   "dano_inimigo_round": 54.5,
+   "composicao": "segundo_frontliner",
+   "reducao_exposto": 1.0,
+   "pv": 50,
+   "recuperacao_dia": 20,
+   "lutas_dia": 4,
+   "excesso": 3.0,
+   "queda": 60,
+   "alvo": {
+    "pv": 60,
+    "dano_aliados_colado": 25,
+    "dano_aliados_longe": 12
+   },
+   "topologias": {
+    "Sala de dungeon": {
+     "esconderijo": {
+      "15": 0.6,
+      "30": 0.3,
+      "50": 0.1
+     },
+     "inicial": {
+      "30": 0.5,
+      "50": 0.5
+     },
+     "proximo": {
+      "10": 0.4,
+      "25": 0.4,
+      "45": 0.2
+     }
+    },
+    "Ruínas ou cidade": {
+     "esconderijo": {
+      "15": 0.4,
+      "30": 0.4,
+      "50": 0.2
+     },
+     "inicial": {
+      "40": 0.5,
+      "70": 0.5
+     },
+     "proximo": {
+      "15": 0.3,
+      "30": 0.4,
+      "50": 0.3
+     }
+    },
+    "Campo aberto": {
+     "esconderijo": {
+      "15": 0.15,
+      "30": 0.35,
+      "50": 0.5
+     },
+     "inicial": {
+      "60": 0.5,
+      "100": 0.5
+     },
+     "proximo": {
+      "20": 0.3,
+      "40": 0.4,
+      "60": 0.3
+     }
+    }
+   }
+  }
  }
 }

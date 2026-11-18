@@ -8,7 +8,8 @@ from functools import lru_cache
 
 import numpy as np
 
-R = 4  # rounds por luta em todos os eixos
+from .premissas import valor as _p0
+R = _p0('base.rounds_por_luta')  # rounds por luta em todos os eixos (premissa)
 
 # CR: (CA, HP, save fraco, save forte, ataque, dano por round) — medianas do Monster Manual
 CRT = {0: (12, 2.5, -2.5, 0.5, 3, 1.5), 0.125: (13, 10, -1.5, 1.5, 3, 4), 0.25: (13, 14.5, -1.5, 1.5, 4, 5.5),
@@ -20,7 +21,9 @@ CRT = {0: (12, 2.5, -2.5, 0.5, 3, 1.5), 0.125: (13, 10, -1.5, 1.5, 3, 4), 0.25: 
        15: (18, 269, 4.8, 9.3, 11, 95.5), 16: (19, 286, 4.7, 9.3, 12, 101.5), 17: (19, 303, 5.7, 10.4, 12, 107)}
 
 # Perfis (aba Comportamento): fração que quer a backline, malícia (0–3), corpo a corpo
-PERFIL = {
+from .premissas import grupo as _grupo, valor as _p
+
+PERFIL_ANTIGO = {
     'Instintivo': (0.2, 0, True), 'Fera': (0.3, 1, True), 'Oportunista': (0.7, 2, True),
     'Soldado disciplinado': (0.5, 2, True), 'Atirador': (0.0, 3, False), 'Cavaleiro noviço': (0.1, 1, True),
     'Veterano defensor': (0.3, 2, True), 'Veterano agressor': (0.8, 2, True),
@@ -29,15 +32,17 @@ PERFIL = {
 
 # Topologias: peso, multiplicador de alvos em área, quem passa no alcance do tank, alcance da Miau,
 # fator do Plant Growth, multiplicador de alvos do Wall of Force
-TOPO = {
+TOPO_ANTIGO = {
     'Campo aberto': dict(peso=0.25, area=0.8, cruza=0.3, alc_miau=0.10, pg=1.0, wall=1.0),
     'Ruínas ou cidade': dict(peso=0.35, area=1.0, cruza=0.6, alc_miau=0.15, pg=1.0, wall=1.0),
     'Sala de dungeon': dict(peso=0.40, area=1.2, cruza=0.9, alc_miau=0.60, pg=0.5, wall=1.5),
 }
+# 18/11: hipóteses migradas para premissas/premissas.json (os *_ANTIGO ficam só como referência; não são lidos)
+PERFIL = {k: tuple(v) for k, v in _p('base.perfis_inimigos').items()}
+TOPO = _p('base.topologias')
 TOPOS = list(TOPO)
-
-SAVE_TIPO = {'For': 1, 'Con': 1, 'Des': 0.5, 'Int': 0, 'Sab': 0, 'Car': 0}
-H = dict(lr_n=1, lr_cr=10, chefe_save=2)
+SAVE_TIPO = _p('base.save_tipo')
+H = _grupo('base.chefe')
 
 
 def n_ataques(cr):
@@ -76,6 +81,7 @@ TIPOS = [('Minions + minibosses', 0.25, [('Minion', 'Oportunista', 4, .25), ('Br
          ('Horda', 0.10, [('Minion', 'Oportunista', 6, 1.0)]),
          ('Dupla', 0.05, [('Bruiser', 'Fera', 1, .5), ('Conjurador', 'Conjurador tático', 1, .5)]),
          ('Chefe sozinho', 0.30, [('Chefe', 'Chefe (perfil próprio)', 1, 1.0)])]
+TIPOS = [(t, p, [tuple(x) for x in c]) for t, p, c in _p('base.encontros')]   # premissa (a lista acima é a antiga)
 PESO_TIPO = {t: p for t, p, _ in TIPOS}
 NIVEIS_TESTE = [1, 3, 4, 5, 7, 8, 10, 11, 13, 16]  # níveis do rank absoluto
 
@@ -141,10 +147,12 @@ def interp_degraus(x, limiares, niveis):
 def defesa_fisica(defesa, resiliencia):
     """2/3 Defesa (blindagem/durabilidade) + 1/3 Resiliência. Sem saves cadastrados: só a Defesa."""
     if defesa is None: return None
-    return defesa if resiliencia is None else (2 * defesa + resiliencia) / 3
+    w = _p('eixos.def_fisica.peso_resiliencia')
+    return defesa if resiliencia is None else (1 - w) * defesa + w * resiliencia
 
 
 def defesa_magica(vontade, resiliencia):
     """2/3 Vontade + 1/3 Resiliência. Sem saves cadastrados: sem nota."""
     if vontade is None: return None
-    return vontade if resiliencia is None else (2 * vontade + resiliencia) / 3
+    w = _p('eixos.def_magica.peso_resiliencia')
+    return vontade if resiliencia is None else (1 - w) * vontade + w * resiliencia

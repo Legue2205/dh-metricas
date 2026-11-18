@@ -74,7 +74,8 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
                                       **avaliar_linha(b, l, modo, regua, eixos))
     if not eixos and not linhas: res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
     res['segundos'] = round(time.time() - t0, 1)
-    res['premissas'] = premissas.usadas()
+    eixos_b = {e for l in b['linhas'] for e in ('dano', 'defesa', 'saves', 'controle', 'area', 'suporte', 'tatico') if l.get(e)}
+    res['premissas'] = {**premissas.relevantes(eixos_b), **premissas.usadas()}
     if not eixos and not linhas:
         RESULTADOS.mkdir(exist_ok=True)
         arq.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding='utf-8')

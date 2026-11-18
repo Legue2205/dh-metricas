@@ -7,7 +7,8 @@ import numpy as np
 
 from ..base import R, TOPO, TOPOS, n_ataques, p_acerto
 
-H = dict(near_back=0.25, conc_bonus=1.5, skel_peso=1.5, skel_pv=133, reach_grande=0.5, reach_pequeno=0.2)
+from ..premissas import grupo as _grupo
+H = _grupo('controle.atencao')   # premissas controle.atencao.*
 DPR_LV = ([1, 3, 4, 5, 6, 7, 8, 10, 11, 13, 16, 20], [8, 12, 15, 20, 22, 26, 31, 37, 45, 60, 80, 100])
 PAPEIS = ['tank', 'striker', 'atirador', 'conjurador']
 

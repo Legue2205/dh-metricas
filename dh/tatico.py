@@ -35,7 +35,7 @@ from functools import lru_cache
 from . import dano as D
 from .base import TOPO
 
-PADRAO = dict(
+PADRAO_ANTIGO = dict(
     deslocamento=30, rounds=4, ca=15,     # "ataques" (melee, arremesso, distancia) e "sneak" vêm da build
     steady_aim=True, p_agir_antes=0.7, p_comeca_escondido=0.3,
     p_aliado={'r1': 0.2, 'depois': 0.7},
@@ -52,11 +52,15 @@ PADRAO = dict(
     })
 
 # Fração do dano inimigo por round que vai para ele, por situação no fim do turno e composição da party.
-COMPOSICOES = {
+COMPOSICOES_ANTIGO = {
     'terceiro_melee':     dict(escondido=0.04, longe=0.10, colado=0.20, nota='tanque + outro corpo a corpo na frente + ele + 1 de trás'),
     'segundo_frontliner': dict(escondido=0.05, longe=0.15, colado=0.32, nota='tanque + ele na frente + 2 de trás'),
     'sem_tanque':         dict(escondido=0.06, longe=0.20, colado=0.45, nota='ele é o único corpo a corpo'),
 }
+
+from .premissas import valor as _p
+PADRAO = _p('tatico.padrao')            # premissas (os *_ANTIGO acima só como referência)
+COMPOSICOES = _p('tatico.composicoes')
 
 POLITICAS = {
     'otima': None,

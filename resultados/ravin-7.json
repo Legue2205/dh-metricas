@@ -1200,8 +1200,371 @@
    }
   }
  },
- "segundos": 17.6,
+ "segundos": 16.9,
  "premissas": {
-  "controle.peso_no_controle.ameaca": 0.0
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
+  "base.chefe.chefe_save": 2,
+  "base.chefe.lr_cr": 10,
+  "base.chefe.lr_n": 1,
+  "base.encontros": [
+   [
+    "Minions + minibosses",
+    0.25,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      4,
+      0.25
+     ],
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Party de elite",
+    0.15,
+    [
+     [
+      "Bruiser",
+      "Veterano agressor",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Artilheiro",
+      "Atirador",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Horda + chefe",
+    0.15,
+    [
+     [
+      "Minion",
+      "Soldado disciplinado",
+      6,
+      0.5
+     ],
+     [
+      "Chefe",
+      "Comandante",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Horda",
+    0.1,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      6,
+      1.0
+     ]
+    ]
+   ],
+   [
+    "Dupla",
+    0.05,
+    [
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.5
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Chefe sozinho",
+    0.3,
+    [
+     [
+      "Chefe",
+      "Chefe (perfil próprio)",
+      1,
+      1.0
+     ]
+    ]
+   ]
+  ],
+  "base.perfis_inimigos": {
+   "Instintivo": [
+    0.2,
+    0,
+    true
+   ],
+   "Fera": [
+    0.3,
+    1,
+    true
+   ],
+   "Oportunista": [
+    0.7,
+    2,
+    true
+   ],
+   "Soldado disciplinado": [
+    0.5,
+    2,
+    true
+   ],
+   "Atirador": [
+    0.0,
+    3,
+    false
+   ],
+   "Cavaleiro noviço": [
+    0.1,
+    1,
+    true
+   ],
+   "Veterano defensor": [
+    0.3,
+    2,
+    true
+   ],
+   "Veterano agressor": [
+    0.8,
+    2,
+    true
+   ],
+   "Conjurador tático": [
+    0.0,
+    3,
+    false
+   ],
+   "Comandante": [
+    0.2,
+    3,
+    true
+   ],
+   "Chefe (perfil próprio)": [
+    0.4,
+    2,
+    true
+   ]
+  },
+  "base.rounds_por_luta": 4,
+  "base.save_tipo": {
+   "For": 1,
+   "Con": 1,
+   "Des": 0.5,
+   "Int": 0,
+   "Sab": 0,
+   "Car": 0
+  },
+  "base.topologias": {
+   "Campo aberto": {
+    "peso": 0.25,
+    "area": 0.8,
+    "cruza": 0.3,
+    "alc_miau": 0.1,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Ruínas ou cidade": {
+    "peso": 0.35,
+    "area": 1.0,
+    "cruza": 0.6,
+    "alc_miau": 0.15,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Sala de dungeon": {
+    "peso": 0.4,
+    "area": 1.2,
+    "cruza": 0.9,
+    "alc_miau": 0.6,
+    "pg": 0.5,
+    "wall": 1.5
+   }
+  },
+  "controle.atencao.conc_bonus": 1.5,
+  "controle.atencao.near_back": 0.25,
+  "controle.atencao.reach_grande": 0.5,
+  "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_pv": 133,
+  "controle.campo.golpes_party": 2,
+  "controle.campo.p_disengage": 0.5,
+  "controle.campo.reach_grande": 0.5,
+  "controle.campo.reach_pequeno": 0.2,
+  "controle.campo.taunt_ameaca": 0.15,
+  "controle.campo.taunt_summon": 0.4,
+  "controle.peso_no_controle.ameaca": 0.0,
+  "controle.peso_no_controle.esqueletos": 0.0,
+  "controle.peso_no_controle.parada_oa": 0.25,
+  "controle.peso_no_controle.sentinela": 0.25,
+  "defesa.fator_critico": 0.6,
+  "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
+  "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "planos.dias": {
+   "padrao": [
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ]
+   ],
+   "combate_unico": [
+    [
+     "p",
+     1
+    ]
+   ],
+   "dia_longo": [
+    [
+     "np",
+     1
+    ],
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "mod",
+     2
+    ],
+    [
+     "boss",
+     4
+    ]
+   ]
+  },
+  "suporte.h.ACERTO": 0.65,
+  "suporte.h.ACERTOS_INIM_ROUND": 4,
+  "suporte.h.ALIADOS": 3,
+  "suporte.h.ATIVO": 0.875,
+  "suporte.h.CUSTO_SAVE": 1,
+  "suporte.h.EF_CURA": 0.9,
+  "suporte.h.EF_PVT": 0.75,
+  "suporte.h.ESCOLHA": 2.0,
+  "suporte.h.F_AURA": 0.67,
+  "suporte.h.F_SAVE": 0.25,
+  "suporte.h.PARCELA_FRENTE": 0.35,
+  "suporte.h.P_ACERTO_INIM": 0.6,
+  "suporte.h.TURNOS_CONDICAO": 1.5,
+  "suporte.h.TURNOS_LEVANTAR": 1.0,
+  "suporte.lutas_dia": 4,
+  "suporte.lutas_por_descanso_curto": 2,
+  "suporte.mix_dado_multiuso": {
+   "dano": 0.3,
+   "acerto": 0.25,
+   "ca": 0.2,
+   "save_dano": 0.15,
+   "save_critico": 0.07,
+   "counterspell": 0.03
+  }
  }
 }

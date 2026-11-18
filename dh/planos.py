@@ -11,11 +11,13 @@ combate, e a média de cada categoria em separado.
 from . import orcamento
 
 SR = 'SR'
-TAGS = {  # (categoria, peso) na ordem do dia; SR = descanso curto
+TAGS_ANTIGO = {  # (categoria, peso) na ordem do dia; SR = descanso curto
     'padrao': [('np', 1), ('p', 2), SR, ('np', 1), ('p', 2)],
     'combate_unico': [('p', 1)],
     'dia_longo': [('np', 1), ('np', 1), ('mod', 2), SR, ('np', 1), ('mod', 2), ('mod', 2), SR, ('mod', 2), ('boss', 4)],
 }
+from .premissas import valor as _p
+TAGS = {k: [x if x == SR else tuple(x) for x in v] for k, v in _p('planos.dias').items()}   # premissa planos.dias
 CATEGORIAS = {'np': 'não prioritário', 'p': 'prioritário', 'mod': 'moderado', 'boss': 'boss'}
 EIXOS = [('dano', None), ('defesa', None), ('saves', 'resiliencia'), ('saves', 'vontade'), ('controle', 'campo'), ('controle', 'corpo'),
          ('area', None), ('suporte', None)]

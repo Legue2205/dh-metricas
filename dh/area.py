@@ -68,7 +68,12 @@ TOP3 = {1: (1, 1, 1), 2: (1, 1, 1), 3: (2, 2, 1), 4: (2, 2, 2), 5: (3, 3, 2), 6:
 RANKS = [("E", 0.5), ("D", 1), ("C-", 3), ("C", 4), ("C+", 5), ("B-", 6), ("B", 7), ("B+", 8),
          ("A-", 10), ("A", 11), ("A+", 13), ("S", 16)]
 
-def alvos_circulo(s): return 2 if s <= 2 else 4 if s <= 4 else 6
+from .premissas import valor as _p
+HORDA = {int(k): v for k, v in _p('area.horda_cr_por_nivel').items()}   # premissa (a tabela acima é a antiga)
+NH = _p('area.horda_tamanho')
+_ALVOS_REF = _p('area.alvos_referencia_por_circulo')
+F_R2_SEL, F_R2 = _p('area.fator_round2_seletiva'), _p('area.fator_round2_nao_seletiva')
+def alvos_circulo(s): return _ALVOS_REF[s - 1]
 def pb(L): return 2 + (L - 1) // 4
 def cd(L): return 8 + pb(L) + (3 if L < 4 else 4 if L < 8 else 5)
 def rank(neq):
@@ -99,7 +104,7 @@ def luta(L, usos):
     hp0, ac, sv = CR[HORDA[L]]
     hp = np.full((N, NH), float(hp0)); tot = np.zeros(N)
     for r, (alvos, sel, ger, dc, metade) in enumerate(usos):
-        fator = 1.0 if r == 0 else (0.75 if sel else 0.5)
+        fator = 1.0 if r == 0 else (F_R2_SEL if sel else F_R2)
         x = min(alvos * S, NH) * fator
         k = np.floor(x) + (rng.random(N) < x - np.floor(x))      # alvos sorteados
         base = ger()                                             # um rolamento por uso
@@ -156,7 +161,7 @@ def nivel_eq(fr, ref):
 # ---------------------------------------------------------------------------
 import re
 
-CENARIOS = {'esparsa': 0.5, 'padrao': 1.0, 'agrupada': 1.5}
+CENARIOS = _p('area.cenarios')
 N_MODO = {'rapido': 8000, 'completo': 40000}
 
 
@@ -212,7 +217,8 @@ def _regua_cache(s, n):
     global S, N, rng
     chave = f'{s}|{n}'
     if chave in _REGUA: return _REGUA[chave]
-    h = hashlib.sha1(Path(__file__).read_bytes()).hexdigest()[:10]
+    from .premissas import hash_prefixos
+    h = hashlib.sha1(Path(__file__).read_bytes() + hash_prefixos('base.', 'area.').encode()).hexdigest()[:10]
     arq = Path(__file__).resolve().parents[1] / 'cache' / f'area-{h}.json'
     d = json.loads(arq.read_text()) if arq.exists() else {}
     if chave not in d:

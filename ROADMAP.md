@@ -365,3 +365,20 @@ custos em PV, cura por acerto conforme CA e vantagem, limiar, Blood Dice no meio
 `premissas.json` com `P()`, começando pelas que o fine tuning mais deve mexer: alvos por forma de área e fração do
 round 2+; `campo.H` (taunt, disengage); `suporte.H` (ACERTO, ATIVO, EF_CURA, ESCOLHA); pesos do dia; exposição do
 tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `premissas.json`.
+
+## 18/11 (noite 3) — migração das premissas
+- Sentinel e parada por AO: **0,25** no Controle (decisão do usuário; vale para todo personagem com Sentinel).
+  Abdul: controle 4,1 → 2,9 (empata com o Marcus). Rodada "0b" gravada no histórico de calibração (tau médio 0,73).
+- **Migradas para `premissas/premissas.json` (58 premissas):** mundo de referência (rounds por luta, perfis de
+  inimigos, topologias, peso dos saves fortes/fracos, chefe, mistura de encontros), composição das notas
+  (peso da Resiliência na Def. Física/Mágica), crítico inimigo, controle (campo, atenção, padrões, peso do corpo no
+  controle), área (fator do round 2+, alvos de referência, horda, cenários), suporte (16 + mix + padrões),
+  dias de aventura, tático (padrão e composições).
+- **Refatoração neutra verificada:** com o Sentinel em 0,5, as 119 notas do painel saíram idênticas antes e depois;
+  teste `test_migracao_reproduz_constantes_antigas` guarda isso.
+- Registro por eixo: cada resultado guarda as premissas dos prefixos que seus eixos leem (determinístico); caches de
+  régua (controle, área, saves) incluem o hash das premissas que os afetam.
+- `HIPOTESES.md` agora lista também o que **não** é premissa (tabelas do MM/DMG, réguas, parâmetros de simulação) e
+  as **pendentes**: repertório de magias inimigas dos saves (a maior), modelo da horda/chefe na defesa, funções de área
+  com nome de personagem (remover), `tatico.padrao.rounds` duplicado.
+- Critério de pronto do MVP: zerar a lista de pendentes; depois, lote piloto de 3 builds.

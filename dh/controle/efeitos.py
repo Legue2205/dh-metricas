@@ -29,12 +29,16 @@ def _mag(nome, sobre=None):
     return C.magia(nome, **(sobre or {}))
 
 
+from ..premissas import grupo as _grupo
+PADROES = _grupo('controle.padroes')   # premissas controle.padroes.*: valores usados quando a fonte não informa
+
+
 # ---------------- tipos simples ----------------
 def _ameaca(f, E, topo, t): return C.soft(E, t)
 
 
 def _sentinela(f, E, topo, t):
-    b, n = f.get('bonus', 8), f.get('tentativas', 2)
+    b, n = f.get('bonus', 8), f.get('tentativas', PADROES['sentinela_tentativas'])
     return np.array([c['wb'] * TOPO[topo]['cruza'] * (1 - (1 - p_acerto(b, c['ca'])) ** n) * C.dil(t, c)
                      if c['melee'] else 0 for c in E])
 
@@ -46,7 +50,7 @@ def _parada_oa(f, E, topo, t):
 def _terreno(f, E, topo, t):
     """Terreno difícil em área grande (Plant Growth): fração fixa do turno dos inimigos corpo a corpo."""
     if len(E) <= 1: return C.zero(E)
-    return np.array([f.get('fator', 0.5) * TOPO[topo][f.get('chave_topo', 'pg')] if c['melee'] else 0 for c in E])
+    return np.array([f.get('fator', PADROES['terreno_fator']) * TOPO[topo][f.get('chave_topo', 'pg')] if c['melee'] else 0 for c in E])
 
 
 def _area(f, E, topo, t):
@@ -136,7 +140,7 @@ def _counterspell(f, E, topo, t):
     for i in conj:
         nv = min(9, max(1, int(-(-E[i]['cr'] // 2))))          # maior círculo típico de um conjurador desse CR
         p = 1.0 if nv <= slot else min(1.0, max(0.0, (21 - (10 + nv - mod)) / 20))
-        v[i] = min(R, f.get('usos_luta', 1) / len(conj)) / R * p * f.get('fracao_conjurando', 0.75)
+        v[i] = min(R, f.get('usos_luta', 1) / len(conj)) / R * p * f.get('fracao_conjurando', PADROES['counterspell_fracao_conjurando'])
     return v
 
 

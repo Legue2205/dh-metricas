@@ -18,7 +18,7 @@ from dataclasses import dataclass
 
 rng = np.random.default_rng(11)
 N = 6000
-R = 4
+from .base import R  # premissa base.rounds_por_luta
 ELEM = {"fogo", "frio", "eletrico", "trovao", "acido"}
 SLOTS = {1: [2], 3: [4, 2], 4: [4, 3], 5: [4, 3, 2], 7: [4, 3, 3, 1], 8: [4, 3, 3, 2],
          10: [4, 3, 3, 3, 2], 11: [4, 3, 3, 3, 2, 1], 13: [4, 3, 3, 3, 2, 1, 1], 16: [4, 3, 3, 3, 2, 1, 1, 1]}
@@ -475,7 +475,8 @@ _MATRIZ = {}
 def _arq_cache():
     import hashlib
     from pathlib import Path
-    h = hashlib.sha1(Path(__file__).read_bytes()).hexdigest()[:10]
+    from .premissas import hash_prefixos
+    h = hashlib.sha1(Path(__file__).read_bytes() + hash_prefixos('base.').encode()).hexdigest()[:10]
     return Path(__file__).resolve().parents[1] / 'cache' / f'saves-{h}.json'
 
 

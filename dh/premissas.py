@@ -36,6 +36,36 @@ def P(nome, padrao=None):
     return d['valor']
 
 
+def valor(nome):
+    """Leitura na importação de um módulo (constante do motor). Não entra no registro por build: o motor registra
+    por prefixo de eixo (ver relevantes)."""
+    return _dados()[nome]['valor']
+
+
+def grupo(prefixo, conv=None):
+    """{chave: valor} de todas as premissas "<prefixo>.<chave>" (para os dicionários H dos motores)."""
+    n = len(prefixo) + 1
+    return {k[n:]: (conv(v['valor']) if conv else v['valor']) for k, v in _dados().items() if k.startswith(prefixo + '.')}
+
+
+# Eixo do resultado -> prefixos de premissas que ele lê (registro determinístico, independe da ordem de cálculo)
+PREFIXOS = {'dano': ('base.rounds_por_luta',), 'defesa': ('base.', 'defesa.'), 'saves': ('base.',),
+            'controle': ('base.', 'controle.'), 'area': ('base.', 'area.'), 'suporte': ('base.rounds_por_luta', 'suporte.'),
+            'tatico': ('base.', 'tatico.'), '_sempre': ('planos.', 'eixos.')}
+
+
+def relevantes(eixos):
+    pref = tuple(p for e in list(eixos) + ['_sempre'] for p in PREFIXOS.get(e, ()))
+    return {k: v['valor'] for k, v in sorted(_dados().items()) if not k.startswith('_') and k.startswith(pref)}
+
+
+def hash_prefixos(*prefixos):
+    """Impressão digital dos valores sob esses prefixos (para chaves de cache de réguas)."""
+    import hashlib
+    d = {k: v['valor'] for k, v in sorted(_dados().items()) if k.startswith(prefixos)}
+    return hashlib.sha1(json.dumps(d, sort_keys=True).encode()).hexdigest()[:8]
+
+
 def inicio(): _USADAS.clear()
 def usadas(): return dict(sorted(_USADAS.items()))
 
@@ -80,4 +110,7 @@ def markdown(uso=None):
             out += [f"- `{n}`: " + ', '.join(f'{k} {x}' for k, x in h.items()) for n, h in hist]
             out += ['', '</details>']
         out.append('')
+    bruto = _dados()
+    out += ['## O que não é premissa (régua e fatos)', ''] + [f'- {x}' for x in bruto.get('_regua_e_fatos', [])]
+    out += ['', '## Hipóteses ainda no código (migrar)', ''] + [f'- {x}' for x in bruto.get('_pendentes', [])] + ['']
     return '\n'.join(out)

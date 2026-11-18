@@ -18,6 +18,8 @@ Objetivo: adicionar ou mudar uma build gastando poucos tokens e sem divergir dos
   `dh completo --forcar` nas builds afetadas.
 - **Uma linha = uma hipótese.** Não conte o mesmo recurso em dois eixos: declare `reacao` e `recursos.espacos`
   e respeite o que `dh validar` disser (ERRO de reação bloqueia; AVISO de espaços deve ser relatado ao usuário).
+- **Hipótese = premissa.** Todo número de julgamento vai para `premissas/premissas.json` (lido com `valor`/`grupo`/`P`),
+  nunca constante solta no código. Mudar só com `dh premissa <nome> <valor> --motivo`, **nunca no meio de um lote**.
 - **Builds agnósticas:** nada de nome de personagem em `dh/`. Mecânica nova entra como tipo/campo genérico no JSON.
 - Avise o usuário em uma linha quando um passo for caro (ler fichas grandes, `dh completo` em tudo).
 

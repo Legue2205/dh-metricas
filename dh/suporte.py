@@ -5,7 +5,8 @@ controle já mede (turnos negados, ataques desviados). A build lista fontes; cad
 """
 from .base import R, letra
 
-H = dict(ACERTO=0.65, ATIVO=0.875, ALIADOS=3, EF_CURA=0.9, EF_PVT=0.75, F_SAVE=0.25, F_AURA=0.67, CUSTO_SAVE=1,
+from .premissas import grupo as _grupo, valor as _p
+H_ANTIGO = dict(ACERTO=0.65, ATIVO=0.875, ALIADOS=3, EF_CURA=0.9, EF_PVT=0.75, F_SAVE=0.25, F_AURA=0.67, CUSTO_SAVE=1,
          LUTAS_SR=2, LUTAS_DIA=4,
          # 16/11 — dados de vários usos (Bardic Inspiration e afins), resgates e levantar caídos:
          ESCOLHA=2.0,            # o jogador gasta o dado quando a rolagem parece perto: chance de virar ×2 frente a uma rolagem qualquer
@@ -14,7 +15,8 @@ H = dict(ACERTO=0.65, ATIVO=0.875, ALIADOS=3, EF_CURA=0.9, EF_PVT=0.75, F_SAVE=0
          TURNOS_LEVANTAR=1.0,    # levantar um caído devolve ~1 turno do aliado além dos PV
          P_ACERTO_INIM=0.6,      # chance de um ataque inimigo acertar o aliado
          PARCELA_FRENTE=0.35)    # parcela do dano inimigo que vai para um aliado da linha de frente
-MIX_PADRAO = {'dano': 0.30, 'acerto': 0.25, 'ca': 0.20, 'save_dano': 0.15, 'save_critico': 0.07, 'counterspell': 0.03}
+H = _grupo('suporte.h')   # premissas suporte.h.* (H_ANTIGO acima só como referência)
+MIX_PADRAO = _p('suporte.mix_dado_multiuso')
 H['VANT'] = (1 - (1 - H['ACERTO']) ** 2) / H['ACERTO'] - 1
 # nível: (DPR do aliado, ataques, dano do inimigo por round, maior espaço, mod)
 REGUA = {1: (8, 1, 14.5, 1, 3), 2: (10, 1, 20, 1, 3), 3: (12, 1, 25.5, 2, 3), 4: (15, 1, 31.5, 2, 4),
@@ -84,8 +86,8 @@ def valor(f, nivel):
         return u / R * sum(p * v[k] for k, p in mix.items())
     if m == 'resgate_condicao':
         # Reação que refaz um save falho contra uma condição (Countercharm 2024: medo/encantamento, com vantagem).
-        p_ok = 1 - (1 - f.get('p_save', 0.45)) ** (2 if f.get('vantagem', True) else 1)
-        return f.get('p_evento', 0.2) * p_ok * H['TURNOS_CONDICAO'] * dpr / R
+        p_ok = 1 - (1 - f.get('p_save', _p('suporte.padroes.resgate_p_save'))) ** (2 if f.get('vantagem', True) else 1)
+        return f.get('p_evento', _p('suporte.padroes.resgate_p_evento')) * p_ok * H['TURNOS_CONDICAO'] * dpr / R
     if m == 'desvantagem_contra':
         # Ataques contra o aliado com desvantagem (Greater Invisibility, Blur...): PV que ele deixa de perder.
         p = f.get('p_acerto', H['P_ACERTO_INIM']); corte = 1 - p * p / p    # acerto com desvantagem = p²

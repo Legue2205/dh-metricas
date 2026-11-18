@@ -29,11 +29,21 @@ def test_premissas_resolver_e_registro():
     from dh import premissas
     premissas.inicio()
     v = premissas.resolver({'x': {'$p': 'controle.peso_no_controle.sentinela'}, 'y': [1, {'$p': 'suporte.lutas_dia'}]})
-    assert v == {'x': 0.5, 'y': [1, 4]}
+    assert v == {'x': premissas.valor('controle.peso_no_controle.sentinela'), 'y': [1, 4]}
     assert set(premissas.usadas()) == {'controle.peso_no_controle.sentinela', 'suporte.lutas_dia'}
 
 
 def test_peso_de_corpo_no_controle():
     from dh.controle import efeitos
     fn = efeitos.compilar([{'tipo': 'sentinela', 'nome': 'S'}, {'tipo': 'ameaca', 'nome': 'A'}], {'ca': 18, 'pv': 60}, 7)
-    assert fn.peso_ctrl == {'S': 0.5, 'A': 0.0} and fn.corpo == {'S', 'A'}
+    from dh.premissas import valor
+    assert fn.peso_ctrl == {'S': valor('controle.peso_no_controle.sentinela'), 'A': 0.0} and fn.corpo == {'S', 'A'}
+
+
+def test_migracao_reproduz_constantes_antigas():
+    """As premissas migradas têm os mesmos valores das constantes que existiam no código (refatoração neutra)."""
+    from dh import base, planos, suporte, tatico
+    assert base.PERFIL == base.PERFIL_ANTIGO and base.TOPO == base.TOPO_ANTIGO
+    assert {k: v for k, v in suporte.H_ANTIGO.items() if k not in ('VANT', 'LUTAS_SR', 'LUTAS_DIA')} == \
+           {k: v for k, v in suporte.H.items() if k != 'VANT'}
+    assert planos.TAGS == planos.TAGS_ANTIGO and tatico.COMPOSICOES == tatico.COMPOSICOES_ANTIGO

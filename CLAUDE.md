@@ -30,8 +30,9 @@ Objetivo: adicionar ou mudar uma build gastando poucos tokens e sem divergir dos
   (ids no Drive: RPGBot `1lKVVcWgGsdgKL3SM4b0zCd1Jk9kvUabo`, 00 `176gRnD8hat1B7iZn-6TFgDO-MUs0I_Fz`,
   01 `1peNspj-DQ2g79p4JK9T1mDOsSVpa6VB9`, 02 `17c93G9-djeUvAlVOirWjksb-pzNi0ApK`, 03 `178DZsrFGY2JOpLLiBxX2Z9x80FXlO_wD`,
   fichas `1DCQHPsJa19HianGOuDongwNKD2Kxb9Ka`, 04 `1unV4p1NYnfpHskfQg82GkVFtwa58ZStx`). Busque com `parentId = '<id>'`.
-- **A página bruta é lida uma vez.** Na ingestão o Claude escreve dois derivados: a ficha compacta
-  (`03-builds/fichas/<slug>.md`, formato de `prompts/prompt-rpgbot.md`) e `progressoes/<id>.json`. Passadas seguintes
+- **A página bruta é lida uma vez.** Na ingestão o Claude escreve o derivado `progressoes/<id>.json` (com `descricao`,
+  inclusive `nao_modelado`); a ficha .md em `03-builds/fichas` é opcional. Antes de cada lote, ler
+  `calibracao/convencoes-passada1.md`. Passadas seguintes
   usam só os derivados; volte ao bruto apenas para conferir algo que a calibração apontar.
 - Números (acerto, CD, PV, CA) são calculados pelo Claude a partir das escolhas do guia (atributos, feats, nível),
   não copiados de resumo de outra IA.

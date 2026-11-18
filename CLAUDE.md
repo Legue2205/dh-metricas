@@ -25,7 +25,11 @@ Objetivo: adicionar ou mudar uma build gastando poucos tokens e sem divergir dos
 
 ## Builds de referência em lote (RPGBot, D4, Treant Monk)
 - **Fonte da verdade = página bruta** colada pelo usuário no Drive (`RPGBot/<pasta>/<tipo>-<slug>.md`, 1ª linha com URL,
-  tipo de página e data). Sem IA no meio. Pastas: `00-contexto`, `02-subclasses`, `03-builds`, `04-magias`.
+  tipo de página e data). Sem IA no meio. Pastas: `00-contexto`, `01-classes`, `02-subclasses`, `03-builds`
+  (+ `03-builds/fichas` para as fichas que o Claude escreve), `04-magias`. Caminho: "Builds RPG/Biblioteca de builds .md/RPGBot"
+  (ids no Drive: RPGBot `1lKVVcWgGsdgKL3SM4b0zCd1Jk9kvUabo`, 00 `176gRnD8hat1B7iZn-6TFgDO-MUs0I_Fz`,
+  01 `1peNspj-DQ2g79p4JK9T1mDOsSVpa6VB9`, 02 `17c93G9-djeUvAlVOirWjksb-pzNi0ApK`, 03 `178DZsrFGY2JOpLLiBxX2Z9x80FXlO_wD`,
+  fichas `1DCQHPsJa19HianGOuDongwNKD2Kxb9Ka`, 04 `1unV4p1NYnfpHskfQg82GkVFtwa58ZStx`). Busque com `parentId = '<id>'`.
 - **A página bruta é lida uma vez.** Na ingestão o Claude escreve dois derivados: a ficha compacta
   (`03-builds/fichas/<slug>.md`, formato de `prompts/prompt-rpgbot.md`) e `progressoes/<id>.json`. Passadas seguintes
   usam só os derivados; volte ao bruto apenas para conferir algo que a calibração apontar.

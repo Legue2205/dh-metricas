@@ -1,0 +1,187 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-echo-knight.json",
+ "build": "Fighter 8 / Barbarian 3 (Echo Knight, Ancestral Guardian), Custom Lineage, malho + GWF; Sentinel 1, Crusher 4, For 20 6, GWM 11 (nível de personagem)",
+ "corpo": {
+  "ca": 16,
+  "pv": 44,
+  "saves": {
+   "sv": {
+    "for": 7,
+    "des": 1,
+    "con": 5,
+    "int": -1,
+    "sab": 1,
+    "car": -1
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "2d6+4+1.33"
+     },
+     {
+      "n": 0.125,
+      "bonus": 7,
+      "dano": "2d6+4+1.33",
+      "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "2d6+4+1.33",
+      "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto",
+     "hard": {
+      "sentinela": 7
+     }
+    },
+    "fontes": [
+     {
+      "tipo": "sentinela",
+      "nome": "Corpo (Sentinel pelo eco)",
+      "bonus": 7
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "principal": true,
+   "hipotese": "ataca pelo eco; Sentinel pune quem tenta sair de perto do eco",
+   "custo": "gratuita",
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade (Sentinel)",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ],
+   "saves": {}
+  },
+  {
+   "id": "surge",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "2d6+4+1.33"
+     },
+     {
+      "n": 0.125,
+      "bonus": 7,
+      "dano": "2d6+4+1.33",
+      "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "2d6+4+1.33",
+      "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+     },
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "2d6+4+1.33"
+     },
+     {
+      "n": 0.0312,
+      "bonus": 7,
+      "dano": "2d6+4+1.33",
+      "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto",
+     "hard": {
+      "sentinela": 7
+     }
+    },
+    "fontes": [
+     {
+      "tipo": "sentinela",
+      "nome": "Corpo (Sentinel pelo eco)",
+      "bonus": 7
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "gasta": {
+    "action_surge": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Echo Knight defensor com Sentinel: ataca pelo eco e prende os inimigos longe da party; a partir do 7 mergulha em Barbarian (Ancestral Guardian).",
+  "estrategia": "Põe o eco ao lado da maior ameaça, bate pelo eco e segura o alvo com Sentinel; com fúria, Ancestral Protectors faz o alvo errar quem não é ele.",
+  "nao_modelado": "Crusher (empurrão); o eco como alvo extra e teleporte; Danger Sense; Indomitable; Second Wind; Shadow Martyr; os outros alvos que o eco ameaça além do principal.",
+  "progressao": "Crusher (For 18); Extra Attack."
+ },
+ "id": "rpgbot-fighter-echo-knight-5",
+ "nome": "Echo Knight Fighter (RPGBot: Dioscuri)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/echo-knight/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

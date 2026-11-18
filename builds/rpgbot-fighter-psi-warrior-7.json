@@ -1,0 +1,174 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-psi-warrior.json",
+ "build": "Fighter (Psi Warrior), Giff, besta pesada → mosquete, Archery; Piercer 4, Sharpshooter 6, Des 20 8",
+ "corpo": {
+  "ca": 16,
+  "pv": 60,
+  "saves": {
+   "sv": {
+    "for": 3,
+    "des": 4,
+    "con": 5,
+    "int": 3,
+    "sab": -1,
+    "car": -1
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d12+4",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_luta": [
+     {
+      "usos_dia": 8,
+      "dano": "1d8+3",
+      "nota": "Psionic Strike: dados por dia (2×PB + 1 por descanso curto) ÷ 4 lutas"
+     },
+     {
+      "usos_dia": 3,
+      "dano": "3",
+      "nota": "Astral Spark (Giff): PB/dia, +PB de força num acerto"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1.5",
+      "nota": "Piercer: rerrolar d12"
+     },
+     {
+      "dano": "1d12",
+      "gatilho": "critico"
+     }
+    ]
+   },
+   "principal": true,
+   "hipotese": "atira todo round; dados psiônicos no Psionic Strike, espalhados pelo dia",
+   "custo": "gratuita",
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto",
+     "front": false
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {}
+  },
+  {
+   "id": "surge",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d12+4",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.5,
+      "bonus": 9,
+      "dano": "1d12+4",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_luta": [
+     {
+      "usos_dia": 8,
+      "dano": "1d8+3",
+      "nota": "Psionic Strike: dados por dia (2×PB + 1 por descanso curto) ÷ 4 lutas"
+     },
+     {
+      "usos_dia": 3,
+      "dano": "3",
+      "nota": "Astral Spark (Giff): PB/dia, +PB de força num acerto"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1.5",
+      "nota": "Piercer: rerrolar d12"
+     },
+     {
+      "dano": "1d12",
+      "gatilho": "critico"
+     }
+    ]
+   },
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "gasta": {
+    "action_surge": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Psi Warrior atirador (Giff) com mosquete; dados psiônicos para dano extra, proteção e empurrão telecinético.",
+  "estrategia": "Atira de longe e gasta os dados psiônicos com parcimônia ao longo do dia, no Psionic Strike para finalizar alvos.",
+  "nao_modelado": "Protective Field (todos os dados foram para o Psionic Strike); Telekinetic Thrust (derrubar/empurrar); Telekinetic Movement; Psi-Powered Leap; Guarded Mind; Indomitable; Second Wind; vantagem do Giff em testes de For.",
+  "progressao": "Sharpshooter (6); Telekinetic Adept."
+ },
+ "id": "rpgbot-fighter-psi-warrior-7",
+ "nome": "Psi Warrior Fighter (RPGBot: Giff Yankee)",
+ "grupo": "RPGBot",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/psi-warrior/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -1,0 +1,218 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-purple-dragon-knight.json",
+ "build": "Fighter 9 / Warlock 2 (Purple Dragon Knight, Undead), Dragonborn de Gema (Fizban), arco longo + Archery, Eldritch Blast; Dragon Fear 4, Car 20 (nível de personagem 10)",
+ "corpo": {
+  "ca": 17,
+  "pv": 48,
+  "saves": {
+   "sv": {
+    "for": 2,
+    "des": 3,
+    "con": 6,
+    "int": -1,
+    "sab": 0,
+    "car": 3
+   },
+   "ataques": 1
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 1
+  },
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   },
+   "sopro": {
+    "qtd": 3,
+    "volta": "longo"
+   }
+  },
+  "espacos_volta": "curto"
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+1d6",
+      "nota": "Eldritch Blast + Hex"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 12,
+      "nota": "3 aliados × nível de Fighter"
+     }
+    ]
+   },
+   "principal": true,
+   "hipotese": "Eldritch Blast + Hex (Hex dura 1 hora: 1 espaço cobre ~2 lutas); Rallying Cry junto do Second Wind",
+   "custo": "recurso",
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto",
+     "front": false
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  },
+  {
+   "id": "sopro",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+1d6",
+      "nota": "Eldritch Blast + Hex"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Breath Weapon (cone 15 pés)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d10",
+       "cd": 14
+      }
+     ]
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 12,
+      "nota": "3 aliados × nível de Fighter"
+     }
+    ]
+   },
+   "herda": "principal",
+   "hipotese": "Breath Weapon num round (substitui um ataque)",
+   "gasta": {
+    "sopro": 1,
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  },
+  {
+   "id": "surge",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+1d6",
+      "nota": "Eldritch Blast + Hex"
+     },
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d10+1d6",
+      "nota": "Eldritch Blast + Hex"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Breath Weapon (cone 15 pés)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d10",
+       "cd": 14
+      }
+     ]
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 12,
+      "nota": "3 aliados × nível de Fighter"
+     }
+    ]
+   },
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Breath Weapon + Action Surge",
+   "gasta": {
+    "sopro": 1,
+    "action_surge": 1,
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal, sopro; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "sopro",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: 0.5×1º, 2 sopro.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Purple Dragon Knight atirador com dip de Warlock (Undead): Eldritch Blast + Hex, sopro de dragão e cura em grupo pelo Second Wind.",
+  "estrategia": "Fica atrás disparando Eldritch Blast; Breath Weapon ou Dragon Fear quando os inimigos se juntam; Action Surge com Eldritch Blast nas lutas importantes.",
+  "nao_modelado": "Dragon Fear e Form of Dread (amedrontado), Repelling Blast; PV temporários do Form of Dread; Second Wind próprio; Indomitable; Royal Envoy; o gasto de ação bônus do Hex no 1º round.",
+  "progressao": "F4 Dragon Fear (Car 16); Warlock 1: Eldritch Blast (2 raios) + Hex; sopro 2d10; meia-armadura (CA 17)."
+ },
+ "id": "rpgbot-fighter-purple-dragon-knight-5",
+ "nome": "Purple Dragon Knight Fighter (RPGBot: Traitor to the Crown)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/purple-dragon-knight/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -1,0 +1,207 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-rune-knight.json",
+ "build": "Fighter (Rune Knight), Tabaxi (MMoM), garras + Unarmed Fighting, agarrador; Skill Expert (Atletismo) 4, Tavern Brawler 6, Crusher 8",
+ "corpo": {
+  "ca": 18,
+  "pv": 85,
+  "saves": {
+   "sv": {
+    "for": 9,
+    "des": 1,
+    "con": 7,
+    "int": -1,
+    "sab": 1,
+    "car": -1
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   },
+   "giants_might": {
+    "qtd": 4,
+    "volta": "longo"
+   },
+   "hill_rune": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 9,
+      "dano": "1d6+5"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto",
+     "agarra": true
+    },
+    "fontes": [
+     {
+      "tipo": "agarrao",
+      "nome": "Agarrão (Atletismo)",
+      "bonus": 13
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "principal": true,
+   "hipotese": "agarra o alvo prioritário (custa ataques até o Tavern Brawler) e bate com as garras",
+   "custo": "gratuita",
+   "defesa": {},
+   "saves": {}
+  },
+  {
+   "id": "gigante",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 9,
+      "dano": "1d6+5"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d6",
+      "nota": "Giant's Might: dano extra 1×/turno"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto",
+     "agarra": true
+    },
+    "fontes": [
+     {
+      "tipo": "agarrao",
+      "nome": "Agarrão (Atletismo)",
+      "bonus": 13
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "herda": "principal",
+   "hipotese": "Giant's Might + Hill Rune na luta",
+   "gasta": {
+    "giants_might": 1,
+    "hill_rune": 1
+   },
+   "defesa": {
+    "resist": true
+   }
+  },
+  {
+   "id": "surge",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 9,
+      "dano": "1d6+5"
+     },
+     {
+      "n": 0.5,
+      "bonus": 9,
+      "dano": "1d6+5"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d6",
+      "nota": "Giant's Might: dano extra 1×/turno"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto",
+     "agarra": true
+    },
+    "fontes": [
+     {
+      "tipo": "agarrao",
+      "nome": "Agarrão (Atletismo)",
+      "bonus": 13
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Giant's Might + Hill Rune + Action Surge",
+   "gasta": {
+    "giants_might": 1,
+    "action_surge": 1,
+    "hill_rune": 1
+   },
+   "defesa": {
+    "resist": true
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: 2 giants_might.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: 3 giants_might.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Rune Knight agarrador (Tabaxi): cresce com Giant's Might, agarra e derruba o alvo prioritário; runas de Fogo e Pedra para prender e encantar.",
+  "estrategia": "Na frente, agarra e derruba quem ameaça a party; Giant's Might nas lutas que pedem; Hill Rune contra dano físico.",
+  "nao_modelado": "Fire Rune (impedido + dano), Stone Rune (encantado/incapacitado), Storm e Cloud Rune, Runic Shield; dano do Unarmed Fighting no agarrado; derrubar (shove) e a vantagem que dá; vantagem do Giant's Might no agarrão; Indomitable; Second Wind.",
+  "progressao": "Crusher (For 20); Indomitable; Giant's Might 4/dia."
+ },
+ "id": "rpgbot-fighter-rune-knight-9",
+ "nome": "Rune Knight Fighter (RPGBot: Attaxi of the Giant Tabaxi)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/rune-knight/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

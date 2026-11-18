@@ -33,3 +33,17 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
 
 ## Área
 - Alvos pela tabela de áreas da DMG (cone/linha/esfera); "todos a 5 pés" = [1, 2, 3] (como o Thunderclap).
+
+## Acrescentado no lote 2 (casos novos; não muda nada do lote 1)
+- Multiclasse: as fatias são por **nível de personagem** (Echo Knight F6/Bb1 no 7; PDK F4/Wl1 no 5).
+- Recurso que se **ativa por luta** (fúria, Giant's Might, Fighting Spirit, Breath Weapon, Hill Rune): linha própria
+  com `gasta`, e o plano automático escolhe as lutas. Recurso gasto **golpe a golpe** (dados psiônicos, Unleash
+  Incarnation, Astral Spark): espalhado pelo dia (`usos_dia` ou n fracionário ÷ 4 lutas ÷ 4 rounds).
+- Uma ativação de 1 turno (Fighting Spirit) = vantagem 0,25 nos ataques da luta.
+- Sentinel / Hold the Line: fonte `sentinela` + ataque de oportunidade n 0,5 no dano + reação 0,5 (dano e controle).
+- PV temporários próprios (Fighting Spirit, Form of Dread): não modelados, como o Second Wind.
+- Reckless Attack: vantagem 1,0 nos ataques de For e `adv: 1` contra ele (RAW, sem desviar golpes para o eco).
+- Fúria: `defesa.resist` e +2 no dano; Hill Rune: `defesa.resist`.
+- Hex (1 hora): 1 espaço cobre ~2 lutas → `gasta` 0,5 espaço de 1º por luta.
+- Cone: alvos = comprimento ÷ 10, arredondado para cima (15 pés = 2).
+- Agarrão: fonte `agarrao` com o bônus de Atletismo; agarrar com a ação custa 1 ataque no 1º round (n − 0,25).

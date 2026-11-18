@@ -1,0 +1,734 @@
+{
+ "id": "rpgbot-fighter-purple-dragon-knight",
+ "nome": "Purple Dragon Knight Fighter (RPGBot: Traitor to the Crown)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/purple-dragon-knight/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Fighter 9 / Warlock 2 (Purple Dragon Knight, Undead), Dragonborn de Gema (Fizban), arco longo + Archery, Eldritch Blast; Dragon Fear 4, Car 20 (nível de personagem 10)",
+  "corpo": {
+   "ca": 16,
+   "pv": 31,
+   "saves": {
+    "sv": {
+     "for": 1,
+     "des": 3,
+     "con": 5,
+     "int": -1,
+     "sab": 0,
+     "car": 2
+    },
+    "ataques": 1
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "action_surge": {
+     "qtd": 1,
+     "volta": "curto"
+    },
+    "sopro": {
+     "qtd": 2,
+     "volta": "longo"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3"
+      }
+     ]
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Rallying Cry (Second Wind)",
+       "lado": "def",
+       "modelo": "cura",
+       "usos_descanso_curto": 1,
+       "pv": 9,
+       "nota": "3 aliados × nível de Fighter"
+      }
+     ]
+    },
+    "principal": true,
+    "hipotese": "atira com o arco (depois Eldritch Blast + Hex); Rallying Cry junto do Second Wind",
+    "custo": "gratuita",
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "soft": 0.15,
+      "dpr": "auto",
+      "front": false
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {}
+   },
+   {
+    "id": "sopro",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Breath Weapon (cone 15 pés)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "1d10",
+        "cd": 13
+       }
+      ]
+     }
+    ],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Rallying Cry (Second Wind)",
+       "lado": "def",
+       "modelo": "cura",
+       "usos_descanso_curto": 1,
+       "pv": 9,
+       "nota": "3 aliados × nível de Fighter"
+      }
+     ]
+    },
+    "herda": "principal",
+    "hipotese": "Breath Weapon num round (substitui um ataque)",
+    "gasta": {
+     "sopro": 1
+    }
+   },
+   {
+    "id": "surge",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3"
+      },
+      {
+       "n": 0.25,
+       "bonus": 7,
+       "dano": "1d8+3"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Breath Weapon (cone 15 pés)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "1d10",
+        "cd": 13
+       }
+      ]
+     }
+    ],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Rallying Cry (Second Wind)",
+       "lado": "def",
+       "modelo": "cura",
+       "usos_descanso_curto": 1,
+       "pv": 9,
+       "nota": "3 aliados × nível de Fighter"
+      }
+     ]
+    },
+    "herda": "principal",
+    "plano": "prioritaria",
+    "hipotese": "Breath Weapon + Action Surge",
+    "gasta": {
+     "sopro": 1,
+     "action_surge": 1
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Purple Dragon Knight atirador com dip de Warlock (Undead): Eldritch Blast + Hex, sopro de dragão e cura em grupo pelo Second Wind.",
+   "estrategia": "Fica atrás disparando Eldritch Blast; Breath Weapon ou Dragon Fear quando os inimigos se juntam; Action Surge com Eldritch Blast nas lutas importantes.",
+   "nao_modelado": "Dragon Fear e Form of Dread (amedrontado), Repelling Blast; PV temporários do Form of Dread; Second Wind próprio; Indomitable; Royal Envoy; o gasto de ação bônus do Hex no 1º round."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Rallying Cry; sopro 1d10, PB/dia."
+  },
+  "5": {
+   "_texto": "F4 Dragon Fear (Car 16); Warlock 1: Eldritch Blast (2 raios) + Hex; sopro 2d10; meia-armadura (CA 17).",
+   "recursos": {
+    "outros": {
+     "sopro": {
+      "qtd": 3,
+      "volta": "longo"
+     }
+    },
+    "espacos": {
+     "1": 1
+    },
+    "espacos_volta": "curto"
+   },
+   "corpo": {
+    "ca": 17,
+    "pv": 48,
+    "saves": {
+     "sv": {
+      "for": 2,
+      "des": 3,
+      "con": 6,
+      "int": -1,
+      "sab": 0,
+      "car": 3
+     },
+     "ataques": 1
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d10+1d6",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 12,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "custo": "recurso",
+     "hipotese": "Eldritch Blast + Hex (Hex dura 1 hora: 1 espaço cobre ~2 lutas); Rallying Cry junto do Second Wind"
+    },
+    {
+     "id": "sopro",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d10+1d6",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Breath Weapon (cone 15 pés)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "2d10",
+         "cd": 14
+        }
+       ]
+      }
+     ],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 12,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     },
+     "gasta": {
+      "sopro": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d10+1d6",
+        "nota": "Eldritch Blast + Hex"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d10+1d6",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Breath Weapon (cone 15 pés)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "2d10",
+         "cd": 14
+        }
+       ]
+      }
+     ],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 12,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     },
+     "gasta": {
+      "sopro": 1,
+      "action_surge": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Warlock 2: Agonizing Blast; F5 Extra Attack.",
+   "recursos": {
+    "espacos": {
+     "1": 2
+    }
+   },
+   "corpo": {
+    "ca": 17,
+    "pv": 65,
+    "saves": {
+     "sv": {
+      "for": 2,
+      "des": 3,
+      "con": 6,
+      "int": -1,
+      "sab": 0,
+      "car": 3
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d10+1d6+3",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 15,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     }
+    },
+    {
+     "id": "sopro",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d10+1d6+3",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Breath Weapon (cone 15 pés)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "2d10",
+         "cd": 14
+        }
+       ]
+      }
+     ],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 15,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d10+1d6+3",
+        "nota": "Eldritch Blast + Hex"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d10+1d6+3",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Breath Weapon (cone 15 pés)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "2d10",
+         "cd": 14
+        }
+       ]
+      }
+     ],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 15,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Car 18 (personagem 8); F7 Royal Envoy; sopro 4/dia.",
+   "recursos": {
+    "outros": {
+     "sopro": {
+      "qtd": 4,
+      "volta": "longo"
+     }
+    }
+   },
+   "corpo": {
+    "ca": 17,
+    "pv": 83,
+    "saves": {
+     "sv": {
+      "for": 3,
+      "des": 3,
+      "con": 7,
+      "int": -1,
+      "sab": 0,
+      "car": 4
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d10+1d6+4",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 21,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     }
+    },
+    {
+     "id": "sopro",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d10+1d6+4",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Breath Weapon (cone 15 pés)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "2d10",
+         "cd": 15
+        }
+       ]
+      }
+     ],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 21,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d10+1d6+4",
+        "nota": "Eldritch Blast + Hex"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+1d6+4",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Breath Weapon (cone 15 pés)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "2d10",
+         "cd": 15
+        }
+       ]
+      }
+     ],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 21,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Car 20 (personagem 10); F9 Indomitable; Eldritch Blast 3 raios; sopro 3d10.",
+   "corpo": {
+    "ca": 17,
+    "pv": 101,
+    "saves": {
+     "sv": {
+      "for": 3,
+      "des": 3,
+      "con": 7,
+      "int": -1,
+      "sab": 0,
+      "car": 5
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d10+1d6+5",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 27,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     }
+    },
+    {
+     "id": "sopro",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d10+1d6+5",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Breath Weapon (cone 15 pés)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "3d10",
+         "cd": 15
+        }
+       ]
+      }
+     ],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 27,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d10+1d6+5",
+        "nota": "Eldritch Blast + Hex"
+       },
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d10+1d6+5",
+        "nota": "Eldritch Blast + Hex"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Breath Weapon (cone 15 pés)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "3d10",
+         "cd": 15
+        }
+       ]
+      }
+     ],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 27,
+        "nota": "3 aliados × nível de Fighter"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

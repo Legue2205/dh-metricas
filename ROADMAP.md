@@ -426,3 +426,10 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - Novo: `"dpr": "auto"` na atenção (DPR da própria linha na CA da premissa `controle.atencao.ca_dpr_auto` = 16).
 - Lote 2: Samurai, Echo Knight, Psi Warrior, Rune Knight, Purple Dragon Knight. Depois: `subclasses-fighter`
   (notas, ler só então) → `calibracao/rpgbot-fighter.json` → `dh calibrar`.
+
+## 19/11 — passada 1, lote 2 (Fighter: Samurai, Echo Knight, Psi Warrior, Rune Knight, Purple Dragon Knight)
+- 5 progressões → 25 fatias; com o lote 1, o Fighter inteiro do RPGBot está no repo (10 subclasses, 50 fatias).
+- Casos novos registrados em `calibracao/convencoes-passada1.md` (multiclasse por nível de personagem, recursos de
+  ativação por luta em linhas próprias, Sentinel, Reckless, agarrão). Nenhuma premissa mudou.
+- Próximo: depois do CI, ler `02-subclasses/subclasses-fighter` (notas do RPGBot) → `calibracao/rpgbot-fighter.json`
+  → `dh calibrar` / `dh comparar`. Spell list do Eldritch Knight ainda não colada (não faz falta para a passada 1).

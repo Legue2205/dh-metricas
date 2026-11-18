@@ -1,0 +1,1139 @@
+{
+ "id": "rpgbot-fighter-echo-knight",
+ "nome": "Echo Knight Fighter (RPGBot: Dioscuri)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/echo-knight/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Fighter 8 / Barbarian 3 (Echo Knight, Ancestral Guardian), Custom Lineage, malho + GWF; Sentinel 1, Crusher 4, For 20 6, GWM 11 (nível de personagem)",
+  "corpo": {
+   "ca": 16,
+   "pv": 28,
+   "saves": {
+    "sv": {
+     "for": 5,
+     "des": 1,
+     "con": 4,
+     "int": -1,
+     "sab": 1,
+     "car": -1
+    },
+    "ataques": 1
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "action_surge": {
+     "qtd": 1,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "2d6+3+1.33"
+      },
+      {
+       "n": 0.125,
+       "bonus": 5,
+       "dano": "2d6+3+1.33",
+       "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 5,
+       "dano": "2d6+3+1.33",
+       "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "soft": 0.15,
+      "dpr": "auto",
+      "hard": {
+       "sentinela": 5
+      }
+     },
+     "fontes": [
+      {
+       "tipo": "sentinela",
+       "nome": "Corpo (Sentinel pelo eco)",
+       "bonus": 5
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "principal": true,
+    "hipotese": "ataca pelo eco; Sentinel pune quem tenta sair de perto do eco",
+    "custo": "gratuita",
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade (Sentinel)",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "saves": {}
+   },
+   {
+    "id": "surge",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "2d6+3+1.33"
+      },
+      {
+       "n": 0.125,
+       "bonus": 5,
+       "dano": "2d6+3+1.33",
+       "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 5,
+       "dano": "2d6+3+1.33",
+       "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+      },
+      {
+       "n": 0.25,
+       "bonus": 5,
+       "dano": "2d6+3+1.33"
+      },
+      {
+       "n": 0.0312,
+       "bonus": 5,
+       "dano": "2d6+3+1.33",
+       "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "soft": 0.15,
+      "dpr": "auto",
+      "hard": {
+       "sentinela": 5
+      }
+     },
+     "fontes": [
+      {
+       "tipo": "sentinela",
+       "nome": "Corpo (Sentinel pelo eco)",
+       "bonus": 5
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "herda": "principal",
+    "plano": "prioritaria",
+    "hipotese": "Action Surge num round",
+    "gasta": {
+     "action_surge": 1
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Echo Knight defensor com Sentinel: ataca pelo eco e prende os inimigos longe da party; a partir do 7 mergulha em Barbarian (Ancestral Guardian).",
+   "estrategia": "Põe o eco ao lado da maior ameaça, bate pelo eco e segura o alvo com Sentinel; com fúria, Ancestral Protectors faz o alvo errar quem não é ele.",
+   "nao_modelado": "Crusher (empurrão); o eco como alvo extra e teleporte; Danger Sense; Indomitable; Second Wind; Shadow Martyr; os outros alvos que o eco ameaça além do principal."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Manifest Echo; Unleash Incarnation (Con/dia)."
+  },
+  "5": {
+   "_texto": "Crusher (For 18); Extra Attack.",
+   "corpo": {
+    "ca": 16,
+    "pv": 44,
+    "saves": {
+     "sv": {
+      "for": 7,
+      "des": 1,
+      "con": 5,
+      "int": -1,
+      "sab": 1,
+      "car": -1
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 7,
+        "dano": "2d6+4+1.33"
+       },
+       {
+        "n": 0.125,
+        "bonus": 7,
+        "dano": "2d6+4+1.33",
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 7,
+        "dano": "2d6+4+1.33",
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 7
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 7
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {}
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 7,
+        "dano": "2d6+4+1.33"
+       },
+       {
+        "n": 0.125,
+        "bonus": 7,
+        "dano": "2d6+4+1.33",
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 7,
+        "dano": "2d6+4+1.33",
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       },
+       {
+        "n": 0.5,
+        "bonus": 7,
+        "dano": "2d6+4+1.33"
+       },
+       {
+        "n": 0.0312,
+        "bonus": 7,
+        "dano": "2d6+4+1.33",
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 7
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 7
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {}
+    }
+   ]
+  },
+  "7": {
+   "_texto": "For 20 (F6); Barbarian 1: fúria 2/dia.",
+   "recursos": {
+    "outros": {
+     "furia": {
+      "qtd": 2,
+      "volta": "longo"
+     }
+    }
+   },
+   "corpo": {
+    "ca": 16,
+    "pv": 61,
+    "saves": {
+     "sv": {
+      "for": 8,
+      "des": 1,
+      "con": 5,
+      "int": -1,
+      "sab": 1,
+      "car": -1
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "2d6+5+1.33"
+       },
+       {
+        "n": 0.125,
+        "bonus": 8,
+        "dano": "2d6+5+1.33",
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "2d6+5+1.33",
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 8
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 8
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {}
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "2d6+5+1.33"
+       },
+       {
+        "n": 0.125,
+        "bonus": 8,
+        "dano": "2d6+5+1.33",
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "2d6+5+1.33",
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "2d6+5+1.33"
+       },
+       {
+        "n": 0.0312,
+        "bonus": 8,
+        "dano": "2d6+5+1.33",
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 8
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 8
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {}
+    },
+    {
+     "id": "furia",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "2d6+7+1.33"
+       },
+       {
+        "n": 0.125,
+        "bonus": 8,
+        "dano": "2d6+7+1.33",
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "2d6+7+1.33",
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 8
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 8
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "resist": true
+     },
+     "herda": "principal",
+     "hipotese": "luta inteira em fúria (+2 de dano, resistência a dano físico)",
+     "gasta": {
+      "furia": 1
+     }
+    },
+    {
+     "id": "furia-surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "2d6+7+1.33"
+       },
+       {
+        "n": 0.125,
+        "bonus": 8,
+        "dano": "2d6+7+1.33",
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "2d6+7+1.33",
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "2d6+7+1.33"
+       },
+       {
+        "n": 0.0312,
+        "bonus": 8,
+        "dano": "2d6+7+1.33",
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 8
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 8
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "resist": true
+     },
+     "herda": "principal",
+     "plano": "prioritaria",
+     "hipotese": "fúria + Action Surge",
+     "gasta": {
+      "furia": 1,
+      "action_surge": 1
+     }
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Barbarian 3: Reckless Attack, Ancestral Protectors; fúria 3/dia.",
+   "recursos": {
+    "outros": {
+     "furia": {
+      "qtd": 3,
+      "volta": "longo"
+     }
+    }
+   },
+   "corpo": {
+    "ca": 16,
+    "pv": 79,
+    "saves": {
+     "sv": {
+      "for": 9,
+      "des": 1,
+      "con": 6,
+      "int": -1,
+      "sab": 1,
+      "car": -1
+     },
+     "ataques": 2
+    },
+    "adv": 1
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0
+       },
+       {
+        "n": 0.125,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0,
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 9
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0
+       },
+       {
+        "n": 0.125,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0,
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0
+       },
+       {
+        "n": 0.0312,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0,
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 9
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     }
+    },
+    {
+     "id": "furia",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0
+       },
+       {
+        "n": 0.125,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0,
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 9
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "ancestral_protectors",
+        "nome": "Ancestral Protectors (pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "resist": true,
+      "adv": 1
+     }
+    },
+    {
+     "id": "furia-surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0
+       },
+       {
+        "n": 0.125,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0,
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0
+       },
+       {
+        "n": 0.0312,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0,
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 9
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "ancestral_protectors",
+        "nome": "Ancestral Protectors (pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "resist": true,
+      "adv": 1
+     }
+    }
+   ]
+  },
+  "11": {
+   "_texto": "F8: Great Weapon Master (personagem 11); ainda 2 ataques.",
+   "corpo": {
+    "ca": 16,
+    "pv": 95,
+    "saves": {
+     "sv": {
+      "for": 9,
+      "des": 1,
+      "con": 6,
+      "int": -1,
+      "sab": 1,
+      "car": -1
+     },
+     "ataques": 2
+    },
+    "adv": 1
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.125,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "poder": [
+         -5,
+         10
+        ],
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 9
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.125,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "poder": [
+         -5,
+         10
+        ],
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.0312,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 9
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     }
+    },
+    {
+     "id": "furia",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.125,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "poder": [
+         -5,
+         10
+        ],
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 9
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "ancestral_protectors",
+        "nome": "Ancestral Protectors (pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "resist": true,
+      "adv": 1
+     }
+    },
+    {
+     "id": "furia-surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.125,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "poder": [
+         -5,
+         10
+        ],
+        "nota": "ataque de oportunidade (Sentinel, também pelo eco), reação em 50% dos rounds"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.0312,
+        "bonus": 9,
+        "dano": "2d6+7+1.33",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 9
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "ancestral_protectors",
+        "nome": "Ancestral Protectors (pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "sentinela",
+        "nome": "Corpo (Sentinel pelo eco)",
+        "bonus": 9
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "resist": true,
+      "adv": 1
+     }
+    }
+   ]
+  }
+ }
+}

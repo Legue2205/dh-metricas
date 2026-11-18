@@ -1,173 +1,192 @@
 {
-  "id": "kael-7",
-  "nome": "Kael",
-  "grupo": "Party",
-  "nivel": 7,
-  "build": "Way of the Blood Monk 7 (homebrew), Des 18",
-  "descricao": {
-    "resumo": "Monge de sangue homebrew: paga habilidades com a própria vida e se cura a cada acerto. Dano constante, atordoa alvos únicos e se sustenta em lutas longas.",
-    "build": "Way of the Blood Monk 7 (homebrew do mestre). Des 18 (20 no time skip), Sab 16. Flurry, Patient Defense e Step of the Wind custam 4 PV cada; Blood Rage (\"a moeda\") 3 vezes por dia.",
-    "itens": "Bordão +2 (arma de monge).",
-    "estrategia": "Mesma abordagem em todo combate: ativa a moeda, 2 golpes de bordão + Flurry, subindo o combo; Stunning Strike no 1º acerto contra o alvo mais perigoso. Quase não gasta recurso diário.",
-    "dano": {
-      "texto": "2 bordões + 2 desarmados (Flurry) por turno. O combo sobe 1 por turno (até 3 na moeda): penalidade no acerto em troca de crítico 19–20 e dado extra.",
-      "vantagem": "Nenhuma própria; rende muito com vantagem externa",
-      "tipo": "Concussão"
-    },
-    "defesa": {
-      "texto": "CA 17 sem armadura. Cura fixa por acerto (Blood Eating), cerca de 5 PV líquidos por round atacando. Evasion e Stillness of Mind. Patient Defense é uma postura à parte."
-    },
-    "controle": {
-      "texto": "Stunning Strike: 1 tentativa por turno no 1º acerto, CD 14 (Con).",
-      "favorita": "Stunning Strike",
-      "corpo": "Striker de linha de frente: só aguenta o que vem nele, não protege a backline.",
-      "posicao": "Striker corpo a corpo"
-    },
-    "suporte": {
-      "texto": "Cada atordoamento dá vantagem aos aliados contra o alvo."
-    }
+ "id": "kael-7",
+ "nome": "Kael",
+ "grupo": "Party",
+ "nivel": 7,
+ "build": "Way of the Blood Monk 7 (homebrew), Des 18",
+ "descricao": {
+  "resumo": "Monge de sangue homebrew: paga habilidades com a própria vida e se cura a cada acerto. Dano constante, atordoa alvos únicos e se sustenta em lutas longas.",
+  "build": "Way of the Blood Monk 7 (homebrew do mestre). Des 18 (20 no time skip), Sab 16. Flurry, Patient Defense e Step of the Wind custam 4 PV cada; Blood Rage (\"a moeda\") 3 vezes por dia.",
+  "itens": "Bordão +2 (arma de monge).",
+  "estrategia": "Mesma abordagem em todo combate: ativa a moeda, 2 golpes de bordão + Flurry, subindo o combo; Stunning Strike no 1º acerto contra o alvo mais perigoso. Quase não gasta recurso diário.",
+  "dano": {
+   "texto": "2 bordões + 2 desarmados (Flurry) por turno. O combo sobe 1 por turno (até 3 na moeda): penalidade no acerto em troca de crítico 19–20 e dado extra.",
+   "vantagem": "Nenhuma própria; rende muito com vantagem externa",
+   "tipo": "Concussão"
   },
-  "corpo": {
-    "ca": 17,
-    "pv": 79,
-    "pv_real": 59,
-    "nota_pv": "pv = 79 é o efetivo com a autocura, usado na atenção (a revisar com o motor de vida do Kael)",
-    "saves": {
-      "sv": {
-        "for": 2,
-        "des": 7,
-        "con": 3,
-        "int": 1,
-        "sab": 3,
-        "car": -1
-      },
-      "pv": 59,
-      "evasion": true,
-      "stillness": true
-    }
+  "defesa": {
+   "texto": "CA 17 sem armadura. Cura fixa por acerto (Blood Eating), cerca de 5 PV líquidos por round atacando. Evasion e Stillness of Mind. Patient Defense é uma postura à parte."
   },
-  "linhas": [
-    {
-      "id": "principal",
-      "principal": true,
-      "hipotese": "Moeda ativa: Flurry subindo o combo, cura líquida ~5/round; 1 Stunning Strike por turno no 1º acerto (CD 14)",
-      "dano": {
-        "medido": [
-          39.5,
-          37.0,
-          29.8,
-          27.5,
-          22.8,
-          18.1,
-          13.6,
-          9.7,
-          8.1
-        ],
-        "fonte": "planilha de dano (sem motor salvo)"
-      },
-      "defesa": {
-        "pv_efetivo": 79
-      },
-      "controle": {
-        "atencao": {
-          "papel": "striker",
-          "soft": 0.15,
-          "dpr": 29.8
-        },
-        "fontes": [
-          {
-            "tipo": "ataque_com_save",
-            "nome": "Stunning Strike",
-            "bonus": [
-              9,
-              9,
-              7,
-              7
-            ],
-            "cd": 14,
-            "save": "Con",
-            "penalidade_por_round": 1
-          },
-          {
-            "tipo": "ameaca",
-            "nome": "Corpo (ameaça)"
-          }
-        ]
-      },
-      "saves": {
-        "cura_round": 5,
-        "ataques": 4
-      },
-      "suporte": {
-        "fontes": [
-          {
-            "nome": "Stunning Strike (abertura)",
-            "lado": "of",
-            "modelo": "vantagem",
-            "alvos": 3,
-            "fracao": 0.34,
-            "nota": "fração dos turnos do chefe atordoado, do eixo de controle"
-          }
-        ]
-      }
-    },
-    {
-      "id": "so-sobreviver",
-      "principal": false,
-      "hipotese": "Só sobreviver: Martial Arts para curar, sem Flurry nem combo (~10/round)",
-      "defesa": {
-        "pv_efetivo": 99
-      },
-      "saves": {
-        "cura_round": 10,
-        "ataques": 3
-      }
-    },
-    {
-      "id": "patient-defense",
-      "principal": false,
-      "hipotese": "Patient Defense todo round: desvantagem nos ataques contra ele; cura líquida ~4",
-      "defesa": {
-        "pv_efetivo": 75,
-        "adv": -1
-      },
-      "saves": {
-        "adv": [
-          "des"
-        ],
-        "cura_round": 4,
-        "ataques": 2
-      }
-    }
-  ],
-  "planos": {
-    "padrao": {
-      "combates": [
-        "principal",
-        "principal",
-        "principal",
-        "principal"
-      ],
-      "descricao": "ki e vida não limitam em 4 rounds: mesma abordagem em todo combate"
-    },
-    "combate_unico": {
-      "combates": [
-        "principal"
-      ],
-      "descricao": "ki e vida não limitam em 4 rounds: mesma abordagem em todo combate"
-    },
-    "dia_longo": {
-      "combates": [
-        "principal",
-        "principal",
-        "principal",
-        "principal",
-        "principal",
-        "principal",
-        "principal",
-        "principal"
-      ],
-      "descricao": "ki e vida não limitam em 4 rounds: mesma abordagem em todo combate"
-    }
+  "controle": {
+   "texto": "Stunning Strike: 1 tentativa por turno no 1º acerto, CD 14 (Con).",
+   "favorita": "Stunning Strike",
+   "corpo": "Striker de linha de frente: só aguenta o que vem nele, não protege a backline.",
+   "posicao": "Striker corpo a corpo"
+  },
+  "suporte": {
+   "texto": "Cada atordoamento dá vantagem aos aliados contra o alvo."
   }
+ },
+ "corpo": {
+  "ca": 17,
+  "pv": 79,
+  "pv_real": 59,
+  "nota_pv": "pv = 79 é o efetivo com a autocura, usado na atenção (a revisar com o motor de vida do Kael)",
+  "saves": {
+   "sv": {
+    "for": 2,
+    "des": 7,
+    "con": 3,
+    "int": 1,
+    "sab": 3,
+    "car": -1
+   },
+   "pv": 59,
+   "evasion": true,
+   "stillness": true
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "principal": true,
+   "hipotese": "Moeda ativa: Flurry subindo o combo, cura líquida ~5/round; 1 Stunning Strike por turno no 1º acerto (CD 14)",
+   "dano": {
+    "medido": [
+     39.5,
+     37.0,
+     29.8,
+     27.5,
+     22.8,
+     18.1,
+     13.6,
+     9.7,
+     8.1
+    ],
+    "fonte": "planilha de dano (sem motor salvo)"
+   },
+   "defesa": {
+    "pv_efetivo": 79
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": 29.8
+    },
+    "fontes": [
+     {
+      "tipo": "ataque_com_save",
+      "nome": "Stunning Strike",
+      "bonus": [
+       9,
+       9,
+       7,
+       7
+      ],
+      "cd": 14,
+      "save": "Con",
+      "penalidade_por_round": 1
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {
+    "cura_round": 5,
+    "ataques": 4
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Stunning Strike (abertura)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.34,
+      "nota": "fração dos turnos do chefe atordoado, do eixo de controle"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sem-stunning",
+   "herda": "principal",
+   "hipotese": "Como a mesa joga hoje: Stunning Strike ainda não acertado com o mestre, não é usado; resto igual à principal",
+   "custo": "gratuita",
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": 29.8
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "so-sobreviver",
+   "principal": false,
+   "hipotese": "Só sobreviver: Martial Arts para curar, sem Flurry nem combo (~10/round)",
+   "defesa": {
+    "pv_efetivo": 99
+   },
+   "saves": {
+    "cura_round": 10,
+    "ataques": 3
+   }
+  },
+  {
+   "id": "patient-defense",
+   "principal": false,
+   "hipotese": "Patient Defense todo round: desvantagem nos ataques contra ele; cura líquida ~4",
+   "defesa": {
+    "pv_efetivo": 75,
+    "adv": -1
+   },
+   "saves": {
+    "adv": [
+     "des"
+    ],
+    "cura_round": 4,
+    "ataques": 2
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "combates": [
+    "sem-stunning",
+    "sem-stunning",
+    "sem-stunning",
+    "sem-stunning"
+   ],
+   "descricao": "ki e vida não limitam em 4 rounds: mesma abordagem em todo combate. Sem Stunning Strike (mesa ainda não usa; fica como linha-opção)."
+  },
+  "combate_unico": {
+   "combates": [
+    "principal"
+   ],
+   "descricao": "ki e vida não limitam em 4 rounds: mesma abordagem em todo combate"
+  },
+  "dia_longo": {
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal",
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ],
+   "descricao": "ki e vida não limitam em 4 rounds: mesma abordagem em todo combate"
+  }
+ }
 }

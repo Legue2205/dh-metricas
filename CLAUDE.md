@@ -20,3 +20,12 @@ Objetivo: adicionar ou mudar uma build gastando poucos tokens e sem divergir dos
   e respeite o que `dh validar` disser (ERRO de reação bloqueia; AVISO de espaços deve ser relatado ao usuário).
 - **Builds agnósticas:** nada de nome de personagem em `dh/`. Mecânica nova entra como tipo/campo genérico no JSON.
 - Avise o usuário em uma linha quando um passo for caro (ler fichas grandes, `dh completo` em tudo).
+
+## Builds de referência em lote (RPGBot, D4, Treant Monk)
+- Fonte: `.md` compacto gerado por `prompts/prompt-rpgbot.md` (Drive: "Biblioteca de builds .md/rpgbot/"). Leia o .md,
+  **nunca o guia inteiro**. Texto do guia não entra no repo (público): só mecânica, descrição em palavras nossas e o link.
+- Escreva `progressoes/<id>.json` (base no menor nível + patches cumulativos só com o que muda; modelo em
+  `progressoes/exemplo-guerreiro.json`), com `"planos": {"padrao": "auto", "combate_unico": "auto"}` salvo se o guia
+  orientar o orçamento. Cada linha-opção declara `"gasta"` por luta.
+- Fluxo do lote: escrever os N `.prog` → `dh expandir` → `dh validar 'builds/*.json'` → commit. Não rode `dh completo`
+  na conversa: o CI calcula. Gabarito da fonte em `calibracao/<fonte>.json`; `dh calibrar` depois do CI.

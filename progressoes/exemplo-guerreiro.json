@@ -1,0 +1,27 @@
+{
+ "id": "exemplo-guerreiro",
+ "nome": "Guerreiro de exemplo (progressão)",
+ "grupo": "Arquétipo",
+ "fonte": {"tipo": "exemplo", "nota": "Modelo de arquivo de progressão: base + patches cumulativos por nível."},
+ "base": {
+  "build": "Fighter (Champion), espada longa + escudo, Dueling, For 16→18→20",
+  "corpo": {"ca": 18, "pv": 28},
+  "recursos": {"espacos": {}, "outros": {"action_surge": {"qtd": 1, "volta": "curto", "valor": 2}}},
+  "linhas": [
+   {"id": "principal", "principal": true, "hipotese": "ataca todo round; sem recurso", "custo": "gratuita",
+    "dano": {"ataques": [{"n": 1, "bonus": 5, "dano": "1d8+5", "crit_em": 19}]},
+    "defesa": {},
+    "controle": {"atencao": {"papel": "tank", "soft": 0.15, "dpr": 10}, "fontes": [{"tipo": "ameaca", "nome": "Corpo (ameaça)"}]}},
+   {"id": "surge", "herda": "principal", "plano": "prioritaria", "hipotese": "Action Surge num round da luta", "gasta": {"action_surge": 1},
+    "dano": {"ataques": [{"n": 1, "bonus": 5, "dano": "1d8+5", "crit_em": 19}, {"n": 0.25, "bonus": 5, "dano": "1d8+5", "crit_em": 19}]}}
+  ],
+  "planos": {"padrao": "auto", "combate_unico": "auto"}
+ },
+ "niveis": {
+  "3": {"_texto": "Champion: crítico em 19."},
+  "5": {"_texto": "Extra Attack; For 18.", "corpo": {"pv": 44, "ca": 18},
+        "linhas": [{"id": "principal", "dano": {"ataques": [{"n": 2, "bonus": 7, "dano": "1d8+6", "crit_em": 19}]}},
+                   {"id": "surge", "dano": {"ataques": [{"n": 2, "bonus": 7, "dano": "1d8+6", "crit_em": 19}, {"n": 0.5, "bonus": 7, "dano": "1d8+6", "crit_em": 19}]}}]},
+  "7": {"_texto": "Remarkable Athlete; escudo +1.", "corpo": {"pv": 60, "ca": 19}}
+ }
+}

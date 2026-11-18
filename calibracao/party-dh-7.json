@@ -1,17 +1,23 @@
 {
   "nome": "Party DragonHeist, nível 7",
-  "fonte": "percepção da mesa (2 anos de jogo)",
+  "fonte": "percepção da mesa (2 anos de jogo) — valor percebido, não medido",
   "visao": "padrao",
   "tolerancia": 0.5,
-  "_como_preencher": "Por eixo: 'ordem' do mais forte ao mais fraco (sublista = empate) e/ou 'faixa' {build: [letra mín, letra máx]}. Deixe vazio o que a mesa não tem opinião. Rode: python -m dh calibrar",
+  "_como_preencher": "Por eixo: 'ordem' do mais forte ao mais fraco (sublista = empate) e/ou 'faixa' {build: [letra mín, letra máx]}. Rode: python -m dh calibrar",
   "eixos": {
-    "dano":     {"ordem": []},
-    "deff":     {"ordem": []},
-    "defm":     {"ordem": []},
-    "area":     {"ordem": []},
-    "controle": {"ordem": []},
-    "suporte":  {"ordem": []},
-    "corpo":    {"ordem": []}
+    "controle": {"ordem": ["marcus-7", "amadeus-7", "ravin-7", ["abdul-7", "john-7"], ["kael-7", "tinbin-7"]]},
+    "dano":     {"ordem": [["kael-7", "john-7", "tinbin-7"], ["ravin-7", "abdul-7", "amadeus-7"], "marcus-7"]},
+    "deff":     {"ordem": ["abdul-7", "tinbin-7", ["ravin-7", "kael-7", "marcus-7"], ["amadeus-7", "john-7"]]},
+    "suporte":  {"ordem": [["marcus-7", "amadeus-7"], ["abdul-7", "john-7", "kael-7", "ravin-7", "tinbin-7"]]},
+    "area":     {"ordem": ["amadeus-7", "ravin-7", "marcus-7"]},
+    "corpo":    {"ordem": [["abdul-7", "amadeus-7"], ["john-7", "kael-7", "marcus-7", "ravin-7", "tinbin-7"]]}
   },
-  "notas": {}
+  "notas": {
+    "controle": "Casters no topo e próximos: Plant Growth (Marcus) um pouco acima da Web (Amadeus), Hypnotic Pattern do Ravin pouco usado e pouco decisivo; Ravin usa ~1 Counterspell/dia, Amadeus só se crítico. Ravin um pouco acima de John (Ensnaring Strike rende bem; a prioritária de controle funcionou) e Abdul (Conquering Presence 1×, falha em save; mas o AO de Sentinel zera velocidade e só precisa acertar a CA). Kael artificialmente perto de zero: Stunning Strike ainda não acertado com o mestre, só o vendaval reduz velocidade. Tin Bin ~0.",
+    "dano": "Kael, John e Tin Bin lideram (Tin Bin agora Rogue 5/Fighter 2 com Nick). Ravin abaixo do John em geral, competitivo com barrado + Haste + espada/Inflict Wounds. Abdul competitivo quando torra smites (o plano padrão torra), reações ajudam. Amadeus muito variável: com esqueletos conectando (CA baixa, Web, mais esqueletos) dobra o Kael num bom round. Marcus disparado o menor (espada raramente usada).",
+    "deff": "Abdul CA alta e aguenta muito. Tin Bin surpreendentemente bom (CA + Uncanny Dodge). Ravin CA alta mas pouca vida (barrado queima rápido). Kael ok; Marcus ok, melhor de escudo. Amadeus baixa sem a máscara (3 sombras), depende de esqueletos e Shield. John ruim.",
+    "suporte": "Marcus (cura, Polymorph em aliado — foi focado e perdeu concentração) e Amadeus (Haste) no topo. Haste trocado entre si.",
+    "area": "Fireball do Amadeus é a mais impactante (às vezes decide o combate). Lightning Bolt do Ravin pega 2–3 alvos em geral. Shatter do Marcus muito usado, dano 'meh', mas quebra estruturas.",
+    "corpo": "Opinião fraca (métrica nova, contraintuitiva). Abdul tanque de verdade (Lay on Hands e Healing Word nele mesmo). Esqueletos do Amadeus: muita vida, CA alta, só valem com AoE; formação dá AO; protegem o melee dele."
+  }
 }

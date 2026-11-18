@@ -4,7 +4,7 @@
  "grupo": "Party",
  "nivel": 7,
  "build": "Way of the Blood Monk 7 (homebrew), Des 18",
- "impressao": "9e60360805",
+ "impressao": "b3f5aa5ce3",
  "versao": "0.7.1",
  "modo": "completo",
  "linhas": {
@@ -165,6 +165,150 @@
     "rank_absoluto": "C-"
    }
   },
+  "sem-stunning": {
+   "hipotese": "Como a mesa joga hoje: Stunning Strike ainda não acertado com o mestre, não é usado; resto igual à principal",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 39.5,
+     "CA 12": 37.0,
+     "CA 15": 29.8,
+     "CA 16": 27.5,
+     "CA 18": 22.8,
+     "CA 20": 18.1,
+     "CA 22": 13.6,
+     "CA 24": 9.7,
+     "CA 25": 8.1
+    },
+    "nivel_eq": 7.3,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.3,
+    "nivel_precisa": 7.1,
+    "medido": true
+   },
+   "defesa": {
+    "pv_efetivo": 79,
+    "ca": 17,
+    "blindagem": 5.95,
+    "durabilidade": 4.22,
+    "nivel_blindagem": 6.1,
+    "nivel_durabilidade": 6.3,
+    "nivel_eq": 6.3,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 10.09,
+     "rank": "A-",
+     "turnos_livres": [
+      3.72,
+      3.71,
+      3.64,
+      2.88,
+      3.06,
+      3.03,
+      2.34,
+      2.28,
+      2.1,
+      1.89
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 8.17,
+     "rank": "B+",
+     "turnos_livres": [
+      3.19,
+      2.22,
+      1.84,
+      1.58,
+      1.13,
+      0.71,
+      1.55,
+      1.35,
+      1.22,
+      1.52
+     ]
+    }
+   },
+   "suporte": {
+    "ofensivo": 9.28,
+    "defensivo": 0,
+    "total": 9.28,
+    "nivel_ofensivo": 4.7,
+    "nivel_defensivo": 0.0,
+    "nivel_eq": 3.8,
+    "rank": "C-",
+    "perfil": "Amplificador",
+    "fonte_principal": "Stunning Strike (abertura)",
+    "fontes": [
+     {
+      "nome": "Stunning Strike (abertura)",
+      "lado": "of",
+      "valor": 9.28
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 1.29,
+    "rank": "D",
+    "nivel_campo": 0.16,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 1.13,
+    "rank_atencao": "D",
+    "vidas_total": 0.173,
+    "vidas_campo": 0.028,
+    "vidas_atencao": 0.147,
+    "corpo": {
+     "T": 0.147,
+     "S": 0.222,
+     "P": -0.075,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "por_tipo": {
+     "Minions + minibosses": 0.95,
+     "Party de elite": 0.97,
+     "Horda + chefe": 0.62,
+     "Horda": 0.71,
+     "Dupla": 2.04,
+     "Chefe sozinho": 2.13
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0145
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0084
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0084
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0191
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0087
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0105
+     }
+    },
+    "nivel_absoluto": 1.14,
+    "rank_absoluto": "D"
+   }
+  },
   "so-sobreviver": {
    "hipotese": "Só sobreviver: Martial Arts para curar, sem Flurry nem combo (~10/round)",
    "principal": [],
@@ -287,7 +431,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "sem-stunning",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -296,7 +440,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "sem-stunning",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -305,7 +449,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "sem-stunning",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -314,7 +458,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "sem-stunning",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -360,11 +504,11 @@
      }
     },
     "campo": {
-     "nivel_eq": 3.9,
-     "rank": "C-",
+     "nivel_eq": 0.0,
+     "rank": "F",
      "por_categoria": {
-      "np": 3.9,
-      "p": 3.9
+      "np": 0.0,
+      "p": 0.0
      }
     },
     "corpo": {
@@ -599,5 +743,5 @@
    }
   }
  },
- "segundos": 3.0
+ "segundos": 6.1
 }

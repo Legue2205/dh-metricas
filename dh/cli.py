@@ -114,7 +114,7 @@ def _linhas(b, res):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(prog='dh', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua', 'site', 'tatico', 'calibrar'])
+    ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua', 'site', 'tatico', 'calibrar', 'expandir', 'plano-auto'])
     ap.add_argument('alvos', nargs='*')
     ap.add_argument('--forcar', action='store_true')
     ap.add_argument('--eixo', action='append')
@@ -123,7 +123,7 @@ def main(argv=None):
     ap.add_argument('--w', type=float, action='append', help='tatico: razão de piscinas, valor de 1 PV dentro do orçamento (padrão 1)')
     ap.add_argument('--comp', action='append', help='tatico: composição (padrão: as três)')
     a = ap.parse_args(argv)
-    arquivos = [f for p in a.alvos for f in sorted(glob.glob(p))] if a.comando not in ('regua', 'painel', 'site', 'calibrar') else []
+    arquivos = [f for p in a.alvos for f in sorted(glob.glob(p))] if a.comando not in ('regua', 'painel', 'site', 'calibrar', 'expandir') else []
 
     if a.comando == 'validar':
         ok = True
@@ -155,6 +155,19 @@ def main(argv=None):
                         print(f"    {t}: DPR {_fmt(v['dpr'])} · recebido {_fmt(v['recebido_luta'])} · escondido {_fmt(v['escondido_fim_turno'])}%")
                         print('      R1:   ' + ' · '.join(f"{k} {_fmt(x)}%" for k, x in v['acoes_r1'].items() if x >= 1))
                         print('      R2-4: ' + ' · '.join(f"{k} {_fmt(x)}%" for k, x in v['acoes_r2_4'].items() if x >= 1))
+        return 0
+
+    if a.comando == 'expandir':
+        from .progressao import expandir
+        esc = expandir(a.alvos or None)
+        print(f'{len(esc)} fatia(s) escrita(s)' + ''.join(f'\n  {p.name}' for p in esc)); return 0
+
+    if a.comando == 'plano-auto':
+        from .plano_auto import aplicar
+        for f in arquivos:
+            b = json.load(open(f, encoding='utf-8')); feitos = aplicar(b)
+            if feitos: open(f, 'w', encoding='utf-8').write(json.dumps(b, ensure_ascii=False, indent=1) + '\n')
+            print(f, '→', ', '.join(f"{t}: {' / '.join(b['planos'][t]['combates'])}" for t in feitos) or 'nada a gerar (planos escritos à mão ou sem "auto")')
         return 0
 
     if a.comando == 'calibrar':

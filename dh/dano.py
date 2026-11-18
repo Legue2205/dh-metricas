@@ -2,7 +2,12 @@
 
 Dois jeitos de informar o dano de uma linha:
   - "medido": lista com os 9 DPRs já calculados (migração das linhas antigas, que não tinham motor salvo);
-  - "ataques"/"por_turno"/"por_luta"/"automatico": o motor calcula em fórmula fechada (valor esperado).
+  - "ataques"/"por_turno"/"por_luta"/"automatico"/"com_save": o motor calcula em fórmula fechada (valor esperado).
+Campos de "ataques": n (fracionário ok), bonus, dano, crit_em, dados_crit, vantagem (0–1), elven_accuracy,
+poder [-5, 10] (GWM/Sharpshooter: usa o modo que rende mais em cada CA).
+"por_turno": 1× por turno no 1º acerto (Sneak Attack; prob = chance de ter o gatilho). "por_luta": smites (usos ou usos_dia).
+"com_save": [{"n", "cd", "save": "Sab", "dano", "meio": false}] — truques/magias de alvo único com save.
+Fúria, Dueling, Hex etc. entram na string de dano ("1d8+2+1d6"); escala de truque por nível vai no patch da progressão.
 O nível equivalente é a mesma conta da coluna U da planilha (porta da fórmula LET/LAMBDA).
 """
 import re
@@ -81,6 +86,27 @@ def _usados(usos, pc, natq):
     lo = floor(usos); return e(lo) + (usos - lo) * (e(lo + 1) - e(lo))
 
 
+def save_alvo(ca, atributo):
+    """Save médio do alvo típico com essa CA (medianas do Monster Manual em base.CRT; acima de CA 19, +1 por ponto)."""
+    from .base import CRT, SAVE_TIPO
+    w = SAVE_TIPO.get(atributo, 0.5)
+    crs = [cr for cr, v in CRT.items() if v[0] == ca]
+    extra = 0.0
+    if not crs:
+        if ca > max(v[0] for v in CRT.values()): crs = [max(CRT)]; extra = ca - CRT[max(CRT)][0]
+        else: crs = [min(CRT, key=lambda cr: (abs(CRT[cr][0] - ca), cr))]
+    return sum(CRT[cr][2] + w * (CRT[cr][3] - CRT[cr][2]) for cr in crs) / len(crs) + extra
+
+
+def _com_save(x, ca):
+    """Dano de alvo único com save (Toll the Dead, Sacred Flame, Blight…): falha = tudo, sucesso = metade se "meio"."""
+    avg = dados(x['dano'])[0]
+    falha = max(0.0, min(1.0, (x['cd'] - save_alvo(ca, x.get('save', 'Des')) - 1) / 20))
+    v = x.get('vantagem_save', 0.0)                      # desvantagem do alvo no save (ex.: Hex) entra como negativo
+    if v: falha = max(0.0, min(1.0, falha + v * falha * (1 - falha)))
+    return x.get('n', 1) * avg * (falha + (1 - falha) * (0.5 if x.get('meio') else 0.0))
+
+
 def dpr(spec, ca, lutas_dia=4, invocacoes=()):
     if 'medido' in spec: return spec['medido'][CAS.index(ca)]
     total = 0.0; nenhum = 1.0; sem_crit = 1.0; pc = []
@@ -99,6 +125,7 @@ def dpr(spec, ca, lutas_dia=4, invocacoes=()):
         usos = x['usos'] if 'usos' in x else x['usos_dia'] / lutas_dia   # recurso diário repartido pelas lutas
         total += _usados(usos, pc, sum(a.get('n', 1) for a in spec.get('ataques', []))) / R * (avg + crit_rel * dad)
     if 'automatico' in spec: total += dados(spec['automatico'])[0]
+    for x in spec.get('com_save', []): total += _com_save(x, ca)
     for inv in invocacoes:                     # criaturas invocadas atacam por conta própria
         if 'ataque' in inv: total += inv['quantidade'] * inv['ataque'].get('n', 1) * _ataque(inv['ataque'], ca)[2]
     return round(total, 1)

@@ -25,8 +25,8 @@ def _entrada(c): return c if isinstance(c, dict) else {'linha': c}
 
 
 def _gasto(linha, corpo, magias, entrada):
-    if 'gasta' in entrada:
-        g = dict(entrada['gasta']); esp = {int(k): v for k, v in g.pop('espacos', {}).items()}
+    if 'gasta' in entrada or 'gasta' in linha:      # no combate do plano > na linha (gasto declarado da hipótese)
+        g = dict(entrada.get('gasta', linha.get('gasta'))); esp = {int(k): v for k, v in g.pop('espacos', {}).items()}
         return esp, g
     esp = {}
     for por_eixo in orcamento.espacos_gastos(linha, corpo, magias).values():

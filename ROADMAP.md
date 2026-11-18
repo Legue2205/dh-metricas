@@ -305,3 +305,32 @@ custos em PV, cura por acerto conforme CA e vantagem, limiar, Blood Dice no meio
 - **Ordem até o fim do MVP:** (a) usuário dita a ordem da mesa → `dh calibrar` → investigar inversões;
   (b) tirar `medido` do Ravin e do Kael (motores da carga e da vida) e ganchos de dano acima;
   (c) suporte no valor da luta; (d) generalização. Depois: expandir, plano-auto, site leve, lote piloto de 3 builds.
+
+## 18/11 (noite) — gabarito da mesa, calibração, generalização para o lote
+- **Gabarito da mesa** em `calibracao/party-dh-7.json` (ordens por eixo + notas do usuário; Def. Mágica sem opinião).
+  Primeira rodada (tau médio 0,66 → 0,8 após o Kael): Dano 1,00 · Suporte 1,00 · Corpo 1,00 · Controle 0,89 ·
+  Def. Física 0,62 · Área 0,00.
+- **Kael:** linha `sem-stunning` (como a mesa joga hoje) vira o plano padrão; Stunning Strike fica como linha-opção
+  (anel externo). Controle do dia 3,9 → 0. O vendaval (redução de velocidade) não é modelado.
+- **Inversões que sobram** (para investigar; Ravin e Kael ficam para os motores próprios):
+  1. Def. Física: Ravin 12,1 > Abdul 9,2 e Tin Bin 6,2 < Kael 7,6. Causas: "barrado" (3 golpes a 0 PV) dá ao Ravin
+     durabilidade 10,6 com 31 PV; Def. Física = 2/3 Defesa + 1/3 Resiliência e a Resiliência do Ravin é S (16,4);
+     PV efetivo do Kael (79) inclui autocura. Questão geral: o peso da Resiliência na Def. Física.
+  2. Área: Ravin 5,6 > Amadeus 2,7 no dia — Thunderclap com espadada em toda luta comum (cleave_save 1–3 alvos × 4
+     rounds) rende 4,1, igual a um Shatter nv3. **Perguntar:** o Ravin solta Thunderclap todo round nas comuns?
+  3. Controle: John 0,8 parece baixo (mesa: parecido com o Abdul, 2,5); Amadeus 2,3 < Ravin 2,8 (dentro do ruído).
+  4. Pedido em aberto do usuário: o AO do Sentinel que zera a velocidade conta como controle (negação de movimento),
+     além do corpo? Hoje `parada_oa`/`sentinela` só entram no Corpo (decisão de 16/11). Decidir antes do lote.
+- **Generalização feita:**
+  - `dh/progressao.py` + `dh expandir`: `progressoes/<id>.json` (base + patches cumulativos por nível; linhas por id;
+    `null` apaga; `_remover`) → `builds/<id>-<nv>.json`. Modelo: `progressoes/exemplo-guerreiro.json` (pulado por padrão).
+  - `dh/plano_auto.py` + `dh plano-auto`: plano `padrao`/`combate_unico` automático (maior gasto do dia que cabe no
+    livro-caixa, o pesado nas prioritárias; desempates por marca `"plano": "prioritaria"|"comum"`, sobra, linhas
+    completas, simplicidade) com descrição explicando. Linha pode declarar `"gasta"` (por luta).
+  - Dano: `com_save` (alvo único com save: Toll the Dead, Sacred Flame…), save do alvo por CA a partir das medianas do MM.
+    Já existiam: `poder` (GWM/SS por CA), `por_turno` (Sneak Attack), `por_luta` (smites), vantagem, Elven Accuracy.
+  - `prompts/prompt-rpgbot.md`: .md compacto com progressão 3–11 e linhas-opção com gasto por luta.
+  - CI: `dh expandir` antes de validar; `progressoes/**` dispara o workflow. CLAUDE.md: fluxo do lote.
+- **Antes do lote piloto (3 builds):** (a) decidir o item 4 acima; (b) site leve (índice + JSON por build sob demanda)
+  quando passar de ~40 builds; (c) gabarito do RPGBot (`calibracao/rpgbot.json`) escrito a partir da análise de meta
+  que o usuário vai colar; (d) faixas de dano nos patches de truque (escala por nível) conferidas no piloto.

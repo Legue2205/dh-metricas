@@ -1,0 +1,149 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-cavalier.json",
+ "build": "Fighter (Cavalier), Custom Lineage pequeno, lança montado + escudo, Dueling; Mounted Combatant 1, Piercer 4",
+ "corpo": {
+  "ca": 20,
+  "pv": 85,
+  "saves": {
+   "sv": {
+    "for": 9,
+    "des": 1,
+    "con": 7,
+    "int": -1,
+    "sab": 2,
+    "car": -1
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "principal": true,
+   "hipotese": "montado, ataca com a lança; Unwavering Mark marca quem acerta",
+   "custo": "gratuita",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d12+7"
+     },
+     {
+      "n": 0.3125,
+      "bonus": 9,
+      "dano": "1d12+11",
+      "nota": "Unwavering Mark: ataque bônus (5/dia ÷ 4 lutas ÷ 4 rounds)"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1.5",
+      "nota": "Piercer: rerrolar d12"
+     },
+     {
+      "dano": "1d12",
+      "gatilho": "critico"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {}
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "gasta": {
+    "action_surge": 1
+   },
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d12+7"
+     },
+     {
+      "n": 0.3125,
+      "bonus": 9,
+      "dano": "1d12+11",
+      "nota": "Unwavering Mark: ataque bônus (5/dia ÷ 4 lutas ÷ 4 rounds)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 9,
+      "dano": "1d12+7"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1.5",
+      "nota": "Piercer: rerrolar d12"
+     },
+     {
+      "dano": "1d12",
+      "gatilho": "critico"
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Cavalier montado com lança e escudo: defensor que marca inimigos e, no 10, segura todos no lugar.",
+  "estrategia": "Na frente, montado; marca o que acerta para atrair os ataques; Hold the Line a partir do 10.",
+  "nao_modelado": "Vantagem do Mounted Combatant contra criaturas menores que a montaria e a montaria em si; desvantagem imposta pelo Unwavering Mark (só o taunt genérico entra); Warding Maneuver; Indomitable; Second Wind.",
+  "progressao": "Con 16 (8); Indomitable."
+ },
+ "id": "rpgbot-fighter-cavalier-9",
+ "nome": "Cavalier Fighter (RPGBot: Tilting at Windmills)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/cavalier/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -1,0 +1,123 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-champion.json",
+ "build": "Fighter (Champion), elfo Shadar-Kai, rapieira + escudo, Dueling; Elven Accuracy 4, Piercer 6, Skill Expert 8",
+ "corpo": {
+  "ca": 18,
+  "pv": 44,
+  "saves": {
+   "sv": {
+    "for": 6,
+    "des": 4,
+    "con": 5,
+    "int": -1,
+    "sab": 0,
+    "car": -1
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "principal": true,
+   "hipotese": "ataca todo round com a rapieira; sem fonte de vantagem",
+   "custo": "gratuita",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+6",
+      "crit_em": 19,
+      "elven_accuracy": true
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {}
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round da luta (1 por descanso curto)",
+   "gasta": {
+    "action_surge": 1
+   },
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+6",
+      "crit_em": 19,
+      "elven_accuracy": true
+     },
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "1d8+6",
+      "crit_em": 19,
+      "elven_accuracy": true
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Fighter Champion de Destreza com rapieira e escudo, crítico em 19, buscando Elven Accuracy sem multiclasse.",
+  "estrategia": "Linha de frente leve: ataca todo round; Action Surge nas lutas importantes.",
+  "nao_modelado": "Elven Accuracy sem fonte de vantagem (Inspiração não entra); Remarkable Athlete (iniciativa); Indomitable; Second Wind; resistência necrótica do Shadar-Kai.",
+  "progressao": "Extra Attack; Elven Accuracy (Des 18)."
+ },
+ "id": "rpgbot-fighter-champion-5",
+ "nome": "Champion Fighter (RPGBot: Lord Forestwalk)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/champion/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -419,3 +419,10 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - Gabarito `calibracao/rpgbot.json` sai das notas de subclasse destiladas (nota + resumo da justificativa).
 - **Ordem: uma classe inteira por vez.** Piloto: Fighter (motor marcial mais maduro, subclasses mecanicamente
   diferentes). Depois Wizard (testa área, controle e Def. Mágica).
+
+## 19/11 — passada 1, lote 1 (Fighter: Champion, Battle Master, Eldritch Knight, Arcane Archer, Cavalier)
+- 5 progressões (`progressoes/rpgbot-fighter-*.json`) → 25 fatias (3/5/7/9/11), plano automático em todas.
+- Convenções escritas em `calibracao/convencoes-passada1.md` (ler antes do lote 2).
+- Novo: `"dpr": "auto"` na atenção (DPR da própria linha na CA da premissa `controle.atencao.ca_dpr_auto` = 16).
+- Lote 2: Samurai, Echo Knight, Psi Warrior, Rune Knight, Purple Dragon Knight. Depois: `subclasses-fighter`
+  (notas, ler só então) → `calibracao/rpgbot-fighter.json` → `dh calibrar`.

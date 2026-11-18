@@ -1,0 +1,560 @@
+{
+ "id": "rpgbot-fighter-arcane-archer",
+ "nome": "Arcane Archer Fighter (RPGBot: Magical Elf Archer)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/arcane-archer/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Fighter (Arcane Archer), elfo da floresta, arco longo, Archery; Elven Accuracy 4, Sharpshooter 6, Piercer 8",
+  "corpo": {
+   "ca": 15,
+   "pv": 28,
+   "saves": {
+    "sv": {
+     "for": 1,
+     "des": 3,
+     "con": 4,
+     "int": 3,
+     "sab": 0,
+     "car": -1
+    },
+    "ataques": 1
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "action_surge": {
+     "qtd": 1,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "principal": true,
+    "hipotese": "atira todo round; 1 Arcane Shot (Shadow Arrow) por luta",
+    "custo": "gratuita",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 1,
+       "dano": "2d6",
+       "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "soft": 0.15,
+      "dpr": "auto",
+      "front": false
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {}
+   },
+   {
+    "id": "surge",
+    "herda": "principal",
+    "plano": "prioritaria",
+    "hipotese": "Action Surge num round",
+    "gasta": {
+     "action_surge": 1
+    },
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3"
+      },
+      {
+       "n": 0.25,
+       "bonus": 7,
+       "dano": "1d8+3"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 1,
+       "dano": "2d6",
+       "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+      }
+     ]
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Arcane Archer elfo com arco longo; Shadow Arrow para cegar alvos grandes e Piercing Arrow para filas de inimigos.",
+   "estrategia": "Atira de longe; um Arcane Shot por luta, Action Surge nas lutas importantes.",
+   "nao_modelado": "Cegueira do Shadow Arrow e a vantagem que ela dá; Piercing Arrow (linha de 30 pés = 1 alvo pela tabela de áreas); Grasping Arrow; Indomitable; Second Wind."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Arcane Shot: Piercing e Shadow Arrow."
+  },
+  "5": {
+   "_texto": "Extra Attack; Elven Accuracy (Des 18).",
+   "corpo": {
+    "ca": 16,
+    "pv": 44,
+    "saves": {
+     "sv": {
+      "for": 2,
+      "des": 4,
+      "con": 5,
+      "int": 3,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "elven_accuracy": true
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1,
+        "dano": "2d6",
+        "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "elven_accuracy": true
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "elven_accuracy": true
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1,
+        "dano": "2d6",
+        "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Sharpshooter (6); Curving Shot: rerrola um erro por turno (tratado como vantagem num ataque).",
+   "corpo": {
+    "ca": 16,
+    "pv": 60,
+    "saves": {
+     "sv": {
+      "for": 2,
+      "des": 4,
+      "con": 5,
+      "int": 3,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ],
+        "vantagem": 1.0
+       },
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1,
+        "dano": "2d6",
+        "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ],
+        "vantagem": 1.0
+       },
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.25,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ],
+        "vantagem": 1.0
+       },
+       {
+        "n": 0.25,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1,
+        "dano": "2d6",
+        "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Piercer (Des 19); Indomitable.",
+   "corpo": {
+    "ca": 17,
+    "pv": 76,
+    "saves": {
+     "sv": {
+      "for": 3,
+      "des": 4,
+      "con": 6,
+      "int": 3,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ],
+        "vantagem": 1.0
+       },
+       {
+        "n": 1,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1,
+        "dano": "2d6",
+        "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ],
+        "vantagem": 1.0
+       },
+       {
+        "n": 1,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.25,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ],
+        "vantagem": 1.0
+       },
+       {
+        "n": 0.25,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1,
+        "dano": "2d6",
+        "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Terceiro ataque.",
+   "corpo": {
+    "ca": 17,
+    "pv": 92,
+    "saves": {
+     "sv": {
+      "for": 3,
+      "des": 4,
+      "con": 6,
+      "int": 3,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 3
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ],
+        "vantagem": 1.0
+       },
+       {
+        "n": 2,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1,
+        "dano": "2d6",
+        "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ],
+        "vantagem": 1.0
+       },
+       {
+        "n": 2,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.25,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ],
+        "vantagem": 1.0
+       },
+       {
+        "n": 0.5,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "elven_accuracy": true,
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1,
+        "dano": "2d6",
+        "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

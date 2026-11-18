@@ -1,0 +1,144 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-battle-master.json",
+ "build": "Fighter (Battle Master), Thri-kreen, besta de mão + escudo, Archery; Sharpshooter 4, Crossbow Expert 6, Piercer 8",
+ "corpo": {
+  "ca": 16,
+  "pv": 49,
+  "saves": {
+   "sv": {
+    "for": 3,
+    "des": 3,
+    "con": 6,
+    "int": -1,
+    "sab": -1,
+    "car": 2
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "principal": true,
+   "hipotese": "atira todo round; manobras somam o dado de superioridade (4 por descanso = 2 por luta)",
+   "custo": "gratuita",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+3",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 2,
+      "dano": "1d8",
+      "nota": "dado de superioridade somado no acerto (Menacing/Pushing/Quick Toss)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto",
+     "front": false
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {}
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round da luta",
+   "gasta": {
+    "action_surge": 1
+   },
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+3",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.5,
+      "bonus": 8,
+      "dano": "1d8+3",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 2,
+      "dano": "1d8",
+      "nota": "dado de superioridade somado no acerto (Menacing/Pushing/Quick Toss)"
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Battle Master atirador com besta de mão e escudo (Thri-kreen), manobras de rede, medo e empurrão para apoiar a party.",
+  "estrategia": "Atira de longe; usa os dados de superioridade nas manobras e o Action Surge nas lutas importantes.",
+  "nao_modelado": "Rede (Quick Toss: impedido), Menacing Attack (amedrontado), Pushing Attack, Rally, Commander's Strike; Indomitable; Second Wind.",
+  "progressao": "Extra Attack; Sharpshooter; arco longo sem escudo (CA 16)."
+ },
+ "id": "rpgbot-fighter-battle-master-5",
+ "nome": "Battle Master Fighter (RPGBot: Bug Game Hunter)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/battle-master/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

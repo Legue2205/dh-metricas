@@ -1,0 +1,180 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-arcane-archer.json",
+ "build": "Fighter (Arcane Archer), elfo da floresta, arco longo, Archery; Elven Accuracy 4, Sharpshooter 6, Piercer 8",
+ "corpo": {
+  "ca": 16,
+  "pv": 60,
+  "saves": {
+   "sv": {
+    "for": 2,
+    "des": 4,
+    "con": 5,
+    "int": 3,
+    "sab": 0,
+    "car": -1
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "principal": true,
+   "hipotese": "atira todo round; 1 Arcane Shot (Shadow Arrow) por luta",
+   "custo": "gratuita",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d8+4",
+      "elven_accuracy": true,
+      "poder": [
+       -5,
+       10
+      ],
+      "vantagem": 1.0
+     },
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d8+4",
+      "elven_accuracy": true,
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1,
+      "dano": "2d6",
+      "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto",
+     "front": false
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {}
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "gasta": {
+    "action_surge": 1
+   },
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d8+4",
+      "elven_accuracy": true,
+      "poder": [
+       -5,
+       10
+      ],
+      "vantagem": 1.0
+     },
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d8+4",
+      "elven_accuracy": true,
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.25,
+      "bonus": 9,
+      "dano": "1d8+4",
+      "elven_accuracy": true,
+      "poder": [
+       -5,
+       10
+      ],
+      "vantagem": 1.0
+     },
+     {
+      "n": 0.25,
+      "bonus": 9,
+      "dano": "1d8+4",
+      "elven_accuracy": true,
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1,
+      "dano": "2d6",
+      "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Arcane Archer elfo com arco longo; Shadow Arrow para cegar alvos grandes e Piercing Arrow para filas de inimigos.",
+  "estrategia": "Atira de longe; um Arcane Shot por luta, Action Surge nas lutas importantes.",
+  "nao_modelado": "Cegueira do Shadow Arrow e a vantagem que ela dá; Piercing Arrow (linha de 30 pés = 1 alvo pela tabela de áreas); Grasping Arrow; Indomitable; Second Wind.",
+  "progressao": "Sharpshooter (6); Curving Shot: rerrola um erro por turno (tratado como vantagem num ataque)."
+ },
+ "id": "rpgbot-fighter-arcane-archer-7",
+ "nome": "Arcane Archer Fighter (RPGBot: Magical Elf Archer)",
+ "grupo": "RPGBot",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/arcane-archer/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

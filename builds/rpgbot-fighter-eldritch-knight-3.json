@@ -1,0 +1,166 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-eldritch-knight.json",
+ "build": "Fighter (Eldritch Knight), Custom Lineage, espada grande, Great Weapon Fighting; Slasher 1, War Caster 4, Fey Touched 6, For 20 no 8",
+ "corpo": {
+  "ca": 16,
+  "pv": 28,
+  "saves": {
+   "sv": {
+    "for": 6,
+    "des": -1,
+    "con": 4,
+    "int": 2,
+    "sab": -1,
+    "car": -1
+   },
+   "ataques": 1
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 2
+  },
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "principal": true,
+   "hipotese": "ataca com Booming Blade (o dano secundário só se o alvo se mover: não contado); Shield como reação",
+   "custo": "recurso",
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 6,
+      "dano": "2d6+4+1.33"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "area": [
+    {
+     "nome": "Sword Burst",
+     "tipo": "cleave_save",
+     "dano": "1d6",
+     "cd": 12,
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sem-shield",
+   "herda": "principal",
+   "plano": "comum",
+   "hipotese": "igual à principal, sem espaço para Shield",
+   "custo": "gratuita",
+   "gasta": {},
+   "defesa": {},
+   "reacao": []
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge + Shield",
+   "gasta": {
+    "espacos": {
+     "1": 1
+    },
+    "action_surge": 1
+   },
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 6,
+      "dano": "2d6+4+1.33"
+     },
+     {
+      "n": 0.25,
+      "bonus": 6,
+      "dano": "2d6+4+1.33"
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: sem-shield; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "sem-shield",
+    "surge",
+    "sem-shield",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: 1×1º.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Eldritch Knight de espada grande que usa truques de lâmina, Shield e Absorb Elements; defensor que pune quem foge.",
+  "estrategia": "Fica entre o inimigo e a retaguarda; Booming Blade + ataque bônus (War Magic) a partir do 7; Sword Burst quando cercado.",
+  "nao_modelado": "Dano secundário do Booming Blade (só se o alvo se mover); Slasher (redução de deslocamento); Absorb Elements; Silvery Barbs e Misty Step (Fey Touched); Eldritch Strike; Indomitable; Second Wind; controle do Rime's Binding Ice.",
+  "progressao": "Eldritch Knight: Booming Blade, Sword Burst, Shield, Absorb Elements."
+ },
+ "id": "rpgbot-fighter-eldritch-knight-3",
+ "nome": "Eldritch Knight Fighter (RPGBot: A good Scottish name)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/eldritch-knight/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

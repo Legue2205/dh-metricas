@@ -42,6 +42,12 @@ def resolver(b):
             mae = linhas[l['herda']]; visto.add(l.pop('herda')); l['herdou'] = mae['id']
             for k, v in mae.items():
                 if k not in l and k not in ('id', 'principal', 'hipotese', 'herdou'): l[k] = json.loads(json.dumps(v))
+    for l in b.get('linhas', []):      # "dpr": "auto" na atenção = DPR da própria linha na CA da premissa
+        at = (l.get('controle') or {}).get('atencao') or {}
+        if at.get('dpr') == 'auto':
+            from .dano import dpr
+            from .premissas import valor
+            at['dpr'] = round(dpr(l['dano'], valor('controle.atencao.ca_dpr_auto')), 1) if l.get('dano') else 0.0
     return b
 
 

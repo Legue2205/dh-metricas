@@ -1,0 +1,397 @@
+{
+ "id": "rpgbot-fighter-champion",
+ "nome": "Champion Fighter (RPGBot: Lord Forestwalk)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/champion/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Fighter (Champion), elfo Shadar-Kai, rapieira + escudo, Dueling; Elven Accuracy 4, Piercer 6, Skill Expert 8",
+  "corpo": {
+   "ca": 17,
+   "pv": 28,
+   "saves": {
+    "sv": {
+     "for": 5,
+     "des": 3,
+     "con": 4,
+     "int": -1,
+     "sab": 0,
+     "car": -1
+    },
+    "ataques": 1
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "action_surge": {
+     "qtd": 1,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "principal": true,
+    "hipotese": "ataca todo round com a rapieira; sem fonte de vantagem",
+    "custo": "gratuita",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "1d8+5",
+       "crit_em": 19,
+       "elven_accuracy": false
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {}
+   },
+   {
+    "id": "surge",
+    "herda": "principal",
+    "plano": "prioritaria",
+    "hipotese": "Action Surge num round da luta (1 por descanso curto)",
+    "gasta": {
+     "action_surge": 1
+    },
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "1d8+5",
+       "crit_em": 19,
+       "elven_accuracy": false
+      },
+      {
+       "n": 0.25,
+       "bonus": 5,
+       "dano": "1d8+5",
+       "crit_em": 19
+      }
+     ]
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Fighter Champion de Destreza com rapieira e escudo, crítico em 19, buscando Elven Accuracy sem multiclasse.",
+   "estrategia": "Linha de frente leve: ataca todo round; Action Surge nas lutas importantes.",
+   "nao_modelado": "Elven Accuracy sem fonte de vantagem (Inspiração não entra); Remarkable Athlete (iniciativa); Indomitable; Second Wind; resistência necrótica do Shadar-Kai."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Improved Critical (19)."
+  },
+  "5": {
+   "_texto": "Extra Attack; Elven Accuracy (Des 18).",
+   "corpo": {
+    "ca": 18,
+    "pv": 44,
+    "saves": {
+     "sv": {
+      "for": 6,
+      "des": 4,
+      "con": 5,
+      "int": -1,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 7,
+        "dano": "1d8+6",
+        "crit_em": 19,
+        "elven_accuracy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 7,
+        "dano": "1d8+6",
+        "crit_em": 19,
+        "elven_accuracy": true
+       },
+       {
+        "n": 0.5,
+        "bonus": 7,
+        "dano": "1d8+6",
+        "crit_em": 19,
+        "elven_accuracy": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Piercer (Des 19).",
+   "corpo": {
+    "ca": 18,
+    "pv": 60,
+    "saves": {
+     "sv": {
+      "for": 6,
+      "des": 4,
+      "con": 5,
+      "int": -1,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 7,
+        "dano": "1d8+6",
+        "crit_em": 19,
+        "elven_accuracy": true
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer: rerrolar o menor dado (d8) ≈ +1"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico",
+        "nota": "Piercer: dado extra no crítico"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 7,
+        "dano": "1d8+6",
+        "crit_em": 19,
+        "elven_accuracy": true
+       },
+       {
+        "n": 0.5,
+        "bonus": 7,
+        "dano": "1d8+6",
+        "crit_em": 19,
+        "elven_accuracy": true
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer: rerrolar o menor dado (d8) ≈ +1"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico",
+        "nota": "Piercer: dado extra no crítico"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Skill Expert (Des 20); Indomitable.",
+   "corpo": {
+    "ca": 19,
+    "pv": 76,
+    "saves": {
+     "sv": {
+      "for": 7,
+      "des": 5,
+      "con": 6,
+      "int": -1,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+7",
+        "crit_em": 19,
+        "elven_accuracy": true
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer: rerrolar o menor dado (d8) ≈ +1"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico",
+        "nota": "Piercer: dado extra no crítico"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+7",
+        "crit_em": 19,
+        "elven_accuracy": true
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+7",
+        "crit_em": 19,
+        "elven_accuracy": true
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer: rerrolar o menor dado (d8) ≈ +1"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico",
+        "nota": "Piercer: dado extra no crítico"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Terceiro ataque; Blind Fighting.",
+   "corpo": {
+    "ca": 19,
+    "pv": 92,
+    "saves": {
+     "sv": {
+      "for": 7,
+      "des": 5,
+      "con": 6,
+      "int": -1,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 3
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d8+7",
+        "crit_em": 19,
+        "elven_accuracy": true
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer: rerrolar o menor dado (d8) ≈ +1"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico",
+        "nota": "Piercer: dado extra no crítico"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d8+7",
+        "crit_em": 19,
+        "elven_accuracy": true
+       },
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+7",
+        "crit_em": 19,
+        "elven_accuracy": true
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer: rerrolar o menor dado (d8) ≈ +1"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico",
+        "nota": "Piercer: dado extra no crítico"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

@@ -433,3 +433,16 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   ativação por luta em linhas próprias, Sentinel, Reckless, agarrão). Nenhuma premissa mudou.
 - Próximo: depois do CI, ler `02-subclasses/subclasses-fighter` (notas do RPGBot) → `calibracao/rpgbot-fighter.json`
   → `dh calibrar` / `dh comparar`. Spell list do Eldritch Knight ainda não colada (não faz falta para a passada 1).
+
+## 19/11 — passada 1 do Fighter: primeira comparação com o RPGBot
+- Gabarito `calibracao/rpgbot-fighter.json`: notas por subclasse INFERIDAS do texto (a página não traz as cores em
+  texto); falta o usuário conferir contra as cores.
+- tau (nota RPGBot × média de dano, Def. Física, Def. Mágica e Controle) = 0,32 no nível 7 e 0,34 no 11: concordância
+  fraca, mas positiva. Extremos batem (Champion/PDK embaixo; Echo/Cavalier/Rune em cima).
+- Padrões de erro candidatos (decidir antes da passada 2, sem mexer no meio):
+  1. Controle cego para efeitos marciais (manobras, Unwavering Mark, runas, flechas, Telekinetic Thrust): 7 de 10
+     subclasses com controle 0. Maior fonte de divergência (Battle Master, Cavalier).
+  2. Sentinel sozinho vale quase nada no controle (Echo 0,4 até o Ancestral; Cavalier 0 até o Hold the Line).
+  3. Eldritch Knight: guia diz "muito durável", nós o pomos no meio da Def. Física e no fim da Def. Mágica.
+  4. Arcane Archer acima do esperado: Curving Shot foi modelado funcionando, mas RAW exige flecha mágica.
+  5. Samurai lidera a média no 11 por Def. Mágica (4 saves proficientes); o guia não destaca isso.

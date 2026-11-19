@@ -67,6 +67,71 @@ rpgbot-fighter-samurai-3   3     1,0 D     1,9 D    3,2 C-     2,5 D         -  
 rpgbot-fighter-samurai-5   5    5,3 C+     4,0 C    5,2 C+     2,9 D         -         -         -
 rpgbot-fighter-samurai-7   7    5,3 C+    5,2 C+     8,0 B     5,0 C         -         -         -
 rpgbot-fighter-samurai-9   9     7,2 B    6,9 B-    12,4 A    8,2 B+         -         -         -
+rpgbot-wizard-abjuration-11  11     1,3 D   10,8 A-         -         -         -    8,2 B+         -
+rpgbot-wizard-abjuration-3   3     0,6 E     2,7 D         -         -         -         -         -
+rpgbot-wizard-abjuration-5   5     0,8 E    6,0 B-         -         -         -     2,5 D         -
+rpgbot-wizard-abjuration-7   7     1,0 D     7,7 B         -         -         -    8,1 B+         -
+rpgbot-wizard-abjuration-9   9     1,3 D   10,2 A-         -         -         -    8,2 B+         -
+rpgbot-wizard-bladesinging-11  11    3,9 C-    6,9 B-         -         -         -    6,8 B-         -
+rpgbot-wizard-bladesinging-3   3     0,9 E     2,3 D         -         -         -         -         -
+rpgbot-wizard-bladesinging-5   5    3,0 C-    5,3 C+         -         -         -     1,3 D         -
+rpgbot-wizard-bladesinging-7   7     2,1 D    5,1 C+         -         -         -    5,4 C+         -
+rpgbot-wizard-bladesinging-9   9     2,8 D    8,1 B+         -         -         -    5,5 C+         -
+rpgbot-wizard-chronurgy-11  11     2,2 D     7,9 B         -         -         -         -         -
+rpgbot-wizard-chronurgy-3   3     0,5 E     1,7 D         -         -         -         -         -
+rpgbot-wizard-chronurgy-5   5     0,9 E     4,0 C         -         -         -         -         -
+rpgbot-wizard-chronurgy-7   7     0,9 E    5,1 C+         -         -         -         -         -
+rpgbot-wizard-chronurgy-9   9     1,0 D    6,2 B-         -         -         -         -         -
+rpgbot-wizard-conjuration-11  11     7,2 B    6,5 B-         -         -         -         -         -
+rpgbot-wizard-conjuration-3   3     0,2 F     1,8 D         -         -         -         -         -
+rpgbot-wizard-conjuration-5   5     0,5 E    3,1 C-         -         -         -         -         -
+rpgbot-wizard-conjuration-7   7     0,5 E     4,3 C         -         -         -         -         -
+rpgbot-wizard-conjuration-9   9     0,6 E    5,6 C+         -         -         -         -         -
+rpgbot-wizard-divination-11  11     0,8 E     4,5 C         -         -         -         -         -
+rpgbot-wizard-divination-3   3     0,2 F     1,0 E         -         -         -         -         -
+rpgbot-wizard-divination-5   5     0,5 E     1,9 D         -         -         -         -         -
+rpgbot-wizard-divination-7   7     1,2 D    3,0 C-         -         -         -         -         -
+rpgbot-wizard-divination-9   9     0,5 E     4,0 C         -         -         -         -         -
+rpgbot-wizard-enchantment-11  11     0,9 E    5,7 C+         -         -         -         -         -
+rpgbot-wizard-enchantment-3   3     0,2 F     1,1 D         -         -         -         -         -
+rpgbot-wizard-enchantment-5   5     0,5 E     2,4 D         -         -         -         -         -
+rpgbot-wizard-enchantment-7   7     0,5 E    3,6 C-         -         -         -         -         -
+rpgbot-wizard-enchantment-9   9     0,6 E     4,4 C         -         -         -         -         -
+rpgbot-wizard-evocation-11  11    3,3 C-     7,2 B         -         -         -         -         -
+rpgbot-wizard-evocation-3   3     0,4 F     1,8 D         -         -         -     2,4 D         -
+rpgbot-wizard-evocation-5   5     1,0 D    3,1 C-         -         -         -    6,8 B-         -
+rpgbot-wizard-evocation-7   7     1,1 D     4,4 C         -         -         -    6,8 B-         -
+rpgbot-wizard-evocation-9   9     1,9 D    5,5 C+         -         -         -     7,1 B         -
+rpgbot-wizard-graviturgy-11  11     1,3 D    5,7 C+         -         -         -     2,9 D         -
+rpgbot-wizard-graviturgy-3   3     0,4 F     1,1 D         -         -         -         -         -
+rpgbot-wizard-graviturgy-5   5     0,6 E     2,3 D         -         -         -    3,9 C-         -
+rpgbot-wizard-graviturgy-7   7     0,7 E    3,6 C-         -         -         -    3,1 C-         -
+rpgbot-wizard-graviturgy-9   9     0,8 E     4,4 C         -         -         -         -         -
+rpgbot-wizard-illusion-11  11     0,9 E    5,7 C+         -         -         -         -         -
+rpgbot-wizard-illusion-3   3     0,2 F     1,1 D         -         -         -         -         -
+rpgbot-wizard-illusion-5   5     0,5 E     2,3 D         -         -         -         -         -
+rpgbot-wizard-illusion-7   7     0,5 E    3,5 C-         -         -         -         -         -
+rpgbot-wizard-illusion-9   9     0,6 E     4,4 C         -         -         -         -         -
+rpgbot-wizard-necromancy-11  11    9,0 B+     4,9 C         -         -         -    6,8 B-         -
+rpgbot-wizard-necromancy-3   3     0,5 E     1,1 D         -         -         -         -         -
+rpgbot-wizard-necromancy-5   5     0,7 E     2,2 D         -         -         -    6,8 B-         -
+rpgbot-wizard-necromancy-7   7    5,5 C+    3,2 C-         -         -         -    8,1 B+         -
+rpgbot-wizard-necromancy-9   9    8,8 B+     4,3 C         -         -         -    5,5 C+         -
+rpgbot-wizard-order-of-scribes-11  11     1,2 D    6,1 B-         -         -         -    8,2 B+         -
+rpgbot-wizard-order-of-scribes-3   3     0,4 F     1,4 D         -         -         -         -         -
+rpgbot-wizard-order-of-scribes-5   5     0,7 E     2,8 D         -         -         -    6,8 B-         -
+rpgbot-wizard-order-of-scribes-7   7     0,8 E     4,1 C         -         -         -    5,4 C+         -
+rpgbot-wizard-order-of-scribes-9   9     0,8 E     4,8 C         -         -         -    8,2 B+         -
+rpgbot-wizard-transmutation-11  11     1,0 D    5,9 C+         -         -         -    8,2 B+         -
+rpgbot-wizard-transmutation-3   3     0,4 F     1,1 D         -         -         -         -         -
+rpgbot-wizard-transmutation-5   5     0,7 E     2,3 D         -         -         -    6,8 B-         -
+rpgbot-wizard-transmutation-7   7     0,6 E    3,8 C-         -         -         -    8,1 B+         -
+rpgbot-wizard-transmutation-9   9     0,7 E     4,7 C         -         -         -    8,2 B+         -
+rpgbot-wizard-war-magic-11  11     2,2 D   10,6 A-         -         -         -     1,4 D         -
+rpgbot-wizard-war-magic-3   3     0,5 E     2,0 D         -         -         -         -         -
+rpgbot-wizard-war-magic-5   5     0,9 E     4,4 C         -         -         -         -         -
+rpgbot-wizard-war-magic-7   7     0,8 E    6,2 B-         -         -         -     2,7 D         -
+rpgbot-wizard-war-magic-9   9     1,0 E     7,3 B         -         -         -     1,4 D         -
 ~solaris-9              9     4,9 C     4,8 C    8,7 B+    12,4 A    8,8 B+    8,2 B+         -
 tinbin-7                7     7,8 B    6,1 B-    6,3 B-     4,5 C         -         -         -
 ~virgil-10             10         -     2,7 D         -         -    6,5 B-         -   10,2 A-
@@ -137,6 +202,71 @@ lucius-15              15    20,0 S   14,5 A+    20,0 S    20,0 S         -     
 ~rpgbot-fighter-samurai-5   5     4,3 C     4,0 C    5,2 C+     2,9 D     0,6 E         -         -
 ~rpgbot-fighter-samurai-7   7     4,3 C    5,2 C+     8,0 B     5,0 C     0,6 E         -         -
 ~rpgbot-fighter-samurai-9   9    5,9 C+    6,9 B-    12,4 A    8,2 B+     1,1 D         -         -
+~rpgbot-wizard-abjuration-11  11     4,1 C    9,7 B+         -         -     4,9 C         -         -
+~rpgbot-wizard-abjuration-3   3     0,6 E     2,7 D         -         -     2,7 D         -         -
+~rpgbot-wizard-abjuration-5   5     1,9 D     4,5 C         -         -    3,1 C-         -         -
+~rpgbot-wizard-abjuration-7   7     1,9 D    6,0 B-         -         -    3,1 C-         -         -
+~rpgbot-wizard-abjuration-9   9     2,4 D     7,8 B         -         -     4,1 C         -         -
+~rpgbot-wizard-bladesinging-11  11     4,7 C    5,3 C+         -         -     2,5 D         -         -
+~rpgbot-wizard-bladesinging-3   3     0,7 E     1,0 D         -         -     0,5 E         -         -
+~rpgbot-wizard-bladesinging-5   5     1,2 D     2,0 D         -         -     1,1 D         -         -
+~rpgbot-wizard-bladesinging-7   7    3,0 C-    3,1 C-         -         -     1,0 D         -         -
+~rpgbot-wizard-bladesinging-9   9    3,8 C-     4,4 C         -         -     1,7 D         -         -
+~rpgbot-wizard-chronurgy-11  11    3,4 C-    6,1 B-         -         -    3,5 C-         -         -
+~rpgbot-wizard-chronurgy-3   3     0,5 E     1,7 D         -         -     1,6 D         -         -
+~rpgbot-wizard-chronurgy-5   5     1,4 D     2,9 D         -         -     2,4 D         -         -
+~rpgbot-wizard-chronurgy-7   7     1,4 D     4,1 C         -         -     2,5 D         -         -
+~rpgbot-wizard-chronurgy-9   9     1,8 D     4,9 C         -         -     2,8 D         -         -
+~rpgbot-wizard-conjuration-11  11     1,6 D    5,3 C+         -         -    3,4 C-         -         -
+~rpgbot-wizard-conjuration-3   3     0,3 F     1,2 D         -         -     1,3 D         -         -
+~rpgbot-wizard-conjuration-5   5     0,7 E     2,3 D         -         -     2,1 D         -         -
+~rpgbot-wizard-conjuration-7   7     0,7 E    3,5 C-         -         -     2,4 D         -         -
+~rpgbot-wizard-conjuration-9   9     0,8 E     4,4 C         -         -     2,6 D         -         -
+~rpgbot-wizard-divination-11  11     1,2 D    3,9 C-         -         -     1,7 D         -         -
+~rpgbot-wizard-divination-3   3     0,3 F     0,7 E         -         -     0,4 F         -         -
+~rpgbot-wizard-divination-5   5     0,7 E     1,4 D         -         -     0,3 F         -         -
+~rpgbot-wizard-divination-7   7     0,7 E     2,2 D         -         -     1,0 D         -         -
+~rpgbot-wizard-divination-9   9     0,7 E    3,0 C-         -         -     1,5 D         -         -
+~rpgbot-wizard-enchantment-11  11     1,4 D     4,6 C         -         -     2,8 D         -         -
+~rpgbot-wizard-enchantment-3   3     0,3 F     0,9 E         -         -     0,7 E         -         -
+~rpgbot-wizard-enchantment-5   5     0,7 E     1,8 D         -         -     1,2 D         -         -
+~rpgbot-wizard-enchantment-7   7     0,7 E     2,8 D         -         -     1,8 D         -         -
+~rpgbot-wizard-enchantment-9   9     0,8 E    3,8 C-         -         -     2,4 D         -         -
+~rpgbot-wizard-evocation-11  11     4,4 C    5,8 C+         -         -    3,0 C-         -         -
+~rpgbot-wizard-evocation-3   3     0,6 E     1,3 D         -         -     1,2 D         -         -
+~rpgbot-wizard-evocation-5   5     1,7 D     2,4 D         -         -     2,0 D         -         -
+~rpgbot-wizard-evocation-7   7     2,4 D    3,7 C-         -         -     2,0 D         -         -
+~rpgbot-wizard-evocation-9   9     2,7 D     4,7 C         -         -     2,5 D         -         -
+~rpgbot-wizard-graviturgy-11  11     2,5 D     4,6 C         -         -     2,4 D         -         -
+~rpgbot-wizard-graviturgy-3   3     0,6 E     0,9 E         -         -     0,4 F         -         -
+~rpgbot-wizard-graviturgy-5   5     1,0 D     1,8 D         -         -     0,5 F         -         -
+~rpgbot-wizard-graviturgy-7   7     1,0 D     2,8 D         -         -     1,4 D         -         -
+~rpgbot-wizard-graviturgy-9   9     1,2 D    3,8 C-         -         -     1,7 D         -         -
+~rpgbot-wizard-illusion-11  11     1,6 D     4,6 C         -         -     2,8 D         -         -
+~rpgbot-wizard-illusion-3   3     0,3 F     0,9 E         -         -     0,7 E         -         -
+~rpgbot-wizard-illusion-5   5     0,7 E     1,8 D         -         -     1,2 D         -         -
+~rpgbot-wizard-illusion-7   7     0,7 E     2,8 D         -         -     1,8 D         -         -
+~rpgbot-wizard-illusion-9   9     0,8 E    3,8 C-         -         -     2,3 D         -         -
+~rpgbot-wizard-necromancy-11  11   10,3 A-     4,2 C         -         -     4,6 C         -         -
+~rpgbot-wizard-necromancy-3   3     0,7 E     0,8 E         -         -     0,1 F         -         -
+~rpgbot-wizard-necromancy-5   5     1,4 D     1,6 D         -         -     0,0 F         -         -
+~rpgbot-wizard-necromancy-7   7    6,3 B-     2,4 D         -         -    3,2 C-         -         -
+~rpgbot-wizard-necromancy-9   9    9,3 B+    3,4 C-         -         -     4,4 C         -         -
+~rpgbot-wizard-order-of-scribes-11  11    3,4 C-     4,9 C         -         -     2,5 D         -         -
+~rpgbot-wizard-order-of-scribes-3   3     0,5 E     1,0 D         -         -     0,7 E         -         -
+~rpgbot-wizard-order-of-scribes-5   5     1,4 D     2,0 D         -         -     1,1 D         -         -
+~rpgbot-wizard-order-of-scribes-7   7     1,4 D    3,1 C-         -         -     1,7 D         -         -
+~rpgbot-wizard-order-of-scribes-9   9     1,8 D     4,1 C         -         -     1,8 D         -         -
+~rpgbot-wizard-transmutation-11  11    3,4 C-     4,9 C         -         -     2,9 D         -         -
+~rpgbot-wizard-transmutation-3   3     0,5 E     1,0 D         -         -     0,6 E         -         -
+~rpgbot-wizard-transmutation-5   5     1,4 D     1,9 D         -         -     1,1 D         -         -
+~rpgbot-wizard-transmutation-7   7     1,4 D    3,0 C-         -         -     1,7 D         -         -
+~rpgbot-wizard-transmutation-9   9     1,8 D     4,1 C         -         -     1,8 D         -         -
+~rpgbot-wizard-war-magic-11  11    3,4 C-     7,2 B         -         -     4,2 C         -         -
+~rpgbot-wizard-war-magic-3   3     0,5 E     2,0 D         -         -     2,2 D         -         -
+~rpgbot-wizard-war-magic-5   5     1,4 D    3,5 C-         -         -     2,6 D         -         -
+~rpgbot-wizard-war-magic-7   7     1,4 D     4,6 C         -         -     2,8 D         -         -
+~rpgbot-wizard-war-magic-9   9     1,8 D    5,8 C+         -         -    3,2 C-         -         -
 ~solaris-9              9     4,9 C     4,8 C    8,7 B+    12,4 A    8,8 B+    8,2 B+         -
 tinbin-7                7     7,8 B    6,1 B-    6,3 B-     4,5 C         -         -         -
 ~virgil-10             10         -     2,7 D         -         -    6,5 B-         -   10,2 A-

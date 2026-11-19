@@ -124,7 +124,6 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1,
      "1": 1,
      "3": 1
     }
@@ -218,7 +217,7 @@
    "dano": {
     "ataques": [
      {
-      "n": 0.75,
+      "n": 0.5,
       "bonus": 7,
       "dano": "2d10",
       "nota": "Fire Bolt"
@@ -247,7 +246,18 @@
    },
    "area": [
     {
-     "nome": "Fireball",
+     "nome": "Fireball (3º)",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "8d6",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    },
+    {
+     "nome": "Fireball (3º)",
      "usos": [
       {
        "alvos": 4,
@@ -260,7 +270,7 @@
    ],
    "gasta": {
     "espacos": {
-     "3": 1,
+     "3": 2,
      "1": 1
     }
    },
@@ -387,19 +397,19 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, principal; prioritário: controle. Sobra: nada.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: area, controle. Sobra: nada.",
    "combates": [
-    "principal",
+    "controle-barato",
     "controle",
-    "controle",
-    "controle"
+    "controle-barato",
+    "area"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 2×1º, 3×2º, 1×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 3×2º, 1×3º.",
    "combates": [
-    "combo"
+    "area"
    ]
   }
  },

@@ -181,9 +181,7 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1,
      "1": 1,
-     "4": 1,
      "5": 1
     }
    },
@@ -282,7 +280,7 @@
    "dano": {
     "ataques": [
      {
-      "n": 0.75,
+      "n": 0.5,
       "bonus": 9,
       "dano": "3d10",
       "nota": "Fire Bolt"
@@ -311,21 +309,33 @@
    },
    "area": [
     {
-     "nome": "Fireball",
+     "nome": "Fireball (6º)",
      "usos": [
       {
        "alvos": 4,
-       "dano": "8d6",
+       "dano": "11d6",
        "cd": 17,
-       "slot": 3
+       "slot": 6
+      }
+     ]
+    },
+    {
+     "nome": "Fireball (5º)",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "10d6",
+       "cd": 17,
+       "slot": 5
       }
      ]
     }
    ],
    "gasta": {
     "espacos": {
-     "3": 1,
-     "1": 1
+     "1": 1,
+     "5": 1,
+     "6": 1
     }
    },
    "invocacoes": [],
@@ -476,10 +486,8 @@
    ],
    "gasta": {
     "espacos": {
-     "2": 1,
      "3": 1,
      "1": 1,
-     "4": 1,
      "5": 1
     }
    },
@@ -551,9 +559,7 @@
    ],
    "gasta": {
     "espacos": {
-     "4": 0.5,
      "1": 1,
-     "5": 0.5,
      "6": 0.5
     }
    },
@@ -582,9 +588,9 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: area, combo; prioritário: combo. Sobra: nada.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: combo; prioritário: combo. Sobra: 3×2º, 2×4º.",
    "combates": [
-    "area",
+    "combo",
     "combo",
     "combo",
     "combo"
@@ -592,9 +598,9 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 3×1º, 2×2º, 2×3º, 2×4º, 2×5º, 1×6º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3×1º, 3×2º, 3×3º, 3×4º, 2×5º.",
    "combates": [
-    "combo"
+    "area"
    ]
   }
  },

@@ -134,7 +134,7 @@
    "dano": {
     "com_save": [
      {
-      "n": 0.75,
+      "n": 0.5,
       "cd": 13,
       "save": "Sab",
       "dano": "1d12",
@@ -165,7 +165,18 @@
    },
    "area": [
     {
-     "nome": "Shatter",
+     "nome": "Shatter (2º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 13,
+       "slot": 2
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (2º)",
      "usos": [
       {
        "alvos": 2,
@@ -178,7 +189,7 @@
    ],
    "gasta": {
     "espacos": {
-     "2": 1,
+     "2": 2,
      "1": 1
     }
    },
@@ -293,9 +304,9 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 2×1º, 1×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 1×2º.",
    "combates": [
-    "combo"
+    "area"
    ]
   }
  },

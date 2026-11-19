@@ -139,9 +139,7 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1,
      "1": 1,
-     "4": 1,
      "5": 1
     }
    },
@@ -172,7 +170,7 @@
    "dano": {
     "ataques": [
      {
-      "n": 0.75,
+      "n": 0.5,
       "bonus": 9,
       "dano": "3d8",
       "nota": "Ray of Frost"
@@ -201,22 +199,22 @@
    },
    "area": [
     {
-     "nome": "Pulse Wave",
+     "nome": "Gravity Fissure (6º)",
      "usos": [
       {
-       "alvos": 3,
-       "dano": "6d6",
+       "alvos": 4,
+       "dano": "9d8",
        "cd": 17,
-       "slot": 3
+       "slot": 6
       }
      ]
     },
     {
-     "nome": "Gravity Fissure",
+     "nome": "Pulse Wave (5º)",
      "usos": [
       {
-       "alvos": 4,
-       "dano": "8d8",
+       "alvos": 3,
+       "dano": "8d6",
        "cd": 17,
        "slot": 5
       }
@@ -225,9 +223,9 @@
    ],
    "gasta": {
     "espacos": {
-     "3": 1,
      "1": 1,
-     "5": 1
+     "5": 1,
+     "6": 1
     }
    },
    "invocacoes": [],
@@ -347,10 +345,8 @@
    ],
    "gasta": {
     "espacos": {
-     "2": 1,
      "3": 1,
      "1": 1,
-     "4": 1,
      "5": 2
     }
    },
@@ -441,17 +437,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, controle-barato; prioritário: combo, controle. Sobra: 1×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: combo. Sobra: 1×2º, 1×3º, 3×4º.",
    "combates": [
-    "controle",
-    "controle",
+    "controle-barato",
+    "combo",
     "controle-barato",
     "combo"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 3×1º, 2×2º, 2×3º, 2×4º, 1×5º, 1×6º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 3×1º, 3×2º, 2×3º, 3×4º, 1×5º, 1×6º.",
    "combates": [
     "combo"
    ]

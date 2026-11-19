@@ -84,3 +84,22 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
 - **Builds `-puro`**: extensão simples sem multiclasse das builds do RPGBot que usam dip (Abjuration, Chronurgy,
   War Magic, Echo Knight, Purple Dragon Knight). Níveis adiantados; Mage Armor + Shield no lugar de armadura;
   Resilient Con onde o dip dava o save. As originais ficam como estão.
+
+# Passada 3 (19/11 noite, decidida pelo usuário)
+- **Marcas no Corpo.** `ancestral_protectors` (Ancestral Protectors; Unwavering Mark com `"resistencia": false`) é fonte
+  de corpo: na atenção, reduz o dano do marcado contra os OUTROS membros da party; só a fração
+  `controle.peso_no_controle.ancestral_protectors` (0,25, igual à do Sentinel) conta no Controle.
+- **Party de referência = 2 frontliners + atirador + conjurador.** Frontliner médio (CA marcial+1 até 21,
+  PV 11+(L−1)·8, soft 0,15, DPR 0,85·ref; `controle.referencia.frontliner.*`). `papel` tank, striker ou frontliner
+  ocupa uma vaga de frontliner (os JSON não mudam).
+- **Área: teto de 3 rounds** na luta contra a horda (`area.horda2.rounds_max`), para medir o pico.
+- **Área dos conjuradores com upcast.** Na linha `area` (luta de pico), as DUAS maiores magias de área da build, cada
+  uma num dos dois maiores espaços do dia (o maior e o segundo maior, unidades distintas; a magia precisa caber no
+  espaço), escolhidas pelo maior dano esperado (alvos × dano médio) e lançadas na ordem do maior para o menor.
+  Escala: Fireball +1d6 por círculo acima do 3º; Shatter +1d8 acima do 2º; Cone of Cold +1d8 acima do 5º; Pulse Wave
+  +1d6 acima do 3º; Gravity Fissure +1d8 acima do 5º; Chain Lightning +1 alvo acima do 6º; Breath Weapon e magias de
+  raça não escalam. Com uma magia de área só, ela é lançada duas vezes (maior e segundo maior espaço). `gasta` = os
+  dois espaços (+ Shield). Truque nos rounds livres: 0,5 (lançou 2). `seletiva` (Sculpt Spells) mantida.
+  A linha `combo` fica como estava (controle + as áreas no círculo base).
+- Gerador (`ferramentas/geradores/wiz.py`): os patches de nível agora são exatos (chave que sumiu = null), então o
+  `gasta` de cada linha não herda mais espaços de níveis anteriores.

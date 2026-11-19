@@ -136,7 +136,7 @@
    "dano": {
     "com_save": [
      {
-      "n": 0.75,
+      "n": 0.5,
       "cd": 15,
       "save": "Sab",
       "dano": "2d12",
@@ -167,7 +167,18 @@
    },
    "area": [
     {
-     "nome": "Fireball",
+     "nome": "Fireball (4º)",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "9d6",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Fireball (3º)",
      "usos": [
       {
        "alvos": 4,
@@ -180,9 +191,9 @@
    ],
    "gasta": {
     "espacos": {
-     "2": 1,
+     "3": 1,
      "1": 1,
-     "3": 1
+     "4": 1
     }
    },
    "invocacoes": [],
@@ -361,17 +372,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: area; prioritário: area. Sobra: nada.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: combo; prioritário: area, combo. Sobra: nada.",
    "combates": [
+    "combo",
     "area",
-    "area",
-    "area",
-    "area"
+    "combo",
+    "combo"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3×1º, 2×2º, 3×3º, 1×4º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3×1º, 3×2º, 3×3º.",
    "combates": [
     "area"
    ]

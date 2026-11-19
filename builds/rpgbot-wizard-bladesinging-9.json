@@ -175,13 +175,13 @@
    "dano": {
     "ataques": [
      {
-      "n": 0.75,
+      "n": 0.5,
       "bonus": 8,
       "dano": "2d10",
       "nota": "Fire Bolt"
      },
      {
-      "n": 0.75,
+      "n": 0.5,
       "bonus": 8,
       "dano": "1d8+4",
       "nota": "besta leve (Extra Attack com truque)"
@@ -210,21 +210,32 @@
    },
    "area": [
     {
-     "nome": "Fireball",
+     "nome": "Fireball (5º)",
      "usos": [
       {
        "alvos": 4,
-       "dano": "8d6",
+       "dano": "10d6",
        "cd": 16,
-       "slot": 3
+       "slot": 5
+      }
+     ]
+    },
+    {
+     "nome": "Fireball (5º)",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "10d6",
+       "cd": 16,
+       "slot": 5
       }
      ]
     }
    ],
    "gasta": {
     "espacos": {
-     "3": 1,
-     "1": 1
+     "1": 1,
+     "5": 2
     }
    },
    "invocacoes": [],
@@ -414,7 +425,6 @@
    },
    "gasta": {
     "espacos": {
-     "4": 1,
      "1": 1,
      "5": 1
     }
@@ -520,7 +530,6 @@
    ],
    "gasta": {
     "espacos": {
-     "4": 1,
      "3": 1,
      "1": 1,
      "5": 1
@@ -551,7 +560,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: canto-haste; prioritário: combo. Sobra: 2×2º, 2 bladesong.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: canto-haste; prioritário: combo. Sobra: 2×2º, 2×4º, 2 bladesong.",
    "combates": [
     "canto-haste",
     "combo",
@@ -561,9 +570,9 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 2×1º, 3×2º, 2×3º, 2×4º, 1×5º, 4 bladesong.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 3×2º, 3×3º, 3×4º, 4 bladesong.",
    "combates": [
-    "combo"
+    "area"
    ]
   }
  },

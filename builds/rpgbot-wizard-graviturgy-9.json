@@ -138,9 +138,7 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1,
      "1": 1,
-     "4": 1,
      "5": 1
     }
    },
@@ -171,7 +169,7 @@
    "dano": {
     "ataques": [
      {
-      "n": 0.75,
+      "n": 0.5,
       "bonus": 9,
       "dano": "2d8",
       "nota": "Ray of Frost"
@@ -200,18 +198,7 @@
    },
    "area": [
     {
-     "nome": "Pulse Wave",
-     "usos": [
-      {
-       "alvos": 3,
-       "dano": "6d6",
-       "cd": 17,
-       "slot": 3
-      }
-     ]
-    },
-    {
-     "nome": "Gravity Fissure",
+     "nome": "Gravity Fissure (5º)",
      "usos": [
       {
        "alvos": 4,
@@ -220,13 +207,23 @@
        "slot": 5
       }
      ]
+    },
+    {
+     "nome": "Pulse Wave (5º)",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "8d6",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
     }
    ],
    "gasta": {
     "espacos": {
-     "3": 1,
      "1": 1,
-     "5": 1
+     "5": 2
     }
    },
    "invocacoes": [],
@@ -346,10 +343,8 @@
    ],
    "gasta": {
     "espacos": {
-     "2": 1,
      "3": 1,
      "1": 1,
-     "4": 1,
      "5": 2
     }
    },
@@ -440,17 +435,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: controle. Sobra: 1×3º, 1×4º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: combo, controle-barato. Sobra: 1×3º, 3×4º.",
    "combates": [
     "controle-barato",
-    "controle",
+    "combo",
     "controle-barato",
-    "controle"
+    "controle-barato"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 2×1º, 2×2º, 2×3º, 2×4º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 2×1º, 3×2º, 2×3º, 3×4º.",
    "combates": [
     "combo"
    ]

@@ -821,3 +821,7 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - **Área 20 no nível 11** é suspeita (20 deveria ser Meteor Swarm): a régua do dia pode estar permissiva demais.
   Não urgente (o que importa agora é separar bem), mas "dar uma segurada" antes das comparações cruzadas.
 - **Invocações:** mostrar cada eixo **com e sem** invocações (decidido); limite de mesa e atrito por área depois.
+- (20/11, cont.) Docs com cabeçalho criados também para Rogue (9), Ranger (8), Monk (10), Druid (7), Sorcerer (8),
+  Warlock (9) e Artificer (4): `classe-*`, `subclasses-*`, `build-*-*` e `magias-*` (Ranger, Druid, Sorcerer, Warlock,
+  Artificer). Total no Drive: 108 Docs novos para 10 classes. Próximo passo do usuário: colar tudo; depois pedir um
+  **checkup das colagens sem análise** (cabeçalho × conteúdo, vazios, trocados), corrigir, e só então subir classe por classe.

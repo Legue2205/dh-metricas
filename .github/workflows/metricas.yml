@@ -2,7 +2,7 @@ name: metricas
 on:
   push:
     branches: [main]
-    paths: ['builds/**', 'progressoes/**', 'dh/**', 'tests/**']
+    paths: ['builds/**', 'progressoes/**', 'dh/**', 'tests/**', '.github/workflows/metricas.yml']
   workflow_dispatch:
     inputs:
       forcar:
@@ -11,6 +11,11 @@ on:
         default: false
 permissions:
   contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: metricas
+  cancel-in-progress: false
 jobs:
   rodar:
     runs-on: ubuntu-latest
@@ -26,7 +31,23 @@ jobs:
       - run: |
           { echo '# Painel (gerado automaticamente)'; echo; echo '```'; python -m dh painel; echo; python -m dh painel dia_longo; echo '```'; } > PAINEL.md
       - run: python -m dh site
+      # resultados/ e cache/ ficam na main (são o cache do motor). docs/ também, ATÉ a fonte do Pages virar
+      # "GitHub Actions" (Settings → Pages); depois disso, tirar "docs" desta linha (ver ROADMAP, 19/11 noite — tarefa 3).
       - run: |
           git config user.name "dh-bot"; git config user.email "dh-bot@users.noreply.github.com"
           git add builds resultados cache PAINEL.md docs
           git diff --cached --quiet || (git commit -m "resultados: atualização automática [skip ci]" && git push)
+      - uses: actions/upload-pages-artifact@v3
+        with: {path: docs}
+  publicar:
+    # Publicação pelo GitHub Actions Pages. Enquanto a fonte do Pages for a branch main (/docs), este job falha sem
+    # quebrar nada (continue-on-error) e o site continua saindo do docs/ commitado acima.
+    needs: rodar
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

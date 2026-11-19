@@ -3,86 +3,104 @@ import json
 import time
 from pathlib import Path
 
-from . import VERSAO, area, base, dano, defesa, horda, orcamento, planos, saves, suporte
+from . import VERSAO, area, base, horda, planos, saves
+from . import eixos as E
+from . import impressoes as I
 from .build import carregar, impressao
-from .controle import atencao, campo, efeitos, total
+from .controle import campo, total
+from .eixos import MODOS  # noqa: F401  (compatibilidade)
 
 RAIZ = Path(__file__).resolve().parents[1]
 RESULTADOS = RAIZ / 'resultados'
-MODOS = {'rapido': dict(N=2000, absoluto=False), 'completo': dict(N=8000, absoluto=True)}
 
 
-def _expande_tatico(b, linha):
-    """Linha com "tatico": o motor tático gera o dano (DPR nas 9 CAs) e a ficha de atenção (fração colado/oculto)."""
-    from . import tatico
-    linha = dict(linha)
-    dprs, aten, resumo = tatico.linha(b['tatico'], linha['tatico'], dano.CAS)
-    linha['dano'] = {'medido': dprs, 'fonte': 'motor tático'}
-    ctrl = dict(linha.get('controle') or {'fontes': [{'tipo': 'ameaca', 'nome': 'Corpo (ameaça)'}]})
-    ctrl['atencao'] = dict(aten, **(ctrl.get('atencao') or {}))
-    linha['controle'] = ctrl
-    return linha, resumo
-
-
-def avaliar_linha(b, linha, modo='rapido', regua=None, eixos=None):
-    cfg = MODOS[modo]; corpo = dict(b['corpo'], **linha.get('corpo', {}))
-    out = {}; livre = orcamento.reacao_livre(linha)
-    if 'tatico' in linha: linha, out['tatico'] = _expande_tatico(b, linha)
-    lutas = b.get('recursos', {}).get('lutas_dia', 4)
-    def quer(e): return e in linha and (not eixos or e in eixos)
-    inv = linha.get('invocacoes', [])
-    if quer('dano'): out['dano'] = dano.avaliar(linha['dano'], lutas, inv)
-    if quer('defesa'): out['defesa'] = defesa.avaliar(linha['defesa'], corpo, livre)
-    if quer('saves'): out['saves'] = saves.avaliar(linha['saves'], corpo, livre)
-    if quer('area') or ('dano' in linha and (not eixos or 'area' in eixos)):   # área v2 (19/11): luta contra a horda
-        velho = area.avaliar(linha['area'], modo) if linha.get('area') else None
-        out['area'] = dict(horda.avaliar(linha), antigo=velho and {k: velho[k] for k in ('nivel_eq', 'rank')},
-                           melhor=(velho or {}).get('melhor') or 'dano de alvo único', areas=(velho or {}).get('areas', []))
-    if quer('suporte'): out['suporte'] = suporte.avaliar(linha['suporte'], b['nivel'])
-    out['orcamento'] = orcamento.resumo(linha, b, campo.MAGIAS)
-    if 'controle' in linha and (not eixos or 'controle' in eixos):
-        campo.configurar(cfg['N'], 11)
-        c = linha['controle']
-        corpos = [i for i in inv if i.get('corpo', True)]   # invocações que ocupam espaço e atraem ataques
-        fontes = c.get('fontes', []) + [dict(tipo='esqueletos', nome=f"Corpo ({i['quantidade']} {i['nome']})",
-                                             pv=i['quantidade'] * i['pv'], ca_alvo=i['ca'] + i.get('cobertura', 0)) for i in corpos]
-        fn = efeitos.compilar(fontes, corpo, b['nivel'])
-        at = dict(c['atencao'])
-        if corpos: at.update(esqueletos=True, inv_pv=sum(i['quantidade'] * i['pv'] for i in corpos), inv_ca=corpos[0]['ca'])
-        ficha = atencao.ficha(at, corpo)
-        out['controle'] = total.avaliar(fn, ficha, b['nivel'], absoluto=cfg['absoluto'], regua=regua)
+def avaliar_linha(b, linha, modo='rapido', regua=None, eixos=None, velho=None, imps=None, imps_velhas=None, feitos=None):
+    """Resultado de uma linha. Com velho (resultado antigo da linha) e as impressões nova e antiga de cada eixo, reaproveita
+    os eixos cuja impressão não mudou; o orçamento (barato) é sempre refeito. feitos: lista que recebe os eixos calculados."""
+    pres = E.presentes(linha, eixos)
+    reusa = {e for e in pres if velho and imps and imps_velhas and e in velho and imps_velhas.get(e) == imps.get(e)}
+    calc = [e for e in pres if e not in reusa]
+    out = {}; lx = linha
+    if 'tatico' in linha:
+        cheio = any(e in calc for e in ('tatico',) + I.DO_TATICO)
+        lx, resumo = E.expande_tatico(b, linha, leve=not cheio)
+        out['tatico'] = resumo if 'tatico' in calc or not velho else velho['tatico']
+    for e in E.ORDEM:
+        if e == 'tatico': continue
+        if e == 'orcamento': out[e] = E.calcular(e, b, lx, modo); continue
+        if e in pres: out[e] = velho[e] if e in reusa else E.calcular(e, b, lx, modo, regua)
+    if feitos is not None: feitos.extend(calc)
     return out
 
 
+def _legado_valido(velho, imp, modo):
+    """Regra antiga (antes da impressão por eixo): build, versão, premissas e modo iguais."""
+    from . import premissas
+    pv = velho.get('premissas', {})
+    return velho.get('impressao') == imp and premissas.atuais(pv) == pv and (
+        velho.get('modo') == modo or (velho.get('modo') == 'completo' and modo == 'rapido'))
+
+
+def _sem_segundos(r):
+    return {k: v for k, v in r.items() if k != 'segundos' and not k.startswith('_')}
+
+
 def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
+    """Avalia uma build e grava resultados/<id>.json. Sem forcar, reaproveita do resultado antigo cada eixo cuja impressão
+    digital (dh/impressoes.py) não mudou; VERSAO diferente recalcula tudo. eixos/linhas = cálculo parcial, sem cache e sem
+    gravar. res['_recalculados'] = {linha: [eixos calculados]} (não é gravado)."""
     from . import premissas
     premissas.inicio()
     b = carregar(caminho); imp = impressao(b)
     arq = RESULTADOS / f"{b['id']}.json"
-    if arq.exists() and not forcar and not eixos and not linhas:
+    parcial = bool(eixos or linhas)
+    velho = None
+    if arq.exists() and not forcar and not parcial:
         velho = json.loads(arq.read_text(encoding='utf-8'))
-        pv = velho.get('premissas', {})
-        if velho.get('impressao') == imp and velho.get('versao') == VERSAO and premissas.atuais(pv) == pv and (
-                velho.get('modo') == modo or (velho.get('modo') == 'completo' and modo == 'rapido')):
-            velho['_cache'] = True
-            return b, velho
+        if velho.get('versao') != VERSAO: velho = None
+    if velho is not None:
+        vm = velho.get('modo')
+        if 'impressoes' not in velho:      # resultado de antes da impressão por eixo: vale a regra antiga, uma vez
+            if _legado_valido(velho, imp, modo):
+                velho['impressoes'] = I.da_build(b, vm, imp)
+                from .arquivos import gravar
+                gravar(arq, json.dumps(velho, ensure_ascii=False, indent=1))
+                velho['_cache'] = True
+                return b, velho
+            velho = None
+        else:
+            pv = velho.get('premissas', {})
+            for m in ([vm] if vm == 'completo' and modo == 'rapido' else []) + [modo]:
+                if (velho.get('impressoes') == I.da_build(b, m, imp) and velho.get('impressao') == imp
+                        and premissas.atuais(pv) == pv):
+                    velho['_cache'] = True
+                    return b, velho
     regua = total.Regua(); t0 = time.time()
     res = dict(id=b['id'], nome=b['nome'], grupo=b['grupo'], nivel=b['nivel'], build=b.get('build', ''),
                impressao=imp, versao=VERSAO, modo=modo, linhas={})
+    imps = {} if parcial else I.da_build(b, modo, imp)
+    vimps = (velho or {}).get('impressoes', {}); vlinhas = (velho or {}).get('linhas', {}); feitos = {}
     for l in b['linhas']:
         if linhas and l['id'] not in linhas: continue
         pr = l.get('principal', False)
         pr = list(pr) if isinstance(pr, list) else (['dano', 'defesa', 'controle', 'saves', 'area', 'suporte'] if pr else [])
+        feitos[l['id']] = []
         res['linhas'][l['id']] = dict(hipotese=l.get('hipotese', ''), principal=pr,
-                                      **avaliar_linha(b, l, modo, regua, eixos))
-    if not eixos and not linhas: res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
+                                      **avaliar_linha(b, l, modo, regua, eixos, vlinhas.get(l['id']), imps.get(l['id']),
+                                                      vimps.get(l['id']), feitos[l['id']]))
+    if not parcial: res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
     res['segundos'] = round(time.time() - t0, 1)
     eixos_b = {e for l in b['linhas'] for e in ('dano', 'defesa', 'saves', 'controle', 'area', 'suporte', 'tatico') if l.get(e)}
     if any(l.get('dano') for l in b['linhas']): eixos_b.add('area')
     res['premissas'] = {**premissas.relevantes(eixos_b), **premissas.usadas()}
-    if not eixos and not linhas:
-        from .arquivos import gravar
-        gravar(arq, json.dumps(res, ensure_ascii=False, indent=1))
+    if not parcial:
+        res['impressoes'] = imps
+        texto = json.dumps(res, ensure_ascii=False, indent=1)
+        antigo = json.loads(arq.read_text(encoding='utf-8')) if arq.exists() else None
+        if antigo is None or _sem_segundos(antigo) != _sem_segundos(json.loads(texto)):   # só "segundos" mudou: não regrava
+            from .arquivos import gravar
+            gravar(arq, texto)
+    res['_recalculados'] = feitos
     return b, res
 
 

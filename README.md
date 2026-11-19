@@ -36,13 +36,39 @@ dh/
     atencao.py       para onde vão os ataques (determinístico)
     efeitos.py       controle declarativo: "fontes" do JSON → função de negação
     total.py         campo + atenção em "vidas poupadas", calibrado contra o conjurador de referência
-  motor.py           orquestra uma build e grava resultados/<id>.json
+  eixos.py           cálculo de cada eixo de uma linha (entra na impressão de todos os eixos)
+  impressoes.py      impressão digital por eixo (o que invalida o cache de cada eixo)
+  motor.py           orquestra uma build, reaproveita os eixos que não mudaram e grava resultados/<id>.json
   cli.py             comandos acima
 builds/              uma build por arquivo (fonte da verdade)
 cache/               régua de controle pronta (regua-<hash>.json); refeita sozinha se o motor mudar
-resultados/          saída por build; só é recalculada se o JSON ou a versão do motor mudar
+resultados/          saída por build; cada eixo só é recalculado se a impressão dele mudar (abaixo)
 tests/               paridade com as planilhas
 ```
+
+## Cache por eixo (impressão digital, desde 19/11)
+
+`resultados/<id>.json` guarda, em `impressoes`, um hash por linha e por eixo (`tatico`, `dano`, `defesa`, `saves`,
+`area`, `suporte`, `controle`) e um do agregado (`_planos`). A impressão de um eixo junta:
+
+1. **o código de que ele depende**: módulos-raiz em `dh/impressoes.py` (`RAIZES`) + tudo o que eles importam dentro
+   de `dh/` (levantado sozinho pelos `from . import …`, inclusive dentro de funções) + `controle/magias.json` +
+   `dh/eixos.py`. Hoje: dano → `dano.py base.py`; defesa → `defesa.py orcamento.py base.py`; saves → `saves.py
+   orcamento.py base.py`; área → `horda.py area.py dano.py base.py`; suporte → `suporte.py base.py`; controle →
+   `controle/*.py magias.json base.py`; tático → `tatico.py dano.py base.py` (`python -c "from dh import impressoes as
+   I; print(I.arquivos('area'))"` mostra a lista);
+2. **as premissas do eixo** (prefixos em `PREFIXOS`; `base.` entra em todos);
+3. **a parte da linha que o eixo lê** (ex.: defesa = `defesa` + corpo + `reacao`; área = `area` + `dano` +
+   `invocacoes` + modo; controle = `controle` + `invocacoes` + corpo + nível + modo). Linha com `tatico`: dano, área
+   e controle incluem também a impressão do tático.
+
+Ao recalcular uma build, cada eixo com a mesma impressão é copiado do resultado antigo e só os outros rodam; o
+orçamento, os planos e os anéis (baratos) são sempre refeitos. Sem mudança nenhuma, a build inteira sai do cache.
+Exemplo: mexer só em `dh/horda.py` recalcula só a Área de cada linha (Marcus 7 completo: 32 s → 6,5 s). Mexer em
+`dh/eixos.py` ou em `base.py` recalcula tudo. Ficam fora das impressões `premissas.py` (os valores já entram pelo
+item 2), `arquivos.py`, `motor.py` e `impressoes.py`: se uma mudança nesses arquivos mudar número, suba `VERSAO`
+(`dh/__init__.py`), que continua forçando o recálculo de tudo — assim como `--forcar`. Se só o campo `segundos` mudar,
+o arquivo não é regravado (o CI não commita ruído). Testes em `tests/test_impressoes.py`.
 
 ## Caminho de uma build nova
 
@@ -186,7 +212,11 @@ e `docs/dados/<id>.json` (um por build: linhas, anéis, descrição, planos). O 
 da build com `fetch` ao abrir (cache em memória; a URL leva a versão do índice). A tabela desenha 150 linhas por vez
 ("mostrar mais"). Sem servidor próprio; o workflow regenera a cada push. Para abrir localmente:
 `cd docs && python -m http.server` (o `fetch` não funciona com `file://`).
-Publicação: GitHub Pages, branch `main`, pasta `/docs` → https://legue2205.github.io/dh-metricas/
+Publicação: https://legue2205.github.io/dh-metricas/. O workflow gera o site no próprio job e o publica pelo
+GitHub Actions Pages (`upload-pages-artifact` + `deploy-pages`, job `publicar`). Enquanto a fonte do Pages no
+repositório for "branch `main`, pasta `/docs`", o job `publicar` falha sem efeito (`continue-on-error`) e o site sai
+do `docs/` que o CI ainda commita; quando a fonte virar "GitHub Actions", `docs/` deixa de ser commitado (ROADMAP,
+19/11 noite — tarefa 3).
 
 - **Abas**: Dia padrão, Combate único, Dia longo (só builds com plano do dia) e **Legado** (linha principal de
   cada build, ou todas as linhas desmarcando "Só linha principal"). Uma build sai do Legado ao ganhar planos.

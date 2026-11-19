@@ -580,3 +580,27 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - Nota de medição: a Área dos marciais anda em degraus (4,6–4,8 ↔ 8,1–8,4) por diferenças de 0,3–0,5 round, porque a
   régua da horda não é monotônica no nível (rounds do conjurador de referência: 2,24 no 7, 3,39 no 8, 2,45 no 9).
   Ex.: Champion 11 8,1 → 4,8 e Echo Knight 7 8,1 → 4,8 com o teto 3. Vale suavizar a régua antes da passada 4.
+
+## 19/11 noite — tarefa 3
+- **Invalidação por eixo** (`dh/impressoes.py`, `dh/eixos.py`, `dh/motor.py`; README "Cache por eixo"). Cada linha de
+  `resultados/<id>.json` ganha `impressoes[linha][eixo]` = hash de (arquivos-fonte do eixo, levantados pelos imports
+  + `magias.json` + `eixos.py`) + (premissas sob os prefixos do eixo) + (parte da linha que o eixo lê, com o modo onde
+  importa). Ao recalcular, os eixos com a mesma impressão são copiados do resultado antigo; orçamento, planos e anéis
+  são sempre refeitos. Sem mudança nenhuma = build inteira em cache. `VERSAO` e `--forcar` continuam forçando tudo.
+  - O cálculo de cada eixo saiu de `motor.py` para `dh/eixos.py` (sem mudar número): `motor.py` (cache) fica fora das
+    impressões, então mexer na orquestração não recalcula nada. 4 builds (Kael 7, Tin Bin 7 com motor tático,
+    Evocation 11, Marcus 7) recalculadas com `--forcar` em modo completo: JSON idêntico ao do CI (sem `segundos`).
+  - Migração: resultado antigo sem `impressoes` que ainda vale pela regra antiga (build, VERSAO, premissas, modo) é
+    carimbado com as impressões atuais sem recalcular (uma vez; o 1º CI regrava os 157 resultados só com esse campo).
+  - Só `segundos` mudou → o arquivo não é regravado (menos commits de ruído do CI).
+  - `tests/test_impressoes.py` (13 testes, ~35 s): sem mudança nada recalcula; "mexer" em `horda.py` (hash fingido)
+    recalcula só a Área e o resultado é idêntico ao recálculo do zero (Kael, Tin Bin, Amadeus); `dano.py` → dano + área;
+    `controle/campo.py` → só controle; `tatico.py` → tático + dano + área + controle só nas linhas táticas; build com
+    defesa mexida → só a defesa das linhas afetadas; VERSAO → tudo; migração; `segundos`. Conferido à parte em modo
+    completo: Kael 7, Evocation 11 e Marcus 7 com `horda.py` "mexido" recalculam só a Área e batem com o CI
+    (Marcus 7: 32 s → 6,5 s).
+- **Publicação do site pelo GitHub Actions Pages** (`.github/workflows/metricas.yml`): o job `rodar` gera o site e
+  sobe `docs/` com `actions/upload-pages-artifact@v3`; o job `publicar` (`actions/deploy-pages@v4`, permissões
+  `pages: write` e `id-token: write`, ambiente `github-pages`) está com `continue-on-error: true`. A troca da fonte do
+  Pages pela API (`gh api -X PUT/POST repos/Legue2205/dh-metricas/pages -f build_type=workflow`) foi recusada pelo
+  proxy da sessão (403, também no GET), então **docs/ continua sendo commitado na main** até o usuário trocar.

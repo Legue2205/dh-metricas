@@ -45,5 +45,5 @@ def test_migracao_reproduz_constantes_antigas():
     from dh import base, planos, suporte, tatico
     assert base.PERFIL == base.PERFIL_ANTIGO and base.TOPO == base.TOPO_ANTIGO
     assert {k: v for k, v in suporte.H_ANTIGO.items() if k not in ('VANT', 'LUTAS_SR', 'LUTAS_DIA')} == \
-           {k: v for k, v in suporte.H.items() if k != 'VANT'}
+           {k: v for k, v in suporte.H.items() if k != 'VANT' and k in suporte.H_ANTIGO}   # premissas novas (19/11) à parte
     assert planos.TAGS == planos.TAGS_ANTIGO and tatico.COMPOSICOES == tatico.COMPOSICOES_ANTIGO

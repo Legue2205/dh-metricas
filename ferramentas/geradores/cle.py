@@ -3,6 +3,9 @@ Convenções em calibracao/convencoes-passada1.md, seção "Clérigos". Rodar da
 import sys, os, json, math
 sys.path.insert(0, os.path.dirname(__file__))
 import wiz
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+from dh.premissas import P as _P
+P_CAIDO = _P('suporte.h.P_CAIDO')
 from wiz import SL, prof, k, merge, U, area_sp, area_pico, AT, hpcalc, M, escrever, controle_fonte
 
 URL = {'death': 'https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/death/',
@@ -44,7 +47,8 @@ def maior(esp): return max(int(s) for s, q in esp.items() if q > 0)
 
 
 def fatia(L, mods, profs, ca, pv, cant, cd, atk, wis, papel, front, nivel_magia, canal=0, esp=None,
-          ctrl=(), areas=(), livres=(), extra_dano=None, sup=(), sw_ok=True, sg_ok=True, extras=(), outros=None):
+          ctrl=(), areas=(), livres=(), extra_dano=None, sup=(), sw_ok=True, sg_ok=True, extras=(), outros=None, reac=None, cura_extra=0.0):
+    """reac: (nome, tipo de reação de defesa, usos por luta)."""
     """nivel_magia = maior círculo de magia de clérigo conhecido (multiclasse: pelo nível de clérigo)."""
     p = prof(L); sv = {kk: mods[kk] + (p if kk in profs else 0) for kk in mods}
     corpo = dict(ca=ca, pv=pv, saves=dict(sv=sv, conjurador=True))
@@ -60,7 +64,9 @@ def fatia(L, mods, profs, ca, pv, cant, cd, atk, wis, papel, front, nivel_magia,
         l = {"id": id_, "dano": dn}; l.update(kw)
         if id_ != 'principal': l.setdefault('herda', 'principal')
         L_.append(l)
-    ln("principal", D(cant(1.0)), controle=base_ctl, defesa={}, saves={}, area=list(livres), invocacoes=[], suporte=S())
+    dfs, rq = ({"reacoes": [{"tipo": reac[1], "usos_luta": reac[2]}]}, [{"uso": reac[0], "fracao": round(reac[2] / 4, 3), "eixos": ["defesa"]}]) if reac else ({}, None)
+    ln("principal", D(cant(1.0)), controle=base_ctl, defesa=dfs, saves={}, area=list(livres), invocacoes=[], suporte=S())
+    if rq: L_[0]['reacao'] = rq
     ln("bless", D(cant(0.75)), suporte=S(BLESS), gasta={"espacos": {"1": 1}})
     if sw_ok and nivel_magia >= 2:
         ln("arma-espiritual", D(cant(1.0), sw(atk, wis, 1.0)), gasta={"espacos": {"2": 1}})
@@ -80,6 +86,13 @@ def fatia(L, mods, profs, ca, pv, cant, cd, atk, wis, papel, front, nivel_magia,
         g = {}
         for x in sp: g[str(x)] = g.get(str(x), 0) + 1
         ln("area", D(cant(0.5 if len(ap) > 1 else 0.75)), area=ap + list(livres), gasta={"espacos": g})
+    if areas and sg_ok and nivel_magia >= 3:
+        # Passada 3 (19/11): Spirit Guardians no round 1 e a melhor área no round 2 (para a Área medir quem tem as duas).
+        s = top; e2 = dict(esp); e2[str(s)] -= 1
+        ap2, sp2 = area_pico(list(areas), e2)
+        if ap2:
+            g = {str(s): 1}; g[str(sp2[0])] = g.get(str(sp2[0]), 0) + 1
+            ln("guardioes-area", D(cant(0.5), sg_dano(cd, s, 0.75)), area=[sg_area(cd, s), ap2[0]] + list(livres), gasta={"espacos": g})
     for x in extras:
         x = dict(x); x.setdefault('herda', 'principal'); L_.append(x)
     # Passada 2 (19/11): o plano automático põe UMA linha por luta, então uma linha que só gasta Channel Divinity (ou só
@@ -95,6 +108,16 @@ def fatia(L, mods, profs, ca, pv, cant, cd, atk, wis, papel, front, nivel_magia,
             v['dano'] = merge(v['dano'], sw(atk, wis, 0.75))
             e = dict(g.get('espacos', {})); e["2"] = e.get("2", 0) + 1; v['gasta'] = dict(g, espacos=e)
             L_.append(v)
+    # Passada 3 (19/11): Healing Word na luta em todas as linhas (distância, ação bônus); gasta 1º × P_CAIDO por luta.
+    if nivel_magia >= 1:
+        hw = {"nome": "Healing Word (levanta um caído)", "lado": "def", "modelo": "cura_na_luta", "alcance": "distancia",
+              "acao": "bonus", "usos_luta": 1, "pv": round(2.5 + wis + cura_extra, 2)}
+        pc = P_CAIDO
+        for l in L_:
+            if 'suporte' in l and not any(f.get('modelo') == 'cura_na_luta' for f in l['suporte']['fontes']):
+                l['suporte'] = {"fontes": l['suporte']['fontes'] + [hw]}
+            g = dict(l.get('gasta', {})); e = dict(g.get('espacos', {})); e["1"] = round(e.get("1", 0) + pc, 3)
+            g['espacos'] = e; l['gasta'] = g
     return dict(corpo=corpo, recursos=rec, linhas=L_)
 
 
@@ -125,7 +148,7 @@ emit('rpgbot-cleric-death', 'death', 'Death Domain Cleric (RPGBot: Stabby, Murde
      "Cleric (Death), Meio-elfo (High Elf, Custom Origin) com Booming Blade; rapieira + escudo, armadura média; Telekinetic 4 (Sab 18), Sab 20 (8)",
      {"resumo": "Clérigo da morte de corpo a corpo: Booming Blade de rapieira com Touch of Death e Divine Strike, Reaper para acertar dois alvos com Toll the Dead.",
       "estrategia": "Corpo a corpo com Booming Blade; Spirit Guardians para grupos e Spiritual Weapon como ação bônus; Hold Person, Blindness e Banishment quando precisa tirar alguém da luta.",
-      "nao_modelado": "Dano secundário do Booming Blade; empurrão do Telekinetic para juntar alvos do Reaper; Inflict Wounds e Vampiric Touch com Touch of Death; Animate Dead; Inescapable Destruction; False Life; cura (Healing Word)."}, F)
+      "nao_modelado": "Dano secundário do Booming Blade; empurrão do Telekinetic para juntar alvos do Reaper; Inflict Wounds e Vampiric Touch com Touch of Death; Animate Dead; Inescapable Destruction; False Life; cura além do Healing Word."}, F)
 
 
 # ---------- Grave: "One Punch" ----------
@@ -147,7 +170,8 @@ for L in FATIAS:
     f = fatia(L, mods_(-1, 2, 1, -1, w, 1), ('sab', 'car'), 18 if L < 5 else 19, hpcalc(dados, 1), cant, cd, atk, w,
               'frontliner', True, (cl + 1) // 2, canal=1 if cl < 6 else 2, esp=esp,
               ctrl=[HP(cd)] + ([BAN(cd)] if cl >= 7 else []), extras=extras,
-              outros={"metamagia": {"qtd": quick, "volta": "longo"}})
+              outros={"metamagia": {"qtd": quick, "volta": "longo"}},
+              reac=("Sentinel at Death's Door", "anula_critico", w / 4) if cl >= 6 else None, cura_extra=1.5)
     f['_texto'] = (f"Cleric {cl}" + (f" / Sorcerer {L - cl}" if L > cl else "") + f"; Sab {10 + 2 * w}; Quicken {quick}/dia (Metamagic Adept"
                    + (" + pontos do Sorcerer" if L >= 9 else "") + ").")
     F[L] = f
@@ -155,7 +179,7 @@ emit('rpgbot-cleric-grave', 'grave', 'Grave Domain Cleric (RPGBot: One Punch)',
      "Cleric (Grave) / Sorcerer 2 (Divine Soul, personagem 7–8), Custom Lineage (Metamagic Adept: Quicken, Extend); Fey Touched 4; escama → meia-armadura + escudo; Sab 20 (personagem 10)",
      {"resumo": "Clérigo da tumba que torna um alvo vulnerável (Path to the Grave) e o atinge com Inflict Wounds no maior espaço, acelerado com Quicken.",
       "estrategia": "Um 'soco' por luta no alvo mais perigoso; Toll the Dead no resto; Spirit Guardians e Spiritual Weapon como clérigo comum quando o Channel acabou.",
-      "nao_modelado": "Hex e True Strike na preparação; Favored by the Gods; conversão de espaços em pontos de feitiçaria (o guia queima espaços para mais Quicken); Absorb Elements no soco; Silvery Barbs; Circle of Mortality e cura; Sentinel at Death's Door; Path to the Grave dado a um aliado."}, F)
+      "nao_modelado": "Hex e True Strike na preparação; Favored by the Gods; conversão de espaços em pontos de feitiçaria (o guia queima espaços para mais Quicken); Absorb Elements no soco; Silvery Barbs; Circle of Mortality fora do Healing Word; Sentinel at Death's Door em aliados; Path to the Grave dado a um aliado."}, F)
 
 
 # ---------- Life: "Lifeberry the Tank Engine" ----------
@@ -173,14 +197,14 @@ for L in FATIAS:
     nm = (cl + 1) // 2
     f = fatia(L, mods_(2, 0, con, -1, w, -1), ('sab', 'car') + (('con',) if L >= 5 else ()), 18 if L < 7 else 20,
               hpcalc([8] * L, con), cant, cd, atk, w, 'frontliner', True, nm, canal=canal, esp=espacos(L, fora=1),
-              ctrl=[HP(cd)] + ([BAN(cd)] if cl >= 7 else []), livres=[wor(L, cd)], sup=[gb], extras=extras)
+              ctrl=[HP(cd)] + ([BAN(cd)] if cl >= 7 else []), livres=[wor(L, cd)], sup=[gb], extras=extras, cura_extra=3)
     f['_texto'] = f"Cleric {cl} / Druid {L - cl} (Stars); Con {10 + 2 * con}" + (" (Resilient)" if L >= 5 else "") + ("; placas" if L >= 7 else "; cota de malha + escudo") + "."
     F[L] = f
 emit('rpgbot-cleric-life', 'life', 'Life Domain Cleric (RPGBot: Lifeberry the Tank Engine)',
      "Cleric (Life) / Druid 2 (Stars: personagem 2 e 6), Anão da Montanha (Custom Origin); armadura pesada + escudo; Resilient Con (personagem 5), Skill Expert 10",
      {"resumo": "Clérigo da vida de armadura pesada que tanqueia com Spirit Guardians e Spiritual Weapon, cura em massa com Goodberry potencializado pelo Disciple of Life e Preserve Life.",
       "estrategia": "Round 1 Spirit Guardians (no 4º círculo no nível 7), round 2 Spiritual Weapon, depois truques ou Esquivar; Bless nas lutas sem área; cura fora de combate.",
-      "nao_modelado": "Starry Form (piso de concentração do Dragão; Archer; Chalice); Healing Word e Disciple of Life na luta; Blessed Healer; Absorb Elements e Faerie Fire do Druid; Beacon of Hope; Death Ward; Heroes' Feast."}, F)
+      "nao_modelado": "Starry Form (piso de concentração do Dragão; Archer; Chalice); Blessed Healer; Absorb Elements e Faerie Fire do Druid; Beacon of Hope; Death Ward; Heroes' Feast."}, F)
 
 
 # ---------- Light: "Variant Human Light Domain Cleric" ----------
@@ -199,14 +223,14 @@ for L in FATIAS:
                    dano=merge(cant(0.75), fs(0.75)), gasta={"espacos": {"2": 1}})]
     f = fatia(L, mods_(-1, 2, 2, 1, w, 0), ('sab', 'car'), 18 if L < 5 else 19, hpcalc([8] * L, 2), cant, cd, atk, w,
               'conjurador', False, (L + 1) // 2, canal=canal, ctrl=[HP(cd)] + ([BAN(cd)] if L >= 7 else []), areas=areas,
-              livres=[wor(L, cd, pot)], sw_ok=False, extras=extras)
+              livres=[wor(L, cd, pot)], sw_ok=False, extras=extras, reac=("Warding Flare", "desvantagem", w / 4))
     f['_texto'] = f"Cleric {L}; Sab {10 + 2 * w}" + ("; Potent Spellcasting" if L >= 9 else "") + "."
     F[L] = f
 emit('rpgbot-cleric-light', 'light', 'Light Domain Cleric (RPGBot: Variant Human Light Domain Cleric)',
      "Cleric (Light), Humano Variante (Lucky), só dano de fogo e radiante; escama → meia-armadura + escudo; Sab 18 (4), Sab 20 (8)",
      {"resumo": "Clérigo blaster de fogo e radiante: Sacred Flame e Word of Radiance, Burning Hands, Fireball, Radiance of the Dawn e Spirit Guardians.",
       "estrategia": "Conjurador a distância com armadura média; área no 1º round das lutas com grupos, Spirit Guardians quando entra no meio, Flaming Sphere no lugar da Spiritual Weapon.",
-      "nao_modelado": "Warding Flare e Improved Flare (desvantagem num ataque por reação); Wall of Fire; Scorching Ray; Faerie Fire; Lucky; dano de fogo da esfera em quem termina o turno ao lado; cura (Healing Word)."}, F)
+      "nao_modelado": "Improved Flare (Warding Flare em aliados); Wall of Fire; Scorching Ray; Faerie Fire; Lucky; dano de fogo da esfera em quem termina o turno ao lado; cura além do Healing Word."}, F)
 
 
 # ---------- Nature: "Snake Charmer" ----------
@@ -234,7 +258,7 @@ emit('rpgbot-cleric-nature', 'nature', 'Nature Domain Cleric (RPGBot: Snake Char
      "Cleric (Nature), Yuan-ti (MMoM), armadura média + escudo, todas as opcionais de classe; Sab 19 (4), Inspiring Leader 8, Sab 20 (12)",
      {"resumo": "Clérigo da natureza yuan-ti que encanta cobras; na luta é um clérigo de truques e Spirit Guardians, com Channel Divinity convertido em espaços.",
       "estrategia": "Toll the Dead e Word of Radiance; Spirit Guardians e Spiritual Weapon; Insect Plague a partir do 9.",
-      "nao_modelado": "Cobras e Animal Friendship; Charm Animals and Plants; Dampen Elements; Spike Growth e Plant Growth; Thorn Whip; resistência a magia e veneno do Yuan-ti; Suggestion racial; cura (Healing Word)."}, F)
+      "nao_modelado": "Cobras e Animal Friendship; Charm Animals and Plants; Dampen Elements; Spike Growth e Plant Growth; Thorn Whip; resistência a magia e veneno do Yuan-ti; Suggestion racial; cura além do Healing Word."}, F)
 
 
 # ---------- Peace: clérigo base + Peace Domain ----------
@@ -260,4 +284,4 @@ emit('rpgbot-cleric-peace', 'peace', 'Peace Domain Cleric (clérigo base; RPGBot
      "Cleric (Peace) sobre clérigo base: Humano Variante (War Caster), Des 14, Con 14, Sab 16; escama → meia-armadura + escudo; Sab 18 (4), Sab 20 (8)",
      {"resumo": "Clérigo da paz de retaguarda: Emboldening Bond (1d4 em ataques e saves, sem concentração, empilha com Bless) e Balm of Peace.",
       "estrategia": "Vínculo antes de cada luta; Bless junto do vínculo; Spirit Guardians, Spiritual Weapon e controle como clérigo comum.",
-      "nao_modelado": "Protective Bond (teleporte e redistribuição de dano por reação; o principal argumento do RPGBot para banir); Expansive Bond; 1d4 em testes; empilhar com Bardic Inspiration/Guidance; Sanctuary, Aid, Warding Bond; cura (Healing Word)."}, F)
+      "nao_modelado": "Protective Bond (teleporte e redistribuição de dano por reação; o principal argumento do RPGBot para banir); Expansive Bond; 1d4 em testes; empilhar com Bardic Inspiration/Guidance; Sanctuary, Aid, Warding Bond; cura além do Healing Word."}, F)

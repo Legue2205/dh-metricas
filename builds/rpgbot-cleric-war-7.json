@@ -103,8 +103,22 @@
       "modelo": "bonus_por_uso",
       "bonus": 10,
       "usos_descanso_curto": 2
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -140,12 +154,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -188,7 +211,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -269,6 +293,7 @@
    },
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "4": 1
     }
    },
@@ -326,12 +351,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -397,6 +431,7 @@
    ],
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "4": 1
     }
    },
@@ -471,6 +506,7 @@
    "gasta": {
     "espacos": {
      "2": 1,
+     "1": 0.5,
      "4": 1
     }
    },
@@ -521,6 +557,15 @@
       "alvos": 3,
       "dano_extra": 2.5,
       "concentracao": "crusaders_mantle"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
@@ -539,7 +584,8 @@
    ],
    "gasta": {
     "espacos": {
-     "3": 1
+     "3": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -548,7 +594,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless+arma; prioritário: bless+arma, guardioes-arma. Sobra: 1×1º, 2×3º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless+arma; prioritário: bless+arma, guardioes-arma. Sobra: 1×3º, 2 canal.",
    "combates": [
     "bless+arma",
     "bless+arma",
@@ -558,7 +604,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 4×1º, 3×2º, 2×3º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 3.5×1º, 3×2º, 2×3º, 2 canal.",
    "combates": [
     "guardioes-arma"
    ]
@@ -567,7 +613,7 @@
  "descricao": {
   "resumo": "Clérigo da guerra que larga a arma no 5 e vira oficial: tropa de esqueletos, Crusader's Mantle e War God's Blessing para os aliados.",
   "estrategia": "Martelo e War Priest até o 4; depois Toll the Dead, esqueletos atirando, Crusader's Mantle quando há muitos atacantes, Spirit Guardians quando não.",
-  "nao_modelado": "Guided Strike (+10 no próprio acerto); sopro do Dragonborn; Divine Favor, Shield of Faith, Magic Weapon; Death Ward, Stoneskin, Freedom of Movement; Contagion; Avatar of Battle (17); cura (Healing Word).",
+  "nao_modelado": "Guided Strike (+10 no próprio acerto); sopro do Dragonborn; Divine Favor, Shield of Faith, Magic Weapon; Death Ward, Stoneskin, Freedom of Movement; Contagion; Avatar of Battle (17); cura além do Healing Word.",
   "progressao": "Cleric 7; Sab 16, Con 18 (Resilient); placas + escudo; 4 esqueletos (1 espaço de 3º por dia); Harness Divine Power."
  },
  "id": "rpgbot-cleric-war-7",

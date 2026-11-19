@@ -91,7 +91,22 @@
    ],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -128,12 +143,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -169,7 +193,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -227,7 +252,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -293,6 +319,7 @@
    ],
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "3": 2
     }
    },
@@ -341,6 +368,7 @@
    "gasta": {
     "canal": 1,
     "espacos": {
+     "1": 0.5,
      "3": 1
     }
    },
@@ -383,12 +411,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -444,6 +481,7 @@
     "canal": 1,
     "espacos": {
      "2": 1,
+     "1": 0.5,
      "3": 1
     }
    },
@@ -503,7 +541,8 @@
    ],
    "gasta": {
     "espacos": {
-     "3": 1
+     "3": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -570,17 +609,90 @@
    "gasta": {
     "espacos": {
      "3": 1,
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
    "hipotese": "guardioes-arma"
+  },
+  {
+   "id": "guardioes-area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Shocking Grasp (Air Genasi, Sab)"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "3d8",
+      "meio": true,
+      "nota": "Spirit Guardians (3º) no alvo"
+     },
+     {
+      "n": 0.25,
+      "cd": 15,
+      "save": "Des",
+      "dano": "2d8",
+      "meio": true,
+      "nota": "Wrath of the Storm (reação, Sab/dia ÷ 4 lutas ÷ 4 rounds)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (3º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "3d8",
+     "cd": 15,
+     "metade": true
+    },
+    {
+     "nome": "Shatter (3º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 15,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "3": 2,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes-area"
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, bless+arma; prioritário: ira+arma. Sobra: 2×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, bless+arma; prioritário: ira+arma. Sobra: nada.",
    "combates": [
     "bless",
     "ira+arma",
@@ -590,7 +702,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: ira+arma. Sobra: 4×1º, 2×2º, 1×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: ira+arma. Sobra: 3.5×1º, 2×2º, 1×3º.",
    "combates": [
     "ira+arma"
    ]
@@ -599,7 +711,7 @@
  "descricao": {
   "resumo": "Clérigo da tempestade de linha de frente: Shocking Grasp e Wrath of the Storm, e Shatter (Destructive Wave no 9) maximizado com Destructive Wrath.",
   "estrategia": "Spirit Guardians para lutas próximas; Shatter maximizado no maior espaço para grupos; Shocking Grasp no corpo a corpo.",
-  "nao_modelado": "Thunderbolt Strike (empurrão e derrubar); vantagem do Shocking Grasp contra armadura de metal e negação de reação; War Caster; Thunderwave, Call Lightning, Sleet Storm, Ice Storm, Insect Plague; Stormborn; cura (Healing Word).",
+  "nao_modelado": "Thunderbolt Strike (empurrão e derrubar); vantagem do Shocking Grasp contra armadura de metal e negação de reação; War Caster; Thunderwave, Call Lightning, Sleet Storm, Ice Storm, Insect Plague; Stormborn; cura além do Healing Word.",
   "progressao": "Cleric 5; Sab 18, Con 17; cota de malha + escudo."
  },
  "id": "rpgbot-cleric-tempest-5",

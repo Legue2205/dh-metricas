@@ -68,7 +68,14 @@
      }
     ]
    },
-   "defesa": {},
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "desvantagem",
+      "usos_luta": 1.25
+     }
+    ]
+   },
    "saves": {},
    "area": [
     {
@@ -86,7 +93,31 @@
    ],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Warding Flare",
+     "fracao": 0.312,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -115,12 +146,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -188,6 +228,7 @@
    },
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "4": 1
     }
    },
@@ -246,6 +287,7 @@
    ],
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "5": 1,
      "6": 1
     }
@@ -296,7 +338,10 @@
     }
    ],
    "gasta": {
-    "canal": 1
+    "canal": 1,
+    "espacos": {
+     "1": 0.5
+    }
    },
    "herda": "principal"
   },
@@ -325,7 +370,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -376,17 +422,83 @@
    ],
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "6": 1
     }
    },
    "herda": "principal",
    "hipotese": "guardioes"
+  },
+  {
+   "id": "guardioes-area",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 17,
+      "save": "Des",
+      "dano": "3d8+5",
+      "meio": false,
+      "nota": "Sacred Flame"
+     },
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "6d8",
+      "meio": true,
+      "nota": "Spirit Guardians (6º) no alvo"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (6º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "6d8",
+     "cd": 17,
+     "metade": true
+    },
+    {
+     "nome": "Fireball (5º)",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "10d6",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6+5",
+     "cd": 17,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "5": 1,
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes-area"
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: area, controle. Sobra: 4×1º, 3×2º, 3×3º, 1×5º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: area, controle. Sobra: 2×1º, 3×2º, 3×3º, 1×5º, 2 canal.",
    "combates": [
     "controle",
     "controle",
@@ -396,7 +508,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 4×1º, 3×2º, 3×3º, 3×4º, 1×5º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 3×2º, 3×3º, 3×4º, 1×5º, 2 canal.",
    "combates": [
     "area"
    ]
@@ -405,7 +517,7 @@
  "descricao": {
   "resumo": "Clérigo blaster de fogo e radiante: Sacred Flame e Word of Radiance, Burning Hands, Fireball, Radiance of the Dawn e Spirit Guardians.",
   "estrategia": "Conjurador a distância com armadura média; área no 1º round das lutas com grupos, Spirit Guardians quando entra no meio, Flaming Sphere no lugar da Spiritual Weapon.",
-  "nao_modelado": "Warding Flare e Improved Flare (desvantagem num ataque por reação); Wall of Fire; Scorching Ray; Faerie Fire; Lucky; dano de fogo da esfera em quem termina o turno ao lado; cura (Healing Word).",
+  "nao_modelado": "Improved Flare (Warding Flare em aliados); Wall of Fire; Scorching Ray; Faerie Fire; Lucky; dano de fogo da esfera em quem termina o turno ao lado; cura além do Healing Word.",
   "progressao": "Cleric 11; Sab 20; Potent Spellcasting."
  },
  "id": "rpgbot-cleric-light-11",

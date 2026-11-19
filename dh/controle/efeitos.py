@@ -68,6 +68,13 @@ def _area(f, E, topo, t):
 def _alvo_unico(f, E, topo, t):
     cd, slots = f['cd'], tuple(f['slots'])
     ms = [_mag(n, f.get('sobre', {}).get(n)) for n in f['magias']]
+    um = [n for n, m in zip(f['magias'], ms) if m['termino'] == 'um_turno']
+    if um:   # efeito de um turno (Command, Psychic Lance): cada espaço nega um turno se o alvo falhar; sem concentração
+        vs = [_condicao_no_acerto({'efeito': n, 'cd': cd, 'usos': len([s for s in slots if s >= _mag(n)['nivel']]),
+                                   'no_acerto': False}, E, topo, t) for n in um]
+        resto = [n for n in f['magias'] if n not in um]
+        if resto: vs.append(_alvo_unico(dict(f, magias=resto), E, topo, t))
+        return max(vs, key=lambda v: C.tot(E, v))
     if f.get('modo', 'combinar') == 'combinar':
         sp = tuple(C._tupla(m) for m in ms)
         return C.unico(E, lambda c: C.seq1(C.ckey(c), cd, slots, sp)[0])

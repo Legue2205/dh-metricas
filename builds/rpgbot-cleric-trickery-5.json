@@ -69,7 +69,22 @@
    "area": [],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -98,12 +113,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -153,7 +177,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -200,7 +225,10 @@
     ]
    },
    "gasta": {
-    "canal": 1
+    "canal": 1,
+    "espacos": {
+     "1": 0.5
+    }
    },
    "herda": "principal"
   },
@@ -228,7 +256,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -265,12 +294,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -281,9 +319,9 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless+arma, duplicidade; prioritário: bless+arma. Sobra: 1×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, duplicidade; prioritário: bless+arma. Sobra: nada.",
    "combates": [
-    "bless+arma",
+    "controle",
     "bless+arma",
     "duplicidade",
     "bless+arma"
@@ -291,7 +329,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 3×1º, 2×2º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 2.5×1º, 2×2º, 1 canal.",
    "combates": [
     "bless+arma"
    ]
@@ -300,7 +338,7 @@
  "descricao": {
   "resumo": "Clérigo trapaceiro com dip de Rogue: perícias e furtividade; na luta, Sacred Flame ou rapieira com vantagem do Invoke Duplicity para o Sneak Attack.",
   "estrategia": "Invoke Duplicity nas lutas corpo a corpo (vantagem e Sneak Attack); fora disso, Sacred Flame, Spirit Guardians e Spiritual Weapon; Polymorph no 9.",
-  "nao_modelado": "Pass Without Trace, Blessing of the Trickster e perícias; Mirror Image e Blink; Cloak of Shadows; magias lançadas da ilusão (Word of Radiance); Cunning Action; Silvery Barbs e magias do Arcane Trickster; cura (Healing Word).",
+  "nao_modelado": "Pass Without Trace, Blessing of the Trickster e perícias; Mirror Image e Blink; Cloak of Shadows; magias lançadas da ilusão (Word of Radiance); Cunning Action; Silvery Barbs e magias do Arcane Trickster; cura além do Healing Word.",
   "progressao": "Rogue 1 / Cleric 4; Sab 18, Des 16; peitoral + escudo."
  },
  "id": "rpgbot-cleric-trickery-5",

@@ -86,7 +86,22 @@
    ],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -119,12 +134,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -156,7 +180,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -210,7 +235,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -249,12 +275,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -265,9 +300,9 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless+arma. Sobra: 1×1º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, principal; prioritário: bless+arma. Sobra: 1 canal.",
    "combates": [
-    "bless",
+    "principal",
     "bless+arma",
     "bless",
     "bless+arma"
@@ -275,7 +310,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 4×1º, 1×2º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 3.5×1º, 1×2º, 1 canal.",
    "combates": [
     "bless+arma"
    ]
@@ -284,7 +319,7 @@
  "descricao": {
   "resumo": "Clérigo da guerra que larga a arma no 5 e vira oficial: tropa de esqueletos, Crusader's Mantle e War God's Blessing para os aliados.",
   "estrategia": "Martelo e War Priest até o 4; depois Toll the Dead, esqueletos atirando, Crusader's Mantle quando há muitos atacantes, Spirit Guardians quando não.",
-  "nao_modelado": "Guided Strike (+10 no próprio acerto); sopro do Dragonborn; Divine Favor, Shield of Faith, Magic Weapon; Death Ward, Stoneskin, Freedom of Movement; Contagion; Avatar of Battle (17); cura (Healing Word).",
+  "nao_modelado": "Guided Strike (+10 no próprio acerto); sopro do Dragonborn; Divine Favor, Shield of Faith, Magic Weapon; Death Ward, Stoneskin, Freedom of Movement; Contagion; Avatar of Battle (17); cura além do Healing Word.",
   "progressao": "Cleric 3; Sab 16, Con 16; cota de malha + escudo; Harness Divine Power."
  },
  "id": "rpgbot-cleric-war-3",

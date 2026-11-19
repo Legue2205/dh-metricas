@@ -77,7 +77,22 @@
     "area": [],
     "invocacoes": [],
     "suporte": {
-     "fontes": []
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
     },
     "principal": true,
     "custo": "gratuita",
@@ -112,22 +127,41 @@
      },
      "fontes": [
       {
-       "tipo": "alvo_unico",
-       "nome": "Hold Person",
-       "cd": 13,
-       "slots": [
-        2
-       ],
-       "magias": [
-        "hold_person"
-       ],
-       "modo": "melhor"
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "alvo_unico",
+         "nome": "Command",
+         "cd": 13,
+         "slots": [
+          1
+         ],
+         "magias": [
+          "command"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 13,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        }
+       ]
       }
      ]
     },
     "gasta": {
      "espacos": {
-      "2": 1
+      "2": 1,
+      "1": 0.5
      }
     },
     "herda": "principal",
@@ -163,12 +197,21 @@
        "lado": "of",
        "modelo": "ataque_extra",
        "alvos": 0.25
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
       }
      ]
     },
     "gasta": {
      "espacos": {
-      "1": 1
+      "1": 1.5
      }
     },
     "herda": "principal"
@@ -195,12 +238,21 @@
        "lado": "of",
        "modelo": "ataque_extra",
        "alvos": 0.5
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
       }
      ]
     },
     "gasta": {
      "espacos": {
-      "1": 2
+      "1": 2.5
      }
     },
     "herda": "principal"
@@ -213,7 +265,7 @@
   "descricao": {
    "resumo": "Clérigo da ordem de suporte: cada magia de nível num aliado (Healing Word, Bless) dá a ele um ataque por reação (Voice of Authority).",
    "estrategia": "Bless ou Healing Word para disparar ataques dos aliados, truques na ação; Command, Hold Person e Banishment; Spirit Guardians quando vale.",
-   "nao_modelado": "Command (efeito de um turno sem suporte como alvo único); Silvery Barbs (vantagem + Voice of Authority); Embodiment of Law (encantamento como ação bônus); Order's Demand; Slow; Heroism e Shield of Faith; Favored by the Gods; Inspiring Leader (13)."
+   "nao_modelado": "Command em mais alvos (upcast); Silvery Barbs (vantagem + Voice of Authority); Embodiment of Law (encantamento como ação bônus); Order's Demand; Slow; Heroism e Shield of Faith; Favored by the Gods; Inspiring Leader (13)."
   }
  },
  "niveis": {
@@ -291,7 +343,22 @@
      "area": [],
      "invocacoes": [],
      "suporte": {
-      "fontes": []
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
      }
     },
     {
@@ -318,7 +385,8 @@
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -353,22 +421,41 @@
       },
       "fontes": [
        {
-        "tipo": "alvo_unico",
-        "nome": "Hold Person",
-        "cd": 15,
-        "slots": [
-         2
-        ],
-        "magias": [
-         "hold_person"
-        ],
-        "modo": "melhor"
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 15,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         }
+        ]
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -404,12 +491,21 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1
+       "1": 1.5
       }
      },
      "herda": "principal"
@@ -436,58 +532,24 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.5
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 2
+       "1": 2.5
       }
      },
      "herda": "principal"
-    },
-    {
-     "id": "bless+arma",
-     "dano": {
-      "com_save": [
-       {
-        "n": 0.75,
-        "cd": 15,
-        "save": "Sab",
-        "dano": "2d12",
-        "meio": false,
-        "nota": "Toll the Dead (alvo ferido)"
-       }
-      ],
-      "ataques": [
-       {
-        "n": 0.75,
-        "bonus": 7,
-        "dano": "1d8+4",
-        "nota": "Spiritual Weapon (2º)"
-       }
-      ]
-     },
-     "suporte": {
-      "fontes": [
-       {
-        "nome": "Bless",
-        "lado": "of",
-        "modelo": "bonus_continuo",
-        "alvos": 3,
-        "bonus": 2.5,
-        "concentracao": "bless"
-       }
-      ]
-     },
-     "gasta": {
-      "espacos": {
-       "1": 1,
-       "2": 1
-      }
-     },
-     "herda": "principal",
-     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
     },
     {
      "id": "bless+arma",
@@ -527,12 +589,21 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      },
@@ -612,7 +683,22 @@
      "area": [],
      "invocacoes": [],
      "suporte": {
-      "fontes": []
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
      }
     },
     {
@@ -639,7 +725,8 @@
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -679,7 +766,8 @@
      ],
      "gasta": {
       "espacos": {
-       "4": 1
+       "4": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -728,7 +816,8 @@
      "gasta": {
       "espacos": {
        "4": 1,
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -763,22 +852,41 @@
       },
       "fontes": [
        {
-        "tipo": "alvo_unico",
-        "nome": "Hold Person",
-        "cd": 15,
-        "slots": [
-         2
-        ],
-        "magias": [
-         "hold_person"
-        ],
-        "modo": "melhor"
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 15,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         }
+        ]
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -814,12 +922,21 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1
+       "1": 1.5
       }
      },
      "herda": "principal"
@@ -846,58 +963,24 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.5
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 2
+       "1": 2.5
       }
      },
      "herda": "principal"
-    },
-    {
-     "id": "bless+arma",
-     "dano": {
-      "com_save": [
-       {
-        "n": 0.75,
-        "cd": 15,
-        "save": "Sab",
-        "dano": "2d12",
-        "meio": false,
-        "nota": "Toll the Dead (alvo ferido)"
-       }
-      ],
-      "ataques": [
-       {
-        "n": 0.75,
-        "bonus": 7,
-        "dano": "1d8+4",
-        "nota": "Spiritual Weapon (2º)"
-       }
-      ]
-     },
-     "suporte": {
-      "fontes": [
-       {
-        "nome": "Bless",
-        "lado": "of",
-        "modelo": "bonus_continuo",
-        "alvos": 3,
-        "bonus": 2.5,
-        "concentracao": "bless"
-       }
-      ]
-     },
-     "gasta": {
-      "espacos": {
-       "1": 1,
-       "2": 1
-      }
-     },
-     "herda": "principal",
-     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
     },
     {
      "id": "bless+arma",
@@ -937,12 +1020,21 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      },
@@ -1023,7 +1115,22 @@
      "area": [],
      "invocacoes": [],
      "suporte": {
-      "fontes": []
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
      }
     },
     {
@@ -1050,7 +1157,8 @@
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -1091,6 +1199,7 @@
      "gasta": {
       "espacos": {
        "5": 1,
+       "1": 0.5,
        "4": null
       }
      },
@@ -1141,6 +1250,7 @@
       "espacos": {
        "5": 1,
        "2": 1,
+       "1": 0.5,
        "4": null
       }
      },
@@ -1181,6 +1291,18 @@
         "opcoes": [
          {
           "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 17,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
           "nome": "Hold Person",
           "cd": 17,
           "slots": [
@@ -1210,6 +1332,7 @@
      "gasta": {
       "espacos": {
        "4": 1,
+       "1": 0.5,
        "2": null
       }
      },
@@ -1246,12 +1369,21 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1
+       "1": 1.5
       }
      },
      "herda": "principal"
@@ -1278,58 +1410,24 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.5
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 2
+       "1": 2.5
       }
      },
      "herda": "principal"
-    },
-    {
-     "id": "bless+arma",
-     "dano": {
-      "com_save": [
-       {
-        "n": 0.75,
-        "cd": 17,
-        "save": "Sab",
-        "dano": "2d12+1d8",
-        "meio": false,
-        "nota": "Toll the Dead (alvo ferido)"
-       }
-      ],
-      "ataques": [
-       {
-        "n": 0.75,
-        "bonus": 9,
-        "dano": "1d8+5",
-        "nota": "Spiritual Weapon (2º)"
-       }
-      ]
-     },
-     "suporte": {
-      "fontes": [
-       {
-        "nome": "Bless",
-        "lado": "of",
-        "modelo": "bonus_continuo",
-        "alvos": 3,
-        "bonus": 2.5,
-        "concentracao": "bless"
-       }
-      ]
-     },
-     "gasta": {
-      "espacos": {
-       "1": 1,
-       "2": 1
-      }
-     },
-     "herda": "principal",
-     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
     },
     {
      "id": "bless+arma",
@@ -1369,12 +1467,21 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      },
@@ -1456,7 +1563,22 @@
      "area": [],
      "invocacoes": [],
      "suporte": {
-      "fontes": []
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
      }
     },
     {
@@ -1483,7 +1605,8 @@
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -1524,6 +1647,7 @@
      "gasta": {
       "espacos": {
        "6": 1,
+       "1": 0.5,
        "5": null
       }
      },
@@ -1574,6 +1698,7 @@
       "espacos": {
        "6": 1,
        "2": 1,
+       "1": 0.5,
        "5": null
       }
      },
@@ -1614,6 +1739,18 @@
         "opcoes": [
          {
           "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 17,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
           "nome": "Hold Person",
           "cd": 17,
           "slots": [
@@ -1642,7 +1779,8 @@
      },
      "gasta": {
       "espacos": {
-       "4": 1
+       "4": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -1678,12 +1816,21 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1
+       "1": 1.5
       }
      },
      "herda": "principal"
@@ -1710,58 +1857,24 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.5
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 2
+       "1": 2.5
       }
      },
      "herda": "principal"
-    },
-    {
-     "id": "bless+arma",
-     "dano": {
-      "com_save": [
-       {
-        "n": 0.75,
-        "cd": 17,
-        "save": "Sab",
-        "dano": "3d12+1d8",
-        "meio": false,
-        "nota": "Toll the Dead (alvo ferido)"
-       }
-      ],
-      "ataques": [
-       {
-        "n": 0.75,
-        "bonus": 9,
-        "dano": "1d8+5",
-        "nota": "Spiritual Weapon (2º)"
-       }
-      ]
-     },
-     "suporte": {
-      "fontes": [
-       {
-        "nome": "Bless",
-        "lado": "of",
-        "modelo": "bonus_continuo",
-        "alvos": 3,
-        "bonus": 2.5,
-        "concentracao": "bless"
-       }
-      ]
-     },
-     "gasta": {
-      "espacos": {
-       "1": 1,
-       "2": 1
-      }
-     },
-     "herda": "principal",
-     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
     },
     {
      "id": "bless+arma",
@@ -1801,12 +1914,21 @@
         "lado": "of",
         "modelo": "ataque_extra",
         "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      },

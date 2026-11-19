@@ -94,8 +94,22 @@
       "usos_dia": 1,
       "pv": 40,
       "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.5
      }
     ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -132,12 +146,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -205,6 +228,7 @@
    },
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "4": 1
     }
    },
@@ -242,11 +266,23 @@
       "modelo": "cura",
       "usos_luta": 1,
       "pv": 45
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.5
      }
     ]
    },
    "gasta": {
-    "canal": 1
+    "canal": 1,
+    "espacos": {
+     "1": 0.5
+    }
    },
    "herda": "principal"
   },
@@ -274,7 +310,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -319,12 +356,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -370,13 +416,23 @@
       "modelo": "cura",
       "usos_luta": 1,
       "pv": 45
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.5
      }
     ]
    },
    "gasta": {
     "canal": 1,
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -427,6 +483,7 @@
    ],
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "6": 1
     }
    },
@@ -488,6 +545,7 @@
    "gasta": {
     "espacos": {
      "2": 1,
+     "1": 0.5,
      "6": 1
     }
    },
@@ -498,7 +556,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 3×1º, 2×2º, 3×3º, 2×5º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 1×1º, 2×2º, 3×3º, 2×5º, 2 canal.",
    "combates": [
     "controle",
     "controle",
@@ -508,7 +566,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 3×1º, 2×2º, 3×3º, 3×4º, 2×5º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 2.5×1º, 2×2º, 3×3º, 3×4º, 2×5º, 2 canal.",
    "combates": [
     "guardioes-arma"
    ]
@@ -517,7 +575,7 @@
  "descricao": {
   "resumo": "Clérigo da vida de armadura pesada que tanqueia com Spirit Guardians e Spiritual Weapon, cura em massa com Goodberry potencializado pelo Disciple of Life e Preserve Life.",
   "estrategia": "Round 1 Spirit Guardians (no 4º círculo no nível 7), round 2 Spiritual Weapon, depois truques ou Esquivar; Bless nas lutas sem área; cura fora de combate.",
-  "nao_modelado": "Starry Form (piso de concentração do Dragão; Archer; Chalice); Healing Word e Disciple of Life na luta; Blessed Healer; Absorb Elements e Faerie Fire do Druid; Beacon of Hope; Death Ward; Heroes' Feast.",
+  "nao_modelado": "Starry Form (piso de concentração do Dragão; Archer; Chalice); Blessed Healer; Absorb Elements e Faerie Fire do Druid; Beacon of Hope; Death Ward; Heroes' Feast.",
   "progressao": "Cleric 9 / Druid 2 (Stars); Con 18 (Resilient); placas."
  },
  "id": "rpgbot-cleric-life-11",

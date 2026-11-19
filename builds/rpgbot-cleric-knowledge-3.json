@@ -69,7 +69,22 @@
    "area": [],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -98,12 +113,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -133,7 +157,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -168,22 +193,41 @@
     },
     "fontes": [
      {
-      "tipo": "alvo_unico",
-      "nome": "Hold Person",
-      "cd": 13,
-      "slots": [
-       2
-      ],
-      "magias": [
-       "hold_person"
-      ],
-      "modo": "melhor"
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Command",
+        "cd": 13,
+        "slots": [
+         1
+        ],
+        "magias": [
+         "command"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 13,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       }
+      ]
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -220,12 +264,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -236,17 +289,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless+arma. Sobra: 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: bless+arma. Sobra: 1 canal.",
    "combates": [
-    "bless",
+    "principal",
     "bless+arma",
-    "bless",
+    "principal",
     "bless+arma"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 3×1º, 1×2º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 2.5×1º, 1×2º, 1 canal.",
    "combates": [
     "bless+arma"
    ]
@@ -255,7 +308,7 @@
  "descricao": {
   "resumo": "Clérigo do conhecimento tabaxi: perícias com Expertise e magias de divinação; na luta, um clérigo de truques, Spirit Guardians e Command.",
   "estrategia": "Toll the Dead e Sacred Flame; Spirit Guardians (Feline Agility para entrar); Command, Hold Person e Banishment.",
-  "nao_modelado": "Command (o efeito de um turno ainda não roda como alvo único no motor); Expertise e Knowledge of the Ages; Read Thoughts + Suggestion; Confusion; Telekinetic; divinações; Summon Celestial (9); cura (Healing Word).",
+  "nao_modelado": "Command em mais alvos (upcast); Expertise e Knowledge of the Ages; Read Thoughts + Suggestion; Confusion; Telekinetic; divinações; Summon Celestial (9); cura além do Healing Word.",
   "progressao": "Cleric 3; Sab 16."
  },
  "id": "rpgbot-cleric-knowledge-3",

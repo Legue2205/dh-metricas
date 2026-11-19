@@ -90,7 +90,22 @@
    ],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -127,12 +142,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -168,7 +192,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -226,7 +251,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -292,7 +318,8 @@
    ],
    "gasta": {
     "espacos": {
-     "2": 2
+     "2": 2,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -340,7 +367,8 @@
    "gasta": {
     "canal": 1,
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -382,12 +410,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -442,7 +479,8 @@
    "gasta": {
     "canal": 1,
     "espacos": {
-     "2": 2
+     "2": 2,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -451,17 +489,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless, ira+arma. Sobra: 1×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: ira. Sobra: nada.",
    "combates": [
     "bless",
+    "ira",
     "bless",
-    "bless",
-    "ira+arma"
+    "ira"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: ira+arma. Sobra: 4×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: ira+arma. Sobra: 3.5×1º.",
    "combates": [
     "ira+arma"
    ]
@@ -470,7 +508,7 @@
  "descricao": {
   "resumo": "Clérigo da tempestade de linha de frente: Shocking Grasp e Wrath of the Storm, e Shatter (Destructive Wave no 9) maximizado com Destructive Wrath.",
   "estrategia": "Spirit Guardians para lutas próximas; Shatter maximizado no maior espaço para grupos; Shocking Grasp no corpo a corpo.",
-  "nao_modelado": "Thunderbolt Strike (empurrão e derrubar); vantagem do Shocking Grasp contra armadura de metal e negação de reação; War Caster; Thunderwave, Call Lightning, Sleet Storm, Ice Storm, Insect Plague; Stormborn; cura (Healing Word).",
+  "nao_modelado": "Thunderbolt Strike (empurrão e derrubar); vantagem do Shocking Grasp contra armadura de metal e negação de reação; War Caster; Thunderwave, Call Lightning, Sleet Storm, Ice Storm, Insect Plague; Stormborn; cura além do Healing Word.",
   "progressao": "Cleric 3; Sab 16, Con 16; cota de malha + escudo."
  },
  "id": "rpgbot-cleric-tempest-3",

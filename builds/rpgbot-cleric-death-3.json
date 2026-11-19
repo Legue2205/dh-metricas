@@ -99,7 +99,22 @@
    ],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -133,12 +148,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -171,7 +195,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -244,7 +269,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -284,12 +310,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -300,17 +335,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless+arma. Sobra: 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: bless+arma. Sobra: 1 canal.",
    "combates": [
-    "bless",
+    "principal",
     "bless+arma",
-    "bless",
+    "principal",
     "bless+arma"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 3×1º, 1×2º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 2.5×1º, 1×2º, 1 canal.",
    "combates": [
     "bless+arma"
    ]
@@ -319,7 +354,7 @@
  "descricao": {
   "resumo": "Clérigo da morte de corpo a corpo: Booming Blade de rapieira com Touch of Death e Divine Strike, Reaper para acertar dois alvos com Toll the Dead.",
   "estrategia": "Corpo a corpo com Booming Blade; Spirit Guardians para grupos e Spiritual Weapon como ação bônus; Hold Person, Blindness e Banishment quando precisa tirar alguém da luta.",
-  "nao_modelado": "Dano secundário do Booming Blade; empurrão do Telekinetic para juntar alvos do Reaper; Inflict Wounds e Vampiric Touch com Touch of Death; Animate Dead; Inescapable Destruction; False Life; cura (Healing Word).",
+  "nao_modelado": "Dano secundário do Booming Blade; empurrão do Telekinetic para juntar alvos do Reaper; Inflict Wounds e Vampiric Touch com Touch of Death; Animate Dead; Inescapable Destruction; False Life; cura além do Healing Word.",
   "progressao": "Cleric 3; Sab 16; escama + escudo."
  },
  "id": "rpgbot-cleric-death-3",

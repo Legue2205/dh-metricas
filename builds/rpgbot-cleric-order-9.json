@@ -72,7 +72,22 @@
    "area": [],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -112,6 +127,18 @@
       "opcoes": [
        {
         "tipo": "alvo_unico",
+        "nome": "Command",
+        "cd": 17,
+        "slots": [
+         1
+        ],
+        "magias": [
+         "command"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
         "nome": "Hold Person",
         "cd": 17,
         "slots": [
@@ -140,6 +167,7 @@
    },
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "4": 1
     }
    },
@@ -176,12 +204,21 @@
       "lado": "of",
       "modelo": "ataque_extra",
       "alvos": 0.25
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal"
@@ -208,12 +245,21 @@
       "lado": "of",
       "modelo": "ataque_extra",
       "alvos": 0.5
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 2
+     "1": 2.5
     }
    },
    "herda": "principal"
@@ -242,7 +288,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -250,6 +297,7 @@
   },
   {
    "id": "bless+arma",
+   "hipotese": "Bless + Voice of Authority (1 ataque de aliado) + Spiritual Weapon (ação bônus, do round 2 em diante)",
    "dano": {
     "com_save": [
      {
@@ -285,17 +333,25 @@
       "lado": "of",
       "modelo": "ataque_extra",
       "alvos": 0.25
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
-   "herda": "principal",
-   "hipotese": "Bless + Voice of Authority (1 ataque de aliado) + Spiritual Weapon (ação bônus, do round 2 em diante)"
+   "herda": "principal"
   },
   {
    "id": "guardioes",
@@ -331,6 +387,7 @@
    ],
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "5": 1
     }
    },
@@ -380,6 +437,7 @@
    "gasta": {
     "espacos": {
      "2": 1,
+     "1": 0.5,
      "5": 1
     }
    },
@@ -390,7 +448,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 4×1º, 2×2º, 3×3º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 2×1º, 2×2º, 3×3º, 2 canal.",
    "combates": [
     "controle",
     "controle",
@@ -400,7 +458,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 4×1º, 2×2º, 3×3º, 3×4º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 3.5×1º, 2×2º, 3×3º, 3×4º, 2 canal.",
    "combates": [
     "guardioes-arma"
    ]
@@ -409,7 +467,7 @@
  "descricao": {
   "resumo": "Clérigo da ordem de suporte: cada magia de nível num aliado (Healing Word, Bless) dá a ele um ataque por reação (Voice of Authority).",
   "estrategia": "Bless ou Healing Word para disparar ataques dos aliados, truques na ação; Command, Hold Person e Banishment; Spirit Guardians quando vale.",
-  "nao_modelado": "Command (efeito de um turno sem suporte como alvo único); Silvery Barbs (vantagem + Voice of Authority); Embodiment of Law (encantamento como ação bônus); Order's Demand; Slow; Heroism e Shield of Faith; Favored by the Gods; Inspiring Leader (13).",
+  "nao_modelado": "Command em mais alvos (upcast); Silvery Barbs (vantagem + Voice of Authority); Embodiment of Law (encantamento como ação bônus); Order's Demand; Slow; Heroism e Shield of Faith; Favored by the Gods; Inspiring Leader (13).",
   "progressao": "Cleric 8 / Sorcerer 1 (Divine Soul, personagem 2); Sab 20; placas + escudo; Blessed Strikes."
  },
  "id": "rpgbot-cleric-order-9",

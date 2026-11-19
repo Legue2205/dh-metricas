@@ -73,7 +73,22 @@
    "area": [],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -102,12 +117,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -137,7 +161,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -177,6 +202,18 @@
       "opcoes": [
        {
         "tipo": "alvo_unico",
+        "nome": "Command",
+        "cd": 17,
+        "slots": [
+         1
+        ],
+        "magias": [
+         "command"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
         "nome": "Hold Person",
         "cd": 17,
         "slots": [
@@ -205,6 +242,7 @@
    },
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "4": 1
     }
    },
@@ -242,12 +280,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -288,6 +335,7 @@
    ],
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "6": 1
     }
    },
@@ -337,6 +385,7 @@
    "gasta": {
     "espacos": {
      "2": 1,
+     "1": 0.5,
      "6": 1
     }
    },
@@ -347,7 +396,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 4×1º, 2×2º, 3×3º, 2×5º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 2×1º, 2×2º, 3×3º, 2×5º, 2 canal.",
    "combates": [
     "controle",
     "controle",
@@ -357,7 +406,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 4×1º, 2×2º, 3×3º, 3×4º, 2×5º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 3.5×1º, 2×2º, 3×3º, 3×4º, 2×5º, 2 canal.",
    "combates": [
     "guardioes-arma"
    ]
@@ -366,7 +415,7 @@
  "descricao": {
   "resumo": "Clérigo do conhecimento tabaxi: perícias com Expertise e magias de divinação; na luta, um clérigo de truques, Spirit Guardians e Command.",
   "estrategia": "Toll the Dead e Sacred Flame; Spirit Guardians (Feline Agility para entrar); Command, Hold Person e Banishment.",
-  "nao_modelado": "Command (o efeito de um turno ainda não roda como alvo único no motor); Expertise e Knowledge of the Ages; Read Thoughts + Suggestion; Confusion; Telekinetic; divinações; Summon Celestial (9); cura (Healing Word).",
+  "nao_modelado": "Command em mais alvos (upcast); Expertise e Knowledge of the Ages; Read Thoughts + Suggestion; Confusion; Telekinetic; divinações; Summon Celestial (9); cura além do Healing Word.",
   "progressao": "Cleric 11; Sab 20; Potent Spellcasting."
  },
  "id": "rpgbot-cleric-knowledge-11",

@@ -90,8 +90,22 @@
       "usos_dia": 1,
       "pv": 40,
       "quando": "entre_lutas"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 8.5
      }
     ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -128,12 +142,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 8.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -183,7 +206,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -220,11 +244,23 @@
       "modelo": "cura",
       "usos_luta": 1,
       "pv": 10
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 8.5
      }
     ]
    },
    "gasta": {
-    "canal": 1
+    "canal": 1,
+    "espacos": {
+     "1": 0.5
+    }
    },
    "herda": "principal"
   }
@@ -232,17 +268,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: controle. Sobra: 1×1º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, preservar; prioritário: controle. Sobra: nada.",
    "combates": [
     "bless",
     "controle",
-    "bless",
+    "preservar",
     "controle"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 3×1º, 1×2º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 2.5×1º, 1×2º, 1 canal.",
    "combates": [
     "controle"
    ]
@@ -251,7 +287,7 @@
  "descricao": {
   "resumo": "Clérigo da vida de armadura pesada que tanqueia com Spirit Guardians e Spiritual Weapon, cura em massa com Goodberry potencializado pelo Disciple of Life e Preserve Life.",
   "estrategia": "Round 1 Spirit Guardians (no 4º círculo no nível 7), round 2 Spiritual Weapon, depois truques ou Esquivar; Bless nas lutas sem área; cura fora de combate.",
-  "nao_modelado": "Starry Form (piso de concentração do Dragão; Archer; Chalice); Healing Word e Disciple of Life na luta; Blessed Healer; Absorb Elements e Faerie Fire do Druid; Beacon of Hope; Death Ward; Heroes' Feast.",
+  "nao_modelado": "Starry Form (piso de concentração do Dragão; Archer; Chalice); Blessed Healer; Absorb Elements e Faerie Fire do Druid; Beacon of Hope; Death Ward; Heroes' Feast.",
   "progressao": "Cleric 2 / Druid 1 (Stars); Con 16; cota de malha + escudo."
  },
  "id": "rpgbot-cleric-life-3",

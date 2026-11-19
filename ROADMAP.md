@@ -757,3 +757,33 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
      se destaca. Mesmo padrão da Fireball no Wizard: medir a subclasse pelo diferencial sobre um "clérigo base"?
   7. Command (efeito de um turno) sem suporte como alvo único no motor de controle.
 - Aviso: houve outra sessão trabalhando no repo ao mesmo tempo (commits `f779f4a` e `cd69c85`, session_01SzatyJS1yzFHjnSxcrkD6G).
+
+## 19/11 (noite 5) — Filosofia: réguas consistentes primeiro
+- **Decisão do usuário:** a nota final (média uniforme dos 7 eixos) é arbitrária: os eixos não estão na mesma moeda
+  e não têm pesos justificados (Dano, Controle, Corpo e Suporte falam de dano causado/evitado/possibilitado; Def F/M
+  são absolutos). Por isso o τ da média deixa de ser o alvo. **Ordem de trabalho:**
+  1. cada eixo consistente consigo mesmo **entre classes** (ex.: um Fighter não passa um Cleric em Suporte sem motivo);
+  2. dentro de cada classe, o eixo concorda com o que o RPGBot diz *sobre aquele eixo* (segunda opinião, não verdade);
+  3. só no fim, com muitas builds e réguas congeladas, calibrar as réguas entre si (pesos, moeda comum, média que
+     valoriza o ponto forte, análise de party). Party ideal e formação: passo longínquo.
+- **Corpo × Controle:** mesma moeda (dano inimigo evitado). Corpo = **presença** (CA, PV, atenção, taunt, marcas);
+  Controle = **ações** (magias, manobras, condições). Sentinel e marcas ficam no Corpo. Casos finos para depois: marca
+  de quem ataca de longe (Ancestral Guardian arqueiro ≈ controle de "metade do dano"); inimigo que troca de alvo para
+  fugir da desvantagem (Cavalier sem Hold the Line) aumenta o DPR do time, não o Corpo.
+- **Corpo com referência única (a fazer):** tirar a "colher de chá" da referência por posição; comparar todos com um
+  membro padrão (wizard frágil fica com Corpo ruim — precisa ser protegido; clérigo de placas atrás ganha o crédito).
+- **Durações:** ≥ 1 hora cobre ~2 lutas (Hex, invocações); 10 minutos ou menos = 1 luta (Spirit Guardians, Bladesong).
+- **Cura na luta:** a dificuldade de acesso conta (Healing Word a distância com ação bônus × Cure Wounds de toque com ação).
+
+## 19/11 (noite 5) — Passada 3 do Cleric: mecânicas novas (gerais) e linhas
+- `cura_na_luta` (suporte): usos = min(usos, `suporte.h.P_CAIDO` 0,5); fator `ACESSO_TOQUE` 0,6 e `ACESSO_ACAO` 0,8
+  (chutes iniciais a calibrar). Todos os clérigos: Healing Word em todas as linhas (+0,5 espaço de 1º por luta);
+  Life +3 (Disciple of Life), Grave dado máximo (Circle of Mortality).
+- Defesa: reações `desvantagem` (decidida antes do resultado, 1º golpe do round; Warding Flare do Light) e
+  `anula_critico` (Sentinel at Death's Door do Grave, a partir do Cleric 6). Usos = Sab/dia ÷ 4 lutas.
+- Controle: magia de **um turno** no alvo único (Command) roda pelo caminho de `condicao_no_acerto` (cada espaço tenta
+  negar um turno); Command voltou ao Knowledge e ao Order. Upcast em mais alvos: não modelado.
+- Clérigos com magia de área (Light, Tempest): linha `guardioes-area` (Spirit Guardians no round 1 + melhor área no 2).
+- **Juntar linhas no plano (pendente):** o plano escolhe uma linha por luta; juntar duas linhas automaticamente exige
+  separar o "truque de enchimento" de cada linha (senão o dano conta duas vezes). Por ora: variantes geradas
+  (+arma, guardioes-area). Medir a sobra de recurso por classe no relatório de consistência antes de mexer no plano.

@@ -72,16 +72,47 @@
      }
     ]
    },
-   "defesa": {},
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "anula_critico",
+      "usos_luta": 1.25
+     }
+    ]
+   },
    "saves": {},
    "area": [],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.0
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
-   "hipotese": "só truques (anel interno)"
+   "hipotese": "só truques (anel interno)",
+   "reacao": [
+    {
+     "uso": "Sentinel at Death's Door",
+     "fracao": 0.312,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ]
   },
   {
    "id": "bless",
@@ -106,12 +137,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.0
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -141,7 +181,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -209,6 +250,7 @@
    },
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "4": 1
     }
    },
@@ -241,6 +283,7 @@
    "gasta": {
     "canal": 1,
     "espacos": {
+     "1": 0.5,
      "6": 1
     }
    },
@@ -273,6 +316,7 @@
     "canal": 1,
     "metamagia": 1,
     "espacos": {
+     "1": 0.5,
      "6": 1
     }
    },
@@ -309,12 +353,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.0
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -354,6 +407,7 @@
     "canal": 1,
     "espacos": {
      "2": 1,
+     "1": 0.5,
      "6": 1
     }
    },
@@ -393,6 +447,7 @@
    ],
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "6": 1
     }
    },
@@ -442,6 +497,7 @@
    "gasta": {
     "espacos": {
      "2": 1,
+     "1": 0.5,
      "6": 1
     }
    },
@@ -452,7 +508,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, punho+arma. Sobra: 4×1º, 2×2º, 3×3º, 2×5º, 2 metamagia, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, punho+arma. Sobra: 2×1º, 2×2º, 3×3º, 2×5º, 2 metamagia, 1 canal.",
    "combates": [
     "controle",
     "controle",
@@ -462,7 +518,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: punho+arma. Sobra: 4×1º, 2×2º, 3×3º, 3×4º, 2×5º, 2 metamagia, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: punho+arma. Sobra: 3.5×1º, 2×2º, 3×3º, 3×4º, 2×5º, 2 metamagia, 1 canal.",
    "combates": [
     "punho+arma"
    ]
@@ -471,7 +527,7 @@
  "descricao": {
   "resumo": "Clérigo da tumba que torna um alvo vulnerável (Path to the Grave) e o atinge com Inflict Wounds no maior espaço, acelerado com Quicken.",
   "estrategia": "Um 'soco' por luta no alvo mais perigoso; Toll the Dead no resto; Spirit Guardians e Spiritual Weapon como clérigo comum quando o Channel acabou.",
-  "nao_modelado": "Hex e True Strike na preparação; Favored by the Gods; conversão de espaços em pontos de feitiçaria (o guia queima espaços para mais Quicken); Absorb Elements no soco; Silvery Barbs; Circle of Mortality e cura; Sentinel at Death's Door; Path to the Grave dado a um aliado.",
+  "nao_modelado": "Hex e True Strike na preparação; Favored by the Gods; conversão de espaços em pontos de feitiçaria (o guia queima espaços para mais Quicken); Absorb Elements no soco; Silvery Barbs; Circle of Mortality fora do Healing Word; Sentinel at Death's Door em aliados; Path to the Grave dado a um aliado.",
   "progressao": "Cleric 9 / Sorcerer 2; Sab 20; Quicken 2/dia (Metamagic Adept + pontos do Sorcerer)."
  },
  "id": "rpgbot-cleric-grave-11",

@@ -64,7 +64,14 @@
      }
     ]
    },
-   "defesa": {},
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "desvantagem",
+      "usos_luta": 0.75
+     }
+    ]
+   },
    "saves": {},
    "area": [
     {
@@ -82,7 +89,31 @@
    ],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Warding Flare",
+     "fracao": 0.188,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -111,12 +142,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -166,7 +206,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -224,7 +265,8 @@
    ],
    "gasta": {
     "espacos": {
-     "2": 2
+     "2": 2,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -273,7 +315,10 @@
     }
    ],
    "gasta": {
-    "canal": 1
+    "canal": 1,
+    "espacos": {
+     "1": 0.5
+    }
    },
    "herda": "principal"
   },
@@ -302,7 +347,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -311,17 +357,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: area, bless. Sobra: 1×1º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: amanhecer, bless; prioritário: area, bless. Sobra: nada.",
    "combates": [
     "bless",
     "bless",
-    "bless",
+    "amanhecer",
     "area"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 4×1º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 1 canal.",
    "combates": [
     "area"
    ]
@@ -330,7 +376,7 @@
  "descricao": {
   "resumo": "Clérigo blaster de fogo e radiante: Sacred Flame e Word of Radiance, Burning Hands, Fireball, Radiance of the Dawn e Spirit Guardians.",
   "estrategia": "Conjurador a distância com armadura média; área no 1º round das lutas com grupos, Spirit Guardians quando entra no meio, Flaming Sphere no lugar da Spiritual Weapon.",
-  "nao_modelado": "Warding Flare e Improved Flare (desvantagem num ataque por reação); Wall of Fire; Scorching Ray; Faerie Fire; Lucky; dano de fogo da esfera em quem termina o turno ao lado; cura (Healing Word).",
+  "nao_modelado": "Improved Flare (Warding Flare em aliados); Wall of Fire; Scorching Ray; Faerie Fire; Lucky; dano de fogo da esfera em quem termina o turno ao lado; cura além do Healing Word.",
   "progressao": "Cleric 3; Sab 16."
  },
  "id": "rpgbot-cleric-light-3",

@@ -95,12 +95,18 @@ def valor(f, nivel):
     if m == 'levantar':
         # Cura num aliado caído: os PV + o turno que ele recupera.
         return u * (f['pv'] * H['EF_CURA'] + H['TURNOS_LEVANTAR'] * dpr) / R
+    if m == 'cura_na_luta':
+        # 19/11: cura que levanta um caído durante a luta. Usos limitados pelos caídos esperados (P_CAIDO) e pelo acesso:
+        # distância + ação bônus (Healing Word) = 1; toque e/ou ação custam ACESSO_TOQUE / ACESSO_ACAO.
+        usos = min(f.get('usos_luta', 1), H['P_CAIDO'])
+        fa = (H['ACESSO_TOQUE'] if f.get('alcance', 'distancia') == 'toque' else 1) * (H['ACESSO_ACAO'] if f.get('acao', 'bonus') == 'acao' else 1)
+        return usos * fa * (f['pv'] * H['EF_CURA'] + H['TURNOS_LEVANTAR'] * dpr) / R
     if m == 'fixo': return f['valor']                      # valor por round medido fora (documente em "nota")
     raise ValueError(f'suporte: modelo desconhecido "{m}"')
 
 
 MODELOS = ('vantagem', 'bonus_continuo', 'bonus_por_uso', 'ataque_extra', 'dano_por_acerto', 'cura', 'pv_temporario',
-           'aura_saves', 'valor_por_luta', 'fixo', 'dado_multiuso', 'resgate_condicao', 'levantar',
+           'aura_saves', 'valor_por_luta', 'fixo', 'dado_multiuso', 'resgate_condicao', 'levantar', 'cura_na_luta',
            'desvantagem_contra')
 
 

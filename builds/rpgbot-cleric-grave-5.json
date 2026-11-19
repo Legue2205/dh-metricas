@@ -74,7 +74,22 @@
    "area": [],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 8.0
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -103,12 +118,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 8.0
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -138,7 +162,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -188,7 +213,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -220,6 +246,7 @@
    "gasta": {
     "canal": 1,
     "espacos": {
+     "1": 0.5,
      "3": 1
     }
    },
@@ -252,6 +279,7 @@
     "canal": 1,
     "metamagia": 1,
     "espacos": {
+     "1": 0.5,
      "3": 1
     }
    },
@@ -288,12 +316,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 8.0
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -333,6 +370,7 @@
     "canal": 1,
     "espacos": {
      "2": 1,
+     "1": 0.5,
      "3": 1
     }
    },
@@ -372,7 +410,8 @@
    ],
    "gasta": {
     "espacos": {
-     "3": 1
+     "3": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -421,7 +460,8 @@
    "gasta": {
     "espacos": {
      "3": 1,
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -431,7 +471,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless+arma; prioritário: punho+arma, punho-rapido. Sobra: 2×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless+arma; prioritário: punho+arma, punho-rapido. Sobra: nada.",
    "combates": [
     "bless+arma",
     "punho-rapido",
@@ -441,7 +481,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: punho+arma. Sobra: 4×1º, 2×2º, 1×3º, 1 metamagia.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: punho+arma. Sobra: 3.5×1º, 2×2º, 1×3º, 1 metamagia.",
    "combates": [
     "punho+arma"
    ]
@@ -450,7 +490,7 @@
  "descricao": {
   "resumo": "Clérigo da tumba que torna um alvo vulnerável (Path to the Grave) e o atinge com Inflict Wounds no maior espaço, acelerado com Quicken.",
   "estrategia": "Um 'soco' por luta no alvo mais perigoso; Toll the Dead no resto; Spirit Guardians e Spiritual Weapon como clérigo comum quando o Channel acabou.",
-  "nao_modelado": "Hex e True Strike na preparação; Favored by the Gods; conversão de espaços em pontos de feitiçaria (o guia queima espaços para mais Quicken); Absorb Elements no soco; Silvery Barbs; Circle of Mortality e cura; Sentinel at Death's Door; Path to the Grave dado a um aliado.",
+  "nao_modelado": "Hex e True Strike na preparação; Favored by the Gods; conversão de espaços em pontos de feitiçaria (o guia queima espaços para mais Quicken); Absorb Elements no soco; Silvery Barbs; Circle of Mortality fora do Healing Word; Sentinel at Death's Door em aliados; Path to the Grave dado a um aliado.",
   "progressao": "Cleric 5; Sab 18; Quicken 1/dia (Metamagic Adept)."
  },
  "id": "rpgbot-cleric-grave-5",

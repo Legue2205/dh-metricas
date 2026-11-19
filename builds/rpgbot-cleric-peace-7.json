@@ -98,8 +98,22 @@
       "lado": "def",
       "modelo": "aura_saves",
       "bonus": 1.88
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -142,12 +156,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -177,7 +200,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -245,6 +269,7 @@
    },
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "4": 1
     }
    },
@@ -288,11 +313,23 @@
       "modelo": "cura",
       "usos_luta": 1,
       "pv": 22
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
-    "canal": 1
+    "canal": 1,
+    "espacos": {
+     "1": 0.5
+    }
    },
    "herda": "principal"
   },
@@ -341,12 +378,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -398,13 +444,23 @@
       "modelo": "cura",
       "usos_luta": 1,
       "pv": 22
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
     "canal": 1,
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -455,6 +511,7 @@
    ],
    "gasta": {
     "espacos": {
+     "1": 0.5,
      "4": 1
     }
    },
@@ -516,6 +573,7 @@
    "gasta": {
     "espacos": {
      "2": 1,
+     "1": 0.5,
      "4": 1
     }
    },
@@ -526,7 +584,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: balsamo+arma; prioritário: balsamo+arma, guardioes-arma. Sobra: 4×1º, 2×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: balsamo+arma; prioritário: balsamo+arma, guardioes-arma. Sobra: 2×1º, 2×3º.",
    "combates": [
     "balsamo+arma",
     "guardioes-arma",
@@ -536,7 +594,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 4×1º, 2×2º, 3×3º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 3.5×1º, 2×2º, 3×3º, 2 canal.",
    "combates": [
     "guardioes-arma"
    ]
@@ -545,7 +603,7 @@
  "descricao": {
   "resumo": "Clérigo da paz de retaguarda: Emboldening Bond (1d4 em ataques e saves, sem concentração, empilha com Bless) e Balm of Peace.",
   "estrategia": "Vínculo antes de cada luta; Bless junto do vínculo; Spirit Guardians, Spiritual Weapon e controle como clérigo comum.",
-  "nao_modelado": "Protective Bond (teleporte e redistribuição de dano por reação; o principal argumento do RPGBot para banir); Expansive Bond; 1d4 em testes; empilhar com Bardic Inspiration/Guidance; Sanctuary, Aid, Warding Bond; cura (Healing Word).",
+  "nao_modelado": "Protective Bond (teleporte e redistribuição de dano por reação; o principal argumento do RPGBot para banir); Expansive Bond; 1d4 em testes; empilhar com Bardic Inspiration/Guidance; Sanctuary, Aid, Warding Bond; cura além do Healing Word.",
   "progressao": "Cleric 7; Sab 18; vínculo em 3 aliados, 3/dia."
  },
  "id": "rpgbot-cleric-peace-7",

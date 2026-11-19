@@ -69,7 +69,7 @@ def _resolve(fn, pv, ac, adv, resist, red):
 # ---------------- reações (Shield, Uncanny Dodge, Parry): simulação golpe a golpe ----------------
 N_SIM = 4000
 GRADE = (0.0, 0.6, 1.0, 1.4, 2.0, 3.0)   # "preço" de guardar a reação, em múltiplos do dano médio de um golpe
-REACOES = ('shield', 'uncanny_dodge', 'reduz_dano')
+REACOES = ('shield', 'uncanny_dodge', 'reduz_dano', 'desvantagem', 'anula_critico')
 
 
 def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7):
@@ -95,10 +95,18 @@ def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7):
         for j in range(n):
             a = rng.integers(1, 21, N_SIM)
             if adv: b = rng.integers(1, 21, N_SIM); a = np.maximum(a, b) if adv > 0 else np.minimum(a, b)
+            for i, rc in enumerate(reacoes):     # desvantagem (Warding Flare): decidida ANTES do resultado, no 1º golpe do round
+                if rc['tipo'] == 'desvantagem' and j == 0:
+                    usa = livre & (usos[i] > 0)
+                    a = np.where(usa, np.minimum(a, rng.integers(1, 21, N_SIM)), a); usos[i] -= usa; livre &= ~usa
             crit = a == 20; tot = a + bonus
             hit = crit | ((a != 1) & (tot >= ac + 5 * escudo))
+            for i, rc in enumerate(reacoes):     # anula crítico (Sentinel at Death's Door): crítico vira acerto normal
+                if rc['tipo'] == 'anula_critico':
+                    usa = livre & crit & (usos[i] > 0); crit = crit & ~usa; usos[i] -= usa; livre &= ~usa
             dmg = liq(d * (rng.random(N_SIM) + rng.random(N_SIM)) * np.where(crit, 1.6, 1.0)); rest = n - 1 - j
             for i, rc in enumerate(reacoes):
+                if rc['tipo'] in ('desvantagem', 'anula_critico'): continue
                 pode = livre & hit & (usos[i] > 0)
                 if rc['tipo'] == 'shield':
                     usa = pode & ~crit & ~escudo & (tot < ac + 5) & (dmg + rest * p_faixa * dbar >= precos[i] * dbar)
@@ -123,8 +131,10 @@ def _golpe(tipo, cr, resist, red):
 def _resolve_sim(tipo, pv, ac, advs, resist, red, reacoes, livre_p, extras=0):
     import itertools
     def melhor(cr):   # a política (preços) é otimizada: o jogador escolhe o limiar que mais poupa dano
-        return min(_sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, pr)
-                   for pr in itertools.product(GRADE, repeat=len(reacoes)))
+        idx = [i for i, rc in enumerate(reacoes) if rc['tipo'] not in ('desvantagem', 'anula_critico')]   # sem preço
+        def pr_de(g): p = [0.0] * len(reacoes); [p.__setitem__(i, x) for i, x in zip(idx, g)]; return p
+        return min(_sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, pr_de(g))
+                   for g in itertools.product(GRADE, repeat=len(idx)))
     lo, hi = 0.0, 30.0
     for _ in range(22):
         m = (lo + hi) / 2
@@ -145,7 +155,9 @@ def _resolve_rounds(fn, pv, ac, advs, resist, red, extras=0):
 def avaliar(spec, corpo, reacao_livre=1.0):
     """spec: {"pv_efetivo", "ca", "adv" (−1/0/1: ataques contra ele) ou "adv_por_round": [4 valores],
     "resist", "red", "reacoes": [{"tipo": "shield", "usos_luta": 2} | {"tipo": "uncanny_dodge"} |
-    {"tipo": "reduz_dano", "valor": 8, "usos_luta": 99}]}; o que faltar vem do corpo.
+    {"tipo": "reduz_dano", "valor": 8, "usos_luta": 99} | {"tipo": "desvantagem", "usos_luta": 1} (Warding Flare,
+    decidida antes do resultado, no 1º golpe do round) | {"tipo": "anula_critico", "usos_luta": 1} (Sentinel at
+    Death's Door)]}; o que faltar vem do corpo.
     reacao_livre: fração dos rounds em que a reação NÃO foi gasta em outro eixo da mesma hipótese."""
     pv = spec.get('pv_efetivo', corpo['pv']); ac = spec.get('ca', corpo['ca'])
     adv = spec.get('adv', 0); resist = spec.get('resist', False); red = spec.get('red', corpo.get('red', 0))

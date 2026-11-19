@@ -70,7 +70,22 @@
    "area": [],
    "invocacoes": [],
    "suporte": {
-    "fontes": []
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
    },
    "principal": true,
    "custo": "gratuita",
@@ -99,12 +114,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1
+     "1": 1.5
     }
    },
    "herda": "principal",
@@ -134,7 +158,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -184,7 +209,8 @@
    },
    "gasta": {
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -214,11 +240,23 @@
       "usos_luta": 4,
       "alvos": 3,
       "pv": 8.5
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
-    "canal": 1
+    "canal": 1,
+    "espacos": {
+     "1": 0.5
+    }
    },
    "herda": "principal"
   },
@@ -253,12 +291,21 @@
       "alvos": 3,
       "bonus": 2.5,
       "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
     "espacos": {
-     "1": 1,
+     "1": 1.5,
      "2": 1
     }
    },
@@ -297,13 +344,23 @@
       "usos_luta": 4,
       "alvos": 3,
       "pv": 8.5
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
    "gasta": {
     "canal": 1,
     "espacos": {
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -342,7 +399,8 @@
    ],
    "gasta": {
     "espacos": {
-     "3": 1
+     "3": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -391,7 +449,8 @@
    "gasta": {
     "espacos": {
      "3": 1,
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -429,6 +488,15 @@
       "usos_luta": 4,
       "alvos": 3,
       "pv": 8.5
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
@@ -445,7 +513,8 @@
    "gasta": {
     "canal": 1,
     "espacos": {
-     "3": 1
+     "3": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -490,6 +559,15 @@
       "usos_luta": 4,
       "alvos": 3,
       "pv": 8.5
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
      }
     ]
    },
@@ -507,7 +585,8 @@
     "canal": 1,
     "espacos": {
      "3": 1,
-     "2": 1
+     "2": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -516,7 +595,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, bless+arma; prioritário: santuario-guardioes+arma. Sobra: 2×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, bless+arma; prioritário: santuario-guardioes+arma. Sobra: nada.",
    "combates": [
     "bless",
     "santuario-guardioes+arma",
@@ -526,7 +605,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: santuario-guardioes+arma. Sobra: 4×1º, 2×2º, 1×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: santuario-guardioes+arma. Sobra: 3.5×1º, 2×2º, 1×3º.",
    "combates": [
     "santuario-guardioes+arma"
    ]
@@ -535,7 +614,7 @@
  "descricao": {
   "resumo": "Clérigo do crepúsculo de linha de frente: Twilight Sanctuary dá PV temporários à party todo round, sem concentração, junto com Spirit Guardians.",
   "estrategia": "Santuário no início das lutas difíceis, Spirit Guardians no round seguinte, truques; Bless e Spiritual Weapon nas outras.",
-  "nao_modelado": "Vigilant Blessing (vantagem na iniciativa); Steps of Night (voo); Eyes of Night; Charge do Centauro e o aliado montado; remoção de medo/encantamento do santuário; Faerie Fire, Moonbeam, Greater Invisibility, Circle of Power; Telekinetic; cura (Healing Word).",
+  "nao_modelado": "Vigilant Blessing (vantagem na iniciativa); Steps of Night (voo); Eyes of Night; Charge do Centauro e o aliado montado; remoção de medo/encantamento do santuário; Faerie Fire, Moonbeam, Greater Invisibility, Circle of Power; Telekinetic; cura além do Healing Word.",
   "progressao": "Cleric 5; Sab 18; cota de malha + escudo."
  },
  "id": "rpgbot-cleric-twilight-5",

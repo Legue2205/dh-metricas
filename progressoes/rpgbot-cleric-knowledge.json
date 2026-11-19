@@ -77,7 +77,22 @@
     "area": [],
     "invocacoes": [],
     "suporte": {
-     "fontes": []
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
     },
     "principal": true,
     "custo": "gratuita",
@@ -106,12 +121,21 @@
        "alvos": 3,
        "bonus": 2.5,
        "concentracao": "bless"
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
       }
      ]
     },
     "gasta": {
      "espacos": {
-      "1": 1
+      "1": 1.5
      }
     },
     "herda": "principal",
@@ -141,7 +165,8 @@
     },
     "gasta": {
      "espacos": {
-      "2": 1
+      "2": 1,
+      "1": 0.5
      }
     },
     "herda": "principal",
@@ -176,22 +201,41 @@
      },
      "fontes": [
       {
-       "tipo": "alvo_unico",
-       "nome": "Hold Person",
-       "cd": 13,
-       "slots": [
-        2
-       ],
-       "magias": [
-        "hold_person"
-       ],
-       "modo": "melhor"
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "alvo_unico",
+         "nome": "Command",
+         "cd": 13,
+         "slots": [
+          1
+         ],
+         "magias": [
+          "command"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 13,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        }
+       ]
       }
      ]
     },
     "gasta": {
      "espacos": {
-      "2": 1
+      "2": 1,
+      "1": 0.5
      }
     },
     "herda": "principal",
@@ -228,12 +272,21 @@
        "alvos": 3,
        "bonus": 2.5,
        "concentracao": "bless"
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
       }
      ]
     },
     "gasta": {
      "espacos": {
-      "1": 1,
+      "1": 1.5,
       "2": 1
      }
     },
@@ -248,7 +301,7 @@
   "descricao": {
    "resumo": "Clérigo do conhecimento tabaxi: perícias com Expertise e magias de divinação; na luta, um clérigo de truques, Spirit Guardians e Command.",
    "estrategia": "Toll the Dead e Sacred Flame; Spirit Guardians (Feline Agility para entrar); Command, Hold Person e Banishment.",
-   "nao_modelado": "Command (o efeito de um turno ainda não roda como alvo único no motor); Expertise e Knowledge of the Ages; Read Thoughts + Suggestion; Confusion; Telekinetic; divinações; Summon Celestial (9); cura (Healing Word)."
+   "nao_modelado": "Command em mais alvos (upcast); Expertise e Knowledge of the Ages; Read Thoughts + Suggestion; Confusion; Telekinetic; divinações; Summon Celestial (9); cura além do Healing Word."
   }
  },
  "niveis": {
@@ -326,7 +379,22 @@
      "area": [],
      "invocacoes": [],
      "suporte": {
-      "fontes": []
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
      }
     },
     {
@@ -352,12 +420,21 @@
         "alvos": 3,
         "bonus": 2.5,
         "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1
+       "1": 1.5
       }
      },
      "herda": "principal",
@@ -387,7 +464,8 @@
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -427,7 +505,8 @@
      ],
      "gasta": {
       "espacos": {
-       "3": 1
+       "3": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -476,7 +555,8 @@
      "gasta": {
       "espacos": {
        "3": 1,
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -511,22 +591,41 @@
       },
       "fontes": [
        {
-        "tipo": "alvo_unico",
-        "nome": "Hold Person",
-        "cd": 15,
-        "slots": [
-         2
-        ],
-        "magias": [
-         "hold_person"
-        ],
-        "modo": "melhor"
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 15,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         }
+        ]
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -563,12 +662,21 @@
         "alvos": 3,
         "bonus": 2.5,
         "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      },
@@ -649,7 +757,22 @@
      "area": [],
      "invocacoes": [],
      "suporte": {
-      "fontes": []
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
      }
     },
     {
@@ -675,12 +798,21 @@
         "alvos": 3,
         "bonus": 2.5,
         "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1
+       "1": 1.5
       }
      },
      "herda": "principal",
@@ -710,7 +842,8 @@
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -751,6 +884,7 @@
      "gasta": {
       "espacos": {
        "4": 1,
+       "1": 0.5,
        "3": null
       }
      },
@@ -801,6 +935,7 @@
       "espacos": {
        "4": 1,
        "2": 1,
+       "1": 0.5,
        "3": null
       }
      },
@@ -841,6 +976,18 @@
         "opcoes": [
          {
           "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 15,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
           "nome": "Hold Person",
           "cd": 15,
           "slots": [
@@ -870,6 +1017,7 @@
      "gasta": {
       "espacos": {
        "4": 1,
+       "1": 0.5,
        "2": null
       }
      },
@@ -907,12 +1055,21 @@
         "alvos": 3,
         "bonus": 2.5,
         "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      },
@@ -994,7 +1151,22 @@
      "area": [],
      "invocacoes": [],
      "suporte": {
-      "fontes": []
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
      }
     },
     {
@@ -1020,12 +1192,21 @@
         "alvos": 3,
         "bonus": 2.5,
         "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1
+       "1": 1.5
       }
      },
      "herda": "principal",
@@ -1055,7 +1236,8 @@
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -1096,6 +1278,7 @@
      "gasta": {
       "espacos": {
        "5": 1,
+       "1": 0.5,
        "4": null
       }
      },
@@ -1146,6 +1329,7 @@
       "espacos": {
        "5": 1,
        "2": 1,
+       "1": 0.5,
        "4": null
       }
      },
@@ -1186,6 +1370,18 @@
         "opcoes": [
          {
           "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 17,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
           "nome": "Hold Person",
           "cd": 17,
           "slots": [
@@ -1214,7 +1410,8 @@
      },
      "gasta": {
       "espacos": {
-       "4": 1
+       "4": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -1251,12 +1448,21 @@
         "alvos": 3,
         "bonus": 2.5,
         "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      },
@@ -1339,7 +1545,22 @@
      "area": [],
      "invocacoes": [],
      "suporte": {
-      "fontes": []
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
      }
     },
     {
@@ -1365,12 +1586,21 @@
         "alvos": 3,
         "bonus": 2.5,
         "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1
+       "1": 1.5
       }
      },
      "herda": "principal",
@@ -1400,7 +1630,8 @@
      },
      "gasta": {
       "espacos": {
-       "2": 1
+       "2": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -1441,6 +1672,7 @@
      "gasta": {
       "espacos": {
        "6": 1,
+       "1": 0.5,
        "5": null
       }
      },
@@ -1491,6 +1723,7 @@
       "espacos": {
        "6": 1,
        "2": 1,
+       "1": 0.5,
        "5": null
       }
      },
@@ -1531,6 +1764,18 @@
         "opcoes": [
          {
           "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 17,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
           "nome": "Hold Person",
           "cd": 17,
           "slots": [
@@ -1559,7 +1804,8 @@
      },
      "gasta": {
       "espacos": {
-       "4": 1
+       "4": 1,
+       "1": 0.5
       }
      },
      "herda": "principal",
@@ -1596,12 +1842,21 @@
         "alvos": 3,
         "bonus": 2.5,
         "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },
      "gasta": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      },

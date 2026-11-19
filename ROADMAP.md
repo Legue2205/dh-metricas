@@ -453,3 +453,6 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   (Menacing), Cavalier (Unwavering Mark como marca), Arcane Archer (Shadow Arrow), Rune Knight (Fire e Stone Rune),
   Psi Warrior (Telekinetic Thrust), PDK (Form of Dread + linha "medo" com Dragon Fear); (2) Curving Shot vira Área.
 - Padrões 2 (Sentinel fraco), 3 (EK durável) e 5 (Samurai Def. Mágica) seguem abertos.
+- Resultado da passada 2 (CI 19/11): tau (nota RPGBot × média de dano, Def. F, Def. M, controle) 0,32 → 0,42 no
+  nível 7 e 0,34 → 0,51 no 11. Controle agora: Cavalier 4,9/6,2, Rune Knight 6,4/6,6, PDK 2,3/2,8, BM 2,2.
+- Site: caixa "Mostrar RPGBot" (desligada por padrão) e seletor de nível da fatia; o nome de cada entrada leva "nv N".

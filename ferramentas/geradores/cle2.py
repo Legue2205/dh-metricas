@@ -67,14 +67,14 @@ for L in FATIAS:
     pot = f"+{w}" if L >= 9 else ""
     cant = lambda n, L=L, cd=cd, pot=pot: toll(L, cd, n, pot)
     f = fatia(L, mods_(-1, 2, 1, 2, w, -1), ('sab', 'car'), 18 if L < 5 else 19, hpcalc([8] * L, 1), cant, cd, atk, w,
-              'conjurador', False, (L + 1) // 2, canal=1 if L < 6 else 2, ctrl=[CMD(cd), HP(cd)] + ([BAN(cd)] if L >= 7 else []))
+              'conjurador', False, (L + 1) // 2, canal=1 if L < 6 else 2, ctrl=[HP(cd)] + ([BAN(cd)] if L >= 7 else []))
     f['_texto'] = f"Cleric {L}; Sab {10 + 2 * w}" + ("; Potent Spellcasting" if L >= 9 else "") + "."
     F[L] = f
 emit('rpgbot-cleric-knowledge', 'knowledge', 'Knowledge Domain Cleric (RPGBot: Oh nowo)',
      "Cleric (Knowledge), Tabaxi; armadura média + escudo; Telekinetic 4, Sab 20 (8)",
      {"resumo": "Clérigo do conhecimento tabaxi: perícias com Expertise e magias de divinação; na luta, um clérigo de truques, Spirit Guardians e Command.",
       "estrategia": "Toll the Dead e Sacred Flame; Spirit Guardians (Feline Agility para entrar); Command, Hold Person e Banishment.",
-      "nao_modelado": "Expertise e Knowledge of the Ages; Read Thoughts + Suggestion; Confusion; Telekinetic; divinações; Summon Celestial (9); cura (Healing Word)."}, F)
+      "nao_modelado": "Command (o efeito de um turno ainda não roda como alvo único no motor); Expertise e Knowledge of the Ages; Read Thoughts + Suggestion; Confusion; Telekinetic; divinações; Summon Celestial (9); cura (Healing Word)."}, F)
 
 
 # ---------- Order: Cleric 1 / Sorcerer 1 ----------
@@ -88,7 +88,7 @@ for L in FATIAS:
               dict(id="voz", hipotese="Healing Word num aliado como ação bônus em 2 rounds (Voice of Authority) + truques",
                    dano=cant(1.0), suporte={"fontes": [voz(2)]}, gasta={"espacos": {"1": 2}})]
     f = fatia(L, mods_(-1, -1, 3, 0, w, 2), ('sab', 'car'), 18 if L < 7 else 20, hpcalc([8] * cl + [6], 3), cant, cd, atk, w,
-              'conjurador', False, (cl + 1) // 2, canal=1 if cl < 6 else 2, ctrl=[CMD(cd), HP(cd)] + ([BAN(cd)] if cl >= 7 else []),
+              'conjurador', False, (cl + 1) // 2, canal=1 if cl < 6 else 2, ctrl=[HP(cd)] + ([BAN(cd)] if cl >= 7 else []),
               extras=extras)
     f['linhas'] = [l for l in f['linhas'] if not (l['id'] == 'bless' and len(l['suporte']['fontes']) == 1)]   # troca o Bless genérico pelo com Voice
     f['_texto'] = f"Cleric {cl} / Sorcerer 1 (Divine Soul, personagem 2); Sab {10 + 2 * w}" + ("; placas" if L >= 7 else "; cota de malha") + " + escudo" + ("; Blessed Strikes" if cl >= 8 else "") + "."
@@ -97,7 +97,7 @@ emit('rpgbot-cleric-order', 'order', 'Order Domain Cleric (RPGBot: I heard a rum
      "Cleric (Order) / Sorcerer 1 (Divine Soul: Bless, Silvery Barbs), Shifter; armadura pesada + escudo; Fey Touched (personagem 5), Sab 20 (9)",
      {"resumo": "Clérigo da ordem de suporte: cada magia de nível num aliado (Healing Word, Bless) dá a ele um ataque por reação (Voice of Authority).",
       "estrategia": "Bless ou Healing Word para disparar ataques dos aliados, truques na ação; Command, Hold Person e Banishment; Spirit Guardians quando vale.",
-      "nao_modelado": "Silvery Barbs (vantagem + Voice of Authority); Embodiment of Law (encantamento como ação bônus); Order's Demand; Slow; Heroism e Shield of Faith; Favored by the Gods; Inspiring Leader (13)."}, F)
+      "nao_modelado": "Command (efeito de um turno sem suporte como alvo único); Silvery Barbs (vantagem + Voice of Authority); Embodiment of Law (encantamento como ação bônus); Order's Demand; Slow; Heroism e Shield of Faith; Favored by the Gods; Inspiring Leader (13)."}, F)
 
 
 # ---------- Tempest: "Shattering Expectations" ----------

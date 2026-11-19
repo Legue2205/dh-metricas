@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 5,
  "build": "Cleric (Light), Humano Variante (Lucky), só dano de fogo e radiante; escama → meia-armadura + escudo; Sab 18 (4), Sab 20 (8)",
- "impressao": "98c5865009",
+ "impressao": "500897cf9d",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -40,14 +40,16 @@
    "defesa": {
     "pv_efetivo": 38,
     "ca": 19,
-    "blindagem": 3.71,
-    "durabilidade": 2.55,
-    "nivel_blindagem": 4.0,
-    "nivel_durabilidade": 3.7,
-    "nivel_eq": 4.0,
+    "blindagem": 4.08,
+    "durabilidade": 3.0,
+    "nivel_blindagem": 4.2,
+    "nivel_durabilidade": 4.3,
+    "nivel_eq": 4.3,
     "rank": "C",
-    "perfil": "Blindado",
-    "reacoes_usadas": []
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "desvantagem"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -130,21 +132,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 3.23,
+    "total": 3.23,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 4.5,
+    "nivel_eq": 0.6,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 3.23
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Warding Flare",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -275,14 +291,16 @@
    "defesa": {
     "pv_efetivo": 38,
     "ca": 19,
-    "blindagem": 3.71,
-    "durabilidade": 2.55,
-    "nivel_blindagem": 4.0,
-    "nivel_durabilidade": 3.7,
-    "nivel_eq": 4.0,
+    "blindagem": 4.08,
+    "durabilidade": 3.0,
+    "nivel_blindagem": 4.2,
+    "nivel_durabilidade": 4.3,
+    "nivel_eq": 4.3,
     "rank": "C",
-    "perfil": "Blindado",
-    "reacoes_usadas": []
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "desvantagem"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -365,29 +383,42 @@
    },
    "suporte": {
     "ofensivo": 10.1,
-    "defensivo": 0,
-    "total": 10.1,
+    "defensivo": 3.23,
+    "total": 13.33,
     "nivel_ofensivo": 5.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 4.1,
+    "nivel_defensivo": 4.5,
+    "nivel_eq": 4.8,
     "rank": "C",
-    "perfil": "Amplificador",
+    "perfil": "Equilibrado",
     "fonte_principal": "Bless",
     "fontes": [
      {
       "nome": "Bless",
       "lado": "of",
       "valor": 10.1
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 3.23
      }
     ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Warding Flare",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [
      "bless"
     ],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -526,14 +557,16 @@
    "defesa": {
     "pv_efetivo": 38,
     "ca": 19,
-    "blindagem": 3.71,
-    "durabilidade": 2.55,
-    "nivel_blindagem": 4.0,
-    "nivel_durabilidade": 3.7,
-    "nivel_eq": 4.0,
+    "blindagem": 4.08,
+    "durabilidade": 3.0,
+    "nivel_blindagem": 4.2,
+    "nivel_durabilidade": 4.3,
+    "nivel_eq": 4.3,
     "rank": "C",
-    "perfil": "Blindado",
-    "reacoes_usadas": []
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "desvantagem"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -616,23 +649,37 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 3.23,
+    "total": 3.23,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 4.5,
+    "nivel_eq": 0.6,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 3.23
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Warding Flare",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [
      "hold_person"
     ],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {
      "controle": {
       "2": 1
@@ -775,14 +822,16 @@
    "defesa": {
     "pv_efetivo": 38,
     "ca": 19,
-    "blindagem": 3.71,
-    "durabilidade": 2.55,
-    "nivel_blindagem": 4.0,
-    "nivel_durabilidade": 3.7,
-    "nivel_eq": 4.0,
+    "blindagem": 4.08,
+    "durabilidade": 3.0,
+    "nivel_blindagem": 4.2,
+    "nivel_durabilidade": 4.3,
+    "nivel_eq": 4.3,
     "rank": "C",
-    "perfil": "Blindado",
-    "reacoes_usadas": []
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "desvantagem"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -887,21 +936,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 3.23,
+    "total": 3.23,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 4.5,
+    "nivel_eq": 0.6,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 3.23
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Warding Flare",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {
      "area": {
       "3": 2
@@ -1052,14 +1115,16 @@
    "defesa": {
     "pv_efetivo": 38,
     "ca": 19,
-    "blindagem": 3.71,
-    "durabilidade": 2.55,
-    "nivel_blindagem": 4.0,
-    "nivel_durabilidade": 3.7,
-    "nivel_eq": 4.0,
+    "blindagem": 4.08,
+    "durabilidade": 3.0,
+    "nivel_blindagem": 4.2,
+    "nivel_durabilidade": 4.3,
+    "nivel_eq": 4.3,
     "rank": "C",
-    "perfil": "Blindado",
-    "reacoes_usadas": []
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "desvantagem"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -1153,21 +1218,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 3.23,
+    "total": 3.23,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 4.5,
+    "nivel_eq": 0.6,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 3.23
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Warding Flare",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -1306,14 +1385,16 @@
    "defesa": {
     "pv_efetivo": 38,
     "ca": 19,
-    "blindagem": 3.71,
-    "durabilidade": 2.55,
-    "nivel_blindagem": 4.0,
-    "nivel_durabilidade": 3.7,
-    "nivel_eq": 4.0,
+    "blindagem": 4.08,
+    "durabilidade": 3.0,
+    "nivel_blindagem": 4.2,
+    "nivel_durabilidade": 4.3,
+    "nivel_eq": 4.3,
     "rank": "C",
-    "perfil": "Blindado",
-    "reacoes_usadas": []
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "desvantagem"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -1396,21 +1477,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 3.23,
+    "total": 3.23,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 4.5,
+    "nivel_eq": 0.6,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 3.23
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Warding Flare",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -1525,14 +1620,16 @@
    "defesa": {
     "pv_efetivo": 38,
     "ca": 19,
-    "blindagem": 3.71,
-    "durabilidade": 2.55,
-    "nivel_blindagem": 4.0,
-    "nivel_durabilidade": 3.7,
-    "nivel_eq": 4.0,
+    "blindagem": 4.08,
+    "durabilidade": 3.0,
+    "nivel_blindagem": 4.2,
+    "nivel_durabilidade": 4.3,
+    "nivel_eq": 4.3,
     "rank": "C",
-    "perfil": "Blindado",
-    "reacoes_usadas": []
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "desvantagem"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -1626,21 +1723,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 3.23,
+    "total": 3.23,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 4.5,
+    "nivel_eq": 0.6,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 3.23
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Warding Flare",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -1721,6 +1832,259 @@
     "nivel_absoluto": 1.28,
     "rank_absoluto": "D"
    }
+  },
+  "guardioes-area": {
+   "hipotese": "guardioes-area",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 12.6,
+     "CA 12": 12.6,
+     "CA 15": 11.4,
+     "CA 16": 10.6,
+     "CA 18": 9.1,
+     "CA 20": 8.0,
+     "CA 22": 7.1,
+     "CA 24": 6.1,
+     "CA 25": 5.6
+    },
+    "nivel_eq": 2.7,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 2.7,
+    "nivel_precisa": 2.7,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 38,
+    "ca": 19,
+    "blindagem": 4.08,
+    "durabilidade": 3.0,
+    "nivel_blindagem": 4.2,
+    "nivel_durabilidade": 4.3,
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "desvantagem"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 3.5,
+     "rank": "C-",
+     "turnos_livres": [
+      3.57,
+      3.29,
+      3.15,
+      1.12,
+      1.1,
+      1.07,
+      1.04,
+      0.78,
+      0.55,
+      0.34
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 8.76,
+     "rank": "B+",
+     "turnos_livres": [
+      3.61,
+      2.39,
+      1.86,
+      1.98,
+      1.7,
+      1.13,
+      1.47,
+      1.1,
+      1.2,
+      0.89
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 8.9,
+    "rank": "B+",
+    "rounds": {
+     "1": 1.67,
+     "2": 1.9,
+     "3": 1.9,
+     "4": 2.06,
+     "5": 2.01,
+     "6": 2.01,
+     "7": 2.01,
+     "8": 2.6,
+     "9": 2.54,
+     "10": 2.54,
+     "11": 2.91,
+     "12": 2.91,
+     "13": 3.56,
+     "14": 3.56,
+     "15": 3.56,
+     "16": 3.56,
+     "17": 4.14,
+     "18": 4.14,
+     "19": 5.05,
+     "20": 4.31
+    },
+    "usos": 1,
+    "antigo": {
+     "nivel_eq": 8.8,
+     "rank": "B+"
+    },
+    "melhor": "Spirit Guardians (3º)",
+    "areas": [
+     {
+      "nome": "Spirit Guardians (3º)",
+      "tipo": "aura",
+      "nivel_eq": 8.78,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 16.75,
+       "padrao": 8.78,
+       "agrupada": 8.37
+      }
+     },
+     {
+      "nome": "Fireball (3º)",
+      "tipo": "explosao",
+      "nivel_eq": 8.14,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 8.15,
+       "padrao": 8.14,
+       "agrupada": 8.61
+      }
+     },
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.43,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.43,
+       "padrao": 4.43,
+       "agrupada": 4.43
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 3.23,
+    "total": 3.23,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 4.5,
+    "nivel_eq": 0.6,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 3.23
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "Warding Flare",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.75,
+    "espacos_por_eixo": {
+     "area": {
+      "3": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 2.89,
+    "rank": "D",
+    "nivel_campo": 0.12,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.75,
+    "rank_atencao": "D",
+    "vidas_total": 0.467,
+    "vidas_campo": 0.024,
+    "vidas_atencao": 0.442,
+    "corpo": {
+     "T": 0.442,
+     "S": 0.709,
+     "P": -0.266,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 9.41,
+    "rank_corpo": "B+",
+    "corpo_busca": [
+     [
+      5,
+      0.442
+     ],
+     [
+      6,
+      0.317
+     ],
+     [
+      7,
+      0.233
+     ],
+     [
+      8,
+      0.14
+     ],
+     [
+      9,
+      0.037
+     ],
+     [
+      10,
+      -0.053
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.85,
+     "Party de elite": 3.35,
+     "Horda + chefe": 2.85,
+     "Horda": 2.43,
+     "Dupla": 3.86,
+     "Chefe sozinho": 2.72
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0114
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0083
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0087
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0162
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0073
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0083
+     }
+    },
+    "nivel_absoluto": 1.45,
+    "rank_absoluto": "D"
+   }
   }
  },
  "planos": {
@@ -1734,6 +2098,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 0.5,
        "2": 1
       }
      }
@@ -1745,6 +2110,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 0.5,
        "2": 1
       }
      }
@@ -1756,6 +2122,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 0.5,
        "2": 1
       }
      }
@@ -1767,6 +2134,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 0.5,
        "3": 2
       }
      }
@@ -1774,7 +2142,7 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 4
+     "1": 2.0
     },
     "canal": 1
    },
@@ -1788,11 +2156,11 @@
      }
     },
     "defesa": {
-     "nivel_eq": 4.0,
+     "nivel_eq": 4.3,
      "rank": "C",
      "por_categoria": {
-      "np": 4.0,
-      "p": 4.0
+      "np": 4.3,
+      "p": 4.3
      }
     },
     "resiliencia": {
@@ -1828,7 +2196,7 @@
      }
     },
     "area": {
-     "nivel_eq": 8.4,
+     "nivel_eq": 8.9,
      "rank": "B+",
      "por_categoria": {
       "np": 4.1,
@@ -1836,11 +2204,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 0.6,
+     "rank": "E",
      "por_categoria": {
-      "np": 0.0,
-      "p": 0.0
+      "np": 0.6,
+      "p": 0.6
      }
     }
    }
@@ -1855,6 +2223,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 0.5,
        "3": 2
       }
      }
@@ -1862,7 +2231,7 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 4,
+     "1": 3.5,
      "2": 3
     },
     "canal": 1
@@ -1876,10 +2245,10 @@
      }
     },
     "defesa": {
-     "nivel_eq": 4.0,
+     "nivel_eq": 4.3,
      "rank": "C",
      "por_categoria": {
-      "p": 4.0
+      "p": 4.3
      }
     },
     "resiliencia": {
@@ -1911,23 +2280,23 @@
      }
     },
     "area": {
-     "nivel_eq": 8.4,
+     "nivel_eq": 8.9,
      "rank": "B+",
      "por_categoria": {
       "p": 8.4
      }
     },
     "suporte": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 0.6,
+     "rank": "E",
      "por_categoria": {
-      "p": 0.0
+      "p": 0.6
      }
     }
    }
   }
  },
- "segundos": 0.0,
+ "segundos": 54.1,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2236,6 +2605,35 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "defesa.chefe.acerto_extra": 3,
+  "defesa.chefe.ataques_por_cr": [
+   [
+    4,
+    2
+   ],
+   [
+    16,
+    3
+   ],
+   [
+    30,
+    4
+   ]
+  ],
+  "defesa.chefe.cr_arma_magica": 10,
+  "defesa.fator_critico": 0.6,
+  "defesa.horda.acerto": {
+   "base": 3,
+   "por_cr": 0.3333333333333333
+  },
+  "defesa.horda.atacantes": {
+   "min": 3,
+   "max": 10
+  },
+  "defesa.horda.dano_por_golpe": {
+   "base": 4,
+   "por_cr": 0.5
+  },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
   "planos.dias": {
@@ -2303,6 +2701,8 @@
   },
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
+  "suporte.h.ACESSO_ACAO": 0.8,
+  "suporte.h.ACESSO_TOQUE": 0.6,
   "suporte.h.ALIADOS": 3,
   "suporte.h.ATIVO": 0.875,
   "suporte.h.CUSTO_SAVE": 1,
@@ -2313,6 +2713,7 @@
   "suporte.h.F_SAVE": 0.25,
   "suporte.h.PARCELA_FRENTE": 0.35,
   "suporte.h.P_ACERTO_INIM": 0.6,
+  "suporte.h.P_CAIDO": 0.5,
   "suporte.h.TURNOS_CONDICAO": 1.5,
   "suporte.h.TURNOS_LEVANTAR": 1.0,
   "suporte.lutas_dia": 4,
@@ -2329,62 +2730,70 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "3b854721d226",
+  "_planos": "3f1e74c53757",
   "principal": {
    "dano": "e82ab729842e",
-   "defesa": "3bd8a00b3f10",
-   "saves": "b21a51625b20",
+   "defesa": "0e3c2c1c11b6",
+   "saves": "0fd2796034d1",
    "area": "8eede3155468",
-   "suporte": "4dec0852f1d0",
-   "controle": "5f3a3160d72e"
+   "suporte": "50247c4e3139",
+   "controle": "5d94b90c83d1"
   },
   "bless": {
    "dano": "947382f74722",
-   "defesa": "3bd8a00b3f10",
-   "saves": "b21a51625b20",
+   "defesa": "0e3c2c1c11b6",
+   "saves": "0fd2796034d1",
    "area": "48137da3d0e3",
-   "suporte": "17246266692a",
-   "controle": "c55fdb099ae5"
+   "suporte": "2522f29bfa01",
+   "controle": "26cef8c9b48c"
   },
   "controle": {
    "dano": "947382f74722",
-   "defesa": "3bd8a00b3f10",
-   "saves": "b21a51625b20",
+   "defesa": "0e3c2c1c11b6",
+   "saves": "0fd2796034d1",
    "area": "48137da3d0e3",
-   "suporte": "4dec0852f1d0",
-   "controle": "63224b2a6e62"
+   "suporte": "50247c4e3139",
+   "controle": "c0d33169b186"
   },
   "area": {
    "dano": "80c987a6da8c",
-   "defesa": "3bd8a00b3f10",
-   "saves": "b21a51625b20",
+   "defesa": "0e3c2c1c11b6",
+   "saves": "0fd2796034d1",
    "area": "7e155e467ed1",
-   "suporte": "4dec0852f1d0",
-   "controle": "f0321330741b"
+   "suporte": "50247c4e3139",
+   "controle": "11095e012d9b"
   },
   "amanhecer": {
    "dano": "947382f74722",
-   "defesa": "3bd8a00b3f10",
-   "saves": "b21a51625b20",
+   "defesa": "0e3c2c1c11b6",
+   "saves": "0fd2796034d1",
    "area": "e4bcf5a3e73b",
-   "suporte": "4dec0852f1d0",
-   "controle": "c55fdb099ae5"
+   "suporte": "50247c4e3139",
+   "controle": "26cef8c9b48c"
   },
   "esfera": {
    "dano": "95729a28daeb",
-   "defesa": "3bd8a00b3f10",
-   "saves": "b21a51625b20",
+   "defesa": "0e3c2c1c11b6",
+   "saves": "0fd2796034d1",
    "area": "6ea58e578b9e",
-   "suporte": "4dec0852f1d0",
-   "controle": "0224259ec75b"
+   "suporte": "50247c4e3139",
+   "controle": "b64778f23ebe"
   },
   "guardioes": {
    "dano": "6b3be8082e30",
-   "defesa": "3bd8a00b3f10",
-   "saves": "b21a51625b20",
+   "defesa": "0e3c2c1c11b6",
+   "saves": "0fd2796034d1",
    "area": "18a658b6b035",
-   "suporte": "4dec0852f1d0",
-   "controle": "590ba648badb"
+   "suporte": "50247c4e3139",
+   "controle": "3f5e01cf53d0"
+  },
+  "guardioes-area": {
+   "dano": "f36891828f2e",
+   "defesa": "0e3c2c1c11b6",
+   "saves": "0fd2796034d1",
+   "area": "694438b9249d",
+   "suporte": "50247c4e3139",
+   "controle": "eeae27fc5810"
   }
  }
 }

@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 9,
  "build": "Cleric (Grave) / Sorcerer 2 (Divine Soul, personagem 7–8), Custom Lineage (Metamagic Adept: Quicken, Extend); Fey Touched 4; escama → meia-armadura + escudo; Sab 20 (personagem 10)",
- "impressao": "6adcd7663e",
+ "impressao": "c962609129",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -40,14 +40,16 @@
    "defesa": {
     "pv_efetivo": 55,
     "ca": 19,
-    "blindagem": 5.3,
-    "durabilidade": 3.58,
-    "nivel_blindagem": 5.3,
-    "nivel_durabilidade": 5.1,
-    "nivel_eq": 5.3,
-    "rank": "C+",
-    "perfil": "Equilibrado",
-    "reacoes_usadas": []
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -115,21 +117,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 5.15,
+    "total": 5.15,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -228,14 +244,16 @@
    "defesa": {
     "pv_efetivo": 55,
     "ca": 19,
-    "blindagem": 5.3,
-    "durabilidade": 3.58,
-    "nivel_blindagem": 5.3,
-    "nivel_durabilidade": 5.1,
-    "nivel_eq": 5.3,
-    "rank": "C+",
-    "perfil": "Equilibrado",
-    "reacoes_usadas": []
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -303,12 +321,12 @@
    },
    "suporte": {
     "ofensivo": 17.16,
-    "defensivo": 0,
-    "total": 17.16,
+    "defensivo": 5.15,
+    "total": 22.31,
     "nivel_ofensivo": 9.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 6.4,
-    "rank": "B-",
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 8.0,
+    "rank": "B+",
     "perfil": "Amplificador",
     "fonte_principal": "Bless",
     "fontes": [
@@ -316,16 +334,29 @@
       "nome": "Bless",
       "lado": "of",
       "valor": 17.16
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
      }
     ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [
      "bless"
     ],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -424,14 +455,16 @@
    "defesa": {
     "pv_efetivo": 55,
     "ca": 19,
-    "blindagem": 5.3,
-    "durabilidade": 3.58,
-    "nivel_blindagem": 5.3,
-    "nivel_durabilidade": 5.1,
-    "nivel_eq": 5.3,
-    "rank": "C+",
-    "perfil": "Equilibrado",
-    "reacoes_usadas": []
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -499,21 +532,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 5.15,
+    "total": 5.15,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -612,14 +659,16 @@
    "defesa": {
     "pv_efetivo": 55,
     "ca": 19,
-    "blindagem": 5.3,
-    "durabilidade": 3.58,
-    "nivel_blindagem": 5.3,
-    "nivel_durabilidade": 5.1,
-    "nivel_eq": 5.3,
-    "rank": "C+",
-    "perfil": "Equilibrado",
-    "reacoes_usadas": []
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -687,23 +736,37 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 5.15,
+    "total": 5.15,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [
      "banishment|hold_person"
     ],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {
      "controle": {
       "4": 1
@@ -806,14 +869,16 @@
    "defesa": {
     "pv_efetivo": 55,
     "ca": 19,
-    "blindagem": 5.3,
-    "durabilidade": 3.58,
-    "nivel_blindagem": 5.3,
-    "nivel_durabilidade": 5.1,
-    "nivel_eq": 5.3,
-    "rank": "C+",
-    "perfil": "Equilibrado",
-    "reacoes_usadas": []
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -881,21 +946,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 5.15,
+    "total": 5.15,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -994,14 +1073,16 @@
    "defesa": {
     "pv_efetivo": 55,
     "ca": 19,
-    "blindagem": 5.3,
-    "durabilidade": 3.58,
-    "nivel_blindagem": 5.3,
-    "nivel_durabilidade": 5.1,
-    "nivel_eq": 5.3,
-    "rank": "C+",
-    "perfil": "Equilibrado",
-    "reacoes_usadas": []
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -1069,21 +1150,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 5.15,
+    "total": 5.15,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -1182,14 +1277,16 @@
    "defesa": {
     "pv_efetivo": 55,
     "ca": 19,
-    "blindagem": 5.3,
-    "durabilidade": 3.58,
-    "nivel_blindagem": 5.3,
-    "nivel_durabilidade": 5.1,
-    "nivel_eq": 5.3,
-    "rank": "C+",
-    "perfil": "Equilibrado",
-    "reacoes_usadas": []
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -1257,12 +1354,12 @@
    },
    "suporte": {
     "ofensivo": 17.16,
-    "defensivo": 0,
-    "total": 17.16,
+    "defensivo": 5.15,
+    "total": 22.31,
     "nivel_ofensivo": 9.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 6.4,
-    "rank": "B-",
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 8.0,
+    "rank": "B+",
     "perfil": "Amplificador",
     "fonte_principal": "Bless",
     "fontes": [
@@ -1270,16 +1367,29 @@
       "nome": "Bless",
       "lado": "of",
       "valor": 17.16
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
      }
     ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [
      "bless"
     ],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -1378,14 +1488,16 @@
    "defesa": {
     "pv_efetivo": 55,
     "ca": 19,
-    "blindagem": 5.3,
-    "durabilidade": 3.58,
-    "nivel_blindagem": 5.3,
-    "nivel_durabilidade": 5.1,
-    "nivel_eq": 5.3,
-    "rank": "C+",
-    "perfil": "Equilibrado",
-    "reacoes_usadas": []
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -1453,21 +1565,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 5.15,
+    "total": 5.15,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -1566,14 +1692,16 @@
    "defesa": {
     "pv_efetivo": 55,
     "ca": 19,
-    "blindagem": 5.3,
-    "durabilidade": 3.58,
-    "nivel_blindagem": 5.3,
-    "nivel_durabilidade": 5.1,
-    "nivel_eq": 5.3,
-    "rank": "C+",
-    "perfil": "Equilibrado",
-    "reacoes_usadas": []
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -1656,21 +1784,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 5.15,
+    "total": 5.15,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -1769,14 +1911,16 @@
    "defesa": {
     "pv_efetivo": 55,
     "ca": 19,
-    "blindagem": 5.3,
-    "durabilidade": 3.58,
-    "nivel_blindagem": 5.3,
-    "nivel_durabilidade": 5.1,
-    "nivel_eq": 5.3,
-    "rank": "C+",
-    "perfil": "Equilibrado",
-    "reacoes_usadas": []
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
    },
    "saves": {
     "resiliencia": {
@@ -1859,21 +2003,35 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 5.15,
+    "total": 5.15,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
+     }
+    ]
    },
    "orcamento": {
-    "reacao": [],
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
     "acao_bonus": [],
     "concentracao": [],
-    "reacao_livre": 1.0,
+    "reacao_livre": 0.75,
     "espacos_por_eixo": {},
     "outros": {}
    },
@@ -1955,6 +2113,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 0.5,
        "4": 1
       }
      }
@@ -1966,6 +2125,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 0.5,
        "4": 1
       }
      }
@@ -1977,6 +2137,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 0.5,
        "4": 1
       }
      }
@@ -1988,6 +2149,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 0.5,
        "2": 1,
        "5": 1
       },
@@ -1997,7 +2159,7 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 4,
+     "1": 2.0,
      "2": 2,
      "3": 3
     },
@@ -2014,11 +2176,11 @@
      }
     },
     "defesa": {
-     "nivel_eq": 5.3,
-     "rank": "C+",
+     "nivel_eq": 6.2,
+     "rank": "B-",
      "por_categoria": {
-      "np": 5.3,
-      "p": 5.3
+      "np": 6.2,
+      "p": 6.2
      }
     },
     "resiliencia": {
@@ -2062,11 +2224,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 1.0,
+     "rank": "D",
      "por_categoria": {
-      "np": 0.0,
-      "p": 0.0
+      "np": 1.0,
+      "p": 1.0
      }
     }
    }
@@ -2081,6 +2243,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 0.5,
        "2": 1,
        "5": 1
       },
@@ -2090,7 +2253,7 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 4,
+     "1": 3.5,
      "2": 2,
      "3": 3,
      "4": 3
@@ -2107,10 +2270,10 @@
      }
     },
     "defesa": {
-     "nivel_eq": 5.3,
-     "rank": "C+",
+     "nivel_eq": 6.2,
+     "rank": "B-",
      "por_categoria": {
-      "p": 5.3
+      "p": 6.2
      }
     },
     "resiliencia": {
@@ -2149,16 +2312,16 @@
      }
     },
     "suporte": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 1.0,
+     "rank": "D",
      "por_categoria": {
-      "p": 0.0
+      "p": 1.0
      }
     }
    }
   }
  },
- "segundos": 6.0,
+ "segundos": 62.5,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2467,6 +2630,35 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "defesa.chefe.acerto_extra": 3,
+  "defesa.chefe.ataques_por_cr": [
+   [
+    4,
+    2
+   ],
+   [
+    16,
+    3
+   ],
+   [
+    30,
+    4
+   ]
+  ],
+  "defesa.chefe.cr_arma_magica": 10,
+  "defesa.fator_critico": 0.6,
+  "defesa.horda.acerto": {
+   "base": 3,
+   "por_cr": 0.3333333333333333
+  },
+  "defesa.horda.atacantes": {
+   "min": 3,
+   "max": 10
+  },
+  "defesa.horda.dano_por_golpe": {
+   "base": 4,
+   "por_cr": 0.5
+  },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
   "planos.dias": {
@@ -2534,6 +2726,8 @@
   },
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
+  "suporte.h.ACESSO_ACAO": 0.8,
+  "suporte.h.ACESSO_TOQUE": 0.6,
   "suporte.h.ALIADOS": 3,
   "suporte.h.ATIVO": 0.875,
   "suporte.h.CUSTO_SAVE": 1,
@@ -2544,6 +2738,7 @@
   "suporte.h.F_SAVE": 0.25,
   "suporte.h.PARCELA_FRENTE": 0.35,
   "suporte.h.P_ACERTO_INIM": 0.6,
+  "suporte.h.P_CAIDO": 0.5,
   "suporte.h.TURNOS_CONDICAO": 1.5,
   "suporte.h.TURNOS_LEVANTAR": 1.0,
   "suporte.lutas_dia": 4,
@@ -2560,86 +2755,86 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "9b1b4b0acb6c",
+  "_planos": "fc1188aa0aa1",
   "principal": {
    "dano": "d05f0e25aa03",
-   "defesa": "ae483bcd5c5d",
-   "saves": "5d81447b3bd2",
+   "defesa": "b3719d505b65",
+   "saves": "744b162fa093",
    "area": "f0b8ab045800",
-   "suporte": "53679140430e",
-   "controle": "eed11f2aeeda"
+   "suporte": "13175322187d",
+   "controle": "0b0e41db699e"
   },
   "bless": {
    "dano": "4edfd7486c57",
-   "defesa": "ae483bcd5c5d",
-   "saves": "5d81447b3bd2",
+   "defesa": "b3719d505b65",
+   "saves": "744b162fa093",
    "area": "321542a7f653",
-   "suporte": "64c9e9565df4",
-   "controle": "8e483ef5f9f5"
+   "suporte": "41a07df5e45c",
+   "controle": "a760fdbe10a9"
   },
   "arma-espiritual": {
    "dano": "c3b76660bf1d",
-   "defesa": "ae483bcd5c5d",
-   "saves": "5d81447b3bd2",
+   "defesa": "b3719d505b65",
+   "saves": "744b162fa093",
    "area": "6da7764c0e00",
-   "suporte": "53679140430e",
-   "controle": "8e53cf062f98"
+   "suporte": "13175322187d",
+   "controle": "85528be6fccc"
   },
   "controle": {
    "dano": "4edfd7486c57",
-   "defesa": "ae483bcd5c5d",
-   "saves": "5d81447b3bd2",
+   "defesa": "b3719d505b65",
+   "saves": "744b162fa093",
    "area": "321542a7f653",
-   "suporte": "53679140430e",
-   "controle": "48274edd981f"
+   "suporte": "13175322187d",
+   "controle": "46498985cdce"
   },
   "punho": {
    "dano": "6cc4d5c43752",
-   "defesa": "ae483bcd5c5d",
-   "saves": "5d81447b3bd2",
+   "defesa": "b3719d505b65",
+   "saves": "744b162fa093",
    "area": "f3959940de7a",
-   "suporte": "53679140430e",
-   "controle": "cdc867037269"
+   "suporte": "13175322187d",
+   "controle": "45c8cdb9fcfd"
   },
   "punho-rapido": {
    "dano": "b1b0b77bcb28",
-   "defesa": "ae483bcd5c5d",
-   "saves": "5d81447b3bd2",
+   "defesa": "b3719d505b65",
+   "saves": "744b162fa093",
    "area": "1afca11ac517",
-   "suporte": "53679140430e",
-   "controle": "cfec0de0b36b"
+   "suporte": "13175322187d",
+   "controle": "1ea987e2306d"
   },
   "bless+arma": {
    "dano": "ed2c81b85d03",
-   "defesa": "ae483bcd5c5d",
-   "saves": "5d81447b3bd2",
+   "defesa": "b3719d505b65",
+   "saves": "744b162fa093",
    "area": "94a439cc937f",
-   "suporte": "64c9e9565df4",
-   "controle": "fe897f5cee34"
+   "suporte": "41a07df5e45c",
+   "controle": "5d238643801b"
   },
   "punho+arma": {
    "dano": "9f4fb08e8781",
-   "defesa": "ae483bcd5c5d",
-   "saves": "5d81447b3bd2",
+   "defesa": "b3719d505b65",
+   "saves": "744b162fa093",
    "area": "1df20b44b487",
-   "suporte": "53679140430e",
-   "controle": "b1a876896ace"
+   "suporte": "13175322187d",
+   "controle": "eca292bc721d"
   },
   "guardioes": {
    "dano": "f463d9390e50",
-   "defesa": "ae483bcd5c5d",
-   "saves": "5d81447b3bd2",
+   "defesa": "b3719d505b65",
+   "saves": "744b162fa093",
    "area": "bbe556f28394",
-   "suporte": "53679140430e",
-   "controle": "42e1021b9d52"
+   "suporte": "13175322187d",
+   "controle": "53b0b02b2b0e"
   },
   "guardioes-arma": {
    "dano": "93a974f0c34f",
-   "defesa": "ae483bcd5c5d",
-   "saves": "5d81447b3bd2",
+   "defesa": "b3719d505b65",
+   "saves": "744b162fa093",
    "area": "6926d584a4ff",
-   "suporte": "53679140430e",
-   "controle": "d1794d1b1d72"
+   "suporte": "13175322187d",
+   "controle": "6c25232a59f9"
   }
  }
 }

@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 3,
  "build": "Cleric (Nature), Yuan-ti (MMoM), armadura média + escudo, todas as opcionais de classe; Sab 19 (4), Inspiring Leader 8, Sab 20 (12)",
- "impressao": "7caa9a7463",
+ "impressao": "5dfae19719",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -130,15 +130,21 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 2.12,
+    "total": 2.12,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
+    "nivel_defensivo": 4.0,
+    "nivel_eq": 0.4,
     "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 2.12
+     }
+    ]
    },
    "orcamento": {
     "reacao": [],
@@ -337,19 +343,24 @@
    },
    "suporte": {
     "ofensivo": 6.06,
-    "defensivo": 0,
-    "total": 6.06,
+    "defensivo": 2.12,
+    "total": 8.18,
     "nivel_ofensivo": 3.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 1.8,
-    "rank": "D",
-    "perfil": "Amplificador",
+    "nivel_defensivo": 4.0,
+    "nivel_eq": 3.2,
+    "rank": "C-",
+    "perfil": "Equilibrado",
     "fonte_principal": "Bless",
     "fontes": [
      {
       "nome": "Bless",
       "lado": "of",
       "valor": 6.06
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 2.12
      }
     ]
    },
@@ -556,15 +567,21 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 2.12,
+    "total": 2.12,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
+    "nivel_defensivo": 4.0,
+    "nivel_eq": 0.4,
     "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 2.12
+     }
+    ]
    },
    "orcamento": {
     "reacao": [],
@@ -759,15 +776,21 @@
    },
    "suporte": {
     "ofensivo": 0,
-    "defensivo": 0,
-    "total": 0,
+    "defensivo": 2.12,
+    "total": 2.12,
     "nivel_ofensivo": 0.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 0.0,
+    "nivel_defensivo": 4.0,
+    "nivel_eq": 0.4,
     "rank": "F",
-    "perfil": "-",
-    "fonte_principal": "-",
-    "fontes": []
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 2.12
+     }
+    ]
    },
    "orcamento": {
     "reacao": [],
@@ -976,19 +999,24 @@
    },
    "suporte": {
     "ofensivo": 6.06,
-    "defensivo": 0,
-    "total": 6.06,
+    "defensivo": 2.12,
+    "total": 8.18,
     "nivel_ofensivo": 3.0,
-    "nivel_defensivo": 0.0,
-    "nivel_eq": 1.8,
-    "rank": "D",
-    "perfil": "Amplificador",
+    "nivel_defensivo": 4.0,
+    "nivel_eq": 3.2,
+    "rank": "C-",
+    "perfil": "Equilibrado",
     "fonte_principal": "Bless",
     "fontes": [
      {
       "nome": "Bless",
       "lado": "of",
       "valor": 6.06
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 2.12
      }
     ]
    },
@@ -1078,13 +1106,13 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "bless",
+     "linha": "principal",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1
+       "1": 0.5
       }
      }
     },
@@ -1095,7 +1123,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      }
@@ -1107,7 +1135,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1
+       "1": 1.5
       }
      }
     },
@@ -1118,23 +1146,21 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      }
     }
    ],
    "sobra": {
-    "espacos": {
-     "1": 1
-    }
+    "espacos": {}
    },
    "eixos": {
     "dano": {
      "nivel_eq": 0.8,
      "rank": "E",
      "por_categoria": {
-      "np": 0.4,
+      "np": 0.5,
       "p": 1.0
      }
     },
@@ -1171,10 +1197,10 @@
      }
     },
     "corpo": {
-     "nivel_eq": 6.2,
-     "rank": "B-",
+     "nivel_eq": 6.0,
+     "rank": "C+",
      "por_categoria": {
-      "np": 7.6,
+      "np": 7.0,
       "p": 5.4
      }
     },
@@ -1187,11 +1213,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 1.8,
+     "nivel_eq": 2.7,
      "rank": "D",
      "por_categoria": {
       "np": 1.8,
-      "p": 1.8
+      "p": 3.2
      }
     }
    }
@@ -1206,7 +1232,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1,
+       "1": 1.5,
        "2": 1
       }
      }
@@ -1214,7 +1240,7 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 4,
+     "1": 3.5,
      "2": 1
     }
    },
@@ -1269,16 +1295,16 @@
      }
     },
     "suporte": {
-     "nivel_eq": 1.8,
-     "rank": "D",
+     "nivel_eq": 3.2,
+     "rank": "C-",
      "por_categoria": {
-      "p": 1.8
+      "p": 3.2
      }
     }
    }
   }
  },
- "segundos": 3.1,
+ "segundos": 23.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1654,6 +1680,8 @@
   },
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
+  "suporte.h.ACESSO_ACAO": 0.8,
+  "suporte.h.ACESSO_TOQUE": 0.6,
   "suporte.h.ALIADOS": 3,
   "suporte.h.ATIVO": 0.875,
   "suporte.h.CUSTO_SAVE": 1,
@@ -1664,6 +1692,7 @@
   "suporte.h.F_SAVE": 0.25,
   "suporte.h.PARCELA_FRENTE": 0.35,
   "suporte.h.P_ACERTO_INIM": 0.6,
+  "suporte.h.P_CAIDO": 0.5,
   "suporte.h.TURNOS_CONDICAO": 1.5,
   "suporte.h.TURNOS_LEVANTAR": 1.0,
   "suporte.lutas_dia": 4,
@@ -1680,46 +1709,46 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "445c86dbc5d1",
+  "_planos": "e674533ee516",
   "principal": {
    "dano": "9b095cb4aece",
-   "defesa": "5211dac98f6d",
+   "defesa": "c8df5798148f",
    "saves": "922bddc449aa",
    "area": "d9721f1b5187",
-   "suporte": "86221582c8fc",
-   "controle": "fe2a3bf67fa5"
+   "suporte": "fc51b1ee40c9",
+   "controle": "32b26ad55fc4"
   },
   "bless": {
    "dano": "04625f3a39a2",
-   "defesa": "5211dac98f6d",
+   "defesa": "c8df5798148f",
    "saves": "922bddc449aa",
    "area": "cc2982027557",
-   "suporte": "27f49b6476a2",
-   "controle": "a0b49e908c8b"
+   "suporte": "8fb67a45f699",
+   "controle": "9e69bc91e19e"
   },
   "arma-espiritual": {
    "dano": "43f355456d0f",
-   "defesa": "5211dac98f6d",
+   "defesa": "c8df5798148f",
    "saves": "922bddc449aa",
    "area": "a9fd9dbb5711",
-   "suporte": "86221582c8fc",
-   "controle": "c58ddf4d5e38"
+   "suporte": "fc51b1ee40c9",
+   "controle": "3cc726230308"
   },
   "controle": {
    "dano": "04625f3a39a2",
-   "defesa": "5211dac98f6d",
+   "defesa": "c8df5798148f",
    "saves": "922bddc449aa",
    "area": "cc2982027557",
-   "suporte": "86221582c8fc",
-   "controle": "5949ee3d156c"
+   "suporte": "fc51b1ee40c9",
+   "controle": "513f1a55c666"
   },
   "bless+arma": {
    "dano": "747eab870942",
-   "defesa": "5211dac98f6d",
+   "defesa": "c8df5798148f",
    "saves": "922bddc449aa",
    "area": "0ec30ab533a8",
-   "suporte": "27f49b6476a2",
-   "controle": "eef4570cc076"
+   "suporte": "8fb67a45f699",
+   "controle": "cfa2655d521c"
   }
  }
 }

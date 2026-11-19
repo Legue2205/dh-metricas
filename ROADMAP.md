@@ -626,7 +626,7 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
     das 157 builds, o resto copiado), contra 12–17 min antes.
   - mudança só em `dh/planos.py` (planos refeitos, todos os eixos copiados): **1m18s** no total (`dh completo` 1 s).
 - **resultados/**: continua na main (é o cache). O que deixou de ir para o commit: arquivo em que só `segundos` mudou
-  (ex.: `--forcar` sem mudança de número) não é regravado. As impressões aumentam cada resultado em ~1–9 KB
+  (ex.: `--forcar` sem mudança de número) não é regravado. As impressões somam 0,1–3,5 KB por resultado (93 KB nos 157)
   (uma linha por eixo); no commit de uma mudança de motor, o diff de cada arquivo é a impressão do eixo + `segundos`.
 
 ## 19/11 noite — pendências (tarefa 3)

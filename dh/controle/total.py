@@ -26,7 +26,7 @@ def _hash_motor():
         h.update(p.read_bytes())
     h.update(str(N_REGUA).encode())
     from ..premissas import hash_prefixos
-    h.update(hash_prefixos('base.', 'controle.campo', 'controle.atencao').encode())
+    h.update(hash_prefixos('base.', 'controle.campo', 'controle.atencao', 'controle.referencia').encode())
     return h.hexdigest()[:10]
 
 
@@ -134,15 +134,21 @@ def avaliar_nivel(fn, ficha, L, regua):
         E = encontro(tipo, L)
         acc = {k: np.zeros(20) if k == 'curva' else 0.0 for k in ('curva', 'total', 'campo', 'ctrl', 'aten', 'S', 'P')}
         corpo_nomes = getattr(fn, 'corpo', set())
-        im = A.PAPEIS.index(ficha['papel'])
+        im = A.posicao(ficha['papel'])
+        marca_nomes = getattr(fn, 'marca', set())
         fontes7 = {}
         for ti, tp in enumerate(TOPOS):
             w = TOPO[tp]['peso']
             pref = A.party_com(A.ref(ficha['papel'], L), L); px = A.party_com(ficha, L)
             fontes = fn(E, tp); neg = C.jv(*fontes.values())
+            # marcas (19/11): na atenção, reduzem o dano do marcado contra os outros membros; fora do campo do total
+            mk = [v for k, v in fontes.items() if k in marca_nomes]
+            marca = (im, C.jv(*mk)) if mk else None
+            outras = [v for k, v in fontes.items() if k not in marca_nomes]
+            neg_sm = C.jv(*outras) if outras else C.zero(E)
             base, fb = A.vida(E, pref, ti, detalhe=True)
-            sx, fx = A.vida(E, px, ti, detalhe=True)     # só atenção: ninguém perde turno, só muda o alvo
-            acc['total'] += w * (base - A.vida(E, px, ti, neg))
+            sx, fx = A.vida(E, px, ti, detalhe=True, marca=marca)   # só atenção: ninguém perde turno, só muda o alvo
+            acc['total'] += w * (base - A.vida(E, px, ti, neg_sm, marca=marca))
             acc['campo'] += w * (base - A.vida(E, pref, ti, neg))
             peso = getattr(fn, 'peso_ctrl', {})
             so_ctrl = [v if k not in corpo_nomes else v * peso.get(k, 0.0) for k, v in fontes.items()

@@ -7,10 +7,19 @@ import numpy as np
 
 from ..base import R, TOPO, TOPOS, n_ataques, p_acerto
 
-from ..premissas import grupo as _grupo
+from ..premissas import P, grupo as _grupo
 H = _grupo('controle.atencao')   # premissas controle.atencao.*
 DPR_LV = ([1, 3, 4, 5, 6, 7, 8, 10, 11, 13, 16, 20], [8, 12, 15, 20, 22, 26, 31, 37, 45, 60, 80, 100])
-PAPEIS = ['tank', 'striker', 'atirador', 'conjurador']
+# Party de referência (19/11, passada 3): 2 frontliners + atirador + conjurador. Os papéis 'tank' e 'striker' dos
+# JSON continuam aceitos e ocupam uma das vagas de frontliner ('frontliner' também vale).
+PAPEIS = ['frontliner', 'frontliner', 'atirador', 'conjurador']
+VAGA = {'frontliner': 0, 'tank': 0, 'striker': 0, 'atirador': 2, 'conjurador': 3}
+FRONT = ('frontliner', 'tank', 'striker')
+
+
+def posicao(papel):
+    """Índice, na party de referência, da vaga que um papel ocupa."""
+    return VAGA[papel]
 
 
 def dpr_ref(L): return float(np.interp(L, *DPR_LV))
@@ -20,13 +29,11 @@ def ca_marcial(L): return 16 if L <= 2 else 17 if L <= 4 else 18 if L <= 10 else
 
 
 def ref(papel, L):
-    """Membro de referência de cada papel no nível L."""
-    if papel == 'tank':
-        return dict(nome='Tank de referência', papel=papel, ca=min(21, ca_marcial(L) + 2), pv=12 + (L - 1) * 8.5,
-                    front=True, soft=0.15, dpr=0.7 * dpr_ref(L))
-    if papel == 'striker':
-        return dict(nome='Striker de referência', papel=papel, ca=ca_marcial(L), pv=10 + (L - 1) * 7.5,
-                    front=True, soft=0.15, dpr=dpr_ref(L))
+    """Membro de referência de cada papel no nível L (tank/striker = frontliner, premissas controle.referencia.frontliner.*)."""
+    if papel in FRONT:
+        def F(k): return P(f'controle.referencia.frontliner.{k}')
+        return dict(nome='Frontliner de referência', papel='frontliner', ca=min(F('ca_max'), ca_marcial(L) + F('ca_bonus')),
+                    pv=F('pv_base') + (L - 1) * F('pv_por_nivel'), front=True, soft=F('soft'), dpr=F('dpr_fator') * dpr_ref(L))
     if papel == 'atirador':
         return dict(nome='Atirador de referência', papel=papel, ca=16 if L < 5 else 17 if L < 11 else 18,
                     pv=10 + (L - 1) * 7.5, front=False, acc_m=(0.7, 0.8, 1.0), dpr=dpr_ref(L))
@@ -36,7 +43,7 @@ def ref(papel, L):
 
 def ficha(spec, corpo):
     """build.json -> ficha de atenção (o formato que o motor usa)."""
-    f = dict(papel=spec['papel'], ca=corpo['ca'], pv=corpo['pv'], front=spec.get('front', spec['papel'] in ('tank', 'striker')),
+    f = dict(papel=spec['papel'], ca=corpo['ca'], pv=corpo['pv'], front=spec.get('front', spec['papel'] in FRONT),
              dpr=spec['dpr'])
     for k in ('res', 'adv', 'red'):
         if corpo.get(k): f[k] = corpo[k]
@@ -90,10 +97,13 @@ def perda(F):
     return min(F, 1.0) + max(0.0, 1 - 1 / F) if F > 0 else 0.0
 
 
-def vida(E, party, ti, neg=None, detalhe=False):
-    """Vida perdida pela party em R rounds; cada inimigo causa (1 − negação de campo) do dano dele."""
+def vida(E, party, ti, neg=None, detalhe=False, marca=None):
+    """Vida perdida pela party em R rounds; cada inimigo causa (1 − negação de campo) do dano dele.
+    marca = (k, vetor): marca do membro k (Ancestral Protectors, Unwavering Mark): o dano do inimigo i contra os
+    OUTROS membros cai pela fração vetor[i]; contra quem marcou, não (19/11: a marca conta no Corpo)."""
     party = [dict(p) for p in party]
     neg = np.zeros(len(E)) if neg is None else np.asarray(neg)
+    km, mv = (None, None) if marca is None else (marca[0], np.asarray(marca[1]))
     grap = None
     fj = [k for k, p in enumerate(party) if p.get('agarra')]
     if fj:
@@ -108,6 +118,7 @@ def vida(E, party, ti, neg=None, detalhe=False):
                 if P[j] == 0: continue
                 red = 0 if e['cr'] >= 10 else p.get('red', 0)
                 dmg = na * p_acerto(e['atk'], p['ca'], p.get('adv', 0)) * max(0, d * p.get('res', 1) - red)
+                if km is not None and j != km: dmg *= 1 - mv[ie]
                 dano[j] += P[j] * dmg * (1 - neg[ie])
                 if p.get('skel'): p['pv'] = max(0, p['pv0'] - dano[j])
     tot = sum(perda(dano[j] / p['pv']) for j, p in enumerate(party) if not p.get('skel'))
@@ -118,7 +129,7 @@ def vida(E, party, ti, neg=None, detalhe=False):
 
 def party_com(membro, L):
     party = [ref(pp, L) for pp in PAPEIS]
-    party[PAPEIS.index(membro['papel'])] = membro
+    party[posicao(membro['papel'])] = membro
     if membro.get('esqueletos'):
         pv = membro.get('inv_pv', H['skel_pv'])
         party.append(dict(nome='Invocações', skel=True, pv=pv, pv0=pv, ca=membro.get('inv_ca', 16), front=True, dpr=0))

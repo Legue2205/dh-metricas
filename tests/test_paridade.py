@@ -53,20 +53,22 @@ def _ignorar():
 
 
 # Controle é Monte Carlo (personagem e régua): tolerância de 0,4 nível.
+# 19/11 (passada 3): a party de referência passou a ter 2 frontliners médios (tank + striker fundidos) e as marcas
+# contam no Corpo; os valores esperados viraram o retrato do motor novo (os da planilha ficam no comentário).
 @pytest.mark.parametrize('arq,total,campo,aten', [
-    ('abdul-7.json', 4.9, 4.2, 4.1),
-    ('kael-7.json', 3.6, 3.0, 1.1),
-    ('virgil-10.json', 6.5, 6.5, 0.5),
+    ('abdul-7.json', 5.26, 4.18, 4.27),     # planilha 4,9 / 4,2 / 4,1
+    ('kael-7.json', 3.11, 2.95, 0.22),      # planilha 3,6 / 3,0 / 1,1
+    ('virgil-10.json', 6.52, 6.5, 0.61),
     ('amadeus-7.json', 4.7, 4.25, 2.54),   # 16/11: PV efetivo 62 -> 48,5 (planilha: 6,0 / 4,3 / 3,8)
     ('john-7.json:ensnaring-strike', 0.7, 1.7, 0.0),
-    ('tinbin-7.json', 0.4, 0.1, 0.3),
-    ('fjord-9.json', 5.7, 5.2, 3.6),
-    ('miau-8.json', 4.5, 4.1, 0.8),
-    ('caleb-14.json', 0.8, 0.8, 0.7),
-    ('lucius-15.json:montado', 2.2, 0.8, 1.5),
-    ('aprendiz-11.json', 3.6, 0.8, 3.1),
-    ('pyotr-14.json', 3.0, 6.2, 0.0),
-    ('jamal-9.json', 2.7, 0.7, 2.4),
+    ('tinbin-7.json', 0.04, 0.13, 0.0),      # planilha 0,4 / 0,1 / 0,3
+    ('fjord-9.json', 5.84, 5.15, 4.16),      # planilha 5,7 / 5,2 / 3,6
+    ('miau-8.json', 4.39, 4.12, 4.39),       # planilha 4,5 / 4,1 / 0,8 (Ancestral Protectors agora no Corpo)
+    ('caleb-14.json', 0.96, 0.78, 0.87),
+    ('lucius-15.json:montado', 1.03, 0.8, 0.83),   # planilha 2,2 / 0,8 / 1,5
+    ('aprendiz-11.json', 2.41, 0.78, 1.89),  # planilha 3,6 / 0,8 / 3,1
+    ('pyotr-14.json', 2.94, 6.23, 0.0),
+    ('jamal-9.json', 1.37, 0.74, 1.24),      # planilha 2,7 / 0,7 / 2,4
     pytest.param('ravin-7.json', 7.7, 6.2, 1.9, marks=pytest.mark.xfail(reason='Minions+minibosses: 9,9 aqui × 12,1 na planilha (extrapolação acima do teto da régua amplifica o ruído)')),
     pytest.param('solaris-9.json', 7.5, 6.9, 1.6, marks=pytest.mark.xfail(reason='Chefe/Dupla divergem; o valor da planilha veio de uma versão anterior do script, não reproduzível')),
 ])

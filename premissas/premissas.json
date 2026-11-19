@@ -1699,7 +1699,7 @@
   ]
  },
  "area.horda2.rounds_max": {
-  "valor": 5,
+  "valor": 3,
   "eixo": "area",
   "desde": "2026-11-19",
   "descricao": "Teto de rounds; quem não chega à fração da vida é extrapolado pela taxa média (até 2× o teto).",
@@ -1709,6 +1709,12 @@
     "de": null,
     "para": 5,
     "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
+   },
+   {
+    "de": 5,
+    "para": 3,
+    "data": "2026-11-19",
+    "motivo": "usuário 19/11: medir o pico; com 5 rounds o DPR sustentado dos marciais pesava demais"
    }
   ]
  },
@@ -1779,6 +1785,104 @@
     "de": null,
     "para": 3000,
     "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
+   }
+  ]
+ },
+ "controle.peso_no_controle.ancestral_protectors": {
+  "valor": 0.25,
+  "eixo": "controle",
+  "desde": "2026-11-19",
+  "descricao": "Marca (Ancestral Protectors; Unwavering Mark com \"resistencia\": false): fração da redução do dano que o marcado causa aos aliados que também conta como Controle. O resto fica no Corpo (atenção: a marca protege os outros membros da party). Mesmo valor da do Sentinel.",
+  "historico": [
+   {
+    "data": "2026-11-19",
+    "de": null,
+    "para": 0.25,
+    "motivo": "Usuário 19/11 (passada 3): marcas contam no Corpo; fração no Controle igual à do Sentinel."
+   }
+  ]
+ },
+ "controle.referencia.frontliner.ca_bonus": {
+  "valor": 1,
+  "eixo": "controle",
+  "desde": "2026-11-19",
+  "descricao": "Frontliner de referência (2 na party): CA = CA marcial do nível + este bônus (média entre o tank, +2, e o striker, +0).",
+  "historico": [
+   {
+    "data": "2026-11-19",
+    "de": null,
+    "para": 1,
+    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+   }
+  ]
+ },
+ "controle.referencia.frontliner.ca_max": {
+  "valor": 21,
+  "eixo": "controle",
+  "desde": "2026-11-19",
+  "descricao": "Teto da CA do frontliner de referência.",
+  "historico": [
+   {
+    "data": "2026-11-19",
+    "de": null,
+    "para": 21,
+    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+   }
+  ]
+ },
+ "controle.referencia.frontliner.pv_base": {
+  "valor": 11,
+  "eixo": "controle",
+  "desde": "2026-11-19",
+  "descricao": "PV do frontliner de referência no nível 1 (média entre tank 12 e striker 10).",
+  "historico": [
+   {
+    "data": "2026-11-19",
+    "de": null,
+    "para": 11,
+    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+   }
+  ]
+ },
+ "controle.referencia.frontliner.pv_por_nivel": {
+  "valor": 8,
+  "eixo": "controle",
+  "desde": "2026-11-19",
+  "descricao": "PV por nível acima do 1º do frontliner de referência (média entre tank 8,5 e striker 7,5).",
+  "historico": [
+   {
+    "data": "2026-11-19",
+    "de": null,
+    "para": 8,
+    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+   }
+  ]
+ },
+ "controle.referencia.frontliner.soft": {
+  "valor": 0.15,
+  "eixo": "controle",
+  "desde": "2026-11-19",
+  "descricao": "Ameaça (taunt soft) do frontliner de referência.",
+  "historico": [
+   {
+    "data": "2026-11-19",
+    "de": null,
+    "para": 0.15,
+    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+   }
+  ]
+ },
+ "controle.referencia.frontliner.dpr_fator": {
+  "valor": 0.85,
+  "eixo": "controle",
+  "desde": "2026-11-19",
+  "descricao": "DPR do frontliner de referência = este fator × DPR de referência do nível (média entre tank 0,7 e striker 1,0).",
+  "historico": [
+   {
+    "data": "2026-11-19",
+    "de": null,
+    "para": 0.85,
+    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
    }
   ]
  }

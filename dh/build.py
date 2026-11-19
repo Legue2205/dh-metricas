@@ -9,7 +9,7 @@ from . import orcamento, planos
 from .defesa import REACOES
 from .suporte import MODELOS
 
-PAPEIS = {'tank', 'striker', 'atirador', 'conjurador'}
+PAPEIS = {'tank', 'striker', 'frontliner', 'atirador', 'conjurador'}   # tank e striker = vaga de frontliner (19/11)
 EIXOS = ('dano', 'defesa', 'controle', 'saves', 'area', 'suporte')
 
 

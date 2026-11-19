@@ -231,7 +231,7 @@ function comparacao(a,b){let g=null,h=`<div class="rol" style="margin-top:10px">
   h+=`<tr><td>${n}</td>${cel(x,w)}${cel(y,-w)}</tr>`}
  return h+'</tbody></table></div><p style="color:var(--ink2);font-size:13px">▲ verde = melhor nesta métrica; ▼ vermelho = pior. Sem marca = empate ou sem nota em um dos lados.</p>'}
 
-const POS={tank:'Tanque',striker:'2º marcial',atirador:'Atirador / backliner',conjurador:'Conjurador'};
+const POS={tank:'Frontliner',striker:'Frontliner',frontliner:'Frontliner',atirador:'Atirador / backliner',conjurador:'Conjurador'};
 function posTag(e){const l=LN(e,'controle'),c=l&&l.res.controle&&l.res.controle.corpo;if(!l)return '';
  return `<p class="pos"><span class="tag" style="font-size:13px;color:var(--ink)">📍 ${esc(POS[l.spec.papel]||l.spec.papel||'')}</span>${c?` <span class="tag" style="font-size:13px;color:var(--ink);border-color:var(--c-corpo)" data-tip="T ${f(c.T,2)} · S ${f(c.S,2)} · P ${f(c.P,2)} (vidas por luta)">🧍 ${esc(c.perfil)}</span>`:''}</p>`}
 function detalhe(){const el=$('#det'),es=D.entradas[S.aba],e=es.find(x=>x.id==S.sel);if(!e){el.innerHTML='';return}

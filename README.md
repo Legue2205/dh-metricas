@@ -107,7 +107,8 @@ linha principal da planilha difere por eixo. Uma linha pode sobrescrever o corpo
 
 ### controle
 
-`atencao` descreve o personagem na party de referência: `papel` (tank, striker, atirador, conjurador),
+`atencao` descreve o personagem na party de referência (2 frontliners + atirador + conjurador, desde 19/11): `papel`
+(tank, striker ou frontliner = uma das vagas de frontliner; atirador; conjurador),
 `dpr`, `soft` (ameaça), `front`, `acc_m`/`acc_r` (chance de ser alcançado em campo aberto/ruínas/dungeon),
 `conc`, `hard` (`{"sentinela": 8}` ou `{"p": 0.5}`), `esqueletos`, `agarra`.
 

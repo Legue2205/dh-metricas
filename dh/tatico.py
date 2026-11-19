@@ -233,8 +233,9 @@ def avaliar(spec, w=1.0, politicas=('otima', 'sombras', 'frontline'), n=20000, c
 
 
 # Posição da party de referência que cada composição ocupa (motor de atenção):
-#   terceiro_melee: ele ocupa o lugar do atirador, mas pode ir para a frente (o striker de referência continua lá);
-#   segundo_frontliner: o lugar do striker; sem_tanque: o lugar do tanque (teste de estresse).
+#   terceiro_melee: ele ocupa o lugar do atirador, mas pode ir para a frente (os 2 frontliners de referência continuam lá);
+#   segundo_frontliner e sem_tanque: uma das 2 vagas de frontliner (19/11: tank e striker viraram uma referência só,
+#   então as duas composições caem na mesma vaga no motor de atenção).
 PAPEL = {'terceiro_melee': 'atirador', 'segundo_frontliner': 'striker', 'sem_tanque': 'tank'}
 
 

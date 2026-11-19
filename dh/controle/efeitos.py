@@ -314,7 +314,10 @@ def compilar(fontes, corpo, nivel):
     # 18/11: parte da negação de uma fonte de corpo pode contar no Controle (premissa controle.peso_no_controle.<tipo>)
     from ..premissas import P
     fn.peso_ctrl = {f.get('nome', f['tipo']): P(f"controle.peso_no_controle.{f['tipo']}") for f in fontes if f['tipo'] in TIPOS_CORPO}
+    # 19/11: marcas entram na atenção como redução do dano do marcado contra os aliados de quem marcou
+    fn.marca = {f.get('nome', f['tipo']) for f in fontes if f['tipo'] in TIPOS_MARCA}
     return fn
 
 
-TIPOS_CORPO = {'ameaca', 'sentinela', 'parada_oa', 'esqueletos'}
+TIPOS_CORPO = {'ameaca', 'sentinela', 'parada_oa', 'esqueletos', 'ancestral_protectors'}   # marcas no Corpo desde 19/11
+TIPOS_MARCA = {'ancestral_protectors'}   # no Corpo: reduzem o dano do marcado contra os outros membros (atencao.vida)

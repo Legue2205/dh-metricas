@@ -6,58 +6,95 @@ Cada premissa é um "peso" do modelo. Mudar: `python -m dh premissa <nome> <valo
 
 | Premissa | Valor | Desde | Builds que usam | O que é |
 |---|---|---|---|---|
-| `area.alvos_referencia_por_circulo` | [2, 2, 4, 4, 6, 6, 6, 6, 6] | 2026-11-18 | 6 | Alvos da magia de área do conjurador de referência por círculo (1º…9º). |
-| `area.cenarios` | {'esparsa': 0.5, 'padrao': 1.0, 'agrupada': 1.5} | 2026-11-18 | 6 | Escala de alvos por cenário (esparsa, padrão, agrupada). |
-| `area.fator_round2_nao_seletiva` | 0.5 | 2026-11-18 | 6 | Idem para área não seletiva (a party se espalha, inimigos se afastam). |
-| `area.fator_round2_seletiva` | 0.75 | 2026-11-18 | 6 | Do 2º round em diante uma área seletiva (escolhe alvos) ainda pega esta fração dos alvos do 1º round. |
-| `area.horda_cr_por_nivel` | {'1': 0.125, '2': 0.25, '3': 0.25, '4': 0.5, '5': 1, '6': 1, '7': 1, '8': 2, '9': 2, '10': 2, '11': 3, '12': 3, '13': 4, '14': 4, '15': 4, '16': 4, '17': 5, '18': 5, '19': 6, '20': 6} | 2026-11-18 | 6 | CR das criaturas da horda de referência (encontro Difícil de 6) por nível da party. |
-| `area.horda_tamanho` | 6 | 2026-11-18 | 6 | Criaturas na horda de referência. |
+| `area.alvos_referencia_por_circulo` | [2, 2, 4, 4, 6, 6, 6, 6, 6] | 2026-11-18 | 153 | Alvos da magia de área do conjurador de referência por círculo (1º…9º). |
+| `area.cenarios` | {'esparsa': 0.5, 'padrao': 1.0, 'agrupada': 1.5} | 2026-11-18 | 153 | Escala de alvos por cenário (esparsa, padrão, agrupada). |
+| `area.fator_round2_nao_seletiva` | 0.5 | 2026-11-18 | 153 | Idem para área não seletiva (a party se espalha, inimigos se afastam). |
+| `area.fator_round2_seletiva` | 0.75 | 2026-11-18 | 153 | Do 2º round em diante uma área seletiva (escolhe alvos) ainda pega esta fração dos alvos do 1º round. |
+| `area.horda2.N` | 3000 | 2026-11-19 | 153 | Combates simulados por nível de horda. |
+| `area.horda2.corpo` | 5 | 2026-11-19 | 153 | Criaturas da horda no grupo que avança para o corpo a corpo (chega à linha de frente no round 2). |
+| `area.horda2.distancia` | 3 | 2026-11-19 | 153 | Criaturas da horda num grupo separado à distância (arqueiros): alvo de área sem fogo amigo em todos os rounds. |
+| `area.horda2.fracao_alvo` | 0.5 | 2026-11-19 | 153 | A luta de área termina quando a party tira esta fração da vida total da horda (o resto é limpeza, sem gastar recursos). |
+| `area.horda2.guerreiros` | {'quantidade': 2, 'dano': '2d6', 'mod': [3, 4, 5], 'ataques': [1, 2, 3, 4]} | 2026-11-19 | 153 | Dois guerreiros de referência que batem junto (alvo de menor PV, dano acima do PV é perdido). mod: +3 até o 3, +4 do 4 ao 7, +5 do 8; ataques: 1 até o 4, 2 do 5 ao 10, 3 do 11 ao 19, 4 no 20. |
+| `area.horda2.rounds_max` | 3 | 2026-11-19 | 153 | Teto de rounds; quem não chega à fração da vida é extrapolado pela taxa média (até 2× o teto). |
+| `area.horda2.truque_referencia` | 1d10 | 2026-11-19 | 153 | Truque de alvo único do conjurador de referência (dados escalam no 5 e no 11), ataque com prof + atributo da régua. |
+| `area.horda_cr_por_nivel` | {'1': 0.125, '2': 0.25, '3': 0.25, '4': 0.5, '5': 1, '6': 1, '7': 1, '8': 2, '9': 2, '10': 2, '11': 3, '12': 3, '13': 4, '14': 4, '15': 4, '16': 4, '17': 5, '18': 5, '19': 6, '20': 6} | 2026-11-18 | 153 | CR das criaturas da horda de referência (encontro Difícil de 6) por nível da party. |
+| `area.horda_tamanho` | 6 | 2026-11-18 | 153 | Criaturas na horda de referência. |
+
+<details><summary>Histórico</summary>
+
+- `area.horda2.N`: data 2026-11-19, de None, para 3000, motivo Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência.
+- `area.horda2.corpo`: data 2026-11-19, de None, para 5, motivo Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência.
+- `area.horda2.distancia`: data 2026-11-19, de None, para 3, motivo Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência.
+- `area.horda2.fracao_alvo`: data 2026-11-19, de None, para 0.5, motivo Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência.
+- `area.horda2.guerreiros`: data 2026-11-19, de None, para {'quantidade': 2, 'dano': '2d6', 'mod': [3, 4, 5], 'ataques': [1, 2, 3, 4]}, motivo Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência.
+- `area.horda2.rounds_max`: data 2026-11-19, de None, para 5, motivo Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência.
+- `area.horda2.rounds_max`: de 5, para 3, data 2026-11-19, motivo usuário 19/11: medir o pico; com 5 rounds o DPR sustentado dos marciais pesava demais
+- `area.horda2.truque_referencia`: data 2026-11-19, de None, para 1d10, motivo Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência.
+
+</details>
 
 ## base
 
 | Premissa | Valor | Desde | Builds que usam | O que é |
 |---|---|---|---|---|
-| `base.chefe.chefe_save` | 2 | 2026-11-18 | 17 | Bônus extra nos saves de um chefe sozinho. |
-| `base.chefe.lr_cr` | 10 | 2026-11-18 | 17 | CR mínimo para o chefe ter Legendary Resistance. |
-| `base.chefe.lr_n` | 1 | 2026-11-18 | 17 | Legendary Resistances de um chefe sozinho. |
-| `base.encontros` | [['Minions + minibosses', 0.25, [['Minion', 'Oportunista', 4, 0.25], ['Bruiser', 'Fera', 1, 0.25], ['Tank inimigo', 'Veterano defensor', 1, 0.25], ['Conjurador', 'Conjurador tático', 1, 0.25]]], ['Party de elite', 0.15, [['Bruiser', 'Veterano agressor', 1, 0.25], ['Tank inimigo', 'Veterano defensor', 1, 0.25], ['Artilheiro', 'Atirador', 1, 0.25], ['Conjurador', 'Conjurador tático', 1, 0.25]]], ['Horda + chefe', 0.15, [['Minion', 'Soldado disciplinado', 6, 0.5], ['Chefe', 'Comandante', 1, 0.5]]], ['Horda', 0.1, [['Minion', 'Oportunista', 6, 1.0]]], ['Dupla', 0.05, [['Bruiser', 'Fera', 1, 0.5], ['Conjurador', 'Conjurador tático', 1, 0.5]]], ['Chefe sozinho', 0.3, [['Chefe', 'Chefe (perfil próprio)', 1, 1.0]]]] | 2026-11-18 | 17 | Mistura de encontros do dia de referência: [nome, peso, composição [papel, perfil, quantidade, fração do orçamento de XP]]. Os pesos somam 1. |
-| `base.perfis_inimigos` | {'Instintivo': [0.2, 0, True], 'Fera': [0.3, 1, True], 'Oportunista': [0.7, 2, True], 'Soldado disciplinado': [0.5, 2, True], 'Atirador': [0.0, 3, False], 'Cavaleiro noviço': [0.1, 1, True], 'Veterano defensor': [0.3, 2, True], 'Veterano agressor': [0.8, 2, True], 'Conjurador tático': [0.0, 3, False], 'Comandante': [0.2, 3, True], 'Chefe (perfil próprio)': [0.4, 2, True]} | 2026-11-18 | 17 | Comportamento dos inimigos: [fração que busca a backline, malícia 0–3, corpo a corpo?]. Define quem é atacado e quem foge de taunt. |
-| `base.rounds_por_luta` | 4 | 2026-11-18 | 17 | Rounds por luta em todos os eixos (duração típica de um combate). |
-| `base.save_tipo` | {'For': 1, 'Con': 1, 'Des': 0.5, 'Int': 0, 'Sab': 0, 'Car': 0} | 2026-11-18 | 17 | Quanto cada atributo de save puxa para o save forte do monstro (1 = forte, 0 = fraco). For/Con fortes, mentais fracos. |
-| `base.topologias` | {'Campo aberto': {'peso': 0.25, 'area': 0.8, 'cruza': 0.3, 'alc_corpo_a_corpo_atras': 0.1, 'pg': 1.0, 'wall': 1.0}, 'Ruínas ou cidade': {'peso': 0.35, 'area': 1.0, 'cruza': 0.6, 'alc_corpo_a_corpo_atras': 0.15, 'pg': 1.0, 'wall': 1.0}, 'Sala de dungeon': {'peso': 0.4, 'area': 1.2, 'cruza': 0.9, 'alc_corpo_a_corpo_atras': 0.6, 'pg': 0.5, 'wall': 1.5}} | 2026-11-18 | 17 | Terrenos e seus pesos no dia, multiplicador de alvos em área, fração que cruza o alcance do tanque, alcance de quem fica atrás, eficácia do Plant Growth e do Wall of Force. |
+| `base.chefe.chefe_save` | 2 | 2026-11-18 | 157 | Bônus extra nos saves de um chefe sozinho. |
+| `base.chefe.lr_cr` | 10 | 2026-11-18 | 157 | CR mínimo para o chefe ter Legendary Resistance. |
+| `base.chefe.lr_n` | 1 | 2026-11-18 | 157 | Legendary Resistances de um chefe sozinho. |
+| `base.encontros` | [['Minions + minibosses', 0.25, [['Minion', 'Oportunista', 4, 0.25], ['Bruiser', 'Fera', 1, 0.25], ['Tank inimigo', 'Veterano defensor', 1, 0.25], ['Conjurador', 'Conjurador tático', 1, 0.25]]], ['Party de elite', 0.15, [['Bruiser', 'Veterano agressor', 1, 0.25], ['Tank inimigo', 'Veterano defensor', 1, 0.25], ['Artilheiro', 'Atirador', 1, 0.25], ['Conjurador', 'Conjurador tático', 1, 0.25]]], ['Horda + chefe', 0.15, [['Minion', 'Soldado disciplinado', 6, 0.5], ['Chefe', 'Comandante', 1, 0.5]]], ['Horda', 0.1, [['Minion', 'Oportunista', 6, 1.0]]], ['Dupla', 0.05, [['Bruiser', 'Fera', 1, 0.5], ['Conjurador', 'Conjurador tático', 1, 0.5]]], ['Chefe sozinho', 0.3, [['Chefe', 'Chefe (perfil próprio)', 1, 1.0]]]] | 2026-11-18 | 157 | Mistura de encontros do dia de referência: [nome, peso, composição [papel, perfil, quantidade, fração do orçamento de XP]]. Os pesos somam 1. |
+| `base.perfis_inimigos` | {'Instintivo': [0.2, 0, True], 'Fera': [0.3, 1, True], 'Oportunista': [0.7, 2, True], 'Soldado disciplinado': [0.5, 2, True], 'Atirador': [0.0, 3, False], 'Cavaleiro noviço': [0.1, 1, True], 'Veterano defensor': [0.3, 2, True], 'Veterano agressor': [0.8, 2, True], 'Conjurador tático': [0.0, 3, False], 'Comandante': [0.2, 3, True], 'Chefe (perfil próprio)': [0.4, 2, True]} | 2026-11-18 | 157 | Comportamento dos inimigos: [fração que busca a backline, malícia 0–3, corpo a corpo?]. Define quem é atacado e quem foge de taunt. |
+| `base.rounds_por_luta` | 4 | 2026-11-18 | 157 | Rounds por luta em todos os eixos (duração típica de um combate). |
+| `base.save_tipo` | {'For': 1, 'Con': 1, 'Des': 0.5, 'Int': 0, 'Sab': 0, 'Car': 0} | 2026-11-18 | 157 | Quanto cada atributo de save puxa para o save forte do monstro (1 = forte, 0 = fraco). For/Con fortes, mentais fracos. |
+| `base.topologias` | {'Campo aberto': {'peso': 0.25, 'area': 0.8, 'cruza': 0.3, 'alc_corpo_a_corpo_atras': 0.1, 'pg': 1.0, 'wall': 1.0}, 'Ruínas ou cidade': {'peso': 0.35, 'area': 1.0, 'cruza': 0.6, 'alc_corpo_a_corpo_atras': 0.15, 'pg': 1.0, 'wall': 1.0}, 'Sala de dungeon': {'peso': 0.4, 'area': 1.2, 'cruza': 0.9, 'alc_corpo_a_corpo_atras': 0.6, 'pg': 0.5, 'wall': 1.5}} | 2026-11-18 | 157 | Terrenos e seus pesos no dia, multiplicador de alvos em área, fração que cruza o alcance do tanque, alcance de quem fica atrás, eficácia do Plant Growth e do Wall of Force. |
 
 ## controle
 
 | Premissa | Valor | Desde | Builds que usam | O que é |
 |---|---|---|---|---|
-| `controle.atencao.conc_bonus` | 1.5 | 2026-11-18 | 17 | Prioridade extra dos inimigos espertos em conjuradores concentrando. |
-| `controle.atencao.near_back` | 0.25 | 2026-11-18 | 17 | Fração dos que querem a backline que ainda atacam quem está perto. |
-| `controle.atencao.reach_grande` | 0.5 | 2026-11-18 | 17 | Alcance de inimigos grandes (atenção). |
-| `controle.atencao.reach_pequeno` | 0.2 | 2026-11-18 | 17 | Alcance de inimigos pequenos (atenção). |
-| `controle.atencao.skel_peso` | 1.5 | 2026-11-18 | 17 | Peso de atração de invocações/esqueletos sobre inimigos corpo a corpo. |
-| `controle.atencao.skel_pv` | 133 | 2026-11-18 | 17 | PV padrão de um corpo de invocações quando a build não informa. |
-| `controle.campo.golpes_party` | 2 | 2026-11-18 | 17 | Golpes da party por round que podem quebrar uma condição com save a cada dano. |
-| `controle.campo.p_disengage` | 0.5 | 2026-11-18 | 17 | Chance de um inimigo parado por AO não ter como sair (padrão de parada_oa). |
-| `controle.campo.reach_grande` | 0.5 | 2026-11-18 | 17 | Fração de inimigos grandes (CR ≥ 5) com alcance para escapar de agarrão/zona. |
-| `controle.campo.reach_pequeno` | 0.2 | 2026-11-18 | 17 | Idem para inimigos menores. |
-| `controle.campo.taunt_ameaca` | 0.15 | 2026-11-18 | 17 | Taunt soft de um corpo que ameaça (fração dos ataques desviados para ele). |
-| `controle.campo.taunt_summon` | 0.4 | 2026-11-18 | 17 | Taunt de invocações que ocupam espaço. |
-| `controle.padroes.counterspell_fracao_conjurando` | 0.75 | 2026-11-18 | 17 | Fração dos turnos de um conjurador inimigo em que ele lança algo que vale contramágica. |
-| `controle.padroes.sentinela_tentativas` | 2 | 2026-11-18 | 17 | Ataques de oportunidade do Sentinel por luta que podem parar alguém (quando a build não diz). |
-| `controle.padroes.terreno_fator` | 0.5 | 2026-11-18 | 17 | Fração do turno de um inimigo corpo a corpo perdida em terreno difícil grande (Plant Growth), antes do fator do terreno. |
-| `controle.peso_no_controle.ameaca` | 0.0 | 2026-11-16 | 17 | Taunt soft (corpo que atrai ataques): só Corpo. |
-| `controle.peso_no_controle.esqueletos` | 0.0 | 2026-11-16 | 17 | Invocações que desviam ataques: só Corpo. |
-| `controle.peso_no_controle.parada_oa` | 0.25 | 2026-11-18 | 17 | Igual à do Sentinel, para paradas por ataque de oportunidade com probabilidade fixa. |
-| `controle.peso_no_controle.sentinela` | 0.25 | 2026-11-18 | 17 | Fração da negação do AO do Sentinel (velocidade 0) que também conta como Controle. O resto (taunt, diluição de dano) fica só no Corpo. |
+| `controle.atencao.ca_dpr_auto` | 16 | 2026-11-19 | 157 | CA usada para o DPR da atenção quando a build declara "dpr": "auto" (a mesma coluna que a party usa). |
+| `controle.atencao.conc_bonus` | 1.5 | 2026-11-18 | 157 | Prioridade extra dos inimigos espertos em conjuradores concentrando. |
+| `controle.atencao.near_back` | 0.25 | 2026-11-18 | 157 | Fração dos que querem a backline que ainda atacam quem está perto. |
+| `controle.atencao.reach_grande` | 0.5 | 2026-11-18 | 157 | Alcance de inimigos grandes (atenção). |
+| `controle.atencao.reach_pequeno` | 0.2 | 2026-11-18 | 157 | Alcance de inimigos pequenos (atenção). |
+| `controle.atencao.skel_peso` | 1.5 | 2026-11-18 | 157 | Peso de atração de invocações/esqueletos sobre inimigos corpo a corpo. |
+| `controle.atencao.skel_pv` | 133 | 2026-11-18 | 157 | PV padrão de um corpo de invocações quando a build não informa. |
+| `controle.campo.golpes_party` | 2 | 2026-11-18 | 157 | Golpes da party por round que podem quebrar uma condição com save a cada dano. |
+| `controle.campo.p_disengage` | 0.5 | 2026-11-18 | 157 | Chance de um inimigo parado por AO não ter como sair (padrão de parada_oa). |
+| `controle.campo.reach_grande` | 0.5 | 2026-11-18 | 157 | Fração de inimigos grandes (CR ≥ 5) com alcance para escapar de agarrão/zona. |
+| `controle.campo.reach_pequeno` | 0.2 | 2026-11-18 | 157 | Idem para inimigos menores. |
+| `controle.campo.taunt_ameaca` | 0.15 | 2026-11-18 | 157 | Taunt soft de um corpo que ameaça (fração dos ataques desviados para ele). |
+| `controle.campo.taunt_summon` | 0.4 | 2026-11-18 | 157 | Taunt de invocações que ocupam espaço. |
+| `controle.marca.fator_sem_resistencia` | 0.5 | 2026-11-19 | 157 | Marca no acerto só com desvantagem contra os outros (Unwavering Mark), sem a resistência que os aliados ganham no Ancestral Protectors: fração do valor da marca completa. 0,5 ≈ (1 − p_desv/p) ÷ (1 − 0,5·p_desv/p) com p ≈ 0,65. |
+| `controle.padroes.counterspell_fracao_conjurando` | 0.75 | 2026-11-18 | 157 | Fração dos turnos de um conjurador inimigo em que ele lança algo que vale contramágica. |
+| `controle.padroes.sentinela_tentativas` | 2 | 2026-11-18 | 157 | Ataques de oportunidade do Sentinel por luta que podem parar alguém (quando a build não diz). |
+| `controle.padroes.terreno_fator` | 0.5 | 2026-11-18 | 157 | Fração do turno de um inimigo corpo a corpo perdida em terreno difícil grande (Plant Growth), antes do fator do terreno. |
+| `controle.peso_no_controle.ameaca` | 0.0 | 2026-11-16 | 157 | Taunt soft (corpo que atrai ataques): só Corpo. |
+| `controle.peso_no_controle.ancestral_protectors` | 0.25 | 2026-11-19 | 0 | Marca (Ancestral Protectors; Unwavering Mark com "resistencia": false): fração da redução do dano que o marcado causa aos aliados que também conta como Controle. O resto fica no Corpo (atenção: a marca protege os outros membros da party). Mesmo valor da do Sentinel. |
+| `controle.peso_no_controle.esqueletos` | 0.0 | 2026-11-16 | 157 | Invocações que desviam ataques: só Corpo. |
+| `controle.peso_no_controle.parada_oa` | 0.25 | 2026-11-18 | 157 | Igual à do Sentinel, para paradas por ataque de oportunidade com probabilidade fixa. |
+| `controle.peso_no_controle.sentinela` | 0.25 | 2026-11-18 | 157 | Fração da negação do AO do Sentinel (velocidade 0) que também conta como Controle. O resto (taunt, diluição de dano) fica só no Corpo. |
+| `controle.referencia.frontliner.ca_bonus` | 1 | 2026-11-19 | 0 | Frontliner de referência (2 na party): CA = CA marcial do nível + este bônus (média entre o tank, +2, e o striker, +0). |
+| `controle.referencia.frontliner.ca_max` | 21 | 2026-11-19 | 0 | Teto da CA do frontliner de referência. |
+| `controle.referencia.frontliner.dpr_fator` | 0.85 | 2026-11-19 | 0 | DPR do frontliner de referência = este fator × DPR de referência do nível (média entre tank 0,7 e striker 1,0). |
+| `controle.referencia.frontliner.pv_base` | 11 | 2026-11-19 | 0 | PV do frontliner de referência no nível 1 (média entre tank 12 e striker 10). |
+| `controle.referencia.frontliner.pv_por_nivel` | 8 | 2026-11-19 | 0 | PV por nível acima do 1º do frontliner de referência (média entre tank 8,5 e striker 7,5). |
+| `controle.referencia.frontliner.soft` | 0.15 | 2026-11-19 | 0 | Ameaça (taunt soft) do frontliner de referência. |
 
 <details><summary>Histórico</summary>
 
+- `controle.marca.fator_sem_resistencia`: data 2026-11-19, de None, para 0.5, motivo Usuário: Ancestral Protectors é mais forte que Unwavering Mark (resistência ao dano nos aliados).
+- `controle.peso_no_controle.ancestral_protectors`: data 2026-11-19, de None, para 0.25, motivo Usuário 19/11 (passada 3): marcas contam no Corpo; fração no Controle igual à do Sentinel.
 - `controle.peso_no_controle.parada_oa`: valor 0.0, ate 2026-11-18
 - `controle.peso_no_controle.parada_oa`: valor 0.5, desde 2026-11-18, motivo mesma decisão do Sentinel
 - `controle.peso_no_controle.parada_oa`: de 0.5, para 0.25, data 2026-11-18, motivo usuário: tirar o movimento é ganho marginal (o alvo mantém ações, pode circular o tanque); 0,5 punha o Abdul acima dos casters
 - `controle.peso_no_controle.sentinela`: valor 0.0, ate 2026-11-18, motivo 16/11: fontes de corpo fora do Controle (evitar contagem dupla)
 - `controle.peso_no_controle.sentinela`: valor 0.5, desde 2026-11-18, motivo usuário: negar movimento só precisando acertar a CA é controle real (como o Plant Growth), mas parte do valor já está no Corpo
 - `controle.peso_no_controle.sentinela`: de 0.5, para 0.25, data 2026-11-18, motivo usuário: tirar o movimento é ganho marginal (o alvo mantém ações, pode circular o tanque); 0,5 punha o Abdul acima dos casters
+- `controle.referencia.frontliner.ca_bonus`: data 2026-11-19, de None, para 1, motivo Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios.
+- `controle.referencia.frontliner.ca_max`: data 2026-11-19, de None, para 21, motivo Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios.
+- `controle.referencia.frontliner.dpr_fator`: data 2026-11-19, de None, para 0.85, motivo Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios.
+- `controle.referencia.frontliner.pv_base`: data 2026-11-19, de None, para 11, motivo Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios.
+- `controle.referencia.frontliner.pv_por_nivel`: data 2026-11-19, de None, para 8, motivo Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios.
+- `controle.referencia.frontliner.soft`: data 2026-11-19, de None, para 0.15, motivo Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios.
 
 </details>
 
@@ -65,26 +102,26 @@ Cada premissa é um "peso" do modelo. Mudar: `python -m dh premissa <nome> <valo
 
 | Premissa | Valor | Desde | Builds que usam | O que é |
 |---|---|---|---|---|
-| `defesa.chefe.acerto_extra` | 3 | 2026-11-18 | 13 | Bônus de ataque do chefe acima da coluna de acerto da tabela de dano. |
-| `defesa.chefe.ataques_por_cr` | [[4, 2], [16, 3], [30, 4]] | 2026-11-18 | 13 | Ataques por round de um chefe: [até o CR, ataques]. |
-| `defesa.chefe.cr_arma_magica` | 10 | 2026-11-18 | 13 | A partir deste CR os golpes do chefe ignoram redução de dano não mágica. |
-| `defesa.fator_critico` | 0.6 | 2026-11-18 | 13 | Dano extra de um crítico inimigo, em fração do golpe normal (dados dobram, modificador não). |
-| `defesa.horda.acerto` | {'base': 3, 'por_cr': 0.3333333333333333} | 2026-11-18 | 13 | Bônus de ataque da horda: base + CR × por_cr. |
-| `defesa.horda.atacantes` | {'min': 3, 'max': 10} | 2026-11-18 | 13 | Horda: número de atacantes entre min e max (importa para redução fixa de dano). |
-| `defesa.horda.dano_por_golpe` | {'base': 4, 'por_cr': 0.5} | 2026-11-18 | 13 | Horda: o dano por round do CR é dividido em golpes de (base + CR × por_cr). |
+| `defesa.chefe.acerto_extra` | 3 | 2026-11-18 | 101 | Bônus de ataque do chefe acima da coluna de acerto da tabela de dano. |
+| `defesa.chefe.ataques_por_cr` | [[4, 2], [16, 3], [30, 4]] | 2026-11-18 | 101 | Ataques por round de um chefe: [até o CR, ataques]. |
+| `defesa.chefe.cr_arma_magica` | 10 | 2026-11-18 | 101 | A partir deste CR os golpes do chefe ignoram redução de dano não mágica. |
+| `defesa.fator_critico` | 0.6 | 2026-11-18 | 101 | Dano extra de um crítico inimigo, em fração do golpe normal (dados dobram, modificador não). |
+| `defesa.horda.acerto` | {'base': 3, 'por_cr': 0.3333333333333333} | 2026-11-18 | 101 | Bônus de ataque da horda: base + CR × por_cr. |
+| `defesa.horda.atacantes` | {'min': 3, 'max': 10} | 2026-11-18 | 101 | Horda: número de atacantes entre min e max (importa para redução fixa de dano). |
+| `defesa.horda.dano_por_golpe` | {'base': 4, 'por_cr': 0.5} | 2026-11-18 | 101 | Horda: o dano por round do CR é dividido em golpes de (base + CR × por_cr). |
 
 ## eixos
 
 | Premissa | Valor | Desde | Builds que usam | O que é |
 |---|---|---|---|---|
-| `eixos.def_fisica.peso_resiliencia` | 0.3333333333333333 | 2026-11-18 | 17 | Def. Física = (1 − p) × Defesa (blindagem/durabilidade) + p × Resiliência (saves For/Des/Con). |
-| `eixos.def_magica.peso_resiliencia` | 0.3333333333333333 | 2026-11-18 | 17 | Def. Mágica = (1 − p) × Vontade (saves mentais) + p × Resiliência. |
+| `eixos.def_fisica.peso_resiliencia` | 0.3333333333333333 | 2026-11-18 | 157 | Def. Física = (1 − p) × Defesa (blindagem/durabilidade) + p × Resiliência (saves For/Des/Con). |
+| `eixos.def_magica.peso_resiliencia` | 0.3333333333333333 | 2026-11-18 | 157 | Def. Mágica = (1 − p) × Vontade (saves mentais) + p × Resiliência. |
 
 ## planos
 
 | Premissa | Valor | Desde | Builds que usam | O que é |
 |---|---|---|---|---|
-| `planos.dias` | {'padrao': [['np', 1], ['p', 2], 'SR', ['np', 1], ['p', 2]], 'combate_unico': [['p', 1]], 'dia_longo': [['np', 1], ['np', 1], ['mod', 2], 'SR', ['np', 1], ['mod', 2], ['mod', 2], 'SR', ['mod', 2], ['boss', 4]]} | 2026-11-18 | 17 | Dias de aventura: sequência de [categoria, peso] e "SR" (descanso curto). Padrão: comum 1, prioritária 2. Dia longo: 8 lutas, boss pesa 4. |
+| `planos.dias` | {'padrao': [['np', 1], ['p', 2], 'SR', ['np', 1], ['p', 2]], 'combate_unico': [['p', 1]], 'dia_longo': [['np', 1], ['np', 1], ['mod', 2], 'SR', ['np', 1], ['mod', 2], ['mod', 2], 'SR', ['mod', 2], ['boss', 4]]} | 2026-11-18 | 157 | Dias de aventura: sequência de [categoria, peso] e "SR" (descanso curto). Padrão: comum 1, prioritária 2. Dia longo: 8 lutas, boss pesa 4. |
 
 ## saves
 
@@ -103,25 +140,25 @@ Cada premissa é um "peso" do modelo. Mudar: `python -m dh premissa <nome> <valo
 
 | Premissa | Valor | Desde | Builds que usam | O que é |
 |---|---|---|---|---|
-| `suporte.h.ACERTO` | 0.65 | 2026-11-18 | 7 | Chance de acerto típica de um aliado. |
-| `suporte.h.ACERTOS_INIM_ROUND` | 4 | 2026-11-18 | 7 | Acertos em que o dano inimigo do round chega. |
-| `suporte.h.ALIADOS` | 3 | 2026-11-18 | 7 | Aliados que recebem um buff em grupo. |
-| `suporte.h.ATIVO` | 0.875 | 2026-11-18 | 7 | Fração da luta em que um buff contínuo está ativo. |
-| `suporte.h.CUSTO_SAVE` | 1 | 2026-11-18 | 7 | Valor de 1 ponto de save, em dano evitado relativo. |
-| `suporte.h.EF_CURA` | 0.9 | 2026-11-18 | 7 | Eficiência da cura (fração que não é desperdiçada). |
-| `suporte.h.EF_PVT` | 0.75 | 2026-11-18 | 7 | Eficiência de PV temporários. |
-| `suporte.h.ESCOLHA` | 2.0 | 2026-11-18 | 7 | Ganho de escolher quando gastar um dado de inspiração (×). |
-| `suporte.h.F_AURA` | 0.67 | 2026-11-18 | 7 | Fração dos aliados dentro de uma aura. |
-| `suporte.h.F_SAVE` | 0.25 | 2026-11-18 | 7 | Fração do dano inimigo que vem por save. |
-| `suporte.h.PARCELA_FRENTE` | 0.35 | 2026-11-18 | 7 | Parcela do dano inimigo que vai para um aliado da linha de frente. |
-| `suporte.h.P_ACERTO_INIM` | 0.6 | 2026-11-18 | 7 | Chance de um ataque inimigo acertar um aliado. |
-| `suporte.h.TURNOS_CONDICAO` | 1.5 | 2026-11-18 | 7 | Turnos de aliado perdidos num save crítico falho. |
-| `suporte.h.TURNOS_LEVANTAR` | 1.0 | 2026-11-18 | 7 | Turnos devolvidos ao levantar um caído. |
-| `suporte.lutas_dia` | 4 | 2026-11-10 | 7 | Lutas por dia para diluir recursos usados ENTRE lutas ("quando": "entre_lutas": Song of Rest, PV temporário de descanso). |
-| `suporte.lutas_por_descanso_curto` | 2 | 2026-11-10 | 7 | Lutas por descanso curto: recurso por descanso curto usado em combate se espalha por essas lutas. |
-| `suporte.mix_dado_multiuso` | {'dano': 0.3, 'acerto': 0.25, 'ca': 0.2, 'save_dano': 0.15, 'save_critico': 0.07, 'counterspell': 0.03} | 2026-11-18 | 7 | Como um dado de inspiração é gasto em média (dano, acerto, CA, save de dano, save crítico, counterspell). Soma 1. |
-| `suporte.padroes.resgate_p_evento` | 0.2 | 2026-11-18 | 7 | Chance por round de surgir uma condição que vale resgatar. |
-| `suporte.padroes.resgate_p_save` | 0.45 | 2026-11-18 | 7 | Chance do aliado passar no save refeito contra uma condição (Countercharm e afins). |
+| `suporte.h.ACERTO` | 0.65 | 2026-11-18 | 17 | Chance de acerto típica de um aliado. |
+| `suporte.h.ACERTOS_INIM_ROUND` | 4 | 2026-11-18 | 17 | Acertos em que o dano inimigo do round chega. |
+| `suporte.h.ALIADOS` | 3 | 2026-11-18 | 17 | Aliados que recebem um buff em grupo. |
+| `suporte.h.ATIVO` | 0.875 | 2026-11-18 | 17 | Fração da luta em que um buff contínuo está ativo. |
+| `suporte.h.CUSTO_SAVE` | 1 | 2026-11-18 | 17 | Valor de 1 ponto de save, em dano evitado relativo. |
+| `suporte.h.EF_CURA` | 0.9 | 2026-11-18 | 17 | Eficiência da cura (fração que não é desperdiçada). |
+| `suporte.h.EF_PVT` | 0.75 | 2026-11-18 | 17 | Eficiência de PV temporários. |
+| `suporte.h.ESCOLHA` | 2.0 | 2026-11-18 | 17 | Ganho de escolher quando gastar um dado de inspiração (×). |
+| `suporte.h.F_AURA` | 0.67 | 2026-11-18 | 17 | Fração dos aliados dentro de uma aura. |
+| `suporte.h.F_SAVE` | 0.25 | 2026-11-18 | 17 | Fração do dano inimigo que vem por save. |
+| `suporte.h.PARCELA_FRENTE` | 0.35 | 2026-11-18 | 17 | Parcela do dano inimigo que vai para um aliado da linha de frente. |
+| `suporte.h.P_ACERTO_INIM` | 0.6 | 2026-11-18 | 17 | Chance de um ataque inimigo acertar um aliado. |
+| `suporte.h.TURNOS_CONDICAO` | 1.5 | 2026-11-18 | 17 | Turnos de aliado perdidos num save crítico falho. |
+| `suporte.h.TURNOS_LEVANTAR` | 1.0 | 2026-11-18 | 17 | Turnos devolvidos ao levantar um caído. |
+| `suporte.lutas_dia` | 4 | 2026-11-10 | 17 | Lutas por dia para diluir recursos usados ENTRE lutas ("quando": "entre_lutas": Song of Rest, PV temporário de descanso). |
+| `suporte.lutas_por_descanso_curto` | 2 | 2026-11-10 | 17 | Lutas por descanso curto: recurso por descanso curto usado em combate se espalha por essas lutas. |
+| `suporte.mix_dado_multiuso` | {'dano': 0.3, 'acerto': 0.25, 'ca': 0.2, 'save_dano': 0.15, 'save_critico': 0.07, 'counterspell': 0.03} | 2026-11-18 | 17 | Como um dado de inspiração é gasto em média (dano, acerto, CA, save de dano, save crítico, counterspell). Soma 1. |
+| `suporte.padroes.resgate_p_evento` | 0.2 | 2026-11-18 | 17 | Chance por round de surgir uma condição que vale resgatar. |
+| `suporte.padroes.resgate_p_save` | 0.45 | 2026-11-18 | 17 | Chance do aliado passar no save refeito contra uma condição (Countercharm e afins). |
 
 ## tatico
 

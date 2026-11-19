@@ -715,3 +715,19 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   subclasses (autor principal, régua única) às vezes discorda dos handbooks (outros autores): War laranja × "on the
   stronger end"; Knowledge laranja → verde pelo próprio handbook. `nota` = guia de subclasses; `nota_handbook` quando
   difere; comparar com e sem os domínios em conflito.
+
+## 19/11 (noite 3) — Cleric lote 2
+- Pedido repetido a um agente novo: o lote 2 (Arcana, Forge, Knowledge, Order, Tempest, Trickery, Twilight, War) **já
+  estava feito** em `3d3f598` (gerador `cle2.py`, não `cle.py`), seguido de `9e9c4ca` (Command fora do controle) e da
+  passada 2 em `1883d42`. Não reingerido (os Docs não foram relidos; refazer sobrescreveria a passada 2). Gabarito já conferido.
+- `calibracao/comparar_rpgbot.py --com-suporte-corpo`: média com dano, deff, defm, controle, área, **suporte e corpo**
+  (padrão 3). Sem a opção o resultado do Fighter/Wizard é o mesmo de antes.
+- Comparação sobre os resultados do CI de `57e7714` (antes da passada 2 do Cleric), plano padrão, n = 14:
+  5 eixos tau −0,11 (nv 7) / −0,09 (nv 11); com Suporte/Corpo +0,09 / −0,01. Fighter com S/C +0,46 / +0,56
+  (era +0,40 / +0,62); Wizard +0,00 / −0,07 (era +0,03 / −0,03).
+- Maiores desvios: **War** (laranja) no topo nas duas médias (dano 6,5/9,2 e corpo 13,5/19); **Nature** (laranja) no meio
+  ou acima (corpo 13,7/22); **Twilight** (5) abaixo do meio com S/C porque Suporte = 0 (aura de PV temporário não entra no
+  eixo); **Light** (azul) é o pior nos 5 eixos (dano 1,2/1,8) e sobe para o topo com S/C só pelo corpo inflado
+  (20,8/26,9) — idem Order (19,6/25,5). Tempest 11 tem área 20,0 (Destructive Wrath no Call Lightning?) — conferir.
+  Isto reforça o padrão 1 (corpo explode para CA alta atrás) e pede Suporte para auras de PV temporário (Twilight).
+- `dh validar 'builds/*.json'`: tudo OK, sem AVISO de espaços. CI disparado para recalcular a passada 2.

@@ -5,7 +5,10 @@ Para cada classe com gabarito (calibracao/rpgbot-<classe>.json), pega as builds 
 Kendall (tau-b, com empates) entre a nota do RPGBot (1–4) e a MÉDIA dos níveis de Dano, Def. Física (deff),
 Def. Mágica (defm), Controle e Área, nos níveis 7 e 11. Eixo ausente conta 0.
 
-Uso (da raiz do repo): python calibracao/comparar_rpgbot.py [--json] [--visao padrao]
+Com --com-suporte-corpo a média inclui também Suporte e Corpo (padrão 3 da comparação do Cleric no ROADMAP);
+sem a opção o resultado é o de sempre (Fighter/Wizard inalterados).
+
+Uso (da raiz do repo): python calibracao/comparar_rpgbot.py [--json] [--visao padrao] [--com-suporte-corpo]
 Os números vêm de `python -m dh comparar --grupo RPGBot --json` (visão do plano padrão).
 """
 import json
@@ -17,6 +20,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[1]
 CLASSES = ('fighter', 'wizard', 'cleric')
 EIXOS = ('dano', 'deff', 'defm', 'controle', 'area')
+EIXOS_SC = EIXOS + ('suporte', 'corpo')
 NIVEIS = (7, 11)
 
 
@@ -39,11 +43,11 @@ def dados(visao='padrao'):
     return json.loads(subprocess.run(cmd, cwd=RAIZ, capture_output=True, text=True, check=True).stdout)
 
 
-def media(d, bid, nv):
-    return sum((d[e].get(bid, {}).get(str(nv)) or 0.0) for e in EIXOS) / len(EIXOS)
+def media(d, bid, nv, eixos=EIXOS):
+    return sum((d.get(e, {}).get(bid, {}).get(str(nv)) or 0.0) for e in eixos) / len(eixos)
 
 
-def comparar(d):
+def comparar(d, eixos=EIXOS):
     out = {}
     for cl in CLASSES:
         gab = json.loads((RAIZ / 'calibracao' / f'rpgbot-{cl}.json').read_text(encoding='utf-8'))['subclasses']
@@ -56,7 +60,7 @@ def comparar(d):
                     bid = f'rpgbot-{cl}-{sub}'
                     if versao == 'puras' and str(nv) in d['dano'].get(bid + '-puro', {}): bid += '-puro'
                     if str(nv) not in d['dano'].get(bid, {}): continue
-                    linhas.append((sub, g['nota'], round(media(d, bid, nv), 2), bid))
+                    linhas.append((sub, g['nota'], round(media(d, bid, nv, eixos), 2), bid))
                 t = tau_b([x[1] for x in linhas], [x[2] for x in linhas])
                 res[versao][nv] = dict(tau=round(t, 2), n=len(linhas),
                                        ordem=sorted(([s, nota, m] for s, nota, m, _ in linhas), key=lambda r: -r[2]))
@@ -66,10 +70,11 @@ def comparar(d):
 
 def main():
     visao = sys.argv[sys.argv.index('--visao') + 1] if '--visao' in sys.argv else 'padrao'
-    r = comparar(dados(visao))
+    eixos = EIXOS_SC if '--com-suporte-corpo' in sys.argv else EIXOS
+    r = comparar(dados(visao), eixos)
     if '--json' in sys.argv: print(json.dumps(r, ensure_ascii=False, indent=1)); return
     for cl, res in r.items():
-        print(f'\n== {cl.title()} (média de {", ".join(EIXOS)}; visão {visao})')
+        print(f'\n== {cl.title()} (média de {", ".join(eixos)}; visão {visao})')
         for versao, por_nv in res.items():
             print(f'  {versao:9s} ' + '  '.join(f"nv{nv}: tau {x['tau']:+.2f} (n={x['n']})" for nv, x in por_nv.items()))
         for nv in NIVEIS:

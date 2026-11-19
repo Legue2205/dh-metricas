@@ -685,3 +685,14 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - Primeiras leituras (modo rápido, plano padrão): Peace 9 Suporte 4,3 (Life 7: 0,4; Grave 9: 0); Corpo dos clérigos
   de retaguarda com CA 19 fica alto (Peace 9: 19,3; Light 5: 17,8) porque o conjurador de referência tem CA 16 — olhar
   na comparação se o Corpo novo infla conjuradores bem armados.
+- **Primeira comparação do Cleric (CI, plano padrão, nv 7 / 11)** — tau −0,07 / −0,14 (média de dano, deff, defm,
+  controle, área; n = 6). Padrões:
+  1. **Corpo novo explode em quem fica atrás com CA alta**: Light 20,8 / 26,9, Nature e Peace 13,7 / ~22, Evocation
+     14,2 / 20,2, Cavalier 10,8 / 19,9. A busca anda muitos níveis porque T cai devagar quando a referência é o
+     conjurador de CA 16; quase tudo vira extrapolação. Decidir antes da passada 2: teto em 20, régua por papel, ou
+     medir o L' só até nível ± 5.
+  2. **Área igual para todos (8,4–8,7 no 7)**: vem do Spirit Guardians da lista comum, não do domínio (mesmo padrão
+     do Wizard com a Fireball). Light (azul, blaster) não se destaca.
+  3. **Suporte não entra na média do `comparar_rpgbot.py`**, e é o eixo de Peace (2,1 / 4,1, o único clérigo com
+     suporte relevante) e Life (0,4: cura na luta não modelada). Para o Cleric, incluir Suporte e Corpo na média.
+  4. Light com dano baixo (Sacred Flame sem metade no save); Grave não passa o Death no dano (o soco é 1 por luta).

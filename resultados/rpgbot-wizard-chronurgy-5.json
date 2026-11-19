@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 5,
  "build": "Cleric 1 (Twilight) / Wizard (Chronurgy), Harengon, armadura média + escudo; Int 18 (personagem 5), Int 20 (9)",
- "impressao": "9b2ac46602",
+ "impressao": "a388199c5f",
  "versao": "0.8.0",
  "modo": "completo",
  "linhas": {
@@ -84,8 +84,33 @@
     }
    },
    "area": {
-    "nivel_eq": null,
-    "rank": "-",
+    "nivel_eq": 4.0,
+    "rank": "C",
+    "rounds": {
+     "1": 3.33,
+     "2": 3.72,
+     "3": 3.72,
+     "4": 4.76,
+     "5": 4.12,
+     "6": 4.12,
+     "7": 4.12,
+     "8": 5.28,
+     "9": 5.01,
+     "10": 5.01,
+     "11": 4.99,
+     "12": 4.99,
+     "13": 5.81,
+     "14": 5.81,
+     "15": 5.81,
+     "16": 5.81,
+     "17": 6.57,
+     "18": 6.57,
+     "19": 8.09,
+     "20": 6.28
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
     "areas": []
    },
    "orcamento": {
@@ -217,8 +242,33 @@
     }
    },
    "area": {
-    "nivel_eq": null,
-    "rank": "-",
+    "nivel_eq": 2.4,
+    "rank": "D",
+    "rounds": {
+     "1": 3.34,
+     "2": 4.19,
+     "3": 4.19,
+     "4": 5.16,
+     "5": 4.34,
+     "6": 4.34,
+     "7": 4.34,
+     "8": 5.54,
+     "9": 5.25,
+     "10": 5.25,
+     "11": 5.17,
+     "12": 5.17,
+     "13": 6.02,
+     "14": 6.02,
+     "15": 6.02,
+     "16": 6.02,
+     "17": 6.77,
+     "18": 6.77,
+     "19": 8.33,
+     "20": 6.43
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
     "areas": []
    },
    "orcamento": {
@@ -247,15 +297,15 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 4.45,
+    "nivel_eq": 4.47,
     "rank": "C",
-    "nivel_campo": 4.06,
+    "nivel_campo": 4.08,
     "rank_campo": "C",
-    "nivel_controle": 4.06,
+    "nivel_controle": 4.08,
     "nivel_atencao": 2.39,
     "rank_atencao": "D",
-    "vidas_total": 0.963,
-    "vidas_campo": 0.649,
+    "vidas_total": 0.976,
+    "vidas_campo": 0.663,
     "vidas_atencao": 0.338,
     "corpo": {
      "T": 0.338,
@@ -265,34 +315,34 @@
      "perfil": "Esquiva Tática"
     },
     "por_tipo": {
-     "Minions + minibosses": 4.38,
-     "Party de elite": 4.71,
-     "Horda + chefe": 4.33,
+     "Minions + minibosses": 4.39,
+     "Party de elite": 4.72,
+     "Horda + chefe": 4.34,
      "Horda": 4.25,
-     "Dupla": 4.74,
-     "Chefe sozinho": 4.47
+     "Dupla": 4.76,
+     "Chefe sozinho": 4.51
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Web": 0.2261
+      "Web": 0.2283
      },
      "Party de elite": {
-      "Web": 0.2125
+      "Web": 0.2159
      },
      "Horda + chefe": {
-      "Web": 0.2393
+      "Web": 0.2417
      },
      "Horda": {
-      "Web": 0.2533
+      "Web": 0.2558
      },
      "Dupla": {
-      "Web": 0.1883
+      "Web": 0.191
      },
      "Chefe sozinho": {
-      "Web": 0.2627
+      "Web": 0.2728
      }
     },
-    "nivel_absoluto": 4.07,
+    "nivel_absoluto": 4.21,
     "rank_absoluto": "C"
    }
   }
@@ -403,6 +453,14 @@
       "np": 2.4,
       "p": 2.4
      }
+    },
+    "area": {
+     "nivel_eq": 4.0,
+     "rank": "C",
+     "por_categoria": {
+      "np": 2.4,
+      "p": 2.4
+     }
     }
    }
   },
@@ -471,12 +529,81 @@
      "por_categoria": {
       "p": 2.4
      }
+    },
+    "area": {
+     "nivel_eq": 4.0,
+     "rank": "C",
+     "por_categoria": {
+      "p": 2.4
+     }
     }
    }
   }
  },
- "segundos": 6.0,
+ "segundos": 6.5,
  "premissas": {
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda2.N": 3000,
+  "area.horda2.corpo": 5,
+  "area.horda2.distancia": 3,
+  "area.horda2.fracao_alvo": 0.5,
+  "area.horda2.guerreiros": {
+   "quantidade": 2,
+   "dano": "2d6",
+   "mod": [
+    3,
+    4,
+    5
+   ],
+   "ataques": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "area.horda2.rounds_max": 5,
+  "area.horda2.truque_referencia": "1d10",
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
   "base.chefe.chefe_save": 2,
   "base.chefe.lr_cr": 10,
   "base.chefe.lr_n": 1,

@@ -1,0 +1,422 @@
+{
+ "gerado_de": "progressoes/rpgbot-cleric-twilight.json",
+ "build": "Cleric (Twilight), Centauro; armadura pesada + escudo; Telekinetic 4, Sab 20 (8); um aliado corpo a corpo montado",
+ "corpo": {
+  "ca": 20,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": 2,
+    "des": -1,
+    "con": 3,
+    "int": -1,
+    "sab": 9,
+    "car": 3
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 2,
+   "6": 1
+  },
+  "outros": {
+   "canal": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": []
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "bless",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless"
+  },
+  {
+   "id": "arma-espiritual",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "santuario",
+   "hipotese": "Twilight Sanctuary (Channel Divinity, ação, 1 minuto) + truques",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Twilight Sanctuary (PV temporários todo round)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "usos_luta": 4,
+      "alvos": 3,
+      "pv": 14.5
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "guardioes",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "6d8",
+      "meio": true,
+      "nota": "Spirit Guardians (6º) no alvo"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (6º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "6d8",
+     "cd": 17,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes"
+  },
+  {
+   "id": "guardioes-arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "6d8",
+      "meio": true,
+      "nota": "Spirit Guardians (6º) no alvo"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (6º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "6d8",
+     "cd": 17,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes-arma"
+  },
+  {
+   "id": "santuario-guardioes",
+   "hipotese": "Twilight Sanctuary (round 1) + Spirit Guardians (round 2) + truques",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.5,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "6d8",
+      "meio": true,
+      "nota": "Spirit Guardians (6º) no alvo"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Twilight Sanctuary (PV temporários todo round)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "usos_luta": 4,
+      "alvos": 3,
+      "pv": 14.5
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (6º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "6d8",
+     "cd": 17,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "6": 1
+    }
+   },
+   "herda": "principal"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 4×1º, 2×2º, 3×3º, 2×5º, 2 canal.",
+   "combates": [
+    "controle",
+    "controle",
+    "controle",
+    "guardioes-arma"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 4×1º, 2×2º, 3×3º, 3×4º, 2×5º, 2 canal.",
+   "combates": [
+    "guardioes-arma"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Clérigo do crepúsculo de linha de frente: Twilight Sanctuary dá PV temporários à party todo round, sem concentração, junto com Spirit Guardians.",
+  "estrategia": "Santuário no início das lutas difíceis, Spirit Guardians no round seguinte, truques; Bless e Spiritual Weapon nas outras.",
+  "nao_modelado": "Vigilant Blessing (vantagem na iniciativa); Steps of Night (voo); Eyes of Night; Charge do Centauro e o aliado montado; remoção de medo/encantamento do santuário; Faerie Fire, Moonbeam, Greater Invisibility, Circle of Power; Telekinetic; cura (Healing Word).",
+  "progressao": "Cleric 11; Sab 20; placas + escudo; Blessed Strikes."
+ },
+ "id": "rpgbot-cleric-twilight-11",
+ "nome": "Twilight Domain Cleric (RPGBot: I protect my friends with magic)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/twilight/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

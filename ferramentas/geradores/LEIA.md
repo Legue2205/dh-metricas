@@ -8,3 +8,4 @@ Scripts que escreveram `progressoes/rpgbot-*.json` (rodar da raiz do repo; depoi
 - `puro_fighter.py`: Echo Knight e Purple Dragon Knight puros.
 - `cle.py`: Cleric (passada 1): Death, Grave, Life, Light, Nature e Peace (clérigo base). Arcana, Forge, Order,
   Knowledge, Tempest, Trickery, Twilight e War esperam as páginas corretas no Drive.
+- `cle2.py`: Cleric lote 2: Arcana, Forge, Knowledge, Order, Tempest, Trickery, Twilight, War (reemite o lote 1, idêntico).

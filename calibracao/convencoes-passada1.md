@@ -124,3 +124,9 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
 - Peace (sem build no RPGBot): clérigo base + Emboldening Bond = `bonus_por_uso` (1 ataque por turno de cada aliado
   no vínculo) + `aura_saves`, escalados pela fração de lutas cobertas (PB/dia ÷ 4 lutas).
 - Corpo agora é o nível de neutralidade (`nivel_corpo`, ver ROADMAP 19/11).
+- Lote 2 (casos novos, sem mudar o lote 1): Voice of Authority = suporte `ataque_extra` com alvos = ataques ÷ 4 rounds;
+  Twilight Sanctuary = `pv_temporario` em 3 aliados todo round (usos_luta 4), linha própria e combinável com Spirit
+  Guardians (não é concentração); War God's Blessing = `bonus_por_uso` +10 (2/descanso curto); Crusader's Mantle =
+  `dano_por_acerto` 1d4 em 3 aliados (+1d4 nos esqueletos); Destructive Wrath = dano máximo constante na área do trovão;
+  Wrath of the Storm = `com_save` Sab/dia ÷ 16; Invoke Duplicity = vantagem 1,0 + Sneak Attack na linha própria;
+  esqueletos de Animate Dead como os do Necromancer (4 no 5–7 com 1 espaço de 3º/dia, 6 no 9–11 com 1 de 4º).

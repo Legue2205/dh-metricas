@@ -1,0 +1,1497 @@
+{
+ "id": "rpgbot-cleric-forge",
+ "nome": "Forge Domain Cleric (RPGBot: Forged in the Heat of Battle)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/forge/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Cleric (Forge), Meio-elfo (High, Custom Origin) com Booming Blade; maça +1 (Blessing of the Forge), armadura pesada + escudo; Crusher 4, War Caster 8, For 20 (12)",
+  "corpo": {
+   "ca": 18,
+   "pv": 27,
+   "saves": {
+    "sv": {
+     "for": 3,
+     "des": -1,
+     "con": 3,
+     "int": -1,
+     "sab": 5,
+     "car": 1
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 2
+   },
+   "outros": {
+    "canal": {
+     "qtd": 1,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 6,
+       "dano": "1d6+4",
+       "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "frontliner",
+      "front": true,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "dano": "1d6",
+      "cd": 13,
+      "save": "Con",
+      "alvos": [
+       1,
+       2,
+       3
+      ]
+     }
+    ],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": []
+    },
+    "principal": true,
+    "custo": "gratuita",
+    "hipotese": "só truques (anel interno)"
+   },
+   {
+    "id": "bless",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "1d6+4",
+       "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+      }
+     ]
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1
+     }
+    },
+    "herda": "principal",
+    "hipotese": "bless"
+   },
+   {
+    "id": "arma-espiritual",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 6,
+       "dano": "1d6+4",
+       "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+      },
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "Spiritual Weapon (2º)"
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1
+     }
+    },
+    "herda": "principal",
+    "hipotese": "arma-espiritual"
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "1d6+4",
+       "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "frontliner",
+      "front": true,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "alvo_unico",
+       "nome": "Hold Person",
+       "cd": 13,
+       "slots": [
+        2
+       ],
+       "magias": [
+        "hold_person"
+       ],
+       "modo": "melhor"
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1
+     }
+    },
+    "herda": "principal",
+    "hipotese": "controle"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Clérigo da forja defensor: maça +1 com Booming Blade, armadura pesada com Soul of the Forge, Spirit Guardians para segurar os inimigos perto.",
+   "estrategia": "Corpo a corpo com Booming Blade; Spirit Guardians e Spiritual Weapon; Hold Person e Banishment quando precisa.",
+   "nao_modelado": "Dano secundário do Booming Blade; empurrão do Crusher; War Caster (Booming Blade no ataque de oportunidade); resistência a fogo; Searing Smite, Heat Metal, Elemental Weapon, Wall of Fire, Animate Objects; Blessing of the Forge num aliado; cura (Healing Word)."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Cleric 3; For 17; CA 18."
+  },
+  "5": {
+   "_texto": "Cleric 5; For 18 (Crusher); CA 18.",
+   "corpo": {
+    "ca": 18,
+    "pv": 43,
+    "saves": {
+     "sv": {
+      "for": 4,
+      "des": -1,
+      "con": 3,
+      "int": -1,
+      "sab": 6,
+      "car": 2
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 2
+    },
+    "outros": {
+     "canal": {
+      "qtd": 1,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 14,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": []
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless"
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       },
+       {
+        "n": 1.0,
+        "bonus": 6,
+        "dano": "1d8+3",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 14,
+        "save": "Sab",
+        "dano": "3d8",
+        "meio": true,
+        "nota": "Spirit Guardians (3º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (3º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "3d8",
+       "cd": 14,
+       "metade": true
+      },
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 14,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       },
+       {
+        "n": 0.75,
+        "bonus": 6,
+        "dano": "1d8+3",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 14,
+        "save": "Sab",
+        "dano": "3d8",
+        "meio": true,
+        "nota": "Spirit Guardians (3º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (3º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "3d8",
+       "cd": 14,
+       "metade": true
+      },
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 14,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 14,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Cleric 7; For 18 (Crusher); CA 21 (placas + Soul of the Forge).",
+   "corpo": {
+    "ca": 21,
+    "pv": 59,
+    "saves": {
+     "sv": {
+      "for": 4,
+      "des": -1,
+      "con": 3,
+      "int": -1,
+      "sab": 6,
+      "car": 2
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 1
+    },
+    "outros": {
+     "canal": {
+      "qtd": 2,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 14,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": []
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless"
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       },
+       {
+        "n": 1.0,
+        "bonus": 6,
+        "dano": "1d8+3",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 14,
+        "save": "Sab",
+        "dano": "4d8",
+        "meio": true,
+        "nota": "Spirit Guardians (4º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (4º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "4d8",
+       "cd": 14,
+       "metade": true
+      },
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 14,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "3": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       },
+       {
+        "n": 0.75,
+        "bonus": 6,
+        "dano": "1d8+3",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 14,
+        "save": "Sab",
+        "dano": "4d8",
+        "meio": true,
+        "nota": "Spirit Guardians (4º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (4º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "4d8",
+       "cd": 14,
+       "metade": true
+      },
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 14,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "2": 1,
+       "3": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d6+5+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 14,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 14,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "2": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Cleric 9; For 18 (Crusher); CA 21 (placas + Soul of the Forge).",
+   "corpo": {
+    "ca": 21,
+    "pv": 75,
+    "saves": {
+     "sv": {
+      "for": 4,
+      "des": -1,
+      "con": 3,
+      "int": -1,
+      "sab": 7,
+      "car": 3
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 1
+    },
+    "outros": {
+     "canal": {
+      "qtd": 2,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d6+5+1d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": []
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d6+5+1d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless"
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d6+5+1d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       },
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+3",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d6+5+1d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "5d8",
+        "meio": true,
+        "nota": "Spirit Guardians (5º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (5º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 15,
+       "metade": true
+      },
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "4": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d6+5+1d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       },
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+3",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "5d8",
+        "meio": true,
+        "nota": "Spirit Guardians (5º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (5º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 15,
+       "metade": true
+      },
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "2": 1,
+       "4": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d6+5+1d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 15,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Cleric 11; For 18 (Crusher); CA 21 (placas + Soul of the Forge).",
+   "corpo": {
+    "ca": 21,
+    "pv": 91,
+    "saves": {
+     "sv": {
+      "for": 4,
+      "des": -1,
+      "con": 3,
+      "int": -1,
+      "sab": 7,
+      "car": 3
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 2,
+     "6": 1
+    },
+    "outros": {
+     "canal": {
+      "qtd": 2,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d6+5+2d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": []
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d6+5+2d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless"
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d6+5+2d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       },
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+3",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d6+5+2d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "6d8",
+        "meio": true,
+        "nota": "Spirit Guardians (6º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (6º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "6d8",
+       "cd": 15,
+       "metade": true
+      },
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 1,
+       "5": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d6+5+2d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       },
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+3",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "6d8",
+        "meio": true,
+        "nota": "Spirit Guardians (6º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (6º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "6d8",
+       "cd": 15,
+       "metade": true
+      },
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 1,
+       "2": 1,
+       "5": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d6+5+2d8+1d8",
+        "nota": "maça +1 (Blessing of the Forge) + Booming Blade + Divine Strike"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 15,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    }
+   ]
+  }
+ }
+}

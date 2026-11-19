@@ -1,0 +1,380 @@
+{
+ "gerado_de": "progressoes/rpgbot-cleric-trickery.json",
+ "build": "Rogue 1 / Cleric (Trickery) / Rogue 3 (Arcane Trickster, personagem 10–11), Meio-elfo; peitoral + escudo; Sab 18 (Cleric 4), Des 18 (Cleric 8)",
+ "corpo": {
+  "ca": 18,
+  "pv": 66,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 8,
+    "con": 2,
+    "int": 3,
+    "sab": 4,
+    "car": 1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 2
+  },
+  "outros": {
+   "canal": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 16,
+      "save": "Des",
+      "dano": "2d8+1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": []
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "bless",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Des",
+      "dano": "2d8+1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Des",
+      "dano": "2d8+1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 16,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 16,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "duplicidade",
+   "hipotese": "Invoke Duplicity (Channel Divinity, concentração): rapieira com vantagem e Sneak Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 8,
+      "dano": "1d8+4+1d8",
+      "vantagem": 1.0,
+      "nota": "rapieira + Blessed Strikes"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d6",
+      "nota": "Sneak Attack"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "arma-espiritual",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 16,
+      "save": "Des",
+      "dano": "2d8+1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "guardioes",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Des",
+      "dano": "2d8+1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     },
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "4d8",
+      "meio": true,
+      "nota": "Spirit Guardians (4º) no alvo"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (4º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "4d8",
+     "cd": 16,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes"
+  },
+  {
+   "id": "guardioes-arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Des",
+      "dano": "2d8+1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     },
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "4d8",
+      "meio": true,
+      "nota": "Spirit Guardians (4º) no alvo"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (4º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "4d8",
+     "cd": 16,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes-arma"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: arma-espiritual; prioritário: guardioes-arma. Sobra: 4×1º, 2×3º, 2 canal.",
+   "combates": [
+    "arma-espiritual",
+    "guardioes-arma",
+    "arma-espiritual",
+    "guardioes-arma"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 4×1º, 2×2º, 3×3º, 1×4º, 2 canal.",
+   "combates": [
+    "guardioes-arma"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Clérigo trapaceiro com dip de Rogue: perícias e furtividade; na luta, Sacred Flame ou rapieira com vantagem do Invoke Duplicity para o Sneak Attack.",
+  "estrategia": "Invoke Duplicity nas lutas corpo a corpo (vantagem e Sneak Attack); fora disso, Sacred Flame, Spirit Guardians e Spiritual Weapon; Polymorph no 9.",
+  "nao_modelado": "Pass Without Trace, Blessing of the Trickster e perícias; Mirror Image e Blink; Cloak of Shadows; magias lançadas da ilusão (Word of Radiance); Cunning Action; Silvery Barbs e magias do Arcane Trickster; cura (Healing Word).",
+  "progressao": "Rogue 1 / Cleric 8; Sab 18, Des 18; peitoral + escudo."
+ },
+ "id": "rpgbot-cleric-trickery-9",
+ "nome": "Trickery Domain Cleric (RPGBot: Half-Elf Trickery Cleric / Rogue)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/trickery-domain/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

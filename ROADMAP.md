@@ -708,3 +708,10 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   a extrapolação não converge e o limiar 0,11 (compartilhado com a tag) ainda são constantes em `total.py`. Não viraram
   premissa agora porque cadastrar `controle.*` muda o hash e recalcula todo o Controle; melhor fazer junto com a escolha
   entre teto em 20 / régua por papel / L' só até nível ± 5, para recalcular uma vez só.
+## 19/11 (noite) — Cleric lote 2 (8 domínios) + gabarito conferido
+- `ferramentas/geradores/cle2.py`: Arcana, Forge, Knowledge, Order (C/Sorc 1), Tempest, Trickery (Rogue/C), Twilight, War.
+  Os 14 domínios estão na passada 1 (70 fatias). Convenções novas no fim da seção "Clérigos".
+- Gabarito `calibracao/rpgbot-cleric.json` conferido pelo usuário (Peace e Twilight = 5). **Autoria:** o guia de
+  subclasses (autor principal, régua única) às vezes discorda dos handbooks (outros autores): War laranja × "on the
+  stronger end"; Knowledge laranja → verde pelo próprio handbook. `nota` = guia de subclasses; `nota_handbook` quando
+  difere; comparar com e sem os domínios em conflito.

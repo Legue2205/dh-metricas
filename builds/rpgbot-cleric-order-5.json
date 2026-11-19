@@ -1,0 +1,283 @@
+{
+ "gerado_de": "progressoes/rpgbot-cleric-order.json",
+ "build": "Cleric (Order) / Sorcerer 1 (Divine Soul: Bless, Silvery Barbs), Shifter; armadura pesada + escudo; Fey Touched (personagem 5), Sab 20 (9)",
+ "corpo": {
+  "ca": 18,
+  "pv": 42,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": -1,
+    "con": 3,
+    "int": 0,
+    "sab": 7,
+    "car": 5
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 2
+  },
+  "outros": {
+   "canal": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": []
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Command",
+        "cd": 15,
+        "slots": [
+         1
+        ],
+        "magias": [
+         "command"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "bless",
+   "hipotese": "Bless + Voice of Authority (1 ataque de aliado)",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     },
+     {
+      "nome": "Voice of Authority (1 ataque de aliado por reação)",
+      "lado": "of",
+      "modelo": "ataque_extra",
+      "alvos": 0.25
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "voz",
+   "hipotese": "Healing Word num aliado como ação bônus em 2 rounds (Voice of Authority) + truques",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Voice of Authority (2 ataques de aliado por reação)",
+      "lado": "of",
+      "modelo": "ataque_extra",
+      "alvos": 0.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 2
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "arma-espiritual",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "arma-espiritual"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: voz; prioritário: voz. Sobra: 1×3º, 1 canal.",
+   "combates": [
+    "voz",
+    "voz",
+    "voz",
+    "voz"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 4×1º, 2×2º, 2×3º, 1 canal.",
+   "combates": [
+    "controle"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Clérigo da ordem de suporte: cada magia de nível num aliado (Healing Word, Bless) dá a ele um ataque por reação (Voice of Authority).",
+  "estrategia": "Bless ou Healing Word para disparar ataques dos aliados, truques na ação; Command, Hold Person e Banishment; Spirit Guardians quando vale.",
+  "nao_modelado": "Silvery Barbs (vantagem + Voice of Authority); Embodiment of Law (encantamento como ação bônus); Order's Demand; Slow; Heroism e Shield of Faith; Favored by the Gods; Inspiring Leader (13).",
+  "progressao": "Cleric 4 / Sorcerer 1 (Divine Soul, personagem 2); Sab 18; cota de malha + escudo."
+ },
+ "id": "rpgbot-cleric-order-5",
+ "nome": "Order Domain Cleric (RPGBot: I heard a rumor this was originally UA content)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/order/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

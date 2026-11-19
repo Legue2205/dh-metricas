@@ -105,7 +105,12 @@ def _nota(x, sub):
 
 def agregar(b, res_linhas, magias, letra):
     """Resultado de cada plano: por eixo, média do dia (ponderada) e média por categoria.
-    Eixo ausente em todos os combates = sem nota; ausente só em alguns = 0 neles (não fez aquilo naquela luta)."""
+    Eixo ausente em todos os combates = sem nota; ausente só em alguns = 0 neles (não fez aquilo naquela luta).
+    Os eixos entram como no JSON gravado (float do Python): um eixo recém-calculado vem com numpy.float64, que
+    arredonda empates de outro jeito (round(np.float64(0.45), 1) = 0.4; round(0.45, 1) = 0.5). Assim o plano não
+    depende de o eixo ter sido recalculado ou reaproveitado do cache (19/11, tarefa 3)."""
+    import json
+    res_linhas = json.loads(json.dumps(res_linhas))
     out = {}
     for tag in b.get('planos', {}):
         _, combates, sobra = livro_caixa(b, tag, magias)

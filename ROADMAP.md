@@ -604,3 +604,23 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   `pages: write` e `id-token: write`, ambiente `github-pages`) está com `continue-on-error: true`. A troca da fonte do
   Pages pela API (`gh api -X PUT/POST repos/Legue2205/dh-metricas/pages -f build_type=workflow`) foi recusada pelo
   proxy da sessão (403, também no GET), então **docs/ continua sendo commitado na main** até o usuário trocar.
+  - **O deploy pelo Actions já funciona** com a fonte atual: no 1º CI o job `publicar` deu "Reported success" e o
+    ambiente `github-pages` apontou para https://legue2205.github.io/dh-metricas/. Mas o Pages continua em modo
+    branch (o `pages-build-deployment` ainda roda a cada push na main), então hoje os dois publicam o mesmo `docs/`.
+- **Bug achado pelo reaproveitamento e corrigido (`dh/planos.py`)**: um eixo recém-calculado chega aos planos como
+  `numpy.float64` e um reaproveitado chega como `float` (lido do JSON), e os dois arredondam empates de jeitos
+  diferentes (`round(np.float64(0.45), 1)` = 0,4; `round(0.45, 1)` = 0,5). O CI com só a Área recalculada mudou 150
+  resultados: as linhas ficaram idênticas, mas algumas médias de plano mudaram. Agora `planos.agregar` lê os eixos
+  como no JSON gravado, e o plano não depende mais de o eixo ter vindo do cache (teste
+  `test_planos_nao_dependem_de_numpy`). Efeito em relação ao estado de antes da tarefa (linhas idênticas): **±0,1 em
+  11 médias de plano de 10 builds**, todas da passada RPGBot: Arcane Archer 3 (corpo np 0,0→0,1), Battle Master 3
+  (corpo np 0,4→0,5), Cavalier 5 (corpo 1,2→1,1 no padrão e no combate único), PDK 9 (corpo 1,0→1,1), Enchantment 3
+  (controle 0,2→0,1), Illusion 3 (controle np 1,2→1,1), Necromancy 3 e Scribes 3 (controle 2,2→2,1), Scribes 7
+  (corpo np 2,0→1,9), Transmutation 11 (controle np 0,9→0,8). Nenhuma letra muda (conferido em todas as tags e
+  eixos dos planos).
+- **Tempo do CI** (antes: ~20 s num push sem build nova; recálculo completo 12–17 min):
+  - push sem mudança de número (1º push, só carimbou as impressões): **1m48s** no total (`rodar` 1m31s, dos quais
+    pytest 73 s e `dh completo` 0 s com as 157 builds em cache; `publicar` 10 s). O pytest subiu de 12 s para ~50–75 s
+    no CI por causa de `tests/test_impressoes.py` (recalcula 3 builds do zero).
+  - mudança só em `dh/horda.py` (só a Área): **2m26s** no total (`dh completo` 58 s: régua da horda refeita + Área
+    das 157 builds, o resto copiado), contra 12–17 min antes.

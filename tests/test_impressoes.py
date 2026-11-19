@@ -126,3 +126,22 @@ def test_so_segundos_nao_regrava(tmp_res):
     arq = tmp_res / 'kael-7.json'; antes = arq.read_text(encoding='utf-8')
     motor.avaliar(B / 'kael-7.json', 'rapido', forcar=True)
     assert arq.read_text(encoding='utf-8') == antes
+
+
+def test_planos_nao_dependem_de_numpy(tmp_res):
+    """Eixo recém-calculado (numpy.float64) e reaproveitado do JSON (float) dão o mesmo plano."""
+    import numpy as np
+    from dh import base, planos
+    from dh.build import carregar
+    from dh.controle import campo
+    b = carregar(B / 'rpgbot-fighter-battle-master-3.json')
+    _, r = motor.avaliar(B / 'rpgbot-fighter-battle-master-3.json', 'rapido')
+    def np_(x):
+        if isinstance(x, dict): return {k: np_(v) for k, v in x.items()}
+        if isinstance(x, list): return [np_(v) for v in x]
+        return np.float64(x) if isinstance(x, float) else x
+    linhas = json.loads(json.dumps(r['linhas']))
+    for l in linhas.values(): l['controle']['nivel_atencao'] = 0.45        # empate no arredondamento
+    a = planos.agregar(b, linhas, campo.MAGIAS, base.letra)
+    c = planos.agregar(b, np_(linhas), campo.MAGIAS, base.letra)
+    assert json.loads(json.dumps(a)) == json.loads(json.dumps(c, default=float))

@@ -648,3 +648,22 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   mudar número, subir `VERSAO`.
 - Avisos do Actions: `actions/checkout@v4`, `setup-python@v5`, `upload-pages-artifact@v3` e `deploy-pages@v4` usam
   Node 20 (obsoleto, forçado para Node 24). Funciona; atualizar as versões quando saírem as novas.
+
+## 19/11 (tarde) — decisões: corpo como nível equivalente; Cleric antes de mexer na Área
+- **Área:** congelada como está (passada 3). Só repensar depois do Cleric (e do Bard), porque Controle e Suporte
+  também podem mudar de modelo; evitar mudar e desfazer.
+- **Corpo = nível equivalente de neutralidade** (decisão do usuário): a build fica fixa (CA, PV, taunt, DPR do nível
+  dela) e é posta em parties e encontros de nível L' = 1..20; a nota é o L' em que o saldo T (vidas poupadas pela
+  party inteira com a atenção) cruza zero. Neutro no próprio nível ⇒ nota = nível da build.
+  - Busca: primeiro cruzamento vindo do nível da build para baixo (ou para cima, se T > 0), interpolando entre níveis
+    inteiros (protege contra os degraus da tabela de CR).
+  - Extremos: positivo ainda no 20 ⇒ 20+ (extrapolar pela inclinação); negativo já no 1 ⇒ nota < 1 por extrapolação,
+    nunca 0 fixo.
+  - A TAG (perfil T/S/P) continua calculada no nível da própria build. Nota < nível ⇔ tag negativa; nota > nível ⇔ positiva.
+  - Custo: ~5 avaliações extras por linha (busca binária); o cache por eixo só recalcula o Corpo.
+- **Cleric:** Docs criados no Drive (01-classes/classe-cleric, 02-subclasses/subclasses-cleric (Ctrl+V com cores),
+  04-magias/magias-cleric, 03-builds/build-cleric-<domínio> para os 14 domínios 2014: Arcana, Death, Forge, Grave,
+  Knowledge, Life, Light, Nature, Order, Peace, Tempest, Trickery, Twilight, War). Quando preenchidos: implementar o
+  corpo novo, passada 1 cega do Cleric (premissas congeladas, convenções de conjurador + frontliner), recálculo,
+  depois ler as notas, gabarito `calibracao/rpgbot-cleric.json` e comparação. Não mexer na Área.
+- Pendente do usuário: Settings → Pages → Source: GitHub Actions.

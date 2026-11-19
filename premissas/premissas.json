@@ -1641,5 +1641,19 @@
   "desde": "2026-11-19",
   "descricao": "CA usada para o DPR da atenção quando a build declara \"dpr\": \"auto\" (a mesma coluna que a party usa).",
   "historico": []
+ },
+ "controle.marca.fator_sem_resistencia": {
+  "valor": 0.5,
+  "eixo": "controle",
+  "desde": "2026-11-19",
+  "descricao": "Marca no acerto só com desvantagem contra os outros (Unwavering Mark), sem a resistência que os aliados ganham no Ancestral Protectors: fração do valor da marca completa. 0,5 ≈ (1 − p_desv/p) ÷ (1 − 0,5·p_desv/p) com p ≈ 0,65.",
+  "historico": [
+   {
+    "data": "2026-11-19",
+    "de": null,
+    "para": 0.5,
+    "motivo": "Usuário: Ancestral Protectors é mais forte que Unwavering Mark (resistência ao dano nos aliados)."
+   }
+  ]
  }
 }

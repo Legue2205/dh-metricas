@@ -2,7 +2,7 @@ from dh.controle import campo as C, efeitos
 
 
 def _E(lr=0):
-    return [dict(ca=15, fr=1, fo=5, sb=0, lr=lr, cr=5, w=1.0, dn=10, hp=100, melee=True)]
+    return [dict(ca=15, fr=1, fo=5, sb=0, lr=lr, cr=5, w=1.0, dn=10, hp=100, melee=True, atk=6)]
 
 
 def _v(**f):
@@ -21,3 +21,11 @@ def test_um_turno_repete_e_sem_ataque():
     C.configurar(4000)
     um = _v(efeito='cond_derrubado', usos=4)
     assert 0 < um < _v(efeito='cond_derrubado', usos=4, no_acerto=False) <= 0.25
+
+
+def test_marca_sem_resistencia_vale_menos():
+    C.configurar(4000)
+    E = _E()
+    com = float(efeitos._ancestral(dict(bonus=8), E, 'Campo aberto', dict(nivel=5, ca=18, pv=50)).sum())
+    sem = float(efeitos._ancestral(dict(bonus=8, resistencia=False), E, 'Campo aberto', dict(nivel=5, ca=18, pv=50)).sum())
+    assert 0 < sem < com

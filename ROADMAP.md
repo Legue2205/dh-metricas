@@ -456,3 +456,12 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - Resultado da passada 2 (CI 19/11): tau (nota RPGBot × média de dano, Def. F, Def. M, controle) 0,32 → 0,42 no
   nível 7 e 0,34 → 0,51 no 11. Controle agora: Cavalier 4,9/6,2, Rune Knight 6,4/6,6, PDK 2,3/2,8, BM 2,2.
 - Site: caixa "Mostrar RPGBot" (desligada por padrão) e seletor de nível da fatia; o nome de cada entrada leva "nv N".
+
+## 19/11 — Ancestral × Unwavering Mark; Wizard preparado
+- Usuário: Ancestral Protectors é mais forte (aliados ganham resistência ao dano do marcado). `ancestral_protectors`
+  ganha `"resistencia"` (padrão true); sem ela (Unwavering Mark do Cavalier) vale a premissa
+  `controle.marca.fator_sem_resistencia` = 0,5. Muda só o controle do Cavalier (cai).
+- Docs criados no Drive para o Wizard (classe, subclasses, 13 builds: Abjuration, Bladesinging, Chronurgy,
+  Conjuration, Divination, Enchantment, Evocation, Graviturgy, Illusion, Necromancy, Order of Scribes, Transmutation,
+  War Magic) e para as listas de magias (`04-magias/magias-wizard`, `magias-eldritch-knight`).
+- Próximo: ingestão do Wizard inteiro numa passada (premissas congeladas), depois gabarito e comparação.

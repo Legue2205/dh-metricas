@@ -30,7 +30,7 @@ def _mag(nome, sobre=None):
     return C.magia(nome, **(sobre or {}))
 
 
-from ..premissas import grupo as _grupo
+from ..premissas import P, grupo as _grupo
 PADROES = _grupo('controle.padroes')   # premissas controle.padroes.*: valores usados quando a fonte não informa
 
 
@@ -147,7 +147,8 @@ def _ancestral(f, E, topo, t):
         p1 = p_acerto(b, c['ca']); p1a = p_acerto(b, c['ca'], 1); pn = p_acerto(c['atk'], 15)
         marc = (1 - pa) * (1 - 0.5 * pn) + pa * C.dil(t, c)
         turnos = sum((1 - (1 - (p1 if r == 0 else p1a)) ** 2) * (1 if r < R - 1 else 0.5) for r in range(R))
-        return turnos / R * marc
+        fator = 1.0 if f.get('resistencia', True) else P('controle.marca.fator_sem_resistencia')
+        return turnos / R * marc * fator
     return C.unico(E, g)
 
 

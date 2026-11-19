@@ -731,3 +731,29 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   (20,8/26,9) — idem Order (19,6/25,5). Tempest 11 tem área 20,0 (Destructive Wrath no Call Lightning?) — conferir.
   Isto reforça o padrão 1 (corpo explode para CA alta atrás) e pede Suporte para auras de PV temporário (Twilight).
 - `dh validar 'builds/*.json'`: tudo OK, sem AVISO de espaços. CI disparado para recalcular a passada 2.
+
+## 19/11 (noite 4) — Cleric passada 2 (correções mecânicas, sem supervisão) e pauta para a passada 3
+- Feito (convenções no fim de `calibracao/convencoes-passada1.md`): variantes "+arma" (Spiritual Weapon do round 2) nas
+  linhas de Channel Divinity e Bless; valor do Channel no plano = espaço do Harness Divine Power. Twilight 7: Suporte
+  0 → 5,9 (o santuário passou a entrar no plano). Tempest 11 com Área 20 é Destructive Wave + Destructive Wrath (6 alvos),
+  como pretendido.
+- Resultado (CI de `1883d42`, plano padrão, n = 14): 5 eixos tau −0,11 / −0,12 (nv 7 / 11); com Suporte e Corpo
+  +0,21 / +0,07. A passada 2 mexeu pouco: os desvios grandes são de modelo, não de mecânica faltando.
+- **Pauta para discutir antes da passada 3 (não mexido por envolver julgamento):**
+  1. **Corpo novo infla quem fica atrás com CA alta** (Light 20,8/26,9, Order 19,6/25,5, Nature/Peace ~22 no 11). Opções:
+     teto em 20, régua por papel, busca limitada a ±5 níveis, ou CA de referência do conjurador maior.
+  2. **Plano automático = uma linha por luta**: sobra recurso (Life 9 termina com 2 Channel e 11 espaços; nunca usa o
+     Preserve Life porque Banishment vale 4 no livro-caixa). Opções: permitir 2 linhas compatíveis por luta, ou um passo
+     de "gastar a sobra" (cura/Bless) no fim do plano.
+  3. **Spirit Guardians dura 10 minutos**: pela convenção do Hex/invocações de 1 hora, 1 espaço cobriria ~2 lutas
+     (`gasta` 0,5)? Muda muito todos os clérigos (é a linha que mais rende Área).
+  4. **Healing Word / cura na luta** não modelada em nenhum clérigo (Life, Grave e Peace perdem a identidade). Proposta:
+     1 Healing Word por luta como `levantar` (Disciple of Life e Circle of Mortality somam), mas isso assume um aliado
+     caído por luta — calibrar a frequência.
+  5. **Mecânicas defensivas sem tipo no motor**: Warding Flare (Light: desvantagem num ataque por reação), Sentinel at
+     Death's Door (Grave: crítico vira acerto), Dampen Elements (Nature), Protective Bond (Peace: redistribui dano).
+     Precisam de um tipo de reação novo em `dh/defesa.py`.
+  6. **Área homogênea** (8,1–8,8 no 7 para todos): o Spirit Guardians da lista comum domina; Light (azul, blaster) não
+     se destaca. Mesmo padrão da Fireball no Wizard: medir a subclasse pelo diferencial sobre um "clérigo base"?
+  7. Command (efeito de um turno) sem suporte como alvo único no motor de controle.
+- Aviso: houve outra sessão trabalhando no repo ao mesmo tempo (commits `f779f4a` e `cd69c85`, session_01SzatyJS1yzFHjnSxcrkD6G).

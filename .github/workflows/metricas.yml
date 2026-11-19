@@ -4,6 +4,11 @@ on:
     branches: [main]
     paths: ['builds/**', 'progressoes/**', 'dh/**', 'tests/**']
   workflow_dispatch:
+    inputs:
+      forcar:
+        description: 'Recalcular todas as builds (--forcar), mesmo as que estão em cache'
+        type: boolean
+        default: false
 permissions:
   contents: write
 jobs:
@@ -17,7 +22,7 @@ jobs:
       - run: python -m dh expandir
       - run: python -m dh validar 'builds/*.json'
       - run: python -m pytest -q
-      - run: python -m dh completo 'builds/*.json' > /dev/null
+      - run: python -m dh completo 'builds/*.json' ${{ inputs.forcar && '--forcar' || '' }}
       - run: |
           { echo '# Painel (gerado automaticamente)'; echo; echo '```'; python -m dh painel; echo; python -m dh painel dia_longo; echo '```'; } > PAINEL.md
       - run: python -m dh site

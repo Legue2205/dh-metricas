@@ -212,7 +212,9 @@ def _regua_cache(s, n):
         S, N, rng = s, n, np.random.default_rng(21)
         r1, r3 = regua()
         d[chave] = [[r1[L] for L in range(1, 21)], [r3[L] for L in range(1, 21)]]
-        arq.parent.mkdir(exist_ok=True); arq.write_text(json.dumps(d))
+        from .arquivos import gravar
+        if arq.exists(): d = {**json.loads(arq.read_text()), **d}   # outro processo pode ter gravado outra chave
+        gravar(arq, json.dumps(d))
     _REGUA[chave] = tuple({L: v[L - 1] for L in range(1, 21)} for v in d[chave])
     return _REGUA[chave]
 

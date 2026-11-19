@@ -126,7 +126,8 @@ def _regua_ref():
         hp0, ac, sv = A.CR[A.HORDA[L]]
         dpr = p_acerto(A.pb(L) + _mod(L), ac) * med
         R0[L] = 1.0 / combate(L, A.ref_usos(L, 1), dpr)
-    arq.parent.mkdir(exist_ok=True); arq.write_text(json.dumps(R0))
+    from .arquivos import gravar
+    gravar(arq, json.dumps(R0))
     return R0
 
 

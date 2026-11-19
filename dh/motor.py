@@ -81,8 +81,8 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
     if any(l.get('dano') for l in b['linhas']): eixos_b.add('area')
     res['premissas'] = {**premissas.relevantes(eixos_b), **premissas.usadas()}
     if not eixos and not linhas:
-        RESULTADOS.mkdir(exist_ok=True)
-        arq.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding='utf-8')
+        from .arquivos import gravar
+        gravar(arq, json.dumps(res, ensure_ascii=False, indent=1))
     return b, res
 
 
@@ -99,3 +99,24 @@ def nota(x, sub=None):
     if x is None: return None
     if sub: x = x[sub]
     return (x['nivel_eq'], x['rank']) if x.get('nivel_eq') is not None else None
+
+
+def preaquecer(caminhos, modo='rapido'):
+    """Calcula (ou só carrega) no processo principal as réguas em cache/ que as builds vão pedir, antes de distribuir
+    as builds entre processos: assim nenhum processo filho calcula régua e todos leem o mesmo arquivo pronto."""
+    niveis, eixos = set(), set()
+    for c in caminhos:
+        try: b = carregar(c)
+        except Exception: continue           # o erro aparece quando a build for avaliada
+        niveis.add(b['nivel'])
+        for l in b['linhas']: eixos |= {e for e in ('dano', 'saves', 'controle', 'area', 'tatico') if l.get(e)}
+    if eixos & {'controle', 'tatico'}:
+        r = total.Regua()
+        for L in sorted(niveis | (set(base.NIVEIS_TESTE) if MODOS[modo]['absoluto'] else set())):
+            for tipo in base.PESO_TIPO: r.vetor(tipo, L, 0, 1)
+        r.salva()
+    if 'area' in eixos:
+        for s in area.CENARIOS.values(): area._regua_cache(s, area.N_MODO[modo])
+    if eixos & {'dano', 'tatico'}: horda._regua_ref()
+    if 'saves' in eixos:
+        for rampa in ('res', 'vol'): saves.matriz(rampa)

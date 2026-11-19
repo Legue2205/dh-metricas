@@ -1,4 +1,5 @@
-"""Gera o site estático (docs/index.html) a partir de builds/*.json e resultados/*.json. Um arquivo, sem servidor.
+"""Gera o site estático a partir de builds/*.json e resultados/*.json: docs/index.html leve (modelo + índice da
+tabela) e docs/dados/<id>.json com o detalhe de cada build, buscado pelo front-end ao abrir o detalhe.
 
 Entradas por aba: nas abas de plano (padrao, combate_unico, dia_longo) há uma entrada por build com plano;
 na aba "legado", uma entrada "principal" por build (cada eixo vem da linha principal daquele eixo) e uma por linha.
@@ -109,8 +110,54 @@ def dados():
     return dict(builds=builds, entradas=entradas, abas=list(TAGS) + ['legado'], categorias=CATEGORIAS, rampa=base.RAMPA)
 
 
+# Campos de build que a TABELA usa (ficam no índice); o resto vai para docs/dados/<id>.json.
+_B_INDICE = ('nome', 'grupo', 'nivel', 'build')
+# Campos de entrada que o índice leva; 'fonte', 'plano' e as médias por categoria ('c') vão para o arquivo da build.
+_E_INDICE = ('id', 'b', 'tipo', 'rotulo', 'estrela', 'pv', 'ca', 'dpr15')
+
+
+def dividir(d):
+    """Separa dados() em (índice para a tabela, {id: detalhe}). O front-end junta os dois ao abrir o detalhe."""
+    builds = {i: {k: b[k] for k in _B_INDICE} for i, b in d['builds'].items()}
+    det = {i: dict(descricao=b['descricao'], linhas=b['linhas'], aneis=b['aneis'], ent={}) for i, b in d['builds'].items()}
+    entradas = {}
+    for aba, es in d['entradas'].items():
+        entradas[aba] = []
+        for e in es:
+            x = {k: e[k] for k in _E_INDICE if k in e}
+            x['eixos'] = {k: {kk: vv for kk, vv in v.items() if kk != 'c'} for k, v in e['eixos'].items()}
+            l = d['builds'][e['b']]['linhas'].get(e['fonte'].get('controle')) or {}
+            perfil = ((l.get('res') or {}).get('controle') or {}).get('corpo', {}).get('perfil')
+            if perfil: x['perfil'] = perfil
+            extra = dict(fonte=e['fonte'])
+            if 'plano' in e: extra['plano'] = e['plano']
+            c = {k: v['c'] for k, v in e['eixos'].items() if 'c' in v}
+            if c: extra['c'] = c
+            det[e['b']]['ent'].setdefault(aba, {})[e['id']] = extra
+            entradas[aba].append(x)
+    indice = dict(d, builds=builds, entradas=entradas)
+    return indice, det
+
+
+def _json(x):
+    return json.dumps(x, ensure_ascii=False, separators=(',', ':'))
+
+
 def gerar(destino=None):
-    html = MODELO.read_text(encoding='utf-8').replace('/*DADOS*/null', json.dumps(dados(), ensure_ascii=False).replace('</', '<\\/'))
+    """docs/index.html (modelo + índice) e docs/dados/<id>.json (um por build). Apaga arquivos de builds que sumiram."""
+    import hashlib
     destino = Path(destino or RAIZ / 'docs' / 'index.html'); destino.parent.mkdir(exist_ok=True)
+    indice, det = dividir(dados())
+    pasta = destino.parent / 'dados'; pasta.mkdir(exist_ok=True)
+    h = hashlib.sha1()
+    for i in sorted(det):
+        txt = _json(det[i]); h.update(txt.encode())
+        arq = pasta / f'{i}.json'
+        if not arq.exists() or arq.read_text(encoding='utf-8') != txt:
+            arq.write_text(txt, encoding='utf-8')
+    for arq in pasta.glob('*.json'):
+        if arq.stem not in det: arq.unlink()
+    indice['versao'] = h.hexdigest()[:10]       # vai na URL do fetch: o cache do navegador não mistura versões
+    html = MODELO.read_text(encoding='utf-8').replace('/*DADOS*/null', _json(indice).replace('</', '<\\/'))
     destino.write_text(html, encoding='utf-8')
     return destino

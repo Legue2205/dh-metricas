@@ -112,6 +112,43 @@ def _linhas(b, res):
             for r in rows: print('\t'.join(r))
 
 
+def _carrega_modulos():
+    """Inicializador dos processos filhos: importa tudo antes da 1ª build, para que nenhuma build pague (nem registre
+    como usadas) as premissas lidas na importação de um módulo carregado tarde."""
+    import os
+    for v in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS'): os.environ.setdefault(v, '1')
+    from . import area, horda, planos, saves, tatico  # noqa: F401
+    from .controle import total  # noqa: F401
+
+
+def _um(f, modo, forcar, eixo, linha):
+    try:
+        b, res = motor.avaliar(f, modo, forcar, eixo, linha)
+    except ErroBuild as e:
+        return f, None, str(e)
+    return f, dict(id=res['id'], segundos=res.get('segundos'), cache=res.get('_cache', False)), None
+
+
+def _em_paralelo(arquivos, modo, a):
+    """Várias builds: um processo por núcleo (os.cpu_count()). As réguas são preaquecidas aqui antes; cada build
+    grava o próprio resultados/<id>.json. Saída: uma linha por build, na ordem em que terminam."""
+    import os
+    import time
+    from concurrent.futures import ProcessPoolExecutor, as_completed
+    from multiprocessing import get_context
+    t0 = time.time(); motor.preaquecer(arquivos, modo)
+    n = min(os.cpu_count() or 1, len(arquivos)); erro = 0
+    print(f'{len(arquivos)} builds em {n} processo(s) ({modo}); réguas prontas em {time.time() - t0:.0f} s', flush=True)
+    with ProcessPoolExecutor(n, mp_context=get_context('spawn'), initializer=_carrega_modulos) as ex:
+        fut = [ex.submit(_um, f, modo, a.forcar, a.eixo, a.linha) for f in arquivos]
+        for i, ft in enumerate(as_completed(fut), 1):
+            f, r, e = ft.result()
+            if e: erro = 1; print(f'[{i}/{len(arquivos)}] ERRO {e}', file=sys.stderr, flush=True); continue
+            print(f"[{i}/{len(arquivos)}] {r['id']:40s} " + ('em cache' if r['cache'] else f"{r['segundos']:.1f} s"), flush=True)
+    print(f'pronto em {time.time() - t0:.0f} s')
+    return erro
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog='dh', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua', 'site', 'tatico', 'calibrar', 'expandir', 'plano-auto', 'premissas', 'premissa', 'comparar'])
@@ -238,6 +275,8 @@ def main(argv=None):
         return 0
 
     modo = 'completo' if a.comando == 'completo' else 'rapido'
+    if a.comando in ('rapido', 'completo') and not a.json and len(arquivos) > 1:
+        return _em_paralelo(arquivos, modo, a)
     for f in arquivos:
         try:
             b, res = motor.avaliar(f, modo, a.forcar, a.eixo, a.linha)

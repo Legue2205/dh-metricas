@@ -8,6 +8,7 @@ padrão das planilhas de rank.
 python -m dh validar 'builds/*.json'
 python -m dh rapido   builds/kael-7.json     # segundos: dano + defesa + controle relativo (N=2000)
 python -m dh completo builds/kael-7.json     # + controle absoluto nos 10 níveis de teste (N=8000)
+python -m dh completo 'builds/*.json'        # várias builds: um processo por núcleo, uma linha por build
 python -m dh linhas   builds/kael-7.json     # linhas prontas para colar nas planilhas
 python -m dh painel                          # resumo de tudo que já foi calculado
 python -m pytest -q                          # paridade com as planilhas
@@ -179,7 +180,11 @@ A decisão de como gastar recursos é da build e fica escrita no JSON. **Tag = p
 
 ## Site
 
-`python -m dh site` gera `docs/index.html` (um arquivo, sem servidor; o workflow regenera a cada push).
+`python -m dh site` gera `docs/index.html` (modelo + índice leve com o que a tabela, os filtros e a ordenação usam)
+e `docs/dados/<id>.json` (um por build: linhas, anéis, descrição, planos). O detalhe e a comparação buscam o JSON
+da build com `fetch` ao abrir (cache em memória; a URL leva a versão do índice). A tabela desenha 150 linhas por vez
+("mostrar mais"). Sem servidor próprio; o workflow regenera a cada push. Para abrir localmente:
+`cd docs && python -m http.server` (o `fetch` não funciona com `file://`).
 Publicação: GitHub Pages, branch `main`, pasta `/docs` → https://legue2205.github.io/dh-metricas/
 
 - **Abas**: Dia padrão, Combate único, Dia longo (só builds com plano do dia) e **Legado** (linha principal de

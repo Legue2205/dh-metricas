@@ -94,6 +94,7 @@ ul.h{margin:6px 0 0;padding-left:18px}ul.h li{margin:4px 0}
   <input type="number" id="fv" step="0.1" placeholder="valor" aria-label="Valor"><button id="fadd">+ filtro</button><span id="fchips" class="linha" style="margin:0"></span></div>
  <div class="linha"><label>Ordenar por:</label><select id="oc" aria-label="Ordenar por"></select><button id="od"></button><span class="cont" id="cont"></span></div>
  <div class="rol"><table><thead><tr id="cab"></tr></thead><tbody id="corpo"></tbody></table></div>
+ <p style="text-align:center;margin:8px 0 0"><button id="mais" style="display:none"></button></p>
 </div>
 <div id="det"></div><div id="tip"></div>
 </main><script>
@@ -115,8 +116,20 @@ const sg=x=>x==null?'–':`<span class="${x>0.005?'pos':x<-0.005?'neg':''}">${x>
 const letra=n=>{let r='F';for(const [l,v] of D.rampa)if(n>=v-1e-9)r=l;return r};
 const chip=r=>r?`<span class="rk r${r[0]}">${r}</span>`:'';
 const nota=x=>x?chip(x.r)+f(x.n):'<span class="sem">–</span>';
-const S={aba:D.abas.reduce((m,a)=>D.entradas[a].length>D.entradas[m].length?a:m,D.abas[0]),busca:'',grupos:new Set(),rpg:false,nv:'',sop:true,filtros:[],ord:'nome',dir:1,sel:null,cmp:null,ver:new Set(),cats:false};
+const PAG=150;   // linhas da tabela desenhadas por vez (botão "mostrar mais")
+const S={aba:D.abas.reduce((m,a)=>D.entradas[a].length>D.entradas[m].length?a:m,D.abas[0]),busca:'',grupos:new Set(),rpg:false,nv:'',sop:true,filtros:[],ord:'nome',dir:1,sel:null,cmp:null,ver:new Set(),cats:false,lim:PAG};
 const B=e=>D.builds[e.b];
+// Detalhe de cada build em dados/<id>.json: buscado ao abrir o detalhe ou comparar, guardado em memória e
+// juntado ao índice (linhas, anéis, descrição; fonte/plano/médias por categoria de cada entrada).
+const CACHE={};
+const pronto=e=>!e||!!B(e)._ok;
+function carregar(id){if(CACHE[id])return CACHE[id];
+ CACHE[id]=fetch(`dados/${encodeURIComponent(id)}.json?v=${D.versao||''}`).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(x=>{
+  const b=D.builds[id];Object.assign(b,{descricao:x.descricao,linhas:x.linhas,aneis:x.aneis,_ok:true});
+  for(const [aba,m] of Object.entries(x.ent))for(const e of D.entradas[aba]||[]){const y=m[e.b==id?e.id:null];if(!y)continue;
+   e.fonte=y.fonte;if(y.plano)e.plano=y.plano;for(const [k,c] of Object.entries(y.c||{}))if(e.eixos[k])e.eixos[k].c=c}
+  return b}).catch(err=>{delete CACHE[id];throw err});
+ return CACHE[id]}
 const LN=(e,res)=>{const id=e&&e.fonte[res];return id?B(e).linhas[id]:null};
 const R=(e,res)=>{const l=LN(e,res);return l?l.res[res]:null};
 const val=(e,c)=>c=='nome'?(B(e).nome+' '+e.rotulo).toLowerCase():c=='nivel'?B(e).nivel:c=='pv'?e.pv:c=='ca'?e.ca:c=='dpr15'?e.dpr15:(e.eixos[c]||{}).n;
@@ -142,9 +155,11 @@ function controles(){
 
 function tabela(){const es=visiveis();
  $('#cab').innerHTML=`<th data-o="nome" class="${S.ord=='nome'?'on':''}">Build</th>`+NUM.slice(0,3+AX.length).map(c=>`<th data-o="${c[0]}" class="${S.ord==c[0]?'on':''}">${c[1]}${S.ord==c[0]?(S.dir<0?' ↓':' ↑'):''}</th>`).join('');
- $('#corpo').innerHTML=es.map(e=>{const b=B(e);return `<tr data-id="${esc(e.id)}" class="${e.id==S.sel?'sel':''}"><td><b>${esc(b.nome)}</b>${(()=>{const c=(R(e,'controle')||{}).corpo;return c?` <small class="tag" style="border-color:var(--c-corpo)">${esc(c.perfil)}</small>`:''})()}${e.tipo=='linha'?` <small>· ${esc(e.rotulo)}${e.estrela?' ★':''}</small>`:''}<span class="tag">${esc(b.grupo)}</span></td><td>${b.nivel}</td><td>${f(e.pv,0)}</td><td>${f(e.ca,0)}</td>`+
+ $('#corpo').innerHTML=es.slice(0,S.lim).map(e=>{const b=B(e);return `<tr data-id="${esc(e.id)}" class="${e.id==S.sel?'sel':''}"><td><b>${esc(b.nome)}</b>${e.perfil?` <small class="tag" style="border-color:var(--c-corpo)">${esc(e.perfil)}</small>`:''}${e.tipo=='linha'?` <small>· ${esc(e.rotulo)}${e.estrela?' ★':''}</small>`:''}<span class="tag">${esc(b.grupo)}</span></td><td>${b.nivel}</td><td>${f(e.pv,0)}</td><td>${f(e.ca,0)}</td>`+
   AX.map(a=>`<td>${nota(e.eixos[a.k])}</td>`).join('')+'</tr>'}).join('')||`<tr><td colspan="11" class="vazio">Nenhuma build nesta visão. ${S.aba!='legado'?'As builds ganham entrada aqui quando o plano do dia delas é escrito; por enquanto estão em “Legado”.':'Afrouxe os filtros.'}</td></tr>`;
- $('#cont').textContent=es.length+(es.length==1?' entrada':' entradas')}
+ const resto=es.length-S.lim;$('#mais').style.display=resto>0?'':'none';
+ if(resto>0)$('#mais').textContent=`mostrar mais ${Math.min(PAG,resto)} (faltam ${resto})`;
+ $('#cont').textContent=(resto>0?`${S.lim} de `:'')+es.length+(es.length==1?' entrada':' entradas')}
 
 function radar(series,extra,an){const vs=[...series.flatMap(sr=>Object.values(sr.eixos).map(x=>x.n)),...(an?Object.values(an.externo).map(x=>x.n):[]),...(extra||[]).flatMap(x=>Object.values(x.v).filter(v=>v!=null))];
  const M=[7,11,16,20].find(m=>m>=Math.max(0,...vs)+0.5)||20;   // zoom: escala até o próximo degrau de letra (B, A, S)
@@ -220,7 +235,13 @@ const POS={tank:'Tanque',striker:'2º marcial',atirador:'Atirador / backliner',c
 function posTag(e){const l=LN(e,'controle'),c=l&&l.res.controle&&l.res.controle.corpo;if(!l)return '';
  return `<p class="pos"><span class="tag" style="font-size:13px;color:var(--ink)">📍 ${esc(POS[l.spec.papel]||l.spec.papel||'')}</span>${c?` <span class="tag" style="font-size:13px;color:var(--ink);border-color:var(--c-corpo)" data-tip="T ${f(c.T,2)} · S ${f(c.S,2)} · P ${f(c.P,2)} (vidas por luta)">🧍 ${esc(c.perfil)}</span>`:''}</p>`}
 function detalhe(){const el=$('#det'),es=D.entradas[S.aba],e=es.find(x=>x.id==S.sel);if(!e){el.innerHTML='';return}
- const c=S.cmp?es.find(x=>x.id==S.cmp):null,b=B(e),d=b.descricao||{};
+ const c=S.cmp?es.find(x=>x.id==S.cmp):null,b=B(e);
+ if(!pronto(e)||!pronto(c)){const sel=S.sel,cmp=S.cmp;
+  el.innerHTML=`<div class="topo"><div class="t"><h2>${esc(nomeE(e))}</h2><p class="vazio" id="carregando">carregando…</p></div><button id="fechar">✕ Fechar</button></div>`;
+  Promise.all([e,c].filter(x=>x&&!pronto(x)).map(x=>carregar(x.b))).then(()=>{if(S.sel==sel&&S.cmp==cmp)detalhe()},
+   err=>{const p=$('#carregando');if(p&&S.sel==sel)p.textContent='não foi possível carregar os dados desta build ('+err.message+').'});
+  return}
+ const d=b.descricao||{};
  const ops=es.filter(x=>x.id!=e.id&&(S.rpg||B(x).grupo!='RPGBot')&&(S.aba!='legado'||x.tipo==(S.sop?'principal':'linha'))).sort((x,y)=>nomeE(x).localeCompare(nomeE(y)));
  let h=`<div class="topo"><div class="t"><h2>${esc(nomeE(e))}</h2><p>Nível ${b.nivel} · ${esc(b.grupo)} · ${esc(b.build)}</p>${posTag(e)}${d.resumo?`<p style="color:var(--ink)">${esc(d.resumo)}</p>`:''}</div>
   <select id="cmp" aria-label="Comparar com"><option value="">⚖️ Comparar com…</option>${ops.map(x=>`<option value="${esc(x.id)}" ${x.id==S.cmp?'selected':''}>${esc(nomeE(x))}</option>`).join('')}</select><button id="fechar">✕ Fechar</button></div>`;
@@ -245,17 +266,19 @@ function detalhe(){const el=$('#det'),es=D.entradas[S.aba],e=es.find(x=>x.id==S.
  el.innerHTML=h}
 
 function tudo(){controles();tabela();detalhe()}
+const reinicia=()=>{S.lim=PAG};
 $('#fc').innerHTML=NUM.map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('');$('#oc').innerHTML=CAMPOS.map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('');
 document.addEventListener('click',ev=>{const t=ev.target,ln=t.closest('[data-ln]');if(ln){const id=ln.dataset.ln;if(S.ver.has(id))S.ver.delete(id);else{if(S.ver.size>=4)S.ver.delete([...S.ver][0]);S.ver.add(id)}detalhe();return}
  if(t.closest('[data-limpa]')){S.ver.clear();detalhe();return}if(t.closest('[data-cats]')){S.cats=!S.cats;detalhe();return}const a=t.closest('[data-aba]'),g=t.closest('[data-g]'),rm=t.closest('[data-rm]'),o=t.closest('th[data-o]'),r=t.closest('tr[data-id]');
- if(a){S.aba=a.dataset.aba;S.sel=S.cmp=null}else if(g){S.grupos.has(g.dataset.g)?S.grupos.delete(g.dataset.g):S.grupos.add(g.dataset.g)}else if(rm){S.filtros.splice(+rm.dataset.rm,1)}
+ if(t.id=='mais'){S.lim+=PAG;tabela();return}
+ if(a){S.aba=a.dataset.aba;S.sel=S.cmp=null;reinicia()}else if(g){S.grupos.has(g.dataset.g)?S.grupos.delete(g.dataset.g):S.grupos.add(g.dataset.g);reinicia()}else if(rm){S.filtros.splice(+rm.dataset.rm,1);reinicia()}
  else if(o){if(S.ord==o.dataset.o)S.dir=-S.dir;else{S.ord=o.dataset.o;S.dir=S.ord=='nome'?1:-1}}
  else if(r){S.sel=S.sel==r.dataset.id?null:r.dataset.id;S.cmp=null;S.ver.clear();tudo();if(S.sel)$('#det').scrollIntoView({behavior:'smooth',block:'start'});return}
- else if(t.id=='fadd'){const v=parseFloat($('#fv').value.replace(',','.'));if(isNaN(v))return;S.filtros.push({c:$('#fc').value,op:$('#fo').value,v});$('#fv').value=''}
+ else if(t.id=='fadd'){const v=parseFloat($('#fv').value.replace(',','.'));if(isNaN(v))return;S.filtros.push({c:$('#fc').value,op:$('#fo').value,v});$('#fv').value='';reinicia()}
  else if(t.id=='od'){S.dir=-S.dir}else if(t.id=='fechar'){S.sel=S.cmp=null}
  else if(t.id=='tema'){const h=document.documentElement;h.dataset.tema=h.dataset.tema=='claro'?'escuro':'claro';try{localStorage.setItem('tema',h.dataset.tema)}catch(e){}return}else return;tudo()});
-document.addEventListener('change',ev=>{const t=ev.target;if(t.id=='sop'){S.sop=t.checked;S.sel=S.cmp=null}else if(t.id=='oc'){S.ord=t.value;S.dir=S.ord=='nome'?1:-1}else if(t.id=='cmp'){S.cmp=t.value||null}else if(t.id=='rpg'){S.rpg=t.checked;if(!S.rpg)S.grupos.delete('RPGBot');S.sel=S.cmp=null}else if(t.id=='nvsel'){S.nv=t.value;S.sel=S.cmp=null}else return;tudo()});
-$('#busca').addEventListener('input',ev=>{S.busca=ev.target.value;tabela()});
+document.addEventListener('change',ev=>{const t=ev.target;if(t.id!='cmp')reinicia();if(t.id=='sop'){S.sop=t.checked;S.sel=S.cmp=null}else if(t.id=='oc'){S.ord=t.value;S.dir=S.ord=='nome'?1:-1}else if(t.id=='cmp'){S.cmp=t.value||null}else if(t.id=='rpg'){S.rpg=t.checked;if(!S.rpg)S.grupos.delete('RPGBot');S.sel=S.cmp=null}else if(t.id=='nvsel'){S.nv=t.value;S.sel=S.cmp=null}else return;tudo()});
+$('#busca').addEventListener('input',ev=>{S.busca=ev.target.value;reinicia();tabela()});
 $('#fv').addEventListener('keydown',ev=>{if(ev.key=='Enter')$('#fadd').click()});
 const tip=$('#tip');document.addEventListener('mousemove',ev=>{const g=ev.target.closest('[data-tip]');if(g){tip.textContent=g.dataset.tip;tip.style.display='block';tip.style.left=Math.min(ev.clientX+12,innerWidth-270)+'px';tip.style.top=ev.clientY+14+'px'}else tip.style.display='none'});
 try{const t=localStorage.getItem('tema');if(t)document.documentElement.dataset.tema=t}catch(e){}

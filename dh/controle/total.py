@@ -69,7 +69,10 @@ class Regua:
 
     def salva(self):
         if self.sujo:
-            CACHE.mkdir(exist_ok=True); self.arq.write_text(json.dumps(self.d)); self.sujo = False
+            from ..arquivos import gravar
+            if self.arq.exists():                                  # junta o que outro processo gravou enquanto isso
+                self.d = {**json.loads(self.arq.read_text()), **self.d}
+            gravar(self.arq, json.dumps(self.d)); self.sujo = False
 
 
 CD_REF = {1: 13, 2: 13, 3: 13, 4: 14, 5: 15, 6: 15, 7: 15, 8: 16, 9: 16, 10: 17, 11: 17, 12: 17,

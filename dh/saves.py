@@ -498,8 +498,10 @@ def matriz(rampa):
     if rampa not in _MATRIZ:
         _MATRIZ[rampa] = {t: np.maximum.accumulate([teste(regua(Lr), rampa, t) for Lr in REGUA_NIVEIS])
                           for t in TESTES}
-        arq.parent.mkdir(exist_ok=True)
-        arq.write_text(json.dumps({r: {str(t): list(map(float, v)) for t, v in m.items()} for r, m in _MATRIZ.items()}))
+        from .arquivos import gravar
+        d = json.loads(arq.read_text()) if arq.exists() else {}       # outro processo pode ter gravado a outra rampa
+        d.update({r: {str(t): list(map(float, v)) for t, v in m.items()} for r, m in _MATRIZ.items()})
+        gravar(arq, json.dumps(d))
     return _MATRIZ[rampa]
 
 

@@ -169,7 +169,11 @@ def test_site_gera(tmp_path):
     assert {e['tipo'] for e in d['entradas']['legado']} == {'principal', 'linha'}
     k = next(e for e in d['entradas']['padrao'] if e['b'] == 'kael-7')
     assert set(k['eixos']) >= {'dano', 'deff', 'defm', 'controle'} and 'c' in k['eixos']['dano']
-    assert '/*DADOS*/null' not in site.gerar(tmp_path / 'i.html').read_text(encoding='utf-8')
+    html = site.gerar(tmp_path / 'i.html').read_text(encoding='utf-8')
+    assert '/*DADOS*/null' not in html and '"linhas"' not in html      # o índice não leva o detalhe
+    det = json.loads((tmp_path / 'dados' / 'kael-7.json').read_text(encoding='utf-8'))
+    assert {'linhas', 'aneis', 'descricao', 'ent'} <= set(det) and 'fonte' in det['ent']['padrao']['kael-7']
+    assert len(list((tmp_path / 'dados').glob('*.json'))) == len(d['builds'])
 
 
 def test_descricao_tem_tamanho_maximo():
@@ -218,7 +222,10 @@ def test_aneis_minimo_equilibrado_maximo():
     for k, v in a['externo'].items():
         assert a['interno'][k]['n'] <= v['n']
         if k in a['equilibrado']: assert a['interno'][k]['n'] - 0.05 <= a['equilibrado'][k]['n'] <= v['n'] + 0.05
-    assert a['interno']['area']['n'] == 0.0          # dia sem área conta 0 (eixo ativo)
+    # dia sem área conta 0 (eixo ativo). Desde a Área v2 (19/11) toda linha com dano tem área, então o interno do
+    # Marcus deixou de ser 0: o mínimo é o da linha que menos faz área (0 só se alguma linha não tiver área).
+    sem_area = any(not (l.get('area') or {}).get('nivel_eq') for l in res['linhas'].values() if 'area' in l or 'dano' in l)
+    assert (a['interno']['area']['n'] == 0.0) if sem_area else a['interno']['area']['n'] > 0
     assert a['linhas']['comum-escudo']['custo'] == 'gasta_recurso'
 
 

@@ -55,7 +55,7 @@ def ficha(spec, corpo):
 def distribui(e, party, ti, grap=None):
     """Probabilidade de cada membro ser o alvo do turno do inimigo e."""
     m = e['mal'] / 3
-    vals = [p['dpr'] / p['pv'] * (H['conc_bonus'] if p.get('conc') else 1) for p in party]
+    vals = [(p['dpr'] / p['pv'] if p['pv'] > 0 else 0.0) * (H['conc_bonus'] if p.get('conc') else 1) for p in party]   # invocação morta: pv 0
     mv = np.mean([v for v, p in zip(vals, party) if not p.get('skel')]) or 1
     w = []
     for p, v in zip(party, vals):

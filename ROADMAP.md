@@ -470,3 +470,16 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - Gerador único para conjuradores (convenções em `calibracao/convencoes-passada1.md`, seção Conjuradores).
 - Biblioteca: +5 efeitos (phantasmal_force, earthen_grasp, phantasmal_killer, cond_hipnotizado, cond_estase).
 - Próximo: CI → ler `subclasses-wizard` (notas) → `calibracao/rpgbot-wizard.json` → comparação.
+
+## 19/11 — Wizard: primeira comparação (passada 1)
+- Gabarito `calibracao/rpgbot-wizard.json` (notas inferidas; usuário confere as cores).
+- tau (nota × média de dano, Def. F, Def. M, controle, área): −0,14 no 7 e 0,12 no 11. Sem concordância.
+- Padrões candidatos:
+  1. Medimos a BUILD; o RPGBot nota a SUBCLASSE. No Wizard o grosso do poder é da lista de magias comum, e as
+     escolhas do guia (dip de Artificer, Polymorph, Fireball) pesam mais que a subclasse (Transmutation, vermelho, no meio).
+  2. Recursos de manipulação de dados fora do modelo (Portent, Chronal Shift, Silvery Barbs, iniciativa): Divination
+     (azul) cai para o fim.
+  3. Área depende do plano automático: o Evoker fica com área 0 no 11 porque o plano preferiu as linhas de controle.
+     Comparar área pelo anel externo (melhor linha), não pelo plano?
+  4. Dano de magias de nível (Fireball, Chain Lightning) só entra na Área; o dano de alvo único dos magos é só truque.
+- Correções no caminho: divisão por zero com invocação de PV 0; Def. Mágica ausente (linha principal sem `saves`).

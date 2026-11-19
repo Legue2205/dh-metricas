@@ -465,3 +465,8 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   Conjuration, Divination, Enchantment, Evocation, Graviturgy, Illusion, Necromancy, Order of Scribes, Transmutation,
   War Magic) e para as listas de magias (`04-magias/magias-wizard`, `magias-eldritch-knight`).
 - Próximo: ingestão do Wizard inteiro numa passada (premissas congeladas), depois gabarito e comparação.
+
+## 19/11 — passada 1 do Wizard (13 subclasses, 65 fatias)
+- Gerador único para conjuradores (convenções em `calibracao/convencoes-passada1.md`, seção Conjuradores).
+- Biblioteca: +5 efeitos (phantasmal_force, earthen_grasp, phantasmal_killer, cond_hipnotizado, cond_estase).
+- Próximo: CI → ler `subclasses-wizard` (notas) → `calibracao/rpgbot-wizard.json` → comparação.

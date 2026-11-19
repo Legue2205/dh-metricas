@@ -1,0 +1,254 @@
+{
+ "gerado_de": "progressoes/rpgbot-wizard-order-of-scribes.json",
+ "build": "Wizard (Order of Scribes), Warforged, Telekinetic 4, Int 20 (8), Resilient Con 12",
+ "corpo": {
+  "ca": 16,
+  "pv": 20,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 2,
+    "int": 5,
+    "sab": 3,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 3,
+   "2": 3
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "area": [],
+   "invocacoes": [],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Earthen Grasp",
+        "cd": 13,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "earthen_grasp"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Phantasmal Force",
+        "cd": 13,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "phantasmal_force"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Earthen Grasp",
+      "cd": 13,
+      "slots": [
+       2
+      ],
+      "magias": [
+       "earthen_grasp"
+      ],
+      "modo": "melhor"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, principal; prioritário: controle. Sobra: nada.",
+   "combates": [
+    "principal",
+    "controle",
+    "controle",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 2×1º, 2×2º.",
+   "combates": [
+    "controle"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Escriba warforged, o mago mais mago: troca o tipo de dano das magias para fugir de resistências e controla com o melhor de cada nível.",
+  "estrategia": "Fire Bolt ou Mind Sliver; Earthen Grasp/Phantasmal Force/Web no alvo ou grupo certo; Summon Undead quando não precisa concentrar em controle.",
+  "nao_modelado": "Awakened Spellbook (troca de tipo de dano: resistências não entram no modelo); Manifest Mind; Master Scrivener; Enemies Abound; Wall of Fire; Eyebite.",
+  "progressao": "Wizard 3; Warforged (+1 CA)."
+ },
+ "id": "rpgbot-wizard-order-of-scribes-3",
+ "nome": "Order of Scribes Wizard (RPGBot: RPGBOT Self-Insert)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/wizard/subclasses/scribes/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

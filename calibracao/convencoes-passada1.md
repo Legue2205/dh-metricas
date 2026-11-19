@@ -57,3 +57,19 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
 - Marca no acerto com desvantagem contra outros (Unwavering Mark): tipo `ancestral_protectors`.
 - **Curving Shot** sai do dano e vai para a Área: `cleave_ataque` com `"p": "erro"` (gatilho = errar ≥ 1 dos
   `n_erro` ataques do turno, contra a CA da horda), como um Horde Breaker.
+
+# Conjuradores (a partir do Wizard, 19/11)
+- Linhas padrão: `principal` (só truques), `controle` (melhor_de das magias de controle disponíveis, gasta o maior
+  espaço da lista), `controle-barato` (a opção mais barata), `area` (1 magia de área), `combo` (controle + área, truque
+  em 2 rounds), `invocacao` (Summon de Tasha no maior espaço; 1 hora = 0,5 espaço por luta). O plano automático escolhe.
+- Truque nos rounds livres: 1 (principal), 0,75 (lançou 1 magia), 0,5 (lançou 2). Toll the Dead com d12 (alvo ferido).
+- Shield: 1 por luta nas linhas que gastam espaço (gasta 1º). Mage Armor: 1 espaço de 1º por dia fora do pool.
+- Arcane Recovery: ceil(nível de Wizard ÷ 2) em espaços, no maior possível (até 5º), somado ao pool do dia.
+- Multiclasse conjuradora: espaços pelo nível de conjurador (Artificer 1 conta 1), Arcane Recovery pelo nível de Wizard.
+- Magias fora da biblioteca de controle: não modeladas (lista na descrição). Adicionadas antes da passada:
+  phantasmal_force 0,75, earthen_grasp 0,5 (escape), phantasmal_killer 0,4, cond_hipnotizado 1 (luta),
+  cond_estase 1 (um turno). Psychic Lance via `condicao_no_acerto` (`no_acerto: false`). Slow só em alvo único (não usado).
+- Área (DMG): Fireball 4 alvos, Shatter 2, Cone de 30 pés 3, Cone de 60 pés 6, linha de 100 pés 4, Chain Lightning 4.
+- Arcane Ward somado ao PV; esqueletos (Undead Thralls) como invocação permanente com upkeep de 1 espaço/dia;
+  Polymorph em si mesmo: PV da forma somados, CA da forma, ataques da forma.
+- Portent, Lucky, Silvery Barbs, Chronal Shift, iniciativa e Counterspell: não modelados (igual para todos).

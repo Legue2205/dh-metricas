@@ -1,0 +1,315 @@
+{
+ "gerado_de": "progressoes/rpgbot-wizard-chronurgy.json",
+ "build": "Cleric 1 (Twilight) / Wizard (Chronurgy), Harengon, armadura média + escudo; Int 18 (personagem 5), Int 20 (9)",
+ "corpo": {
+  "ca": 18,
+  "pv": 70,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 2,
+    "int": 5,
+    "sab": 6,
+    "car": 3
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 3,
+   "6": 1
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "3d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "area": [],
+   "invocacoes": [],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Evard's Black Tentacles",
+        "magia": "evards_black_tentacles",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Monster",
+        "cd": 17,
+        "slots": [
+         5
+        ],
+        "magias": [
+         "hold_monster"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1,
+     "3": 1,
+     "4": 1,
+     "5": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "estase",
+   "herda": "principal",
+   "hipotese": "Momentary Stasis num alvo (Int/dia ÷ 4 lutas), no lugar de 1 truque",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Momentary Stasis",
+      "efeito": "cond_estase",
+      "cd": 17,
+      "no_acerto": false,
+      "usos": 1.25
+     }
+    ]
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {}
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, controle-barato; prioritário: controle. Sobra: nada.",
+   "combates": [
+    "controle",
+    "controle",
+    "controle-barato",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 3×1º, 2×2º, 2×3º, 2×4º, 2×5º, 1×6º.",
+   "combates": [
+    "controle"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Cronurgista com dip de Clérigo da Twilight (armadura, escudo, vantagem na iniciativa): vence a iniciativa e abre com área de controle.",
+  "estrategia": "Fire Bolt no dia a dia; Web e Hypnotic Pattern no 1º round, Momentary Stasis num alvo isolado.",
+  "nao_modelado": "Iniciativa (Temporal Awareness, Vigilant Blessing); Chronal Shift; Arcane Abeyance; Silvery Barbs; magias de Clérigo (Bless, Healing Word, Faerie Fire); Counterspell; Sickening Radiance.",
+  "progressao": "Cleric 1 (Twilight) / Wizard 10."
+ },
+ "id": "rpgbot-wizard-chronurgy-11",
+ "nome": "Chronurgy Wizard (RPGBot: Hare Today, Gone Tomorrow)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/wizard/subclasses/chronurgy-magic/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

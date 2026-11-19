@@ -1,0 +1,100 @@
+{
+ "gerado_de": "progressoes/rpgbot-wizard-chronurgy.json",
+ "build": "Cleric 1 (Twilight) / Wizard (Chronurgy), Harengon, armadura média + escudo; Int 18 (personagem 5), Int 20 (9)",
+ "corpo": {
+  "ca": 18,
+  "pv": 22,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 2,
+    "int": 3,
+    "sab": 4,
+    "car": 1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 5,
+   "2": 2
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "area": [],
+   "invocacoes": [],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: 5×1º, 2×2º.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: 5×1º, 2×2º.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Cronurgista com dip de Clérigo da Twilight (armadura, escudo, vantagem na iniciativa): vence a iniciativa e abre com área de controle.",
+  "estrategia": "Fire Bolt no dia a dia; Web e Hypnotic Pattern no 1º round, Momentary Stasis num alvo isolado.",
+  "nao_modelado": "Iniciativa (Temporal Awareness, Vigilant Blessing); Chronal Shift; Arcane Abeyance; Silvery Barbs; magias de Clérigo (Bless, Healing Word, Faerie Fire); Counterspell; Sickening Radiance.",
+  "progressao": "Cleric 1 (Twilight) / Wizard 2."
+ },
+ "id": "rpgbot-wizard-chronurgy-3",
+ "nome": "Chronurgy Wizard (RPGBot: Hare Today, Gone Tomorrow)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/wizard/subclasses/chronurgy-magic/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

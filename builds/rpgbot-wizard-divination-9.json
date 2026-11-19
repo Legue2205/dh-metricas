@@ -1,0 +1,363 @@
+{
+ "gerado_de": "progressoes/rpgbot-wizard-divination.json",
+ "build": "Wizard (Divination), Halfling, Int 17 até o 11; Bountiful Luck 4, Lucky 8, Fey Touched 12",
+ "corpo": {
+  "ca": 15,
+  "pv": 47,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 1,
+    "int": 7,
+    "sab": 6,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 3,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 2
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 15,
+      "save": "Int",
+      "dano": "2d6",
+      "nota": "Mind Sliver"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "area": [],
+   "invocacoes": [],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Int",
+      "dano": "2d6",
+      "nota": "Mind Sliver"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Suggestion",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "suggestion"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Psychic Lance",
+        "efeito": "psychic_lance",
+        "cd": 15,
+        "no_acerto": false,
+        "usos": 1
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Wall of Force",
+        "cd": 15,
+        "slots": [
+         5
+        ],
+        "magias": [
+         "wall_of_force"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1,
+     "3": 1,
+     "5": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Int",
+      "dano": "2d6",
+      "nota": "Mind Sliver"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "invocacao",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Int",
+      "dano": "2d6",
+      "nota": "Mind Sliver"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Aberration (5º)",
+     "quantidade": 1,
+     "pv": 50,
+     "ca": 16,
+     "ataque": {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+8"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "3": 0.5,
+     "1": 1,
+     "4": 0.5,
+     "5": 0.5
+    }
+   },
+   "area": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "invocacao"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: controle. Sobra: 2×4º.",
+   "combates": [
+    "controle-barato",
+    "controle",
+    "controle-barato",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 2×1º, 2×2º, 2×3º, 3×4º, 1×5º.",
+   "combates": [
+    "controle"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Adivinho que manipula os dados: Portent, Lucky e Silvery Barbs garantem os saves das magias de controle; evita rolar ataques.",
+  "estrategia": "Mind Sliver antes do save; Web, Hypnotic Pattern, Banishment e Psychic Lance escolhidos pelo save fraco do alvo.",
+  "nao_modelado": "Portent, Lucky, Bountiful Luck e Silvery Barbs (forçar falhas nos saves); Expert Divination; Create Bonfire; Dragon's Breath no familiar; Mind Spike.",
+  "progressao": "Wizard 9; Int 17 (Bountiful Luck 4, Lucky 8)."
+ },
+ "id": "rpgbot-wizard-divination-9",
+ "nome": "Divination Wizard (RPGBot: Probability and I Don't Get Along)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/wizard/subclasses/divination/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

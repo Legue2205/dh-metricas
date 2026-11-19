@@ -5,7 +5,7 @@
  "nivel": 11,
  "build": "Fighter (Cavalier), Custom Lineage pequeno, lança montado + escudo, Dueling; Mounted Combatant 1, Piercer 4",
  "impressao": "4f8e963c18",
- "versao": "0.8.0",
+ "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -82,6 +82,36 @@
       1.27
      ]
     }
+   },
+   "area": {
+    "nivel_eq": 8.2,
+    "rank": "B+",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.31,
+     "9": 3.22,
+     "10": 3.22,
+     "11": 3.42,
+     "12": 3.42,
+     "13": 4.07,
+     "14": 4.07,
+     "15": 4.07,
+     "16": 4.07,
+     "17": 4.44,
+     "18": 4.44,
+     "19": 5.31,
+     "20": 4.5
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
    },
    "orcamento": {
     "reacao": [
@@ -229,6 +259,36 @@
       1.27
      ]
     }
+   },
+   "area": {
+    "nivel_eq": 8.4,
+    "rank": "B+",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.09,
+     "9": 3.02,
+     "10": 3.02,
+     "11": 3.28,
+     "12": 3.28,
+     "13": 3.86,
+     "14": 3.86,
+     "15": 3.86,
+     "16": 3.86,
+     "17": 4.3,
+     "18": 4.3,
+     "19": 4.95,
+     "20": 4.36
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
    },
    "orcamento": {
     "reacao": [
@@ -404,6 +464,14 @@
       "np": 3.7,
       "p": 3.8
      }
+    },
+    "area": {
+     "nivel_eq": 8.4,
+     "rank": "B+",
+     "por_categoria": {
+      "np": 8.2,
+      "p": 8.4
+     }
     }
    }
   },
@@ -466,12 +534,81 @@
      "por_categoria": {
       "p": 3.8
      }
+    },
+    "area": {
+     "nivel_eq": 8.4,
+     "rank": "B+",
+     "por_categoria": {
+      "p": 8.4
+     }
     }
    }
   }
  },
- "segundos": 5.1,
+ "segundos": 6.1,
  "premissas": {
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda2.N": 3000,
+  "area.horda2.corpo": 5,
+  "area.horda2.distancia": 3,
+  "area.horda2.fracao_alvo": 0.5,
+  "area.horda2.guerreiros": {
+   "quantidade": 2,
+   "dano": "2d6",
+   "mod": [
+    3,
+    4,
+    5
+   ],
+   "ataques": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "area.horda2.rounds_max": 5,
+  "area.horda2.truque_referencia": "1d10",
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
   "base.chefe.chefe_save": 2,
   "base.chefe.lr_cr": 10,
   "base.chefe.lr_n": 1,

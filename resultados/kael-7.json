@@ -5,7 +5,7 @@
  "nivel": 7,
  "build": "Way of the Blood Monk 7 (homebrew), Des 18",
  "impressao": "b3f5aa5ce3",
- "versao": "0.8.0",
+ "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -82,6 +82,36 @@
       1.52
      ]
     }
+   },
+   "area": {
+    "nivel_eq": 4.9,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.7,
+     "9": 3.58,
+     "10": 3.58,
+     "11": 3.84,
+     "12": 3.84,
+     "13": 4.42,
+     "14": 4.42,
+     "15": 4.42,
+     "16": 4.42,
+     "17": 4.96,
+     "18": 4.96,
+     "19": 6.15,
+     "20": 5.02
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
    },
    "suporte": {
     "ofensivo": 9.28,
@@ -232,6 +262,36 @@
       1.52
      ]
     }
+   },
+   "area": {
+    "nivel_eq": 4.9,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.7,
+     "9": 3.58,
+     "10": 3.58,
+     "11": 3.84,
+     "12": 3.84,
+     "13": 4.42,
+     "14": 4.42,
+     "15": 4.42,
+     "16": 4.42,
+     "17": 4.96,
+     "18": 4.96,
+     "19": 6.15,
+     "20": 5.02
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
    },
    "suporte": {
     "ofensivo": 9.28,
@@ -519,6 +579,14 @@
       "p": 1.1
      }
     },
+    "area": {
+     "nivel_eq": 4.9,
+     "rank": "C",
+     "por_categoria": {
+      "np": 4.9,
+      "p": 4.9
+     }
+    },
     "suporte": {
      "nivel_eq": 3.8,
      "rank": "C-",
@@ -586,6 +654,13 @@
      "rank": "D",
      "por_categoria": {
       "p": 1.1
+     }
+    },
+    "area": {
+     "nivel_eq": 4.9,
+     "rank": "C",
+     "por_categoria": {
+      "p": 4.9
      }
     },
     "suporte": {
@@ -731,6 +806,15 @@
       "boss": 1.1
      }
     },
+    "area": {
+     "nivel_eq": 4.9,
+     "rank": "C",
+     "por_categoria": {
+      "np": 4.9,
+      "mod": 4.9,
+      "boss": 4.9
+     }
+    },
     "suporte": {
      "nivel_eq": 3.8,
      "rank": "C-",
@@ -743,8 +827,70 @@
    }
   }
  },
- "segundos": 5.9,
+ "segundos": 7.5,
  "premissas": {
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda2.N": 3000,
+  "area.horda2.corpo": 5,
+  "area.horda2.distancia": 3,
+  "area.horda2.fracao_alvo": 0.5,
+  "area.horda2.guerreiros": {
+   "quantidade": 2,
+   "dano": "2d6",
+   "mod": [
+    3,
+    4,
+    5
+   ],
+   "ataques": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "area.horda2.rounds_max": 5,
+  "area.horda2.truque_referencia": "1d10",
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
   "base.chefe.chefe_save": 2,
   "base.chefe.lr_cr": 10,
   "base.chefe.lr_n": 1,
@@ -962,6 +1108,7 @@
     "wall": 1.5
    }
   },
+  "controle.atencao.ca_dpr_auto": 16,
   "controle.atencao.conc_bonus": 1.5,
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
@@ -974,6 +1121,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
   "controle.padroes.sentinela_tentativas": 2,
   "controle.padroes.terreno_fator": 0.5,

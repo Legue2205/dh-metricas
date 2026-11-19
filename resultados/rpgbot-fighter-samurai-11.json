@@ -5,7 +5,7 @@
  "nivel": 11,
  "build": "Fighter (Samurai), Kobold (MMoM), besta leve → mosquete (Gunner 4), Archery; Resilient Des 6, Piercer 8",
  "impressao": "d1abb5e1e6",
- "versao": "0.8.0",
+ "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -82,6 +82,36 @@
       1.57
      ]
     }
+   },
+   "area": {
+    "nivel_eq": 4.9,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.6,
+     "9": 3.48,
+     "10": 3.48,
+     "11": 3.69,
+     "12": 3.69,
+     "13": 4.28,
+     "14": 4.28,
+     "15": 4.28,
+     "16": 4.28,
+     "17": 4.73,
+     "18": 4.73,
+     "19": 5.83,
+     "20": 4.79
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
    },
    "orcamento": {
     "reacao": [],
@@ -209,6 +239,36 @@
      ]
     }
    },
+   "area": {
+    "nivel_eq": 8.0,
+    "rank": "B+",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.53,
+     "9": 3.43,
+     "10": 3.43,
+     "11": 3.67,
+     "12": 3.67,
+     "13": 4.25,
+     "14": 4.25,
+     "15": 4.25,
+     "16": 4.25,
+     "17": 4.68,
+     "18": 4.68,
+     "19": 5.7,
+     "20": 4.71
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
    "orcamento": {
     "reacao": [],
     "acao_bonus": [],
@@ -334,6 +394,36 @@
       1.57
      ]
     }
+   },
+   "area": {
+    "nivel_eq": 8.2,
+    "rank": "B+",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.31,
+     "9": 3.22,
+     "10": 3.22,
+     "11": 3.39,
+     "12": 3.39,
+     "13": 4.05,
+     "14": 4.05,
+     "15": 4.05,
+     "16": 4.05,
+     "17": 4.42,
+     "18": 4.42,
+     "19": 5.24,
+     "20": 4.47
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
    },
    "orcamento": {
     "reacao": [],
@@ -491,6 +581,14 @@
       "np": 0.9,
       "p": 0.8
      }
+    },
+    "area": {
+     "nivel_eq": 8.2,
+     "rank": "B+",
+     "por_categoria": {
+      "np": 6.5,
+      "p": 8.2
+     }
     }
    }
   },
@@ -555,12 +653,81 @@
      "por_categoria": {
       "p": 0.8
      }
+    },
+    "area": {
+     "nivel_eq": 8.2,
+     "rank": "B+",
+     "por_categoria": {
+      "p": 8.2
+     }
     }
    }
   }
  },
- "segundos": 4.8,
+ "segundos": 9.1,
  "premissas": {
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda2.N": 3000,
+  "area.horda2.corpo": 5,
+  "area.horda2.distancia": 3,
+  "area.horda2.fracao_alvo": 0.5,
+  "area.horda2.guerreiros": {
+   "quantidade": 2,
+   "dano": "2d6",
+   "mod": [
+    3,
+    4,
+    5
+   ],
+   "ataques": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "area.horda2.rounds_max": 5,
+  "area.horda2.truque_referencia": "1d10",
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
   "base.chefe.chefe_save": 2,
   "base.chefe.lr_cr": 10,
   "base.chefe.lr_n": 1,
@@ -791,6 +958,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
   "controle.padroes.sentinela_tentativas": 2,
   "controle.padroes.terreno_fator": 0.5,

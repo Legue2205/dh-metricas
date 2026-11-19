@@ -5,7 +5,7 @@
  "nivel": 3,
  "build": "Wizard (Order of Scribes), Warforged, Telekinetic 4, Int 20 (8), Resilient Con 12",
  "impressao": "1ce849d5bb",
- "versao": "0.8.0",
+ "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -84,8 +84,33 @@
     }
    },
    "area": {
-    "nivel_eq": null,
-    "rank": "-",
+    "nivel_eq": 0.5,
+    "rank": "F",
+    "rounds": {
+     "1": 3.81,
+     "2": 4.84,
+     "3": 4.84,
+     "4": 6.01,
+     "5": 4.71,
+     "6": 4.71,
+     "7": 4.71,
+     "8": 5.96,
+     "9": 5.61,
+     "10": 5.61,
+     "11": 5.4,
+     "12": 5.4,
+     "13": 6.28,
+     "14": 6.28,
+     "15": 6.28,
+     "16": 6.28,
+     "17": 7.06,
+     "18": 7.06,
+     "19": 8.64,
+     "20": 6.61
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
     "areas": []
    },
    "orcamento": {
@@ -217,8 +242,33 @@
     }
    },
    "area": {
-    "nivel_eq": null,
-    "rank": "-",
+    "nivel_eq": 0.4,
+    "rank": "F",
+    "rounds": {
+     "1": 3.99,
+     "2": 5.22,
+     "3": 5.22,
+     "4": 6.36,
+     "5": 4.86,
+     "6": 4.86,
+     "7": 4.86,
+     "8": 6.11,
+     "9": 5.74,
+     "10": 5.74,
+     "11": 5.47,
+     "12": 5.47,
+     "13": 6.36,
+     "14": 6.36,
+     "15": 6.36,
+     "16": 6.36,
+     "17": 7.14,
+     "18": 7.14,
+     "19": 8.78,
+     "20": 6.7
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
     "areas": []
    },
    "orcamento": {
@@ -367,8 +417,33 @@
     }
    },
    "area": {
-    "nivel_eq": null,
-    "rank": "-",
+    "nivel_eq": 0.4,
+    "rank": "F",
+    "rounds": {
+     "1": 3.99,
+     "2": 5.22,
+     "3": 5.22,
+     "4": 6.36,
+     "5": 4.86,
+     "6": 4.86,
+     "7": 4.86,
+     "8": 6.11,
+     "9": 5.74,
+     "10": 5.74,
+     "11": 5.47,
+     "12": 5.47,
+     "13": 6.36,
+     "14": 6.36,
+     "15": 6.36,
+     "16": 6.36,
+     "17": 7.14,
+     "18": 7.14,
+     "19": 8.78,
+     "20": 6.7
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
     "areas": []
    },
    "orcamento": {
@@ -548,6 +623,14 @@
       "np": 0.7,
       "p": 0.8
      }
+    },
+    "area": {
+     "nivel_eq": 0.5,
+     "rank": "E",
+     "por_categoria": {
+      "np": 0.5,
+      "p": 0.4
+     }
     }
    }
   },
@@ -615,12 +698,81 @@
      "por_categoria": {
       "p": 0.8
      }
+    },
+    "area": {
+     "nivel_eq": 0.5,
+     "rank": "E",
+     "por_categoria": {
+      "p": 0.4
+     }
     }
    }
   }
  },
- "segundos": 9.1,
+ "segundos": 9.8,
  "premissas": {
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda2.N": 3000,
+  "area.horda2.corpo": 5,
+  "area.horda2.distancia": 3,
+  "area.horda2.fracao_alvo": 0.5,
+  "area.horda2.guerreiros": {
+   "quantidade": 2,
+   "dano": "2d6",
+   "mod": [
+    3,
+    4,
+    5
+   ],
+   "ataques": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "area.horda2.rounds_max": 5,
+  "area.horda2.truque_referencia": "1d10",
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
   "base.chefe.chefe_save": 2,
   "base.chefe.lr_cr": 10,
   "base.chefe.lr_n": 1,

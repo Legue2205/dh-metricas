@@ -5,7 +5,7 @@
  "nivel": 7,
  "build": "Wizard (Enchantment), Kenku, Car 14 para Face; Telekinetic 4, Int 18 (8)",
  "impressao": "f11fec286e",
- "versao": "0.8.0",
+ "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -84,8 +84,33 @@
     }
    },
    "area": {
-    "nivel_eq": null,
-    "rank": "-",
+    "nivel_eq": 2.0,
+    "rank": "D",
+    "rounds": {
+     "1": 3.35,
+     "2": 4.5,
+     "3": 4.5,
+     "4": 5.67,
+     "5": 4.57,
+     "6": 4.57,
+     "7": 4.57,
+     "8": 5.78,
+     "9": 5.47,
+     "10": 5.47,
+     "11": 5.27,
+     "12": 5.27,
+     "13": 6.13,
+     "14": 6.13,
+     "15": 6.13,
+     "16": 6.13,
+     "17": 6.9,
+     "18": 6.9,
+     "19": 8.5,
+     "20": 6.52
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
     "areas": []
    },
    "orcamento": {
@@ -217,8 +242,33 @@
     }
    },
    "area": {
-    "nivel_eq": null,
-    "rank": "-",
+    "nivel_eq": 0.5,
+    "rank": "F",
+    "rounds": {
+     "1": 3.81,
+     "2": 4.85,
+     "3": 4.85,
+     "4": 6.07,
+     "5": 4.71,
+     "6": 4.71,
+     "7": 4.71,
+     "8": 5.94,
+     "9": 5.6,
+     "10": 5.6,
+     "11": 5.39,
+     "12": 5.39,
+     "13": 6.27,
+     "14": 6.27,
+     "15": 6.27,
+     "16": 6.27,
+     "17": 7.04,
+     "18": 7.04,
+     "19": 8.64,
+     "20": 6.61
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
     "areas": []
    },
    "orcamento": {
@@ -367,8 +417,33 @@
     }
    },
    "area": {
-    "nivel_eq": null,
-    "rank": "-",
+    "nivel_eq": 0.3,
+    "rank": "F",
+    "rounds": {
+     "1": 5.08,
+     "2": 6.83,
+     "3": 6.83,
+     "4": 7.54,
+     "5": 5.27,
+     "6": 5.27,
+     "7": 5.27,
+     "8": 6.6,
+     "9": 6.18,
+     "10": 6.18,
+     "11": 5.75,
+     "12": 5.75,
+     "13": 6.65,
+     "14": 6.65,
+     "15": 6.65,
+     "16": 6.65,
+     "17": 7.44,
+     "18": 7.44,
+     "19": 9.04,
+     "20": 6.9
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
     "areas": []
    },
    "orcamento": {
@@ -518,8 +593,33 @@
     }
    },
    "area": {
-    "nivel_eq": null,
-    "rank": "-",
+    "nivel_eq": 0.5,
+    "rank": "F",
+    "rounds": {
+     "1": 3.81,
+     "2": 4.85,
+     "3": 4.85,
+     "4": 6.07,
+     "5": 4.71,
+     "6": 4.71,
+     "7": 4.71,
+     "8": 5.94,
+     "9": 5.6,
+     "10": 5.6,
+     "11": 5.39,
+     "12": 5.39,
+     "13": 6.27,
+     "14": 6.27,
+     "15": 6.27,
+     "16": 6.27,
+     "17": 7.04,
+     "18": 7.04,
+     "19": 8.64,
+     "20": 6.61
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
     "areas": []
    },
    "orcamento": {
@@ -704,6 +804,14 @@
       "np": 2.3,
       "p": 2.3
      }
+    },
+    "area": {
+     "nivel_eq": 2.0,
+     "rank": "D",
+     "por_categoria": {
+      "np": 0.5,
+      "p": 0.5
+     }
     }
    }
   },
@@ -774,12 +882,81 @@
      "por_categoria": {
       "p": 2.3
      }
+    },
+    "area": {
+     "nivel_eq": 2.0,
+     "rank": "D",
+     "por_categoria": {
+      "p": 0.5
+     }
     }
    }
   }
  },
- "segundos": 12.9,
+ "segundos": 13.7,
  "premissas": {
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda2.N": 3000,
+  "area.horda2.corpo": 5,
+  "area.horda2.distancia": 3,
+  "area.horda2.fracao_alvo": 0.5,
+  "area.horda2.guerreiros": {
+   "quantidade": 2,
+   "dano": "2d6",
+   "mod": [
+    3,
+    4,
+    5
+   ],
+   "ataques": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "area.horda2.rounds_max": 5,
+  "area.horda2.truque_referencia": "1d10",
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
   "base.chefe.chefe_save": 2,
   "base.chefe.lr_cr": 10,
   "base.chefe.lr_n": 1,

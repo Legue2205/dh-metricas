@@ -5,7 +5,7 @@
  "nivel": 3,
  "build": "Fighter (Psi Warrior), Giff, besta pesada → mosquete, Archery; Piercer 4, Sharpshooter 6, Des 20 8",
  "impressao": "36ae7fa47d",
- "versao": "0.8.0",
+ "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
   "principal": {
@@ -82,6 +82,36 @@
       0.42
      ]
     }
+   },
+   "area": {
+    "nivel_eq": 4.0,
+    "rank": "C",
+    "rounds": {
+     "1": 3.33,
+     "2": 3.71,
+     "3": 3.71,
+     "4": 4.75,
+     "5": 4.1,
+     "6": 4.1,
+     "7": 4.1,
+     "8": 5.24,
+     "9": 4.98,
+     "10": 4.98,
+     "11": 4.91,
+     "12": 4.91,
+     "13": 5.73,
+     "14": 5.73,
+     "15": 5.73,
+     "16": 5.73,
+     "17": 6.48,
+     "18": 6.48,
+     "19": 7.96,
+     "20": 6.2
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
    },
    "orcamento": {
     "reacao": [],
@@ -208,6 +238,36 @@
       0.42
      ]
     }
+   },
+   "area": {
+    "nivel_eq": 4.2,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 3.69,
+     "3": 3.69,
+     "4": 4.17,
+     "5": 3.88,
+     "6": 3.88,
+     "7": 3.88,
+     "8": 5.03,
+     "9": 4.79,
+     "10": 4.79,
+     "11": 4.78,
+     "12": 4.78,
+     "13": 5.58,
+     "14": 5.58,
+     "15": 5.58,
+     "16": 5.58,
+     "17": 6.33,
+     "18": 6.33,
+     "19": 7.81,
+     "20": 6.12
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
    },
    "orcamento": {
     "reacao": [],
@@ -362,6 +422,14 @@
       "np": 0.0,
       "p": 0.0
      }
+    },
+    "area": {
+     "nivel_eq": 4.2,
+     "rank": "C",
+     "por_categoria": {
+      "np": 4.0,
+      "p": 4.2
+     }
     }
    }
   },
@@ -424,12 +492,81 @@
      "por_categoria": {
       "p": 0.0
      }
+    },
+    "area": {
+     "nivel_eq": 4.2,
+     "rank": "C",
+     "por_categoria": {
+      "p": 4.2
+     }
     }
    }
   }
  },
- "segundos": 3.9,
+ "segundos": 5.9,
  "premissas": {
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda2.N": 3000,
+  "area.horda2.corpo": 5,
+  "area.horda2.distancia": 3,
+  "area.horda2.fracao_alvo": 0.5,
+  "area.horda2.guerreiros": {
+   "quantidade": 2,
+   "dano": "2d6",
+   "mod": [
+    3,
+    4,
+    5
+   ],
+   "ataques": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "area.horda2.rounds_max": 5,
+  "area.horda2.truque_referencia": "1d10",
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
   "base.chefe.chefe_save": 2,
   "base.chefe.lr_cr": 10,
   "base.chefe.lr_n": 1,
@@ -660,6 +797,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
   "controle.padroes.sentinela_tentativas": 2,
   "controle.padroes.terreno_fator": 0.5,

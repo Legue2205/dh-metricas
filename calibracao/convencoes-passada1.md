@@ -73,3 +73,14 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
 - Arcane Ward somado ao PV; esqueletos (Undead Thralls) como invocação permanente com upkeep de 1 espaço/dia;
   Polymorph em si mesmo: PV da forma somados, CA da forma, ataques da forma.
 - Portent, Lucky, Silvery Barbs, Chronal Shift, iniciativa e Counterspell: não modelados (igual para todos).
+
+# Passada 2 do Wizard / Área v2 (19/11)
+- **Área = luta contra uma horda** (`dh/horda.py`): personagem + 2 guerreiros de referência contra 5 criaturas que
+  avançam e 3 à distância; termina com 50% da vida da horda; métrica = 1/rounds, nível pela régua (conjurador de
+  referência: 1 área no maior espaço, depois truque). Vale para todas as linhas com dano (marciais também; cleaves somam).
+  Área com `"seletiva": true` (Sculpt Spells, alvos escolhidos) não perde alvos depois do round 1.
+- **Área no plano = pico** (melhor linha da build), não a média do dia.
+- **`forcar_falha`** em fonte de controle: Portent e Chronal Shift = 2/dia ÷ 4 lutas = 0,5 por luta.
+- **Builds `-puro`**: extensão simples sem multiclasse das builds do RPGBot que usam dip (Abjuration, Chronurgy,
+  War Magic, Echo Knight, Purple Dragon Knight). Níveis adiantados; Mage Armor + Shield no lugar de armadura;
+  Resilient Con onde o dip dava o save. As originais ficam como estão.

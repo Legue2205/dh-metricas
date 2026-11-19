@@ -1,0 +1,197 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-purple-dragon-knight-puro.json",
+ "build": "Fighter (Purple Dragon Knight) sem multiclasse, Dragonborn de Gema, arco longo + Archery; Dragon Fear 4, Sharpshooter 6, Des 18 (8)",
+ "corpo": {
+  "ca": 16,
+  "pv": 31,
+  "saves": {
+   "sv": {
+    "for": 1,
+    "des": 3,
+    "con": 5,
+    "int": -1,
+    "sab": 0,
+    "car": 2
+   },
+   "ataques": 1
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   },
+   "sopro": {
+    "qtd": 2,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+3"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 9
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto",
+     "front": false
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "principal": true,
+   "hipotese": "arco longo todo round; Rallying Cry no Second Wind",
+   "custo": "gratuita",
+   "defesa": {},
+   "saves": {}
+  },
+  {
+   "id": "sopro",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+3"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Breath Weapon (cone 15 pés)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "1d10",
+       "cd": 13
+      }
+     ]
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 9
+     }
+    ]
+   },
+   "herda": "principal",
+   "hipotese": "Breath Weapon num round",
+   "gasta": {
+    "sopro": 1
+   }
+  },
+  {
+   "id": "surge",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 0.25,
+      "bonus": 7,
+      "dano": "1d8+3"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Breath Weapon (cone 15 pés)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "1d10",
+       "cd": 13
+      }
+     ]
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 9
+     }
+    ]
+   },
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Breath Weapon + Action Surge",
+   "gasta": {
+    "sopro": 1,
+    "action_surge": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: 1 sopro.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "A build Traitor to the Crown sem o dip de Warlock: arqueiro com Sharpshooter, sopro de dragão, Dragon Fear e Inspiring Surge no 10.",
+  "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis adiantados, atributos e feats remendados); a build original continua como referência.",
+  "nao_modelado": "Royal Envoy; Bulwark; Indomitable; Second Wind próprio.",
+  "progressao": "Rallying Cry."
+ },
+ "id": "rpgbot-fighter-purple-dragon-knight-puro-3",
+ "nome": "Purple Dragon Knight puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/purple-dragon-knight/",
+  "nota": "Extensão simples sem multiclasse; passada 2."
+ }
+}

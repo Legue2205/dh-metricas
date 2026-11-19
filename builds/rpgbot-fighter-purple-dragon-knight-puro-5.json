@@ -1,0 +1,246 @@
+{
+ "gerado_de": "progressoes/rpgbot-fighter-purple-dragon-knight-puro.json",
+ "build": "Fighter (Purple Dragon Knight) sem multiclasse, Dragonborn de Gema, arco longo + Archery; Dragon Fear 4, Sharpshooter 6, Des 18 (8)",
+ "corpo": {
+  "ca": 17,
+  "pv": 49,
+  "saves": {
+   "sv": {
+    "for": 2,
+    "des": 3,
+    "con": 6,
+    "int": -1,
+    "sab": 0,
+    "car": 3
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   },
+   "sopro": {
+    "qtd": 3,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+3"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 15
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto",
+     "front": false
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "principal": true,
+   "hipotese": "arco longo todo round; Rallying Cry no Second Wind",
+   "custo": "gratuita",
+   "defesa": {},
+   "saves": {}
+  },
+  {
+   "id": "sopro",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+3"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Breath Weapon (cone 15 pés)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d10",
+       "cd": 14
+      }
+     ]
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 15
+     }
+    ]
+   },
+   "herda": "principal",
+   "hipotese": "Breath Weapon num round",
+   "gasta": {
+    "sopro": 1
+   }
+  },
+  {
+   "id": "surge",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 0.5,
+      "bonus": 8,
+      "dano": "1d8+3"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Breath Weapon (cone 15 pés)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d10",
+       "cd": 14
+      }
+     ]
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 15
+     }
+    ]
+   },
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Breath Weapon + Action Surge",
+   "gasta": {
+    "sopro": 1,
+    "action_surge": 1
+   }
+  },
+  {
+   "id": "medo",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+3"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 15
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto",
+     "front": false
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Dragon Fear (cone 30 pés)",
+      "magia": "cond_amedrontado",
+      "alvos": 3,
+      "cd": 14
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "herda": "principal",
+   "hipotese": "Dragon Fear no lugar do sopro de dano",
+   "gasta": {
+    "sopro": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal, sopro; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "sopro",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: 2 sopro.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "A build Traitor to the Crown sem o dip de Warlock: arqueiro com Sharpshooter, sopro de dragão, Dragon Fear e Inspiring Surge no 10.",
+  "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis adiantados, atributos e feats remendados); a build original continua como referência.",
+  "nao_modelado": "Royal Envoy; Bulwark; Indomitable; Second Wind próprio.",
+  "progressao": "Dragon Fear (Car 16); Extra Attack; meia-armadura."
+ },
+ "id": "rpgbot-fighter-purple-dragon-knight-puro-5",
+ "nome": "Purple Dragon Knight puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/purple-dragon-knight/",
+  "nota": "Extensão simples sem multiclasse; passada 2."
+ }
+}

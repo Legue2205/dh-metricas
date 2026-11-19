@@ -115,6 +115,8 @@ def agregar(b, res_linhas, magias, letra):
             if all(v is None for v in vals): continue
             vals = [v or 0.0 for v in vals]; pesos = [c['peso'] for c in combates]
             dia = sum(p * v for p, v in zip(pesos, vals)) / sum(pesos)
+            if eixo == 'area':   # 19/11: área vale o pico (melhor linha da build), não a média do dia
+                dia = max((_nota(r.get('area'), None) or 0.0) for r in res_linhas.values())
             if sub == 'campo':   # régua de dia: média dos picos do dia contra o dia do conjurador de referência
                 from .controle.total import nivel_dia
                 picos = [_nota(res_linhas[c['linha']].get(eixo), 'campo_pico') or 0.0 for c in combates]

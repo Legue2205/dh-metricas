@@ -29,3 +29,12 @@ def test_marca_sem_resistencia_vale_menos():
     com = float(efeitos._ancestral(dict(bonus=8), E, 'Campo aberto', dict(nivel=5, ca=18, pv=50)).sum())
     sem = float(efeitos._ancestral(dict(bonus=8, resistencia=False), E, 'Campo aberto', dict(nivel=5, ca=18, pv=50)).sum())
     assert 0 < sem < com
+
+
+def test_forcar_falha_aumenta_controle():
+    C.configurar(4000)
+    E = _E() + _E()
+    f = dict(tipo='alvo_unico', nome='Hold', cd=14, slots=[2], magias=['hold_person'], modo='melhor')
+    base = float(efeitos._avalia_fonte(f, E, 'Campo aberto', None)['Hold'].sum())
+    com = float(efeitos._avalia_fonte(dict(f, forcar_falha=0.5), E, 'Campo aberto', None)['Hold'].sum())
+    assert com > base

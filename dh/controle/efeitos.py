@@ -9,6 +9,7 @@ Cada fonte é um dicionário com "tipo". Tipos disponíveis (ver README para exe
   alvo_unico        magias de alvo único relançadas com os espaços dados (modo combinar ou melhor)
   alvo_unico_direto efeito de alvo único sem relançar (ex.: Wall of Force num alvo)
   ataque_com_save   save no acerto (Stunning Strike e afins)
+  (qualquer fonte) "forcar_falha": Portent/Chronal Shift: chance por luta de o save inicial de 1 alvo falhar
   condicao_no_acerto condição da biblioteca no acerto ou por gatilho, com usos por luta (manobras, runas, flechas)
   counterspell      nega turnos de conjuradores inimigos (usos finitos; gasta reação e espaço)
   melhor_de         escolhe a opção que mais nega (ex.: concentração exclusiva Fear OU Polymorph)
@@ -266,7 +267,34 @@ def _avalia_fonte(f, E, topo, t):
     """"topos": [...] na fonte = só vale nessas topologias (o personagem escolhe a magia pelo terreno)."""
     nome = f.get('nome', f['tipo'])
     if 'topos' in f and topo not in f['topos']: return {nome: C.zero(E)}
+    if f.get('forcar_falha'): return {nome: _forcar_falha(f, E, topo, t)}
     return {nome: TIPOS[f['tipo']](f, E, topo, t)}
+
+
+def _sem_save(f):
+    """Cópia da fonte em que o save INICIAL falha (os resaves continuam normais)."""
+    g = {k: v for k, v in f.items() if k != 'forcar_falha'}
+    if g['tipo'] in ('area', 'alvo_unico_direto'): g['sobre'] = dict(g.get('sobre') or {}, sem_save=True)
+    elif g['tipo'] == 'alvo_unico': g['sobre'] = {m: dict((g.get('sobre') or {}).get(m, {}), sem_save=True) for m in g['magias']}
+    else: return None
+    return g
+
+
+def _forcar_falha(f, E, topo, t):
+    """Portent, Chronal Shift, Silvery Barbs e afins (19/11): "forcar_falha" = chance, por luta, de transformar o save
+    inicial de UM alvo da magia em falha (usos por dia ÷ lutas, no máximo 1). Em área, o ganho vale para 1 dos alvos.
+    Em melhor_de, a chance passa para cada opção."""
+    u = min(1.0, f['forcar_falha'])
+    base = {k: v for k, v in f.items() if k != 'forcar_falha'}
+    if f['tipo'] == 'melhor_de':
+        base['opcoes'] = [dict(o, forcar_falha=u) for o in f['opcoes']]
+        return TIPOS['melhor_de'](base, E, topo, t)
+    v0 = TIPOS[f['tipo']](base, E, topo, t); g = _sem_save(base)
+    if g is None: return v0
+    v1 = TIPOS[g['tipo']](g, E, topo, t)
+    k = 1.0
+    if f['tipo'] == 'area': k = max(1.0, float(f.get('alvos', _mag(f['magia']).get('alvos', 1))))
+    return v0 + u * (v1 - v0) / k
 
 
 def compilar(fontes, corpo, nivel):

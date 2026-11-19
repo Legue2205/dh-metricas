@@ -483,3 +483,9 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
      Comparar área pelo anel externo (melhor linha), não pelo plano?
   4. Dano de magias de nível (Fireball, Chain Lightning) só entra na Área; o dano de alvo único dos magos é só truque.
 - Correções no caminho: divisão por zero com invocação de PV 0; Def. Mágica ausente (linha principal sem `saves`).
+
+## 19/11 (madrugada) — passada 2: área v2, forçar falha, builds puras
+- Gabarito do Wizard conferido: Scribes verde, Bladesinging laranja; o resto como inferido.
+- Área v2 (`dh/horda.py`): combate contra horda com a party de referência, até 50% da vida, 5 rounds no máximo.
+  Premissas `area.horda2.*`. Muda a Área de TODAS as builds (party incluída) e agora marciais também têm Área.
+- Plano: Área = pico da build. `forcar_falha` (Portent, Chronal Shift). Builds `-puro` (5).

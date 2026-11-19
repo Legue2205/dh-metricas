@@ -3,7 +3,7 @@ import json
 import time
 from pathlib import Path
 
-from . import VERSAO, area, base, dano, defesa, orcamento, planos, saves, suporte
+from . import VERSAO, area, base, dano, defesa, horda, orcamento, planos, saves, suporte
 from .build import carregar, impressao
 from .controle import atencao, campo, efeitos, total
 
@@ -34,7 +34,10 @@ def avaliar_linha(b, linha, modo='rapido', regua=None, eixos=None):
     if quer('dano'): out['dano'] = dano.avaliar(linha['dano'], lutas, inv)
     if quer('defesa'): out['defesa'] = defesa.avaliar(linha['defesa'], corpo, livre)
     if quer('saves'): out['saves'] = saves.avaliar(linha['saves'], corpo, livre)
-    if quer('area'): out['area'] = area.avaliar(linha['area'], modo)
+    if quer('area') or ('dano' in linha and (not eixos or 'area' in eixos)):   # área v2 (19/11): luta contra a horda
+        velho = area.avaliar(linha['area'], modo) if linha.get('area') else None
+        out['area'] = dict(horda.avaliar(linha), antigo=velho and {k: velho[k] for k in ('nivel_eq', 'rank')},
+                           melhor=(velho or {}).get('melhor') or 'dano de alvo único', areas=(velho or {}).get('areas', []))
     if quer('suporte'): out['suporte'] = suporte.avaliar(linha['suporte'], b['nivel'])
     out['orcamento'] = orcamento.resumo(linha, b, campo.MAGIAS)
     if 'controle' in linha and (not eixos or 'controle' in eixos):
@@ -75,6 +78,7 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
     if not eixos and not linhas: res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
     res['segundos'] = round(time.time() - t0, 1)
     eixos_b = {e for l in b['linhas'] for e in ('dano', 'defesa', 'saves', 'controle', 'area', 'suporte', 'tatico') if l.get(e)}
+    if any(l.get('dano') for l in b['linhas']): eixos_b.add('area')
     res['premissas'] = {**premissas.relevantes(eixos_b), **premissas.usadas()}
     if not eixos and not linhas:
         RESULTADOS.mkdir(exist_ok=True)

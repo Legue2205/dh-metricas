@@ -130,3 +130,10 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
   `dano_por_acerto` 1d4 em 3 aliados (+1d4 nos esqueletos); Destructive Wrath = dano máximo constante na área do trovão;
   Wrath of the Storm = `com_save` Sab/dia ÷ 16; Invoke Duplicity = vantagem 1,0 + Sneak Attack na linha própria;
   esqueletos de Animate Dead como os do Necromancer (4 no 5–7 com 1 espaço de 3º/dia, 6 no 9–11 com 1 de 4º).
+
+# Passada 2 do Cleric (19/11, sem supervisão; só correções mecânicas)
+- Variante "+arma" de toda linha que gasta só Channel Divinity e da linha `bless`: a mesma hipótese com Spiritual Weapon
+  (ação bônus) do round 2 em diante (+1 espaço de 2º). Motivo: o plano automático põe uma linha por luta e deixava
+  Channel e espaços parados (Twilight 7: santuário nunca escolhido, 2 Channel e 6 espaços sobrando).
+- `recursos.outros.canal.valor` = espaço do Harness Divine Power (ceil(PB/2)) para o plano pesar o Channel como recurso.
+- Command fora das listas de controle (o efeito "um turno" ainda não roda como alvo único no motor).

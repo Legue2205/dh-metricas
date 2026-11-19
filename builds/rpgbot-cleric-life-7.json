@@ -26,7 +26,8 @@
   "outros": {
    "canal": {
     "qtd": 1,
-    "volta": "curto"
+    "volta": "curto",
+    "valor": 2
    }
   }
  },
@@ -260,6 +261,107 @@
    "hipotese": "arma-espiritual"
   },
   {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 14,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Goodberry + Disciple of Life (fim do dia)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 40,
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  },
+  {
+   "id": "preservar+arma",
+   "hipotese": "Preserve Life na luta (Channel Divinity, ação) + truques + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 14,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Goodberry + Disciple of Life (fim do dia)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_dia": 1,
+      "pv": 40,
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Preserve Life",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_luta": 1,
+      "pv": 25
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
    "id": "guardioes",
    "dano": {
     "com_save": [
@@ -376,11 +478,11 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 3×1º, 2×3º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless+arma, preservar+arma; prioritário: guardioes-arma, preservar+arma. Sobra: 2×1º, 2×3º.",
    "combates": [
-    "controle",
-    "controle",
-    "controle",
+    "bless+arma",
+    "preservar+arma",
+    "preservar+arma",
     "guardioes-arma"
    ]
   },

@@ -237,6 +237,58 @@
    "hipotese": "controle"
   },
   {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "2d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Inspiring Leader",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "usos_descanso_curto": 1,
+      "alvos": 3,
+      "pv": 10,
+      "quando": "entre_lutas"
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  },
+  {
    "id": "guardioes",
    "dano": {
     "com_save": [

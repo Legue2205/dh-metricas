@@ -25,7 +25,8 @@
   "outros": {
    "canal": {
     "qtd": 1,
-    "volta": "curto"
+    "volta": "curto",
+    "valor": 2
    }
   }
  },
@@ -226,24 +227,73 @@
    },
    "herda": "principal",
    "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     },
+     {
+      "nome": "Voice of Authority (1 ataque de aliado por reação)",
+      "lado": "of",
+      "modelo": "ataque_extra",
+      "alvos": 0.25
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "Bless + Voice of Authority (1 ataque de aliado) + Spiritual Weapon (ação bônus, do round 2 em diante)"
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: voz; prioritário: voz. Sobra: 1×3º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless+arma; prioritário: bless+arma. Sobra: 1×3º, 1 canal.",
    "combates": [
-    "voz",
-    "voz",
-    "voz",
-    "voz"
+    "bless+arma",
+    "bless+arma",
+    "bless+arma",
+    "bless+arma"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 4×1º, 2×2º, 2×3º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 3×1º, 2×2º, 2×3º, 1 canal.",
    "combates": [
-    "controle"
+    "bless+arma"
    ]
   }
  },

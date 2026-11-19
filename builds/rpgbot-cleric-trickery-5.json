@@ -24,7 +24,8 @@
   "outros": {
    "canal": {
     "qtd": 1,
-    "volta": "curto"
+    "volta": "curto",
+    "valor": 2
    }
   }
  },
@@ -232,24 +233,67 @@
    },
    "herda": "principal",
    "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Des",
+      "dano": "2d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, controle; prioritário: controle. Sobra: 3×1º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless+arma, duplicidade; prioritário: bless+arma. Sobra: 1×1º.",
    "combates": [
-    "bless",
-    "controle",
-    "controle",
-    "controle"
+    "bless+arma",
+    "bless+arma",
+    "duplicidade",
+    "bless+arma"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 4×1º, 2×2º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 3×1º, 2×2º, 1 canal.",
    "combates": [
-    "controle"
+    "bless+arma"
    ]
   }
  },

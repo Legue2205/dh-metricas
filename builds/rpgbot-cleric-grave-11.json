@@ -32,7 +32,8 @@
    },
    "canal": {
     "qtd": 2,
-    "volta": "curto"
+    "volta": "curto",
+    "valor": 2
    }
   }
  },
@@ -278,6 +279,87 @@
    "herda": "principal"
   },
   {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12+5",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  },
+  {
+   "id": "punho+arma",
+   "hipotese": "Path to the Grave (ação) e Inflict Wounds no maior espaço no round seguinte + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12+5",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.25,
+      "bonus": 9,
+      "dano": "16d10",
+      "nota": "Inflict Wounds (6º) no alvo vulnerável (Path to the Grave: dados dobrados)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "2": 1,
+     "6": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
    "id": "guardioes",
    "dano": {
     "com_save": [
@@ -370,19 +452,19 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, punho-rapido. Sobra: 4×1º, 3×2º, 3×3º, 2×5º, 1 metamagia, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, punho+arma. Sobra: 4×1º, 2×2º, 3×3º, 2×5º, 2 metamagia, 1 canal.",
    "combates": [
     "controle",
     "controle",
     "controle",
-    "punho-rapido"
+    "punho+arma"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: punho-rapido. Sobra: 4×1º, 3×2º, 3×3º, 3×4º, 2×5º, 1 metamagia, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: punho+arma. Sobra: 4×1º, 2×2º, 3×3º, 3×4º, 2×5º, 2 metamagia, 1 canal.",
    "combates": [
-    "punho-rapido"
+    "punho+arma"
    ]
   }
  },

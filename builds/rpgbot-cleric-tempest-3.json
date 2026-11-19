@@ -24,7 +24,8 @@
   "outros": {
    "canal": {
     "qtd": 1,
-    "volta": "curto"
+    "volta": "curto",
+    "valor": 1
    }
   }
  },
@@ -343,24 +344,126 @@
     }
    },
    "herda": "principal"
+  },
+  {
+   "id": "bless+arma",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8",
+      "nota": "Shocking Grasp (Air Genasi, Sab)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.188,
+      "cd": 13,
+      "save": "Des",
+      "dano": "2d8",
+      "meio": true,
+      "nota": "Wrath of the Storm (reação, Sab/dia ÷ 4 lutas ÷ 4 rounds)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  },
+  {
+   "id": "ira+arma",
+   "hipotese": "Destructive Wrath (Channel Divinity) maximizando a área do trovão no maior espaço + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8",
+      "nota": "Shocking Grasp (Air Genasi, Sab)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter + Destructive Wrath (2º)",
+     "tipo": "explosao",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "24",
+       "cd": 13,
+       "metade": true
+      }
+     ]
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "1d6",
+     "cd": 13,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "2": 2
+    }
+   },
+   "herda": "principal"
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: ira. Sobra: 2×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless, ira+arma. Sobra: 1×1º.",
    "combates": [
     "bless",
-    "ira",
     "bless",
-    "ira"
+    "bless",
+    "ira+arma"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 4×1º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: ira+arma. Sobra: 4×1º.",
    "combates": [
-    "area"
+    "ira+arma"
    ]
   }
  },

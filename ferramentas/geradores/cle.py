@@ -50,7 +50,7 @@ def fatia(L, mods, profs, ca, pv, cant, cd, atk, wis, papel, front, nivel_magia,
     corpo = dict(ca=ca, pv=pv, saves=dict(sv=sv, conjurador=True))
     esp = esp or espacos(L); top = maior(esp)
     rec = {"espacos": esp, "outros": dict(outros or {})}
-    if canal: rec["outros"]["canal"] = {"qtd": canal, "volta": "curto"}
+    if canal: rec["outros"]["canal"] = {"qtd": canal, "volta": "curto", "valor": math.ceil(p / 2)}   # valor no plano = espaço do Harness Divine Power
     ed = extra_dano or {}
     def D(*ds): return merge(*ds, ed) if ed else merge(*ds)
     def S(*fs): return {"fontes": list(sup) + list(fs)}
@@ -82,6 +82,19 @@ def fatia(L, mods, profs, ca, pv, cant, cd, atk, wis, papel, front, nivel_magia,
         ln("area", D(cant(0.5 if len(ap) > 1 else 0.75)), area=ap + list(livres), gasta={"espacos": g})
     for x in extras:
         x = dict(x); x.setdefault('herda', 'principal'); L_.append(x)
+    # Passada 2 (19/11): o plano automático põe UMA linha por luta, então uma linha que só gasta Channel Divinity (ou só
+    # um espaço de 1º) deixava o resto parado (ex.: Twilight 7 terminava o dia com 2 Channel e 6 espaços sobrando e o
+    # santuário nunca entrava). Variante "+arma": a mesma linha com Spiritual Weapon (ação bônus) a partir do round 2.
+    # Fora: linhas que já usam a ação bônus (Quicken, ilusão do Invoke Duplicity, Healing Word do Voice of Authority).
+    if sw_ok and nivel_magia >= 2:
+        for l in list(L_):
+            g = l.get('gasta', {})
+            if l['id'] in ('punho-rapido', 'duplicidade', 'voz') or not (l['id'] == 'bless' or 'canal' in g): continue
+            v = json.loads(json.dumps(l)); v['id'] = l['id'] + '+arma'
+            v['hipotese'] = l.get('hipotese', l['id']) + ' + Spiritual Weapon (ação bônus, do round 2 em diante)'
+            v['dano'] = merge(v['dano'], sw(atk, wis, 0.75))
+            e = dict(g.get('espacos', {})); e["2"] = e.get("2", 0) + 1; v['gasta'] = dict(g, espacos=e)
+            L_.append(v)
     return dict(corpo=corpo, recursos=rec, linhas=L_)
 
 

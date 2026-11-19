@@ -26,7 +26,8 @@
   "outros": {
    "canal": {
     "qtd": 2,
-    "volta": "curto"
+    "volta": "curto",
+    "valor": 2
    }
   }
  },
@@ -288,6 +289,69 @@
    ]
   },
   {
+   "id": "bless+arma",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 14,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "War God's Blessing (+10 num ataque de aliado, reação)",
+      "lado": "of",
+      "modelo": "bonus_por_uso",
+      "bonus": 10,
+      "usos_descanso_curto": 2
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "invocacoes": [
+    {
+     "nome": "esqueletos (Animate Dead)",
+     "quantidade": 4,
+     "pv": 13,
+     "ca": 13,
+     "ataque": {
+      "bonus": 4,
+      "dano": "1d6+2"
+     },
+     "nota": "arco curto"
+    }
+   ]
+  },
+  {
    "id": "guardioes",
    "dano": {
     "com_save": [
@@ -484,12 +548,12 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: arma-espiritual, manto; prioritário: guardioes-arma, manto. Sobra: 4×1º, 2×2º, 2 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless+arma; prioritário: bless+arma, guardioes-arma. Sobra: 1×1º, 2×3º, 2 canal.",
    "combates": [
-    "arma-espiritual",
-    "guardioes-arma",
-    "manto",
-    "manto"
+    "bless+arma",
+    "bless+arma",
+    "bless+arma",
+    "guardioes-arma"
    ]
   },
   "combate_unico": {

@@ -28,7 +28,8 @@
    },
    "canal": {
     "qtd": 1,
-    "volta": "curto"
+    "volta": "curto",
+    "valor": 1
    }
   }
  },
@@ -254,24 +255,104 @@
     }
    },
    "herda": "principal"
+  },
+  {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 13,
+      "save": "Sab",
+      "dano": "1d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  },
+  {
+   "id": "punho+arma",
+   "hipotese": "Path to the Grave (ação) e Inflict Wounds no maior espaço no round seguinte + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 13,
+      "save": "Sab",
+      "dano": "1d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.25,
+      "bonus": 5,
+      "dano": "8d10",
+      "nota": "Inflict Wounds (2º) no alvo vulnerável (Path to the Grave: dados dobrados)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "2": 2
+    }
+   },
+   "herda": "principal"
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: punho, punho-rapido. Sobra: 2×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless+arma, punho-rapido. Sobra: 1×1º.",
    "combates": [
     "bless",
-    "punho",
+    "bless+arma",
     "bless",
     "punho-rapido"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: punho-rapido. Sobra: 4×1º, 1×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: punho+arma. Sobra: 4×1º, 1 metamagia.",
    "combates": [
-    "punho-rapido"
+    "punho+arma"
    ]
   }
  },

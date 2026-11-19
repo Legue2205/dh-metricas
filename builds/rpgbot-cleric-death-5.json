@@ -25,7 +25,8 @@
   "outros": {
    "canal": {
     "qtd": 1,
-    "volta": "curto"
+    "volta": "curto",
+    "valor": 2
    }
   }
  },
@@ -251,6 +252,52 @@
    "hipotese": "controle"
   },
   {
+   "id": "bless+arma",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d8+3+1d8",
+      "nota": "Booming Blade (rapieira)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 0.5,
+      "dano": "15",
+      "nota": "Touch of Death (Channel Divinity ÷ 2 lutas)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  },
+  {
    "id": "guardioes",
    "dano": {
     "ataques": [
@@ -403,11 +450,11 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: arma-espiritual, bless; prioritário: guardioes-arma. Sobra: 3×1º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, bless+arma; prioritário: guardioes-arma. Sobra: 2×1º, 1 canal.",
    "combates": [
     "bless",
     "guardioes-arma",
-    "arma-espiritual",
+    "bless+arma",
     "guardioes-arma"
    ]
   },

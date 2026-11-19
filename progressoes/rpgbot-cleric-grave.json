@@ -36,7 +36,8 @@
     },
     "canal": {
      "qtd": 1,
-     "volta": "curto"
+     "volta": "curto",
+     "valor": 1
     }
    }
   },
@@ -262,6 +263,86 @@
      }
     },
     "herda": "principal"
+   },
+   {
+    "id": "bless+arma",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Sab",
+       "dano": "1d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ],
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "Spiritual Weapon (2º)"
+      }
+     ]
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1,
+      "2": 1
+     }
+    },
+    "herda": "principal",
+    "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+   },
+   {
+    "id": "punho+arma",
+    "hipotese": "Path to the Grave (ação) e Inflict Wounds no maior espaço no round seguinte + Spiritual Weapon (ação bônus, do round 2 em diante)",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.5,
+       "cd": 13,
+       "save": "Sab",
+       "dano": "1d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ],
+     "ataques": [
+      {
+       "n": 0.25,
+       "bonus": 5,
+       "dano": "8d10",
+       "nota": "Inflict Wounds (2º) no alvo vulnerável (Path to the Grave: dados dobrados)"
+      },
+      {
+       "n": 0.75,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "Spiritual Weapon (2º)"
+      }
+     ]
+    },
+    "gasta": {
+     "canal": 1,
+     "espacos": {
+      "2": 2
+     }
+    },
+    "herda": "principal"
    }
   ],
   "planos": {
@@ -308,7 +389,8 @@
      },
      "canal": {
       "qtd": 1,
-      "volta": "curto"
+      "volta": "curto",
+      "valor": 2
      }
     }
    },
@@ -622,6 +704,87 @@
       }
      },
      "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+    },
+    {
+     "id": "punho+arma",
+     "hipotese": "Path to the Grave (ação) e Inflict Wounds no maior espaço no round seguinte + Spiritual Weapon (ação bônus, do round 2 em diante)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.5,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.25,
+        "bonus": 7,
+        "dano": "10d10",
+        "nota": "Inflict Wounds (3º) no alvo vulnerável (Path to the Grave: dados dobrados)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "3": 1,
+       "2": 1
+      }
+     },
+     "herda": "principal"
     }
    ]
   },
@@ -656,7 +819,8 @@
      },
      "canal": {
       "qtd": 2,
-      "volta": "curto"
+      "volta": "curto",
+      "valor": 2
      }
     }
    },
@@ -972,6 +1136,88 @@
       }
      },
      "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+    },
+    {
+     "id": "punho+arma",
+     "hipotese": "Path to the Grave (ação) e Inflict Wounds no maior espaço no round seguinte + Spiritual Weapon (ação bônus, do round 2 em diante)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.5,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.25,
+        "bonus": 7,
+        "dano": "12d10",
+        "nota": "Inflict Wounds (4º) no alvo vulnerável (Path to the Grave: dados dobrados)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "4": 1,
+       "2": 1,
+       "3": null
+      }
+     },
+     "herda": "principal"
     }
    ]
   },
@@ -1007,7 +1253,8 @@
      },
      "canal": {
       "qtd": 2,
-      "volta": "curto"
+      "volta": "curto",
+      "valor": 2
      }
     }
    },
@@ -1342,6 +1589,88 @@
       }
      },
      "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+    },
+    {
+     "id": "punho+arma",
+     "hipotese": "Path to the Grave (ação) e Inflict Wounds no maior espaço no round seguinte + Spiritual Weapon (ação bônus, do round 2 em diante)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.5,
+        "cd": 16,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.25,
+        "bonus": 8,
+        "dano": "14d10",
+        "nota": "Inflict Wounds (5º) no alvo vulnerável (Path to the Grave: dados dobrados)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "5": 1,
+       "2": 1,
+       "4": null
+      }
+     },
+     "herda": "principal"
     }
    ]
   },
@@ -1378,7 +1707,8 @@
      },
      "canal": {
       "qtd": 2,
-      "volta": "curto"
+      "volta": "curto",
+      "valor": 2
      }
     }
    },
@@ -1708,6 +2038,88 @@
       "metamagia": 1,
       "espacos": {
        "6": 1,
+       "5": null
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+5",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1,
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+    },
+    {
+     "id": "punho+arma",
+     "hipotese": "Path to the Grave (ação) e Inflict Wounds no maior espaço no round seguinte + Spiritual Weapon (ação bônus, do round 2 em diante)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.5,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+5",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.25,
+        "bonus": 9,
+        "dano": "16d10",
+        "nota": "Inflict Wounds (6º) no alvo vulnerável (Path to the Grave: dados dobrados)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "6": 1,
+       "2": 1,
        "5": null
       }
      },

@@ -24,7 +24,8 @@
   "outros": {
    "canal": {
     "qtd": 1,
-    "volta": "curto"
+    "volta": "curto",
+    "valor": 1
    }
   }
  },
@@ -214,24 +215,69 @@
    },
    "herda": "principal",
    "hipotese": "controle"
+  },
+  {
+   "id": "bless+arma",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 4,
+      "dano": "1d8+2",
+      "nota": "martelo de guerra"
+     },
+     {
+      "n": 0.141,
+      "bonus": 4,
+      "dano": "1d8+2",
+      "nota": "War Priest (Sab/dia ÷ 4 lutas ÷ 4 rounds)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: arma-espiritual. Sobra: 3×1º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless+arma. Sobra: 1×1º, 1 canal.",
    "combates": [
     "bless",
-    "arma-espiritual",
+    "bless+arma",
     "bless",
-    "arma-espiritual"
+    "bless+arma"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: arma-espiritual. Sobra: 5×1º, 1×2º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 4×1º, 1×2º, 1 canal.",
    "combates": [
-    "arma-espiritual"
+    "bless+arma"
    ]
   }
  },

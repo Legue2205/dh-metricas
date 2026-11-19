@@ -25,7 +25,8 @@
   "outros": {
    "canal": {
     "qtd": 1,
-    "volta": "curto"
+    "volta": "curto",
+    "valor": 2
    }
   }
  },
@@ -222,6 +223,92 @@
    "herda": "principal"
   },
   {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  },
+  {
+   "id": "santuario+arma",
+   "hipotese": "Twilight Sanctuary (Channel Divinity, ação, 1 minuto) + truques + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Twilight Sanctuary (PV temporários todo round)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "usos_luta": 4,
+      "alvos": 3,
+      "pv": 8.5
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
    "id": "guardioes",
    "dano": {
     "com_save": [
@@ -362,24 +449,86 @@
     }
    },
    "herda": "principal"
+  },
+  {
+   "id": "santuario-guardioes+arma",
+   "hipotese": "Twilight Sanctuary (round 1) + Spirit Guardians (round 2) + truques + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.5,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "3d8",
+      "meio": true,
+      "nota": "Spirit Guardians (3º) no alvo"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Twilight Sanctuary (PV temporários todo round)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "usos_luta": 4,
+      "alvos": 3,
+      "pv": 8.5
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (3º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "3d8",
+     "cd": 15,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "3": 1,
+     "2": 1
+    }
+   },
+   "herda": "principal"
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: arma-espiritual, bless; prioritário: guardioes-arma. Sobra: 3×1º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, bless+arma; prioritário: santuario-guardioes+arma. Sobra: 2×1º.",
    "combates": [
     "bless",
-    "guardioes-arma",
-    "arma-espiritual",
-    "guardioes-arma"
+    "santuario-guardioes+arma",
+    "bless+arma",
+    "santuario-guardioes+arma"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 4×1º, 2×2º, 1×3º, 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: santuario-guardioes+arma. Sobra: 4×1º, 2×2º, 1×3º.",
    "combates": [
-    "guardioes-arma"
+    "santuario-guardioes+arma"
    ]
   }
  },

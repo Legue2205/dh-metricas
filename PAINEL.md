@@ -97,11 +97,11 @@ lucius-15              15    20,0 S   14,5 A+    20,0 S    20,0 S         -     
 ~rpgbot-fighter-battle-master-5   5     4,7 C    3,6 C-    5,0 C+     1,5 D     1,4 D         -         -
 ~rpgbot-fighter-battle-master-7   7    6,3 B-    5,8 C+     7,1 B     2,1 D     2,3 D         -         -
 ~rpgbot-fighter-battle-master-9   9    8,0 B+    8,6 B+    9,1 B+     2,2 D     2,5 D         -         -
-~rpgbot-fighter-cavalier-11  11   10,5 A-   10,8 A-    9,8 B+     2,9 D    6,0 C+         -         -
-~rpgbot-fighter-cavalier-3   3     1,6 D     2,3 D     2,6 D     1,8 D     2,4 D         -         -
-~rpgbot-fighter-cavalier-5   5    5,4 C+     4,0 C     4,4 C     2,6 D     2,8 D         -         -
-~rpgbot-fighter-cavalier-7   7    6,5 B-    6,8 B-    5,8 C+     2,9 D     4,5 C         -         -
-~rpgbot-fighter-cavalier-9   9     7,1 B    9,8 B+    8,4 B+     2,9 D     4,7 C         -         -
+~rpgbot-fighter-cavalier-11  11   10,5 A-   10,8 A-    9,8 B+     2,9 D    5,6 C+         -         -
+~rpgbot-fighter-cavalier-3   3     1,6 D     2,3 D     2,6 D     1,8 D     1,2 D         -         -
+~rpgbot-fighter-cavalier-5   5    5,4 C+     4,0 C     4,4 C     2,6 D     1,5 D         -         -
+~rpgbot-fighter-cavalier-7   7    6,5 B-    6,8 B-    5,8 C+     2,9 D     2,5 D         -         -
+~rpgbot-fighter-cavalier-9   9     7,1 B    9,8 B+    8,4 B+     2,9 D    3,6 C-         -         -
 ~rpgbot-fighter-champion-11  11     7,5 B    9,4 B+   10,8 A-     2,1 D     1,0 E         -         -
 ~rpgbot-fighter-champion-3   3     0,9 E     2,0 D     2,8 D     0,9 E     0,2 F         -         -
 ~rpgbot-fighter-champion-5   5    3,9 C-     4,0 C     4,9 C     1,1 D     0,5 F         -         -

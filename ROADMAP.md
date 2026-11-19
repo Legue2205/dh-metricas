@@ -513,3 +513,70 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   Push sem build nova: ~20 s. Novo disparo manual com `forcar` (Actions → metricas → Run workflow) para recalcular tudo.
 - Teste `test_aneis_minimo_equilibrado_maximo` falhava desde o recálculo da Área v2 (o Marcus passou a ter área em
   toda linha); a asserção foi atualizada, sem mudar números.
+
+## 19/11 noite — passada 3
+- **O que mudou** (convenções em `calibracao/convencoes-passada1.md`, seção Passada 3):
+  - (a) Marcas no Corpo: `ancestral_protectors` em `TIPOS_CORPO`; nova premissa
+    `controle.peso_no_controle.ancestral_protectors` = 0,25 (igual à do Sentinel). Na atenção, a marca reduz o dano do
+    marcado contra os OUTROS membros (`atencao.vida(..., marca=(k, vetor))`); quem marca não ganha nada para si. O
+    "total" usa a marca do mesmo jeito (sem contá-la também como campo). Teste em `tests/test_passada3.py`.
+  - (b) Frontliner único: `ref('tank'|'striker'|'frontliner')` = CA marcial+1 (máx. 21), PV 11+(L−1)·8, soft 0,15,
+    DPR 0,85·ref (premissas `controle.referencia.frontliner.*`). Party = 2 frontliners + atirador + conjurador;
+    `A.posicao(papel)` dá a vaga (tank/striker → frontliner). `build.py` aceita `frontliner`; o motor tático
+    (`segundo_frontliner`, `sem_tanque`) cai numa vaga de frontliner; site mostra "Frontliner". O hash da régua de
+    controle inclui `controle.referencia`. A paridade do controle com as planilhas virou retrato do motor novo
+    (valores da planilha ficam no comentário de `tests/test_paridade.py`).
+  - (c) `area.horda2.rounds_max` 5 → 3.
+  - (d) Área dos magos com upcast (`ferramentas/geradores/wiz.py`, `area_pico`): 2 maiores magias de área nos 2 maiores
+    espaços, escaladas; uma magia só = 2 vezes; truque 0,5. **Bug achado e corrigido no gerador:** os patches de nível
+    eram mesclados recursivamente e o `gasta` herdava espaços de níveis anteriores (73 linhas de controle, combo e
+    invocação gastavam espaços a mais, ex.: controle do Abjuration 11 gastava 2º+5º). Agora o patch anula o que sumiu.
+- Recálculo: push com `[skip ci]` + disparo manual forçado (`gh workflow run` falha: GraphQL bloqueado na sessão; o
+  disparo foi feito pela API REST `POST .../actions/workflows/metricas.yml/dispatches` com `inputs[forcar]=true`).
+  CI 17m03s, verde.
+- **Tau** (`python calibracao/comparar_rpgbot.py`: tau-b entre a nota do RPGBot e a média de dano, Def. F, Def. M,
+  controle e área, plano padrão; níveis 7 / 11). Antes = os mesmos dados antes da passada 3 medidos pelo mesmo script
+  (os valores anotados antes eram Fighter 0,41/0,63 e Wizard 0,18/0,22):
+
+  | Classe | Versão | Antes (7 / 11) | Depois (7 / 11) |
+  |---|---|---|---|
+  | Fighter | originais | 0,46 / 0,62 | 0,40 / 0,62 |
+  | Fighter | puras | 0,38 / 0,67 | 0,38 / 0,67 |
+  | Wizard | originais | 0,18 / 0,21 | 0,03 / −0,03 |
+  | Wizard | puras | −0,03 / 0,21 | −0,03 / −0,03 |
+
+- **Corpo dos frontliners do Fighter** (linha principal: nível do Corpo e perfil; antes → depois):
+
+  | Subclasse | nv 7 | nv 11 |
+  |---|---|---|
+  | Cavalier | 0,1 Taunt → **2,35 Guardião** | 3,73 Tank → **4,99 Tank** |
+  | Echo Knight (puro) | 1,40 Tank → 1,93 Tank | 1,28 Taunt → 1,68 Tank |
+  | Echo Knight | 0,33 Taunt → 0,99 Taunt | 0,0 Alvo Frágil → 0,0 (a marca está na linha `furia`; no plano: 0,0 → 1,9) |
+  | Battle Master | 0,75 Resistente → 0,93 | 1,45 → 1,47 Resistente |
+  | Rune Knight | 0,75 → 0,77 Taunt | 0,95 → 0,99 Taunt |
+  | Samurai | 0,50 → 0,54 Redirecionador | 0,88 → 0,91 Redirecionador |
+  | Purple Dragon Knight | 0,45 → 0,49 Redirecionador | 0,85 → 0,88 Redirecionador |
+  | Psi Warrior | 0,0 Neutro | 0,50 → 0,36 Neutro |
+  | Champion | 0,28 Redirecionador → 0,0 Neutro | 0,87 Redirecionador → 0,0 Neutro |
+  | Eldritch Knight | 0,30 Redirecionador → 0,0 Neutro | 0,0 Redirecionador → 0,0 Vulnerável |
+
+  Quem era `tank` ficou contra uma referência mais fraca (CA −1, PV −4 no 7) e sobe; quem era `striker` (Champion, EK)
+  ficou contra uma mais forte e cai para 0. Controle do Cavalier (plano padrão): 3,0 → 1,9 (nv 7) e 4,9 → 2,5 (nv 11);
+  a marca saiu do Controle (fica 0,25) e foi para o Corpo.
+- Outros efeitos: Área dos magos com área sobe muito (nv 7: ~8 → ~11; nv 11: ~8,4 → 16–20, Evocation e Necromancy no
+  teto 20); magos sem linha de área (Chronurgy, Enchantment, Illusion) caem (teto de 3 rounds pune quem só tem truque).
+  A correção do `gasta` mudou planos automáticos (ex.: Conjuration 11 dano 7,2 → 0,9 e controle 2,7 → 7,0; Evocation
+  11 controle 7,7 → 4,8 porque o plano passou a escolher `area`; Bladesinging 7 controle 3,3 → 0).
+- **3 maiores padrões de divergência que restam:**
+  1. **Área domina o Wizard e é da lista de magias, não da subclasse.** Com upcast + teto 3, todo mago com Fireball
+     fica com Área 10–11 no 7 e 16–20 no 11; Transmutation (vermelho) fica no meio e Divination/Chronurgy (azuis) caem
+     por não terem linha de área. É o que derrubou o tau do Wizard. Candidatos: medir a subclasse pelo diferencial
+     sobre um "mago base" comum, ou dar linha de área a todos os magos que têm Fireball na lista.
+  2. **Manipulação de dados ainda subvalorizada** (Portent, Chronal Shift, Silvery Barbs, iniciativa): Divination
+     (azul) segue no fim (média 4,1 / 5,7), Chronurgy só se segura pelo controle.
+  3. **Fighter: Eldritch Knight (azul) no fim e Rune Knight (verde) no topo do nv 7.** EK: Corpo 0, controle 0,
+     Def. M baixa (War Magic, Shield extra e Indomitable fora do modelo); Rune Knight: Def. F 8,5/12,7 e controle 6,4
+     inflam a média. Champion e PDK (laranjas) seguem embaixo, o que bate.
+- Nota de medição: a Área dos marciais anda em degraus (4,6–4,8 ↔ 8,1–8,4) por diferenças de 0,3–0,5 round, porque a
+  régua da horda não é monotônica no nível (rounds do conjurador de referência: 2,24 no 7, 3,39 no 8, 2,45 no 9).
+  Ex.: Champion 11 8,1 → 4,8 e Echo Knight 7 8,1 → 4,8 com o teto 3. Vale suavizar a régua antes da passada 4.

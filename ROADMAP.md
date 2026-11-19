@@ -446,3 +446,10 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   3. Eldritch Knight: guia diz "muito durável", nós o pomos no meio da Def. Física e no fim da Def. Mágica.
   4. Arcane Archer acima do esperado: Curving Shot foi modelado funcionando, mas RAW exige flecha mágica.
   5. Samurai lidera a média no 11 por Def. Mágica (4 saves proficientes); o guia não destaca isso.
+
+## 19/11 — passada 2 do Fighter
+- Usuário conferiu as cores: só o Samurai muda (azul). Gabarito marcado como conferido.
+- Decisões: (1) tipo genérico `condicao_no_acerto` + 8 efeitos `cond_*` na biblioteca, aplicados a Battle Master
+  (Menacing), Cavalier (Unwavering Mark como marca), Arcane Archer (Shadow Arrow), Rune Knight (Fire e Stone Rune),
+  Psi Warrior (Telekinetic Thrust), PDK (Form of Dread + linha "medo" com Dragon Fear); (2) Curving Shot vira Área.
+- Padrões 2 (Sentinel fraco), 3 (EK durável) e 5 (Samurai Def. Mágica) seguem abertos.

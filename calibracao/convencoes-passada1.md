@@ -47,3 +47,13 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
 - Hex (1 hora): 1 espaço cobre ~2 lutas → `gasta` 0,5 espaço de 1º por luta.
 - Cone: alvos = comprimento ÷ 10, arredondado para cima (15 pés = 2).
 - Agarrão: fonte `agarrao` com o bônus de Atletismo; agarrar com a ação custa 1 ataque no 1º round (n − 0,25).
+
+# Passada 2 (19/11, decidida depois da comparação da passada 1 do Fighter)
+- **Condição no acerto** (tipo `condicao_no_acerto`): manobras, runas, flechas e empurrões que impõem save e condição
+  entram no controle, com os mesmos usos por luta que o recurso já tem (o mesmo uso pode somar dano e controle,
+  porque é um só efeito). Efeitos na biblioteca (`magias.json`, prefixo `cond_`): amedrontado 0,4; derrubado 0,25
+  (um turno); impedido 0,5; cego (um turno) 0,5; banido (um turno) 1; incapacitado 1.
+- Reação sem ataque (Stone Rune): `"no_acerto": false`.
+- Marca no acerto com desvantagem contra outros (Unwavering Mark): tipo `ancestral_protectors`.
+- **Curving Shot** sai do dano e vai para a Área: `cleave_ataque` com `"p": "erro"` (gatilho = errar ≥ 1 dos
+  `n_erro` ataques do turno, contra a CA da horda), como um Horde Breaker.

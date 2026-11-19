@@ -172,9 +172,13 @@ def _gerador(u):
     return g
 
 
-def cleave_ataque(L, bonus, dano, p):
-    """Ataque extra num 2º alvo colado em p dos turnos; 4 rounds."""
+def cleave_ataque(L, bonus, dano, p, n_erro=None):
+    """Ataque extra num 2º alvo colado em p dos turnos; 4 rounds.
+    p = "erro": o gatilho é errar ao menos 1 dos n_erro ataques do turno (Curving Shot), contra a CA da horda."""
     hp, ac, sv = CR[HORDA[L]]; tot = 0.0
+    if p == 'erro':
+        from .base import p_acerto
+        p = 1 - p_acerto(bonus, ac) ** n_erro
     for _ in range(4):
         tot += p * np.minimum(ataque(bonus, ac, lambda m: rola(dano, m)), hp).mean()
     return tot / (NH * hp)
@@ -219,7 +223,7 @@ def _por_cenario(v, i): return v[i] if isinstance(v, list) else v
 def avaliar(spec, modo='rapido'):
     """spec: lista de áreas da linha. Cada uma:
       {"nome", "tipo": "explosao" | "prioritaria", "usos": [{"alvos", "seletiva", "dano", "cd", "metade"}...]}
-      {"nome", "tipo": "cleave_ataque", "bonus", "dano", "p": [esparsa, padrão, agrupada]}
+      {"nome", "tipo": "cleave_ataque", "bonus", "dano", "p": [esparsa, padrão, agrupada] | "erro", "n_erro"}
       {"nome", "tipo": "cleave_save", "dano", "cd", "alvos": [..3..], "metade", "custo_ataque": {"bonus", "dano"}}
     Nível da linha = a melhor área na horda padrão."""
     from .base import letra
@@ -235,7 +239,8 @@ def avaliar(spec, modo='rapido'):
                 usos = [(u['alvos'], u.get('seletiva', False), _gerador(u), u['cd'], u.get('metade', True)) for u in a['usos']]
                 fr = {L: luta(L, usos) for L in range(1, 21)}
             elif t == 'cleave_ataque':
-                fr = {L: cleave_ataque(L, a['bonus'], a['dano'], _por_cenario(a['p'], i)) for L in range(1, 21)}
+                fr = {L: cleave_ataque(L, a['bonus'], a['dano'], a['p'] if a['p'] == 'erro' else _por_cenario(a['p'], i),
+                                       a.get('n_erro')) for L in range(1, 21)}
             elif t == 'cleave_save':
                 fr = {L: cleave_save(L, a['dano'], a['cd'], _por_cenario(a['alvos'], i), a.get('metade', False),
                                      a.get('custo_ataque')) for L in range(1, 21)}

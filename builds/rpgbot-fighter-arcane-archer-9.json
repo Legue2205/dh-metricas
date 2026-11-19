@@ -41,8 +41,7 @@
       "poder": [
        -5,
        10
-      ],
-      "vantagem": 1.0
+      ]
      },
      {
       "n": 1,
@@ -85,10 +84,32 @@
      {
       "tipo": "ameaca",
       "nome": "Corpo (ameaça)"
+     },
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Shadow Arrow (Arcane Shot)",
+      "efeito": "cond_cego_um_turno",
+      "cd": 15,
+      "bonus": [
+       10,
+       10
+      ],
+      "usos": 1,
+      "_p2": true
      }
     ]
    },
-   "saves": {}
+   "saves": {},
+   "area": [
+    {
+     "nome": "Curving Shot",
+     "tipo": "cleave_ataque",
+     "bonus": 10,
+     "dano": "1d8+4",
+     "p": "erro",
+     "n_erro": 2
+    }
+   ]
   },
   {
    "id": "surge",
@@ -108,8 +129,7 @@
       "poder": [
        -5,
        10
-      ],
-      "vantagem": 1.0
+      ]
      },
      {
       "n": 1,
@@ -129,8 +149,7 @@
       "poder": [
        -5,
        10
-      ],
-      "vantagem": 1.0
+      ]
      },
      {
       "n": 0.25,
@@ -160,7 +179,17 @@
       "gatilho": "critico"
      }
     ]
-   }
+   },
+   "area": [
+    {
+     "nome": "Curving Shot",
+     "tipo": "cleave_ataque",
+     "bonus": 10,
+     "dano": "1d8+4",
+     "p": "erro",
+     "n_erro": 2
+    }
+   ]
   }
  ],
  "planos": {
@@ -185,7 +214,7 @@
  "descricao": {
   "resumo": "Arcane Archer elfo com arco longo; Shadow Arrow para cegar alvos grandes e Piercing Arrow para filas de inimigos.",
   "estrategia": "Atira de longe; um Arcane Shot por luta, Action Surge nas lutas importantes.",
-  "nao_modelado": "Cegueira do Shadow Arrow e a vantagem que ela dá; Piercing Arrow (linha de 30 pés = 1 alvo pela tabela de áreas); Grasping Arrow; Indomitable; Second Wind.",
+  "nao_modelado": "Vantagem que a cegueira do Shadow Arrow dá à party; Piercing Arrow; Grasping Arrow; exigência RAW de flecha mágica no Curving Shot (tratado como funcionando); Indomitable; Second Wind.",
   "progressao": "Piercer (Des 19); Indomitable."
  },
  "id": "rpgbot-fighter-arcane-archer-9",

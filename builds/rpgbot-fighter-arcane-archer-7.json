@@ -41,8 +41,7 @@
       "poder": [
        -5,
        10
-      ],
-      "vantagem": 1.0
+      ]
      },
      {
       "n": 1,
@@ -75,10 +74,32 @@
      {
       "tipo": "ameaca",
       "nome": "Corpo (ameaça)"
+     },
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Shadow Arrow (Arcane Shot)",
+      "efeito": "cond_cego_um_turno",
+      "cd": 14,
+      "bonus": [
+       9,
+       9
+      ],
+      "usos": 1,
+      "_p2": true
      }
     ]
    },
-   "saves": {}
+   "saves": {},
+   "area": [
+    {
+     "nome": "Curving Shot",
+     "tipo": "cleave_ataque",
+     "bonus": 9,
+     "dano": "1d8+4",
+     "p": "erro",
+     "n_erro": 2
+    }
+   ]
   },
   {
    "id": "surge",
@@ -98,8 +119,7 @@
       "poder": [
        -5,
        10
-      ],
-      "vantagem": 1.0
+      ]
      },
      {
       "n": 1,
@@ -119,8 +139,7 @@
       "poder": [
        -5,
        10
-      ],
-      "vantagem": 1.0
+      ]
      },
      {
       "n": 0.25,
@@ -140,7 +159,17 @@
       "nota": "Arcane Shot (Shadow Arrow): 2 por descanso = 1 por luta"
      }
     ]
-   }
+   },
+   "area": [
+    {
+     "nome": "Curving Shot",
+     "tipo": "cleave_ataque",
+     "bonus": 9,
+     "dano": "1d8+4",
+     "p": "erro",
+     "n_erro": 2
+    }
+   ]
   }
  ],
  "planos": {
@@ -165,8 +194,8 @@
  "descricao": {
   "resumo": "Arcane Archer elfo com arco longo; Shadow Arrow para cegar alvos grandes e Piercing Arrow para filas de inimigos.",
   "estrategia": "Atira de longe; um Arcane Shot por luta, Action Surge nas lutas importantes.",
-  "nao_modelado": "Cegueira do Shadow Arrow e a vantagem que ela dá; Piercing Arrow (linha de 30 pés = 1 alvo pela tabela de áreas); Grasping Arrow; Indomitable; Second Wind.",
-  "progressao": "Sharpshooter (6); Curving Shot: rerrola um erro por turno (tratado como vantagem num ataque)."
+  "nao_modelado": "Vantagem que a cegueira do Shadow Arrow dá à party; Piercing Arrow; Grasping Arrow; exigência RAW de flecha mágica no Curving Shot (tratado como funcionando); Indomitable; Second Wind.",
+  "progressao": "Sharpshooter (6); Curving Shot: um ataque errado por turno vai para outro alvo (Área, cleave com gatilho de erro)."
  },
  "id": "rpgbot-fighter-arcane-archer-7",
  "nome": "Arcane Archer Fighter (RPGBot: Magical Elf Archer)",

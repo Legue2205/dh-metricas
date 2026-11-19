@@ -9,6 +9,7 @@ Cada fonte é um dicionário com "tipo". Tipos disponíveis (ver README para exe
   alvo_unico        magias de alvo único relançadas com os espaços dados (modo combinar ou melhor)
   alvo_unico_direto efeito de alvo único sem relançar (ex.: Wall of Force num alvo)
   ataque_com_save   save no acerto (Stunning Strike e afins)
+  condicao_no_acerto condição da biblioteca no acerto ou por gatilho, com usos por luta (manobras, runas, flechas)
   counterspell      nega turnos de conjuradores inimigos (usos finitos; gasta reação e espaço)
   melhor_de         escolhe a opção que mais nega (ex.: concentração exclusiva Fear OU Polymorph)
   plano             roteiro round a round (Virgil), executado por um motor genérico
@@ -93,6 +94,39 @@ def _melhor_de(f, E, topo, t):
         v = C.jv(*_avalia_fonte(op, E, topo, t).values()) if op['tipo'] != 'melhor_de' else _melhor_de(op, E, topo, t)
         if best is None or C.tot(E, v) > C.tot(E, best): best = v
     return best
+
+
+def _condicao_no_acerto(f, E, topo, t):
+    """Condição imposta no acerto (manobras, runas, flechas, empurrão telecinético) ou por gatilho sem ataque
+    ("no_acerto": false, ex.: reação). Campos: "efeito" (nome em magias.json: save, peso, termino), "cd",
+    "bonus" (lista dos ataques do turno), "usos" (por luta, fracionário ok; gasto no acerto, mesmo que o alvo passe).
+    um_turno: cada sucesso nega só aquele turno e a tentativa se repete nos turnos seguintes enquanto houver usos.
+    Persistentes: a 1ª falha no save prende até o término; tentativas seguintes só depois de um save bem-sucedido."""
+    m = _mag(f['efeito']); cd, u = f['cd'], f['usos']; bonus = f.get('bonus', [])
+    k = int(np.ceil(u)); fr = u - (k - 1)
+
+    def g(c):
+        p = 1.0 if f.get('no_acerto', True) is False else 1 - np.prod([1 - p_acerto(b, c['ca']) for b in bonus])
+        mod = round(save(c, m.get('save') or 'Des'), 2)
+        pf = float((~C.passa(mod, cd)).mean())
+        if m['termino'] == 'um_turno':
+            turnos = min(float(R), u / p if p else 0.0) * p            # turnos com tentativa
+            sucesso = turnos * pf; sucesso = max(0.0, sucesso - min(sucesso, c['lr']))
+            return sucesso * m['peso'] * (R - 0.5) / R / R
+        estado = {0: 1.0}; v = 0.0                                     # usos gastos -> prob. (ainda sem sucesso)
+        for r in range(R):
+            novo = {}
+            for gm, pr in estado.items():
+                if gm >= k: novo[gm] = novo.get(gm, 0) + pr; continue
+                a = 1.0 if gm < k - 1 else fr
+                tent = pr * p * a
+                v += tent * C.efeito1(mod, cd, m['peso'], m['termino'], c['lr'], False, False, False,
+                                      round(save(c, 'For') - 2, 2), 0, r)
+                novo[gm + 1] = novo.get(gm + 1, 0) + tent * (1 - pf)
+                novo[gm] = novo.get(gm, 0) + pr - tent
+            estado = novo
+        return v
+    return C.unico(E, g)
 
 
 # ---------------- casos especiais registrados ----------------
@@ -223,7 +257,8 @@ def _plano(f, E, topo, t):
 TIPOS = dict(ameaca=_ameaca, terreno=_terreno, sentinela=_sentinela, parada_oa=_parada_oa, area=_area, alvo_unico=_alvo_unico,
              alvo_unico_direto=_alvo_unico_direto, ataque_com_save=_ataque_com_save, melhor_de=_melhor_de,
              plano=_plano, esqueletos=_esqueletos, agarrao=_agarrao, ancestral_protectors=_ancestral,
-             command_fixo=_command_fixo, counterspell=_counterspell, ataque_nega_turno=_ataque_nega_turno)
+             command_fixo=_command_fixo, counterspell=_counterspell, ataque_nega_turno=_ataque_nega_turno,
+             condicao_no_acerto=_condicao_no_acerto)
 
 
 def _avalia_fonte(f, E, topo, t):

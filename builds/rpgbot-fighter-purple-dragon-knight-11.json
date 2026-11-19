@@ -72,6 +72,19 @@
      {
       "tipo": "ameaca",
       "nome": "Corpo (ameaça)"
+     },
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Form of Dread",
+      "efeito": "cond_amedrontado_um_turno",
+      "cd": 17,
+      "bonus": [
+       9,
+       9,
+       9
+      ],
+      "usos": 4,
+      "_p2": true
      }
     ]
    },
@@ -179,6 +192,51 @@
      "1": 0.5
     }
    }
+  },
+  {
+   "id": "medo",
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto",
+     "front": false
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Dragon Fear (cone 30 pés)",
+      "magia": "cond_amedrontado",
+      "alvos": 3,
+      "cd": 17
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     },
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Form of Dread",
+      "efeito": "cond_amedrontado_um_turno",
+      "cd": 17,
+      "bonus": [
+       9,
+       9,
+       9
+      ],
+      "usos": 4,
+      "_p2": true
+     }
+    ]
+   },
+   "herda": "principal",
+   "hipotese": "Dragon Fear no lugar do sopro de dano (gasta 1 uso do Breath Weapon)",
+   "gasta": {
+    "sopro": 1,
+    "espacos": {
+     "1": 0.5
+    }
+   }
   }
  ],
  "planos": {
@@ -203,7 +261,7 @@
  "descricao": {
   "resumo": "Purple Dragon Knight atirador com dip de Warlock (Undead): Eldritch Blast + Hex, sopro de dragão e cura em grupo pelo Second Wind.",
   "estrategia": "Fica atrás disparando Eldritch Blast; Breath Weapon ou Dragon Fear quando os inimigos se juntam; Action Surge com Eldritch Blast nas lutas importantes.",
-  "nao_modelado": "Dragon Fear e Form of Dread (amedrontado), Repelling Blast; PV temporários do Form of Dread; Second Wind próprio; Indomitable; Royal Envoy; o gasto de ação bônus do Hex no 1º round.",
+  "nao_modelado": "Repelling Blast; PV temporários do Form of Dread; Second Wind próprio; Indomitable; Royal Envoy; o gasto de ação bônus do Hex no 1º round.",
   "progressao": "Car 20 (personagem 10); F9 Indomitable; Eldritch Blast 3 raios; sopro 3d10."
  },
  "id": "rpgbot-fighter-purple-dragon-knight-11",

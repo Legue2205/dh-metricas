@@ -120,7 +120,7 @@
   "descricao": {
    "resumo": "Psi Warrior atirador (Giff) com mosquete; dados psiônicos para dano extra, proteção e empurrão telecinético.",
    "estrategia": "Atira de longe e gasta os dados psiônicos com parcimônia ao longo do dia, no Psionic Strike para finalizar alvos.",
-   "nao_modelado": "Protective Field (todos os dados foram para o Psionic Strike); Telekinetic Thrust (derrubar/empurrar); Telekinetic Movement; Psi-Powered Leap; Guarded Mind; Indomitable; Second Wind; vantagem do Giff em testes de For."
+   "nao_modelado": "Protective Field (todos os dados foram para o Psionic Strike); empurrão de 10 pés do Telekinetic Thrust (só o derrubar conta); Telekinetic Movement; Psi-Powered Leap; Guarded Mind; Indomitable; Second Wind; vantagem do Giff em testes de For."
   }
  },
  "niveis": {
@@ -274,6 +274,32 @@
         "gatilho": "critico"
        }
       ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto",
+       "front": false
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       },
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Telekinetic Thrust (Psionic Strike)",
+        "efeito": "cond_derrubado",
+        "cd": 14,
+        "bonus": [
+         9,
+         9
+        ],
+        "usos": 2,
+        "_p2": true
+       }
+      ]
      }
     },
     {
@@ -379,6 +405,32 @@
         "gatilho": "critico"
        }
       ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto",
+       "front": false
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       },
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Telekinetic Thrust (Psionic Strike)",
+        "efeito": "cond_derrubado",
+        "cd": 15,
+        "bonus": [
+         11,
+         11
+        ],
+        "usos": 2.5,
+        "_p2": true
+       }
+      ]
      }
     },
     {
@@ -482,6 +534,33 @@
        {
         "dano": "1d12",
         "gatilho": "critico"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto",
+       "front": false
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       },
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Telekinetic Thrust (Psionic Strike)",
+        "efeito": "cond_derrubado",
+        "cd": 15,
+        "bonus": [
+         11,
+         11,
+         11
+        ],
+        "usos": 2.5,
+        "_p2": true
        }
       ]
      }

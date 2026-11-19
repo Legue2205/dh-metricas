@@ -1,6 +1,14 @@
 {
   "_leia": "Efeitos de controle. peso = fração do turno negada (null = Slow, peso calculado pelo nº de ataques). termino: fim_turno (resave no fim do turno), inicio_turno (save no início, perde o turno se falhar), luta (dura a luta), escape (teste de For contra a CD), um_turno (só o próximo turno). regua = entra na régua do conjurador de referência (area com N alvos, ou unico). Mudar um valor aqui muda personagens E régua: rode 'dh regua --refazer'.",
 
+  "cond_amedrontado_um_turno": {"nivel": 0, "save": "Sab", "peso": 0.4, "termino": "um_turno", "nota": "Menacing Attack: amedrontado até o fim do próximo turno do atacante"},
+  "cond_amedrontado":          {"nivel": 0, "save": "Sab", "peso": 0.4, "termino": "fim_turno", "nota": "amedrontado com resave no fim do turno (Dragon Fear, Form of Dread)"},
+  "cond_derrubado":            {"nivel": 0, "save": "For", "peso": 0.25, "termino": "um_turno", "nota": "derrubado/empurrado: perde meio deslocamento e ataca com desvantagem no turno"},
+  "cond_impedido":             {"nivel": 0, "save": "For", "peso": 0.5, "termino": "fim_turno", "nota": "impedido com resave no fim do turno (Fire Rune)"},
+  "cond_impedido_escape":      {"nivel": 0, "save": "Des", "peso": 0.5, "termino": "escape", "nota": "impedido até escapar (rede, Grasping Arrow)"},
+  "cond_cego_um_turno":        {"nivel": 0, "save": "Sab", "peso": 0.5, "termino": "um_turno", "nota": "cego até o início do próximo turno do atacante (Shadow Arrow)"},
+  "cond_banido_um_turno":      {"nivel": 0, "save": "Car", "peso": 1, "termino": "um_turno", "nota": "banido por um turno (Banishing Arrow)"},
+  "cond_incapacitado":         {"nivel": 0, "save": "Sab", "peso": 1, "termino": "fim_turno", "nota": "encantado e incapacitado, resave no fim do turno (Stone Rune)"},
   "entangle":               {"conc": true, "nivel": 1, "save": "For", "peso": 0.5,  "termino": "escape",     "alvos": 4, "regua": "area"},
   "web":                    {"conc": true, "nivel": 2, "save": "Des", "peso": 0.5,  "termino": "escape",     "alvos": 4, "resave_fora": true, "regua": "area"},
   "hypnotic_pattern":       {"conc": true, "nivel": 3, "save": "Sab", "peso": 1,    "termino": "luta",       "alvos": 6, "regua": "area"},

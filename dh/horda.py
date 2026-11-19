@@ -46,9 +46,11 @@ def _aplica_alvo(hp, dano, grupo):
     return real
 
 
-def combate(L, usos, dpr_alvo, cleaves=(), livres=(), N=None):
+def combate(L, usos, dpr_alvo, cleaves=(), livres=(), N=None, auras=()):
     """Rounds até a fração-alvo da vida da horda. usos: [(alvos, seletiva, gerador, cd, metade)] (gastam recurso);
-    livres: idem, sem limite (cleave_save); cleaves: [(bonus, dano, p)] ataque extra num 2º alvo."""
+    livres: idem, sem limite (cleave_save); cleaves: [(bonus, dano, p)] ataque extra num 2º alvo.
+    auras (19/11, Spirit Guardians e afins): mesmo formato de usos; a ação do 1º round é o lançamento e, do 2º round
+    em diante (quando o grupo do corpo a corpo chega), a aura fere os alvos dela todo round SEM gastar a ação."""
     c = _cfg(); N = N or c['N']
     A.N = N; A.rng = np.random.default_rng(31)
     rng = A.rng
@@ -87,10 +89,14 @@ def combate(L, usos, dpr_alvo, cleaves=(), livres=(), N=None):
 
     for r in range(c['rmax']):
         antes = tot.copy()
+        if auras and r >= 1:
+            for u in auras: lanca(u, r)
         # personagem
         opcoes = [(esperado(u, r), 'uso', u) for u in restantes[:1]] + [(esperado(u, r), 'livre', u) for u in livres]
         melhor = max(opcoes, key=lambda x: x[0]) if opcoes else None
-        if melhor and melhor[0] > dpr_alvo:
+        if auras and r == 0:
+            pass                                    # ação do 1º round: lançar a aura
+        elif melhor and melhor[0] > dpr_alvo:
             lanca(melhor[2], r)
             if melhor[1] == 'uso': restantes.pop(0)
         elif dpr_alvo > 0:
@@ -145,7 +151,7 @@ def avaliar(linha):
     """Velocidade da party (1/rounds) contra hordas de cada nível, comparada com a da régua."""
     from .base import letra
     areas = linha.get('area') or []; inv = linha.get('invocacoes', [])
-    usos, livres, cleaves = [], [], []
+    usos, livres, cleaves, auras = [], [], [], []
     for a in areas:
         t = a.get('tipo', 'explosao')
         if t in ('explosao', 'prioritaria'):
@@ -155,6 +161,8 @@ def avaliar(linha):
             livres.append((al, True, A._gerador(dict(dano=a['dano'])), a['cd'], a.get('metade', False)))
         elif t == 'cleave_ataque':
             cleaves.append(a)
+        elif t == 'aura':
+            auras.append((a['alvos'], True, A._gerador(dict(dano=a['dano'])), a['cd'], a.get('metade', True)))
     ref = _regua_ref(); fr = {}; rounds = {}
     for L in range(1, 21):
         hp0, ac, sv = A.CR[A.HORDA[L]]
@@ -164,7 +172,7 @@ def avaliar(linha):
             if p == 'erro': p = 1 - p_acerto(a['bonus'], ac) ** a.get('n_erro', 1)
             elif isinstance(p, list): p = p[1]
             cl.append((a['bonus'], a['dano'], p))
-        rd = combate(L, usos, _dpr(linha.get('dano'), ac, inv), cl, livres)
+        rd = combate(L, usos, _dpr(linha.get('dano'), ac, inv), cl, livres, auras=auras)
         fr[L] = 1.0 / rd; rounds[L] = round(rd, 2)
     nv = float(A.nivel_eq(fr, ref))
     return dict(nivel_eq=round(nv, 1), rank=letra(nv), rounds=rounds, usos=len(usos))

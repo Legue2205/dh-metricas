@@ -6,3 +6,5 @@ Scripts que escreveram `progressoes/rpgbot-*.json` (rodar da raiz do repo; depoi
 - `p2.py`: passada 2 do Fighter (condição no acerto nas progressões existentes). Já aplicado; não rodar de novo.
 - `wiz.py` (biblioteca) + `wiz_builds.py`: as 13 subclasses de Wizard e as 3 puras.
 - `puro_fighter.py`: Echo Knight e Purple Dragon Knight puros.
+- `cle.py`: Cleric (passada 1): Death, Grave, Life, Light, Nature e Peace (clérigo base). Arcana, Forge, Order,
+  Knowledge, Tempest, Trickery, Twilight e War esperam as páginas corretas no Drive.

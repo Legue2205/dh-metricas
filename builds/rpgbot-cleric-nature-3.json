@@ -1,0 +1,234 @@
+{
+ "gerado_de": "progressoes/rpgbot-cleric-nature.json",
+ "build": "Cleric (Nature), Yuan-ti (MMoM), armadura média + escudo, todas as opcionais de classe; Sab 19 (4), Inspiring Leader 8, Sab 20 (12)",
+ "corpo": {
+  "ca": 18,
+  "pv": 24,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 2,
+    "int": -1,
+    "sab": 5,
+    "car": 3
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 5,
+   "2": 2
+  },
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 13,
+      "save": "Sab",
+      "dano": "1d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "1d6",
+     "cd": 13,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": []
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "bless",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 13,
+      "save": "Sab",
+      "dano": "1d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless"
+  },
+  {
+   "id": "arma-espiritual",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 13,
+      "save": "Sab",
+      "dano": "1d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 13,
+      "save": "Sab",
+      "dano": "1d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Hold Person",
+      "cd": 13,
+      "slots": [
+       2
+      ],
+      "magias": [
+       "hold_person"
+      ],
+      "modo": "melhor"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: arma-espiritual. Sobra: 3×1º.",
+   "combates": [
+    "bless",
+    "arma-espiritual",
+    "bless",
+    "arma-espiritual"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: arma-espiritual. Sobra: 5×1º, 1×2º.",
+   "combates": [
+    "arma-espiritual"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Clérigo da natureza yuan-ti que encanta cobras; na luta é um clérigo de truques e Spirit Guardians, com Channel Divinity convertido em espaços.",
+  "estrategia": "Toll the Dead e Word of Radiance; Spirit Guardians e Spiritual Weapon; Insect Plague a partir do 9.",
+  "nao_modelado": "Cobras e Animal Friendship; Charm Animals and Plants; Dampen Elements; Spike Growth e Plant Growth; Thorn Whip; resistência a magia e veneno do Yuan-ti; Suggestion racial; cura (Healing Word).",
+  "progressao": "Cleric 3; Sab 17; Harness Divine Power 1× espaço de 1º."
+ },
+ "id": "rpgbot-cleric-nature-3",
+ "nome": "Nature Domain Cleric (RPGBot: Snake Charmer)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/nature/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -243,6 +243,8 @@ def avaliar(spec, modo='rapido'):
             elif t == 'cleave_ataque':
                 fr = {L: cleave_ataque(L, a['bonus'], a['dano'], a['p'] if a['p'] == 'erro' else _por_cenario(a['p'], i),
                                        a.get('n_erro')) for L in range(1, 21)}
+            elif t == 'aura':             # área v1 (só referência): aura como um cleave de save que não gasta ataque
+                fr = {L: cleave_save(L, a['dano'], a['cd'], a['alvos'], a.get('metade', True)) for L in range(1, 21)}
             elif t == 'cleave_save':
                 fr = {L: cleave_save(L, a['dano'], a['cd'], _por_cenario(a['alvos'], i), a.get('metade', False),
                                      a.get('custo_ataque')) for L in range(1, 21)}

@@ -89,7 +89,7 @@ def checar(b, magias):
     return erros
 
 
-SUB_CONTROLE = {'campo': 'nivel_campo', 'corpo': 'nivel_atencao'}   # Controle (turnos negados) e Corpo (quem leva o dano)
+SUB_CONTROLE = {'campo': 'nivel_campo', 'corpo': 'nivel_corpo'}   # Controle (turnos negados) e Corpo (quem leva o dano)
 
 
 def _nota(x, sub):
@@ -98,6 +98,7 @@ def _nota(x, sub):
         from .controle.total import nivel_dia
         return nivel_dia(x.get('nivel_controle', x.get('nivel_campo')))
     if sub == 'campo_pico': return x.get('nivel_controle', x.get('nivel_campo'))
+    if sub == 'corpo': return x.get('nivel_corpo', x.get('nivel_atencao'))   # 19/11: nível de neutralidade
     if sub in SUB_CONTROLE: return x.get(SUB_CONTROLE[sub])
     if sub: x = x[sub]
     return x.get('nivel_eq')

@@ -1,0 +1,419 @@
+{
+ "gerado_de": "progressoes/rpgbot-cleric-light.json",
+ "build": "Cleric (Light), Humano Variante (Lucky), só dano de fogo e radiante; escama → meia-armadura + escudo; Sab 18 (4), Sab 20 (8)",
+ "corpo": {
+  "ca": 19,
+  "pv": 80,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 2,
+    "int": 1,
+    "sab": 9,
+    "car": 4
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 2,
+   "6": 1
+  },
+  "outros": {
+   "canal": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 17,
+      "save": "Des",
+      "dano": "3d8+5",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6+5",
+     "cd": 17,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": []
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "bless",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Des",
+      "dano": "3d8+5",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Des",
+      "dano": "3d8+5",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 17,
+      "save": "Des",
+      "dano": "3d8+5",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Fireball (6º)",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "11d6",
+       "cd": 17,
+       "slot": 6
+      }
+     ]
+    },
+    {
+     "nome": "Burning Hands",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d6",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6+5",
+     "cd": 17,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "5": 1,
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "amanhecer",
+   "hipotese": "Radiance of the Dawn (Channel Divinity) + truques",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Des",
+      "dano": "3d8+5",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Radiance of the Dawn",
+     "tipo": "explosao",
+     "usos": [
+      {
+       "alvos": 6,
+       "seletiva": true,
+       "dano": "2d10+11",
+       "cd": 17,
+       "metade": true
+      }
+     ]
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6+5",
+     "cd": 17,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "canal": 1
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "esfera",
+   "hipotese": "Flaming Sphere (no lugar da Spiritual Weapon: o guia só usa fogo e radiante)",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Des",
+      "dano": "3d8+5",
+      "meio": false,
+      "nota": "Sacred Flame"
+     },
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Des",
+      "dano": "2d6",
+      "meio": true,
+      "nota": "Flaming Sphere (ação bônus)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "guardioes",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Des",
+      "dano": "3d8+5",
+      "meio": false,
+      "nota": "Sacred Flame"
+     },
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "6d8",
+      "meio": true,
+      "nota": "Spirit Guardians (6º) no alvo"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (6º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "6d8",
+     "cd": 17,
+     "metade": true
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6+5",
+     "cd": 17,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: area, controle. Sobra: 4×1º, 3×2º, 3×3º, 1×5º, 2 canal.",
+   "combates": [
+    "controle",
+    "controle",
+    "controle",
+    "area"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 4×1º, 3×2º, 3×3º, 3×4º, 1×5º, 2 canal.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Clérigo blaster de fogo e radiante: Sacred Flame e Word of Radiance, Burning Hands, Fireball, Radiance of the Dawn e Spirit Guardians.",
+  "estrategia": "Conjurador a distância com armadura média; área no 1º round das lutas com grupos, Spirit Guardians quando entra no meio, Flaming Sphere no lugar da Spiritual Weapon.",
+  "nao_modelado": "Warding Flare e Improved Flare (desvantagem num ataque por reação); Wall of Fire; Scorching Ray; Faerie Fire; Lucky; dano de fogo da esfera em quem termina o turno ao lado; cura (Healing Word).",
+  "progressao": "Cleric 11; Sab 20; Potent Spellcasting."
+ },
+ "id": "rpgbot-cleric-light-11",
+ "nome": "Light Domain Cleric (RPGBot: Variant Human Light Domain Cleric)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/light-domain/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

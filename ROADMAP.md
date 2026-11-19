@@ -667,3 +667,21 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   corpo novo, passada 1 cega do Cleric (premissas congeladas, convenções de conjurador + frontliner), recálculo,
   depois ler as notas, gabarito `calibracao/rpgbot-cleric.json` e comparação. Não mexer na Área.
 - Pendente do usuário: Settings → Pages → Source: GitHub Actions.
+
+## 19/11 (noite) — Corpo como nível de neutralidade; passada 1 do Cleric (6 domínios)
+- **Corpo novo** (`dh/controle/total.py`: `t_atencao`, `nivel_corpo`): a build fixa vai para parties/encontros de nível
+  L' e a nota é o L' em que T cruza zero (primeiro cruzamento a partir do nível da build, interpolado; |T| ≤ 0,11 no
+  próprio nível = nota igual ao nível; 20+ e < 1 por extrapolação, piso 0,1). Gravado como `nivel_corpo` (+ `corpo_busca`
+  com os pontos); planos/anéis/site leem `nivel_corpo` (cai em `nivel_atencao` nos resultados antigos). Tag inalterada.
+  Exemplos (rápido): Cavalier 7 2,35 → 10,9 (Guardião); Champion 7 0 → 7,0 (Neutro); EK 11 0 → 9,8; Evocation 7 2,0 → 11,1.
+  `tests/test_corpo_nivel.py`. Todo o Controle recalcula no CI (mudou `total.py`).
+- **Área: tipo `aura`** (`dh/horda.py`): Spirit Guardians / Insect Plague. Builds sem aura: mesmo resultado.
+- **Cleric, passada 1 cega** (`ferramentas/geradores/cle.py`, convenções em `calibracao/convencoes-passada1.md`):
+  Death, Grave, Life, Light, Nature + **Peace sobre clérigo base** (sem build no RPGBot; o guia recomenda banir).
+  Gabarito `calibracao/rpgbot-cleric.json` com notas inferidas do texto (colagem sem cores; Peace e Twilight = 5,
+  "acima do azul") — **usuário confere**.
+- **Drive com colagens erradas:** arcana (tem a página de magias), forge (tem Death), order (tem Nature); vazios:
+  knowledge, tempest, trickery, twilight, war. Usuário vai recolar → lote 2 do Cleric com o mesmo gerador.
+- Primeiras leituras (modo rápido, plano padrão): Peace 9 Suporte 4,3 (Life 7: 0,4; Grave 9: 0); Corpo dos clérigos
+  de retaguarda com CA 19 fica alto (Peace 9: 19,3; Light 5: 17,8) porque o conjurador de referência tem CA 16 — olhar
+  na comparação se o Corpo novo infla conjuradores bem armados.

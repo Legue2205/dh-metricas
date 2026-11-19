@@ -169,6 +169,49 @@ def avaliar_nivel(fn, ficha, L, regua):
     return geral, out
 
 
+def t_atencao(fn, ficha, L):
+    """T (vidas poupadas pela party inteira só com a atenção) da build FIXA (CA, PV, taunt, DPR do nível dela) posta
+    numa party e em encontros de nível L. Mesma conta de vidas_atencao em avaliar_nivel, sem a régua."""
+    t = 0.0
+    im = A.posicao(ficha['papel']); marca_nomes = getattr(fn, 'marca', set())
+    for tipo in PESO_TIPO:
+        E = encontro(tipo, L); acc = 0.0
+        for ti, tp in enumerate(TOPOS):
+            mk = [v for k, v in fn(E, tp).items() if k in marca_nomes] if marca_nomes else []
+            marca = (im, C.jv(*mk)) if mk else None
+            pref = A.party_com(A.ref(ficha['papel'], L), L); px = A.party_com(ficha, L)
+            acc += TOPO[tp]['peso'] * (A.vida(E, pref, ti) - A.vida(E, px, ti, marca=marca))
+        t += PESO_TIPO[tipo] * acc
+    return t
+
+
+def nivel_corpo(fn, ficha, L0, t0):
+    """Corpo como nível equivalente de neutralidade (decisão de 19/11): o nível de party L' em que a build fixa fica
+    neutra (T cruza zero). Neutra no próprio nível (|T| ≤ LIMIAR_T, o mesmo limiar da tag) ⇒ nota = L0.
+    Busca o primeiro cruzamento a partir do nível da build (para cima se T > 0, para baixo se T < 0), interpolando
+    entre níveis inteiros; positivo ainda no 20 ⇒ extrapola pela inclinação (20+); negativo já no 1 ⇒ extrapola
+    abaixo de 1 (nunca 0 fixo; piso 0,1)."""
+    if abs(t0) <= LIMIAR_T: return float(L0), [(L0, round(t0, 3))]
+    passo = 1 if t0 > 0 else -1
+    pts = [(L0, t0)]; L = L0
+    while 1 <= L + passo <= 20:
+        L += passo; t = t_atencao(fn, ficha, L); pts.append((L, t))
+        if (t <= 0) if passo > 0 else (t >= 0):
+            (la, ta), (lb, tb) = pts[-2], pts[-1]
+            return float(la + (lb - la) * ta / (ta - tb)), [(l, round(x, 3)) for l, x in pts]
+    (la, ta), (lb, tb) = (pts[-2], pts[-1]) if len(pts) > 1 else ((L0, t0), (L0, t0))
+    incl = (tb - ta) / (lb - la) if lb != la else 0.0
+    raiz = lb - tb / incl if incl else None
+    if raiz is None or (raiz - lb) * passo <= 0:
+        raiz = lb + passo            # T não caminha para zero no extremo: um nível além dele
+    return float(max(0.1, raiz)), [(l, round(x, 3)) for l, x in pts]
+
+
+def _nota_corpo(fn, ficha, L, t0):
+    nv, pts = nivel_corpo(fn, ficha, L, t0)
+    return dict(nivel_corpo=round(nv, 2), rank_corpo=base.letra(nv), corpo_busca=pts)
+
+
 def avaliar(fn, ficha, L, absoluto=False, regua=None):
     regua = regua or Regua()
     geral, tipos = avaliar_nivel(fn, ficha, L, regua)
@@ -178,6 +221,7 @@ def avaliar(fn, ficha, L, absoluto=False, regua=None):
                nivel_atencao=round(geral['nivel_atencao'], 2), rank_atencao=base.letra(geral['nivel_atencao']),
                vidas_total=round(geral['vidas_total'], 3), vidas_campo=round(geral['vidas_campo'], 3),
                vidas_atencao=round(geral['vidas_atencao'], 3), corpo=_corpo(geral),
+               **_nota_corpo(fn, ficha, L, geral['vidas_atencao']),
                por_tipo={t: round(v['nivel_total'], 2) for t, v in tipos.items()},
                negacao_por_fonte={t: v['negacao_por_fonte'] for t, v in tipos.items()})
     if absoluto:

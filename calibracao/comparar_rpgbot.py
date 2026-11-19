@@ -15,7 +15,7 @@ from itertools import combinations
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
-CLASSES = ('fighter', 'wizard')
+CLASSES = ('fighter', 'wizard', 'cleric')
 EIXOS = ('dano', 'deff', 'defm', 'controle', 'area')
 NIVEIS = (7, 11)
 

@@ -103,3 +103,24 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
   A linha `combo` fica como estava (controle + as áreas no círculo base).
 - Gerador (`ferramentas/geradores/wiz.py`): os patches de nível agora são exatos (chave que sumiu = null), então o
   `gasta` de cada linha não herda mais espaços de níveis anteriores.
+
+# Clérigos (passada 1 do Cleric, 19/11)
+- Gerador `ferramentas/geradores/cle.py` (usa `wiz.py`). Espaços pelo nível de conjurador (sem Arcane Recovery, sem Shield).
+- Linhas padrão: `principal` (truque), `bless` (Bless, suporte `bonus_continuo` 3 aliados +2,5), `arma-espiritual`
+  (Spiritual Weapon no 2º, 1 ataque por round), `guardioes` (Spirit Guardians no maior espaço, +1d8 por círculo acima do
+  3º), `guardioes-arma` (SG + SW no round 2), `controle` (Hold Person; Banishment a partir do Cleric 7), `area` (regra de
+  upcast do Wizard). O plano automático escolhe.
+- **Spirit Guardians = `aura`** (tipo novo da Área): a ação do round 1 é o lançamento; do round 2 em diante fere 3 alvos
+  (esfera de 15 pés pela DMG) todo round sem gastar a ação. No dano de alvo único: `com_save` n 0,75 (meio).
+  Insect Plague também como `aura` (4 alvos).
+- Word of Radiance: `cleave_save` [1, 2, 3] (convenção do Thunderclap). Reaper: Toll the Dead em 2 (`cleave_save` [1, 2, 2]).
+- Channel Divinity: `outros.canal` (1/descanso curto até o Cleric 5, 2 a partir do 6). Uso que custa a ação (Preserve
+  Life, Balm of Peace, Radiance of the Dawn, Path to the Grave) = linha própria com `gasta`; uso que não custa ação
+  (Touch of Death) = `por_luta` com qtd ÷ 2 lutas. Harness Divine Power (quando o guia usa opcionais): espaço extra no pool.
+- Divine Strike / Blessed Strikes / Potent Spellcasting somados na string de dano do truque (1 ataque por turno).
+- Armadura média: escama + escudo (18) até o 4, meia-armadura (19) a partir do 5; pesada: cota de malha (18), placas no 7.
+- Cura na luta (Healing Word) não modelada; cura fora de luta só quando o guia a centra (Goodberry do Life, 1 espaço
+  de 1º fora do pool). Warding Flare, Dampen Elements, Sentinel at Death's Door, Protective Bond: não modelados.
+- Peace (sem build no RPGBot): clérigo base + Emboldening Bond = `bonus_por_uso` (1 ataque por turno de cada aliado
+  no vínculo) + `aura_saves`, escalados pela fração de lutas cobertas (PB/dia ÷ 4 lutas).
+- Corpo agora é o nível de neutralidade (`nivel_corpo`, ver ROADMAP 19/11).

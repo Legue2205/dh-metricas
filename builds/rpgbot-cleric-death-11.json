@@ -1,0 +1,452 @@
+{
+ "gerado_de": "progressoes/rpgbot-cleric-death.json",
+ "build": "Cleric (Death), Meio-elfo (High Elf, Custom Origin) com Booming Blade; rapieira + escudo, armadura média; Telekinetic 4 (Sab 18), Sab 20 (8)",
+ "corpo": {
+  "ca": 19,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 3,
+    "con": 3,
+    "int": -1,
+    "sab": 9,
+    "car": 3
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 2,
+   "6": 1
+  },
+  "outros": {
+   "canal": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d8+3+2d8+1d8",
+      "nota": "Booming Blade (rapieira) + Divine Strike"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "27",
+      "nota": "Touch of Death (Channel Divinity ÷ 2 lutas)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [
+    {
+     "nome": "Reaper (Toll the Dead em 2 alvos)",
+     "tipo": "cleave_save",
+     "dano": "3d12",
+     "cd": 17,
+     "save": "Sab",
+     "alvos": [
+      1,
+      2,
+      2
+     ]
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6",
+     "cd": 17,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": []
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "bless",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+3+2d8+1d8",
+      "nota": "Booming Blade (rapieira) + Divine Strike"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "27",
+      "nota": "Touch of Death (Channel Divinity ÷ 2 lutas)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless"
+  },
+  {
+   "id": "arma-espiritual",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d8+3+2d8+1d8",
+      "nota": "Booming Blade (rapieira) + Divine Strike"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "27",
+      "nota": "Touch of Death (Channel Divinity ÷ 2 lutas)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+3+2d8+1d8",
+      "nota": "Booming Blade (rapieira) + Divine Strike"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "27",
+      "nota": "Touch of Death (Channel Divinity ÷ 2 lutas)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Blindness/Deafness",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "blindness"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "guardioes",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+3+2d8+1d8",
+      "nota": "Booming Blade (rapieira) + Divine Strike"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "6d8",
+      "meio": true,
+      "nota": "Spirit Guardians (6º) no alvo"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "27",
+      "nota": "Touch of Death (Channel Divinity ÷ 2 lutas)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (6º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "6d8",
+     "cd": 17,
+     "metade": true
+    },
+    {
+     "nome": "Reaper (Toll the Dead em 2 alvos)",
+     "tipo": "cleave_save",
+     "dano": "3d12",
+     "cd": 17,
+     "save": "Sab",
+     "alvos": [
+      1,
+      2,
+      2
+     ]
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6",
+     "cd": 17,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes"
+  },
+  {
+   "id": "guardioes-arma",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+3+2d8+1d8",
+      "nota": "Booming Blade (rapieira) + Divine Strike"
+     },
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "6d8",
+      "meio": true,
+      "nota": "Spirit Guardians (6º) no alvo"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "27",
+      "nota": "Touch of Death (Channel Divinity ÷ 2 lutas)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (6º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "6d8",
+     "cd": 17,
+     "metade": true
+    },
+    {
+     "nome": "Reaper (Toll the Dead em 2 alvos)",
+     "tipo": "cleave_save",
+     "dano": "3d12",
+     "cd": 17,
+     "save": "Sab",
+     "alvos": [
+      1,
+      2,
+      2
+     ]
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6",
+     "cd": 17,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes-arma"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 4×1º, 2×2º, 3×3º, 2×5º, 2 canal.",
+   "combates": [
+    "controle",
+    "controle",
+    "controle",
+    "guardioes-arma"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 4×1º, 2×2º, 3×3º, 3×4º, 2×5º, 2 canal.",
+   "combates": [
+    "guardioes-arma"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Clérigo da morte de corpo a corpo: Booming Blade de rapieira com Touch of Death e Divine Strike, Reaper para acertar dois alvos com Toll the Dead.",
+  "estrategia": "Corpo a corpo com Booming Blade; Spirit Guardians para grupos e Spiritual Weapon como ação bônus; Hold Person, Blindness e Banishment quando precisa tirar alguém da luta.",
+  "nao_modelado": "Dano secundário do Booming Blade; empurrão do Telekinetic para juntar alvos do Reaper; Inflict Wounds e Vampiric Touch com Touch of Death; Animate Dead; Inescapable Destruction; False Life; cura (Healing Word).",
+  "progressao": "Cleric 11; Sab 20; meia-armadura + escudo."
+ },
+ "id": "rpgbot-cleric-death-11",
+ "nome": "Death Domain Cleric (RPGBot: Stabby, Murdery Death)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/death/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

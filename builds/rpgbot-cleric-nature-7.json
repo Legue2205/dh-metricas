@@ -1,0 +1,367 @@
+{
+ "gerado_de": "progressoes/rpgbot-cleric-nature.json",
+ "build": "Cleric (Nature), Yuan-ti (MMoM), armadura média + escudo, todas as opcionais de classe; Sab 19 (4), Inspiring Leader 8, Sab 20 (12)",
+ "corpo": {
+  "ca": 19,
+  "pv": 52,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 2,
+    "int": -1,
+    "sab": 7,
+    "car": 4
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 5,
+   "3": 3,
+   "4": 1
+  },
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 15,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": []
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "bless",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless"
+  },
+  {
+   "id": "arma-espiritual",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "guardioes",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "4d8",
+      "meio": true,
+      "nota": "Spirit Guardians (4º) no alvo"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (4º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "4d8",
+     "cd": 15,
+     "metade": true
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 15,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes"
+  },
+  {
+   "id": "guardioes-arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "4d8",
+      "meio": true,
+      "nota": "Spirit Guardians (4º) no alvo"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (4º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "4d8",
+     "cd": 15,
+     "metade": true
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 15,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes-arma"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: arma-espiritual; prioritário: arma-espiritual, guardioes-arma. Sobra: 4×1º, 1×2º, 3×3º.",
+   "combates": [
+    "arma-espiritual",
+    "arma-espiritual",
+    "arma-espiritual",
+    "guardioes-arma"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 4×1º, 4×2º, 3×3º.",
+   "combates": [
+    "guardioes-arma"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Clérigo da natureza yuan-ti que encanta cobras; na luta é um clérigo de truques e Spirit Guardians, com Channel Divinity convertido em espaços.",
+  "estrategia": "Toll the Dead e Word of Radiance; Spirit Guardians e Spiritual Weapon; Insect Plague a partir do 9.",
+  "nao_modelado": "Cobras e Animal Friendship; Charm Animals and Plants; Dampen Elements; Spike Growth e Plant Growth; Thorn Whip; resistência a magia e veneno do Yuan-ti; Suggestion racial; cura (Healing Word).",
+  "progressao": "Cleric 7; Sab 19; Harness Divine Power 2× espaço de 2º."
+ },
+ "id": "rpgbot-cleric-nature-7",
+ "nome": "Nature Domain Cleric (RPGBot: Snake Charmer)",
+ "grupo": "RPGBot",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/nature/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

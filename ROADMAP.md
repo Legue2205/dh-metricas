@@ -624,3 +624,27 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
     no CI por causa de `tests/test_impressoes.py` (recalcula 3 builds do zero).
   - mudança só em `dh/horda.py` (só a Área): **2m26s** no total (`dh completo` 58 s: régua da horda refeita + Área
     das 157 builds, o resto copiado), contra 12–17 min antes.
+  - mudança só em `dh/planos.py` (planos refeitos, todos os eixos copiados): **1m18s** no total (`dh completo` 1 s).
+- **resultados/**: continua na main (é o cache). O que deixou de ir para o commit: arquivo em que só `segundos` mudou
+  (ex.: `--forcar` sem mudança de número) não é regravado. As impressões aumentam cada resultado em ~1–9 KB
+  (uma linha por eixo); no commit de uma mudança de motor, o diff de cada arquivo é a impressão do eixo + `segundos`.
+
+## 19/11 noite — pendências (tarefa 3)
+- **Trocar a fonte do Pages (depende do usuário; a API foi recusada pelo proxy desta sessão):**
+  1. GitHub → repositório `Legue2205/dh-metricas` → **Settings** → **Pages** (menu da esquerda, em "Code and
+     automation").
+  2. Em **Build and deployment** → **Source**, trocar "Deploy from a branch" por **GitHub Actions**. Não precisa
+     escolher modelo de workflow (o `metricas.yml` já tem o deploy).
+  3. Disparar o workflow uma vez (Actions → metricas → Run workflow, ou um push em `dh/`/`builds/`) e conferir que
+     o job `publicar` passou e o site abre.
+  4. Depois disso, no `.github/workflows/metricas.yml`, na linha `git add builds resultados cache PAINEL.md docs`,
+     **tirar o ` docs`** (e o comentário acima dela); opcionalmente trocar `continue-on-error: true` do job `publicar`
+     por nada (para o erro de deploy aparecer). E parar de versionar o site: `git rm -r --cached docs` + `docs/` no
+     `.gitignore`, num commit só. (O histórico antigo de docs/ continua no repositório; limpar exigiria reescrever
+     o histórico, o que não foi feito.)
+- O pytest do CI ficou ~40–60 s mais lento (`tests/test_impressoes.py`). Se incomodar: rodar esses testes só quando
+  `dh/` mudar, ou marcá-los como lentos.
+- Mexer em `motor.py`/`impressoes.py`/`premissas.py`/`arquivos.py` não invalida nada: se uma mudança nesses arquivos
+  mudar número, subir `VERSAO`.
+- Avisos do Actions: `actions/checkout@v4`, `setup-python@v5`, `upload-pages-artifact@v3` e `deploy-pages@v4` usam
+  Node 20 (obsoleto, forçado para Node 24). Funciona; atualizar as versões quando saírem as novas.

@@ -489,3 +489,27 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - Área v2 (`dh/horda.py`): combate contra horda com a party de referência, até 50% da vida, 5 rounds no máximo.
   Premissas `area.horda2.*`. Muda a Área de TODAS as builds (party incluída) e agora marciais também têm Área.
 - Plano: Área = pico da build. `forcar_falha` (Portent, Chronal Shift). Builds `-puro` (5).
+
+## 19/11 noite — tarefa 1
+- **Site dividido.** `docs/index.html` = modelo + índice da tabela (id, nome, grupo, nível, build, rótulo, abas, PV,
+  CA, DPR em CA 15, notas dos eixos, perfil de corpo); `docs/dados/<id>.json` = o resto (linhas, anéis, descrição;
+  fonte, plano e médias por categoria de cada entrada). O front-end busca o JSON com `fetch` ao abrir o detalhe ou
+  escolher "Comparar com…" (cache em memória, "carregando…", URL com `?v=<versão>` para não misturar versões).
+  Tabela: 150 linhas por vez + "mostrar mais".
+  - Tamanhos: index.html **2.440.894 → 424.102 bytes** (gzip 226 KB → 45 KB); `docs/dados/` 157 arquivos,
+    1.821.530 bytes no total (maior: marcus-7, 64 KB).
+  - Teste no Chromium (Playwright): zero erros de JS; abas, busca, filtros, ordenação, "Mostrar RPGBot", seletor
+    de nível, detalhe, linhas-opção, categorias, comparação e tema funcionam. O HTML do detalhe e da comparação
+    (18 casos em 3 abas) saiu **idêntico** ao do site antigo. `tests/test_site_navegador.py` roda onde houver
+    Playwright (no CI é pulado).
+- **`dh completo` em paralelo.** Várias builds → `ProcessPoolExecutor` (os.cpu_count() processos, spawn), réguas
+  preaquecidas no processo principal (`motor.preaquecer`), uma linha por build no terminal. Caches de `cache/` e
+  `resultados/` gravados de forma atômica (`dh/arquivos.py`) e mesclados com o que outro processo gravou.
+  - Determinismo: 3 builds (Cavalier 7, Evocation 9, Amadeus 7) em série, em ordem invertida, isoladas e em
+    paralelo → JSON idênticos (sem `segundos`). No CI, o recálculo forçado das 157 builds em paralelo mudou só o
+    campo `segundos` em relação ao recálculo em série anterior.
+  - Como o próprio arquivo entra no hash dos caches, area/horda/saves ganharam caches novos (mesmos números).
+- **CI:** recálculo completo **~32 min (32m26s, em série) → 12m12s** no total (completo: 702 s com 4 processos).
+  Push sem build nova: ~20 s. Novo disparo manual com `forcar` (Actions → metricas → Run workflow) para recalcular tudo.
+- Teste `test_aneis_minimo_equilibrado_maximo` falhava desde o recálculo da Área v2 (o Marcus passou a ter área em
+  toda linha); a asserção foi atualizada, sem mudar números.

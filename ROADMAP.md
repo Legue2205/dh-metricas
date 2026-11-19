@@ -696,3 +696,15 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   3. **Suporte não entra na média do `comparar_rpgbot.py`**, e é o eixo de Peace (2,1 / 4,1, o único clérigo com
      suporte relevante) e Life (0,4: cura na luta não modelada). Para o Cleric, incluir Suporte e Corpo na média.
   4. Light com dano baixo (Sacred Flame sem metade no save); Grave não passa o Death no dano (o soco é 1 por luta).
+
+## 19/11 (noite 2) — corpo: nível de neutralidade
+- Pedido repetido a um agente novo: o corpo novo **já estava implementado** em `f3f44f5` (`t_atencao`/`nivel_corpo`
+  em `dh/controle/total.py`, CI já recalculou). Não reimplementado; só conferido no motor real e coberto por teste.
+- `tests/test_corpo_nivel.py` ganhou teste com o motor real (Cavalier 7, Champion 7, EK 11, Evocation 7): o T da busca é
+  o mesmo `vidas_atencao` da tag; nota < nível ⇔ T < −0,11 e nota > nível ⇔ T > 0,11; T cai com L' (inclinação < 0,
+  T(1) > T(20)) com degraus de subida < 0,12 (o Light 11 tem +0,09 entre L' 4 e 5: tabela de CR).
+- Custo medido: 20 níveis de T ≈ 0,3 s por linha (modo rápido) — não precisa de cache próprio.
+- **Pendência (decisão do usuário, junto com o padrão 1 da comparação do Cleric):** o piso 0,1, o "um nível além" quando
+  a extrapolação não converge e o limiar 0,11 (compartilhado com a tag) ainda são constantes em `total.py`. Não viraram
+  premissa agora porque cadastrar `controle.*` muda o hash e recalcula todo o Controle; melhor fazer junto com a escolha
+  entre teto em 20 / régua por papel / L' só até nível ± 5, para recalcular uma vez só.

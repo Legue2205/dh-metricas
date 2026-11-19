@@ -17,16 +17,31 @@ marcus-7                7     2,7 D    3,9 C-    5,9 C+     4,3 C         -    8
 ~miau-8                 8         -    6,6 B-    6,8 B-     2,5 D     4,4 C         -         -
 ~pyotr-14              14    8,9 B+    3,5 C-   13,3 A+    16,9 S     2,9 D    12,7 A         -
 ravin-7                 7    6,2 B-    9,9 B+    16,4 S    12,6 A         -   10,1 A-     0,0 F
+rpgbot-cleric-arcana-11  11     4,9 C    8,0 B+     7,1 B    12,3 A         -   10,2 A-     0,0 F
+rpgbot-cleric-arcana-3   3     1,4 D     1,9 D     2,1 D     4,1 C         -     2,8 D     0,6 E
+rpgbot-cleric-arcana-5   5     4,1 C     4,0 C    3,5 C-    8,6 B+         -    8,1 B+     0,7 E
+rpgbot-cleric-arcana-7   7     4,5 C    5,0 C+     4,6 C    8,6 B+         -    8,5 B+     0,0 F
+rpgbot-cleric-arcana-9   9    3,8 C-    6,5 B-    5,8 C+    12,3 A         -    8,9 B+     0,0 F
 rpgbot-cleric-death-11  11    6,6 B-    9,3 B+    8,4 B+    12,6 A         -   10,3 A-     0,0 F
 rpgbot-cleric-death-3   3     1,8 D     2,2 D     2,6 D     4,1 C         -     4,1 C     0,6 E
 rpgbot-cleric-death-5   5     4,4 C     4,3 C     4,2 C    8,4 B+         -    8,2 B+     0,7 E
 rpgbot-cleric-death-7   7    5,4 C+    5,7 C+    5,5 C+    8,6 B+         -    8,6 B+     0,0 F
 rpgbot-cleric-death-9   9    5,7 C+     7,5 B     7,0 B    12,6 A         -    9,0 B+     0,0 F
+rpgbot-cleric-forge-11  11    5,1 C+   10,9 A-    8,0 B+    8,8 B+         -   10,1 A-     0,0 F
+rpgbot-cleric-forge-3   3     1,5 D     2,2 D     2,2 D     4,1 C         -     2,8 D     0,6 E
+rpgbot-cleric-forge-5   5     4,0 C    3,9 C-    3,9 C-     7,2 B         -    8,1 B+     0,7 E
+rpgbot-cleric-forge-7   7     4,3 C     7,9 B    5,1 C+    8,2 B+         -    8,4 B+     0,0 F
+rpgbot-cleric-forge-9   9     4,1 C   10,0 A-    6,5 B-    8,8 B+         -    8,9 B+     0,0 F
 rpgbot-cleric-grave-11  11    5,2 C+    6,6 B-    5,8 C+    12,7 A         -   10,3 A-     0,0 F
 rpgbot-cleric-grave-3   3     1,4 D     1,6 D     1,7 D     3,0 D         -     4,1 C     0,6 E
 rpgbot-cleric-grave-5   5     4,4 C    3,3 C-     3,0 D    8,2 B+         -    8,1 B+     0,0 F
 rpgbot-cleric-grave-7   7     4,6 C     4,4 C     4,1 C    8,4 B+         -    8,5 B+     0,0 F
 rpgbot-cleric-grave-9   9     2,6 D    5,3 C+     4,8 C    12,1 A         -    8,9 B+     0,0 F
+rpgbot-cleric-knowledge-11  11    5,8 C+    6,8 B-    6,0 C+    12,8 A         -   10,3 A-     0,0 F
+rpgbot-cleric-knowledge-3   3     1,3 D     1,6 D     1,7 D     4,1 C         -     2,8 D     0,6 E
+rpgbot-cleric-knowledge-5   5     4,2 C    3,3 C-     3,0 D    8,7 B+         -    8,1 B+     0,7 E
+rpgbot-cleric-knowledge-7   7     4,6 C     4,5 C     4,2 C    8,9 B+         -    8,5 B+     0,0 F
+rpgbot-cleric-knowledge-9   9     4,3 C    5,5 C+     4,9 C    12,8 A         -    8,9 B+     0,0 F
 rpgbot-cleric-life-11  11    5,3 C+   10,8 A-    9,0 B+    12,2 A         -   10,2 A-     0,4 F
 rpgbot-cleric-life-3    3     0,4 F     2,2 D     2,3 D     4,1 C         -     0,5 E     1,4 D
 rpgbot-cleric-life-5    5     0,9 E     4,3 C     4,5 C     7,4 B         -     4,2 C     0,4 F
@@ -42,11 +57,36 @@ rpgbot-cleric-nature-3   3     1,3 D     1,9 D     2,1 D    3,6 C-         -    
 rpgbot-cleric-nature-5   5     4,7 C     4,0 C    3,5 C-    8,3 B+         -    8,1 B+     0,0 F
 rpgbot-cleric-nature-7   7     4,6 C    5,0 C+     4,6 C    8,5 B+         -    8,5 B+     0,0 F
 rpgbot-cleric-nature-9   9    3,9 C-    6,5 B-    5,8 C+    12,2 A         -    8,9 B+     0,5 E
+rpgbot-cleric-order-11  11    5,7 C+   10,2 A-     7,5 B    12,8 A         -   10,3 A-     0,0 F
+rpgbot-cleric-order-3   3     0,5 E     2,1 D     2,1 D     4,2 C         -     0,5 E     0,5 E
+rpgbot-cleric-order-5   5     1,9 D    3,8 C-    3,6 C-    8,6 B+         -     4,3 C     0,8 E
+rpgbot-cleric-order-7   7    3,2 C-    6,6 B-     4,7 C    8,8 B+         -    8,5 B+     0,9 E
+rpgbot-cleric-order-9   9     4,2 C    8,5 B+    6,1 B-    12,8 A         -    8,9 B+     0,0 F
 rpgbot-cleric-peace-11  11    5,8 C+    8,0 B+     7,1 B    12,6 A         -   10,3 A-     4,1 C
 rpgbot-cleric-peace-3   3     1,3 D     1,9 D     2,1 D    3,6 C-         -     2,8 D     1,5 D
 rpgbot-cleric-peace-5   5     4,2 C     4,0 C    3,5 C-    8,3 B+         -    8,1 B+     1,8 D
 rpgbot-cleric-peace-7   7     4,6 C    5,0 C+     4,6 C    8,5 B+         -    8,5 B+     2,1 D
 rpgbot-cleric-peace-9   9     4,3 C    6,5 B-    5,8 C+    12,6 A         -    8,9 B+     4,3 C
+rpgbot-cleric-tempest-11  11     1,4 D   10,2 A-     7,9 B    12,2 A         -    20,0 S     0,0 F
+rpgbot-cleric-tempest-3   3     0,4 F     2,2 D     2,2 D     4,1 C         -     4,4 C     0,6 E
+rpgbot-cleric-tempest-5   5     4,0 C    3,9 C-    3,8 C-    8,3 B+         -    8,1 B+     0,7 E
+rpgbot-cleric-tempest-7   7     2,6 D    6,7 B-     4,9 C    8,6 B+         -    8,5 B+     0,0 F
+rpgbot-cleric-tempest-9   9     1,4 D    8,6 B+    6,5 B-    12,2 A         -    20,0 S     0,0 F
+rpgbot-cleric-trickery-11  11    3,6 C-     7,1 B    9,1 B+     4,9 C         -    8,9 B+     0,0 F
+rpgbot-cleric-trickery-3   3     0,9 E     1,9 D     2,4 D     2,4 D         -     2,8 D     1,2 D
+rpgbot-cleric-trickery-5   5     0,6 E    3,3 C-     4,2 C     4,6 C         -     4,2 C     0,7 E
+rpgbot-cleric-trickery-7   7    3,8 C-     4,5 C    5,6 C+     4,7 C         -    8,1 B+     0,8 E
+rpgbot-cleric-trickery-9   9    5,3 C+    5,7 C+     7,8 B     4,9 C         -    8,6 B+     0,0 F
+rpgbot-cleric-twilight-11  11    5,7 C+   10,2 A-     7,9 B    12,6 A         -   10,3 A-     0,0 F
+rpgbot-cleric-twilight-3   3     1,3 D     2,2 D     2,2 D     4,1 C         -     2,8 D     0,6 E
+rpgbot-cleric-twilight-5   5     4,2 C    3,9 C-    3,8 C-    8,3 B+         -    8,1 B+     0,7 E
+rpgbot-cleric-twilight-7   7     4,6 C    6,7 B-     4,9 C    8,6 B+         -    8,5 B+     0,0 F
+rpgbot-cleric-twilight-9   9     4,2 C    8,6 B+    6,5 B-    12,6 A         -    8,9 B+     0,0 F
+rpgbot-cleric-war-11   11    9,2 B+   10,8 A-    8,7 B+    12,2 A         -   10,3 A-     1,4 D
+rpgbot-cleric-war-3     3     1,4 D     2,2 D     2,2 D     4,1 C         -     2,8 D     0,6 E
+rpgbot-cleric-war-5     5    6,5 B-     4,3 C     4,3 C     7,4 B         -    8,3 B+     0,0 F
+rpgbot-cleric-war-7     7    6,5 B-     7,6 B    5,9 C+    8,3 B+         -    8,6 B+     2,4 D
+rpgbot-cleric-war-9     9    9,2 B+    9,7 B+     7,9 B    12,2 A         -   10,0 A-    3,2 C-
 rpgbot-fighter-arcane-archer-11  11    9,6 B+     7,6 B    9,7 B+     2,6 D         -    8,2 B+         -
 rpgbot-fighter-arcane-archer-3   3     1,3 D     1,5 D     2,8 D     1,3 D         -     2,8 D         -
 rpgbot-fighter-arcane-archer-5   5     4,5 C    3,1 C-     4,7 C     2,4 D         -     4,3 C         -
@@ -207,16 +247,31 @@ lucius-15              15    20,0 S   14,5 A+    20,0 S    20,0 S         -    8
 ~miau-8                 8         -    6,6 B-    6,8 B-     2,5 D     4,4 C         -         -
 ~pyotr-14              14    8,9 B+    3,5 C-   13,3 A+    16,9 S     2,9 D    12,7 A         -
 ~ravin-7                7    5,3 C+   10,6 A-    16,4 S    12,6 A    6,3 B-   10,0 A-         -
+~rpgbot-cleric-arcana-11  11     4,1 C    8,0 B+     7,1 B    12,3 A     0,0 F     4,6 C     0,0 F
+~rpgbot-cleric-arcana-3   3     0,7 E     1,9 D     2,1 D     4,1 C     0,0 F     1,4 D     0,0 F
+~rpgbot-cleric-arcana-5   5     1,9 D     4,0 C    3,5 C-    8,6 B+     0,0 F     2,8 D     0,0 F
+~rpgbot-cleric-arcana-7   7     1,9 D    5,0 C+     4,6 C    8,6 B+     0,0 F     2,8 D     0,0 F
+~rpgbot-cleric-arcana-9   9    3,1 C-    6,5 B-    5,8 C+    12,3 A     0,0 F     4,4 C     0,0 F
 ~rpgbot-cleric-death-11  11    5,4 C+    9,3 B+    8,4 B+    12,6 A     0,0 F     5,0 C     0,0 F
 ~rpgbot-cleric-death-3   3     0,9 E     2,2 D     2,6 D     4,1 C     0,0 F     2,5 D     0,0 F
 ~rpgbot-cleric-death-5   5     2,1 D     4,3 C     4,2 C    8,4 B+     0,1 F     4,5 C     0,0 F
 ~rpgbot-cleric-death-7   7    3,1 C-    5,7 C+    5,5 C+    8,6 B+     0,1 F     4,5 C     0,0 F
 ~rpgbot-cleric-death-9   9     4,4 C     7,5 B     7,0 B    12,6 A     0,7 E     4,6 C     0,0 F
+~rpgbot-cleric-forge-11  11     4,5 C   10,9 A-    8,0 B+    8,8 B+     0,9 E     4,3 C     0,0 F
+~rpgbot-cleric-forge-3   3     0,7 E     2,2 D     2,2 D     4,1 C     0,0 F     1,4 D     0,0 F
+~rpgbot-cleric-forge-5   5     2,1 D    3,9 C-    3,9 C-     7,2 B     0,0 F     4,1 C     0,0 F
+~rpgbot-cleric-forge-7   7     2,1 D     7,9 B    5,1 C+    8,2 B+     0,6 E     4,1 C     0,0 F
+~rpgbot-cleric-forge-9   9    3,6 C-   10,0 A-    6,5 B-    8,8 B+     1,2 D     4,2 C     0,0 F
 ~rpgbot-cleric-grave-11  11     4,9 C    6,6 B-    5,8 C+    12,7 A     0,0 F     4,3 C     0,0 F
 ~rpgbot-cleric-grave-3   3     0,6 E     1,6 D     1,7 D     3,0 D     0,0 F     0,5 F     0,0 F
 ~rpgbot-cleric-grave-5   5     1,9 D    3,3 C-     3,0 D    8,2 B+     0,0 F     2,8 D     0,0 F
 ~rpgbot-cleric-grave-7   7     1,9 D     4,4 C     4,1 C    8,4 B+     0,0 F     2,8 D     0,0 F
 ~rpgbot-cleric-grave-9   9     2,1 D    5,3 C+     4,8 C    12,1 A     0,0 F     2,8 D     0,0 F
+~rpgbot-cleric-knowledge-11  11     4,9 C    6,8 B-    6,0 C+    12,8 A    4,0 C-     4,3 C     0,0 F
+~rpgbot-cleric-knowledge-3   3     0,6 E     1,6 D     1,7 D     4,1 C     1,6 D     0,5 F     0,0 F
+~rpgbot-cleric-knowledge-5   5     1,9 D    3,3 C-     3,0 D    8,7 B+     2,6 D     2,8 D     0,0 F
+~rpgbot-cleric-knowledge-7   7     1,9 D     4,5 C     4,2 C    8,9 B+     2,8 D     2,8 D     0,0 F
+~rpgbot-cleric-knowledge-9   9    3,8 C-    5,5 C+     4,9 C    12,8 A     3,0 D     4,2 C     0,0 F
 ~rpgbot-cleric-life-11  11     4,6 C   10,8 A-    9,0 B+    12,2 A     0,8 E     4,3 C     0,4 F
 ~rpgbot-cleric-life-3   3     0,6 E     2,2 D     2,3 D     4,1 C     0,0 F     0,5 F     0,4 F
 ~rpgbot-cleric-life-5   5     1,7 D     4,3 C     4,5 C     7,4 B     0,0 F     2,8 D     0,4 F
@@ -232,11 +287,36 @@ lucius-15              15    20,0 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-cleric-nature-5   5     1,9 D     4,0 C    3,5 C-    8,3 B+     2,9 D     2,8 D     0,0 F
 ~rpgbot-cleric-nature-7   7     1,9 D    5,0 C+     4,6 C    8,5 B+    3,0 C-     2,8 D     0,0 F
 ~rpgbot-cleric-nature-9   9    3,4 C-    6,5 B-    5,8 C+    12,2 A    3,7 C-     4,4 C     0,5 E
+~rpgbot-cleric-order-11  11     4,8 C   10,2 A-     7,5 B    12,8 A    5,0 C+     4,3 C     0,0 F
+~rpgbot-cleric-order-3   3     0,6 E     2,1 D     2,1 D     4,2 C     2,5 D     0,5 F     0,0 F
+~rpgbot-cleric-order-5   5     1,9 D    3,8 C-    3,6 C-    8,6 B+     2,8 D     2,8 D     0,0 F
+~rpgbot-cleric-order-7   7     1,9 D    6,6 B-     4,7 C    8,8 B+    3,4 C-     2,8 D     0,0 F
+~rpgbot-cleric-order-9   9    3,7 C-    8,5 B+    6,1 B-    12,8 A     4,6 C     4,2 C     0,0 F
 ~rpgbot-cleric-peace-11  11     4,9 C    8,0 B+     7,1 B    12,6 A     4,4 C     4,8 C     4,1 C
 ~rpgbot-cleric-peace-3   3     0,6 E     1,9 D     2,1 D    3,6 C-     2,4 D     0,5 F     0,5 E
 ~rpgbot-cleric-peace-5   5     1,9 D     4,0 C    3,5 C-    8,3 B+     2,9 D     2,8 D     1,0 D
 ~rpgbot-cleric-peace-7   7     1,9 D    5,0 C+     4,6 C    8,5 B+    3,0 C-     2,8 D     2,1 D
 ~rpgbot-cleric-peace-9   9    3,8 C-    6,5 B-    5,8 C+    12,6 A    3,7 C-     4,5 C     4,3 C
+~rpgbot-cleric-tempest-11  11    3,0 C-   10,2 A-     7,9 B    12,2 A     0,0 F     4,4 C     0,0 F
+~rpgbot-cleric-tempest-3   3     0,6 E     2,2 D     2,2 D     4,1 C     0,0 F     0,5 F     0,0 F
+~rpgbot-cleric-tempest-5   5     1,5 D    3,9 C-    3,8 C-    8,3 B+     0,0 F     4,1 C     0,0 F
+~rpgbot-cleric-tempest-7   7     1,5 D    6,7 B-     4,9 C    8,6 B+     0,3 F     4,1 C     0,0 F
+~rpgbot-cleric-tempest-9   9     1,7 D    8,6 B+    6,5 B-    12,2 A     0,8 E     4,1 C     0,0 F
+~rpgbot-cleric-trickery-11  11    3,0 C-     7,1 B    9,1 B+     4,9 C     4,3 C     4,2 C     0,0 F
+~rpgbot-cleric-trickery-3   3     0,4 F     1,9 D     2,4 D     2,4 D     2,4 D     0,4 F     0,0 F
+~rpgbot-cleric-trickery-5   5     0,8 E    3,3 C-     4,2 C     4,6 C     2,7 D     1,7 D     0,0 F
+~rpgbot-cleric-trickery-7   7     0,8 E     4,5 C    5,6 C+     4,7 C     2,9 D     1,7 D     0,0 F
+~rpgbot-cleric-trickery-9   9     1,9 D    5,7 C+     7,8 B     4,9 C    3,5 C-     2,8 D     0,0 F
+~rpgbot-cleric-twilight-11  11     4,8 C   10,2 A-     7,9 B    12,6 A     0,1 F     4,3 C     0,0 F
+~rpgbot-cleric-twilight-3   3     0,6 E     2,2 D     2,2 D     4,1 C     0,0 F     0,5 F     0,0 F
+~rpgbot-cleric-twilight-5   5     1,9 D    3,9 C-    3,8 C-    8,3 B+     0,0 F     2,8 D     0,0 F
+~rpgbot-cleric-twilight-7   7     1,9 D    6,7 B-     4,9 C    8,6 B+     0,3 F     2,8 D     0,0 F
+~rpgbot-cleric-twilight-9   9    3,7 C-    8,6 B+    6,5 B-    12,6 A     0,9 E     4,2 C     0,0 F
+~rpgbot-cleric-war-11  11    8,4 B+   10,8 A-    8,7 B+    12,2 A     4,0 C     4,8 C     0,5 E
+~rpgbot-cleric-war-3    3     0,7 E     2,2 D     2,2 D     4,1 C     0,0 F     0,5 F     0,0 F
+~rpgbot-cleric-war-5    5    5,0 C+     4,3 C     4,3 C     7,4 B     2,6 D     4,6 C     0,0 F
+~rpgbot-cleric-war-7    7    5,0 C+     7,6 B    5,9 C+    8,3 B+    3,2 C-     4,6 C     0,5 E
+~rpgbot-cleric-war-9    9     7,3 B    9,7 B+     7,9 B    12,2 A     4,4 C     4,8 C     0,6 E
 ~rpgbot-fighter-arcane-archer-11  11    8,3 B+     7,6 B    9,7 B+     2,6 D     0,9 E    8,0 B+         -
 ~rpgbot-fighter-arcane-archer-3   3     1,0 D     1,5 D     2,8 D     1,3 D     0,4 F     2,7 D         -
 ~rpgbot-fighter-arcane-archer-5   5     4,0 C    3,1 C-     4,7 C     2,4 D     0,9 E     4,2 C         -

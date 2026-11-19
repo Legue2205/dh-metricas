@@ -808,3 +808,16 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   2. **Teto da Área em 20** no 11: Evocation, Light, Necromancy e Tempest empatam em 20,0 — a régua satura.
   3. **Controle no plano padrão**: o eixo é medido no plano do dia, e o plano escolhe pelo gasto, não pelo eixo; um
      clérigo com Hold Person/Banishment aparece com Controle 0. Medir o eixo também pelo anel (máximo da build)?
+
+## 20/11 — Plano das próximas classes e decisões
+- **Ordem:** Bard (testa Controle e Suporte) → Barbarian → Paladin; depois Rogue, Ranger, Monk, Druid, Sorcerer,
+  Warlock, Artificer. Docs com cabeçalho já criados no Drive (20/11) para Bard (8 colleges), Barbarian (9 paths) e
+  Paladin (9 oaths): `classe-*` (01), `subclasses-*` (02), `build-*-*` (03), `magias-bard` e `magias-paladin` (04).
+  Os de build vêm com "COLE-A-URL-AQUI" quando o slug do RPGBot não foi confirmado. O usuário cola; o Claude ingere
+  uma classe por vez quando o usuário liberar (pode ser pelo celular).
+- **Primeiro adicionar todas as builds**, com ajustes pequenos a cada classe (sempre uma fatia da realidade atual);
+  a calibração entre eixos (pesos, moeda comum) só no fim. As pistas por eixo do RPGBot ("Light é blaster",
+  "Forge é defensor", "Twilight é suporte") são guardadas no gabarito para essa fase final.
+- **Área 20 no nível 11** é suspeita (20 deveria ser Meteor Swarm): a régua do dia pode estar permissiva demais.
+  Não urgente (o que importa agora é separar bem), mas "dar uma segurada" antes das comparações cruzadas.
+- **Invocações:** mostrar cada eixo **com e sem** invocações (decidido); limite de mesa e atrito por área depois.

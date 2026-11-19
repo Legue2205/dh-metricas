@@ -787,3 +787,24 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - **Juntar linhas no plano (pendente):** o plano escolhe uma linha por luta; juntar duas linhas automaticamente exige
   separar o "truque de enchimento" de cada linha (senão o dano conta duas vezes). Por ora: variantes geradas
   (+arma, guardioes-area). Medir a sobra de recurso por classe no relatório de consistência antes de mexer no plano.
+
+## 19/11 (noite 6) — Relatório de consistência e Corpo com referência única
+- `calibracao/consistencia.py`: por eixo e nível (7, 11), média/mín/máx por classe (originais do RPGBot), sobra de
+  recurso do plano padrão e checagens de ordem entre classes (lista explícita no script).
+- Leitura com a passada 3 do Cleric (CI de `e85428c`): Suporte clérigos 4,4 / 3,0 × fighters 0,3 / 0,6 (ok; antes 3,2 /
+  0,7); Área Light 10,1 / 20,0 ≥ média dos clérigos (ok, a linha Spirit Guardians + área resolveu); τ do Cleric
+  5 eixos −0,05 / +0,03, com S/C +0,20 / +0,07. Violações: **Corpo** wizards 16,6 / 22,8 > fighters 7,7 / 12,2
+  (a colher de chá da referência por vaga) e **Controle** dos clérigos 0,0 no 7 (o plano padrão nunca escolhe a linha
+  de controle; ver abaixo).
+- **Corpo com referência única** (`controle.corpo.referencia_unica` = 1; `atencao.ref_padrao`): T, S, P, tag e nível
+  do Corpo comparam com um membro padrão na vaga da build (comportamento da vaga, CA e PV médios da party de
+  referência). Controle (total/campo/curva) inalterado. Testes de paridade com planilhas fixam a referência antiga.
+  Rápido no 7: Evocation 11,1 → 7,0 (T −0,09, neutro), Light 17,8 → 7,0, Life 7,7 → 11,0, Cavalier 10,9 → 13,0.
+- **Pendências para discutir:**
+  1. **Sobra de recurso** (valor em níveis de espaço, plano padrão): fighters 0,6 / 0,9, wizards 5,0 / 21,5, clérigos
+     5,9 / 25,4. Parte é real (concentração limita o conjurador; sobra vai para utilidade e cura fora de luta), parte é o
+     plano de uma linha por luta. Proposta: linhas "de luta inteira" no gerador (um feitiço de nível por round quando
+     não há conflito de concentração) antes de mexer no plano.
+  2. **Teto da Área em 20** no 11: Evocation, Light, Necromancy e Tempest empatam em 20,0 — a régua satura.
+  3. **Controle no plano padrão**: o eixo é medido no plano do dia, e o plano escolhe pelo gasto, não pelo eixo; um
+     clérigo com Hold Person/Banishment aparece com Controle 0. Medir o eixo também pelo anel (máximo da build)?

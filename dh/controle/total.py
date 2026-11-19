@@ -147,6 +147,7 @@ def avaliar_nivel(fn, ficha, L, regua):
             outras = [v for k, v in fontes.items() if k not in marca_nomes]
             neg_sm = C.jv(*outras) if outras else C.zero(E)
             base, fb = A.vida(E, pref, ti, detalhe=True)
+            bc, fbc = A.vida(E, A.party_com(A.ref_padrao(ficha['papel'], L), L), ti, detalhe=True)   # Corpo: membro padrão
             sx, fx = A.vida(E, px, ti, detalhe=True, marca=marca)   # só atenção: ninguém perde turno, só muda o alvo
             acc['total'] += w * (base - A.vida(E, px, ti, neg_sm, marca=marca))
             acc['campo'] += w * (base - A.vida(E, pref, ti, neg))
@@ -154,8 +155,8 @@ def avaliar_nivel(fn, ficha, L, regua):
             so_ctrl = [v if k not in corpo_nomes else v * peso.get(k, 0.0) for k, v in fontes.items()
                        if k not in corpo_nomes or peso.get(k, 0.0) > 0]   # fontes de corpo só com o peso da premissa (16/11, 18/11)
             acc['ctrl'] += w * (base - A.vida(E, pref, ti, C.jv(*so_ctrl) if so_ctrl else C.zero(E)))
-            acc['aten'] += w * (base - sx)
-            acc['S'] += w * (fb[im] - fx[im]); acc['P'] += w * ((sum(fb) - fb[im]) - (sum(fx) - fx[im]))
+            acc['aten'] += w * (bc - sx)
+            acc['S'] += w * (fbc[im] - fx[im]); acc['P'] += w * ((sum(fbc) - fbc[im]) - (sum(fx) - fx[im]))
             acc['curva'] += w * np.array([base - A.vida(E, pref, ti, regua.vetor(tipo, L, ti, k)) for k in range(1, 21)])
             if tp == 'Ruínas ou cidade': fontes7 = {k: round(C.tot(E, v), 4) for k, v in fontes.items()}
         out[tipo] = dict(vidas_total=acc['total'], vidas_campo=acc['campo'], vidas_atencao=acc['aten'], vidas_controle=acc['ctrl'],
@@ -179,7 +180,7 @@ def t_atencao(fn, ficha, L):
         for ti, tp in enumerate(TOPOS):
             mk = [v for k, v in fn(E, tp).items() if k in marca_nomes] if marca_nomes else []
             marca = (im, C.jv(*mk)) if mk else None
-            pref = A.party_com(A.ref(ficha['papel'], L), L); px = A.party_com(ficha, L)
+            pref = A.party_com(A.ref_padrao(ficha['papel'], L), L); px = A.party_com(ficha, L)
             acc += TOPO[tp]['peso'] * (A.vida(E, pref, ti) - A.vida(E, px, ti, marca=marca))
         t += PESO_TIPO[tipo] * acc
     return t

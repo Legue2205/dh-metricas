@@ -41,6 +41,15 @@ def ref(papel, L):
                 acc_m=(0.8, 0.9, 1.0), conc=True, dpr=0.9 * dpr_ref(L))
 
 
+def ref_padrao(papel, L):
+    """Membro padrão para o Corpo (19/11, premissa controle.corpo.referencia_unica): a referência da vaga, mas com CA e
+    PV médios da party de referência. Com a premissa em 0, é a própria referência da vaga (comportamento antigo)."""
+    r = ref(papel, L)
+    if not P('controle.corpo.referencia_unica'): return r
+    todos = [ref(pp, L) for pp in PAPEIS]
+    return dict(r, nome='Membro padrão', ca=float(np.mean([x['ca'] for x in todos])), pv=float(np.mean([x['pv'] for x in todos])))
+
+
 def ficha(spec, corpo):
     """build.json -> ficha de atenção (o formato que o motor usa)."""
     f = dict(papel=spec['papel'], ca=corpo['ca'], pv=corpo['pv'], front=spec.get('front', spec['papel'] in FRONT),

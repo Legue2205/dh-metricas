@@ -119,7 +119,9 @@ def test_descanso_curto_devolve():
     assert planos.livro_caixa(b, 'padrao', MAGIAS)[0] == []
 
 
-def test_invocacoes():
+def test_invocacoes(monkeypatch):
+    from dh.controle import atencao
+    monkeypatch.setattr(atencao, 'ref_padrao', atencao.ref)   # paridade com a referência da vaga (antes de 19/11)
     from dh.dano import avaliar
     spec = {"ataques": [{"n": 1, "bonus": 6, "dano": "2d8"}]}
     inv = [{"nome": "esqueletos", "quantidade": 7, "pv": 19, "ca": 16, "ataque": {"bonus": 4, "dano": "1d6+5"}}]

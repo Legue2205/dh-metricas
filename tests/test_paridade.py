@@ -72,7 +72,10 @@ def _ignorar():
     pytest.param('ravin-7.json', 7.7, 6.2, 1.9, marks=pytest.mark.xfail(reason='Minions+minibosses: 9,9 aqui × 12,1 na planilha (extrapolação acima do teto da régua amplifica o ruído)')),
     pytest.param('solaris-9.json', 7.5, 6.9, 1.6, marks=pytest.mark.xfail(reason='Chefe/Dupla divergem; o valor da planilha veio de uma versão anterior do script, não reproduzível')),
 ])
-def test_controle(arq, total, campo, aten):
+def test_controle(arq, total, campo, aten, monkeypatch):
+    # paridade com as planilhas: Corpo com a referência da própria vaga (antes da referência única de 19/11)
+    from dh.controle import atencao
+    monkeypatch.setattr(atencao, 'ref_padrao', atencao.ref)
     arq, _, lid = arq.partition(':'); lid = lid or 'principal'
     _, r = motor.avaliar(B / arq, 'rapido', forcar=True, eixos=['controle'], linhas=[lid])
     c = r['linhas'][lid]['controle']

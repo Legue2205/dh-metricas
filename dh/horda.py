@@ -13,6 +13,8 @@ O grupo à distância vale inteiro sempre. Cleaves somam um ataque num 2º alvo.
 
 Régua: o mesmo combate com o conjurador de referência (1 área no maior espaço, sem seleção, depois truque).
 Nível equivalente pela mesma interpolação da área antiga (area.nivel_eq).
+
+Cache: este arquivo entra só na impressão digital da Área (dh/impressoes.py); mexer nele recalcula só esse eixo.
 """
 import numpy as np
 

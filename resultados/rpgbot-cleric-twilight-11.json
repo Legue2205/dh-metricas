@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Cleric (Twilight), Centauro; armadura pesada + escudo; Telekinetic 4, Sab 20 (8); um aliado corpo a corpo montado",
- "impressao": "4be58d78e6",
+ "impressao": "34e2590659",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -915,6 +915,372 @@
     "rank_absoluto": "D"
    }
   },
+  "bless+arma": {
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 23.6,
+     "CA 12": 23.2,
+     "CA 15": 19.9,
+     "CA 16": 18.2,
+     "CA 18": 14.8,
+     "CA 20": 12.1,
+     "CA 22": 9.6,
+     "CA 24": 7.1,
+     "CA 25": 5.8
+    },
+    "nivel_eq": 5.0,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.0,
+    "nivel_precisa": 5.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 91,
+    "ca": 20,
+    "blindagem": 9.04,
+    "durabilidade": 6.24,
+    "nivel_blindagem": 10.2,
+    "nivel_durabilidade": 9.9,
+    "nivel_eq": 10.2,
+    "rank": "A-",
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.9,
+     "rank": "B",
+     "turnos_livres": [
+      3.72,
+      3.37,
+      3.29,
+      2.72,
+      2.09,
+      1.93,
+      2.51,
+      2.3,
+      1.66,
+      1.4
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.61,
+     "rank": "A",
+     "turnos_livres": [
+      3.78,
+      2.54,
+      1.97,
+      2.3,
+      2.02,
+      1.4,
+      1.85,
+      1.62,
+      1.73,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.28,
+     "6": 3.28,
+     "7": 3.28,
+     "8": 4.33,
+     "9": 4.17,
+     "10": 4.17,
+     "11": 4.42,
+     "12": 4.42,
+     "13": 5.15,
+     "14": 5.15,
+     "15": 5.15,
+     "16": 5.15,
+     "17": 5.69,
+     "18": 5.69,
+     "19": 5.99,
+     "20": 5.67
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 22.72,
+    "defensivo": 0,
+    "total": 22.72,
+    "nivel_ofensivo": 11.0,
+    "nivel_defensivo": 0.0,
+    "nivel_eq": 8.0,
+    "rank": "B+",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 22.72
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.06,
+    "rank": "F",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.01,
+    "vidas_campo": 0.026,
+    "vidas_atencao": -0.015,
+    "corpo": {
+     "T": -0.015,
+     "S": 0.073,
+     "P": -0.088,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.015
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.09,
+     "Party de elite": 0.07,
+     "Horda + chefe": 0.04,
+     "Horda": 0.16,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0137
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0078
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0099
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0207
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0081
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0097
+     }
+    },
+    "nivel_absoluto": 1.45,
+    "rank_absoluto": "D"
+   }
+  },
+  "santuario+arma": {
+   "hipotese": "Twilight Sanctuary (Channel Divinity, ação, 1 minuto) + truques + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 23.6,
+     "CA 12": 23.2,
+     "CA 15": 19.9,
+     "CA 16": 18.2,
+     "CA 18": 14.8,
+     "CA 20": 12.1,
+     "CA 22": 9.6,
+     "CA 24": 7.1,
+     "CA 25": 5.8
+    },
+    "nivel_eq": 5.0,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.0,
+    "nivel_precisa": 5.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 91,
+    "ca": 20,
+    "blindagem": 9.04,
+    "durabilidade": 6.24,
+    "nivel_blindagem": 10.2,
+    "nivel_durabilidade": 9.9,
+    "nivel_eq": 10.2,
+    "rank": "A-",
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.9,
+     "rank": "B",
+     "turnos_livres": [
+      3.72,
+      3.37,
+      3.29,
+      2.72,
+      2.09,
+      1.93,
+      2.51,
+      2.3,
+      1.66,
+      1.4
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.61,
+     "rank": "A",
+     "turnos_livres": [
+      3.78,
+      2.54,
+      1.97,
+      2.3,
+      2.02,
+      1.4,
+      1.85,
+      1.62,
+      1.73,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.28,
+     "6": 3.28,
+     "7": 3.28,
+     "8": 4.33,
+     "9": 4.17,
+     "10": 4.17,
+     "11": 4.42,
+     "12": 4.42,
+     "13": 5.15,
+     "14": 5.15,
+     "15": 5.15,
+     "16": 5.15,
+     "17": 5.69,
+     "18": 5.69,
+     "19": 5.99,
+     "20": 5.67
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 32.62,
+    "total": 32.62,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 20.0,
+    "nivel_eq": 10.2,
+    "rank": "A-",
+    "perfil": "Protetor",
+    "fonte_principal": "Twilight Sanctuary (PV temporários todo round)",
+    "fontes": [
+     {
+      "nome": "Twilight Sanctuary (PV temporários todo round)",
+      "lado": "def",
+      "valor": 32.62
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.06,
+    "rank": "F",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.01,
+    "vidas_campo": 0.026,
+    "vidas_atencao": -0.015,
+    "corpo": {
+     "T": -0.015,
+     "S": 0.073,
+     "P": -0.088,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.015
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.09,
+     "Party de elite": 0.07,
+     "Horda + chefe": 0.04,
+     "Horda": 0.16,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0137
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0078
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0099
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0207
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0081
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0097
+     }
+    },
+    "nivel_absoluto": 1.45,
+    "rank_absoluto": "D"
+   }
+  },
   "guardioes": {
    "hipotese": "guardioes",
    "principal": [],
@@ -1493,6 +1859,203 @@
     "nivel_absoluto": 1.56,
     "rank_absoluto": "D"
    }
+  },
+  "santuario-guardioes+arma": {
+   "hipotese": "Twilight Sanctuary (round 1) + Spirit Guardians (round 2) + truques + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 31.0,
+     "CA 12": 30.7,
+     "CA 15": 27.3,
+     "CA 16": 25.5,
+     "CA 18": 22.0,
+     "CA 20": 19.2,
+     "CA 22": 16.6,
+     "CA 24": 14.0,
+     "CA 25": 12.7
+    },
+    "nivel_eq": 7.0,
+    "rank": "B",
+    "perfil": "Preciso",
+    "nivel_bruta": 6.9,
+    "nivel_precisa": 7.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 91,
+    "ca": 20,
+    "blindagem": 9.04,
+    "durabilidade": 6.24,
+    "nivel_blindagem": 10.2,
+    "nivel_durabilidade": 9.9,
+    "nivel_eq": 10.2,
+    "rank": "A-",
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.9,
+     "rank": "B",
+     "turnos_livres": [
+      3.72,
+      3.37,
+      3.29,
+      2.72,
+      2.09,
+      1.93,
+      2.51,
+      2.3,
+      1.66,
+      1.4
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.61,
+     "rank": "A",
+     "turnos_livres": [
+      3.78,
+      2.54,
+      1.97,
+      2.3,
+      2.02,
+      1.4,
+      1.85,
+      1.62,
+      1.73,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 10.1,
+    "rank": "A-",
+    "rounds": {
+     "1": 1.71,
+     "2": 1.82,
+     "3": 1.82,
+     "4": 1.9,
+     "5": 1.98,
+     "6": 1.98,
+     "7": 1.98,
+     "8": 2.42,
+     "9": 2.39,
+     "10": 2.39,
+     "11": 2.64,
+     "12": 2.64,
+     "13": 3.1,
+     "14": 3.1,
+     "15": 3.1,
+     "16": 3.1,
+     "17": 3.59,
+     "18": 3.59,
+     "19": 4.4,
+     "20": 3.81
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 20.0,
+     "rank": "S"
+    },
+    "melhor": "Spirit Guardians (6º)",
+    "areas": [
+     {
+      "nome": "Spirit Guardians (6º)",
+      "tipo": "aura",
+      "nivel_eq": 20.0,
+      "rank": "S",
+      "variacoes": {
+       "esparsa": 20.0,
+       "padrao": 20.0,
+       "agrupada": 20.0
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 32.62,
+    "total": 32.62,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 20.0,
+    "nivel_eq": 10.2,
+    "rank": "A-",
+    "perfil": "Protetor",
+    "fonte_principal": "Twilight Sanctuary (PV temporários todo round)",
+    "fontes": [
+     {
+      "nome": "Twilight Sanctuary (PV temporários todo round)",
+      "lado": "def",
+      "valor": 32.62
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.74,
+    "rank": "E",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.026,
+    "vidas_campo": 0.026,
+    "vidas_atencao": 0.0,
+    "corpo": {
+     "T": 0.0,
+     "S": 0.0,
+     "P": 0.0,
+     "chave": "T0S0P0",
+     "perfil": "Neutro"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      0.0
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.17,
+     "Party de elite": 0.14,
+     "Horda + chefe": 0.1,
+     "Horda": 0.23,
+     "Dupla": 0.18,
+     "Chefe sozinho": 2.1
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0137
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0078
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0099
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0207
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0081
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0097
+     }
+    },
+    "nivel_absoluto": 1.7,
+    "rank_absoluto": "D"
+   }
   }
  },
  "planos": {
@@ -1533,7 +2096,7 @@
      }
     },
     {
-     "linha": "guardioes-arma",
+     "linha": "santuario-guardioes+arma",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -1541,7 +2104,8 @@
       "espacos": {
        "2": 1,
        "6": 1
-      }
+      },
+      "canal": 1
      }
     }
    ],
@@ -1552,15 +2116,15 @@
      "3": 3,
      "5": 2
     },
-    "canal": 2
+    "canal": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.7,
-     "rank": "C+",
+     "nivel_eq": 4.9,
+     "rank": "C",
      "por_categoria": {
       "np": 3.8,
-      "p": 6.7
+      "p": 5.4
      }
     },
     "defesa": {
@@ -1612,11 +2176,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 3.4,
+     "rank": "C-",
      "por_categoria": {
       "np": 0.0,
-      "p": 0.0
+      "p": 5.1
      }
     }
    }
@@ -1625,7 +2189,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "guardioes-arma",
+     "linha": "santuario-guardioes+arma",
      "categoria": "p",
      "peso": 1,
      "nota": "",
@@ -1633,7 +2197,8 @@
       "espacos": {
        "2": 1,
        "6": 1
-      }
+      },
+      "canal": 1
      }
     }
    ],
@@ -1645,14 +2210,14 @@
      "4": 3,
      "5": 2
     },
-    "canal": 2
+    "canal": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.6,
-     "rank": "B+",
+     "nivel_eq": 7.0,
+     "rank": "B",
      "por_categoria": {
-      "p": 9.6
+      "p": 7.0
      }
     },
     "defesa": {
@@ -1694,20 +2259,20 @@
      "nivel_eq": 10.3,
      "rank": "A-",
      "por_categoria": {
-      "p": 10.3
+      "p": 10.1
      }
     },
     "suporte": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 10.2,
+     "rank": "A-",
      "por_categoria": {
-      "p": 0.0
+      "p": 10.2
      }
     }
    }
   }
  },
- "segundos": 53.2,
+ "segundos": 8.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2109,7 +2674,7 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "baef80e6ad92",
+  "_planos": "36b736dde28e",
   "principal": {
    "dano": "67963d8c3070",
    "defesa": "878126568947",
@@ -2150,6 +2715,22 @@
    "suporte": "5f59495cef2b",
    "controle": "a82a0f434425"
   },
+  "bless+arma": {
+   "dano": "29f5450ad7cb",
+   "defesa": "878126568947",
+   "saves": "630b32768f9e",
+   "area": "7e1624a50f2c",
+   "suporte": "26ac42267100",
+   "controle": "9c3840bfebfb"
+  },
+  "santuario+arma": {
+   "dano": "29f5450ad7cb",
+   "defesa": "878126568947",
+   "saves": "630b32768f9e",
+   "area": "7e1624a50f2c",
+   "suporte": "5f59495cef2b",
+   "controle": "9c3840bfebfb"
+  },
   "guardioes": {
    "dano": "a3663335d949",
    "defesa": "878126568947",
@@ -2173,6 +2754,14 @@
    "area": "17c9ce7af683",
    "suporte": "5f59495cef2b",
    "controle": "b4c28f366c89"
+  },
+  "santuario-guardioes+arma": {
+   "dano": "7c73b7bdb5ff",
+   "defesa": "878126568947",
+   "saves": "630b32768f9e",
+   "area": "7dbeaeee1ddd",
+   "suporte": "5f59495cef2b",
+   "controle": "7f486c65d6b2"
   }
  }
 }

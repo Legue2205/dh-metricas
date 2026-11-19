@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 3,
  "build": "Cleric (Peace) sobre clérigo base: Humano Variante (War Caster), Des 14, Con 14, Sab 16; escama → meia-armadura + escudo; Sab 18 (4), Sab 20 (8)",
- "impressao": "933f76377e",
+ "impressao": "ba8517c097",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1130,6 +1130,446 @@
     "nivel_absoluto": 0.24,
     "rank_absoluto": "F"
    }
+  },
+  "bless+arma": {
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 7.9,
+     "CA 12": 7.6,
+     "CA 15": 6.2,
+     "CA 16": 5.5,
+     "CA 18": 4.2,
+     "CA 20": 3.1,
+     "CA 22": 2.1,
+     "CA 24": 1.0,
+     "CA 25": 0.5
+    },
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 1.0,
+    "nivel_precisa": 1.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 24,
+    "ca": 18,
+    "blindagem": 1.85,
+    "durabilidade": 1.17,
+    "nivel_blindagem": 1.9,
+    "nivel_durabilidade": 1.7,
+    "nivel_eq": 1.9,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 2.1,
+     "rank": "D",
+     "turnos_livres": [
+      3.4,
+      2.43,
+      2.19,
+      0.53,
+      0.72,
+      0.72,
+      0.62,
+      0.37,
+      0.19,
+      0.14
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 3.59,
+     "rank": "C-",
+     "turnos_livres": [
+      2.53,
+      1.58,
+      1.29,
+      1.52,
+      1.1,
+      0.66,
+      0.78,
+      0.63,
+      0.57,
+      0.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 2.0,
+    "rank": "D",
+    "rounds": {
+     "1": 3.47,
+     "2": 4.4,
+     "3": 4.4,
+     "4": 5.12,
+     "5": 4.52,
+     "6": 4.52,
+     "7": 4.52,
+     "8": 5.53,
+     "9": 5.37,
+     "10": 5.37,
+     "11": 5.33,
+     "12": 5.33,
+     "13": 5.83,
+     "14": 5.83,
+     "15": 5.83,
+     "16": 5.83,
+     "17": 5.98,
+     "18": 5.98,
+     "19": 6.0,
+     "20": 5.95
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 2.6,
+     "rank": "D"
+    },
+    "melhor": "Word of Radiance",
+    "areas": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 2.59,
+      "rank": "D",
+      "variacoes": {
+       "esparsa": 2.59,
+       "padrao": 2.59,
+       "agrupada": 2.59
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 8.37,
+    "defensivo": 0.27,
+    "total": 8.64,
+    "nivel_ofensivo": 4.3,
+    "nivel_defensivo": 0.2,
+    "nivel_eq": 3.4,
+    "rank": "C-",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Emboldening Bond (1d4 em 1 ataque por turno)",
+      "lado": "of",
+      "valor": 2.31
+     },
+     {
+      "nome": "Emboldening Bond (1d4 nos saves)",
+      "lado": "def",
+      "valor": 0.27
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 6.06
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 2.37,
+    "rank": "D",
+    "nivel_campo": 0.07,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.19,
+    "rank_atencao": "D",
+    "vidas_total": 0.344,
+    "vidas_campo": 0.019,
+    "vidas_atencao": 0.327,
+    "corpo": {
+     "T": 0.327,
+     "S": 0.585,
+     "P": -0.258,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 5.44,
+    "rank_corpo": "C+",
+    "corpo_busca": [
+     [
+      3,
+      0.327
+     ],
+     [
+      4,
+      0.21
+     ],
+     [
+      5,
+      0.078
+     ],
+     [
+      6,
+      -0.099
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.29,
+     "Party de elite": 2.97,
+     "Horda + chefe": 2.17,
+     "Horda": 2.01,
+     "Dupla": 2.76,
+     "Chefe sozinho": 2.3
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0057
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0069
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0146
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0059
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0079
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
+  },
+  "balsamo+arma": {
+   "hipotese": "Balm of Peace (Channel Divinity, ação) + truques + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 7.9,
+     "CA 12": 7.6,
+     "CA 15": 6.2,
+     "CA 16": 5.5,
+     "CA 18": 4.2,
+     "CA 20": 3.1,
+     "CA 22": 2.1,
+     "CA 24": 1.0,
+     "CA 25": 0.5
+    },
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 1.0,
+    "nivel_precisa": 1.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 24,
+    "ca": 18,
+    "blindagem": 1.85,
+    "durabilidade": 1.17,
+    "nivel_blindagem": 1.9,
+    "nivel_durabilidade": 1.7,
+    "nivel_eq": 1.9,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 2.1,
+     "rank": "D",
+     "turnos_livres": [
+      3.4,
+      2.43,
+      2.19,
+      0.53,
+      0.72,
+      0.72,
+      0.62,
+      0.37,
+      0.19,
+      0.14
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 3.59,
+     "rank": "C-",
+     "turnos_livres": [
+      2.53,
+      1.58,
+      1.29,
+      1.52,
+      1.1,
+      0.66,
+      0.78,
+      0.63,
+      0.57,
+      0.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 2.0,
+    "rank": "D",
+    "rounds": {
+     "1": 3.47,
+     "2": 4.4,
+     "3": 4.4,
+     "4": 5.12,
+     "5": 4.52,
+     "6": 4.52,
+     "7": 4.52,
+     "8": 5.53,
+     "9": 5.37,
+     "10": 5.37,
+     "11": 5.33,
+     "12": 5.33,
+     "13": 5.83,
+     "14": 5.83,
+     "15": 5.83,
+     "16": 5.83,
+     "17": 5.98,
+     "18": 5.98,
+     "19": 6.0,
+     "20": 5.95
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 2.6,
+     "rank": "D"
+    },
+    "melhor": "Word of Radiance",
+    "areas": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 2.59,
+      "rank": "D",
+      "variacoes": {
+       "esparsa": 2.59,
+       "padrao": 2.59,
+       "agrupada": 2.59
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 2.31,
+    "defensivo": 4.77,
+    "total": 7.08,
+    "nivel_ofensivo": 0.6,
+    "nivel_defensivo": 6.2,
+    "nivel_eq": 2.5,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Balm of Peace (2 aliados)",
+    "fontes": [
+     {
+      "nome": "Emboldening Bond (1d4 em 1 ataque por turno)",
+      "lado": "of",
+      "valor": 2.31
+     },
+     {
+      "nome": "Emboldening Bond (1d4 nos saves)",
+      "lado": "def",
+      "valor": 0.27
+     },
+     {
+      "nome": "Balm of Peace (2 aliados)",
+      "lado": "def",
+      "valor": 4.5
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 2.37,
+    "rank": "D",
+    "nivel_campo": 0.07,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.19,
+    "rank_atencao": "D",
+    "vidas_total": 0.344,
+    "vidas_campo": 0.019,
+    "vidas_atencao": 0.327,
+    "corpo": {
+     "T": 0.327,
+     "S": 0.585,
+     "P": -0.258,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 5.44,
+    "rank_corpo": "C+",
+    "corpo_busca": [
+     [
+      3,
+      0.327
+     ],
+     [
+      4,
+      0.21
+     ],
+     [
+      5,
+      0.078
+     ],
+     [
+      6,
+      -0.099
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.29,
+     "Party de elite": 2.97,
+     "Horda + chefe": 2.17,
+     "Horda": 2.01,
+     "Dupla": 2.76,
+     "Chefe sozinho": 2.3
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0057
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0069
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0146
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0059
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0079
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -1148,12 +1588,13 @@
      }
     },
     {
-     "linha": "arma-espiritual",
+     "linha": "bless+arma",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 1,
        "2": 1
       }
      }
@@ -1170,30 +1611,29 @@
      }
     },
     {
-     "linha": "arma-espiritual",
+     "linha": "bless+arma",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 1,
        "2": 1
       }
      }
     }
    ],
    "sobra": {
-    "espacos": {
-     "1": 2
-    },
+    "espacos": {},
     "canal": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 1.3,
-     "rank": "D",
+     "nivel_eq": 0.8,
+     "rank": "E",
      "por_categoria": {
       "np": 0.4,
-      "p": 1.7
+      "p": 1.0
      }
     },
     "defesa": {
@@ -1229,11 +1669,11 @@
      }
     },
     "corpo": {
-     "nivel_eq": 5.9,
-     "rank": "C+",
+     "nivel_eq": 6.2,
+     "rank": "B-",
      "por_categoria": {
       "np": 7.6,
-      "p": 5.0
+      "p": 5.4
      }
     },
     "area": {
@@ -1241,15 +1681,15 @@
      "rank": "D",
      "por_categoria": {
       "np": 0.5,
-      "p": 2.8
+      "p": 2.0
      }
     },
     "suporte": {
-     "nivel_eq": 1.5,
-     "rank": "D",
+     "nivel_eq": 3.4,
+     "rank": "C-",
      "por_categoria": {
       "np": 3.4,
-      "p": 0.5
+      "p": 3.4
      }
     }
    }
@@ -1258,12 +1698,13 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "arma-espiritual",
+     "linha": "bless+arma",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 1,
        "2": 1
       }
      }
@@ -1271,17 +1712,17 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 4,
+     "1": 3,
      "2": 1
     },
     "canal": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 1.7,
+     "nivel_eq": 1.0,
      "rank": "D",
      "por_categoria": {
-      "p": 1.7
+      "p": 1.0
      }
     },
     "defesa": {
@@ -1313,30 +1754,30 @@
      }
     },
     "corpo": {
-     "nivel_eq": 5.0,
+     "nivel_eq": 5.4,
      "rank": "C+",
      "por_categoria": {
-      "p": 5.0
+      "p": 5.4
      }
     },
     "area": {
      "nivel_eq": 2.8,
      "rank": "D",
      "por_categoria": {
-      "p": 2.8
+      "p": 2.0
      }
     },
     "suporte": {
-     "nivel_eq": 0.5,
-     "rank": "E",
+     "nivel_eq": 3.4,
+     "rank": "C-",
      "por_categoria": {
-      "p": 0.5
+      "p": 3.4
      }
     }
    }
   }
  },
- "segundos": 15.8,
+ "segundos": 5.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1738,7 +2179,7 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "790ae583d1cc",
+  "_planos": "c3a64deb440b",
   "principal": {
    "dano": "9b095cb4aece",
    "defesa": "383d1706a402",
@@ -1778,6 +2219,22 @@
    "area": "cc2982027557",
    "suporte": "1824739e2373",
    "controle": "4bdc3059354c"
+  },
+  "bless+arma": {
+   "dano": "747eab870942",
+   "defesa": "383d1706a402",
+   "saves": "225391796447",
+   "area": "0ec30ab533a8",
+   "suporte": "545eaf9da8e4",
+   "controle": "5bb548a6299c"
+  },
+  "balsamo+arma": {
+   "dano": "747eab870942",
+   "defesa": "383d1706a402",
+   "saves": "225391796447",
+   "area": "0ec30ab533a8",
+   "suporte": "1824739e2373",
+   "controle": "5bb548a6299c"
   }
  }
 }

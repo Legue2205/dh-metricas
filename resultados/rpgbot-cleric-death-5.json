@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 5,
  "build": "Cleric (Death), Meio-elfo (High Elf, Custom Origin) com Booming Blade; rapieira + escudo, armadura média; Telekinetic 4 (Sab 18), Sab 20 (8)",
- "impressao": "e2fbc83ffb",
+ "impressao": "9dface0c7d",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -837,6 +837,216 @@
     "rank_absoluto": "D"
    }
   },
+  "bless+arma": {
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 15.0,
+     "CA 12": 14.2,
+     "CA 15": 11.9,
+     "CA 16": 11.1,
+     "CA 18": 9.6,
+     "CA 20": 8.0,
+     "CA 22": 6.3,
+     "CA 24": 4.4,
+     "CA 25": 3.4
+    },
+    "nivel_eq": 3.0,
+    "rank": "C-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 3.0,
+    "nivel_precisa": 3.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 43,
+    "ca": 19,
+    "blindagem": 4.2,
+    "durabilidade": 2.87,
+    "nivel_blindagem": 4.3,
+    "nivel_durabilidade": 4.2,
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 4.23,
+     "rank": "C",
+     "turnos_livres": [
+      3.57,
+      3.44,
+      3.34,
+      1.4,
+      1.25,
+      1.22,
+      1.24,
+      1.02,
+      0.76,
+      0.52
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 8.36,
+     "rank": "B+",
+     "turnos_livres": [
+      3.61,
+      2.21,
+      1.66,
+      1.93,
+      1.62,
+      1.04,
+      1.43,
+      1.05,
+      1.28,
+      0.91
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "rounds": {
+     "1": 2.14,
+     "2": 2.73,
+     "3": 2.73,
+     "4": 3.41,
+     "5": 3.29,
+     "6": 3.29,
+     "7": 3.29,
+     "8": 4.46,
+     "9": 4.31,
+     "10": 4.31,
+     "11": 4.47,
+     "12": 4.47,
+     "13": 5.25,
+     "14": 5.25,
+     "15": 5.25,
+     "16": 5.25,
+     "17": 5.71,
+     "18": 5.71,
+     "19": 5.98,
+     "20": 5.69
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 6.1,
+     "rank": "B-"
+    },
+    "melhor": "Reaper (Toll the Dead em 2 alvos)",
+    "areas": [
+     {
+      "nome": "Reaper (Toll the Dead em 2 alvos)",
+      "tipo": "cleave_save",
+      "nivel_eq": 6.14,
+      "rank": "B-",
+      "variacoes": {
+       "esparsa": 6.14,
+       "padrao": 6.14,
+       "agrupada": 4.63
+      }
+     },
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.43,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.43,
+       "padrao": 4.43,
+       "agrupada": 4.43
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 10.1,
+    "defensivo": 0,
+    "total": 10.1,
+    "nivel_ofensivo": 5.0,
+    "nivel_defensivo": 0.0,
+    "nivel_eq": 4.1,
+    "rank": "C",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 10.1
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.13,
+    "rank": "F",
+    "nivel_campo": 0.14,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.026,
+    "vidas_campo": 0.027,
+    "vidas_atencao": -0.001,
+    "corpo": {
+     "T": -0.001,
+     "S": 0.006,
+     "P": -0.006,
+     "chave": "T0S0P0",
+     "perfil": "Neutro"
+    },
+    "nivel_corpo": 5.0,
+    "rank_corpo": "C+",
+    "corpo_busca": [
+     [
+      5,
+      -0.001
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.13,
+     "Party de elite": 0.11,
+     "Horda + chefe": 0.09,
+     "Horda": 0.17,
+     "Dupla": 0.13,
+     "Chefe sozinho": 0.15
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0128
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0094
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0098
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0184
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0084
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0097
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
+  },
   "guardioes": {
    "hipotese": "guardioes",
    "principal": [],
@@ -1292,12 +1502,13 @@
      }
     },
     {
-     "linha": "arma-espiritual",
+     "linha": "bless+arma",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 1,
        "2": 1
       }
      }
@@ -1317,16 +1528,16 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 3
+     "1": 2
     },
     "canal": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 4.4,
+     "nivel_eq": 4.2,
      "rank": "C",
      "por_categoria": {
-      "np": 2.7,
+      "np": 2.1,
       "p": 5.2
      }
     },
@@ -1379,10 +1590,10 @@
      }
     },
     "suporte": {
-     "nivel_eq": 0.7,
-     "rank": "E",
+     "nivel_eq": 1.4,
+     "rank": "D",
      "por_categoria": {
-      "np": 2.0,
+      "np": 4.1,
       "p": 0.0
      }
     }
@@ -1472,7 +1683,7 @@
    }
   }
  },
- "segundos": 20.0,
+ "segundos": 3.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1874,7 +2085,7 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "7c8e192b38c0",
+  "_planos": "79f728e25570",
   "principal": {
    "dano": "f6b20b9e6012",
    "defesa": "6e003780bd6d",
@@ -1906,6 +2117,14 @@
    "area": "691ff66c7d8a",
    "suporte": "4dec0852f1d0",
    "controle": "1bf9615a89b3"
+  },
+  "bless+arma": {
+   "dano": "ce433679c324",
+   "defesa": "6e003780bd6d",
+   "saves": "3d78932cf202",
+   "area": "e0784a340e5b",
+   "suporte": "17246266692a",
+   "controle": "590206313a51"
   },
   "guardioes": {
    "dano": "bd02193f4f5b",

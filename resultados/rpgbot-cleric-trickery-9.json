@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 9,
  "build": "Rogue 1 / Cleric (Trickery) / Rogue 3 (Arcane Trickster, personagem 10–11), Meio-elfo; peitoral + escudo; Sab 18 (Cleric 4), Des 18 (Cleric 8)",
- "impressao": "f625c4e61b",
+ "impressao": "fc0a59f311",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1093,6 +1093,234 @@
     "rank_absoluto": "C-"
    }
   },
+  "bless+arma": {
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 14.0,
+     "CA 12": 13.7,
+     "CA 15": 11.4,
+     "CA 16": 10.2,
+     "CA 18": 7.9,
+     "CA 20": 6.0,
+     "CA 22": 4.4,
+     "CA 24": 2.7,
+     "CA 25": 1.9
+    },
+    "nivel_eq": 2.8,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 2.8,
+    "nivel_precisa": 2.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 66,
+    "ca": 18,
+    "blindagem": 5.58,
+    "durabilidade": 3.88,
+    "nivel_blindagem": 5.6,
+    "nivel_durabilidade": 5.7,
+    "nivel_eq": 5.7,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.75,
+     "rank": "B",
+     "turnos_livres": [
+      3.57,
+      3.72,
+      3.66,
+      2.65,
+      2.25,
+      2.17,
+      1.93,
+      1.93,
+      1.6,
+      1.18
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.92,
+     "rank": "C",
+     "turnos_livres": [
+      3.31,
+      1.97,
+      1.55,
+      1.48,
+      1.24,
+      0.89,
+      1.28,
+      1.0,
+      1.12,
+      0.99
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.2,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 3.8,
+     "3": 3.8,
+     "4": 4.03,
+     "5": 3.86,
+     "6": 3.86,
+     "7": 3.86,
+     "8": 5.04,
+     "9": 4.83,
+     "10": 4.83,
+     "11": 4.98,
+     "12": 4.98,
+     "13": 5.63,
+     "14": 5.63,
+     "15": 5.63,
+     "16": 5.63,
+     "17": 5.93,
+     "18": 5.93,
+     "19": 6.0,
+     "20": 5.89
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 17.16,
+    "defensivo": 0,
+    "total": 17.16,
+    "nivel_ofensivo": 9.0,
+    "nivel_defensivo": 0.0,
+    "nivel_eq": 6.4,
+    "rank": "B-",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 17.16
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 3.37,
+    "rank": "C-",
+    "nivel_campo": 0.69,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 3.17,
+    "rank_atencao": "C-",
+    "vidas_total": 0.395,
+    "vidas_campo": 0.019,
+    "vidas_atencao": 0.376,
+    "corpo": {
+     "T": 0.376,
+     "S": 0.792,
+     "P": -0.416,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 19.69,
+    "rank_corpo": "S",
+    "corpo_busca": [
+     [
+      9,
+      0.376
+     ],
+     [
+      10,
+      0.334
+     ],
+     [
+      11,
+      0.342
+     ],
+     [
+      12,
+      0.307
+     ],
+     [
+      13,
+      0.267
+     ],
+     [
+      14,
+      0.24
+     ],
+     [
+      15,
+      0.24
+     ],
+     [
+      16,
+      0.21
+     ],
+     [
+      17,
+      0.147
+     ],
+     [
+      18,
+      0.116
+     ],
+     [
+      19,
+      0.041
+     ],
+     [
+      20,
+      -0.019
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.67,
+     "Party de elite": 3.86,
+     "Horda + chefe": 2.59,
+     "Horda": 2.6,
+     "Dupla": 3.4,
+     "Chefe sozinho": 4.34
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0096
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0056
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.007
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0134
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0056
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0064
+     }
+    },
+    "nivel_absoluto": 3.12,
+    "rank_absoluto": "C-"
+   }
+  },
   "guardioes": {
    "hipotese": "guardioes",
    "principal": [],
@@ -1541,12 +1769,13 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "arma-espiritual",
+     "linha": "bless+arma",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 1,
        "2": 1
       }
      }
@@ -1564,12 +1793,13 @@
      }
     },
     {
-     "linha": "arma-espiritual",
+     "linha": "bless+arma",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 1,
        "2": 1
       }
      }
@@ -1589,17 +1819,17 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 4,
+     "1": 2,
      "3": 2
     },
     "canal": 2
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.3,
-     "rank": "C+",
+     "nivel_eq": 4.9,
+     "rank": "C",
      "por_categoria": {
-      "np": 4.0,
+      "np": 2.8,
       "p": 5.9
      }
     },
@@ -1636,10 +1866,10 @@
      }
     },
     "corpo": {
-     "nivel_eq": 16.4,
+     "nivel_eq": 16.9,
      "rank": "S",
      "por_categoria": {
-      "np": 18.2,
+      "np": 19.7,
       "p": 15.5
      }
     },
@@ -1647,15 +1877,15 @@
      "nivel_eq": 8.6,
      "rank": "B+",
      "por_categoria": {
-      "np": 4.3,
+      "np": 4.2,
       "p": 8.6
      }
     },
     "suporte": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 2.1,
+     "rank": "D",
      "por_categoria": {
-      "np": 0.0,
+      "np": 6.4,
       "p": 0.0
      }
     }
@@ -1746,7 +1976,7 @@
    }
   }
  },
- "segundos": 47.5,
+ "segundos": 2.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2148,7 +2378,7 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "1ba4737ca5a9",
+  "_planos": "cbdf37484707",
   "principal": {
    "dano": "75d8bb6f48ca",
    "defesa": "6f1075e0fee6",
@@ -2188,6 +2418,14 @@
    "area": "4f576e39ca67",
    "suporte": "53679140430e",
    "controle": "f903f7ed8e45"
+  },
+  "bless+arma": {
+   "dano": "392bd7d44b36",
+   "defesa": "6f1075e0fee6",
+   "saves": "1d952726dfa2",
+   "area": "fb467593a1ab",
+   "suporte": "64c9e9565df4",
+   "controle": "fc43861fda5e"
   },
   "guardioes": {
    "dano": "149be4c561f3",

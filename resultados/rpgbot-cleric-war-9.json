@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 9,
  "build": "Cleric (War), Dragonborn Cromático (verde); armadura pesada + escudo; Resilient Con 4, Sab 18 (8), Sab 20 (12); esqueletos de Animate Dead a partir do 5",
- "impressao": "b84dc2e8a2",
+ "impressao": "470813eb6e",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -964,6 +964,244 @@
     "rank_absoluto": "C+"
    }
   },
+  "bless+arma": {
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 41.5,
+     "CA 12": 39.6,
+     "CA 15": 32.0,
+     "CA 16": 29.1,
+     "CA 18": 23.2,
+     "CA 20": 17.8,
+     "CA 22": 12.5,
+     "CA 24": 7.3,
+     "CA 25": 6.3
+    },
+    "nivel_eq": 7.6,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.6,
+    "nivel_precisa": 7.2,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 84,
+    "ca": 20,
+    "blindagem": 8.5,
+    "durabilidade": 5.69,
+    "nivel_blindagem": 9.7,
+    "nivel_durabilidade": 9.0,
+    "nivel_eq": 9.7,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.89,
+     "rank": "B",
+     "turnos_livres": [
+      3.72,
+      3.37,
+      3.29,
+      2.66,
+      1.99,
+      1.85,
+      2.62,
+      2.35,
+      1.65,
+      1.48
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.19,
+     "rank": "A",
+     "turnos_livres": [
+      3.69,
+      2.37,
+      1.81,
+      2.11,
+      1.84,
+      1.28,
+      1.73,
+      1.44,
+      1.6,
+      1.33
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "rounds": {
+     "1": 2.36,
+     "2": 2.84,
+     "3": 2.84,
+     "4": 3.01,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.74,
+     "9": 3.6,
+     "10": 3.6,
+     "11": 3.87,
+     "12": 3.87,
+     "13": 4.49,
+     "14": 4.49,
+     "15": 4.49,
+     "16": 4.49,
+     "17": 5.02,
+     "18": 5.02,
+     "19": 5.86,
+     "20": 5.16
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 5.0,
+     "rank": "C"
+    },
+    "melhor": "Word of Radiance",
+    "areas": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.97,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.97,
+       "padrao": 4.97,
+       "agrupada": 4.97
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 20.43,
+    "defensivo": 0,
+    "total": 20.43,
+    "nivel_ofensivo": 10.4,
+    "nivel_defensivo": 0.0,
+    "nivel_eq": 7.4,
+    "rank": "B",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "War God's Blessing (+10 num ataque de aliado, reação)",
+      "lado": "of",
+      "valor": 3.27
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 17.16
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 4.39,
+    "rank": "C",
+    "nivel_campo": 1.5,
+    "rank_campo": "D",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 3.13,
+    "rank_atencao": "C-",
+    "vidas_total": 0.492,
+    "vidas_campo": 0.173,
+    "vidas_atencao": 0.345,
+    "corpo": {
+     "T": 0.345,
+     "S": 0.247,
+     "P": 0.098,
+     "chave": "T+S+P+S",
+     "perfil": "Fortaleza"
+    },
+    "nivel_corpo": 15.97,
+    "rank_corpo": "A+",
+    "corpo_busca": [
+     [
+      9,
+      0.345
+     ],
+     [
+      10,
+      0.302
+     ],
+     [
+      11,
+      0.208
+     ],
+     [
+      12,
+      0.183
+     ],
+     [
+      13,
+      0.159
+     ],
+     [
+      14,
+      0.125
+     ],
+     [
+      15,
+      0.028
+     ],
+     [
+      16,
+      -0.001
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 4.01,
+     "Party de elite": 2.73,
+     "Horda + chefe": 2.62,
+     "Horda": 4.02,
+     "Dupla": 4.19,
+     "Chefe sozinho": 6.58
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0159,
+      "Corpo (6 esqueletos (Animate Dead))": 0.0668
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0094,
+      "Corpo (6 esqueletos (Animate Dead))": 0.0406
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0117,
+      "Corpo (6 esqueletos (Animate Dead))": 0.0489
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0223,
+      "Corpo (6 esqueletos (Animate Dead))": 0.0933
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0095,
+      "Corpo (6 esqueletos (Animate Dead))": 0.043
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0111,
+      "Corpo (6 esqueletos (Animate Dead))": 0.0533
+     }
+    },
+    "nivel_absoluto": 3.67,
+    "rank_absoluto": "C-"
+   }
+  },
   "guardioes": {
    "hipotese": "guardioes",
    "principal": [],
@@ -1692,13 +1930,38 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "manto",
+     "linha": "bless+arma",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "3": 1
+       "1": 1,
+       "2": 1
+      }
+     }
+    },
+    {
+     "linha": "bless+arma",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 1,
+       "2": 1
+      }
+     }
+    },
+    {
+     "linha": "bless+arma",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 1,
+       "2": 1
       }
      }
     },
@@ -1713,45 +1976,23 @@
        "5": 1
       }
      }
-    },
-    {
-     "linha": "manto",
-     "categoria": "np",
-     "peso": 1,
-     "nota": "",
-     "gasto": {
-      "espacos": {
-       "3": 1
-      }
-     }
-    },
-    {
-     "linha": "manto",
-     "categoria": "p",
-     "peso": 2,
-     "nota": "",
-     "gasto": {
-      "espacos": {
-       "3": 1
-      }
-     }
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 4,
-     "2": 3,
+     "1": 1,
+     "3": 3,
      "4": 2
     },
     "canal": 2
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.2,
+     "nivel_eq": 8.7,
      "rank": "B+",
      "por_categoria": {
-      "np": 8.4,
-      "p": 9.6
+      "np": 7.6,
+      "p": 9.2
      }
     },
     "defesa": {
@@ -1787,11 +2028,11 @@
      }
     },
     "corpo": {
-     "nivel_eq": 16.1,
-     "rank": "S",
+     "nivel_eq": 15.6,
+     "rank": "A+",
      "por_categoria": {
-      "np": 16.7,
-      "p": 15.8
+      "np": 16.0,
+      "p": 15.5
      }
     },
     "area": {
@@ -1803,11 +2044,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 3.2,
-     "rank": "C-",
+     "nivel_eq": 5.1,
+     "rank": "C+",
      "por_categoria": {
-      "np": 4.5,
-      "p": 2.5
+      "np": 7.4,
+      "p": 4.0
      }
     }
    }
@@ -1897,7 +2138,7 @@
    }
   }
  },
- "segundos": 38.5,
+ "segundos": 2.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2299,7 +2540,7 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "4e026ce79f54",
+  "_planos": "0471fe41a508",
   "principal": {
    "dano": "e678be8d026a",
    "defesa": "db0746e960f9",
@@ -2331,6 +2572,14 @@
    "area": "a31afdd0599b",
    "suporte": "2f5000650511",
    "controle": "1aab41351693"
+  },
+  "bless+arma": {
+   "dano": "e942a972e3f7",
+   "defesa": "db0746e960f9",
+   "saves": "750137438933",
+   "area": "c39b655e569b",
+   "suporte": "0b2eb82ddf65",
+   "controle": "36a14473b544"
   },
   "guardioes": {
    "dano": "0304dea3465f",

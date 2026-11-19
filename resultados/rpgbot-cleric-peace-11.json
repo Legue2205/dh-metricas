@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Cleric (Peace) sobre clérigo base: Humano Variante (War Caster), Des 14, Con 14, Sab 16; escama → meia-armadura + escudo; Sab 18 (4), Sab 20 (8)",
- "impressao": "417095ae05",
+ "impressao": "5ae5366e9f",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1223,6 +1223,494 @@
     "rank_absoluto": "C-"
    }
   },
+  "bless+arma": {
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 23.9,
+     "CA 12": 23.6,
+     "CA 15": 20.2,
+     "CA 16": 18.5,
+     "CA 18": 15.0,
+     "CA 20": 12.3,
+     "CA 22": 9.7,
+     "CA 24": 7.2,
+     "CA 25": 5.9
+    },
+    "nivel_eq": 5.0,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.0,
+    "nivel_precisa": 5.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 80,
+    "ca": 19,
+    "blindagem": 7.36,
+    "durabilidade": 4.89,
+    "nivel_blindagem": 8.0,
+    "nivel_durabilidade": 7.8,
+    "nivel_eq": 8.0,
+    "rank": "B+",
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.06,
+     "rank": "B",
+     "turnos_livres": [
+      3.57,
+      3.45,
+      3.37,
+      2.65,
+      2.0,
+      1.85,
+      2.24,
+      2.07,
+      1.59,
+      1.27
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.64,
+     "rank": "A",
+     "turnos_livres": [
+      3.78,
+      2.54,
+      1.97,
+      2.3,
+      2.06,
+      1.47,
+      1.87,
+      1.57,
+      1.69,
+      1.4
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "rounds": {
+     "1": 2.36,
+     "2": 2.17,
+     "3": 2.17,
+     "4": 2.86,
+     "5": 2.84,
+     "6": 2.84,
+     "7": 2.84,
+     "8": 3.94,
+     "9": 3.81,
+     "10": 3.81,
+     "11": 4.05,
+     "12": 4.05,
+     "13": 4.87,
+     "14": 4.87,
+     "15": 4.87,
+     "16": 4.87,
+     "17": 5.45,
+     "18": 5.45,
+     "19": 5.93,
+     "20": 5.47
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 8.2,
+     "rank": "B+"
+    },
+    "melhor": "Word of Radiance",
+    "areas": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 8.16,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 8.16,
+       "padrao": 8.16,
+       "agrupada": 8.69
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 31.37,
+    "defensivo": 1.63,
+    "total": 33.0,
+    "nivel_ofensivo": 13.3,
+    "nivel_defensivo": 2.7,
+    "nivel_eq": 10.3,
+    "rank": "A-",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Emboldening Bond (1d4 em 1 ataque por turno)",
+      "lado": "of",
+      "valor": 8.65
+     },
+     {
+      "nome": "Emboldening Bond (1d4 nos saves)",
+      "lado": "def",
+      "valor": 1.63
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 22.72
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 4.38,
+    "rank": "C",
+    "nivel_campo": 0.71,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 4.25,
+    "rank_atencao": "C",
+    "vidas_total": 0.465,
+    "vidas_campo": 0.02,
+    "vidas_atencao": 0.446,
+    "corpo": {
+     "T": 0.446,
+     "S": 0.752,
+     "P": -0.306,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 21.16,
+    "rank_corpo": "S",
+    "corpo_busca": [
+     [
+      11,
+      0.446
+     ],
+     [
+      12,
+      0.409
+     ],
+     [
+      13,
+      0.368
+     ],
+     [
+      14,
+      0.336
+     ],
+     [
+      15,
+      0.327
+     ],
+     [
+      16,
+      0.294
+     ],
+     [
+      17,
+      0.234
+     ],
+     [
+      18,
+      0.201
+     ],
+     [
+      19,
+      0.129
+     ],
+     [
+      20,
+      0.069
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 3.24,
+     "Party de elite": 4.36,
+     "Horda + chefe": 3.02,
+     "Horda": 2.98,
+     "Dupla": 4.35,
+     "Chefe sozinho": 6.47
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0106
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.006
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0161
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0062
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0073
+     }
+    },
+    "nivel_absoluto": 4.04,
+    "rank_absoluto": "C"
+   }
+  },
+  "balsamo+arma": {
+   "hipotese": "Balm of Peace (Channel Divinity, ação) + truques + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 23.9,
+     "CA 12": 23.6,
+     "CA 15": 20.2,
+     "CA 16": 18.5,
+     "CA 18": 15.0,
+     "CA 20": 12.3,
+     "CA 22": 9.7,
+     "CA 24": 7.2,
+     "CA 25": 5.9
+    },
+    "nivel_eq": 5.0,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.0,
+    "nivel_precisa": 5.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 80,
+    "ca": 19,
+    "blindagem": 7.36,
+    "durabilidade": 4.89,
+    "nivel_blindagem": 8.0,
+    "nivel_durabilidade": 7.8,
+    "nivel_eq": 8.0,
+    "rank": "B+",
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.06,
+     "rank": "B",
+     "turnos_livres": [
+      3.57,
+      3.45,
+      3.37,
+      2.65,
+      2.0,
+      1.85,
+      2.24,
+      2.07,
+      1.59,
+      1.27
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.64,
+     "rank": "A",
+     "turnos_livres": [
+      3.78,
+      2.54,
+      1.97,
+      2.3,
+      2.06,
+      1.47,
+      1.87,
+      1.57,
+      1.69,
+      1.4
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "rounds": {
+     "1": 2.36,
+     "2": 2.17,
+     "3": 2.17,
+     "4": 2.86,
+     "5": 2.84,
+     "6": 2.84,
+     "7": 2.84,
+     "8": 3.94,
+     "9": 3.81,
+     "10": 3.81,
+     "11": 4.05,
+     "12": 4.05,
+     "13": 4.87,
+     "14": 4.87,
+     "15": 4.87,
+     "16": 4.87,
+     "17": 5.45,
+     "18": 5.45,
+     "19": 5.93,
+     "20": 5.47
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 8.2,
+     "rank": "B+"
+    },
+    "melhor": "Word of Radiance",
+    "areas": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 8.16,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 8.16,
+       "padrao": 8.16,
+       "agrupada": 8.69
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 8.65,
+    "defensivo": 7.03,
+    "total": 15.68,
+    "nivel_ofensivo": 4.4,
+    "nivel_defensivo": 8.0,
+    "nivel_eq": 6.1,
+    "rank": "B-",
+    "perfil": "Protetor",
+    "fonte_principal": "Emboldening Bond (1d4 em 1 ataque por turno)",
+    "fontes": [
+     {
+      "nome": "Emboldening Bond (1d4 em 1 ataque por turno)",
+      "lado": "of",
+      "valor": 8.65
+     },
+     {
+      "nome": "Emboldening Bond (1d4 nos saves)",
+      "lado": "def",
+      "valor": 1.63
+     },
+     {
+      "nome": "Balm of Peace (2 aliados)",
+      "lado": "def",
+      "valor": 5.4
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 4.38,
+    "rank": "C",
+    "nivel_campo": 0.71,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 4.25,
+    "rank_atencao": "C",
+    "vidas_total": 0.465,
+    "vidas_campo": 0.02,
+    "vidas_atencao": 0.446,
+    "corpo": {
+     "T": 0.446,
+     "S": 0.752,
+     "P": -0.306,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 21.16,
+    "rank_corpo": "S",
+    "corpo_busca": [
+     [
+      11,
+      0.446
+     ],
+     [
+      12,
+      0.409
+     ],
+     [
+      13,
+      0.368
+     ],
+     [
+      14,
+      0.336
+     ],
+     [
+      15,
+      0.327
+     ],
+     [
+      16,
+      0.294
+     ],
+     [
+      17,
+      0.234
+     ],
+     [
+      18,
+      0.201
+     ],
+     [
+      19,
+      0.129
+     ],
+     [
+      20,
+      0.069
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 3.24,
+     "Party de elite": 4.36,
+     "Horda + chefe": 3.02,
+     "Horda": 2.98,
+     "Dupla": 4.35,
+     "Chefe sozinho": 6.47
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0106
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.006
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0161
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0062
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0073
+     }
+    },
+    "nivel_absoluto": 4.04,
+    "rank_absoluto": "C"
+   }
+  },
   "guardioes": {
    "hipotese": "guardioes",
    "principal": [],
@@ -1926,7 +2414,7 @@
    }
   }
  },
- "segundos": 24.0,
+ "segundos": 6.4,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2328,7 +2816,7 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "9180e5c8749e",
+  "_planos": "985c6454bb4d",
   "principal": {
    "dano": "2bd678e6b709",
    "defesa": "970afa02157f",
@@ -2368,6 +2856,22 @@
    "area": "506da87ab25b",
    "suporte": "044977167a32",
    "controle": "dbbfabf56dfc"
+  },
+  "bless+arma": {
+   "dano": "09e538a85abd",
+   "defesa": "970afa02157f",
+   "saves": "22d8abeff819",
+   "area": "235c97a62a0b",
+   "suporte": "5ecf06711c0f",
+   "controle": "702f23f616bd"
+  },
+  "balsamo+arma": {
+   "dano": "09e538a85abd",
+   "defesa": "970afa02157f",
+   "saves": "22d8abeff819",
+   "area": "235c97a62a0b",
+   "suporte": "044977167a32",
+   "controle": "702f23f616bd"
   },
   "guardioes": {
    "dano": "4310b203d30c",

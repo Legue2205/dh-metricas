@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 9,
  "build": "Cleric (Tempest), Air Genasi (Shocking Grasp por Sab); armadura pesada + escudo; ASI Con/Sab 4, War Caster 8, Sab 20 (12)",
- "impressao": "593a48f132",
+ "impressao": "85ffb542ea",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1213,6 +1213,407 @@
     "rank_absoluto": "F"
    }
   },
+  "bless+arma": {
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 14.3,
+     "CA 12": 13.7,
+     "CA 15": 11.6,
+     "CA 16": 10.8,
+     "CA 18": 9.3,
+     "CA 20": 7.9,
+     "CA 22": 6.4,
+     "CA 24": 5.0,
+     "CA 25": 4.3
+    },
+    "nivel_eq": 2.8,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 2.8,
+    "nivel_precisa": 2.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 75,
+    "ca": 20,
+    "blindagem": 7.77,
+    "durabilidade": 4.99,
+    "nivel_blindagem": 8.6,
+    "nivel_durabilidade": 8.0,
+    "nivel_eq": 8.6,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.45,
+     "rank": "B-",
+     "turnos_livres": [
+      3.72,
+      3.37,
+      3.29,
+      2.44,
+      1.82,
+      1.72,
+      2.13,
+      1.75,
+      1.31,
+      1.16
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.69,
+      2.37,
+      1.81,
+      2.11,
+      1.84,
+      1.28,
+      1.72,
+      1.39,
+      1.56,
+      1.28
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.2,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 3.82,
+     "3": 3.82,
+     "4": 4.04,
+     "5": 3.83,
+     "6": 3.83,
+     "7": 3.83,
+     "8": 5.01,
+     "9": 4.82,
+     "10": 4.82,
+     "11": 4.94,
+     "12": 4.94,
+     "13": 5.61,
+     "14": 5.61,
+     "15": 5.61,
+     "16": 5.61,
+     "17": 5.93,
+     "18": 5.93,
+     "19": 6.0,
+     "20": 5.88
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 4.5,
+     "rank": "C"
+    },
+    "melhor": "Word of Radiance",
+    "areas": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.49,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.49,
+       "padrao": 4.49,
+       "agrupada": 4.49
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 17.16,
+    "defensivo": 0,
+    "total": 17.16,
+    "nivel_ofensivo": 9.0,
+    "nivel_defensivo": 0.0,
+    "nivel_eq": 6.4,
+    "rank": "B-",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 17.16
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.89,
+    "rank": "E",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.24,
+    "rank_atencao": "F",
+    "vidas_total": 0.06,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.032,
+    "corpo": {
+     "T": 0.032,
+     "S": 0.178,
+     "P": -0.145,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 9.0,
+    "rank_corpo": "B+",
+    "corpo_busca": [
+     [
+      9,
+      0.032
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.41,
+     "Party de elite": 0.39,
+     "Horda + chefe": 0.35,
+     "Horda": 0.43,
+     "Dupla": 0.19,
+     "Chefe sozinho": 2.08
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0149
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0087
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0109
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0207
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0087
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.01
+     }
+    },
+    "nivel_absoluto": 0.66,
+    "rank_absoluto": "E"
+   }
+  },
+  "ira+arma": {
+   "hipotese": "Destructive Wrath (Channel Divinity) maximizando a área do trovão no maior espaço + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 12.3,
+     "CA 12": 11.7,
+     "CA 15": 9.7,
+     "CA 16": 9.0,
+     "CA 18": 7.7,
+     "CA 20": 6.4,
+     "CA 22": 5.1,
+     "CA 24": 3.8,
+     "CA 25": 3.1
+    },
+    "nivel_eq": 2.1,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 2.1,
+    "nivel_precisa": 2.1,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 75,
+    "ca": 20,
+    "blindagem": 7.77,
+    "durabilidade": 4.99,
+    "nivel_blindagem": 8.6,
+    "nivel_durabilidade": 8.0,
+    "nivel_eq": 8.6,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.45,
+     "rank": "B-",
+     "turnos_livres": [
+      3.72,
+      3.37,
+      3.29,
+      2.44,
+      1.82,
+      1.72,
+      2.13,
+      1.75,
+      1.31,
+      1.16
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.69,
+      2.37,
+      1.81,
+      2.11,
+      1.84,
+      1.28,
+      1.72,
+      1.39,
+      1.56,
+      1.28
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 20.0,
+    "rank": "S",
+    "rounds": {
+     "1": 0.73,
+     "2": 0.74,
+     "3": 0.74,
+     "4": 0.75,
+     "5": 0.73,
+     "6": 0.73,
+     "7": 0.73,
+     "8": 0.81,
+     "9": 0.8,
+     "10": 0.8,
+     "11": 0.87,
+     "12": 0.87,
+     "13": 1.24,
+     "14": 1.24,
+     "15": 1.24,
+     "16": 1.24,
+     "17": 1.92,
+     "18": 1.92,
+     "19": 2.91,
+     "20": 2.49
+    },
+    "usos": 1,
+    "antigo": {
+     "nivel_eq": 20.0,
+     "rank": "S"
+    },
+    "melhor": "Destructive Wave + Destructive Wrath (5º)",
+    "areas": [
+     {
+      "nome": "Destructive Wave + Destructive Wrath (5º)",
+      "tipo": "explosao",
+      "nivel_eq": 20.0,
+      "rank": "S",
+      "variacoes": {
+       "esparsa": 20.0,
+       "padrao": 20.0,
+       "agrupada": 20.0
+      }
+     },
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.49,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.49,
+       "padrao": 4.49,
+       "agrupada": 4.49
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 0,
+    "total": 0,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 0.0,
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "perfil": "-",
+    "fonte_principal": "-",
+    "fontes": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.86,
+    "rank": "E",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.14,
+    "rank_atencao": "F",
+    "vidas_total": 0.053,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.026,
+    "corpo": {
+     "T": 0.026,
+     "S": 0.204,
+     "P": -0.178,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 9.0,
+    "rank_corpo": "B+",
+    "corpo_busca": [
+     [
+      9,
+      0.026
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.38,
+     "Party de elite": 0.35,
+     "Horda + chefe": 0.33,
+     "Horda": 0.4,
+     "Dupla": 0.1,
+     "Chefe sozinho": 2.04
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0149
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0087
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0109
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0207
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0087
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.01
+     }
+    },
+    "nivel_absoluto": 0.57,
+    "rank_absoluto": "E"
+   }
+  },
   "guardioes": {
    "hipotese": "guardioes",
    "principal": [],
@@ -1623,13 +2024,13 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "arma-espiritual",
+     "linha": "controle",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "2": 1
+       "4": 1
       }
      }
     },
@@ -1656,15 +2057,16 @@
      }
     },
     {
-     "linha": "area",
+     "linha": "ira+arma",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "4": 1,
+       "2": 1,
        "5": 1
-      }
+      },
+      "canal": 1
      }
     }
    ],
@@ -1674,15 +2076,15 @@
      "2": 2,
      "3": 3
     },
-    "canal": 2
+    "canal": 1
    },
    "eixos": {
     "dano": {
      "nivel_eq": 1.4,
      "rank": "D",
      "por_categoria": {
-      "np": 2.5,
-      "p": 0.9
+      "np": 1.0,
+      "p": 1.6
      }
     },
     "defesa": {
@@ -1710,10 +2112,10 @@
      }
     },
     "campo": {
-     "nivel_eq": 2.2,
+     "nivel_eq": 2.4,
      "rank": "D",
      "por_categoria": {
-      "np": 1.5,
+      "np": 2.9,
       "p": 1.5
      }
     },
@@ -1729,7 +2131,7 @@
      "nivel_eq": 20.0,
      "rank": "S",
      "por_categoria": {
-      "np": 4.2,
+      "np": 4.1,
       "p": 12.1
      }
     },
@@ -1828,7 +2230,7 @@
    }
   }
  },
- "segundos": 53.7,
+ "segundos": 6.5,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2230,7 +2632,7 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "31764503e87f",
+  "_planos": "d7221802ad55",
   "principal": {
    "dano": "859e8ba40e5a",
    "defesa": "cc8a8e491744",
@@ -2278,6 +2680,22 @@
    "area": "2a22f27fce7b",
    "suporte": "53679140430e",
    "controle": "f981dc8dd973"
+  },
+  "bless+arma": {
+   "dano": "6fa2d2181333",
+   "defesa": "cc8a8e491744",
+   "saves": "745af39c351d",
+   "area": "02c0b132f1a6",
+   "suporte": "64c9e9565df4",
+   "controle": "e0b54086a9f4"
+  },
+  "ira+arma": {
+   "dano": "d31c662eb4ce",
+   "defesa": "cc8a8e491744",
+   "saves": "745af39c351d",
+   "area": "d5bfc12a8ad4",
+   "suporte": "53679140430e",
+   "controle": "129ae2147e66"
   },
   "guardioes": {
    "dano": "2ab8196e3f41",

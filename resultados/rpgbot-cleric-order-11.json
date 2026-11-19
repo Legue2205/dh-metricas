@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Cleric (Order) / Sorcerer 1 (Divine Soul: Bless, Silvery Barbs), Shifter; armadura pesada + escudo; Fey Touched (personagem 5), Sab 20 (9)",
- "impressao": "ecacb9b84f",
+ "impressao": "1a706ca315",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1100,6 +1100,231 @@
     "rank_absoluto": "C"
    }
   },
+  "bless+arma": {
+   "hipotese": "Bless + Voice of Authority (1 ataque de aliado) + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 23.6,
+     "CA 12": 23.2,
+     "CA 15": 19.9,
+     "CA 16": 18.2,
+     "CA 18": 14.8,
+     "CA 20": 12.1,
+     "CA 22": 9.6,
+     "CA 24": 7.1,
+     "CA 25": 5.8
+    },
+    "nivel_eq": 5.0,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.0,
+    "nivel_precisa": 5.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 90,
+    "ca": 20,
+    "blindagem": 8.97,
+    "durabilidade": 6.16,
+    "nivel_blindagem": 10.2,
+    "nivel_durabilidade": 9.7,
+    "nivel_eq": 10.2,
+    "rank": "A-",
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.48,
+     "rank": "B",
+     "turnos_livres": [
+      3.57,
+      3.33,
+      3.27,
+      2.7,
+      1.96,
+      1.78,
+      2.47,
+      2.27,
+      1.65,
+      1.38
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.81,
+     "rank": "A",
+     "turnos_livres": [
+      3.78,
+      2.65,
+      2.09,
+      2.33,
+      2.19,
+      1.64,
+      1.96,
+      1.66,
+      1.81,
+      1.53
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.28,
+     "6": 3.28,
+     "7": 3.28,
+     "8": 4.33,
+     "9": 4.17,
+     "10": 4.17,
+     "11": 4.42,
+     "12": 4.42,
+     "13": 5.15,
+     "14": 5.15,
+     "15": 5.15,
+     "16": 5.15,
+     "17": 5.69,
+     "18": 5.69,
+     "19": 5.99,
+     "20": 5.67
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 26.0,
+    "defensivo": 0,
+    "total": 26.0,
+    "nivel_ofensivo": 11.9,
+    "nivel_defensivo": 0.0,
+    "nivel_eq": 8.5,
+    "rank": "B+",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 22.72
+     },
+     {
+      "nome": "Voice of Authority (1 ataque de aliado por reação)",
+      "lado": "of",
+      "valor": 3.28
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 5.05,
+    "rank": "C+",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 4.99,
+    "rank_atencao": "C",
+    "vidas_total": 0.562,
+    "vidas_campo": 0.026,
+    "vidas_atencao": 0.538,
+    "corpo": {
+     "T": 0.538,
+     "S": 0.879,
+     "P": -0.341,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 25.26,
+    "rank_corpo": "S",
+    "corpo_busca": [
+     [
+      11,
+      0.538
+     ],
+     [
+      12,
+      0.509
+     ],
+     [
+      13,
+      0.478
+     ],
+     [
+      14,
+      0.452
+     ],
+     [
+      15,
+      0.452
+     ],
+     [
+      16,
+      0.424
+     ],
+     [
+      17,
+      0.38
+     ],
+     [
+      18,
+      0.353
+     ],
+     [
+      19,
+      0.297
+     ],
+     [
+      20,
+      0.249
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 4.08,
+     "Party de elite": 4.64,
+     "Horda + chefe": 4.06,
+     "Horda": 4.06,
+     "Dupla": 4.61,
+     "Chefe sozinho": 6.94
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0136
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0098
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0206
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.008
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0096
+     }
+    },
+    "nivel_absoluto": 4.2,
+    "rank_absoluto": "C"
+   }
+  },
   "guardioes": {
    "hipotese": "guardioes",
    "principal": [],
@@ -1767,7 +1992,7 @@
    }
   }
  },
- "segundos": 48.7,
+ "segundos": 3.1,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2169,7 +2394,7 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "ec958a10237b",
+  "_planos": "3f338d0d1649",
   "principal": {
    "dano": "67963d8c3070",
    "defesa": "076fc4aba451",
@@ -2209,6 +2434,14 @@
    "area": "7e83e543f2a4",
    "suporte": "5cfd47874ac4",
    "controle": "f9803bd1aa5a"
+  },
+  "bless+arma": {
+   "dano": "29f5450ad7cb",
+   "defesa": "076fc4aba451",
+   "saves": "56ca85f80055",
+   "area": "7e1624a50f2c",
+   "suporte": "7f190696b703",
+   "controle": "71e631467bc0"
   },
   "guardioes": {
    "dano": "a3663335d949",

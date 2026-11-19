@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Cleric (Life) / Druid 2 (Stars: personagem 2 e 6), Anão da Montanha (Custom Origin); armadura pesada + escudo; Resilient Con (personagem 5), Skill Expert 10",
- "impressao": "11e3795680",
+ "impressao": "a6e2d936a7",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1018,6 +1018,412 @@
     "rank_absoluto": "D"
    }
   },
+  "bless+arma": {
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 21.7,
+     "CA 12": 21.3,
+     "CA 15": 18.2,
+     "CA 16": 16.5,
+     "CA 18": 13.1,
+     "CA 20": 10.5,
+     "CA 22": 8.1,
+     "CA 24": 5.6,
+     "CA 25": 4.4
+    },
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.6,
+    "nivel_precisa": 4.6,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 102,
+    "ca": 20,
+    "blindagem": 9.86,
+    "durabilidade": 7.06,
+    "nivel_blindagem": 10.8,
+    "nivel_durabilidade": 10.7,
+    "nivel_eq": 10.8,
+    "rank": "A-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 9.0,
+     "rank": "B+",
+     "turnos_livres": [
+      3.72,
+      3.4,
+      3.33,
+      2.84,
+      2.29,
+      2.13,
+      3.01,
+      2.92,
+      2.16,
+      1.82
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.19,
+     "rank": "A",
+     "turnos_livres": [
+      3.69,
+      2.37,
+      1.81,
+      2.11,
+      1.84,
+      1.28,
+      1.73,
+      1.5,
+      1.64,
+      1.38
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "rounds": {
+     "1": 2.36,
+     "2": 2.84,
+     "3": 2.84,
+     "4": 3.86,
+     "5": 3.44,
+     "6": 3.44,
+     "7": 3.44,
+     "8": 4.45,
+     "9": 4.28,
+     "10": 4.28,
+     "11": 4.48,
+     "12": 4.48,
+     "13": 5.2,
+     "14": 5.2,
+     "15": 5.2,
+     "16": 5.2,
+     "17": 5.75,
+     "18": 5.75,
+     "19": 5.99,
+     "20": 5.72
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 4.9,
+     "rank": "C"
+    },
+    "melhor": "Word of Radiance",
+    "areas": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.88,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.88,
+       "padrao": 4.88,
+       "agrupada": 4.88
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 22.72,
+    "defensivo": 2.25,
+    "total": 24.97,
+    "nivel_ofensivo": 11.0,
+    "nivel_defensivo": 4.1,
+    "nivel_eq": 8.4,
+    "rank": "B+",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Goodberry + Disciple of Life (fim do dia)",
+      "lado": "def",
+      "valor": 2.25
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 22.72
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.85,
+    "rank": "E",
+    "nivel_campo": 0.75,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.71,
+    "rank_atencao": "E",
+    "vidas_total": 0.045,
+    "vidas_campo": 0.028,
+    "vidas_atencao": 0.019,
+    "corpo": {
+     "T": 0.019,
+     "S": 0.152,
+     "P": -0.133,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      0.019
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.32,
+     "Party de elite": 0.35,
+     "Horda + chefe": 0.22,
+     "Horda": 0.36,
+     "Dupla": 0.19,
+     "Chefe sozinho": 2.15
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0147
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0084
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0106
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0223
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0108
+     }
+    },
+    "nivel_absoluto": 1.44,
+    "rank_absoluto": "D"
+   }
+  },
+  "preservar+arma": {
+   "hipotese": "Preserve Life na luta (Channel Divinity, ação) + truques + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 21.7,
+     "CA 12": 21.3,
+     "CA 15": 18.2,
+     "CA 16": 16.5,
+     "CA 18": 13.1,
+     "CA 20": 10.5,
+     "CA 22": 8.1,
+     "CA 24": 5.6,
+     "CA 25": 4.4
+    },
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.6,
+    "nivel_precisa": 4.6,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 102,
+    "ca": 20,
+    "blindagem": 9.86,
+    "durabilidade": 7.06,
+    "nivel_blindagem": 10.8,
+    "nivel_durabilidade": 10.7,
+    "nivel_eq": 10.8,
+    "rank": "A-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 9.0,
+     "rank": "B+",
+     "turnos_livres": [
+      3.72,
+      3.4,
+      3.33,
+      2.84,
+      2.29,
+      2.13,
+      3.01,
+      2.92,
+      2.16,
+      1.82
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.19,
+     "rank": "A",
+     "turnos_livres": [
+      3.69,
+      2.37,
+      1.81,
+      2.11,
+      1.84,
+      1.28,
+      1.73,
+      1.5,
+      1.64,
+      1.38
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "rounds": {
+     "1": 2.36,
+     "2": 2.84,
+     "3": 2.84,
+     "4": 3.86,
+     "5": 3.44,
+     "6": 3.44,
+     "7": 3.44,
+     "8": 4.45,
+     "9": 4.28,
+     "10": 4.28,
+     "11": 4.48,
+     "12": 4.48,
+     "13": 5.2,
+     "14": 5.2,
+     "15": 5.2,
+     "16": 5.2,
+     "17": 5.75,
+     "18": 5.75,
+     "19": 5.99,
+     "20": 5.72
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 4.9,
+     "rank": "C"
+    },
+    "melhor": "Word of Radiance",
+    "areas": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.88,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.88,
+       "padrao": 4.88,
+       "agrupada": 4.88
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 12.37,
+    "total": 12.37,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 9.0,
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "perfil": "Protetor",
+    "fonte_principal": "Preserve Life",
+    "fontes": [
+     {
+      "nome": "Goodberry + Disciple of Life (fim do dia)",
+      "lado": "def",
+      "valor": 2.25
+     },
+     {
+      "nome": "Preserve Life",
+      "lado": "def",
+      "valor": 10.12
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.85,
+    "rank": "E",
+    "nivel_campo": 0.75,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.71,
+    "rank_atencao": "E",
+    "vidas_total": 0.045,
+    "vidas_campo": 0.028,
+    "vidas_atencao": 0.019,
+    "corpo": {
+     "T": 0.019,
+     "S": 0.152,
+     "P": -0.133,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      0.019
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.32,
+     "Party de elite": 0.35,
+     "Horda + chefe": 0.22,
+     "Horda": 0.36,
+     "Dupla": 0.19,
+     "Chefe sozinho": 2.15
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0147
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0084
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0106
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0223
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0108
+     }
+    },
+    "nivel_absoluto": 1.44,
+    "rank_absoluto": "D"
+   }
+  },
   "guardioes": {
    "hipotese": "guardioes",
    "principal": [],
@@ -1647,7 +2053,7 @@
    }
   }
  },
- "segundos": 23.2,
+ "segundos": 6.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2049,7 +2455,7 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "82faca86a1ee",
+  "_planos": "d4a697fd4d74",
   "principal": {
    "dano": "5bec0d173c68",
    "defesa": "fc2b499aba0e",
@@ -2089,6 +2495,22 @@
    "area": "deaa77b40ed3",
    "suporte": "1a7a07785825",
    "controle": "e22266d36bb6"
+  },
+  "bless+arma": {
+   "dano": "62367abeb680",
+   "defesa": "fc2b499aba0e",
+   "saves": "7badbb6b92dc",
+   "area": "1e3ccbf3bc45",
+   "suporte": "e4f8483fcd40",
+   "controle": "8ed2a6e847fb"
+  },
+  "preservar+arma": {
+   "dano": "62367abeb680",
+   "defesa": "fc2b499aba0e",
+   "saves": "7badbb6b92dc",
+   "area": "1e3ccbf3bc45",
+   "suporte": "fc0671eca545",
+   "controle": "8ed2a6e847fb"
   },
   "guardioes": {
    "dano": "8593986b1a3c",

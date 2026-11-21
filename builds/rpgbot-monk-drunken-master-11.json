@@ -191,24 +191,104 @@
    "gasta": {
     "ki": 4
    }
+  },
+  {
+   "id": "mira",
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (lança; Flurry com Disengage grátis)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "rajada-mira",
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (lança; Flurry com Disengage grátis)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 6
+   }
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: rajada; prioritário: rajada. Sobra: 3 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: rajada; prioritário: rajada-mira. Sobra: 1 ki.",
    "combates": [
     "rajada",
+    "rajada-mira",
     "rajada",
-    "rajada",
-    "rajada"
+    "rajada-mira"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada. Sobra: 7 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada-mira. Sobra: 5 ki.",
    "combates": [
-    "rajada"
+    "rajada-mira"
    ]
   }
  },

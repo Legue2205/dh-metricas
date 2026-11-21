@@ -113,7 +113,7 @@
   "descricao": {
    "resumo": "Guardião Ancestral defensor de Destreza: rapieira e escudo, marca o alvo com Ancestral Protectors e protege aliados com Spirit Shield.",
    "estrategia": "Fúria em toda luta, acerta a maior ameaça para marcá-la; reação em Spirit Shield; o familiar dá vantagem no 1º ataque.",
-   "nao_modelado": "Arcane Deflection (compete com Spirit Shield pela reação); Consult the Spirits; Second Wind; teleporte do Shadar-Kai; Booming Blade; Arcane Recovery e rituais; Relentless Rage; Feral Instinct."
+   "nao_modelado": "Arcane Deflection só como +2 de CA (o +4 em save não); Consult the Spirits; Second Wind; teleporte do Shadar-Kai; Booming Blade; Arcane Recovery e rituais; Relentless Rage; Feral Instinct."
   }
  },
  "niveis": {
@@ -445,7 +445,13 @@
       ]
      },
      "defesa": {
-      "resist": true
+      "resist": true,
+      "reacoes": [
+       {
+        "tipo": "bloqueio",
+        "valor": 2
+       }
+      ]
      },
      "controle": {
       "atencao": {
@@ -579,7 +585,13 @@
       ]
      },
      "defesa": {
-      "resist": true
+      "resist": true,
+      "reacoes": [
+       {
+        "tipo": "bloqueio",
+        "valor": 2
+       }
+      ]
      },
      "controle": {
       "atencao": {

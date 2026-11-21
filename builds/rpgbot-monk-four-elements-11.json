@@ -247,6 +247,86 @@
    }
   },
   {
+   "id": "mira",
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "rajada-mira",
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 6
+   }
+  },
+  {
    "id": "fenix",
    "hipotese": "Flames of the Phoenix (Fireball, 4 ki) no 1º round",
    "dano": {
@@ -313,19 +393,19 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: fenix; prioritário: fenix. Sobra: 3 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: fenix; prioritário: rajada-mira. Sobra: 1 ki.",
    "combates": [
     "fenix",
+    "rajada-mira",
     "fenix",
-    "fenix",
-    "fenix"
+    "rajada-mira"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: fenix. Sobra: 7 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada-mira. Sobra: 5 ki.",
    "combates": [
-    "fenix"
+    "rajada-mira"
    ]
   }
  },

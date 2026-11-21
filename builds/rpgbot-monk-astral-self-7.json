@@ -314,6 +314,86 @@
    }
   },
   {
+   "id": "mira",
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (lança, sem os braços astrais)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 1.5,
+      "bonus": 6,
+      "dano": "1d6+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "rajada-mira",
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (lança, sem os braços astrais)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d6+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 6
+   }
+  },
+  {
    "id": "bracos-atordoar",
    "hipotese": "braços astrais + Flurry em 1 round + 1 Stunning Strike (3 ki)",
    "dano": {
@@ -392,19 +472,19 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bracos-atordoar; prioritário: bracos-rajada. Sobra: nada.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bracos; prioritário: rajada-mira. Sobra: nada.",
    "combates": [
-    "bracos-atordoar",
-    "bracos-rajada",
-    "bracos-atordoar",
-    "bracos-rajada"
+    "bracos",
+    "rajada-mira",
+    "bracos",
+    "rajada-mira"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bracos-rajada. Sobra: 3 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada-mira. Sobra: 1 ki.",
    "combates": [
-    "bracos-rajada"
+    "rajada-mira"
    ]
   }
  },

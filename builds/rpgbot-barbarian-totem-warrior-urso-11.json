@@ -1,0 +1,197 @@
+{
+ "gerado_de": "rpgbot-barbarian-totem-warrior-urso.json",
+ "build": "Barbarian (Totem Warrior: Bear), Eladrin, alabarda, Unarmored Defense; Polearm Master 4, For 18 8, For 20 12",
+ "corpo": {
+  "ca": 15,
+  "pv": 104,
+  "saves": {
+   "sv": {
+    "for": 8,
+    "des": 3,
+    "con": 6,
+    "int": -1,
+    "sab": -1,
+    "car": -1
+   },
+   "ataques": 3,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 4,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: alabarda com Polearm Master, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d10+4",
+      "vantagem": 1.0,
+      "dados_crit": "1d10+1d10"
+     },
+     {
+      "n": 1.0,
+      "bonus": 8,
+      "dano": "1d4+4",
+      "vantagem": 1.0,
+      "nota": "Polearm Master (ação bônus; 1º round na fúria)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 8,
+      "dano": "1d10+4",
+      "nota": "ataque de oportunidade do Polearm Master, reação em 50% dos rounds",
+      "dados_crit": "1d10+1d10"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita",
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "furia-urso",
+   "hipotese": "fúria com Totem Spirit (Bear): resistência a tudo menos psíquico",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d10+7",
+      "vantagem": 1.0,
+      "dados_crit": "1d10+1d10"
+     },
+     {
+      "n": 0.75,
+      "bonus": 8,
+      "dano": "1d4+7",
+      "vantagem": 1.0,
+      "nota": "Polearm Master (ação bônus; 1º round na fúria)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 8,
+      "dano": "1d10+7",
+      "nota": "ataque de oportunidade do Polearm Master, reação em 50% dos rounds",
+      "dados_crit": "1d10+1d10"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {
+    "res": [
+     "fogo",
+     "frio",
+     "eletrico",
+     "trovao",
+     "acido",
+     "radiante",
+     "necrotico",
+     "forca",
+     "veneno"
+    ]
+   },
+   "gasta": {
+    "furia": 1
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia-urso; prioritário: furia-urso. Sobra: nada.",
+   "combates": [
+    "furia-urso",
+    "furia-urso",
+    "furia-urso",
+    "furia-urso"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia-urso. Sobra: 3 furia.",
+   "combates": [
+    "furia-urso"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "A build What is Nature's Call? com o totem do Urso, a opção que o guia dá como padrão do nível 3.",
+  "estrategia": "Fúria em toda luta com resistência a quase tudo; Polearm Master na ação bônus e na reação.",
+  "nao_modelado": "Mesmos da build do Lobo; variante nossa para comparar (fora do gabarito).",
+  "progressao": "Spirit Walker (10); Relentless Rage."
+ },
+ "id": "rpgbot-barbarian-totem-warrior-urso-11",
+ "nome": "Totem Warrior Barbarian (variante Urso da build do RPGBot)",
+ "grupo": "Variante",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "variante",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/totem-warrior/",
+  "nota": "Build do RPGBot (Lobo) trocada para o Urso, para separar o peso do totem na nota azul da subclasse."
+ }
+}

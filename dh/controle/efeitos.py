@@ -18,12 +18,12 @@ Cada fonte é um dicionário com "tipo". Tipos disponíveis (ver README para exe
 """
 import numpy as np
 
-from ..base import R, TOPO, p_acerto, save
+from ..base import R, TOPO, p_acerto, save, pv_com_pvt
 from . import campo as C
 
 
 def _corpo_t(corpo, nivel):
-    return dict(nivel=nivel, ca=corpo['ca'], pv=corpo['pv'], res=corpo.get('res', 1), adv=corpo.get('adv', 0),
+    return dict(nivel=nivel, ca=corpo['ca'], pv=pv_com_pvt(corpo), res=corpo.get('res', 1), adv=corpo.get('adv', 0),
                 red=corpo.get('red', 0))
 
 

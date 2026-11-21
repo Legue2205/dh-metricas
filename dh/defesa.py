@@ -69,10 +69,10 @@ def _resolve(fn, pv, ac, adv, resist, red):
 # ---------------- reações (Shield, Uncanny Dodge, Parry): simulação golpe a golpe ----------------
 N_SIM = 4000
 GRADE = (0.0, 0.6, 1.0, 1.4, 2.0, 3.0)   # "preço" de guardar a reação, em múltiplos do dano médio de um golpe
-REACOES = ('shield', 'uncanny_dodge', 'reduz_dano', 'desvantagem', 'anula_critico')
+REACOES = ('shield', 'uncanny_dodge', 'reduz_dano', 'desvantagem', 'anula_critico', 'bloqueio')
 
 
-def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7):
+def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7, pvt_round=0.0):
     """Dano médio em R rounds com reações. O personagem vê o total do ataque (Shield) e o dano rolado
     (Uncanny Dodge / Parry) antes de decidir, e pesa os golpes que ainda faltam no round.
     Shield: gasta um uso se o golpe entra na faixa [CA, CA+5) e (dano evitado agora + esperado nos próximos
@@ -92,6 +92,7 @@ def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7):
     total = np.zeros(N_SIM)
     for r in range(4):
         adv = advs[r]; livre = rng.random(N_SIM) < livre_p; escudo = np.zeros(N_SIM, bool)
+        pool = np.full(N_SIM, float(pvt_round))   # PV temporários que se renovam a cada round (Reckless Abandon)
         for j in range(n):
             a = rng.integers(1, 21, N_SIM)
             if adv: b = rng.integers(1, 21, N_SIM); a = np.maximum(a, b) if adv > 0 else np.minimum(a, b)
@@ -111,12 +112,18 @@ def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7):
                 if rc['tipo'] == 'shield':
                     usa = pode & ~crit & ~escudo & (tot < ac + 5) & (dmg + rest * p_faixa * dbar >= precos[i] * dbar)
                     escudo |= usa; hit &= ~usa
+                elif rc['tipo'] == 'bloqueio':   # +k de CA contra UM ataque, depois de saber que acertou (cauda do Beast: 1d8)
+                    kmax = rc.get('dado', 0) or rc.get('valor', 0)
+                    usa = pode & ~crit & (tot < ac + 5 * escudo + kmax) & (dmg >= precos[i] * dbar)
+                    k = rng.integers(1, rc['dado'] + 1, N_SIM) if rc.get('dado') else rc.get('valor', 0)
+                    hit &= ~(usa & (tot < ac + 5 * escudo + k))
                 else:
                     usa = pode & ((dmg >= precos[i] * dbar) | (rest == 0))
                     dmg = np.where(usa, dmg * rc.get('fator', 0.5) if rc['tipo'] == 'uncanny_dodge'
                                    else np.maximum(0, dmg - rc.get('valor', 0)), dmg)
                 usos[i] -= usa; livre &= ~usa
-            total += hit * dmg
+            absorvido = np.minimum(pool, hit * dmg); pool -= absorvido
+            total += hit * dmg - absorvido
     return float(total.mean())
 
 
@@ -128,12 +135,12 @@ def _golpe(tipo, cr, resist, red):
     return max(0.0, D / n - (0 if magico else red)) * (0.5 if resist else 1)
 
 
-def _resolve_sim(tipo, pv, ac, advs, resist, red, reacoes, livre_p, extras=0):
+def _resolve_sim(tipo, pv, ac, advs, resist, red, reacoes, livre_p, extras=0, pvt_round=0.0):
     import itertools
     def melhor(cr):   # a política (preços) é otimizada: o jogador escolhe o limiar que mais poupa dano
         idx = [i for i, rc in enumerate(reacoes) if rc['tipo'] not in ('desvantagem', 'anula_critico')]   # sem preço
         def pr_de(g): p = [0.0] * len(reacoes); [p.__setitem__(i, x) for i, x in zip(idx, g)]; return p
-        return min(_sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, pr_de(g))
+        return min(_sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, pr_de(g), pvt_round=pvt_round)
                    for g in itertools.product(GRADE, repeat=len(idx)))
     lo, hi = 0.0, 30.0
     for _ in range(22):
@@ -143,11 +150,11 @@ def _resolve_sim(tipo, pv, ac, advs, resist, red, reacoes, livre_p, extras=0):
     return round(lo, 2)
 
 
-def _resolve_rounds(fn, pv, ac, advs, resist, red, extras=0):
+def _resolve_rounds(fn, pv, ac, advs, resist, red, extras=0, pvt_round=0.0):
     lo, hi = 0.0, 30.0
     for _ in range(60):
         m = (lo + hi) / 2
-        if sum(fn(m, ac, a, resist, red) for a in advs) <= pv + extras * _golpe(fn.__name__, m, resist, red): lo = m
+        if sum(max(0.0, fn(m, ac, a, resist, red) - pvt_round) for a in advs) <= pv + extras * _golpe(fn.__name__, m, resist, red): lo = m
         else: hi = m
     return round(lo, 2)
 
@@ -157,9 +164,13 @@ def avaliar(spec, corpo, reacao_livre=1.0):
     "resist", "red", "reacoes": [{"tipo": "shield", "usos_luta": 2} | {"tipo": "uncanny_dodge"} |
     {"tipo": "reduz_dano", "valor": 8, "usos_luta": 99} | {"tipo": "desvantagem", "usos_luta": 1} (Warding Flare,
     decidida antes do resultado, no 1º golpe do round) | {"tipo": "anula_critico", "usos_luta": 1} (Sentinel at
-    Death's Door)]}; o que faltar vem do corpo.
+    Death's Door) | {"tipo": "bloqueio", "dado": 8} ou {"valor": 2} (+CA contra UM ataque depois de acertar: cauda do
+    Beast, Arcane Deflection, Defensive Duelist)]}; o que faltar vem do corpo.
+    PV temporários próprios: "pvt_luta" (carga que ele já tem no começo da luta, somada ao PV; ex.: Touch of Death)
+    e "pvt_round" (renova todo round e absorve o 1º dano do round; ex.: Reckless Abandon). Na linha ou no corpo.
     reacao_livre: fração dos rounds em que a reação NÃO foi gasta em outro eixo da mesma hipótese."""
     pv = spec.get('pv_efetivo', corpo['pv']); ac = spec.get('ca', corpo['ca'])
+    pv += spec.get('pvt_luta', corpo.get('pvt_luta', 0)); pvr = spec.get('pvt_round', corpo.get('pvt_round', 0))
     adv = spec.get('adv', 0); resist = spec.get('resist', False); red = spec.get('red', corpo.get('red', 0))
     if 'medido' in spec:  # linhas cuja mecânica o motor ainda não modela (Shield, Absorb Elements, "barrado"…)
         bl, du = spec['medido']['blindagem'], spec['medido']['durabilidade']
@@ -168,10 +179,11 @@ def avaliar(spec, corpo, reacao_livre=1.0):
         reacoes = spec.get('reacoes', []) if reacao_livre > 0 else []
         ex = spec.get('golpes_extras_a_0pv', 0)   # ex.: 'barrado': continua de pé por N golpes depois de zerar
         if reacoes:
-            bl = _resolve_sim('horda', pv, ac, advs, resist, red, reacoes, reacao_livre, ex)
-            du = _resolve_sim('boss', pv, ac, advs, resist, red, reacoes, reacao_livre, ex)
+            bl = _resolve_sim('horda', pv, ac, advs, resist, red, reacoes, reacao_livre, ex, pvr)
+            du = _resolve_sim('boss', pv, ac, advs, resist, red, reacoes, reacao_livre, ex, pvr)
         else:
-            bl, du = _resolve_rounds(horda, pv, ac, advs, resist, red, ex), _resolve_rounds(boss, pv, ac, advs, resist, red, ex)
+            bl = _resolve_rounds(horda, pv, ac, advs, resist, red, ex, pvr)
+            du = _resolve_rounds(boss, pv, ac, advs, resist, red, ex, pvr)
     nb = round(interp_degraus(bl, LIM_BLINDAGEM, NIVEIS), 1)
     nd = round(interp_degraus(du, LIM_DURABILIDADE, NIVEIS), 1)
     lb, ld = letra(nb), letra(nd)

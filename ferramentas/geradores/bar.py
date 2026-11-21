@@ -26,16 +26,19 @@ def beast(L):
                             "nota": "Infectious Fury (PB/dia ÷ 4 lutas, 1 por luta)"}]
     fur = linha('furia-garras', 'fúria com Form of the Beast (garras: um ataque extra na ação), Reckless Attack',
                 gar, {"adv": 1, **RES}, papel='tank', gasta={"furia": 1})
+    cau = linha('furia-cauda', 'fúria com Form of the Beast (cauda: alcance, reação +1d8 de CA contra um ataque), Reckless Attack',
+                {"ataques": [A(n, b, '1d8', s + rdano(L), bc=bc, vantagem=1.0)]},
+                {"adv": 1, **RES, "reacoes": [{"tipo": "bloqueio", "dado": 8}]}, papel='tank', gasta={"furia": 1})
     txt = {3: "Form of the Beast; For 17; escama + escudo (18).", 5: "Extra Attack (3 ataques de garra); Skill Expert (For 18); meia-armadura + escudo (19).",
            7: "Bestial Soul, Feral Instinct.", 9: "For 20 (8); Brutal Critical; fúria +3.", 11: "Infectious Fury (10); Relentless Rage."}[L]
-    return dict(_texto=txt, corpo=dict(ca=ca, pv=hp([12] * L, 3), saves=ss), recursos=rec, linhas=[sem, fur])
+    return dict(_texto=txt, corpo=dict(ca=ca, pv=hp([12] * L, 3), saves=ss), recursos=rec, linhas=[sem, fur, cau])
 
 
 escrever('rpgbot-barbarian-beast', 'beast', 'Beast Barbarian (RPGBot: Wrathful Leaps)',
          'Barbarian (Beast), Satyr, garras + escudo; Skill Expert 4 (For 18), For 20 8, Con 18 12',
          {"resumo": "Bárbaro da Fera com escudo: na fúria ataca com garras (um ataque extra na ação) sem largar o escudo.",
           "estrategia": "Fúria em toda luta com garras e Reckless Attack; Infectious Fury a partir do 10.",
-          "nao_modelado": "Form of the Beast (mordida: cura; cauda: +1d8 de CA por reação) — só as garras; saltos e agarrão (Skill Expert); Bestial Soul; força ataque de Infectious Fury; Relentless Rage; Danger Sense entra nos saves; Magic Resistance do Satyr aproximada por vantagem em saves mentais contra magia; Feral Instinct."},
+          "nao_modelado": "Form of the Beast (mordida: cura); saltos e agarrão (Skill Expert); Bestial Soul; força ataque de Infectious Fury; Relentless Rage; Danger Sense entra nos saves; Magic Resistance do Satyr aproximada por vantagem em saves mentais contra magia; Feral Instinct."},
          {L: beast(L) for L in NIV})
 
 # ---------------------------------------------------------------- Ancestral Guardian (Furious About Mediocre Strength)
@@ -61,8 +64,9 @@ def ag(L):
         sup = [{"nome": "Spirit Shield (reação: −2d6 no dano de um aliado)", "lado": "def", "modelo": "cura",
                 "usos_luta": 2, "pv": 7}]
         reac = [{"uso": "Spirit Shield", "fracao": 0.5, "eixos": ["suporte"]}]
+    dfur = dict(RES, **({"reacoes": [{"tipo": "bloqueio", "valor": 2}]} if wz >= 2 else {}))
     fur = linha('furia', 'fúria em toda luta: Ancestral Protectors no 1º alvo atingido (a fúria não soma dano: ataque de Destreza)',
-                dano, RES, controle=ctrl('tank', fontes), gasta={"furia": 1}, suporte=sup, reacao=reac)
+                dano, dfur, controle=ctrl('tank', fontes), gasta={"furia": 1}, suporte=sup, reacao=reac)
     rec = {"espacos": {}, "outros": {"furia": {"qtd": furias(bb), "volta": "longo"}}}
     txt = {3: "Barbarian 3: Ancestral Protectors; Unarmored Defense com escudo (18).",
            5: "Barbarian 4 (Elven Accuracy, Des 17) / Wizard 1: Find Familiar (Help no 1º ataque).",
@@ -77,7 +81,7 @@ escrever('rpgbot-barbarian-ancestral-guardian', 'ancestral-guardian',
          'Barbarian 8 / Wizard 2 / Fighter 1 (nível de personagem 11), Shadar-Kai, rapieira + escudo de Destreza; Elven Accuracy 4, Wizard 1 no 5, Wizard 2 no 8, Fighter 1 no 11',
          {"resumo": "Guardião Ancestral defensor de Destreza: rapieira e escudo, marca o alvo com Ancestral Protectors e protege aliados com Spirit Shield.",
           "estrategia": "Fúria em toda luta, acerta a maior ameaça para marcá-la; reação em Spirit Shield; o familiar dá vantagem no 1º ataque.",
-          "nao_modelado": "Arcane Deflection (compete com Spirit Shield pela reação); Consult the Spirits; Second Wind; teleporte do Shadar-Kai; Booming Blade; Arcane Recovery e rituais; Relentless Rage; Feral Instinct."},
+          "nao_modelado": "Arcane Deflection só como +2 de CA (o +4 em save não); Consult the Spirits; Second Wind; teleporte do Shadar-Kai; Booming Blade; Arcane Recovery e rituais; Relentless Rage; Feral Instinct."},
          {L: ag(L) for L in NIV})
 
 # ---------------------------------------------------------------- Battlerager (The Drop Hawk, versão anão)
@@ -92,20 +96,22 @@ def br(L):
                 {"ataques": [A(n - 0.25, b, '1d8', s + rdano(L), bc=bc, vantagem=1.0),
                              A(0.75, b, '1d4', s + rdano(L), bc=bc, vantagem=1.0, nota="espinhos (ação bônus; o 1º round vai na fúria)")],
                  "automatico": "0.75"},
-                {"adv": 1, **RES}, controle=ctrl('tank', [{"tipo": "agarrao", "nome": "Agarrão (Atletismo com vantagem na fúria)", "bonus": gr}]),
+                {"adv": 1, **RES, **({"pvt_round": c} if L >= 7 else {})}, controle=ctrl('tank', [{"tipo": "agarrao", "nome": "Agarrão (Atletismo com vantagem na fúria)", "bonus": gr}]),
                 gasta={"furia": 1})
     rec = {"espacos": {}, "outros": {"furia": {"qtd": furias(L), "volta": "longo"}}}
     txt = {3: "Battlerager Armor (espinhos, CA 16 + escudo = 18).", 5: "Extra Attack; Skill Expert (For 18, expertise em Atletismo).",
            7: "Reckless Abandon (PV temporários, não modelados); Feral Instinct.", 9: "Con 19 (8); Brutal Critical; fúria +3.",
            11: "Battlerager Charge (10); Relentless Rage."}[L]
-    return dict(_texto=txt, corpo=dict(ca=18, pv=hp([12] * L, c), saves=ss), recursos=rec, linhas=[sem, fur])
+    cp = dict(ca=18, pv=hp([12] * L, c), saves=ss)
+    if L >= 7: cp['pvt_round'] = c   # Reckless Abandon (6): Con em PV temporários a cada Reckless Attack
+    return dict(_texto=txt, corpo=cp, recursos=rec, linhas=[sem, fur])
 
 
 escrever('rpgbot-barbarian-battlerager', 'battlerager', 'Battlerager Barbarian (RPGBot: The Drop Hawk)',
          'Barbarian (Battlerager), anão da montanha, armadura de espinhos + escudo; Skill Expert 4 (For 18), Con 19 8, Mobile 12',
          {"resumo": "Bárbaro agarrador de armadura de espinhos: agarra, bate com a arma e com os espinhos como ação bônus.",
           "estrategia": "Fúria em toda luta, agarra a ameaça principal e mantém o agarrão (Atletismo com expertise e vantagem).",
-          "nao_modelado": "Reckless Abandon (PV temporários próprios, como Second Wind); vantagem de Força no teste de agarrão (o motor usa só o bônus); derrubar após agarrar (combo agarrar+empurrar custa ataque); versão Owlin voadora (soltar do alto); Battlerager Charge; Spiked Retribution (14); resistência a veneno do anão; Relentless Rage."},
+          "nao_modelado": "Vantagem de Força no teste de agarrão (o motor usa só o bônus); derrubar após agarrar (combo agarrar+empurrar custa ataque); versão Owlin voadora (soltar do alto); Battlerager Charge; Spiked Retribution (14); resistência a veneno do anão; Relentless Rage."},
          {L: br(L) for L in NIV})
 
 # ---------------------------------------------------------------- Giant (Stature-esque)
@@ -172,7 +178,7 @@ escrever('rpgbot-barbarian-storm-herald', 'storm-herald', 'Storm Herald Barbaria
          {L: storm(L) for L in NIV})
 
 # ---------------------------------------------------------------- Totem Warrior (What is Nature's Call?, Wolf)
-def totem(L):
+def totem(L, urso=False):
     st = {3: 16, 5: 16, 7: 16, 9: 18, 11: 18}[L]; s = mod(st); P = pb(L)
     m = M(s, 3, 2, -1, -1, -1); b = P + s; n = 1 if L < 5 else 2; bc = 1 if L >= 9 else 0
     ss = dict(sv=sv(L, m), ataques=n + (1 if L >= 5 else 0), **DS)
@@ -186,7 +192,12 @@ def totem(L):
     sem = linha('principal', 'sem fúria: alabarda' + (' com Polearm Master' if pam else '') + ', Reckless Attack', at(0),
                 {"adv": 1}, reacao=OA if pam else None)
     if pam: sem['dano']['ataques'][1]['n'] = 1.0
-    fur = linha('furia-lobo', 'fúria com Totem Spirit (Wolf): aliados com vantagem corpo a corpo contra quem está a 5 pés dele',
+    if urso:
+        res = ["fogo", "frio", "eletrico", "trovao", "acido", "radiante", "necrotico", "forca", "veneno"]
+        fur = linha('furia-urso', 'fúria com Totem Spirit (Bear): resistência a tudo menos psíquico', at(rdano(L)),
+                    {"adv": 1, **RES}, saves={"res": res}, gasta={"furia": 1}, reacao=OA if pam else None)
+    else:
+      fur = linha('furia-lobo', 'fúria com Totem Spirit (Wolf): aliados com vantagem corpo a corpo contra quem está a 5 pés dele',
                 at(rdano(L)), {"adv": 1, **RES}, gasta={"furia": 1}, reacao=OA if pam else None,
                 suporte=[{"nome": "Totem Spirit (Wolf)", "lado": "of", "modelo": "vantagem", "alvos": 1, "fracao": 0.5}])
     rec = {"espacos": {}, "outros": {"furia": {"qtd": furias(L), "volta": "longo"}}}
@@ -224,6 +235,15 @@ def zealot(L):
            11: "Zealous Presence (10); Relentless Rage."}[L]
     return dict(_texto=txt, corpo=dict(ca=ca, pv=hp([12] * L, 3), saves=ss), recursos=rec, linhas=[sem, fur])
 
+
+escrever('rpgbot-barbarian-totem-warrior-urso', 'totem-warrior', "Totem Warrior Barbarian (variante Urso da build do RPGBot)",
+         'Barbarian (Totem Warrior: Bear), Eladrin, alabarda, Unarmored Defense; Polearm Master 4, For 18 8, For 20 12',
+         {"resumo": "A build What is Nature's Call? com o totem do Urso, a opção que o guia dá como padrão do nível 3.",
+          "estrategia": "Fúria em toda luta com resistência a quase tudo; Polearm Master na ação bônus e na reação.",
+          "nao_modelado": "Mesmos da build do Lobo; variante nossa para comparar (fora do gabarito)."},
+         {L: totem(L, urso=True) for L in NIV}, grupo="Variante",
+         fonte={"tipo": "variante", "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/totem-warrior/",
+                "nota": "Build do RPGBot (Lobo) trocada para o Urso, para separar o peso do totem na nota azul da subclasse."})
 
 escrever('rpgbot-barbarian-zealot', 'zealot', 'Zealot Barbarian (RPGBot: Starbarian)',
          'Barbarian (Zealot), Astral Elf, machado grande, Unarmored Defense e depois meia-armadura; GWM 4, Slasher 8, For 20 12',

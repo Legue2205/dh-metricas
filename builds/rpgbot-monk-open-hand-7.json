@@ -263,24 +263,148 @@
      }
     ]
    }
+  },
+  {
+   "id": "mira",
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (bordão com as duas mãos)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d6+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Open Hand Technique (derruba/arremessa no Flurry)",
+      "efeito": "cond_derrubado",
+      "cd": 14,
+      "bonus": [
+       7,
+       7
+      ],
+      "usos": 4
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Crusher (crítico: vantagem de todos contra o alvo)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.164
+     }
+    ]
+   }
+  },
+  {
+   "id": "rajada-mira",
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (bordão com as duas mãos)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d6+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Open Hand Technique (derruba/arremessa no Flurry)",
+      "efeito": "cond_derrubado",
+      "cd": 14,
+      "bonus": [
+       7,
+       7
+      ],
+      "usos": 8
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 6
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Crusher (crítico: vantagem de todos contra o alvo)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.185
+     }
+    ]
+   }
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: meia-rajada; prioritário: rajada. Sobra: 1 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: rajada-mira. Sobra: 1 ki.",
    "combates": [
-    "meia-rajada",
-    "rajada",
-    "meia-rajada",
-    "rajada"
+    "principal",
+    "rajada-mira",
+    "principal",
+    "rajada-mira"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada. Sobra: 3 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada-mira. Sobra: 1 ki.",
    "combates": [
-    "rajada"
+    "rajada-mira"
    ]
   }
  },

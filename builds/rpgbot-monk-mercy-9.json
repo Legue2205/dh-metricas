@@ -255,24 +255,104 @@
    "gasta": {
     "ki": 4
    }
+  },
+  {
+   "id": "mira",
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (chicote com o dado de Martial Arts)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+5"
+     },
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "rajada-mira",
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (chicote com o dado de Martial Arts)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+5"
+     },
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 6
+   }
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: mao-da-morte; prioritário: mao-da-morte. Sobra: 1 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: meia-rajada; prioritário: rajada-mira. Sobra: 1 ki.",
    "combates": [
-    "mao-da-morte",
-    "mao-da-morte",
-    "mao-da-morte",
-    "mao-da-morte"
+    "meia-rajada",
+    "rajada-mira",
+    "meia-rajada",
+    "rajada-mira"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: mao-da-morte. Sobra: 5 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada-mira. Sobra: 3 ki.",
    "combates": [
-    "mao-da-morte"
+    "rajada-mira"
    ]
   }
  },

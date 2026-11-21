@@ -43,6 +43,11 @@ def base_monk(L, papel, arma, b, mod_, ub, umod, wis, n_arma=None, defesa=None, 
         ls.append(linha('atordoar', 'Flurry em 2 rounds + 2 tentativas de Stunning Strike (4 ki)' + sufixo, at(1.5), d,
                         saves=saves, controle=ctrl(papel, [stun(L, ub if not arma else b, wis, golpes)] + list(extra_ctrl)),
                         gasta={"ki": 4}))
+        # Focused Aim (Tasha's, Monk 5): +2 no acerto por ki depois de errar, até 3 ki
+        ls.append(linha('mira', 'Flurry em 2 rounds + Focused Aim com 2 ki (4 ki)' + sufixo, dict(at(1.5), focused_aim={"ki": 2}), d,
+                        saves=saves, papel=papel, controle=ctrl(papel, extra_ctrl), gasta={"ki": 4}))
+        ls.append(linha('rajada-mira', 'Flurry todo round + Focused Aim com 2 ki (6 ki)' + sufixo, dict(at(2), focused_aim={"ki": 2}), d,
+                        saves=saves, papel=papel, controle=ctrl(papel, extra_ctrl), gasta={"ki": 6}))
     return ls
 
 
@@ -104,6 +109,8 @@ def longd(L):
         ls = base_monk(L, 'tank', '1d8', bd, d, bd, d, w, defesa=defesa, sufixo=' (lança)')
     else:   # morde com Constituição (arma de monge com o dado de Martial Arts) na ação; golpes desarmados de Destreza
         ls = base_monk(L, 'tank', f'1d{die(L)}', bc, c, bd, d, w, defesa=defesa, sufixo=' (mordida de Dhampir com Con)')
+        for l in ls:   # vantagem da mordida abaixo da metade da vida: 25% do tempo (hipótese a calibrar)
+            l['dano']['ataques'][0]['vantagem'] = 0.25
     if L >= 7:
         ls.append(linha('ceifa', 'Hour of Reaping na ação todo round (amedronta em 30 pés) + golpe desarmado na ação bônus',
                         {"ataques": [U(1, bd, d, L, nota="ação bônus (Martial Arts)")]}, defesa,
@@ -111,14 +118,16 @@ def longd(L):
                                                 "cd": 8 + P + w, "so_grupos": True}])))
     txt = {3: "Touch of Death (PV temporários ao derrubar: não modelado); lança.", 5: "Extra Attack, Stunning Strike; Con 18 (4): morde com Con.",
            7: "Hour of Reaping (6); Evasion, Stillness of Mind.", 9: "Con 20 (8).", 11: "Mastery of Death (1 ki: fica com 1 PV); Purity of Body; Martial Arts d8."}[L]
-    return dict(_texto=txt, corpo=corpo_m(L, dx, cn, ws, m, ss), recursos=rec(L), linhas=ls)
+    cp = corpo_m(L, dx, cn, ws, m, ss)
+    cp['pvt_luta'] = 2 * (w + L)   # Touch of Death: carga do começo da luta (rato) + 1 recarga por abate na luta
+    return dict(_texto=txt, corpo=cp, recursos=rec(L), linhas=ls)
 
 
 escrever('rpgbot-monk-long-death', 'way-of-the-long-death', 'Long Death Monk (RPGBot: Vulture)',
          'Monk (Long Death), Dhampir (base Aarakocra), lança e depois mordida de Con; Con 18 4, Con 20 8, Piercer 12',
          {"resumo": "Monge da Morte Longa: tanque que vive de PV temporários ao derrubar inimigos e amedronta multidões de graça.",
           "estrategia": "Segura os inimigos no corpo a corpo; Hour of Reaping contra grupos; Mastery of Death a partir do 11.",
-          "nao_modelado": "Touch of Death (PV temporários ao derrubar, inclusive o 'saco de ratos'); vantagem da mordida abaixo da metade da vida (condição de julgamento); cura da mordida; voo do Aarakocra e Spider Climb; Touch of the Long Death (17)."},
+          "nao_modelado": "Touch of Death entra como 2 cargas por luta (começo + 1 abate); vantagem da mordida abaixo da metade da vida como 25% do tempo; cura da mordida; voo do Aarakocra e Spider Climb; Touch of the Long Death (17)."},
          {L: longd(L) for L in NIV})
 
 # ---------------------------------------------------------------- Open Hand (The Launch Pad)
@@ -132,9 +141,9 @@ def openh(L):
         return {"tipo": "condicao_no_acerto", "nome": "Open Hand Technique (derruba/arremessa no Flurry)", "efeito": "cond_derrubado",
                 "cd": cd, "bonus": [b, b], "usos": k}
     for l in ls:
-        kfl = {"meia-rajada": 4, "rajada": 8, "atordoar": 4}.get(l['id'])
+        kfl = {"meia-rajada": 4, "rajada": 8, "atordoar": 4, "mira": 4, "rajada-mira": 8}.get(l["id"])
         if kfl: l['controle']['fontes'].insert(0, oht(kfl))
-        k = n + {"principal": 1, "meia-rajada": 1.5, "rajada": 2, "atordoar": 1.5}[l['id']]
+        k = n + {"principal": 1, "meia-rajada": 1.5, "rajada": 2, "atordoar": 1.5, "mira": 1.5, "rajada-mira": 2}[l["id"]]
         pc = round(1 - 0.95 ** k, 3)
         l['suporte'] = {"fontes": [{"nome": "Crusher (crítico: vantagem de todos contra o alvo)", "lado": "of", "modelo": "vantagem",
                                     "alvos": 3, "fracao": pc}]}
@@ -291,6 +300,9 @@ def kensei(L):
         ls.append(linha('deft', f'+ Deft Strike (1 ki por acerto: +1d{die(mk)}) com o ki da luta ({mk // 2} ki)',
                         {"ataques": at, "por_luta": [{"dano": f"1d{die(mk)}", "usos": mk // 2, "nota": "Deft Strike"}]}, {},
                         papel='atirador', gasta={"ki": mk // 2}))
+    if mk >= 5:
+        ls.append(linha('mira', f'+ Focused Aim com o ki da luta ({mk // 2} ki: +2 por ki depois de errar)',
+                        {"ataques": at, "focused_aim": {"ki": mk // 2}}, {}, papel='atirador', gasta={"ki": mk // 2}))
     rec_ = {"espacos": {}, "outros": {"ki": {"qtd": mk if mk >= 2 else 0, "volta": "curto"}}}
     txt = {3: "Fighter 1 (Archery) / Monk 2: besta de mão com Crossbow Expert (Variant Human).",
            5: "Monk 4: Way of the Kensei (3), Sharpshooter (4).", 7: "Monk 6: Extra Attack, One with the Blade (Deft Strike).",

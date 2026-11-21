@@ -847,3 +847,16 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   4. Plano automático de uma linha por luta: o Monk 11 gasta 16 de 22 ki; o Ascendant Dragon quase nunca sopra no plano
      padrão (o sopro não tem valor de recurso, só a Área de pico o mede).
   5. Form of the Beast só com garras (cauda +1d8 de CA por reação não tem tipo; aproximar com `shield` superestima).
+
+## 21/11 (tarde) — passada 2 de Barbarian/Monk: módulos novos
+- **Motor:** `pvt_luta` e `pvt_round` (PV temporários próprios) na defesa (linha ou corpo); a atenção/corpo usa
+  `pv_com_pvt` = PV + pvt_luta + 3 × pvt_round. Reação `bloqueio` (+CA contra UM ataque depois de acertar: `dado` 8 da
+  cauda do Beast, `valor` 2 do Arcane Deflection). Dano: `focused_aim` {ki} (Focused Aim do Tasha's: erros por 1–2, 3–4,
+  5–6 viram acerto com 1/2/3 ki). Testes em `tests/test_modulos_marciais.py`.
+- **Builds:** Long Death com Touch of Death = 2 cargas por luta (começo + 1 abate) e mordida com vantagem 0,25;
+  Battlerager com Reckless Abandon (pvt_round = Con) do 7; Beast com linha da cauda; AG com Arcane Deflection do 9;
+  Monk com linhas `mira` (4 ki) e `rajada-mira` (6 ki); Kensei com `mira`; variante `totem-warrior-urso` (grupo Variante).
+- **τ local (rapido, plano padrão):** Monk 7 0,45 → 0,54, Monk 11 0,43 → 0,36 (o plano trocou o Hand of Harm do Mercy
+  pelo Focused Aim e o controle do Mercy caiu); Barbarian continua negativo (−0,43 no 7, −0,59 no 11 em 5 eixos;
+  +0,16 com Corpo e Suporte). Causas no Barbarian: Área em degrau (DPR alto pula de 4,6 para 8: Berserker, Zealot,
+  Wild Magic), agarrão do Battlerager vale ~6 de Controle, Totem azul pela subclasse (Urso só melhora a Def. mágica).

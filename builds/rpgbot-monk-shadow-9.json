@@ -396,24 +396,146 @@
      ]
     }
    ]
+  },
+  {
+   "id": "mira",
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 1.5,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ataque de oportunidade (Sentinel), reação em 50% dos rounds"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "sentinela",
+      "nome": "Sentinel",
+      "bonus": 8
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade (Sentinel)",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rajada-mira",
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ataque de oportunidade (Sentinel), reação em 50% dos rounds"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "sentinela",
+      "nome": "Sentinel",
+      "bonus": 8
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 6
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade (Sentinel)",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: rajada; prioritário: rajada. Sobra: 1 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: meia-rajada; prioritário: rajada-mira. Sobra: 1 ki.",
    "combates": [
-    "rajada",
-    "rajada",
-    "rajada",
-    "rajada"
+    "meia-rajada",
+    "rajada-mira",
+    "meia-rajada",
+    "rajada-mira"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada. Sobra: 5 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada-mira. Sobra: 3 ki.",
    "combates": [
-    "rajada"
+    "rajada-mira"
    ]
   }
  },

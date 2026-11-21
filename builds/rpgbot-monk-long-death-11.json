@@ -19,7 +19,8 @@
    "imune": [
     "veneno"
    ]
-  }
+  },
+  "pvt_luta": 28
  },
  "recursos": {
   "espacos": {},
@@ -39,7 +40,8 @@
      {
       "n": 2,
       "bonus": 9,
-      "dano": "1d8+5"
+      "dano": "1d8+5",
+      "vantagem": 0.25
      },
      {
       "n": 1,
@@ -77,7 +79,8 @@
      {
       "n": 2,
       "bonus": 9,
-      "dano": "1d8+5"
+      "dano": "1d8+5",
+      "vantagem": 0.25
      },
      {
       "n": 1.5,
@@ -116,7 +119,8 @@
      {
       "n": 2,
       "bonus": 9,
-      "dano": "1d8+5"
+      "dano": "1d8+5",
+      "vantagem": 0.25
      },
      {
       "n": 2,
@@ -155,7 +159,8 @@
      {
       "n": 2,
       "bonus": 9,
-      "dano": "1d8+5"
+      "dano": "1d8+5",
+      "vantagem": 0.25
      },
      {
       "n": 1.5,
@@ -200,6 +205,92 @@
    }
   },
   {
+   "id": "mira",
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (mordida de Dhampir com Con)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "vantagem": 0.25
+     },
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d8+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {
+    "golpes_extras_a_0pv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "rajada-mira",
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (mordida de Dhampir com Con)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "vantagem": 0.25
+     },
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {
+    "golpes_extras_a_0pv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 6
+   }
+  },
+  {
    "id": "ceifa",
    "hipotese": "Hour of Reaping na ação todo round (amedronta em 30 pés) + golpe desarmado na ação bônus",
    "dano": {
@@ -241,26 +332,26 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: rajada; prioritário: rajada. Sobra: 3 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: rajada; prioritário: rajada-mira. Sobra: 1 ki.",
    "combates": [
     "rajada",
+    "rajada-mira",
     "rajada",
-    "rajada",
-    "rajada"
+    "rajada-mira"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada. Sobra: 7 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada-mira. Sobra: 5 ki.",
    "combates": [
-    "rajada"
+    "rajada-mira"
    ]
   }
  },
  "descricao": {
   "resumo": "Monge da Morte Longa: tanque que vive de PV temporários ao derrubar inimigos e amedronta multidões de graça.",
   "estrategia": "Segura os inimigos no corpo a corpo; Hour of Reaping contra grupos; Mastery of Death a partir do 11.",
-  "nao_modelado": "Touch of Death (PV temporários ao derrubar, inclusive o 'saco de ratos'); vantagem da mordida abaixo da metade da vida (condição de julgamento); cura da mordida; voo do Aarakocra e Spider Climb; Touch of the Long Death (17).",
+  "nao_modelado": "Touch of Death entra como 2 cargas por luta (começo + 1 abate); vantagem da mordida abaixo da metade da vida como 25% do tempo; cura da mordida; voo do Aarakocra e Spider Climb; Touch of the Long Death (17).",
   "progressao": "Mastery of Death (1 ki: fica com 1 PV); Purity of Body; Martial Arts d8."
  },
  "id": "rpgbot-monk-long-death-11",

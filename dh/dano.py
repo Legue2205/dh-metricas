@@ -7,6 +7,8 @@ Campos de "ataques": n (fracionário ok), bonus, dano, crit_em, dados_crit, vant
 poder [-5, 10] (GWM/Sharpshooter: usa o modo que rende mais em cada CA).
 "por_turno": 1× por turno no 1º acerto (Sneak Attack; prob = chance de ter o gatilho). "por_luta": smites (usos ou usos_dia).
 "com_save": [{"n", "cd", "save": "Sab", "dano", "meio": false}] — truques/magias de alvo único com save.
+"focused_aim": {"ki": K, "max": 3, "por_ponto": 2} — gasta até K pontos por luta transformando erros por pouco em acertos
+(Focused Aim do Monk, Tasha's; +2 por ki, até 3): primeiro os erros por 1–2 (1 ki), depois por 3–4 (2), por 5–6 (3).
 Fúria, Dueling, Hex etc. entram na string de dano ("1d8+2+1d6"); escala de truque por nível vai no patch da progressão.
 O nível equivalente é a mesma conta da coluna U da planilha (porta da fórmula LET/LAMBDA).
 """
@@ -86,6 +88,23 @@ def _usados(usos, pc, natq):
     lo = floor(usos); return e(lo) + (usos - lo) * (e(lo + 1) - e(lo))
 
 
+def _focused(f, ataques, ca):
+    """Valor esperado por round de converter erros por pouco em acertos com um orçamento de K pontos por luta."""
+    K = f.get('ki', 0); passo = f.get('por_ponto', 2); mx = f.get('max', 3)
+    if K <= 0 or not ataques: return 0.0
+    N = sum(a.get('n', 1) for a in ataques)
+    hitd = sum(a.get('n', 1) * (dados(a['dano'])[0] + (a['poder'][1] if 'poder' in a and
+               _ataque1(a, ca, a['bonus'] + a['poder'][0], a['poder'][1])[2] > _ataque1(a, ca, a['bonus'], 0)[2] else 0))
+               for a in ataques) / N
+    ganho = 0.0
+    for custo in range(1, mx + 1):              # faixa de erro (custo-1)*passo+1 .. custo*passo abaixo da CA
+        q = sum(a.get('n', 1) * sum(1 for r in range(2, 20) if ca - custo * passo <= r + a['bonus'] < ca - (custo - 1) * passo)
+                for a in ataques) / 20          # erros nessa faixa por round
+        conv = min(K / custo, R * q); K -= conv * custo; ganho += conv * hitd
+        if K <= 1e-9: break
+    return ganho / R
+
+
 def save_alvo(ca, atributo):
     """Save médio do alvo típico com essa CA (medianas do Monster Manual em base.CRT; acima de CA 19, +1 por ponto)."""
     from .base import CRT, SAVE_TIPO
@@ -126,6 +145,7 @@ def dpr(spec, ca, lutas_dia=4, invocacoes=()):
         total += _usados(usos, pc, sum(a.get('n', 1) for a in spec.get('ataques', []))) / R * (avg + crit_rel * dad)
     if 'automatico' in spec: total += dados(spec['automatico'])[0]
     for x in spec.get('com_save', []): total += _com_save(x, ca)
+    if 'focused_aim' in spec: total += _focused(spec['focused_aim'], spec.get('ataques', []), ca)
     for inv in invocacoes:                     # criaturas invocadas atacam por conta própria
         if 'ataque' in inv: total += inv['quantidade'] * inv['ataque'].get('n', 1) * _ataque(inv['ataque'], ca)[2]
     return round(total, 1)

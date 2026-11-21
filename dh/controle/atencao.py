@@ -5,7 +5,7 @@ aqui é uma só, com o vetor de negação de campo opcional).
 """
 import numpy as np
 
-from ..base import R, TOPO, TOPOS, n_ataques, p_acerto
+from ..base import R, TOPO, TOPOS, n_ataques, p_acerto, pv_com_pvt
 
 from ..premissas import P, grupo as _grupo
 H = _grupo('controle.atencao')   # premissas controle.atencao.*
@@ -52,7 +52,7 @@ def ref_padrao(papel, L):
 
 def ficha(spec, corpo):
     """build.json -> ficha de atenção (o formato que o motor usa)."""
-    f = dict(papel=spec['papel'], ca=corpo['ca'], pv=corpo['pv'], front=spec.get('front', spec['papel'] in FRONT),
+    f = dict(papel=spec['papel'], ca=corpo['ca'], pv=pv_com_pvt(corpo), front=spec.get('front', spec['papel'] in FRONT),
              dpr=spec['dpr'])
     for k in ('res', 'adv', 'red'):
         if corpo.get(k): f[k] = corpo[k]

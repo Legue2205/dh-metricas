@@ -1,0 +1,217 @@
+{
+ "gerado_de": "rpgbot-barbarian-wild-magic.json",
+ "build": "Barbarian (Wild Magic), Tiefling alado, malho, armadura média; Crusher 4, GWM 8, For 20 12",
+ "corpo": {
+  "ca": 16,
+  "pv": 75,
+  "saves": {
+   "sv": {
+    "for": 7,
+    "des": 2,
+    "con": 6,
+    "int": -1,
+    "sab": 0,
+    "car": -1
+   },
+   "ataques": 2,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 4,
+    "volta": "longo"
+   },
+   "bolstering": {
+    "qtd": 3,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: malho, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "2d6+4",
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia",
+   "hipotese": "fúria com Wild Surge (valor esperado das opções de dano 4 e 8), Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "2d6+6+0.44",
+      "vantagem": 1.0
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.094,
+      "cd": 14,
+      "save": "Con",
+      "dano": "1d6",
+      "meio": false,
+      "nota": "Wild Surge 8 (raio de luz na ação bônus, rounds 2–4, 1/8 das fúrias)"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Crusher (crítico: vantagem de todos contra o alvo)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.185
+     }
+    ]
+   }
+  },
+  {
+   "id": "furia-bolstering",
+   "hipotese": "fúria + Bolstering Magic em si (+1d3 nos ataques por 10 minutos)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "2d6+6+0.44",
+      "vantagem": 1.0
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.094,
+      "cd": 14,
+      "save": "Con",
+      "dano": "1d6",
+      "meio": false,
+      "nota": "Wild Surge 8 (raio de luz na ação bônus, rounds 2–4, 1/8 das fúrias)"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1,
+    "bolstering": 1
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Crusher (crítico: vantagem de todos contra o alvo)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.185
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia, furia-bolstering; prioritário: furia-bolstering. Sobra: nada.",
+   "combates": [
+    "furia",
+    "furia-bolstering",
+    "furia-bolstering",
+    "furia-bolstering"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia-bolstering. Sobra: 3 furia, 2 bolstering.",
+   "combates": [
+    "furia-bolstering"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bárbaro da Magia Selvagem: um efeito aleatório a cada fúria e Bolstering Magic para acertar mais.",
+  "estrategia": "Fúria em toda luta com Reckless Attack; Crusher dá vantagem à party no crítico; Bolstering Magic nas lutas importantes.",
+  "nao_modelado": "Wild Surge: só o valor esperado das opções 4 (+1d6 de força por acerto, 1/8) e 8 (raio de 1d6 na ação bônus, 1/8); as outras (explosão necrótica, teleporte, espírito explosivo, retaliação, +1 CA aos aliados, terreno difícil) e a cegueira da 8 não; empurrão do Crusher; voo do Tiefling e agarrar-e-soltar; restaurar espaços de aliados com Bolstering Magic; Unstable Backlash e Controlled Surge; Relentless Rage; Feral Instinct.",
+  "progressao": "Bolstering Magic (6, PB/dia); Feral Instinct."
+ },
+ "id": "rpgbot-barbarian-wild-magic-7",
+ "nome": "Wild Magic Barbarian (RPGBot: \"Did he just slap me with a giant spork?\")",
+ "grupo": "RPGBot",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/path-of-wild-magic/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

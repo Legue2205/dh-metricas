@@ -1,0 +1,141 @@
+{
+ "gerado_de": "rpgbot-barbarian-zealot.json",
+ "build": "Barbarian (Zealot), Astral Elf, machado grande, Unarmored Defense e depois meia-armadura; GWM 4, Slasher 8, For 20 12",
+ "corpo": {
+  "ca": 15,
+  "pv": 35,
+  "saves": {
+   "sv": {
+    "for": 5,
+    "des": 2,
+    "con": 5,
+    "int": -1,
+    "sab": 0,
+    "car": -1
+   },
+   "ataques": 1,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 3,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: machado grande, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d12+3",
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia",
+   "hipotese": "fúria com Divine Fury, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d12+5",
+      "vantagem": 1.0
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d6+1",
+      "nota": "Divine Fury (1º acerto do turno na fúria)"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia, principal; prioritário: furia. Sobra: nada.",
+   "combates": [
+    "principal",
+    "furia",
+    "furia",
+    "furia"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia. Sobra: 2 furia.",
+   "combates": [
+    "furia"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Zelote: dano radiante extra no 1º acerto de cada turno na fúria e quase impossível de tirar da luta.",
+  "estrategia": "Fúria em toda luta com Reckless Attack e GWM; Zealous Presence uma vez por dia.",
+  "nao_modelado": "Warrior of the Gods (ressurreição sem componente); Slasher; Starlight Step; Rage Beyond Death (14); Relentless Rage; Feral Instinct. Fanatical Focus = 1 rerolagem de save por luta, só na fúria.",
+  "progressao": "Divine Fury (1d6+1), Warrior of the Gods; Unarmored Defense (15)."
+ },
+ "id": "rpgbot-barbarian-zealot-3",
+ "nome": "Zealot Barbarian (RPGBot: Starbarian)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/zealot/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

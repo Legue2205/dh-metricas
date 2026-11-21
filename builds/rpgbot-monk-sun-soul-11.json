@@ -1,0 +1,405 @@
+{
+ "gerado_de": "rpgbot-monk-sun-soul.json",
+ "build": "Monk (Sun Soul), Hadozee, raios radiantes; Gunner 4, Skill Expert 8, Des 20 12",
+ "corpo": {
+  "ca": 17,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": 3,
+    "des": 8,
+    "con": 3,
+    "int": -1,
+    "sab": 3,
+    "car": -1
+   },
+   "evasion": true,
+   "stillness": true,
+   "imune": [
+    "veneno"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "ki": {
+    "qtd": 11,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem ki: ataque + golpe desarmado na ação bônus (lança, corpo a corpo)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "meia-rajada",
+   "hipotese": "Flurry of Blows em 2 dos 4 rounds (2 ki) (lança, corpo a corpo)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 1.5,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 2
+   }
+  },
+  {
+   "id": "rajada",
+   "hipotese": "Flurry of Blows todo round (4 ki) (lança, corpo a corpo)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "raios",
+   "hipotese": "Radiant Sun Bolt na ação (30 pés), sem ki",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "Radiant Sun Bolt"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {}
+  },
+  {
+   "id": "raios-rajada",
+   "hipotese": "Radiant Sun Bolt + dois raios na ação bônus todo round (4 ki)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "Radiant Sun Bolt"
+     },
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "raios na ação bônus (1 ki)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "atordoar",
+   "hipotese": "Flurry em 2 rounds + 2 tentativas de Stunning Strike (4 ki) (lança, corpo a corpo)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 1.5,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Stunning Strike (ki)",
+      "efeito": "cond_atordoado_um_turno",
+      "cd": 15,
+      "bonus": [
+       8,
+       8,
+       8,
+       8
+      ],
+      "usos": 2
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "arco",
+   "hipotese": "Searing Arc Strike (Burning Hands na ação bônus, 2 ki) no 1º round, raios na ação",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "Radiant Sun Bolt"
+     },
+     {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "raios na ação bônus (rounds 2–4: 1,5 ki em média)"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.25,
+      "cd": 15,
+      "save": "Des",
+      "dano": "3d6",
+      "meio": true,
+      "nota": "Searing Arc Strike"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "area": [
+    {
+     "nome": "Searing Arc Strike",
+     "tipo": "explosao",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d6",
+       "cd": 15,
+       "save": "Des",
+       "metade": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sunburst",
+   "hipotese": "Searing Sunburst na ação (grátis, 20 pés de raio, Con anula) + raios na ação bônus nos rounds em que sobra ki",
+   "dano": {
+    "ataques": [],
+    "com_save": [
+     {
+      "n": 1,
+      "cd": 15,
+      "save": "Con",
+      "dano": "2d6",
+      "meio": false,
+      "nota": "Searing Sunburst"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "area": [
+    {
+     "nome": "Searing Sunburst (grátis)",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 15,
+     "save": "Con",
+     "alvos": [
+      3,
+      4,
+      4
+     ],
+     "metade": false
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: arco; prioritário: arco. Sobra: 3 ki.",
+   "combates": [
+    "arco",
+    "arco",
+    "arco",
+    "arco"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: arco. Sobra: 7 ki.",
+   "combates": [
+    "arco"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Monge da Alma Solar: raios radiantes a 30 pés, Burning Hands na ação bônus e uma explosão grátis no 11.",
+  "estrategia": "Fica atrás e dispara Radiant Sun Bolt; gasta ki nos raios da ação bônus; Searing Sunburst contra grupos no 11.",
+  "nao_modelado": "Hadozee Resilience (reação: reduz dano, PB/dia); planar; mosquete com Gunner e Ki-Fueled Attack; upcast do Searing Sunburst com ki; Sun Shield (17).",
+  "progressao": "Searing Sunburst; Purity of Body; Martial Arts d8."
+ },
+ "id": "rpgbot-monk-sun-soul-11",
+ "nome": "Sun Soul Monk (RPGBot: The Prince of All Hadozee)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/sun-soul/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

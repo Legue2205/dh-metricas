@@ -1,0 +1,347 @@
+{
+ "gerado_de": "rpgbot-monk-four-elements.json",
+ "build": "Monk (Four Elements), goblin, lança; Des 18 4, Des 20 8, Sab 18 12; todas as opcionais de classe",
+ "corpo": {
+  "ca": 18,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": 3,
+    "des": 9,
+    "con": 3,
+    "int": -1,
+    "sab": 3,
+    "car": -1
+   },
+   "evasion": true,
+   "stillness": true,
+   "imune": [
+    "veneno"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "ki": {
+    "qtd": 11,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem ki: ataque + golpe desarmado na ação bônus (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "meia-rajada",
+   "hipotese": "Flurry of Blows em 2 dos 4 rounds (2 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 2
+   }
+  },
+  {
+   "id": "rajada",
+   "hipotese": "Flurry of Blows todo round (4 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "punho",
+   "hipotese": "Fist of Unbroken Air no 1º round (2 ki): 3d10, empurra e derruba",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação nos rounds 2–4"
+     },
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Ki-Fueled Attack no round da disciplina)"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.25,
+      "cd": 15,
+      "save": "For",
+      "dano": "3d10",
+      "meio": true,
+      "nota": "Fist of Unbroken Air (1× por luta)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Fist of Unbroken Air (derrubado)",
+      "efeito": "cond_derrubado",
+      "cd": 15,
+      "usos": 1,
+      "no_acerto": false
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 2
+   }
+  },
+  {
+   "id": "atordoar",
+   "hipotese": "Flurry em 2 rounds + 2 tentativas de Stunning Strike (4 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Stunning Strike (ki)",
+      "efeito": "cond_atordoado_um_turno",
+      "cd": 15,
+      "bonus": [
+       9,
+       9,
+       9,
+       9
+      ],
+      "usos": 2
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "fenix",
+   "hipotese": "Flames of the Phoenix (Fireball, 4 ki) no 1º round",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação nos rounds 2–4"
+     },
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Ki-Fueled Attack no round da disciplina)"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.25,
+      "cd": 15,
+      "save": "Des",
+      "dano": "8d6",
+      "meio": true,
+      "nota": "Flames of the Phoenix"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "area": [
+    {
+     "nome": "Flames of the Phoenix",
+     "tipo": "explosao",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "8d6",
+       "cd": 15,
+       "save": "Des",
+       "metade": true
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: fenix; prioritário: fenix. Sobra: 3 ki.",
+   "combates": [
+    "fenix",
+    "fenix",
+    "fenix",
+    "fenix"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: fenix. Sobra: 7 ki.",
+   "combates": [
+    "fenix"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Monge dos Quatro Elementos: disciplinas que gastam muito ki para empurrar, derrubar e, no 11, soltar Fireball.",
+  "estrategia": "Fist of Unbroken Air para reposicionar e derrubar; área com Gong of the Summit e, depois, Flames of the Phoenix.",
+  "nao_modelado": "Upcast das disciplinas com ki extra; empurrão de 20 pés; Ride the Wind (voo); Fury of the Small e Nimble Escape do goblin; Elemental Attunement.",
+  "progressao": "Flames of the Phoenix; Gong trocado por Ride the Wind; Purity of Body; Martial Arts d8."
+ },
+ "id": "rpgbot-monk-four-elements-11",
+ "nome": "Four Elements Monk (RPGBot: Destroyer of Cabbages)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/monk/four-elements/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -137,3 +137,47 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
   Channel e espaços parados (Twilight 7: santuário nunca escolhido, 2 Channel e 6 espaços sobrando).
 - `recursos.outros.canal.valor` = espaço do Harness Divine Power (ceil(PB/2)) para o plano pesar o Channel como recurso.
 - Command fora das listas de controle (o efeito "um turno" ainda não roda como alvo único no motor).
+
+# Barbarian (passada 1, 21/11; gerador `ferramentas/geradores/bar.py`)
+- Fatias por nível de personagem (Ancestral Guardian é Bb8/W2/F1 no 11). PV d12: 12 + Con no 1º, 7 + Con por nível.
+- Fúrias 2/3/4 (Bb 1–2/3–5/6–11), dano +2 (até o 8) e +3 (9+). Linha `principal` = sem fúria; linhas `furia*` com
+  `gasta` furia 1, `defesa.resist` e o bônus na string; o plano automático escolhe as lutas.
+- Reckless Attack: vantagem 1,0 nos ataques de For e `adv: 1` contra ele (como no lote 2 do Fighter), em todas as
+  linhas das builds que o usam (o Ancestral Guardian de Destreza não usa, e a fúria não soma no ataque de Des).
+- Brutal Critical (9) e Savage Attacks: `dados_crit` = todos os dados da string + 1 dado da arma por feature.
+- Danger Sense: `adv: ["Des"]` nos saves. Fanatical Focus (Zealot 6) = `rerolagens: 1` só nas linhas de fúria.
+  Mindless Rage (Berserker 6) = `imune: [encanto, medo]` nas linhas de fúria.
+- Dano automático que não gasta ação (Storm Aura Desert): `automatico` no alvo principal e, na Área, `cleave_ataque`
+  com bônus 99 (acerto garantido) por alvo extra (2 alvos a 10 pés).
+- Divine Fury = `por_turno` 1d6 + metade do nível. Infectious Fury e Mighty Impel = `com_save` (1 por luta ÷ 4 rounds /
+  ação bônus dos rounds 2–4). Mighty Impel também como `condicao_no_acerto` derrubado (`no_acerto: false`, 3 usos).
+- Totem do Lobo: suporte `vantagem` 1 aliado, fração 0,5 (julgamento a calibrar). Crusher (Wild Magic, Open Hand):
+  `vantagem` 3 aliados com fração = P(≥ 1 crítico no turno). Zealous Presence: 3 aliados × 1/16 (1/dia, 1 round).
+- Spirit Shield (Ancestral Guardian 6): suporte `cura` com 2 usos por luta (reação em 50% dos rounds), 2d6 = 7.
+- Wild Surge: só o valor esperado das opções de dano 4 (+1d6/8 por acerto) e 8 (1d6 com save na ação bônus, 1/8 dos
+  rounds 2–4); Bolstering Magic = linha com +2 no acerto e `gasta` bolstering (PB/dia).
+- Polearm Master: ataque do cabo na ação bônus (0,75 nas linhas de fúria: o 1º round vai na fúria) + oportunidade 0,5.
+- Berserker (sem build no RPGBot): chassi do Handbook; `frenesi` 1 por descanso longo (RAW) e, na versão
+  `-homebrew` (grupo Homebrew, fora do gabarito), 2 por descanso curto (a exaustão sai no descanso curto).
+- Não modelados (igual para todos): PV temporários próprios (Reckless Abandon, Touch of Death), Relentless Rage,
+  Feral Instinct, agarrar+empurrar (custa ataques), saltos/voo, Form of the Beast mordida/cauda, Guile of the Cloud Giant.
+
+# Monk (passada 1, 21/11; gerador `ferramentas/geradores/mon.py`)
+- PV d8 (8 + Con, 5 + Con por nível); CA 10 + Des + Sab; saves For/Des; Evasion e Stillness of Mind a partir do 7;
+  Purity of Body (10) = `imune: [veneno]`. Dado de Martial Arts d4/d6/d8 (1–4/5–10/11+), também na arma de monge.
+- Ki = nível de monge por descanso curto (`ki`, volta curto). Linhas padrão: `principal` (ataque + 1 golpe desarmado na
+  ação bônus), `meia-rajada` (Flurry em 2 rounds, 2 ki), `rajada` (Flurry todo round, 4 ki) e, a partir do 5,
+  `atordoar` (Flurry em 2 rounds + 2 tentativas de Stunning Strike, 4 ki). O plano automático reparte o ki do dia.
+- Stunning Strike = `condicao_no_acerto` com o efeito novo `cond_atordoado_um_turno` (Con, peso 1, um turno). A vantagem
+  dos aliados contra o atordoado não é contada.
+- Durações de 10 minutos (Arms of the Astral Self, Darkness) = 1 luta. Invocação dos braços: área `explosao` em 2 alvos.
+- Mercy: Hand of Harm `por_luta` (2 usos por luta) e, no 11, `por_turno` (grátis no Flurry); Physician's Touch =
+  `cond_envenenado_um_turno` (peso 0,35, sem save: cd 99); Hand of Healing = `cura_na_luta` (toque, ação bônus).
+- Long Death: mordida de Con a partir do 5 (sem a vantagem abaixo da metade da vida: condição de julgamento);
+  Hour of Reaping = fonte `area` com o efeito novo `hour_of_reaping` (Sab, peso 0,4, 6 alvos), ação todo round;
+  Mastery of Death = `golpes_extras_a_0pv: 1`.
+- Shadow: Darkness + Devil's Sight = vantagem 1,0 nos ataques e `adv: -1` contra ele (o custo para os aliados não entra).
+- Kensei: Fighter 1 (Archery) primeiro, então as fatias são Monk 2/4/6/8/10; Sharpen the Blade fica fora (nível 12).
+- Sun Soul: Radiant Sun Bolt como ataque à distância (papel atirador); Searing Sunburst grátis como `cleave_save` livre.
+- Ascendant Dragon: os dois sopros (monge, PB/dia; Dragonborn, PB/dia) no lugar de ataques do 1º round, cone de 20 pés = 2
+  alvos; Frightful Presence (11) = amedrontado com resave, 4 tentativas por luta (1/descanso longo).

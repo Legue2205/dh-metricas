@@ -1,0 +1,99 @@
+{
+ "gerado_de": "rpgbot-monk-kensei.json",
+ "build": "Fighter 1 (Archery) / Monk (Kensei), Variant Human (Crossbow Expert), besta de mão; Sharpshooter no Monk 4, Des 18 no Monk 8",
+ "corpo": {
+  "ca": 16,
+  "pv": 26,
+  "saves": {
+   "sv": {
+    "for": 2,
+    "des": 3,
+    "con": 4,
+    "int": -1,
+    "sab": 3,
+    "car": -1
+   }
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "ki": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "besta de mão com Crossbow Expert, sem ki",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d6+3"
+     },
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d6+3",
+      "nota": "Crossbow Expert (ação bônus)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: 2 ki.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: 2 ki.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Kensei atirador: besta de mão com Crossbow Expert e Sharpshooter, Archery do Fighter 1.",
+  "estrategia": "Atira de longe com ação e ação bônus; Deft Strike com o ki; Sharpen the Blade só a partir do Monk 11 (nível 12).",
+  "nao_modelado": "Agile Parry e Kensei's Shot (competem com o Crossbow Expert); Deflect Missiles devolvido com Archery; Second Wind; Sharpen the Blade (nível 12); Action Surge (nível 20).",
+  "progressao": "Fighter 1 (Archery) / Monk 2: besta de mão com Crossbow Expert (Variant Human)."
+ },
+ "id": "rpgbot-monk-kensei-3",
+ "nome": "Kensei Monk (RPGBot: Why don't you just shoot it?)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

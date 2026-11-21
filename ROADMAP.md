@@ -825,3 +825,25 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   Warlock (9) e Artificer (4): `classe-*`, `subclasses-*`, `build-*-*` e `magias-*` (Ranger, Druid, Sorcerer, Warlock,
   Artificer). Total no Drive: 108 Docs novos para 10 classes. Próximo passo do usuário: colar tudo; depois pedir um
   **checkup das colagens sem análise** (cabeçalho × conteúdo, vazios, trocados), corrigir, e só então subir classe por classe.
+
+## 21/11 — Barbarian e Monk (passada 1, sem o gabarito colado)
+- **Ingeridas** pelo celular do usuário: 8 builds de Barbarian (Ancestral Guardian, Battlerager, Beast, Giant, Storm
+  Herald, Totem Warrior, Wild Magic, Zealot) + Berserker (sem build no RPGBot: chassi do Handbook, RAW e
+  `-homebrew` da mesa com a exaustão saindo no descanso curto) e as 10 de Monk (Mercy, Long Death, Open Hand, Astral
+  Self, Shadow, Drunken Master, Four Elements, Kensei, Sun Soul, Ascendant Dragon). Geradores `bar.py`, `mon.py`
+  (`marcial.py` com as funções comuns). Convenções novas na seção Barbarian/Monk de `convencoes-passada1.md`.
+- **Gabaritos provisórios** (`calibracao/rpgbot-barbarian.json`, `rpgbot-monk.json`): notas que o usuário lembrou de
+  memória; os Docs `subclasses-barbarian` e `subclasses-monk` (e `classe-*`) ainda estão só com o cabeçalho.
+  Sem nota: Giant (Barbarian) e Ascendant Dragon (Monk). Incertas: Storm Herald (verde?), Wild Magic (verde ou azul).
+  Conferir as cores quando a página de subclasses for colada; `comparar_rpgbot.py` e `consistencia.py` já incluem as duas classes.
+- Efeitos novos em `magias.json` (sem `regua`, não mudam a régua): `cond_atordoado_um_turno`, `cond_envenenado_um_turno`,
+  `hour_of_reaping`.
+- **Pontos de julgamento para discutir antes da passada 2:**
+  1. PV temporários próprios fora (Touch of Death do Long Death, Reckless Abandon do Battlerager): são a identidade
+     defensiva dessas subclasses; o Long Death (azul) vai sair subestimado em Defesa.
+  2. Vantagem por condição (mordida do Dhampir abaixo da metade da vida; Help do familiar no Ancestral Guardian foi
+     contado por ser fonte mecânica fixa).
+  3. Totem do Lobo com fração 0,5 de um aliado; Stunning Strike sem a vantagem que dá à party.
+  4. Plano automático de uma linha por luta: o Monk 11 gasta 16 de 22 ki; o Ascendant Dragon quase nunca sopra no plano
+     padrão (o sopro não tem valor de recurso, só a Área de pico o mede).
+  5. Form of the Beast só com garras (cauda +1d8 de CA por reação não tem tipo; aproximar com `shield` superestima).

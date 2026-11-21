@@ -1,0 +1,870 @@
+{
+ "id": "rpgbot-barbarian-berserker",
+ "nome": "Berserker Barbarian (sem build do RPGBot; RAW)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/berserker/",
+  "nota": "O RPGBot não tem build de Berserker (exaustão punitiva demais). Build montada por nós no chassi do Handbook, RAW."
+ },
+ "base": {
+  "build": "Barbarian (Berserker), meia-orc, machado grande, armadura média; GWM 4, For 18/Con 17 8, For 20 12 (chassi do Barbarian Handbook; o RPGBot não tem build de Berserker)",
+  "corpo": {
+   "ca": 16,
+   "pv": 35,
+   "saves": {
+    "sv": {
+     "for": 5,
+     "des": 2,
+     "con": 5,
+     "int": -1,
+     "sab": 0,
+     "car": -1
+    },
+    "ataques": 2,
+    "adv": [
+     "Des"
+    ]
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "furia": {
+     "qtd": 3,
+     "volta": "longo"
+    },
+    "frenesi": {
+     "qtd": 1,
+     "volta": "longo"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "sem fúria: machado grande, Reckless Attack",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "1d12+3",
+       "vantagem": 1.0,
+       "dados_crit": "1d12+1d12"
+      }
+     ]
+    },
+    "defesa": {
+     "adv": 1
+    },
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "furia",
+    "hipotese": "fúria sem Frenzy, Reckless Attack",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "1d12+5",
+       "vantagem": 1.0,
+       "dados_crit": "1d12+1d12"
+      }
+     ]
+    },
+    "defesa": {
+     "adv": 1,
+     "resist": true
+    },
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "furia": 1
+    }
+   },
+   {
+    "id": "furia-frenesi",
+    "hipotese": "fúria com Frenzy: ataque extra na ação bônus dos rounds 2–4 (exaustão no fim)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "1d12+5",
+       "vantagem": 1.0,
+       "dados_crit": "1d12+1d12"
+      },
+      {
+       "n": 0.75,
+       "bonus": 5,
+       "dano": "1d12+5",
+       "vantagem": 1.0,
+       "nota": "Frenzy (ação bônus)",
+       "dados_crit": "1d12+1d12"
+      }
+     ]
+    },
+    "defesa": {
+     "adv": 1,
+     "resist": true
+    },
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "furia": 1,
+     "frenesi": 1
+    },
+    "plano": "prioritaria"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Berserker com machado grande e Frenzy (ataque extra na ação bônus).",
+   "estrategia": "RAW: a exaustão só sai no descanso longo; um frenesi por dia, na luta prioritária.",
+   "nao_modelado": "Exaustão (nível 1: desvantagem em testes; o plano limita o frenesi); Intimidating Presence (Car 8); Retaliation (14); Relentless Rage; Feral Instinct."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Frenzy; meia-orc (Savage Attacks); escama (16)."
+  },
+  "5": {
+   "_texto": "Extra Attack; GWM (4); meia-armadura (17).",
+   "corpo": {
+    "ca": 17,
+    "pv": 55,
+    "saves": {
+     "sv": {
+      "for": 6,
+      "des": 2,
+      "con": 6,
+      "int": -1,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 3,
+     "adv": [
+      "Des"
+     ]
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "furia": {
+      "qtd": 3,
+      "volta": "longo"
+     },
+     "frenesi": {
+      "qtd": 1,
+      "volta": "longo"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "sem fúria: machado grande com GWM, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d12+3",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+1d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "furia",
+     "hipotese": "fúria sem Frenzy, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d12+5",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+1d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "furia": 1
+     }
+    },
+    {
+     "id": "furia-frenesi",
+     "hipotese": "fúria com Frenzy: ataque extra na ação bônus dos rounds 2–4 (exaustão no fim)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d12+5",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+1d12"
+       },
+       {
+        "n": 0.75,
+        "bonus": 6,
+        "dano": "1d12+5",
+        "vantagem": 1.0,
+        "nota": "Frenzy (ação bônus)",
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+1d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "furia": 1,
+      "frenesi": 1
+     },
+     "plano": "prioritaria"
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Mindless Rage (6: imune a encantado e amedrontado na fúria); Feral Instinct.",
+   "corpo": {
+    "ca": 17,
+    "pv": 75,
+    "saves": {
+     "sv": {
+      "for": 6,
+      "des": 2,
+      "con": 6,
+      "int": -1,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 3,
+     "adv": [
+      "Des"
+     ]
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "furia": {
+      "qtd": 4,
+      "volta": "longo"
+     },
+     "frenesi": {
+      "qtd": 1,
+      "volta": "longo"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "sem fúria: machado grande com GWM, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d12+3",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+1d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "furia",
+     "hipotese": "fúria sem Frenzy, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d12+5",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+1d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {
+      "imune": [
+       "encanto",
+       "medo"
+      ]
+     },
+     "gasta": {
+      "furia": 1
+     }
+    },
+    {
+     "id": "furia-frenesi",
+     "hipotese": "fúria com Frenzy: ataque extra na ação bônus dos rounds 2–4 (exaustão no fim)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "1d12+5",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+1d12"
+       },
+       {
+        "n": 0.75,
+        "bonus": 6,
+        "dano": "1d12+5",
+        "vantagem": 1.0,
+        "nota": "Frenzy (ação bônus)",
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+1d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {
+      "imune": [
+       "encanto",
+       "medo"
+      ]
+     },
+     "gasta": {
+      "furia": 1,
+      "frenesi": 1
+     },
+     "plano": "prioritaria"
+    }
+   ]
+  },
+  "9": {
+   "_texto": "For 18, Con 17 (8); Brutal Critical; fúria +3.",
+   "corpo": {
+    "ca": 17,
+    "pv": 95,
+    "saves": {
+     "sv": {
+      "for": 8,
+      "des": 2,
+      "con": 7,
+      "int": -1,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 3,
+     "adv": [
+      "Des"
+     ]
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "furia": {
+      "qtd": 4,
+      "volta": "longo"
+     },
+     "frenesi": {
+      "qtd": 1,
+      "volta": "longo"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "sem fúria: machado grande com GWM, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d12+4",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+2d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "furia",
+     "hipotese": "fúria sem Frenzy, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d12+7",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+2d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {
+      "imune": [
+       "encanto",
+       "medo"
+      ]
+     },
+     "gasta": {
+      "furia": 1
+     }
+    },
+    {
+     "id": "furia-frenesi",
+     "hipotese": "fúria com Frenzy: ataque extra na ação bônus dos rounds 2–4 (exaustão no fim)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d12+7",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+2d12"
+       },
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d12+7",
+        "vantagem": 1.0,
+        "nota": "Frenzy (ação bônus)",
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+2d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {
+      "imune": [
+       "encanto",
+       "medo"
+      ]
+     },
+     "gasta": {
+      "furia": 1,
+      "frenesi": 1
+     },
+     "plano": "prioritaria"
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Intimidating Presence (10); Relentless Rage.",
+   "corpo": {
+    "ca": 17,
+    "pv": 115,
+    "saves": {
+     "sv": {
+      "for": 8,
+      "des": 2,
+      "con": 7,
+      "int": -1,
+      "sab": 0,
+      "car": -1
+     },
+     "ataques": 3,
+     "adv": [
+      "Des"
+     ]
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "furia": {
+      "qtd": 4,
+      "volta": "longo"
+     },
+     "frenesi": {
+      "qtd": 1,
+      "volta": "longo"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "sem fúria: machado grande com GWM, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d12+4",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+2d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "furia",
+     "hipotese": "fúria sem Frenzy, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d12+7",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+2d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {
+      "imune": [
+       "encanto",
+       "medo"
+      ]
+     },
+     "gasta": {
+      "furia": 1
+     }
+    },
+    {
+     "id": "furia-frenesi",
+     "hipotese": "fúria com Frenzy: ataque extra na ação bônus dos rounds 2–4 (exaustão no fim)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d12+7",
+        "vantagem": 1.0,
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+2d12"
+       },
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d12+7",
+        "vantagem": 1.0,
+        "nota": "Frenzy (ação bônus)",
+        "poder": [
+         -5,
+         10
+        ],
+        "dados_crit": "1d12+2d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {
+      "imune": [
+       "encanto",
+       "medo"
+      ]
+     },
+     "gasta": {
+      "furia": 1,
+      "frenesi": 1
+     },
+     "plano": "prioritaria"
+    }
+   ]
+  }
+ }
+}

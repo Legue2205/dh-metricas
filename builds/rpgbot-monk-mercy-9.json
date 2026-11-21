@@ -1,0 +1,294 @@
+{
+ "gerado_de": "rpgbot-monk-mercy.json",
+ "build": "Monk (Mercy), meio-elfo da floresta, chicote como arma dedicada; Slasher 4, Des 20 8, Sab 18 12",
+ "corpo": {
+  "ca": 18,
+  "pv": 75,
+  "saves": {
+   "sv": {
+    "for": 3,
+    "des": 9,
+    "con": 3,
+    "int": -1,
+    "sab": 3,
+    "car": -1
+   },
+   "evasion": true,
+   "stillness": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "ki": {
+    "qtd": 9,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem ki: ataque + golpe desarmado na ação bônus (chicote com o dado de Martial Arts)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+5"
+     },
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "meia-rajada",
+   "hipotese": "Flurry of Blows em 2 dos 4 rounds (2 ki) (chicote com o dado de Martial Arts)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+5"
+     },
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 2
+   }
+  },
+  {
+   "id": "rajada",
+   "hipotese": "Flurry of Blows todo round (4 ki) (chicote com o dado de Martial Arts)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+5"
+     },
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "mao-da-morte",
+   "hipotese": "Flurry em 2 rounds + Hand of Harm em 2 acertos + 1 Hand of Healing (4 ki)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+5"
+     },
+     {
+      "n": 1.25,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "nota": "ação bônus (Flurry em 2 rounds, um golpe vira cura)"
+     }
+    ],
+    "por_luta": [
+     {
+      "dano": "1d6+3",
+      "nota": "Hand of Harm (1 ki, 1× por turno num golpe desarmado)",
+      "usos": 2
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Physician's Touch (envenenado, sem save)",
+      "efeito": "cond_envenenado_um_turno",
+      "cd": 99,
+      "bonus": [
+       9,
+       9,
+       9
+      ],
+      "usos": 2
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Hand of Healing (troca um golpe do Flurry)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "atordoar",
+   "hipotese": "Flurry em 2 rounds + 2 tentativas de Stunning Strike (4 ki) (chicote com o dado de Martial Arts)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+5"
+     },
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Stunning Strike (ki)",
+      "efeito": "cond_atordoado_um_turno",
+      "cd": 15,
+      "bonus": [
+       9,
+       9,
+       9,
+       9
+      ],
+      "usos": 2
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: mao-da-morte; prioritário: mao-da-morte. Sobra: 1 ki.",
+   "combates": [
+    "mao-da-morte",
+    "mao-da-morte",
+    "mao-da-morte",
+    "mao-da-morte"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: mao-da-morte. Sobra: 5 ki.",
+   "combates": [
+    "mao-da-morte"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Monge da Misericórdia: Hand of Harm para dano necrótico e veneno sem save, Hand of Healing para levantar aliados.",
+  "estrategia": "Ataca com o chicote, gasta ki em Flurry com Hand of Harm; troca um golpe do Flurry por cura quando alguém cai.",
+  "nao_modelado": "Alcance do chicote e Slasher; remoção de condições (Physician's Touch na cura); cura fora de luta com o ki que sobra; Deflect Missiles; Hand of Ultimate Mercy (17); vantagem do atordoado para os aliados.",
+  "progressao": "Des 20 (8)."
+ },
+ "id": "rpgbot-monk-mercy-9",
+ "nome": "Mercy Monk (RPGBot: Stuck Halfway)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/way-of-mercy/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

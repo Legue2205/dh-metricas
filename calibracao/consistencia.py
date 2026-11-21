@@ -9,7 +9,7 @@ import glob, json, os, re, sys, statistics as st
 RAIZ = os.path.join(os.path.dirname(__file__), '..')
 EIXOS = ['dano', 'defesa', 'resiliencia', 'vontade', 'campo', 'corpo', 'area', 'suporte']
 NOME = {'defesa': 'Def. física', 'resiliencia': 'Def. mágica (Res)', 'vontade': 'Def. mágica (Von)', 'campo': 'Controle'}
-CLASSES = ('fighter', 'wizard', 'cleric')
+CLASSES = ('fighter', 'wizard', 'cleric', 'barbarian', 'monk')
 NIVEIS = (7, 11)
 
 

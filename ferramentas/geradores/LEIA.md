@@ -9,3 +9,5 @@ Scripts que escreveram `progressoes/rpgbot-*.json` (rodar da raiz do repo; depoi
 - `cle.py`: Cleric (passada 1): Death, Grave, Life, Light, Nature e Peace (clérigo base). Arcana, Forge, Order,
   Knowledge, Tempest, Trickery, Twilight e War esperam as páginas corretas no Drive.
 - `cle2.py`: Cleric lote 2: Arcana, Forge, Knowledge, Order, Tempest, Trickery, Twilight, War (reemite o lote 1, idêntico).
+- `marcial.py` (biblioteca dos marciais) + `bar.py`: Barbarian (8 subclasses do RPGBot + Berserker RAW e homebrew).
+- `mon.py`: Monk (10 subclasses do RPGBot).

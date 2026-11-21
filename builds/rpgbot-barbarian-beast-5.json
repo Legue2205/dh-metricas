@@ -1,0 +1,137 @@
+{
+ "gerado_de": "rpgbot-barbarian-beast.json",
+ "build": "Barbarian (Beast), Satyr, garras + escudo; Skill Expert 4 (For 18), For 20 8, Con 18 12",
+ "corpo": {
+  "ca": 19,
+  "pv": 55,
+  "saves": {
+   "sv": {
+    "for": 7,
+    "des": 2,
+    "con": 6,
+    "int": -1,
+    "sab": 0,
+    "car": -1
+   },
+   "ataques": 3,
+   "adv_mental_magia": true,
+   "humanoide": false,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 3,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: martelo de guerra com escudo, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia-garras",
+   "hipotese": "fúria com Form of the Beast (garras: um ataque extra na ação), Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 7,
+      "dano": "1d6+6",
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia-garras, principal; prioritário: furia-garras. Sobra: nada.",
+   "combates": [
+    "principal",
+    "furia-garras",
+    "furia-garras",
+    "furia-garras"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia-garras. Sobra: 2 furia.",
+   "combates": [
+    "furia-garras"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bárbaro da Fera com escudo: na fúria ataca com garras (um ataque extra na ação) sem largar o escudo.",
+  "estrategia": "Fúria em toda luta com garras e Reckless Attack; Infectious Fury a partir do 10.",
+  "nao_modelado": "Form of the Beast (mordida: cura; cauda: +1d8 de CA por reação) — só as garras; saltos e agarrão (Skill Expert); Bestial Soul; força ataque de Infectious Fury; Relentless Rage; Danger Sense entra nos saves; Magic Resistance do Satyr aproximada por vantagem em saves mentais contra magia; Feral Instinct.",
+  "progressao": "Extra Attack (3 ataques de garra); Skill Expert (For 18); meia-armadura + escudo (19)."
+ },
+ "id": "rpgbot-barbarian-beast-5",
+ "nome": "Beast Barbarian (RPGBot: Wrathful Leaps)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/beast/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

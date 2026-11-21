@@ -1,0 +1,299 @@
+{
+ "gerado_de": "rpgbot-monk-astral-self.json",
+ "build": "Monk (Astral Self), Dhampir, lança e braços astrais de Sabedoria; Sab 18 4, Skill Expert 8, Observant 12",
+ "corpo": {
+  "ca": 16,
+  "pv": 27,
+  "saves": {
+   "sv": {
+    "for": 1,
+    "des": 5,
+    "con": 3,
+    "int": -1,
+    "sab": 3,
+    "car": -1
+   }
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "ki": {
+    "qtd": 3,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem ki: ataque + golpe desarmado na ação bônus (lança, sem os braços astrais)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d4+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "meia-rajada",
+   "hipotese": "Flurry of Blows em 2 dos 4 rounds (2 ki) (lança, sem os braços astrais)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 1.5,
+      "bonus": 5,
+      "dano": "1d4+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 2
+   }
+  },
+  {
+   "id": "rajada",
+   "hipotese": "Flurry of Blows todo round (4 ki) (lança, sem os braços astrais)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 2,
+      "bonus": 5,
+      "dano": "1d4+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "bracos",
+   "hipotese": "Arms of the Astral Self (1 ki, 10 minutos = 1 luta): ataques de Sab com alcance; Martial Arts nos rounds 2–4",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d4+3",
+      "nota": "braços astrais (Sab, alcance 10)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d4+3",
+      "nota": "ação bônus (rounds 2–4: o 1º round invoca os braços)"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.25,
+      "cd": 13,
+      "save": "Des",
+      "dano": "2d4",
+      "meio": false,
+      "nota": "invocação dos braços (1× por luta)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 1
+   },
+   "area": [
+    {
+     "nome": "Arms of the Astral Self (invocação)",
+     "tipo": "explosao",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d4",
+       "cd": 13,
+       "save": "Des",
+       "metade": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bracos-rajada",
+   "hipotese": "braços astrais + Flurry nos rounds 2–4 (4 ki)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d4+3",
+      "nota": "braços astrais (Sab, alcance 10)"
+     },
+     {
+      "n": 1.5,
+      "bonus": 5,
+      "dano": "1d4+3",
+      "nota": "ação bônus (rounds 2–4: o 1º round invoca os braços)"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.25,
+      "cd": 13,
+      "save": "Des",
+      "dano": "2d4",
+      "meio": false,
+      "nota": "invocação dos braços (1× por luta)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "area": [
+    {
+     "nome": "Arms of the Astral Self (invocação)",
+     "tipo": "explosao",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d4",
+       "cd": 13,
+       "save": "Des",
+       "metade": false
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bracos; prioritário: meia-rajada. Sobra: nada.",
+   "combates": [
+    "bracos",
+    "meia-rajada",
+    "bracos",
+    "meia-rajada"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: meia-rajada. Sobra: 1 ki.",
+   "combates": [
+    "meia-rajada"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Monge do Eu Astral: braços espectrais que batem com Sabedoria, com alcance, e sobem a CD do Stunning Strike.",
+  "estrategia": "Invoca os braços no começo da luta (dano em área ao redor) e luta com Sabedoria; Flurry e Stunning Strike com o ki que sobra.",
+  "nao_modelado": "Agarrão e empurrão com Sabedoria (Atletismo com expertise: o combo agarrar+derrubar custa ataques); Visage (visão no escuro mágico, Intimidação); Deflect Energy (11, reação); duração de 10 minutos cobrindo duas lutas seguidas; Awakened Astral Self (17).",
+  "progressao": "Arms of the Astral Self (ataques de Sab, alcance 10, dano de força)."
+ },
+ "id": "rpgbot-monk-astral-self-3",
+ "nome": "Astral Self Monk (RPGBot: Yes, This IS A Jojo's Reference)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/astral-self/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

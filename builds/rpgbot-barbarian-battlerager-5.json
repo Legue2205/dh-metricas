@@ -1,0 +1,148 @@
+{
+ "gerado_de": "rpgbot-barbarian-battlerager.json",
+ "build": "Barbarian (Battlerager), anão da montanha, armadura de espinhos + escudo; Skill Expert 4 (For 18), Con 19 8, Mobile 12",
+ "corpo": {
+  "ca": 18,
+  "pv": 55,
+  "saves": {
+   "sv": {
+    "for": 7,
+    "des": 2,
+    "con": 6,
+    "int": -1,
+    "sab": 0,
+    "car": -1
+   },
+   "ataques": 3,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 3,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: martelo e escudo, Reckless Attack (espinhos só na fúria)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia-agarrao",
+   "hipotese": "fúria: agarra com o 1º ataque do 1º round (3 de dano no agarrão, ÷ 4 rounds), bate com a arma e com os espinhos (ação bônus) com Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.75,
+      "bonus": 7,
+      "dano": "1d8+6",
+      "vantagem": 1.0
+     },
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d4+6",
+      "vantagem": 1.0,
+      "nota": "espinhos (ação bônus; o 1º round vai na fúria)"
+     }
+    ],
+    "automatico": "0.75"
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "agarrao",
+      "nome": "Agarrão (Atletismo com vantagem na fúria)",
+      "bonus": 10
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia-agarrao, principal; prioritário: furia-agarrao. Sobra: nada.",
+   "combates": [
+    "principal",
+    "furia-agarrao",
+    "furia-agarrao",
+    "furia-agarrao"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia-agarrao. Sobra: 2 furia.",
+   "combates": [
+    "furia-agarrao"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bárbaro agarrador de armadura de espinhos: agarra, bate com a arma e com os espinhos como ação bônus.",
+  "estrategia": "Fúria em toda luta, agarra a ameaça principal e mantém o agarrão (Atletismo com expertise e vantagem).",
+  "nao_modelado": "Reckless Abandon (PV temporários próprios, como Second Wind); vantagem de Força no teste de agarrão (o motor usa só o bônus); derrubar após agarrar (combo agarrar+empurrar custa ataque); versão Owlin voadora (soltar do alto); Battlerager Charge; Spiked Retribution (14); resistência a veneno do anão; Relentless Rage.",
+  "progressao": "Extra Attack; Skill Expert (For 18, expertise em Atletismo)."
+ },
+ "id": "rpgbot-barbarian-battlerager-5",
+ "nome": "Battlerager Barbarian (RPGBot: The Drop Hawk)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/battlerager/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

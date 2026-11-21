@@ -1,0 +1,151 @@
+{
+ "gerado_de": "rpgbot-barbarian-giant.json",
+ "build": "Barbarian (Giant), Variant Human (Strike of the Giants: Cloud), machado grande, armadura média; Guile of the Cloud Giant 4, Skill Expert 8, For 20 12",
+ "corpo": {
+  "ca": 17,
+  "pv": 86,
+  "saves": {
+   "sv": {
+    "for": 8,
+    "des": 2,
+    "con": 6,
+    "int": 1,
+    "sab": -1,
+    "car": 0
+   },
+   "ataques": 2,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 4,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: machado grande, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d12+4",
+      "vantagem": 1.0,
+      "dados_crit": "1d12+1d12"
+     }
+    ],
+    "por_luta": [
+     {
+      "dano": "1d4",
+      "usos_dia": 4,
+      "nota": "Strike of the Giants (Cloud): +1d4 trovão, PB/dia"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia",
+   "hipotese": "fúria (Giant Stature, alcance +5), Elemental Cleaver +1d6, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d12+7+1d6",
+      "vantagem": 1.0,
+      "dados_crit": "1d12+1d6+1d12"
+     }
+    ],
+    "por_luta": [
+     {
+      "dano": "1d4",
+      "usos_dia": 4,
+      "nota": "Strike of the Giants (Cloud): +1d4 trovão, PB/dia"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia; prioritário: furia. Sobra: nada.",
+   "combates": [
+    "furia",
+    "furia",
+    "furia",
+    "furia"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia. Sobra: 3 furia.",
+   "combates": [
+    "furia"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bárbaro Gigante: cresce na fúria, ganha dano elemental e arma que volta quando arremessada; a partir do 10 arremessa inimigos.",
+  "estrategia": "Fúria em toda luta com Reckless Attack; Mighty Impel na ação bônus para derrubar pela queda.",
+  "nao_modelado": "Arremesso à distância com Elemental Cleaver (o motor mede só corpo a corpo; vale como mobilidade); invisibilidade do Cloud Strike; teleporte do Guile; agarrão a 10 pés (Skill Expert); Giant's Power; Crushing Throw; Relentless Rage; Feral Instinct. Guile of the Cloud Giant (resistência por reação, PB/dia; na fúria é quase redundante).",
+  "progressao": "Skill Expert (For 18, 8); Brutal Critical; fúria +3."
+ },
+ "id": "rpgbot-barbarian-giant-9",
+ "nome": "Giant Barbarian (RPGBot: Stature-esque)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/path-of-the-giant/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

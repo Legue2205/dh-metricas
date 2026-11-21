@@ -158,9 +158,7 @@ def defesa_magica(vontade, resiliencia):
     return vontade if resiliencia is None else (1 - w) * vontade + w * resiliencia
 
 
-PVT_ROUNDS_CORPO = 3   # rounds em que o PV temporário renovável (pvt_round) absorve dano, para a atenção/corpo
-
-
 def pv_com_pvt(corpo):
-    """PV usado pela atenção e pelo corpo: PV + PV temporários próprios (pvt_luta + pvt_round × 3 rounds)."""
-    return corpo['pv'] + corpo.get('pvt_luta', 0) + PVT_ROUNDS_CORPO * corpo.get('pvt_round', 0)
+    """PV usado pela atenção e pelo corpo: PV + PV temporários próprios (pvt_luta + pvt_round × premissa corpo.pvt_rounds)."""
+    from .premissas import valor
+    return corpo['pv'] + corpo.get('pvt_luta', 0) + valor('corpo.pvt_rounds') * corpo.get('pvt_round', 0)

@@ -1,0 +1,972 @@
+{
+ "id": "rpgbot-barbarian-storm-herald-5",
+ "nome": "Storm Herald Barbarian (RPGBot: Fireball Me in the Face)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "build": "Barbarian (Storm Herald, Desert), Dragonborn cromático, glaive, armadura média; Slasher 4, Resilient Des 8, For 20 12",
+ "impressao": "386604445b",
+ "versao": "0.9.0",
+ "modo": "completo",
+ "linhas": {
+  "principal": {
+   "hipotese": "sem fúria: glaive, Reckless Attack",
+   "principal": [
+    "dano",
+    "defesa",
+    "controle",
+    "saves",
+    "area",
+    "suporte"
+   ],
+   "dano": {
+    "dpr": {
+     "CA 11": 19.6,
+     "CA 12": 19.3,
+     "CA 15": 17.7,
+     "CA 16": 17.0,
+     "CA 18": 15.3,
+     "CA 20": 13.2,
+     "CA 22": 10.8,
+     "CA 24": 7.9,
+     "CA 25": 6.3
+    },
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.5,
+    "nivel_precisa": 4.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 50,
+    "ca": 17,
+    "blindagem": 2.14,
+    "durabilidade": 1.66,
+    "nivel_blindagem": 2.2,
+    "nivel_durabilidade": 2.3,
+    "nivel_eq": 2.3,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.1,
+     "rank": "C+",
+     "turnos_livres": [
+      3.9,
+      3.53,
+      3.45,
+      1.66,
+      1.55,
+      1.57,
+      1.59,
+      1.26,
+      0.92,
+      0.77
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.16,
+     "rank": "D",
+     "turnos_livres": [
+      2.9,
+      1.23,
+      0.88,
+      0.99,
+      0.77,
+      0.47,
+      0.79,
+      0.52,
+      0.75,
+      0.92
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.84,
+     "5": 3.5,
+     "6": 3.5,
+     "7": 3.5,
+     "8": 4.54,
+     "9": 4.36,
+     "10": 4.36,
+     "11": 4.53,
+     "12": 4.53,
+     "13": 5.27,
+     "14": 5.27,
+     "15": 5.27,
+     "16": 5.27,
+     "17": 5.77,
+     "18": 5.77,
+     "19": 5.99,
+     "20": 5.7
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.12,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.51,
+    "rank_atencao": "E",
+    "vidas_total": -0.03,
+    "vidas_campo": 0.025,
+    "vidas_atencao": 0.101,
+    "corpo": {
+     "T": 0.101,
+     "S": 0.172,
+     "P": -0.072,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 5.0,
+    "rank_corpo": "C+",
+    "corpo_busca": [
+     [
+      5,
+      0.101
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0114
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0085
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0086
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0167
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0092
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
+  },
+  "furia-deserto": {
+   "hipotese": "fúria com Storm Aura (Desert): 3 de fogo automático em quem escolher a 10 pés, todo turno (ação bônus)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 26.6,
+     "CA 12": 26.2,
+     "CA 15": 24.3,
+     "CA 16": 23.4,
+     "CA 18": 21.3,
+     "CA 20": 18.8,
+     "CA 22": 15.8,
+     "CA 24": 12.4,
+     "CA 25": 10.5
+    },
+    "nivel_eq": 6.8,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 6.3,
+    "nivel_precisa": 6.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 50,
+    "ca": 17,
+    "blindagem": 4.77,
+    "durabilidade": 3.77,
+    "nivel_blindagem": 4.8,
+    "nivel_durabilidade": 5.5,
+    "nivel_eq": 5.5,
+    "rank": "C+",
+    "perfil": "Durável",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.1,
+     "rank": "C+",
+     "turnos_livres": [
+      3.9,
+      3.53,
+      3.45,
+      1.66,
+      1.55,
+      1.57,
+      1.59,
+      1.26,
+      0.92,
+      0.77
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.16,
+     "rank": "D",
+     "turnos_livres": [
+      2.9,
+      1.23,
+      0.88,
+      0.99,
+      0.77,
+      0.47,
+      0.79,
+      0.52,
+      0.75,
+      0.92
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "rounds": {
+     "1": 1.9,
+     "2": 2.24,
+     "3": 2.24,
+     "4": 2.59,
+     "5": 2.77,
+     "6": 2.77,
+     "7": 2.77,
+     "8": 3.67,
+     "9": 3.54,
+     "10": 3.54,
+     "11": 3.82,
+     "12": 3.82,
+     "13": 4.47,
+     "14": 4.47,
+     "15": 4.47,
+     "16": 4.47,
+     "17": 5.11,
+     "18": 5.11,
+     "19": 5.85,
+     "20": 5.16
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 2.0,
+     "rank": "D"
+    },
+    "melhor": "Storm Aura (Desert) no 2º alvo",
+    "areas": [
+     {
+      "nome": "Storm Aura (Desert) no 2º alvo",
+      "tipo": "cleave_ataque",
+      "nivel_eq": 2.04,
+      "rank": "D",
+      "variacoes": {
+       "esparsa": 3.97,
+       "padrao": 2.04,
+       "agrupada": 0.35
+      }
+     },
+     {
+      "nome": "Storm Aura (Desert) no 3º alvo",
+      "tipo": "cleave_ataque",
+      "nivel_eq": 2.04,
+      "rank": "D",
+      "variacoes": {
+       "esparsa": 3.97,
+       "padrao": 2.04,
+       "agrupada": 0.35
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.01,
+    "rank": "F",
+    "nivel_campo": 0.12,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.55,
+    "rank_atencao": "E",
+    "vidas_total": -0.025,
+    "vidas_campo": 0.025,
+    "vidas_atencao": 0.105,
+    "corpo": {
+     "T": 0.105,
+     "S": 0.077,
+     "P": 0.029,
+     "chave": "T0S+P0",
+     "perfil": "Neutro"
+    },
+    "nivel_corpo": 5.0,
+    "rank_corpo": "C+",
+    "corpo_busca": [
+     [
+      5,
+      0.105
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.05
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0114
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0085
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0086
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0167
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0092
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
+  }
+ },
+ "planos": {
+  "padrao": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "principal",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {}
+     }
+    },
+    {
+     "linha": "furia-deserto",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "furia": 1
+     }
+    },
+    {
+     "linha": "furia-deserto",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "furia": 1
+     }
+    },
+    {
+     "linha": "furia-deserto",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "furia": 1
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {}
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 6.4,
+     "rank": "B-",
+     "por_categoria": {
+      "np": 5.7,
+      "p": 6.8
+     }
+    },
+    "defesa": {
+     "nivel_eq": 5.0,
+     "rank": "C",
+     "por_categoria": {
+      "np": 3.9,
+      "p": 5.5
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 5.1,
+     "rank": "C+",
+     "por_categoria": {
+      "np": 5.1,
+      "p": 5.1
+     }
+    },
+    "vontade": {
+     "nivel_eq": 2.2,
+     "rank": "D",
+     "por_categoria": {
+      "np": 2.2,
+      "p": 2.2
+     }
+    },
+    "campo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "np": 0.0,
+      "p": 0.0
+     }
+    },
+    "corpo": {
+     "nivel_eq": 5.0,
+     "rank": "C+",
+     "por_categoria": {
+      "np": 5.0,
+      "p": 5.0
+     }
+    },
+    "area": {
+     "nivel_eq": 4.8,
+     "rank": "C",
+     "por_categoria": {
+      "np": 4.5,
+      "p": 4.8
+     }
+    }
+   }
+  },
+  "combate_unico": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "furia-deserto",
+     "categoria": "p",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {},
+      "furia": 1
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {},
+    "furia": 2
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 6.8,
+     "rank": "B-",
+     "por_categoria": {
+      "p": 6.8
+     }
+    },
+    "defesa": {
+     "nivel_eq": 5.5,
+     "rank": "C+",
+     "por_categoria": {
+      "p": 5.5
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 5.1,
+     "rank": "C+",
+     "por_categoria": {
+      "p": 5.1
+     }
+    },
+    "vontade": {
+     "nivel_eq": 2.2,
+     "rank": "D",
+     "por_categoria": {
+      "p": 2.2
+     }
+    },
+    "campo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "p": 0.0
+     }
+    },
+    "corpo": {
+     "nivel_eq": 5.0,
+     "rank": "C+",
+     "por_categoria": {
+      "p": 5.0
+     }
+    },
+    "area": {
+     "nivel_eq": 4.8,
+     "rank": "C",
+     "por_categoria": {
+      "p": 4.8
+     }
+    }
+   }
+  }
+ },
+ "segundos": 13.4,
+ "premissas": {
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda2.N": 3000,
+  "area.horda2.corpo": 5,
+  "area.horda2.distancia": 3,
+  "area.horda2.fracao_alvo": 0.5,
+  "area.horda2.guerreiros": {
+   "quantidade": 2,
+   "dano": "2d6",
+   "mod": [
+    3,
+    4,
+    5
+   ],
+   "ataques": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "area.horda2.rounds_max": 3,
+  "area.horda2.truque_referencia": "1d10",
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
+  "base.chefe.chefe_save": 2,
+  "base.chefe.lr_cr": 10,
+  "base.chefe.lr_n": 1,
+  "base.encontros": [
+   [
+    "Minions + minibosses",
+    0.25,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      4,
+      0.25
+     ],
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Party de elite",
+    0.15,
+    [
+     [
+      "Bruiser",
+      "Veterano agressor",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Artilheiro",
+      "Atirador",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Horda + chefe",
+    0.15,
+    [
+     [
+      "Minion",
+      "Soldado disciplinado",
+      6,
+      0.5
+     ],
+     [
+      "Chefe",
+      "Comandante",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Horda",
+    0.1,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      6,
+      1.0
+     ]
+    ]
+   ],
+   [
+    "Dupla",
+    0.05,
+    [
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.5
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Chefe sozinho",
+    0.3,
+    [
+     [
+      "Chefe",
+      "Chefe (perfil próprio)",
+      1,
+      1.0
+     ]
+    ]
+   ]
+  ],
+  "base.perfis_inimigos": {
+   "Instintivo": [
+    0.2,
+    0,
+    true
+   ],
+   "Fera": [
+    0.3,
+    1,
+    true
+   ],
+   "Oportunista": [
+    0.7,
+    2,
+    true
+   ],
+   "Soldado disciplinado": [
+    0.5,
+    2,
+    true
+   ],
+   "Atirador": [
+    0.0,
+    3,
+    false
+   ],
+   "Cavaleiro noviço": [
+    0.1,
+    1,
+    true
+   ],
+   "Veterano defensor": [
+    0.3,
+    2,
+    true
+   ],
+   "Veterano agressor": [
+    0.8,
+    2,
+    true
+   ],
+   "Conjurador tático": [
+    0.0,
+    3,
+    false
+   ],
+   "Comandante": [
+    0.2,
+    3,
+    true
+   ],
+   "Chefe (perfil próprio)": [
+    0.4,
+    2,
+    true
+   ]
+  },
+  "base.rounds_por_luta": 4,
+  "base.save_tipo": {
+   "For": 1,
+   "Con": 1,
+   "Des": 0.5,
+   "Int": 0,
+   "Sab": 0,
+   "Car": 0
+  },
+  "base.topologias": {
+   "Campo aberto": {
+    "peso": 0.25,
+    "area": 0.8,
+    "cruza": 0.3,
+    "alc_corpo_a_corpo_atras": 0.1,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Ruínas ou cidade": {
+    "peso": 0.35,
+    "area": 1.0,
+    "cruza": 0.6,
+    "alc_corpo_a_corpo_atras": 0.15,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Sala de dungeon": {
+    "peso": 0.4,
+    "area": 1.2,
+    "cruza": 0.9,
+    "alc_corpo_a_corpo_atras": 0.6,
+    "pg": 0.5,
+    "wall": 1.5
+   }
+  },
+  "controle.atencao.ca_dpr_auto": 16,
+  "controle.atencao.conc_bonus": 1.5,
+  "controle.atencao.near_back": 0.25,
+  "controle.atencao.reach_grande": 0.5,
+  "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_pv": 133,
+  "controle.campo.golpes_party": 2,
+  "controle.campo.p_disengage": 0.5,
+  "controle.campo.reach_grande": 0.5,
+  "controle.campo.reach_pequeno": 0.2,
+  "controle.campo.taunt_ameaca": 0.15,
+  "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.referencia_unica": 1,
+  "controle.marca.fator_sem_resistencia": 0.5,
+  "controle.padroes.counterspell_fracao_conjurando": 0.75,
+  "controle.padroes.sentinela_tentativas": 2,
+  "controle.padroes.terreno_fator": 0.5,
+  "controle.peso_no_controle.ameaca": 0.0,
+  "controle.peso_no_controle.ancestral_protectors": 0.25,
+  "controle.peso_no_controle.esqueletos": 0.0,
+  "controle.peso_no_controle.parada_oa": 0.25,
+  "controle.peso_no_controle.sentinela": 0.25,
+  "controle.referencia.frontliner.ca_bonus": 1,
+  "controle.referencia.frontliner.ca_max": 21,
+  "controle.referencia.frontliner.dpr_fator": 0.85,
+  "controle.referencia.frontliner.pv_base": 11,
+  "controle.referencia.frontliner.pv_por_nivel": 8,
+  "controle.referencia.frontliner.soft": 0.15,
+  "defesa.chefe.acerto_extra": 3,
+  "defesa.chefe.ataques_por_cr": [
+   [
+    4,
+    2
+   ],
+   [
+    16,
+    3
+   ],
+   [
+    30,
+    4
+   ]
+  ],
+  "defesa.chefe.cr_arma_magica": 10,
+  "defesa.fator_critico": 0.6,
+  "defesa.horda.acerto": {
+   "base": 3,
+   "por_cr": 0.3333333333333333
+  },
+  "defesa.horda.atacantes": {
+   "min": 3,
+   "max": 10
+  },
+  "defesa.horda.dano_por_golpe": {
+   "base": 4,
+   "por_cr": 0.5
+  },
+  "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
+  "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "planos.dias": {
+   "padrao": [
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ]
+   ],
+   "combate_unico": [
+    [
+     "p",
+     1
+    ]
+   ],
+   "dia_longo": [
+    [
+     "np",
+     1
+    ],
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "mod",
+     2
+    ],
+    [
+     "boss",
+     4
+    ]
+   ]
+  }
+ },
+ "impressoes": {
+  "_planos": "ba1831a39c79",
+  "principal": {
+   "dano": "65db40c637ef",
+   "defesa": "0fcc2c4d6125",
+   "saves": "345cc0e096ab",
+   "area": "c660e84ddf58",
+   "controle": "7d495080d704"
+  },
+  "furia-deserto": {
+   "dano": "63ea88a31d80",
+   "defesa": "793aa6a673f7",
+   "saves": "345cc0e096ab",
+   "area": "ffec1a7fe756",
+   "controle": "de02b5636fe5"
+  }
+ }
+}

@@ -4,9 +4,9 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Monk (Sun Soul), Hadozee, raios radiantes; Gunner 4, Skill Expert 8, Des 20 12",
- "impressao": "0ff429bf73",
+ "impressao": "660b86f9e0",
  "versao": "0.9.0",
- "modo": "rapido",
+ "modo": "completo",
  "linhas": {
   "principal": {
    "hipotese": "sem ki: ataque + golpe desarmado na ação bônus (lança, corpo a corpo)",
@@ -174,7 +174,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0069
      }
-    }
+    },
+    "nivel_absoluto": 0.24,
+    "rank_absoluto": "F"
    }
   },
   "meia-rajada": {
@@ -336,7 +338,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0069
      }
-    }
+    },
+    "nivel_absoluto": 0.29,
+    "rank_absoluto": "F"
    }
   },
   "rajada": {
@@ -498,7 +502,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0069
      }
-    }
+    },
+    "nivel_absoluto": 0.34,
+    "rank_absoluto": "F"
    }
   },
   "raios": {
@@ -660,7 +666,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0069
      }
-    }
+    },
+    "nivel_absoluto": 1.15,
+    "rank_absoluto": "D"
    }
   },
   "raios-rajada": {
@@ -822,7 +830,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0069
      }
-    }
+    },
+    "nivel_absoluto": 1.23,
+    "rank_absoluto": "D"
    }
   },
   "atordoar": {
@@ -932,15 +942,15 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.15,
+    "nivel_eq": 0.08,
     "rank": "F",
-    "nivel_campo": 1.66,
+    "nivel_campo": 1.65,
     "rank_campo": "D",
-    "nivel_controle": 0.98,
+    "nivel_controle": 0.97,
     "nivel_atencao": 0.01,
     "rank_atencao": "F",
-    "vidas_total": -0.044,
-    "vidas_campo": 0.122,
+    "vidas_total": -0.046,
+    "vidas_campo": 0.119,
     "vidas_atencao": -0.019,
     "corpo": {
      "T": -0.019,
@@ -959,38 +969,368 @@
     ],
     "por_tipo": {
      "Minions + minibosses": 0.0,
-     "Party de elite": 0.07,
-     "Horda + chefe": 0.22,
+     "Party de elite": 0.05,
+     "Horda + chefe": 0.21,
      "Horda": 0.0,
-     "Dupla": 2.1,
+     "Dupla": 0.9,
      "Chefe sozinho": 0.0
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Stunning Strike (ki)": 0.0525,
+      "Stunning Strike (ki)": 0.0517,
       "Corpo (ameaça)": 0.009
      },
      "Party de elite": {
-      "Stunning Strike (ki)": 0.0613,
+      "Stunning Strike (ki)": 0.0602,
       "Corpo (ameaça)": 0.0052
      },
      "Horda + chefe": {
-      "Stunning Strike (ki)": 0.0738,
+      "Stunning Strike (ki)": 0.0726,
       "Corpo (ameaça)": 0.0065
      },
      "Horda": {
-      "Stunning Strike (ki)": 0.0439,
+      "Stunning Strike (ki)": 0.044,
       "Corpo (ameaça)": 0.0136
      },
      "Dupla": {
-      "Stunning Strike (ki)": 0.112,
+      "Stunning Strike (ki)": 0.1105,
       "Corpo (ameaça)": 0.0055
      },
      "Chefe sozinho": {
       "Stunning Strike (ki)": 0.0,
       "Corpo (ameaça)": 0.0069
      }
+    },
+    "nivel_absoluto": 1.78,
+    "rank_absoluto": "D"
+   }
+  },
+  "mira": {
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (lança, corpo a corpo)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 29.1,
+     "CA 12": 29.0,
+     "CA 15": 25.2,
+     "CA 16": 23.7,
+     "CA 18": 20.8,
+     "CA 20": 17.8,
+     "CA 22": 14.8,
+     "CA 24": 11.8,
+     "CA 25": 10.4
+    },
+    "nivel_eq": 6.6,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 6.4,
+    "nivel_precisa": 6.6,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 91,
+    "ca": 17,
+    "blindagem": 6.78,
+    "durabilidade": 4.76,
+    "nivel_blindagem": 7.2,
+    "nivel_durabilidade": 7.5,
+    "nivel_eq": 7.5,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 16.82,
+     "rank": "S",
+     "turnos_livres": [
+      3.76,
+      3.76,
+      3.7,
+      2.94,
+      3.16,
+      3.17,
+      3.61,
+      3.43,
+      2.97,
+      2.68
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 8.15,
+     "rank": "B+",
+     "turnos_livres": [
+      3.16,
+      2.05,
+      1.64,
+      1.67,
+      1.18,
+      0.69,
+      1.5,
+      1.4,
+      1.26,
+      1.66
+     ]
     }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 4.02,
+     "9": 3.87,
+     "10": 3.87,
+     "11": 4.15,
+     "12": 4.15,
+     "13": 4.8,
+     "14": 4.8,
+     "15": 4.8,
+     "16": 4.8,
+     "17": 5.42,
+     "18": 5.42,
+     "19": 5.95,
+     "20": 5.44
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.69,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.157,
+    "vidas_campo": 0.017,
+    "vidas_atencao": -0.026,
+    "corpo": {
+     "T": -0.026,
+     "S": 0.118,
+     "P": -0.144,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.026
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.009
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0052
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0065
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0136
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0055
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0069
+     }
+    },
+    "nivel_absoluto": 0.36,
+    "rank_absoluto": "F"
+   }
+  },
+  "rajada-mira": {
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (lança, corpo a corpo)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 33.2,
+     "CA 12": 33.2,
+     "CA 15": 28.5,
+     "CA 16": 26.8,
+     "CA 18": 23.4,
+     "CA 20": 20.0,
+     "CA 22": 16.6,
+     "CA 24": 13.2,
+     "CA 25": 11.5
+    },
+    "nivel_eq": 7.3,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.2,
+    "nivel_precisa": 7.3,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 91,
+    "ca": 17,
+    "blindagem": 6.78,
+    "durabilidade": 4.76,
+    "nivel_blindagem": 7.2,
+    "nivel_durabilidade": 7.5,
+    "nivel_eq": 7.5,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 16.82,
+     "rank": "S",
+     "turnos_livres": [
+      3.76,
+      3.76,
+      3.7,
+      2.94,
+      3.16,
+      3.17,
+      3.61,
+      3.43,
+      2.97,
+      2.68
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 8.15,
+     "rank": "B+",
+     "turnos_livres": [
+      3.16,
+      2.05,
+      1.64,
+      1.67,
+      1.18,
+      0.69,
+      1.5,
+      1.4,
+      1.26,
+      1.66
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 3.86,
+     "9": 3.72,
+     "10": 3.72,
+     "11": 4.01,
+     "12": 4.01,
+     "13": 4.65,
+     "14": 4.65,
+     "15": 4.65,
+     "16": 4.65,
+     "17": 5.24,
+     "18": 5.24,
+     "19": 5.91,
+     "20": 5.3
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.69,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.162,
+    "vidas_campo": 0.017,
+    "vidas_atencao": -0.031,
+    "corpo": {
+     "T": -0.031,
+     "S": 0.087,
+     "P": -0.118,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.031
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.009
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0052
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0065
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0136
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0055
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0069
+     }
+    },
+    "nivel_absoluto": 0.41,
+    "rank_absoluto": "F"
    }
   },
   "arco": {
@@ -1096,12 +1436,12 @@
      {
       "nome": "Searing Arc Strike",
       "tipo": "explosao",
-      "nivel_eq": 2.66,
+      "nivel_eq": 2.67,
       "rank": "D",
       "variacoes": {
-       "esparsa": 2.65,
-       "padrao": 2.66,
-       "agrupada": 2.66
+       "esparsa": 2.66,
+       "padrao": 2.67,
+       "agrupada": 2.67
       }
      }
     ]
@@ -1167,7 +1507,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0069
      }
-    }
+    },
+    "nivel_absoluto": 1.2,
+    "rank_absoluto": "D"
    }
   },
   "sunburst": {
@@ -1265,7 +1607,7 @@
     },
     "usos": 0,
     "antigo": {
-     "nivel_eq": 6.7,
+     "nivel_eq": 6.6,
      "rank": "B-"
     },
     "melhor": "Searing Sunburst (grátis)",
@@ -1273,11 +1615,11 @@
      {
       "nome": "Searing Sunburst (grátis)",
       "tipo": "cleave_save",
-      "nivel_eq": 6.65,
+      "nivel_eq": 6.61,
       "rank": "B-",
       "variacoes": {
        "esparsa": 8.41,
-       "padrao": 6.65,
+       "padrao": 6.61,
        "agrupada": 4.7
       }
      }
@@ -1344,7 +1686,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0069
      }
-    }
+    },
+    "nivel_absoluto": 1.36,
+    "rank_absoluto": "D"
    }
   }
  },
@@ -1363,13 +1707,13 @@
      }
     },
     {
-     "linha": "arco",
+     "linha": "rajada-mira",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 4
+      "ki": 6
      }
     },
     {
@@ -1383,27 +1727,27 @@
      }
     },
     {
-     "linha": "arco",
+     "linha": "rajada-mira",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 4
+      "ki": 6
      }
     }
    ],
    "sobra": {
     "espacos": {},
-    "ki": 3
+    "ki": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.2,
-     "rank": "C+",
+     "nivel_eq": 6.6,
+     "rank": "B-",
      "por_categoria": {
       "np": 5.2,
-      "p": 5.2
+      "p": 7.3
      }
     },
     "defesa": {
@@ -1460,26 +1804,26 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "arco",
+     "linha": "rajada-mira",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 4
+      "ki": 6
      }
     }
    ],
    "sobra": {
     "espacos": {},
-    "ki": 7
+    "ki": 5
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.2,
-     "rank": "C+",
+     "nivel_eq": 7.3,
+     "rank": "B",
      "por_categoria": {
-      "p": 5.2
+      "p": 7.3
      }
     },
     "defesa": {
@@ -1527,7 +1871,7 @@
    }
   }
  },
- "segundos": 8.3,
+ "segundos": 64.1,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1904,62 +2248,76 @@
   }
  },
  "impressoes": {
-  "_planos": "2a140ea4ed95",
+  "_planos": "7257604faaa4",
   "principal": {
-   "dano": "aa71087b8155",
-   "defesa": "c62ebff7236b",
-   "saves": "7c08d8461888",
-   "area": "e3d9bf0daea6",
-   "controle": "08bc0eab8720"
+   "dano": "2e9e853ced06",
+   "defesa": "0eb80a36c80f",
+   "saves": "618573292348",
+   "area": "80ed92b05c78",
+   "controle": "98f54a1d4947"
   },
   "meia-rajada": {
-   "dano": "93b5dafa2a4e",
-   "defesa": "c62ebff7236b",
-   "saves": "7c08d8461888",
-   "area": "a29f8221af02",
-   "controle": "359b91e5f372"
+   "dano": "c9113a471283",
+   "defesa": "0eb80a36c80f",
+   "saves": "618573292348",
+   "area": "531915cda9bb",
+   "controle": "674898d6f594"
   },
   "rajada": {
-   "dano": "9364ad7f0528",
-   "defesa": "c62ebff7236b",
-   "saves": "7c08d8461888",
-   "area": "b6bf43e273fe",
-   "controle": "4c397e914908"
+   "dano": "5c8f39fed2da",
+   "defesa": "0eb80a36c80f",
+   "saves": "618573292348",
+   "area": "58497b0884ad",
+   "controle": "423d0fadbef9"
   },
   "raios": {
-   "dano": "8cc58605b761",
-   "defesa": "c62ebff7236b",
-   "saves": "7c08d8461888",
-   "area": "59f5e1360b71",
-   "controle": "297c6e6ba13e"
+   "dano": "a4546c38eb17",
+   "defesa": "0eb80a36c80f",
+   "saves": "618573292348",
+   "area": "e63976337f28",
+   "controle": "9f4b0988da66"
   },
   "raios-rajada": {
-   "dano": "b64fa443ed4d",
-   "defesa": "c62ebff7236b",
-   "saves": "7c08d8461888",
-   "area": "84391d2e6287",
-   "controle": "330f4c152bc4"
+   "dano": "f68f3aa95042",
+   "defesa": "0eb80a36c80f",
+   "saves": "618573292348",
+   "area": "8036f99c5bec",
+   "controle": "430e7d72e1fb"
   },
   "atordoar": {
-   "dano": "93b5dafa2a4e",
-   "defesa": "c62ebff7236b",
-   "saves": "7c08d8461888",
-   "area": "a29f8221af02",
-   "controle": "e8e7b6b00608"
+   "dano": "c9113a471283",
+   "defesa": "0eb80a36c80f",
+   "saves": "618573292348",
+   "area": "531915cda9bb",
+   "controle": "e13cc6e46064"
+  },
+  "mira": {
+   "dano": "1d4f1ddaa567",
+   "defesa": "0eb80a36c80f",
+   "saves": "618573292348",
+   "area": "5debbb91cb20",
+   "controle": "15c92104f47b"
+  },
+  "rajada-mira": {
+   "dano": "1cf21cdc29da",
+   "defesa": "0eb80a36c80f",
+   "saves": "618573292348",
+   "area": "989c59ed2754",
+   "controle": "017395a4fb69"
   },
   "arco": {
-   "dano": "91f195bb777a",
-   "defesa": "c62ebff7236b",
-   "saves": "7c08d8461888",
-   "area": "399ce2c49aa7",
-   "controle": "4f561326c33d"
+   "dano": "20f6c1e04333",
+   "defesa": "0eb80a36c80f",
+   "saves": "618573292348",
+   "area": "a52e88a0ed58",
+   "controle": "e4aa8c3f50a2"
   },
   "sunburst": {
-   "dano": "27d3412bdb75",
-   "defesa": "c62ebff7236b",
-   "saves": "7c08d8461888",
-   "area": "f632e60284a7",
-   "controle": "8f421bebad88"
+   "dano": "4d767afba328",
+   "defesa": "0eb80a36c80f",
+   "saves": "618573292348",
+   "area": "feeb018d1ad8",
+   "controle": "8710a79036fb"
   }
  }
 }

@@ -4,9 +4,9 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Monk (Ascendant Dragon), Dragonborn (Fizban's), lança; Des 19 4, Des 20/Sab 17 8, Gift of the Gem Dragon 12",
- "impressao": "1beb964dda",
+ "impressao": "e9f91d7635",
  "versao": "0.9.0",
- "modo": "rapido",
+ "modo": "completo",
  "linhas": {
   "principal": {
    "hipotese": "sem ki: ataque + golpe desarmado na ação bônus (lança)",
@@ -174,7 +174,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0062
      }
-    }
+    },
+    "nivel_absoluto": 0.29,
+    "rank_absoluto": "F"
    }
   },
   "meia-rajada": {
@@ -336,7 +338,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0062
      }
-    }
+    },
+    "nivel_absoluto": 0.35,
+    "rank_absoluto": "F"
    }
   },
   "rajada": {
@@ -498,7 +502,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0062
      }
-    }
+    },
+    "nivel_absoluto": 0.43,
+    "rank_absoluto": "F"
    }
   },
   "sopro": {
@@ -607,7 +613,7 @@
       "nivel_eq": 4.26,
       "rank": "C",
       "variacoes": {
-       "esparsa": 4.27,
+       "esparsa": 4.26,
        "padrao": 4.26,
        "agrupada": 4.26
       }
@@ -675,7 +681,9 @@
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0062
      }
-    }
+    },
+    "nivel_absoluto": 0.33,
+    "rank_absoluto": "F"
    }
   },
   "atordoar": {
@@ -785,15 +793,15 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.12,
+    "nivel_eq": 0.05,
     "rank": "F",
-    "nivel_campo": 1.66,
+    "nivel_campo": 1.64,
     "rank_campo": "D",
-    "nivel_controle": 0.98,
+    "nivel_controle": 0.97,
     "nivel_atencao": 0.0,
     "rank_atencao": "F",
-    "vidas_total": -0.07,
-    "vidas_campo": 0.121,
+    "vidas_total": -0.073,
+    "vidas_campo": 0.118,
     "vidas_atencao": -0.049,
     "corpo": {
      "T": -0.049,
@@ -813,37 +821,367 @@
     "por_tipo": {
      "Minions + minibosses": 0.0,
      "Party de elite": 0.0,
-     "Horda + chefe": 0.1,
+     "Horda + chefe": 0.09,
      "Horda": 0.0,
-     "Dupla": 2.04,
+     "Dupla": 0.8,
      "Chefe sozinho": 0.0
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Stunning Strike (ki)": 0.0525,
+      "Stunning Strike (ki)": 0.0517,
       "Corpo (ameaça)": 0.0088
      },
      "Party de elite": {
-      "Stunning Strike (ki)": 0.0613,
+      "Stunning Strike (ki)": 0.0602,
       "Corpo (ameaça)": 0.005
      },
      "Horda + chefe": {
-      "Stunning Strike (ki)": 0.0738,
+      "Stunning Strike (ki)": 0.0726,
       "Corpo (ameaça)": 0.0064
      },
      "Horda": {
-      "Stunning Strike (ki)": 0.0439,
+      "Stunning Strike (ki)": 0.044,
       "Corpo (ameaça)": 0.0134
      },
      "Dupla": {
-      "Stunning Strike (ki)": 0.112,
+      "Stunning Strike (ki)": 0.1105,
       "Corpo (ameaça)": 0.0052
      },
      "Chefe sozinho": {
       "Stunning Strike (ki)": 0.0,
       "Corpo (ameaça)": 0.0062
      }
+    },
+    "nivel_absoluto": 1.82,
+    "rank_absoluto": "D"
+   }
+  },
+  "mira": {
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (lança)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 32.4,
+     "CA 12": 32.4,
+     "CA 15": 29.8,
+     "CA 16": 28.1,
+     "CA 18": 24.8,
+     "CA 20": 21.4,
+     "CA 22": 18.1,
+     "CA 24": 14.8,
+     "CA 25": 13.1
+    },
+    "nivel_eq": 7.6,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.4,
+    "nivel_precisa": 7.6,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 80,
+    "ca": 18,
+    "blindagem": 6.65,
+    "durabilidade": 4.56,
+    "nivel_blindagem": 7.1,
+    "nivel_durabilidade": 7.0,
+    "nivel_eq": 7.1,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 16.42,
+     "rank": "S",
+     "turnos_livres": [
+      3.76,
+      3.82,
+      3.75,
+      2.94,
+      3.21,
+      3.23,
+      3.55,
+      3.29,
+      2.78,
+      2.45
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 8.15,
+     "rank": "B+",
+     "turnos_livres": [
+      3.16,
+      2.05,
+      1.64,
+      1.67,
+      1.21,
+      0.74,
+      1.52,
+      1.35,
+      1.29,
+      1.64
+     ]
     }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 3.84,
+     "9": 3.7,
+     "10": 3.7,
+     "11": 3.97,
+     "12": 3.97,
+     "13": 4.6,
+     "14": 4.6,
+     "15": 4.6,
+     "16": 4.6,
+     "17": 5.18,
+     "18": 5.18,
+     "19": 5.88,
+     "20": 5.22
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.69,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.189,
+    "vidas_campo": 0.016,
+    "vidas_atencao": -0.057,
+    "corpo": {
+     "T": -0.057,
+     "S": 0.019,
+     "P": -0.076,
+     "chave": "T0S0P-",
+     "perfil": "Neutro"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.057
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.005
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0064
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0134
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0052
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0062
+     }
+    },
+    "nivel_absoluto": 0.44,
+    "rank_absoluto": "F"
+   }
+  },
+  "rajada-mira": {
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (lança)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 37.0,
+     "CA 12": 37.0,
+     "CA 15": 33.7,
+     "CA 16": 31.8,
+     "CA 18": 28.0,
+     "CA 20": 24.2,
+     "CA 22": 20.4,
+     "CA 24": 16.6,
+     "CA 25": 14.7
+    },
+    "nivel_eq": 8.5,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 8.3,
+    "nivel_precisa": 8.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 80,
+    "ca": 18,
+    "blindagem": 6.65,
+    "durabilidade": 4.56,
+    "nivel_blindagem": 7.1,
+    "nivel_durabilidade": 7.0,
+    "nivel_eq": 7.1,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 16.42,
+     "rank": "S",
+     "turnos_livres": [
+      3.76,
+      3.82,
+      3.75,
+      2.94,
+      3.21,
+      3.23,
+      3.55,
+      3.29,
+      2.78,
+      2.45
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 8.15,
+     "rank": "B+",
+     "turnos_livres": [
+      3.16,
+      2.05,
+      1.64,
+      1.67,
+      1.21,
+      0.74,
+      1.52,
+      1.35,
+      1.29,
+      1.64
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.68,
+     "9": 3.56,
+     "10": 3.56,
+     "11": 3.83,
+     "12": 3.83,
+     "13": 4.47,
+     "14": 4.47,
+     "15": 4.47,
+     "16": 4.47,
+     "17": 4.97,
+     "18": 4.97,
+     "19": 5.81,
+     "20": 5.06
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.69,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.195,
+    "vidas_campo": 0.016,
+    "vidas_atencao": -0.063,
+    "corpo": {
+     "T": -0.063,
+     "S": -0.021,
+     "P": -0.042,
+     "chave": "T0S0P0",
+     "perfil": "Neutro"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.063
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.005
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0064
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0134
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0052
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0062
+     }
+    },
+    "nivel_absoluto": 0.66,
+    "rank_absoluto": "E"
    }
   },
   "aspecto": {
@@ -953,15 +1291,15 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.05,
+    "nivel_eq": 0.06,
     "rank": "F",
-    "nivel_campo": 1.45,
+    "nivel_campo": 1.61,
     "rank_campo": "D",
     "nivel_controle": 0.78,
     "nivel_atencao": 0.02,
     "rank_atencao": "F",
     "vidas_total": -0.062,
-    "vidas_campo": 0.11,
+    "vidas_campo": 0.111,
     "vidas_atencao": -0.022,
     "corpo": {
      "T": -0.022,
@@ -980,38 +1318,40 @@
     ],
     "por_tipo": {
      "Minions + minibosses": 0.0,
-     "Party de elite": 0.01,
-     "Horda + chefe": 0.11,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.14,
      "Horda": 0.0,
-     "Dupla": 0.62,
+     "Dupla": 0.78,
      "Chefe sozinho": 0.0
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Frightful Presence": 0.0479,
+      "Frightful Presence": 0.0459,
       "Corpo (ameaça)": 0.0088
      },
      "Party de elite": {
-      "Frightful Presence": 0.0563,
+      "Frightful Presence": 0.0535,
       "Corpo (ameaça)": 0.005
      },
      "Horda + chefe": {
-      "Frightful Presence": 0.0642,
+      "Frightful Presence": 0.0666,
       "Corpo (ameaça)": 0.0064
      },
      "Horda": {
-      "Frightful Presence": 0.0387,
+      "Frightful Presence": 0.0398,
       "Corpo (ameaça)": 0.0134
      },
      "Dupla": {
-      "Frightful Presence": 0.101,
+      "Frightful Presence": 0.1,
       "Corpo (ameaça)": 0.0052
      },
      "Chefe sozinho": {
       "Frightful Presence": 0.0,
       "Corpo (ameaça)": 0.0062
      }
-    }
+    },
+    "nivel_absoluto": 1.35,
+    "rank_absoluto": "D"
    }
   }
  },
@@ -1030,13 +1370,13 @@
      }
     },
     {
-     "linha": "rajada",
+     "linha": "rajada-mira",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 4
+      "ki": 6
      }
     },
     {
@@ -1050,30 +1390,30 @@
      }
     },
     {
-     "linha": "rajada",
+     "linha": "rajada-mira",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 4
+      "ki": 6
      }
     }
    ],
    "sobra": {
     "espacos": {},
-    "ki": 3,
+    "ki": 1,
     "sopro": 4,
     "sopro_racial": 4,
     "aspecto": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.3,
-     "rank": "B",
+     "nivel_eq": 8.1,
+     "rank": "B+",
      "por_categoria": {
       "np": 7.3,
-      "p": 7.3
+      "p": 8.5
      }
     },
     "defesa": {
@@ -1117,11 +1457,11 @@
      }
     },
     "area": {
-     "nivel_eq": 4.6,
+     "nivel_eq": 4.8,
      "rank": "C",
      "por_categoria": {
       "np": 4.6,
-      "p": 4.6
+      "p": 4.8
      }
     }
    }
@@ -1130,29 +1470,29 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "rajada",
+     "linha": "rajada-mira",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 4
+      "ki": 6
      }
     }
    ],
    "sobra": {
     "espacos": {},
-    "ki": 7,
+    "ki": 5,
     "sopro": 4,
     "sopro_racial": 4,
     "aspecto": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.3,
-     "rank": "B",
+     "nivel_eq": 8.5,
+     "rank": "B+",
      "por_categoria": {
-      "p": 7.3
+      "p": 8.5
      }
     },
     "defesa": {
@@ -1191,16 +1531,16 @@
      }
     },
     "area": {
-     "nivel_eq": 4.6,
+     "nivel_eq": 4.8,
      "rank": "C",
      "por_categoria": {
-      "p": 4.6
+      "p": 4.8
      }
     }
    }
   }
  },
- "segundos": 6.5,
+ "segundos": 54.6,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1577,48 +1917,62 @@
   }
  },
  "impressoes": {
-  "_planos": "b16b4c54bb49",
+  "_planos": "16f67f84e2af",
   "principal": {
-   "dano": "160531ce948a",
-   "defesa": "45cb0450f4d3",
-   "saves": "b93bb2201b1f",
-   "area": "304527b80c9a",
-   "controle": "a45f13646560"
+   "dano": "4ec91661b10c",
+   "defesa": "001bb9d3aa23",
+   "saves": "0dec86059d19",
+   "area": "79d49f6ef658",
+   "controle": "3e3dd68c40be"
   },
   "meia-rajada": {
-   "dano": "4369eda3b4ba",
-   "defesa": "45cb0450f4d3",
-   "saves": "b93bb2201b1f",
-   "area": "5da93f6f03b4",
-   "controle": "b9d033e866e5"
+   "dano": "2f4837f8cf73",
+   "defesa": "001bb9d3aa23",
+   "saves": "0dec86059d19",
+   "area": "d94a92f8389a",
+   "controle": "116b98ca0d77"
   },
   "rajada": {
-   "dano": "ddc6ddbe21a4",
-   "defesa": "45cb0450f4d3",
-   "saves": "b93bb2201b1f",
-   "area": "7a57da666229",
-   "controle": "d3a9cd55b028"
+   "dano": "946b879e7f1c",
+   "defesa": "001bb9d3aa23",
+   "saves": "0dec86059d19",
+   "area": "9be709c5c7f8",
+   "controle": "2ec4a90cc576"
   },
   "sopro": {
-   "dano": "7e81ee9220b9",
-   "defesa": "45cb0450f4d3",
-   "saves": "b93bb2201b1f",
-   "area": "bde19b39be19",
-   "controle": "0aa99e0b76d4"
+   "dano": "e39af90b609d",
+   "defesa": "001bb9d3aa23",
+   "saves": "0dec86059d19",
+   "area": "14baf245a6f6",
+   "controle": "bb47e3cd9b18"
   },
   "atordoar": {
-   "dano": "4369eda3b4ba",
-   "defesa": "45cb0450f4d3",
-   "saves": "b93bb2201b1f",
-   "area": "5da93f6f03b4",
-   "controle": "839fece6b9ba"
+   "dano": "2f4837f8cf73",
+   "defesa": "001bb9d3aa23",
+   "saves": "0dec86059d19",
+   "area": "d94a92f8389a",
+   "controle": "1e4ae7ac4f85"
+  },
+  "mira": {
+   "dano": "a60adefad053",
+   "defesa": "001bb9d3aa23",
+   "saves": "0dec86059d19",
+   "area": "368762393c63",
+   "controle": "0fd84086293b"
+  },
+  "rajada-mira": {
+   "dano": "048042cd71d3",
+   "defesa": "001bb9d3aa23",
+   "saves": "0dec86059d19",
+   "area": "403d16c1269b",
+   "controle": "4830dfb776ef"
   },
   "aspecto": {
-   "dano": "7b891ef7d87e",
-   "defesa": "45cb0450f4d3",
-   "saves": "b93bb2201b1f",
-   "area": "1f87b463cb15",
-   "controle": "b6a9af88260c"
+   "dano": "9b4f0170f34f",
+   "defesa": "001bb9d3aa23",
+   "saves": "0dec86059d19",
+   "area": "285141d555f2",
+   "controle": "117e7f6cd0ac"
   }
  }
 }

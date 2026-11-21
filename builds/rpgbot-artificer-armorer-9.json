@@ -1,0 +1,329 @@
+{
+ "gerado_de": "progressoes/rpgbot-artificer-armorer.json",
+ "build": "Artificer (Armorer, Infiltrator) vedalken, peitoral + escudo, Lightning Launcher +1 (Int); Skill Expert 4 (Int 18), Int 20 (8)",
+ "corpo": {
+  "ca": 18,
+  "pv": 66,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 3,
+    "con": 6,
+    "int": 9,
+    "sab": 0,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 2
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 10,
+      "dano": "1d6+6",
+      "nota": "Lightning Launcher +1 (Int)"
+     },
+     {
+      "n": 1.0,
+      "bonus": 10,
+      "dano": "1d6",
+      "nota": "Lightning Launcher: +1d6 uma vez por turno (aprox.: 1 rolagem/turno)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 10,
+      "dano": "1d6+6",
+      "nota": "Lightning Launcher +1 (Int)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 10,
+      "dano": "1d6",
+      "nota": "Lightning Launcher: +1d6 uma vez por turno (aprox.: 1 rolagem/turno)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Lightning Bolt",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "8d6",
+       "cd": 17,
+       "slot": 3
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (3º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 17,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "3": 2
+    }
+   },
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 10,
+      "dano": "1d6+6",
+      "nota": "Lightning Launcher +1 (Int)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 10,
+      "dano": "1d6",
+      "nota": "Lightning Launcher: +1d6 uma vez por turno (aprox.: 1 rolagem/turno)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Hypnotic Pattern",
+      "magia": "hypnotic_pattern",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "combo",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 10,
+      "dano": "1d6+6",
+      "nota": "Lightning Launcher +1 (Int)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 10,
+      "dano": "1d6",
+      "nota": "Lightning Launcher: +1d6 uma vez por turno (aprox.: 1 rolagem/turno)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Hypnotic Pattern",
+      "magia": "hypnotic_pattern",
+      "cd": 17
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Thunderwave",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d8",
+       "cd": 17,
+       "slot": 1
+      }
+     ]
+    },
+    {
+     "nome": "Shatter",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 17,
+       "slot": 2
+      }
+     ]
+    },
+    {
+     "nome": "Lightning Bolt",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "8d6",
+       "cd": 17,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "3": 2,
+     "1": 1,
+     "2": 1
+    }
+   },
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "combo"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: combo, principal. Sobra: 3×1º, 2×2º.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "combo"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 3×1º, 2×2º.",
+   "combates": [
+    "combo"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Infiltrator de distância: Lightning Launcher com Int e Extra Attack, magias de área da subclasse, Hypnotic Pattern no 9.",
+  "nao_modelado": [
+   "Infusões além de Enhanced Defense/Weapon/Focus",
+   "Flash of Genius (7)",
+   "Spell-Storing Item (11)",
+   "Faerie Fire e Grease (sem entrada na biblioteca de controle)",
+   "Cure Wounds / Healing Word",
+   "Homunculus",
+   "Vantagem em Furtividade",
+   "Heat Metal e Tasha's Caustic Brew (sem entrada)",
+   "Resistant Armor (10)"
+  ]
+ },
+ "id": "rpgbot-artificer-armorer-9",
+ "nome": "Artificer — Armorer (RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/artificer/subclasses/armorer/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

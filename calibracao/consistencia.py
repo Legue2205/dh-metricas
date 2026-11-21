@@ -9,7 +9,8 @@ import glob, json, os, re, sys, statistics as st
 RAIZ = os.path.join(os.path.dirname(__file__), '..')
 EIXOS = ['dano', 'defesa', 'resiliencia', 'vontade', 'campo', 'corpo', 'area', 'suporte']
 NOME = {'defesa': 'Def. física', 'resiliencia': 'Def. mágica (Res)', 'vontade': 'Def. mágica (Von)', 'campo': 'Controle'}
-CLASSES = ('fighter', 'wizard', 'cleric', 'barbarian', 'monk')
+CLASSES = ('fighter', 'wizard', 'cleric', 'barbarian', 'monk',
+           'paladin', 'rogue', 'bard', 'druid', 'warlock', 'sorcerer', 'ranger', 'artificer')
 NIVEIS = (7, 11)
 
 
@@ -66,6 +67,11 @@ def checagens(d):
             (f"nv{L} Controle: média dos wizards ≥ média dos clérigos", media(d, 'wizard', L, 'campo'), media(d, 'cleric', L, 'campo')),
             (f"nv{L} Controle: média dos clérigos ≥ média dos fighters", media(d, 'cleric', L, 'campo'), media(d, 'fighter', L, 'campo')),
             (f"nv{L} Corpo: média dos fighters ≥ média dos wizards", media(d, 'fighter', L, 'corpo'), media(d, 'wizard', L, 'corpo')),
+            # Bard (mutirão 21/11)
+            (f"nv{L} Suporte: média dos bardos ≥ média dos fighters", media(d, 'bard', L, 'suporte'), media(d, 'fighter', L, 'suporte')),
+            (f"nv{L} Controle: média dos bardos ≥ média dos fighters", media(d, 'bard', L, 'campo'), media(d, 'fighter', L, 'campo')),
+            (f"nv{L} Dano: média dos fighters ≥ média dos bardos", media(d, 'fighter', L, 'dano'), media(d, 'bard', L, 'dano')),
+            (f"nv{L} Def. física: Valor ≥ média dos bardos", g(d, 'bard', 'valor', L, 'defesa'), media(d, 'bard', L, 'defesa')),
         ]
     return regras
 

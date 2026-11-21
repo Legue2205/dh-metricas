@@ -1,0 +1,255 @@
+{
+ "gerado_de": "progressoes/rpgbot-paladin-ancients.json",
+ "build": "Paladin (Ancients), Giff, Fighting Initiate Archery 4, Sharpshooter 8; besta pesada → mosquete, Protection",
+ "corpo": {
+  "ca": 15,
+  "pv": 76,
+  "saves": {
+   "sv": {
+    "for": 4,
+    "des": 6,
+    "con": 5,
+    "int": 2,
+    "sab": 6,
+    "car": 10
+   },
+   "conjurador": true,
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 5,
+   "3": 2
+  },
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "só armas, sem gastar espaço",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 9,
+      "dano": "1d12+3",
+      "vantagem": 0.0,
+      "nota": "mosquete (Firearms Mastery)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "modelo": "aura_saves",
+      "bonus": 3
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 11.25
+     }
+    ]
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "bless",
+   "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d12+3",
+      "vantagem": 0.0,
+      "nota": "mosquete (Firearms Mastery)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "modelo": "aura_saves",
+      "bonus": 3
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 11.25
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   }
+  },
+  {
+   "id": "enredar",
+   "hipotese": "Ensnaring Strike (ação bônus) no 1º acerto: impedido até escapar",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 9,
+      "dano": "1d12+3",
+      "vantagem": 0.0,
+      "nota": "mosquete (Firearms Mastery)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Ensnaring Strike",
+      "cd": 15,
+      "slots": [
+       1
+      ],
+      "magias": [
+       "ensnaring_strike"
+      ],
+      "modo": "melhor"
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "modelo": "aura_saves",
+      "bonus": 3
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 11.25
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless. Sobra: 5×2º, 2×3º.",
+   "combates": [
+    "bless",
+    "bless",
+    "bless",
+    "bless"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless. Sobra: 3×1º, 5×2º, 2×3º.",
+   "combates": [
+    "bless"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Paladino atirador: Ensnaring Strike à distância e auras para a retaguarda.",
+  "estrategia": "Ensnaring Strike no primeiro acerto; Harness Divine Power converte o Channel em espaço.",
+  "nao_modelado": "Protection (estilo), Aura of Warding (resistência a magia), Hippo Build/empurrão, Misty Step, Branding Smite, recarga do mosquete. Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico.",
+  "progressao": "Sharpshooter (8); magias de 3º."
+ },
+ "id": "rpgbot-paladin-ancients-9",
+ "nome": "Oath of the Ancients Paladin (RPGBot: Celebrant Hunter)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/paladin/subclasses/oath-of-the-ancients/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

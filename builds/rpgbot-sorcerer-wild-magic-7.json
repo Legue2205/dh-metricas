@@ -1,0 +1,104 @@
+{
+ "gerado_de": "progressoes/rpgbot-sorcerer-wild-magic.json",
+ "build": "Sorcerer (Wild Magic), Halfling (origem customizada), Second Chance 4, Fey Touched 8; Car 17 → 18 (4) → 19 (8)",
+ "corpo": {
+  "ca": 16,
+  "pv": 44,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 3,
+    "con": 5,
+    "int": -1,
+    "sab": -1,
+    "car": 7
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 3,
+   "2": 3,
+   "3": 3,
+   "4": 2
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 15,
+      "save": "Int",
+      "dano": "2d6",
+      "nota": "Mind Sliver"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: 3×1º, 3×2º, 3×3º, 2×4º.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: 3×1º, 3×2º, 3×3º, 2×4º.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Conjurador do caos: magias imprevisíveis, Tides of Chaos e Bend Luck; ofensiva quase toda de truques.",
+  "estrategia": "Mind Sliver e Chaos Bolt; Polymorph e Insect Plague nos níveis altos; Bend Luck para virar saves por 1–2.",
+  "nao_modelado": "Wild Magic Surge e Tides of Chaos; Bend Luck; Chaos Bolt; Tasha's Caustic Brew; Nathair's Mischief, Vortex Warp, Enemies Abound, Sleet Storm, Confusion, Scatter (fora da biblioteca); Quickened/Twinned; Second Chance; Bane do Fey Touched.",
+  "progressao": "Sorcerer 7; Mage Armor. Car 18 (Second Chance)."
+ },
+ "id": "rpgbot-sorcerer-wild-magic-7",
+ "nome": "Wild Magic Sorcerer (RPGBot: Maximum Chaos)",
+ "grupo": "RPGBot",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/sorcerer/subclasses/wild-magic/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

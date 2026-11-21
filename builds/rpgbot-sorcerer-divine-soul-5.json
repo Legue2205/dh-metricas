@@ -1,0 +1,134 @@
+{
+ "gerado_de": "progressoes/rpgbot-sorcerer-divine-soul.json",
+ "build": "Cleric 1 (Order) / Sorcerer (Divine Soul), Shifter, Telekinetic 5, Car +2 9; armadura pesada; Car 17 → 18 (5) → 20 (9)",
+ "corpo": {
+  "ca": 16,
+  "pv": 39,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": -1,
+    "con": 3,
+    "int": 0,
+    "sab": 5,
+    "car": 7
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 4,
+   "3": 2
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "2d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "bless",
+   "herda": "principal",
+   "hipotese": "Bless nos aliados",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless. Sobra: 4×2º, 2×3º.",
+   "combates": [
+    "bless",
+    "bless",
+    "bless",
+    "bless"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless. Sobra: 3×1º, 4×2º, 2×3º.",
+   "combates": [
+    "bless"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Suporte divino-arcano: Bless, Healing Word, Silvery Barbs com Voice of Authority (ataque de reação do aliado), Haste e Polymorph geminados.",
+  "estrategia": "Bless/Shield of Faith no 1º round; Silvery Barbs e Healing Word para disparar Voice of Authority; Fireball em grupos; Polymorph.",
+  "nao_modelado": "Voice of Authority (ataque de reação do aliado); Silvery Barbs; Twinned (Haste, Polymorph, Death Ward); Favored by the Gods; Healing Word; Shield of Faith; Guiding Bolt; Bestow Curse; Mass Cure Wounds; Telekinetic.",
+  "progressao": "Cleric 1 (Order) / Sorcerer 4; armadura pesada (CA 16)."
+ },
+ "id": "rpgbot-sorcerer-divine-soul-5",
+ "nome": "Divine Soul Sorcerer (RPGBot: 5e Mystic Theurge)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/sorcerer/subclasses/divine-soul/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "gerado_de": "progressoes/rpgbot-rogue-swashbuckler.json",
+ "build": "Rogue (Swashbuckler), meio-elfo alto, rapieira + Booming Blade; Skill Expert 4, Dex 20 8, Inspiring Leader 10",
+ "corpo": {
+  "ca": 15,
+  "pv": 27,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 5,
+    "con": 3,
+    "int": 1,
+    "sab": -1,
+    "car": 3
+   }
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "Booming Blade com rapieira + Sneak (Rakish Audacity); Fancy Footwork para sair",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d8+3",
+      "nota": "rapieira com Booming Blade"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "2d6",
+      "prob": 0.9,
+      "nota": "Sneak Attack (Rakish Audacity ou aliado adjacente)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Espadachim: Sneak quase garantido no duelo, entra e sai sem ataque de oportunidade.",
+  "estrategia": "Booming Blade no alvo isolado e sai com Fancy Footwork; Panache para prender um inimigo em si.",
+  "nao_modelado": "Panache (taunt de 1 minuto: sem tipo de taunt por condição no motor), secundário do Booming Blade, Car na iniciativa, Elegant Maneuver (13), Master Duelist (17).",
+  "progressao": "Fancy Footwork, Rakish Audacity; meio-elfo alto (Booming Blade)."
+ },
+ "id": "rpgbot-rogue-swashbuckler-3",
+ "nome": "Swashbuckler (RPGBot: Thundering Thrillseeker)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/swashbuckler/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

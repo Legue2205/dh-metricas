@@ -1,0 +1,143 @@
+{
+ "gerado_de": "progressoes/rpgbot-ranger-fey-wanderer.json",
+ "build": "Ranger (Fey Wanderer), humano variante arqueiro, arco longo; Archery, Sharpshooter 1, Des 18 no 4, Des 20 no 8 (chassi comum)",
+ "corpo": {
+  "ca": 15,
+  "pv": 28,
+  "saves": {
+   "sv": {
+    "for": 2,
+    "des": 5,
+    "con": 2,
+    "int": 0,
+    "sab": 2,
+    "car": 0
+   }
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 3
+  },
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco longo com Sharpshooter, sem magia",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+3",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d4",
+      "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "marca",
+   "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+3+1d6",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d4",
+      "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: marca; prioritário: marca. Sobra: 1×1º.",
+   "combates": [
+    "marca",
+    "marca",
+    "marca",
+    "marca"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: marca. Sobra: 2.5×1º.",
+   "combates": [
+    "marca"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Fey Wanderer: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
+  "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
+  "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Dreadful Strikes (3; 1d6 no 11); Otherworldly Glamour; Beguiling Twist (7) e Fey Reinforcements (11) não modelados.",
+  "progressao": "Arqueiro: Archery, Sharpshooter (1), Des 16. Dreadful Strikes (3; 1d6 no 11); Otherworldly Glamour; Beguiling Twist (7) e Fey Reinforcements (11) não modelados."
+ },
+ "id": "rpgbot-ranger-fey-wanderer-3",
+ "nome": "Fey Wanderer Ranger",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/ranger/subclasses/fey-wanderer/",
+  "nota": "Chassi comum de arqueiro (Handbook do Ranger) com as features da subclasse; mutirão 21/11, passada 1 cega: só mecânica, premissas congeladas."
+ }
+}

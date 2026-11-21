@@ -1,0 +1,3098 @@
+{
+ "id": "rpgbot-paladin-redemption",
+ "nome": "Oath of Redemption Paladin (RPGBot: Apostle of Peace)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/paladin/subclasses/oath-of-redemption/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Paladin (Redemption), Duergar, Telekinetic 4 (Car 18), Car 20 8; espada longa + escudo, Blessed Warrior",
+  "corpo": {
+   "ca": 18,
+   "pv": 31,
+   "saves": {
+    "sv": {
+     "for": 2,
+     "des": -1,
+     "con": 3,
+     "int": -1,
+     "sab": 1,
+     "car": 5
+    },
+    "conjurador": true,
+    "ataques": 1
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 3
+   },
+   "outros": {
+    "canal": {
+     "qtd": 1,
+     "volta": "curto",
+     "valor": 1
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "só armas, sem gastar espaço",
+    "dano": {
+     "com_save": [
+      {
+       "n": 1.0,
+       "cd": 13,
+       "save": "Con",
+       "dano": "1d6",
+       "meio": false,
+       "nota": "Word of Radiance (Blessed Warrior)"
+      }
+     ],
+     "ataques": [
+      {
+       "n": 0.5,
+       "bonus": 4,
+       "dano": "1d8+2",
+       "nota": "ataque de oportunidade (reação em 50%)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 3.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "area": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "dano": "1d6",
+      "cd": 13,
+      "save": "Con",
+      "alvos": [
+       1,
+       2,
+       3
+      ]
+     }
+    ],
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "bless",
+    "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Con",
+       "dano": "1d6",
+       "meio": false,
+       "nota": "Word of Radiance (Blessed Warrior)"
+      }
+     ],
+     "ataques": [
+      {
+       "n": 0.5,
+       "bonus": 4,
+       "dano": "1d8+2",
+       "nota": "ataque de oportunidade (reação em 50%)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 1
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 3.75
+      },
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "area": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "dano": "1d6",
+      "cd": 13,
+      "save": "Con",
+      "alvos": [
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Paladino de Carisma com Word of Radiance, Hold Person e Hypnotic Pattern; absorve dano dos aliados.",
+   "estrategia": "Word of Radiance até o 4; depois espada; controle com magias de save.",
+   "nao_modelado": "Aura of the Guardian (absorver dano de aliado), Rebuke the Violent, Emissary of Peace, Sleep, Calm Emotions, Counterspell, Telekinetic (empurrão), magias de Duergar (Enlarge/Invisibility). Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Duergar; Blessed Warrior (Word of Radiance); espada longa + escudo; cota de malha + escudo (18)."
+  },
+  "5": {
+   "_texto": "Telekinetic (Car 18) (4); Extra Attack; Hold Person, Calm Emotions.",
+   "corpo": {
+    "ca": 18,
+    "pv": 49,
+    "saves": {
+     "sv": {
+      "for": 2,
+      "des": -1,
+      "con": 3,
+      "int": -1,
+      "sab": 2,
+      "car": 7
+     },
+     "conjurador": true,
+     "ataques": 2
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 2
+    },
+    "outros": {
+     "canal": {
+      "qtd": 1,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "só armas, sem gastar espaço",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "com_save": null
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 6.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-1",
+     "hipotese": "2 Divine Smites de 1º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 6.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-2",
+     "hipotese": "2 Divine Smites de 2º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "3d8",
+        "nota": "Divine Smite (2º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 6.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "com_save": null
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 6.25
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 6.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle+smite",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 6.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Placas (20); Aura of the Guardian.",
+   "corpo": {
+    "ca": 20,
+    "pv": 67,
+    "saves": {
+     "sv": {
+      "for": 6,
+      "des": 3,
+      "con": 7,
+      "int": 3,
+      "sab": 6,
+      "car": 11
+     },
+     "conjurador": true,
+     "ataques": 2
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3
+    },
+    "outros": {
+     "canal": {
+      "qtd": 1,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "só armas, sem gastar espaço",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 4
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 8.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-1",
+     "hipotese": "2 Divine Smites de 1º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 4
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 8.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-2",
+     "hipotese": "2 Divine Smites de 2º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "3d8",
+        "nota": "Divine Smite (2º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 4
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 8.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 4
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 8.75
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 4
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 8.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle+smite",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 4
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 8.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Car 20 (8); Hypnotic Pattern, Counterspell.",
+   "corpo": {
+    "ca": 20,
+    "pv": 85,
+    "saves": {
+     "sv": {
+      "for": 7,
+      "des": 4,
+      "con": 8,
+      "int": 4,
+      "sab": 8,
+      "car": 14
+     },
+     "conjurador": true,
+     "ataques": 2
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 2
+    },
+    "outros": {
+     "canal": {
+      "qtd": 1,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "só armas, sem gastar espaço",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 11.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-1",
+     "hipotese": "2 Divine Smites de 1º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 11.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-2",
+     "hipotese": "2 Divine Smites de 2º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "3d8",
+        "nota": "Divine Smite (2º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 11.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-3",
+     "hipotese": "2 Divine Smites de 3º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "4d8",
+        "nota": "Divine Smite (3º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 11.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 11.25
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 11.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle+smite",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 11.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "padrao-hipnotico",
+     "hipotese": "Hypnotic Pattern (3º) no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 11.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "padrao-hipnotico+smite",
+     "hipotese": "Hypnotic Pattern (3º) no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 11.25
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Improved Divine Smite.",
+   "corpo": {
+    "ca": 20,
+    "pv": 103,
+    "saves": {
+     "sv": {
+      "for": 7,
+      "des": 4,
+      "con": 8,
+      "int": 4,
+      "sab": 8,
+      "car": 14
+     },
+     "conjurador": true,
+     "ataques": 2
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3
+    },
+    "outros": {
+     "canal": {
+      "qtd": 1,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "só armas, sem gastar espaço",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-1",
+     "hipotese": "2 Divine Smites de 1º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-2",
+     "hipotese": "2 Divine Smites de 2º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "3d8",
+        "nota": "Divine Smite (2º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-3",
+     "hipotese": "2 Divine Smites de 3º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "4d8",
+        "nota": "Divine Smite (3º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle+smite",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "padrao-hipnotico",
+     "hipotese": "Hypnotic Pattern (3º) no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "id": "padrao-hipnotico+smite",
+     "hipotese": "Hypnotic Pattern (3º) no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa"
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "1d8+2+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 5
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ],
+     "area": [
+      {
+       "nome": "Word of Radiance",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

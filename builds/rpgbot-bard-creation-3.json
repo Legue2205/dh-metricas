@@ -1,0 +1,189 @@
+{
+ "gerado_de": "progressoes/rpgbot-bard-creation.json",
+ "build": "Bard (Creation): Autognomo, For 8 Des 16 Con 15 Int 8 Sab 8 Car 17; Fey Touched (4, Car 18, Bless/Misty Step); Resilient Con (8)",
+ "corpo": {
+  "ca": 16,
+  "pv": 24,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 5,
+    "con": 2,
+    "int": -1,
+    "sab": -1,
+    "car": 5
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 2
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 13,
+      "save": "Sab",
+      "dano": "1d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d6)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 3.5,
+      "usos_luta": 0.75
+     },
+     {
+      "nome": "Mote of Potential (ataque: trovão em volta do alvo)",
+      "lado": "of",
+      "modelo": "valor_por_luta",
+      "usos_luta": 0.413,
+      "valor": 5.25
+     },
+     {
+      "nome": "Mote of Potential (save: PV temporários)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "usos_luta": 0.165,
+      "pv": 6.5
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 13,
+      "save": "Sab",
+      "dano": "1d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (2º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 13,
+       "slot": 2
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (2º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 13,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 2,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: area, principal. Sobra: 2×1º.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "area"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bardo de suporte com pet: Mote of Potential nos dados, Dancing Item a partir do 6, Hypnotic Pattern e Hold Monster.",
+  "estrategia": "Inspiração com os riders do Mote; Dancing Item no início do dia; uma magia de controle ou área por luta.",
+  "nao_modelado": "Bless (Fey Touched), Aid, Silvery Barbs, Sleep, Polymorph em aliado, Counterspell, Eyebite; aura do Dancing Item (Irrepressible Dance); Performance of Creation; Mote em testes.",
+  "progressao": "Bard 3; Car 16; Armored Casing 16."
+ },
+ "id": "rpgbot-bard-creation-3",
+ "nome": "College of Creation Bard (Autognomes, Roll Out!)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/creation/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

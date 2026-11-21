@@ -98,8 +98,10 @@ def _sim(tipo, cr, ac, advs, resist, red, reacoes, livre_p, precos, seed=7, pvt_
             if adv: b = rng.integers(1, 21, N_SIM); a = np.maximum(a, b) if adv > 0 else np.minimum(a, b)
             for i, rc in enumerate(reacoes):     # desvantagem (Warding Flare): decidida ANTES do resultado, no 1º golpe do round
                 if rc['tipo'] == 'desvantagem' and j == 0:
-                    usa = livre & (usos[i] > 0)
-                    a = np.where(usa, np.minimum(a, rng.integers(1, 21, N_SIM)), a); usos[i] -= usa; livre &= ~usa
+                    # "propria": reação de outra criatura (Deflect Attack do Steel Defender): não gasta a reação da build
+                    usa = (usos[i] > 0) if rc.get('propria') else livre & (usos[i] > 0)
+                    a = np.where(usa, np.minimum(a, rng.integers(1, 21, N_SIM)), a); usos[i] -= usa
+                    if not rc.get('propria'): livre &= ~usa
             crit = a == 20; tot = a + bonus
             hit = crit | ((a != 1) & (tot >= ac + 5 * escudo))
             for i, rc in enumerate(reacoes):     # anula crítico (Sentinel at Death's Door): crítico vira acerto normal
@@ -163,7 +165,8 @@ def avaliar(spec, corpo, reacao_livre=1.0):
     """spec: {"pv_efetivo", "ca", "adv" (−1/0/1: ataques contra ele) ou "adv_por_round": [4 valores],
     "resist", "red", "reacoes": [{"tipo": "shield", "usos_luta": 2} | {"tipo": "uncanny_dodge"} |
     {"tipo": "reduz_dano", "valor": 8, "usos_luta": 99} | {"tipo": "desvantagem", "usos_luta": 1} (Warding Flare,
-    decidida antes do resultado, no 1º golpe do round) | {"tipo": "anula_critico", "usos_luta": 1} (Sentinel at
+    decidida antes do resultado, no 1º golpe do round; com "propria": true é a reação de outra criatura, ex.: Deflect
+    Attack do Steel Defender, e não gasta a reação da build) | {"tipo": "anula_critico", "usos_luta": 1} (Sentinel at
     Death's Door) | {"tipo": "bloqueio", "dado": 8} ou {"valor": 2} (+CA contra UM ataque depois de acertar: cauda do
     Beast, Arcane Deflection, Defensive Duelist)]}; o que faltar vem do corpo.
     PV temporários próprios: "pvt_luta" (carga que ele já tem no começo da luta, somada ao PV; ex.: Touch of Death)

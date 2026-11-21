@@ -1,0 +1,591 @@
+{
+ "gerado_de": "progressoes/rpgbot-druid-moon.json",
+ "build": "Druid (Moon), Halfling Robusto (Custom Origin), gibão de peles + escudo; Telekinetic 4 (Sab 18), Sab 20 (8)",
+ "corpo": {
+  "ca": 16,
+  "pv": 66,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 2,
+    "int": 5,
+    "sab": 9,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 1
+  },
+  "outros": {
+   "forma_selvagem": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 9,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Wall of Fire",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 17,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Ice Knife",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d6",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "4": 1,
+     "5": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "principal+forma",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 4,
+      "dano": "1d8+2",
+      "nota": "escorpião, pinças (agarra)"
+     },
+     {
+      "n": 1.0,
+      "bonus": 4,
+      "dano": "1d10+2",
+      "nota": "escorpião, ferrão"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.6,
+      "cd": 12,
+      "save": "Con",
+      "dano": "4d10",
+      "meio": true,
+      "nota": "veneno do ferrão (≈ chance de acerto)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto",
+     "conc": true
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "corpo": {
+    "ca": 15,
+    "pv": 118
+   },
+   "herda": "principal",
+   "hipotese": "só truques + forma",
+   "gasta": {
+    "forma_selvagem": 1,
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  },
+  {
+   "id": "controle+forma",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 4,
+      "dano": "1d8+2",
+      "nota": "escorpião, pinças (agarra)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 4,
+      "dano": "1d10+2",
+      "nota": "escorpião, ferrão"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.45,
+      "cd": 12,
+      "save": "Con",
+      "dano": "4d10",
+      "meio": true,
+      "nota": "veneno do ferrão (≈ chance de acerto)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto",
+     "conc": true
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "4": 1
+    },
+    "forma_selvagem": 1
+   },
+   "herda": "principal",
+   "corpo": {
+    "ca": 15,
+    "pv": 118
+   },
+   "hipotese": "controle + forma"
+  },
+  {
+   "id": "controle-barato+forma",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 4,
+      "dano": "1d8+2",
+      "nota": "escorpião, pinças (agarra)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 4,
+      "dano": "1d10+2",
+      "nota": "escorpião, ferrão"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.45,
+      "cd": 12,
+      "save": "Con",
+      "dano": "4d10",
+      "meio": true,
+      "nota": "veneno do ferrão (≈ chance de acerto)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto",
+     "conc": true
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    },
+    "forma_selvagem": 1
+   },
+   "herda": "principal",
+   "corpo": {
+    "ca": 15,
+    "pv": 118
+   },
+   "hipotese": "controle-barato + forma"
+  },
+  {
+   "id": "area+forma",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 4,
+      "dano": "1d8+2",
+      "nota": "escorpião, pinças (agarra)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 4,
+      "dano": "1d10+2",
+      "nota": "escorpião, ferrão"
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.45,
+      "cd": 12,
+      "save": "Con",
+      "dano": "4d10",
+      "meio": true,
+      "nota": "veneno do ferrão (≈ chance de acerto)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Wall of Fire",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 17,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Ice Knife",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d6",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "4": 1,
+     "5": 1
+    },
+    "forma_selvagem": 1
+   },
+   "herda": "principal",
+   "corpo": {
+    "ca": 15,
+    "pv": 118
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto",
+     "conc": true
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "hipotese": "area + forma"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle+forma, controle-barato+forma; prioritário: area+forma, controle+forma. Sobra: 1×1º, 3×2º, 3×3º.",
+   "combates": [
+    "controle+forma",
+    "controle+forma",
+    "controle-barato+forma",
+    "area+forma"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area+forma. Sobra: 3.5×1º, 3×2º, 3×3º, 2×4º, 1 forma_selvagem.",
+   "combates": [
+    "area+forma"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Druida da lua que luta transformado: Wild Shape como ação bônus em formas de CR alto, com os PV da forma por cima dos seus.",
+  "estrategia": "Lutas importantes em forma de combate (Dire Wolf, tigre, escorpião, Fire Elemental a partir do 10); fora da forma, Produce Flame, Entangle/Hold Person e Healing Word.",
+  "nao_modelado": "Derrubar/agarrar das formas; Hold Person seguido de ataques automáticos críticos; Deinonychus; reverter para a 2ª forma na mesma luta; Lucky e Brave; Telekinetic; Flaming Sphere, Tidal Wave; Stoneskin; Primal Strike (resistência).",
+  "progressao": "Druid 9; Sab 20; forma de combate: escorpião."
+ },
+ "id": "rpgbot-druid-moon-9",
+ "nome": "Circle of the Moon Druid (RPGBot: Moon Sailor)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/moon/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

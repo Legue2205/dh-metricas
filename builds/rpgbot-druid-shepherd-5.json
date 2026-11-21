@@ -1,0 +1,326 @@
+{
+ "gerado_de": "progressoes/rpgbot-druid-shepherd.json",
+ "build": "Druid (Shepherd), Sátiro, couro + escudo; Fey Touched 4 (Sab 18), Sab 20 (8)",
+ "corpo": {
+  "ca": 16,
+  "pv": 38,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 3,
+    "con": 2,
+    "int": 3,
+    "sab": 7,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 2
+  },
+  "outros": {
+   "forma_selvagem": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "2d6",
+      "nota": "Thorn Whip"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Spirit Totem: Hawk (vantagem em 1 ataque aliado por round, reação)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 1,
+      "fracao": 0.25,
+      "nota": "1 dos ~2 ataques do aliado × 0.5 das lutas (1/descanso curto)"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d6",
+      "nota": "Thorn Whip"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d6",
+      "nota": "Thorn Whip"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "invocacao",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d6",
+      "nota": "Thorn Whip"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Conjure Animals (8 lobos)",
+     "quantidade": 8,
+     "pv": 11,
+     "ca": 13,
+     "ataque": {
+      "n": 1,
+      "bonus": 4,
+      "dano": "2d4+2"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "3": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "invocacao"
+  },
+  {
+   "id": "totem-urso",
+   "hipotese": "Spirit Totem (Bear) no lugar do Hawk + invocação",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d6",
+      "nota": "Thorn Whip"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Conjure Animals (8 lobos)",
+     "quantidade": 8,
+     "pv": 11,
+     "ca": 13,
+     "ataque": {
+      "n": 1,
+      "bonus": 4,
+      "dano": "2d4+2"
+     }
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Spirit Totem: Bear (PV temporários)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "usos_descanso_curto": 1,
+      "alvos": 3,
+      "pv": 10
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "3": 0.5
+    }
+   },
+   "herda": "principal"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle. Sobra: 2×1º, 1×3º, 2 forma_selvagem.",
+   "combates": [
+    "controle",
+    "controle",
+    "controle",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 3.5×1º, 2×2º, 2×3º, 2 forma_selvagem.",
+   "combates": [
+    "controle"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Druida invocador: Summon Beast, Conjure Animals (8 lobos) e Conjure Elemental, reforçados pelo Mighty Summoner, com Spirit Totem como ação bônus.",
+  "estrategia": "Invocação de 1 hora nas lutas que importam; Spirit Totem (Hawk) para vantagem nos ataques do grupo, Bear para PV temporários; Thorn Whip para puxar inimigos.",
+  "nao_modelado": "Unicorn Spirit (cura em área em cada magia de cura) e Guardian Spirit; ataques mágicos do Mighty Summoner; PV temporários do Bear nas invocações; Conjure Woodland Beings; Faithful Summons; Fey Touched (Misty Step, Sleep); resistência a magia do Sátiro.",
+  "progressao": "Druid 5 (Shepherd); Sab 18; invocação: Conjure Animals (8 lobos)."
+ },
+ "id": "rpgbot-druid-shepherd-5",
+ "nome": "Circle of the Shepherd Druid (RPGBot: Little Bo-Peep, the GOAT)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/circle-of-the-shepherd/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -18,7 +18,8 @@ from itertools import combinations
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
-CLASSES = ('fighter', 'wizard', 'cleric', 'barbarian', 'monk')
+CLASSES = ('fighter', 'wizard', 'cleric', 'barbarian', 'monk',
+           'paladin', 'rogue', 'bard', 'druid', 'warlock', 'sorcerer', 'ranger', 'artificer')
 EIXOS = ('dano', 'deff', 'defm', 'controle', 'area')
 EIXOS_SC = EIXOS + ('suporte', 'corpo')
 NIVEIS = (7, 11)

@@ -1,0 +1,288 @@
+{
+ "gerado_de": "progressoes/rpgbot-bard-valor.json",
+ "build": "Bard (Valor): Meio-Elfo, For 8 Des 16 Con 16 Int 8 Sab 8 Car 17; Elven Accuracy (4, Car 18); Fighting Initiate Archery (8); peitoral + escudo; arco longo",
+ "corpo": {
+  "ca": 18,
+  "pv": 59,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 6,
+    "con": 3,
+    "int": -1,
+    "sab": -1,
+    "car": 7
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 1
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 6,
+      "dano": "1d8+3",
+      "elven_accuracy": true,
+      "nota": "arco longo"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d8) (Combat Inspiration: também dano/CA do aliado)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2.0
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 6,
+      "dano": "1d8+3",
+      "elven_accuracy": true,
+      "nota": "arco longo"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (4º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "5d8",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (3º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "3": 1,
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 6,
+      "dano": "1d8+3",
+      "elven_accuracy": true,
+      "nota": "arco longo"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 15
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "invisibilidade",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 6,
+      "dano": "1d8+3",
+      "elven_accuracy": true,
+      "nota": "arco longo"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d8) (Combat Inspiration: também dano/CA do aliado)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 2.0
+     },
+     {
+      "nome": "Greater Invisibility (aliado: vantagem)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 1,
+      "fracao": 1.0,
+      "concentracao": "greater_invisibility"
+     },
+     {
+      "nome": "Greater Invisibility (aliado: desvantagem contra)",
+      "lado": "def",
+      "modelo": "desvantagem_contra",
+      "alvos": 1
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "invisibilidade"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, principal; prioritário: area, controle. Sobra: 2×1º, 3×2º.",
+   "combates": [
+    "principal",
+    "area",
+    "controle",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 3×2º, 2×3º.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bardo arqueiro de armadura média e escudo: arco com Extra Attack, controle de área e Combat Inspiration.",
+  "estrategia": "Arco nos rounds livres; Hypnotic Pattern/Fear ou Hold Monster por luta; Holy Weapon no próprio arco a partir do 10.",
+  "nao_modelado": "Faerie Fire (vantagem para Elven Accuracy), Sleep, Silvery Barbs, Dispel Magic, Dimension Door, Summon Celestial, Mass Suggestion; Battle Magic (14); Combat Inspiration de dano/CA além do mix padrão do dado.",
+  "progressao": "Bard 7; Des 16, Car 18; peitoral + escudo; arco longo com Extra Attack."
+ },
+ "id": "rpgbot-bard-valor-7",
+ "nome": "College of Valor Bard (Another Gish for the Pile)",
+ "grupo": "RPGBot",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/valor/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

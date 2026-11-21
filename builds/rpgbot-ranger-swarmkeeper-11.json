@@ -1,0 +1,145 @@
+{
+ "gerado_de": "progressoes/rpgbot-ranger-swarmkeeper.json",
+ "build": "Ranger (Swarmkeeper), humano variante arqueiro, arco longo; Archery, Sharpshooter 1, Des 18 no 4, Des 20 no 8 (chassi comum)",
+ "corpo": {
+  "ca": 17,
+  "pv": 92,
+  "saves": {
+   "sv": {
+    "for": 4,
+    "des": 9,
+    "con": 2,
+    "int": 0,
+    "sab": 2,
+    "car": 0
+   }
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3
+  },
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco longo com Sharpshooter, sem magia",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Gathered Swarm (1×/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "marca",
+   "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5+1d6",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Gathered Swarm (1×/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: marca; prioritário: marca. Sobra: 2×1º, 3×2º, 3×3º.",
+   "combates": [
+    "marca",
+    "marca",
+    "marca",
+    "marca"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: marca. Sobra: 3.5×1º, 3×2º, 3×3º.",
+   "combates": [
+    "marca"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Swarmkeeper: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
+  "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
+  "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Gathered Swarm (3; 1d8 no 11); Writhing Tide (7) e Mighty Swarm (11, derrubar) não modelados.",
+  "progressao": "Gathered Swarm (3; 1d8 no 11); Writhing Tide (7) e Mighty Swarm (11, derrubar) não modelados."
+ },
+ "id": "rpgbot-ranger-swarmkeeper-11",
+ "nome": "Swarmkeeper Ranger",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/ranger/subclasses/swarmkeeper/",
+  "nota": "Chassi comum de arqueiro (Handbook do Ranger) com as features da subclasse; mutirão 21/11, passada 1 cega: só mecânica, premissas congeladas."
+ }
+}

@@ -1,0 +1,298 @@
+{
+ "gerado_de": "progressoes/rpgbot-druid-dreams.json",
+ "build": "Druid (Dreams), Githzerai (Shield 1/dia), gibão de peles + escudo; Chef 4 (Sab 18), Sab 20 (8)",
+ "corpo": {
+  "ca": 16,
+  "pv": 59,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 3,
+    "int": 3,
+    "sab": 7,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 1
+  },
+  "outros": {
+   "forma_selvagem": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 0.25
+     }
+    ]
+   },
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Balm of the Summer Court (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 14.0,
+      "nota": "pool de L d6/dia; ~2 usos/dia (P_CAIDO × 4 lutas), cada um com L/2 dados: 3,5 + 1 PV temporário por dado"
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield (Githzerai, 1/dia)",
+     "fracao": 0.25,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Wall of Fire",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Thunderwave",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d8",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: area, controle-barato. Sobra: 1×1º, 3×2º, 2×3º, 2 forma_selvagem.",
+   "combates": [
+    "controle-barato",
+    "controle-barato",
+    "controle-barato",
+    "area"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 4×1º, 3×2º, 2×3º, 2 forma_selvagem.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Druida curandeiro de retaguarda: Balm of the Summer Court (cura a distância como ação bônus, sem espaço) no lugar do Healing Word.",
+  "estrategia": "Produce Flame e magias de controle; Balm para levantar aliados caídos; Polymorph e Wall of Fire no 7.",
+  "nao_modelado": "Hearth of Moonlight and Shadow; Hidden Paths (10); Chef; Aura of Vitality; Faerie Fire, Spike Growth, Pass Without Trace; Absorb Elements; PV temporários do Balm somados à cura.",
+  "progressao": "Druid 7 (Dreams); Githzerai; Sab 18; Balm of the Summer Court 7d6/dia."
+ },
+ "id": "rpgbot-druid-dreams-7",
+ "nome": "Circle of Dreams Druid (RPGBot: Lucidity)",
+ "grupo": "RPGBot",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/circle-of-dreams/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -1,0 +1,219 @@
+{
+ "gerado_de": "progressoes/rpgbot-artificer-battle-smith.json",
+ "build": "Artificer (Battle Smith) autognomo, meia-armadura + escudo, espada longa +1 (Int); Skill Expert 4 (Int 18), Mounted Combatant 8",
+ "corpo": {
+  "ca": 20,
+  "pv": 75,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 7,
+    "int": 8,
+    "sab": 0,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 2
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "espada longa +1 (Enhanced Weapon, Int)"
+     },
+     {
+      "n": 0.25,
+      "bonus": 9,
+      "dano": "2d6",
+      "nota": "Arcane Jolt (Int/dia ÷ 4 lutas ÷ 4 rounds)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "desvantagem",
+      "usos_luta": 4,
+      "propria": true
+     }
+    ]
+   },
+   "saves": {},
+   "area": [],
+   "invocacoes": [
+    {
+     "nome": "Steel Defender",
+     "quantidade": 1,
+     "pv": 51,
+     "ca": 15,
+     "ataque": {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d8+4"
+     }
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "espada longa +1 (Enhanced Weapon, Int)"
+     },
+     {
+      "n": 0.1875,
+      "bonus": 9,
+      "dano": "2d6",
+      "nota": "Arcane Jolt (Int/dia ÷ 4 lutas ÷ 4 rounds)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 16
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [
+    {
+     "nome": "Steel Defender",
+     "quantidade": 1,
+     "pv": 51,
+     "ca": 15,
+     "ataque": {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d8+4"
+     }
+    }
+   ],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     },
+     {
+      "tipo": "desvantagem",
+      "usos_luta": 4,
+      "propria": true
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle. Sobra: 1×3º.",
+   "combates": [
+    "controle",
+    "controle",
+    "controle",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 3×1º, 2×2º, 2×3º.",
+   "combates": [
+    "controle"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Build Super Fighting Robot: arma com Int, Steel Defender, Shield e Web.",
+  "nao_modelado": [
+   "Infusões além de Enhanced Defense/Weapon/Focus",
+   "Flash of Genius (7)",
+   "Spell-Storing Item (11)",
+   "Faerie Fire e Grease (sem entrada na biblioteca de controle)",
+   "Cure Wounds / Healing Word",
+   "Montaria no Steel Defender (a build monta; aqui o Defender ataca)",
+   "Arcane Jolt como cura"
+  ]
+ },
+ "id": "rpgbot-artificer-battle-smith-9",
+ "nome": "Artificer — Battle Smith (RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/artificer/subclasses/battle-smith/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

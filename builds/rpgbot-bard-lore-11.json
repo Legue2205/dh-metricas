@@ -1,0 +1,371 @@
+{
+ "gerado_de": "progressoes/rpgbot-bard-lore.json",
+ "build": "Bard (Lore): Meio-Elfo, For 8 Des 16 Con 14 Int 12 Sab 8 Car 17; Skill Expert (4, Car 18); Car 20 (8); couro batido",
+ "corpo": {
+  "ca": 15,
+  "pv": 80,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 7,
+    "con": 2,
+    "int": 0,
+    "sab": 0,
+    "car": 9
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 2,
+   "6": 1
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d10)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 5.5,
+      "usos_luta": 1.25
+     },
+     {
+      "nome": "Bardic Inspiration (d10) como Cutting Words",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 5.5,
+      "usos_luta": 1.25,
+      "mix": {
+       "ca": 1.0
+      }
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Synaptic Static",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "8d6",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (6º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "7d8",
+       "cd": 17,
+       "slot": 6
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "5": 1,
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Phantasmal Killer",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "phantasmal_killer"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Synaptic Static",
+        "magia": "synaptic_static",
+        "cd": 17
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "5": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "invisibilidade",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d10)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 5.5,
+      "usos_luta": 1.25
+     },
+     {
+      "nome": "Bardic Inspiration (d10) como Cutting Words",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 5.5,
+      "usos_luta": 1.25,
+      "mix": {
+       "ca": 1.0
+      }
+     },
+     {
+      "nome": "Greater Invisibility (aliado: vantagem)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 1,
+      "fracao": 1.0,
+      "concentracao": "greater_invisibility"
+     },
+     {
+      "nome": "Greater Invisibility (aliado: desvantagem contra)",
+      "lado": "def",
+      "modelo": "desvantagem_contra",
+      "alvos": 1
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "invisibilidade"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: invisibilidade; prioritário: area, controle. Sobra: 2×1º, 3×2º, 3×3º, 1×4º.",
+   "combates": [
+    "invisibilidade",
+    "area",
+    "invisibilidade",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 3×2º, 3×3º, 3×4º, 1×5º.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bardo generalista de retaguarda: controle (Web, Phantasmal Killer), Shatter/Synaptic Static, Greater Invisibility e Cutting Words.",
+  "estrategia": "Inspiração e Cutting Words dividindo o pool; uma magia de controle ou área por luta; Healing Word para levantar caídos.",
+  "nao_modelado": "Silvery Barbs, Counterspell, Dissonant Whispers, Sleep, Bane, Enemies Abound, Psychic Lance, Mass Suggestion, Destructive Wave (10); desvantagem do Vicious Mockery; Peerless Skill; Song of Rest; perícias.",
+  "progressao": "Bard 11; Car 20; BI d10 × 5; Web/Counterspell (Additional Magical Secrets)."
+ },
+ "id": "rpgbot-bard-lore-11",
+ "nome": "College of Lore Bard (The Sorcerer's Apprentice)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/lore/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

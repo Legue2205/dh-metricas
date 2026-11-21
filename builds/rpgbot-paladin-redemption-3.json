@@ -1,0 +1,235 @@
+{
+ "gerado_de": "progressoes/rpgbot-paladin-redemption.json",
+ "build": "Paladin (Redemption), Duergar, Telekinetic 4 (Car 18), Car 20 8; espada longa + escudo, Blessed Warrior",
+ "corpo": {
+  "ca": 18,
+  "pv": 31,
+  "saves": {
+   "sv": {
+    "for": 2,
+    "des": -1,
+    "con": 3,
+    "int": -1,
+    "sab": 1,
+    "car": 5
+   },
+   "conjurador": true,
+   "ataques": 1
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 3
+  },
+  "outros": {
+   "canal": {
+    "qtd": 1,
+    "volta": "curto",
+    "valor": 1
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "só armas, sem gastar espaço",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 13,
+      "save": "Con",
+      "dano": "1d6",
+      "meio": false,
+      "nota": "Word of Radiance (Blessed Warrior)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 4,
+      "dano": "1d8+2",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ],
+   "area": [
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "1d6",
+     "cd": 13,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "bless",
+   "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 13,
+      "save": "Con",
+      "dano": "1d6",
+      "meio": false,
+      "nota": "Word of Radiance (Blessed Warrior)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 4,
+      "dano": "1d8+2",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ],
+   "area": [
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "1d6",
+     "cd": 13,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, principal; prioritário: bless. Sobra: 1 canal.",
+   "combates": [
+    "principal",
+    "bless",
+    "bless",
+    "bless"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless. Sobra: 2×1º, 1 canal.",
+   "combates": [
+    "bless"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Paladino de Carisma com Word of Radiance, Hold Person e Hypnotic Pattern; absorve dano dos aliados.",
+  "estrategia": "Word of Radiance até o 4; depois espada; controle com magias de save.",
+  "nao_modelado": "Aura of the Guardian (absorver dano de aliado), Rebuke the Violent, Emissary of Peace, Sleep, Calm Emotions, Counterspell, Telekinetic (empurrão), magias de Duergar (Enlarge/Invisibility). Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico.",
+  "progressao": "Duergar; Blessed Warrior (Word of Radiance); espada longa + escudo; cota de malha + escudo (18)."
+ },
+ "id": "rpgbot-paladin-redemption-3",
+ "nome": "Oath of Redemption Paladin (RPGBot: Apostle of Peace)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/paladin/subclasses/oath-of-redemption/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

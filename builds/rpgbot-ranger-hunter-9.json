@@ -1,0 +1,145 @@
+{
+ "gerado_de": "progressoes/rpgbot-ranger-hunter.json",
+ "build": "Ranger (Hunter), humano variante arqueiro, arco longo; Archery, Sharpshooter 1, Des 18 no 4, Des 20 no 8 (chassi comum)",
+ "corpo": {
+  "ca": 17,
+  "pv": 76,
+  "saves": {
+   "sv": {
+    "for": 4,
+    "des": 9,
+    "con": 2,
+    "int": 0,
+    "sab": 2,
+    "car": 0
+   }
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 2
+  },
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco longo com Sharpshooter, sem magia",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "marca",
+   "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5+1d6",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: marca; prioritário: marca. Sobra: 2×1º, 3×2º, 2×3º.",
+   "combates": [
+    "marca",
+    "marca",
+    "marca",
+    "marca"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: marca. Sobra: 3.5×1º, 3×2º, 2×3º.",
+   "combates": [
+    "marca"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Hunter: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
+  "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
+  "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados.",
+  "progressao": "Des 20 (8); magias de 3º. Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados."
+ },
+ "id": "rpgbot-ranger-hunter-9",
+ "nome": "Hunter Ranger",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/ranger/subclasses/hunter/",
+  "nota": "Chassi comum de arqueiro (Handbook do Ranger) com as features da subclasse; mutirão 21/11, passada 1 cega: só mecânica, premissas congeladas."
+ }
+}

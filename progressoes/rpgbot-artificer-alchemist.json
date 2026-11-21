@@ -1,0 +1,722 @@
+{
+ "id": "rpgbot-artificer-alchemist",
+ "nome": "Artificer — Alchemist (RPGBot)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/artificer/subclasses/alchemist/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Artificer (Alchemist) fada, couro batido + escudo, Acid Splash com Alchemical Savant, Healing Word; Fey Touched 4 (Int 18, Bless), Int 20 (8)",
+  "corpo": {
+   "ca": 17,
+   "pv": 24,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 3,
+     "con": 4,
+     "int": 5,
+     "sab": 0,
+     "car": -1
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 3
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "com_save": [
+      {
+       "n": 1.0,
+       "cd": 13,
+       "save": "Des",
+       "dano": "1d6",
+       "meio": false,
+       "nota": "Acid Splash (Alchemical Savant no 5; 1 alvo contado)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    },
+    "principal": true,
+    "custo": "gratuita",
+    "hipotese": "só truques (anel interno)"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Build Here, Drink This: Acid Splash, Healing Word e Bless; elixires e Aid como apoio.",
+   "nao_modelado": [
+    "Infusões além de Enhanced Defense/Weapon/Focus",
+    "Flash of Genius (7)",
+    "Spell-Storing Item (11)",
+    "Faerie Fire e Grease (sem entrada na biblioteca de controle)",
+    "Cure Wounds / Healing Word",
+    "Experimental Elixir",
+    "Aid",
+    "Restorative Reagents",
+    "Homunculus",
+    "Voo (fada)",
+    "Acid Splash no 2º alvo"
+   ]
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": ""
+  },
+  "5": {
+   "_texto": "",
+   "corpo": {
+    "ca": 17,
+    "pv": 38,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 3,
+      "con": 5,
+      "int": 7,
+      "sab": 0,
+      "car": -1
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d6+4",
+        "meio": false,
+        "nota": "Acid Splash (Alchemical Savant no 5; 1 alvo contado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 10.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d6+4",
+        "meio": false,
+        "nota": "Acid Splash (Alchemical Savant no 5; 1 alvo contado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "herda": "principal",
+     "hipotese": "Bless (Fey Touched) no round 1",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 10.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     }
+    }
+   ]
+  },
+  "7": {
+   "_texto": "",
+   "corpo": {
+    "ca": 17,
+    "pv": 52,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 3,
+      "con": 5,
+      "int": 7,
+      "sab": 0,
+      "car": -1
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d6+4",
+        "meio": false,
+        "nota": "Acid Splash (Alchemical Savant no 5; 1 alvo contado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 10.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d6+4",
+        "meio": false,
+        "nota": "Acid Splash (Alchemical Savant no 5; 1 alvo contado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "herda": "principal",
+     "hipotese": "Bless (Fey Touched) no round 1",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 10.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     }
+    }
+   ]
+  },
+  "9": {
+   "_texto": "",
+   "corpo": {
+    "ca": 17,
+    "pv": 66,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 3,
+      "con": 6,
+      "int": 9,
+      "sab": 0,
+      "car": -1
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 17,
+        "save": "Des",
+        "dano": "2d6+5",
+        "meio": false,
+        "nota": "Acid Splash (Alchemical Savant no 5; 1 alvo contado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 12.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Des",
+        "dano": "2d6+5",
+        "meio": false,
+        "nota": "Acid Splash (Alchemical Savant no 5; 1 alvo contado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "herda": "principal",
+     "hipotese": "Bless (Fey Touched) no round 1",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 12.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     }
+    }
+   ]
+  },
+  "11": {
+   "_texto": "",
+   "corpo": {
+    "ca": 17,
+    "pv": 80,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 3,
+      "con": 6,
+      "int": 9,
+      "sab": 0,
+      "car": -1
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 17,
+        "save": "Des",
+        "dano": "3d6+5",
+        "meio": false,
+        "nota": "Acid Splash (Alchemical Savant no 5; 1 alvo contado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 12.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Des",
+        "dano": "3d6+5",
+        "meio": false,
+        "nota": "Acid Splash (Alchemical Savant no 5; 1 alvo contado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "herda": "principal",
+     "hipotese": "Bless (Fey Touched) no round 1",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 12.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     }
+    }
+   ]
+  }
+ }
+}

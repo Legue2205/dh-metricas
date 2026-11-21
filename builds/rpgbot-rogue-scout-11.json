@@ -1,0 +1,112 @@
+{
+ "gerado_de": "progressoes/rpgbot-rogue-scout.json",
+ "build": "Rogue (Scout), Harengon, arco curto e depois mosquete; Piercer 4, Gunner 8, Skill Expert 10",
+ "corpo": {
+  "ca": 17,
+  "pv": 80,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 9,
+    "con": 2,
+    "int": 5,
+    "sab": 1,
+    "car": -1
+   },
+   "evasion": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco curto/mosquete + Sneak (sem Steady Aim: o guia não usa opcionais)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d12+5",
+      "nota": "mosquete (Gunner)"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "6d6",
+      "prob": 0.75,
+      "nota": "Sneak Attack"
+     },
+     {
+      "dano": "1.5",
+      "nota": "Piercer: rerrola 1 dado por turno"
+     },
+     {
+      "dano": "1d12",
+      "gatilho": "critico",
+      "nota": "Piercer: dado extra no crítico"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Batedor: explorador de perícias que luta de longe e sai do corpo a corpo com a reação.",
+  "estrategia": "Atira de longe; Cunning Action para se esconder; Skirmisher para sair do alcance.",
+  "nao_modelado": "Hide com Cunning Action (vantagem depende de cobertura), Skirmisher (reação; conflita com Uncanny Dodge), Ambush Master (13), Sudden Strike (17).",
+  "progressao": "Skill Expert (Dex 20, 10); Reliable Talent."
+ },
+ "id": "rpgbot-rogue-scout-11",
+ "nome": "Scout (RPGBot: Field Scholar)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/scout/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

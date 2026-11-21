@@ -7,6 +7,9 @@ Campos de "ataques": n (fracionário ok), bonus, dano, crit_em, dados_crit, vant
 poder [-5, 10] (GWM/Sharpshooter: usa o modo que rende mais em cada CA).
 "por_turno": 1× por turno no 1º acerto (Sneak Attack; prob = chance de ter o gatilho). "por_luta": smites (usos ou usos_dia).
 "com_save": [{"n", "cd", "save": "Sab", "dano", "meio": false}] — truques/magias de alvo único com save.
+"dado_no_erro": {"dado": D, "usos": U} — depois de errar o último ataque do turno sem nenhum acerto antes, soma 1dD ao
+acerto; o dado só é gasto se virar acerto (Homing Strikes do Soulknife). U = usos por luta; o acerto convertido traz o
+dano da arma e o 1× por turno (Sneak) que ainda não saiu.
 "focused_aim": {"ki": K, "max": 3, "por_ponto": 2} — gasta até K pontos por luta transformando erros por pouco em acertos
 (Focused Aim do Monk, Tasha's; +2 por ki, até 3): primeiro os erros por 1–2 (1 ki), depois por 3–4 (2), por 5–6 (3).
 Fúria, Dueling, Hex etc. entram na string de dano ("1d8+2+1d6"); escala de truque por nível vai no patch da progressão.
@@ -88,6 +91,21 @@ def _usados(usos, pc, natq):
     lo = floor(usos); return e(lo) + (usos - lo) * (e(lo + 1) - e(lo))
 
 
+def _dado_no_erro(f, ataques, por_turno, ca):
+    """Valor esperado por round de somar 1dD a um último ataque errado (sem acerto antes no turno); usos U por luta."""
+    D = f['dado']; U = f.get('usos', 0)
+    if U <= 0 or not ataques: return 0.0
+    a = ataques[-1]; b = a['bonus']; v = a.get('vantagem', 0.0); k = 3 if a.get('elven_accuracy') else 2
+    pr = {r: (1 - v) / 20 + v * ((r / 20) ** k - ((r - 1) / 20) ** k) for r in range(1, 21)}
+    conv = sum(pr[r] * sum(1 for j in range(1, D + 1) if r + b + j >= ca) / D
+               for r in range(2, 20) if r + b < ca)        # nat 1 não converte; nat 20 já acerta
+    outros = 1.0
+    for x in ataques[:-1]: outros *= (1 - _ataque(x, ca)[0]) ** x.get('n', 1)
+    if a.get('n', 1) > 1: outros *= (1 - _ataque(a, ca)[0]) ** (a['n'] - 1)
+    val = dados(a['dano'])[0] + sum(x.get('prob', 1.0) * dados(x['dano'])[0] for x in por_turno if x.get('gatilho') != 'critico')
+    return min(conv * outros, U / R) * val
+
+
 def _focused(f, ataques, ca):
     """Valor esperado por round de converter erros por pouco em acertos com um orçamento de K pontos por luta."""
     K = f.get('ki', 0); passo = f.get('por_ponto', 2); mx = f.get('max', 3)
@@ -146,6 +164,7 @@ def dpr(spec, ca, lutas_dia=4, invocacoes=()):
     if 'automatico' in spec: total += dados(spec['automatico'])[0]
     for x in spec.get('com_save', []): total += _com_save(x, ca)
     if 'focused_aim' in spec: total += _focused(spec['focused_aim'], spec.get('ataques', []), ca)
+    if 'dado_no_erro' in spec: total += _dado_no_erro(spec['dado_no_erro'], spec.get('ataques', []), spec.get('por_turno', []), ca)
     for inv in invocacoes:                     # criaturas invocadas atacam por conta própria
         if 'ataque' in inv: total += inv['quantidade'] * inv['ataque'].get('n', 1) * _ataque(inv['ataque'], ca)[2]
     return round(total, 1)

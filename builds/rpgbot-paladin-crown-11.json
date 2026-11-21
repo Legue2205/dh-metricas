@@ -1,0 +1,352 @@
+{
+ "gerado_de": "progressoes/rpgbot-paladin-crown.json",
+ "build": "Paladin (Crown), Orc, Con/Car 4, Resilient Con 8; truques com Blessed Warrior",
+ "corpo": {
+  "ca": 20,
+  "pv": 114,
+  "saves": {
+   "sv": {
+    "for": 6,
+    "des": 3,
+    "con": 12,
+    "int": 3,
+    "sab": 7,
+    "car": 12
+   },
+   "conjurador": true,
+   "ataques": 1
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3
+  },
+  "outros": {
+   "canal": {
+    "qtd": 1,
+    "volta": "curto",
+    "valor": 2
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "só armas, sem gastar espaço",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (Blessed Warrior, alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d8+2+1d8",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "modelo": "aura_saves",
+      "bonus": 4
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 13.75
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ],
+   "area": [
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6",
+     "cd": 16,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "bless",
+   "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (Blessed Warrior, alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d8+2+1d8",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "modelo": "aura_saves",
+      "bonus": 4
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 13.75
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ],
+   "area": [
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6",
+     "cd": 16,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ]
+  },
+  {
+   "id": "guardioes",
+   "hipotese": "Spirit Guardians (3º) no round 1, truque nos rounds 2–4",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (Blessed Warrior, alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "3d8",
+      "meio": true,
+      "nota": "Spirit Guardians no alvo"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d8+2+1d8",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "modelo": "aura_saves",
+      "bonus": 4
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 13.75
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (3º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "3d8",
+     "cd": 16,
+     "metade": true
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "3d6",
+     "cd": 16,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, guardioes; prioritário: guardioes. Sobra: 3×1º, 3×2º, 1 canal.",
+   "combates": [
+    "bless",
+    "guardioes",
+    "guardioes",
+    "guardioes"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes. Sobra: 4×1º, 3×2º, 2×3º, 1 canal.",
+   "combates": [
+    "guardioes"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Guarda-costas: Toll the Dead e Word of Radiance, Divine Allegiance e Champion Challenge.",
+  "estrategia": "Truques à distância ao lado do protegido; Spirit Guardians a partir do 9.",
+  "nao_modelado": "Divine Allegiance (absorver dano de aliado), Champion Challenge, Compelled Duel, Turn the Tide, Warding Bond, Aid, Adrenaline Rush/Relentless Endurance. Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico.",
+  "progressao": "Truques com 3 dados."
+ },
+ "id": "rpgbot-paladin-crown-11",
+ "nome": "Oath of the Crown Paladin (RPGBot: The Bodyguard)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/paladin/subclasses/oath-of-the-crown/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

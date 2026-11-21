@@ -1,0 +1,1212 @@
+{
+ "id": "rpgbot-bard-eloquence",
+ "nome": "College of Eloquence Bard (bardo base)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/eloquence/",
+  "nota": "Sem build no handbook colado: bardo base (Meio-Elfo, Des 16, Con 14, Car 17) + recursos da subclasse. Passada 1 cega."
+ },
+ "base": {
+  "build": "Bard base: Meio-Elfo, For 8 Des 16 Con 14 Int 10 Sab 10 Car 17; Car 18 (4), Car 20 (8); couro batido",
+  "corpo": {
+   "ca": 15,
+   "pv": 24,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 5,
+     "con": 2,
+     "int": 0,
+     "sab": 0,
+     "car": 5
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 2
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "com_save": [
+      {
+       "n": 1.0,
+       "cd": 13,
+       "save": "Sab",
+       "dano": "1d4",
+       "meio": false,
+       "nota": "Vicious Mockery"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Bardic Inspiration (d6)",
+       "lado": "of",
+       "modelo": "dado_multiuso",
+       "dado_medio": 3.5,
+       "usos_luta": 0.0
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    },
+    "principal": true,
+    "custo": "gratuita",
+    "hipotese": "só truques (anel interno)"
+   },
+   {
+    "id": "area",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.5,
+       "cd": 13,
+       "save": "Sab",
+       "dano": "1d4",
+       "meio": false,
+       "nota": "Vicious Mockery"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Shatter (2º)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d8",
+        "cd": 13,
+        "slot": 2
+       }
+      ]
+     },
+     {
+      "nome": "Shatter (2º)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d8",
+        "cd": 13,
+        "slot": 2
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "2": 2,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "area"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Bardo base com Unsettling Words antes do save-or-suck.",
+   "estrategia": "Unsettling Words (ação bônus) e Hypnotic Pattern/Hold Monster no mesmo turno; o resto dos dados como inspiração.",
+   "nao_modelado": "Silver Tongue, Universal Speech, Infectious Inspiration; Silvery Barbs, Counterspell, Faerie Fire, Sleep, Dissonant Whispers, Mass Suggestion; desvantagem do Vicious Mockery; Song of Rest."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Bard 3; Car 16; Unsettling Words antes da magia de controle (CD +3)."
+  },
+  "5": {
+   "_texto": "Bard 5; Car 18; Unsettling Words antes da magia de controle (CD +4).",
+   "corpo": {
+    "ca": 15,
+    "pv": 38,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 6,
+      "con": 2,
+      "int": 0,
+      "sab": 0,
+      "car": 7
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d8)",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 4.5,
+        "usos_luta": 1.0
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 19
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.5,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter (3º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "4d8",
+         "cd": 15,
+         "slot": 3
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (3º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "4d8",
+         "cd": 15,
+         "slot": 3
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 2,
+       "1": 0.5,
+       "2": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "area"
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Bard 7; Car 18; Unsettling Words antes da magia de controle (CD +4).",
+   "corpo": {
+    "ca": 15,
+    "pv": 52,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 6,
+      "con": 2,
+      "int": 0,
+      "sab": 0,
+      "car": 7
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 1
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d8) + Unfailing Inspiration",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 4.5,
+        "usos_luta": 1.0,
+        "volta_se_falhar": true
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 19
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.5,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter (4º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "5d8",
+         "cd": 15,
+         "slot": 4
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (3º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "4d8",
+         "cd": 15,
+         "slot": 3
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "3": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "invisibilidade",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d8) + Unfailing Inspiration",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 4.5,
+        "usos_luta": 1.0,
+        "volta_se_falhar": true
+       },
+       {
+        "nome": "Greater Invisibility (aliado: vantagem)",
+        "lado": "of",
+        "modelo": "vantagem",
+        "alvos": 1,
+        "fracao": 1.0,
+        "concentracao": "greater_invisibility"
+       },
+       {
+        "nome": "Greater Invisibility (aliado: desvantagem contra)",
+        "lado": "def",
+        "modelo": "desvantagem_contra",
+        "alvos": 1
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "invisibilidade"
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Bard 9; Car 20; Unsettling Words antes da magia de controle (CD +4).",
+   "corpo": {
+    "ca": 15,
+    "pv": 66,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 7,
+      "con": 2,
+      "int": 0,
+      "sab": 0,
+      "car": 9
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 1
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d8) + Unfailing Inspiration",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 4.5,
+        "usos_luta": 1.5,
+        "volta_se_falhar": true
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 21
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Monster",
+          "cd": 21,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "hold_monster"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "1": 0.5,
+       "3": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "controle-barato",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 21
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle-barato"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.5,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Synaptic Static",
+       "usos": [
+        {
+         "alvos": 4,
+         "dano": "8d6",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (4º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "5d8",
+         "cd": 17,
+         "slot": 4
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "4": 1,
+       "1": 0.5,
+       "3": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "invisibilidade",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d8) + Unfailing Inspiration",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 4.5,
+        "usos_luta": 1.5,
+        "volta_se_falhar": true
+       },
+       {
+        "nome": "Greater Invisibility (aliado: vantagem)",
+        "lado": "of",
+        "modelo": "vantagem",
+        "alvos": 1,
+        "fracao": 1.0,
+        "concentracao": "greater_invisibility"
+       },
+       {
+        "nome": "Greater Invisibility (aliado: desvantagem contra)",
+        "lado": "def",
+        "modelo": "desvantagem_contra",
+        "alvos": 1
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "invisibilidade"
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Bard 11; Car 20; Unsettling Words antes da magia de controle (CD +6).",
+   "corpo": {
+    "ca": 15,
+    "pv": 80,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 7,
+      "con": 2,
+      "int": 0,
+      "sab": 0,
+      "car": 9
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 2,
+     "6": 1
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d10) + Unfailing Inspiration",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 5.5,
+        "usos_luta": 1.5,
+        "volta_se_falhar": true
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 23
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Monster",
+          "cd": 23,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "hold_monster"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "controle-barato",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 23
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle-barato"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.5,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Synaptic Static",
+       "usos": [
+        {
+         "alvos": 4,
+         "dano": "8d6",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (6º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "7d8",
+         "cd": 17,
+         "slot": 6
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "6": 1,
+       "1": 0.5,
+       "4": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "invisibilidade",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d4",
+        "meio": false,
+        "nota": "Vicious Mockery"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d10) + Unfailing Inspiration",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 5.5,
+        "usos_luta": 1.5,
+        "volta_se_falhar": true
+       },
+       {
+        "nome": "Greater Invisibility (aliado: vantagem)",
+        "lado": "of",
+        "modelo": "vantagem",
+        "alvos": 1,
+        "fracao": 1.0,
+        "concentracao": "greater_invisibility"
+       },
+       {
+        "nome": "Greater Invisibility (aliado: desvantagem contra)",
+        "lado": "def",
+        "modelo": "desvantagem_contra",
+        "alvos": 1
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "invisibilidade"
+    }
+   ]
+  }
+ }
+}

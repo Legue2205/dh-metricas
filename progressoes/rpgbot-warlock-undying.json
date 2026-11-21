@@ -1,0 +1,2253 @@
+{
+ "id": "rpgbot-warlock-undying",
+ "nome": "Undying Warlock (RPGBot: chassi do handbook)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/warlock/subclasses/",
+  "nota": "Chassi do handbook por subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Warlock (Undying), humano variante; Car 16 (3), 18 (5), 20 (9); Agonizing Blast + Armor of Shadows",
+  "corpo": {
+   "ca": 15,
+   "pv": 24,
+   "saves": {
+    "sv": {
+     "for": 0,
+     "des": 2,
+     "con": 2,
+     "int": 0,
+     "sab": 3,
+     "car": 5
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "2": 2
+   },
+   "espacos_volta": "curto"
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d10+3",
+       "nota": "Eldritch Blast + Agonizing Blast"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "principal": true,
+    "custo": "gratuita",
+    "hipotese": "só truques (anel interno)"
+   },
+   {
+    "id": "hex",
+    "herda": "principal",
+    "hipotese": "Hex (1 hora: 0,5 espaço por luta) no truque principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d10+3+1d6",
+       "nota": "Eldritch Blast + Agonizing Blast + Hex"
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 0.5
+     }
+    }
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 5,
+       "dano": "1d10+3",
+       "nota": "Eldritch Blast + Agonizing Blast"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "alvo_unico",
+       "nome": "Hold Person",
+       "cd": 13,
+       "slots": [
+        2
+       ],
+       "magias": [
+        "hold_person"
+       ],
+       "modo": "melhor"
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1
+     }
+    },
+    "area": [],
+    "invocacoes": [],
+    "defesa": {},
+    "reacao": [],
+    "herda": "principal",
+    "hipotese": "controle"
+   },
+   {
+    "id": "area",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.5,
+       "bonus": 5,
+       "dano": "1d10+3",
+       "nota": "Eldritch Blast + Agonizing Blast"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Shatter (2º)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d8",
+        "cd": 13,
+        "slot": 2
+       }
+      ]
+     },
+     {
+      "nome": "Shatter (2º)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d8",
+        "cd": 13,
+        "slot": 2
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "2": 2
+     }
+    },
+    "invocacoes": [],
+    "defesa": {},
+    "reacao": [],
+    "herda": "principal",
+    "hipotese": "area"
+   },
+   {
+    "id": "combo",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.5,
+       "bonus": 5,
+       "dano": "1d10+3",
+       "nota": "Eldritch Blast + Agonizing Blast"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "alvo_unico",
+       "nome": "Hold Person",
+       "cd": 13,
+       "slots": [
+        2
+       ],
+       "magias": [
+        "hold_person"
+       ],
+       "modo": "melhor"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Shatter",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d8",
+        "cd": 13,
+        "slot": 2
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "2": 2
+     }
+    },
+    "invocacoes": [],
+    "defesa": {},
+    "reacao": [],
+    "herda": "principal",
+    "hipotese": "combo"
+   },
+   {
+    "id": "area+hex",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.5,
+       "bonus": 5,
+       "dano": "1d10+3+1d6",
+       "nota": "Eldritch Blast + Agonizing Blast + Hex"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Shatter (2º)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d8",
+        "cd": 13,
+        "slot": 2
+       }
+      ]
+     },
+     {
+      "nome": "Shatter (2º)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d8",
+        "cd": 13,
+        "slot": 2
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "2": 2.5
+     }
+    },
+    "invocacoes": [],
+    "defesa": {},
+    "reacao": [],
+    "herda": "principal",
+    "hipotese": "area + Hex"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Undying Warlock: Eldritch Blast com Agonizing Blast e Hex; espaços de pacto voltam no descanso curto.",
+   "estrategia": "Hex no início do dia (cobre ~2 lutas), controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster) ou invocação no espaço de pacto.",
+   "nao_modelado": "Among the Dead, Defy Death, Undying Nature; Agonizing Blast; Repelling Blast e outras invocações; Hunger of Hadar; Armor of Agathys; Counterspell; Misty Step; Darkness+Devil's Sight"
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Warlock 3; Car 16; pacto 2×2º."
+  },
+  "5": {
+   "_texto": "Warlock 5; Car 18; pacto 2×3º.",
+   "corpo": {
+    "ca": 15,
+    "pv": 38,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 2,
+      "con": 2,
+      "int": 0,
+      "sab": 4,
+      "car": 7
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "3": 2,
+     "2": null
+    },
+    "espacos_volta": "curto"
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": []
+    },
+    {
+     "id": "hex",
+     "herda": "principal",
+     "hipotese": "Hex (1 hora: 0,5 espaço por luta) no truque principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 7,
+        "dano": "1d10+4+1d6",
+        "nota": "Eldritch Blast + Agonizing Blast + Hex"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "3": 0.5,
+       "2": null
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 15
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "2": null
+      }
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter (3º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "4d8",
+         "cd": 15,
+         "slot": 3
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (3º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "4d8",
+         "cd": 15,
+         "slot": 3
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 2,
+       "2": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "combo",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 15
+         }
+        ]
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "3d8",
+         "cd": 15,
+         "slot": 2
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 2,
+       "2": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "combo"
+    },
+    {
+     "id": "invocacao",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Summon Shadowspawn (3º)",
+       "quantidade": 1,
+       "pv": 35,
+       "ca": 14,
+       "ataque": {
+        "n": 1,
+        "bonus": 7,
+        "dano": "1d12+6"
+       }
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 0.5
+      }
+     },
+     "area": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "invocacao"
+    },
+    {
+     "id": "area+hex",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d10+4+1d6",
+        "nota": "Eldritch Blast + Agonizing Blast + Hex"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter (3º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "4d8",
+         "cd": 15,
+         "slot": 3
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (3º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "4d8",
+         "cd": 15,
+         "slot": 3
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 2.5,
+       "2": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "area + Hex"
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Warlock 7; Car 18; pacto 2×4º.",
+   "corpo": {
+    "ca": 15,
+    "pv": 52,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 2,
+      "con": 2,
+      "int": 0,
+      "sab": 4,
+      "car": 7
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "4": 2,
+     "3": null
+    },
+    "espacos_volta": "curto"
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": []
+    },
+    {
+     "id": "hex",
+     "herda": "principal",
+     "hipotese": "Hex (1 hora: 0,5 espaço por luta) no truque principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 7,
+        "dano": "1d10+4+1d6",
+        "nota": "Eldritch Blast + Agonizing Blast + Hex"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 0.5,
+       "3": null
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 15
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 15,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "3": null
+      }
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter (4º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "5d8",
+         "cd": 15,
+         "slot": 4
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (4º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "5d8",
+         "cd": 15,
+         "slot": 4
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 2,
+       "3": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "combo",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 15
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 15,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "3d8",
+         "cd": 15,
+         "slot": 2
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 2,
+       "3": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "combo"
+    },
+    {
+     "id": "invocacao",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Summon Aberration (4º)",
+       "quantidade": 1,
+       "pv": 40,
+       "ca": 15,
+       "ataque": {
+        "n": 2,
+        "bonus": 7,
+        "dano": "1d8+7"
+       }
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 0.5,
+       "3": null
+      }
+     },
+     "area": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "invocacao"
+    },
+    {
+     "id": "area+hex",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d10+4+1d6",
+        "nota": "Eldritch Blast + Agonizing Blast + Hex"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter (4º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "5d8",
+         "cd": 15,
+         "slot": 4
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (4º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "5d8",
+         "cd": 15,
+         "slot": 4
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 2.5,
+       "3": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "area + Hex"
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Warlock 9; Car 20; pacto 2×5º.",
+   "corpo": {
+    "ca": 15,
+    "pv": 66,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 2,
+      "con": 2,
+      "int": 0,
+      "sab": 5,
+      "car": 9
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "5": 2,
+     "4": null
+    },
+    "espacos_volta": "curto"
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": []
+    },
+    {
+     "id": "hex",
+     "herda": "principal",
+     "hipotese": "Hex (1 hora: 0,5 espaço por luta) no truque principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 9,
+        "dano": "1d10+5+1d6",
+        "nota": "Eldritch Blast + Agonizing Blast + Hex"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "5": 0.5,
+       "4": null
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Monster",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "hold_monster"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "4": null
+      }
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter (5º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "6d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (5º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "6d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 2,
+       "4": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "combo",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Monster",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "hold_monster"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "3d8",
+         "cd": 17,
+         "slot": 2
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 2,
+       "4": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "combo"
+    },
+    {
+     "id": "invocacao",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Summon Aberration (5º)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 16,
+       "ataque": {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+8"
+       }
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 0.5,
+       "4": null
+      }
+     },
+     "area": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "invocacao"
+    },
+    {
+     "id": "area+hex",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d10+5+1d6",
+        "nota": "Eldritch Blast + Agonizing Blast + Hex"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter (5º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "6d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (5º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "6d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 2.5,
+       "4": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "area + Hex"
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Warlock 11; Car 20; pacto 3×5º.",
+   "corpo": {
+    "ca": 15,
+    "pv": 80,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 2,
+      "con": 2,
+      "int": 0,
+      "sab": 5,
+      "car": 9
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "5": 3
+    },
+    "outros": {
+     "arcano": {
+      "qtd": 1,
+      "volta": "longo"
+     }
+    },
+    "espacos_volta": "curto"
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3.0,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": []
+    },
+    {
+     "id": "hex",
+     "herda": "principal",
+     "hipotese": "Hex (1 hora: 0,5 espaço por luta) no truque principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3.0,
+        "bonus": 9,
+        "dano": "1d10+5+1d6",
+        "nota": "Eldritch Blast + Agonizing Blast + Hex"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "5": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.25,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Monster",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "hold_monster"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Synaptic Static",
+          "magia": "synaptic_static",
+          "cd": 17
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "5": 1
+      }
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter (5º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "6d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (5º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "6d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 2
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "combo",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Monster",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "hold_monster"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Synaptic Static",
+          "magia": "synaptic_static",
+          "cd": 17
+         }
+        ]
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "3d8",
+         "cd": 17,
+         "slot": 2
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 2
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "combo"
+    },
+    {
+     "id": "invocacao",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.25,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Summon Aberration (5º)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 16,
+       "ataque": {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+8"
+       }
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 0.5
+      }
+     },
+     "area": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "invocacao"
+    },
+    {
+     "id": "arcano",
+     "herda": "principal",
+     "hipotese": "Mystic Arcanum: Mass Suggestion no pico",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.25,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Mass Suggestion (Mystic Arcanum)",
+        "magia": "mass_suggestion",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "arcano": 1
+     }
+    },
+    {
+     "id": "area+hex",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 9,
+        "dano": "1d10+5+1d6",
+        "nota": "Eldritch Blast + Agonizing Blast + Hex"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Shatter (5º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "6d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (5º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "6d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 2.5
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "area + Hex"
+    },
+    {
+     "id": "arcano+hex",
+     "herda": "principal",
+     "hipotese": "Mystic Arcanum: Mass Suggestion no pico + Hex",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.25,
+        "bonus": 9,
+        "dano": "1d10+5+1d6",
+        "nota": "Eldritch Blast + Agonizing Blast + Hex"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Mass Suggestion (Mystic Arcanum)",
+        "magia": "mass_suggestion",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "arcano": 1,
+      "espacos": {
+       "5": 0.5
+      }
+     }
+    }
+   ]
+  }
+ }
+}

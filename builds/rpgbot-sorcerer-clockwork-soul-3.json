@@ -1,0 +1,102 @@
+{
+ "gerado_de": "progressoes/rpgbot-sorcerer-clockwork-soul.json",
+ "build": "Sorcerer (Clockwork Soul), Anão da Montanha (origem customizada, armadura média), Fey Touched 4, Car +2 8; Car 17 → 18 (4) → 20 (8)",
+ "corpo": {
+  "ca": 16,
+  "pv": 23,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 5,
+    "int": -1,
+    "sab": 1,
+    "car": 5
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 13,
+      "save": "Int",
+      "dano": "1d6",
+      "nota": "Mind Sliver"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: 4×1º, 3×2º.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: 4×1º, 3×2º.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Sorcerer de suporte e controle com armadura média e 10 magias extras (Aid, Web, Hypnotic Pattern, Wall of Force).",
+  "estrategia": "Mind Sliver/Fire Bolt; Web e Hypnotic Pattern para controlar; Wall of Force e Polymorph; Shield na reação.",
+  "nao_modelado": "Restore Balance; Bastion of Law (ward com pontos de feitiçaria); Trance of Order; Twinned/Extended; Silvery Barbs; Aid; Tasha's Mind Whip; Dissonant Whispers; Greater Invisibility; Protection from Evil and Good.",
+  "progressao": "Sorcerer 3; armadura média (anão da montanha), CA 16."
+ },
+ "id": "rpgbot-sorcerer-clockwork-soul-3",
+ "nome": "Clockwork Soul Sorcerer (RPGBot: Precision Engineering)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/sorcerer/subclasses/clockwork-soul/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

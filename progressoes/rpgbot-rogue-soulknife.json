@@ -1,0 +1,688 @@
+{
+ "id": "rpgbot-rogue-soulknife",
+ "nome": "Soulknife (RPGBot: Half-Elf Skill Monkey)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/soulknife/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Rogue (Soulknife), meio-elfo, Psychic Blades + Steady Aim; Skill Expert 4, Dex 20 8, Skulker 10",
+  "corpo": {
+   "ca": 15,
+   "pv": 21,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 5,
+     "con": 1,
+     "int": 5,
+     "sab": 2,
+     "car": -1
+    }
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {}
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "Psychic Blade arremessada com Steady Aim + Sneak",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "1d6+3",
+       "vantagem": 1.0,
+       "nota": "Psychic Blade (60 pés) com Steady Aim"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "2d6",
+       "prob": 1.0,
+       "nota": "Sneak Attack"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "acao_bonus": [
+     {
+      "uso": "Steady Aim",
+      "fracao": 1.0,
+      "eixos": [
+       "dano"
+      ]
+     }
+    ],
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "duas-laminas",
+    "hipotese": "duas Psychic Blades (ação bônus) + Sneak (aliado adjacente)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "1d6+3"
+      },
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "1d4+3",
+       "nota": "2ª lâmina na ação bônus (soma Des)"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "2d6",
+       "prob": 0.75,
+       "nota": "Sneak Attack"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "acao_bonus": [
+     {
+      "uso": "2ª Psychic Blade",
+      "fracao": 1.0,
+      "eixos": [
+       "dano"
+      ]
+     }
+    ]
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Lâmina psíquica: arremessa lâminas a 60 pés com Sneak; dados psiônicos para perícias e acertos.",
+   "estrategia": "Steady Aim com uma lâmina quando falta aliado; duas lâminas quando há aliado no alvo.",
+   "nao_modelado": "Psychic Teleportation, Psi-Bolstered Knack, Psychic Veil (13), Rend Mind (17), dano psíquico (resistências)."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Psychic Blades, Psionic Power (2×PB dados); Steady Aim; meio-elfo."
+  },
+  "5": {
+   "_texto": "Skill Expert (Dex 18, 4); Uncanny Dodge; dado d8.",
+   "corpo": {
+    "ca": 16,
+    "pv": 33,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 7,
+      "con": 1,
+      "int": 6,
+      "sab": 2,
+      "car": -1
+     }
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "Psychic Blade arremessada com Steady Aim + Sneak",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 7,
+        "dano": "1d6+4",
+        "vantagem": 1.0,
+        "nota": "Psychic Blade (60 pés) com Steady Aim"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "3d6",
+        "prob": 1.0,
+        "nota": "Sneak Attack"
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "Steady Aim",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "duas-laminas",
+     "hipotese": "duas Psychic Blades (ação bônus) + Sneak (aliado adjacente)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 7,
+        "dano": "1d6+4"
+       },
+       {
+        "n": 1,
+        "bonus": 7,
+        "dano": "1d4+4",
+        "nota": "2ª lâmina na ação bônus (soma Des)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "3d6",
+        "prob": 0.75,
+        "nota": "Sneak Attack"
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "2ª Psychic Blade",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Evasion.",
+   "corpo": {
+    "ca": 16,
+    "pv": 45,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 7,
+      "con": 1,
+      "int": 6,
+      "sab": 2,
+      "car": -1
+     },
+     "evasion": true
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "Psychic Blade arremessada com Steady Aim + Sneak",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 7,
+        "dano": "1d6+4",
+        "vantagem": 1.0,
+        "nota": "Psychic Blade (60 pés) com Steady Aim"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "4d6",
+        "prob": 1.0,
+        "nota": "Sneak Attack"
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "Steady Aim",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "duas-laminas",
+     "hipotese": "duas Psychic Blades (ação bônus) + Sneak (aliado adjacente)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 7,
+        "dano": "1d6+4"
+       },
+       {
+        "n": 1,
+        "bonus": 7,
+        "dano": "1d4+4",
+        "nota": "2ª lâmina na ação bônus (soma Des)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "4d6",
+        "prob": 0.75,
+        "nota": "Sneak Attack"
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "2ª Psychic Blade",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Dex 20 (8); Soul Blades (Homing Strikes, Psychic Teleportation).",
+   "corpo": {
+    "ca": 17,
+    "pv": 57,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 9,
+      "con": 1,
+      "int": 7,
+      "sab": 2,
+      "car": -1
+     },
+     "evasion": true
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "Psychic Blade arremessada com Steady Aim + Sneak",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d6+5",
+        "vantagem": 1.0,
+        "nota": "Psychic Blade (60 pés) com Steady Aim"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "5d6",
+        "prob": 1.0,
+        "nota": "Sneak Attack"
+       }
+      ],
+      "dado_no_erro": {
+       "dado": 8,
+       "usos": 2.5
+      }
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "Steady Aim",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "duas-laminas",
+     "hipotese": "duas Psychic Blades (ação bônus) + Sneak (aliado adjacente)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d6+5"
+       },
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d4+5",
+        "nota": "2ª lâmina na ação bônus (soma Des)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "5d6",
+        "prob": 0.75,
+        "nota": "Sneak Attack"
+       }
+      ],
+      "dado_no_erro": {
+       "dado": 8,
+       "usos": 2.5
+      }
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "2ª Psychic Blade",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Skulker (10); Reliable Talent; dado d10.",
+   "corpo": {
+    "ca": 17,
+    "pv": 69,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 9,
+      "con": 1,
+      "int": 7,
+      "sab": 2,
+      "car": -1
+     },
+     "evasion": true
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "Psychic Blade arremessada com Steady Aim + Sneak",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d6+5",
+        "vantagem": 1.0,
+        "nota": "Psychic Blade (60 pés) com Steady Aim"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "6d6",
+        "prob": 1.0,
+        "nota": "Sneak Attack"
+       }
+      ],
+      "dado_no_erro": {
+       "dado": 10,
+       "usos": 2.5
+      }
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "Steady Aim",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "duas-laminas",
+     "hipotese": "duas Psychic Blades (ação bônus) + Sneak (aliado adjacente)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d6+5"
+       },
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d4+5",
+        "nota": "2ª lâmina na ação bônus (soma Des)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "6d6",
+        "prob": 0.75,
+        "nota": "Sneak Attack"
+       }
+      ],
+      "dado_no_erro": {
+       "dado": 10,
+       "usos": 2.5
+      }
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "2ª Psychic Blade",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,223 @@
+{
+ "gerado_de": "progressoes/rpgbot-paladin-ancients.json",
+ "build": "Paladin (Ancients), Giff, Fighting Initiate Archery 4, Sharpshooter 8; besta pesada → mosquete, Protection",
+ "corpo": {
+  "ca": 15,
+  "pv": 28,
+  "saves": {
+   "sv": {
+    "for": 1,
+    "des": 3,
+    "con": 2,
+    "int": -1,
+    "sab": 1,
+    "car": 5
+   },
+   "conjurador": true,
+   "ataques": 1
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4
+  },
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "só armas, sem gastar espaço",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "vantagem": 0.0,
+      "nota": "besta pesada"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     }
+    ]
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "bless",
+   "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "vantagem": 0.0,
+      "nota": "besta pesada"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   }
+  },
+  {
+   "id": "enredar",
+   "hipotese": "Ensnaring Strike (ação bônus) no 1º acerto: impedido até escapar",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "vantagem": 0.0,
+      "nota": "besta pesada"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Ensnaring Strike",
+      "cd": 13,
+      "slots": [
+       1
+      ],
+      "magias": [
+       "ensnaring_strike"
+      ],
+      "modo": "melhor"
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless. Sobra: nada.",
+   "combates": [
+    "bless",
+    "bless",
+    "bless",
+    "bless"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless. Sobra: 3×1º.",
+   "combates": [
+    "bless"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Paladino atirador: Ensnaring Strike à distância e auras para a retaguarda.",
+  "estrategia": "Ensnaring Strike no primeiro acerto; Harness Divine Power converte o Channel em espaço.",
+  "nao_modelado": "Protection (estilo), Aura of Warding (resistência a magia), Hippo Build/empurrão, Misty Step, Branding Smite, recarga do mosquete. Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico.",
+  "progressao": "Giff; besta pesada, Protection; couro batido (15); Harness Divine Power 1/dia."
+ },
+ "id": "rpgbot-paladin-ancients-3",
+ "nome": "Oath of the Ancients Paladin (RPGBot: Celebrant Hunter)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/paladin/subclasses/oath-of-the-ancients/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

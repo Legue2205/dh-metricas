@@ -291,3 +291,14 @@ def test_aneis_por_planos_de_foco():
     assert a['externo']['suporte']['n'] == max(d['suporte']['n'] for d in list(a['focos'].values()) + [a['equilibrado']] if 'suporte' in d)
     for k, v in a['externo'].items():
         assert a['interno'][k]['n'] <= a['equilibrado'].get(k, {'n': 0})['n'] + 1e-9 <= v['n'] + 1e-9
+
+
+def test_dado_multiuso_volta_se_falhar():
+    # Unfailing Inspiration (Bard Eloquence, 21/11): dado que não vira a rolagem volta → reuso até virar, com teto.
+    from dh import suporte as S
+    from dh.premissas import P
+    f = {'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'usos_luta': 1}
+    base = S.valor(f, 7); com = S.valor(dict(f, volta_se_falhar=True), 7)
+    assert base < com <= base * P('suporte.dado_multiuso.reuso_max') + 1e-9
+    so_dano = {'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'usos_luta': 1, 'mix': {'dano': 1.0}}
+    assert S.valor(dict(so_dano, volta_se_falhar=True), 7) == S.valor(so_dano, 7)   # dano não falha: sem reuso

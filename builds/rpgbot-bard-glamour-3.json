@@ -1,0 +1,183 @@
+{
+ "gerado_de": "progressoes/rpgbot-bard-glamour.json",
+ "build": "Bard base: Meio-Elfo, For 8 Des 16 Con 14 Int 10 Sab 10 Car 17; Car 18 (4), Car 20 (8); couro batido",
+ "corpo": {
+  "ca": 15,
+  "pv": 24,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 5,
+    "con": 2,
+    "int": 0,
+    "sab": 0,
+    "car": 5
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 2
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 13,
+      "save": "Sab",
+      "dano": "1d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d6)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 3.5,
+      "usos_luta": 0.0
+     },
+     {
+      "nome": "Mantle of Inspiration (PV temporários)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "alvos": 3,
+      "usos_luta": 0.75,
+      "pv": 5
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 13,
+      "save": "Sab",
+      "dano": "1d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (2º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 13,
+       "slot": 2
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (2º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 13,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 2,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: area, principal. Sobra: 2×1º.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "area"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bardo base com Mantle of Inspiration (PV temporários no grupo) e Mantle of Majesty (Command todo round).",
+  "estrategia": "Mantle of Inspiration no início da luta; Mantle of Majesty numa luta por dia; Hypnotic Pattern/Hold Monster.",
+  "nao_modelado": "Reposicionamento do Mantle of Inspiration; Enthralling Performance; Unbreakable Majesty (14); auto-falha do Command em encantado; Silvery Barbs, Counterspell, Faerie Fire, Sleep, Dissonant Whispers, Mass Suggestion; desvantagem do Vicious Mockery; Song of Rest.",
+  "progressao": "Bard 3; Car 16; Mantle of Inspiration (5 PV temp.)."
+ },
+ "id": "rpgbot-bard-glamour-3",
+ "nome": "College of Glamour Bard (bardo base)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/glamour/",
+  "nota": "Sem build no handbook colado: bardo base (Meio-Elfo, Des 16, Con 14, Car 17) + recursos da subclasse. Passada 1 cega."
+ }
+}

@@ -1,0 +1,461 @@
+{
+ "id": "rpgbot-rogue-phantom",
+ "nome": "Phantom (RPGBot: Can't defeat Her, so instead I'll have to be Her)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/phantom/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Rogue (Phantom), elfo da floresta, chicote + Steady Aim; Elven Accuracy 4, Slasher 8, Athlete 10",
+  "corpo": {
+   "ca": 15,
+   "pv": 24,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 5,
+     "con": 2,
+     "int": 2,
+     "sab": 2,
+     "car": 0
+    }
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {}
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "chicote com Steady Aim + Sneak; Wails from the Grave num 2º alvo",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 5,
+       "dano": "1d4+3",
+       "vantagem": 1.0,
+       "nota": "chicote (alcance) com Steady Aim"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "2d6",
+       "prob": 1.0,
+       "nota": "Sneak Attack"
+      }
+     ],
+     "por_luta": [
+      {
+       "dano": "1d6",
+       "nota": "Wails from the Grave (2º alvo, necrótico, depois do Sneak)",
+       "usos_dia": 2
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "acao_bonus": [
+     {
+      "uso": "Steady Aim",
+      "fracao": 1.0,
+      "eixos": [
+       "dano"
+      ]
+     }
+    ],
+    "principal": true,
+    "custo": "gratuita"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Fantasma: Sneak no alvo e metade dos dados em necrótico num segundo alvo; Soul Trinkets recarregam.",
+   "estrategia": "Chicote a 10 pés com Steady Aim; Wails from the Grave quando há dois inimigos perto.",
+   "nao_modelado": "Slasher (velocidade), Whispers of the Dead, pergunta ao morto, Ghost Walk (13)."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Wails from the Grave; Steady Aim; elfo da floresta com chicote."
+  },
+  "5": {
+   "_texto": "Elven Accuracy (Dex 18, 4); Uncanny Dodge.",
+   "corpo": {
+    "ca": 16,
+    "pv": 38,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 7,
+      "con": 2,
+      "int": 3,
+      "sab": 2,
+      "car": 0
+     }
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "chicote com Steady Aim + Sneak; Wails from the Grave num 2º alvo",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 7,
+        "dano": "1d4+4",
+        "vantagem": 1.0,
+        "nota": "chicote (alcance) com Steady Aim",
+        "elven_accuracy": true
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "3d6",
+        "prob": 1.0,
+        "nota": "Sneak Attack"
+       }
+      ],
+      "por_luta": [
+       {
+        "dano": "2d6",
+        "nota": "Wails from the Grave (2º alvo, necrótico, depois do Sneak)",
+        "usos_dia": 3
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "Steady Aim",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Evasion.",
+   "corpo": {
+    "ca": 16,
+    "pv": 52,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 7,
+      "con": 2,
+      "int": 3,
+      "sab": 2,
+      "car": 0
+     },
+     "evasion": true
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "chicote com Steady Aim + Sneak; Wails from the Grave num 2º alvo",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 7,
+        "dano": "1d4+4",
+        "vantagem": 1.0,
+        "nota": "chicote (alcance) com Steady Aim",
+        "elven_accuracy": true
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "4d6",
+        "prob": 1.0,
+        "nota": "Sneak Attack"
+       }
+      ],
+      "por_luta": [
+       {
+        "dano": "2d6",
+        "nota": "Wails from the Grave (2º alvo, necrótico, depois do Sneak)",
+        "usos_dia": 3
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "Steady Aim",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Slasher (Dex 19, 8); Tokens of the Departed.",
+   "corpo": {
+    "ca": 16,
+    "pv": 66,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 8,
+      "con": 2,
+      "int": 4,
+      "sab": 2,
+      "car": 0
+     },
+     "evasion": true,
+     "adv": [
+      "con"
+     ]
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "chicote com Steady Aim + Sneak; Wails from the Grave num 2º alvo",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 8,
+        "dano": "1d4+4",
+        "vantagem": 1.0,
+        "nota": "chicote (alcance) com Steady Aim",
+        "elven_accuracy": true
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "5d6",
+        "prob": 1.0,
+        "nota": "Sneak Attack"
+       }
+      ],
+      "por_luta": [
+       {
+        "dano": "3d6",
+        "nota": "Wails from the Grave (2º alvo, necrótico, depois do Sneak)",
+        "usos": 2.0
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "Steady Aim",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ],
+     "reacao": [
+      {
+       "uso": "Tokens of the Departed (pegar Soul Trinket)",
+       "fracao": 0.25,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Athlete (Dex 20, 10); Reliable Talent.",
+   "corpo": {
+    "ca": 17,
+    "pv": 80,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 9,
+      "con": 2,
+      "int": 4,
+      "sab": 2,
+      "car": 0
+     },
+     "evasion": true,
+     "adv": [
+      "con"
+     ]
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "chicote com Steady Aim + Sneak; Wails from the Grave num 2º alvo",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d4+5",
+        "vantagem": 1.0,
+        "nota": "chicote (alcance) com Steady Aim",
+        "elven_accuracy": true
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "6d6",
+        "prob": 1.0,
+        "nota": "Sneak Attack"
+       }
+      ],
+      "por_luta": [
+       {
+        "dano": "3d6",
+        "nota": "Wails from the Grave (2º alvo, necrótico, depois do Sneak)",
+        "usos": 2.0
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "Steady Aim",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ],
+     "reacao": [
+      {
+       "uso": "Tokens of the Departed (pegar Soul Trinket)",
+       "fracao": 0.25,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

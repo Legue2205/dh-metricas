@@ -1,0 +1,186 @@
+{
+ "gerado_de": "progressoes/rpgbot-bard-lore.json",
+ "build": "Bard (Lore): Meio-Elfo, For 8 Des 16 Con 14 Int 12 Sab 8 Car 17; Skill Expert (4, Car 18); Car 20 (8); couro batido",
+ "corpo": {
+  "ca": 15,
+  "pv": 38,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 6,
+    "con": 2,
+    "int": 0,
+    "sab": 0,
+    "car": 7
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 2
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d8)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 1.0
+     },
+     {
+      "nome": "Bardic Inspiration (d8) como Cutting Words",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 1.0,
+      "mix": {
+       "ca": 1.0
+      }
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (3º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (3º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "3": 2
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: area, principal. Sobra: 2×1º, 3×2º.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "area"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 3×2º.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bardo generalista de retaguarda: controle (Web, Phantasmal Killer), Shatter/Synaptic Static, Greater Invisibility e Cutting Words.",
+  "estrategia": "Inspiração e Cutting Words dividindo o pool; uma magia de controle ou área por luta; Healing Word para levantar caídos.",
+  "nao_modelado": "Silvery Barbs, Counterspell, Dissonant Whispers, Sleep, Bane, Enemies Abound, Psychic Lance, Mass Suggestion, Destructive Wave (10); desvantagem do Vicious Mockery; Peerless Skill; Song of Rest; perícias.",
+  "progressao": "Bard 5; Car 18; BI d8 × 4."
+ },
+ "id": "rpgbot-bard-lore-5",
+ "nome": "College of Lore Bard (The Sorcerer's Apprentice)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/lore/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

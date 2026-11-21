@@ -1,0 +1,534 @@
+{
+ "gerado_de": "progressoes/rpgbot-druid-wildfire.json",
+ "build": "Druid (Wildfire) / Cleric 1 (Arcana, personagem 5), Tortle, lança + escudo; War Caster 4; Sab 18 (personagem 9)",
+ "corpo": {
+  "ca": 19,
+  "pv": 43,
+  "saves": {
+   "sv": {
+    "for": 3,
+    "des": -1,
+    "con": 3,
+    "int": 2,
+    "sab": 6,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 2
+  },
+  "outros": {
+   "forma_selvagem": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 6,
+      "dano": "1d6+3+1d8",
+      "nota": "Green-Flame Blade (lança)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d6+3+1d8",
+      "nota": "Green-Flame Blade (lança)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 14
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 14,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d6+3+1d8",
+      "nota": "Green-Flame Blade (lança)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 14
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d6+3+1d8",
+      "nota": "Green-Flame Blade (lança)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Burning Hands",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d6",
+       "cd": 14,
+       "slot": 3
+      }
+     ]
+    },
+    {
+     "nome": "Burning Hands",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d6",
+       "cd": 14,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "3": 2
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "principal+espirito",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 6,
+      "dano": "1d6+3+1d8",
+      "nota": "Green-Flame Blade (lança)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [
+    {
+     "nome": "Wildfire Spirit",
+     "quantidade": 1,
+     "pv": 25,
+     "ca": 13,
+     "ataque": {
+      "n": 1,
+      "bonus": 6,
+      "dano": "1d6+3"
+     }
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "herda": "principal",
+   "hipotese": "só truques + espirito",
+   "gasta": {
+    "forma_selvagem": 0.5,
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  },
+  {
+   "id": "controle+espirito",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d6+3+1d8",
+      "nota": "Green-Flame Blade (lança)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 14
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 14,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    },
+    "forma_selvagem": 0.5
+   },
+   "herda": "principal",
+   "invocacoes": [
+    {
+     "nome": "Wildfire Spirit",
+     "quantidade": 1,
+     "pv": 25,
+     "ca": 13,
+     "ataque": {
+      "n": 1,
+      "bonus": 6,
+      "dano": "1d6+3"
+     }
+    }
+   ],
+   "hipotese": "controle + espirito"
+  },
+  {
+   "id": "controle-barato+espirito",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d6+3+1d8",
+      "nota": "Green-Flame Blade (lança)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 14
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    },
+    "forma_selvagem": 0.5
+   },
+   "herda": "principal",
+   "invocacoes": [
+    {
+     "nome": "Wildfire Spirit",
+     "quantidade": 1,
+     "pv": 25,
+     "ca": 13,
+     "ataque": {
+      "n": 1,
+      "bonus": 6,
+      "dano": "1d6+3"
+     }
+    }
+   ],
+   "hipotese": "controle-barato + espirito"
+  },
+  {
+   "id": "area+espirito",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d6+3+1d8",
+      "nota": "Green-Flame Blade (lança)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Burning Hands",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d6",
+       "cd": 14,
+       "slot": 3
+      }
+     ]
+    },
+    {
+     "nome": "Burning Hands",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d6",
+       "cd": 14,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "3": 2
+    },
+    "forma_selvagem": 0.5
+   },
+   "herda": "principal",
+   "invocacoes": [
+    {
+     "nome": "Wildfire Spirit",
+     "quantidade": 1,
+     "pv": 25,
+     "ca": 13,
+     "ataque": {
+      "n": 1,
+      "bonus": 6,
+      "dano": "1d6+3"
+     }
+    }
+   ],
+   "hipotese": "area + espirito"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle+espirito; prioritário: area+espirito, controle+espirito. Sobra: 2×1º, 1 forma_selvagem.",
+   "combates": [
+    "controle+espirito",
+    "controle+espirito",
+    "controle+espirito",
+    "area+espirito"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area+espirito. Sobra: 3.5×1º, 3×2º, 1.5 forma_selvagem.",
+   "combates": [
+    "area+espirito"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Druida do fogo selvagem de linha de frente: lança com Green-Flame Blade, Wildfire Spirit (Wild Shape, 1 hora) atirando como ação bônus, magias de fogo com Enhanced Bond.",
+  "estrategia": "Espírito invocado antes ou no início da luta; Green-Flame Blade de lança; Burning Hands, Wall of Fire e Flame Strike; Healing Word potencializado.",
+  "nao_modelado": "Fiery Teleport (área e reposicionamento); dano secundário do Green-Flame Blade; Booming Blade; magias saindo do espírito; Create Bonfire; Scorching Ray, Flaming Sphere, Plant Growth, Fire Shield, Aura of Life; Blazing Revival; ação bônus disputada entre o espírito e Healing Word.",
+  "progressao": "Druid 4 / Cleric 1 (Arcana); Tortle (CA 17) + escudo; Sab 16."
+ },
+ "id": "rpgbot-druid-wildfire-5",
+ "nome": "Circle of Wildfire Druid (RPGBot: Gamera)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/circle-of-wildfire/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

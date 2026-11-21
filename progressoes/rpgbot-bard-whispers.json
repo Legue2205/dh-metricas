@@ -1,0 +1,442 @@
+{
+ "id": "rpgbot-bard-whispers",
+ "nome": "College of Whispers Bard (Master Spy)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/college-of-whispers/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Bard (Whispers): Changeling, For 8 Des 16 Con 13 Int 8 Sab 12 Car 17; Actor (4, Car 18); Skill Expert (8, Car 19); couro batido; besta leve",
+  "corpo": {
+   "ca": 15,
+   "pv": 21,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 5,
+     "con": 1,
+     "int": -1,
+     "sab": 1,
+     "car": 5
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 2
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "besta leve"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 0.375,
+       "dano": "2d6",
+       "nota": "Psychic Blades (metade dos dados de inspiração)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Bardic Inspiration (d6)",
+       "lado": "of",
+       "modelo": "dado_multiuso",
+       "dado_medio": 3.5,
+       "usos_luta": 0.375
+      }
+     ]
+    },
+    "principal": true,
+    "custo": "gratuita",
+    "hipotese": "só truques (anel interno)"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Espião e face: quase nenhuma magia de combate; besta leve com Psychic Blades.",
+   "estrategia": "Besta e Psychic Blades no combate; inspiração para os aliados.",
+   "nao_modelado": "Sleep, Charm Person, Calm Emotions, Invisibility, Dimension Door, Psychic Lance, Mass Suggestion; Words of Terror, Mantle of Whispers, Shadow Lore; utilidade social (o foco do guia)."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Bard 3; Des 16, Car 16; Psychic Blades 2d6; sem magia de combate modelada."
+  },
+  "5": {
+   "_texto": "Bard 5; Des 16, Car 18; Psychic Blades 3d6; sem magia de combate modelada.",
+   "corpo": {
+    "ca": 15,
+    "pv": 33,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 6,
+      "con": 1,
+      "int": -1,
+      "sab": 1,
+      "car": 7
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 2
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 6,
+        "dano": "1d8+3",
+        "nota": "besta leve"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1.0,
+        "dano": "3d6",
+        "nota": "Psychic Blades (metade dos dados de inspiração)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d8)",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 4.5,
+        "usos_luta": 1.0
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Bard 7; Des 16, Car 18; Psychic Blades 3d6; sem magia de combate modelada.",
+   "corpo": {
+    "ca": 15,
+    "pv": 45,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 6,
+      "con": 1,
+      "int": -1,
+      "sab": 1,
+      "car": 7
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 1
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 6,
+        "dano": "1d8+3",
+        "nota": "besta leve"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1.0,
+        "dano": "3d6",
+        "nota": "Psychic Blades (metade dos dados de inspiração)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d8)",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 4.5,
+        "usos_luta": 1.0
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Bard 9; Des 16, Car 18; Psychic Blades 3d6; sem magia de combate modelada.",
+   "corpo": {
+    "ca": 15,
+    "pv": 57,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 7,
+      "con": 1,
+      "int": -1,
+      "sab": 1,
+      "car": 8
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 1
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+3",
+        "nota": "besta leve"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1.0,
+        "dano": "3d6",
+        "nota": "Psychic Blades (metade dos dados de inspiração)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d8)",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 4.5,
+        "usos_luta": 1.0
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Bard 11; Des 16, Car 18; Psychic Blades 5d6; sem magia de combate modelada.",
+   "corpo": {
+    "ca": 15,
+    "pv": 69,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 7,
+      "con": 1,
+      "int": -1,
+      "sab": 1,
+      "car": 8
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 2,
+     "6": 1
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+3",
+        "nota": "besta leve"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1.0,
+        "dano": "5d6",
+        "nota": "Psychic Blades (metade dos dados de inspiração)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bardic Inspiration (d10)",
+        "lado": "of",
+        "modelo": "dado_multiuso",
+        "dado_medio": 5.5,
+        "usos_luta": 1.0
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

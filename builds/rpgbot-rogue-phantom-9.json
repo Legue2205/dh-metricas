@@ -1,0 +1,133 @@
+{
+ "gerado_de": "progressoes/rpgbot-rogue-phantom.json",
+ "build": "Rogue (Phantom), elfo da floresta, chicote + Steady Aim; Elven Accuracy 4, Slasher 8, Athlete 10",
+ "corpo": {
+  "ca": 16,
+  "pv": 66,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 8,
+    "con": 2,
+    "int": 4,
+    "sab": 2,
+    "car": 0
+   },
+   "evasion": true,
+   "adv": [
+    "con"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "chicote com Steady Aim + Sneak; Wails from the Grave num 2º alvo",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d4+4",
+      "vantagem": 1.0,
+      "nota": "chicote (alcance) com Steady Aim",
+      "elven_accuracy": true
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "5d6",
+      "prob": 1.0,
+      "nota": "Sneak Attack"
+     }
+    ],
+    "por_luta": [
+     {
+      "dano": "3d6",
+      "nota": "Wails from the Grave (2º alvo, necrótico, depois do Sneak)",
+      "usos": 2.0
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Steady Aim",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita",
+   "reacao": [
+    {
+     "uso": "Tokens of the Departed (pegar Soul Trinket)",
+     "fracao": 0.25,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Fantasma: Sneak no alvo e metade dos dados em necrótico num segundo alvo; Soul Trinkets recarregam.",
+  "estrategia": "Chicote a 10 pés com Steady Aim; Wails from the Grave quando há dois inimigos perto.",
+  "nao_modelado": "Slasher (velocidade), Whispers of the Dead, pergunta ao morto, Ghost Walk (13).",
+  "progressao": "Slasher (Dex 19, 8); Tokens of the Departed."
+ },
+ "id": "rpgbot-rogue-phantom-9",
+ "nome": "Phantom (RPGBot: Can't defeat Her, so instead I'll have to be Her)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/phantom/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

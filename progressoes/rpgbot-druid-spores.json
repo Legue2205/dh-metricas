@@ -1,0 +1,2325 @@
+{
+ "id": "rpgbot-druid-spores",
+ "nome": "Circle of Spores Druid (RPGBot: Tortle Druid)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/circle-of-spores/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ },
+ "base": {
+  "build": "Druid (Spores), Tortle, escudo, Shillelagh; Sab 18 (4), Sab 20 (8); Resilient Con 12",
+  "corpo": {
+   "ca": 19,
+   "pv": 24,
+   "saves": {
+    "sv": {
+     "for": 0,
+     "des": 1,
+     "con": 2,
+     "int": 3,
+     "sab": 5,
+     "car": -1
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 2
+   },
+   "outros": {
+    "forma_selvagem": {
+     "qtd": 2,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "Shillelagh (bordão)"
+      }
+     ],
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Con",
+       "dano": "1d4",
+       "meio": false,
+       "nota": "Halo of Spores (reação, alvo a 10 pés)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "frontliner",
+      "front": true,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    },
+    "principal": true,
+    "custo": "gratuita",
+    "hipotese": "só truques (anel interno)"
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "Shillelagh (bordão)"
+      }
+     ],
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Con",
+       "dano": "1d4",
+       "meio": false,
+       "nota": "Halo of Spores (reação, alvo a 10 pés)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "frontliner",
+      "front": true,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Entangle",
+         "magia": "entangle",
+         "cd": 13
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 13,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "controle"
+   },
+   {
+    "id": "controle-barato",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "Shillelagh (bordão)"
+      }
+     ],
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Con",
+       "dano": "1d4",
+       "meio": false,
+       "nota": "Halo of Spores (reação, alvo a 10 pés)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "frontliner",
+      "front": true,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Entangle",
+       "magia": "entangle",
+       "cd": 13
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "controle-barato"
+   },
+   {
+    "id": "principal+simbionte",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d8+3+1d6",
+       "nota": "Shillelagh (bordão) + Symbiotic Entity"
+      }
+     ],
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Con",
+       "dano": "2d4",
+       "meio": false,
+       "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "frontliner",
+      "front": true,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "corpo": {
+     "pvt_luta": 12
+    },
+    "herda": "principal",
+    "hipotese": "só truques + simbionte",
+    "gasta": {
+     "forma_selvagem": 1,
+     "espacos": {
+      "1": 0.5
+     }
+    }
+   },
+   {
+    "id": "controle+simbionte",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 5,
+       "dano": "1d8+3+1d6",
+       "nota": "Shillelagh (bordão) + Symbiotic Entity"
+      }
+     ],
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Con",
+       "dano": "2d4",
+       "meio": false,
+       "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "frontliner",
+      "front": true,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Entangle",
+         "magia": "entangle",
+         "cd": 13
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 13,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 0.5
+     },
+     "forma_selvagem": 1
+    },
+    "herda": "principal",
+    "corpo": {
+     "pvt_luta": 12
+    },
+    "hipotese": "controle + simbionte"
+   },
+   {
+    "id": "controle-barato+simbionte",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 5,
+       "dano": "1d8+3+1d6",
+       "nota": "Shillelagh (bordão) + Symbiotic Entity"
+      }
+     ],
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Con",
+       "dano": "2d4",
+       "meio": false,
+       "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "frontliner",
+      "front": true,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Entangle",
+       "magia": "entangle",
+       "cd": 13
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5
+     },
+     "forma_selvagem": 1
+    },
+    "herda": "principal",
+    "corpo": {
+     "pvt_luta": 12
+    },
+    "hipotese": "controle-barato + simbionte"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Druida de corpo a corpo com Shillelagh e Halo of Spores na reação; Symbiotic Entity (Wild Shape) dá 4 PV temporários por nível e dobra os esporos.",
+   "estrategia": "Symbiotic Entity antes das lutas, bordão com Shillelagh e esporos como reação; Thunderclap contra grupos; Entangle/Hold Person quando precisa controlar.",
+   "nao_modelado": "Ação para ativar a Symbiotic Entity e Shillelagh (ação bônus) no 1º round; Fungal Infestation; Spreading Spores; Fungal Body; Chill Touch; Thorn Whip; Spike Growth, Warding Wind, Healing Spirit, Guardian of Nature, Giant Insect."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Druid 3 (Spores); Tortle (CA 17) + escudo; Sab 16; Halo of Spores 1d4."
+  },
+  "5": {
+   "_texto": "Druid 5 (Spores); Tortle (CA 17) + escudo; Sab 18; Halo of Spores 1d4.",
+   "corpo": {
+    "ca": 19,
+    "pv": 38,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 1,
+      "con": 2,
+      "int": 4,
+      "sab": 7,
+      "car": -1
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 2
+    },
+    "outros": {
+     "forma_selvagem": {
+      "qtd": 2,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "1d4",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Thunderclap",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "1d4",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 15
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "controle-barato",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "1d4",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 15
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle-barato"
+    },
+    {
+     "id": "principal+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+4+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Thunderclap",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "corpo": {
+      "pvt_luta": 20
+     },
+     "herda": "principal",
+     "hipotese": "só truques + simbionte",
+     "gasta": {
+      "forma_selvagem": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 15
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "pvt_luta": 20
+     },
+     "hipotese": "controle + simbionte"
+    },
+    {
+     "id": "controle-barato+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "2d4",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 15
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "pvt_luta": 20
+     },
+     "hipotese": "controle-barato + simbionte"
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Druid 7 (Spores); Tortle (CA 17) + escudo; Sab 18; Halo of Spores 1d6.",
+   "corpo": {
+    "ca": 19,
+    "pv": 52,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 1,
+      "con": 2,
+      "int": 4,
+      "sab": 7,
+      "car": -1
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 1
+    },
+    "outros": {
+     "forma_selvagem": {
+      "qtd": 2,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "1d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Thunderclap",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "1d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 15
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 15,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5,
+       "2": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "controle-barato",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "1d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 15
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle-barato"
+    },
+    {
+     "id": "principal+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+4+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "2d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Thunderclap",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 15,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "corpo": {
+      "pvt_luta": 28
+     },
+     "herda": "principal",
+     "hipotese": "só truques + simbionte",
+     "gasta": {
+      "forma_selvagem": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "2d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 15
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 15,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5,
+       "2": null
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "pvt_luta": 28
+     },
+     "hipotese": "controle + simbionte"
+    },
+    {
+     "id": "controle-barato+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Con",
+        "dano": "2d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 15
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "pvt_luta": 28
+     },
+     "hipotese": "controle-barato + simbionte"
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Druid 9 (Spores); Tortle (CA 17) + escudo; Sab 20; Halo of Spores 1d6.",
+   "corpo": {
+    "ca": 19,
+    "pv": 66,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 1,
+      "con": 2,
+      "int": 5,
+      "sab": 9,
+      "car": -1
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 1
+    },
+    "outros": {
+     "forma_selvagem": {
+      "qtd": 2,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "1d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Thunderclap",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "1d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "controle-barato",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "1d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle-barato"
+    },
+    {
+     "id": "principal+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d8+5+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "2d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Thunderclap",
+       "tipo": "cleave_save",
+       "dano": "2d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "corpo": {
+      "pvt_luta": 36
+     },
+     "herda": "principal",
+     "hipotese": "só truques + simbionte",
+     "gasta": {
+      "forma_selvagem": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "2d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "pvt_luta": 36
+     },
+     "hipotese": "controle + simbionte"
+    },
+    {
+     "id": "controle-barato+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "2d6",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "pvt_luta": 36
+     },
+     "hipotese": "controle-barato + simbionte"
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Druid 11 (Spores); Tortle (CA 17) + escudo; Sab 20; Halo of Spores 1d8.",
+   "corpo": {
+    "ca": 19,
+    "pv": 80,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 1,
+      "con": 2,
+      "int": 5,
+      "sab": 9,
+      "car": -1
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 2,
+     "6": 1
+    },
+    "outros": {
+     "forma_selvagem": {
+      "qtd": 2,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "1d8",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Thunderclap",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "1d8",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "controle-barato",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Shillelagh (bordão)"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "1d8",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle-barato"
+    },
+    {
+     "id": "principal+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d8+5+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [
+      {
+       "nome": "Thunderclap",
+       "tipo": "cleave_save",
+       "dano": "3d6",
+       "cd": 17,
+       "save": "Con",
+       "alvos": [
+        1,
+        2,
+        3
+       ]
+      }
+     ],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "corpo": {
+      "pvt_luta": 44
+     },
+     "herda": "principal",
+     "hipotese": "só truques + simbionte",
+     "gasta": {
+      "forma_selvagem": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "pvt_luta": 44
+     },
+     "hipotese": "controle + simbionte"
+    },
+    {
+     "id": "controle-barato+simbionte",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5+1d6",
+        "nota": "Shillelagh (bordão) + Symbiotic Entity"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Con",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Halo of Spores (reação, alvo a 10 pés) dobrado"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "frontliner",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "pvt_luta": 44
+     },
+     "hipotese": "controle-barato + simbionte"
+    }
+   ]
+  }
+ }
+}

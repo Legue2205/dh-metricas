@@ -1,0 +1,300 @@
+{
+ "gerado_de": "progressoes/rpgbot-bard-swords.json",
+ "build": "Bard (Swords) base: Meio-Elfo, For 8 Des 16 Con 14 Car 17; Car 18 (4), Car 20 (8); cota de escamas; rapieira (Dueling)",
+ "corpo": {
+  "ca": 16,
+  "pv": 52,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 6,
+    "con": 2,
+    "int": 0,
+    "sab": 0,
+    "car": 7
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 1
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 6,
+      "dano": "1d8+5",
+      "nota": "rapieira (Dueling)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "1d8",
+      "nota": "Blade Flourish (metade dos dados)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d8)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 1.0
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 6,
+      "dano": "1d8+5",
+      "nota": "rapieira (Dueling)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "1d8",
+      "nota": "Blade Flourish (metade dos dados)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (4º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "5d8",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (3º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "3": 1,
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 6,
+      "dano": "1d8+5",
+      "nota": "rapieira (Dueling)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "1d8",
+      "nota": "Blade Flourish (metade dos dados)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Hypnotic Pattern",
+      "magia": "hypnotic_pattern",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "invisibilidade",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 6,
+      "dano": "1d8+5",
+      "nota": "rapieira (Dueling)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "1d8",
+      "nota": "Blade Flourish (metade dos dados)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d8)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 1.0
+     },
+     {
+      "nome": "Greater Invisibility (aliado: vantagem)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 1,
+      "fracao": 1.0,
+      "concentracao": "greater_invisibility"
+     },
+     {
+      "nome": "Greater Invisibility (aliado: desvantagem contra)",
+      "lado": "def",
+      "modelo": "desvantagem_contra",
+      "alvos": 1
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "invisibilidade"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, principal; prioritário: area, controle. Sobra: 2×1º, 3×2º.",
+   "combates": [
+    "principal",
+    "area",
+    "controle",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 3×2º, 2×3º.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bardo de corpo a corpo leve: rapieira com Dueling, Extra Attack e Blade Flourish.",
+  "estrategia": "Rapieira nos rounds livres com Blade Flourish; Hypnotic Pattern/Hold Monster; metade dos dados como inspiração.",
+  "nao_modelado": "CA do Defensive Flourish, alvos extras do Slashing Flourish, Mobile Flourish, Master's Flourish (14); linha de frente (atenção) igual ao conjurador; Silvery Barbs, Counterspell, Faerie Fire, Sleep, Dissonant Whispers, Mass Suggestion; desvantagem do Vicious Mockery; Song of Rest.",
+  "progressao": "Bard 7; Des 16, Car 18; rapieira com Dueling; Extra Attack."
+ },
+ "id": "rpgbot-bard-swords-7",
+ "nome": "College of Swords Bard (bardo base)",
+ "grupo": "RPGBot",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/college-of-swords/",
+  "nota": "Sem build no handbook colado: bardo base (Meio-Elfo, Des 16, Con 14, Car 17) + recursos da subclasse. Passada 1 cega."
+ }
+}

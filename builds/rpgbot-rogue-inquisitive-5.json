@@ -1,0 +1,126 @@
+{
+ "gerado_de": "progressoes/rpgbot-rogue-inquisitive.json",
+ "build": "Rogue (Inquisitive), Vedalken, arco curto + Steady Aim; Piercer 4, Dex 20 8, Observant 10",
+ "corpo": {
+  "ca": 16,
+  "pv": 38,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 7,
+    "con": 2,
+    "int": 4,
+    "sab": 2,
+    "car": -1
+   },
+   "adv": [
+    "int",
+    "sab",
+    "car"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco curto com Steady Aim (ou Insightful Fighting) + Sneak",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d6+4",
+      "vantagem": 1.0,
+      "nota": "Steady Aim (ação bônus, sem mover): vantagem e Sneak garantido"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "3d6",
+      "prob": 1.0,
+      "nota": "Sneak Attack"
+     },
+     {
+      "dano": "0.75",
+      "nota": "Piercer: rerrola 1 dado por turno"
+     },
+     {
+      "dano": "1d6",
+      "gatilho": "critico",
+      "nota": "Piercer: dado extra no crítico"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Steady Aim",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Investigador: percepção e intuição imbatíveis; em combate é um ladino básico com Steady Aim.",
+  "estrategia": "Arco curto, Steady Aim todo turno; Insightful Fighting quando precisa se mover.",
+  "nao_modelado": "Eye for Detail; Eye for Weakness (17).",
+  "progressao": "Piercer (Dex 18, 4); Uncanny Dodge."
+ },
+ "id": "rpgbot-rogue-inquisitive-5",
+ "nome": "Inquisitive (RPGBot: I Really Wanted to Play the PF2 Investigator)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/inquisitive/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -1,0 +1,372 @@
+{
+ "gerado_de": "progressoes/rpgbot-warlock-fiend.json",
+ "build": "Warlock (Fiend), humano variante; Car 16 (3), 18 (5), 20 (9); Agonizing Blast + Armor of Shadows",
+ "corpo": {
+  "ca": 15,
+  "pv": 24,
+  "saves": {
+   "sv": {
+    "for": 0,
+    "des": 2,
+    "con": 2,
+    "int": 0,
+    "sab": 3,
+    "car": 5
+   },
+   "conjurador": true
+  },
+  "pvt_luta": 6
+ },
+ "recursos": {
+  "espacos": {
+   "2": 2
+  },
+  "espacos_volta": "curto"
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "hex",
+   "herda": "principal",
+   "hipotese": "Hex (1 hora: 0,5 espaço por luta) no truque principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d10+3+1d6",
+      "nota": "Eldritch Blast + Agonizing Blast + Hex"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 0.5
+    }
+   }
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Hold Person",
+      "cd": 13,
+      "slots": [
+       2
+      ],
+      "magias": [
+       "hold_person"
+      ],
+      "modo": "melhor"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (2º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 13,
+       "slot": 2
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (2º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 13,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 2
+    }
+   },
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "combo",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Hold Person",
+      "cd": 13,
+      "slots": [
+       2
+      ],
+      "magias": [
+       "hold_person"
+      ],
+      "modo": "melhor"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 13,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 2
+    }
+   },
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "combo"
+  },
+  {
+   "id": "area+hex",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 5,
+      "dano": "1d10+3+1d6",
+      "nota": "Eldritch Blast + Agonizing Blast + Hex"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (2º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 13,
+       "slot": 2
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (2º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 13,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 2.5
+    }
+   },
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "area + Hex"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: area. Sobra: nada.",
+   "combates": [
+    "principal",
+    "area",
+    "principal",
+    "area"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: nada.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Fiend Warlock: Eldritch Blast com Agonizing Blast e Hex; espaços de pacto voltam no descanso curto.",
+  "estrategia": "Hex no início do dia (cobre ~2 lutas), controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster) ou invocação no espaço de pacto.",
+  "nao_modelado": "Dark One's Own Luck, Fiendish Resilience; Elemental Adept; Agonizing Blast; Repelling Blast e outras invocações; Hunger of Hadar; Armor of Agathys; Counterspell; Misty Step; Darkness+Devil's Sight",
+  "progressao": "Warlock 3; Car 16; pacto 2×2º. Dark One's Blessing: 1 abate por luta."
+ },
+ "id": "rpgbot-warlock-fiend-3",
+ "nome": "Fiend Warlock (RPGBot: chassi do handbook)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/warlock/subclasses/",
+  "nota": "Chassi do handbook por subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

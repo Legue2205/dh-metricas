@@ -181,3 +181,109 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
 - Sun Soul: Radiant Sun Bolt como ataque à distância (papel atirador); Searing Sunburst grátis como `cleave_save` livre.
 - Ascendant Dragon: os dois sopros (monge, PB/dia; Dragonborn, PB/dia) no lugar de ataques do 1º round, cone de 20 pés = 2
   alvos; Frightful Presence (11) = amedrontado com resave, 4 tentativas por luta (1/descanso longo).
+
+# Mutirão de 21/11 (8 classes; textos das sessões, sem edição)
+
+# Paladin (passada 1, 21/11 mutirão; gerador `ferramentas/geradores/pal.py`)
+- PV d10; saves Sab/Car; Aura of Protection (Paladin 6) soma Car nos próprios saves e entra no Suporte como `aura_saves`.
+- Espaços pela tabela de conjurador completo com nível ceil(Pal/2) (multiclasse: floor(Pal/2) + nível do outro conjurador);
+  espaços de pacto em `outros.pacto` (volta curto).
+- Divine Smite: linhas `smite-<círculo>` (2 smites por luta naquele círculo, `por_luta`, 1º 2d8 … 3º 4d8); toda linha de
+  subclasse ganha a variante `+smite` (2 smites de 1º) se sobrarem espaços de 1º. Improved Divine Smite = +1d8 na string.
+- Linha `bless` em todos os paladinos com espaço (ação no round 1, ataques 0,75). Lay on Hands = `cura_na_luta` (toque, ação,
+  pool de 5 × nível ÷ 4 lutas).
+- Channel Divinity `outros.canal` 1/descanso curto, `valor` = espaço do Harness Divine Power. Uso de ação no round 1
+  (Sacred Weapon, Conquering Presence) = ataques 0,75; de ação bônus (Vow of Enmity) = ataque da ação bônus 0,75.
+- Vow of Enmity = vantagem 1,0 na luta. Sacred Weapon = +Car no acerto. Hunter's Mark = +1d6, `gasta` 0,5 espaço de 1º.
+- Polearm Master: cabo na ação bônus (1d4) + oportunidade 0,5 (reação, dano e controle). Cimitarra de duas lâminas: ataque
+  de 1d4 na ação bônus; GWF em 2d4 = +1,0, em 1d4 = +0,5.
+- Form of Dread: `pvt_luta` 1d10 + nível de warlock e `condicao_no_acerto` amedrontado (4 tentativas por luta), PB/dia.
+  Aura of Conquest: `com_save` Sab n 0,75 com metade do nível de paladino nas linhas que causam medo.
+- Armor of Agathys: `pvt_luta` 5 (1º); dano de retorno não modelado. Inspiring Smite = `pv_temporario` 2d8 + nível em 1 aliado.
+- Haste em si: round 1 é a ação; +1 ataque nos rounds 2–4 (0,75) e `defesa.ca` +2.
+- Não modelados (igual para todos): smite guardado para o crítico, Aura of Courage, Divine Allegiance, Aura of the Guardian,
+  Rebuke the Violent, Champion Challenge/Compelled Duel, Shield Master (derrubar), Watcher's Will, Aura of Warding,
+  Find Steed, upcast de Bless/Ensnaring Strike.
+
+# Rogue (passada 1, mutirão 21/11; gerador `ferramentas/geradores/rog.py`)
+- Sneak Attack: `por_turno` com `"prob"` = gatilho além do acerto. Sem fonte própria (aliado adjacente ao alvo) 0,75;
+  Rakish Audacity 0,9 (união com aliado adjacente); fonte própria 1,0 (Steady Aim; familiar adjacente do AT, como o Help
+  do familiar do Ancestral Guardian).
+- Steady Aim (Tasha's): vantagem 1,0 e ação bônus declarada (`acao_bonus`); só quando o guia usa os opcionais (o Scout não).
+- Hide com Cunning Action: não conta (vantagem depende de cobertura = julgamento).
+- Assassinate: vantagem = 0,25 (round 1) × chance de vencer a iniciativa (0,6 no 3; 0,8 com Alert; 0,95 com Reliable
+  Talent + Harengon). Críticos da surpresa: não contam.
+- Booming Blade: só o dano no acerto (1d8 no 5, 2d8 no 11); o secundário não conta. CA de couro batido 12 + Des.
+- Uncanny Dodge (5+) em `defesa.reacoes`; Evasion (7+) nos saves.
+- Wails from the Grave: `por_luta` com metade dos dados do Sneak; PB `usos_dia` até o 8; do 9 em diante PB ÷ 4 + 1
+  Soul Trinket por luta (reação 0,25). Soul Trinket na mão: vantagem em saves de Con.
+- Homing Strikes: `dado_no_erro` com (2×PB + 2) ÷ 4 usos por luta.
+- Fast Hands: frasco de ácido na ação bônus (2d6 + Des, arma improvisada sem proficiência); estrepes não contam.
+- Master of Tactics: suporte `vantagem` com `fracao` = 1 ÷ (3 × ataques do aliado na régua) (1 ataque de 1 aliado por round).
+- Inspiring Leader: `pv_temporario` `entre_lutas` com `usos_descanso_curto` 1 (nível + Car).
+
+# Bard (passada 1, 21/11; gerador `ferramentas/geradores/brd.py`, usa `wiz.py`)
+- Espaços de conjurador completo (sem Shield/Mage Armor). Linhas: `principal` (truque: Vicious Mockery kd4 Sab sem meio;
+  Valor arco longo, Whispers besta leve, Swords rapieira), `controle` / `controle-barato` / `area` (regras do Wizard),
+  `invisibilidade` (Greater Invisibility num aliado: `vantagem` 1 alvo + `desvantagem_contra` 1 alvo, gasta 4º).
+- Bardic Inspiration = `dado_multiuso` (d6/d8/d10 em 3/5/10), usos por luta = Car ÷ 4 até o 4 e Car ÷ 2 com Font of
+  Inspiration (5). Healing Word como no Cleric (passada 3), exceto Whispers (não tem).
+- Dados divididos entre usos: Lore metade como Cutting Words (`mix` {"ca": 1}); Whispers metade em Psychic Blades e Swords
+  metade em Blade Flourish (`por_luta`); Eloquence 1 dado por luta em Unsettling Words (CD +dado na linha de controle) e
+  Unfailing Inspiration (6) = `volta_se_falhar`; Glamour 1 dado por luta em Mantle of Inspiration (`pv_temporario`
+  5/8/11 em 3 aliados).
+- Creation: Mote of Potential como riders proporcionais ao mix padrão (ataque → `valor_por_luta` dado × 1,5 alvos; save →
+  `pv_temporario` dado + Car); Dancing Item = invocação (CA 16, PV 10 + 5×nível, 1d10 + PB com 0,5 ataque/round pela ação
+  bônus), gasta 0,25 espaço de 3º por luta. Glamour: Mantle of Majesty = Command em 4 rounds, `outros.majestade` 1/longo.
+- Valor: peitoral + escudo (18), Elven Accuracy no 4, Archery no 8, Holy Weapon (10+) = linha `arma-sagrada`, 0,5 de 5º.
+- Não modelados (todos): Silvery Barbs, Counterspell, Sleep, Faerie Fire, Dissonant Whispers, Mass Suggestion, desvantagem
+  do Vicious Mockery, Song of Rest, Tales from Beyond (aleatório), Combat Inspiration além do mix padrão.
+
+# Druidas (mutirão 21/11)
+- Druida base: Produce Flame (ou o truque da build), controle = Entangle + Hold Person (+ Polymorph quando a build o
+  nomeia), Healing Word em todas as linhas (convenção do Cleric). Wild Shape = recurso `forma_selvagem` {qtd 2, volta curto}.
+- Usos de Wild Shape como buff (Starry Form, Symbiotic Entity, Wildfire Spirit, forma de combate do Moon) = variante
+  "+<nome>" de cada linha, gastando a forma (10 min ou menos = 1 por luta; Wildfire Spirit 1 hora = 0,5). Ataques da
+  forma ×0,75 quando a linha lança magia no round 1.
+- Moon: PV da forma somados aos do druida, CA e ataques da forma (como Polymorph em si mesmo); efeitos de agarrar/derrubar
+  não modelados; Elemental Wild Shape (2 usos) em variantes "+elemental".
+- Natural Recovery = Arcane Recovery. Invocações de 1 hora = 0,5 espaço por luta. Mighty Summoner: +2 PV por dado de vida
+  (Conjure X), não se aplica aos Summon de Tasha.
+- Symbiotic Entity: `pvt_luta` 4 × nível. Halo of Spores: com_save n 0,75 por round (reação). Balm of the Summer Court
+  substitui o Healing Word (cura_na_luta, 2 × nível PV, sem espaço). Enhanced Bond em área: +4 fixo (parser).
+- Starry Form Archer: ataque extra 1,0/round; Guiding Bolt grátis e Cosmic Omen: PB/4 por luta.
+
+# Warlock (mutirão 21/11)
+- Espaços de pacto: `recursos.espacos = {nível do pacto: qtd}`, `espacos_volta: "curto"`; todo `gasta` no nível do pacto
+  (magia de círculo menor lançada no espaço do pacto; upcast de área pela regra da magia).
+- Eldritch Blast + Agonizing Blast: `ataques` com n = raios (1/2/3 nos níveis 1/5/11), dano 1d10+Car. Armor of Shadows: CA 13+Des.
+- Hex: linha `hex` (0,5 espaço/luta) e variantes `+hex` das linhas sem concentração (área, Mass Suggestion).
+- Mystic Arcanum: recurso `outros.arcano` (qtd 1, `volta: longo`), linha própria; Mass Suggestion no 11.
+- Recurso de subclasse por descanso curto que dura até o alvo cair (Hexblade's Curse): valor médio por golpe = efeito ÷ 2 lutas.
+- Recurso PB/dia que dura 1 minuto (Tentacle of the Deeps, Form of Dread): fração por luta = min(1, PB/4).
+- Recurso 1/descanso curto em reação (Entropic Ward): `usos_luta` 0,5.
+
+# Sorcerer (passada 1, 21/11; gerador `ferramentas/geradores/sor.py`)
+- Espaços = tabela de conjurador pleno (nível de conjurador na multiclasse) + Flexible Casting: TODOS os pontos de feitiçaria
+  (= nível de Sorcerer, a partir do 2) viram espaços, gulosamente no maior círculo disponível até o 5º (custo 2/3/5/6/7). Sem Arcane Recovery.
+- Metamagia (Twinned, Quickened, Heightened, Extended, Transmuted) não modelada na passada 1; vai para `nao_modelado`.
+- Mage Armor: 1 espaço de 1º/dia fora do pool (como Wizard). Draconic Resilience = CA 13+Des e +1 PV/nível de Sorcerer.
+- Elemental Affinity: +Car no dano de magias do elemento (truque incluso) a partir do 6. Elemental Adept não modelado.
+- Saves de proficiência pela 1ª classe (Divine Soul com Cleric 1: Sab/Car). Armadura da build: média/pesada quando a raça ou o dip dá.
+- Linhas: as mesmas dos wizards (principal, controle, controle-barato, area, combo, invocacao) + `bless` quando a build usa Bless
+  (fonte de suporte `bonus_continuo` igual à dos clérigos).
+- Magias fora de `magias.json` ficam fora (em `nao_modelado`), sem criar magia nova na passada 1.
+
+# Ranger (passada 1, mutirão 21/11; gerador `ferramentas/geradores/ran.py`)
+- Hunter's Mark: +1d6 na string de dano de cada ataque; 1 hora → `gasta` 0,5 espaço de 1º por luta. Linha `marca`.
+- Dread Ambusher: 0,25 ataque/round com +1d8 (1 ataque extra no 1º de 4 rounds). Stalker's Flurry: +0,5 ataque/turno.
+- Riders 1×/turno das subclasses (Colossus Slayer, Planar Warrior, Slayer's Prey, Dreadful Strikes, Gathered Swarm) = `por_turno`.
+- Pet (drake, Primal Companion): ataque próprio com bônus de magia, 0,75/round (round 1 da ação bônus vai na Hunter's Mark).
+- Distant Strike: 3º ataque sempre (assume ≥ 2 inimigos).
+
+# Artificer (passada 1, mutirão 21/11; gerador `ferramentas/geradores/art.py`)
+- Pet/objeto permanente que age na ação bônus (Steel Defender, Eldritch Cannon): `invocacoes` em todas as linhas, com o stat
+  block pelo nível; tratado como presente em todas as lutas.
+- Reação de outra criatura que protege a build (Deflect Attack): reação com `"propria": true`, 1/round (`usos_luta: 4`).
+- "+X dados uma vez por turno se algum ataque acertar" (Lightning Launcher): entrada extra de 1 rolagem por turno com o mesmo bônus.
+- Infusões: só as que mudam número fixo (Enhanced Defense/Weapon/Arcane Focus, Repulsion Shield) e só se o guia as põe na própria build.

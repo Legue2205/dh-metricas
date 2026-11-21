@@ -1,0 +1,162 @@
+{
+ "gerado_de": "progressoes/rpgbot-rogue-mastermind.json",
+ "build": "Rogue (Mastermind), Hobgoblin (Custom Origin), besta pesada; Skill Expert 4, Piercer 8, Dex 20/Car 16 10",
+ "corpo": {
+  "ca": 15,
+  "pv": 24,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 5,
+    "con": 2,
+    "int": 1,
+    "sab": 1,
+    "car": 2
+   }
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "besta pesada com Steady Aim + Sneak",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "vantagem": 1.0,
+      "nota": "Steady Aim (ação bônus, sem mover): vantagem e Sneak garantido"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "2d6",
+      "prob": 1.0,
+      "nota": "Sneak Attack"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Steady Aim",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "tatica",
+   "hipotese": "besta pesada + Sneak (aliado adjacente); Master of Tactics: Help a 30 pés num ataque de aliado",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "1d10+3"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "2d6",
+      "prob": 0.75,
+      "nota": "Sneak Attack"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Master of Tactics (Help a distância)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 1,
+      "fracao": 0.333,
+      "nota": "1 ataque de 1 aliado por round"
+     }
+    ]
+   },
+   "acao_bonus": [
+    {
+     "uso": "Master of Tactics",
+     "fracao": 1.0,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: tatica; prioritário: tatica. Sobra: nada.",
+   "combates": [
+    "tatica",
+    "tatica",
+    "tatica",
+    "tatica"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: tatica. Sobra: nada.",
+   "combates": [
+    "tatica"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Mentor: face social; em combate troca o Steady Aim por Help a distância para um aliado.",
+  "estrategia": "Besta pesada com Steady Aim; Master of Tactics quando um aliado tem um ataque grande.",
+  "nao_modelado": "Saving Face do Hobgoblin, Help em teste de empurrão, Insightful Manipulator, Misdirection (13).",
+  "progressao": "Master of Tactics; Steady Aim; Hobgoblin (besta pesada)."
+ },
+ "id": "rpgbot-rogue-mastermind-3",
+ "nome": "Mastermind (RPGBot: Criminal Mastermind)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/mastermind/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

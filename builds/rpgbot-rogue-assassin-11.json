@@ -1,0 +1,104 @@
+{
+ "gerado_de": "progressoes/rpgbot-rogue-assassin.json",
+ "build": "Rogue (Assassin), Harengon, arco curto; Alert 4, Dex 18 8, Dex 20 10",
+ "corpo": {
+  "ca": 17,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 9,
+    "con": 3,
+    "int": 3,
+    "sab": -1,
+    "car": 3
+   },
+   "evasion": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco curto + Sneak; Assassinate dá vantagem no round 1 quando vence a iniciativa",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "vantagem": 0.237,
+      "nota": "arco curto; vantagem do Assassinate no round 1"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "6d6",
+      "prob": 0.809,
+      "nota": "Sneak Attack (aliado adjacente ou Assassinate no round 1)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Assassino de iniciativa: quase sempre age primeiro e abre com Sneak com vantagem; surpresa é bônus.",
+  "estrategia": "Arco curto a distância, Sneak nos alvos que os aliados seguram; round 1 com vantagem do Assassinate.",
+  "nao_modelado": "Críticos automáticos da surpresa (exigem a party toda furtiva), Rabbit Hop, Death Strike (17), perfil social (Infiltration Expertise, Impostor).",
+  "progressao": "Dex 20 (10); Reliable Talent (iniciativa mínima 24)."
+ },
+ "id": "rpgbot-rogue-assassin-11",
+ "nome": "Assassin (RPGBot: The Killer Rabbit of Caerbannog)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/assassin/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

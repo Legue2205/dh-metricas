@@ -1,0 +1,123 @@
+{
+ "gerado_de": "progressoes/rpgbot-bard-whispers.json",
+ "build": "Bard (Whispers): Changeling, For 8 Des 16 Con 13 Int 8 Sab 12 Car 17; Actor (4, Car 18); Skill Expert (8, Car 19); couro batido; besta leve",
+ "corpo": {
+  "ca": 15,
+  "pv": 69,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 7,
+    "con": 1,
+    "int": -1,
+    "sab": 1,
+    "car": 8
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 2,
+   "6": 1
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d8+3",
+      "nota": "besta leve"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "5d6",
+      "nota": "Psychic Blades (metade dos dados de inspiração)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d10)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 5.5,
+      "usos_luta": 1.0
+     }
+    ]
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: 4×1º, 3×2º, 3×3º, 3×4º, 2×5º, 1×6º.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: 4×1º, 3×2º, 3×3º, 3×4º, 2×5º, 1×6º.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Espião e face: quase nenhuma magia de combate; besta leve com Psychic Blades.",
+  "estrategia": "Besta e Psychic Blades no combate; inspiração para os aliados.",
+  "nao_modelado": "Sleep, Charm Person, Calm Emotions, Invisibility, Dimension Door, Psychic Lance, Mass Suggestion; Words of Terror, Mantle of Whispers, Shadow Lore; utilidade social (o foco do guia).",
+  "progressao": "Bard 11; Des 16, Car 18; Psychic Blades 5d6; sem magia de combate modelada."
+ },
+ "id": "rpgbot-bard-whispers-11",
+ "nome": "College of Whispers Bard (Master Spy)",
+ "grupo": "RPGBot",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/college-of-whispers/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

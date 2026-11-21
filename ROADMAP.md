@@ -860,3 +860,105 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
   pelo Focused Aim e o controle do Mercy caiu); Barbarian continua negativo (−0,43 no 7, −0,59 no 11 em 5 eixos;
   +0,16 com Corpo e Suporte). Causas no Barbarian: Área em degrau (DPR alto pula de 4,6 para 8: Berserker, Zealot,
   Wild Magic), agarrão do Battlerager vale ~6 de Controle, Totem azul pela subclasse (Urso só melhora a Def. mágica).
+
+## 21/11 (noite) — Mutirão: 8 classes em paralelo (consolidação)
+- 8 sessões autônomas (Paladin, Rogue, Bard, Druid, Warlock, Sorcerer, Ranger, Artificer) sobre a base `e214699`,
+  protocolo e staging no Drive (`dh-staging-2026-11-21`). Todas entregaram passada 1 + passada 2 (Artificer: 1 correção).
+  A sessão final aplicou os 8 `patch-*-p2.patch` sem conflito, exceto a tupla `CLASSES` de `comparar_rpgbot.py` e
+  `consistencia.py` (juntada à mão; as checagens novas do Bard ficaram). pytest 119 passed / 2 xfailed;
+  `dh validar` 622/622 OK.
+- **Motor (genérico, com teste):** `dado_no_erro` no dano (Rogue/Soulknife), `dado_multiuso.volta_se_falhar` com a
+  premissa NOVA `suporte.dado_multiuso.reuso_max` = 2 (Bard/Eloquence), reação com `"propria": true` = reação de outra
+  criatura (Artificer/Steel Defender). Nenhum valor de premissa existente mudou.
+- **Gabaritos:** as 8 colagens de subclasses perderam as cores; TODAS as notas de `calibracao/rpgbot-<classe>.json` do
+  mutirão são inferidas do texto (`inferida: true`). Conferir antes de qualquer calibração.
+- **Reingerir:** Warlock e Ranger usaram chassi comum (as páginas `build-*` não foram lidas por prazo).
+- **Pauta transversal (aparece em várias classes):** (1) plano de uma linha por luta prejudica invocadores e buffs
+  (Shepherd, Hex, Greater Invisibility, Holy Weapon) e deixa sobra de recurso alta (Druid a maior; Warlock "nada");
+  (2) fontes de vantagem permanentes (Steady Aim, Vow of Enmity) dominam o Dano; (3) Evasion pesa na Def. mágica;
+  (4) pets/formas não somam Corpo como PV descartáveis; (5) Metamagia e taunts (Panache, Compelled Duel) sem tipo;
+  (6) nota da subclasse ≠ chassi (Watchers, Fathomless, Armorer Infiltrator).
+- Seções por classe abaixo (texto das sessões, sem edição).
+
+## 21/11 (mutirão) — Paladin
+- **Ingeridas** (sessão autônoma): 8 builds de Paladin do RPGBot (Vengeance "Deep Striker", Devotion "Curseedge" Pal/So 2,
+  Conquest Pal 8/Wl 2 Undead, Ancients atirador, Crown "Bodyguard" com truques, Glory, Redemption, Watchers com cimitarra de
+  duas lâminas), fatias 3/5/7/9/11, gerador `ferramentas/geradores/pal.py`. Oathbreaker sem build colada.
+- **Gabarito** `calibracao/rpgbot-paladin.json` inferido do texto (a colagem perdeu as cores): Conquest 4, Vengeance 4,
+  Ancients 3,5, Crown 3,5, Devotion 3, Glory 3, Redemption 3, Watchers 2. Conferir as cores.
+- Sem mecânica nova no motor. Passada 2 no gerador: Aura of Conquest (com_save no amedrontado), Haste em si (Vengeance/Glory,
+  +2 CA), Shield do Devotion.
+- τ local (plano padrão, n = 8): 5 eixos +0,35 / +0,12 (nv 7 / 11); com S/C +0,24 / +0,04. Por eixo no 11: Dano −0,28,
+  Def. F +0,24, Def. M +0,32, Controle +0,34, Área −0,04, Suporte +0,16, Corpo +0,09.
+- **Pauta:** smite guardado para o crítico; Aura of Protection barata no Suporte (aura_saves); Ancients/Crown viram "Bless-bots"
+  (Ancients 8,8 de Suporte no 11, o maior de todas as classes); absorver dano de aliado (Divine Allegiance, Aura of the
+  Guardian) sem tipo, igual ao Protective Bond; Watchers laranja com o maior dano (nota da subclasse ≠ chassi).
+
+## 21/11 (mutirão) — Rogue
+- **Ingeridas** 9 builds (Arcane Trickster, Assassin, Inquisitive, Mastermind, Phantom, Scout, Soulknife, Swashbuckler e
+  Thief, este sem build dedicada: chassi do Handbook com Fast Hands). Gerador `ferramentas/geradores/rog.py`.
+  Gabarito `calibracao/rpgbot-rogue.json` com notas inferidas do texto (as cores não vieram na colagem do Doc de
+  subclasses): AT 4, Swashbuckler 4, Soulknife 3,5, Thief/Phantom/Scout 3, Assassin 2,5, Inquisitive 2, Mastermind 1,5.
+- **Motor:** `dado_no_erro` no dano (`{"dado", "usos"}`: soma o dado ao último ataque errado do turno sem acerto antes,
+  gasto só se converter; o acerto traz o Sneak). Homing Strikes do Soulknife (9+). Teste em `tests/test_modulos_rogue.py`.
+- **τ local (rapido, plano padrão, n = 9):** 5 eixos +0,00 / +0,00 (nv 7 / 11); Dano +0,03 / +0,22, Controle +0,44,
+  Def. mágica −0,28 / −0,37, Corpo −0,14 / −0,39.
+- **Pauta:** (1) `prob` do Sneak (0,75 / 0,9 / 1,0) virar premissa; (2) Steady Aim com vantagem 1,0 põe Inquisitive e
+  Thief acima dos azuis; (3) Evasion leva a Def. mágica dos rogues acima dos barbarians no 11; (4) Wails from the Grave no
+  Dano ou na Área; (5) Panache sem tipo de taunt; (6) reconferir as cores do gabarito.
+
+## 21/11 (mutirão) — Bard
+- Passada 1 cega (gerador `ferramentas/geradores/brd.py`): Lore, Valor, Whispers, Creation (builds do RPGBot) e Eloquence,
+  Glamour, Swords, Spirits (bardo base + subclasse). Gabarito `calibracao/rpgbot-bard.json` com notas inferidas do texto
+  (a cópia veio sem cores; conferir): Lore 4, Eloquence 4, Creation 3, Glamour/Swords/Valor 2,5, Spirits 2, Whispers 1,5.
+- Passada 2: `dado_multiuso.volta_se_falhar` (Unfailing Inspiration) com a premissa nova `suporte.dado_multiuso.reuso_max` = 2.
+- τ local (rápido, n = 8) nv7 / nv11: 5 eixos +0,15 / +0,15; 7 eixos +0,39 / +0,39. Por eixo no 11: controle +0,41,
+  def. mágica +0,38, suporte +0,31, corpo +0,54, dano −0,39.
+- Pauta: Cutting Words abaixo da inspiração comum no `dado_multiuso`; salto do Suporte do bardo entre 7 e 11; linhas de
+  buff (Greater Invisibility, Holy Weapon, Dancing Item) fora do plano de uma linha por luta.
+
+## 21/11 (mutirão) — Druid
+- Passada 1 cega (gerador `ferramentas/geradores/dru.py`): Moon, Land (Grassland), Shepherd, Spores, Stars, Wildfire,
+  Dreams, fatias 3/5/7/9/11. Gabarito `calibracao/rpgbot-druid.json` com notas atribuídas pela sessão a partir dos textos
+  (moon/stars/shepherd 4, wildfire 3,5, spores/land 3, dreams 2,5; conferir as cores). Nada novo em `dh/`.
+- Passada 2 (mecânica): variante "+forma" em toda linha do Moon (o plano nunca escolhia a forma isolada; sobravam as 2
+  formas do dia). τ local média de 5 eixos 0,16 → 0,48 (nv 7 e 11); por eixo no 11: Dano 0,67, Def F 0,05, Def M 0,35,
+  Controle −0,46, Área 0,17, Suporte 0,17, Corpo 0,34.
+- Pauta: (1) uma linha por luta: Shepherd 7 nunca invoca (Dano 0,6), Shepherd 11 nunca controla, Land 7 só Haste;
+  sobra de recurso do druida é a maior entre as classes; (2) Corpo neutro para a forma do Moon (PV descartáveis);
+  (3) Conjure Animals = 8 lobos; (4) Hawk 0,5 × 1/lutas por descanso curto.
+
+## 21/11 (mutirão) — Warlock
+- Ingestão (chassi do handbook por subclasse; as páginas `build-warlock-*` existem e ficam para a reingestão): 9 subclasses
+  × 3/5/7/9/11, gerador `ferramentas/geradores/wlk.py` (sobre `wiz.fatia`). Gabarito `calibracao/rpgbot-warlock.json`
+  com notas inferidas do texto (a cópia perdeu as cores: conferir).
+- Passada 2: Hex nas linhas sem concentração (`area+hex`, `arcano+hex`); Mystic Arcanum 6º = Mass Suggestion (recurso
+  `arcano`, volta no longo); Hexblade's Curse como +PB/2 por golpe.
+- τ local 5 eixos: +0,53 / +0,47 (p1) → +0,66 / +0,53 (p2) nos níveis 7 / 11. Dano nv11 τ −0,63 pelo plano "uma linha
+  por luta" (quem tem controle forte troca Hex por `combo`); controle 0 no 7 em todos.
+- Pauta: ver relatorio-warlock.md (dano abaixo do clérigo no 11; sobra de recurso "nada" com pacto; Fathomless × nota).
+
+## 21/11 (mutirão) — Sorcerer
+- Passada 1 cega: 5 builds do RPGBot (Aberrant Mind, Clockwork Soul, Divine Soul [Cleric 1 Order], Draconic, Wild Magic), fatias
+  3/5/7/9/11, gerador `ferramentas/geradores/sor.py` (reusa wiz.py). Sem build colada: Lunar, Shadow, Storm.
+- Gabarito `calibracao/rpgbot-sorcerer.json` atribuído pela sessão (Clockwork 4, Divine 4, Aberrant 3,5, Draconic 3, Wild 2; a conferir).
+- τ (média de 5 eixos): nv7 +0,74, nv11 +0,95. Por eixo: dano −0,22 (Draconic na frente, Clockwork atrás: truques iguais), deff/defm/área
+  +0,4 a +0,9, controle +0,25/+0,44.
+- Passada 2: sem mudança de código. Pendência principal: Metamagia (Twinned = 2 alvos em alvo_unico; Quickened) e `recursos.pontos`;
+  depois Psionic Sorcery, Bastion of Law (PV temporários), Voice of Authority.
+
+## 21/11 (mutirão) — Ranger
+- Passada 1 com chassi comum de arqueiro (Archery, Sharpshooter 1, Des 20 no 8; Hunter's Mark = +1d6 por acerto,
+  0,5 espaço de 1º por luta) nas 8 subclasses; as páginas build-ranger-* ainda não foram ingeridas (sessão curta).
+  Gabarito calibracao/rpgbot-ranger.json atribuído pela sessão (inferido). Passada 2: Stalker's Flurry (+0,5 ataque/turno).
+- τ local da média (nv7 / nv11): −0,17 / −0,04. Eixos fora do dano quase constantes (chassi único).
+- Pendências: reingerir builds reais; pets como corpo; controle (Spike Growth, Gathered Swarm); régua de área × multiataque.
+
+## 21/11 (mutirão) — Artificer
+- Passada 1 cega das 4 subclasses (battle-smith, armorer Infiltrator, artillerist, alchemist) a partir das builds de exemplo do
+  RPGBot; gerador `ferramentas/geradores/art.py` (reusa `wiz.fatia` com espaços de meio-conjurador arredondados para cima).
+- Gabarito `calibracao/rpgbot-artificer.json` (notas inferidas do texto; a colagem perdeu as cores): armorer 4, battle-smith 3,5,
+  artillerist 3,5, alchemist 2,5. τ local +0,18 (nv7 e nv11, n=4); inversão única: armorer em 3º por ser Infiltrator na build.
+- Mecânica: reação `desvantagem` com `"propria": true` (reação de outra criatura; Deflect Attack do Steel Defender), teste
+  `tests/test_reacao_propria.py`.
+- Pendências: variante Guardian do Armorer; Faerie Fire/Bane quando entrarem na biblioteca.

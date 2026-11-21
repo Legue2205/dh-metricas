@@ -1,0 +1,186 @@
+{
+ "gerado_de": "progressoes/rpgbot-rogue-thief.json",
+ "build": "Rogue (Thief), chassi do Handbook (sem build dedicada no RPGBot): arco curto + Steady Aim; Piercer 4, Dex 20 8",
+ "corpo": {
+  "ca": 16,
+  "pv": 38,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 7,
+    "con": 2,
+    "int": 3,
+    "sab": 1,
+    "car": 0
+   }
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco curto com Steady Aim + Sneak",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d6+4",
+      "vantagem": 1.0,
+      "nota": "Steady Aim (ação bônus, sem mover): vantagem e Sneak garantido"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "3d6",
+      "prob": 1.0,
+      "nota": "Sneak Attack"
+     },
+     {
+      "dano": "0.75",
+      "nota": "Piercer: rerrola 1 dado por turno"
+     },
+     {
+      "dano": "1d6",
+      "gatilho": "critico",
+      "nota": "Piercer: dado extra no crítico"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Steady Aim",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "fast-hands",
+   "hipotese": "arco curto + Sneak (aliado adjacente); Fast Hands: frasco de ácido na ação bônus",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d6+4"
+     },
+     {
+      "n": 1,
+      "bonus": 4,
+      "dano": "2d6+4",
+      "nota": "ácido (arma improvisada, sem proficiência; soma Des)"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "3d6",
+      "prob": 0.75,
+      "nota": "Sneak Attack"
+     },
+     {
+      "dano": "0.75",
+      "nota": "Piercer: rerrola 1 dado por turno"
+     },
+     {
+      "dano": "1d6",
+      "gatilho": "critico",
+      "nota": "Piercer: dado extra no crítico"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Fast Hands (Use an Object)",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Ladrão: o ladino icônico; Fast Hands transforma a ação bônus em itens (ácido, estrepes, kit de cura).",
+  "estrategia": "Steady Aim no padrão; frasco de ácido com Fast Hands quando há aliado no alvo.",
+  "nao_modelado": "Estrepes/armadilha de caça/esferas (controle por item sem tipo), Healer feat, Second-Story Work, Supreme Sneak, Use Magic Device (13), Thief's Reflexes (17).",
+  "progressao": "Piercer (Dex 18, 4); Uncanny Dodge."
+ },
+ "id": "rpgbot-rogue-thief-5",
+ "nome": "Thief (chassi do Handbook do RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/fast-hands/",
+  "nota": "Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas. Sem build dedicada: chassi do Handbook (como o Berserker)."
+ }
+}

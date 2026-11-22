@@ -19,10 +19,10 @@ chassi-artificer-armorer-infiltrator-11  11     4,1 C    12,5 A    8,4 B+     4,
 chassi-artificer-armorer-infiltrator-7   7     2,7 D    6,9 B-     4,7 C    4,0 C-         -     4,4 C         -
 chassi-artificer-armorer-infiltrator-f-skill-expert-11  11     4,1 C    11,1 A     7,5 B     4,3 C         -    6,6 B-         -
 chassi-artificer-armorer-infiltrator-f-skill-expert-7   7     2,7 D    6,9 B-     4,7 C    4,0 C-         -     4,4 C         -
-chassi-artificer-artillerist-11  11    6,2 B-    12,0 A    8,4 B+     4,3 C         -   10,5 A-         -
-chassi-artificer-artillerist-7   7     4,0 C    5,8 C+     4,7 C    3,9 C-         -     4,7 C         -
-chassi-artificer-artillerist-f-fey-touched-11  11    6,2 B-   10,4 A-     7,5 B     4,3 C         -   10,5 A-         -
-chassi-artificer-artillerist-f-fey-touched-7   7    3,9 C-    5,8 C+     4,7 C    3,9 C-         -     4,7 C     0,8 E
+chassi-artificer-artillerist-11  11    6,7 B-    12,0 A    8,4 B+     4,3 C         -   10,5 A-         -
+chassi-artificer-artillerist-7   7     4,2 C    5,4 C+     4,7 C    3,9 C-         -     4,7 C         -
+chassi-artificer-artillerist-f-fey-touched-11  11    6,7 B-   10,4 A-     7,5 B     4,3 C         -   10,5 A-         -
+chassi-artificer-artillerist-f-fey-touched-7   7     4,0 C    5,4 C+     4,7 C    3,9 C-         -     4,7 C     1,6 D
 chassi-artificer-battle-smith-11  11    6,0 B-   13,6 A+    8,4 B+     4,3 C         -     4,6 C         -
 chassi-artificer-battle-smith-7   7     4,2 C     7,7 B     4,7 C    3,9 C-         -     4,5 C         -
 chassi-artificer-battle-smith-f-skill-expert-11  11    6,0 B-    12,3 A     7,5 B     4,3 C         -     4,6 C         -

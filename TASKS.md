@@ -149,6 +149,8 @@ P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
   Artillerist 29,3 → 32,4; Moon 31,9 → 27,2). Mas o eixo de dano conta a invocação viva a luta inteira: o PV dela é gasto
   duas vezes. Descontar do dano da invocação a fração da luta em que ela já morreu (a `vida()` da atenção já sabe
   quando o PV dela zera).
+- [ ] **P2.14 Mantle of Inspiration e outras fontes de ação bônus** [M] — o fator de ação bônus da D6 só vale no
+  `dado_multiuso`; o Mantle (Glamour), que também gasta a ação bônus e um uso de BI, não paga.
 - [ ] **P2.1 Invocação domina o dano externo** [J → D7] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
   Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
   Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).
@@ -162,7 +164,11 @@ P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
 
 ### Respostas do usuário (23/11) e o que vira tarefa
 Ordem de execução: D8 → D3 → D5 → D2 → D4 → D6 → D9 → D1 (D7 fechada pela D2 + D5).
-- **D1 → mistura ponderada das rampas** bruta/precisa, peso como premissa treinável.
+- **D1 → mistura ponderada das rampas** bruta/precisa, peso como premissa treinável. **Feito 23/11:**
+  nível = β·bruta + (1 − β)·precisa, β = `dano.peso_rampa_bruta` = 0,5. Champion + GWM: +1,1 → +0,5 nível; Berserker +
+  GWM continua ≈ 0 (o +1 de For que o feat custa pesa nas CAs altas tanto quanto o −5/+10 ajuda na CA 16; β maior
+  favorece o GWM: o treino decide). Paridade com as planilhas da DragonHeist atualizada (John 9,4 → 9,2, Kael 7,3 →
+  7,2, Abdul 5,6 → 5,5, Lucius 20,0 → 18,6, Amadeus 11,8 → 10,7); as planilhas em si não foram reescritas.
 - **D2 → mistura plano × externo**: valor = plano + α·(externo − plano), α global = 0,2 (premissa treinável; α por eixo só
   se o treino mostrar padrão por eixo). **Feito 23/11:** anel `misto` (`aneis.alfa_versatilidade`), visão padrão do
   `comparar_chassi` e do `diff_baseline`. Razão: o plano é o que a build faz com o combustível de um dia; o externo conta
@@ -180,13 +186,21 @@ Ordem de execução: D8 → D3 → D5 → D2 → D4 → D6 → D9 → D1 (D7 fec
   da linha; valor = níveis eq. dos eixos × `plano.auto.peso_eixo`, todos 1); gasto vira desempate. Hexblade: dano do dia
   2,5 → 7,9.
 - **D6 → BI cobra a ação bônus**; usos do dado com retorno decrescente na luta (decaimento treinável); Cutting Words é
-  opção extra (nunca piora a build); rever se o BI está superestimado.
+  opção extra (nunca piora a build); rever se o BI está superestimado. **Feito 23/11:** `dado_multiuso` vale
+  (1 − δ^u)/(1 − δ) usos (δ = `suporte.dado_multiuso.decaimento` = 0,75) × 0,85 se for por ação bônus
+  (`fator_acao_bonus`); Cutting Words com `acao: reacao`. Suporte nv11 (1ª linha): Lore 4,7 > Valor 4,5 (antes Lore <
+  base); Creation 6,1 e Glamour 6,2 seguem no topo (Mote of Potential soma ao BI; Mantle = 3 × 11 PV temp.; a pista
+  "médio" deles pode ser [G]). O Mantle também é ação bônus e não paga o fator: → P2.14.
 - **D7 → fechada pela D2 + D5** (reabrir se o τ de dano do Wizard seguir negativo depois delas).
 - **D8 → sem teto no corpo**, prioridade consistência. **Feito 23/11:** a extrapolação acima do 20 usava só os 2 últimos
   pontos da busca (T oscila com os CRs discretos); agora é a regressão da busca inteira (`controle.corpo.extrap_pontos`
   = 0). Infiltrator 31,5 → 25,7 (pico 42,6 → 29,8); delta do feat −8,6 → −4,1 níveis; AG 25,3 → 25,6.
 - **D9 → premissa de magias por luta por nível** (derivada dos espaços, ~20% para utilidade), com ajuste por build
-  (blaster gasta mais). Eixo de utilidade: só nota de rodapé por enquanto.
+  (blaster gasta mais). Eixo de utilidade: só nota de rodapé por enquanto. **Proposta (a confirmar):** em vez de
+  reescrever as linhas, o plano do dia passa a ter até k linhas por luta (linha principal + secundárias, com os rounds
+  divididos), k = `orcamento.magias_por_luta[tipo][nível]` = espaços × (1 − 0,2 utilidade) / lutas do dia, e a build
+  pode sobrescrever (`"magias_por_luta": 3` num blaster). O rendimento (D5) e o livro-caixa já sabem somar linhas; muda
+  o agregador do dia (média ponderada pelos rounds de cada linha).
 
 ### Texto original das decisões
 

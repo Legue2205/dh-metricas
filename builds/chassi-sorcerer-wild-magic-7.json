@@ -1,0 +1,457 @@
+{
+ "gerado_de": "progressoes/chassi-sorcerer-wild-magic.json",
+ "build": "Sorcerer (wild-magic), retaguarda, Car > Con > Des, Fire Bolt, Mage Armor, Shield; sem feat",
+ "corpo": {
+  "ca": 14,
+  "pv": 44,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 1,
+    "con": 5,
+    "int": 0,
+    "sab": 1,
+    "car": 7
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 3,
+   "2": 3,
+   "3": 3,
+   "4": 2
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "2d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "hipotese": "só Fire Bolt",
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "2d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Fireball (4º)",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "9d6",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Fireball (4º)",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "9d6",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 2,
+     "1": 1
+    }
+   },
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "combo",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "2d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Fireball",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "8d6",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "3": 1,
+     "1": 1
+    }
+   },
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "combo"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: combo. Sobra: 1×3º.",
+   "combates": [
+    "controle-barato",
+    "combo",
+    "controle-barato",
+    "combo"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 3×2º, 3×3º.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Sorcerer wild-magic: Sem mecânica modelável: chassi = Sorcerer base.",
+  "estrategia": "Fire Bolt nos rounds livres; Web/Hold Person/Hypnotic Pattern/Polymorph; Fireball em grupos; o plano automático escolhe.",
+  "nao_modelado": "Wild Magic Surge; Tides of Chaos; Bend Luck; Controlled Chaos. Metamagia (Twinned, Quickened, Heightened...: os pontos viram espaços pela convenção); Counterspell; Haste; magias conhecidas além da lista base.",
+  "progressao": "Sorcerer 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 10, 'sab': 12, 'car': 19}; CA 14."
+ },
+ "id": "chassi-sorcerer-wild-magic-7",
+ "nome": "Wild Magic Sorcerer — chassi",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/sorcerer/subclasses/wild-magic/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "sorcerer",
+ "subclasse": "wild-magic",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

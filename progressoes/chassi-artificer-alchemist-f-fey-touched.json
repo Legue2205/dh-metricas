@@ -1,0 +1,452 @@
+{
+ "id": "chassi-artificer-alchemist-f-fey-touched",
+ "nome": "Alchemist Artificer — chassi + Fey Touched",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/artificer/subclasses/alchemist/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "artificer",
+ "subclasse": "alchemist",
+ "posicao": "retaguarda",
+ "feat": "Fey Touched",
+ "variante": "feat",
+ "base": {
+  "build": "Artificer (Alchemist), retaguarda de meia-armadura + escudo, Fire Bolt com Alchemical Savant, Healing Word; Fey Touched no 4 (Int +1)",
+  "corpo": {
+   "ca": 19,
+   "pv": 52,
+   "saves": {
+    "sv": {
+     "for": 0,
+     "des": 1,
+     "con": 5,
+     "int": 7,
+     "sab": 1,
+     "car": -1
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 3
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 8,
+       "dano": "2d10+4",
+       "nota": "Fire Bolt (Enhanced Arcane Focus)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 10.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    },
+    "hipotese": "principal",
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 8,
+       "dano": "2d10+4",
+       "nota": "Fire Bolt (Enhanced Arcane Focus)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Web",
+       "magia": "web",
+       "cd": 15
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 0.5
+     }
+    },
+    "area": [],
+    "invocacoes": [],
+    "defesa": {},
+    "reacao": [],
+    "herda": "principal",
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 10.5
+      }
+     ]
+    },
+    "hipotese": "controle"
+   },
+   {
+    "id": "bless",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 8,
+       "dano": "2d10+4",
+       "nota": "Fire Bolt (Enhanced Arcane Focus)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "herda": "principal",
+    "hipotese": "Bless (Fey Touched) no round 1",
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 10.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5
+     }
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Alchemist: Fire Bolt com Alchemical Savant, Healing Word com +Int e Web.",
+   "nao_modelado": [
+    "Infusões além de Enhanced Defense/Weapon/Arcane Focus",
+    "Flash of Genius (7)",
+    "Spell-Storing Item (11)",
+    "Faerie Fire, Grease, Haste e Cure Wounds (lista base sem entrada ou fora da régua)",
+    "Tool Expertise e utilitários",
+    "Experimental Elixir",
+    "Restorative Reagents",
+    "Ray of Sickness, Flaming Sphere, Melf's Acid Arrow, Mass Healing Word",
+    "Homunculus",
+    "Fey Touched: Misty Step",
+    "Fey Touched: magia de 1º círculo grátis 1×/dia (aqui gasta espaço)"
+   ],
+   "feat": "Fey Touched: 1º feat não racial da build do RPGBot (alchemist)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 10, 'des': 13, 'con': 15, 'int': 18, 'sab': 12, 'car': 8}"
+  },
+  "11": {
+   "_texto": "atributos {'for': 10, 'des': 13, 'con': 15, 'int': 20, 'sab': 12, 'car': 8}",
+   "corpo": {
+    "ca": 20,
+    "pv": 80,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 1,
+      "con": 6,
+      "int": 9,
+      "sab": 1,
+      "car": -1
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 11,
+        "dano": "3d10+5",
+        "nota": "Fire Bolt (Enhanced Arcane Focus)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 12.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "hipotese": "principal"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 11,
+        "dano": "3d10+5",
+        "nota": "Fire Bolt (Enhanced Arcane Focus)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 12.5
+       }
+      ]
+     },
+     "hipotese": "controle"
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 11,
+        "dano": "3d10+5",
+        "nota": "Fire Bolt (Enhanced Arcane Focus)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "herda": "principal",
+     "hipotese": "Bless (Fey Touched) no round 1",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 12.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     }
+    }
+   ]
+  }
+ }
+}

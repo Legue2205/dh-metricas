@@ -1,0 +1,575 @@
+{
+ "id": "chassi-artificer-armorer",
+ "nome": "Armorer Artificer — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/artificer/subclasses/armorer/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "artificer",
+ "subclasse": "armorer",
+ "posicao": "defensor",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Artificer (Armorer, Guardian), defensor de placas + escudo, Thunder Gauntlets, Defensive Field; sem feat",
+  "corpo": {
+   "ca": 21,
+   "pv": 52,
+   "saves": {
+    "sv": {
+     "for": 0,
+     "des": 1,
+     "con": 5,
+     "int": 7,
+     "sab": 1,
+     "car": -1
+    },
+    "conjurador": true
+   },
+   "pvt_luta": 5.25
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 3
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 8,
+       "dano": "1d8+5",
+       "nota": "Thunder Gauntlets (Int, Enhanced Weapon)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      },
+      {
+       "tipo": "ancestral_protectors",
+       "nome": "Thunder Gauntlets (desvantagem contra outros)",
+       "bonus": 8,
+       "resistencia": false
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "hipotese": "principal",
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.5,
+       "bonus": 8,
+       "dano": "1d8+5",
+       "nota": "Thunder Gauntlets (Int, Enhanced Weapon)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Web",
+       "magia": "web",
+       "cd": 15
+      },
+      {
+       "tipo": "ancestral_protectors",
+       "nome": "Thunder Gauntlets (desvantagem contra outros)",
+       "bonus": 8,
+       "resistencia": false
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1
+     }
+    },
+    "area": [],
+    "invocacoes": [],
+    "defesa": {},
+    "reacao": [],
+    "herda": "principal",
+    "hipotese": "controle"
+   },
+   {
+    "id": "area",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 8,
+       "dano": "1d8+5",
+       "nota": "Thunder Gauntlets (Int, Enhanced Weapon)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      },
+      {
+       "tipo": "ancestral_protectors",
+       "nome": "Thunder Gauntlets (desvantagem contra outros)",
+       "bonus": 8,
+       "resistencia": false
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Shatter (2º)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d8",
+        "cd": 15,
+        "slot": 2
+       }
+      ]
+     },
+     {
+      "nome": "Thunderwave",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "2d8",
+        "cd": 15,
+        "slot": 2
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "2": 2
+     }
+    },
+    "invocacoes": [],
+    "defesa": {},
+    "reacao": [],
+    "herda": "principal",
+    "hipotese": "area"
+   },
+   {
+    "id": "combo",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 8,
+       "dano": "1d8+5",
+       "nota": "Thunder Gauntlets (Int, Enhanced Weapon)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Web",
+       "magia": "web",
+       "cd": 15
+      },
+      {
+       "tipo": "ancestral_protectors",
+       "nome": "Thunder Gauntlets (desvantagem contra outros)",
+       "bonus": 8,
+       "resistencia": false
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Thunderwave",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "2d8",
+        "cd": 15,
+        "slot": 1
+       }
+      ]
+     },
+     {
+      "nome": "Shatter",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d8",
+        "cd": 15,
+        "slot": 2
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "2": 2,
+      "1": 1
+     }
+    },
+    "invocacoes": [],
+    "defesa": {},
+    "reacao": [],
+    "herda": "principal",
+    "hipotese": "combo"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Armorer no modelo Guardian: Thunder Gauntlets com Int (marca sem resistência), PV temporários do Defensive Field, magias de área da subclasse e Web; Hypnotic Pattern no 9.",
+   "nao_modelado": [
+    "Infusões além de Enhanced Defense/Weapon/Arcane Focus",
+    "Flash of Genius (7)",
+    "Spell-Storing Item (11)",
+    "Faerie Fire, Grease, Haste e Cure Wounds (lista base sem entrada ou fora da régua)",
+    "Tool Expertise e utilitários",
+    "Mirror Image, Magic Missile, Fire Shield (sem entrada)",
+    "Homunculus",
+    "Troca de modelo no descanso",
+    "Defensive Field como ação bônus (PB/dia; aqui carga média por luta)"
+   ]
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 10, 'des': 13, 'con': 15, 'int': 19, 'sab': 12, 'car': 8}"
+  },
+  "11": {
+   "_texto": "atributos {'for': 10, 'des': 13, 'con': 16, 'int': 20, 'sab': 12, 'car': 8}",
+   "corpo": {
+    "ca": 22,
+    "pv": 91,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 1,
+      "con": 7,
+      "int": 9,
+      "sab": 1,
+      "car": -1
+     },
+     "conjurador": true
+    },
+    "pvt_luta": 11.0
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 11,
+        "dano": "1d8+7",
+        "nota": "Thunder Gauntlets (Int, Enhanced Weapon)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       },
+       {
+        "tipo": "ancestral_protectors",
+        "nome": "Thunder Gauntlets (desvantagem contra outros)",
+        "bonus": 11,
+        "resistencia": false
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "hipotese": "principal"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 11,
+        "dano": "1d8+7",
+        "nota": "Thunder Gauntlets (Int, Enhanced Weapon)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Web",
+          "magia": "web",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         }
+        ]
+       },
+       {
+        "tipo": "ancestral_protectors",
+        "nome": "Thunder Gauntlets (desvantagem contra outros)",
+        "bonus": 11,
+        "resistencia": false
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "2": null
+      }
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 11,
+        "dano": "1d8+7",
+        "nota": "Thunder Gauntlets (Int, Enhanced Weapon)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       },
+       {
+        "tipo": "ancestral_protectors",
+        "nome": "Thunder Gauntlets (desvantagem contra outros)",
+        "bonus": 11,
+        "resistencia": false
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Lightning Bolt",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "8d6",
+         "cd": 17,
+         "slot": 3
+        }
+       ]
+      },
+      {
+       "nome": "Shatter (3º)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "4d8",
+         "cd": 17,
+         "slot": 3
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 2,
+       "2": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "combo",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 11,
+        "dano": "1d8+7",
+        "nota": "Thunder Gauntlets (Int, Enhanced Weapon)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Web",
+          "magia": "web",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         }
+        ]
+       },
+       {
+        "tipo": "ancestral_protectors",
+        "nome": "Thunder Gauntlets (desvantagem contra outros)",
+        "bonus": 11,
+        "resistencia": false
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Thunderwave",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "2d8",
+         "cd": 17,
+         "slot": 1
+        }
+       ]
+      },
+      {
+       "nome": "Shatter",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "3d8",
+         "cd": 17,
+         "slot": 2
+        }
+       ]
+      },
+      {
+       "nome": "Lightning Bolt",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "8d6",
+         "cd": 17,
+         "slot": 3
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 2,
+       "1": 1,
+       "2": 1
+      }
+     },
+     "invocacoes": [],
+     "defesa": {},
+     "reacao": [],
+     "herda": "principal",
+     "hipotese": "combo"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,356 @@
+{
+ "id": "chassi-artificer-battle-smith-f-skill-expert",
+ "nome": "Battle Smith Artificer — chassi + Skill Expert",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/artificer/subclasses/battle-smith/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "artificer",
+ "subclasse": "battle-smith",
+ "posicao": "striker",
+ "feat": "Skill Expert",
+ "variante": "feat",
+ "base": {
+  "build": "Artificer (Battle Smith), striker de espada longa + escudo, meia-armadura, Steel Defender; Skill Expert no 4 (Int +1)",
+  "corpo": {
+   "ca": 19,
+   "pv": 52,
+   "saves": {
+    "sv": {
+     "for": 0,
+     "des": 1,
+     "con": 5,
+     "int": 7,
+     "sab": 1,
+     "car": -1
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 3
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 8,
+       "dano": "1d8+5",
+       "nota": "espada longa (Battle Ready, Enhanced Weapon)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "desvantagem",
+       "usos_luta": 4,
+       "propria": true
+      }
+     ]
+    },
+    "saves": {},
+    "area": [],
+    "invocacoes": [
+     {
+      "nome": "Steel Defender",
+      "quantidade": 1,
+      "pv": 41,
+      "ca": 15,
+      "ataque": {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3"
+      }
+     }
+    ],
+    "hipotese": "principal",
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.5,
+       "bonus": 8,
+       "dano": "1d8+5",
+       "nota": "espada longa (Battle Ready, Enhanced Weapon)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Web",
+       "magia": "web",
+       "cd": 15
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 1
+     }
+    },
+    "area": [],
+    "invocacoes": [
+     {
+      "nome": "Steel Defender",
+      "quantidade": 1,
+      "pv": 41,
+      "ca": 15,
+      "ataque": {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3"
+      }
+     }
+    ],
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "shield",
+       "usos_luta": 1
+      },
+      {
+       "tipo": "desvantagem",
+       "usos_luta": 4,
+       "propria": true
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "herda": "principal",
+    "hipotese": "controle"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Battle Smith: arma com Int e Extra Attack, Steel Defender com Deflect Attack, Shield e Web.",
+   "nao_modelado": [
+    "Infusões além de Enhanced Defense/Weapon/Arcane Focus",
+    "Flash of Genius (7)",
+    "Spell-Storing Item (11)",
+    "Faerie Fire, Grease, Haste e Cure Wounds (lista base sem entrada ou fora da régua)",
+    "Tool Expertise e utilitários",
+    "Montaria no Steel Defender",
+    "Arcane Jolt como cura",
+    "Heroism, Branding Smite, Warding Wind, Aura of Vitality",
+    "Skill Expert: perícia e expertise (sem mecânica no motor; a variante só difere no atributo)"
+   ],
+   "feat": "Skill Expert: 1º feat não racial da build do RPGBot (battle-smith)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 10, 'des': 13, 'con': 15, 'int': 18, 'sab': 12, 'car': 8}"
+  },
+  "11": {
+   "_texto": "atributos {'for': 10, 'des': 13, 'con': 15, 'int': 20, 'sab': 12, 'car': 8}",
+   "corpo": {
+    "ca": 20,
+    "pv": 80,
+    "saves": {
+     "sv": {
+      "for": 0,
+      "des": 1,
+      "con": 6,
+      "int": 9,
+      "sab": 1,
+      "car": -1
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 11,
+        "dano": "1d8+7",
+        "nota": "espada longa (Battle Ready, Enhanced Weapon)"
+       },
+       {
+        "n": 0.3125,
+        "bonus": 11,
+        "dano": "2d6",
+        "nota": "Arcane Jolt (Int/dia ÷ 4 lutas ÷ 4 rounds)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "desvantagem",
+        "usos_luta": 4,
+        "propria": true
+       }
+      ]
+     },
+     "saves": {},
+     "area": [],
+     "invocacoes": [
+      {
+       "nome": "Steel Defender",
+       "quantidade": 1,
+       "pv": 62,
+       "ca": 15,
+       "ataque": {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d8+4"
+       }
+      }
+     ],
+     "hipotese": "principal"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 11,
+        "dano": "1d8+7",
+        "nota": "espada longa (Battle Ready, Enhanced Weapon)"
+       },
+       {
+        "n": 0.2344,
+        "bonus": 11,
+        "dano": "2d6",
+        "nota": "Arcane Jolt (Int/dia ÷ 4 lutas ÷ 4 rounds)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 1
+      }
+     },
+     "area": [],
+     "invocacoes": [
+      {
+       "nome": "Steel Defender",
+       "quantidade": 1,
+       "pv": 62,
+       "ca": 15,
+       "ataque": {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d8+4"
+       }
+      }
+     ],
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "shield",
+        "usos_luta": 1
+       },
+       {
+        "tipo": "desvantagem",
+        "usos_luta": 4,
+        "propria": true
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Shield",
+       "fracao": 0.5,
+       "eixos": [
+        "defesa"
+       ]
+      }
+     ],
+     "herda": "principal",
+     "hipotese": "controle"
+    }
+   ]
+  }
+ }
+}

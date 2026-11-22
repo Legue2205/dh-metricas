@@ -1,0 +1,176 @@
+{
+ "gerado_de": "progressoes/chassi-ranger-drakewarden-f-polearm-master.json",
+ "build": "Ranger (Drakewarden), striker: glaive, Great Weapon Fighting, meia-armadura; Polearm Master no 4 (natural de quem luta de perto com arma de haste; a ação bônus fica com o drake)",
+ "corpo": {
+  "ca": 17,
+  "pv": 53,
+  "saves": {
+   "sv": {
+    "for": 6,
+    "des": 5,
+    "con": 1,
+    "int": -1,
+    "sab": 1,
+    "car": 0
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3
+  },
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "glaive sem magia",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+3+0.8"
+     },
+     {
+      "n": 0.75,
+      "bonus": 4,
+      "dano": "1d6+3+1d6",
+      "nota": "Drake: mordida (ação bônus; round 1 vai na Hunter's Mark)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d10+3+0.8",
+      "nota": "ataque de oportunidade do Polearm Master (reação em 50% dos rounds)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "marca",
+   "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+3+0.8+1d6"
+     },
+     {
+      "n": 0.75,
+      "bonus": 4,
+      "dano": "1d6+3+1d6",
+      "nota": "Drake: mordida (ação bônus; round 1 vai na Hunter's Mark)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d10+3+0.8+1d6",
+      "nota": "ataque de oportunidade do Polearm Master (reação em 50% dos rounds)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: marca; prioritário: marca. Sobra: 2×1º, 3×2º.",
+   "combates": [
+    "marca",
+    "marca",
+    "marca",
+    "marca"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: marca. Sobra: 3.5×1º, 3×2º.",
+   "combates": [
+    "marca"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Drakewarden: Ranger striker com Hunter's Mark e a feature de dano da subclasse.",
+  "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
+  "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Drake Companion (3); Bond of Fang and Scale (7: +1d6 na mordida, montaria não modelada); Drake's Breath e drake maior (11) não modelados. Polearm Master: só a reação (a ação bônus é do drake).",
+  "progressao": "atributos {'for': 17, 'des': 15, 'con': 13, 'int': 8, 'sab': 12, 'car': 10}. Drake Companion (3); Bond of Fang and Scale (7: +1d6 na mordida, montaria não modelada); Drake's Breath e drake maior (11) não modelados. Polearm Master: só a reação (a ação bônus é do drake)."
+ },
+ "id": "chassi-ranger-drakewarden-f-polearm-master-7",
+ "nome": "Drakewarden Ranger — chassi + Polearm Master",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/ranger/subclasses/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "ranger",
+ "subclasse": "drakewarden",
+ "posicao": "striker",
+ "feat": "Polearm Master",
+ "variante": "feat"
+}

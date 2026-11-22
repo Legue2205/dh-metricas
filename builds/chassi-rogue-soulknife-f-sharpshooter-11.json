@@ -1,0 +1,203 @@
+{
+ "gerado_de": "progressoes/chassi-rogue-soulknife-f-sharpshooter.json",
+ "build": "Rogue (Soulknife), atirador, Psychic Blades arremessadas, couro batido; Sharpshooter no 4 — feat de posição (atirador)",
+ "corpo": {
+  "ca": 17,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 9,
+    "con": 3,
+    "int": 5,
+    "sab": 1,
+    "car": 0
+   },
+   "evasion": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "Psychic Blade arremessada com Steady Aim + Sneak",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "vantagem": 1.0,
+      "nota": "Psychic Blade (60 pés) com Steady Aim",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "6d6",
+      "prob": 1.0,
+      "nota": "Sneak Attack (Steady Aim)"
+     }
+    ],
+    "dado_no_erro": {
+     "dado": 10,
+     "usos": 2.5
+    }
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Steady Aim",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "duas-laminas",
+   "hipotese": "duas Psychic Blades (ação bônus) + Sneak (aliado adjacente)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d4+5",
+      "nota": "2ª lâmina na ação bônus",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "6d6",
+      "prob": 0.75,
+      "nota": "Sneak Attack"
+     }
+    ],
+    "dado_no_erro": {
+     "dado": 10,
+     "usos": 2.5
+    }
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "2ª Psychic Blade",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Lâmina psíquica: lâminas a 60 pés com Sneak; dados psiônicos.",
+  "nao_modelado": "Psi-Bolstered Knack, Psychic Whispers, Psychic Teleportation (9), dano psíquico (resistências).",
+  "progressao": "Psychic Blades; Homing Strikes (9). atributos {'for': 8, 'des': 20, 'con': 16, 'int': 13, 'sab': 12, 'car': 10}"
+ },
+ "id": "chassi-rogue-soulknife-f-sharpshooter-11",
+ "nome": "Soulknife Rogue — chassi + Sharpshooter",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/soulknife/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "rogue",
+ "subclasse": "soulknife",
+ "posicao": "atirador",
+ "feat": "Sharpshooter",
+ "variante": "feat"
+}

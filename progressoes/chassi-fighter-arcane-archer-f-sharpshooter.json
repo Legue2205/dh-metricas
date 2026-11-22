@@ -1,0 +1,316 @@
+{
+ "id": "chassi-fighter-arcane-archer-f-sharpshooter",
+ "nome": "Arcane Archer Fighter — chassi + Sharpshooter",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/arcane-archer/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "arcane-archer",
+ "posicao": "atirador",
+ "feat": "Sharpshooter",
+ "variante": "feat",
+ "base": {
+  "build": "Fighter (Arcane Archer), atirador de arco longo, couro batido/meia-armadura, Archery; Sharpshooter no 4",
+  "corpo": {
+   "ca": 17,
+   "pv": 60,
+   "saves": {
+    "sv": {
+     "for": 3,
+     "des": 4,
+     "con": 5,
+     "int": 1,
+     "sab": 1,
+     "car": -1
+    },
+    "ataques": 2
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "action_surge": {
+     "qtd": 1,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "arco longo; Shadow Arrow 1×/luta; Curving Shot redireciona um erro",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 9,
+       "dano": "1d8+4",
+       "poder": [
+        -5,
+        10
+       ]
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 1,
+       "dano": "2d6",
+       "nota": "Arcane Shot (Shadow Arrow): 2 por descanso curto = 1 por luta"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "condicao_no_acerto",
+       "nome": "Shadow Arrow (Arcane Shot)",
+       "efeito": "cond_cego_um_turno",
+       "cd": 12,
+       "bonus": [
+        9,
+        9
+       ],
+       "usos": 1
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "area": [
+     {
+      "nome": "Curving Shot",
+      "tipo": "cleave_ataque",
+      "bonus": 9,
+      "dano": "1d8+4",
+      "p": "erro",
+      "n_erro": 2
+     }
+    ],
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "surge",
+    "herda": "principal",
+    "plano": "prioritaria",
+    "hipotese": "Action Surge num round",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 9,
+       "dano": "1d8+4",
+       "poder": [
+        -5,
+        10
+       ]
+      },
+      {
+       "n": 0.5,
+       "bonus": 9,
+       "dano": "1d8+4",
+       "poder": [
+        -5,
+        10
+       ]
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 1,
+       "dano": "2d6",
+       "nota": "Arcane Shot (Shadow Arrow): 2 por descanso curto = 1 por luta"
+      }
+     ]
+    },
+    "gasta": {
+     "action_surge": 1
+    },
+    "area": [
+     {
+      "nome": "Curving Shot",
+      "tipo": "cleave_ataque",
+      "bonus": 9,
+      "dano": "1d8+4",
+      "p": "erro",
+      "n_erro": 2
+     }
+    ]
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Arcane Archer: Shadow Arrow 1×/luta (dano e cegueira) e Curving Shot para não perder o erro.",
+   "estrategia": "Posição atirador; feat da subclasse: Sharpshooter (6) da build do RPGBot (Elven Accuracy no 4 é racial).",
+   "nao_modelado": "Vantagem da cegueira para a party; Magic Arrow; as outras flechas; Second Wind; Indomitable (9)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 10, 'des': 19, 'con': 15, 'int': 13, 'sab': 12, 'car': 8}"
+  },
+  "11": {
+   "_texto": "atributos {'for': 10, 'des': 20, 'con': 16, 'int': 13, 'sab': 12, 'car': 8}",
+   "corpo": {
+    "ca": 17,
+    "pv": 103,
+    "saves": {
+     "sv": {
+      "for": 4,
+      "des": 5,
+      "con": 7,
+      "int": 1,
+      "sab": 1,
+      "car": -1
+     },
+     "ataques": 3
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "action_surge": {
+      "qtd": 1,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "arco longo; Shadow Arrow 1×/luta; Curving Shot redireciona um erro",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1,
+        "dano": "2d6",
+        "nota": "Arcane Shot (Shadow Arrow): 2 por descanso curto = 1 por luta"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Shadow Arrow (Arcane Shot)",
+        "efeito": "cond_cego_um_turno",
+        "cd": 13,
+        "bonus": [
+         11,
+         11,
+         11
+        ],
+        "usos": 1
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "area": [
+      {
+       "nome": "Curving Shot",
+       "tipo": "cleave_ataque",
+       "bonus": 11,
+       "dano": "1d8+5",
+       "p": "erro",
+       "n_erro": 3
+      }
+     ]
+    },
+    {
+     "id": "surge",
+     "herda": "principal",
+     "plano": "prioritaria",
+     "hipotese": "Action Surge num round",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 1,
+        "dano": "2d6",
+        "nota": "Arcane Shot (Shadow Arrow): 2 por descanso curto = 1 por luta"
+       }
+      ]
+     },
+     "gasta": {
+      "action_surge": 1
+     },
+     "area": [
+      {
+       "nome": "Curving Shot",
+       "tipo": "cleave_ataque",
+       "bonus": 11,
+       "dano": "1d8+5",
+       "p": "erro",
+       "n_erro": 3
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

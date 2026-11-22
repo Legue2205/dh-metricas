@@ -1,0 +1,257 @@
+{
+ "id": "chassi-fighter-cavalier-f-mounted-combatant",
+ "nome": "Cavalier Fighter — chassi + Mounted Combatant",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/cavalier/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "cavalier",
+ "posicao": "defensor",
+ "feat": "Mounted Combatant",
+ "variante": "feat",
+ "base": {
+  "build": "Fighter (Cavalier), defensor de espada longa + escudo, placas, Dueling; Mounted Combatant no 4",
+  "corpo": {
+   "ca": 20,
+   "pv": 60,
+   "saves": {
+    "sv": {
+     "for": 7,
+     "des": 1,
+     "con": 5,
+     "int": -1,
+     "sab": 1,
+     "car": 0
+    },
+    "ataques": 2
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "action_surge": {
+     "qtd": 1,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "espada longa + escudo na frente; marca o alvo e pune quem bate em outro",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d8+4+2"
+      },
+      {
+       "n": 0.25,
+       "bonus": 7,
+       "dano": "1d8+9",
+       "nota": "Unwavering Mark: ataque bônus (For/dia ÷ 4 lutas ÷ 4 rounds)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ancestral_protectors",
+       "nome": "Unwavering Mark (marca no acerto)",
+       "bonus": 7
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "surge",
+    "herda": "principal",
+    "plano": "prioritaria",
+    "hipotese": "Action Surge num round",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d8+4+2"
+      },
+      {
+       "n": 0.25,
+       "bonus": 7,
+       "dano": "1d8+9",
+       "nota": "Unwavering Mark: ataque bônus (For/dia ÷ 4 lutas ÷ 4 rounds)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "1d8+4+2"
+      }
+     ]
+    },
+    "gasta": {
+     "action_surge": 1
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Cavalier a pé na frente: Unwavering Mark obriga o alvo a bater nele; Hold the Line no 10.",
+   "estrategia": "Posição defensor; feat da subclasse: Mounted Combatant (1, via Custom Lineage) da build do RPGBot; não modelado, diferença só do ASI perdido.",
+   "nao_modelado": "Mounted Combatant (sem montaria no chassi); Montaria e lança (o chassi luta a pé); Mounted Combatant inteiro (vantagem contra menores que a montaria); Warding Maneuver; Born to the Saddle; Second Wind; Indomitable (9)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 19, 'des': 12, 'con': 15, 'int': 8, 'sab': 13, 'car': 10}"
+  },
+  "11": {
+   "_texto": "atributos {'for': 20, 'des': 12, 'con': 16, 'int': 8, 'sab': 13, 'car': 10}",
+   "corpo": {
+    "ca": 20,
+    "pv": 103,
+    "saves": {
+     "sv": {
+      "for": 9,
+      "des": 1,
+      "con": 7,
+      "int": -1,
+      "sab": 1,
+      "car": 0
+     },
+     "ataques": 3
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "action_surge": {
+      "qtd": 1,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "espada longa + escudo na frente; marca o alvo e pune quem bate em outro",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d8+5+2"
+       },
+       {
+        "n": 0.3125,
+        "bonus": 9,
+        "dano": "1d8+12",
+        "nota": "Unwavering Mark: ataque bônus (For/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+5+2",
+        "nota": "ataque de oportunidade (Hold the Line), reação em 50% dos rounds"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 9
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Hold the Line",
+        "bonus": 9
+       },
+       {
+        "tipo": "ancestral_protectors",
+        "nome": "Unwavering Mark (marca no acerto)",
+        "bonus": 9
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade (Sentinel/Hold the Line)",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "surge",
+     "herda": "principal",
+     "plano": "prioritaria",
+     "hipotese": "Action Surge num round",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d8+5+2"
+       },
+       {
+        "n": 0.3125,
+        "bonus": 9,
+        "dano": "1d8+12",
+        "nota": "Unwavering Mark: ataque bônus (For/dia ÷ 4 lutas ÷ 4 rounds)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+5+2",
+        "nota": "ataque de oportunidade (Hold the Line), reação em 50% dos rounds"
+       },
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5+2"
+       }
+      ]
+     },
+     "gasta": {
+      "action_surge": 1
+     }
+    }
+   ]
+  }
+ }
+}

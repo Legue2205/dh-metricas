@@ -1,0 +1,302 @@
+{
+ "gerado_de": "progressoes/chassi-bard-whispers.json",
+ "build": "Bard (Whispers) chassi: Car 17/Des 15/Con 13 (+2/+1), Car 19 (4), Car 20 + Des 16 (8); couro batido; Vicious Mockery; sem feat; besta leve",
+ "corpo": {
+  "ca": 14,
+  "pv": 45,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 5,
+    "con": 1,
+    "int": 0,
+    "sab": 1,
+    "car": 7
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 1
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "só ataque/truque nos rounds",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d8+2",
+      "nota": "besta leve"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "3d6",
+      "nota": "Psychic Blades (metade dos dados)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d8)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 1.0
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "hipotese": "melhor magia de controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8+2",
+      "nota": "besta leve"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "3d6",
+      "nota": "Psychic Blades (metade dos dados)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Hypnotic Pattern",
+      "magia": "hypnotic_pattern",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "area",
+   "hipotese": "luta de pico: área",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 5,
+      "dano": "1d8+2",
+      "nota": "besta leve"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "3d6",
+      "nota": "Psychic Blades (metade dos dados)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (4º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "5d8",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (3º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "4d8",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "3": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "invisibilidade",
+   "hipotese": "Greater Invisibility num aliado de frente",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8+2",
+      "nota": "besta leve"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.0,
+      "dano": "3d6",
+      "nota": "Psychic Blades (metade dos dados)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d8)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 4.5,
+      "usos_luta": 1.0
+     },
+     {
+      "nome": "Greater Invisibility (aliado: vantagem)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 1,
+      "fracao": 1.0,
+      "concentracao": "greater_invisibility"
+     },
+     {
+      "nome": "Greater Invisibility (aliado: desvantagem contra)",
+      "lado": "def",
+      "modelo": "desvantagem_contra",
+      "alvos": 1
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, principal; prioritário: area, controle. Sobra: 2×1º, 3×2º.",
+   "combates": [
+    "principal",
+    "controle",
+    "controle",
+    "area"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 3×2º, 2×3º.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bardo base que troca o truque por besta leve para usar Psychic Blades.",
+  "nao_modelado": "Words of Terror, Mantle of Whispers, Shadow Lore; utilidade social. Todos: Silvery Barbs, Counterspell, Faerie Fire, Sleep, Dissonant Whispers, Mass Suggestion; Magical Secrets (10); desvantagem do Vicious Mockery; Song of Rest; Jack of All Trades/Expertise.",
+  "progressao": "Bard 7; atributos {'for': 8, 'des': 15, 'con': 13, 'int': 10, 'sab': 12, 'car': 19}; CA 14. besta leve com Psychic Blades 3d6."
+ },
+ "id": "chassi-bard-whispers-7",
+ "nome": "Whispers Bard — chassi",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/college-of-whispers/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "bard",
+ "subclasse": "whispers",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

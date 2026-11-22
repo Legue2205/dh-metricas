@@ -1,0 +1,135 @@
+{
+ "gerado_de": "progressoes/chassi-fighter-echo-knight.json",
+ "build": "Fighter (Echo Knight), striker de espadão, placas, GWF, atacando pelo eco; sem feat",
+ "corpo": {
+  "ca": 18,
+  "pv": 67,
+  "saves": {
+   "sv": {
+    "for": 8,
+    "des": 1,
+    "con": 6,
+    "int": -1,
+    "sab": 1,
+    "car": 0
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "espadão com GWF, atacando pelo eco; Unleash Incarnation espalhado pelo dia",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "2d6+5+1.33"
+     },
+     {
+      "n": 0.1875,
+      "bonus": 8,
+      "dano": "2d6+5+1.33",
+      "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "2d6+5+1.33"
+     },
+     {
+      "n": 0.1875,
+      "bonus": 8,
+      "dano": "2d6+5+1.33",
+      "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 8,
+      "dano": "2d6+5+1.33"
+     }
+    ]
+   },
+   "gasta": {
+    "action_surge": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Echo Knight de espadão: ataca pelo eco e ganha ataques extras com Unleash Incarnation; com Sentinel segura a linha pelo eco.",
+  "estrategia": "Posição striker; feat da subclasse: Sentinel (1, via Custom Lineage) da build do RPGBot.",
+  "nao_modelado": "O eco como segundo ponto de ameaça e teleporte; Shadow Martyr; Reclaim Potential (PV temporários); Second Wind; Indomitable (9).",
+  "progressao": "atributos {'for': 20, 'des': 13, 'con': 16, 'int': 8, 'sab': 12, 'car': 10}"
+ },
+ "id": "chassi-fighter-echo-knight-7",
+ "nome": "Echo Knight Fighter — chassi",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/echo-knight/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "echo-knight",
+ "posicao": "striker",
+ "feat": null,
+ "variante": "sem-feat"
+}

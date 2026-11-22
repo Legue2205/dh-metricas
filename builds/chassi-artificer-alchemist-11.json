@@ -1,0 +1,192 @@
+{
+ "gerado_de": "progressoes/chassi-artificer-alchemist.json",
+ "build": "Artificer (Alchemist), retaguarda de meia-armadura + escudo, Fire Bolt com Alchemical Savant, Healing Word; sem feat",
+ "corpo": {
+  "ca": 20,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": 0,
+    "des": 1,
+    "con": 7,
+    "int": 9,
+    "sab": 1,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 11,
+      "dano": "3d10+5",
+      "nota": "Fire Bolt (Enhanced Arcane Focus)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 12.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "hipotese": "principal",
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 11,
+      "dano": "3d10+5",
+      "nota": "Fire Bolt (Enhanced Arcane Focus)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 12.5
+     }
+    ]
+   },
+   "hipotese": "controle"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle. Sobra: 2×1º, 2×3º.",
+   "combates": [
+    "controle",
+    "controle",
+    "controle",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 3.5×1º, 2×2º, 3×3º.",
+   "combates": [
+    "controle"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Alchemist: Fire Bolt com Alchemical Savant, Healing Word com +Int e Web.",
+  "nao_modelado": [
+   "Infusões além de Enhanced Defense/Weapon/Arcane Focus",
+   "Flash of Genius (7)",
+   "Spell-Storing Item (11)",
+   "Faerie Fire, Grease, Haste e Cure Wounds (lista base sem entrada ou fora da régua)",
+   "Tool Expertise e utilitários",
+   "Experimental Elixir",
+   "Restorative Reagents",
+   "Ray of Sickness, Flaming Sphere, Melf's Acid Arrow, Mass Healing Word",
+   "Homunculus"
+  ],
+  "progressao": "atributos {'for': 10, 'des': 13, 'con': 16, 'int': 20, 'sab': 12, 'car': 8}"
+ },
+ "id": "chassi-artificer-alchemist-11",
+ "nome": "Alchemist Artificer — chassi",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/artificer/subclasses/alchemist/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "artificer",
+ "subclasse": "alchemist",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

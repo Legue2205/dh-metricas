@@ -1,0 +1,157 @@
+{
+ "gerado_de": "progressoes/rpgbot-barbarian-ancestral-guardian-puro.json",
+ "build": "Barbarian (Ancestral Guardian) sem multiclasse, Shadar-Kai, rapieira + escudo de Destreza; Elven Accuracy 4 (Des 17), Des 19 8",
+ "corpo": {
+  "ca": 19,
+  "pv": 95,
+  "saves": {
+   "sv": {
+    "for": 5,
+    "des": 4,
+    "con": 7,
+    "int": 1,
+    "sab": -1,
+    "car": -1
+   },
+   "ataques": 2,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 4,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: rapieira e escudo, sem Reckless Attack (ataque de Destreza)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "dados_crit": "1d8+1d8"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia",
+   "hipotese": "fúria em toda luta: Ancestral Protectors no 1º alvo atingido (a fúria não soma dano: ataque de Destreza)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "dados_crit": "1d8+1d8"
+     }
+    ]
+   },
+   "defesa": {
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ancestral_protectors",
+      "nome": "Ancestral Protectors",
+      "bonus": 8
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Spirit Shield (reação: −2d6 no dano de um aliado)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_luta": 2,
+      "pv": 7
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Spirit Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia; prioritário: furia. Sobra: nada.",
+   "combates": [
+    "furia",
+    "furia",
+    "furia",
+    "furia"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia. Sobra: 3 furia.",
+   "combates": [
+    "furia"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "A build Furious About Mediocre Strength sem os níveis de Wizard e Fighter: Guardião Ancestral de Destreza com rapieira e escudo.",
+  "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis adiantados, atributos e feats remendados); a build original continua como referência.",
+  "nao_modelado": "Elven Accuracy sem fonte de vantagem (sem o familiar); Consult the Spirits; teleporte do Shadar-Kai; Booming Blade; Relentless Rage; Feral Instinct.",
+  "progressao": "Des 19 (8); Brutal Critical; fúria +3."
+ },
+ "id": "rpgbot-barbarian-ancestral-guardian-puro-9",
+ "nome": "Ancestral Guardian Barbarian puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/ancestral-guardian/",
+  "nota": "Extensão simples sem multiclasse; mini-mutirão 22/11."
+ }
+}

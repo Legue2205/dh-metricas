@@ -1,0 +1,483 @@
+{
+ "id": "chassi-paladin-ancients-f-fighting-initiate",
+ "nome": "Ancients Paladin — chassi + Fighting Initiate",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/paladin/subclasses/oath-of-the-ancients/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "paladin",
+ "subclasse": "ancients",
+ "posicao": "atirador",
+ "feat": "Fighting Initiate",
+ "variante": "feat",
+ "base": {
+  "build": "Paladin (Oath of Ancients), atirador: arco longo, Defense, couro batido; Fighting Initiate no 4",
+  "corpo": {
+   "ca": 16,
+   "pv": 53,
+   "saves": {
+    "sv": {
+     "for": 2,
+     "des": 5,
+     "con": 3,
+     "int": 1,
+     "sab": 6,
+     "car": 7
+    },
+    "conjurador": true,
+    "ataques": 2
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 3
+   },
+   "outros": {
+    "canal": {
+     "qtd": 1,
+     "volta": "curto",
+     "valor": 2
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "só armas, sem gastar espaço",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 8,
+       "dano": "1d8+3",
+       "vantagem": 0.0,
+       "nota": "arco longo"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "bless",
+    "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.5,
+       "bonus": 8,
+       "dano": "1d8+3",
+       "vantagem": 0.0,
+       "nota": "arco longo"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 1
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      },
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      }
+     ]
+    }
+   },
+   {
+    "id": "enredar",
+    "hipotese": "Ensnaring Strike (ação bônus) no 1º acerto: impedido até escapar",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 8,
+       "dano": "1d8+3",
+       "vantagem": 0.0,
+       "nota": "arco longo"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "alvo_unico",
+       "nome": "Ensnaring Strike",
+       "cd": 13,
+       "slots": [
+        1
+       ],
+       "magias": [
+        "ensnaring_strike"
+       ],
+       "modo": "melhor"
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 1
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Oath of Ancients: régua comum do Paladin + features do juramento (atirador). Feat da subclasse = 1º feat não racial da build do RPGBot.",
+   "nao_modelado": "Aura of Warding (resistência a dano de magia), Nature's Wrath, Turn the Faithless, Moonbeam, Misty Step; Improved Divine Smite sem uso à distância; Harness Divine Power (opcional) não usado na régua. Fighting Initiate = estilo Archery (+2 no acerto). Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico, upcast de Bless."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 10, 'des': 17, 'con': 13, 'int': 8, 'sab': 12, 'car': 15}; CA 16"
+  },
+  "11": {
+   "_texto": "atributos {'for': 10, 'des': 19, 'con': 13, 'int': 8, 'sab': 12, 'car': 15}; CA 17",
+   "corpo": {
+    "ca": 17,
+    "pv": 81,
+    "saves": {
+     "sv": {
+      "for": 2,
+      "des": 6,
+      "con": 3,
+      "int": 1,
+      "sab": 7,
+      "car": 8
+     },
+     "conjurador": true,
+     "ataques": 2
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3
+    },
+    "outros": {
+     "canal": {
+      "qtd": 1,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "só armas, sem gastar espaço",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "vantagem": 0.0,
+        "nota": "arco longo"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     }
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "vantagem": 0.0,
+        "nota": "arco longo"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     }
+    },
+    {
+     "id": "enredar",
+     "hipotese": "Ensnaring Strike (ação bônus) no 1º acerto: impedido até escapar",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "vantagem": 0.0,
+        "nota": "arco longo"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Ensnaring Strike",
+        "cd": 14,
+        "slots": [
+         1
+        ],
+        "magias": [
+         "ensnaring_strike"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

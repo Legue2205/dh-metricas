@@ -1,0 +1,201 @@
+{
+ "gerado_de": "progressoes/chassi-artificer-battle-smith.json",
+ "build": "Artificer (Battle Smith), striker de espada longa + escudo, meia-armadura, Steel Defender; sem feat",
+ "corpo": {
+  "ca": 19,
+  "pv": 52,
+  "saves": {
+   "sv": {
+    "for": 0,
+    "des": 1,
+    "con": 5,
+    "int": 7,
+    "sab": 1,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 8,
+      "dano": "1d8+5",
+      "nota": "espada longa (Battle Ready, Enhanced Weapon)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "desvantagem",
+      "usos_luta": 4,
+      "propria": true
+     }
+    ]
+   },
+   "saves": {},
+   "area": [],
+   "invocacoes": [
+    {
+     "nome": "Steel Defender",
+     "quantidade": 1,
+     "pv": 41,
+     "ca": 15,
+     "ataque": {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+3"
+     }
+    }
+   ],
+   "hipotese": "principal",
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 8,
+      "dano": "1d8+5",
+      "nota": "espada longa (Battle Ready, Enhanced Weapon)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [
+    {
+     "nome": "Steel Defender",
+     "quantidade": 1,
+     "pv": 41,
+     "ca": 15,
+     "ataque": {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+3"
+     }
+    }
+   ],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     },
+     {
+      "tipo": "desvantagem",
+      "usos_luta": 4,
+      "propria": true
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, principal; prioritário: controle. Sobra: 1×1º.",
+   "combates": [
+    "principal",
+    "controle",
+    "controle",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: controle. Sobra: 3×1º, 2×2º.",
+   "combates": [
+    "controle"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Battle Smith: arma com Int e Extra Attack, Steel Defender com Deflect Attack, Shield e Web.",
+  "nao_modelado": [
+   "Infusões além de Enhanced Defense/Weapon/Arcane Focus",
+   "Flash of Genius (7)",
+   "Spell-Storing Item (11)",
+   "Faerie Fire, Grease, Haste e Cure Wounds (lista base sem entrada ou fora da régua)",
+   "Tool Expertise e utilitários",
+   "Montaria no Steel Defender",
+   "Arcane Jolt como cura",
+   "Heroism, Branding Smite, Warding Wind, Aura of Vitality"
+  ],
+  "progressao": "atributos {'for': 10, 'des': 13, 'con': 15, 'int': 19, 'sab': 12, 'car': 8}"
+ },
+ "id": "chassi-artificer-battle-smith-7",
+ "nome": "Battle Smith Artificer — chassi",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/artificer/subclasses/battle-smith/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "artificer",
+ "subclasse": "battle-smith",
+ "posicao": "striker",
+ "feat": null,
+ "variante": "sem-feat"
+}

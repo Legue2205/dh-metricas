@@ -1,0 +1,381 @@
+{
+ "id": "chassi-monk-kensei-f-mobile",
+ "nome": "Kensei Monk — chassi + Mobile",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "monk",
+ "subclasse": "kensei",
+ "posicao": "atirador",
+ "feat": "Mobile",
+ "variante": "feat",
+ "base": {
+  "build": "Monk (kensei), atirador, sem armadura, Des/Sab; Mobile no 4 (variante comum do Monk)",
+  "corpo": {
+   "ca": 15,
+   "pv": 45,
+   "saves": {
+    "sv": {
+     "for": 4,
+     "des": 6,
+     "con": 1,
+     "int": 0,
+     "sab": 2,
+     "car": -1
+    },
+    "evasion": true,
+    "stillness": true
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "ki": {
+     "qtd": 7,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "arco longo com Kensei's Shot, sem ki",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 6,
+       "dano": "1d8+3+1d4",
+       "nota": "arco longo + Kensei's Shot (ação bônus)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "deft",
+    "hipotese": "arco longo com Kensei's Shot + Deft Strike em 4 acertos (4 ki)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 6,
+       "dano": "1d8+3+1d4",
+       "nota": "arco longo + Kensei's Shot (ação bônus)"
+      }
+     ],
+     "por_luta": [
+      {
+       "dano": "1d6",
+       "nota": "Deft Strike (1 ki, 1× por turno)",
+       "usos": 4
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "ki": 4
+    }
+   },
+   {
+    "id": "mira",
+    "hipotese": "arco longo com Kensei's Shot + Focused Aim 2 ki + Deft Strike em 2 acertos (4 ki)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 6,
+       "dano": "1d8+3+1d4",
+       "nota": "arco longo + Kensei's Shot (ação bônus)"
+      }
+     ],
+     "focused_aim": {
+      "ki": 2
+     },
+     "por_luta": [
+      {
+       "dano": "1d6",
+       "nota": "Deft Strike (1 ki, 1× por turno)",
+       "usos": 2
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "ki": 4
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Monk Kensei atirador: arco longo com Kensei's Shot, Deft Strike e Sharpen the Blade.",
+   "estrategia": "Régua comum do monge (lança + Martial Arts, Flurry, Stunning Strike, Focused Aim) + o que a tradição dá.",
+   "nao_modelado": "Flurry/Stunning Strike (exigem corpo a corpo: as linhas de ki do Kensei são Deft Strike e Focused Aim); Agile Parry; Deflect Missiles. Mobile (+10 pés, sem ataque de oportunidade de quem atacou): sem mecânica no motor, diferença zero de propósito. Deflect Missiles; Slow Fall; Patient Defense/Step of the Wind."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "Path of the Kensei, Agile Parry, Kensei's Shot; One with the Blade (6). Atributos {'for': 12, 'des': 17, 'con': 13, 'int': 10, 'sab': 15, 'car': 8}."
+  },
+  "11": {
+   "_texto": "Path of the Kensei, Agile Parry, Kensei's Shot; One with the Blade (6); Sharpen the Blade (11). Atributos {'for': 12, 'des': 19, 'con': 13, 'int': 10, 'sab': 15, 'car': 8}.",
+   "corpo": {
+    "ca": 16,
+    "pv": 69,
+    "saves": {
+     "sv": {
+      "for": 5,
+      "des": 8,
+      "con": 1,
+      "int": 0,
+      "sab": 2,
+      "car": -1
+     },
+     "evasion": true,
+     "stillness": true,
+     "imune": [
+      "veneno"
+     ]
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "ki": {
+      "qtd": 11,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "arco longo com Kensei's Shot, sem ki",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d8+4+1d4",
+        "nota": "arco longo + Kensei's Shot (ação bônus)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "deft",
+     "hipotese": "arco longo com Kensei's Shot + Deft Strike em 4 acertos (4 ki)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d8+4+1d4",
+        "nota": "arco longo + Kensei's Shot (ação bônus)"
+       }
+      ],
+      "por_luta": [
+       {
+        "dano": "1d8",
+        "nota": "Deft Strike (1 ki, 1× por turno)",
+        "usos": 4
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "ki": 4
+     }
+    },
+    {
+     "id": "mira",
+     "hipotese": "arco longo com Kensei's Shot + Focused Aim 2 ki + Deft Strike em 2 acertos (4 ki)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d8+4+1d4",
+        "nota": "arco longo + Kensei's Shot (ação bônus)"
+       }
+      ],
+      "focused_aim": {
+       "ki": 2
+      },
+      "por_luta": [
+       {
+        "dano": "1d8",
+        "nota": "Deft Strike (1 ki, 1× por turno)",
+        "usos": 2
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "ki": 4
+     }
+    },
+    {
+     "id": "afiar",
+     "hipotese": "Sharpen the Blade (3 ki: +3 no acerto e no dano, 1 minuto = 1 luta) + arco longo com Kensei's Shot",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+7+1d4",
+        "nota": "arco longo + Kensei's Shot (ação bônus)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "ki": 3
+     }
+    }
+   ]
+  }
+ }
+}

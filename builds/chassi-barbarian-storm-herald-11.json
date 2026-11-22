@@ -1,0 +1,169 @@
+{
+ "gerado_de": "progressoes/chassi-barbarian-storm-herald.json",
+ "build": "Barbarian (storm-herald), striker, glaive, meia-armadura; For > Con > Des; sem feat",
+ "corpo": {
+  "ca": 16,
+  "pv": 115,
+  "saves": {
+   "sv": {
+    "for": 9,
+    "des": 1,
+    "con": 7,
+    "int": -1,
+    "sab": 1,
+    "car": 0
+   },
+   "ataques": 2,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 4,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: glaive, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "vantagem": 1.0,
+      "dados_crit": "1d10+1d10"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia-deserto",
+   "hipotese": "fúria com Storm Aura (Desert): 4 de fogo automático em quem escolher a 10 pés (ação bônus)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d10+8",
+      "vantagem": 1.0,
+      "dados_crit": "1d10+1d10"
+     }
+    ],
+    "automatico": "4"
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1
+   },
+   "area": [
+    {
+     "nome": "Storm Aura (Desert) no 2º alvo",
+     "tipo": "cleave_ataque",
+     "bonus": 99,
+     "dano": "4",
+     "p": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "nome": "Storm Aura (Desert) no 3º alvo",
+     "tipo": "cleave_ataque",
+     "bonus": 99,
+     "dano": "4",
+     "p": [
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia-deserto; prioritário: furia-deserto. Sobra: nada.",
+   "combates": [
+    "furia-deserto",
+    "furia-deserto",
+    "furia-deserto",
+    "furia-deserto"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia-deserto. Sobra: 3 furia.",
+   "combates": [
+    "furia-deserto"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Arauto da Tempestade do deserto: aura de fogo automático em volta.",
+  "estrategia": "Fúria nas lutas que o plano automático escolher; Reckless Attack sempre.",
+  "nao_modelado": "Storm Soul e Shielding Storm (resistência a fogo); Slasher (redução de deslocamento e debuff no crítico: só o +1 de For conta). Relentless Rage; Feral Instinct; Fast Movement; Primal Path 14 (fora das fatias).",
+  "progressao": "atributos {'for': 20, 'des': 13, 'con': 16, 'int': 8, 'sab': 12, 'car': 10}; meia-armadura (16)"
+ },
+ "id": "chassi-barbarian-storm-herald-11",
+ "nome": "Storm Herald Barbarian — chassi",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/storm-herald/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "barbarian",
+ "subclasse": "storm-herald",
+ "posicao": "striker",
+ "feat": null,
+ "variante": "sem-feat"
+}

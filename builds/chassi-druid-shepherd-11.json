@@ -1,0 +1,422 @@
+{
+ "gerado_de": "progressoes/chassi-druid-shepherd.json",
+ "build": "Druid (Shepherd), retaguarda, gibão de peles + escudo, Sab > Con > Des; sem feat",
+ "corpo": {
+  "ca": 15,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 1,
+    "con": 3,
+    "int": 5,
+    "sab": 9,
+    "car": 0
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 2,
+   "6": 1
+  },
+  "outros": {
+   "forma_selvagem": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Spirit Totem: Hawk (vantagem em 1 ataque aliado por round, reação)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 1,
+      "fracao": 0.25,
+      "nota": "1 dos ~2 ataques do aliado × 0.5 das lutas (1/descanso curto)"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Wall of Fire",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    },
+    {
+     "nome": "Ice Knife",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d6",
+       "cd": 17,
+       "slot": 6
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "5": 1,
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "invocacao",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Beast (Land, 6º)",
+     "quantidade": 1,
+     "pv": 50,
+     "ca": 17,
+     "ataque": {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d8+10"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "6": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "invocacao"
+  },
+  {
+   "id": "conjurar",
+   "hipotese": "Conjure Elemental (Earth Elemental, Mighty Summoner) (1 hora) + truques",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Conjure Elemental (Earth Elemental, Mighty Summoner)",
+     "quantidade": 1,
+     "pv": 142,
+     "ca": 17,
+     "ataque": {
+      "n": 2,
+      "bonus": 8,
+      "dano": "2d8+5"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "5": 0.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "totem-urso",
+   "hipotese": "Spirit Totem (Bear) no lugar do Hawk + Summon Beast",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Beast (Land, 6º)",
+     "quantidade": 1,
+     "pv": 50,
+     "ca": 17,
+     "ataque": {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d8+10"
+     }
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Spirit Totem: Bear (PV temporários)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "usos_descanso_curto": 1,
+      "alvos": 3,
+      "pv": 16
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "6": 0.5
+    }
+   },
+   "herda": "principal"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: area, controle. Sobra: 2×1º, 3×2º, 3×3º, 1×5º, 2 forma_selvagem.",
+   "combates": [
+    "controle",
+    "controle",
+    "controle",
+    "area"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 3×2º, 3×3º, 3×4º, 1×5º, 2 forma_selvagem.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Circle of Shepherd: Spirit Totem (Hawk ou Bear) e Mighty Summoner: Conjure Animals no 7 e Conjure Elemental no 11.",
+  "estrategia": "Régua comum do chassi: Sab > Con > Des, gibão de peles + escudo, Produce Flame, Entangle/Hold Person/Polymorph, Ice Knife + Wall of Fire, Summon Beast e Healing Word; sem feat (conjurador pleno).",
+  "nao_modelado": "Unicorn Spirit; Guardian Spirit; ataques mágicos do Mighty Summoner; Bear nos PV das invocações; Faithful Summons. Comuns: Wild Shape fora de combate; Goodberry; Faerie Fire, Spike Growth, Moonbeam, Conjure Animals (fora do Shepherd).",
+  "progressao": "Druid 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 12, 'sab': 20, 'car': 10}; Mighty Summoner; Conjure Elemental (Earth Elemental, Mighty Summoner)."
+ },
+ "id": "chassi-druid-shepherd-11",
+ "nome": "Shepherd Druid — chassi",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/circle-of-the-shepherd/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "druid",
+ "subclasse": "shepherd",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

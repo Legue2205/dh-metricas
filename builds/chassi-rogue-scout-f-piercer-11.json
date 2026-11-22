@@ -1,0 +1,131 @@
+{
+ "gerado_de": "progressoes/chassi-rogue-scout-f-piercer.json",
+ "build": "Rogue (Scout), atirador, besta leve, couro batido; Piercer no 4 — RPGBot (Field Scholar): Piercer no 4",
+ "corpo": {
+  "ca": 17,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 9,
+    "con": 3,
+    "int": 5,
+    "sab": 1,
+    "car": 0
+   },
+   "evasion": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "besta leve com Steady Aim + Sneak",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "vantagem": 1.0,
+      "nota": "besta leve (Steady Aim)"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "6d6",
+      "prob": 1.0,
+      "nota": "Sneak Attack (Steady Aim)"
+     },
+     {
+      "dano": "1.0",
+      "nota": "Piercer: rerrola 1 dado por turno"
+     },
+     {
+      "dano": "1d8",
+      "gatilho": "critico",
+      "nota": "Piercer: dado extra no crítico"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Steady Aim",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Batedor: luta de longe e sai do corpo a corpo com a reação (Skirmisher).",
+  "nao_modelado": "Skirmisher (reação; conflita com Uncanny Dodge), Survivalist, Superior Mobility (9), Ambush Master (13).",
+  "progressao": "Skirmisher, Survivalist; Superior Mobility (9). atributos {'for': 8, 'des': 20, 'con': 17, 'int': 12, 'sab': 13, 'car': 10}"
+ },
+ "id": "chassi-rogue-scout-f-piercer-11",
+ "nome": "Scout Rogue — chassi + Piercer",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/scout/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "rogue",
+ "subclasse": "scout",
+ "posicao": "atirador",
+ "feat": "Piercer",
+ "variante": "feat"
+}

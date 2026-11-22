@@ -1,0 +1,683 @@
+{
+ "gerado_de": "progressoes/chassi-druid-stars.json",
+ "build": "Druid (Stars), retaguarda, gibão de peles + escudo, Sab > Con > Des; sem feat",
+ "corpo": {
+  "ca": 15,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 1,
+    "con": 3,
+    "int": 5,
+    "sab": 9,
+    "car": 0
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 2,
+   "6": 1
+  },
+  "outros": {
+   "forma_selvagem": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "4d6",
+      "nota": "Guiding Bolt grátis (PB/dia ÷ 4 lutas; vantagem seguinte não modelada)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Cosmic Omen (±1d6 por reação)",
+      "lado": "of",
+      "modelo": "bonus_por_uso",
+      "bonus": 3.5,
+      "usos_luta": 1.0
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "4d6",
+      "nota": "Guiding Bolt grátis (PB/dia ÷ 4 lutas; vantagem seguinte não modelada)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "4d6",
+      "nota": "Guiding Bolt grátis (PB/dia ÷ 4 lutas; vantagem seguinte não modelada)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "4d6",
+      "nota": "Guiding Bolt grátis (PB/dia ÷ 4 lutas; vantagem seguinte não modelada)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Wall of Fire",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    },
+    {
+     "nome": "Ice Knife",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d6",
+       "cd": 17,
+       "slot": 6
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "5": 1,
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "invocacao",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "4d6",
+      "nota": "Guiding Bolt grátis (PB/dia ÷ 4 lutas; vantagem seguinte não modelada)"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Beast (Land, 6º)",
+     "quantidade": 1,
+     "pv": 50,
+     "ca": 17,
+     "ataque": {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d8+10"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "6": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "invocacao"
+  },
+  {
+   "id": "principal+estrelas",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "4d6",
+      "nota": "Guiding Bolt grátis (PB/dia ÷ 4 lutas; vantagem seguinte não modelada)"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "2d8+5",
+      "nota": "Starry Form: Archer (ação bônus)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Cosmic Omen (±1d6 por reação)",
+      "lado": "of",
+      "modelo": "bonus_por_uso",
+      "bonus": 3.5,
+      "usos_luta": 1.0
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "herda": "principal",
+   "hipotese": "só truques + estrelas",
+   "gasta": {
+    "forma_selvagem": 1,
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  },
+  {
+   "id": "controle+estrelas",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "4d6",
+      "nota": "Guiding Bolt grátis (PB/dia ÷ 4 lutas; vantagem seguinte não modelada)"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "2d8+5",
+      "nota": "Starry Form: Archer (ação bônus)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    },
+    "forma_selvagem": 1
+   },
+   "herda": "principal",
+   "hipotese": "controle + estrelas"
+  },
+  {
+   "id": "controle-barato+estrelas",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "4d6",
+      "nota": "Guiding Bolt grátis (PB/dia ÷ 4 lutas; vantagem seguinte não modelada)"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "2d8+5",
+      "nota": "Starry Form: Archer (ação bônus)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    },
+    "forma_selvagem": 1
+   },
+   "herda": "principal",
+   "hipotese": "controle-barato + estrelas"
+  },
+  {
+   "id": "area+estrelas",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "4d6",
+      "nota": "Guiding Bolt grátis (PB/dia ÷ 4 lutas; vantagem seguinte não modelada)"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "2d8+5",
+      "nota": "Starry Form: Archer (ação bônus)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Wall of Fire",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    },
+    {
+     "nome": "Ice Knife",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d6",
+       "cd": 17,
+       "slot": 6
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "5": 1,
+     "6": 1
+    },
+    "forma_selvagem": 1
+   },
+   "herda": "principal",
+   "hipotese": "area + estrelas"
+  },
+  {
+   "id": "invocacao+estrelas",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "3d8",
+      "nota": "Produce Flame"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "4d6",
+      "nota": "Guiding Bolt grátis (PB/dia ÷ 4 lutas; vantagem seguinte não modelada)"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "2d8+5",
+      "nota": "Starry Form: Archer (ação bônus)"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Beast (Land, 6º)",
+     "quantidade": 1,
+     "pv": 50,
+     "ca": 17,
+     "ataque": {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d8+10"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "6": 0.5
+    },
+    "forma_selvagem": 1
+   },
+   "herda": "principal",
+   "hipotese": "invocacao + estrelas"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle+estrelas; prioritário: area+estrelas, controle+estrelas. Sobra: 2×1º, 3×2º, 3×3º, 1×5º.",
+   "combates": [
+    "controle+estrelas",
+    "controle+estrelas",
+    "controle+estrelas",
+    "area+estrelas"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area+estrelas. Sobra: 3.5×1º, 3×2º, 3×3º, 3×4º, 1×5º, 1 forma_selvagem.",
+   "combates": [
+    "area+estrelas"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Circle of Stars: Starry Form (Archer) como ação bônus em toda luta relevante; Guiding Bolt grátis; Cosmic Omen.",
+  "estrategia": "Régua comum do chassi: Sab > Con > Des, gibão de peles + escudo, Produce Flame, Entangle/Hold Person/Polymorph, Ice Knife + Wall of Fire, Summon Beast e Healing Word; sem feat (conjurador pleno).",
+  "nao_modelado": "Chalice e Dragon; trocar de constelação; Full of Stars; vantagem do Guiding Bolt. Comuns: Wild Shape fora de combate; Goodberry; Faerie Fire, Spike Growth, Moonbeam, Conjure Animals (fora do Shepherd).",
+  "progressao": "Druid 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 12, 'sab': 20, 'car': 10}; Starry Form (Archer); Guiding Bolt grátis; Cosmic Omen; Twinkling Constellations."
+ },
+ "id": "chassi-druid-stars-11",
+ "nome": "Stars Druid — chassi",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/circle-of-stars/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "druid",
+ "subclasse": "stars",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

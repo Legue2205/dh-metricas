@@ -1,0 +1,256 @@
+{
+ "id": "chassi-fighter-purple-dragon-knight-f-sharpshooter",
+ "nome": "Purple Dragon Knight Fighter — chassi + Sharpshooter",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/purple-dragon-knight/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "purple-dragon-knight",
+ "posicao": "atirador",
+ "feat": "Sharpshooter",
+ "variante": "feat",
+ "base": {
+  "build": "Fighter (Purple Dragon Knight), atirador de arco longo, couro batido/meia-armadura, Archery; Sharpshooter no 4",
+  "corpo": {
+   "ca": 17,
+   "pv": 60,
+   "saves": {
+    "sv": {
+     "for": 3,
+     "des": 4,
+     "con": 5,
+     "int": -1,
+     "sab": 1,
+     "car": 1
+    },
+    "ataques": 2
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "action_surge": {
+     "qtd": 1,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "arco longo todo round; Rallying Cry junto do Second Wind",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 9,
+       "dano": "1d8+4",
+       "poder": [
+        -5,
+        10
+       ]
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Rallying Cry (Second Wind)",
+       "lado": "def",
+       "modelo": "cura",
+       "usos_descanso_curto": 1,
+       "pv": 21,
+       "nota": "3 aliados × nível de Fighter"
+      }
+     ]
+    },
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "surge",
+    "herda": "principal",
+    "plano": "prioritaria",
+    "hipotese": "Action Surge num round",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 9,
+       "dano": "1d8+4",
+       "poder": [
+        -5,
+        10
+       ]
+      },
+      {
+       "n": 0.5,
+       "bonus": 9,
+       "dano": "1d8+4",
+       "poder": [
+        -5,
+        10
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "action_surge": 1
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Purple Dragon Knight (Banneret) arqueiro: cura em grupo no Second Wind e ataque de aliado no Action Surge (10).",
+   "estrategia": "Posição atirador; feat da subclasse: Sharpshooter (6) da extensão pura da build do RPGBot (a build original só tem Dragon Fear, racial).",
+   "nao_modelado": "Royal Envoy; Bulwark (15); o Second Wind próprio; Second Wind; Indomitable (9)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 10, 'des': 19, 'con': 15, 'int': 8, 'sab': 13, 'car': 12}"
+  },
+  "11": {
+   "_texto": "atributos {'for': 10, 'des': 20, 'con': 16, 'int': 8, 'sab': 13, 'car': 12}",
+   "corpo": {
+    "ca": 17,
+    "pv": 103,
+    "saves": {
+     "sv": {
+      "for": 4,
+      "des": 5,
+      "con": 7,
+      "int": -1,
+      "sab": 1,
+      "car": 1
+     },
+     "ataques": 3
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "action_surge": {
+      "qtd": 1,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "arco longo todo round; Rallying Cry junto do Second Wind",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Rallying Cry (Second Wind)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_descanso_curto": 1,
+        "pv": 33,
+        "nota": "3 aliados × nível de Fighter"
+       },
+       {
+        "nome": "Inspiring Surge (aliado ataca no Action Surge)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.125,
+        "nota": "0,5 Action Surge por luta ÷ 4 rounds"
+       }
+      ]
+     }
+    },
+    {
+     "id": "surge",
+     "herda": "principal",
+     "plano": "prioritaria",
+     "hipotese": "Action Surge num round",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "action_surge": 1
+     }
+    }
+   ]
+  }
+ }
+}

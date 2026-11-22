@@ -1,0 +1,260 @@
+{
+ "id": "chassi-barbarian-zealot",
+ "nome": "Zealot Barbarian — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/zealot/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "barbarian",
+ "subclasse": "zealot",
+ "posicao": "striker",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Barbarian (zealot), striker, machado grande, meia-armadura; For > Con > Des; sem feat",
+  "corpo": {
+   "ca": 16,
+   "pv": 68,
+   "saves": {
+    "sv": {
+     "for": 7,
+     "des": 1,
+     "con": 5,
+     "int": -1,
+     "sab": 1,
+     "car": 0
+    },
+    "ataques": 2,
+    "adv": [
+     "Des"
+    ]
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "furia": {
+     "qtd": 4,
+     "volta": "longo"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "sem fúria: machado grande, Reckless Attack",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d12+4",
+       "vantagem": 1.0
+      }
+     ]
+    },
+    "defesa": {
+     "adv": 1
+    },
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "furia",
+    "hipotese": "fúria com Divine Fury, Reckless Attack",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d12+6",
+       "vantagem": 1.0
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1d6+3",
+       "nota": "Divine Fury (1º acerto do turno na fúria)"
+      }
+     ]
+    },
+    "defesa": {
+     "adv": 1,
+     "resist": true
+    },
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {
+     "rerolagens": 1
+    },
+    "gasta": {
+     "furia": 1
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi: Zelote: dano radiante extra no 1º acerto de cada turno na fúria e Fanatical Focus.",
+   "estrategia": "Fúria nas lutas que o plano automático escolher; Reckless Attack sempre.",
+   "nao_modelado": "Warrior of the Gods (ressurreição); Zealous Presence só como 1/16 de vantagem para 3 aliados. Relentless Rage; Feral Instinct; Fast Movement; Primal Path 14 (fora das fatias)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 19, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}; meia-armadura (16)"
+  },
+  "11": {
+   "_texto": "atributos {'for': 20, 'des': 13, 'con': 16, 'int': 8, 'sab': 12, 'car': 10}; meia-armadura (16)",
+   "corpo": {
+    "ca": 16,
+    "pv": 115,
+    "saves": {
+     "sv": {
+      "for": 9,
+      "des": 1,
+      "con": 7,
+      "int": -1,
+      "sab": 1,
+      "car": 0
+     },
+     "ataques": 2,
+     "adv": [
+      "Des"
+     ]
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "furia": {
+      "qtd": 4,
+      "volta": "longo"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "sem fúria: machado grande, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d12+5",
+        "vantagem": 1.0,
+        "dados_crit": "1d12+1d12"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "furia",
+     "hipotese": "fúria com Divine Fury, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d12+8",
+        "vantagem": 1.0,
+        "dados_crit": "1d12+1d12"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d6+5",
+        "nota": "Divine Fury (1º acerto do turno na fúria)"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {
+      "rerolagens": 1
+     },
+     "gasta": {
+      "furia": 1
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Zealous Presence (1/dia: vantagem para a party por um round)",
+        "lado": "of",
+        "modelo": "vantagem",
+        "alvos": 3,
+        "fracao": 0.0625
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

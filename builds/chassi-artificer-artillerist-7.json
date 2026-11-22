@@ -1,0 +1,388 @@
+{
+ "gerado_de": "progressoes/chassi-artificer-artillerist.json",
+ "build": "Artificer (Artillerist), retaguarda de meia-armadura + escudo, Fire Bolt com Arcane Firearm, Force Ballista; sem feat",
+ "corpo": {
+  "ca": 19,
+  "pv": 52,
+  "saves": {
+   "sv": {
+    "for": 0,
+    "des": 1,
+    "con": 5,
+    "int": 7,
+    "sab": 1,
+    "car": -1
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 8,
+      "dano": "2d10+1d8",
+      "nota": "Fire Bolt (Enhanced Arcane Focus)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [
+    {
+     "nome": "Eldritch Cannon (Force Ballista)",
+     "quantidade": 1,
+     "pv": 35,
+     "ca": 18,
+     "ataque": {
+      "n": 1,
+      "bonus": 8,
+      "dano": "2d8"
+     }
+    }
+   ],
+   "hipotese": "principal",
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 8,
+      "dano": "2d10+1d8",
+      "nota": "Fire Bolt (Enhanced Arcane Focus)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [
+    {
+     "nome": "Eldritch Cannon (Force Ballista)",
+     "quantidade": 1,
+     "pv": 35,
+     "ca": 18,
+     "ataque": {
+      "n": 1,
+      "bonus": 8,
+      "dano": "2d8"
+     }
+    }
+   ],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 8,
+      "dano": "2d10+1d8",
+      "nota": "Fire Bolt (Enhanced Arcane Focus)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (2º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8+4",
+       "cd": 15,
+       "slot": 2
+      }
+     ]
+    },
+    {
+     "nome": "Thunderwave",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d8+4",
+       "cd": 15,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 2,
+     "1": 1
+    }
+   },
+   "invocacoes": [
+    {
+     "nome": "Eldritch Cannon (Force Ballista)",
+     "quantidade": 1,
+     "pv": 35,
+     "ca": 18,
+     "ataque": {
+      "n": 1,
+      "bonus": 8,
+      "dano": "2d8"
+     }
+    }
+   ],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "combo",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 8,
+      "dano": "2d10+1d8",
+      "nota": "Fire Bolt (Enhanced Arcane Focus)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 15
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Thunderwave",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d8+4",
+       "cd": 15,
+       "slot": 1
+      }
+     ]
+    },
+    {
+     "nome": "Shatter",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8+4",
+       "cd": 15,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 2,
+     "1": 2
+    }
+   },
+   "invocacoes": [
+    {
+     "nome": "Eldritch Cannon (Force Ballista)",
+     "quantidade": 1,
+     "pv": 35,
+     "ca": 18,
+     "ataque": {
+      "n": 1,
+      "bonus": 8,
+      "dano": "2d8"
+     }
+    }
+   ],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "combo"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: combo, controle. Sobra: 1×1º.",
+   "combates": [
+    "principal",
+    "controle",
+    "principal",
+    "combo"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 2×1º, 1×2º.",
+   "combates": [
+    "combo"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Artillerist: Fire Bolt com Arcane Firearm, canhão Force Ballista na ação bônus, Shield, Web, Thunderwave/Shatter e Fireball no 9.",
+  "nao_modelado": [
+   "Infusões além de Enhanced Defense/Weapon/Arcane Focus",
+   "Flash of Genius (7)",
+   "Spell-Storing Item (11)",
+   "Faerie Fire, Grease, Haste e Cure Wounds (lista base sem entrada ou fora da régua)",
+   "Tool Expertise e utilitários",
+   "Protector e Flamethrower (só Force Ballista)",
+   "Explosão do canhão",
+   "Scorching Ray, Wind Wall (sem entrada)"
+  ],
+  "progressao": "atributos {'for': 10, 'des': 13, 'con': 15, 'int': 19, 'sab': 12, 'car': 8}"
+ },
+ "id": "chassi-artificer-artillerist-7",
+ "nome": "Artillerist Artificer — chassi",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/artificer/subclasses/artillerist/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "artificer",
+ "subclasse": "artillerist",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

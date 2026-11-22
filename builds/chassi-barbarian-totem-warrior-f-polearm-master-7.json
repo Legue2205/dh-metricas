@@ -1,0 +1,200 @@
+{
+ "gerado_de": "progressoes/chassi-barbarian-totem-warrior-f-polearm-master.json",
+ "build": "Barbarian (totem-warrior), defensor, alabarda, meia-armadura; For > Con > Des; Polearm Master no 4",
+ "corpo": {
+  "ca": 16,
+  "pv": 68,
+  "saves": {
+   "sv": {
+    "for": 6,
+    "des": 1,
+    "con": 5,
+    "int": -1,
+    "sab": 1,
+    "car": 0
+   },
+   "ataques": 3,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 4,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: alabarda com Polearm Master, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+3",
+      "vantagem": 1.0
+     },
+     {
+      "n": 1.0,
+      "bonus": 6,
+      "dano": "1d4+3",
+      "vantagem": 1.0,
+      "nota": "Polearm Master (ação bônus)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d10+3",
+      "nota": "ataque de oportunidade do Polearm Master, reação em 50% dos rounds"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade (Polearm Master)",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia-urso",
+   "hipotese": "fúria com Totem Spirit (Bear): resistência a tudo menos psíquico",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+5",
+      "vantagem": 1.0
+     },
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d4+5",
+      "vantagem": 1.0,
+      "nota": "Polearm Master (ação bônus)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d10+5",
+      "nota": "ataque de oportunidade do Polearm Master, reação em 50% dos rounds"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {
+    "res": [
+     "fogo",
+     "frio",
+     "eletrico",
+     "trovao",
+     "acido",
+     "radiante",
+     "necrotico",
+     "forca",
+     "veneno"
+    ]
+   },
+   "gasta": {
+    "furia": 1
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade (Polearm Master)",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia-urso; prioritário: furia-urso. Sobra: nada.",
+   "combates": [
+    "furia-urso",
+    "furia-urso",
+    "furia-urso",
+    "furia-urso"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia-urso. Sobra: 3 furia.",
+   "combates": [
+    "furia-urso"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Guerreiro Totêmico do Urso (resistência a tudo menos psíquico na fúria), defensor de alabarda.",
+  "estrategia": "Fúria nas lutas que o plano automático escolher; Reckless Attack sempre.",
+  "nao_modelado": "Totem do Lobo (o RPGBot usa Lobo; o chassi usa o Urso, o padrão defensivo do caminho); Aspect of the Beast (6); Spirit Walker (10). Relentless Rage; Feral Instinct; Fast Movement; Primal Path 14 (fora das fatias).",
+  "progressao": "atributos {'for': 17, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}; meia-armadura (16), alabarda (sem escudo)"
+ },
+ "id": "chassi-barbarian-totem-warrior-f-polearm-master-7",
+ "nome": "Totem Warrior Barbarian — chassi + Polearm Master",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/totem-warrior/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "barbarian",
+ "subclasse": "totem-warrior",
+ "posicao": "defensor",
+ "feat": "Polearm Master",
+ "variante": "feat"
+}

@@ -1,0 +1,264 @@
+{
+ "id": "chassi-ranger-gloom-stalker",
+ "nome": "Gloom Stalker Ranger — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/ranger/subclasses/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "ranger",
+ "subclasse": "gloom-stalker",
+ "posicao": "atirador",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Ranger (Gloom Stalker), atirador: arco longo, Archery, couro batido; sem feat",
+  "corpo": {
+   "ca": 16,
+   "pv": 60,
+   "saves": {
+    "sv": {
+     "for": 4,
+     "des": 7,
+     "con": 2,
+     "int": 0,
+     "sab": 4,
+     "car": -1
+    },
+    "ataques": 2
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 3
+   },
+   "outros": {}
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "arco longo sem magia",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 9,
+       "dano": "1d8+4"
+      },
+      {
+       "n": 0.25,
+       "bonus": 9,
+       "dano": "1d8+4+1d8",
+       "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "marca",
+    "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 9,
+       "dano": "1d8+4+1d6"
+      },
+      {
+       "n": 0.25,
+       "bonus": 9,
+       "dano": "1d8+4+1d6+1d8",
+       "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Gloom Stalker: Ranger atirador com Hunter's Mark e a feature de dano da subclasse.",
+   "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
+   "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Dread Ambusher (3); Iron Mind (7); Stalker's Flurry (11); Umbral Sight não modelado."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 12, 'des': 19, 'con': 15, 'int': 10, 'sab': 13, 'car': 8}. Dread Ambusher (3); Iron Mind (7); Stalker's Flurry (11); Umbral Sight não modelado."
+  },
+  "11": {
+   "_texto": "atributos {'for': 12, 'des': 20, 'con': 16, 'int': 10, 'sab': 13, 'car': 8}. Dread Ambusher (3); Iron Mind (7); Stalker's Flurry (11); Umbral Sight não modelado.",
+   "corpo": {
+    "ca": 17,
+    "pv": 103,
+    "saves": {
+     "sv": {
+      "for": 5,
+      "des": 9,
+      "con": 3,
+      "int": 0,
+      "sab": 5,
+      "car": -1
+     },
+     "ataques": 2
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3
+    },
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "arco longo sem magia",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5"
+       },
+       {
+        "n": 0.25,
+        "bonus": 11,
+        "dano": "1d8+5+1d8",
+        "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+       },
+       {
+        "n": 0.5,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "nota": "Stalker's Flurry: ataque extra após errar (≈0,5/turno)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "marca",
+     "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5+1d6"
+       },
+       {
+        "n": 0.25,
+        "bonus": 11,
+        "dano": "1d8+5+1d6+1d8",
+        "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+       },
+       {
+        "n": 0.5,
+        "bonus": 11,
+        "dano": "1d8+5+1d6",
+        "nota": "Stalker's Flurry: ataque extra após errar (≈0,5/turno)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    }
+   ]
+  }
+ }
+}

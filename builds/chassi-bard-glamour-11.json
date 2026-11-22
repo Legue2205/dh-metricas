@@ -1,0 +1,422 @@
+{
+ "gerado_de": "progressoes/chassi-bard-glamour.json",
+ "build": "Bard (Glamour) chassi: Car 17/Des 15/Con 13 (+2/+1), Car 19 (4), Car 20 + Des 16 (8); couro batido; Vicious Mockery; sem feat",
+ "corpo": {
+  "ca": 15,
+  "pv": 69,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 7,
+    "con": 1,
+    "int": 0,
+    "sab": 1,
+    "car": 9
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 2,
+   "6": 1
+  },
+  "outros": {
+   "majestade": {
+    "qtd": 1,
+    "volta": "longo",
+    "valor": 3
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "só ataque/truque nos rounds",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d10)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 5.5,
+      "usos_luta": 1.5
+     },
+     {
+      "nome": "Mantle of Inspiration (PV temporários)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "alvos": 3,
+      "usos_luta": 1.0,
+      "pv": 11
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "hipotese": "melhor magia de controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Monster",
+        "cd": 17,
+        "slots": [
+         5
+        ],
+        "magias": [
+         "hold_monster"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "5": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "area",
+   "hipotese": "luta de pico: área",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Synaptic Static",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "8d6",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (6º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "7d8",
+       "cd": 17,
+       "slot": 6
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "5": 1,
+     "6": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "invisibilidade",
+   "hipotese": "Greater Invisibility num aliado de frente",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d10)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 5.5,
+      "usos_luta": 1.5
+     },
+     {
+      "nome": "Mantle of Inspiration (PV temporários)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "alvos": 3,
+      "usos_luta": 1.0,
+      "pv": 11
+     },
+     {
+      "nome": "Greater Invisibility (aliado: vantagem)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 1,
+      "fracao": 1.0,
+      "concentracao": "greater_invisibility"
+     },
+     {
+      "nome": "Greater Invisibility (aliado: desvantagem contra)",
+      "lado": "def",
+      "modelo": "desvantagem_contra",
+      "alvos": 1
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "majestade",
+   "hipotese": "Mantle of Majesty: Command (ação bônus) todo round + truque",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Mantle of Majesty (Command todo round)",
+      "cd": 17,
+      "slots": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "magias": [
+       "command"
+      ],
+      "modo": "combinar"
+     }
+    ]
+   },
+   "gasta": {
+    "majestade": 1,
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "controle-barato",
+   "hipotese": "controle mais barato",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Hypnotic Pattern",
+      "magia": "hypnotic_pattern",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: invisibilidade; prioritário: area, controle. Sobra: 2×1º, 3×2º, 3×3º, 1×4º, 1 majestade.",
+   "combates": [
+    "invisibilidade",
+    "controle",
+    "invisibilidade",
+    "area"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 3×2º, 3×3º, 3×4º, 1×5º, 1 majestade.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Bardo base com Mantle of Inspiration (PV temporários) e Mantle of Majesty (Command todo round, 1/dia).",
+  "nao_modelado": "Reposicionamento do Mantle of Inspiration; Enthralling Performance; auto-falha do Command em encantado. Todos: Silvery Barbs, Counterspell, Faerie Fire, Sleep, Dissonant Whispers, Mass Suggestion; Magical Secrets (10); desvantagem do Vicious Mockery; Song of Rest; Jack of All Trades/Expertise.",
+  "progressao": "Bard 11; atributos {'for': 8, 'des': 16, 'con': 13, 'int': 10, 'sab': 12, 'car': 20}; CA 15. Mantle of Inspiration (11 PV temp.); Mantle of Majesty."
+ },
+ "id": "chassi-bard-glamour-11",
+ "nome": "Glamour Bard — chassi",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/bard/subclasses/glamour/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "bard",
+ "subclasse": "glamour",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

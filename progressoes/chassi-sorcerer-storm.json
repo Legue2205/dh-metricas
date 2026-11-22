@@ -1,0 +1,914 @@
+{
+ "id": "chassi-sorcerer-storm",
+ "nome": "Storm Sorcerer — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/sorcerer/subclasses/storm/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "sorcerer",
+ "subclasse": "storm",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Sorcerer (storm), retaguarda, Car > Con > Des, Fire Bolt, Mage Armor, Shield; sem feat",
+  "corpo": {
+   "ca": 14,
+   "pv": 44,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 1,
+     "con": 5,
+     "int": 0,
+     "sab": 1,
+     "car": 7
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 2
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 7,
+       "dano": "2d10",
+       "nota": "Fire Bolt"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "hipotese": "só Fire Bolt",
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d10",
+       "nota": "Fire Bolt"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Web",
+         "magia": "web",
+         "cd": 15
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 15,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "area",
+         "nome": "Hypnotic Pattern",
+         "magia": "hypnotic_pattern",
+         "cd": 15
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Polymorph",
+         "cd": 15,
+         "slots": [
+          4
+         ],
+         "magias": [
+          "polymorph"
+         ],
+         "modo": "melhor"
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "1": 1
+     }
+    },
+    "area": [],
+    "invocacoes": [],
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "shield",
+       "usos_luta": 1
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "herda": "principal",
+    "hipotese": "controle"
+   },
+   {
+    "id": "controle-barato",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d10",
+       "nota": "Fire Bolt"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Web",
+       "magia": "web",
+       "cd": 15
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 1
+     }
+    },
+    "area": [],
+    "invocacoes": [],
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "shield",
+       "usos_luta": 1
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "herda": "principal",
+    "hipotese": "controle-barato"
+   },
+   {
+    "id": "area",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "2d10",
+       "nota": "Fire Bolt"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Fireball (4º)",
+      "usos": [
+       {
+        "alvos": 4,
+        "dano": "9d6",
+        "cd": 15,
+        "slot": 4
+       }
+      ]
+     },
+     {
+      "nome": "Fireball (4º)",
+      "usos": [
+       {
+        "alvos": 4,
+        "dano": "9d6",
+        "cd": 15,
+        "slot": 4
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "4": 2,
+      "1": 1
+     }
+    },
+    "invocacoes": [],
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "shield",
+       "usos_luta": 1
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "herda": "principal",
+    "hipotese": "area"
+   },
+   {
+    "id": "combo",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "2d10",
+       "nota": "Fire Bolt"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Web",
+         "magia": "web",
+         "cd": 15
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 15,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "area",
+         "nome": "Hypnotic Pattern",
+         "magia": "hypnotic_pattern",
+         "cd": 15
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Polymorph",
+         "cd": 15,
+         "slots": [
+          4
+         ],
+         "magias": [
+          "polymorph"
+         ],
+         "modo": "melhor"
+        }
+       ]
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Fireball",
+      "usos": [
+       {
+        "alvos": 4,
+        "dano": "8d6",
+        "cd": 15,
+        "slot": 3
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "3": 1,
+      "1": 1
+     }
+    },
+    "invocacoes": [],
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "shield",
+       "usos_luta": 1
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "herda": "principal",
+    "hipotese": "combo"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Sorcerer storm: Sem mecânica modelável com tipos existentes: chassi = Sorcerer base (a lista base não tem magia de raio/trovão).",
+   "estrategia": "Fire Bolt nos rounds livres; Web/Hold Person/Hypnotic Pattern/Polymorph; Fireball em grupos; o plano automático escolhe.",
+   "nao_modelado": "Tempestuous Magic (voo de 10 pés); Heart of the Storm (dano em área de metade do nível ao lançar raio/trovão; resistência); Storm Guide. Metamagia (Twinned, Quickened, Heightened...: os pontos viram espaços pela convenção); Counterspell; Haste; magias conhecidas além da lista base."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "Sorcerer 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 10, 'sab': 12, 'car': 19}; CA 14."
+  },
+  "11": {
+   "_texto": "Sorcerer 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 10, 'sab': 12, 'car': 20}; CA 14.",
+   "corpo": {
+    "ca": 14,
+    "pv": 79,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 1,
+      "con": 7,
+      "int": 0,
+      "sab": 1,
+      "car": 9
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 3,
+     "2": 4,
+     "3": 3,
+     "4": 3,
+     "5": 3,
+     "6": 1
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "3d10",
+        "nota": "Fire Bolt"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "hipotese": "só Fire Bolt"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d10",
+        "nota": "Fire Bolt"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Web",
+          "magia": "web",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Monster",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "hold_monster"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Synaptic Static",
+          "magia": "synaptic_static",
+          "cd": 17
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "1": 1,
+       "4": null
+      }
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "shield",
+        "usos_luta": 1
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Shield",
+       "fracao": 0.5,
+       "eixos": [
+        "defesa"
+       ]
+      }
+     ],
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "controle-barato",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d10",
+        "nota": "Fire Bolt"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 1
+      }
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "shield",
+        "usos_luta": 1
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Shield",
+       "fracao": 0.5,
+       "eixos": [
+        "defesa"
+       ]
+      }
+     ],
+     "herda": "principal",
+     "hipotese": "controle-barato"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "3d10",
+        "nota": "Fire Bolt"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Cone of Cold (6º)",
+       "usos": [
+        {
+         "alvos": 6,
+         "dano": "9d8",
+         "cd": 17,
+         "slot": 6
+        }
+       ]
+      },
+      {
+       "nome": "Fireball (5º)",
+       "usos": [
+        {
+         "alvos": 4,
+         "dano": "10d6",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 1,
+       "5": 1,
+       "1": 1,
+       "4": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "shield",
+        "usos_luta": 1
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Shield",
+       "fracao": 0.5,
+       "eixos": [
+        "defesa"
+       ]
+      }
+     ],
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "combo",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "3d10",
+        "nota": "Fire Bolt"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Web",
+          "magia": "web",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Monster",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "hold_monster"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Synaptic Static",
+          "magia": "synaptic_static",
+          "cd": 17
+         }
+        ]
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Fireball",
+       "usos": [
+        {
+         "alvos": 4,
+         "dano": "8d6",
+         "cd": 17,
+         "slot": 3
+        }
+       ]
+      },
+      {
+       "nome": "Cone of Cold",
+       "usos": [
+        {
+         "alvos": 6,
+         "dano": "8d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 2,
+       "3": 1,
+       "1": 1,
+       "4": null
+      }
+     },
+     "invocacoes": [],
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "shield",
+        "usos_luta": 1
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Shield",
+       "fracao": 0.5,
+       "eixos": [
+        "defesa"
+       ]
+      }
+     ],
+     "herda": "principal",
+     "hipotese": "combo"
+    }
+   ]
+  }
+ }
+}

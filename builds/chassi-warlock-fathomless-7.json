@@ -1,0 +1,584 @@
+{
+ "gerado_de": "progressoes/chassi-warlock-fathomless.json",
+ "build": "Warlock (Fathomless), retaguarda: Pact of the Tome, Eldritch Blast + Agonizing Blast, Armor of Shadows; Car>Con>Des; sem feat",
+ "corpo": {
+  "ca": 14,
+  "pv": 52,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 1,
+    "con": 2,
+    "int": 0,
+    "sab": 4,
+    "car": 7
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "4": 2
+  },
+  "espacos_volta": "curto"
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 7,
+      "dano": "1d10+4",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     },
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8",
+      "nota": "Tentacle of the Deeps (PB/dia ÷ 4 lutas)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "reduz_dano",
+      "valor": 4.5,
+      "usos_luta": 0.75
+     }
+    ]
+   },
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "hipotese": "só o ataque à vontade (anel interno)",
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "hex",
+   "herda": "principal",
+   "hipotese": "Hex (1 hora: 0,5 espaço por luta) no ataque principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 7,
+      "dano": "1d10+4+1d6",
+      "nota": "Eldritch Blast + Agonizing Blast + Hex"
+     },
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8",
+      "nota": "Tentacle of the Deeps"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 0.5
+    }
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "reduz_dano",
+      "valor": 4.5,
+      "usos_luta": 0.75
+     }
+    ]
+   }
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d10+4",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     },
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8",
+      "nota": "Tentacle of the Deeps (PB/dia ÷ 4 lutas)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "reduz_dano",
+      "valor": 4.5,
+      "usos_luta": 0.75
+     }
+    ]
+   },
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d10+4",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     },
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8",
+      "nota": "Tentacle of the Deeps (PB/dia ÷ 4 lutas)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Lightning Bolt",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "8d6",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (4º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "5d8",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 2
+    }
+   },
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "reduz_dano",
+      "valor": 4.5,
+      "usos_luta": 0.75
+     }
+    ]
+   },
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "combo",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d10+4",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     },
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8",
+      "nota": "Tentacle of the Deeps (PB/dia ÷ 4 lutas)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 15,
+       "slot": 2
+      }
+     ]
+    },
+    {
+     "nome": "Lightning Bolt",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "8d6",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 3
+    }
+   },
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "reduz_dano",
+      "valor": 4.5,
+      "usos_luta": 0.75
+     }
+    ]
+   },
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "combo"
+  },
+  {
+   "id": "invocacao",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d10+4",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     },
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8",
+      "nota": "Tentacle of the Deeps (PB/dia ÷ 4 lutas)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Aberration (4º)",
+     "quantidade": 1,
+     "pv": 40,
+     "ca": 15,
+     "ataque": {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+7"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 0.5
+    }
+   },
+   "area": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "reduz_dano",
+      "valor": 4.5,
+      "usos_luta": 0.75
+     }
+    ]
+   },
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "invocacao"
+  },
+  {
+   "id": "area+hex",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d10+4+1d6",
+      "nota": "Eldritch Blast + Agonizing Blast + Hex"
+     },
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8",
+      "nota": "Tentacle of the Deeps"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Lightning Bolt",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "8d6",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (4º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "5d8",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 2.5
+    }
+   },
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "reduz_dano",
+      "valor": 4.5,
+      "usos_luta": 0.75
+     }
+    ]
+   },
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "area + Hex"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: area. Sobra: nada.",
+   "combates": [
+    "principal",
+    "area",
+    "principal",
+    "area"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: nada.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Fathomless: Eldritch Blast com Agonizing Blast e Hex, espaços de pacto; muda só o que o patrono dá.",
+  "estrategia": "Hex no início do dia (cobre ~2 lutas); controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster, Synaptic Static), área ou invocação no espaço de pacto; Mass Suggestion no 11.",
+  "nao_modelado": "Gift of the Sea, Oceanic Soul, Fathomless Plunge; Guardian Coil como reduz_dano 4,5; Pact of the Tome (Book of Shadows: truques extras); Repelling Blast, Devil's Sight e a invocação do 9; Hunger of Hadar; Armor of Agathys; Counterspell; Misty Step; Darkness+Devil's Sight",
+  "progressao": "Warlock 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 10, 'sab': 12, 'car': 19}; pacto 2×4º; CA 14."
+ },
+ "id": "chassi-warlock-fathomless-7",
+ "nome": "Fathomless Warlock — chassi",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/warlock/subclasses/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "warlock",
+ "subclasse": "fathomless",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

@@ -1,0 +1,485 @@
+{
+ "gerado_de": "progressoes/chassi-cleric-nature.json",
+ "build": "Cleric (Nature), defensor, placas + escudo, maça; Toll the Dead; sem feat",
+ "corpo": {
+  "ca": 20,
+  "pv": 69,
+  "saves": {
+   "sv": {
+    "for": 3,
+    "des": 1,
+    "con": 1,
+    "int": -1,
+    "sab": 9,
+    "car": 4
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 2,
+   "6": 1
+  },
+  "outros": {
+   "canal": {
+    "qtd": 2,
+    "volta": "curto",
+    "valor": 2
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "bless",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless"
+  },
+  {
+   "id": "arma-espiritual",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "guardioes",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "6d8",
+      "meio": true,
+      "nota": "Spirit Guardians (6º) no alvo"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (6º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "6d8",
+     "cd": 17,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes"
+  },
+  {
+   "id": "guardioes-arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "6d8",
+      "meio": true,
+      "nota": "Spirit Guardians (6º) no alvo"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (6º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "6d8",
+     "cd": 17,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5,
+     "6": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes-arma"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "arma",
+   "hipotese": "maça todo round com Divine Strike",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d6+3+1d8",
+      "nota": "maça + Divine Strike"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "herda": "principal",
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  },
+  {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  },
+  {
+   "id": "praga",
+   "hipotese": "Insect Plague (6º) como aura parada a distância + truques",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Con",
+      "dano": "5d10",
+      "meio": true,
+      "nota": "Insect Plague no alvo"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Insect Plague (6º)",
+     "tipo": "aura",
+     "alvos": 4,
+     "dano": "5d10",
+     "cd": 17,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "6": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 2×1º, 2×2º, 3×3º, 2×5º, 2 canal.",
+   "combates": [
+    "controle",
+    "guardioes-arma",
+    "controle",
+    "controle"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 3.5×1º, 2×2º, 3×3º, 3×4º, 2×5º, 2 canal.",
+   "combates": [
+    "guardioes-arma"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Nature: Defensor de placas: clérigo base com maça e Divine Strike; Insect Plague no 9.",
+  "estrategia": "Régua comum do chassi (Toll the Dead, Bless, Spiritual Weapon, Spirit Guardians, Hold Person/Banishment, Healing Word) + o que o domínio dá; o plano automático escolhe.",
+  "nao_modelado": "Acolyte of Nature (truque de druida); Charm Animals and Plants; Dampen Elements; Barkskin, Spike Growth, Plant Growth, Wind Wall, Grasping Vine. Comum: cura além do Healing Word; utilitárias; quebra de concentração; penalidade de deslocamento ignorada.",
+  "progressao": "Cleric 11; atributos 6; CA 20 (placas + escudo)."
+ },
+ "id": "chassi-cleric-nature-11",
+ "nome": "Nature Cleric — chassi",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/nature/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "cleric",
+ "subclasse": "nature",
+ "posicao": "defensor",
+ "feat": null,
+ "variante": "sem-feat"
+}

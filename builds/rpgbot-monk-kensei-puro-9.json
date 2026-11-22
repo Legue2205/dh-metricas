@@ -1,0 +1,209 @@
+{
+ "gerado_de": "progressoes/rpgbot-monk-kensei-puro.json",
+ "build": "Monk (Kensei) sem multiclasse, Variant Human (Crossbow Expert), besta de mão; Sharpshooter 4, Des 18 8",
+ "corpo": {
+  "ca": 17,
+  "pv": 66,
+  "saves": {
+   "sv": {
+    "for": 4,
+    "des": 8,
+    "con": 2,
+    "int": -1,
+    "sab": 3,
+    "car": -1
+   },
+   "evasion": true,
+   "stillness": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "ki": {
+    "qtd": 9,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "besta de mão com Crossbow Expert e Sharpshooter, sem ki",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "mira",
+   "hipotese": "+ Focused Aim com o ki da luta (4 ki: +2 por ki depois de errar)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "focused_aim": {
+     "ki": 4
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "deft",
+   "hipotese": "+ Deft Strike (1 ki por acerto: +1d6) com o ki da luta (4 ki)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_luta": [
+     {
+      "dano": "1d6",
+      "usos": 4,
+      "nota": "Deft Strike"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: mira; prioritário: mira. Sobra: 1 ki.",
+   "combates": [
+    "mira",
+    "mira",
+    "mira",
+    "mira"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: mira. Sobra: 5 ki.",
+   "combates": [
+    "mira"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "A build Why don't you just shoot it? sem o Fighter 1: besta de mão com Crossbow Expert e Sharpshooter, sem Archery.",
+  "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis adiantados); a build original continua como referência.",
+  "nao_modelado": "Agile Parry e Kensei's Shot (competem com o Crossbow Expert pela ação bônus); Deflect Missiles; Stunning Strike (só corpo a corpo).",
+  "progressao": "Des 18 (8)."
+ },
+ "id": "rpgbot-monk-kensei-puro-9",
+ "nome": "Kensei Monk puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+  "nota": "Extensão simples sem multiclasse (puro, 22/11). Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."
+ }
+}

@@ -1,0 +1,406 @@
+{
+ "gerado_de": "progressoes/rpgbot-paladin-devotion-puro.json",
+ "build": "Paladin (Devotion) sem multiclasse, Astral Elf, Metamagic Adept 4, GWM 8; espadão, Blessed Warrior",
+ "corpo": {
+  "ca": 16,
+  "pv": 31,
+  "saves": {
+   "sv": {
+    "for": 2,
+    "des": -1,
+    "con": 3,
+    "int": -1,
+    "sab": 1,
+    "car": 5
+   },
+   "conjurador": true,
+   "ataques": 1
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 3
+  },
+  "outros": {
+   "canal": {
+    "qtd": 1,
+    "volta": "curto",
+    "valor": 1
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "só armas, sem gastar espaço",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 4,
+      "dano": "2d6+2",
+      "vantagem": 0.0,
+      "nota": "espadão"
+     },
+     {
+      "n": 0.5,
+      "bonus": 4,
+      "dano": "2d6+2",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "smite-1",
+   "hipotese": "2 Divine Smites de 1º na luta",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 4,
+      "dano": "2d6+2",
+      "vantagem": 0.0,
+      "nota": "espadão"
+     },
+     {
+      "n": 0.5,
+      "bonus": 4,
+      "dano": "2d6+2",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 2,
+      "dano": "2d8",
+      "nota": "Divine Smite (1º) ×2"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 2
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bless",
+   "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 4,
+      "dano": "2d6+2",
+      "vantagem": 0.0,
+      "nota": "espadão"
+     },
+     {
+      "n": 0.5,
+      "bonus": 4,
+      "dano": "2d6+2",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "arma-sagrada",
+   "hipotese": "Sacred Weapon (ação no round 1: +Car no acerto a luta toda)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d6+2",
+      "vantagem": 0.0,
+      "nota": "espadão"
+     },
+     {
+      "n": 0.5,
+      "bonus": 4,
+      "dano": "2d6+2",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "canal": 1
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "arma-sagrada+smite",
+   "hipotese": "Sacred Weapon (ação no round 1: +Car no acerto a luta toda) + 2 Divine Smites de 1º",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d6+2",
+      "vantagem": 0.0,
+      "nota": "espadão"
+     },
+     {
+      "n": 0.5,
+      "bonus": 4,
+      "dano": "2d6+2",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 2,
+      "dano": "2d8",
+      "nota": "Divine Smite (1º) ×2"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "1": 2
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, principal; prioritário: arma-sagrada, arma-sagrada+smite. Sobra: nada.",
+   "combates": [
+    "principal",
+    "arma-sagrada",
+    "bless",
+    "arma-sagrada+smite"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: arma-sagrada+smite. Sobra: 1×1º.",
+   "combates": [
+    "arma-sagrada+smite"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "A build Curseedge sem o dip de Sorcerer: Sacred Weapon, espadão e GWM no 8; sem Booming Blade nem Shield.",
+  "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis adiantados, atributos e feats remendados); a build original continua como referência.",
+  "nao_modelado": "Metamagic Adept (sem magia de Sorcerer para acelerar), Blessed Warrior (truques), Aura of Devotion, Astral Elf (Astral Trance etc.). Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico.",
+  "progressao": "Paladin 3: Sacred Weapon; espadão, Blessed Warrior; cota de malha (16)."
+ },
+ "id": "rpgbot-paladin-devotion-puro-3",
+ "nome": "Oath of Devotion Paladin puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/paladin/subclasses/oath-of-devotion/",
+  "nota": "Extensão simples sem multiclasse; mini-mutirão 22/11."
+ }
+}

@@ -1,0 +1,2036 @@
+{
+ "id": "chassi-paladin-vengeance-f-polearm-master",
+ "nome": "Vengeance Paladin — chassi + Polearm Master",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/paladin/subclasses/oath-of-vengeance/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "paladin",
+ "subclasse": "vengeance",
+ "posicao": "striker",
+ "feat": "Polearm Master",
+ "variante": "feat",
+ "base": {
+  "build": "Paladin (Oath of Vengeance), striker: espadão, GWF, placas; Polearm Master no 4",
+  "corpo": {
+   "ca": 18,
+   "pv": 53,
+   "saves": {
+    "sv": {
+     "for": 5,
+     "des": 2,
+     "con": 3,
+     "int": 1,
+     "sab": 6,
+     "car": 7
+    },
+    "conjurador": true,
+    "ataques": 3
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 3
+   },
+   "outros": {
+    "canal": {
+     "qtd": 1,
+     "volta": "curto",
+     "valor": 2
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "só armas, sem gastar espaço",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "vantagem": 0.0,
+       "nota": "glaive (GWF)"
+      },
+      {
+       "n": 1.0,
+       "bonus": 6,
+       "dano": "1d4+3+0.5",
+       "vantagem": 0.0,
+       "nota": "cabo (Polearm Master, ação bônus)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "smite-1",
+    "hipotese": "2 Divine Smites de 1º na luta",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "vantagem": 0.0,
+       "nota": "glaive (GWF)"
+      },
+      {
+       "n": 1.0,
+       "bonus": 6,
+       "dano": "1d4+3+0.5",
+       "vantagem": 0.0,
+       "nota": "cabo (Polearm Master, ação bônus)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 2,
+       "dano": "2d8",
+       "nota": "Divine Smite (1º) ×2"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 2
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "smite-2",
+    "hipotese": "2 Divine Smites de 2º na luta",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "vantagem": 0.0,
+       "nota": "glaive (GWF)"
+      },
+      {
+       "n": 1.0,
+       "bonus": 6,
+       "dano": "1d4+3+0.5",
+       "vantagem": 0.0,
+       "nota": "cabo (Polearm Master, ação bônus)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 2,
+       "dano": "3d8",
+       "nota": "Divine Smite (2º) ×2"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "2": 2
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "bless",
+    "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "vantagem": 0.0,
+       "nota": "glaive (GWF)"
+      },
+      {
+       "n": 1.0,
+       "bonus": 6,
+       "dano": "1d4+3+0.5",
+       "vantagem": 0.0,
+       "nota": "cabo (Polearm Master, ação bônus)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 1
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      },
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "voto",
+    "hipotese": "Vow of Enmity (ação bônus no round 1): vantagem contra o alvo a luta toda",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "vantagem": 1.0,
+       "nota": "glaive (GWF)"
+      },
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "1d4+3+0.5",
+       "vantagem": 1.0,
+       "nota": "cabo (Polearm Master, ação bônus)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "canal": 1
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "voto+smite",
+    "hipotese": "Vow of Enmity (ação bônus no round 1): vantagem contra o alvo a luta toda + 2 Divine Smites de 1º",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "vantagem": 1.0,
+       "nota": "glaive (GWF)"
+      },
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "1d4+3+0.5",
+       "vantagem": 1.0,
+       "nota": "cabo (Polearm Master, ação bônus)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 2,
+       "dano": "2d8",
+       "nota": "Divine Smite (1º) ×2"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "canal": 1,
+     "espacos": {
+      "1": 2
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "marca",
+    "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta; ação bônus no round 1)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 6,
+       "dano": "1d10+3+0.8+1d6",
+       "vantagem": 0.0,
+       "nota": "glaive (GWF)"
+      },
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "1d4+3+0.5+1d6",
+       "vantagem": 0.0,
+       "nota": "cabo (Polearm Master, ação bônus)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "marca+smite",
+    "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta; ação bônus no round 1) + 2 Divine Smites de 1º",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 6,
+       "dano": "1d10+3+0.8+1d6",
+       "vantagem": 0.0,
+       "nota": "glaive (GWF)"
+      },
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "1d4+3+0.5+1d6",
+       "vantagem": 0.0,
+       "nota": "cabo (Polearm Master, ação bônus)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 2,
+       "dano": "2d8",
+       "nota": "Divine Smite (1º) ×2"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 2.5
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "controle",
+    "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "vantagem": 0.0,
+       "nota": "glaive (GWF)"
+      },
+      {
+       "n": 1.0,
+       "bonus": 6,
+       "dano": "1d4+3+0.5",
+       "vantagem": 0.0,
+       "nota": "cabo (Polearm Master, ação bônus)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "alvo_unico",
+       "nome": "Hold Person",
+       "cd": 13,
+       "slots": [
+        2
+       ],
+       "magias": [
+        "hold_person"
+       ],
+       "modo": "melhor"
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "2": 1
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "controle+smite",
+    "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "vantagem": 0.0,
+       "nota": "glaive (GWF)"
+      },
+      {
+       "n": 1.0,
+       "bonus": 6,
+       "dano": "1d4+3+0.5",
+       "vantagem": 0.0,
+       "nota": "cabo (Polearm Master, ação bônus)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d10+3+0.8",
+       "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 2,
+       "dano": "2d8",
+       "nota": "Divine Smite (1º) ×2"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "alvo_unico",
+       "nome": "Hold Person",
+       "cd": 13,
+       "slots": [
+        2
+       ],
+       "magias": [
+        "hold_person"
+       ],
+       "modo": "melhor"
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 2
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Oath of Vengeance: régua comum do Paladin + features do juramento (striker). Feat da subclasse = 1º feat não racial da build do RPGBot.",
+   "nao_modelado": "Relentless Avenger, Abjure Enemy, Misty Step. Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico, upcast de Bless."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 17, 'des': 10, 'con': 13, 'int': 8, 'sab': 12, 'car': 15}; CA 18"
+  },
+  "11": {
+   "_texto": "atributos {'for': 19, 'des': 10, 'con': 13, 'int': 8, 'sab': 12, 'car': 15}; CA 18",
+   "corpo": {
+    "ca": 18,
+    "pv": 81,
+    "saves": {
+     "sv": {
+      "for": 6,
+      "des": 2,
+      "con": 3,
+      "int": 1,
+      "sab": 7,
+      "car": 8
+     },
+     "conjurador": true,
+     "ataques": 3
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3
+    },
+    "outros": {
+     "canal": {
+      "qtd": 1,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "só armas, sem gastar espaço",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-1",
+     "hipotese": "2 Divine Smites de 1º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-2",
+     "hipotese": "2 Divine Smites de 2º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "3d8",
+        "nota": "Divine Smite (2º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-3",
+     "hipotese": "2 Divine Smites de 3º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "4d8",
+        "nota": "Divine Smite (3º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "voto",
+     "hipotese": "Vow of Enmity (ação bônus no round 1): vantagem contra o alvo a luta toda",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 1.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 1.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "canal": 1
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "voto+smite",
+     "hipotese": "Vow of Enmity (ação bônus no round 1): vantagem contra o alvo a luta toda + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 1.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 1.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "marca",
+     "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta; ação bônus no round 1)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8+1d6",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8+1d6",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "marca+smite",
+     "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta; ação bônus no round 1) + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8+1d6",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8+1d6",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 2.5
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 14,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle+smite",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 14,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "haste",
+     "hipotese": "Haste em si (3º) no round 1 (ação): +1 ataque e +2 de CA nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.25,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {
+      "ca": 20
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "haste+smite",
+     "hipotese": "Haste em si (3º) no round 1 (ação): +1 ataque e +2 de CA nos rounds 2–4 + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.25,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "vantagem": 0.0,
+        "nota": "glaive (GWF)"
+       },
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d4+4+0.5+1d8",
+        "vantagem": 0.0,
+        "nota": "cabo (Polearm Master, ação bônus)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d10+4+0.8+1d8",
+        "nota": "ataque de oportunidade (Polearm Master, reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {
+      "ca": 20
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 2
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

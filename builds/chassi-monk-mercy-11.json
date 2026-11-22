@@ -1,0 +1,416 @@
+{
+ "gerado_de": "progressoes/chassi-monk-mercy.json",
+ "build": "Monk (mercy), skirmisher, sem armadura, Des/Sab; sem feat",
+ "corpo": {
+  "ca": 18,
+  "pv": 69,
+  "saves": {
+   "sv": {
+    "for": 5,
+    "des": 9,
+    "con": 1,
+    "int": 0,
+    "sab": 3,
+    "car": -1
+   },
+   "evasion": true,
+   "stillness": true,
+   "imune": [
+    "veneno"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "ki": {
+    "qtd": 11,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem ki: ataque + golpe desarmado na ação bônus (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "meia-rajada",
+   "hipotese": "Flurry of Blows em 2 dos 4 rounds (2 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 2
+   }
+  },
+  {
+   "id": "rajada",
+   "hipotese": "Flurry of Blows todo round (4 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "atordoar",
+   "hipotese": "Flurry em 2 rounds + 2 tentativas de Stunning Strike (4 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Stunning Strike (ki)",
+      "efeito": "cond_atordoado_um_turno",
+      "cd": 15,
+      "bonus": [
+       9,
+       9,
+       9,
+       9
+      ],
+      "usos": 2
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "mira",
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "rajada-mira",
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 6
+   }
+  },
+  {
+   "id": "mao-da-morte",
+   "hipotese": "Flurry todo round com Hand of Harm grátis + 1 Hand of Healing (4 ki)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 1.75,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Flurry todo round, um golpe vira cura)"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8+3",
+      "nota": "Hand of Harm (1 ki, 1× por turno num golpe desarmado)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Physician's Touch (envenenado, sem save)",
+      "efeito": "cond_envenenado_um_turno",
+      "cd": 99,
+      "bonus": [
+       9,
+       9,
+       9
+      ],
+      "usos": 4
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Hand of Healing (troca um golpe do Flurry)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: mao-da-morte; prioritário: rajada-mira. Sobra: 1 ki.",
+   "combates": [
+    "mao-da-morte",
+    "rajada-mira",
+    "mao-da-morte",
+    "rajada-mira"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada-mira. Sobra: 5 ki.",
+   "combates": [
+    "rajada-mira"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Monk Misericórdia: Hand of Harm, veneno sem save e Hand of Healing no Flurry.",
+  "estrategia": "Régua comum do monge (lança + Martial Arts, Flurry, Stunning Strike, Focused Aim) + o que a tradição dá.",
+  "nao_modelado": "Remoção de condições; cura fora de luta; chicote (alcance) trocado pela lança da régua. Deflect Missiles; Slow Fall; Patient Defense/Step of the Wind.",
+  "progressao": "Hand of Healing/Harm; Physician's Touch (6); Flurry of Healing and Harm (11). Atributos {'for': 12, 'des': 20, 'con': 13, 'int': 10, 'sab': 16, 'car': 8}."
+ },
+ "id": "chassi-monk-mercy-11",
+ "nome": "Mercy Monk — chassi",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/mercy/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "monk",
+ "subclasse": "mercy",
+ "posicao": "skirmisher",
+ "feat": null,
+ "variante": "sem-feat"
+}

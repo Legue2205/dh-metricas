@@ -1,0 +1,363 @@
+{
+ "gerado_de": "progressoes/chassi-druid-land.json",
+ "build": "Druid (Land), retaguarda, gibão de peles + escudo, Sab > Con > Des; sem feat",
+ "corpo": {
+  "ca": 15,
+  "pv": 52,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 1,
+    "con": 2,
+    "int": 4,
+    "sab": 7,
+    "car": 0
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 2
+  },
+  "outros": {
+   "forma_selvagem": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Wall of Fire",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Ice Knife",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d6",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 2,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "invocacao",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Beast (Land, 4º)",
+     "quantidade": 1,
+     "pv": 40,
+     "ca": 15,
+     "ataque": {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+8"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 0.5,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "invocacao"
+  },
+  {
+   "id": "haste",
+   "hipotese": "Haste (Grassland) no melhor marcial do grupo + truques",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Haste (ataque extra num aliado)",
+      "lado": "of",
+      "modelo": "ataque_extra",
+      "alvos": 1,
+      "concentracao": "haste"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: haste; prioritário: area, haste. Sobra: 2×1º, 3×2º, 2 forma_selvagem.",
+   "combates": [
+    "haste",
+    "area",
+    "haste",
+    "haste"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 3×2º, 3×3º, 2 forma_selvagem.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Circle of Land: Grassland (terreno da build do RPGBot): Haste e Insect Plague do círculo; Natural Recovery no pool.",
+  "estrategia": "Régua comum do chassi: Sab > Con > Des, gibão de peles + escudo, Produce Flame, Entangle/Hold Person/Polymorph, Ice Knife + Wall of Fire, Summon Beast e Healing Word; sem feat (conjurador pleno).",
+  "nao_modelado": "Land's Stride; Nature's Ward; Invisibility, Pass without Trace, Daylight, Freedom of Movement, Divination, Dream. Comuns: Wild Shape fora de combate; Goodberry; Faerie Fire, Spike Growth, Moonbeam, Conjure Animals (fora do Shepherd).",
+  "progressao": "Druid 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 12, 'sab': 19, 'car': 10}; Grassland; Natural Recovery somado ao pool."
+ },
+ "id": "chassi-druid-land-7",
+ "nome": "Land Druid — chassi",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/circle-of-the-land/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "druid",
+ "subclasse": "land",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

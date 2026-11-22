@@ -1,0 +1,184 @@
+{
+ "gerado_de": "progressoes/chassi-barbarian-beast.json",
+ "build": "Barbarian (beast), defensor, martelo de guerra + escudo; garras na fúria, meia-armadura; For > Con > Des; sem feat",
+ "corpo": {
+  "ca": 18,
+  "pv": 68,
+  "saves": {
+   "sv": {
+    "for": 7,
+    "des": 1,
+    "con": 5,
+    "int": -1,
+    "sab": 1,
+    "car": 0
+   },
+   "ataques": 3,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 4,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: martelo de guerra com escudo, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia-garras",
+   "hipotese": "fúria com Form of the Beast (garras: um ataque extra na ação), Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 7,
+      "dano": "1d6+6",
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1
+   }
+  },
+  {
+   "id": "furia-cauda",
+   "hipotese": "fúria com Form of the Beast (cauda: alcance, reação +1d8 de CA contra um ataque), Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+6",
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true,
+    "reacoes": [
+     {
+      "tipo": "bloqueio",
+      "dado": 8
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia-garras; prioritário: furia-garras. Sobra: nada.",
+   "combates": [
+    "furia-garras",
+    "furia-garras",
+    "furia-garras",
+    "furia-garras"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia-garras. Sobra: 3 furia.",
+   "combates": [
+    "furia-garras"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Bárbaro da Fera com escudo: na fúria ataca com garras (um ataque extra na ação).",
+  "estrategia": "Fúria nas lutas que o plano automático escolher; Reckless Attack sempre.",
+  "nao_modelado": "Mordida (cura); Bestial Soul (6); força o ataque de Infectious Fury; Skill Expert: expertise em Atletismo e a perícia (sem agarrão modelado: só o +1 de For conta). Relentless Rage; Feral Instinct; Fast Movement; Primal Path 14 (fora das fatias).",
+  "progressao": "atributos {'for': 19, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}; meia-armadura + escudo (18)"
+ },
+ "id": "chassi-barbarian-beast-7",
+ "nome": "Beast Barbarian — chassi",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/beast/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "barbarian",
+ "subclasse": "beast",
+ "posicao": "defensor",
+ "feat": null,
+ "variante": "sem-feat"
+}

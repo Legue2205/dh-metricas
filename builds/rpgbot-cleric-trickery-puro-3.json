@@ -1,0 +1,347 @@
+{
+ "gerado_de": "progressoes/rpgbot-cleric-trickery-puro.json",
+ "build": "Cleric (Trickery) sem multiclasse, Meio-elfo; peitoral + escudo; Sab 18 (4), Des 18 (8)",
+ "corpo": {
+  "ca": 18,
+  "pv": 24,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 3,
+    "con": 2,
+    "int": -1,
+    "sab": 5,
+    "car": 3
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 2
+  },
+  "outros": {
+   "canal": {
+    "qtd": 1,
+    "volta": "curto",
+    "valor": 1
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 13,
+      "save": "Des",
+      "dano": "1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "bless",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 13,
+      "save": "Des",
+      "dano": "1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless"
+  },
+  {
+   "id": "arma-espiritual",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 13,
+      "save": "Des",
+      "dano": "1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 13,
+      "save": "Des",
+      "dano": "1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Hold Person",
+      "cd": 13,
+      "slots": [
+       2
+      ],
+      "magias": [
+       "hold_person"
+      ],
+      "modo": "melhor"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "duplicidade",
+   "hipotese": "Invoke Duplicity (Channel Divinity, concentração): rapieira com vantagem pela ilusão",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d8+3",
+      "vantagem": 1.0,
+      "nota": "rapieira"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 13,
+      "save": "Des",
+      "dano": "1d8",
+      "meio": false,
+      "nota": "Sacred Flame"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8+3",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 5.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: duplicidade; prioritário: bless+arma. Sobra: nada.",
+   "combates": [
+    "duplicidade",
+    "bless+arma",
+    "duplicidade",
+    "bless+arma"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+arma. Sobra: 2.5×1º, 1×2º, 1 canal.",
+   "combates": [
+    "bless+arma"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "A build Half-Elf Trickery sem os níveis de Rogue: Sacred Flame, Spirit Guardians e Spiritual Weapon; rapieira com vantagem do Invoke Duplicity, agora sem Sneak Attack.",
+  "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis de Cleric = nível de personagem, atributos e feats remendados); a build original continua como referência. Sem o Rogue: saves Sab/Car (era Des/Int), sem Sneak Attack, Expertise nem Booming Blade do Arcane Trickster; a linha da duplicidade fica só com vantagem e Divine Strike (Cleric 8); Polymorph no 7.",
+  "nao_modelado": "Sneak Attack, Expertise e Booming Blade (perdidos com o Rogue); Blessing of the Trickster; Invoke Duplicity para lançar magias à distância; Cloak of Shadows; Dimension Door; Improved Duplicity (17).",
+  "progressao": "Cleric 3; Sab 16, Des 16; peitoral + escudo."
+ },
+ "id": "rpgbot-cleric-trickery-puro-3",
+ "nome": "Trickery Domain Cleric puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 3,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/trickery-domain/",
+  "nota": "Extensão simples sem multiclasse; mini-mutirão 22/11."
+ }
+}

@@ -981,3 +981,114 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - **Lacunas do motor que viram próximos passos:** quebra de concentração (libera feats de conjurador e dá sentido à
   meia distância); valor do uso padrão da ação bônus/reação (Cunning Action: o Help do Mastermind hoje é de graça);
   plano de uma linha por luta; Evasion; pets no Corpo; Bless no Suporte; Metamagia.
+
+## 22/11 (tarde) — Mini-mutirão do chassi (consolidação)
+- 14 sessões autônomas (13 classes + os -puro do Cleric) sobre a base `3f37fbe`, protocolo em `dh-staging-2026-11-22` no
+  Drive. Todas entregaram antes do prazo (13:00–14:50 UTC+1); nenhuma mexeu em `dh/`, premissas ou testes (regra do
+  protocolo), então os 14 patches aplicaram sem conflito.
+- **192 progressões de chassi** (fatias 7 e 11; 76 com feat, 116 sem feat) cobrindo as 115 subclasses dos gabaritos
+  (+ Armorer Infiltrator), e **10 -puro** novos (Ancestral Guardian, Grave, Life, Order, Trickery, Wildfire, Kensei,
+  Conquest, Devotion, Divine Soul). Geradores `chassi_<classe>.py` e `puro_<classe>.py` reproduzem os arquivos idênticos.
+- Dúvidas de julgamento de cada sessão: nos relatórios (`relatorio-<classe>.md` na pasta de staging) e resumidas abaixo
+  por classe.
+
+## 22/11 (mini-mutirão) — Fighter
+- `chassi_fighter.py`: 10 subclasses × (sem feat + feat da subclasse), fatias 7/11, 40 builds validadas sem aviso.
+- Posições: defensor (Cavalier, Rune Knight), striker (Champion, EK, Echo), atirador (BM, Psi, PDK, Samurai, AA).
+- Feats: GWM (Champion, do modelo), SS (BM, PDK, AA), Mounted Combatant, Slasher, Sentinel, Piercer, Skill Expert, Gunner.
+- PDK sem os traços de Dragonborn; Cavalier a pé; Mounted Combatant entra com diferença zero (só o ASI perdido).
+- Pendente: decidir o feat do Champion (GWM do modelo × Piercer da regra).
+
+## 22/11 (mini-mutirão) — Barbarian
+- Chassi: 8 caminhos do gabarito × (sem feat, feat da subclasse), fatias 7/11, gerador `chassi_barbarian.py`.
+- Régua: For/Con, meia-armadura, Reckless Attack em todas as linhas; defensores (AG, Battlerager, Beast, Totem Urso) com escudo ou alabarda.
+- Strikers (Berserker RAW, Storm Desert, Wild Magic, Zealot) com arma grande.
+- Feats: GWM (Zealot, Berserker), PAM (Totem), Crusher (Wild), Slasher (Storm), Skill Expert (Beast, Battlerager), Sentinel (AG, escolhido por nós).
+- `rpgbot-barbarian-ancestral-guardian-puro` (sem Wizard/Fighter), gerador `puro_barbarian.py`.
+- Pendências: Giant sem nota no gabarito; Totem do Lobo fora do chassi; Skill Expert/Slasher sem mecânica (só +1 For).
+
+## 22/11 (mini-mutirão) — Monk
+- Chassi das 9 tradições do gabarito (`chassi_monk.py`): sem feat + feat da build do RPGBot (Crusher, Slasher, Piercer, Skill Expert,
+  Eldritch Adept, Gunner, Crossbow Expert) + Mobile em todas (zero de propósito); Four Elements só Mobile. 26 progressões, fatias 7/11.
+- Régua: lança + Martial Arts, Flurry/Stunning/Focused Aim iguais; Des>Sab>Con (Astral: Sab primeiro); skirmisher, exceto
+  Long Death (defensor) e Kensei (atirador de arco longo + Kensei's Shot; ki em Deft Strike/Focused Aim/Sharpen the Blade).
+- `rpgbot-monk-kensei-puro` (`puro_monk.py`): a build do RPGBot sem o Fighter 1 (sem Archery, d8, saves For/Des), fatias 3–11.
+- Pendente: decidir Eldritch Adept × Sentinel no Shadow; conferir o salto do Focused Aim com Sharpshooter no Kensei puro.
+
+## 22/11 (mini-mutirão) — Paladin
+- Chassi dos 8 juramentos (`chassi_paladin.py`, 17 progressões): striker de espadão (Vengeance, Devotion, Glory, Watchers),
+  defensor de escudo (Conquest, Crown, Redemption), atirador de arco longo (Ancients). Régua comum de smites/Bless/Lay on Hands.
+- Feats do RPGBot no 4: PAM, Metamagic Adept + GWM, Shield Master, Fighting Initiate, Resilient Con (×2), Telekinetic, Skill Expert.
+- Conquest ganhou Fear (9) como linha; Crown, Spirit Guardians `front` no 11.
+- -puro: Conquest sem Warlock e Devotion sem Sorcerer (`puro_paladin.py`).
+- Pendentes: Ancients atirador vs defensor; feats sem mecânica (Shield Master, Metamagic Adept, Telekinetic) dão diferença ≤ 0.
+
+## 22/11 (mini-mutirão) — Rogue
+- `chassi_rogue.py`: 9 subclasses × (sem feat, feat do RPGBot no 4, Mobile/Sharpshooter por posição), fatias 7/11, 54 builds OK.
+- Régua: couro batido, Sneak pelos gatilhos das convenções; atirador = besta leve + Steady Aim; skirmisher = rapieira + Disengage.
+- Skirmishers: Arcane Trickster (Booming Blade + familiar) e Swashbuckler; os outros 7 são atiradores.
+- Feats sem mecânica (Mobile, Skill Expert, Slasher) dão só o +1 Des ou zero, de propósito.
+- Pendentes: Assassin vs Steady Aim, Swashbuckler sem truque, efeito do Sharpshooter no nível eq. de dano.
+
+## 22/11 (mini-mutirão) — Ranger
+- `chassi_ranger.py`: 8 conclaves × (sem feat + feat) = 17 progressões, 34 builds, validar/pytest limpos.
+- 6 atiradores (arco longo, Archery, couro batido, Sharpshooter); Drakewarden striker de glaive (GWM ou PAM só reação);
+  Beast Master defensor de espada e escudo com Sentinel.
+- Mesma régua: Extra Attack + Hunter's Mark (0,5 espaço de 1º); features das subclasses = ran.py.
+- Pendências: variante skirmisher do Horizon Walker; pet como corpo; magias de controle do Ranger (Spike Growth).
+
+## 22/11 (mini-mutirão) — Artificer
+- `chassi_artificer.py`: 4 subclasses do gabarito, Armorer em dois modelos (Guardian defensor = `chassi-artificer-armorer`,
+  Infiltrator atirador = `chassi-artificer-armorer-infiltrator`, `subclasse: armorer`); 10 progressões, fatias 7/11.
+- Régua: Int>Con>Des, meia-armadura+escudo (Armorer placas), Enhanced Defense/Weapon/Focus (+1→+2 no 10), Fire Bolt, Web.
+- Feats: Skill Expert (Battle Smith, Armorer; sem mecânica) e Fey Touched com Bless (Artillerist, Alchemist), meio-feat de Int no 4.
+- Guardian: Thunder Gauntlets como `ancestral_protectors` sem resistência; Defensive Field como `pvt_luta` médio.
+- Pendente: Bane, Defensive Field como ação bônus, Protector cannon, elixires.
+
+## 22/11 (mini-mutirão) — Cleric
+- `chassi_cleric.py`: 14 domínios (gabarito rpgbot-cleric), fatias 7/11, só sem feat; reusa `cle.fatia` (régua: Toll the Dead, Bless, Spiritual Weapon, Spirit Guardians, Hold Person/Banishment, Healing Word).
+- Placas + arma com Divine Strike (defensor): Forge, Life, Nature, Order, Tempest, Twilight; War striker; Death/Grave meia; Arcana, Knowledge, Light, Peace, Trickery retaguarda (média).
+- Sem opcionais do Tasha nem itens; Atributos Sab > For (pesada) ou Sab > Des (média).
+- Pendências: Invoke Duplicity/Divine Strike do Trickery, Inflict Wounds do Grave, controle F do War principal.
+
+## 22/11 (mini-mutirão) — Cleric -puro
+- `puro_cleric.py`: grave/life/order/trickery do RPGBot sem multiclasse (fatias 3–11, grupo RPGBot), peças de cle.py/cle2.py.
+- Grave mantém Quicken 1/dia pelo Metamagic Adept; Life perde Goodberry (sem remendo); Order quase igual à original;
+  Trickery passa a saves Sab/Car e perde Sneak Attack/Booming Blade.
+- Features por nível adiantadas (Potent Spellcasting/Divine Strike do 9, Banishment/Polymorph do 7).
+
+## 22/11 (mini-mutirão) — Wizard
+- Chassi do Wizard: `chassi_wizard.py`, 13 tradições × fatias 7/11, só sem feat (conjurador pleno). Régua comum: Int>Con>Des,
+  Mage Armor + Shield, Toll the Dead, Web/Hypnotic Pattern/Banishment (+Hold Monster/Wall of Force/Synaptic Static no 11),
+  Fireball (+Cone of Cold), Summon Aberration. Cada tradição acrescenta só as próprias features/magias (features do `wiz_builds.py`).
+- Abjuration e Bladesinging na posição meia; o resto na retaguarda. Order of Scribes = régua pura (nada modelável).
+- Nenhuma mecânica nova; o que falta está em `nao_modelado`. CI calcula; depois `python calibracao/comparar_chassi.py`.
+
+## 22/11 (mini-mutirão) — Bard
+- `chassi_bard.py`: 8 colégios (Lore, Valor, Whispers, Creation, Eloquence, Glamour, Swords, Spirits), fatias 7/11, sem feat.
+- Régua comum: Vicious Mockery, Shatter/Hypnotic Pattern/Greater Invisibility/Hold Monster/Synaptic Static, Bardic Inspiration, Healing Word.
+- Posições: retaguarda (6), Valor meia (rapieira + escudo, meia-armadura), Swords skirmisher (Des primeiro, Dueling).
+- Lore: Fireball por Additional Magical Secrets; Magical Secrets (10) fora para todos.
+- Features reaproveitadas do brd.py; nenhuma mecânica nova; 16 builds validam sem aviso.
+
+## 22/11 (mini-mutirão) — Druid
+- `chassi_druid.py`: 7 círculos (Moon, Land, Shepherd, Spores, Stars, Wildfire, Dreams), sem feat, fatias 7/11; peças de `dru.py` reaproveitadas sem reescrever as builds do RPGBot.
+- Régua: Sab>Con>Des, peles+escudo (CA 15), Produce Flame, Entangle/Hold Person/Polymorph, Ice Knife+Wall of Fire, Summon Beast, Healing Word.
+- Meia: Moon, Spores, Wildfire; retaguarda: Land (Grassland), Shepherd, Stars, Dreams.
+- `rpgbot-druid-wildfire-puro` (3–11): Gamera sem Cleric 1; Produce Flame + Enhanced Bond no lugar dos truques de Arcana.
+- Pendências: Shillelagh só na Symbiotic Entity (Spores); Summon Beast na lista base; posição do Wildfire.
+
+## 22/11 (mini-mutirão) — Warlock
+- `ferramentas/geradores/chassi_warlock.py`: 9 chassis `chassi-warlock-<patrono>` (fatias 7 e 11, sem feat).
+- Régua: Car>Con>Des, EB + Agonizing Blast + Hex, Pact of the Tome (sem mecânica), invocações base iguais, Mystic Arcanum = Mass Suggestion.
+- Hexblade: Pact of the Blade, striker, espada longa + escudo + meia-armadura (CA 18), Hexblade's Curse = PB/2 por golpe.
+- Demais patronos na retaguarda (CA 14); features reaproveitadas de `wlk.py` (+ Phantasmal Force para Archfey/Undead).
+- Undying sem nenhuma feature com número no motor; Tome/Chain/Blade e muitas invocações em `nao_modelado`.
+- Pendente: decidir Con vs Des na retaguarda; rodar `comparar_chassi.py` depois do CI.
+
+## 22/11 (mini-mutirão) — Sorcerer
+- Chassi: 8 origens (as 5 do gabarito + Lunar, Shadow e Storm de `sem_build`), só sem feat, fatias 7/11, todas na retaguarda (`ferramentas/geradores/chassi_sorcerer.py`).
+- Régua: Car > Con > Des, Fire Bolt, Mage Armor/Shield, Flexible Casting com todos os pontos em espaços (pendência mantida), lista base Web/Hold Person/Hypnotic/Polymorph/Fireball (+ Hold Monster, Synaptic Static, Cone of Cold no 11).
+- Origens: Aberrant (Tentacles + Summon Aberration), Clockwork (Summon Construct + Wall of Force), Divine (Bless), Draconic (Resilience + Affinity), Lunar (Blindness), Shadow (Hound of Ill Omen como invocação); Wild e Storm = base.
+- Puro: `rpgbot-sorcerer-divine-soul-puro` sem o Cleric 1 (Mage Armor, saves de Sorcerer, Des/Sab trocadas), `puro_sorcerer.py`.
+- Pendente: metamagia e Shadow/Storm/Lunar quase sem mecânica no motor.

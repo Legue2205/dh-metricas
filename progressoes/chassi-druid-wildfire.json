@@ -1,0 +1,1247 @@
+{
+ "id": "chassi-druid-wildfire",
+ "nome": "Wildfire Druid — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/circle-of-wildfire/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "druid",
+ "subclasse": "wildfire",
+ "posicao": "meia",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Druid (Wildfire), meia, gibão de peles + escudo, Sab > Con > Des; sem feat",
+  "corpo": {
+   "ca": 15,
+   "pv": 52,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 1,
+     "con": 2,
+     "int": 4,
+     "sab": 7,
+     "car": 0
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 3,
+    "3": 3,
+    "4": 1
+   },
+   "outros": {
+    "forma_selvagem": {
+     "qtd": 2,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 7,
+       "dano": "2d8+1d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído; Enhanced Bond)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 11.0
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    },
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d8+1d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Entangle",
+         "magia": "entangle",
+         "cd": 15
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 15,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Polymorph",
+         "cd": 15,
+         "slots": [
+          4
+         ],
+         "magias": [
+          "polymorph"
+         ],
+         "modo": "melhor"
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "controle"
+   },
+   {
+    "id": "controle-barato",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d8+1d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Entangle",
+       "magia": "entangle",
+       "cd": 15
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "controle-barato"
+   },
+   {
+    "id": "area",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "2d8+1d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Wall of Fire",
+      "usos": [
+       {
+        "alvos": 3,
+        "dano": "5d8+4",
+        "cd": 15,
+        "slot": 4
+       }
+      ]
+     },
+     {
+      "nome": "Burning Hands (Wildfire)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d6+4",
+        "cd": 15,
+        "slot": 3
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "3": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "area"
+   },
+   {
+    "id": "invocacao",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d8+1d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "invocacoes": [
+     {
+      "nome": "Summon Beast (Land, 4º)",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 15,
+      "ataque": {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d8+8"
+      }
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "4": 0.5,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "invocacao"
+   },
+   {
+    "id": "principal+espirito",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 7,
+       "dano": "2d8+1d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [
+     {
+      "nome": "Wildfire Spirit",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 13,
+      "ataque": {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d6+3"
+      }
+     }
+    ],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído; Enhanced Bond)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 11.0
+      }
+     ]
+    },
+    "herda": "principal",
+    "hipotese": "só truques + espirito",
+    "gasta": {
+     "forma_selvagem": 0.5,
+     "espacos": {
+      "1": 0.5
+     }
+    }
+   },
+   {
+    "id": "controle+espirito",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d8+1d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Entangle",
+         "magia": "entangle",
+         "cd": 15
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 15,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Polymorph",
+         "cd": 15,
+         "slots": [
+          4
+         ],
+         "magias": [
+          "polymorph"
+         ],
+         "modo": "melhor"
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "1": 0.5
+     },
+     "forma_selvagem": 0.5
+    },
+    "herda": "principal",
+    "invocacoes": [
+     {
+      "nome": "Wildfire Spirit",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 13,
+      "ataque": {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d6+3"
+      }
+     }
+    ],
+    "hipotese": "controle + espirito"
+   },
+   {
+    "id": "controle-barato+espirito",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d8+1d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Entangle",
+       "magia": "entangle",
+       "cd": 15
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5
+     },
+     "forma_selvagem": 0.5
+    },
+    "herda": "principal",
+    "invocacoes": [
+     {
+      "nome": "Wildfire Spirit",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 13,
+      "ataque": {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d6+3"
+      }
+     }
+    ],
+    "hipotese": "controle-barato + espirito"
+   },
+   {
+    "id": "area+espirito",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "2d8+1d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Wall of Fire",
+      "usos": [
+       {
+        "alvos": 3,
+        "dano": "5d8+4",
+        "cd": 15,
+        "slot": 4
+       }
+      ]
+     },
+     {
+      "nome": "Burning Hands (Wildfire)",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "3d6+4",
+        "cd": 15,
+        "slot": 3
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "3": 1,
+      "1": 0.5
+     },
+     "forma_selvagem": 0.5
+    },
+    "herda": "principal",
+    "invocacoes": [
+     {
+      "nome": "Wildfire Spirit",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 13,
+      "ataque": {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d6+3"
+      }
+     }
+    ],
+    "hipotese": "area + espirito"
+   },
+   {
+    "id": "invocacao+espirito",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d8+1d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "invocacoes": [
+     {
+      "nome": "Wildfire Spirit",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 13,
+      "ataque": {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d6+3"
+      }
+     },
+     {
+      "nome": "Summon Beast (Land, 4º)",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 15,
+      "ataque": {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d8+8"
+      }
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "4": 0.5,
+      "1": 0.5
+     },
+     "forma_selvagem": 0.5
+    },
+    "herda": "principal",
+    "hipotese": "invocacao + espirito"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Circle of Wildfire: Wildfire Spirit (1 hora) e Enhanced Bond em Produce Flame, Wall of Fire, Burning Hands, Flame Strike e Healing Word; Cauterizing Flames no 10.",
+   "estrategia": "Régua comum do chassi: Sab > Con > Des, gibão de peles + escudo, Produce Flame, Entangle/Hold Person/Polymorph, Ice Knife + Wall of Fire, Summon Beast e Healing Word; sem feat (conjurador pleno).",
+   "nao_modelado": "Fiery Teleport; magias saindo do espírito; Cure Wounds, Flaming Sphere, Scorching Ray, Plant Growth, Revivify, Aura of Life, Fire Shield, Mass Cure Wounds; ação bônus disputada entre espírito e Healing Word. Comuns: Wild Shape fora de combate; Goodberry; Faerie Fire, Spike Growth, Moonbeam, Conjure Animals (fora do Shepherd)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "Druid 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 12, 'sab': 19, 'car': 10}; Wildfire Spirit; Enhanced Bond."
+  },
+  "11": {
+   "_texto": "Druid 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 12, 'sab': 20, 'car': 10}; Wildfire Spirit; Enhanced Bond; Cauterizing Flames.",
+   "corpo": {
+    "ca": 15,
+    "pv": 91,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 1,
+      "con": 3,
+      "int": 5,
+      "sab": 9,
+      "car": 0
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 2,
+     "6": 1
+    },
+    "outros": {
+     "forma_selvagem": {
+      "qtd": 2,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "3d8+1d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Cauterizing Flames (cura na reação)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_luta": 1.0,
+        "pv": 16
+       },
+       {
+        "nome": "Healing Word (levanta um caído; Enhanced Bond)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 12.0
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d8+1d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "controle-barato",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d8+1d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle-barato"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "3d8+1d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Wall of Fire",
+       "usos": [
+        {
+         "alvos": 3,
+         "dano": "5d8+4",
+         "cd": 17,
+         "slot": 6
+        }
+       ]
+      },
+      {
+       "nome": "Flame Strike (Wildfire)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "8d6+4",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 1,
+       "5": 1,
+       "1": 0.5,
+       "4": null,
+       "3": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "invocacao",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d8+1d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Summon Beast (Land, 6º)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17,
+       "ataque": {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d8+10"
+       }
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 0.5,
+       "1": 0.5,
+       "4": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "invocacao"
+    },
+    {
+     "id": "principal+espirito",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "3d8+1d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [
+      {
+       "nome": "Wildfire Spirit",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 13,
+       "ataque": {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d6+4"
+       }
+      }
+     ],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Cauterizing Flames (cura na reação)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_luta": 1.0,
+        "pv": 16
+       },
+       {
+        "nome": "Healing Word (levanta um caído; Enhanced Bond)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 12.0
+       }
+      ]
+     },
+     "herda": "principal",
+     "hipotese": "só truques + espirito",
+     "gasta": {
+      "forma_selvagem": 0.5,
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle+espirito",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d8+1d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      },
+      "forma_selvagem": 0.5
+     },
+     "herda": "principal",
+     "invocacoes": [
+      {
+       "nome": "Wildfire Spirit",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 13,
+       "ataque": {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d6+4"
+       }
+      }
+     ],
+     "hipotese": "controle + espirito"
+    },
+    {
+     "id": "controle-barato+espirito",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d8+1d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      },
+      "forma_selvagem": 0.5
+     },
+     "herda": "principal",
+     "invocacoes": [
+      {
+       "nome": "Wildfire Spirit",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 13,
+       "ataque": {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d6+4"
+       }
+      }
+     ],
+     "hipotese": "controle-barato + espirito"
+    },
+    {
+     "id": "area+espirito",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "3d8+1d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Wall of Fire",
+       "usos": [
+        {
+         "alvos": 3,
+         "dano": "5d8+4",
+         "cd": 17,
+         "slot": 6
+        }
+       ]
+      },
+      {
+       "nome": "Flame Strike (Wildfire)",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "8d6+4",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 1,
+       "5": 1,
+       "1": 0.5,
+       "4": null,
+       "3": null
+      },
+      "forma_selvagem": 0.5
+     },
+     "herda": "principal",
+     "invocacoes": [
+      {
+       "nome": "Wildfire Spirit",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 13,
+       "ataque": {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d6+4"
+       }
+      }
+     ],
+     "hipotese": "area + espirito"
+    },
+    {
+     "id": "invocacao+espirito",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d8+1d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Wildfire Spirit",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 13,
+       "ataque": {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d6+4"
+       }
+      },
+      {
+       "nome": "Summon Beast (Land, 6º)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17,
+       "ataque": {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d8+10"
+       }
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 0.5,
+       "1": 0.5,
+       "4": null
+      },
+      "forma_selvagem": 0.5
+     },
+     "herda": "principal",
+     "hipotese": "invocacao + espirito"
+    }
+   ]
+  }
+ }
+}

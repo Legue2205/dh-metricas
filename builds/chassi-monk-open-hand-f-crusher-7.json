@@ -1,0 +1,461 @@
+{
+ "gerado_de": "progressoes/chassi-monk-open-hand-f-crusher.json",
+ "build": "Monk (open-hand), skirmisher, sem armadura, Des/Sab; Crusher no 4 (1º feat não racial da build do RPGBot)",
+ "corpo": {
+  "ca": 15,
+  "pv": 52,
+  "saves": {
+   "sv": {
+    "for": 4,
+    "des": 6,
+    "con": 2,
+    "int": 0,
+    "sab": 2,
+    "car": -1
+   },
+   "evasion": true,
+   "stillness": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "ki": {
+    "qtd": 7,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem ki: ataque + golpe desarmado na ação bônus (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 1,
+      "bonus": 6,
+      "dano": "1d6+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Crusher (crítico: vantagem de todos contra o alvo)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.05
+     }
+    ]
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "meia-rajada",
+   "hipotese": "Flurry of Blows em 2 dos 4 rounds (2 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 1.5,
+      "bonus": 6,
+      "dano": "1d6+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Open Hand Technique (derruba no Flurry)",
+      "efeito": "cond_derrubado",
+      "cd": 13,
+      "bonus": [
+       6,
+       6
+      ],
+      "usos": 4
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 2
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Crusher (crítico: vantagem de todos contra o alvo)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.074
+     }
+    ]
+   }
+  },
+  {
+   "id": "rajada",
+   "hipotese": "Flurry of Blows todo round (4 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d6+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Open Hand Technique (derruba no Flurry)",
+      "efeito": "cond_derrubado",
+      "cd": 13,
+      "bonus": [
+       6,
+       6
+      ],
+      "usos": 8
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Crusher (crítico: vantagem de todos contra o alvo)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.098
+     }
+    ]
+   }
+  },
+  {
+   "id": "atordoar",
+   "hipotese": "Flurry em 2 rounds + 2 tentativas de Stunning Strike (4 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 1.5,
+      "bonus": 6,
+      "dano": "1d6+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Open Hand Technique (derruba no Flurry)",
+      "efeito": "cond_derrubado",
+      "cd": 13,
+      "bonus": [
+       6,
+       6
+      ],
+      "usos": 4
+     },
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Stunning Strike (ki)",
+      "efeito": "cond_atordoado_um_turno",
+      "cd": 13,
+      "bonus": [
+       6,
+       6,
+       6,
+       6
+      ],
+      "usos": 2
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Crusher (crítico: vantagem de todos contra o alvo)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.074
+     }
+    ]
+   }
+  },
+  {
+   "id": "mira",
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 1.5,
+      "bonus": 6,
+      "dano": "1d6+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Open Hand Technique (derruba no Flurry)",
+      "efeito": "cond_derrubado",
+      "cd": 13,
+      "bonus": [
+       6,
+       6
+      ],
+      "usos": 4
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Crusher (crítico: vantagem de todos contra o alvo)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.074
+     }
+    ]
+   }
+  },
+  {
+   "id": "rajada-mira",
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (lança)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d8+3"
+     },
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d6+3",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Open Hand Technique (derruba no Flurry)",
+      "efeito": "cond_derrubado",
+      "cd": 13,
+      "bonus": [
+       6,
+       6
+      ],
+      "usos": 8
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 6
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Crusher (crítico: vantagem de todos contra o alvo)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 3,
+      "fracao": 0.098
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: rajada-mira. Sobra: 1 ki.",
+   "combates": [
+    "principal",
+    "rajada-mira",
+    "principal",
+    "rajada-mira"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: rajada-mira. Sobra: 1 ki.",
+   "combates": [
+    "rajada-mira"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Monk Mão Aberta: o Flurry derruba; Stunning Strike no resto.",
+  "estrategia": "Régua comum do monge (lança + Martial Arts, Flurry, Stunning Strike, Focused Aim) + o que a tradição dá.",
+  "nao_modelado": "Empurrão e reação negada da Open Hand Technique; Wholeness of Body; Tranquility; vantagem dos aliados contra o derrubado/atordoado. Deflect Missiles; Slow Fall; Patient Defense/Step of the Wind.",
+  "progressao": "Open Hand Technique; Wholeness of Body (6). Atributos {'for': 12, 'des': 17, 'con': 14, 'int': 10, 'sab': 15, 'car': 8}."
+ },
+ "id": "chassi-monk-open-hand-f-crusher-7",
+ "nome": "Open Hand Monk — chassi + Crusher",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/open-hand/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "monk",
+ "subclasse": "open-hand",
+ "posicao": "skirmisher",
+ "feat": "Crusher",
+ "variante": "feat"
+}

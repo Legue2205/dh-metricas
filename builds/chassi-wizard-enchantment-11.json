@@ -1,0 +1,680 @@
+{
+ "gerado_de": "progressoes/chassi-wizard-enchantment.json",
+ "build": "Wizard (Enchantment), chassi: + Hold Person e Psychic Lance; retaguarda",
+ "corpo": {
+  "ca": 14,
+  "pv": 79,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 1,
+    "con": 3,
+    "int": 9,
+    "sab": 5,
+    "car": 0
+   },
+   "conjurador": true,
+   "ataques": 1
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 3,
+   "6": 1
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "hipotese": "só truques (Toll the Dead)",
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Wall of Force",
+        "cd": 17,
+        "slots": [
+         5
+        ],
+        "magias": [
+         "wall_of_force"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Synaptic Static",
+        "magia": "synaptic_static",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hold Monster (Split Enchantment)",
+        "magia": "hold_monster",
+        "cd": 17,
+        "alvos": 2
+       },
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Psychic Lance (Split Enchantment: 2 alvos)",
+        "efeito": "psychic_lance",
+        "cd": 17,
+        "no_acerto": false,
+        "usos": 2
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "5": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Cone of Cold (6º)",
+     "usos": [
+      {
+       "alvos": 6,
+       "dano": "9d8",
+       "cd": 17,
+       "slot": 6
+      }
+     ]
+    },
+    {
+     "nome": "Fireball (5º)",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "10d6",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "6": 1,
+     "5": 1
+    }
+   },
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "combo",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Wall of Force",
+        "cd": 17,
+        "slots": [
+         5
+        ],
+        "magias": [
+         "wall_of_force"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Synaptic Static",
+        "magia": "synaptic_static",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hold Monster (Split Enchantment)",
+        "magia": "hold_monster",
+        "cd": 17,
+        "alvos": 2
+       },
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Psychic Lance (Split Enchantment: 2 alvos)",
+        "efeito": "psychic_lance",
+        "cd": 17,
+        "no_acerto": false,
+        "usos": 2
+       }
+      ]
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Fireball",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "8d6",
+       "cd": 17,
+       "slot": 3
+      }
+     ]
+    },
+    {
+     "nome": "Cone of Cold",
+     "usos": [
+      {
+       "alvos": 6,
+       "dano": "8d8",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 1,
+     "5": 2
+    }
+   },
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "combo"
+  },
+  {
+   "id": "invocacao",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Aberration (6º)",
+     "quantidade": 1,
+     "pv": 60,
+     "ca": 17,
+     "ataque": {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d8+9"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 1,
+     "6": 0.5
+    }
+   },
+   "area": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "invocacao"
+  },
+  {
+   "id": "olhar",
+   "herda": "principal",
+   "hipotese": "Hypnotic Gaze: chega a 5 pés e gasta a ação para manter um alvo incapacitado (sem truques)",
+   "dano": {
+    "ataques": []
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Hypnotic Gaze",
+      "efeito": "cond_hipnotizado",
+      "cd": 17,
+      "no_acerto": false,
+      "usos": 2
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": []
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: combo. Sobra: 1×2º, 1×3º, 3×4º.",
+   "combates": [
+    "controle-barato",
+    "combo",
+    "controle-barato",
+    "combo"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 3×1º, 3×2º, 2×3º, 3×4º, 1×5º, 1×6º.",
+   "combates": [
+    "combo"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Encantador do chassi: a régua comum + Hold Person, Psychic Lance e o Hypnotic Gaze; no 11, Split Enchantment.",
+  "estrategia": "Régua comum do chassi do Wizard (ver gerador) + o que a tradição dá.",
+  "nao_modelado": "Instinctive Charm; Tasha's Hideous Laughter e Suggestion; Psychic Lance é do Fizban's/Strixhaven (Raulothim's) e entra como magia da escola. Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Absorb Elements; Ritual Casting e utilidade; quebra de concentração.",
+  "progressao": "Wizard 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 20, 'sab': 12, 'car': 10}; CD 17, ataque +9. Split Enchantment: Hold Monster e Psychic Lance em 2 alvos."
+ },
+ "id": "chassi-wizard-enchantment-11",
+ "nome": "Enchantment Wizard — chassi",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/wizard/subclasses/enchantment/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "wizard",
+ "subclasse": "enchantment",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

@@ -1,0 +1,549 @@
+{
+ "gerado_de": "progressoes/rpgbot-cleric-life-puro.json",
+ "build": "Cleric (Life) sem multiclasse, Anão da Montanha (Custom Origin); armadura pesada + escudo; Resilient Con 4, Skill Expert 8",
+ "corpo": {
+  "ca": 20,
+  "pv": 84,
+  "saves": {
+   "sv": {
+    "for": 2,
+    "des": 0,
+    "con": 8,
+    "int": -1,
+    "sab": 8,
+    "car": 3
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 1
+  },
+  "outros": {
+   "canal": {
+    "qtd": 2,
+    "volta": "curto",
+    "valor": 2
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "2d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 16,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "bless",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "2d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless"
+  },
+  {
+   "id": "arma-espiritual",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "2d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "2d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 16,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 16,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "4": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "preservar",
+   "hipotese": "Preserve Life na luta (Channel Divinity, ação) + truques",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "2d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Preserve Life",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_luta": 1,
+      "pv": 45
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.5
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "2d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  },
+  {
+   "id": "preservar+arma",
+   "hipotese": "Preserve Life na luta (Channel Divinity, ação) + truques + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "2d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Preserve Life",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_luta": 1,
+      "pv": 45
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 9.5
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "guardioes",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "2d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "5d8",
+      "meio": true,
+      "nota": "Spirit Guardians (5º) no alvo"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (5º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "5d8",
+     "cd": 16,
+     "metade": true
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 16,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "1": 0.5,
+     "5": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes"
+  },
+  {
+   "id": "guardioes-arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "2d12+1d8",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 16,
+      "save": "Sab",
+      "dano": "5d8",
+      "meio": true,
+      "nota": "Spirit Guardians (5º) no alvo"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (5º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "5d8",
+     "cd": 16,
+     "metade": true
+    },
+    {
+     "nome": "Word of Radiance",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 16,
+     "save": "Con",
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5,
+     "5": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes-arma"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: controle, guardioes-arma. Sobra: 2×1º, 2×2º, 3×3º, 2 canal.",
+   "combates": [
+    "controle",
+    "controle",
+    "controle",
+    "guardioes-arma"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: guardioes-arma. Sobra: 3.5×1º, 2×2º, 3×3º, 3×4º, 2 canal.",
+   "combates": [
+    "guardioes-arma"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "A build Lifeberry sem os 2 níveis de Druid: tanque de armadura pesada com Spirit Guardians, Spiritual Weapon, Preserve Life e Healing Word reforçado pelo Disciple of Life.",
+  "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis de Cleric = nível de personagem, atributos e feats remendados); a build original continua como referência. Sem o Druid não há Goodberry: a cura em massa de fim do dia sai (e o espaço de 1º volta ao pool); Resilient Con no 4 e Skill Expert no 8 (Sab 18 no 9); Divine Strike a partir do 9.",
+  "nao_modelado": "Goodberry/Starry Form (perdidos com o Druid, não remendados); Blessed Healer; Beacon of Hope; Death Ward; Mass Healing Word e Mass Cure Wounds; Heroes' Feast.",
+  "progressao": "Cleric 9; Con 18 (Resilient, 4); Skill Expert Sab (8); Divine Strike; placas."
+ },
+ "id": "rpgbot-cleric-life-puro-9",
+ "nome": "Life Domain Cleric puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/life-domain/",
+  "nota": "Extensão simples sem multiclasse; mini-mutirão 22/11."
+ }
+}

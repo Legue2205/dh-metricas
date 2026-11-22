@@ -1,0 +1,420 @@
+{
+ "gerado_de": "progressoes/chassi-druid-shepherd.json",
+ "build": "Druid (Shepherd), retaguarda, gibão de peles + escudo, Sab > Con > Des; sem feat",
+ "corpo": {
+  "ca": 15,
+  "pv": 52,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 1,
+    "con": 2,
+    "int": 4,
+    "sab": 7,
+    "car": 0
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3,
+   "4": 1
+  },
+  "outros": {
+   "forma_selvagem": {
+    "qtd": 2,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Spirit Totem: Hawk (vantagem em 1 ataque aliado por round, reação)",
+      "lado": "of",
+      "modelo": "vantagem",
+      "alvos": 1,
+      "fracao": 0.25,
+      "nota": "1 dos ~2 ataques do aliado × 0.5 das lutas (1/descanso curto)"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "controle-barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Entangle",
+      "magia": "entangle",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle-barato"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Wall of Fire",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    },
+    {
+     "nome": "Ice Knife",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "2d6",
+       "cd": 15,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "3": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "invocacao",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Beast (Land, 4º)",
+     "quantidade": 1,
+     "pv": 40,
+     "ca": 15,
+     "ataque": {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+8"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 0.5,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "invocacao"
+  },
+  {
+   "id": "conjurar",
+   "hipotese": "Conjure Animals (8 lobos, Mighty Summoner) (1 hora) + truques",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Conjure Animals (8 lobos, Mighty Summoner)",
+     "quantidade": 8,
+     "pv": 15,
+     "ca": 13,
+     "ataque": {
+      "n": 1,
+      "bonus": 4,
+      "dano": "2d4+2"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "3": 0.5,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "totem-urso",
+   "hipotese": "Spirit Totem (Bear) no lugar do Hawk + Summon Beast",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "2d8",
+      "nota": "Produce Flame"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Beast (Land, 4º)",
+     "quantidade": 1,
+     "pv": 40,
+     "ca": 15,
+     "ataque": {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+8"
+     }
+    }
+   ],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Spirit Totem: Bear (PV temporários)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "usos_descanso_curto": 1,
+      "alvos": 3,
+      "pv": 12
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 6.5
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 0.5,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conjurar; prioritário: area, conjurar. Sobra: 2×1º, 3×2º, 0.5×3º, 2 forma_selvagem.",
+   "combates": [
+    "conjurar",
+    "area",
+    "conjurar",
+    "conjurar"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 3.5×1º, 3×2º, 2×3º, 2 forma_selvagem.",
+   "combates": [
+    "area"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Circle of Shepherd: Spirit Totem (Hawk ou Bear) e Mighty Summoner: Conjure Animals no 7 e Conjure Elemental no 11.",
+  "estrategia": "Régua comum do chassi: Sab > Con > Des, gibão de peles + escudo, Produce Flame, Entangle/Hold Person/Polymorph, Ice Knife + Wall of Fire, Summon Beast e Healing Word; sem feat (conjurador pleno).",
+  "nao_modelado": "Unicorn Spirit; Guardian Spirit; ataques mágicos do Mighty Summoner; Bear nos PV das invocações; Faithful Summons. Comuns: Wild Shape fora de combate; Goodberry; Faerie Fire, Spike Growth, Moonbeam, Conjure Animals (fora do Shepherd).",
+  "progressao": "Druid 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 12, 'sab': 19, 'car': 10}; Mighty Summoner; Conjure Animals (8 lobos, Mighty Summoner)."
+ },
+ "id": "chassi-druid-shepherd-7",
+ "nome": "Shepherd Druid — chassi",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/circle-of-the-shepherd/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "druid",
+ "subclasse": "shepherd",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

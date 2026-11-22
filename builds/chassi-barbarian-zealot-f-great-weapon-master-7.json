@@ -1,0 +1,158 @@
+{
+ "gerado_de": "progressoes/chassi-barbarian-zealot-f-great-weapon-master.json",
+ "build": "Barbarian (zealot), striker, machado grande, meia-armadura; For > Con > Des; Great Weapon Master no 4",
+ "corpo": {
+  "ca": 16,
+  "pv": 68,
+  "saves": {
+   "sv": {
+    "for": 6,
+    "des": 1,
+    "con": 5,
+    "int": -1,
+    "sab": 1,
+    "car": 0
+   },
+   "ataques": 2,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 4,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: machado grande com GWM, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d12+3",
+      "vantagem": 1.0,
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia",
+   "hipotese": "fúria com Divine Fury e GWM, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d12+5",
+      "vantagem": 1.0,
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d6+3",
+      "nota": "Divine Fury (1º acerto do turno na fúria)"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {
+    "rerolagens": 1
+   },
+   "gasta": {
+    "furia": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia; prioritário: furia. Sobra: nada.",
+   "combates": [
+    "furia",
+    "furia",
+    "furia",
+    "furia"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia. Sobra: 3 furia.",
+   "combates": [
+    "furia"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Zelote: dano radiante extra no 1º acerto de cada turno na fúria e Fanatical Focus.",
+  "estrategia": "Fúria nas lutas que o plano automático escolher; Reckless Attack sempre.",
+  "nao_modelado": "Warrior of the Gods (ressurreição); Zealous Presence só como 1/16 de vantagem para 3 aliados. Relentless Rage; Feral Instinct; Fast Movement; Primal Path 14 (fora das fatias).",
+  "progressao": "atributos {'for': 17, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}; meia-armadura (16)"
+ },
+ "id": "chassi-barbarian-zealot-f-great-weapon-master-7",
+ "nome": "Zealot Barbarian — chassi + Great Weapon Master",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/zealot/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "barbarian",
+ "subclasse": "zealot",
+ "posicao": "striker",
+ "feat": "Great Weapon Master",
+ "variante": "feat"
+}

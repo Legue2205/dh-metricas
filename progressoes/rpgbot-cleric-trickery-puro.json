@@ -1,0 +1,2007 @@
+{
+ "id": "rpgbot-cleric-trickery-puro",
+ "nome": "Trickery Domain Cleric puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/trickery-domain/",
+  "nota": "Extensão simples sem multiclasse; mini-mutirão 22/11."
+ },
+ "base": {
+  "build": "Cleric (Trickery) sem multiclasse, Meio-elfo; peitoral + escudo; Sab 18 (4), Des 18 (8)",
+  "corpo": {
+   "ca": 18,
+   "pv": 24,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 3,
+     "con": 2,
+     "int": -1,
+     "sab": 5,
+     "car": 3
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 2
+   },
+   "outros": {
+    "canal": {
+     "qtd": 1,
+     "volta": "curto",
+     "valor": 1
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "com_save": [
+      {
+       "n": 1.0,
+       "cd": 13,
+       "save": "Des",
+       "dano": "1d8",
+       "meio": false,
+       "nota": "Sacred Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    },
+    "principal": true,
+    "custo": "gratuita",
+    "hipotese": "só truques (anel interno)"
+   },
+   {
+    "id": "bless",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Des",
+       "dano": "1d8",
+       "meio": false,
+       "nota": "Sacred Flame"
+      }
+     ]
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "bless"
+   },
+   {
+    "id": "arma-espiritual",
+    "dano": {
+     "com_save": [
+      {
+       "n": 1.0,
+       "cd": 13,
+       "save": "Des",
+       "dano": "1d8",
+       "meio": false,
+       "nota": "Sacred Flame"
+      }
+     ],
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "Spiritual Weapon (2º)"
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "arma-espiritual"
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Des",
+       "dano": "1d8",
+       "meio": false,
+       "nota": "Sacred Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "alvo_unico",
+       "nome": "Hold Person",
+       "cd": 13,
+       "slots": [
+        2
+       ],
+       "magias": [
+        "hold_person"
+       ],
+       "modo": "melhor"
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "controle"
+   },
+   {
+    "id": "duplicidade",
+    "hipotese": "Invoke Duplicity (Channel Divinity, concentração): rapieira com vantagem pela ilusão",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "vantagem": 1.0,
+       "nota": "rapieira"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "gasta": {
+     "canal": 1,
+     "espacos": {
+      "1": 0.5
+     }
+    },
+    "herda": "principal"
+   },
+   {
+    "id": "bless+arma",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Des",
+       "dano": "1d8",
+       "meio": false,
+       "nota": "Sacred Flame"
+      }
+     ],
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "Spiritual Weapon (2º)"
+      }
+     ]
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5,
+      "2": 1
+     }
+    },
+    "herda": "principal",
+    "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "A build Half-Elf Trickery sem os níveis de Rogue: Sacred Flame, Spirit Guardians e Spiritual Weapon; rapieira com vantagem do Invoke Duplicity, agora sem Sneak Attack.",
+   "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis de Cleric = nível de personagem, atributos e feats remendados); a build original continua como referência. Sem o Rogue: saves Sab/Car (era Des/Int), sem Sneak Attack, Expertise nem Booming Blade do Arcane Trickster; a linha da duplicidade fica só com vantagem e Divine Strike (Cleric 8); Polymorph no 7.",
+   "nao_modelado": "Sneak Attack, Expertise e Booming Blade (perdidos com o Rogue); Blessing of the Trickster; Invoke Duplicity para lançar magias à distância; Cloak of Shadows; Dimension Door; Improved Duplicity (17)."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Cleric 3; Sab 16, Des 16; peitoral + escudo."
+  },
+  "5": {
+   "_texto": "Cleric 5; Sab 18, Des 16; peitoral + escudo.",
+   "corpo": {
+    "ca": 18,
+    "pv": 38,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 3,
+      "con": 2,
+      "int": -1,
+      "sab": 7,
+      "car": 4
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 2
+    },
+    "outros": {
+     "canal": {
+      "qtd": 1,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless"
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       },
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "3d8",
+        "meio": true,
+        "nota": "Spirit Guardians (3º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (3º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "3d8",
+       "cd": 15,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       },
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "3d8",
+        "meio": true,
+        "nota": "Spirit Guardians (3º) no alvo"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (3º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "3d8",
+       "cd": 15,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "duplicidade",
+     "hipotese": "Invoke Duplicity (Channel Divinity, concentração): rapieira com vantagem pela ilusão",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 6,
+        "dano": "1d8+3",
+        "vantagem": 1.0,
+        "nota": "rapieira"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5,
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Cleric 7; Sab 18, Des 16; peitoral + escudo.",
+   "corpo": {
+    "ca": 18,
+    "pv": 52,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 3,
+      "con": 2,
+      "int": -1,
+      "sab": 7,
+      "car": 4
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 1
+    },
+    "outros": {
+     "canal": {
+      "qtd": 2,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless"
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       },
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "4d8",
+        "meio": true,
+        "nota": "Spirit Guardians (4º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (4º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "4d8",
+       "cd": 15,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5,
+       "3": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       },
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "4d8",
+        "meio": true,
+        "nota": "Spirit Guardians (4º) no alvo"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (4º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "4d8",
+       "cd": 15,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "2": 1,
+       "1": 0.5,
+       "3": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 15,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5,
+       "2": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "duplicidade",
+     "hipotese": "Invoke Duplicity (Channel Divinity, concentração): rapieira com vantagem pela ilusão",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 6,
+        "dano": "1d8+3",
+        "vantagem": 1.0,
+        "nota": "rapieira"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Des",
+        "dano": "2d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5,
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Cleric 9; Sab 18, Des 18; peitoral + escudo; Divine Strike.",
+   "corpo": {
+    "ca": 18,
+    "pv": 66,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 4,
+      "con": 2,
+      "int": -1,
+      "sab": 8,
+      "car": 5
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 1
+    },
+    "outros": {
+     "canal": {
+      "qtd": 2,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 16,
+        "save": "Des",
+        "dano": "2d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Des",
+        "dano": "2d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless"
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 16,
+        "save": "Des",
+        "dano": "2d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Des",
+        "dano": "2d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       },
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Sab",
+        "dano": "5d8",
+        "meio": true,
+        "nota": "Spirit Guardians (5º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (5º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 16,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "1": 0.5,
+       "4": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Des",
+        "dano": "2d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       },
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Sab",
+        "dano": "5d8",
+        "meio": true,
+        "nota": "Spirit Guardians (5º) no alvo"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (5º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 16,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "2": 1,
+       "1": 0.5,
+       "4": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Des",
+        "dano": "2d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 16,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 16,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "duplicidade",
+     "hipotese": "Invoke Duplicity (Channel Divinity, concentração): rapieira com vantagem pela ilusão",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d8+4+1d8",
+        "vantagem": 1.0,
+        "nota": "rapieira + Divine Strike"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Des",
+        "dano": "2d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5,
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Cleric 11; Sab 18, Des 18; peitoral + escudo; Divine Strike.",
+   "corpo": {
+    "ca": 18,
+    "pv": 80,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 4,
+      "con": 2,
+      "int": -1,
+      "sab": 8,
+      "car": 5
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 2,
+     "6": 1
+    },
+    "outros": {
+     "canal": {
+      "qtd": 2,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 16,
+        "save": "Des",
+        "dano": "3d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "bless",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Des",
+        "dano": "3d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless"
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 16,
+        "save": "Des",
+        "dano": "3d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Des",
+        "dano": "3d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       },
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Sab",
+        "dano": "6d8",
+        "meio": true,
+        "nota": "Spirit Guardians (6º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (6º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "6d8",
+       "cd": 16,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 1,
+       "1": 0.5,
+       "5": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Des",
+        "dano": "3d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       },
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Sab",
+        "dano": "6d8",
+        "meio": true,
+        "nota": "Spirit Guardians (6º) no alvo"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (6º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "6d8",
+       "cd": 16,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 1,
+       "2": 1,
+       "1": 0.5,
+       "5": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Des",
+        "dano": "3d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 16,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 16,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "duplicidade",
+     "hipotese": "Invoke Duplicity (Channel Divinity, concentração): rapieira com vantagem pela ilusão",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 8,
+        "dano": "1d8+4+1d8",
+        "vantagem": 1.0,
+        "nota": "rapieira + Divine Strike"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 16,
+        "save": "Des",
+        "dano": "3d8+1d8",
+        "meio": false,
+        "nota": "Sacred Flame"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 8,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5,
+       "2": 1
+      }
+     },
+     "herda": "principal",
+     "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+    }
+   ]
+  }
+ }
+}

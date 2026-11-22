@@ -1,0 +1,2134 @@
+{
+ "id": "rpgbot-cleric-order-puro",
+ "nome": "Order Domain Cleric puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/order/",
+  "nota": "Extensão simples sem multiclasse; mini-mutirão 22/11."
+ },
+ "base": {
+  "build": "Cleric (Order) sem multiclasse, Shifter; armadura pesada + escudo; Fey Touched 4, Sab 20 (8)",
+  "corpo": {
+   "ca": 18,
+   "pv": 27,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": -1,
+     "con": 3,
+     "int": 0,
+     "sab": 5,
+     "car": 4
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 2
+   },
+   "outros": {
+    "canal": {
+     "qtd": 1,
+     "volta": "curto",
+     "valor": 1
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "com_save": [
+      {
+       "n": 1.0,
+       "cd": 13,
+       "save": "Sab",
+       "dano": "1d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    },
+    "principal": true,
+    "custo": "gratuita",
+    "hipotese": "só truques (anel interno)"
+   },
+   {
+    "id": "arma-espiritual",
+    "dano": {
+     "com_save": [
+      {
+       "n": 1.0,
+       "cd": 13,
+       "save": "Sab",
+       "dano": "1d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ],
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "Spiritual Weapon (2º)"
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "arma-espiritual"
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Sab",
+       "dano": "1d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "alvo_unico",
+         "nome": "Command",
+         "cd": 13,
+         "slots": [
+          1
+         ],
+         "magias": [
+          "command"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 13,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "controle"
+   },
+   {
+    "id": "bless",
+    "hipotese": "Bless + Voice of Authority (1 ataque de aliado)",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Sab",
+       "dano": "1d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ]
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      },
+      {
+       "nome": "Voice of Authority (1 ataque de aliado por reação)",
+       "lado": "of",
+       "modelo": "ataque_extra",
+       "alvos": 0.25
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5
+     }
+    },
+    "herda": "principal"
+   },
+   {
+    "id": "voz",
+    "hipotese": "Healing Word num aliado como ação bônus em 2 rounds (Voice of Authority) + truques",
+    "dano": {
+     "com_save": [
+      {
+       "n": 1.0,
+       "cd": 13,
+       "save": "Sab",
+       "dano": "1d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ]
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Voice of Authority (2 ataques de aliado por reação)",
+       "lado": "of",
+       "modelo": "ataque_extra",
+       "alvos": 0.5
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 2.5
+     }
+    },
+    "herda": "principal"
+   },
+   {
+    "id": "bless+arma",
+    "hipotese": "Bless + Voice of Authority (1 ataque de aliado) + Spiritual Weapon (ação bônus, do round 2 em diante)",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 13,
+       "save": "Sab",
+       "dano": "1d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ],
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 5,
+       "dano": "1d8+3",
+       "nota": "Spiritual Weapon (2º)"
+      }
+     ]
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      },
+      {
+       "nome": "Voice of Authority (1 ataque de aliado por reação)",
+       "lado": "of",
+       "modelo": "ataque_extra",
+       "alvos": 0.25
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 5.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5,
+      "2": 1
+     }
+    },
+    "herda": "principal"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "A build de Order sem o nível de Sorcerer: Bless e Healing Word disparam ataques dos aliados (Voice of Authority); Command, Hold Person e Banishment.",
+   "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis de Cleric = nível de personagem, atributos e feats remendados); a build original continua como referência. O Sorcerer só dava Silvery Barbs e Favored by the Gods (ambos já fora do modelo) e Bless, que o Cleric tem; Fey Touched no 4 e Sab 20 no 8; Divine Strike a partir do 9.",
+   "nao_modelado": "Command em mais alvos (upcast); Silvery Barbs (perdido com o Sorcerer); Embodiment of Law; Order's Demand; Heroism e Shield of Faith."
+  }
+ },
+ "niveis": {
+  "3": {
+   "_texto": "Cleric 3; Sab 16; cota de malha + escudo."
+  },
+  "5": {
+   "_texto": "Cleric 5; Sab 18; cota de malha + escudo.",
+   "corpo": {
+    "ca": 18,
+    "pv": 43,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": -1,
+      "con": 3,
+      "int": 0,
+      "sab": 7,
+      "car": 5
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 2
+    },
+    "outros": {
+     "canal": {
+      "qtd": 1,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       },
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "3d8",
+        "meio": true,
+        "nota": "Spirit Guardians (3º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (3º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "3d8",
+       "cd": 15,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       },
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "3d8",
+        "meio": true,
+        "nota": "Spirit Guardians (3º) no alvo"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (3º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "3d8",
+       "cd": 15,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 15,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless + Voice of Authority (1 ataque de aliado)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Voice of Authority (1 ataque de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "voz",
+     "hipotese": "Healing Word num aliado como ação bônus em 2 rounds (Voice of Authority) + truques",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Voice of Authority (2 ataques de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.5
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 2.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "hipotese": "Bless + Voice of Authority (1 ataque de aliado) + Spiritual Weapon (ação bônus, do round 2 em diante)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Voice of Authority (1 ataque de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5,
+       "2": 1
+      }
+     },
+     "herda": "principal"
+    }
+   ]
+  },
+  "7": {
+   "_texto": "Cleric 7; Sab 18; placas + escudo.",
+   "corpo": {
+    "ca": 20,
+    "pv": 59,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": -1,
+      "con": 3,
+      "int": 0,
+      "sab": 7,
+      "car": 5
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 1
+    },
+    "outros": {
+     "canal": {
+      "qtd": 2,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       },
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "4d8",
+        "meio": true,
+        "nota": "Spirit Guardians (4º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (4º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "4d8",
+       "cd": 15,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5,
+       "3": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       },
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "4d8",
+        "meio": true,
+        "nota": "Spirit Guardians (4º) no alvo"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (4º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "4d8",
+       "cd": 15,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "2": 1,
+       "1": 0.5,
+       "3": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 15,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 15,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 15,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5,
+       "2": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless + Voice of Authority (1 ataque de aliado)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Voice of Authority (1 ataque de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "voz",
+     "hipotese": "Healing Word num aliado como ação bônus em 2 rounds (Voice of Authority) + truques",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Voice of Authority (2 ataques de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.5
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 2.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "hipotese": "Bless + Voice of Authority (1 ataque de aliado) + Spiritual Weapon (ação bônus, do round 2 em diante)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 15,
+        "save": "Sab",
+        "dano": "2d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 7,
+        "dano": "1d8+4",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Voice of Authority (1 ataque de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 6.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5,
+       "2": 1
+      }
+     },
+     "herda": "principal"
+    }
+   ]
+  },
+  "9": {
+   "_texto": "Cleric 9; Sab 20; placas + escudo; Divine Strike.",
+   "corpo": {
+    "ca": 20,
+    "pv": 75,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": -1,
+      "con": 3,
+      "int": 0,
+      "sab": 9,
+      "car": 6
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 1
+    },
+    "outros": {
+     "canal": {
+      "qtd": 2,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       },
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "5d8",
+        "meio": true,
+        "nota": "Spirit Guardians (5º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (5º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 17,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "1": 0.5,
+       "4": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       },
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "5d8",
+        "meio": true,
+        "nota": "Spirit Guardians (5º) no alvo"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (5º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "5d8",
+       "cd": 17,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "2": 1,
+       "1": 0.5,
+       "4": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 17,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless + Voice of Authority (1 ataque de aliado)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Voice of Authority (1 ataque de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "voz",
+     "hipotese": "Healing Word num aliado como ação bônus em 2 rounds (Voice of Authority) + truques",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Voice of Authority (2 ataques de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.5
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 2.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "hipotese": "Bless + Voice of Authority (1 ataque de aliado) + Spiritual Weapon (ação bônus, do round 2 em diante)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "2d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Voice of Authority (1 ataque de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5,
+       "2": 1
+      }
+     },
+     "herda": "principal"
+    }
+   ]
+  },
+  "11": {
+   "_texto": "Cleric 11; Sab 20; placas + escudo; Divine Strike.",
+   "corpo": {
+    "ca": 20,
+    "pv": 91,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": -1,
+      "con": 3,
+      "int": 0,
+      "sab": 9,
+      "car": 6
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 2,
+     "6": 1
+    },
+    "outros": {
+     "canal": {
+      "qtd": 2,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "arma-espiritual",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "arma-espiritual"
+    },
+    {
+     "id": "guardioes",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       },
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "6d8",
+        "meio": true,
+        "nota": "Spirit Guardians (6º) no alvo"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (6º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "6d8",
+       "cd": 17,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 1,
+       "1": 0.5,
+       "5": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes"
+    },
+    {
+     "id": "guardioes-arma",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       },
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "6d8",
+        "meio": true,
+        "nota": "Spirit Guardians (6º) no alvo"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Spirit Guardians (6º)",
+       "tipo": "aura",
+       "alvos": 3,
+       "dano": "6d8",
+       "cd": 17,
+       "metade": true
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 1,
+       "2": 1,
+       "1": 0.5,
+       "5": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "guardioes-arma"
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "alvo_unico",
+          "nome": "Command",
+          "cd": 17,
+          "slots": [
+           1
+          ],
+          "magias": [
+           "command"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless + Voice of Authority (1 ataque de aliado)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Voice of Authority (1 ataque de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "voz",
+     "hipotese": "Healing Word num aliado como ação bônus em 2 rounds (Voice of Authority) + truques",
+     "dano": {
+      "com_save": [
+       {
+        "n": 1.0,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Voice of Authority (2 ataques de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.5
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 2.5
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "bless+arma",
+     "hipotese": "Bless + Voice of Authority (1 ataque de aliado) + Spiritual Weapon (ação bônus, do round 2 em diante)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+1d8",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       },
+       {
+        "nome": "Voice of Authority (1 ataque de aliado por reação)",
+        "lado": "of",
+        "modelo": "ataque_extra",
+        "alvos": 0.25
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5,
+       "2": 1
+      }
+     },
+     "herda": "principal"
+    }
+   ]
+  }
+ }
+}

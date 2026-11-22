@@ -1,0 +1,344 @@
+{
+ "id": "chassi-fighter-rune-knight",
+ "nome": "Rune Knight Fighter — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/rune-knight/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "rune-knight",
+ "posicao": "defensor",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Fighter (Rune Knight), defensor de espada longa (mão livre para agarrar), placas, Dueling; runas Fogo, Pedra, Colina; sem feat",
+  "corpo": {
+   "ca": 18,
+   "pv": 67,
+   "saves": {
+    "sv": {
+     "for": 8,
+     "des": 1,
+     "con": 6,
+     "int": -1,
+     "sab": 1,
+     "car": 0
+    },
+    "ataques": 2
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "action_surge": {
+     "qtd": 1,
+     "volta": "curto"
+    },
+    "giants_might": {
+     "qtd": 3,
+     "volta": "longo"
+    },
+    "hill_rune": {
+     "qtd": 1,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "espada longa (Dueling) com a outra mão livre: agarra o alvo prioritário e prende com as runas",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.75,
+       "bonus": 8,
+       "dano": "1d8+5+2",
+       "nota": "agarrar custa 1 ataque no 1º round"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto",
+      "agarra": true
+     },
+     "fontes": [
+      {
+       "tipo": "agarrao",
+       "nome": "Agarrão (Atletismo)",
+       "bonus": 8
+      },
+      {
+       "tipo": "condicao_no_acerto",
+       "nome": "Fire Rune",
+       "efeito": "cond_impedido",
+       "cd": 14,
+       "bonus": [
+        8,
+        8
+       ],
+       "usos": 0.5
+      },
+      {
+       "tipo": "condicao_no_acerto",
+       "nome": "Stone Rune (reação)",
+       "efeito": "cond_incapacitado",
+       "cd": 14,
+       "no_acerto": false,
+       "usos": 0.5
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "gigante",
+    "herda": "principal",
+    "hipotese": "Giant's Might + Hill Rune na luta (resistência a dano físico)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.75,
+       "bonus": 8,
+       "dano": "1d8+5+2",
+       "nota": "agarrar custa 1 ataque no 1º round"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1d6",
+       "nota": "Giant's Might: dano extra 1×/turno"
+      }
+     ]
+    },
+    "defesa": {
+     "resist": true
+    },
+    "gasta": {
+     "giants_might": 1,
+     "hill_rune": 1
+    }
+   },
+   {
+    "id": "surge",
+    "herda": "principal",
+    "plano": "prioritaria",
+    "hipotese": "Giant's Might + Hill Rune + Action Surge",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.75,
+       "bonus": 8,
+       "dano": "1d8+5+2",
+       "nota": "agarrar custa 1 ataque no 1º round"
+      },
+      {
+       "n": 0.5,
+       "bonus": 8,
+       "dano": "1d8+5+2",
+       "nota": "agarrar custa 1 ataque no 1º round"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1d6",
+       "nota": "Giant's Might: dano extra 1×/turno"
+      }
+     ]
+    },
+    "gasta": {
+     "giants_might": 1,
+     "hill_rune": 1,
+     "action_surge": 1
+    },
+    "defesa": {
+     "resist": true
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Rune Knight agarrador na frente: Giant's Might, Fire Rune para impedir, Stone Rune para incapacitar, Hill Rune para resistir.",
+   "estrategia": "Posição defensor; feat da subclasse: Skill Expert (4, expertise em Atletismo) da build do RPGBot, meio-feat em For.",
+   "nao_modelado": "Storm Rune (10); Runic Shield; derrubar e a vantagem que dá; vantagem do Giant's Might no agarrão; dano no agarrado; Second Wind; Indomitable (9)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 20, 'des': 13, 'con': 16, 'int': 8, 'sab': 12, 'car': 10}; Atletismo +8"
+  },
+  "11": {
+   "_texto": "atributos {'for': 20, 'des': 13, 'con': 18, 'int': 8, 'sab': 12, 'car': 10}; Atletismo +9",
+   "corpo": {
+    "ca": 18,
+    "pv": 114,
+    "saves": {
+     "sv": {
+      "for": 9,
+      "des": 1,
+      "con": 8,
+      "int": -1,
+      "sab": 1,
+      "car": 0
+     },
+     "ataques": 3
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "action_surge": {
+      "qtd": 1,
+      "volta": "curto"
+     },
+     "giants_might": {
+      "qtd": 4,
+      "volta": "longo"
+     },
+     "hill_rune": {
+      "qtd": 1,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "espada longa (Dueling) com a outra mão livre: agarra o alvo prioritário e prende com as runas",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.75,
+        "bonus": 9,
+        "dano": "1d8+5+2",
+        "nota": "agarrar custa 1 ataque no 1º round"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "agarra": true
+      },
+      "fontes": [
+       {
+        "tipo": "agarrao",
+        "nome": "Agarrão (Atletismo)",
+        "bonus": 9
+       },
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Fire Rune",
+        "efeito": "cond_impedido",
+        "cd": 16,
+        "bonus": [
+         9,
+         9,
+         9
+        ],
+        "usos": 0.5
+       },
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Stone Rune (reação)",
+        "efeito": "cond_incapacitado",
+        "cd": 16,
+        "no_acerto": false,
+        "usos": 0.5
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "gigante",
+     "herda": "principal",
+     "hipotese": "Giant's Might + Hill Rune na luta (resistência a dano físico)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.75,
+        "bonus": 9,
+        "dano": "1d8+5+2",
+        "nota": "agarrar custa 1 ataque no 1º round"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d8",
+        "nota": "Giant's Might: dano extra 1×/turno"
+       }
+      ]
+     },
+     "defesa": {
+      "resist": true
+     },
+     "gasta": {
+      "giants_might": 1,
+      "hill_rune": 1
+     }
+    },
+    {
+     "id": "surge",
+     "herda": "principal",
+     "plano": "prioritaria",
+     "hipotese": "Giant's Might + Hill Rune + Action Surge",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.75,
+        "bonus": 9,
+        "dano": "1d8+5+2",
+        "nota": "agarrar custa 1 ataque no 1º round"
+       },
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5+2",
+        "nota": "agarrar custa 1 ataque no 1º round"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d8",
+        "nota": "Giant's Might: dano extra 1×/turno"
+       }
+      ]
+     },
+     "gasta": {
+      "giants_might": 1,
+      "hill_rune": 1,
+      "action_surge": 1
+     },
+     "defesa": {
+      "resist": true
+     }
+    }
+   ]
+  }
+ }
+}

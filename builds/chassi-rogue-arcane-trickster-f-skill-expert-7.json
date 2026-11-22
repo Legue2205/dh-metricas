@@ -1,0 +1,179 @@
+{
+ "gerado_de": "progressoes/chassi-rogue-arcane-trickster-f-skill-expert.json",
+ "build": "Rogue (Arcane Trickster), skirmisher, rapieira + Booming Blade, couro batido; Skill Expert no 4 — RPGBot (Small and Tricksy): Skill Expert no 4",
+ "corpo": {
+  "ca": 16,
+  "pv": 45,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 7,
+    "con": 1,
+    "int": 5,
+    "sab": 1,
+    "car": 0
+   },
+   "evasion": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 2
+  },
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "Booming Blade com rapieira + Sneak (familiar adjacente), Disengage",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+4+1d8",
+      "nota": "rapieira com Booming Blade"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "4d6",
+      "prob": 1.0,
+      "nota": "Sneak Attack (familiar adjacente ao alvo)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "ilusao",
+   "hipotese": "Phantasmal Force no round 1 (2º círculo) + Booming Blade nos outros",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4+1d8",
+      "nota": "round 1 vai para a magia"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "4d6",
+      "prob": 0.75,
+      "nota": "Sneak Attack (3 de 4 rounds)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Phantasmal Force",
+      "cd": 13,
+      "slots": [
+       2
+      ],
+      "magias": [
+       "phantasmal_force"
+      ],
+      "modo": "melhor"
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: ilusao. Sobra: 4×1º.",
+   "combates": [
+    "principal",
+    "ilusao",
+    "principal",
+    "ilusao"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: ilusao. Sobra: 4×1º, 1×2º.",
+   "combates": [
+    "ilusao"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Trapaceiro arcano: Booming Blade com Sneak garantido pelo familiar; Phantasmal Force de controle.",
+  "nao_modelado": "Mage Hand Legerdemain, Silvery Barbs/Shield (reação; conflita com Uncanny Dodge), secundário do Booming Blade, Magical Ambush (9, precisa estar escondido). Skill Expert: só o +1 Des e a expertise (perícias não modeladas).",
+  "progressao": "Booming Blade, Find Familiar, Phantasmal Force; Uncanny Dodge, Evasion. atributos {'for': 8, 'des': 18, 'con': 13, 'int': 15, 'sab': 12, 'car': 10}"
+ },
+ "id": "chassi-rogue-arcane-trickster-f-skill-expert-7",
+ "nome": "Arcane Trickster Rogue — chassi + Skill Expert",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/arcane-trickster/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "rogue",
+ "subclasse": "arcane-trickster",
+ "posicao": "skirmisher",
+ "feat": "Skill Expert",
+ "variante": "feat"
+}

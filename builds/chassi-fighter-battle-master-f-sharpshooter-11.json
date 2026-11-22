@@ -1,0 +1,165 @@
+{
+ "gerado_de": "progressoes/chassi-fighter-battle-master-f-sharpshooter.json",
+ "build": "Fighter (Battle Master), atirador de arco longo, couro batido/meia-armadura, Archery; Sharpshooter no 4",
+ "corpo": {
+  "ca": 17,
+  "pv": 103,
+  "saves": {
+   "sv": {
+    "for": 5,
+    "des": 5,
+    "con": 7,
+    "int": 0,
+    "sab": 1,
+    "car": -1
+   },
+   "ataques": 3
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco longo todo round; dados de superioridade no acerto (Menacing)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 2.5,
+      "dano": "1d10",
+      "nota": "dado de superioridade no acerto (5 por descanso curto ÷ 2 lutas)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Menacing Attack (dado de superioridade)",
+      "efeito": "cond_amedrontado_um_turno",
+      "cd": 17,
+      "bonus": [
+       11,
+       11,
+       11
+      ],
+      "usos": 2.5
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 2.5,
+      "dano": "1d10",
+      "nota": "dado de superioridade no acerto (5 por descanso curto ÷ 2 lutas)"
+     }
+    ]
+   },
+   "gasta": {
+    "action_surge": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Battle Master arqueiro: dados de superioridade somados no acerto e Menacing Attack para amedrontar.",
+  "estrategia": "Posição atirador; feat da subclasse: Sharpshooter (4) da build do RPGBot.",
+  "nao_modelado": "Pushing/Trip/Rally/Commander's Strike e as outras manobras; Know Your Enemy; Second Wind; Indomitable (9).",
+  "progressao": "atributos {'for': 12, 'des': 20, 'con': 16, 'int': 10, 'sab': 13, 'car': 8}; superioridade 5d10"
+ },
+ "id": "chassi-fighter-battle-master-f-sharpshooter-11",
+ "nome": "Battle Master Fighter — chassi + Sharpshooter",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/battle-master/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "battle-master",
+ "posicao": "atirador",
+ "feat": "Sharpshooter",
+ "variante": "feat"
+}

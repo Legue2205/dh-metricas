@@ -1,0 +1,350 @@
+{
+ "id": "chassi-rogue-thief-f-piercer",
+ "nome": "Thief Rogue — chassi + Piercer",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/thief/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "rogue",
+ "subclasse": "thief",
+ "posicao": "atirador",
+ "feat": "Piercer",
+ "variante": "feat",
+ "base": {
+  "build": "Rogue (Thief), atirador, besta leve, couro batido; Piercer no 4 — RPGBot (chassi do Handbook do Fast Hands): Piercer no 4",
+  "corpo": {
+   "ca": 16,
+   "pv": 52,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 7,
+     "con": 2,
+     "int": 4,
+     "sab": 1,
+     "car": 0
+    },
+    "evasion": true
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {}
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "besta leve com Steady Aim + Sneak",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+4",
+       "vantagem": 1.0,
+       "nota": "besta leve (Steady Aim)"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "4d6",
+       "prob": 1.0,
+       "nota": "Sneak Attack (Steady Aim)"
+      },
+      {
+       "dano": "1.0",
+       "nota": "Piercer: rerrola 1 dado por turno"
+      },
+      {
+       "dano": "1d8",
+       "gatilho": "critico",
+       "nota": "Piercer: dado extra no crítico"
+      }
+     ]
+    },
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "uncanny_dodge"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "acao_bonus": [
+     {
+      "uso": "Steady Aim",
+      "fracao": 1.0,
+      "eixos": [
+       "dano"
+      ]
+     }
+    ],
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "fast-hands",
+    "hipotese": "besta leve + Sneak (aliado adjacente); Fast Hands: frasco de ácido na ação bônus",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+4"
+      },
+      {
+       "n": 1,
+       "bonus": 4,
+       "dano": "2d6+4",
+       "nota": "ácido (improvisada, sem proficiência)"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "4d6",
+       "prob": 0.75,
+       "nota": "Sneak Attack"
+      },
+      {
+       "dano": "1.0",
+       "nota": "Piercer: rerrola 1 dado por turno"
+      },
+      {
+       "dano": "1d8",
+       "gatilho": "critico",
+       "nota": "Piercer: dado extra no crítico"
+      }
+     ]
+    },
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "uncanny_dodge"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "acao_bonus": [
+     {
+      "uso": "Fast Hands (Use an Object)",
+      "fracao": 1.0,
+      "eixos": [
+       "dano"
+      ]
+     }
+    ]
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi: Ladrão: Fast Hands transforma a ação bônus em itens (ácido).",
+   "nao_modelado": "Estrepes/armadilhas por item, Second-Story Work, Supreme Sneak (9), Use Magic Device (13)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "Fast Hands, Second-Story Work; Supreme Sneak (9). atributos {'for': 8, 'des': 18, 'con': 15, 'int': 12, 'sab': 13, 'car': 10}"
+  },
+  "11": {
+   "_texto": "Fast Hands, Second-Story Work; Supreme Sneak (9). atributos {'for': 8, 'des': 20, 'con': 17, 'int': 12, 'sab': 13, 'car': 10}",
+   "corpo": {
+    "ca": 17,
+    "pv": 91,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 9,
+      "con": 3,
+      "int": 5,
+      "sab": 1,
+      "car": 0
+     },
+     "evasion": true
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "besta leve com Steady Aim + Sneak",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "vantagem": 1.0,
+        "nota": "besta leve (Steady Aim)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "6d6",
+        "prob": 1.0,
+        "nota": "Sneak Attack (Steady Aim)"
+       },
+       {
+        "dano": "1.0",
+        "nota": "Piercer: rerrola 1 dado por turno"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico",
+        "nota": "Piercer: dado extra no crítico"
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "Steady Aim",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "fast-hands",
+     "hipotese": "besta leve + Sneak (aliado adjacente); Fast Hands: frasco de ácido na ação bônus",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d8+5"
+       },
+       {
+        "n": 1,
+        "bonus": 5,
+        "dano": "2d6+5",
+        "nota": "ácido (improvisada, sem proficiência)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "6d6",
+        "prob": 0.75,
+        "nota": "Sneak Attack"
+       },
+       {
+        "dano": "1.0",
+        "nota": "Piercer: rerrola 1 dado por turno"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico",
+        "nota": "Piercer: dado extra no crítico"
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "acao_bonus": [
+      {
+       "uso": "Fast Hands (Use an Object)",
+       "fracao": 1.0,
+       "eixos": [
+        "dano"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

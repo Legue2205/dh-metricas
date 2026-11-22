@@ -1,0 +1,622 @@
+{
+ "gerado_de": "progressoes/chassi-warlock-undead.json",
+ "build": "Warlock (Undead), retaguarda: Pact of the Tome, Eldritch Blast + Agonizing Blast, Armor of Shadows; Car>Con>Des; sem feat",
+ "corpo": {
+  "ca": 14,
+  "pv": 91,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 1,
+    "con": 3,
+    "int": 0,
+    "sab": 5,
+    "car": 9
+   },
+   "conjurador": true
+  },
+  "pvt_luta": 16.5
+ },
+ "recursos": {
+  "espacos": {
+   "5": 3
+  },
+  "espacos_volta": "curto",
+  "outros": {
+   "arcano": {
+    "qtd": 1,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3.0,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "hipotese": "só o ataque à vontade (anel interno)",
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "hex",
+   "herda": "principal",
+   "hipotese": "Hex (1 hora: 0,5 espaço por luta) no ataque principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3.0,
+      "bonus": 9,
+      "dano": "1d10+5+1d6",
+      "nota": "Eldritch Blast + Agonizing Blast + Hex"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "5": 0.5
+    }
+   }
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.25,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Monster",
+        "cd": 17,
+        "slots": [
+         5
+        ],
+        "magias": [
+         "hold_monster"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Synaptic Static",
+        "magia": "synaptic_static",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Phantasmal Force",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "phantasmal_force"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "5": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "area",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (5º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "6d8",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (5º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "6d8",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "5": 2
+    }
+   },
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "area"
+  },
+  {
+   "id": "combo",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Monster",
+        "cd": 17,
+        "slots": [
+         5
+        ],
+        "magias": [
+         "hold_monster"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Synaptic Static",
+        "magia": "synaptic_static",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Phantasmal Force",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "phantasmal_force"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "3d8",
+       "cd": 17,
+       "slot": 2
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "5": 2
+    }
+   },
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "combo"
+  },
+  {
+   "id": "invocacao",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.25,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Summon Aberration (5º)",
+     "quantidade": 1,
+     "pv": 50,
+     "ca": 16,
+     "ataque": {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+8"
+     }
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "5": 0.5
+    }
+   },
+   "area": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "invocacao"
+  },
+  {
+   "id": "area+hex",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d10+5+1d6",
+      "nota": "Eldritch Blast + Agonizing Blast + Hex"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Shatter (5º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "6d8",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    },
+    {
+     "nome": "Shatter (5º)",
+     "usos": [
+      {
+       "alvos": 2,
+       "dano": "6d8",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "5": 2.5
+    }
+   },
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "area + Hex"
+  },
+  {
+   "id": "arcano",
+   "herda": "principal",
+   "hipotese": "Mystic Arcanum: Mass Suggestion no pico",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.25,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Mass Suggestion (Mystic Arcanum)",
+      "magia": "mass_suggestion",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "arcano": 1
+   }
+  },
+  {
+   "id": "arcano+hex",
+   "herda": "principal",
+   "hipotese": "Mystic Arcanum: Mass Suggestion no pico + Hex",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.25,
+      "bonus": 9,
+      "dano": "1d10+5+1d6",
+      "nota": "Eldritch Blast + Agonizing Blast + Hex"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Mass Suggestion (Mystic Arcanum)",
+      "magia": "mass_suggestion",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "arcano": 1,
+    "espacos": {
+     "5": 0.5
+    }
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: arcano+hex, hex; prioritário: area+hex. Sobra: nada.",
+   "combates": [
+    "hex",
+    "area+hex",
+    "arcano+hex",
+    "area+hex"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area+hex. Sobra: 0.5×5º, 1 arcano.",
+   "combates": [
+    "area+hex"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Undead: Eldritch Blast com Agonizing Blast e Hex, espaços de pacto; muda só o que o patrono dá.",
+  "estrategia": "Hex no início do dia (cobre ~2 lutas); controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster, Synaptic Static), área ou invocação no espaço de pacto; Mass Suggestion no 11.",
+  "nao_modelado": "Form of Dread (medo no acerto), Grave Touched, Necrotic Husk; Cloudkill; Pact of the Tome (Book of Shadows: truques extras); Repelling Blast, Devil's Sight e a invocação do 9; Hunger of Hadar; Armor of Agathys; Counterspell; Misty Step; Darkness+Devil's Sight",
+  "progressao": "Warlock 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 10, 'sab': 12, 'car': 20}; pacto 3×5º; CA 14. Form of Dread: PB/dia ÷ 4 lutas."
+ },
+ "id": "chassi-warlock-undead-11",
+ "nome": "Undead Warlock — chassi",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/warlock/subclasses/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "warlock",
+ "subclasse": "undead",
+ "posicao": "retaguarda",
+ "feat": null,
+ "variante": "sem-feat"
+}

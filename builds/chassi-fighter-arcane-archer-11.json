@@ -1,0 +1,173 @@
+{
+ "gerado_de": "progressoes/chassi-fighter-arcane-archer.json",
+ "build": "Fighter (Arcane Archer), atirador de arco longo, couro batido/meia-armadura, Archery; sem feat",
+ "corpo": {
+  "ca": 17,
+  "pv": 114,
+  "saves": {
+   "sv": {
+    "for": 4,
+    "des": 5,
+    "con": 8,
+    "int": 1,
+    "sab": 1,
+    "car": -1
+   },
+   "ataques": 3
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco longo; Shadow Arrow 1×/luta; Curving Shot redireciona um erro",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 11,
+      "dano": "1d8+5"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1,
+      "dano": "2d6",
+      "nota": "Arcane Shot (Shadow Arrow): 2 por descanso curto = 1 por luta"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Shadow Arrow (Arcane Shot)",
+      "efeito": "cond_cego_um_turno",
+      "cd": 13,
+      "bonus": [
+       11,
+       11,
+       11
+      ],
+      "usos": 1
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "area": [
+    {
+     "nome": "Curving Shot",
+     "tipo": "cleave_ataque",
+     "bonus": 11,
+     "dano": "1d8+5",
+     "p": "erro",
+     "n_erro": 3
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 11,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 0.75,
+      "bonus": 11,
+      "dano": "1d8+5"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1,
+      "dano": "2d6",
+      "nota": "Arcane Shot (Shadow Arrow): 2 por descanso curto = 1 por luta"
+     }
+    ]
+   },
+   "gasta": {
+    "action_surge": 1
+   },
+   "area": [
+    {
+     "nome": "Curving Shot",
+     "tipo": "cleave_ataque",
+     "bonus": 11,
+     "dano": "1d8+5",
+     "p": "erro",
+     "n_erro": 3
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Arcane Archer: Shadow Arrow 1×/luta (dano e cegueira) e Curving Shot para não perder o erro.",
+  "estrategia": "Posição atirador; feat da subclasse: Sharpshooter (6) da build do RPGBot (Elven Accuracy no 4 é racial).",
+  "nao_modelado": "Vantagem da cegueira para a party; Magic Arrow; as outras flechas; Second Wind; Indomitable (9).",
+  "progressao": "atributos {'for': 10, 'des': 20, 'con': 18, 'int': 13, 'sab': 12, 'car': 8}"
+ },
+ "id": "chassi-fighter-arcane-archer-11",
+ "nome": "Arcane Archer Fighter — chassi",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/arcane-archer/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "arcane-archer",
+ "posicao": "atirador",
+ "feat": null,
+ "variante": "sem-feat"
+}

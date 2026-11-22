@@ -1,0 +1,172 @@
+{
+ "id": "chassi-rogue-swashbuckler-f-mobile",
+ "nome": "Swashbuckler Rogue — chassi + Mobile",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/swashbuckler/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "rogue",
+ "subclasse": "swashbuckler",
+ "posicao": "skirmisher",
+ "feat": "Mobile",
+ "variante": "feat",
+ "base": {
+  "build": "Rogue (Swashbuckler), skirmisher, rapieira, couro batido (sem Booming Blade: truque é racial no RPGBot); Mobile no 4 — feat de posição (skirmisher)",
+  "corpo": {
+   "ca": 15,
+   "pv": 52,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 6,
+     "con": 2,
+     "int": 3,
+     "sab": 1,
+     "car": 1
+    },
+    "evasion": true
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {}
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "rapieira + Sneak (Rakish Audacity); Fancy Footwork para sair",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 6,
+       "dano": "1d8+3",
+       "nota": "rapieira"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "4d6",
+       "prob": 0.9,
+       "nota": "Sneak Attack (Rakish Audacity ou aliado adjacente)"
+      }
+     ]
+    },
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "uncanny_dodge"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": false,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi: Espadachim: Sneak quase garantido no duelo, entra e sai sem ataque de oportunidade.",
+   "nao_modelado": "Panache (9; taunt sem tipo no motor), Car na iniciativa, Elegant Maneuver (13). Mobile (sem mecânica de movimento no motor: diferença zero de propósito)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "Fancy Footwork, Rakish Audacity; Panache (9). atributos {'for': 8, 'des': 17, 'con': 15, 'int': 10, 'sab': 12, 'car': 13}"
+  },
+  "11": {
+   "_texto": "Fancy Footwork, Rakish Audacity; Panache (9). atributos {'for': 8, 'des': 20, 'con': 16, 'int': 10, 'sab': 12, 'car': 13}",
+   "corpo": {
+    "ca": 17,
+    "pv": 91,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 9,
+      "con": 3,
+      "int": 4,
+      "sab": 1,
+      "car": 1
+     },
+     "evasion": true
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "rapieira + Sneak (Rakish Audacity); Fancy Footwork para sair",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "rapieira"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "6d6",
+        "prob": 0.9,
+        "nota": "Sneak Attack (Rakish Audacity ou aliado adjacente)"
+       }
+      ]
+     },
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "uncanny_dodge"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": false,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    }
+   ]
+  }
+ }
+}

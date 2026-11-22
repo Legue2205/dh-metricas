@@ -1,0 +1,264 @@
+{
+ "id": "chassi-barbarian-battlerager",
+ "nome": "Battlerager Barbarian — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/battlerager/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "barbarian",
+ "subclasse": "battlerager",
+ "posicao": "defensor",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Barbarian (battlerager), defensor, martelo de guerra + escudo, armadura de espinhos; For > Con > Des; sem feat",
+  "corpo": {
+   "ca": 17,
+   "pv": 68,
+   "saves": {
+    "sv": {
+     "for": 7,
+     "des": 1,
+     "con": 5,
+     "int": -1,
+     "sab": 1,
+     "car": 0
+    },
+    "ataques": 3,
+    "adv": [
+     "Des"
+    ]
+   },
+   "pvt_round": 2
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "furia": {
+     "qtd": 4,
+     "volta": "longo"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "sem fúria: martelo de guerra e escudo, Reckless Attack (espinhos só na fúria)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d8+4",
+       "vantagem": 1.0
+      }
+     ]
+    },
+    "defesa": {
+     "adv": 1
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "furia-agarrao",
+    "hipotese": "fúria: agarra com o 1º ataque do 1º round (3 de espinhos no agarrão, ÷ 4 rounds), arma + espinhos (ação bônus), Reckless Attack",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.75,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "vantagem": 1.0
+      },
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "1d4+6",
+       "vantagem": 1.0,
+       "nota": "espinhos (ação bônus; o 1º round vai na fúria)"
+      }
+     ],
+     "automatico": "0.75"
+    },
+    "defesa": {
+     "adv": 1,
+     "resist": true,
+     "pvt_round": 2
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "agarrao",
+       "nome": "Agarrão (Atletismo)",
+       "bonus": 7
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "furia": 1
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi: Battlerager agarrador: arma, espinhos na ação bônus e agarrão na fúria.",
+   "estrategia": "Fúria nas lutas que o plano automático escolher; Reckless Attack sempre.",
+   "nao_modelado": "Vantagem de Força no agarrão (o motor usa só o bônus); derrubar após agarrar; Battlerager Charge (10); Skill Expert: a perícia extra. Relentless Rage; Feral Instinct; Fast Movement; Primal Path 14 (fora das fatias)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 19, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}; armadura de espinhos + escudo (17); Reckless Abandon (Con em PV temporários)"
+  },
+  "11": {
+   "_texto": "atributos {'for': 20, 'des': 13, 'con': 16, 'int': 8, 'sab': 12, 'car': 10}; armadura de espinhos + escudo (17); Reckless Abandon (Con em PV temporários)",
+   "corpo": {
+    "ca": 17,
+    "pv": 115,
+    "saves": {
+     "sv": {
+      "for": 9,
+      "des": 1,
+      "con": 7,
+      "int": -1,
+      "sab": 1,
+      "car": 0
+     },
+     "ataques": 3,
+     "adv": [
+      "Des"
+     ]
+    },
+    "pvt_round": 3
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "furia": {
+      "qtd": 4,
+      "volta": "longo"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "sem fúria: martelo de guerra e escudo, Reckless Attack (espinhos só na fúria)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "vantagem": 1.0,
+        "dados_crit": "1d8+1d8"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "furia-agarrao",
+     "hipotese": "fúria: agarra com o 1º ataque do 1º round (3 de espinhos no agarrão, ÷ 4 rounds), arma + espinhos (ação bônus), Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.75,
+        "bonus": 9,
+        "dano": "1d8+8",
+        "vantagem": 1.0,
+        "dados_crit": "1d8+1d8"
+       },
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d4+8",
+        "vantagem": 1.0,
+        "nota": "espinhos (ação bônus; o 1º round vai na fúria)",
+        "dados_crit": "1d4+1d4"
+       }
+      ],
+      "automatico": "0.75"
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true,
+      "pvt_round": 3
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "agarrao",
+        "nome": "Agarrão (Atletismo)",
+        "bonus": 9
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "furia": 1
+     }
+    }
+   ]
+  }
+ }
+}

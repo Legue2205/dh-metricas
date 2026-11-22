@@ -1,0 +1,377 @@
+{
+ "id": "chassi-barbarian-ancestral-guardian-f-sentinel",
+ "nome": "Ancestral Guardian Barbarian — chassi + Sentinel",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/ancestral-guardian/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "barbarian",
+ "subclasse": "ancestral-guardian",
+ "posicao": "defensor",
+ "feat": "Sentinel",
+ "variante": "feat",
+ "base": {
+  "build": "Barbarian (ancestral-guardian), defensor, espada longa + escudo, meia-armadura; For > Con > Des; Sentinel no 4",
+  "corpo": {
+   "ca": 18,
+   "pv": 68,
+   "saves": {
+    "sv": {
+     "for": 6,
+     "des": 1,
+     "con": 5,
+     "int": -1,
+     "sab": 1,
+     "car": 0
+    },
+    "ataques": 2,
+    "adv": [
+     "Des"
+    ]
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "furia": {
+     "qtd": 4,
+     "volta": "longo"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "sem fúria: espada longa e escudo, Reckless Attack, Sentinel",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 6,
+       "dano": "1d8+3",
+       "vantagem": 1.0
+      },
+      {
+       "n": 0.5,
+       "bonus": 6,
+       "dano": "1d8+3",
+       "nota": "ataque de oportunidade (Sentinel), reação em 50% dos rounds"
+      }
+     ]
+    },
+    "defesa": {
+     "adv": 1
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto",
+      "hard": {
+       "sentinela": 6
+      }
+     },
+     "fontes": [
+      {
+       "tipo": "sentinela",
+       "nome": "Sentinel",
+       "bonus": 6
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade (Sentinel)",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "furia",
+    "hipotese": "fúria em toda luta: Ancestral Protectors no 1º alvo atingido, Spirit Shield na reação, Reckless Attack",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 6,
+       "dano": "1d8+5",
+       "vantagem": 1.0
+      },
+      {
+       "n": 0.25,
+       "bonus": 6,
+       "dano": "1d8+5",
+       "nota": "ataque de oportunidade (Sentinel), reação em 25% dos rounds"
+      }
+     ]
+    },
+    "defesa": {
+     "adv": 1,
+     "resist": true
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto",
+      "hard": {
+       "sentinela": 6
+      }
+     },
+     "fontes": [
+      {
+       "tipo": "ancestral_protectors",
+       "nome": "Ancestral Protectors",
+       "bonus": 6
+      },
+      {
+       "tipo": "sentinela",
+       "nome": "Sentinel",
+       "bonus": 6
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "furia": 1
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Spirit Shield (reação: −2d6 no dano de um aliado)",
+       "lado": "def",
+       "modelo": "cura",
+       "usos_luta": 2,
+       "pv": 7
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "Spirit Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "suporte"
+      ]
+     },
+     {
+      "uso": "ataque de oportunidade (Sentinel)",
+      "fracao": 0.25,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi: Guardião Ancestral defensor: marca o alvo com Ancestral Protectors e protege aliados com Spirit Shield.",
+   "estrategia": "Fúria nas lutas que o plano automático escolher; Reckless Attack sempre.",
+   "nao_modelado": "Consult the Spirits (10). Feat: a build do RPGBot só tem Elven Accuracy (racial) até o 11, então o feat é o natural de defensor, Sentinel. Relentless Rage; Feral Instinct; Fast Movement; Primal Path 14 (fora das fatias)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 17, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}; meia-armadura + escudo (18)"
+  },
+  "11": {
+   "_texto": "atributos {'for': 19, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}; meia-armadura + escudo (18)",
+   "corpo": {
+    "ca": 18,
+    "pv": 104,
+    "saves": {
+     "sv": {
+      "for": 8,
+      "des": 1,
+      "con": 6,
+      "int": -1,
+      "sab": 1,
+      "car": 0
+     },
+     "ataques": 2,
+     "adv": [
+      "Des"
+     ]
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "furia": {
+      "qtd": 4,
+      "volta": "longo"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "sem fúria: espada longa e escudo, Reckless Attack, Sentinel",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d8+4",
+        "vantagem": 1.0,
+        "dados_crit": "1d8+1d8"
+       },
+       {
+        "n": 0.5,
+        "bonus": 8,
+        "dano": "1d8+4",
+        "nota": "ataque de oportunidade (Sentinel), reação em 50% dos rounds",
+        "dados_crit": "1d8+1d8"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 8
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "sentinela",
+        "nome": "Sentinel",
+        "bonus": 8
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade (Sentinel)",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "furia",
+     "hipotese": "fúria em toda luta: Ancestral Protectors no 1º alvo atingido, Spirit Shield na reação, Reckless Attack",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 8,
+        "dano": "1d8+7",
+        "vantagem": 1.0,
+        "dados_crit": "1d8+1d8"
+       },
+       {
+        "n": 0.25,
+        "bonus": 8,
+        "dano": "1d8+7",
+        "nota": "ataque de oportunidade (Sentinel), reação em 25% dos rounds",
+        "dados_crit": "1d8+1d8"
+       }
+      ]
+     },
+     "defesa": {
+      "adv": 1,
+      "resist": true
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "hard": {
+        "sentinela": 8
+       }
+      },
+      "fontes": [
+       {
+        "tipo": "ancestral_protectors",
+        "nome": "Ancestral Protectors",
+        "bonus": 8
+       },
+       {
+        "tipo": "sentinela",
+        "nome": "Sentinel",
+        "bonus": 8
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "furia": 1
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Spirit Shield (reação: −3d6 no dano de um aliado)",
+        "lado": "def",
+        "modelo": "cura",
+        "usos_luta": 2,
+        "pv": 10.5
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Spirit Shield",
+       "fracao": 0.5,
+       "eixos": [
+        "suporte"
+       ]
+      },
+      {
+       "uso": "ataque de oportunidade (Sentinel)",
+       "fracao": 0.25,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

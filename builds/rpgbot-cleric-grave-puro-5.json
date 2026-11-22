@@ -1,0 +1,505 @@
+{
+ "gerado_de": "progressoes/rpgbot-cleric-grave-puro.json",
+ "build": "Cleric (Grave) sem multiclasse, Custom Lineage (Metamagic Adept: Quicken, Extend); Fey Touched 4; escama → meia-armadura + escudo; Sab 20 (8)",
+ "corpo": {
+  "ca": 19,
+  "pv": 33,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 2,
+    "con": 1,
+    "int": -1,
+    "sab": 7,
+    "car": 4
+   },
+   "conjurador": true
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 2
+  },
+  "outros": {
+   "metamagia": {
+    "qtd": 1,
+    "volta": "longo"
+   },
+   "canal": {
+    "qtd": 1,
+    "volta": "curto",
+    "valor": 2
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "area": [],
+   "invocacoes": [],
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 8.0
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   },
+   "principal": true,
+   "custo": "gratuita",
+   "hipotese": "só truques (anel interno)"
+  },
+  {
+   "id": "bless",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 8.0
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless"
+  },
+  {
+   "id": "arma-espiritual",
+   "dano": {
+    "com_save": [
+     {
+      "n": 1.0,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "arma-espiritual"
+  },
+  {
+   "id": "controle",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "frontliner",
+     "front": true,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Hold Person",
+      "cd": 15,
+      "slots": [
+       2
+      ],
+      "magias": [
+       "hold_person"
+      ],
+      "modo": "melhor"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "controle"
+  },
+  {
+   "id": "punho",
+   "hipotese": "Path to the Grave (ação) e Inflict Wounds no maior espaço no round seguinte",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.25,
+      "bonus": 7,
+      "dano": "10d10",
+      "nota": "Inflict Wounds (3º) no alvo vulnerável (Path to the Grave: dados dobrados)"
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "1": 0.5,
+     "3": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "punho-rapido",
+   "hipotese": "Path to the Grave + Inflict Wounds acelerado (Quicken Spell, Metamagic Adept) no mesmo round",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.25,
+      "bonus": 7,
+      "dano": "10d10",
+      "nota": "Inflict Wounds (3º) no alvo vulnerável (Path to the Grave: dados dobrados)"
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1,
+    "metamagia": 1,
+    "espacos": {
+     "1": 0.5,
+     "3": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "bless+arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 8.0
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5,
+     "2": 1
+    }
+   },
+   "herda": "principal",
+   "hipotese": "bless + Spiritual Weapon (ação bônus, do round 2 em diante)"
+  },
+  {
+   "id": "punho+arma",
+   "hipotese": "Path to the Grave (ação) e Inflict Wounds no maior espaço no round seguinte + Spiritual Weapon (ação bônus, do round 2 em diante)",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.25,
+      "bonus": 7,
+      "dano": "10d10",
+      "nota": "Inflict Wounds (3º) no alvo vulnerável (Path to the Grave: dados dobrados)"
+     },
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "gasta": {
+    "canal": 1,
+    "espacos": {
+     "2": 1,
+     "1": 0.5,
+     "3": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "guardioes",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "3d8",
+      "meio": true,
+      "nota": "Spirit Guardians (3º) no alvo"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (3º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "3d8",
+     "cd": 15,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes"
+  },
+  {
+   "id": "guardioes-arma",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     },
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "3d8",
+      "meio": true,
+      "nota": "Spirit Guardians (3º) no alvo"
+     }
+    ],
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "Spiritual Weapon (2º)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Spirit Guardians (3º)",
+     "tipo": "aura",
+     "alvos": 3,
+     "dano": "3d8",
+     "cd": 15,
+     "metade": true
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "2": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal",
+   "hipotese": "guardioes-arma"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless+arma; prioritário: punho+arma, punho-rapido. Sobra: nada.",
+   "combates": [
+    "bless+arma",
+    "punho-rapido",
+    "bless+arma",
+    "punho+arma"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: punho+arma. Sobra: 3.5×1º, 2×2º, 1×3º, 1 metamagia.",
+   "combates": [
+    "punho+arma"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "A build One Punch sem os 2 níveis de Sorcerer: Path to the Grave + Inflict Wounds no maior espaço, com Quicken só pelos 2 pontos do Metamagic Adept.",
+  "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis de Cleric = nível de personagem, atributos e feats remendados); a build original continua como referência. Sem o Sorcerer, Quicken fica em 1/dia em todas as fatias (sem os pontos extras do 9+); a ASI do Cleric 8 chega no personagem 8 (Sab 20 no 9); Potent Spellcasting a partir do 9.",
+  "nao_modelado": "Conversão de espaços em pontos de feitiçaria (não existe mais); Hex e True Strike; Absorb Elements no soco; Circle of Mortality fora do Healing Word; Sentinel at Death's Door em aliados; Path to the Grave dado a um aliado; Keeper of Souls.",
+  "progressao": "Cleric 5; Sab 18; Quicken 1/dia (Metamagic Adept)."
+ },
+ "id": "rpgbot-cleric-grave-puro-5",
+ "nome": "Grave Domain Cleric puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 5,
+ "fonte": {
+  "tipo": "rpgbot",
+  "url": "https://rpgbot.net/dnd5/characters/classes/cleric/subclasses/grave/",
+  "nota": "Extensão simples sem multiclasse; mini-mutirão 22/11."
+ }
+}

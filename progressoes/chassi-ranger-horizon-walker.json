@@ -1,0 +1,264 @@
+{
+ "id": "chassi-ranger-horizon-walker",
+ "nome": "Horizon Walker Ranger — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/ranger/subclasses/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "ranger",
+ "subclasse": "horizon-walker",
+ "posicao": "atirador",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Ranger (Horizon Walker), atirador: arco longo, Archery, couro batido; sem feat",
+  "corpo": {
+   "ca": 16,
+   "pv": 60,
+   "saves": {
+    "sv": {
+     "for": 4,
+     "des": 7,
+     "con": 2,
+     "int": 0,
+     "sab": 1,
+     "car": -1
+    },
+    "ataques": 2
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 3
+   },
+   "outros": {}
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "arco longo sem magia",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 9,
+       "dano": "1d8+4"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1d8",
+       "nota": "Planar Warrior (ação bônus, 1 acerto/turno, força)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "marca",
+    "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 9,
+       "dano": "1d8+4+1d6"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1d8",
+       "nota": "Planar Warrior (ação bônus, 1 acerto/turno, força)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Horizon Walker: Ranger atirador com Hunter's Mark e a feature de dano da subclasse.",
+   "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
+   "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Planar Warrior (3; 2d8 no 11); Distant Strike (11) com o 3º ataque sempre; Ethereal Step (7) e o teleporte não modelados."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 12, 'des': 19, 'con': 15, 'int': 10, 'sab': 13, 'car': 8}. Planar Warrior (3; 2d8 no 11); Distant Strike (11) com o 3º ataque sempre; Ethereal Step (7) e o teleporte não modelados."
+  },
+  "11": {
+   "_texto": "atributos {'for': 12, 'des': 20, 'con': 16, 'int': 10, 'sab': 13, 'car': 8}. Planar Warrior (3; 2d8 no 11); Distant Strike (11) com o 3º ataque sempre; Ethereal Step (7) e o teleporte não modelados.",
+   "corpo": {
+    "ca": 17,
+    "pv": 103,
+    "saves": {
+     "sv": {
+      "for": 5,
+      "des": 9,
+      "con": 3,
+      "int": 0,
+      "sab": 1,
+      "car": -1
+     },
+     "ataques": 2
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3
+    },
+    "outros": {}
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "arco longo sem magia",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5"
+       },
+       {
+        "n": 1,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "nota": "Distant Strike: 3º ataque contra outra criatura"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "2d8",
+        "nota": "Planar Warrior (ação bônus, 1 acerto/turno, força)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "marca",
+     "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5+1d6"
+       },
+       {
+        "n": 1,
+        "bonus": 11,
+        "dano": "1d8+5+1d6",
+        "nota": "Distant Strike: 3º ataque contra outra criatura"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "2d8",
+        "nota": "Planar Warrior (ação bônus, 1 acerto/turno, força)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    }
+   ]
+  }
+ }
+}

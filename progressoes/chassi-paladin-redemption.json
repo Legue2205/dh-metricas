@@ -1,0 +1,1289 @@
+{
+ "id": "chassi-paladin-redemption",
+ "nome": "Redemption Paladin — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/paladin/subclasses/oath-of-redemption/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "paladin",
+ "subclasse": "redemption",
+ "posicao": "defensor",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Paladin (Oath of Redemption), defensor: espada longa + escudo, Dueling, placas; sem feat",
+  "corpo": {
+   "ca": 20,
+   "pv": 53,
+   "saves": {
+    "sv": {
+     "for": 6,
+     "des": 2,
+     "con": 3,
+     "int": 1,
+     "sab": 6,
+     "car": 7
+    },
+    "conjurador": true,
+    "ataques": 2
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 3
+   },
+   "outros": {
+    "canal": {
+     "qtd": 1,
+     "volta": "curto",
+     "valor": 2
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "só armas, sem gastar espaço",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "vantagem": 0.0,
+       "nota": "espada longa (Dueling)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "nota": "ataque de oportunidade (reação em 50%)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "smite-1",
+    "hipotese": "2 Divine Smites de 1º na luta",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "vantagem": 0.0,
+       "nota": "espada longa (Dueling)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "nota": "ataque de oportunidade (reação em 50%)"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 2,
+       "dano": "2d8",
+       "nota": "Divine Smite (1º) ×2"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 2
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "smite-2",
+    "hipotese": "2 Divine Smites de 2º na luta",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2.0,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "vantagem": 0.0,
+       "nota": "espada longa (Dueling)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "nota": "ataque de oportunidade (reação em 50%)"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 2,
+       "dano": "3d8",
+       "nota": "Divine Smite (2º) ×2"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "2": 2
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "bless",
+    "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.5,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "vantagem": 0.0,
+       "nota": "espada longa (Dueling)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "nota": "ataque de oportunidade (reação em 50%)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 1
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      },
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "controle",
+    "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.5,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "vantagem": 0.0,
+       "nota": "espada longa (Dueling)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "nota": "ataque de oportunidade (reação em 50%)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "alvo_unico",
+       "nome": "Hold Person",
+       "cd": 13,
+       "slots": [
+        2
+       ],
+       "magias": [
+        "hold_person"
+       ],
+       "modo": "melhor"
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "2": 1
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "controle+smite",
+    "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.5,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "vantagem": 0.0,
+       "nota": "espada longa (Dueling)"
+      },
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "1d8+6",
+       "nota": "ataque de oportunidade (reação em 50%)"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 2,
+       "dano": "2d8",
+       "nota": "Divine Smite (1º) ×2"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "alvo_unico",
+       "nome": "Hold Person",
+       "cd": 13,
+       "slots": [
+        2
+       ],
+       "magias": [
+        "hold_person"
+       ],
+       "modo": "melhor"
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "2": 1,
+      "1": 2
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Aura of Protection",
+       "lado": "def",
+       "modelo": "aura_saves",
+       "bonus": 2
+      },
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 8.75
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Oath of Redemption: régua comum do Paladin + features do juramento (defensor). Feat da subclasse = 1º feat não racial da build do RPGBot.",
+   "nao_modelado": "Aura of the Guardian, Rebuke the Violent, Emissary of Peace, Sleep, Calm Emotions, Counterspell. Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico, upcast de Bless."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 19, 'des': 10, 'con': 13, 'int': 8, 'sab': 12, 'car': 15}; CA 20"
+  },
+  "11": {
+   "_texto": "atributos {'for': 20, 'des': 10, 'con': 13, 'int': 8, 'sab': 12, 'car': 16}; CA 20",
+   "corpo": {
+    "ca": 20,
+    "pv": 81,
+    "saves": {
+     "sv": {
+      "for": 8,
+      "des": 3,
+      "con": 4,
+      "int": 2,
+      "sab": 8,
+      "car": 10
+     },
+     "conjurador": true,
+     "ataques": 2
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3
+    },
+    "outros": {
+     "canal": {
+      "qtd": 1,
+      "volta": "curto",
+      "valor": 2
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "só armas, sem gastar espaço",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa (Dueling)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-1",
+     "hipotese": "2 Divine Smites de 1º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa (Dueling)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-2",
+     "hipotese": "2 Divine Smites de 2º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa (Dueling)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "3d8",
+        "nota": "Divine Smite (2º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "smite-3",
+     "hipotese": "2 Divine Smites de 3º na luta",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa (Dueling)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "4d8",
+        "nota": "Divine Smite (3º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bless",
+     "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa (Dueling)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa (Dueling)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "controle+smite",
+     "hipotese": "Hold Person no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa (Dueling)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1,
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "padrao-hipnotico",
+     "hipotese": "Hypnotic Pattern (3º) no round 1 (ação), ataques nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa (Dueling)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "padrao-hipnotico+smite",
+     "hipotese": "Hypnotic Pattern (3º) no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "vantagem": 0.0,
+        "nota": "espada longa (Dueling)"
+       },
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "1d8+7+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 2
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

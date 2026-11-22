@@ -1,0 +1,153 @@
+{
+ "gerado_de": "progressoes/chassi-fighter-samurai-f-gunner.json",
+ "build": "Fighter (Samurai), atirador de arco longo (mosquete com Gunner), couro batido/meia-armadura, Archery; Gunner no 4",
+ "corpo": {
+  "ca": 17,
+  "pv": 103,
+  "saves": {
+   "sv": {
+    "for": 5,
+    "des": 5,
+    "con": 7,
+    "int": 0,
+    "sab": 5,
+    "car": -1
+   },
+   "ataques": 3
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   },
+   "fighting_spirit": {
+    "qtd": 3,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "atira todo round (mosquete, Gunner); Fighting Spirit = vantagem num turno",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 11,
+      "dano": "1d12+5",
+      "vantagem": 0.25
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "espirito",
+   "herda": "principal",
+   "hipotese": "Fighting Spirit num round (vantagem nos ataques do turno)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 11,
+      "dano": "1d12+5",
+      "vantagem": 0.5
+     }
+    ]
+   },
+   "gasta": {
+    "fighting_spirit": 1
+   }
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Fighting Spirit + Action Surge no mesmo round",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 11,
+      "dano": "1d12+5",
+      "vantagem": 0.5
+     },
+     {
+      "n": 0.75,
+      "bonus": 11,
+      "dano": "1d12+5",
+      "vantagem": 0.5
+     }
+    ]
+   },
+   "gasta": {
+    "fighting_spirit": 1,
+    "action_surge": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: espirito, principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "espirito",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: 2 fighting_spirit.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Samurai atirador: Fighting Spirit dá vantagem num turno; Tireless Spirit garante 1 por luta no 10.",
+  "estrategia": "Posição atirador; feat da subclasse: Gunner (4) da build do RPGBot, meio-feat em Des; troca o arco pelo mosquete (armas de fogo da DMG).",
+  "nao_modelado": "PV temporários do Fighting Spirit; Elegant Courtier fora dos saves; Second Wind; Indomitable (9).",
+  "progressao": "atributos {'for': 12, 'des': 20, 'con': 17, 'int': 10, 'sab': 13, 'car': 8}"
+ },
+ "id": "chassi-fighter-samurai-f-gunner-11",
+ "nome": "Samurai Fighter — chassi + Gunner",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/samurai/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "samurai",
+ "posicao": "atirador",
+ "feat": "Gunner",
+ "variante": "feat"
+}

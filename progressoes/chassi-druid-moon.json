@@ -1,0 +1,1572 @@
+{
+ "id": "chassi-druid-moon",
+ "nome": "Moon Druid — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/druid/subclasses/moon/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "druid",
+ "subclasse": "moon",
+ "posicao": "meia",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Druid (Moon), meia, gibão de peles + escudo, Sab > Con > Des; sem feat",
+  "corpo": {
+   "ca": 15,
+   "pv": 52,
+   "saves": {
+    "sv": {
+     "for": -1,
+     "des": 1,
+     "con": 2,
+     "int": 4,
+     "sab": 7,
+     "car": 0
+    },
+    "conjurador": true
+   }
+  },
+  "recursos": {
+   "espacos": {
+    "1": 4,
+    "2": 3,
+    "3": 3,
+    "4": 1
+   },
+   "outros": {
+    "forma_selvagem": {
+     "qtd": 2,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 7,
+       "dano": "2d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 6.5
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 0.5
+     }
+    },
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "controle",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Entangle",
+         "magia": "entangle",
+         "cd": 15
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 15,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Polymorph",
+         "cd": 15,
+         "slots": [
+          4
+         ],
+         "magias": [
+          "polymorph"
+         ],
+         "modo": "melhor"
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "controle"
+   },
+   {
+    "id": "controle-barato",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Entangle",
+       "magia": "entangle",
+       "cd": 15
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "controle-barato"
+   },
+   {
+    "id": "area",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "2d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Wall of Fire",
+      "usos": [
+       {
+        "alvos": 3,
+        "dano": "5d8",
+        "cd": 15,
+        "slot": 4
+       }
+      ]
+     },
+     {
+      "nome": "Ice Knife",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "2d6",
+        "cd": 15,
+        "slot": 3
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "3": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "area"
+   },
+   {
+    "id": "invocacao",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "2d8",
+       "nota": "Produce Flame"
+      }
+     ]
+    },
+    "invocacoes": [
+     {
+      "nome": "Summon Beast (Land, 4º)",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 15,
+      "ataque": {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d8+8"
+      }
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "4": 0.5,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "hipotese": "invocacao"
+   },
+   {
+    "id": "principal+forma",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 6,
+       "dano": "1d10+5",
+       "nota": "tigre, mordida"
+      },
+      {
+       "n": 1.0,
+       "bonus": 6,
+       "dano": "2d6+5",
+       "nota": "tigre, garra"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto",
+      "conc": true
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "area": [],
+    "invocacoes": [],
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 6.5
+      }
+     ]
+    },
+    "corpo": {
+     "ca": 12,
+     "pv": 104
+    },
+    "herda": "principal",
+    "hipotese": "só truques + forma",
+    "gasta": {
+     "forma_selvagem": 1,
+     "espacos": {
+      "1": 0.5
+     }
+    }
+   },
+   {
+    "id": "controle+forma",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "1d10+5",
+       "nota": "tigre, mordida"
+      },
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "2d6+5",
+       "nota": "tigre, garra"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto",
+      "conc": true
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Entangle",
+         "magia": "entangle",
+         "cd": 15
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 15,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Polymorph",
+         "cd": 15,
+         "slots": [
+          4
+         ],
+         "magias": [
+          "polymorph"
+         ],
+         "modo": "melhor"
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "1": 0.5
+     },
+     "forma_selvagem": 1
+    },
+    "herda": "principal",
+    "corpo": {
+     "ca": 12,
+     "pv": 104
+    },
+    "hipotese": "controle + forma"
+   },
+   {
+    "id": "controle-barato+forma",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "1d10+5",
+       "nota": "tigre, mordida"
+      },
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "2d6+5",
+       "nota": "tigre, garra"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto",
+      "conc": true
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Entangle",
+       "magia": "entangle",
+       "cd": 15
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "1": 1.5
+     },
+     "forma_selvagem": 1
+    },
+    "herda": "principal",
+    "corpo": {
+     "ca": 12,
+     "pv": 104
+    },
+    "hipotese": "controle-barato + forma"
+   },
+   {
+    "id": "area+forma",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "1d10+5",
+       "nota": "tigre, mordida"
+      },
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "2d6+5",
+       "nota": "tigre, garra"
+      }
+     ]
+    },
+    "area": [
+     {
+      "nome": "Wall of Fire",
+      "usos": [
+       {
+        "alvos": 3,
+        "dano": "5d8",
+        "cd": 15,
+        "slot": 4
+       }
+      ]
+     },
+     {
+      "nome": "Ice Knife",
+      "usos": [
+       {
+        "alvos": 2,
+        "dano": "2d6",
+        "cd": 15,
+        "slot": 3
+       }
+      ]
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "3": 1,
+      "1": 0.5
+     },
+     "forma_selvagem": 1
+    },
+    "herda": "principal",
+    "corpo": {
+     "ca": 12,
+     "pv": 104
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto",
+      "conc": true
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "hipotese": "area + forma"
+   },
+   {
+    "id": "invocacao+forma",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "1d10+5",
+       "nota": "tigre, mordida"
+      },
+      {
+       "n": 0.75,
+       "bonus": 6,
+       "dano": "2d6+5",
+       "nota": "tigre, garra"
+      }
+     ]
+    },
+    "invocacoes": [
+     {
+      "nome": "Summon Beast (Land, 4º)",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 15,
+      "ataque": {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d8+8"
+      }
+     }
+    ],
+    "gasta": {
+     "espacos": {
+      "4": 0.5,
+      "1": 0.5
+     },
+     "forma_selvagem": 1
+    },
+    "herda": "principal",
+    "corpo": {
+     "ca": 12,
+     "pv": 104
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto",
+      "conc": true
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "hipotese": "invocacao + forma"
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Circle of Moon: Wild Shape de combate (ação bônus) com os PV da forma por cima dos seus; Elemental Wild Shape no 10.",
+   "estrategia": "Régua comum do chassi: Sab > Con > Des, gibão de peles + escudo, Produce Flame, Entangle/Hold Person/Polymorph, Ice Knife + Wall of Fire, Summon Beast e Healing Word; sem feat (conjurador pleno).",
+   "nao_modelado": "Derrubar/agarrar das formas; Primal Strike; reverter para a 2ª forma na mesma luta; Hold Person + ataques automáticos críticos da forma. Comuns: Wild Shape fora de combate; Goodberry; Faerie Fire, Spike Growth, Moonbeam, Conjure Animals (fora do Shepherd)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "Druid 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 12, 'sab': 19, 'car': 10}; forma de combate: tigre."
+  },
+  "11": {
+   "_texto": "Druid 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 12, 'sab': 20, 'car': 10}; forma de combate: escorpião ou Fire Elemental.",
+   "corpo": {
+    "ca": 15,
+    "pv": 91,
+    "saves": {
+     "sv": {
+      "for": -1,
+      "des": 1,
+      "con": 3,
+      "int": 5,
+      "sab": 9,
+      "car": 0
+     },
+     "conjurador": true
+    }
+   },
+   "recursos": {
+    "espacos": {
+     "1": 4,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 2,
+     "6": 1
+    },
+    "outros": {
+     "forma_selvagem": {
+      "qtd": 2,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "3d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle"
+    },
+    {
+     "id": "controle-barato",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      }
+     },
+     "herda": "principal",
+     "hipotese": "controle-barato"
+    },
+    {
+     "id": "area",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.5,
+        "bonus": 9,
+        "dano": "3d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Wall of Fire",
+       "usos": [
+        {
+         "alvos": 3,
+         "dano": "5d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      },
+      {
+       "nome": "Ice Knife",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "2d6",
+         "cd": 17,
+         "slot": 6
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "6": 1,
+       "1": 0.5,
+       "4": null,
+       "3": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "area"
+    },
+    {
+     "id": "invocacao",
+     "dano": {
+      "ataques": [
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "3d8",
+        "nota": "Produce Flame"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Summon Beast (Land, 6º)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17,
+       "ataque": {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d8+10"
+       }
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 0.5,
+       "1": 0.5,
+       "4": null
+      }
+     },
+     "herda": "principal",
+     "hipotese": "invocacao"
+    },
+    {
+     "id": "elemental",
+     "herda": "principal",
+     "hipotese": "Wild Shape de combate (Fire Elemental (Elemental Wild Shape, 2 usos), ação bônus); PV da forma somados aos do druida",
+     "corpo": {
+      "ca": 13,
+      "pv": 193
+     },
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 6,
+        "dano": "2d6+3",
+        "nota": "Fire Elemental, toque (incendeia: não modelado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "conc": true
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "area": [],
+     "invocacoes": [],
+     "gasta": {
+      "forma_selvagem": 2,
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "principal+forma",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 4,
+        "dano": "1d8+2",
+        "nota": "escorpião, pinças (agarra)"
+       },
+       {
+        "n": 1.0,
+        "bonus": 4,
+        "dano": "1d10+2",
+        "nota": "escorpião, ferrão"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.6,
+        "cd": 12,
+        "save": "Con",
+        "dano": "4d10",
+        "meio": true,
+        "nota": "veneno do ferrão (≈ chance de acerto)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "conc": true
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "area": [],
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
+       }
+      ]
+     },
+     "corpo": {
+      "ca": 15,
+      "pv": 143
+     },
+     "herda": "principal",
+     "hipotese": "só truques + forma",
+     "gasta": {
+      "forma_selvagem": 1,
+      "espacos": {
+       "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "controle+forma",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 4,
+        "dano": "1d8+2",
+        "nota": "escorpião, pinças (agarra)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 4,
+        "dano": "1d10+2",
+        "nota": "escorpião, ferrão"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.45,
+        "cd": 12,
+        "save": "Con",
+        "dano": "4d10",
+        "meio": true,
+        "nota": "veneno do ferrão (≈ chance de acerto)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "conc": true
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "ca": 15,
+      "pv": 143
+     },
+     "hipotese": "controle + forma"
+    },
+    {
+     "id": "controle-barato+forma",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 4,
+        "dano": "1d8+2",
+        "nota": "escorpião, pinças (agarra)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 4,
+        "dano": "1d10+2",
+        "nota": "escorpião, ferrão"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.45,
+        "cd": 12,
+        "save": "Con",
+        "dano": "4d10",
+        "meio": true,
+        "nota": "veneno do ferrão (≈ chance de acerto)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "conc": true
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "ca": 15,
+      "pv": 143
+     },
+     "hipotese": "controle-barato + forma"
+    },
+    {
+     "id": "area+forma",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 4,
+        "dano": "1d8+2",
+        "nota": "escorpião, pinças (agarra)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 4,
+        "dano": "1d10+2",
+        "nota": "escorpião, ferrão"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.45,
+        "cd": 12,
+        "save": "Con",
+        "dano": "4d10",
+        "meio": true,
+        "nota": "veneno do ferrão (≈ chance de acerto)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Wall of Fire",
+       "usos": [
+        {
+         "alvos": 3,
+         "dano": "5d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      },
+      {
+       "nome": "Ice Knife",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "2d6",
+         "cd": 17,
+         "slot": 6
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "6": 1,
+       "1": 0.5,
+       "4": null,
+       "3": null
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "ca": 15,
+      "pv": 143
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "conc": true
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "hipotese": "area + forma"
+    },
+    {
+     "id": "invocacao+forma",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 4,
+        "dano": "1d8+2",
+        "nota": "escorpião, pinças (agarra)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 4,
+        "dano": "1d10+2",
+        "nota": "escorpião, ferrão"
+       }
+      ],
+      "com_save": [
+       {
+        "n": 0.45,
+        "cd": 12,
+        "save": "Con",
+        "dano": "4d10",
+        "meio": true,
+        "nota": "veneno do ferrão (≈ chance de acerto)"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Summon Beast (Land, 6º)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17,
+       "ataque": {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d8+10"
+       }
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 0.5,
+       "1": 0.5,
+       "4": null
+      },
+      "forma_selvagem": 1
+     },
+     "herda": "principal",
+     "corpo": {
+      "ca": 15,
+      "pv": 143
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "conc": true
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "hipotese": "invocacao + forma"
+    },
+    {
+     "id": "controle+elemental",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "2d6+3",
+        "nota": "Fire Elemental, toque (incendeia: não modelado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "conc": true
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Entangle",
+          "magia": "entangle",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 0.5
+      },
+      "forma_selvagem": 2
+     },
+     "herda": "principal",
+     "hipotese": "controle + Fire Elemental (Elemental Wild Shape)",
+     "corpo": {
+      "ca": 13,
+      "pv": 193
+     }
+    },
+    {
+     "id": "controle-barato+elemental",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "2d6+3",
+        "nota": "Fire Elemental, toque (incendeia: não modelado)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "conc": true
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Entangle",
+        "magia": "entangle",
+        "cd": 17
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "1": 1.5
+      },
+      "forma_selvagem": 2
+     },
+     "herda": "principal",
+     "hipotese": "controle-barato + Fire Elemental (Elemental Wild Shape)",
+     "corpo": {
+      "ca": 13,
+      "pv": 193
+     }
+    },
+    {
+     "id": "area+elemental",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "2d6+3",
+        "nota": "Fire Elemental, toque (incendeia: não modelado)"
+       }
+      ]
+     },
+     "area": [
+      {
+       "nome": "Wall of Fire",
+       "usos": [
+        {
+         "alvos": 3,
+         "dano": "5d8",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      },
+      {
+       "nome": "Ice Knife",
+       "usos": [
+        {
+         "alvos": 2,
+         "dano": "2d6",
+         "cd": 17,
+         "slot": 6
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "6": 1,
+       "1": 0.5
+      },
+      "forma_selvagem": 2
+     },
+     "herda": "principal",
+     "hipotese": "area + Fire Elemental (Elemental Wild Shape)",
+     "corpo": {
+      "ca": 13,
+      "pv": 193
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "conc": true
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     }
+    },
+    {
+     "id": "invocacao+elemental",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "2d6+3",
+        "nota": "Fire Elemental, toque (incendeia: não modelado)"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Summon Beast (Land, 6º)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17,
+       "ataque": {
+        "n": 3,
+        "bonus": 9,
+        "dano": "1d8+10"
+       }
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "6": 0.5,
+       "1": 0.5
+      },
+      "forma_selvagem": 2
+     },
+     "herda": "principal",
+     "hipotese": "invocacao + Fire Elemental (Elemental Wild Shape)",
+     "corpo": {
+      "ca": 13,
+      "pv": 193
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto",
+       "conc": true
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

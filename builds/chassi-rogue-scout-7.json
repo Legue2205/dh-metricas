@@ -1,0 +1,122 @@
+{
+ "gerado_de": "progressoes/chassi-rogue-scout.json",
+ "build": "Rogue (Scout), atirador, besta leve, couro batido; sem feat",
+ "corpo": {
+  "ca": 16,
+  "pv": 52,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 7,
+    "con": 2,
+    "int": 4,
+    "sab": 1,
+    "car": 0
+   },
+   "evasion": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "besta leve com Steady Aim + Sneak",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "vantagem": 1.0,
+      "nota": "besta leve (Steady Aim)"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "4d6",
+      "prob": 1.0,
+      "nota": "Sneak Attack (Steady Aim)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Steady Aim",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Batedor: luta de longe e sai do corpo a corpo com a reação (Skirmisher).",
+  "nao_modelado": "Skirmisher (reação; conflita com Uncanny Dodge), Survivalist, Superior Mobility (9), Ambush Master (13).",
+  "progressao": "Skirmisher, Survivalist; Superior Mobility (9). atributos {'for': 8, 'des': 19, 'con': 15, 'int': 12, 'sab': 13, 'car': 10}"
+ },
+ "id": "chassi-rogue-scout-7",
+ "nome": "Scout Rogue — chassi",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/scout/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "rogue",
+ "subclasse": "scout",
+ "posicao": "atirador",
+ "feat": null,
+ "variante": "sem-feat"
+}

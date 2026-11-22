@@ -1,0 +1,252 @@
+{
+ "id": "chassi-fighter-samurai",
+ "nome": "Samurai Fighter — chassi",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/samurai/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "samurai",
+ "posicao": "atirador",
+ "feat": null,
+ "variante": "sem-feat",
+ "base": {
+  "build": "Fighter (Samurai), atirador de arco longo (mosquete com Gunner), couro batido/meia-armadura, Archery; sem feat",
+  "corpo": {
+   "ca": 17,
+   "pv": 67,
+   "saves": {
+    "sv": {
+     "for": 4,
+     "des": 5,
+     "con": 6,
+     "int": 0,
+     "sab": 4,
+     "car": -1
+    },
+    "ataques": 2
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "action_surge": {
+     "qtd": 1,
+     "volta": "curto"
+    },
+    "fighting_spirit": {
+     "qtd": 3,
+     "volta": "longo"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "atira todo round (arco longo); Fighting Spirit = vantagem num turno",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 10,
+       "dano": "1d8+5"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "espirito",
+    "herda": "principal",
+    "hipotese": "Fighting Spirit num round (vantagem nos ataques do turno)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 10,
+       "dano": "1d8+5",
+       "vantagem": 0.25
+      }
+     ]
+    },
+    "gasta": {
+     "fighting_spirit": 1
+    }
+   },
+   {
+    "id": "surge",
+    "herda": "principal",
+    "plano": "prioritaria",
+    "hipotese": "Fighting Spirit + Action Surge no mesmo round",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 10,
+       "dano": "1d8+5",
+       "vantagem": 0.25
+      },
+      {
+       "n": 0.5,
+       "bonus": 10,
+       "dano": "1d8+5",
+       "vantagem": 0.25
+      }
+     ]
+    },
+    "gasta": {
+     "fighting_spirit": 1,
+     "action_surge": 1
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Samurai atirador: Fighting Spirit dá vantagem num turno; Tireless Spirit garante 1 por luta no 10.",
+   "estrategia": "Posição atirador; feat da subclasse: Gunner (4) da build do RPGBot, meio-feat em Des; troca o arco pelo mosquete (armas de fogo da DMG).",
+   "nao_modelado": "PV temporários do Fighting Spirit; Elegant Courtier fora dos saves; Second Wind; Indomitable (9)."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 12, 'des': 20, 'con': 16, 'int': 10, 'sab': 13, 'car': 8}"
+  },
+  "11": {
+   "_texto": "atributos {'for': 12, 'des': 20, 'con': 18, 'int': 10, 'sab': 13, 'car': 8}",
+   "corpo": {
+    "ca": 17,
+    "pv": 114,
+    "saves": {
+     "sv": {
+      "for": 5,
+      "des": 5,
+      "con": 8,
+      "int": 0,
+      "sab": 5,
+      "car": -1
+     },
+     "ataques": 3
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "action_surge": {
+      "qtd": 1,
+      "volta": "curto"
+     },
+     "fighting_spirit": {
+      "qtd": 3,
+      "volta": "longo"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "atira todo round (arco longo); Fighting Spirit = vantagem num turno",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "vantagem": 0.25
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "espirito",
+     "herda": "principal",
+     "hipotese": "Fighting Spirit num round (vantagem nos ataques do turno)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "vantagem": 0.5
+       }
+      ]
+     },
+     "gasta": {
+      "fighting_spirit": 1
+     }
+    },
+    {
+     "id": "surge",
+     "herda": "principal",
+     "plano": "prioritaria",
+     "hipotese": "Fighting Spirit + Action Surge no mesmo round",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "vantagem": 0.5
+       },
+       {
+        "n": 0.75,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "vantagem": 0.5
+       }
+      ]
+     },
+     "gasta": {
+      "fighting_spirit": 1,
+      "action_surge": 1
+     }
+    }
+   ]
+  }
+ }
+}

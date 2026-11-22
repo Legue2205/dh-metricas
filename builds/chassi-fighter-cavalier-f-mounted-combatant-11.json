@@ -1,0 +1,170 @@
+{
+ "gerado_de": "progressoes/chassi-fighter-cavalier-f-mounted-combatant.json",
+ "build": "Fighter (Cavalier), defensor de espada longa + escudo, placas, Dueling; Mounted Combatant no 4",
+ "corpo": {
+  "ca": 20,
+  "pv": 103,
+  "saves": {
+   "sv": {
+    "for": 9,
+    "des": 1,
+    "con": 7,
+    "int": -1,
+    "sab": 1,
+    "car": 0
+   },
+   "ataques": 3
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "espada longa + escudo na frente; marca o alvo e pune quem bate em outro",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d8+5+2"
+     },
+     {
+      "n": 0.3125,
+      "bonus": 9,
+      "dano": "1d8+12",
+      "nota": "Unwavering Mark: ataque bônus (For/dia ÷ 4 lutas ÷ 4 rounds)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 9,
+      "dano": "1d8+5+2",
+      "nota": "ataque de oportunidade (Hold the Line), reação em 50% dos rounds"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto",
+     "hard": {
+      "sentinela": 9
+     }
+    },
+    "fontes": [
+     {
+      "tipo": "sentinela",
+      "nome": "Hold the Line",
+      "bonus": 9
+     },
+     {
+      "tipo": "ancestral_protectors",
+      "nome": "Unwavering Mark (marca no acerto)",
+      "bonus": 9
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita",
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade (Sentinel/Hold the Line)",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d8+5+2"
+     },
+     {
+      "n": 0.3125,
+      "bonus": 9,
+      "dano": "1d8+12",
+      "nota": "Unwavering Mark: ataque bônus (For/dia ÷ 4 lutas ÷ 4 rounds)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 9,
+      "dano": "1d8+5+2",
+      "nota": "ataque de oportunidade (Hold the Line), reação em 50% dos rounds"
+     },
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "1d8+5+2"
+     }
+    ]
+   },
+   "gasta": {
+    "action_surge": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Cavalier a pé na frente: Unwavering Mark obriga o alvo a bater nele; Hold the Line no 10.",
+  "estrategia": "Posição defensor; feat da subclasse: Mounted Combatant (1, via Custom Lineage) da build do RPGBot; não modelado, diferença só do ASI perdido.",
+  "nao_modelado": "Mounted Combatant (sem montaria no chassi); Montaria e lança (o chassi luta a pé); Mounted Combatant inteiro (vantagem contra menores que a montaria); Warding Maneuver; Born to the Saddle; Second Wind; Indomitable (9).",
+  "progressao": "atributos {'for': 20, 'des': 12, 'con': 16, 'int': 8, 'sab': 13, 'car': 10}"
+ },
+ "id": "chassi-fighter-cavalier-f-mounted-combatant-11",
+ "nome": "Cavalier Fighter — chassi + Mounted Combatant",
+ "grupo": "Chassi",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/cavalier/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "cavalier",
+ "posicao": "defensor",
+ "feat": "Mounted Combatant",
+ "variante": "feat"
+}

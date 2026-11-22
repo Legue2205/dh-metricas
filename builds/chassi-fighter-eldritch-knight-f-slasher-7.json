@@ -1,0 +1,236 @@
+{
+ "gerado_de": "progressoes/chassi-fighter-eldritch-knight-f-slasher.json",
+ "build": "Fighter (Eldritch Knight), striker de espadão, placas, GWF; Booming Blade, Sword Burst, Shield, Rime's Binding Ice; Slasher no 4",
+ "corpo": {
+  "ca": 18,
+  "pv": 60,
+  "saves": {
+   "sv": {
+    "for": 8,
+    "des": 1,
+    "con": 5,
+    "int": 1,
+    "sab": 0,
+    "car": -1
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 2
+  },
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "espadão com GWF (War Magic com Booming Blade no 7); Shield 1×/luta",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "2d6+5+1.33"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Booming Blade (War Magic): dado de trovão no acerto"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "area": [
+    {
+     "nome": "Sword Burst",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 12,
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "sem-shield",
+   "hipotese": "sem gastar espaço no Shield",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "2d6+5+1.33"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Booming Blade (War Magic): dado de trovão no acerto"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "area": [
+    {
+     "nome": "Sword Burst",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 12,
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ]
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "2d6+5+1.33"
+     },
+     {
+      "n": 0.5,
+      "bonus": 8,
+      "dano": "2d6+5+1.33"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Booming Blade (War Magic): dado de trovão no acerto"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1
+    },
+    "action_surge": 1
+   },
+   "area": [
+    {
+     "nome": "Sword Burst",
+     "tipo": "cleave_save",
+     "dano": "2d6",
+     "cd": 12,
+     "alvos": [
+      1,
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: 2×2º.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: 3×1º, 2×2º.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Eldritch Knight de espadão: War Magic com Booming Blade no 7, Shield como reação, Sword Burst e Rime's Binding Ice para área.",
+  "estrategia": "Posição striker; feat da subclasse: Slasher (1, via Custom Lineage) da build do RPGBot, meio-feat em For.",
+  "nao_modelado": "Dano secundário do Booming Blade; Slasher (redução de deslocamento e desvantagem no crítico); Absorb Elements; Eldritch Strike (10); controle do Rime's Binding Ice; Second Wind; Indomitable (9).",
+  "progressao": "atributos {'for': 20, 'des': 12, 'con': 15, 'int': 13, 'sab': 10, 'car': 8}"
+ },
+ "id": "chassi-fighter-eldritch-knight-f-slasher-7",
+ "nome": "Eldritch Knight Fighter — chassi + Slasher",
+ "grupo": "Chassi",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/eldritch-knight/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "eldritch-knight",
+ "posicao": "striker",
+ "feat": "Slasher",
+ "variante": "feat"
+}

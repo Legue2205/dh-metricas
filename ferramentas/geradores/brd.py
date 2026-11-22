@@ -25,9 +25,14 @@ def dado(L): return 3.5 if L < 5 else 4.5 if L < 10 else 5.5           # Bardic 
 def dstr(L): return 'd6' if L < 5 else 'd8' if L < 10 else 'd10'
 def usos_bi(L, car): return round(car / 4 if L < 5 else car / 2, 3)    # por luta: Car/descanso longo (4 lutas); Font of Inspiration (5): Car/curto (2 lutas)
 def vm(L, cd, n): return {"com_save": [{"n": n, "cd": cd, "save": "Sab", "dano": f"{k(L)}d4", "meio": False, "nota": "Vicious Mockery"}]}
+DEF_MIX = {"ca", "save_dano", "save_critico", "counterspell"}   # usos do dado que poupam PV/turnos do aliado
+
+
 def BI(L, u, nota='', mix=None):
     f = {"nome": f"Bardic Inspiration ({dstr(L)}){nota}", "lado": "of", "modelo": "dado_multiuso", "dado_medio": dado(L), "usos_luta": round(u, 3)}
-    if mix: f["mix"] = mix
+    if mix:
+        f["mix"] = mix
+        if set(mix) <= DEF_MIX: f["lado"] = "def"   # P1.3 (22/11): Cutting Words e afins protegem o aliado
     return f
 HYP = lambda cd: U("Hypnotic Pattern", "hypnotic_pattern", cd, 3, area=True)
 FEAR = lambda cd: U("Fear", "fear", cd, 3, area=True)

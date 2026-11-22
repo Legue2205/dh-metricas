@@ -29,10 +29,15 @@ def dstr(L): return 'd6' if L < 5 else 'd8' if L < 10 else 'd10'
 def usos_bi(L, car): return round(car / 4 if L < 5 else car / 2, 3)   # por luta (Font of Inspiration no 5)
 
 
+DEF_MIX = {"ca", "save_dano", "save_critico", "counterspell"}   # usos do dado que poupam PV/turnos do aliado
+
+
 def BI(L, u, nota='', mix=None):
     f = {"nome": f"Bardic Inspiration ({dstr(L)}){nota}", "lado": "of", "modelo": "dado_multiuso",
          "dado_medio": dado(L), "usos_luta": round(u, 3)}
-    if mix: f["mix"] = mix
+    if mix:
+        f["mix"] = mix
+        if set(mix) <= DEF_MIX: f["lado"] = "def"   # P1.3 (22/11): Cutting Words e afins protegem o aliado
     return f
 
 

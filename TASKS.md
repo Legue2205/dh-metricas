@@ -36,16 +36,27 @@ Regras:
 
 Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
 
-- [ ] **P1.1 Warlock — dano** [M] — τ dano −0,60 (nv11, padrão). Hexblade (striker, pista "alto") tem o pior dano da
+- [x] **P1.1 Warlock — dano** [M] — **feito 22/11:** Hexblade ganhou as linhas `eb` e `eb+hex` (EB com Carisma +
+  Hexblade's Curse PB/2 por raio, atenção de atirador): dano no 11 de 5,9 → 9,3 (linha), externo 7,9 → 9,3.
+  τ médio warlock nv11 (externo) 0,32 → 0,39; τ dano da classe igual, porque (a) a invocação (Summon Aberration, 9,4) é o
+  máximo de dano de todos os patronos no externo (→ P2.1) e (b) a pista "alto" do Fiend é Fireball = área [G] (→ P2.3);
+  no padrão nada muda porque o plano auto não olha rendimento (→ D5). Original: — τ dano −0,60 (nv11, padrão). Hexblade (striker, pista "alto") tem o pior dano da
   classe: 2,5 no padrão, 7,9 no externo; a linha corpo a corpo `principal` dá só 4,5 no 11. O plano auto põe `combo`
   (1,8 de dano) nas lutas prioritárias. Fiend (pista "alto") 3,9 < base 5,2. Conferir Hexblade's Curse, arma do pacto,
   Thirsting Blade e se o plano está escolhendo controle onde o dano deveria vencer.
-- [ ] **P1.2 Warlock — controle** [M] — no externo nv7, τ controle −1,0; no padrão nv11 Hexblade/Fiend/Genie = 7,4,
+- [x] **P1.2 Warlock — controle** [M] — **revisto 22/11, sem bug:** no padrão os dois valores vêm do plano auto (→ D5);
+  no externo nv7 o τ −1,0 é de 3 pistas com valores 6,3–6,9 (ruído). GOO < base no 7 porque o Fiend tem PV temporários
+  (Dark One's Blessing) e segura a concentração. Original: — no externo nv7, τ controle −1,0; no padrão nv11 Hexblade/Fiend/Genie = 7,4,
   os outros todos = 2,3 (dois valores para 9 patronos). Great Old One (pista "alto") fica no 2,3.
-- [ ] **P1.3 Bard — suporte invertido** [M/G] — τ −0,89/−0,82: Eloquence e Lore (pista "alto") 7,2/7,0 abaixo de
+- [x] **P1.3 Bard — suporte invertido** [M/G] — **feito 22/11:** Cutting Words estava com `lado: "of"`; dado com mix só
+  defensivo (ca/save) agora vai para `def` (brd.py e chassi_bard.py; só o Lore muda; total igual). O resto não é bug:
+  Unsettling Words do Eloquence está no controle por design (pista de suporte do RPGBot o inclui → [G], P2.4); BI custa
+  ação bônus e Cutting Words não (→ D6). Original: — τ −0,89/−0,82: Eloquence e Lore (pista "alto") 7,2/7,0 abaixo de
   Creation e Glamour ("médio") 8,6/8,4. Conferir Unsettling Words, Cutting Words (defensivo), Mantle of Inspiration
   (PV temporários possivelmente inflados), Performance of Creation; e se Eloquence/Lore deviam mesmo ser "alto" em suporte.
-- [ ] **P1.4 Bard — dano/controle planos** [M] — 8 colégios com dano 0,6 idêntico e controle 3,3 idêntico (exceto
+- [x] **P1.4 Bard — dano/controle planos** [M] — **revisto 22/11, sem bug:** é a régua comum (Vicious Mockery e a mesma lista
+  de controle); as diferenças dos colégios estão em suporte/área ou em `nao_modelado` (Words of Terror, Mantle of Whispers).
+  Original: — 8 colégios com dano 0,6 idêntico e controle 3,3 idêntico (exceto
   Eloquence/Swords): a régua comum domina tudo. Conferir se Cutting Words/Unsettling Words entram no controle.
 - [ ] **P1.5 Wizard — controle e dano** [M] — τ controle −0,60 e dano −0,60 (nv11, externo). Dano externo do Wizard
   (10,8) passa o do Fighter (9,4): ver qual linha dá esse pico (invocação? área contando em alvo único?).
@@ -75,6 +86,15 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
 ## Passada 2
 (problemas novos achados durante a passada 1)
 
+- [ ] **P2.1 Invocação domina o dano externo** [M/J] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
+  Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
+  Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).
+- [ ] **P2.2 Linhas grátis empatam no plano auto** [M] — sem gasto, `principal` e `eb` empatam e ganha a mais antiga
+  (desempate por eixos declarados / menos trocas). Depende da D5.
+- [ ] **P2.3 Pista de dano que é área** [G] — Fiend "alto (blaster de fogo, Fireball)": rever pistas de dano que falam de
+  magia de área, em todas as classes.
+- [ ] **P2.4 Pista de suporte que é controle** [G] — Eloquence "suporte alto" inclui Unsettling Words (no controle por design).
+
 ## Decisões (para o usuário)
 
 - **D1 GWM/Sharpshooter e as rampas** — o nível eq. de dano é o máximo entre a rampa bruta e a precisa. Um feat que troca
@@ -83,4 +103,12 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
 - **D2 Visão do teste de régua** — testar cada régua no anel externo (potencial do eixo) e o plano do dia à parte, ou no
   padrão (o plano mistura eixos; ver P1.13)?
 - **D3 Teto da área** (ver P1.12) — subir o teto, mudar a escala ou aceitar a saturação no 11.
+- **D5 Plano automático só olha gasto** — `plano_auto` escolhe a combinação que gasta mais recurso, sem olhar rendimento;
+  linhas grátis empatam e linhas de controle/combo (que gastam mais) tomam as lutas prioritárias. Isso derruba o dano do dia
+  de quem tem opções (Hexblade 2,5 padrão × 9,3 externo) e torna os eixos do padrão ruidosos. Opções: (a) manter;
+  (b) desempatar por rendimento (precisa de um valor da linha = pesos dos eixos, premissa treinável); (c) gasto primeiro,
+  rendimento como 2º critério.
+- **D6 Custo de ação do Bardic Inspiration** — BI entregue custa ação bônus (compete com Healing Word, Spiritual Weapon…);
+  Cutting Words é reação e vê a rolagem. Hoje o motor não cobra nenhum dos dois e o Cutting Words vale menos que o BI
+  comum (mix só "ca"). Cobrar a ação bônus do BI? Dar ao Cutting Words um ESCOLHA maior?
 - **D4 Corpo de invocações** (ver P1.9) — invocação/torreta conta como presença do personagem? Com que peso?

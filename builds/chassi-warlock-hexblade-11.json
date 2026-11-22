@@ -455,6 +455,77 @@
    "hipotese": "area + Hex"
   },
   {
+   "id": "eb",
+   "herda": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3.0,
+      "bonus": 9,
+      "dano": "1d10+5+2",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "hipotese": "Eldritch Blast + Agonizing + Hexblade's Curse, à distância"
+  },
+  {
+   "id": "eb+hex",
+   "herda": "principal",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3.0,
+      "bonus": 9,
+      "dano": "1d10+5+1d6+2",
+      "nota": "Eldritch Blast + Agonizing Blast + Hex"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "hipotese": "Eldritch Blast + Agonizing + Hex + Hexblade's Curse, à distância",
+   "gasta": {
+    "espacos": {
+     "5": 0.5
+    }
+   }
+  },
+  {
    "id": "arcano",
    "herda": "principal",
    "hipotese": "Mystic Arcanum: Mass Suggestion no pico",
@@ -548,7 +619,7 @@
  "descricao": {
   "resumo": "Chassi do Hexblade: espada do pacto com Carisma, Hexblade's Curse e Hex no alvo principal, na linha de frente.",
   "estrategia": "Hex no início do dia (cobre ~2 lutas); controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster, Synaptic Static), área ou invocação no espaço de pacto; Mass Suggestion no 11.",
-  "nao_modelado": "Hex Warrior (já no Carisma na arma), Accursed Specter, Armor of Hexes; crítico em 19 do Curse; Shield/Wrathful Smite da lista; Pact of the Blade (troca de arma); Agonizing Blast/EB como alternativa à distância; Devil's Sight; Counterspell; Misty Step",
+  "nao_modelado": "Hex Warrior (já no Carisma na arma), Accursed Specter, Armor of Hexes; crítico em 19 do Curse; Shield/Wrathful Smite da lista; Pact of the Blade (troca de arma); crítico em 19 do Hexblade's Curse; Devil's Sight; Counterspell; Misty Step",
   "progressao": "Warlock 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 10, 'sab': 12, 'car': 20}; pacto 3×5º; CA 18."
  },
  "id": "chassi-warlock-hexblade-11",

@@ -55,14 +55,24 @@ def fatia_ch(L, sub):
             g.setdefault('espacos', {}); g['espacos']['9'] = 0.5   # marcador; W.ajusta junta no nível do pacto
             f['linhas'].append(dict(l, id=l['id'] + '+hex', hipotese=l.get('hipotese', l['id']) + ' + Hex',
                                     dano=cant_hex(fr), gasta=g))
+    if sub == 'hexblade' and L >= 5:
+        # P1.1 (22/11): Eldritch Blast com Carisma também pega o Hexblade's Curse (PB/2 por raio, mesma conta da lâmina).
+        # No 11 são 3 raios contra 2 golpes; opção de turno à distância (atenção de atirador), Hex como na lâmina.
+        cu = f"+{W.prof(L) / 2:g}"; ctl = json.loads(json.dumps(f['linhas'][0].get('controle', {})))
+        f['linhas'].append(dict(id="eb", herda="principal", dano=W.eb(L, a, c, 1.0, False, cu), _pos='atirador',
+                                controle=json.loads(json.dumps(ctl)), hipotese="Eldritch Blast + Agonizing + Hexblade's Curse, à distância"))
+        f['linhas'].append(dict(id="eb+hex", herda="principal", dano=W.eb(L, a, c, 1.0, True, cu), _pos='atirador', controle=json.loads(json.dumps(ctl)),
+                                hipotese="Eldritch Blast + Agonizing + Hex + Hexblade's Curse, à distância",
+                                gasta={"espacos": {pl: 0.5}}))
     for kk, v in o.get('corpo', {}).items(): f['corpo'][kk] = v
     if o.get('outros'): f['recursos']['outros'] = o['outros']
     for l in f['linhas']:
         for kk, v in o.get('todas', {}).items():
             if not l.get(kk): l[kk] = json.loads(json.dumps(v))
         l.setdefault('hipotese', l['id'])
+        lp = l.pop('_pos', pos)
         if l.get('controle', {}).get('atencao'):    # posição do chassi (só muda a atenção)
-            l['controle']['atencao'] = C.atencao(pos)
+            l['controle']['atencao'] = C.atencao(lp)
         if l['id'] == 'principal': l.pop('herda', None)
     f = W.ajusta(f, L)
     f['linhas'][0]['hipotese'] = 'só o ataque à vontade (anel interno)'
@@ -72,7 +82,7 @@ def fatia_ch(L, sub):
 
 NM_BASE = ("Pact of the Tome (Book of Shadows: truques extras); Repelling Blast, Devil's Sight e a invocação do 9; "
            "Hunger of Hadar; Armor of Agathys; Counterspell; Misty Step; Darkness+Devil's Sight")
-NM_BLADE = ("Pact of the Blade (troca de arma); Agonizing Blast/EB como alternativa à distância; Devil's Sight; "
+NM_BLADE = ("Pact of the Blade (troca de arma); crítico em 19 do Hexblade's Curse; Devil's Sight; "
             "Counterspell; Misty Step")
 SUBS = {
     'archfey': ("Archfey", "Fey Presence, Misty Escape, Beguiling Defenses; Faerie Fire/Sleep/Dominate Person da lista"),

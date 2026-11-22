@@ -4,7 +4,7 @@
   2. Por posição: média de cada eixo das variantes sem feat, agrupadas pela posição que a subclasse escolheu.
   3. Feat: (com feat − sem feat) por eixo, por subclasse = sinergia daquela subclasse com aquele feat.
 
-Uso (da raiz): python calibracao/comparar_chassi.py [--nivel 11] [--classe rogue] [--json]
+Uso (da raiz): python calibracao/comparar_chassi.py [--nivel 11] [--classe rogue] [--visao padrao|externo|interno] [--json]
 Lê resultados via `python -m dh comparar --grupo Chassi --json` e os rótulos (classe/subclasse/posicao/feat) de builds/.
 """
 import glob
@@ -22,8 +22,8 @@ EIXOS = ('dano', 'deff', 'defm', 'controle', 'area', 'suporte', 'corpo')
 EIXOS5 = EIXOS[:5]
 
 
-def dados():
-    cmd = [sys.executable, '-m', 'dh', 'comparar', '--grupo', 'Chassi', '--json']
+def dados(visao='padrao'):
+    cmd = [sys.executable, '-m', 'dh', 'comparar', '--grupo', 'Chassi', '--json', '--visao', visao]
     return json.loads(subprocess.run(cmd, cwd=RAIZ, capture_output=True, text=True, check=True).stdout)
 
 
@@ -85,7 +85,8 @@ def main():
     a = sys.argv
     nvs = [int(a[a.index('--nivel') + 1])] if '--nivel' in a else [7, 11]
     so = a[a.index('--classe') + 1] if '--classe' in a else None
-    d, rot = dados(), rotulos()
+    visao = a[a.index('--visao') + 1] if '--visao' in a else 'padrao'
+    d, rot = dados(visao), rotulos()
     res = {'tau': {}, 'tau_eixos': {}, 'posicao': {}, 'feat': []}
     classes = sorted({r['classe'] for r in rot.values() if r['classe'] and (not so or r['classe'] == so)})
     gabs = {}

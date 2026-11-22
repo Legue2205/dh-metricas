@@ -47,7 +47,9 @@ def main():
     res = {'tau': {}, 'posicao': {}, 'feat': []}
     classes = sorted({r['classe'] for r in rot.values() if r['classe'] and (not so or r['classe'] == so)})
     for cl in classes:
-        try: gab = json.load(open(os.path.join(RAIZ, 'calibracao', f'rpgbot-{cl}.json'), encoding='utf-8'))['subclasses']
+        try:
+            g = json.load(open(os.path.join(RAIZ, 'calibracao', f'rpgbot-{cl}.json'), encoding='utf-8'))
+            gab = dict(g['subclasses'], **{s: {'nota': n} for s, n in g.get('sem_build', {}).items()})
         except FileNotFoundError: gab = {}
         for nv in nvs:
             xs = [(gab[r['subclasse']]['nota'], st.mean(val(d, e, b, nv) or 0 for e in EIXOS5), r['subclasse'])

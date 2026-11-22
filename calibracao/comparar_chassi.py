@@ -39,18 +39,62 @@ def rotulos():
 def val(d, e, bid, nv): return d.get(e, {}).get(bid, {}).get(str(nv))
 
 
+# Pistas por eixo do gabarito ("eixos": {"dano": "alto (…)"}) -> escala ordinal; eixo do gabarito -> eixo do motor.
+ESCALA = {'nenhum': 0, 'fraco': 1, 'baixo': 1, 'básico': 1, 'baixo-médio': 1.5, 'médio': 2, 'média': 2,
+          'médio-alto': 2.5, 'média-alta': 2.5, 'alto': 3, 'alta': 3, 'muito': 3, 'altíssimo': 3.5}
+PISTA_EIXO = {'dano': 'dano', 'defesa': 'deff', 'controle': 'controle', 'area': 'area', 'suporte': 'suporte', 'corpo': 'corpo'}
+
+
+def pista(txt):
+    import re
+    return ESCALA.get(re.split(r'[ (,;]', txt.strip().lower())[0])
+
+
+def tau_eixos(d, rot, gabs, nv):
+    """τ por régua: (a) eixo do motor × pista daquele eixo no gabarito, dentro de cada classe, combinado pela soma dos pares
+    (média dos τ por classe ponderada por n) e agrupado entre classes (todas juntas; pistas são relativas à classe, então
+    é só uma pista grosseira, útil para corpo/área, que têm poucas pistas por classe); (b) eixo do motor × nota geral da subclasse (o que a nota do RPGBot 'enxerga')."""
+    out = {}
+    for ge, me in PISTA_EIXO.items():
+        por_cl, pesos, tot_n, todos = {}, 0, 0, []
+        for cl, gab in gabs.items():
+            xs = [(pista(gab[r['subclasse']]['eixos'][ge]), val(d, me, b, nv) or 0, r['subclasse'])
+                  for b, r in rot.items() if r['classe'] == cl and r['variante'] == 'sem-feat' and r['subclasse'] in gab
+                  and ge in (gab[r['subclasse']].get('eixos') or {}) and val(d, 'dano', b, nv) is not None]
+            xs = [x for x in xs if x[0] is not None]
+            tot_n += len(xs); todos.extend(xs)
+            if len(xs) >= 3 and len({x[0] for x in xs}) > 1 and len({x[1] for x in xs}) > 1:
+                t = tau_b([x[0] for x in xs], [x[1] for x in xs])
+                por_cl[cl] = dict(tau=round(t, 2), n=len(xs)); pesos += len(xs)
+        media = round(sum(x['tau'] * x['n'] for x in por_cl.values()) / pesos, 2) if pesos else None
+        agr = round(tau_b([x[0] for x in todos], [x[1] for x in todos]), 2) if len(todos) >= 5 else None
+        out[me] = dict(pista=dict(tau=media, n_usado=pesos, n_pistas=tot_n, por_classe=por_cl, agrupado=agr))
+    for me in EIXOS:
+        ts, ns = [], 0
+        for cl, gab in gabs.items():
+            xs = [(gab[r['subclasse']]['nota'], val(d, me, b, nv) or 0) for b, r in rot.items()
+                  if r['classe'] == cl and r['variante'] == 'sem-feat' and r['subclasse'] in gab and val(d, 'dano', b, nv) is not None]
+            if len(xs) >= 3 and len({x[1] for x in xs}) > 1:
+                ts.append((tau_b([x[0] for x in xs], [x[1] for x in xs]), len(xs)))
+        out.setdefault(me, {})['nota'] = dict(tau=round(sum(t * n for t, n in ts) / sum(n for _, n in ts), 2) if ts else None,
+                                              n=sum(n for _, n in ts))
+    return out
+
+
 def main():
     a = sys.argv
     nvs = [int(a[a.index('--nivel') + 1])] if '--nivel' in a else [7, 11]
     so = a[a.index('--classe') + 1] if '--classe' in a else None
     d, rot = dados(), rotulos()
-    res = {'tau': {}, 'posicao': {}, 'feat': []}
+    res = {'tau': {}, 'tau_eixos': {}, 'posicao': {}, 'feat': []}
     classes = sorted({r['classe'] for r in rot.values() if r['classe'] and (not so or r['classe'] == so)})
+    gabs = {}
     for cl in classes:
         try:
             g = json.load(open(os.path.join(RAIZ, 'calibracao', f'rpgbot-{cl}.json'), encoding='utf-8'))
             gab = dict(g['subclasses'], **{s: {'nota': n} for s, n in g.get('sem_build', {}).items()})
         except FileNotFoundError: gab = {}
+        gabs[cl] = gab
         for nv in nvs:
             xs = [(gab[r['subclasse']]['nota'], st.mean(val(d, e, b, nv) or 0 for e in EIXOS5), r['subclasse'])
                   for b, r in rot.items() if r['classe'] == cl and r['variante'] == 'sem-feat' and r['subclasse'] in gab
@@ -59,6 +103,7 @@ def main():
                 res['tau'].setdefault(cl, {})[nv] = dict(tau=round(tau_b([x[0] for x in xs], [x[1] for x in xs]), 2), n=len(xs),
                                                          ordem=sorted(([s, n, round(m, 1)] for n, m, s in xs), key=lambda r: -r[2]))
     for nv in nvs:
+        res['tau_eixos'][nv] = tau_eixos(d, rot, gabs, nv)
         grupos = {}
         for b, r in rot.items():
             if r['variante'] != 'sem-feat' or (so and r['classe'] != so) or val(d, 'dano', b, nv) is None: continue
@@ -75,6 +120,21 @@ def main():
     print('== τ por classe (nota RPGBot × média de 5 eixos, variante sem feat)')
     for cl, t in res['tau'].items():
         print(f'  {cl:10s} ' + '  '.join(f"nv{nv}: {x['tau']:+.2f} (n={x['n']})" for nv, x in t.items()))
+    print('\n== τ por régua (variante sem feat; média dos τ dentro de cada classe, ponderada por n)')
+    print('   pista = eixo × pista daquele eixo no gabarito (o teste da régua); nota = eixo × nota geral da subclasse')
+    for nv, t in res['tau_eixos'].items():
+        print(f'  nv{nv}')
+        for e in EIXOS:
+            p, n = t[e].get('pista'), t[e]['nota']
+            sp = (f"pista {p['tau']:+.2f} (n={p['n_usado']}/{p['n_pistas']}, {len(p['por_classe'])} cl)"
+                  if p and p['tau'] is not None else 'pista   —' + (f" (n={p['n_pistas']})" if p else ''))
+            if p and p.get('agrupado') is not None: sp += f"  agrup. {p['agrupado']:+.2f}"
+            sn = f"nota {n['tau']:+.2f} (n={n['n']})" if n['tau'] is not None else 'nota —'
+            print(f'    {e:9s} {sp:52s} {sn}')
+        if so:
+            for e in EIXOS:
+                for cl, x in (t[e].get('pista') or {}).get('por_classe', {}).items():
+                    print(f'      {e} {cl}: {x["tau"]:+.2f} (n={x["n"]})')
     for nv, g in res['posicao'].items():
         print(f'\n== Por posição, nv{nv} (médias, sem feat)\n  {"posição":11s} {"n":>3s} ' + ' '.join(f'{e:>8s}' for e in EIXOS))
         for p, x in g.items(): print(f'  {p:11s} {x["n"]:3d} ' + ' '.join(f'{x[e]:8.1f}' for e in EIXOS))

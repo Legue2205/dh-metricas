@@ -275,6 +275,7 @@ def _avalia_fonte(f, E, topo, t):
     nome = f.get('nome', f['tipo'])
     if 'topos' in f and topo not in f['topos']: return {nome: C.zero(E)}
     if f.get('forcar_falha'): return {nome: _forcar_falha(f, E, topo, t)}
+    C.reiniciar_rng()
     return {nome: TIPOS[f['tipo']](f, E, topo, t)}
 
 
@@ -296,9 +297,9 @@ def _forcar_falha(f, E, topo, t):
     if f['tipo'] == 'melhor_de':
         base['opcoes'] = [dict(o, forcar_falha=u) for o in f['opcoes']]
         return TIPOS['melhor_de'](base, E, topo, t)
-    v0 = TIPOS[f['tipo']](base, E, topo, t); g = _sem_save(base)
+    C.reiniciar_rng(); v0 = TIPOS[f['tipo']](base, E, topo, t); g = _sem_save(base)
     if g is None: return v0
-    v1 = TIPOS[g['tipo']](g, E, topo, t)
+    C.reiniciar_rng(); v1 = TIPOS[g['tipo']](g, E, topo, t)
     k = 1.0
     if f['tipo'] == 'area': k = max(1.0, float(f.get('alvos', _mag(f['magia']).get('alvos', 1))))
     return v0 + u * (v1 - v0) / k

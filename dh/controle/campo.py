@@ -19,12 +19,20 @@ H = _grupo('controle.campo')   # premissas controle.campo.* (era: golpes_party=2
 FIM = {'fim_turno': 0, 'luta': 1, 'inicio_turno': 2, 'escape': 3}
 
 N = 8000
-rng = np.random.default_rng(11)
+SEMENTE = 11
+rng = np.random.default_rng(SEMENTE)
+
+
+def reiniciar_rng():
+    """Números aleatórios comuns (P1.5, 22/11): cada fonte de controle recomeça da mesma semente, para que a diferença
+    entre duas fontes/builds seja o efeito da mecânica e não a sequência de sorteios que sobrou das fontes anteriores."""
+    global rng
+    rng = np.random.default_rng(SEMENTE)
 
 
 def configurar(n=8000, semente=11):
-    global N, rng
-    N = n; rng = np.random.default_rng(semente)
+    global N, rng, SEMENTE
+    N = n; SEMENTE = semente; rng = np.random.default_rng(semente)
     for f in (efeito1, seq1, stun, agarra):
         f.cache_clear()
 

@@ -58,7 +58,12 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
   de controle); as diferenças dos colégios estão em suporte/área ou em `nao_modelado` (Words of Terror, Mantle of Whispers).
   Original: — 8 colégios com dano 0,6 idêntico e controle 3,3 idêntico (exceto
   Eloquence/Swords): a régua comum domina tudo. Conferir se Cutting Words/Unsettling Words entram no controle.
-- [ ] **P1.5 Wizard — controle e dano** [M] — τ controle −0,60 e dano −0,60 (nv11, externo). Dano externo do Wizard
+- [x] **P1.5 Wizard — controle e dano** [M] — **feito 22/11 (controle):** bug no motor: o Monte Carlo do controle usava
+  um `rng` global e o `forcar_falha` avalia a magia duas vezes, deslocando os sorteios de todas as fontes seguintes; o
+  efeito de Portent/Chronal Shift ficava abaixo do ruído (Chronurgy < escola sem feature). Agora cada fonte recomeça da
+  mesma semente (números aleatórios comuns, `campo.reiniciar_rng`). τ controle Wizard nv11 (externo) −0,60 → +0,65;
+  τ controle global nv11 0,34 → 0,62. Todo o controle desloca um pouco (CI com --forcar). **Dano:** não é bug, é a P2.1
+  (a invocação comum é o máximo de todo Wizard; necromancy 14,1 por mortos-vivos) → D7. Original: — τ controle −0,60 e dano −0,60 (nv11, externo). Dano externo do Wizard
   (10,8) passa o do Fighter (9,4): ver qual linha dá esse pico (invocação? área contando em alvo único?).
 - [ ] **P1.6 Sorcerer — def. física** [M] — τ −0,5 nos dois níveis: Draconic (Draconic Resilience) devia liderar.
   Nos originais, dano do Sorcerer 0,8/1,0 (o menor junto do Bard) mesmo com Fire Bolt.
@@ -86,7 +91,11 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
 ## Passada 2
 (problemas novos achados durante a passada 1)
 
-- [ ] **P2.1 Invocação domina o dano externo** [M/J] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
+- [ ] **P2.5 Ruído do Monte Carlo** [M] — antes do P1.5 o campo variava ±0,4–0,8 nível só pela ordem das fontes; com os
+  números comuns a comparação entre builds fica justa, mas o valor absoluto ainda depende da semente. Medir o ruído
+  (sementes 11/12/13 num punhado de builds) e decidir se N=8000 basta.
+
+- [ ] **P2.1 Invocação domina o dano externo** [J → D7] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
   Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
   Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).
 - [ ] **P2.2 Linhas grátis empatam no plano auto** [M] — sem gasto, `principal` e `eb` empatam e ganha a mais antiga
@@ -111,4 +120,8 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
 - **D6 Custo de ação do Bardic Inspiration** — BI entregue custa ação bônus (compete com Healing Word, Spiritual Weapon…);
   Cutting Words é reação e vê a rolagem. Hoje o motor não cobra nenhum dos dois e o Cutting Words vale menos que o BI
   comum (mix só "ca"). Cobrar a ação bônus do BI? Dar ao Cutting Words um ESCOLHA maior?
+- **D7 Anel externo esconde a subclasse** — o externo pega o máximo de cada eixo; quando a linha mais forte é da régua
+  comum (Summon Aberration no Wizard/Warlock), toda a classe empata e o τ da régua mede só ruído. Opções: (a) testar as
+  réguas por subclasse no anel interno (à vontade) + o externo à parte; (b) marcar linhas de invocação e medir o dano do
+  personagem sem elas (invocação como contribuição separada); (c) aceitar.
 - **D4 Corpo de invocações** (ver P1.9) — invocação/torreta conta como presença do personagem? Com que peso?

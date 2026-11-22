@@ -86,7 +86,11 @@ def valor(f, nivel):
         # 21/11: "volta_se_falhar" (Unfailing Inspiration): o dado que não vira a rolagem volta; reusado até virar uma
         # (×1/vira), limitado por suporte.dado_multiuso.reuso_max. O uso "dano" nunca falha, então não muda.
         reuso = min(1 / vira, _p('suporte.dado_multiuso.reuso_max')) if f.get('volta_se_falhar') and vira > 0 else 1.0
-        return u / R * sum(p * v[k] * (1.0 if k == 'dano' else reuso) for k, p in mix.items())
+        # D6 (23/11): retorno decrescente na luta (u usos valem (1 − δ^u)/(1 − δ) usos cheios) e custo da ação bônus.
+        dl = _p('suporte.dado_multiuso.decaimento')
+        ue = (1 - dl ** u) / (1 - dl) if 0 < dl < 1 else u
+        fa = _p('suporte.dado_multiuso.fator_acao_bonus') if f.get('acao', 'bonus') == 'bonus' else 1.0
+        return ue * fa / R * sum(p * v[k] * (1.0 if k == 'dano' else reuso) for k, p in mix.items())
     if m == 'resgate_condicao':
         # Reação que refaz um save falho contra uma condição (Countercharm 2024: medo/encantamento, com vantagem).
         p_ok = 1 - (1 - f.get('p_save', _p('suporte.padroes.resgate_p_save'))) ** (2 if f.get('vantagem', True) else 1)

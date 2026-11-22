@@ -37,7 +37,9 @@ def BI(L, u, nota='', mix=None):
          "dado_medio": dado(L), "usos_luta": round(u, 3)}
     if mix:
         f["mix"] = mix
-        if set(mix) <= DEF_MIX: f["lado"] = "def"   # P1.3 (22/11): Cutting Words e afins protegem o aliado
+        if set(mix) <= DEF_MIX:
+            f["lado"] = "def"     # P1.3 (22/11): Cutting Words e afins protegem o aliado
+            f["acao"] = "reacao"  # D6 (23/11): por reação, sem o custo da ação bônus do BI
     return f
 
 

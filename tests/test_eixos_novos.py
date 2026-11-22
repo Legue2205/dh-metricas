@@ -267,8 +267,14 @@ def test_suporte_dado_multiuso_resgate_levantar():
     base = S.valor({'modelo': 'bonus_por_uso', 'bonus': 4.5, 'usos_luta': 1}, 7)
     multi = S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'usos_luta': 1}, 7)
     assert multi > base                                   # usos defensivos e saves valem mais que só +acerto
-    so_dano = S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'mix': {'dano': 1.0}}, 7)
+    so_dano = S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'mix': {'dano': 1.0}, 'acao': 'reacao'}, 7)
     assert abs(so_dano - 4.5 / 4) < 1e-9
+    # D6 (23/11): ação bônus custa; usos na mesma luta com retorno decrescente; duas fontes de 1 uso > uma de 2
+    bonus = S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'mix': {'dano': 1.0}}, 7)
+    assert bonus < so_dano
+    um = S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'usos_luta': 1, 'acao': 'reacao'}, 7)
+    dois = S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'usos_luta': 2, 'acao': 'reacao'}, 7)
+    assert um < dois < 2 * um
     with pytest.raises(ValueError):
         S.valor({'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'mix': {'dano': 0.5}}, 7)
     assert S.valor({'modelo': 'resgate_condicao', 'p_evento': 0.4}, 7) == 2 * S.valor({'modelo': 'resgate_condicao', 'p_evento': 0.2}, 7)

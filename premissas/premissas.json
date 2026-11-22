@@ -2013,5 +2013,33 @@
         "motivo": "D1 (usuário, 23/11): mistura ponderada das rampas com peso treinável."
       }
     ]
+  },
+  "suporte.dado_multiuso.decaimento": {
+    "valor": 0.75,
+    "eixo": "suporte",
+    "desde": "2026-11-23",
+    "descricao": "D6: retorno decrescente dos usos de um dado multiuso (Bardic Inspiration e afins) na mesma luta: o k-ésimo uso vale δ^k (total (1 − δ^u)/(1 − δ)). As oportunidades de ouro são poucas; cada fonte (ex.: BI e Cutting Words) tem a sua sequência, então uma opção extra nunca piora a build. Parâmetro treinável.",
+    "historico": [
+      {
+        "data": "2026-11-23",
+        "de": null,
+        "para": 0.75,
+        "motivo": "D6 (usuário, 23/11): a 4ª e a 5ª inspiração não valem a 1ª; rever se o BI está superestimado."
+      }
+    ]
+  },
+  "suporte.dado_multiuso.fator_acao_bonus": {
+    "valor": 0.85,
+    "eixo": "suporte",
+    "desde": "2026-11-23",
+    "descricao": "D6: dado multiuso entregue com ação bônus (Bardic Inspiration) disputa a ação bônus com Healing Word, Spiritual Weapon etc.: o valor é multiplicado por este fator. Uso por reação (Cutting Words, \"acao\": \"reacao\") não paga. Parâmetro treinável.",
+    "historico": [
+      {
+        "data": "2026-11-23",
+        "de": null,
+        "para": 0.85,
+        "motivo": "D6 (usuário, 23/11): BI cobra a ação bônus."
+      }
+    ]
   }
 }

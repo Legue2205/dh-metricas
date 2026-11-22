@@ -49,9 +49,9 @@ def grupo(prefixo, conv=None):
 
 
 # Eixo do resultado -> prefixos de premissas que ele lê (registro determinístico, independe da ordem de cálculo)
-PREFIXOS = {'dano': ('base.rounds_por_luta',), 'defesa': ('base.', 'defesa.'), 'saves': ('base.',),
+PREFIXOS = {'dano': ('base.rounds_por_luta', 'dano.'), 'defesa': ('base.', 'defesa.'), 'saves': ('base.',),
             'controle': ('base.', 'controle.'), 'area': ('base.', 'area.'), 'suporte': ('base.rounds_por_luta', 'suporte.'),
-            'tatico': ('base.', 'tatico.'), '_sempre': ('planos.', 'eixos.')}
+            'tatico': ('base.', 'tatico.'), '_sempre': ('planos.', 'plano.', 'eixos.')}
 
 
 def relevantes(eixos):

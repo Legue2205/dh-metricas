@@ -39,7 +39,9 @@ def nivel_equivalente(dpr):
     nb, np_ = _degraus(dpr, BRUTA), _degraus(dpr, PRECISA)
     lb, lp = letra(nb), letra(np_)
     perfil = 'Equilibrado' if lb == lp else ('Bruto' if nb > np_ else 'Preciso')
-    return round(max(nb, np_), 1), perfil
+    from .premissas import P          # D1 (23/11): mistura ponderada das rampas (antes: o máximo)
+    beta = P('dano.peso_rampa_bruta')
+    return round(beta * nb + (1 - beta) * np_, 1), perfil
 
 
 # ---------------- DPR em fórmula fechada ----------------

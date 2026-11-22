@@ -103,6 +103,28 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
   a velocidade 0 da Aura of Conquest não está modelada → P2.9) e 1 de suporte no Fighter. Original: — Paladin controle τ 0,0 e Fighter suporte 0,0: provavelmente todos iguais (só uma
   subclasse com valor). Confirmar se é falta de mecânica (Paladin: Conquest/Fear, Ancients/Nature's Wrath).
 
+## Fechamento da passada 1 (22/11, depois do CI com --forcar, commit dafa63e)
+
+τ por régua no externo (nv7 / nv11), baseline → agora: dano 0,18/0,32 → 0,18/0,32; def. física 0,52/0,52 (igual);
+**controle 0,47/0,34 → 0,63/0,65**; suporte 0,33/0,39 (igual). Warlock e Sorcerer nv7 no controle: τ −1,0/+0,5 → sem τ
+(as subclasses agora empatam; o valor antigo era ruído do sorteio).
+
+Problemas moderados a grandes que restam:
+1. **Corpo acima de 20** (D8, agora o maior): 14 chassis > 20 no externo nv11 — Infiltrator 42,6, Moon 31,9, Armorer 32,3,
+   Spores 29,3, Artillerist 29,3, Cavalier 26,8; Druid médio 24,3, Artificer 28,8.
+2. **Dano escondido pela invocação** (D7): Wizard −0,60, Warlock −0,25 no nv11.
+3. **Suporte do Bard invertido** (D6 + pista [G], P2.4): −1,0 / −0,82.
+4. **Área no teto** (D3): Sorcerer e Wizard médios em 20,0.
+5. **Ranger sem controle nem suporte** (0,0 em todos; Ensnaring Strike, Spike Growth e Conjure Animals fora da régua) → P2.11.
+6. **Dano dos marciais no nv7** levemente negativo (Monk −0,16, Ranger −0,19, Rogue −0,30, Fighter 0,07) → P1.14, agora P2.12.
+7. Def. física agrupada ≈ 0 entre classes: as pistas são relativas à classe; não é sinal de régua quebrada.
+8. Def. mágica não tem nenhuma pista no gabarito: sem teste possível hoje.
+
+Revisão da lista da passada 2: todas seguem valendo. A P2.5 (ruído do Monte Carlo) muda de foco: os números aleatórios
+comuns resolveram a comparação entre builds; resta só a dependência do valor absoluto em relação à semente. Entram a
+P2.10 (corpo > 20, até a D8), a P2.11 (Ranger) e a P2.12 (ex-P1.14). Ordem sugerida, depois das decisões: D8 → D5 → D7 →
+P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
+
 ## Passada 2
 (problemas novos achados durante a passada 1)
 
@@ -118,6 +140,10 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
 - [ ] **P2.8 Magias de controle faltando no `magias.json`** [M] — Sleep, Psychic Lance, Dissonant Whispers, Sleet Storm,
   Plant Growth, Spike Growth (Whispers, Druid, Bard base).
 - [ ] **P2.9 Aura of Conquest: velocidade 0 do amedrontado** [M] — hoje só o dano psíquico entra.
+- [ ] **P2.10 Corpo > 20 em 14 chassis** [J → D8] — ver o fechamento da passada 1.
+- [ ] **P2.11 Ranger sem controle nem suporte** [M] — 0,0 em todas as subclasses; Ensnaring Strike, Spike Growth e
+  Conjure Animals fora da régua (junto com a P2.7/P2.8).
+- [ ] **P2.12 Dano dos marciais no nv7** [M] — ex-P1.14: Monk −0,16, Ranger −0,19, Rogue −0,30, Fighter 0,07.
 - [ ] **P2.1 Invocação domina o dano externo** [J → D7] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
   Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
   Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).

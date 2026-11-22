@@ -4,6 +4,7 @@ Por eixo do painel (dano, deff, defm, controle, area, suporte):
   externo = máximo entre as linhas  (potencial: um eixo por vez, não todos juntos)
   interno = mínimo entre as linhas  (teste de estresse)
   intermediário = linha equilibrada = média do dia do plano `padrao` (o ranking padrão da build)
+  misto = plano + α·(externo − plano), α = premissa aneis.alfa_versatilidade (D2, 23/11): visão do teste de régua
 Eixo ativo (dano, controle, área, suporte) ausente numa linha = 0 (ela não faz aquilo), como nos planos.
 Eixo passivo (deff, defm) ausente = ignorado (a linha não mexeu no corpo).
 Linha com "aneis": false fica de fora (linhas antigas, de conferência).
@@ -71,6 +72,12 @@ def calcular(b, res):
             vs = [v for v in vs if v is not None]
             if vs and any(k in d for d in dias): mn[k], mx[k] = min(vs), max(vs)
     fmt = lambda d: {k: dict(n=v, r=base.letra(v)) for k, v in d.items()}
-    return dict(interno=fmt(mn), externo=fmt(mx), equilibrado=fmt(eq) if eq is not None else None, linhas=linhas,
+    mi = None
+    if eq is not None:
+        from .premissas import P
+        a = P('aneis.alfa_versatilidade')
+        mi = {k: round(eq[k] + a * (mx[k] - eq[k]), 1) if k in mx else eq[k] for k in eq}
+    return dict(interno=fmt(mn), externo=fmt(mx), equilibrado=fmt(eq) if eq is not None else None,
+                misto=fmt(mi) if mi is not None else None, linhas=linhas,
                 fonte='planos de foco' if focos and eq is not None else 'linhas',
                 focos={t: fmt(d) for t, d in focos.items()})

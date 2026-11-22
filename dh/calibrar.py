@@ -37,10 +37,10 @@ POS = {r: i for i, r in enumerate(base.ORDEM)}
 def valores(dados, visao='padrao'):
     """{build_id: ({eixo: n}, marca)} a partir de site.dados(). marca '~' = sem o plano pedido (linha principal)."""
     out = {}
-    if visao in ('externo', 'interno'):
+    if visao in ('externo', 'interno', 'misto'):
         for bid, b in dados['builds'].items():
             an = b.get('aneis')
-            if an: out[bid] = ({k: v['n'] for k, v in an[visao].items()}, '')
+            if an and an.get(visao): out[bid] = ({k: v['n'] for k, v in an[visao].items()}, '')
         return out
     princ = {e['b']: e for e in dados['entradas']['legado'] if e['tipo'] == 'principal'}
     plano = {e['b']: e for e in dados['entradas'].get(visao, [])}

@@ -287,3 +287,21 @@ todas as builds (nem mais duro com build "fraca", nem mais generoso com build "f
 - Reação de outra criatura que protege a build (Deflect Attack): reação com `"propria": true`, 1/round (`usos_luta: 4`).
 - "+X dados uma vez por turno se algum ataque acertar" (Lightning Launcher): entrada extra de 1 rolagem por turno com o mesmo bônus.
 - Infusões: só as que mudam número fixo (Enhanced Defense/Weapon/Arcane Focus, Repulsion Shield) e só se o guia as põe na própria build.
+
+# Chassi (mini-mutirão de 22/11; helper `ferramentas/geradores/chassi.py`, modelo `chassi_exemplo.py`)
+- **Para que serve:** comparar SUBCLASSES (a cor do RPGBot avalia a subclasse, não a build). Grupo "Chassi", ids
+  `chassi-<classe>-<sub>` (sem feat) e `chassi-<classe>-<sub>-f-<feat>` (com feat). Fatias 7 e 11 só.
+- **Regras fixas:** sem multiclasse, sem features raciais (nem feats raciais), compra padrão 15/14/13/12/10/8 com +2 no
+  1º e +1 no 2º atributo da `ordem`; ASIs pelo `chassi.atributos` (principal até 20, depois o secundário; Fighter 6/14 e
+  Rogue 10 extras). PV: máximo no 1º, média para cima depois (`chassi.hp`).
+- **A subclasse escolhe:** posição (`chassi.POSICOES`: defensor, striker, skirmisher, atirador, meia, retaguarda), arma,
+  armadura, escudo, estilo de luta, ordem dos atributos e magias preparadas (lista base da classe + as da subclasse).
+  Itens mágicos: nenhum. Posição só muda `controle.atencao`; uma linha que fica no corpo a corpo pode ter `front: true`.
+- **Feat da subclasse:** o 1º feat NÃO racial da build do RPGBot daquela subclasse (`progressoes/rpgbot-<classe>-<sub>.json`);
+  sem build do RPGBot, o natural, registrado na descrição. Até 2 variantes "feat" quando há dois caminhos (Rogue:
+  Mobile ou Sharpshooter de arremesso; Monk: Mobile). Feat não modelado (Mobile) entra com `nao_modelado` e dá
+  diferença zero — de propósito. **Conjuradores plenos: só sem feat** (a quebra de concentração não é modelada).
+- **Mesma régua para as subclasses da classe:** as linhas-base (truque, ataque, Healing Word, controle-barato…) são as
+  mesmas em todas as subclasses; o que muda é só o que a subclasse dá e a posição/equipamento que ela escolhe.
+- Comparação: `python calibracao/comparar_chassi.py` (τ por classe com a variante sem feat, médias por posição,
+  diferença com − sem feat).

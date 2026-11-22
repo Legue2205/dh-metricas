@@ -1,0 +1,222 @@
+{
+ "id": "chassi-fighter-champion-f-great-weapon-master",
+ "nome": "Champion Fighter — chassi + Great Weapon Master",
+ "grupo": "Chassi",
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/champion/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "champion",
+ "posicao": "striker",
+ "feat": "Great Weapon Master",
+ "variante": "feat",
+ "base": {
+  "build": "Fighter (Champion), striker de espadão, placas, GWF; Great Weapon Master no 4",
+  "corpo": {
+   "ca": 18,
+   "pv": 60,
+   "saves": {
+    "sv": {
+     "for": 7,
+     "des": 1,
+     "con": 5,
+     "int": -1,
+     "sab": 1,
+     "car": 0
+    },
+    "ataques": 2
+   }
+  },
+  "recursos": {
+   "espacos": {},
+   "outros": {
+    "action_surge": {
+     "qtd": 1,
+     "volta": "curto"
+    }
+   }
+  },
+  "linhas": [
+   {
+    "id": "principal",
+    "hipotese": "espadão com GWF todo round",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 7,
+       "dano": "2d6+4+1.33",
+       "crit_em": 19,
+       "poder": [
+        -5,
+        10
+       ]
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "principal": true,
+    "custo": "gratuita"
+   },
+   {
+    "id": "surge",
+    "herda": "principal",
+    "plano": "prioritaria",
+    "hipotese": "Action Surge num round",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 7,
+       "dano": "2d6+4+1.33",
+       "crit_em": 19,
+       "poder": [
+        -5,
+        10
+       ]
+      },
+      {
+       "n": 0.5,
+       "bonus": 7,
+       "dano": "2d6+4+1.33",
+       "crit_em": 19,
+       "poder": [
+        -5,
+        10
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "action_surge": 1
+    }
+   }
+  ],
+  "planos": {
+   "padrao": "auto",
+   "combate_unico": "auto"
+  },
+  "descricao": {
+   "resumo": "Chassi do Champion: o Fighter base de espadão com Improved Critical.",
+   "nao_modelado": "Remarkable Athlete; Second Wind; Indomitable."
+  }
+ },
+ "niveis": {
+  "7": {
+   "_texto": "atributos {'for': 19, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}"
+  },
+  "11": {
+   "_texto": "atributos {'for': 20, 'des': 13, 'con': 16, 'int': 8, 'sab': 12, 'car': 10}",
+   "corpo": {
+    "ca": 18,
+    "pv": 103,
+    "saves": {
+     "sv": {
+      "for": 9,
+      "des": 1,
+      "con": 7,
+      "int": -1,
+      "sab": 1,
+      "car": 0
+     },
+     "ataques": 3
+    }
+   },
+   "recursos": {
+    "espacos": {},
+    "outros": {
+     "action_surge": {
+      "qtd": 1,
+      "volta": "curto"
+     }
+    }
+   },
+   "linhas": [
+    {
+     "id": "principal",
+     "hipotese": "espadão com GWF todo round",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "crit_em": 19,
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {}
+    },
+    {
+     "id": "surge",
+     "herda": "principal",
+     "plano": "prioritaria",
+     "hipotese": "Action Surge num round",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "crit_em": 19,
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "2d6+5+1.33",
+        "crit_em": 19,
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "action_surge": 1
+     }
+    }
+   ]
+  }
+ }
+}

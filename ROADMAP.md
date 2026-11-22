@@ -962,3 +962,22 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - Mecânica: reação `desvantagem` com `"propria": true` (reação de outra criatura; Deflect Attack do Steel Defender), teste
   `tests/test_reacao_propria.py`.
 - Pendências: variante Guardian do Armorer; Faerie Fire/Bane quando entrarem na biblioteca.
+
+## 22/11 — Cores conferidas, réguas, chassi
+- **Cores dos 8 gabaritos do mutirão conferidas pelo usuário** (32 de 67 chutes estavam errados; o chute fica em
+  `nota_inferida_mutirao`). τ (5 eixos, nv7/11) com as cores reais: Druid +0,79/+0,69, Ranger +0,54/+0,63 (chassi comum),
+  Warlock +0,58/+0,45, Sorcerer +0,26/+0,26, Paladin +0,25/+0,17, Rogue −0,13/0,00, Bard −0,08/−0,17, Artificer −0,24.
+- **Teste α (potencial × plano):** valor = α·anel externo + (1−α)·plano; τ juntando as 13 classes 0,16 (α=0) → 0,09
+  (α=1). O potencial não explica melhor o RPGBot; só o Suporte melhora (−0,06 → +0,05). Por eixo isolado, só Controle
+  (+0,31), Def. física (+0,17) e Corpo (+0,12) concordam dentro da classe.
+- **Decisões do usuário:** parâmetros treináveis sim, mas poucos (~110 notas, não 290 builds), com sentido, validação
+  deixando uma classe de fora; separar "como joga" (α, magias por luta) de "quanto vale o eixo". Sobra de magia no 11 é
+  esperada (utilidade fora de combate) e depende da lista (Wizard torra em instantâneas; Druid/Cleric têm mais
+  concentração): proposta de turnos de truque trocáveis pela melhor magia sem concentração preparada (`p_troca`).
+- **Chassi por posição** (6 posições do usuário: defensor, striker de frente, skirmisher, atirador, conjurador de meia
+  distância, conjurador de retaguarda; posição = entrada; função = saída dos eixos). Feat é da SUBCLASSE; duas
+  variantes (sem/com feat) separam força da subclasse de sinergia com o feat; a build do RPGBot fica como "meta".
+  Convenções em `calibracao/convencoes-passada1.md` (seção Chassi). Mini-mutirão 22/11: 13 classes + 10 `-puro`.
+- **Lacunas do motor que viram próximos passos:** quebra de concentração (libera feats de conjurador e dá sentido à
+  meia distância); valor do uso padrão da ação bônus/reação (Cunning Action: o Help do Mastermind hoje é de graça);
+  plano de uma linha por luta; Evasion; pets no Corpo; Bless no Suporte; Metamagia.

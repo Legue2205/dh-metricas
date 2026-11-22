@@ -49,6 +49,10 @@ def mesclar(a, b, chave=None):
     return copy.deepcopy(b)
 
 
+# Rótulos de comparação (22/11, builds de chassi): passam da progressão para cada fatia; os motores não os leem.
+ROTULOS = ('classe', 'subclasse', 'posicao', 'feat', 'variante')
+
+
 def fatias(prog):
     """{nível: build completa} para cada nível declarado em "niveis"."""
     atual = copy.deepcopy(prog['base']); out = {}
@@ -57,7 +61,8 @@ def fatias(prog):
         atual = mesclar(atual, patch)
         b = copy.deepcopy(atual)
         b.update(id=f"{prog['id']}-{int(nv)}", nome=prog['nome'], grupo=prog.get('grupo', 'Referência'), nivel=int(nv))
-        if 'fonte' in prog: b['fonte'] = prog['fonte']
+        for k in ('fonte',) + ROTULOS:
+            if k in prog: b[k] = prog[k]
         if txt: b.setdefault('descricao', {})['progressao'] = txt
         from .plano_auto import aplicar
         aplicar(b)

@@ -13,6 +13,7 @@ import numpy as np
 
 from .. import base
 from ..base import PESO_TIPO, NIVEIS_TESTE, TOPO, TOPOS, encontro
+from ..premissas import P
 from . import atencao as A
 from . import campo as C
 
@@ -190,8 +191,9 @@ def nivel_corpo(fn, ficha, L0, t0):
     """Corpo como nível equivalente de neutralidade (decisão de 19/11): o nível de party L' em que a build fixa fica
     neutra (T cruza zero). Neutra no próprio nível (|T| ≤ LIMIAR_T, o mesmo limiar da tag) ⇒ nota = L0.
     Busca o primeiro cruzamento a partir do nível da build (para cima se T > 0, para baixo se T < 0), interpolando
-    entre níveis inteiros; positivo ainda no 20 ⇒ extrapola pela inclinação (20+); negativo já no 1 ⇒ extrapola
-    abaixo de 1 (nunca 0 fixo; piso 0,1)."""
+    entre níveis inteiros; positivo ainda no 20 ⇒ extrapola pela reta ajustada aos últimos N pontos (premissa
+    controle.corpo.extrap_pontos; D8, 23/11: sem teto, extrapolação estável); negativo já no 1 ⇒ idem abaixo de 1
+    (nunca 0 fixo; piso 0,1)."""
     if abs(t0) <= LIMIAR_T: return float(L0), [(L0, round(t0, 3))]
     passo = 1 if t0 > 0 else -1
     pts = [(L0, t0)]; L = L0
@@ -200,9 +202,15 @@ def nivel_corpo(fn, ficha, L0, t0):
         if (t <= 0) if passo > 0 else (t >= 0):
             (la, ta), (lb, tb) = pts[-2], pts[-1]
             return float(la + (lb - la) * ta / (ta - tb)), [(l, round(x, 3)) for l, x in pts]
-    (la, ta), (lb, tb) = (pts[-2], pts[-1]) if len(pts) > 1 else ((L0, t0), (L0, t0))
-    incl = (tb - ta) / (lb - la) if lb != la else 0.0
-    raiz = lb - tb / incl if incl else None
+    lb, tb = pts[-1]
+    n = int(P('controle.corpo.extrap_pontos'))                     # D8 (23/11): regressão sobre os últimos N pontos
+    jan = pts if n <= 0 else pts[-max(2, n):]                       # 0 = a busca inteira
+    if len(jan) > 1:
+        xs = np.array([l for l, _ in jan], float); ys = np.array([x for _, x in jan], float)
+        incl, b0 = np.polyfit(xs, ys, 1)
+        raiz = -b0 / incl if incl else None
+    else:
+        raiz = None
     if raiz is None or (raiz - lb) * passo <= 0:
         raiz = lb + passo            # T não caminha para zero no extremo: um nível além dele
     return float(max(0.1, raiz)), [(l, round(x, 3)) for l, x in pts]

@@ -135,7 +135,9 @@ def nivel_eq(fr, ref):
     d = [fr[L] - ref[L] for L in range(1, 21)]
     if d[0] < 0: return round(0.5 * fr[1] / ref[1], 2)
     best = max(i for i in range(20) if d[i] >= 0)
-    if best == 19: return 20.0
+    if best == 19:                      # D3 (23/11): sem teto; razão no 20 convertida em níveis
+        from .premissas import P
+        return round(20.0 + float(np.log(fr[20] / ref[20]) / np.log(P('area.crescimento_por_nivel'))), 2)
     a, b = d[best], d[best + 1]
     return round(best + 1 + a / (a - b), 2)
 

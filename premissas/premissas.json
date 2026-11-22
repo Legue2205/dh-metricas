@@ -1,1931 +1,1959 @@
 {
- "_sobre": "Premissas (hipóteses de modelagem) com nome, valor e histórico. Os motores leem com dh.premissas.P(nome); builds podem usar {\"$p\": \"nome\"} em qualquer valor. Mudar um valor: python -m dh premissa <nome> <valor> --motivo \"...\". Resultados guardam as premissas que usaram; dh completo recalcula sozinho quem usou uma premissa alterada.",
- "controle.peso_no_controle.sentinela": {
-  "valor": 0.25,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Fração da negação do AO do Sentinel (velocidade 0) que também conta como Controle. O resto (taunt, diluição de dano) fica só no Corpo.",
-  "historico": [
-   {
-    "valor": 0.0,
-    "ate": "2026-11-18",
-    "motivo": "16/11: fontes de corpo fora do Controle (evitar contagem dupla)"
-   },
-   {
-    "valor": 0.5,
+  "_sobre": "Premissas (hipóteses de modelagem) com nome, valor e histórico. Os motores leem com dh.premissas.P(nome); builds podem usar {\"$p\": \"nome\"} em qualquer valor. Mudar um valor: python -m dh premissa <nome> <valor> --motivo \"...\". Resultados guardam as premissas que usaram; dh completo recalcula sozinho quem usou uma premissa alterada.",
+  "controle.peso_no_controle.sentinela": {
+    "valor": 0.25,
+    "eixo": "controle",
     "desde": "2026-11-18",
-    "motivo": "usuário: negar movimento só precisando acertar a CA é controle real (como o Plant Growth), mas parte do valor já está no Corpo"
-   },
-   {
-    "de": 0.5,
-    "para": 0.25,
-    "data": "2026-11-18",
-    "motivo": "usuário: tirar o movimento é ganho marginal (o alvo mantém ações, pode circular o tanque); 0,5 punha o Abdul acima dos casters"
-   }
-  ]
- },
- "controle.peso_no_controle.parada_oa": {
-  "valor": 0.25,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Igual à do Sentinel, para paradas por ataque de oportunidade com probabilidade fixa.",
-  "historico": [
-   {
-    "valor": 0.0,
-    "ate": "2026-11-18"
-   },
-   {
-    "valor": 0.5,
+    "descricao": "Fração da negação do AO do Sentinel (velocidade 0) que também conta como Controle. O resto (taunt, diluição de dano) fica só no Corpo.",
+    "historico": [
+      {
+        "valor": 0.0,
+        "ate": "2026-11-18",
+        "motivo": "16/11: fontes de corpo fora do Controle (evitar contagem dupla)"
+      },
+      {
+        "valor": 0.5,
+        "desde": "2026-11-18",
+        "motivo": "usuário: negar movimento só precisando acertar a CA é controle real (como o Plant Growth), mas parte do valor já está no Corpo"
+      },
+      {
+        "de": 0.5,
+        "para": 0.25,
+        "data": "2026-11-18",
+        "motivo": "usuário: tirar o movimento é ganho marginal (o alvo mantém ações, pode circular o tanque); 0,5 punha o Abdul acima dos casters"
+      }
+    ]
+  },
+  "controle.peso_no_controle.parada_oa": {
+    "valor": 0.25,
+    "eixo": "controle",
     "desde": "2026-11-18",
-    "motivo": "mesma decisão do Sentinel"
-   },
-   {
-    "de": 0.5,
-    "para": 0.25,
-    "data": "2026-11-18",
-    "motivo": "usuário: tirar o movimento é ganho marginal (o alvo mantém ações, pode circular o tanque); 0,5 punha o Abdul acima dos casters"
-   }
-  ]
- },
- "controle.peso_no_controle.ameaca": {
-  "valor": 0.0,
-  "eixo": "controle",
-  "desde": "2026-11-16",
-  "descricao": "Taunt soft (corpo que atrai ataques): só Corpo.",
-  "historico": []
- },
- "controle.peso_no_controle.esqueletos": {
-  "valor": 0.0,
-  "eixo": "controle",
-  "desde": "2026-11-16",
-  "descricao": "Invocações que desviam ataques: só Corpo.",
-  "historico": []
- },
- "suporte.lutas_dia": {
-  "valor": 4,
-  "eixo": "suporte",
-  "desde": "2026-11-10",
-  "descricao": "Lutas por dia para diluir recursos usados ENTRE lutas (\"quando\": \"entre_lutas\": Song of Rest, PV temporário de descanso).",
-  "historico": []
- },
- "suporte.lutas_por_descanso_curto": {
-  "valor": 2,
-  "eixo": "suporte",
-  "desde": "2026-11-10",
-  "descricao": "Lutas por descanso curto: recurso por descanso curto usado em combate se espalha por essas lutas.",
-  "historico": []
- },
- "base.rounds_por_luta": {
-  "valor": 4,
-  "eixo": "base",
-  "desde": "2026-11-18",
-  "descricao": "Rounds por luta em todos os eixos (duração típica de um combate).",
-  "historico": []
- },
- "base.perfis_inimigos": {
-  "valor": {
-   "Instintivo": [
-    0.2,
-    0,
-    true
-   ],
-   "Fera": [
-    0.3,
-    1,
-    true
-   ],
-   "Oportunista": [
-    0.7,
-    2,
-    true
-   ],
-   "Soldado disciplinado": [
-    0.5,
-    2,
-    true
-   ],
-   "Atirador": [
-    0.0,
-    3,
-    false
-   ],
-   "Cavaleiro noviço": [
-    0.1,
-    1,
-    true
-   ],
-   "Veterano defensor": [
-    0.3,
-    2,
-    true
-   ],
-   "Veterano agressor": [
-    0.8,
-    2,
-    true
-   ],
-   "Conjurador tático": [
-    0.0,
-    3,
-    false
-   ],
-   "Comandante": [
-    0.2,
-    3,
-    true
-   ],
-   "Chefe (perfil próprio)": [
-    0.4,
-    2,
-    true
-   ]
+    "descricao": "Igual à do Sentinel, para paradas por ataque de oportunidade com probabilidade fixa.",
+    "historico": [
+      {
+        "valor": 0.0,
+        "ate": "2026-11-18"
+      },
+      {
+        "valor": 0.5,
+        "desde": "2026-11-18",
+        "motivo": "mesma decisão do Sentinel"
+      },
+      {
+        "de": 0.5,
+        "para": 0.25,
+        "data": "2026-11-18",
+        "motivo": "usuário: tirar o movimento é ganho marginal (o alvo mantém ações, pode circular o tanque); 0,5 punha o Abdul acima dos casters"
+      }
+    ]
   },
-  "eixo": "base",
-  "desde": "2026-11-18",
-  "descricao": "Comportamento dos inimigos: [fração que busca a backline, malícia 0–3, corpo a corpo?]. Define quem é atacado e quem foge de taunt.",
-  "historico": []
- },
- "base.topologias": {
-  "valor": {
-   "Campo aberto": {
-    "peso": 0.25,
-    "area": 0.8,
-    "cruza": 0.3,
-    "alc_corpo_a_corpo_atras": 0.1,
-    "pg": 1.0,
-    "wall": 1.0
-   },
-   "Ruínas ou cidade": {
-    "peso": 0.35,
-    "area": 1.0,
-    "cruza": 0.6,
-    "alc_corpo_a_corpo_atras": 0.15,
-    "pg": 1.0,
-    "wall": 1.0
-   },
-   "Sala de dungeon": {
-    "peso": 0.4,
-    "area": 1.2,
-    "cruza": 0.9,
-    "alc_corpo_a_corpo_atras": 0.6,
-    "pg": 0.5,
-    "wall": 1.5
-   }
+  "controle.peso_no_controle.ameaca": {
+    "valor": 0.0,
+    "eixo": "controle",
+    "desde": "2026-11-16",
+    "descricao": "Taunt soft (corpo que atrai ataques): só Corpo.",
+    "historico": []
   },
-  "eixo": "base",
-  "desde": "2026-11-18",
-  "descricao": "Terrenos e seus pesos no dia, multiplicador de alvos em área, fração que cruza o alcance do tanque, alcance de quem fica atrás, eficácia do Plant Growth e do Wall of Force.",
-  "historico": []
- },
- "base.save_tipo": {
-  "valor": {
-   "For": 1,
-   "Con": 1,
-   "Des": 0.5,
-   "Int": 0,
-   "Sab": 0,
-   "Car": 0
+  "controle.peso_no_controle.esqueletos": {
+    "valor": 0.0,
+    "eixo": "controle",
+    "desde": "2026-11-16",
+    "descricao": "Invocações que desviam ataques: só Corpo.",
+    "historico": []
   },
-  "eixo": "base",
-  "desde": "2026-11-18",
-  "descricao": "Quanto cada atributo de save puxa para o save forte do monstro (1 = forte, 0 = fraco). For/Con fortes, mentais fracos.",
-  "historico": []
- },
- "base.chefe.lr_n": {
-  "valor": 1,
-  "eixo": "base",
-  "desde": "2026-11-18",
-  "descricao": "Legendary Resistances de um chefe sozinho.",
-  "historico": []
- },
- "base.chefe.lr_cr": {
-  "valor": 10,
-  "eixo": "base",
-  "desde": "2026-11-18",
-  "descricao": "CR mínimo para o chefe ter Legendary Resistance.",
-  "historico": []
- },
- "base.chefe.chefe_save": {
-  "valor": 2,
-  "eixo": "base",
-  "desde": "2026-11-18",
-  "descricao": "Bônus extra nos saves de um chefe sozinho.",
-  "historico": []
- },
- "base.encontros": {
-  "valor": [
-   [
-    "Minions + minibosses",
-    0.25,
-    [
-     [
-      "Minion",
-      "Oportunista",
-      4,
-      0.25
-     ],
-     [
-      "Bruiser",
-      "Fera",
-      1,
-      0.25
-     ],
-     [
-      "Tank inimigo",
-      "Veterano defensor",
-      1,
-      0.25
-     ],
-     [
-      "Conjurador",
-      "Conjurador tático",
-      1,
-      0.25
-     ]
-    ]
-   ],
-   [
-    "Party de elite",
-    0.15,
-    [
-     [
-      "Bruiser",
-      "Veterano agressor",
-      1,
-      0.25
-     ],
-     [
-      "Tank inimigo",
-      "Veterano defensor",
-      1,
-      0.25
-     ],
-     [
-      "Artilheiro",
-      "Atirador",
-      1,
-      0.25
-     ],
-     [
-      "Conjurador",
-      "Conjurador tático",
-      1,
-      0.25
-     ]
-    ]
-   ],
-   [
-    "Horda + chefe",
-    0.15,
-    [
-     [
-      "Minion",
-      "Soldado disciplinado",
-      6,
-      0.5
-     ],
-     [
-      "Chefe",
-      "Comandante",
-      1,
-      0.5
-     ]
-    ]
-   ],
-   [
-    "Horda",
-    0.1,
-    [
-     [
-      "Minion",
-      "Oportunista",
-      6,
-      1.0
-     ]
-    ]
-   ],
-   [
-    "Dupla",
-    0.05,
-    [
-     [
-      "Bruiser",
-      "Fera",
-      1,
-      0.5
-     ],
-     [
-      "Conjurador",
-      "Conjurador tático",
-      1,
-      0.5
-     ]
-    ]
-   ],
-   [
-    "Chefe sozinho",
-    0.3,
-    [
-     [
-      "Chefe",
-      "Chefe (perfil próprio)",
-      1,
-      1.0
-     ]
-    ]
-   ]
-  ],
-  "eixo": "base",
-  "desde": "2026-11-18",
-  "descricao": "Mistura de encontros do dia de referência: [nome, peso, composição [papel, perfil, quantidade, fração do orçamento de XP]]. Os pesos somam 1.",
-  "historico": []
- },
- "eixos.def_fisica.peso_resiliencia": {
-  "valor": 0.3333333333333333,
-  "eixo": "eixos",
-  "desde": "2026-11-18",
-  "descricao": "Def. Física = (1 − p) × Defesa (blindagem/durabilidade) + p × Resiliência (saves For/Des/Con).",
-  "historico": []
- },
- "eixos.def_magica.peso_resiliencia": {
-  "valor": 0.3333333333333333,
-  "eixo": "eixos",
-  "desde": "2026-11-18",
-  "descricao": "Def. Mágica = (1 − p) × Vontade (saves mentais) + p × Resiliência.",
-  "historico": []
- },
- "defesa.fator_critico": {
-  "valor": 0.6,
-  "eixo": "defesa",
-  "desde": "2026-11-18",
-  "descricao": "Dano extra de um crítico inimigo, em fração do golpe normal (dados dobram, modificador não).",
-  "historico": []
- },
- "controle.campo.golpes_party": {
-  "valor": 2,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Golpes da party por round que podem quebrar uma condição com save a cada dano.",
-  "historico": []
- },
- "controle.campo.taunt_ameaca": {
-  "valor": 0.15,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Taunt soft de um corpo que ameaça (fração dos ataques desviados para ele).",
-  "historico": []
- },
- "controle.campo.taunt_summon": {
-  "valor": 0.4,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Taunt de invocações que ocupam espaço.",
-  "historico": []
- },
- "controle.campo.p_disengage": {
-  "valor": 0.5,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Chance de um inimigo parado por AO não ter como sair (padrão de parada_oa).",
-  "historico": []
- },
- "controle.campo.reach_grande": {
-  "valor": 0.5,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Fração de inimigos grandes (CR ≥ 5) com alcance para escapar de agarrão/zona.",
-  "historico": []
- },
- "controle.campo.reach_pequeno": {
-  "valor": 0.2,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Idem para inimigos menores.",
-  "historico": []
- },
- "controle.atencao.near_back": {
-  "valor": 0.25,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Fração dos que querem a backline que ainda atacam quem está perto.",
-  "historico": []
- },
- "controle.atencao.conc_bonus": {
-  "valor": 1.5,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Prioridade extra dos inimigos espertos em conjuradores concentrando.",
-  "historico": []
- },
- "controle.atencao.skel_peso": {
-  "valor": 1.5,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Peso de atração de invocações/esqueletos sobre inimigos corpo a corpo.",
-  "historico": []
- },
- "controle.atencao.skel_pv": {
-  "valor": 133,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "PV padrão de um corpo de invocações quando a build não informa.",
-  "historico": []
- },
- "controle.atencao.reach_grande": {
-  "valor": 0.5,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Alcance de inimigos grandes (atenção).",
-  "historico": []
- },
- "controle.atencao.reach_pequeno": {
-  "valor": 0.2,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Alcance de inimigos pequenos (atenção).",
-  "historico": []
- },
- "area.fator_round2_seletiva": {
-  "valor": 0.75,
-  "eixo": "area",
-  "desde": "2026-11-18",
-  "descricao": "Do 2º round em diante uma área seletiva (escolhe alvos) ainda pega esta fração dos alvos do 1º round.",
-  "historico": []
- },
- "area.fator_round2_nao_seletiva": {
-  "valor": 0.5,
-  "eixo": "area",
-  "desde": "2026-11-18",
-  "descricao": "Idem para área não seletiva (a party se espalha, inimigos se afastam).",
-  "historico": []
- },
- "area.alvos_referencia_por_circulo": {
-  "valor": [
-   2,
-   2,
-   4,
-   4,
-   6,
-   6,
-   6,
-   6,
-   6
-  ],
-  "eixo": "area",
-  "desde": "2026-11-18",
-  "descricao": "Alvos da magia de área do conjurador de referência por círculo (1º…9º).",
-  "historico": []
- },
- "area.horda_cr_por_nivel": {
-  "valor": {
-   "1": 0.125,
-   "2": 0.25,
-   "3": 0.25,
-   "4": 0.5,
-   "5": 1,
-   "6": 1,
-   "7": 1,
-   "8": 2,
-   "9": 2,
-   "10": 2,
-   "11": 3,
-   "12": 3,
-   "13": 4,
-   "14": 4,
-   "15": 4,
-   "16": 4,
-   "17": 5,
-   "18": 5,
-   "19": 6,
-   "20": 6
+  "suporte.lutas_dia": {
+    "valor": 4,
+    "eixo": "suporte",
+    "desde": "2026-11-10",
+    "descricao": "Lutas por dia para diluir recursos usados ENTRE lutas (\"quando\": \"entre_lutas\": Song of Rest, PV temporário de descanso).",
+    "historico": []
   },
-  "eixo": "area",
-  "desde": "2026-11-18",
-  "descricao": "CR das criaturas da horda de referência (encontro Difícil de 6) por nível da party.",
-  "historico": []
- },
- "area.horda_tamanho": {
-  "valor": 6,
-  "eixo": "area",
-  "desde": "2026-11-18",
-  "descricao": "Criaturas na horda de referência.",
-  "historico": []
- },
- "area.cenarios": {
-  "valor": {
-   "esparsa": 0.5,
-   "padrao": 1.0,
-   "agrupada": 1.5
+  "suporte.lutas_por_descanso_curto": {
+    "valor": 2,
+    "eixo": "suporte",
+    "desde": "2026-11-10",
+    "descricao": "Lutas por descanso curto: recurso por descanso curto usado em combate se espalha por essas lutas.",
+    "historico": []
   },
-  "eixo": "area",
-  "desde": "2026-11-18",
-  "descricao": "Escala de alvos por cenário (esparsa, padrão, agrupada).",
-  "historico": []
- },
- "suporte.h.ACERTO": {
-  "valor": 0.65,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Chance de acerto típica de um aliado.",
-  "historico": []
- },
- "suporte.h.ATIVO": {
-  "valor": 0.875,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Fração da luta em que um buff contínuo está ativo.",
-  "historico": []
- },
- "suporte.h.ALIADOS": {
-  "valor": 3,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Aliados que recebem um buff em grupo.",
-  "historico": []
- },
- "suporte.h.EF_CURA": {
-  "valor": 0.9,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Eficiência da cura (fração que não é desperdiçada).",
-  "historico": []
- },
- "suporte.h.EF_PVT": {
-  "valor": 0.75,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Eficiência de PV temporários.",
-  "historico": []
- },
- "suporte.h.F_SAVE": {
-  "valor": 0.25,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Fração do dano inimigo que vem por save.",
-  "historico": []
- },
- "suporte.h.F_AURA": {
-  "valor": 0.67,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Fração dos aliados dentro de uma aura.",
-  "historico": []
- },
- "suporte.h.CUSTO_SAVE": {
-  "valor": 1,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Valor de 1 ponto de save, em dano evitado relativo.",
-  "historico": []
- },
- "suporte.h.ESCOLHA": {
-  "valor": 2.0,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Ganho de escolher quando gastar um dado de inspiração (×).",
-  "historico": []
- },
- "suporte.h.ACERTOS_INIM_ROUND": {
-  "valor": 4,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Acertos em que o dano inimigo do round chega.",
-  "historico": []
- },
- "suporte.h.TURNOS_CONDICAO": {
-  "valor": 1.5,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Turnos de aliado perdidos num save crítico falho.",
-  "historico": []
- },
- "suporte.h.TURNOS_LEVANTAR": {
-  "valor": 1.0,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Turnos devolvidos ao levantar um caído.",
-  "historico": []
- },
- "suporte.h.P_ACERTO_INIM": {
-  "valor": 0.6,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Chance de um ataque inimigo acertar um aliado.",
-  "historico": []
- },
- "suporte.h.PARCELA_FRENTE": {
-  "valor": 0.35,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Parcela do dano inimigo que vai para um aliado da linha de frente.",
-  "historico": []
- },
- "suporte.mix_dado_multiuso": {
-  "valor": {
-   "dano": 0.3,
-   "acerto": 0.25,
-   "ca": 0.2,
-   "save_dano": 0.15,
-   "save_critico": 0.07,
-   "counterspell": 0.03
+  "base.rounds_por_luta": {
+    "valor": 4,
+    "eixo": "base",
+    "desde": "2026-11-18",
+    "descricao": "Rounds por luta em todos os eixos (duração típica de um combate).",
+    "historico": []
   },
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Como um dado de inspiração é gasto em média (dano, acerto, CA, save de dano, save crítico, counterspell). Soma 1.",
-  "historico": []
- },
- "planos.dias": {
-  "valor": {
-   "padrao": [
-    [
-     "np",
-     1
-    ],
-    [
-     "p",
-     2
-    ],
-    "SR",
-    [
-     "np",
-     1
-    ],
-    [
-     "p",
-     2
-    ]
-   ],
-   "combate_unico": [
-    [
-     "p",
-     1
-    ]
-   ],
-   "dia_longo": [
-    [
-     "np",
-     1
-    ],
-    [
-     "np",
-     1
-    ],
-    [
-     "mod",
-     2
-    ],
-    "SR",
-    [
-     "np",
-     1
-    ],
-    [
-     "mod",
-     2
-    ],
-    [
-     "mod",
-     2
-    ],
-    "SR",
-    [
-     "mod",
-     2
-    ],
-    [
-     "boss",
-     4
-    ]
-   ]
-  },
-  "eixo": "planos",
-  "desde": "2026-11-18",
-  "descricao": "Dias de aventura: sequência de [categoria, peso] e \"SR\" (descanso curto). Padrão: comum 1, prioritária 2. Dia longo: 8 lutas, boss pesa 4.",
-  "historico": []
- },
- "tatico.padrao": {
-  "valor": {
-   "deslocamento": 30,
-   "ca": 15,
-   "steady_aim": true,
-   "p_agir_antes": 0.7,
-   "p_comeca_escondido": 0.3,
-   "p_aliado": {
-    "r1": 0.2,
-    "depois": 0.7
-   },
-   "dano_inimigo_round": 54.5,
-   "composicao": "segundo_frontliner",
-   "reducao_exposto": 1.0,
-   "pv": 50,
-   "recuperacao_dia": 20,
-   "lutas_dia": 4,
-   "excesso": 3.0,
-   "queda": 60,
-   "alvo": {
-    "pv": 60,
-    "dano_aliados_colado": 25,
-    "dano_aliados_longe": 12
-   },
-   "topologias": {
-    "Sala de dungeon": {
-     "esconderijo": {
-      "15": 0.6,
-      "30": 0.3,
-      "50": 0.1
-     },
-     "inicial": {
-      "30": 0.5,
-      "50": 0.5
-     },
-     "proximo": {
-      "10": 0.4,
-      "25": 0.4,
-      "45": 0.2
-     }
+  "base.perfis_inimigos": {
+    "valor": {
+      "Instintivo": [
+        0.2,
+        0,
+        true
+      ],
+      "Fera": [
+        0.3,
+        1,
+        true
+      ],
+      "Oportunista": [
+        0.7,
+        2,
+        true
+      ],
+      "Soldado disciplinado": [
+        0.5,
+        2,
+        true
+      ],
+      "Atirador": [
+        0.0,
+        3,
+        false
+      ],
+      "Cavaleiro noviço": [
+        0.1,
+        1,
+        true
+      ],
+      "Veterano defensor": [
+        0.3,
+        2,
+        true
+      ],
+      "Veterano agressor": [
+        0.8,
+        2,
+        true
+      ],
+      "Conjurador tático": [
+        0.0,
+        3,
+        false
+      ],
+      "Comandante": [
+        0.2,
+        3,
+        true
+      ],
+      "Chefe (perfil próprio)": [
+        0.4,
+        2,
+        true
+      ]
     },
-    "Ruínas ou cidade": {
-     "esconderijo": {
-      "15": 0.4,
-      "30": 0.4,
-      "50": 0.2
-     },
-     "inicial": {
-      "40": 0.5,
-      "70": 0.5
-     },
-     "proximo": {
-      "15": 0.3,
-      "30": 0.4,
-      "50": 0.3
-     }
+    "eixo": "base",
+    "desde": "2026-11-18",
+    "descricao": "Comportamento dos inimigos: [fração que busca a backline, malícia 0–3, corpo a corpo?]. Define quem é atacado e quem foge de taunt.",
+    "historico": []
+  },
+  "base.topologias": {
+    "valor": {
+      "Campo aberto": {
+        "peso": 0.25,
+        "area": 0.8,
+        "cruza": 0.3,
+        "alc_corpo_a_corpo_atras": 0.1,
+        "pg": 1.0,
+        "wall": 1.0
+      },
+      "Ruínas ou cidade": {
+        "peso": 0.35,
+        "area": 1.0,
+        "cruza": 0.6,
+        "alc_corpo_a_corpo_atras": 0.15,
+        "pg": 1.0,
+        "wall": 1.0
+      },
+      "Sala de dungeon": {
+        "peso": 0.4,
+        "area": 1.2,
+        "cruza": 0.9,
+        "alc_corpo_a_corpo_atras": 0.6,
+        "pg": 0.5,
+        "wall": 1.5
+      }
     },
-    "Campo aberto": {
-     "esconderijo": {
-      "15": 0.15,
-      "30": 0.35,
-      "50": 0.5
-     },
-     "inicial": {
-      "60": 0.5,
-      "100": 0.5
-     },
-     "proximo": {
-      "20": 0.3,
-      "40": 0.4,
-      "60": 0.3
-     }
-    }
-   }
+    "eixo": "base",
+    "desde": "2026-11-18",
+    "descricao": "Terrenos e seus pesos no dia, multiplicador de alvos em área, fração que cruza o alcance do tanque, alcance de quem fica atrás, eficácia do Plant Growth e do Wall of Force.",
+    "historico": []
   },
-  "eixo": "tatico",
-  "desde": "2026-11-18",
-  "descricao": "Premissas do motor tático (rogue/skirmisher): deslocamento, iniciativa, chance de começar escondido, aliado ao lado, orçamento de PV, distâncias por terreno. (Rounds: base.rounds_por_luta.)",
-  "historico": []
- },
- "tatico.composicoes": {
-  "valor": {
-   "terceiro_melee": {
-    "escondido": 0.04,
-    "longe": 0.1,
-    "colado": 0.2,
-    "nota": "tanque + outro corpo a corpo na frente + ele + 1 de trás"
-   },
-   "segundo_frontliner": {
-    "escondido": 0.05,
-    "longe": 0.15,
-    "colado": 0.32,
-    "nota": "tanque + ele na frente + 2 de trás"
-   },
-   "sem_tanque": {
-    "escondido": 0.06,
-    "longe": 0.2,
-    "colado": 0.45,
-    "nota": "ele é o único corpo a corpo"
-   }
+  "base.save_tipo": {
+    "valor": {
+      "For": 1,
+      "Con": 1,
+      "Des": 0.5,
+      "Int": 0,
+      "Sab": 0,
+      "Car": 0
+    },
+    "eixo": "base",
+    "desde": "2026-11-18",
+    "descricao": "Quanto cada atributo de save puxa para o save forte do monstro (1 = forte, 0 = fraco). For/Con fortes, mentais fracos.",
+    "historico": []
   },
-  "eixo": "tatico",
-  "desde": "2026-11-18",
-  "descricao": "Fração do dano inimigo por round que vai para o personagem conforme a posição (escondido, longe, colado) e a composição da party.",
-  "historico": []
- },
- "controle.padroes.sentinela_tentativas": {
-  "valor": 2,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Ataques de oportunidade do Sentinel por luta que podem parar alguém (quando a build não diz).",
-  "historico": []
- },
- "controle.padroes.terreno_fator": {
-  "valor": 0.5,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Fração do turno de um inimigo corpo a corpo perdida em terreno difícil grande (Plant Growth), antes do fator do terreno.",
-  "historico": []
- },
- "controle.padroes.counterspell_fracao_conjurando": {
-  "valor": 0.75,
-  "eixo": "controle",
-  "desde": "2026-11-18",
-  "descricao": "Fração dos turnos de um conjurador inimigo em que ele lança algo que vale contramágica.",
-  "historico": []
- },
- "suporte.padroes.resgate_p_save": {
-  "valor": 0.45,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Chance do aliado passar no save refeito contra uma condição (Countercharm e afins).",
-  "historico": []
- },
- "suporte.padroes.resgate_p_evento": {
-  "valor": 0.2,
-  "eixo": "suporte",
-  "desde": "2026-11-18",
-  "descricao": "Chance por round de surgir uma condição que vale resgatar.",
-  "historico": []
- },
- "suporte.dado_multiuso.reuso_max": {
-  "valor": 2,
-  "eixo": "suporte",
-  "desde": "2026-11-21",
-  "descricao": "Dado de vários usos que volta quando a rolagem falha mesmo assim (Unfailing Inspiration do Eloquence): o dado é reusado até virar uma rolagem (×1/chance de virar), no máximo este fator por dado (a luta acaba antes).",
-  "historico": []
- },
- "_regua_e_fatos": [
-  "Tabelas do Monster Manual/DMG (fatos, não premissas): CA/PV/saves/dano por CR (base.CRT, area.CR, defesa.T_DMG), XP e orçamento de encontro (base.XP, base.BUD), dano de magia por círculo (area.MULTI), espaços por nível (area.TOP3, saves.SLOTS).",
-  "Réguas (o 'zero' de cada eixo; mudam o significado das letras, não a hipótese): rampas de DPR (dano.TRONCO/BRUTA/PRECISA), limites de Defesa (defesa.LIM_*), régua de suporte (suporte.REGUA: DPR aliado, dano inimigo, maior espaço por nível), party de referência da atenção (controle.atencao.ref), letras (base.RAMPA).",
-  "Parâmetros numéricos de simulação (precisão, não hipótese): N de simulações, sementes, grade de preços de reação (defesa.GRADE)."
- ],
- "_pendentes": [],
- "saves.repertorio_mental": {
-  "valor": [
-   {
-    "sono_hp": [
-     5,
-     8
-    ],
-    "ef": "sono",
-    "w": 1,
-    "sono": true,
-    "nome": "Sleep",
-    "nivel": 1,
-    "save": null
-   },
-   {
-    "ef": "fim",
-    "w": 1,
-    "conc": true,
-    "nome": "Tasha's Hideous Laughter",
-    "nivel": 1,
-    "save": "sab"
-   },
-   {
-    "ef": "turno",
-    "w": 1,
-    "nome": "Command",
-    "nivel": 1,
-    "save": "sab"
-   },
-   {
-    "ef": "fim",
-    "w": 1,
-    "conc": true,
-    "humanoide": true,
-    "nome": "Hold Person",
-    "nivel": 2,
-    "save": "sab"
-   },
-   {
-    "ef": "fim",
-    "w": 1,
-    "conc": true,
-    "tick": [
-     1,
-     6,
-     "psiquico"
-    ],
-    "nome": "Phantasmal Force",
-    "nivel": 2,
-    "save": "int"
-   },
-   {
-    "ef": "luta",
-    "w": 1,
-    "conc": true,
-    "encanto": true,
-    "stillness": true,
-    "nome": "Suggestion",
-    "nivel": 2,
-    "save": "sab"
-   },
-   {
-    "ef": "fim",
-    "w": "slow",
-    "conc": true,
-    "nome": "Slow",
-    "nivel": 3,
-    "save": "sab"
-   },
-   {
-    "ef": "fim",
-    "w": 1,
-    "conc": true,
-    "medo": true,
-    "stillness": true,
-    "nome": "Fear",
-    "nivel": 3,
-    "save": "sab"
-   },
-   {
-    "ef": "sono",
-    "w": 1,
-    "conc": true,
-    "encanto": true,
-    "nome": "Hypnotic Pattern",
-    "nivel": 3,
-    "save": "sab"
-   },
-   {
-    "ef": "luta",
-    "w": 1,
-    "conc": true,
-    "nome": "Banishment",
-    "nivel": 4,
-    "save": "car"
-   },
-   {
-    "ef": "luta",
-    "w": 1,
-    "conc": true,
-    "nome": "Polymorph",
-    "nivel": 4,
-    "save": "sab"
-   },
-   {
-    "dano": [
-     7,
-     6,
-     0
-    ],
-    "tipo": "psiquico",
-    "metade": true,
-    "ef": "turno",
-    "w": 1,
-    "nome": "Raulothim's Psychic Lance",
-    "nivel": 4,
-    "save": "int"
-   },
-   {
-    "ef": "sono",
-    "w": 1,
-    "conc": true,
-    "humanoide": true,
-    "encanto": true,
-    "stillness": true,
-    "nome": "Dominate Person",
-    "nivel": 5,
-    "save": "sab"
-   },
-   {
-    "dano": [
-     8,
-     6,
-     0
-    ],
-    "tipo": "psiquico",
-    "metade": true,
-    "ef": "fim",
-    "w": 0.2,
-    "nome": "Synaptic Static",
-    "nivel": 5,
-    "save": "int"
-   },
-   {
-    "ef": "sono",
-    "w": 1,
-    "conc": true,
-    "encanto": true,
-    "vant_save": true,
-    "nome": "Modify Memory",
-    "nivel": 5,
-    "save": "sab"
-   },
-   {
-    "ef": "luta",
-    "w": 1,
-    "encanto": true,
-    "stillness": true,
-    "nome": "Mass Suggestion",
-    "nivel": 6,
-    "save": "sab"
-   },
-   {
-    "ef": "sono",
-    "w": 1,
-    "conc": true,
-    "acao": true,
-    "sono": true,
-    "nome": "Eyebite (dormir)",
-    "nivel": 6,
-    "save": "sab"
-   },
-   {
-    "dano": [
-     5,
-     10,
-     0
-    ],
-    "tipo": "psiquico",
-    "nada_no_sucesso": true,
-    "ef": "luta",
-    "w": 0.5,
-    "conc": true,
-    "nome": "Mental Prison",
-    "nivel": 6,
-    "save": "int"
-   },
-   {
-    "limiar": true,
-    "nome": "Divine Word",
-    "nivel": 7,
-    "save": "car"
-   },
-   {
-    "ataque": true,
-    "ef": "luta",
-    "w": 1,
-    "nome": "Plane Shift (ofensivo)",
-    "nivel": 7,
-    "save": "car"
-   },
-   {
-    "ef": "luta",
-    "w": 1,
-    "nome": "Symbol (atordoamento)",
-    "nivel": 7,
-    "save": "sab"
-   },
-   {
-    "dano": [
-     4,
-     6,
-     0
-    ],
-    "tipo": "psiquico",
-    "sempre_dano": true,
-    "ef": "luta",
-    "w": 0.3,
-    "w_conj": 1,
-    "nome": "Feeblemind",
-    "nivel": 8,
-    "save": "int"
-   },
-   {
-    "ef": "fim",
-    "w": 1,
-    "medo": true,
-    "stillness": true,
-    "nome": "Antipathy (medo)",
-    "nivel": 8,
-    "save": "sab"
-   },
-   {
-    "dano": [
-     8,
-     8,
-     0
-    ],
-    "tipo": "psiquico",
-    "metade": true,
-    "conc": true,
-    "area": true,
-    "nome": "Maddening Darkness",
-    "nivel": 8,
-    "save": "sab"
-   }
-  ],
-  "eixo": "saves",
-  "desde": "2026-11-18",
-  "descricao": "Magias mentais (Int/Sab/Car) do conjurador inimigo de referência, com o efeito e o peso (fração do turno perdida). Ele lança do maior espaço para o menor, escolhendo entre as magias do círculo. Base da Vontade / Def. Mágica.",
-  "historico": []
- },
- "saves.repertorio_fisico": {
-  "valor": [
-   {
-    "dano": [
-     3,
-     6,
-     0
-    ],
-    "tipo": "fogo",
-    "metade": true,
-    "nome": "Burning Hands",
-    "nivel": 1,
-    "save": "des"
-   },
-   {
-    "dano": [
-     2,
-     8,
-     0
-    ],
-    "tipo": "trovao",
-    "metade": true,
-    "nome": "Thunderwave",
-    "nivel": 1,
-    "save": "con"
-   },
-   {
-    "ef": "contido",
-    "w": 0.5,
-    "conc": true,
-    "escape": "for",
-    "nome": "Entangle",
-    "nivel": 1,
-    "save": "for"
-   },
-   {
-    "dano": [
-     3,
-     6,
-     0
-    ],
-    "tipo": "dragao",
-    "metade": true,
-    "conc": true,
-    "acao": true,
-    "nome": "Dragon's Breath",
-    "nivel": 2,
-    "save": "des"
-   },
-   {
-    "dano": [
-     3,
-     8,
-     0
-    ],
-    "tipo": "trovao",
-    "metade": true,
-    "nome": "Shatter",
-    "nivel": 2,
-    "save": "con"
-   },
-   {
-    "ef": "contido",
-    "w": 0.5,
-    "conc": true,
-    "area": true,
-    "escape": "for",
-    "nome": "Web",
-    "nivel": 2,
-    "save": "des"
-   },
-   {
-    "dano": [
-     8,
-     6,
-     0
-    ],
-    "tipo": "fogo",
-    "metade": true,
-    "nome": "Fireball",
-    "nivel": 3,
-    "save": "des"
-   },
-   {
-    "dano": [
-     8,
-     6,
-     0
-    ],
-    "tipo": "eletrico",
-    "metade": true,
-    "nome": "Lightning Bolt",
-    "nivel": 3,
-    "save": "des"
-   },
-   {
-    "dano": [
-     2,
-     6,
-     0
-    ],
-    "tipo": "acido",
-    "nada_no_sucesso": true,
-    "auto": [
-     2,
-     6,
-     "frio"
-    ],
-    "ef": "area_peso",
-    "w": 0.5,
-    "conc": true,
-    "area": true,
-    "nome": "Hunger of Hadar",
-    "nivel": 3,
-    "save": "des"
-   },
-   {
-    "dano": [
-     3,
-     6,
-     0
-    ],
-    "tipo": "fisico",
-    "nada_no_sucesso": true,
-    "ef": "contido",
-    "w": 0.75,
-    "conc": true,
-    "area": true,
-    "tick": [
-     3,
-     6,
-     "fisico"
-    ],
-    "escape": "forte",
-    "nome": "Evard's Black Tentacles",
-    "nivel": 4,
-    "save": "des"
-   },
-   {
-    "dano": [
-     5,
-     8,
-     0
-    ],
-    "tipo": "fogo",
-    "metade": true,
-    "conc": true,
-    "area": true,
-    "nome": "Wall of Fire (de pé nela)",
-    "nivel": 4,
-    "save": "des"
-   },
-   {
-    "dano": [
-     2,
-     8,
-     0
-    ],
-    "tipo": "fisico",
-    "metade": true,
-    "extra": [
-     4,
-     6,
-     "frio"
-    ],
-    "nome": "Ice Storm",
-    "nivel": 4,
-    "save": "des"
-   },
-   {
-    "ef": "contido",
-    "w": 0.75,
-    "conc": true,
-    "escape": "for",
-    "nome": "Watery Sphere",
-    "nivel": 4,
-    "save": "for"
-   },
-   {
-    "dano": [
-     5,
-     8,
-     0
-    ],
-    "tipo": "veneno",
-    "metade": true,
-    "conc": true,
-    "area": true,
-    "nome": "Cloudkill",
-    "nivel": 5,
-    "save": "con"
-   },
-   {
-    "dano": [
-     8,
-     8,
-     0
-    ],
-    "tipo": "frio",
-    "metade": true,
-    "nome": "Cone of Cold",
-    "nivel": 5,
-    "save": "con"
-   },
-   {
-    "dano": [
-     4,
-     8,
-     0
-    ],
-    "tipo": "radiante",
-    "metade": true,
-    "ef": "fim",
-    "w": 0.3,
-    "conc": true,
-    "nome": "Wall of Light",
-    "nivel": 5,
-    "save": "con"
-   },
-   {
-    "dano": [
-     10,
-     8,
-     0
-    ],
-    "tipo": "eletrico",
-    "metade": true,
-    "nome": "Chain Lightning",
-    "nivel": 6,
-    "save": "des"
-   },
-   {
-    "dano": [
-     10,
-     6,
-     40
-    ],
-    "tipo": "forca",
-    "nada_no_sucesso": true,
-    "nome": "Disintegrate",
-    "nivel": 6,
-    "save": "des"
-   },
-   {
-    "dano": [
-     8,
-     6,
-     0
-    ],
-    "tipo": "necrotico",
-    "metade": true,
-    "nome": "Circle of Death",
-    "nivel": 6,
-    "save": "con"
-   },
-   {
-    "dano": [
-     12,
-     6,
-     0
-    ],
-    "tipo": "fogo",
-    "metade": true,
-    "nome": "Delayed Blast Fireball",
-    "nivel": 7,
-    "save": "des"
-   },
-   {
-    "dano": [
-     7,
-     8,
-     30
-    ],
-    "tipo": "necrotico",
-    "metade": true,
-    "nome": "Finger of Death",
-    "nivel": 7,
-    "save": "con"
-   },
-   {
-    "dano": [
-     10,
-     6,
-     0
-    ],
-    "tipo": "prisma",
-    "metade": true,
-    "nome": "Prismatic Spray",
-    "nivel": 7,
-    "save": "des"
-   },
-   {
-    "dano": [
-     10,
-     6,
-     0
-    ],
-    "tipo": "fisico",
-    "metade": true,
-    "ef": "contido",
-    "w": 0.5,
-    "conc": true,
-    "area": true,
-    "escape": "for",
-    "nome": "Whirlwind",
-    "nivel": 7,
-    "save": "des"
-   },
-   {
-    "dano": [
-     12,
-     6,
-     0
-    ],
-    "tipo": "radiante",
-    "metade": true,
-    "ef": "fim",
-    "w": 0.3,
-    "nome": "Sunburst",
-    "nivel": 8,
-    "save": "con"
-   },
-   {
-    "dano": [
-     10,
-     8,
-     0
-    ],
-    "tipo": "fogo",
-    "metade": true,
-    "conc": true,
-    "area": true,
-    "nome": "Incendiary Cloud",
-    "nivel": 8,
-    "save": "des"
-   },
-   {
-    "dano": [
-     12,
-     8,
-     0
-    ],
-    "tipo": "necrotico",
-    "metade": true,
-    "nome": "Abi-Dalzim's Horrid Wilting",
-    "nivel": 8,
-    "save": "con"
-   }
-  ],
-  "eixo": "saves",
-  "desde": "2026-11-18",
-  "descricao": "Magias de For/Des/Con do conjurador inimigo de referência (dano e contenção). Base da Resiliência.",
-  "historico": []
- },
- "saves.truques_mentais": {
-  "valor": [
-   {
-    "dano": [
-     "cantrip",
-     6,
-     0
-    ],
-    "tipo": "psiquico",
-    "nada_no_sucesso": true,
-    "sliver": true,
-    "nome": "Mind Sliver",
-    "nivel": 0,
-    "save": "int"
-   },
-   {
-    "dano": [
-     "cantrip",
-     4,
-     0
-    ],
-    "tipo": "psiquico",
-    "nada_no_sucesso": true,
-    "ef": "turno",
-    "w": "mockery",
-    "nome": "Vicious Mockery",
-    "nivel": 0,
-    "save": "sab"
-   }
-  ],
-  "eixo": "saves",
-  "desde": "2026-11-18",
-  "descricao": "Truques mentais usados quando acabam os espaços (Mind Sliver, Vicious Mockery).",
-  "historico": []
- },
- "saves.truques_fisicos": {
-  "valor": [
-   {
-    "dano": [
-     "cantrip",
-     6,
-     0
-    ],
-    "tipo": "frio",
-    "nada_no_sucesso": true,
-    "nome": "Frostbite",
-    "nivel": 0,
-    "save": "con"
-   },
-   {
-    "dano": [
-     "cantrip",
-     8,
-     0
-    ],
-    "tipo": "radiante",
-    "nada_no_sucesso": true,
-    "nome": "Sacred Flame",
-    "nivel": 0,
-    "save": "des"
-   }
-  ],
-  "eixo": "saves",
-  "desde": "2026-11-18",
-  "descricao": "Truques de save físico usados quando acabam os espaços.",
-  "historico": []
- },
- "saves.peso.slow_conjurador": {
-  "valor": 0.6,
-  "eixo": "saves",
-  "desde": "2026-11-18",
-  "descricao": "Fração do turno que um conjurador perde sob Slow (50% de a magia atrasar + perde a ação bônus).",
-  "historico": []
- },
- "saves.peso.slow_marcial": {
-  "valor": {
-   "min": 0.25,
-   "max": 0.9,
-   "extra": 0.05
+  "base.chefe.lr_n": {
+    "valor": 1,
+    "eixo": "base",
+    "desde": "2026-11-18",
+    "descricao": "Legendary Resistances de um chefe sozinho.",
+    "historico": []
   },
-  "eixo": "saves",
-  "desde": "2026-11-18",
-  "descricao": "Slow num marcial: 1 − 1/ataques + extra, entre min e max.",
-  "historico": []
- },
- "saves.peso.mockery": {
-  "valor": {
-   "conjurador": 0.05,
-   "marcial": 0.3
+  "base.chefe.lr_cr": {
+    "valor": 10,
+    "eixo": "base",
+    "desde": "2026-11-18",
+    "descricao": "CR mínimo para o chefe ter Legendary Resistance.",
+    "historico": []
   },
-  "eixo": "saves",
-  "desde": "2026-11-18",
-  "descricao": "Vicious Mockery: turno perdido por um conjurador; marcial = valor ÷ ataques por turno.",
-  "historico": []
- },
- "saves.conjurador_inimigo.mod_por_nivel": {
-  "valor": [
-   [
-    3,
-    3
-   ],
-   [
-    7,
-    4
-   ],
-   [
-    20,
-    5
-   ]
-  ],
-  "eixo": "saves",
-  "desde": "2026-11-18",
-  "descricao": "Modificador de conjuração do inimigo de referência: [até o nível, mod]. CD = 8 + proficiência + mod.",
-  "historico": []
- },
- "defesa.horda.dano_por_golpe": {
-  "valor": {
-   "base": 4,
-   "por_cr": 0.5
+  "base.chefe.chefe_save": {
+    "valor": 2,
+    "eixo": "base",
+    "desde": "2026-11-18",
+    "descricao": "Bônus extra nos saves de um chefe sozinho.",
+    "historico": []
   },
-  "eixo": "defesa",
-  "desde": "2026-11-18",
-  "descricao": "Horda: o dano por round do CR é dividido em golpes de (base + CR × por_cr).",
-  "historico": []
- },
- "defesa.horda.atacantes": {
-  "valor": {
-   "min": 3,
-   "max": 10
+  "base.encontros": {
+    "valor": [
+      [
+        "Minions + minibosses",
+        0.25,
+        [
+          [
+            "Minion",
+            "Oportunista",
+            4,
+            0.25
+          ],
+          [
+            "Bruiser",
+            "Fera",
+            1,
+            0.25
+          ],
+          [
+            "Tank inimigo",
+            "Veterano defensor",
+            1,
+            0.25
+          ],
+          [
+            "Conjurador",
+            "Conjurador tático",
+            1,
+            0.25
+          ]
+        ]
+      ],
+      [
+        "Party de elite",
+        0.15,
+        [
+          [
+            "Bruiser",
+            "Veterano agressor",
+            1,
+            0.25
+          ],
+          [
+            "Tank inimigo",
+            "Veterano defensor",
+            1,
+            0.25
+          ],
+          [
+            "Artilheiro",
+            "Atirador",
+            1,
+            0.25
+          ],
+          [
+            "Conjurador",
+            "Conjurador tático",
+            1,
+            0.25
+          ]
+        ]
+      ],
+      [
+        "Horda + chefe",
+        0.15,
+        [
+          [
+            "Minion",
+            "Soldado disciplinado",
+            6,
+            0.5
+          ],
+          [
+            "Chefe",
+            "Comandante",
+            1,
+            0.5
+          ]
+        ]
+      ],
+      [
+        "Horda",
+        0.1,
+        [
+          [
+            "Minion",
+            "Oportunista",
+            6,
+            1.0
+          ]
+        ]
+      ],
+      [
+        "Dupla",
+        0.05,
+        [
+          [
+            "Bruiser",
+            "Fera",
+            1,
+            0.5
+          ],
+          [
+            "Conjurador",
+            "Conjurador tático",
+            1,
+            0.5
+          ]
+        ]
+      ],
+      [
+        "Chefe sozinho",
+        0.3,
+        [
+          [
+            "Chefe",
+            "Chefe (perfil próprio)",
+            1,
+            1.0
+          ]
+        ]
+      ]
+    ],
+    "eixo": "base",
+    "desde": "2026-11-18",
+    "descricao": "Mistura de encontros do dia de referência: [nome, peso, composição [papel, perfil, quantidade, fração do orçamento de XP]]. Os pesos somam 1.",
+    "historico": []
   },
-  "eixo": "defesa",
-  "desde": "2026-11-18",
-  "descricao": "Horda: número de atacantes entre min e max (importa para redução fixa de dano).",
-  "historico": []
- },
- "defesa.horda.acerto": {
-  "valor": {
-   "base": 3,
-   "por_cr": 0.3333333333333333
+  "eixos.def_fisica.peso_resiliencia": {
+    "valor": 0.3333333333333333,
+    "eixo": "eixos",
+    "desde": "2026-11-18",
+    "descricao": "Def. Física = (1 − p) × Defesa (blindagem/durabilidade) + p × Resiliência (saves For/Des/Con).",
+    "historico": []
   },
-  "eixo": "defesa",
-  "desde": "2026-11-18",
-  "descricao": "Bônus de ataque da horda: base + CR × por_cr.",
-  "historico": []
- },
- "defesa.chefe.ataques_por_cr": {
-  "valor": [
-   [
-    4,
-    2
-   ],
-   [
-    16,
-    3
-   ],
-   [
-    30,
-    4
-   ]
-  ],
-  "eixo": "defesa",
-  "desde": "2026-11-18",
-  "descricao": "Ataques por round de um chefe: [até o CR, ataques].",
-  "historico": []
- },
- "defesa.chefe.acerto_extra": {
-  "valor": 3,
-  "eixo": "defesa",
-  "desde": "2026-11-18",
-  "descricao": "Bônus de ataque do chefe acima da coluna de acerto da tabela de dano.",
-  "historico": []
- },
- "defesa.chefe.cr_arma_magica": {
-  "valor": 10,
-  "eixo": "defesa",
-  "desde": "2026-11-18",
-  "descricao": "A partir deste CR os golpes do chefe ignoram redução de dano não mágica.",
-  "historico": []
- },
- "controle.atencao.ca_dpr_auto": {
-  "valor": 16,
-  "eixo": "controle",
-  "desde": "2026-11-19",
-  "descricao": "CA usada para o DPR da atenção quando a build declara \"dpr\": \"auto\" (a mesma coluna que a party usa).",
-  "historico": []
- },
- "controle.marca.fator_sem_resistencia": {
-  "valor": 0.5,
-  "eixo": "controle",
-  "desde": "2026-11-19",
-  "descricao": "Marca no acerto só com desvantagem contra os outros (Unwavering Mark), sem a resistência que os aliados ganham no Ancestral Protectors: fração do valor da marca completa. 0,5 ≈ (1 − p_desv/p) ÷ (1 − 0,5·p_desv/p) com p ≈ 0,65.",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 0.5,
-    "motivo": "Usuário: Ancestral Protectors é mais forte que Unwavering Mark (resistência ao dano nos aliados)."
-   }
-  ]
- },
- "area.horda2.corpo": {
-  "valor": 5,
-  "eixo": "area",
-  "desde": "2026-11-19",
-  "descricao": "Criaturas da horda no grupo que avança para o corpo a corpo (chega à linha de frente no round 2).",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 5,
-    "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
-   }
-  ]
- },
- "area.horda2.distancia": {
-  "valor": 3,
-  "eixo": "area",
-  "desde": "2026-11-19",
-  "descricao": "Criaturas da horda num grupo separado à distância (arqueiros): alvo de área sem fogo amigo em todos os rounds.",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 3,
-    "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
-   }
-  ]
- },
- "area.horda2.fracao_alvo": {
-  "valor": 0.5,
-  "eixo": "area",
-  "desde": "2026-11-19",
-  "descricao": "A luta de área termina quando a party tira esta fração da vida total da horda (o resto é limpeza, sem gastar recursos).",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 0.5,
-    "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
-   }
-  ]
- },
- "area.horda2.rounds_max": {
-  "valor": 3,
-  "eixo": "area",
-  "desde": "2026-11-19",
-  "descricao": "Teto de rounds; quem não chega à fração da vida é extrapolado pela taxa média (até 2× o teto).",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 5,
-    "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
-   },
-   {
-    "de": 5,
-    "para": 3,
-    "data": "2026-11-19",
-    "motivo": "usuário 19/11: medir o pico; com 5 rounds o DPR sustentado dos marciais pesava demais"
-   }
-  ]
- },
- "area.horda2.guerreiros": {
-  "valor": {
-   "quantidade": 2,
-   "dano": "2d6",
-   "mod": [
-    3,
-    4,
-    5
-   ],
-   "ataques": [
-    1,
-    2,
-    3,
-    4
-   ]
+  "eixos.def_magica.peso_resiliencia": {
+    "valor": 0.3333333333333333,
+    "eixo": "eixos",
+    "desde": "2026-11-18",
+    "descricao": "Def. Mágica = (1 − p) × Vontade (saves mentais) + p × Resiliência.",
+    "historico": []
   },
-  "eixo": "area",
-  "desde": "2026-11-19",
-  "descricao": "Dois guerreiros de referência que batem junto (alvo de menor PV, dano acima do PV é perdido). mod: +3 até o 3, +4 do 4 ao 7, +5 do 8; ataques: 1 até o 4, 2 do 5 ao 10, 3 do 11 ao 19, 4 no 20.",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": {
-     "quantidade": 2,
-     "dano": "2d6",
-     "mod": [
-      3,
-      4,
-      5
-     ],
-     "ataques": [
-      1,
+  "defesa.fator_critico": {
+    "valor": 0.6,
+    "eixo": "defesa",
+    "desde": "2026-11-18",
+    "descricao": "Dano extra de um crítico inimigo, em fração do golpe normal (dados dobram, modificador não).",
+    "historico": []
+  },
+  "controle.campo.golpes_party": {
+    "valor": 2,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Golpes da party por round que podem quebrar uma condição com save a cada dano.",
+    "historico": []
+  },
+  "controle.campo.taunt_ameaca": {
+    "valor": 0.15,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Taunt soft de um corpo que ameaça (fração dos ataques desviados para ele).",
+    "historico": []
+  },
+  "controle.campo.taunt_summon": {
+    "valor": 0.4,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Taunt de invocações que ocupam espaço.",
+    "historico": []
+  },
+  "controle.campo.p_disengage": {
+    "valor": 0.5,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Chance de um inimigo parado por AO não ter como sair (padrão de parada_oa).",
+    "historico": []
+  },
+  "controle.campo.reach_grande": {
+    "valor": 0.5,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Fração de inimigos grandes (CR ≥ 5) com alcance para escapar de agarrão/zona.",
+    "historico": []
+  },
+  "controle.campo.reach_pequeno": {
+    "valor": 0.2,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Idem para inimigos menores.",
+    "historico": []
+  },
+  "controle.atencao.near_back": {
+    "valor": 0.25,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Fração dos que querem a backline que ainda atacam quem está perto.",
+    "historico": []
+  },
+  "controle.atencao.conc_bonus": {
+    "valor": 1.5,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Prioridade extra dos inimigos espertos em conjuradores concentrando.",
+    "historico": []
+  },
+  "controle.atencao.skel_peso": {
+    "valor": 1.5,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Peso de atração de invocações/esqueletos sobre inimigos corpo a corpo.",
+    "historico": []
+  },
+  "controle.atencao.skel_pv": {
+    "valor": 133,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "PV padrão de um corpo de invocações quando a build não informa.",
+    "historico": []
+  },
+  "controle.atencao.reach_grande": {
+    "valor": 0.5,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Alcance de inimigos grandes (atenção).",
+    "historico": []
+  },
+  "controle.atencao.reach_pequeno": {
+    "valor": 0.2,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Alcance de inimigos pequenos (atenção).",
+    "historico": []
+  },
+  "area.fator_round2_seletiva": {
+    "valor": 0.75,
+    "eixo": "area",
+    "desde": "2026-11-18",
+    "descricao": "Do 2º round em diante uma área seletiva (escolhe alvos) ainda pega esta fração dos alvos do 1º round.",
+    "historico": []
+  },
+  "area.fator_round2_nao_seletiva": {
+    "valor": 0.5,
+    "eixo": "area",
+    "desde": "2026-11-18",
+    "descricao": "Idem para área não seletiva (a party se espalha, inimigos se afastam).",
+    "historico": []
+  },
+  "area.alvos_referencia_por_circulo": {
+    "valor": [
       2,
-      3,
-      4
-     ]
+      2,
+      4,
+      4,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "eixo": "area",
+    "desde": "2026-11-18",
+    "descricao": "Alvos da magia de área do conjurador de referência por círculo (1º…9º).",
+    "historico": []
+  },
+  "area.horda_cr_por_nivel": {
+    "valor": {
+      "1": 0.125,
+      "2": 0.25,
+      "3": 0.25,
+      "4": 0.5,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 2,
+      "9": 2,
+      "10": 2,
+      "11": 3,
+      "12": 3,
+      "13": 4,
+      "14": 4,
+      "15": 4,
+      "16": 4,
+      "17": 5,
+      "18": 5,
+      "19": 6,
+      "20": 6
     },
-    "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
-   }
-  ]
- },
- "area.horda2.truque_referencia": {
-  "valor": "1d10",
-  "eixo": "area",
-  "desde": "2026-11-19",
-  "descricao": "Truque de alvo único do conjurador de referência (dados escalam no 5 e no 11), ataque com prof + atributo da régua.",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": "1d10",
-    "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
-   }
-  ]
- },
- "area.horda2.N": {
-  "valor": 3000,
-  "eixo": "area",
-  "desde": "2026-11-19",
-  "descricao": "Combates simulados por nível de horda.",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 3000,
-    "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
-   }
-  ]
- },
- "controle.peso_no_controle.ancestral_protectors": {
-  "valor": 0.25,
-  "eixo": "controle",
-  "desde": "2026-11-19",
-  "descricao": "Marca (Ancestral Protectors; Unwavering Mark com \"resistencia\": false): fração da redução do dano que o marcado causa aos aliados que também conta como Controle. O resto fica no Corpo (atenção: a marca protege os outros membros da party). Mesmo valor da do Sentinel.",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 0.25,
-    "motivo": "Usuário 19/11 (passada 3): marcas contam no Corpo; fração no Controle igual à do Sentinel."
-   }
-  ]
- },
- "controle.referencia.frontliner.ca_bonus": {
-  "valor": 1,
-  "eixo": "controle",
-  "desde": "2026-11-19",
-  "descricao": "Frontliner de referência (2 na party): CA = CA marcial do nível + este bônus (média entre o tank, +2, e o striker, +0).",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 1,
-    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
-   }
-  ]
- },
- "controle.referencia.frontliner.ca_max": {
-  "valor": 21,
-  "eixo": "controle",
-  "desde": "2026-11-19",
-  "descricao": "Teto da CA do frontliner de referência.",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 21,
-    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
-   }
-  ]
- },
- "controle.referencia.frontliner.pv_base": {
-  "valor": 11,
-  "eixo": "controle",
-  "desde": "2026-11-19",
-  "descricao": "PV do frontliner de referência no nível 1 (média entre tank 12 e striker 10).",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 11,
-    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
-   }
-  ]
- },
- "controle.referencia.frontliner.pv_por_nivel": {
-  "valor": 8,
-  "eixo": "controle",
-  "desde": "2026-11-19",
-  "descricao": "PV por nível acima do 1º do frontliner de referência (média entre tank 8,5 e striker 7,5).",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 8,
-    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
-   }
-  ]
- },
- "controle.referencia.frontliner.soft": {
-  "valor": 0.15,
-  "eixo": "controle",
-  "desde": "2026-11-19",
-  "descricao": "Ameaça (taunt soft) do frontliner de referência.",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 0.15,
-    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
-   }
-  ]
- },
- "controle.referencia.frontliner.dpr_fator": {
-  "valor": 0.85,
-  "eixo": "controle",
-  "desde": "2026-11-19",
-  "descricao": "DPR do frontliner de referência = este fator × DPR de referência do nível (média entre tank 0,7 e striker 1,0).",
-  "historico": [
-   {
-    "data": "2026-11-19",
-    "de": null,
-    "para": 0.85,
-    "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
-   }
-  ]
- },
- "suporte.h.P_CAIDO": {
-  "valor": 0.5,
-  "eixo": "suporte",
-  "desde": "2026-11-19",
-  "descricao": "Aliados caídos por luta que uma cura na luta levanta (cura_na_luta). Chute inicial (19/11), a calibrar.",
-  "historico": []
- },
- "suporte.h.ACESSO_TOQUE": {
-  "valor": 0.6,
-  "eixo": "suporte",
-  "desde": "2026-11-19",
-  "descricao": "Fator da cura de toque (Cure Wounds, Lay on Hands) frente à de distância (Healing Word): precisa chegar ao caído. Chute inicial (19/11).",
-  "historico": []
- },
- "suporte.h.ACESSO_ACAO": {
-  "valor": 0.8,
-  "eixo": "suporte",
-  "desde": "2026-11-19",
-  "descricao": "Fator da cura que custa a ação (Cure Wounds) frente à de ação bônus (Healing Word). Chute inicial (19/11).",
-  "historico": []
- },
- "controle.corpo.referencia_unica": {
-  "valor": 1,
-  "eixo": "controle",
-  "desde": "2026-11-19",
-  "descricao": "Corpo (T, S, P e tag) compara a build com um MEMBRO PADRÃO na vaga dela: o comportamento da vaga (alvo, acc, concentração) é o da referência da posição, mas CA e PV são a média da party de referência (2 frontliners, atirador, conjurador). 0 = referência da própria posição (antes de 19/11). Tira a 'colher de chá' de quem fica atrás.",
-  "historico": []
- },
- "corpo.pvt_rounds": {
-  "valor": 3,
-  "eixo": "corpo",
-  "desde": "2026-11-21",
-  "descricao": "Rounds em que o PV temporário renovável (pvt_round, ex.: Reckless Abandon) conta na atenção/corpo: PV + pvt_luta + pvt_round × este valor.",
-  "historico": []
- }
+    "eixo": "area",
+    "desde": "2026-11-18",
+    "descricao": "CR das criaturas da horda de referência (encontro Difícil de 6) por nível da party.",
+    "historico": []
+  },
+  "area.horda_tamanho": {
+    "valor": 6,
+    "eixo": "area",
+    "desde": "2026-11-18",
+    "descricao": "Criaturas na horda de referência.",
+    "historico": []
+  },
+  "area.cenarios": {
+    "valor": {
+      "esparsa": 0.5,
+      "padrao": 1.0,
+      "agrupada": 1.5
+    },
+    "eixo": "area",
+    "desde": "2026-11-18",
+    "descricao": "Escala de alvos por cenário (esparsa, padrão, agrupada).",
+    "historico": []
+  },
+  "suporte.h.ACERTO": {
+    "valor": 0.65,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Chance de acerto típica de um aliado.",
+    "historico": []
+  },
+  "suporte.h.ATIVO": {
+    "valor": 0.875,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Fração da luta em que um buff contínuo está ativo.",
+    "historico": []
+  },
+  "suporte.h.ALIADOS": {
+    "valor": 3,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Aliados que recebem um buff em grupo.",
+    "historico": []
+  },
+  "suporte.h.EF_CURA": {
+    "valor": 0.9,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Eficiência da cura (fração que não é desperdiçada).",
+    "historico": []
+  },
+  "suporte.h.EF_PVT": {
+    "valor": 0.75,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Eficiência de PV temporários.",
+    "historico": []
+  },
+  "suporte.h.F_SAVE": {
+    "valor": 0.25,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Fração do dano inimigo que vem por save.",
+    "historico": []
+  },
+  "suporte.h.F_AURA": {
+    "valor": 0.67,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Fração dos aliados dentro de uma aura.",
+    "historico": []
+  },
+  "suporte.h.CUSTO_SAVE": {
+    "valor": 1,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Valor de 1 ponto de save, em dano evitado relativo.",
+    "historico": []
+  },
+  "suporte.h.ESCOLHA": {
+    "valor": 2.0,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Ganho de escolher quando gastar um dado de inspiração (×).",
+    "historico": []
+  },
+  "suporte.h.ACERTOS_INIM_ROUND": {
+    "valor": 4,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Acertos em que o dano inimigo do round chega.",
+    "historico": []
+  },
+  "suporte.h.TURNOS_CONDICAO": {
+    "valor": 1.5,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Turnos de aliado perdidos num save crítico falho.",
+    "historico": []
+  },
+  "suporte.h.TURNOS_LEVANTAR": {
+    "valor": 1.0,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Turnos devolvidos ao levantar um caído.",
+    "historico": []
+  },
+  "suporte.h.P_ACERTO_INIM": {
+    "valor": 0.6,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Chance de um ataque inimigo acertar um aliado.",
+    "historico": []
+  },
+  "suporte.h.PARCELA_FRENTE": {
+    "valor": 0.35,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Parcela do dano inimigo que vai para um aliado da linha de frente.",
+    "historico": []
+  },
+  "suporte.mix_dado_multiuso": {
+    "valor": {
+      "dano": 0.3,
+      "acerto": 0.25,
+      "ca": 0.2,
+      "save_dano": 0.15,
+      "save_critico": 0.07,
+      "counterspell": 0.03
+    },
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Como um dado de inspiração é gasto em média (dano, acerto, CA, save de dano, save crítico, counterspell). Soma 1.",
+    "historico": []
+  },
+  "planos.dias": {
+    "valor": {
+      "padrao": [
+        [
+          "np",
+          1
+        ],
+        [
+          "p",
+          2
+        ],
+        "SR",
+        [
+          "np",
+          1
+        ],
+        [
+          "p",
+          2
+        ]
+      ],
+      "combate_unico": [
+        [
+          "p",
+          1
+        ]
+      ],
+      "dia_longo": [
+        [
+          "np",
+          1
+        ],
+        [
+          "np",
+          1
+        ],
+        [
+          "mod",
+          2
+        ],
+        "SR",
+        [
+          "np",
+          1
+        ],
+        [
+          "mod",
+          2
+        ],
+        [
+          "mod",
+          2
+        ],
+        "SR",
+        [
+          "mod",
+          2
+        ],
+        [
+          "boss",
+          4
+        ]
+      ]
+    },
+    "eixo": "planos",
+    "desde": "2026-11-18",
+    "descricao": "Dias de aventura: sequência de [categoria, peso] e \"SR\" (descanso curto). Padrão: comum 1, prioritária 2. Dia longo: 8 lutas, boss pesa 4.",
+    "historico": []
+  },
+  "tatico.padrao": {
+    "valor": {
+      "deslocamento": 30,
+      "ca": 15,
+      "steady_aim": true,
+      "p_agir_antes": 0.7,
+      "p_comeca_escondido": 0.3,
+      "p_aliado": {
+        "r1": 0.2,
+        "depois": 0.7
+      },
+      "dano_inimigo_round": 54.5,
+      "composicao": "segundo_frontliner",
+      "reducao_exposto": 1.0,
+      "pv": 50,
+      "recuperacao_dia": 20,
+      "lutas_dia": 4,
+      "excesso": 3.0,
+      "queda": 60,
+      "alvo": {
+        "pv": 60,
+        "dano_aliados_colado": 25,
+        "dano_aliados_longe": 12
+      },
+      "topologias": {
+        "Sala de dungeon": {
+          "esconderijo": {
+            "15": 0.6,
+            "30": 0.3,
+            "50": 0.1
+          },
+          "inicial": {
+            "30": 0.5,
+            "50": 0.5
+          },
+          "proximo": {
+            "10": 0.4,
+            "25": 0.4,
+            "45": 0.2
+          }
+        },
+        "Ruínas ou cidade": {
+          "esconderijo": {
+            "15": 0.4,
+            "30": 0.4,
+            "50": 0.2
+          },
+          "inicial": {
+            "40": 0.5,
+            "70": 0.5
+          },
+          "proximo": {
+            "15": 0.3,
+            "30": 0.4,
+            "50": 0.3
+          }
+        },
+        "Campo aberto": {
+          "esconderijo": {
+            "15": 0.15,
+            "30": 0.35,
+            "50": 0.5
+          },
+          "inicial": {
+            "60": 0.5,
+            "100": 0.5
+          },
+          "proximo": {
+            "20": 0.3,
+            "40": 0.4,
+            "60": 0.3
+          }
+        }
+      }
+    },
+    "eixo": "tatico",
+    "desde": "2026-11-18",
+    "descricao": "Premissas do motor tático (rogue/skirmisher): deslocamento, iniciativa, chance de começar escondido, aliado ao lado, orçamento de PV, distâncias por terreno. (Rounds: base.rounds_por_luta.)",
+    "historico": []
+  },
+  "tatico.composicoes": {
+    "valor": {
+      "terceiro_melee": {
+        "escondido": 0.04,
+        "longe": 0.1,
+        "colado": 0.2,
+        "nota": "tanque + outro corpo a corpo na frente + ele + 1 de trás"
+      },
+      "segundo_frontliner": {
+        "escondido": 0.05,
+        "longe": 0.15,
+        "colado": 0.32,
+        "nota": "tanque + ele na frente + 2 de trás"
+      },
+      "sem_tanque": {
+        "escondido": 0.06,
+        "longe": 0.2,
+        "colado": 0.45,
+        "nota": "ele é o único corpo a corpo"
+      }
+    },
+    "eixo": "tatico",
+    "desde": "2026-11-18",
+    "descricao": "Fração do dano inimigo por round que vai para o personagem conforme a posição (escondido, longe, colado) e a composição da party.",
+    "historico": []
+  },
+  "controle.padroes.sentinela_tentativas": {
+    "valor": 2,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Ataques de oportunidade do Sentinel por luta que podem parar alguém (quando a build não diz).",
+    "historico": []
+  },
+  "controle.padroes.terreno_fator": {
+    "valor": 0.5,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Fração do turno de um inimigo corpo a corpo perdida em terreno difícil grande (Plant Growth), antes do fator do terreno.",
+    "historico": []
+  },
+  "controle.padroes.counterspell_fracao_conjurando": {
+    "valor": 0.75,
+    "eixo": "controle",
+    "desde": "2026-11-18",
+    "descricao": "Fração dos turnos de um conjurador inimigo em que ele lança algo que vale contramágica.",
+    "historico": []
+  },
+  "suporte.padroes.resgate_p_save": {
+    "valor": 0.45,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Chance do aliado passar no save refeito contra uma condição (Countercharm e afins).",
+    "historico": []
+  },
+  "suporte.padroes.resgate_p_evento": {
+    "valor": 0.2,
+    "eixo": "suporte",
+    "desde": "2026-11-18",
+    "descricao": "Chance por round de surgir uma condição que vale resgatar.",
+    "historico": []
+  },
+  "suporte.dado_multiuso.reuso_max": {
+    "valor": 2,
+    "eixo": "suporte",
+    "desde": "2026-11-21",
+    "descricao": "Dado de vários usos que volta quando a rolagem falha mesmo assim (Unfailing Inspiration do Eloquence): o dado é reusado até virar uma rolagem (×1/chance de virar), no máximo este fator por dado (a luta acaba antes).",
+    "historico": []
+  },
+  "_regua_e_fatos": [
+    "Tabelas do Monster Manual/DMG (fatos, não premissas): CA/PV/saves/dano por CR (base.CRT, area.CR, defesa.T_DMG), XP e orçamento de encontro (base.XP, base.BUD), dano de magia por círculo (area.MULTI), espaços por nível (area.TOP3, saves.SLOTS).",
+    "Réguas (o 'zero' de cada eixo; mudam o significado das letras, não a hipótese): rampas de DPR (dano.TRONCO/BRUTA/PRECISA), limites de Defesa (defesa.LIM_*), régua de suporte (suporte.REGUA: DPR aliado, dano inimigo, maior espaço por nível), party de referência da atenção (controle.atencao.ref), letras (base.RAMPA).",
+    "Parâmetros numéricos de simulação (precisão, não hipótese): N de simulações, sementes, grade de preços de reação (defesa.GRADE)."
+  ],
+  "_pendentes": [],
+  "saves.repertorio_mental": {
+    "valor": [
+      {
+        "sono_hp": [
+          5,
+          8
+        ],
+        "ef": "sono",
+        "w": 1,
+        "sono": true,
+        "nome": "Sleep",
+        "nivel": 1,
+        "save": null
+      },
+      {
+        "ef": "fim",
+        "w": 1,
+        "conc": true,
+        "nome": "Tasha's Hideous Laughter",
+        "nivel": 1,
+        "save": "sab"
+      },
+      {
+        "ef": "turno",
+        "w": 1,
+        "nome": "Command",
+        "nivel": 1,
+        "save": "sab"
+      },
+      {
+        "ef": "fim",
+        "w": 1,
+        "conc": true,
+        "humanoide": true,
+        "nome": "Hold Person",
+        "nivel": 2,
+        "save": "sab"
+      },
+      {
+        "ef": "fim",
+        "w": 1,
+        "conc": true,
+        "tick": [
+          1,
+          6,
+          "psiquico"
+        ],
+        "nome": "Phantasmal Force",
+        "nivel": 2,
+        "save": "int"
+      },
+      {
+        "ef": "luta",
+        "w": 1,
+        "conc": true,
+        "encanto": true,
+        "stillness": true,
+        "nome": "Suggestion",
+        "nivel": 2,
+        "save": "sab"
+      },
+      {
+        "ef": "fim",
+        "w": "slow",
+        "conc": true,
+        "nome": "Slow",
+        "nivel": 3,
+        "save": "sab"
+      },
+      {
+        "ef": "fim",
+        "w": 1,
+        "conc": true,
+        "medo": true,
+        "stillness": true,
+        "nome": "Fear",
+        "nivel": 3,
+        "save": "sab"
+      },
+      {
+        "ef": "sono",
+        "w": 1,
+        "conc": true,
+        "encanto": true,
+        "nome": "Hypnotic Pattern",
+        "nivel": 3,
+        "save": "sab"
+      },
+      {
+        "ef": "luta",
+        "w": 1,
+        "conc": true,
+        "nome": "Banishment",
+        "nivel": 4,
+        "save": "car"
+      },
+      {
+        "ef": "luta",
+        "w": 1,
+        "conc": true,
+        "nome": "Polymorph",
+        "nivel": 4,
+        "save": "sab"
+      },
+      {
+        "dano": [
+          7,
+          6,
+          0
+        ],
+        "tipo": "psiquico",
+        "metade": true,
+        "ef": "turno",
+        "w": 1,
+        "nome": "Raulothim's Psychic Lance",
+        "nivel": 4,
+        "save": "int"
+      },
+      {
+        "ef": "sono",
+        "w": 1,
+        "conc": true,
+        "humanoide": true,
+        "encanto": true,
+        "stillness": true,
+        "nome": "Dominate Person",
+        "nivel": 5,
+        "save": "sab"
+      },
+      {
+        "dano": [
+          8,
+          6,
+          0
+        ],
+        "tipo": "psiquico",
+        "metade": true,
+        "ef": "fim",
+        "w": 0.2,
+        "nome": "Synaptic Static",
+        "nivel": 5,
+        "save": "int"
+      },
+      {
+        "ef": "sono",
+        "w": 1,
+        "conc": true,
+        "encanto": true,
+        "vant_save": true,
+        "nome": "Modify Memory",
+        "nivel": 5,
+        "save": "sab"
+      },
+      {
+        "ef": "luta",
+        "w": 1,
+        "encanto": true,
+        "stillness": true,
+        "nome": "Mass Suggestion",
+        "nivel": 6,
+        "save": "sab"
+      },
+      {
+        "ef": "sono",
+        "w": 1,
+        "conc": true,
+        "acao": true,
+        "sono": true,
+        "nome": "Eyebite (dormir)",
+        "nivel": 6,
+        "save": "sab"
+      },
+      {
+        "dano": [
+          5,
+          10,
+          0
+        ],
+        "tipo": "psiquico",
+        "nada_no_sucesso": true,
+        "ef": "luta",
+        "w": 0.5,
+        "conc": true,
+        "nome": "Mental Prison",
+        "nivel": 6,
+        "save": "int"
+      },
+      {
+        "limiar": true,
+        "nome": "Divine Word",
+        "nivel": 7,
+        "save": "car"
+      },
+      {
+        "ataque": true,
+        "ef": "luta",
+        "w": 1,
+        "nome": "Plane Shift (ofensivo)",
+        "nivel": 7,
+        "save": "car"
+      },
+      {
+        "ef": "luta",
+        "w": 1,
+        "nome": "Symbol (atordoamento)",
+        "nivel": 7,
+        "save": "sab"
+      },
+      {
+        "dano": [
+          4,
+          6,
+          0
+        ],
+        "tipo": "psiquico",
+        "sempre_dano": true,
+        "ef": "luta",
+        "w": 0.3,
+        "w_conj": 1,
+        "nome": "Feeblemind",
+        "nivel": 8,
+        "save": "int"
+      },
+      {
+        "ef": "fim",
+        "w": 1,
+        "medo": true,
+        "stillness": true,
+        "nome": "Antipathy (medo)",
+        "nivel": 8,
+        "save": "sab"
+      },
+      {
+        "dano": [
+          8,
+          8,
+          0
+        ],
+        "tipo": "psiquico",
+        "metade": true,
+        "conc": true,
+        "area": true,
+        "nome": "Maddening Darkness",
+        "nivel": 8,
+        "save": "sab"
+      }
+    ],
+    "eixo": "saves",
+    "desde": "2026-11-18",
+    "descricao": "Magias mentais (Int/Sab/Car) do conjurador inimigo de referência, com o efeito e o peso (fração do turno perdida). Ele lança do maior espaço para o menor, escolhendo entre as magias do círculo. Base da Vontade / Def. Mágica.",
+    "historico": []
+  },
+  "saves.repertorio_fisico": {
+    "valor": [
+      {
+        "dano": [
+          3,
+          6,
+          0
+        ],
+        "tipo": "fogo",
+        "metade": true,
+        "nome": "Burning Hands",
+        "nivel": 1,
+        "save": "des"
+      },
+      {
+        "dano": [
+          2,
+          8,
+          0
+        ],
+        "tipo": "trovao",
+        "metade": true,
+        "nome": "Thunderwave",
+        "nivel": 1,
+        "save": "con"
+      },
+      {
+        "ef": "contido",
+        "w": 0.5,
+        "conc": true,
+        "escape": "for",
+        "nome": "Entangle",
+        "nivel": 1,
+        "save": "for"
+      },
+      {
+        "dano": [
+          3,
+          6,
+          0
+        ],
+        "tipo": "dragao",
+        "metade": true,
+        "conc": true,
+        "acao": true,
+        "nome": "Dragon's Breath",
+        "nivel": 2,
+        "save": "des"
+      },
+      {
+        "dano": [
+          3,
+          8,
+          0
+        ],
+        "tipo": "trovao",
+        "metade": true,
+        "nome": "Shatter",
+        "nivel": 2,
+        "save": "con"
+      },
+      {
+        "ef": "contido",
+        "w": 0.5,
+        "conc": true,
+        "area": true,
+        "escape": "for",
+        "nome": "Web",
+        "nivel": 2,
+        "save": "des"
+      },
+      {
+        "dano": [
+          8,
+          6,
+          0
+        ],
+        "tipo": "fogo",
+        "metade": true,
+        "nome": "Fireball",
+        "nivel": 3,
+        "save": "des"
+      },
+      {
+        "dano": [
+          8,
+          6,
+          0
+        ],
+        "tipo": "eletrico",
+        "metade": true,
+        "nome": "Lightning Bolt",
+        "nivel": 3,
+        "save": "des"
+      },
+      {
+        "dano": [
+          2,
+          6,
+          0
+        ],
+        "tipo": "acido",
+        "nada_no_sucesso": true,
+        "auto": [
+          2,
+          6,
+          "frio"
+        ],
+        "ef": "area_peso",
+        "w": 0.5,
+        "conc": true,
+        "area": true,
+        "nome": "Hunger of Hadar",
+        "nivel": 3,
+        "save": "des"
+      },
+      {
+        "dano": [
+          3,
+          6,
+          0
+        ],
+        "tipo": "fisico",
+        "nada_no_sucesso": true,
+        "ef": "contido",
+        "w": 0.75,
+        "conc": true,
+        "area": true,
+        "tick": [
+          3,
+          6,
+          "fisico"
+        ],
+        "escape": "forte",
+        "nome": "Evard's Black Tentacles",
+        "nivel": 4,
+        "save": "des"
+      },
+      {
+        "dano": [
+          5,
+          8,
+          0
+        ],
+        "tipo": "fogo",
+        "metade": true,
+        "conc": true,
+        "area": true,
+        "nome": "Wall of Fire (de pé nela)",
+        "nivel": 4,
+        "save": "des"
+      },
+      {
+        "dano": [
+          2,
+          8,
+          0
+        ],
+        "tipo": "fisico",
+        "metade": true,
+        "extra": [
+          4,
+          6,
+          "frio"
+        ],
+        "nome": "Ice Storm",
+        "nivel": 4,
+        "save": "des"
+      },
+      {
+        "ef": "contido",
+        "w": 0.75,
+        "conc": true,
+        "escape": "for",
+        "nome": "Watery Sphere",
+        "nivel": 4,
+        "save": "for"
+      },
+      {
+        "dano": [
+          5,
+          8,
+          0
+        ],
+        "tipo": "veneno",
+        "metade": true,
+        "conc": true,
+        "area": true,
+        "nome": "Cloudkill",
+        "nivel": 5,
+        "save": "con"
+      },
+      {
+        "dano": [
+          8,
+          8,
+          0
+        ],
+        "tipo": "frio",
+        "metade": true,
+        "nome": "Cone of Cold",
+        "nivel": 5,
+        "save": "con"
+      },
+      {
+        "dano": [
+          4,
+          8,
+          0
+        ],
+        "tipo": "radiante",
+        "metade": true,
+        "ef": "fim",
+        "w": 0.3,
+        "conc": true,
+        "nome": "Wall of Light",
+        "nivel": 5,
+        "save": "con"
+      },
+      {
+        "dano": [
+          10,
+          8,
+          0
+        ],
+        "tipo": "eletrico",
+        "metade": true,
+        "nome": "Chain Lightning",
+        "nivel": 6,
+        "save": "des"
+      },
+      {
+        "dano": [
+          10,
+          6,
+          40
+        ],
+        "tipo": "forca",
+        "nada_no_sucesso": true,
+        "nome": "Disintegrate",
+        "nivel": 6,
+        "save": "des"
+      },
+      {
+        "dano": [
+          8,
+          6,
+          0
+        ],
+        "tipo": "necrotico",
+        "metade": true,
+        "nome": "Circle of Death",
+        "nivel": 6,
+        "save": "con"
+      },
+      {
+        "dano": [
+          12,
+          6,
+          0
+        ],
+        "tipo": "fogo",
+        "metade": true,
+        "nome": "Delayed Blast Fireball",
+        "nivel": 7,
+        "save": "des"
+      },
+      {
+        "dano": [
+          7,
+          8,
+          30
+        ],
+        "tipo": "necrotico",
+        "metade": true,
+        "nome": "Finger of Death",
+        "nivel": 7,
+        "save": "con"
+      },
+      {
+        "dano": [
+          10,
+          6,
+          0
+        ],
+        "tipo": "prisma",
+        "metade": true,
+        "nome": "Prismatic Spray",
+        "nivel": 7,
+        "save": "des"
+      },
+      {
+        "dano": [
+          10,
+          6,
+          0
+        ],
+        "tipo": "fisico",
+        "metade": true,
+        "ef": "contido",
+        "w": 0.5,
+        "conc": true,
+        "area": true,
+        "escape": "for",
+        "nome": "Whirlwind",
+        "nivel": 7,
+        "save": "des"
+      },
+      {
+        "dano": [
+          12,
+          6,
+          0
+        ],
+        "tipo": "radiante",
+        "metade": true,
+        "ef": "fim",
+        "w": 0.3,
+        "nome": "Sunburst",
+        "nivel": 8,
+        "save": "con"
+      },
+      {
+        "dano": [
+          10,
+          8,
+          0
+        ],
+        "tipo": "fogo",
+        "metade": true,
+        "conc": true,
+        "area": true,
+        "nome": "Incendiary Cloud",
+        "nivel": 8,
+        "save": "des"
+      },
+      {
+        "dano": [
+          12,
+          8,
+          0
+        ],
+        "tipo": "necrotico",
+        "metade": true,
+        "nome": "Abi-Dalzim's Horrid Wilting",
+        "nivel": 8,
+        "save": "con"
+      }
+    ],
+    "eixo": "saves",
+    "desde": "2026-11-18",
+    "descricao": "Magias de For/Des/Con do conjurador inimigo de referência (dano e contenção). Base da Resiliência.",
+    "historico": []
+  },
+  "saves.truques_mentais": {
+    "valor": [
+      {
+        "dano": [
+          "cantrip",
+          6,
+          0
+        ],
+        "tipo": "psiquico",
+        "nada_no_sucesso": true,
+        "sliver": true,
+        "nome": "Mind Sliver",
+        "nivel": 0,
+        "save": "int"
+      },
+      {
+        "dano": [
+          "cantrip",
+          4,
+          0
+        ],
+        "tipo": "psiquico",
+        "nada_no_sucesso": true,
+        "ef": "turno",
+        "w": "mockery",
+        "nome": "Vicious Mockery",
+        "nivel": 0,
+        "save": "sab"
+      }
+    ],
+    "eixo": "saves",
+    "desde": "2026-11-18",
+    "descricao": "Truques mentais usados quando acabam os espaços (Mind Sliver, Vicious Mockery).",
+    "historico": []
+  },
+  "saves.truques_fisicos": {
+    "valor": [
+      {
+        "dano": [
+          "cantrip",
+          6,
+          0
+        ],
+        "tipo": "frio",
+        "nada_no_sucesso": true,
+        "nome": "Frostbite",
+        "nivel": 0,
+        "save": "con"
+      },
+      {
+        "dano": [
+          "cantrip",
+          8,
+          0
+        ],
+        "tipo": "radiante",
+        "nada_no_sucesso": true,
+        "nome": "Sacred Flame",
+        "nivel": 0,
+        "save": "des"
+      }
+    ],
+    "eixo": "saves",
+    "desde": "2026-11-18",
+    "descricao": "Truques de save físico usados quando acabam os espaços.",
+    "historico": []
+  },
+  "saves.peso.slow_conjurador": {
+    "valor": 0.6,
+    "eixo": "saves",
+    "desde": "2026-11-18",
+    "descricao": "Fração do turno que um conjurador perde sob Slow (50% de a magia atrasar + perde a ação bônus).",
+    "historico": []
+  },
+  "saves.peso.slow_marcial": {
+    "valor": {
+      "min": 0.25,
+      "max": 0.9,
+      "extra": 0.05
+    },
+    "eixo": "saves",
+    "desde": "2026-11-18",
+    "descricao": "Slow num marcial: 1 − 1/ataques + extra, entre min e max.",
+    "historico": []
+  },
+  "saves.peso.mockery": {
+    "valor": {
+      "conjurador": 0.05,
+      "marcial": 0.3
+    },
+    "eixo": "saves",
+    "desde": "2026-11-18",
+    "descricao": "Vicious Mockery: turno perdido por um conjurador; marcial = valor ÷ ataques por turno.",
+    "historico": []
+  },
+  "saves.conjurador_inimigo.mod_por_nivel": {
+    "valor": [
+      [
+        3,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        20,
+        5
+      ]
+    ],
+    "eixo": "saves",
+    "desde": "2026-11-18",
+    "descricao": "Modificador de conjuração do inimigo de referência: [até o nível, mod]. CD = 8 + proficiência + mod.",
+    "historico": []
+  },
+  "defesa.horda.dano_por_golpe": {
+    "valor": {
+      "base": 4,
+      "por_cr": 0.5
+    },
+    "eixo": "defesa",
+    "desde": "2026-11-18",
+    "descricao": "Horda: o dano por round do CR é dividido em golpes de (base + CR × por_cr).",
+    "historico": []
+  },
+  "defesa.horda.atacantes": {
+    "valor": {
+      "min": 3,
+      "max": 10
+    },
+    "eixo": "defesa",
+    "desde": "2026-11-18",
+    "descricao": "Horda: número de atacantes entre min e max (importa para redução fixa de dano).",
+    "historico": []
+  },
+  "defesa.horda.acerto": {
+    "valor": {
+      "base": 3,
+      "por_cr": 0.3333333333333333
+    },
+    "eixo": "defesa",
+    "desde": "2026-11-18",
+    "descricao": "Bônus de ataque da horda: base + CR × por_cr.",
+    "historico": []
+  },
+  "defesa.chefe.ataques_por_cr": {
+    "valor": [
+      [
+        4,
+        2
+      ],
+      [
+        16,
+        3
+      ],
+      [
+        30,
+        4
+      ]
+    ],
+    "eixo": "defesa",
+    "desde": "2026-11-18",
+    "descricao": "Ataques por round de um chefe: [até o CR, ataques].",
+    "historico": []
+  },
+  "defesa.chefe.acerto_extra": {
+    "valor": 3,
+    "eixo": "defesa",
+    "desde": "2026-11-18",
+    "descricao": "Bônus de ataque do chefe acima da coluna de acerto da tabela de dano.",
+    "historico": []
+  },
+  "defesa.chefe.cr_arma_magica": {
+    "valor": 10,
+    "eixo": "defesa",
+    "desde": "2026-11-18",
+    "descricao": "A partir deste CR os golpes do chefe ignoram redução de dano não mágica.",
+    "historico": []
+  },
+  "controle.atencao.ca_dpr_auto": {
+    "valor": 16,
+    "eixo": "controle",
+    "desde": "2026-11-19",
+    "descricao": "CA usada para o DPR da atenção quando a build declara \"dpr\": \"auto\" (a mesma coluna que a party usa).",
+    "historico": []
+  },
+  "controle.marca.fator_sem_resistencia": {
+    "valor": 0.5,
+    "eixo": "controle",
+    "desde": "2026-11-19",
+    "descricao": "Marca no acerto só com desvantagem contra os outros (Unwavering Mark), sem a resistência que os aliados ganham no Ancestral Protectors: fração do valor da marca completa. 0,5 ≈ (1 − p_desv/p) ÷ (1 − 0,5·p_desv/p) com p ≈ 0,65.",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 0.5,
+        "motivo": "Usuário: Ancestral Protectors é mais forte que Unwavering Mark (resistência ao dano nos aliados)."
+      }
+    ]
+  },
+  "area.horda2.corpo": {
+    "valor": 5,
+    "eixo": "area",
+    "desde": "2026-11-19",
+    "descricao": "Criaturas da horda no grupo que avança para o corpo a corpo (chega à linha de frente no round 2).",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 5,
+        "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
+      }
+    ]
+  },
+  "area.horda2.distancia": {
+    "valor": 3,
+    "eixo": "area",
+    "desde": "2026-11-19",
+    "descricao": "Criaturas da horda num grupo separado à distância (arqueiros): alvo de área sem fogo amigo em todos os rounds.",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 3,
+        "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
+      }
+    ]
+  },
+  "area.horda2.fracao_alvo": {
+    "valor": 0.5,
+    "eixo": "area",
+    "desde": "2026-11-19",
+    "descricao": "A luta de área termina quando a party tira esta fração da vida total da horda (o resto é limpeza, sem gastar recursos).",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 0.5,
+        "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
+      }
+    ]
+  },
+  "area.horda2.rounds_max": {
+    "valor": 3,
+    "eixo": "area",
+    "desde": "2026-11-19",
+    "descricao": "Teto de rounds; quem não chega à fração da vida é extrapolado pela taxa média (até 2× o teto).",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 5,
+        "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
+      },
+      {
+        "de": 5,
+        "para": 3,
+        "data": "2026-11-19",
+        "motivo": "usuário 19/11: medir o pico; com 5 rounds o DPR sustentado dos marciais pesava demais"
+      }
+    ]
+  },
+  "area.horda2.guerreiros": {
+    "valor": {
+      "quantidade": 2,
+      "dano": "2d6",
+      "mod": [
+        3,
+        4,
+        5
+      ],
+      "ataques": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "eixo": "area",
+    "desde": "2026-11-19",
+    "descricao": "Dois guerreiros de referência que batem junto (alvo de menor PV, dano acima do PV é perdido). mod: +3 até o 3, +4 do 4 ao 7, +5 do 8; ataques: 1 até o 4, 2 do 5 ao 10, 3 do 11 ao 19, 4 no 20.",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": {
+          "quantidade": 2,
+          "dano": "2d6",
+          "mod": [
+            3,
+            4,
+            5
+          ],
+          "ataques": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
+      }
+    ]
+  },
+  "area.horda2.truque_referencia": {
+    "valor": "1d10",
+    "eixo": "area",
+    "desde": "2026-11-19",
+    "descricao": "Truque de alvo único do conjurador de referência (dados escalam no 5 e no 11), ataque com prof + atributo da régua.",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": "1d10",
+        "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
+      }
+    ]
+  },
+  "area.horda2.N": {
+    "valor": 3000,
+    "eixo": "area",
+    "desde": "2026-11-19",
+    "descricao": "Combates simulados por nível de horda.",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 3000,
+        "motivo": "Área v2 (usuário, 19/11): área = luta contra uma horda com a party de referência."
+      }
+    ]
+  },
+  "controle.peso_no_controle.ancestral_protectors": {
+    "valor": 0.25,
+    "eixo": "controle",
+    "desde": "2026-11-19",
+    "descricao": "Marca (Ancestral Protectors; Unwavering Mark com \"resistencia\": false): fração da redução do dano que o marcado causa aos aliados que também conta como Controle. O resto fica no Corpo (atenção: a marca protege os outros membros da party). Mesmo valor da do Sentinel.",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 0.25,
+        "motivo": "Usuário 19/11 (passada 3): marcas contam no Corpo; fração no Controle igual à do Sentinel."
+      }
+    ]
+  },
+  "controle.referencia.frontliner.ca_bonus": {
+    "valor": 1,
+    "eixo": "controle",
+    "desde": "2026-11-19",
+    "descricao": "Frontliner de referência (2 na party): CA = CA marcial do nível + este bônus (média entre o tank, +2, e o striker, +0).",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 1,
+        "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+      }
+    ]
+  },
+  "controle.referencia.frontliner.ca_max": {
+    "valor": 21,
+    "eixo": "controle",
+    "desde": "2026-11-19",
+    "descricao": "Teto da CA do frontliner de referência.",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 21,
+        "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+      }
+    ]
+  },
+  "controle.referencia.frontliner.pv_base": {
+    "valor": 11,
+    "eixo": "controle",
+    "desde": "2026-11-19",
+    "descricao": "PV do frontliner de referência no nível 1 (média entre tank 12 e striker 10).",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 11,
+        "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+      }
+    ]
+  },
+  "controle.referencia.frontliner.pv_por_nivel": {
+    "valor": 8,
+    "eixo": "controle",
+    "desde": "2026-11-19",
+    "descricao": "PV por nível acima do 1º do frontliner de referência (média entre tank 8,5 e striker 7,5).",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 8,
+        "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+      }
+    ]
+  },
+  "controle.referencia.frontliner.soft": {
+    "valor": 0.15,
+    "eixo": "controle",
+    "desde": "2026-11-19",
+    "descricao": "Ameaça (taunt soft) do frontliner de referência.",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 0.15,
+        "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+      }
+    ]
+  },
+  "controle.referencia.frontliner.dpr_fator": {
+    "valor": 0.85,
+    "eixo": "controle",
+    "desde": "2026-11-19",
+    "descricao": "DPR do frontliner de referência = este fator × DPR de referência do nível (média entre tank 0,7 e striker 1,0).",
+    "historico": [
+      {
+        "data": "2026-11-19",
+        "de": null,
+        "para": 0.85,
+        "motivo": "Usuário 19/11 (passada 3): tank e striker de referência viram um frontliner só, com valores médios."
+      }
+    ]
+  },
+  "suporte.h.P_CAIDO": {
+    "valor": 0.5,
+    "eixo": "suporte",
+    "desde": "2026-11-19",
+    "descricao": "Aliados caídos por luta que uma cura na luta levanta (cura_na_luta). Chute inicial (19/11), a calibrar.",
+    "historico": []
+  },
+  "suporte.h.ACESSO_TOQUE": {
+    "valor": 0.6,
+    "eixo": "suporte",
+    "desde": "2026-11-19",
+    "descricao": "Fator da cura de toque (Cure Wounds, Lay on Hands) frente à de distância (Healing Word): precisa chegar ao caído. Chute inicial (19/11).",
+    "historico": []
+  },
+  "suporte.h.ACESSO_ACAO": {
+    "valor": 0.8,
+    "eixo": "suporte",
+    "desde": "2026-11-19",
+    "descricao": "Fator da cura que custa a ação (Cure Wounds) frente à de ação bônus (Healing Word). Chute inicial (19/11).",
+    "historico": []
+  },
+  "controle.corpo.referencia_unica": {
+    "valor": 1,
+    "eixo": "controle",
+    "desde": "2026-11-19",
+    "descricao": "Corpo (T, S, P e tag) compara a build com um MEMBRO PADRÃO na vaga dela: o comportamento da vaga (alvo, acc, concentração) é o da referência da posição, mas CA e PV são a média da party de referência (2 frontliners, atirador, conjurador). 0 = referência da própria posição (antes de 19/11). Tira a 'colher de chá' de quem fica atrás.",
+    "historico": []
+  },
+  "corpo.pvt_rounds": {
+    "valor": 3,
+    "eixo": "corpo",
+    "desde": "2026-11-21",
+    "descricao": "Rounds em que o PV temporário renovável (pvt_round, ex.: Reckless Abandon) conta na atenção/corpo: PV + pvt_luta + pvt_round × este valor.",
+    "historico": []
+  },
+  "controle.corpo.extrap_pontos": {
+    "valor": 0,
+    "eixo": "controle",
+    "desde": "2026-11-23",
+    "descricao": "Corpo além do nível 1–20 (D8): a raiz de T é extrapolada por uma regressão linear sobre os últimos N pontos da busca (0 = a busca inteira, do nível da build até o 20) (antes: só os 2 últimos, instável porque T oscila com os CRs discretos dos encontros). Sem teto.",
+    "historico": [
+      {
+        "data": "2026-11-23",
+        "de": null,
+        "para": 0,
+        "motivo": "D8 (usuário, 23/11): sem teto no corpo; prioridade é a consistência da régua, então extrapolação estável."
+      }
+    ]
+  },
+  "area.crescimento_por_nivel": {
+    "valor": 1.12,
+    "eixo": "area",
+    "desde": "2026-11-23",
+    "descricao": "Área acima do 20 (D3): se a build ainda vence a referência no 20, nível eq. = 20 + ln(fr20/ref20)/ln(g), com g = quanto o desempenho contra a horda cresce por nível. Preserva a ordem das builds pelo desempenho no 20 (a margem pode ficar quase plana entre 11 e 20 e a raiz de uma reta explode). Antes: teto fixo em 20,0. g chutado ~ degraus da rampa antiga; parâmetro treinável.",
+    "historico": [
+      {
+        "data": "2026-11-23",
+        "de": null,
+        "para": 1.12,
+        "motivo": "D3 (usuário, 23/11): tirar o teto da área; consistência interna antes da calibração entre réguas."
+      }
+    ]
+  }
 }

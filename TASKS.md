@@ -155,6 +155,30 @@ P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
 
 ## Decisões (para o usuário)
 
+### Respostas do usuário (23/11) e o que vira tarefa
+Ordem de execução: D8 → D3 → D5 → D2 → D4 → D6 → D9 → D1 (D7 fechada pela D2 + D5).
+- **D1 → mistura ponderada das rampas** bruta/precisa, peso como premissa treinável.
+- **D2 → mistura plano × externo**: valor = plano + α·(externo − plano), α global = 0,2 (premissa treinável; α por eixo só
+  se o treino mostrar padrão por eixo). Razão: o plano é o que a build faz com o combustível de um dia; o externo conta
+  "três Wizards"; a versatilidade vale algo, mas a munição é a mesma; marciais quase não ganham nada com α.
+- **D3 → sem teto na área** (consistência interna antes da escala). **Feito 23/11:** acima do 20, nível = 20 +
+  ln(fr20/ref20)/ln(g), g = `area.crescimento_por_nivel` = 1,12 (a margem pode ficar plana entre 11 e 20 e a raiz de
+  uma reta explodia: combo do Evocation ia a 34,5; agora 22,2; área 21,4; Sorcerer Draconic 21,0).
+- **D4 → inimigo esperto**: invocação/torreta entra no corpo, mas o inimigo só bate nela quando eliminá-la rende mais
+  (dano evitado por golpe) do que bater no conjurador/tanque; substitui o `taunt_summon` fixo. Trabalho em equipe
+  (tanque segurando) fica para a análise de party.
+- **D5 → rendimento**: o plano auto maximiza o rendimento respeitando o orçamento (gasto ≤ recursos), não o gasto.
+- **D6 → BI cobra a ação bônus**; usos do dado com retorno decrescente na luta (decaimento treinável); Cutting Words é
+  opção extra (nunca piora a build); rever se o BI está superestimado.
+- **D7 → fechada pela D2 + D5** (reabrir se o τ de dano do Wizard seguir negativo depois delas).
+- **D8 → sem teto no corpo**, prioridade consistência. **Feito 23/11:** a extrapolação acima do 20 usava só os 2 últimos
+  pontos da busca (T oscila com os CRs discretos); agora é a regressão da busca inteira (`controle.corpo.extrap_pontos`
+  = 0). Infiltrator 31,5 → 25,7 (pico 42,6 → 29,8); delta do feat −8,6 → −4,1 níveis; AG 25,3 → 25,6.
+- **D9 → premissa de magias por luta por nível** (derivada dos espaços, ~20% para utilidade), com ajuste por build
+  (blaster gasta mais). Eixo de utilidade: só nota de rodapé por enquanto.
+
+### Texto original das decisões
+
 - **D1 GWM/Sharpshooter e as rampas** — o nível eq. de dano é o máximo entre a rampa bruta e a precisa. Um feat que troca
   acerto por dano faz a build trocar de perfil e chegar no mesmo nível (Berserker 11: 11,0 com e sem GWM, apesar de +5 de
   DPR na CA 16). (a) manter o máximo; (b) mistura ponderada das rampas, com o peso como premissa treinável.

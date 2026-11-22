@@ -47,8 +47,23 @@ def pos(f, posicao, front=None):
     return f
 
 
-def com_inv(f, inv):
-    for l in f['linhas']: l['invocacoes'] = [inv] + [x for x in l.get('invocacoes', []) if x is not inv]
+def com_inv(f, inv, gasto=None):
+    """gasto = espaços por luta que a invocação custa (P1.9, 22/11: o Eldritch Cannon sai grátis 1×/descanso longo e
+    depois custa um espaço; sem gasto, ele ficava de graça em todas as lutas). Com gasto, a linha principal (anel
+    interno, grátis) fica sem a invocação e ganha uma irmã "<id>+inv" com ela."""
+    novas = []
+    for l in f['linhas']:
+        if gasto and l.get('principal'):
+            c = json.loads(json.dumps(l)); c.pop('principal', None); c.pop('custo', None)
+            c.update(id=l['id'] + '+inv', herda=l['id'], hipotese=l.get('hipotese', l['id']) + ' + ' + inv['nome'])
+            c['invocacoes'] = [inv] + c.get('invocacoes', []); c['gasta'] = {"espacos": dict(gasto)}
+            novas.append(c); continue
+        l['invocacoes'] = [inv] + [x for x in l.get('invocacoes', []) if x is not inv]
+        if gasto:
+            g = dict(l.get('gasta', {})); e = dict(g.get('espacos', {}))
+            for k, v in gasto.items(): e[k] = round(e.get(k, 0) + v, 3)
+            g['espacos'] = e; l['gasta'] = g
+    f['linhas'] += novas
     return f
 
 
@@ -113,7 +128,7 @@ def artillerist(L, feat):
     if feat: bless_linha(f, cant)
     can = {"nome": "Eldritch Cannon (Force Ballista)", "quantidade": 1, "pv": 5 * L, "ca": 18,
            "ataque": {"n": 1, "bonus": p + i + E, "dano": "3d8" if L >= 9 else "2d8"}}
-    return pos(com_inv(f, can), 'retaguarda'), s
+    return pos(com_inv(f, can, {"1": 0.75}), 'retaguarda'), s   # 1 grátis/descanso longo + 3 espaços de 1º nas 4 lutas
 
 
 def alchemist(L, feat):

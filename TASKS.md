@@ -65,13 +65,22 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
   τ controle global nv11 0,34 → 0,62. Todo o controle desloca um pouco (CI com --forcar). **Dano:** não é bug, é a P2.1
   (a invocação comum é o máximo de todo Wizard; necromancy 14,1 por mortos-vivos) → D7. Original: — τ controle −0,60 e dano −0,60 (nv11, externo). Dano externo do Wizard
   (10,8) passa o do Fighter (9,4): ver qual linha dá esse pico (invocação? área contando em alvo único?).
-- [ ] **P1.6 Sorcerer — def. física** [M] — τ −0,5 nos dois níveis: Draconic (Draconic Resilience) devia liderar.
+- [x] **P1.6 Sorcerer — def. física** [G] — **revisto 22/11, sem bug:** a pista "alta" do Divine Soul é a armadura pesada do
+  dip de Cleric da build do RPGBot (o chassi não tem dip); Draconic lidera a classe (6,9 × 5,9). Dano baixo nos originais =
+  plano auto pondo `combo` em todas as lutas (D5) + metamagia não modelada (→ P2.6). Original: — τ −0,5 nos dois níveis: Draconic (Draconic Resilience) devia liderar.
   Nos originais, dano do Sorcerer 0,8/1,0 (o menor junto do Bard) mesmo com Fire Bolt.
-- [ ] **P1.7 Cleric — controle e dano** [M] — originais nv7: controle 0,0 em todos (checagem "clérigos ≥ fighters" falha);
+- [x] **P1.7 Cleric — controle e dano** [M] — **revisto 22/11, sem bug de motor:** a régua do Cleric só tem Hold Person e
+  Banishment (alvo único); o controle de área do Bard/Wizard/Armorer vem do Hypnotic Pattern. Controle 0,0 nos originais nv7 =
+  plano auto sem linha de controle (D5). Dano nv7: depois da D5/D7. Original: — originais nv7: controle 0,0 em todos (checagem "clérigos ≥ fighters" falha);
   chassi externo nv11 controle 3,4 com Hold Person/Banishment, contra Artificer 8,2 só com Web. τ dano nv7 −0,38.
-- [ ] **P1.8 Controle entre classes** [M] — mesmas magias, valores muito diferentes: Druid 3,6 (Entangle/Hold
+- [x] **P1.8 Controle entre classes** [M] — **revisto 22/11:** Web × Entangle na mesma build: campo 4,9 × 1,8, e a diferença é
+  RAW (Web repete o save a cada entrada/início de turno, Entangle só na conjuração; For dos brutos). Hypnotic Pattern do
+  Armorer está certo (lista da subclasse no 9). A diferença entre classes vem da lista da régua (→ P2.7). Original: — mesmas magias, valores muito diferentes: Druid 3,6 (Entangle/Hold
   Person/Polymorph) e Cleric 3,4 contra Artificer 8,2, Warlock 9,1, Bard 9,0 (externo nv11). Pode ser o mesmo bug da P1.7.
-- [ ] **P1.9 Corpo de invocações/torreta** [M/J] — Artificer corpo 28,8 (Artillerist 28,7, o maior de todos, acima do
+- [x] **P1.9 Corpo de invocações/torreta** [M/J] — **feito 22/11 (parte M):** o Eldritch Cannon estava grátis em todas as
+  linhas; agora custa 0,75 espaço de 1º por luta (1 grátis/descanso longo + 3 espaços) e a `principal` fica sem ele
+  (nova `principal+inv`). Corpo do Artillerist nv7 19,7 → 14,8; nv11 continua ~27, porque as linhas de controle/área (que
+  já gastam) levam o canhão: o tamanho do corpo de invocação é a D4. Original: — Artificer corpo 28,8 (Artillerist 28,7, o maior de todos, acima do
   Ancestral Guardian 26,8) e Druid 24,3 (Shepherd 24,7). Ver se torreta/invocação está contando como presença do
   personagem, e quanto deveria contar (pode virar decisão).
 - [ ] **P1.10 Sensibilidade do corpo/defesa a 1 ponto de atributo** [M] — no 11, trocar um ASI por feat derruba o corpo
@@ -95,6 +104,11 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
   números comuns a comparação entre builds fica justa, mas o valor absoluto ainda depende da semente. Medir o ruído
   (sementes 11/12/13 num punhado de builds) e decidir se N=8000 basta.
 
+- [ ] **P2.6 Pontos de feitiçaria** [M] — Flexible Casting põe todos os pontos em espaços; metamagia (Quickened/Twinned),
+  Bastion of Law (Clockwork) e afins sem mecânica. O dano e a defesa do Sorcerer não têm onde aparecer.
+- [ ] **P2.7 Listas das réguas de controle** [M/J] — Druid (Entangle, Hold Person, Polymorph) e Cleric (Hold Person,
+  Banishment) têm listas fracas perto da do Wizard/Bard; Sleet Storm, Plant Growth e Spike Growth nem existem no
+  `magias.json`. Acrescentar as magias é mecânica; mudar a lista da régua comum é decisão de régua (fazer entre passadas).
 - [ ] **P2.1 Invocação domina o dano externo** [J → D7] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
   Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
   Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).

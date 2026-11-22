@@ -418,11 +418,18 @@
     "historico": []
   },
   "controle.atencao.skel_peso": {
-    "valor": 1.5,
+    "valor": 1.0,
     "eixo": "controle",
     "desde": "2026-11-18",
-    "descricao": "Peso de atração de invocações/esqueletos sobre inimigos corpo a corpo.",
-    "historico": []
+    "descricao": "Peso de atração de invocações/esqueletos sobre a parcela não maliciosa (1 − malícia) dos inimigos corpo a corpo (1 = o mesmo de um frontliner). A parcela maliciosa escolhe a invocação pela ameaça por PV (DPR/PV), como faz com os membros (D4, 23/11).",
+    "historico": [
+      {
+        "data": "2026-11-23",
+        "de": 1.5,
+        "para": 1.0,
+        "motivo": "D4 (usuário, 23/11): inimigos não fazem ataques burros; a parcela 'burra' trata a invocação como mais um corpo na linha de frente (peso de um frontliner), e a parcela esperta passa a pesar a ameaça por PV da invocação (inv_dpr)."
+      }
+    ]
   },
   "controle.atencao.skel_pv": {
     "valor": 133,

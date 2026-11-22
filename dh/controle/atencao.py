@@ -56,7 +56,7 @@ def ficha(spec, corpo):
              dpr=spec['dpr'])
     for k in ('res', 'adv', 'red'):
         if corpo.get(k): f[k] = corpo[k]
-    for k in ('soft', 'conc', 'esqueletos', 'agarra', 'inv_pv', 'inv_ca', 'oculto'):
+    for k in ('soft', 'conc', 'esqueletos', 'agarra', 'inv_pv', 'inv_ca', 'inv_dpr', 'oculto'):
         if k in spec: f[k] = spec[k]
     for k in ('acc_m', 'acc_r'):
         if k in spec: f[k] = tuple(spec[k])
@@ -75,8 +75,8 @@ def distribui(e, party, ti, grap=None):
     mv = np.mean([v for v, p in zip(vals, party) if not p.get('skel')]) or 1
     w = []
     for p, v in zip(party, vals):
-        if p.get('skel'):
-            w.append(H['skel_peso'] * (1 - m) if (e['melee'] and p['pv'] > 0) else 0); continue
+        if p.get('skel'):   # D4 (23/11): burro = mais um corpo na frente; esperto = ameaça por PV, como os membros
+            w.append((H['skel_peso'] * (1 - m) + m * v / mv) if (e['melee'] and p['pv'] > 0) else 0); continue
         f = float(p['front'])                 # fração do tempo na linha de frente (bool = 0 ou 1)
         if e['melee']:
             reach = f + (1 - f) * p.get('acc_m', (1, 1, 1))[ti]
@@ -141,5 +141,6 @@ def party_com(membro, L):
     party[posicao(membro['papel'])] = membro
     if membro.get('esqueletos'):
         pv = membro.get('inv_pv', H['skel_pv'])
-        party.append(dict(nome='Invocações', skel=True, pv=pv, pv0=pv, ca=membro.get('inv_ca', 16), front=True, dpr=0))
+        party.append(dict(nome='Invocações', skel=True, pv=pv, pv0=pv, ca=membro.get('inv_ca', 16), front=True,
+                          dpr=membro.get('inv_dpr', 0.0)))
     return party

@@ -144,6 +144,11 @@ P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
 - [ ] **P2.11 Ranger sem controle nem suporte** [M] — 0,0 em todas as subclasses; Ensnaring Strike, Spike Growth e
   Conjure Animals fora da régua (junto com a P2.7/P2.8).
 - [ ] **P2.12 Dano dos marciais no nv7** [M] — ex-P1.14: Monk −0,16, Ranger −0,19, Rogue −0,30, Fighter 0,07.
+- [ ] **P2.13 Invocação: dano × corpo com o mesmo PV** [M/J] — com a D4 o inimigo esperto bate na invocação quando a
+  ameaça por PV dela é maior (Summon Aberration ≈ 0,4 × conjurador ≈ 0,2), e o corpo sobe (Necromancy 19,8 → 26,4,
+  Artillerist 29,3 → 32,4; Moon 31,9 → 27,2). Mas o eixo de dano conta a invocação viva a luta inteira: o PV dela é gasto
+  duas vezes. Descontar do dano da invocação a fração da luta em que ela já morreu (a `vida()` da atenção já sabe
+  quando o PV dela zera).
 - [ ] **P2.1 Invocação domina o dano externo** [J → D7] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
   Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
   Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).
@@ -159,15 +164,21 @@ P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
 Ordem de execução: D8 → D3 → D5 → D2 → D4 → D6 → D9 → D1 (D7 fechada pela D2 + D5).
 - **D1 → mistura ponderada das rampas** bruta/precisa, peso como premissa treinável.
 - **D2 → mistura plano × externo**: valor = plano + α·(externo − plano), α global = 0,2 (premissa treinável; α por eixo só
-  se o treino mostrar padrão por eixo). Razão: o plano é o que a build faz com o combustível de um dia; o externo conta
+  se o treino mostrar padrão por eixo). **Feito 23/11:** anel `misto` (`aneis.alfa_versatilidade`), visão padrão do
+  `comparar_chassi` e do `diff_baseline`. Razão: o plano é o que a build faz com o combustível de um dia; o externo conta
   "três Wizards"; a versatilidade vale algo, mas a munição é a mesma; marciais quase não ganham nada com α.
 - **D3 → sem teto na área** (consistência interna antes da escala). **Feito 23/11:** acima do 20, nível = 20 +
   ln(fr20/ref20)/ln(g), g = `area.crescimento_por_nivel` = 1,12 (a margem pode ficar plana entre 11 e 20 e a raiz de
   uma reta explodia: combo do Evocation ia a 34,5; agora 22,2; área 21,4; Sorcerer Draconic 21,0).
 - **D4 → inimigo esperto**: invocação/torreta entra no corpo, mas o inimigo só bate nela quando eliminá-la rende mais
-  (dano evitado por golpe) do que bater no conjurador/tanque; substitui o `taunt_summon` fixo. Trabalho em equipe
-  (tanque segurando) fica para a análise de party.
+  (dano evitado por golpe) do que bater no conjurador/tanque. Trabalho em equipe (tanque segurando) fica para a análise
+  de party. **Feito 23/11:** na escolha de alvo, a parcela maliciosa pesa a invocação pela ameaça por PV (DPR/PV, com o
+  DPR dela na CA 15, campo `inv_dpr`), como os membros; a não maliciosa a trata como mais um corpo na frente
+  (`skel_peso` 1,5 → 1,0). Efeito: invocação perigosa sobe, saco de PV inofensivo desce. Falta o custo → P2.13.
 - **D5 → rendimento**: o plano auto maximiza o rendimento respeitando o orçamento (gasto ≤ recursos), não o gasto.
+  **Feito 23/11:** o motor reescolhe os planos `auto` depois de calcular as linhas (rendimento = Σ peso do combate × valor
+  da linha; valor = níveis eq. dos eixos × `plano.auto.peso_eixo`, todos 1); gasto vira desempate. Hexblade: dano do dia
+  2,5 → 7,9.
 - **D6 → BI cobra a ação bônus**; usos do dado com retorno decrescente na luta (decaimento treinável); Cutting Words é
   opção extra (nunca piora a build); rever se o BI está superestimado.
 - **D7 → fechada pela D2 + D5** (reabrir se o τ de dano do Wizard seguir negativo depois delas).

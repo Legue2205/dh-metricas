@@ -61,7 +61,9 @@ def calcular(e, b, linha, modo='rapido', regua=None):
                                              pv=i['quantidade'] * i['pv'], ca_alvo=i['ca'] + i.get('cobertura', 0)) for i in corpos]
         fn = efeitos.compilar(fontes, corpo, b['nivel'])
         at = dict(c['atencao'])
-        if corpos: at.update(esqueletos=True, inv_pv=sum(i['quantidade'] * i['pv'] for i in corpos), inv_ca=corpos[0]['ca'])
+        if corpos:   # D4 (23/11): o DPR da invocação entra na escolha de alvo do inimigo esperto (ameaça por PV)
+            at.update(esqueletos=True, inv_pv=sum(i['quantidade'] * i['pv'] for i in corpos), inv_ca=corpos[0]['ca'],
+                      inv_dpr=float(dano.dpr({'ataques': []}, 15, invocacoes=corpos)))
         ficha = atencao.ficha(at, corpo)
         return total.avaliar(fn, ficha, b['nivel'], absoluto=cfg['absoluto'], regua=regua)
     raise KeyError(e)

@@ -83,18 +83,24 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
   já gastam) levam o canhão: o tamanho do corpo de invocação é a D4. Original: — Artificer corpo 28,8 (Artillerist 28,7, o maior de todos, acima do
   Ancestral Guardian 26,8) e Druid 24,3 (Shepherd 24,7). Ver se torreta/invocação está contando como presença do
   personagem, e quanto deveria contar (pode virar decisão).
-- [ ] **P1.10 Sensibilidade do corpo/defesa a 1 ponto de atributo** [M] — no 11, trocar um ASI por feat derruba o corpo
+- [x] **P1.10 Sensibilidade do corpo/defesa a 1 ponto de atributo** [J → D8] — **revisto 22/11:** não é o PV em si, é a
+  extrapolação do corpo acima do nível 20 (`nivel_corpo`: "positivo ainda no 20 ⇒ extrapola pela inclinação"). Infiltrator
+  (CA 20, 91 PV) tem corpo 31,5; −11 PV → 22,9. Outliers do corpo estão todos nessa faixa (AG 25–27, Artillerist ~27,
+  Cavalier 24, War 23,6). Original: — no 11, trocar um ASI por feat derruba o corpo
   em −3 a −7,5 níveis (Armorer Infiltrator + Skill Expert: −7,5; Alchemist + Fey Touched: −5,8). Ver se é o PV/CA
   mesmo ou um degrau da rampa.
-- [ ] **P1.11 Sobra de recursos dos conjuradores** [M/J] — originais nv11: Bard Whispers sobra 47 níveis de espaço;
+- [x] **P1.11 Sobra de recursos dos conjuradores** [J → D9] — **revisto 22/11:** Whispers é intencional (build social do guia,
+  só linha `principal`; magias em `nao_modelado` → P2.8). Nos outros, cada linha gasta 1 magia por luta, então sobram os
+  espaços de 2º/3º (Life, Moon, Conjuration sobram 2–3 de cada). Original: — originais nv11: Bard Whispers sobra 47 níveis de espaço;
   Cleric 25, Druid 28, Wizard 21 em média. O plano auto gasta pouco e subavalia conjuradores no padrão.
-- [ ] **P1.12 Área no teto** [M/J] — Wizard e Sorcerer médios no 20,0 (teto) no externo nv11; Light e Necromancy no 20
+- [x] **P1.12 Área no teto** [J → D3] — **revisto 22/11:** é a escala (teto 20), não bug. Original: — Wizard e Sorcerer médios no 20,0 (teto) no externo nv11; Light e Necromancy no 20
   já nos originais. A régua satura e não separa. Retaguarda 14 × marciais 5–8: conferir se é real.
-- [ ] **P1.13 Dano no padrão colapsa por troca de linha** [J] — estrutural: o plano escolhe linhas de controle/combo nas
+- [x] **P1.13 Dano no padrão colapsa por troca de linha** [J → D5] — confirmado na P1.1 (plano auto só olha gasto). Original: — estrutural: o plano escolhe linhas de controle/combo nas
   lutas prioritárias, e o dano do dia de quem tem opções cai (Hexblade 2,5 × 7,9 externo). Ligado à Decisão D2.
-- [ ] **P1.14 τ de dano levemente negativo** [M] — Monk (−0,16/0,0), Ranger (−0,19), Rogue (−0,30 externo nv7). Pequenos,
+- [ ] **P1.14 τ de dano levemente negativo** [M] — **adiada para a passada 2** (pequena; depende de D5/D7). Original: — Monk (−0,16/0,0), Ranger (−0,19), Rogue (−0,30 externo nv7). Pequenos,
   conferir depois dos maiores.
-- [ ] **P1.15 Variância zero** [M] — Paladin controle τ 0,0 e Fighter suporte 0,0: provavelmente todos iguais (só uma
+- [x] **P1.15 Variância zero** [M] — **revisto 22/11:** só 3 pistas de controle no Paladin (Conquest 4,1 < Redemption 4,9:
+  a velocidade 0 da Aura of Conquest não está modelada → P2.9) e 1 de suporte no Fighter. Original: — Paladin controle τ 0,0 e Fighter suporte 0,0: provavelmente todos iguais (só uma
   subclasse com valor). Confirmar se é falta de mecânica (Paladin: Conquest/Fear, Ancients/Nature's Wrath).
 
 ## Passada 2
@@ -109,6 +115,9 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
 - [ ] **P2.7 Listas das réguas de controle** [M/J] — Druid (Entangle, Hold Person, Polymorph) e Cleric (Hold Person,
   Banishment) têm listas fracas perto da do Wizard/Bard; Sleet Storm, Plant Growth e Spike Growth nem existem no
   `magias.json`. Acrescentar as magias é mecânica; mudar a lista da régua comum é decisão de régua (fazer entre passadas).
+- [ ] **P2.8 Magias de controle faltando no `magias.json`** [M] — Sleep, Psychic Lance, Dissonant Whispers, Sleet Storm,
+  Plant Growth, Spike Growth (Whispers, Druid, Bard base).
+- [ ] **P2.9 Aura of Conquest: velocidade 0 do amedrontado** [M] — hoje só o dano psíquico entra.
 - [ ] **P2.1 Invocação domina o dano externo** [J → D7] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
   Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
   Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).
@@ -138,4 +147,9 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
   comum (Summon Aberration no Wizard/Warlock), toda a classe empata e o τ da régua mede só ruído. Opções: (a) testar as
   réguas por subclasse no anel interno (à vontade) + o externo à parte; (b) marcar linhas de invocação e medir o dano do
   personagem sem elas (invocação como contribuição separada); (c) aceitar.
+- **D8 Corpo acima do nível 20** (ver P1.10) — o corpo extrapola pela inclinação final e explode (31,5 num atirador de
+  placas). (a) teto em 20 como os outros eixos; (b) compressão acima de 20 (ex.: 20 + log); (c) manter.
+- **D9 Uma magia por luta** (ver P1.11) — as linhas de conjurador gastam uma magia (+ Healing Word) por luta; no 11 sobram
+  os espaços médios. (a) manter (hipótese conservadora); (b) linhas com 2 magias por luta (controle + área/buff) para os
+  conjuradores plenos; (c) uma premissa "magias por luta" por nível.
 - **D4 Corpo de invocações** (ver P1.9) — invocação/torreta conta como presença do personagem? Com que peso?

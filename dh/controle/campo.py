@@ -184,7 +184,9 @@ def unico(E, f, filtro=None):
 def f_area(cd, m, atraso=0):
     """Efeito de área de uma magia da biblioteca numa criatura."""
     def f(c):
-        return efeito1(round(save(c, m.get('save') or 'Des'), 2), cd, m['peso'], m['termino'], c['lr'],
+        # peso None = Slow: mesmo peso por criatura que o caminho de alvo único (tira 1 ataque do inimigo).
+        p = m['peso'] if m['peso'] is not None else max(0.25, 1 - 1 / n_ataques(c['cr']) + 0.05)
+        return efeito1(round(save(c, m.get('save') or 'Des'), 2), cd, p, m['termino'], c['lr'],
                        bool(m.get('sem_save', False)), False, bool(m.get('resave_fora', False)),
                        round(save(c, 'For') - 2, 2), 0, atraso)
     return f

@@ -1,0 +1,3564 @@
+{
+ "id": "rpgbot-paladin-conquest-puro-9",
+ "nome": "Oath of Conquest Paladin puro (extensão da build do RPGBot)",
+ "grupo": "RPGBot",
+ "nivel": 9,
+ "build": "Paladin (Conquest) sem multiclasse, Variant Human, Shield Master 1, For 18 4, Car 18 8; espada longa + escudo, Dueling",
+ "impressao": "637e042a8f",
+ "versao": "0.9.0",
+ "modo": "completo",
+ "linhas": {
+  "principal": {
+   "hipotese": "só armas, sem gastar espaço",
+   "principal": [
+    "dano",
+    "defesa",
+    "controle",
+    "saves",
+    "area",
+    "suporte"
+   ],
+   "dano": {
+    "dpr": {
+     "CA 11": 24.2,
+     "CA 12": 22.9,
+     "CA 15": 18.9,
+     "CA 16": 17.6,
+     "CA 18": 15.0,
+     "CA 20": 12.4,
+     "CA 22": 9.8,
+     "CA 24": 7.1,
+     "CA 25": 5.8
+    },
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.8,
+    "nivel_precisa": 4.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.37,
+     "6": 3.37,
+     "7": 3.37,
+     "8": 4.38,
+     "9": 4.21,
+     "10": 4.21,
+     "11": 4.47,
+     "12": 4.47,
+     "13": 5.21,
+     "14": 5.21,
+     "15": 5.21,
+     "16": 5.21,
+     "17": 5.73,
+     "18": 5.73,
+     "19": 5.99,
+     "20": 5.69
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.93,
+    "rank": "E",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 1.91,
+    "rank_atencao": "D",
+    "vidas_total": 0.068,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.18,
+    "corpo": {
+     "T": 0.18,
+     "S": 0.338,
+     "P": -0.158,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.59,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.18
+     ],
+     [
+      10,
+      0.132
+     ],
+     [
+      11,
+      0.054
+     ],
+     [
+      12,
+      0.02
+     ],
+     [
+      13,
+      -0.013
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.45,
+     "Party de elite": 0.43,
+     "Horda + chefe": 0.38,
+     "Horda": 0.47,
+     "Dupla": 0.27,
+     "Chefe sozinho": 2.11
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 0.72,
+    "rank_absoluto": "E"
+   }
+  },
+  "smite-1": {
+   "hipotese": "2 Divine Smites de 1º na luta",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 28.9,
+     "CA 12": 27.6,
+     "CA 15": 23.8,
+     "CA 16": 22.5,
+     "CA 18": 19.9,
+     "CA 20": 17.3,
+     "CA 22": 14.6,
+     "CA 24": 11.7,
+     "CA 25": 10.1
+    },
+    "nivel_eq": 6.3,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 6.1,
+    "nivel_precisa": 6.3,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.06,
+     "6": 3.06,
+     "7": 3.06,
+     "8": 4.08,
+     "9": 3.93,
+     "10": 3.93,
+     "11": 4.21,
+     "12": 4.21,
+     "13": 4.89,
+     "14": 4.89,
+     "15": 4.89,
+     "16": 4.89,
+     "17": 5.51,
+     "18": 5.51,
+     "19": 5.96,
+     "20": 5.49
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 1.0,
+    "rank": "E",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.21,
+    "rank_atencao": "D",
+    "vidas_total": 0.082,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.194,
+    "corpo": {
+     "T": 0.194,
+     "S": 0.295,
+     "P": -0.102,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.28,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.194
+     ],
+     [
+      10,
+      0.142
+     ],
+     [
+      11,
+      0.052
+     ],
+     [
+      12,
+      0.011
+     ],
+     [
+      13,
+      -0.028
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.5,
+     "Party de elite": 0.51,
+     "Horda + chefe": 0.43,
+     "Horda": 0.53,
+     "Dupla": 0.43,
+     "Chefe sozinho": 2.18
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 1.01,
+    "rank_absoluto": "D"
+   }
+  },
+  "bless": {
+   "hipotese": "Bless no round 1 (ação), ataques nos rounds 2–4",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 19.4,
+     "CA 12": 18.3,
+     "CA 15": 15.1,
+     "CA 16": 14.1,
+     "CA 18": 12.0,
+     "CA 20": 9.9,
+     "CA 22": 7.8,
+     "CA 24": 5.7,
+     "CA 25": 4.7
+    },
+    "nivel_eq": 4.0,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.0,
+    "nivel_precisa": 4.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.84,
+     "5": 3.6,
+     "6": 3.6,
+     "7": 3.6,
+     "8": 4.69,
+     "9": 4.49,
+     "10": 4.49,
+     "11": 4.68,
+     "12": 4.68,
+     "13": 5.42,
+     "14": 5.42,
+     "15": 5.42,
+     "16": 5.42,
+     "17": 5.85,
+     "18": 5.85,
+     "19": 6.0,
+     "20": 5.8
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 17.16,
+    "defensivo": 4.88,
+    "total": 22.04,
+    "nivel_ofensivo": 9.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 7.9,
+    "rank": "B",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 17.16
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.88,
+    "rank": "E",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 1.82,
+    "rank_atencao": "D",
+    "vidas_total": 0.059,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.171,
+    "corpo": {
+     "T": 0.171,
+     "S": 0.371,
+     "P": -0.2,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.93,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.171
+     ],
+     [
+      10,
+      0.126
+     ],
+     [
+      11,
+      0.056
+     ],
+     [
+      12,
+      0.027
+     ],
+     [
+      13,
+      -0.002
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.41,
+     "Party de elite": 0.38,
+     "Horda + chefe": 0.36,
+     "Horda": 0.43,
+     "Dupla": 0.15,
+     "Chefe sozinho": 2.07
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 0.61,
+    "rank_absoluto": "E"
+   }
+  },
+  "conquista": {
+   "hipotese": "Conquering Presence no round 1 (ação), ataques nos rounds 2–4",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 22.0,
+     "CA 12": 20.9,
+     "CA 15": 17.4,
+     "CA 16": 16.1,
+     "CA 18": 13.6,
+     "CA 20": 11.1,
+     "CA 22": 8.7,
+     "CA 24": 6.3,
+     "CA 25": 5.1
+    },
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.5,
+    "nivel_precisa": 4.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.84,
+     "5": 3.5,
+     "6": 3.5,
+     "7": 3.5,
+     "8": 4.51,
+     "9": 4.33,
+     "10": 4.33,
+     "11": 4.54,
+     "12": 4.54,
+     "13": 5.29,
+     "14": 5.29,
+     "15": 5.29,
+     "16": 5.29,
+     "17": 5.78,
+     "18": 5.78,
+     "19": 5.99,
+     "20": 5.74
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 3.24,
+    "rank": "C-",
+    "nivel_campo": 3.22,
+    "rank_campo": "C-",
+    "nivel_controle": 2.57,
+    "nivel_atencao": 1.84,
+    "rank_atencao": "D",
+    "vidas_total": 0.422,
+    "vidas_campo": 0.415,
+    "vidas_atencao": 0.176,
+    "corpo": {
+     "T": 0.176,
+     "S": 0.352,
+     "P": -0.176,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.72,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.176
+     ],
+     [
+      10,
+      0.129
+     ],
+     [
+      11,
+      0.055
+     ],
+     [
+      12,
+      0.023
+     ],
+     [
+      13,
+      -0.009
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 4.09,
+     "Party de elite": 2.86,
+     "Horda + chefe": 4.09,
+     "Horda": 4.09,
+     "Dupla": 2.74,
+     "Chefe sozinho": 2.09
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Conquering Presence": 0.2417,
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Conquering Presence": 0.133,
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Conquering Presence": 0.2482,
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Conquering Presence": 0.2692,
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Conquering Presence": 0.1115,
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Conquering Presence": 0.0,
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 3.04,
+    "rank_absoluto": "C-"
+   }
+  },
+  "conquista+smite": {
+   "hipotese": "Conquering Presence no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 26.7,
+     "CA 12": 25.7,
+     "CA 15": 22.2,
+     "CA 16": 21.0,
+     "CA 18": 18.4,
+     "CA 20": 16.0,
+     "CA 22": 13.4,
+     "CA 24": 10.5,
+     "CA 25": 8.9
+    },
+    "nivel_eq": 5.8,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.7,
+    "nivel_precisa": 5.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.14,
+     "6": 3.14,
+     "7": 3.14,
+     "8": 4.24,
+     "9": 4.07,
+     "10": 4.07,
+     "11": 4.26,
+     "12": 4.26,
+     "13": 4.98,
+     "14": 4.98,
+     "15": 4.98,
+     "16": 4.98,
+     "17": 5.58,
+     "18": 5.58,
+     "19": 5.97,
+     "20": 5.54
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 3.29,
+    "rank": "C-",
+    "nivel_campo": 3.22,
+    "rank_campo": "C-",
+    "nivel_controle": 2.57,
+    "nivel_atencao": 2.19,
+    "rank_atencao": "D",
+    "vidas_total": 0.441,
+    "vidas_campo": 0.415,
+    "vidas_atencao": 0.189,
+    "corpo": {
+     "T": 0.189,
+     "S": 0.308,
+     "P": -0.119,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.36,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.189
+     ],
+     [
+      10,
+      0.139
+     ],
+     [
+      11,
+      0.053
+     ],
+     [
+      12,
+      0.013
+     ],
+     [
+      13,
+      -0.024
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 4.11,
+     "Party de elite": 2.93,
+     "Horda + chefe": 4.1,
+     "Horda": 4.12,
+     "Dupla": 2.84,
+     "Chefe sozinho": 2.16
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Conquering Presence": 0.2417,
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Conquering Presence": 0.133,
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Conquering Presence": 0.2482,
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Conquering Presence": 0.2692,
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Conquering Presence": 0.1115,
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Conquering Presence": 0.0,
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 3.42,
+    "rank_absoluto": "C-"
+   }
+  },
+  "agathys": {
+   "hipotese": "Armor of Agathys (1º) antes da luta: 5 PV temporários",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 24.2,
+     "CA 12": 22.9,
+     "CA 15": 18.9,
+     "CA 16": 17.6,
+     "CA 18": 15.0,
+     "CA 20": 12.4,
+     "CA 22": 9.8,
+     "CA 24": 7.1,
+     "CA 25": 5.8
+    },
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.8,
+    "nivel_precisa": 4.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 81,
+    "ca": 20,
+    "blindagem": 8.26,
+    "durabilidade": 5.45,
+    "nivel_blindagem": 9.4,
+    "nivel_durabilidade": 8.7,
+    "nivel_eq": 9.4,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.37,
+     "6": 3.37,
+     "7": 3.37,
+     "8": 4.38,
+     "9": 4.21,
+     "10": 4.21,
+     "11": 4.47,
+     "12": 4.47,
+     "13": 5.21,
+     "14": 5.21,
+     "15": 5.21,
+     "16": 5.21,
+     "17": 5.73,
+     "18": 5.73,
+     "19": 5.99,
+     "20": 5.69
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.93,
+    "rank": "E",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 1.91,
+    "rank_atencao": "D",
+    "vidas_total": 0.068,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.18,
+    "corpo": {
+     "T": 0.18,
+     "S": 0.338,
+     "P": -0.158,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.59,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.18
+     ],
+     [
+      10,
+      0.132
+     ],
+     [
+      11,
+      0.054
+     ],
+     [
+      12,
+      0.02
+     ],
+     [
+      13,
+      -0.013
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.45,
+     "Party de elite": 0.43,
+     "Horda + chefe": 0.38,
+     "Horda": 0.47,
+     "Dupla": 0.27,
+     "Chefe sozinho": 2.11
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 0.72,
+    "rank_absoluto": "E"
+   }
+  },
+  "agathys+smite": {
+   "hipotese": "Armor of Agathys (1º) antes da luta: 5 PV temporários + 2 Divine Smites de 1º",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 28.9,
+     "CA 12": 27.6,
+     "CA 15": 23.8,
+     "CA 16": 22.5,
+     "CA 18": 19.9,
+     "CA 20": 17.3,
+     "CA 22": 14.6,
+     "CA 24": 11.7,
+     "CA 25": 10.1
+    },
+    "nivel_eq": 6.3,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 6.1,
+    "nivel_precisa": 6.3,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 81,
+    "ca": 20,
+    "blindagem": 8.26,
+    "durabilidade": 5.45,
+    "nivel_blindagem": 9.4,
+    "nivel_durabilidade": 8.7,
+    "nivel_eq": 9.4,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.06,
+     "6": 3.06,
+     "7": 3.06,
+     "8": 4.08,
+     "9": 3.93,
+     "10": 3.93,
+     "11": 4.21,
+     "12": 4.21,
+     "13": 4.89,
+     "14": 4.89,
+     "15": 4.89,
+     "16": 4.89,
+     "17": 5.51,
+     "18": 5.51,
+     "19": 5.96,
+     "20": 5.49
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 1.0,
+    "rank": "E",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.21,
+    "rank_atencao": "D",
+    "vidas_total": 0.082,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.194,
+    "corpo": {
+     "T": 0.194,
+     "S": 0.295,
+     "P": -0.102,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.28,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.194
+     ],
+     [
+      10,
+      0.142
+     ],
+     [
+      11,
+      0.052
+     ],
+     [
+      12,
+      0.011
+     ],
+     [
+      13,
+      -0.028
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.5,
+     "Party de elite": 0.51,
+     "Horda + chefe": 0.43,
+     "Horda": 0.53,
+     "Dupla": 0.43,
+     "Chefe sozinho": 2.18
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 1.01,
+    "rank_absoluto": "D"
+   }
+  },
+  "smite-2": {
+   "hipotese": "2 Divine Smites de 2º na luta",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 31.3,
+     "CA 12": 30.0,
+     "CA 15": 26.2,
+     "CA 16": 24.9,
+     "CA 18": 22.3,
+     "CA 20": 19.8,
+     "CA 22": 17.1,
+     "CA 24": 14.0,
+     "CA 25": 12.2
+    },
+    "nivel_eq": 7.1,
+    "rank": "B",
+    "perfil": "Preciso",
+    "nivel_bruta": 6.7,
+    "nivel_precisa": 7.1,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 3.97,
+     "9": 3.82,
+     "10": 3.82,
+     "11": 4.11,
+     "12": 4.11,
+     "13": 4.75,
+     "14": 4.75,
+     "15": 4.75,
+     "16": 4.75,
+     "17": 5.36,
+     "18": 5.36,
+     "19": 5.95,
+     "20": 5.4
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 1.03,
+    "rank": "D",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.23,
+    "rank_atencao": "D",
+    "vidas_total": 0.089,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.2,
+    "corpo": {
+     "T": 0.2,
+     "S": 0.275,
+     "P": -0.075,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.18,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.2
+     ],
+     [
+      10,
+      0.147
+     ],
+     [
+      11,
+      0.052
+     ],
+     [
+      12,
+      0.007
+     ],
+     [
+      13,
+      -0.034
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.53,
+     "Party de elite": 0.55,
+     "Horda + chefe": 0.45,
+     "Horda": 0.56,
+     "Dupla": 0.52,
+     "Chefe sozinho": 2.22
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 1.04,
+    "rank_absoluto": "D"
+   }
+  },
+  "arma-espiritual": {
+   "hipotese": "Spiritual Weapon (2º; ação bônus, rounds 2–4)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 30.1,
+     "CA 12": 28.5,
+     "CA 15": 23.6,
+     "CA 16": 21.9,
+     "CA 18": 18.7,
+     "CA 20": 15.4,
+     "CA 22": 12.2,
+     "CA 24": 8.9,
+     "CA 25": 7.3
+    },
+    "nivel_eq": 6.0,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 6.0,
+    "nivel_precisa": 5.9,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.06,
+     "6": 3.06,
+     "7": 3.06,
+     "8": 4.08,
+     "9": 3.93,
+     "10": 3.93,
+     "11": 4.21,
+     "12": 4.21,
+     "13": 4.89,
+     "14": 4.89,
+     "15": 4.89,
+     "16": 4.89,
+     "17": 5.51,
+     "18": 5.51,
+     "19": 5.97,
+     "20": 5.53
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.99,
+    "rank": "E",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.2,
+    "rank_atencao": "D",
+    "vidas_total": 0.081,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.192,
+    "corpo": {
+     "T": 0.192,
+     "S": 0.3,
+     "P": -0.109,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.31,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.192
+     ],
+     [
+      10,
+      0.141
+     ],
+     [
+      11,
+      0.052
+     ],
+     [
+      12,
+      0.012
+     ],
+     [
+      13,
+      -0.026
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.5,
+     "Party de elite": 0.5,
+     "Horda + chefe": 0.42,
+     "Horda": 0.52,
+     "Dupla": 0.41,
+     "Chefe sozinho": 2.17
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 1.0,
+    "rank_absoluto": "D"
+   }
+  },
+  "arma-espiritual+smite": {
+   "hipotese": "Spiritual Weapon (2º; ação bônus, rounds 2–4) + 2 Divine Smites de 1º",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 34.8,
+     "CA 12": 33.2,
+     "CA 15": 28.4,
+     "CA 16": 26.8,
+     "CA 18": 23.6,
+     "CA 20": 20.4,
+     "CA 22": 17.2,
+     "CA 24": 13.9,
+     "CA 25": 12.1
+    },
+    "nivel_eq": 7.3,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.2,
+    "nivel_precisa": 7.3,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 3.86,
+     "9": 3.72,
+     "10": 3.72,
+     "11": 4.01,
+     "12": 4.01,
+     "13": 4.66,
+     "14": 4.66,
+     "15": 4.66,
+     "16": 4.66,
+     "17": 5.25,
+     "18": 5.25,
+     "19": 5.91,
+     "20": 5.3
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 1.06,
+    "rank": "D",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.25,
+    "rank_atencao": "D",
+    "vidas_total": 0.095,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.206,
+    "corpo": {
+     "T": 0.206,
+     "S": 0.26,
+     "P": -0.054,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.11,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.206
+     ],
+     [
+      10,
+      0.152
+     ],
+     [
+      11,
+      0.052
+     ],
+     [
+      12,
+      0.005
+     ],
+     [
+      13,
+      -0.039
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.56,
+     "Party de elite": 0.58,
+     "Horda + chefe": 0.47,
+     "Horda": 0.58,
+     "Dupla": 0.58,
+     "Chefe sozinho": 2.25
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 1.07,
+    "rank_absoluto": "D"
+   }
+  },
+  "smite-3": {
+   "hipotese": "2 Divine Smites de 3º na luta",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 33.7,
+     "CA 12": 32.4,
+     "CA 15": 28.6,
+     "CA 16": 27.3,
+     "CA 18": 24.8,
+     "CA 20": 22.2,
+     "CA 22": 19.5,
+     "CA 24": 16.3,
+     "CA 25": 14.3
+    },
+    "nivel_eq": 7.8,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.3,
+    "nivel_precisa": 7.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 3.89,
+     "9": 3.75,
+     "10": 3.75,
+     "11": 4.01,
+     "12": 4.01,
+     "13": 4.65,
+     "14": 4.65,
+     "15": 4.65,
+     "16": 4.65,
+     "17": 5.24,
+     "18": 5.24,
+     "19": 5.9,
+     "20": 5.27
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 1.06,
+    "rank": "D",
+    "nivel_campo": 0.74,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.26,
+    "rank_atencao": "D",
+    "vidas_total": 0.097,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.207,
+    "corpo": {
+     "T": 0.207,
+     "S": 0.256,
+     "P": -0.048,
+     "chave": "T+S+P0",
+     "perfil": "Resistente"
+    },
+    "nivel_corpo": 12.09,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.207
+     ],
+     [
+      10,
+      0.153
+     ],
+     [
+      11,
+      0.052
+     ],
+     [
+      12,
+      0.004
+     ],
+     [
+      13,
+      -0.04
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.56,
+     "Party de elite": 0.58,
+     "Horda + chefe": 0.47,
+     "Horda": 0.59,
+     "Dupla": 0.6,
+     "Chefe sozinho": 2.25
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 1.08,
+    "rank_absoluto": "D"
+   }
+  },
+  "medo": {
+   "hipotese": "Fear (3º) no round 1 (ação), ataques nos rounds 2–4",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 22.0,
+     "CA 12": 20.9,
+     "CA 15": 17.4,
+     "CA 16": 16.1,
+     "CA 18": 13.6,
+     "CA 20": 11.1,
+     "CA 22": 8.7,
+     "CA 24": 6.3,
+     "CA 25": 5.1
+    },
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.5,
+    "nivel_precisa": 4.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.84,
+     "5": 3.5,
+     "6": 3.5,
+     "7": 3.5,
+     "8": 4.51,
+     "9": 4.33,
+     "10": 4.33,
+     "11": 4.54,
+     "12": 4.54,
+     "13": 5.29,
+     "14": 5.29,
+     "15": 5.29,
+     "16": 5.29,
+     "17": 5.78,
+     "18": 5.78,
+     "19": 5.99,
+     "20": 5.74
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [
+     "fear"
+    ],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "controle": {
+      "3": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 3.63,
+    "rank": "C-",
+    "nivel_campo": 3.63,
+    "rank_campo": "C-",
+    "nivel_controle": 2.99,
+    "nivel_atencao": 1.84,
+    "rank_atencao": "D",
+    "vidas_total": 0.54,
+    "vidas_campo": 0.54,
+    "vidas_atencao": 0.176,
+    "corpo": {
+     "T": 0.176,
+     "S": 0.352,
+     "P": -0.176,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.72,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.176
+     ],
+     [
+      10,
+      0.129
+     ],
+     [
+      11,
+      0.055
+     ],
+     [
+      12,
+      0.023
+     ],
+     [
+      13,
+      -0.009
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 4.22,
+     "Party de elite": 4.56,
+     "Horda + chefe": 4.19,
+     "Horda": 4.16,
+     "Dupla": 4.46,
+     "Chefe sozinho": 2.09
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Fear": 0.2701,
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Fear": 0.266,
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Fear": 0.2741,
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Fear": 0.2692,
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Fear": 0.2229,
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Fear": 0.0,
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 3.81,
+    "rank_absoluto": "C-"
+   }
+  },
+  "medo+smite": {
+   "hipotese": "Fear (3º) no round 1 (ação), ataques nos rounds 2–4 + 2 Divine Smites de 1º",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 26.7,
+     "CA 12": 25.7,
+     "CA 15": 22.2,
+     "CA 16": 21.0,
+     "CA 18": 18.4,
+     "CA 20": 16.0,
+     "CA 22": 13.4,
+     "CA 24": 10.5,
+     "CA 25": 8.9
+    },
+    "nivel_eq": 5.8,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.7,
+    "nivel_precisa": 5.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 76,
+    "ca": 20,
+    "blindagem": 7.86,
+    "durabilidade": 5.06,
+    "nivel_blindagem": 8.8,
+    "nivel_durabilidade": 8.1,
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.53,
+     "rank": "B+",
+     "turnos_livres": [
+      3.92,
+      3.63,
+      3.56,
+      2.7,
+      2.32,
+      2.29,
+      2.49,
+      2.26,
+      1.72,
+      1.41
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.18,
+     "rank": "A",
+     "turnos_livres": [
+      3.61,
+      2.55,
+      2.04,
+      2.04,
+      2.15,
+      1.9,
+      1.91,
+      1.43,
+      1.71,
+      1.45
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.14,
+     "6": 3.14,
+     "7": 3.14,
+     "8": 4.24,
+     "9": 4.07,
+     "10": 4.07,
+     "11": 4.26,
+     "12": 4.26,
+     "13": 4.98,
+     "14": 4.98,
+     "15": 4.98,
+     "16": 4.98,
+     "17": 5.58,
+     "18": 5.58,
+     "19": 5.97,
+     "20": 5.54
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.88,
+    "total": 4.88,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.3,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 2.23
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.65
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [
+     "fear"
+    ],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "controle": {
+      "3": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 3.67,
+    "rank": "C-",
+    "nivel_campo": 3.63,
+    "rank_campo": "C-",
+    "nivel_controle": 2.99,
+    "nivel_atencao": 2.19,
+    "rank_atencao": "D",
+    "vidas_total": 0.561,
+    "vidas_campo": 0.54,
+    "vidas_atencao": 0.189,
+    "corpo": {
+     "T": 0.189,
+     "S": 0.308,
+     "P": -0.119,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 12.36,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      9,
+      0.189
+     ],
+     [
+      10,
+      0.139
+     ],
+     [
+      11,
+      0.053
+     ],
+     [
+      12,
+      0.013
+     ],
+     [
+      13,
+      -0.024
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 4.24,
+     "Party de elite": 4.6,
+     "Horda + chefe": 4.21,
+     "Horda": 4.18,
+     "Dupla": 4.52,
+     "Chefe sozinho": 2.16
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Fear": 0.2701,
+      "Corpo (ameaça)": 0.015
+     },
+     "Party de elite": {
+      "Fear": 0.266,
+      "Corpo (ameaça)": 0.0088
+     },
+     "Horda + chefe": {
+      "Fear": 0.2741,
+      "Corpo (ameaça)": 0.011
+     },
+     "Horda": {
+      "Fear": 0.2692,
+      "Corpo (ameaça)": 0.0209
+     },
+     "Dupla": {
+      "Fear": 0.2229,
+      "Corpo (ameaça)": 0.0088
+     },
+     "Chefe sozinho": {
+      "Fear": 0.0,
+      "Corpo (ameaça)": 0.0102
+     }
+    },
+    "nivel_absoluto": 3.99,
+    "rank_absoluto": "C-"
+   }
+  }
+ },
+ "planos": {
+  "padrao": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "conquista+smite",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 2
+      },
+      "canal": 1
+     }
+    },
+    {
+     "linha": "arma-espiritual+smite",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 2,
+       "2": 1
+      }
+     }
+    },
+    {
+     "linha": "conquista+smite",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 2
+      },
+      "canal": 1
+     }
+    },
+    {
+     "linha": "smite-3",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "3": 2
+      }
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {}
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 7.0,
+     "rank": "B-",
+     "por_categoria": {
+      "np": 5.8,
+      "p": 7.5
+     }
+    },
+    "defesa": {
+     "nivel_eq": 8.8,
+     "rank": "B+",
+     "por_categoria": {
+      "np": 8.8,
+      "p": 8.8
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 8.5,
+     "rank": "B+",
+     "por_categoria": {
+      "np": 8.5,
+      "p": 8.5
+     }
+    },
+    "vontade": {
+     "nivel_eq": 12.2,
+     "rank": "A",
+     "por_categoria": {
+      "np": 12.2,
+      "p": 12.2
+     }
+    },
+    "campo": {
+     "nivel_eq": 2.0,
+     "rank": "D",
+     "por_categoria": {
+      "np": 3.7,
+      "p": 0.0
+     }
+    },
+    "corpo": {
+     "nivel_eq": 12.2,
+     "rank": "A",
+     "por_categoria": {
+      "np": 12.4,
+      "p": 12.1
+     }
+    },
+    "area": {
+     "nivel_eq": 4.6,
+     "rank": "C",
+     "por_categoria": {
+      "np": 4.6,
+      "p": 4.6
+     }
+    },
+    "suporte": {
+     "nivel_eq": 0.9,
+     "rank": "E",
+     "por_categoria": {
+      "np": 0.9,
+      "p": 0.9
+     }
+    }
+   }
+  },
+  "combate_unico": {
+   "hypercharged": 1,
+   "combates": [
+    {
+     "linha": "smite-3",
+     "categoria": "p",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "3": 2
+      }
+     }
+    }
+   ],
+   "sobra": {
+    "espacos": {
+     "1": 4,
+     "2": 3
+    },
+    "canal": 1
+   },
+   "eixos": {
+    "dano": {
+     "nivel_eq": 7.8,
+     "rank": "B",
+     "por_categoria": {
+      "p": 7.8
+     }
+    },
+    "defesa": {
+     "nivel_eq": 8.8,
+     "rank": "B+",
+     "por_categoria": {
+      "p": 8.8
+     }
+    },
+    "resiliencia": {
+     "nivel_eq": 8.5,
+     "rank": "B+",
+     "por_categoria": {
+      "p": 8.5
+     }
+    },
+    "vontade": {
+     "nivel_eq": 12.2,
+     "rank": "A",
+     "por_categoria": {
+      "p": 12.2
+     }
+    },
+    "campo": {
+     "nivel_eq": 0.0,
+     "rank": "F",
+     "por_categoria": {
+      "p": 0.0
+     }
+    },
+    "corpo": {
+     "nivel_eq": 12.1,
+     "rank": "A",
+     "por_categoria": {
+      "p": 12.1
+     }
+    },
+    "area": {
+     "nivel_eq": 4.6,
+     "rank": "C",
+     "por_categoria": {
+      "p": 4.6
+     }
+    },
+    "suporte": {
+     "nivel_eq": 0.9,
+     "rank": "E",
+     "por_categoria": {
+      "p": 0.9
+     }
+    }
+   }
+  }
+ },
+ "segundos": 42.1,
+ "premissas": {
+  "area.alvos_referencia_por_circulo": [
+   2,
+   2,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "area.cenarios": {
+   "esparsa": 0.5,
+   "padrao": 1.0,
+   "agrupada": 1.5
+  },
+  "area.fator_round2_nao_seletiva": 0.5,
+  "area.fator_round2_seletiva": 0.75,
+  "area.horda2.N": 3000,
+  "area.horda2.corpo": 5,
+  "area.horda2.distancia": 3,
+  "area.horda2.fracao_alvo": 0.5,
+  "area.horda2.guerreiros": {
+   "quantidade": 2,
+   "dano": "2d6",
+   "mod": [
+    3,
+    4,
+    5
+   ],
+   "ataques": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "area.horda2.rounds_max": 3,
+  "area.horda2.truque_referencia": "1d10",
+  "area.horda_cr_por_nivel": {
+   "1": 0.125,
+   "2": 0.25,
+   "3": 0.25,
+   "4": 0.5,
+   "5": 1,
+   "6": 1,
+   "7": 1,
+   "8": 2,
+   "9": 2,
+   "10": 2,
+   "11": 3,
+   "12": 3,
+   "13": 4,
+   "14": 4,
+   "15": 4,
+   "16": 4,
+   "17": 5,
+   "18": 5,
+   "19": 6,
+   "20": 6
+  },
+  "area.horda_tamanho": 6,
+  "base.chefe.chefe_save": 2,
+  "base.chefe.lr_cr": 10,
+  "base.chefe.lr_n": 1,
+  "base.encontros": [
+   [
+    "Minions + minibosses",
+    0.25,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      4,
+      0.25
+     ],
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Party de elite",
+    0.15,
+    [
+     [
+      "Bruiser",
+      "Veterano agressor",
+      1,
+      0.25
+     ],
+     [
+      "Tank inimigo",
+      "Veterano defensor",
+      1,
+      0.25
+     ],
+     [
+      "Artilheiro",
+      "Atirador",
+      1,
+      0.25
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.25
+     ]
+    ]
+   ],
+   [
+    "Horda + chefe",
+    0.15,
+    [
+     [
+      "Minion",
+      "Soldado disciplinado",
+      6,
+      0.5
+     ],
+     [
+      "Chefe",
+      "Comandante",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Horda",
+    0.1,
+    [
+     [
+      "Minion",
+      "Oportunista",
+      6,
+      1.0
+     ]
+    ]
+   ],
+   [
+    "Dupla",
+    0.05,
+    [
+     [
+      "Bruiser",
+      "Fera",
+      1,
+      0.5
+     ],
+     [
+      "Conjurador",
+      "Conjurador tático",
+      1,
+      0.5
+     ]
+    ]
+   ],
+   [
+    "Chefe sozinho",
+    0.3,
+    [
+     [
+      "Chefe",
+      "Chefe (perfil próprio)",
+      1,
+      1.0
+     ]
+    ]
+   ]
+  ],
+  "base.perfis_inimigos": {
+   "Instintivo": [
+    0.2,
+    0,
+    true
+   ],
+   "Fera": [
+    0.3,
+    1,
+    true
+   ],
+   "Oportunista": [
+    0.7,
+    2,
+    true
+   ],
+   "Soldado disciplinado": [
+    0.5,
+    2,
+    true
+   ],
+   "Atirador": [
+    0.0,
+    3,
+    false
+   ],
+   "Cavaleiro noviço": [
+    0.1,
+    1,
+    true
+   ],
+   "Veterano defensor": [
+    0.3,
+    2,
+    true
+   ],
+   "Veterano agressor": [
+    0.8,
+    2,
+    true
+   ],
+   "Conjurador tático": [
+    0.0,
+    3,
+    false
+   ],
+   "Comandante": [
+    0.2,
+    3,
+    true
+   ],
+   "Chefe (perfil próprio)": [
+    0.4,
+    2,
+    true
+   ]
+  },
+  "base.rounds_por_luta": 4,
+  "base.save_tipo": {
+   "For": 1,
+   "Con": 1,
+   "Des": 0.5,
+   "Int": 0,
+   "Sab": 0,
+   "Car": 0
+  },
+  "base.topologias": {
+   "Campo aberto": {
+    "peso": 0.25,
+    "area": 0.8,
+    "cruza": 0.3,
+    "alc_corpo_a_corpo_atras": 0.1,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Ruínas ou cidade": {
+    "peso": 0.35,
+    "area": 1.0,
+    "cruza": 0.6,
+    "alc_corpo_a_corpo_atras": 0.15,
+    "pg": 1.0,
+    "wall": 1.0
+   },
+   "Sala de dungeon": {
+    "peso": 0.4,
+    "area": 1.2,
+    "cruza": 0.9,
+    "alc_corpo_a_corpo_atras": 0.6,
+    "pg": 0.5,
+    "wall": 1.5
+   }
+  },
+  "controle.atencao.ca_dpr_auto": 16,
+  "controle.atencao.conc_bonus": 1.5,
+  "controle.atencao.near_back": 0.25,
+  "controle.atencao.reach_grande": 0.5,
+  "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_pv": 133,
+  "controle.campo.golpes_party": 2,
+  "controle.campo.p_disengage": 0.5,
+  "controle.campo.reach_grande": 0.5,
+  "controle.campo.reach_pequeno": 0.2,
+  "controle.campo.taunt_ameaca": 0.15,
+  "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.referencia_unica": 1,
+  "controle.marca.fator_sem_resistencia": 0.5,
+  "controle.padroes.counterspell_fracao_conjurando": 0.75,
+  "controle.padroes.sentinela_tentativas": 2,
+  "controle.padroes.terreno_fator": 0.5,
+  "controle.peso_no_controle.ameaca": 0.0,
+  "controle.peso_no_controle.ancestral_protectors": 0.25,
+  "controle.peso_no_controle.esqueletos": 0.0,
+  "controle.peso_no_controle.parada_oa": 0.25,
+  "controle.peso_no_controle.sentinela": 0.25,
+  "controle.referencia.frontliner.ca_bonus": 1,
+  "controle.referencia.frontliner.ca_max": 21,
+  "controle.referencia.frontliner.dpr_fator": 0.85,
+  "controle.referencia.frontliner.pv_base": 11,
+  "controle.referencia.frontliner.pv_por_nivel": 8,
+  "controle.referencia.frontliner.soft": 0.15,
+  "defesa.chefe.acerto_extra": 3,
+  "defesa.chefe.ataques_por_cr": [
+   [
+    4,
+    2
+   ],
+   [
+    16,
+    3
+   ],
+   [
+    30,
+    4
+   ]
+  ],
+  "defesa.chefe.cr_arma_magica": 10,
+  "defesa.fator_critico": 0.6,
+  "defesa.horda.acerto": {
+   "base": 3,
+   "por_cr": 0.3333333333333333
+  },
+  "defesa.horda.atacantes": {
+   "min": 3,
+   "max": 10
+  },
+  "defesa.horda.dano_por_golpe": {
+   "base": 4,
+   "por_cr": 0.5
+  },
+  "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
+  "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "planos.dias": {
+   "padrao": [
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "p",
+     2
+    ]
+   ],
+   "combate_unico": [
+    [
+     "p",
+     1
+    ]
+   ],
+   "dia_longo": [
+    [
+     "np",
+     1
+    ],
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "np",
+     1
+    ],
+    [
+     "mod",
+     2
+    ],
+    [
+     "mod",
+     2
+    ],
+    "SR",
+    [
+     "mod",
+     2
+    ],
+    [
+     "boss",
+     4
+    ]
+   ]
+  },
+  "suporte.dado_multiuso.reuso_max": 2,
+  "suporte.h.ACERTO": 0.65,
+  "suporte.h.ACERTOS_INIM_ROUND": 4,
+  "suporte.h.ACESSO_ACAO": 0.8,
+  "suporte.h.ACESSO_TOQUE": 0.6,
+  "suporte.h.ALIADOS": 3,
+  "suporte.h.ATIVO": 0.875,
+  "suporte.h.CUSTO_SAVE": 1,
+  "suporte.h.EF_CURA": 0.9,
+  "suporte.h.EF_PVT": 0.75,
+  "suporte.h.ESCOLHA": 2.0,
+  "suporte.h.F_AURA": 0.67,
+  "suporte.h.F_SAVE": 0.25,
+  "suporte.h.PARCELA_FRENTE": 0.35,
+  "suporte.h.P_ACERTO_INIM": 0.6,
+  "suporte.h.P_CAIDO": 0.5,
+  "suporte.h.TURNOS_CONDICAO": 1.5,
+  "suporte.h.TURNOS_LEVANTAR": 1.0,
+  "suporte.lutas_dia": 4,
+  "suporte.lutas_por_descanso_curto": 2,
+  "suporte.mix_dado_multiuso": {
+   "dano": 0.3,
+   "acerto": 0.25,
+   "ca": 0.2,
+   "save_dano": 0.15,
+   "save_critico": 0.07,
+   "counterspell": 0.03
+  },
+  "suporte.padroes.resgate_p_evento": 0.2,
+  "suporte.padroes.resgate_p_save": 0.45
+ },
+ "impressoes": {
+  "_planos": "960a6baca676",
+  "principal": {
+   "dano": "db6cebd3a093",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "c83e6339f2e4",
+   "suporte": "5f22ec517481",
+   "controle": "47af4f0ef85b"
+  },
+  "smite-1": {
+   "dano": "fa52cbfa2c21",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "91e009b4f979",
+   "suporte": "5f22ec517481",
+   "controle": "d44cdac07a99"
+  },
+  "bless": {
+   "dano": "210ad96ed64f",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "0e2fa0754e8e",
+   "suporte": "098da9717fbe",
+   "controle": "c645dbf890e7"
+  },
+  "conquista": {
+   "dano": "7ef887424d82",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "aa33d3406ba7",
+   "suporte": "5f22ec517481",
+   "controle": "5228a713b5cd"
+  },
+  "conquista+smite": {
+   "dano": "5116bb7cd8e3",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "a3ae81e94d1c",
+   "suporte": "5f22ec517481",
+   "controle": "f9a549380e07"
+  },
+  "agathys": {
+   "dano": "db6cebd3a093",
+   "defesa": "e4d55f51d28d",
+   "saves": "844f85125e66",
+   "area": "c83e6339f2e4",
+   "suporte": "5f22ec517481",
+   "controle": "47af4f0ef85b"
+  },
+  "agathys+smite": {
+   "dano": "fa52cbfa2c21",
+   "defesa": "e4d55f51d28d",
+   "saves": "844f85125e66",
+   "area": "91e009b4f979",
+   "suporte": "5f22ec517481",
+   "controle": "d44cdac07a99"
+  },
+  "smite-2": {
+   "dano": "d4588fd4de69",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "ad704d5e0461",
+   "suporte": "5f22ec517481",
+   "controle": "72aacb2cf5fc"
+  },
+  "arma-espiritual": {
+   "dano": "708a3edf02ea",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "0af6d211d653",
+   "suporte": "5f22ec517481",
+   "controle": "1f3f18e2b6ce"
+  },
+  "arma-espiritual+smite": {
+   "dano": "42da5c470638",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "7dd00dfebbf3",
+   "suporte": "5f22ec517481",
+   "controle": "ab01930916c6"
+  },
+  "smite-3": {
+   "dano": "6541e6feb968",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "5a835c3a38b5",
+   "suporte": "5f22ec517481",
+   "controle": "c297a5e18306"
+  },
+  "medo": {
+   "dano": "7ef887424d82",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "aa33d3406ba7",
+   "suporte": "5f22ec517481",
+   "controle": "fb38ea0c6118"
+  },
+  "medo+smite": {
+   "dano": "5116bb7cd8e3",
+   "defesa": "6bd0f3aa063e",
+   "saves": "844f85125e66",
+   "area": "a3ae81e94d1c",
+   "suporte": "5f22ec517481",
+   "controle": "c1b4d6e7085b"
+  }
+ }
+}

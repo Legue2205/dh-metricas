@@ -25,3 +25,12 @@ def test_atributos_sem_e_com_feat():
     assert C.atributos('rogue', 7, o, feat='Sharpshooter')['des'] == 17  # o ASI 4 virou feat
     assert C.atributos('rogue', 11, o) == {'for': 8, 'des': 20, 'con': 18, 'int': 10, 'sab': 13, 'car': 12}   # ASIs 4, 8, 10
     assert C.atributos('wizard', 7, ('int', 'con', 'des', 'sab', 'car', 'for'), feat='x', meio_feat='int')['int'] == 18
+
+
+def test_slow_em_area_usa_peso_por_criatura():
+    """Slow tem peso None em magias.json (depende dos ataques do inimigo); o caminho de área não pode quebrar."""
+    from dh.controle import campo as C
+    m = {"save": "Sab", "peso": None, "termino": "fim_turno"}
+    c = {"ca": 15, "fr": 2.0, "fo": 4.0, "sb": 0, "lr": 0, "cr": 5}
+    v = C.f_area(15, m)(c)
+    assert 0 < v <= 1

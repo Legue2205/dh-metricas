@@ -1,8 +1,11 @@
 """Plano do dia automático (para builds de referência em lote, ex.: RPGBot).
 
 Regra explícita, para ficar auditável: entre todas as atribuições de linhas aos combates do dia que fecham o
-livro-caixa (sem gastar o que não tem), escolhe a que **gasta mais recurso no dia** (build otimizada não deixa
-recurso parado) e, entre essas, a que põe **o gasto mais pesado nas prioritárias** (gasto × peso do combate).
+livro-caixa (sem gastar o que não tem), escolhe a de **maior rendimento do dia** (D5, 23/11): soma de peso do combate ×
+valor da linha, com o valor da linha = níveis eq. dos eixos × `plano.auto.peso_eixo`. O rendimento só existe depois de
+calcular as linhas, então o motor reescolhe o plano (`valores=`); sem valores (no `dh expandir`) vale a regra antiga,
+que serve de rascunho: a que **gasta mais recurso no dia** e, entre essas, a que põe **o gasto mais pesado nas
+prioritárias** (gasto × peso do combate); com valores, o gasto vira desempate.
 Gasto de uma linha: `"gasta"` declarado na linha (recomendado: {"espacos": {"3": 1}, "ki": 2}) ou inferido das
 magias dos eixos. Desempates, nesta ordem:
   1. linhas marcadas `"plano": "prioritaria"` nos combates prioritários e `"plano": "comum"` nos comuns;
@@ -31,8 +34,24 @@ def _valor(b, ge, go):
     return sum(int(k) * v for k, v in ge.items()) + sum(v * outros.get(k, {}).get('valor', 1) for k, v in go.items())
 
 
-def gerar(b, tag='padrao'):
-    """Devolve o dict do plano (ou None se nenhuma combinação fecha o livro-caixa)."""
+def valores_linhas(res_linhas):
+    """Valor de cada linha para o rendimento (D5): soma dos níveis eq. dos eixos (nota do plano) × peso por eixo."""
+    import json
+    from .premissas import P
+    w = P('plano.auto.peso_eixo'); r = json.loads(json.dumps(res_linhas))
+    out = {}
+    for lid, x in r.items():
+        v = 0.0
+        for eixo, sub in planos.EIXOS:
+            sub_n = 'campo_pico' if sub == 'campo' else sub
+            n = planos._nota(x.get(eixo), sub_n)
+            v += w.get(sub or eixo, 1) * (n or 0.0)
+        out[lid] = v
+    return out
+
+
+def gerar(b, tag='padrao', valores=None):
+    """Devolve o dict do plano (ou None se nenhuma combinação fecha o livro-caixa). valores = {linha: valor} (D5)."""
     from .build import resolver
     b = resolver(copy.deepcopy(b)); seq = [x for x in planos._seq(tag) if x != planos.SR]
     cands = _candidatas(b)
@@ -41,7 +60,9 @@ def gerar(b, tag='padrao'):
     marca = {l['id']: l.get('plano') for l in cands}
     eixos = {l['id']: [e for e in ('dano', 'defesa', 'saves', 'controle', 'area', 'suporte') if e in l] for l in cands}
     ids = [l['id'] for l in cands]
-    if len(ids) ** len(seq) > LIMITE: ids = sorted(ids, key=lambda i: -_valor(b, *gastos[i]))[:int(LIMITE ** (1 / len(seq)))]
+    if len(ids) ** len(seq) > LIMITE:
+        crit = (lambda i: -valores.get(i, 0.0)) if valores else (lambda i: -_valor(b, *gastos[i]))
+        ids = sorted(ids, key=crit)[:int(LIMITE ** (1 / len(seq)))]
     melhor = None
     if True:
         for combo in product(ids, repeat=len(seq)):
@@ -55,13 +76,18 @@ def gerar(b, tag='padrao'):
             total = sum(_valor(b, *gastos[i]) for i in combo)
             completas = sum(len(eixos[i]) for i in combo)
             chave = (round(total, 6), round(gasto, 6), pref, -resto, completas, -len(set(combo)))
+            if valores:
+                rend = sum(p * valores.get(i, 0.0) for (_, p), i in zip(seq, combo))
+                chave = (round(rend, 4),) + chave
             if melhor is None or chave > melhor[0]: melhor = (chave, combo, sobra)
     if melhor is None: return None
     _, combo, sobra = melhor
     nomes = lambda cat: sorted({i for (c, _), i in zip(seq, combo) if c == cat})
     partes = [f"{planos.CATEGORIAS[c]}: {', '.join(nomes(c))}" for c in dict.fromkeys(c for c, _ in seq)]
     sb = ', '.join([f"{v:g}×{k}º" for k, v in sobra.get('espacos', {}).items()] + [f"{v:g} {k}" for k, v in sobra.items() if k != 'espacos'])
-    desc = (f"Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). "
+    regra = ("maior rendimento do dia que cabe no orçamento; gasto desempata" if valores
+             else "maior gasto ponderado que cabe no dia")
+    desc = (f"Plano automático ({regra}; prioritário pesa 2). "
             f"{'; '.join(partes)}. Sobra: {sb or 'nada'}.")
     return {'auto': True, 'descricao': desc[:500], 'combates': list(combo)}
 

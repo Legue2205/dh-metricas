@@ -88,7 +88,15 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
         res['linhas'][l['id']] = dict(hipotese=l.get('hipotese', ''), principal=pr,
                                       **avaliar_linha(b, l, modo, regua, eixos, vlinhas.get(l['id']), imps.get(l['id']),
                                                       vimps.get(l['id']), feitos[l['id']]))
-    if not parcial: res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
+    if not parcial:
+        from . import plano_auto                      # D5 (23/11): plano auto reescolhido pelo rendimento das linhas
+        vals = None
+        for tag, pl in list(b.get('planos', {}).items()):
+            if isinstance(pl, dict) and pl.get('auto'):
+                vals = vals or plano_auto.valores_linhas(res['linhas'])
+                novo = plano_auto.gerar(b, tag, vals)
+                if novo: b['planos'][tag] = novo
+        res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
     res['segundos'] = round(time.time() - t0, 1)
     eixos_b = {e for l in b['linhas'] for e in ('dano', 'defesa', 'saves', 'controle', 'area', 'suporte', 'tatico') if l.get(e)}
     if any(l.get('dano') for l in b['linhas']): eixos_b.add('area')

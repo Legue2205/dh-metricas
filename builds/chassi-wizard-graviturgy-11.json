@@ -569,16 +569,88 @@
    ],
    "herda": "principal",
    "hipotese": "invocacao"
+  },
+  {
+   "id": "area-barata",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.5,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "area": [
+    {
+     "nome": "Fireball",
+     "usos": [
+      {
+       "alvos": 4,
+       "dano": "8d6",
+       "cd": 17,
+       "slot": 3
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   },
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "Fireball no 3º (sem concentração; magia extra barata)"
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-counterspell; prioritário: combo, controle. Sobra: 2×1º, 3×2º, 2×4º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: area-barata; prioritário: combo, controle. Sobra: 2×1º, 3×2º, 2×4º.",
    "combates": [
-    "reacao-counterspell",
+    "area-barata",
     "controle",
-    "reacao-counterspell",
+    "area-barata",
     "combo"
    ]
   },

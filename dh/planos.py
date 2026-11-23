@@ -142,11 +142,13 @@ def agregar(b, res_linhas, magias, letra):
         eixos = {}
         bid = base_id(b)
 
-        def luta(c, eixo, sb):   # D9: linha 1 + Σ (extra − principal), nunca abaixo de 0
+        def luta(c, eixo, sb):   # D9: linha 1 + Σ max(0, extra − principal) por eixo
+            # M5 (23/11): só o ganho. Os eixos medem cenários diferentes (dano: alvo único/chefe; área: horda): o
+            # Fireball extra não troca rounds de truque contra o chefe. O ganho total segue decidindo a escolha.
             v = _nota(res_linhas[c['linha']].get(eixo), sb)
             if not c.get('extras'): return v
             v0 = _nota(res_linhas[bid].get(eixo), sb) or 0.0
-            tot = (v or 0.0) + sum((_nota(res_linhas[x].get(eixo), sb) or 0.0) - v0 for x in c['extras'])
+            tot = (v or 0.0) + sum(max(0.0, (_nota(res_linhas[x].get(eixo), sb) or 0.0) - v0) for x in c['extras'])
             return max(0.0, tot) if (v is not None or tot) else None
         for eixo, sub in EIXOS:
             vals = [luta(c, eixo, sub) for c in combates]

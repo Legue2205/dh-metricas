@@ -176,9 +176,20 @@ seguinte. Itens que mudam premissa vão para Decisões.
   empurrão no controle [N]).
 - [ ] **M4b Corpo agrupado caiu com o M2** [M] — corpo agrupado entre classes 0,27 → 0,18 (nv11) e 0,49 → 0,37 (nv7)
   depois dos lobos do Conjure Animals (Ranger 11 corpo 28). Ver se é o outlier ou a régua.
-- [ ] **M5 Concentração e linhas sem concentração** [D] — ex-P2.17: geradores declaram `concentracao` em área/suporte
+- [x] **M5 Concentração e linhas sem concentração** [D] — **feito 23/11 (parcial, ver M5b):**
+  (1) `orcamento.concentracao_por_nome`: o `dh validar` reconhece pelo nome (lista `_concentracao_nomes`) a concentração
+  não declarada em área/suporte/invocação e dá **AVISO** (não erro: podem ser lançadas uma depois da outra; não quebra o
+  CI); 6 avisos hoje. (2) `chassi.area_barata`: linha de área sem concentração no nível base (Wizard/Sorcerer: Fireball
+  no 3º desde o 5; Druid: Ice Storm no 4º desde o 7). (3) Bug da D9: o mesmo truque com menos rounds (n diferente) era
+  tratado como peça repetida e bloqueava qualquer extra. (4) No resultado do dia, cada extra soma só o ganho por eixo
+  (dano = chefe, área = horda: o Fireball extra não troca rounds de truque contra o chefe); o ganho total segue decidindo
+  a escolha. Wizard Evocation 11 = controle/invocação + Fireball + Counterspell em toda luta (sobram só 2 espaços de 2º);
+  dano do dia 7,9 (igual), corpo 15,3 → 18,6; Cleric Life 11 dano 3,2 → 4,4. Original: — ex-P2.17: geradores declaram `concentracao` em área/suporte
   (Spirit Guardians, Wall of Fire, Bless…) e o `dh validar` passa a checar; ex-P2.16: linhas de blaster puro e de
   buff/cura sem concentração para Wizard/Druid/Sorcerer (para a D9 render).
+- [ ] **M5b Os 6 avisos de concentração** [D] — `combo` do Sorcerer Draconic 11 (Wall of Fire) e Wild Magic 9/11
+  (Insect Plague) junto do controle; áreas do Druid Land/Spores 11 (duas áreas de concentração na mesma linha);
+  solaris-9 (party: só reportar). Corrigir nos geradores e depois ligar o erro no validador.
 - [ ] **M6 Magias de controle faltando e listas das réguas** [N] — ex-P2.8/P2.7: Sleep, Psychic Lance, Dissonant
   Whispers, Sleet Storm, Plant Growth, Spike Growth, Ensnaring Strike no `magias.json`; depois rever as listas do
   Druid/Cleric (mudança de régua: só entre passadas).
@@ -358,6 +369,9 @@ Ordem de execução: D8 → D3 → D5 → D2 → D4 → D6 → D9 → D1 (D7 fec
 - **D8 → sem teto no corpo**, prioridade consistência. **Feito 23/11:** a extrapolação acima do 20 usava só os 2 últimos
   pontos da busca (T oscila com os CRs discretos); agora é a regressão da busca inteira (`controle.corpo.extrap_pontos`
   = 0). Infiltrator 31,5 → 25,7 (pico 42,6 → 29,8); delta do feat −8,6 → −4,1 níveis; AG 25,3 → 25,6.
+- **D10 (nova, a confirmar) → extra soma só o ganho por eixo** (M5, 23/11): implementado como acima; alternativa seria
+  contar a perda (o Fireball tira rounds de truque também contra o chefe), o que derrubava o dano do Wizard 11 de 7,9
+  para 5,0.
 - **D9 → premissa de magias por luta por nível** — **Feito 23/11** (proposta aprovada, com um ajuste): até k linhas
   por luta, k = espaços do dia × (1 − 0,2) / combates (`planos.magias_por_luta`, entre 1 e os rounds da luta;
   sobrescrevível com `"magias_por_luta"` na build). **Ajuste:** em vez de "rounds divididos igualmente" (média das

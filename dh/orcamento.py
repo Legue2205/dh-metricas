@@ -15,6 +15,8 @@ Uma linha = uma hipótese de luta. Regras checadas:
     o que cada linha gasta numa luta: lido das fontes de controle, reações de defesa, saves e áreas ("slot"),
     mais "usa": {"espacos": {"3": 1}} dentro de um eixo e "usa": {"furia": 1} na linha.
 """
+import json
+import re
 FONTES_REACAO = ('sentinela', 'parada_oa', 'counterspell')
 
 
@@ -123,6 +125,38 @@ def concentracoes(linha, magias):
     return toks
 
 
+def _norm(x): return re.sub(r'[^a-z]', '', x.lower())
+
+
+def concentracao_por_nome(linha, magias):
+    """M5 (23/11): magias de concentração RAW (lista _concentracao_nomes do magias.json) em entradas de área, suporte
+    e invocação que NÃO declararam "concentracao" nem já aparecem como concentração da linha (nomes normalizados)."""
+    nomes = tuple(n.lower() for n in _NOMES_CONC())
+    ja = {_norm(p) for t in concentracoes(linha, magias) for p in t.split('|')}
+    out = set()
+    ents = [x for x in (linha.get('area') or []) if isinstance(x, dict)]
+    ents += [f for f in (linha.get('suporte') or {}).get('fontes', [])] if isinstance(linha.get('suporte'), dict) else []
+    ents += [i for i in linha.get('invocacoes', []) or []]
+    for x in ents:
+        n = re.sub(r'\s*\(.*', '', x.get('nome', '')).strip()
+        if x.get('concentracao') or not n.lower().startswith(nomes): continue
+        if any(_norm(n).startswith(j) or j.startswith(_norm(n)) for j in ja if j): continue
+        out.add(n)
+    return out
+
+
+_CACHE_NOMES = None
+
+
+def _NOMES_CONC():
+    global _CACHE_NOMES
+    if _CACHE_NOMES is None:
+        from pathlib import Path
+        _CACHE_NOMES = json.loads((Path(__file__).parent / 'controle' / 'magias.json').read_text(encoding='utf-8')).get(
+            '_concentracao_nomes', {}).get('nomes', [])
+    return _CACHE_NOMES
+
+
 def checar(b, magias):
     """(erros, avisos). Erro: reação contada duas vezes. Espaços não geram erro: viram a tag de orçamento."""
     erros = []; avisos = []
@@ -137,6 +171,10 @@ def checar(b, magias):
         for a, c in conflitos_concentracao(l, magias):
             erros.append(f'{nome}: mais de uma concentração ao mesmo tempo ({a}; {c}); '
                          f'separe em linhas, junte as opções num "melhor_de" ou separe por "topos"')
+        nc = concentracao_por_nome(l, magias)   # M5 (23/11): só aviso (podem ser magias lançadas uma depois da outra)
+        if nc and len(nc) + len(conflitos_base := concentracoes(l, magias)) > 1:
+            avisos.append(f'{nome}: concentração não declarada reconhecida pelo nome ({", ".join(sorted(nc))}) junto de '
+                          f'{len(conflitos_base) + len(nc) - 1} outra(s); declare "concentracao" na entrada ou separe em linhas')
         usos = l.get('reacao', [])
         def tem(eixo): return any(eixo in u.get('eixos', []) for u in usos)
         def fontes(fs):

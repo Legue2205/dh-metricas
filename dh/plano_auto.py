@@ -80,7 +80,8 @@ def _extras(b, tag, seq, combo, valores, cands):
 
     def pecas(l):   # o que a linha põe na luta além da principal (ataques, fontes, áreas, invocações)
         d = l.get('dano') if isinstance(l.get('dano'), dict) else {}
-        s = {'atq:' + json.dumps(x, sort_keys=True) for x in d.get('ataques', [])}
+        # ataque sem o "n": o mesmo truque/arma com menos rounds (porque a linha lançou magia) não é peça nova
+        s = {'atq:' + json.dumps({k: v for k, v in x.items() if k != 'n'}, sort_keys=True) for x in d.get('ataques', [])}
         s |= {'sup:' + f.get('nome', '') for f in (l.get('suporte') or {}).get('fontes', []) if isinstance(l.get('suporte'), dict)}
         s |= {'ctl:' + f.get('nome', '') for f in l.get('controle', {}).get('fontes', [])}
         s |= {'area:' + (x.get('nome', '') if isinstance(x, dict) else str(x)) for x in l.get('area', []) or []}

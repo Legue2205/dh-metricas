@@ -45,6 +45,7 @@ def monta(L, b, pos, ff=0, extra=(), **kw):
         l.setdefault('hipotese', 'só truques (Toll the Dead)' if l['id'] == 'principal' else l['id'])
     f['corpo']['saves']['ataques'] = 1
     f['_texto'] = f"Wizard {L}; atributos {b['s']}; CD {b['cd']}, ataque +{b['a']}."
+    if L >= 5: C.area_barata(f, b['areas'][0])   # M5 (23/11): Fireball no 3º como magia extra
     return f
 
 

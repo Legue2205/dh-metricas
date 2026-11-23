@@ -55,6 +55,7 @@ def montar(sub, L, b, cant, ctrl=None, areas=None, esp=None, inv=None, _t='', **
             l['controle']['atencao'] = C.atencao(POS[sub])
         if l['id'] != 'principal': l.setdefault('hipotese', l['id'])
     f['_texto'] = f"Druid {L}; atributos {b['s']}; " + _t
+    if L >= 7: C.area_barata(f, D['area_sp']("Ice Storm", 4, "2d8+4d6", b['cd'], 4))   # M5 (23/11): sem concentração
     return f
 
 

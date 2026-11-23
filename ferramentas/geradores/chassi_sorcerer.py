@@ -78,6 +78,8 @@ def montar(sub, L):
         if 'controle' in l: l['controle']['atencao'] = dict(ate)
         l.setdefault('hipotese', {'principal': 'só Fire Bolt'}.get(l['id'], l['id']))
     f['_texto'] = f"Sorcerer {L}; atributos {s}; CA {ca}" + ("; Elemental Affinity (+Car no fogo)" if ea else "") + "."
+    nc = [x for x in ar if x['usos'][0]['slot'] >= 3 and not x.get('concentracao')]
+    if L >= 5 and nc: C.area_barata(f, nc[0])   # M5 (23/11): área sem concentração no nível base como magia extra
     return f
 
 

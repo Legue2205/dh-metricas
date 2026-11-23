@@ -75,6 +75,21 @@ def atencao(posicao, dpr='auto', **extra):
 def slug(feat): return feat.lower().replace("'", '').replace(' ', '-')
 
 
+def area_barata(f, entrada, rotulo=None):
+    """M5 (23/11): linha "area-barata" = a linha "area" com UMA magia de área sem concentração no nível base (ex.:
+    Fireball no 3º), gastando só esse espaço. Dá ao plano (D9) uma magia extra que cabe nos espaços médios, que hoje
+    sobram porque a "area" usa as versões subidas de nível. Não faz nada sem linha "area" ou se já existe."""
+    import json as _j
+    ls = {l['id']: l for l in f['linhas']}
+    if 'area' not in ls or 'area-barata' in ls or entrada.get('concentracao'): return f
+    slot = entrada['usos'][0]['slot']
+    nova = _j.loads(_j.dumps(ls['area']))
+    nova.update(id='area-barata', area=[entrada], gasta={"espacos": {str(slot): 1}},
+                hipotese=rotulo or f"{entrada['nome']} no {slot}º (sem concentração; magia extra barata)")
+    f['linhas'].append(nova)
+    return f
+
+
 def escrever(classe, sub, posicao, fat, build, desc, feat=None, url=None):
     """fat = {7: {"corpo", "recursos", "linhas"[, "_texto"]}, 11: {...}}. A 1ª linha da fatia 7 vira a principal."""
     id_ = f"chassi-{classe}-{sub}" + (f"-f-{slug(feat)}" if feat else '')

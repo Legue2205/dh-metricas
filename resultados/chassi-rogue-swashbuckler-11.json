@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 11,
  "build": "Rogue (Swashbuckler), skirmisher, rapieira, couro batido (sem Booming Blade: truque é racial no RPGBot); sem feat",
- "impressao": "ee0f1403d9",
+ "impressao": "bf8ee2ee95",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -180,6 +180,180 @@
     "nivel_absoluto": 0.21,
     "rank_absoluto": "F"
    }
+  },
+  "duas-armas": {
+   "hipotese": "duas espadas curtas (2ª na ação bônus) + Sneak (Rakish Audacity); Fancy Footwork para sair",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 31.6,
+     "CA 12": 30.9,
+     "CA 15": 28.2,
+     "CA 16": 27.2,
+     "CA 18": 24.7,
+     "CA 20": 21.9,
+     "CA 22": 18.8,
+     "CA 24": 15.2,
+     "CA 25": 13.3
+    },
+    "nivel_eq": 7.5,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.2,
+    "nivel_precisa": 7.7,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 102,
+    "ca": 17,
+    "blindagem": 9.0,
+    "durabilidade": 7.65,
+    "nivel_blindagem": 10.2,
+    "nivel_durabilidade": 11.6,
+    "nivel_eq": 11.6,
+    "rank": "A",
+    "perfil": "Durável",
+    "reacoes_usadas": [
+     "uncanny_dodge"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 16.24,
+     "rank": "S",
+     "turnos_livres": [
+      3.57,
+      3.78,
+      3.72,
+      2.95,
+      3.08,
+      3.04,
+      3.3,
+      3.35,
+      3.1,
+      2.99
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 3.42,
+     "rank": "C-",
+     "turnos_livres": [
+      2.9,
+      1.5,
+      1.17,
+      1.06,
+      0.92,
+      0.71,
+      0.96,
+      0.86,
+      0.93,
+      1.23
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 3.89,
+     "9": 3.75,
+     "10": 3.75,
+     "11": 4.01,
+     "12": 4.01,
+     "13": 4.66,
+     "14": 4.66,
+     "15": 4.66,
+     "16": 4.66,
+     "17": 5.25,
+     "18": 5.25,
+     "19": 5.9,
+     "20": 5.27
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [
+     {
+      "uso": "ataque com a 2ª arma",
+      "fracao": 1.0,
+      "eixos": [
+       "dano"
+      ]
+     }
+    ],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.71,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.89,
+    "rank_atencao": "E",
+    "vidas_total": -0.079,
+    "vidas_campo": 0.021,
+    "vidas_atencao": 0.051,
+    "corpo": {
+     "T": 0.051,
+     "S": 0.344,
+     "P": -0.293,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      0.051
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0106
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0076
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0159
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0065
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0083
+     }
+    },
+    "nivel_absoluto": 0.27,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -187,7 +361,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "duas-armas",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -196,7 +370,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "duas-armas",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -205,7 +379,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "duas-armas",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -214,7 +388,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "duas-armas",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -228,11 +402,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.7,
-     "rank": "C+",
+     "nivel_eq": 7.5,
+     "rank": "B",
      "por_categoria": {
-      "np": 5.7,
-      "p": 5.7
+      "np": 7.5,
+      "p": 7.5
      }
     },
     "defesa": {
@@ -289,7 +463,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "duas-armas",
      "categoria": "p",
      "peso": 1,
      "nota": "",
@@ -303,10 +477,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.7,
-     "rank": "C+",
+     "nivel_eq": 7.5,
+     "rank": "B",
      "por_categoria": {
-      "p": 5.7
+      "p": 7.5
      }
     },
     "defesa": {
@@ -354,7 +528,7 @@
    }
   }
  },
- "segundos": 0.0,
+ "segundos": 3.1,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -835,13 +1009,20 @@
   }
  },
  "impressoes": {
-  "_planos": "ff36f088a6df",
+  "_planos": "518efeeff674",
   "principal": {
    "dano": "8a2622c16814",
    "defesa": "882aad1270d2",
    "saves": "c82398e7fee2",
    "area": "3a5f28382851",
    "controle": "b1614742552d"
+  },
+  "duas-armas": {
+   "dano": "724d5f68919c",
+   "defesa": "882aad1270d2",
+   "saves": "c82398e7fee2",
+   "area": "e3cb8c3c813e",
+   "controle": "cb8b17a32c4b"
   }
  }
 }

@@ -1786,7 +1786,7 @@
    }
   }
  },
- "segundos": 33.1,
+ "segundos": 54.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1804,6 +1804,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -2072,7 +2073,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -2080,6 +2081,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -2096,8 +2098,19 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -2161,6 +2174,8 @@
     ]
    ]
   },
+  "suporte.dado_multiuso.decaimento": 0.75,
+  "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
@@ -2193,70 +2208,70 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "1191bba7ba95",
+  "_planos": "b784ae0a5ccf",
   "principal": {
-   "dano": "a51bcb38e346",
-   "defesa": "82cfce4503c0",
-   "saves": "02c567b5b120",
-   "area": "dc91bdd6cd4b",
-   "suporte": "979234bf9f70",
-   "controle": "85641e0e9c15"
+   "dano": "07e6bb8640f4",
+   "defesa": "8666ed6898dc",
+   "saves": "0a8c6d0771da",
+   "area": "1a424722fb81",
+   "suporte": "d3f6b639e56a",
+   "controle": "e23e99d959ec"
   },
   "controle": {
-   "dano": "1fa21dd5620e",
-   "defesa": "82cfce4503c0",
-   "saves": "02c567b5b120",
-   "area": "f3fc9684599b",
-   "suporte": "979234bf9f70",
-   "controle": "f43f6abc2b1c"
+   "dano": "01faf9d5da17",
+   "defesa": "8666ed6898dc",
+   "saves": "0a8c6d0771da",
+   "area": "aa2a5f102b80",
+   "suporte": "d3f6b639e56a",
+   "controle": "fc93a8be6da9"
   },
   "controle-barato": {
-   "dano": "1fa21dd5620e",
-   "defesa": "82cfce4503c0",
-   "saves": "02c567b5b120",
-   "area": "f3fc9684599b",
-   "suporte": "979234bf9f70",
-   "controle": "7cb0ede5b088"
+   "dano": "01faf9d5da17",
+   "defesa": "8666ed6898dc",
+   "saves": "0a8c6d0771da",
+   "area": "aa2a5f102b80",
+   "suporte": "d3f6b639e56a",
+   "controle": "daf8cbfdbd64"
   },
   "principal+estrelas": {
-   "dano": "48b68ec6242b",
-   "defesa": "82cfce4503c0",
-   "saves": "02c567b5b120",
-   "area": "094fad766e5e",
-   "suporte": "979234bf9f70",
-   "controle": "33b5c08d6e70"
+   "dano": "07b07ee3fe30",
+   "defesa": "8666ed6898dc",
+   "saves": "0a8c6d0771da",
+   "area": "c5636423c74d",
+   "suporte": "d3f6b639e56a",
+   "controle": "23c9f1d5506f"
   },
   "controle+estrelas": {
-   "dano": "b6259e0b6a93",
-   "defesa": "82cfce4503c0",
-   "saves": "02c567b5b120",
-   "area": "9dbb200c28ae",
-   "suporte": "979234bf9f70",
-   "controle": "849d0770abbc"
+   "dano": "04953be4697a",
+   "defesa": "8666ed6898dc",
+   "saves": "0a8c6d0771da",
+   "area": "4f050ac2232b",
+   "suporte": "d3f6b639e56a",
+   "controle": "f03f9b64f266"
   },
   "controle-barato+estrelas": {
-   "dano": "b6259e0b6a93",
-   "defesa": "82cfce4503c0",
-   "saves": "02c567b5b120",
-   "area": "9dbb200c28ae",
-   "suporte": "979234bf9f70",
-   "controle": "296ab729f16c"
+   "dano": "04953be4697a",
+   "defesa": "8666ed6898dc",
+   "saves": "0a8c6d0771da",
+   "area": "4f050ac2232b",
+   "suporte": "d3f6b639e56a",
+   "controle": "b8dfbd2f0e2f"
   },
   "area": {
-   "dano": "1fa21dd5620e",
-   "defesa": "82cfce4503c0",
-   "saves": "02c567b5b120",
-   "area": "8197569d2881",
-   "suporte": "979234bf9f70",
-   "controle": "43ff0b970afc"
+   "dano": "01faf9d5da17",
+   "defesa": "8666ed6898dc",
+   "saves": "0a8c6d0771da",
+   "area": "e8220537d1df",
+   "suporte": "d3f6b639e56a",
+   "controle": "93ba8c7c0bcd"
   },
   "area+estrelas": {
-   "dano": "b6259e0b6a93",
-   "defesa": "82cfce4503c0",
-   "saves": "02c567b5b120",
-   "area": "feddfebce2a6",
-   "suporte": "979234bf9f70",
-   "controle": "16acfca9a0a5"
+   "dano": "04953be4697a",
+   "defesa": "8666ed6898dc",
+   "saves": "0a8c6d0771da",
+   "area": "7c6d53f0bfa1",
+   "suporte": "d3f6b639e56a",
+   "controle": "8c769f7555fb"
   }
  }
 }

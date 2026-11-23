@@ -194,7 +194,7 @@
      "CA 24": 10.8,
      "CA 25": 9.1
     },
-    "nivel_eq": 6.6,
+    "nivel_eq": 6.5,
     "rank": "B-",
     "perfil": "Equilibrado",
     "nivel_bruta": 6.5,
@@ -534,7 +534,7 @@
      "CA 24": 10.8,
      "CA 25": 9.1
     },
-    "nivel_eq": 6.6,
+    "nivel_eq": 6.5,
     "rank": "B-",
     "perfil": "Equilibrado",
     "nivel_bruta": 6.5,
@@ -710,7 +710,7 @@
      "CA 24": 14.8,
      "CA 25": 13.1
     },
-    "nivel_eq": 7.6,
+    "nivel_eq": 7.5,
     "rank": "B",
     "perfil": "Equilibrado",
     "nivel_bruta": 7.4,
@@ -880,7 +880,7 @@
      "CA 24": 16.6,
      "CA 25": 14.7
     },
-    "nivel_eq": 8.5,
+    "nivel_eq": 8.4,
     "rank": "B+",
     "perfil": "Equilibrado",
     "nivel_bruta": 8.3,
@@ -1049,7 +1049,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "rajada",
+     "linha": "mira",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -1059,17 +1059,17 @@
      }
     },
     {
-     "linha": "rajada-mira",
+     "linha": "mira",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 6
+      "ki": 4
      }
     },
     {
-     "linha": "rajada",
+     "linha": "mira",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -1079,27 +1079,27 @@
      }
     },
     {
-     "linha": "rajada-mira",
+     "linha": "mira",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 6
+      "ki": 4
      }
     }
    ],
    "sobra": {
     "espacos": {},
-    "ki": 1
+    "ki": 3
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 8.1,
-     "rank": "B+",
+     "nivel_eq": 7.5,
+     "rank": "B",
      "por_categoria": {
-      "np": 7.3,
-      "p": 8.5
+      "np": 7.5,
+      "p": 7.5
      }
     },
     "defesa": {
@@ -1135,11 +1135,11 @@
      }
     },
     "corpo": {
-     "nivel_eq": 10.0,
-     "rank": "B+",
+     "nivel_eq": 11.0,
+     "rank": "A",
      "por_categoria": {
       "np": 11.0,
-      "p": 9.4
+      "p": 11.0
      }
     },
     "area": {
@@ -1147,7 +1147,7 @@
      "rank": "C",
      "por_categoria": {
       "np": 4.6,
-      "p": 4.8
+      "p": 4.6
      }
     }
    }
@@ -1156,26 +1156,26 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "rajada-mira",
+     "linha": "mira",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 6
+      "ki": 4
      }
     }
    ],
    "sobra": {
     "espacos": {},
-    "ki": 5
+    "ki": 7
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 8.5,
-     "rank": "B+",
+     "nivel_eq": 7.5,
+     "rank": "B",
      "por_categoria": {
-      "p": 8.5
+      "p": 7.5
      }
     },
     "defesa": {
@@ -1207,23 +1207,23 @@
      }
     },
     "corpo": {
-     "nivel_eq": 9.4,
-     "rank": "B+",
+     "nivel_eq": 11.0,
+     "rank": "A",
      "por_categoria": {
-      "p": 9.4
+      "p": 11.0
      }
     },
     "area": {
      "nivel_eq": 4.8,
      "rank": "C",
      "por_categoria": {
-      "p": 4.8
+      "p": 4.6
      }
     }
    }
   }
  },
- "segundos": 24.0,
+ "segundos": 40.6,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1241,6 +1241,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -1509,7 +1510,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -1517,6 +1518,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -1533,8 +1535,19 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1600,48 +1613,48 @@
   }
  },
  "impressoes": {
-  "_planos": "cdbaa6ead338",
+  "_planos": "bbbd7e37d3d9",
   "principal": {
-   "dano": "3846f633874c",
-   "defesa": "67bbc04ddbdf",
-   "saves": "0ea7a720a19f",
-   "area": "99b89ffd2aa3",
-   "controle": "952030d1e433"
+   "dano": "fdb489b769a1",
+   "defesa": "9308cfc702ac",
+   "saves": "e63b9cbd7216",
+   "area": "6c2d222b0f7d",
+   "controle": "aca0be55a50d"
   },
   "meia-rajada": {
-   "dano": "aa64eb810daa",
-   "defesa": "67bbc04ddbdf",
-   "saves": "0ea7a720a19f",
-   "area": "523d256b7e1b",
-   "controle": "04be4f435535"
+   "dano": "4dc941d3a630",
+   "defesa": "9308cfc702ac",
+   "saves": "e63b9cbd7216",
+   "area": "ef58778fda1b",
+   "controle": "3b4cd96b7c5f"
   },
   "rajada": {
-   "dano": "b2cb9ffba8f9",
-   "defesa": "67bbc04ddbdf",
-   "saves": "0ea7a720a19f",
-   "area": "26af5bdfd2b0",
-   "controle": "ae22dc06362d"
+   "dano": "3f88325dad89",
+   "defesa": "9308cfc702ac",
+   "saves": "e63b9cbd7216",
+   "area": "e70dcf3a0bc5",
+   "controle": "59c917d3c6e9"
   },
   "atordoar": {
-   "dano": "aa64eb810daa",
-   "defesa": "67bbc04ddbdf",
-   "saves": "0ea7a720a19f",
-   "area": "523d256b7e1b",
-   "controle": "e33b7fa8e09c"
+   "dano": "4dc941d3a630",
+   "defesa": "9308cfc702ac",
+   "saves": "e63b9cbd7216",
+   "area": "ef58778fda1b",
+   "controle": "af78f5f5bf52"
   },
   "mira": {
-   "dano": "ef8907ec899f",
-   "defesa": "67bbc04ddbdf",
-   "saves": "0ea7a720a19f",
-   "area": "40b6453bb1cf",
-   "controle": "a09063a22146"
+   "dano": "d80789641d83",
+   "defesa": "9308cfc702ac",
+   "saves": "e63b9cbd7216",
+   "area": "5009b6077932",
+   "controle": "d719f30f98cc"
   },
   "rajada-mira": {
-   "dano": "ec0a4a1a3d19",
-   "defesa": "67bbc04ddbdf",
-   "saves": "0ea7a720a19f",
-   "area": "79979f569513",
-   "controle": "ba64ef5de6a3"
+   "dano": "a1ee107dbcf7",
+   "defesa": "9308cfc702ac",
+   "saves": "e63b9cbd7216",
+   "area": "7d8b38c7aa3a",
+   "controle": "aae485b2f657"
   }
  }
 }

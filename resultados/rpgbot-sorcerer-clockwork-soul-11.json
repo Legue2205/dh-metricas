@@ -1081,15 +1081,15 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "area",
+     "linha": "combo",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 1,
-       "5": 1,
-       "6": 1
+       "3": 1,
+       "5": 1
       }
      }
     }
@@ -1098,9 +1098,10 @@
     "espacos": {
      "1": 3,
      "2": 4,
-     "3": 3,
+     "3": 2,
      "4": 3,
-     "5": 2
+     "5": 2,
+     "6": 1
     }
    },
    "eixos": {
@@ -1133,10 +1134,10 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 14.4,
+     "rank": "A+",
      "por_categoria": {
-      "p": 0.0
+      "p": 14.4
      }
     },
     "corpo": {
@@ -1150,13 +1151,13 @@
      "nivel_eq": 16.4,
      "rank": "S",
      "por_categoria": {
-      "p": 16.4
+      "p": 8.1
      }
     }
    }
   }
  },
- "segundos": 25.2,
+ "segundos": 40.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1174,6 +1175,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -1442,7 +1444,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -1450,6 +1452,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -1466,6 +1469,7 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -1497,6 +1501,16 @@
   },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1562,41 +1576,41 @@
   }
  },
  "impressoes": {
-  "_planos": "719165e697c3",
+  "_planos": "9a30fc60fd84",
   "principal": {
-   "dano": "bda73b373c51",
-   "defesa": "c25cb11f6df5",
-   "saves": "37b4e91feb13",
-   "area": "825ebc2639ce",
-   "controle": "c15e161c67b2"
+   "dano": "c4d61f925431",
+   "defesa": "578207ae1102",
+   "saves": "b2feeb186d5f",
+   "area": "406f3831f9e6",
+   "controle": "b5c1376b5717"
   },
   "controle": {
-   "dano": "0e6d2527f710",
-   "defesa": "2af1517ab7f0",
-   "saves": "5c4a2e92c5df",
-   "area": "6a4957b93d7c",
-   "controle": "b095081bd327"
+   "dano": "0a3b064032ce",
+   "defesa": "a944c4419c7b",
+   "saves": "a59071665323",
+   "area": "b2c22d1bdc34",
+   "controle": "b63cbf930c31"
   },
   "controle-barato": {
-   "dano": "0e6d2527f710",
-   "defesa": "2af1517ab7f0",
-   "saves": "5c4a2e92c5df",
-   "area": "6a4957b93d7c",
-   "controle": "35712d830605"
+   "dano": "0a3b064032ce",
+   "defesa": "a944c4419c7b",
+   "saves": "a59071665323",
+   "area": "b2c22d1bdc34",
+   "controle": "28e64552b1af"
   },
   "area": {
-   "dano": "f035930e2936",
-   "defesa": "2af1517ab7f0",
-   "saves": "5c4a2e92c5df",
-   "area": "481d3f7885af",
-   "controle": "ff0bda6ec19c"
+   "dano": "7b36f1ec4341",
+   "defesa": "a944c4419c7b",
+   "saves": "a59071665323",
+   "area": "87ac8ff844f9",
+   "controle": "4b6bfc009343"
   },
   "combo": {
-   "dano": "f035930e2936",
-   "defesa": "2af1517ab7f0",
-   "saves": "5c4a2e92c5df",
-   "area": "2e6896d3f5e7",
-   "controle": "40310429eb0c"
+   "dano": "7b36f1ec4341",
+   "defesa": "a944c4419c7b",
+   "saves": "a59071665323",
+   "area": "b6c7eacd05aa",
+   "controle": "345749a89e27"
   }
  }
 }

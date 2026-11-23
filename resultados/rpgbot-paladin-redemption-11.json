@@ -511,7 +511,7 @@
      "CA 24": 9.0,
      "CA 25": 7.0
     },
-    "nivel_eq": 5.8,
+    "nivel_eq": 5.7,
     "rank": "C+",
     "perfil": "Equilibrado",
     "nivel_bruta": 5.7,
@@ -746,7 +746,7 @@
      "CA 24": 10.9,
      "CA 25": 8.5
     },
-    "nivel_eq": 6.6,
+    "nivel_eq": 6.5,
     "rank": "B-",
     "perfil": "Equilibrado",
     "nivel_bruta": 6.4,
@@ -1479,7 +1479,7 @@
      "CA 24": 12.8,
      "CA 25": 10.1
     },
-    "nivel_eq": 7.3,
+    "nivel_eq": 7.2,
     "rank": "B",
     "perfil": "Equilibrado",
     "nivel_bruta": 7.0,
@@ -2199,36 +2199,37 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "smite-2",
+     "linha": "bless",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "2": 2
+       "1": 1
       }
      }
     },
     {
-     "linha": "smite-3",
+     "linha": "padrao-hipnotico+smite",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "3": 2
+       "1": 2,
+       "3": 1
       }
      }
     },
     {
-     "linha": "controle+smite",
+     "linha": "padrao-hipnotico+smite",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 2,
-       "2": 1
+       "3": 1
       }
      }
     },
@@ -2251,11 +2252,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.9,
-     "rank": "C+",
+     "nivel_eq": 4.6,
+     "rank": "C",
      "por_categoria": {
-      "np": 5.7,
-      "p": 6.0
+      "np": 4.2,
+      "p": 4.8
      }
     },
     "defesa": {
@@ -2283,34 +2284,34 @@
      }
     },
     "campo": {
-     "nivel_eq": 4.0,
-     "rank": "C",
+     "nivel_eq": 7.7,
+     "rank": "B",
      "por_categoria": {
-      "np": 1.3,
-      "p": 4.4
+      "np": 4.4,
+      "p": 8.7
      }
     },
     "corpo": {
-     "nivel_eq": 16.2,
+     "nivel_eq": 16.6,
      "rank": "S",
      "por_categoria": {
-      "np": 16.3,
-      "p": 16.2
+      "np": 16.8,
+      "p": 16.5
      }
     },
     "area": {
      "nivel_eq": 4.6,
      "rank": "C",
      "por_categoria": {
-      "np": 4.4,
-      "p": 4.4
+      "np": 4.3,
+      "p": 4.3
      }
     },
     "suporte": {
-     "nivel_eq": 2.3,
-     "rank": "D",
+     "nivel_eq": 3.4,
+     "rank": "C-",
      "por_categoria": {
-      "np": 2.3,
+      "np": 5.7,
       "p": 2.3
      }
     }
@@ -2320,31 +2321,32 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "smite-3",
+     "linha": "padrao-hipnotico+smite",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "3": 2
+       "1": 2,
+       "3": 1
       }
      }
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 4,
+     "1": 2,
      "2": 3,
-     "3": 1
+     "3": 2
     },
     "canal": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.3,
-     "rank": "B",
+     "nivel_eq": 4.8,
+     "rank": "C",
      "por_categoria": {
-      "p": 7.3
+      "p": 4.8
      }
     },
     "defesa": {
@@ -2369,24 +2371,24 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 8.7,
+     "rank": "B+",
      "por_categoria": {
-      "p": 0.0
+      "p": 8.7
      }
     },
     "corpo": {
-     "nivel_eq": 15.9,
-     "rank": "A+",
+     "nivel_eq": 16.5,
+     "rank": "S",
      "por_categoria": {
-      "p": 15.9
+      "p": 16.5
      }
     },
     "area": {
      "nivel_eq": 4.6,
      "rank": "C",
      "por_categoria": {
-      "p": 4.6
+      "p": 4.3
      }
     },
     "suporte": {
@@ -2399,7 +2401,7 @@
    }
   }
  },
- "segundos": 40.2,
+ "segundos": 64.6,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2417,6 +2419,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -2685,7 +2688,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -2693,6 +2696,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -2709,8 +2713,19 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -2774,6 +2789,8 @@
     ]
    ]
   },
+  "suporte.dado_multiuso.decaimento": 0.75,
+  "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
@@ -2806,78 +2823,78 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "25c2165df8e2",
+  "_planos": "9be8cd1a385d",
   "principal": {
-   "dano": "d075564e80c8",
-   "defesa": "8b99a24eb115",
-   "saves": "bafde4435bd8",
-   "area": "bc3fbdaf12d4",
-   "suporte": "e15becbbff01",
-   "controle": "ee12b1fd3615"
+   "dano": "af77011dab5e",
+   "defesa": "c018e55fd01d",
+   "saves": "092ae1366f98",
+   "area": "bfdb58de6087",
+   "suporte": "89aa3ea4f527",
+   "controle": "249cba59b7d0"
   },
   "bless": {
-   "dano": "7768e1e4b73a",
-   "defesa": "8b99a24eb115",
-   "saves": "bafde4435bd8",
-   "area": "3930364809e7",
-   "suporte": "cbd31f75f93a",
-   "controle": "c88f54f10944"
+   "dano": "9f2dafb8e70d",
+   "defesa": "c018e55fd01d",
+   "saves": "092ae1366f98",
+   "area": "22b00d23258c",
+   "suporte": "37ba95d2460f",
+   "controle": "7bae9e0d3013"
   },
   "smite-1": {
-   "dano": "a9d08bc4b903",
-   "defesa": "8b99a24eb115",
-   "saves": "bafde4435bd8",
-   "area": "fdeec781a2dc",
-   "suporte": "e15becbbff01",
-   "controle": "2c08c2976f4d"
+   "dano": "91b97ba93871",
+   "defesa": "c018e55fd01d",
+   "saves": "092ae1366f98",
+   "area": "9f28f23a3550",
+   "suporte": "89aa3ea4f527",
+   "controle": "b698201185e3"
   },
   "smite-2": {
-   "dano": "b061eb044b9e",
-   "defesa": "8b99a24eb115",
-   "saves": "bafde4435bd8",
-   "area": "c5d6409bffd7",
-   "suporte": "e15becbbff01",
-   "controle": "3ead5a7d8de9"
+   "dano": "a603b49cf1c6",
+   "defesa": "c018e55fd01d",
+   "saves": "092ae1366f98",
+   "area": "f05c9d0c3bb6",
+   "suporte": "89aa3ea4f527",
+   "controle": "fb82dc6b6362"
   },
   "controle": {
-   "dano": "7768e1e4b73a",
-   "defesa": "8b99a24eb115",
-   "saves": "bafde4435bd8",
-   "area": "3930364809e7",
-   "suporte": "e15becbbff01",
-   "controle": "18ae7d56540b"
+   "dano": "9f2dafb8e70d",
+   "defesa": "c018e55fd01d",
+   "saves": "092ae1366f98",
+   "area": "22b00d23258c",
+   "suporte": "89aa3ea4f527",
+   "controle": "903da6bfde60"
   },
   "controle+smite": {
-   "dano": "ccda479958ab",
-   "defesa": "8b99a24eb115",
-   "saves": "bafde4435bd8",
-   "area": "d7892cc65bcc",
-   "suporte": "e15becbbff01",
-   "controle": "a4a8df61d103"
+   "dano": "c336cb413301",
+   "defesa": "c018e55fd01d",
+   "saves": "092ae1366f98",
+   "area": "96c6c60c4f33",
+   "suporte": "89aa3ea4f527",
+   "controle": "c52978ce1191"
   },
   "smite-3": {
-   "dano": "399b06e3e2fa",
-   "defesa": "8b99a24eb115",
-   "saves": "bafde4435bd8",
-   "area": "a0fb400e5285",
-   "suporte": "e15becbbff01",
-   "controle": "5133e81ba9df"
+   "dano": "513501deb226",
+   "defesa": "c018e55fd01d",
+   "saves": "092ae1366f98",
+   "area": "b4d7e0d93afe",
+   "suporte": "89aa3ea4f527",
+   "controle": "95e942a52e50"
   },
   "padrao-hipnotico": {
-   "dano": "7768e1e4b73a",
-   "defesa": "8b99a24eb115",
-   "saves": "bafde4435bd8",
-   "area": "3930364809e7",
-   "suporte": "e15becbbff01",
-   "controle": "fa346cc21aeb"
+   "dano": "9f2dafb8e70d",
+   "defesa": "c018e55fd01d",
+   "saves": "092ae1366f98",
+   "area": "22b00d23258c",
+   "suporte": "89aa3ea4f527",
+   "controle": "c243d082d021"
   },
   "padrao-hipnotico+smite": {
-   "dano": "ccda479958ab",
-   "defesa": "8b99a24eb115",
-   "saves": "bafde4435bd8",
-   "area": "d7892cc65bcc",
-   "suporte": "e15becbbff01",
-   "controle": "34aa400c4840"
+   "dano": "c336cb413301",
+   "defesa": "c018e55fd01d",
+   "saves": "092ae1366f98",
+   "area": "96c6c60c4f33",
+   "suporte": "89aa3ea4f527",
+   "controle": "af2ed2f4ab3c"
   }
  }
 }

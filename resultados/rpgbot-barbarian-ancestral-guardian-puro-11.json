@@ -357,7 +357,7 @@
      "chave": "T+S+P+≈",
      "perfil": "Bastião"
     },
-    "nivel_corpo": 30.0,
+    "nivel_corpo": 30.07,
     "rank_corpo": "S",
     "corpo_busca": [
      [
@@ -530,11 +530,11 @@
      }
     },
     "corpo": {
-     "nivel_eq": 30.0,
+     "nivel_eq": 30.1,
      "rank": "S",
      "por_categoria": {
-      "np": 30.0,
-      "p": 30.0
+      "np": 30.1,
+      "p": 30.1
      }
     },
     "area": {
@@ -610,10 +610,10 @@
      }
     },
     "corpo": {
-     "nivel_eq": 30.0,
+     "nivel_eq": 30.1,
      "rank": "S",
      "por_categoria": {
-      "p": 30.0
+      "p": 30.1
      }
     },
     "area": {
@@ -633,7 +633,7 @@
    }
   }
  },
- "segundos": 8.4,
+ "segundos": 13.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -651,6 +651,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -919,7 +920,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -927,6 +928,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -943,6 +945,7 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -974,6 +977,16 @@
   },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1037,6 +1050,8 @@
     ]
    ]
   },
+  "suporte.dado_multiuso.decaimento": 0.75,
+  "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
@@ -1069,21 +1084,21 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "1400327a7453",
+  "_planos": "b0a8683fe6ee",
   "principal": {
-   "dano": "528a5e6a1f08",
-   "defesa": "c2336cfd023e",
-   "saves": "3cb5f80c9eda",
-   "area": "143fa961c624",
-   "controle": "ff7bdb952f5b"
+   "dano": "68fc84fe52c0",
+   "defesa": "9e6bbf6bdb87",
+   "saves": "008aa2a648eb",
+   "area": "bf8660b9ee0a",
+   "controle": "9917f2f96938"
   },
   "furia": {
-   "dano": "528a5e6a1f08",
-   "defesa": "869cf511b052",
-   "saves": "00f49186d9c3",
-   "area": "143fa961c624",
-   "suporte": "b40eadcd0500",
-   "controle": "225eed94f48f"
+   "dano": "68fc84fe52c0",
+   "defesa": "d2cb55d226cf",
+   "saves": "4b30fdefde21",
+   "area": "bf8660b9ee0a",
+   "suporte": "a657fc70d470",
+   "controle": "f595898aa88b"
   }
  }
 }

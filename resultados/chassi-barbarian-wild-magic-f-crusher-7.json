@@ -30,7 +30,7 @@
      "CA 24": 9.3,
      "CA 25": 7.5
     },
-    "nivel_eq": 5.4,
+    "nivel_eq": 5.3,
     "rank": "C+",
     "perfil": "Equilibrado",
     "nivel_bruta": 5.2,
@@ -194,7 +194,7 @@
      "CA 24": 11.0,
      "CA 25": 8.8
     },
-    "nivel_eq": 6.9,
+    "nivel_eq": 6.7,
     "rank": "B-",
     "perfil": "Equilibrado",
     "nivel_bruta": 6.5,
@@ -376,7 +376,7 @@
      "CA 24": 15.1,
      "CA 25": 13.1
     },
-    "nivel_eq": 7.5,
+    "nivel_eq": 7.3,
     "rank": "B",
     "perfil": "Preciso",
     "nivel_bruta": 7.0,
@@ -597,11 +597,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.4,
+     "nivel_eq": 7.2,
      "rank": "B",
      "por_categoria": {
-      "np": 7.2,
-      "p": 7.5
+      "np": 7.0,
+      "p": 7.3
      }
     },
     "defesa": {
@@ -684,10 +684,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.5,
+     "nivel_eq": 7.3,
      "rank": "B",
      "por_categoria": {
-      "p": 7.5
+      "p": 7.3
      }
     },
     "defesa": {
@@ -742,7 +742,7 @@
    }
   }
  },
- "segundos": 11.9,
+ "segundos": 19.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -760,6 +760,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -1028,7 +1029,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -1036,6 +1037,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -1052,6 +1054,7 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -1083,6 +1086,16 @@
   },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1146,6 +1159,8 @@
     ]
    ]
   },
+  "suporte.dado_multiuso.decaimento": 0.75,
+  "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
@@ -1178,29 +1193,29 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "2ff569348169",
+  "_planos": "f7fb263ef945",
   "principal": {
-   "dano": "366565f7bc83",
-   "defesa": "f1c1be18d237",
-   "saves": "7700f70f704c",
-   "area": "a7841a0d0dd4",
-   "controle": "daa9d1a75bc0"
+   "dano": "24e89d0f6a4b",
+   "defesa": "66423eaa47ca",
+   "saves": "da3c7f5dd0a6",
+   "area": "96802984f52e",
+   "controle": "6ef77d838017"
   },
   "furia": {
-   "dano": "3f75ea9f6625",
-   "defesa": "123107bb94ac",
-   "saves": "7700f70f704c",
-   "area": "801536db8bfc",
-   "suporte": "543ca08349df",
-   "controle": "d3e834f1841d"
+   "dano": "01e5a1424bcb",
+   "defesa": "f17785611e6e",
+   "saves": "da3c7f5dd0a6",
+   "area": "4762273e7f9f",
+   "suporte": "9eac9e5079c5",
+   "controle": "e2a803e5c620"
   },
   "furia-bolstering": {
-   "dano": "0c2c8aed487d",
-   "defesa": "123107bb94ac",
-   "saves": "7700f70f704c",
-   "area": "00aebe32b287",
-   "suporte": "543ca08349df",
-   "controle": "e30bdd59f8ac"
+   "dano": "cd18f89d1e1c",
+   "defesa": "f17785611e6e",
+   "saves": "da3c7f5dd0a6",
+   "area": "c273425623d7",
+   "suporte": "9eac9e5079c5",
+   "controle": "267e90132f0d"
   }
  }
 }

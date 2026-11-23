@@ -114,12 +114,12 @@
     "areas": []
    },
    "suporte": {
-    "ofensivo": 1.88,
+    "ofensivo": 1.59,
     "defensivo": 0,
-    "total": 1.88,
-    "nivel_ofensivo": 0.5,
+    "total": 1.59,
+    "nivel_ofensivo": 0.4,
     "nivel_defensivo": 0.0,
-    "nivel_eq": 0.4,
+    "nivel_eq": 0.3,
     "rank": "F",
     "perfil": "Equilibrado",
     "fonte_principal": "Bardic Inspiration (d8)",
@@ -127,7 +127,7 @@
      {
       "nome": "Bardic Inspiration (d8)",
       "lado": "of",
-      "valor": 1.88
+      "valor": 1.59
      }
     ]
    },
@@ -317,11 +317,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 0.4,
+     "nivel_eq": 0.3,
      "rank": "F",
      "por_categoria": {
-      "np": 0.4,
-      "p": 0.4
+      "np": 0.3,
+      "p": 0.3
      }
     }
    }
@@ -398,16 +398,16 @@
      }
     },
     "suporte": {
-     "nivel_eq": 0.4,
+     "nivel_eq": 0.3,
      "rank": "F",
      "por_categoria": {
-      "p": 0.4
+      "p": 0.3
      }
     }
    }
   }
  },
- "segundos": 3.9,
+ "segundos": 6.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -425,6 +425,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -693,7 +694,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -701,6 +702,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -717,8 +719,19 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -782,6 +795,8 @@
     ]
    ]
   },
+  "suporte.dado_multiuso.decaimento": 0.75,
+  "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
@@ -814,14 +829,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "f53c3cf84ba7",
+  "_planos": "8e723a7af63f",
   "principal": {
-   "dano": "e3308b8e5108",
-   "defesa": "12ca23fb67c8",
-   "saves": "e9264422050d",
-   "area": "ae5ff8afb7f2",
-   "suporte": "cdddea917a63",
-   "controle": "183ba6b8ae20"
+   "dano": "5f3cbaf9d40e",
+   "defesa": "eb7551d7ad30",
+   "saves": "c2ff25b47a84",
+   "area": "df9d7268d47e",
+   "suporte": "ae537da4c476",
+   "controle": "8b0c3d829565"
   }
  }
 }

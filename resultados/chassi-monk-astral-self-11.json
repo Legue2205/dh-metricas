@@ -1020,7 +1020,7 @@
      "CA 24": 12.1,
      "CA 25": 10.3
     },
-    "nivel_eq": 6.9,
+    "nivel_eq": 6.8,
     "rank": "B-",
     "perfil": "Equilibrado",
     "nivel_bruta": 6.8,
@@ -1562,56 +1562,57 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "bracos-rajada",
+     "linha": "bracos-atordoar",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 5
+      "ki": 4
      }
     },
     {
-     "linha": "rajada-mira",
+     "linha": "bracos-atordoar",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 6
+      "ki": 4
      }
     },
     {
-     "linha": "bracos-rajada",
+     "linha": "bracos-atordoar",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 5
+      "ki": 4
      }
     },
     {
-     "linha": "rajada-mira",
+     "linha": "bracos-atordoar",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 6
+      "ki": 4
      }
     }
    ],
    "sobra": {
-    "espacos": {}
+    "espacos": {},
+    "ki": 3
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.7,
-     "rank": "B-",
+     "nivel_eq": 7.6,
+     "rank": "B",
      "por_categoria": {
-      "np": 7.9,
-      "p": 6.1
+      "np": 7.6,
+      "p": 7.6
      }
     },
     "defesa": {
@@ -1639,18 +1640,18 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 0.7,
+     "rank": "E",
      "por_categoria": {
-      "np": 0.0,
-      "p": 0.0
+      "np": 0.7,
+      "p": 0.7
      }
     },
     "corpo": {
-     "nivel_eq": 10.5,
-     "rank": "A-",
+     "nivel_eq": 11.0,
+     "rank": "A",
      "por_categoria": {
-      "np": 9.5,
+      "np": 11.0,
       "p": 11.0
      }
     },
@@ -1658,7 +1659,7 @@
      "nivel_eq": 4.8,
      "rank": "C",
      "por_categoria": {
-      "np": 4.8,
+      "np": 4.6,
       "p": 4.6
      }
     }
@@ -1668,26 +1669,26 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "rajada-mira",
+     "linha": "bracos-atordoar",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 6
+      "ki": 4
      }
     }
    ],
    "sobra": {
     "espacos": {},
-    "ki": 5
+    "ki": 7
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.1,
-     "rank": "B-",
+     "nivel_eq": 7.6,
+     "rank": "B",
      "por_categoria": {
-      "p": 6.1
+      "p": 7.6
      }
     },
     "defesa": {
@@ -1712,10 +1713,10 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 0.7,
+     "rank": "E",
      "por_categoria": {
-      "p": 0.0
+      "p": 0.7
      }
     },
     "corpo": {
@@ -1735,7 +1736,7 @@
    }
   }
  },
- "segundos": 37.1,
+ "segundos": 60.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1753,6 +1754,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -2021,7 +2023,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -2029,6 +2031,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -2045,8 +2048,19 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -2112,69 +2126,69 @@
   }
  },
  "impressoes": {
-  "_planos": "b015fd7a25cd",
+  "_planos": "d6f070a6c958",
   "principal": {
-   "dano": "380b3c524315",
-   "defesa": "7e984bdde0ab",
-   "saves": "1402542a1e18",
-   "area": "a7e0ce3dfa8b",
-   "controle": "7747e86138ad"
+   "dano": "06123b07c614",
+   "defesa": "42f420892a4c",
+   "saves": "9b3ea2e10063",
+   "area": "3c8196a829ce",
+   "controle": "e8b0c337e91a"
   },
   "meia-rajada": {
-   "dano": "5dcdc4180984",
-   "defesa": "7e984bdde0ab",
-   "saves": "1402542a1e18",
-   "area": "9cc45c302fc4",
-   "controle": "b0a8ab8873e8"
+   "dano": "106b84ddd011",
+   "defesa": "42f420892a4c",
+   "saves": "9b3ea2e10063",
+   "area": "c3e28a08280e",
+   "controle": "f28a508cfa7a"
   },
   "rajada": {
-   "dano": "7866a424590c",
-   "defesa": "7e984bdde0ab",
-   "saves": "1402542a1e18",
-   "area": "f603c6c36ee2",
-   "controle": "cfe804a990f7"
+   "dano": "05cba247d03d",
+   "defesa": "42f420892a4c",
+   "saves": "9b3ea2e10063",
+   "area": "c4e8846ab53a",
+   "controle": "6c3ea7a17cff"
   },
   "atordoar": {
-   "dano": "5dcdc4180984",
-   "defesa": "7e984bdde0ab",
-   "saves": "1402542a1e18",
-   "area": "9cc45c302fc4",
-   "controle": "9cc3f8d4be02"
+   "dano": "106b84ddd011",
+   "defesa": "42f420892a4c",
+   "saves": "9b3ea2e10063",
+   "area": "c3e28a08280e",
+   "controle": "cdf669fefac1"
   },
   "mira": {
-   "dano": "ff743e73ee61",
-   "defesa": "7e984bdde0ab",
-   "saves": "1402542a1e18",
-   "area": "ff275b826c5e",
-   "controle": "f37e994c772a"
+   "dano": "073c1d647ce5",
+   "defesa": "42f420892a4c",
+   "saves": "9b3ea2e10063",
+   "area": "dcfab569a08d",
+   "controle": "8ebd4e65818e"
   },
   "rajada-mira": {
-   "dano": "882b467da020",
-   "defesa": "7e984bdde0ab",
-   "saves": "1402542a1e18",
-   "area": "24dda1ce272a",
-   "controle": "94dc50132bf4"
+   "dano": "d44648da3bf5",
+   "defesa": "42f420892a4c",
+   "saves": "9b3ea2e10063",
+   "area": "21dc34d7ce8c",
+   "controle": "e28e710cb037"
   },
   "bracos": {
-   "dano": "b982d0e7ad5a",
-   "defesa": "7e984bdde0ab",
-   "saves": "1402542a1e18",
-   "area": "34ca7632616a",
-   "controle": "7ba4ed290a77"
+   "dano": "dd6eca45ca72",
+   "defesa": "42f420892a4c",
+   "saves": "9b3ea2e10063",
+   "area": "1db5dc3cb9a0",
+   "controle": "8b4ed33e1ebf"
   },
   "bracos-rajada": {
-   "dano": "18d3f34187f7",
-   "defesa": "7e984bdde0ab",
-   "saves": "1402542a1e18",
-   "area": "48bb98fc0f58",
-   "controle": "3784425fe55e"
+   "dano": "12cbbb2b8efc",
+   "defesa": "42f420892a4c",
+   "saves": "9b3ea2e10063",
+   "area": "f2efade3e124",
+   "controle": "986b69e0f337"
   },
   "bracos-atordoar": {
-   "dano": "6ea7122d75f2",
-   "defesa": "7e984bdde0ab",
-   "saves": "1402542a1e18",
-   "area": "5ca242fc57fd",
-   "controle": "971b88e75fb8"
+   "dano": "72b8c2189741",
+   "defesa": "42f420892a4c",
+   "saves": "9b3ea2e10063",
+   "area": "ab34d96b3ad7",
+   "controle": "0068b0f48bae"
   }
  }
 }

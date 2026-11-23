@@ -431,7 +431,7 @@
      "CA 24": 16.3,
      "CA 25": 13.8
     },
-    "nivel_eq": 9.8,
+    "nivel_eq": 9.5,
     "rank": "B+",
     "perfil": "Equilibrado",
     "nivel_bruta": 9.8,
@@ -629,13 +629,13 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "sem-shield",
+     "linha": "principal",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "2": 1
+       "1": 1
       }
      }
     },
@@ -652,13 +652,13 @@
      }
     },
     {
-     "linha": "sem-shield",
+     "linha": "principal",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "2": 1
+       "1": 1
       }
      }
     },
@@ -677,24 +677,23 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 2,
-     "2": 1
+     "2": 3
     }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.1,
+     "nivel_eq": 8.9,
      "rank": "B+",
      "por_categoria": {
       "np": 7.6,
-      "p": 9.8
+      "p": 9.5
      }
     },
     "defesa": {
-     "nivel_eq": 10.2,
+     "nivel_eq": 10.6,
      "rank": "A-",
      "por_categoria": {
-      "np": 9.4,
+      "np": 10.6,
       "p": 10.6
      }
     },
@@ -764,10 +763,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.8,
+     "nivel_eq": 9.5,
      "rank": "B+",
      "por_categoria": {
-      "p": 9.8
+      "p": 9.5
      }
     },
     "defesa": {
@@ -815,7 +814,7 @@
    }
   }
  },
- "segundos": 15.4,
+ "segundos": 23.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -833,6 +832,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -1101,7 +1101,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -1109,6 +1109,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -1125,6 +1126,7 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -1156,6 +1158,16 @@
   },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1221,27 +1233,27 @@
   }
  },
  "impressoes": {
-  "_planos": "851e983de25f",
+  "_planos": "3f5b2c7b41c7",
   "principal": {
-   "dano": "436179b5a2c2",
-   "defesa": "c3cbfa200616",
-   "saves": "b963ce2ecd0c",
-   "area": "f84ae8f72bf8",
-   "controle": "93fb81fb0de2"
+   "dano": "01c4b20ac6a8",
+   "defesa": "103a6d8110a8",
+   "saves": "08bba7dc3f5c",
+   "area": "f43489758e23",
+   "controle": "b3b7aa0b2dfd"
   },
   "sem-shield": {
-   "dano": "436179b5a2c2",
-   "defesa": "666bd75e3b12",
-   "saves": "09bab78192ae",
-   "area": "f84ae8f72bf8",
-   "controle": "93fb81fb0de2"
+   "dano": "01c4b20ac6a8",
+   "defesa": "8a5fd52c1c30",
+   "saves": "eb95d77c235c",
+   "area": "f43489758e23",
+   "controle": "b3b7aa0b2dfd"
   },
   "surge": {
-   "dano": "16699f79cdb2",
-   "defesa": "c3cbfa200616",
-   "saves": "b963ce2ecd0c",
-   "area": "e83414101fb4",
-   "controle": "b186ea36826d"
+   "dano": "3a70c0b30d5d",
+   "defesa": "103a6d8110a8",
+   "saves": "08bba7dc3f5c",
+   "area": "3de57092ec89",
+   "controle": "de39489830bc"
   }
  }
 }

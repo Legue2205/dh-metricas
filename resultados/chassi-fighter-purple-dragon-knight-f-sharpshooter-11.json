@@ -30,7 +30,7 @@
      "CA 24": 12.1,
      "CA 25": 10.6
     },
-    "nivel_eq": 8.6,
+    "nivel_eq": 8.2,
     "rank": "B+",
     "perfil": "Bruto",
     "nivel_bruta": 8.6,
@@ -217,8 +217,8 @@
      "CA 24": 15.1,
      "CA 25": 13.3
     },
-    "nivel_eq": 10.5,
-    "rank": "A-",
+    "nivel_eq": 9.9,
+    "rank": "B+",
     "perfil": "Bruto",
     "nivel_bruta": 10.5,
     "nivel_precisa": 9.4,
@@ -438,11 +438,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.9,
+     "nivel_eq": 9.3,
      "rank": "B+",
      "por_categoria": {
-      "np": 8.6,
-      "p": 10.5
+      "np": 8.2,
+      "p": 9.9
      }
     },
     "defesa": {
@@ -522,10 +522,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 10.5,
-     "rank": "A-",
+     "nivel_eq": 9.9,
+     "rank": "B+",
      "por_categoria": {
-      "p": 10.5
+      "p": 9.9
      }
     },
     "defesa": {
@@ -580,7 +580,7 @@
    }
   }
  },
- "segundos": 7.8,
+ "segundos": 12.8,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -598,6 +598,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -866,7 +867,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -874,6 +875,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -890,8 +892,19 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -955,6 +968,8 @@
     ]
    ]
   },
+  "suporte.dado_multiuso.decaimento": 0.75,
+  "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
@@ -987,22 +1002,22 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "4597d65c9141",
+  "_planos": "24eef550efbd",
   "principal": {
-   "dano": "de4ef3003ee3",
-   "defesa": "793a9f179edf",
-   "saves": "e6686e5c7c01",
-   "area": "f69ab6a0825f",
-   "suporte": "adf5d6b05fa8",
-   "controle": "dcbece8b66d9"
+   "dano": "8278164e744b",
+   "defesa": "4aa59c1681f5",
+   "saves": "9a480de84232",
+   "area": "e82868f2e63d",
+   "suporte": "a8ddbfd6b2a2",
+   "controle": "39debbd1af72"
   },
   "surge": {
-   "dano": "9fbd8009431f",
-   "defesa": "793a9f179edf",
-   "saves": "e6686e5c7c01",
-   "area": "3989358f2329",
-   "suporte": "adf5d6b05fa8",
-   "controle": "e4346025eafa"
+   "dano": "140f36e79ece",
+   "defesa": "4aa59c1681f5",
+   "saves": "9a480de84232",
+   "area": "7a73366d5bc2",
+   "suporte": "a8ddbfd6b2a2",
+   "controle": "a31da804638c"
   }
  }
 }

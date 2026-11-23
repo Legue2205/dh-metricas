@@ -369,7 +369,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "assassinate",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -378,7 +378,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "assassinate",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -387,7 +387,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "assassinate",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -396,7 +396,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "assassinate",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -410,11 +410,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.0,
-     "rank": "C+",
+     "nivel_eq": 3.4,
+     "rank": "C-",
      "por_categoria": {
-      "np": 5.0,
-      "p": 5.0
+      "np": 3.4,
+      "p": 3.4
      }
     },
     "defesa": {
@@ -450,19 +450,19 @@
      }
     },
     "corpo": {
-     "nivel_eq": 5.2,
-     "rank": "C+",
+     "nivel_eq": 7.0,
+     "rank": "B",
      "por_categoria": {
-      "np": 5.2,
-      "p": 5.2
+      "np": 7.0,
+      "p": 7.0
      }
     },
     "area": {
      "nivel_eq": 4.3,
      "rank": "C",
      "por_categoria": {
-      "np": 4.3,
-      "p": 4.3
+      "np": 4.2,
+      "p": 4.2
      }
     }
    }
@@ -471,7 +471,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "assassinate",
      "categoria": "p",
      "peso": 1,
      "nota": "",
@@ -485,10 +485,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.0,
-     "rank": "C+",
+     "nivel_eq": 3.4,
+     "rank": "C-",
      "por_categoria": {
-      "p": 5.0
+      "p": 3.4
      }
     },
     "defesa": {
@@ -520,23 +520,23 @@
      }
     },
     "corpo": {
-     "nivel_eq": 5.2,
-     "rank": "C+",
+     "nivel_eq": 7.0,
+     "rank": "B",
      "por_categoria": {
-      "p": 5.2
+      "p": 7.0
      }
     },
     "area": {
      "nivel_eq": 4.3,
      "rank": "C",
      "por_categoria": {
-      "p": 4.3
+      "p": 4.2
      }
     }
    }
   }
  },
- "segundos": 9.3,
+ "segundos": 14.6,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -554,6 +554,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -822,7 +823,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -830,6 +831,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -846,6 +848,7 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -877,6 +880,16 @@
   },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -942,20 +955,20 @@
   }
  },
  "impressoes": {
-  "_planos": "cd249dc7037f",
+  "_planos": "cd55da80fa74",
   "principal": {
-   "dano": "7dea1c16252c",
-   "defesa": "3d3794446be1",
-   "saves": "a968b6e38c22",
-   "area": "70f6afeabc31",
-   "controle": "7d8e509d0cee"
+   "dano": "0af20a7f5129",
+   "defesa": "92615c5bc1a1",
+   "saves": "7e1ef14b8a84",
+   "area": "516034fbe3d1",
+   "controle": "19dbe200978d"
   },
   "assassinate": {
-   "dano": "216d3a4cf4cb",
-   "defesa": "3d3794446be1",
-   "saves": "a968b6e38c22",
-   "area": "d614f6bc0352",
-   "controle": "9b190e64a0da"
+   "dano": "c53c63049632",
+   "defesa": "92615c5bc1a1",
+   "saves": "7e1ef14b8a84",
+   "area": "39cda233e4f4",
+   "controle": "e6f8f3ebc269"
   }
  }
 }

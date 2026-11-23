@@ -208,7 +208,7 @@
      "CA 24": 6.9,
      "CA 25": 5.5
     },
-    "nivel_eq": 5.1,
+    "nivel_eq": 5.0,
     "rank": "C+",
     "perfil": "Equilibrado",
     "nivel_bruta": 5.1,
@@ -1078,38 +1078,54 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 3.84,
-    "rank": "C-",
+    "nivel_eq": 4.44,
+    "rank": "C",
     "nivel_campo": 1.1,
     "rank_campo": "D",
     "nivel_controle": 0.0,
-    "nivel_atencao": 0.91,
-    "rank_atencao": "E",
-    "vidas_total": 0.567,
+    "nivel_atencao": 2.7,
+    "rank_atencao": "D",
+    "vidas_total": 0.842,
     "vidas_campo": 0.143,
-    "vidas_atencao": 0.093,
+    "vidas_atencao": 0.385,
     "corpo": {
-     "T": 0.093,
-     "S": 0.12,
-     "P": -0.027,
-     "chave": "T0S+P0",
-     "perfil": "Neutro"
+     "T": 0.385,
+     "S": 0.197,
+     "P": 0.188,
+     "chave": "T+S+P+≈",
+     "perfil": "Bastião"
     },
-    "nivel_corpo": 7.0,
-    "rank_corpo": "B",
+    "nivel_corpo": 10.49,
+    "rank_corpo": "A-",
     "corpo_busca": [
      [
       7,
-      0.093
+      0.385
+     ],
+     [
+      8,
+      0.291
+     ],
+     [
+      9,
+      0.13
+     ],
+     [
+      10,
+      0.059
+     ],
+     [
+      11,
+      -0.061
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 4.08,
-     "Party de elite": 3.75,
-     "Horda + chefe": 2.6,
-     "Horda": 4.05,
-     "Dupla": 4.38,
-     "Chefe sozinho": 4.14
+     "Minions + minibosses": 4.23,
+     "Party de elite": 4.38,
+     "Horda + chefe": 4.27,
+     "Horda": 4.28,
+     "Dupla": 4.42,
+     "Chefe sozinho": 4.79
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
@@ -1137,8 +1153,8 @@
       "Corpo (1 Summon Aberration (4º))": 0.0533
      }
     },
-    "nivel_absoluto": 3.5,
-    "rank_absoluto": "C-"
+    "nivel_absoluto": 4.45,
+    "rank_absoluto": "C"
    }
   },
   "area+hex": {
@@ -1355,56 +1371,62 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "invocacao",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
-      "espacos": {}
-     }
-    },
-    {
-     "linha": "area",
-     "categoria": "p",
-     "peso": 2,
-     "nota": "",
-     "gasto": {
       "espacos": {
-       "4": 2
+       "4": 0.5
       }
      }
     },
     {
-     "linha": "principal",
-     "categoria": "np",
-     "peso": 1,
-     "nota": "",
-     "gasto": {
-      "espacos": {}
-     }
-    },
-    {
-     "linha": "area",
+     "linha": "invocacao",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "4": 2
+       "4": 0.5
+      }
+     }
+    },
+    {
+     "linha": "invocacao",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "4": 0.5
+      }
+     }
+    },
+    {
+     "linha": "invocacao",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "4": 0.5
       }
      }
     }
    ],
    "sobra": {
-    "espacos": {}
+    "espacos": {
+     "4": 1.0
+    }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 2.6,
-     "rank": "D",
+     "nivel_eq": 6.8,
+     "rank": "B-",
      "por_categoria": {
-      "np": 4.1,
-      "p": 1.8
+      "np": 6.8,
+      "p": 6.8
      }
     },
     "defesa": {
@@ -1440,19 +1462,19 @@
      }
     },
     "corpo": {
-     "nivel_eq": 5.0,
-     "rank": "C+",
+     "nivel_eq": 10.5,
+     "rank": "A-",
      "por_categoria": {
-      "np": 4.8,
-      "p": 5.1
+      "np": 10.5,
+      "p": 10.5
      }
     },
     "area": {
      "nivel_eq": 8.4,
      "rank": "B+",
      "por_categoria": {
-      "np": 4.3,
-      "p": 8.3
+      "np": 4.6,
+      "p": 4.6
      }
     }
    }
@@ -1461,26 +1483,28 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "area",
+     "linha": "invocacao",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "4": 2
+       "4": 0.5
       }
      }
     }
    ],
    "sobra": {
-    "espacos": {}
+    "espacos": {
+     "4": 1.5
+    }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 1.8,
-     "rank": "D",
+     "nivel_eq": 6.8,
+     "rank": "B-",
      "por_categoria": {
-      "p": 1.8
+      "p": 6.8
      }
     },
     "defesa": {
@@ -1512,23 +1536,23 @@
      }
     },
     "corpo": {
-     "nivel_eq": 5.1,
-     "rank": "C+",
+     "nivel_eq": 10.5,
+     "rank": "A-",
      "por_categoria": {
-      "p": 5.1
+      "p": 10.5
      }
     },
     "area": {
      "nivel_eq": 8.4,
      "rank": "B+",
      "por_categoria": {
-      "p": 8.3
+      "p": 4.6
      }
     }
    }
   }
  },
- "segundos": 36.8,
+ "segundos": 56.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1546,6 +1570,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -1814,7 +1839,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -1822,6 +1847,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -1838,6 +1864,7 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -1869,6 +1896,16 @@
   },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1934,55 +1971,55 @@
   }
  },
  "impressoes": {
-  "_planos": "d58f532708c3",
+  "_planos": "b65c14ec44fc",
   "principal": {
-   "dano": "4075cb42f6c8",
-   "defesa": "aabb297c823a",
-   "saves": "56f76b8188d2",
-   "area": "81dde652af2e",
-   "controle": "9f631c0c33f9"
+   "dano": "8e6f9a00a1ed",
+   "defesa": "5cdcc725da93",
+   "saves": "42cd9d58366f",
+   "area": "cba4f6e55066",
+   "controle": "c4dd17429921"
   },
   "hex": {
-   "dano": "0e2557e66558",
-   "defesa": "aabb297c823a",
-   "saves": "56f76b8188d2",
-   "area": "b6ed133e5287",
-   "controle": "442398775c27"
+   "dano": "0e00c1645a3f",
+   "defesa": "5cdcc725da93",
+   "saves": "42cd9d58366f",
+   "area": "eb87f630ec53",
+   "controle": "481996a60371"
   },
   "controle": {
-   "dano": "acbc8d6e8b03",
-   "defesa": "11ef4523c9a5",
-   "saves": "af0a1c188aa4",
-   "area": "627154863035",
-   "controle": "b04321dd3187"
+   "dano": "354b4df92feb",
+   "defesa": "86f91d298a19",
+   "saves": "48cb5b890f0d",
+   "area": "562b3cb80056",
+   "controle": "cb459405fa83"
   },
   "area": {
-   "dano": "7cd63e388f0e",
-   "defesa": "11ef4523c9a5",
-   "saves": "af0a1c188aa4",
-   "area": "debc6f2ad58c",
-   "controle": "a8d7ee0309dc"
+   "dano": "fd8772225391",
+   "defesa": "86f91d298a19",
+   "saves": "48cb5b890f0d",
+   "area": "11ef50bbeddd",
+   "controle": "868b1bc36550"
   },
   "combo": {
-   "dano": "7cd63e388f0e",
-   "defesa": "11ef4523c9a5",
-   "saves": "af0a1c188aa4",
-   "area": "db82f7b88b79",
-   "controle": "7fbb43c48fe9"
+   "dano": "fd8772225391",
+   "defesa": "86f91d298a19",
+   "saves": "48cb5b890f0d",
+   "area": "b84971d4640a",
+   "controle": "bdbe67d773b7"
   },
   "invocacao": {
-   "dano": "f7cf9be82090",
-   "defesa": "11ef4523c9a5",
-   "saves": "af0a1c188aa4",
-   "area": "0c9420347ac0",
-   "controle": "672c08913331"
+   "dano": "103ad5cb6fa0",
+   "defesa": "86f91d298a19",
+   "saves": "48cb5b890f0d",
+   "area": "cbc86800271e",
+   "controle": "0f83f2c5c5f4"
   },
   "area+hex": {
-   "dano": "40bfdfee3cc9",
-   "defesa": "11ef4523c9a5",
-   "saves": "af0a1c188aa4",
-   "area": "172cff572d1d",
-   "controle": "44ef3101c612"
+   "dano": "ce1a9c7e84f0",
+   "defesa": "86f91d298a19",
+   "saves": "48cb5b890f0d",
+   "area": "28be7a47306c",
+   "controle": "d0c9565077d7"
   }
  }
 }

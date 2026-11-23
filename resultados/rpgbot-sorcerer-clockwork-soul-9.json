@@ -1080,14 +1080,15 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "area",
+     "linha": "combo",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 1,
-       "5": 2
+       "3": 1,
+       "5": 1
       }
      }
     }
@@ -1096,8 +1097,9 @@
     "espacos": {
      "1": 4,
      "2": 3,
-     "3": 3,
-     "4": 3
+     "3": 2,
+     "4": 3,
+     "5": 1
     }
    },
    "eixos": {
@@ -1130,10 +1132,10 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 14.3,
+     "rank": "A+",
      "por_categoria": {
-      "p": 0.0
+      "p": 14.3
      }
     },
     "corpo": {
@@ -1147,13 +1149,13 @@
      "nivel_eq": 14.6,
      "rank": "A+",
      "por_categoria": {
-      "p": 14.6
+      "p": 8.1
      }
     }
    }
   }
  },
- "segundos": 25.7,
+ "segundos": 40.0,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1171,6 +1173,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -1439,7 +1442,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -1447,6 +1450,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -1463,6 +1467,7 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -1494,6 +1499,16 @@
   },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1559,41 +1574,41 @@
   }
  },
  "impressoes": {
-  "_planos": "b0394438e8a8",
+  "_planos": "82890ed304fd",
   "principal": {
-   "dano": "2ea4c43f8c94",
-   "defesa": "94a9bcc99744",
-   "saves": "ec11a0bf5078",
-   "area": "97ed20613990",
-   "controle": "68a22e1ce641"
+   "dano": "ae3e22b26ba8",
+   "defesa": "ff2efee1755e",
+   "saves": "5fc1fdb6d88e",
+   "area": "4abd80b97b87",
+   "controle": "ce85de6773d8"
   },
   "controle": {
-   "dano": "bb1537cf9f99",
-   "defesa": "ba00c5259746",
-   "saves": "11e76e6a210c",
-   "area": "374ed6884586",
-   "controle": "609903a73d1b"
+   "dano": "ccb6c8a0235d",
+   "defesa": "3008c0612d04",
+   "saves": "0a6141f41cc2",
+   "area": "f55401bf3124",
+   "controle": "555c77c8667e"
   },
   "controle-barato": {
-   "dano": "bb1537cf9f99",
-   "defesa": "ba00c5259746",
-   "saves": "11e76e6a210c",
-   "area": "374ed6884586",
-   "controle": "990692d13ec5"
+   "dano": "ccb6c8a0235d",
+   "defesa": "3008c0612d04",
+   "saves": "0a6141f41cc2",
+   "area": "f55401bf3124",
+   "controle": "9b75a35e3e85"
   },
   "area": {
-   "dano": "c34cdcd699c1",
-   "defesa": "ba00c5259746",
-   "saves": "11e76e6a210c",
-   "area": "dc12ad08049d",
-   "controle": "e39754cc3df5"
+   "dano": "53304303c061",
+   "defesa": "3008c0612d04",
+   "saves": "0a6141f41cc2",
+   "area": "9015904a2605",
+   "controle": "ce585dee27d2"
   },
   "combo": {
-   "dano": "c34cdcd699c1",
-   "defesa": "ba00c5259746",
-   "saves": "11e76e6a210c",
-   "area": "616385fe2821",
-   "controle": "1de8a5ec2637"
+   "dano": "53304303c061",
+   "defesa": "3008c0612d04",
+   "saves": "0a6141f41cc2",
+   "area": "fee9c77be334",
+   "controle": "3d6d5489198e"
   }
  }
 }

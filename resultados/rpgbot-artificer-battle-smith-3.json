@@ -124,58 +124,58 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 2.86,
-    "rank": "D",
+    "nivel_eq": 3.18,
+    "rank": "C-",
     "nivel_campo": 0.57,
     "rank_campo": "E",
     "nivel_controle": 0.0,
-    "nivel_atencao": 2.71,
-    "rank_atencao": "D",
-    "vidas_total": 0.434,
+    "nivel_atencao": 3.23,
+    "rank_atencao": "C-",
+    "vidas_total": 0.502,
     "vidas_campo": 0.151,
-    "vidas_atencao": 0.409,
+    "vidas_atencao": 0.486,
     "corpo": {
-     "T": 0.409,
-     "S": 0.328,
-     "P": 0.082,
+     "T": 0.486,
+     "S": 0.336,
+     "P": 0.15,
      "chave": "T+S+P+S",
      "perfil": "Fortaleza"
     },
-    "nivel_corpo": 7.04,
+    "nivel_corpo": 7.79,
     "rank_corpo": "B",
     "corpo_busca": [
      [
       3,
-      0.409
+      0.486
      ],
      [
       4,
-      0.383
+      0.521
      ],
      [
       5,
-      0.269
+      0.397
      ],
      [
       6,
-      0.118
+      0.239
      ],
      [
       7,
-      0.005
+      0.134
      ],
      [
       8,
-      -0.103
+      -0.036
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 4.04,
-     "Party de elite": 2.01,
-     "Horda + chefe": 0.95,
-     "Horda": 4.01,
-     "Dupla": 4.03,
-     "Chefe sozinho": 2.69
+     "Minions + minibosses": 4.1,
+     "Party de elite": 2.28,
+     "Horda + chefe": 2.64,
+     "Horda": 4.09,
+     "Dupla": 3.12,
+     "Chefe sozinho": 2.86
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
@@ -203,8 +203,8 @@
       "Corpo (1 Steel Defender)": 0.0533
      }
     },
-    "nivel_absoluto": 0.22,
-    "rank_absoluto": "F"
+    "nivel_absoluto": 0.76,
+    "rank_absoluto": "E"
    }
   }
  },
@@ -296,11 +296,11 @@
      }
     },
     "corpo": {
-     "nivel_eq": 7.0,
+     "nivel_eq": 7.8,
      "rank": "B",
      "por_categoria": {
-      "np": 7.0,
-      "p": 7.0
+      "np": 7.8,
+      "p": 7.8
      }
     },
     "area": {
@@ -368,10 +368,10 @@
      }
     },
     "corpo": {
-     "nivel_eq": 7.0,
+     "nivel_eq": 7.8,
      "rank": "B",
      "por_categoria": {
-      "p": 7.0
+      "p": 7.8
      }
     },
     "area": {
@@ -384,7 +384,7 @@
    }
   }
  },
- "segundos": 4.0,
+ "segundos": 7.1,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -402,6 +402,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -670,7 +671,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -678,6 +679,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -694,6 +696,7 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -725,6 +728,16 @@
   },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -790,13 +803,13 @@
   }
  },
  "impressoes": {
-  "_planos": "1d2978e3bec3",
+  "_planos": "4462401b4bdc",
   "principal": {
-   "dano": "f96f713db663",
-   "defesa": "45c89cdf7438",
-   "saves": "80ba7a52b09d",
-   "area": "483d91ce5fdf",
-   "controle": "7fe05ef7c609"
+   "dano": "0eb01eadcad4",
+   "defesa": "f2290a9cdc8a",
+   "saves": "d7db3b7e70e0",
+   "area": "652cabf4f5da",
+   "controle": "5029a8087dcd"
   }
  }
 }

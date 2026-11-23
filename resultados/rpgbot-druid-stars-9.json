@@ -639,8 +639,8 @@
      "CA 24": 9.2,
      "CA 25": 7.7
     },
-    "nivel_eq": 6.0,
-    "rank": "B-",
+    "nivel_eq": 5.9,
+    "rank": "C+",
     "perfil": "Equilibrado",
     "nivel_bruta": 6.0,
     "nivel_precisa": 5.9,
@@ -1916,7 +1916,7 @@
    }
   }
  },
- "segundos": 35.3,
+ "segundos": 56.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1934,6 +1934,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -2202,7 +2203,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -2210,6 +2211,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -2226,8 +2228,19 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -2291,6 +2304,8 @@
     ]
    ]
   },
+  "suporte.dado_multiuso.decaimento": 0.75,
+  "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
@@ -2323,70 +2338,70 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "3758a6d0bafb",
+  "_planos": "90c36e9602ec",
   "principal": {
-   "dano": "a578f01de619",
-   "defesa": "01f6f4d055f3",
-   "saves": "0809c609043e",
-   "area": "88f5d63df0b8",
-   "suporte": "951b560530eb",
-   "controle": "5b5b77b1557a"
+   "dano": "7a708b159bfe",
+   "defesa": "18f567dfc27b",
+   "saves": "6ebec243fb8d",
+   "area": "08444a8467e6",
+   "suporte": "d07abf5eda43",
+   "controle": "984753d6804a"
   },
   "controle": {
-   "dano": "9ddfa70972a7",
-   "defesa": "01f6f4d055f3",
-   "saves": "0809c609043e",
-   "area": "e65095affc39",
-   "suporte": "951b560530eb",
-   "controle": "72d8f02923ee"
+   "dano": "43a5fc72c1fc",
+   "defesa": "18f567dfc27b",
+   "saves": "6ebec243fb8d",
+   "area": "9791ec55a170",
+   "suporte": "d07abf5eda43",
+   "controle": "e3e528acd1b4"
   },
   "controle-barato": {
-   "dano": "9ddfa70972a7",
-   "defesa": "01f6f4d055f3",
-   "saves": "0809c609043e",
-   "area": "e65095affc39",
-   "suporte": "951b560530eb",
-   "controle": "0e209bd99166"
+   "dano": "43a5fc72c1fc",
+   "defesa": "18f567dfc27b",
+   "saves": "6ebec243fb8d",
+   "area": "9791ec55a170",
+   "suporte": "d07abf5eda43",
+   "controle": "35259b924d2a"
   },
   "principal+estrelas": {
-   "dano": "5e99caef3dfe",
-   "defesa": "01f6f4d055f3",
-   "saves": "0809c609043e",
-   "area": "3cd94e51570f",
-   "suporte": "951b560530eb",
-   "controle": "99956fe005d5"
+   "dano": "e0a1cfefb241",
+   "defesa": "18f567dfc27b",
+   "saves": "6ebec243fb8d",
+   "area": "bd29392bfc92",
+   "suporte": "d07abf5eda43",
+   "controle": "59eaf7f2095a"
   },
   "controle+estrelas": {
-   "dano": "8dcc825ffce8",
-   "defesa": "01f6f4d055f3",
-   "saves": "0809c609043e",
-   "area": "5165f66bc3a6",
-   "suporte": "951b560530eb",
-   "controle": "98efb91ce67c"
+   "dano": "36d9b2432417",
+   "defesa": "18f567dfc27b",
+   "saves": "6ebec243fb8d",
+   "area": "bca619fbdafd",
+   "suporte": "d07abf5eda43",
+   "controle": "cb756adf7243"
   },
   "controle-barato+estrelas": {
-   "dano": "8dcc825ffce8",
-   "defesa": "01f6f4d055f3",
-   "saves": "0809c609043e",
-   "area": "5165f66bc3a6",
-   "suporte": "951b560530eb",
-   "controle": "1c00e6bfb7f4"
+   "dano": "36d9b2432417",
+   "defesa": "18f567dfc27b",
+   "saves": "6ebec243fb8d",
+   "area": "bca619fbdafd",
+   "suporte": "d07abf5eda43",
+   "controle": "75085b3ece62"
   },
   "area": {
-   "dano": "453f1d09b041",
-   "defesa": "01f6f4d055f3",
-   "saves": "0809c609043e",
-   "area": "89718c9fa171",
-   "suporte": "951b560530eb",
-   "controle": "c5e40fa53b58"
+   "dano": "5335bdfb9b80",
+   "defesa": "18f567dfc27b",
+   "saves": "6ebec243fb8d",
+   "area": "5e42bd0a7832",
+   "suporte": "d07abf5eda43",
+   "controle": "b5794af0c9a8"
   },
   "area+estrelas": {
-   "dano": "73d8dd712946",
-   "defesa": "01f6f4d055f3",
-   "saves": "0809c609043e",
-   "area": "d9bffe3eb950",
-   "suporte": "951b560530eb",
-   "controle": "817407809acb"
+   "dano": "08e66e6a9db5",
+   "defesa": "18f567dfc27b",
+   "saves": "6ebec243fb8d",
+   "area": "068037db7598",
+   "suporte": "d07abf5eda43",
+   "controle": "dcd7af67a341"
   }
  }
 }

@@ -1017,7 +1017,7 @@
      "CA 24": 17.2,
      "CA 25": 14.5
     },
-    "nivel_eq": 10.2,
+    "nivel_eq": 10.0,
     "rank": "A-",
     "perfil": "Bruto",
     "nivel_bruta": 10.2,
@@ -1123,58 +1123,74 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 5.4,
+    "nivel_eq": 5.76,
     "rank": "C+",
     "nivel_campo": 1.4,
     "rank_campo": "D",
     "nivel_controle": 0.0,
-    "nivel_atencao": 1.32,
-    "rank_atencao": "D",
-    "vidas_total": 0.645,
+    "nivel_atencao": 4.35,
+    "rank_atencao": "C",
+    "vidas_total": 1.004,
     "vidas_campo": 0.127,
-    "vidas_atencao": 0.127,
+    "vidas_atencao": 0.507,
     "corpo": {
-     "T": 0.127,
-     "S": 0.288,
-     "P": -0.161,
-     "chave": "T+S+P-",
-     "perfil": "Esquiva Tática"
+     "T": 0.507,
+     "S": 0.36,
+     "P": 0.146,
+     "chave": "T+S+P+S",
+     "perfil": "Fortaleza"
     },
-    "nivel_corpo": 15.67,
-    "rank_corpo": "A+",
+    "nivel_corpo": 21.0,
+    "rank_corpo": "S",
     "corpo_busca": [
      [
       11,
-      0.127
+      0.507
      ],
      [
       12,
-      0.114
+      0.391
      ],
      [
       13,
-      0.095
+      0.339
      ],
      [
       14,
-      0.074
+      0.316
      ],
      [
       15,
-      0.019
+      0.228
      ],
      [
       16,
-      -0.009
+      0.206
+     ],
+     [
+      17,
+      0.161
+     ],
+     [
+      18,
+      0.121
+     ],
+     [
+      19,
+      0.045
+     ],
+     [
+      20,
+      0.002
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 4.22,
-     "Party de elite": 4.43,
-     "Horda + chefe": 4.01,
-     "Horda": 4.18,
-     "Dupla": 4.83,
-     "Chefe sozinho": 8.05
+     "Minions + minibosses": 4.52,
+     "Party de elite": 4.98,
+     "Horda + chefe": 4.48,
+     "Horda": 4.44,
+     "Dupla": 4.95,
+     "Chefe sozinho": 8.39
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
@@ -1202,8 +1218,8 @@
       "Corpo (1 Summon Aberration (6º))": 0.0533
      }
     },
-    "nivel_absoluto": 4.34,
-    "rank_absoluto": "C"
+    "nivel_absoluto": 5.44,
+    "rank_absoluto": "C+"
    }
   }
  },
@@ -1225,15 +1241,14 @@
      }
     },
     {
-     "linha": "combo",
+     "linha": "invocacao",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 1,
-       "3": 1,
-       "5": 1
+       "6": 0.5
       }
      }
     },
@@ -1251,15 +1266,14 @@
      }
     },
     {
-     "linha": "combo",
+     "linha": "invocacao",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 1,
-       "3": 1,
-       "5": 1
+       "6": 0.5
       }
      }
     }
@@ -1267,16 +1281,18 @@
    "sobra": {
     "espacos": {
      "2": 4,
-     "4": 2
+     "3": 1,
+     "4": 3,
+     "5": 1
     }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 1.0,
-     "rank": "D",
+     "nivel_eq": 7.0,
+     "rank": "B",
      "por_categoria": {
       "np": 1.0,
-      "p": 1.0
+      "p": 10.0
      }
     },
     "defesa": {
@@ -1304,19 +1320,19 @@
      }
     },
     "campo": {
-     "nivel_eq": 7.1,
-     "rank": "B",
+     "nivel_eq": 2.7,
+     "rank": "D",
      "por_categoria": {
       "np": 7.1,
-      "p": 7.1
+      "p": 0.0
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 17.7,
+     "rank": "S",
      "por_categoria": {
       "np": 11.0,
-      "p": 11.0
+      "p": 21.0
      }
     },
     "area": {
@@ -1324,7 +1340,7 @@
      "rank": "S",
      "por_categoria": {
       "np": 8.2,
-      "p": 8.2
+      "p": 8.1
      }
     }
    }
@@ -1333,15 +1349,14 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "area",
+     "linha": "invocacao",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 1,
-       "5": 1,
-       "6": 1
+       "6": 0.5
       }
      }
     }
@@ -1352,15 +1367,16 @@
      "2": 4,
      "3": 3,
      "4": 3,
-     "5": 2
+     "5": 3,
+     "6": 0.5
     }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 1.0,
-     "rank": "D",
+     "nivel_eq": 10.0,
+     "rank": "A-",
      "por_categoria": {
-      "p": 1.0
+      "p": 10.0
      }
     },
     "defesa": {
@@ -1392,23 +1408,23 @@
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 21.0,
+     "rank": "S",
      "por_categoria": {
-      "p": 11.0
+      "p": 21.0
      }
     },
     "area": {
      "nivel_eq": 16.5,
      "rank": "S",
      "por_categoria": {
-      "p": 16.5
+      "p": 8.1
      }
     }
    }
   }
  },
- "segundos": 29.3,
+ "segundos": 46.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1426,6 +1442,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -1694,7 +1711,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -1702,6 +1719,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -1718,6 +1736,7 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -1749,6 +1768,16 @@
   },
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1814,48 +1843,48 @@
   }
  },
  "impressoes": {
-  "_planos": "029413014e96",
+  "_planos": "8ed711dd2136",
   "principal": {
-   "dano": "5d05f66200a4",
-   "defesa": "5b8f8340cfef",
-   "saves": "0100a25534c8",
-   "area": "02933e895f38",
-   "controle": "b6a98d52e4dd"
+   "dano": "f32da8d753b4",
+   "defesa": "3a9feeeb4b45",
+   "saves": "3ca543594fc3",
+   "area": "284e3927944a",
+   "controle": "17aebb569fc3"
   },
   "controle": {
-   "dano": "99f86bddd49c",
-   "defesa": "30b62c8b62eb",
-   "saves": "35f92f9b6614",
-   "area": "9aca0af92062",
-   "controle": "c5014a12e6a5"
+   "dano": "1d1cc91c3a91",
+   "defesa": "86734c02005a",
+   "saves": "fb1a0ec568d5",
+   "area": "19166f8c993e",
+   "controle": "033224811b6f"
   },
   "controle-barato": {
-   "dano": "99f86bddd49c",
-   "defesa": "30b62c8b62eb",
-   "saves": "35f92f9b6614",
-   "area": "9aca0af92062",
-   "controle": "c21d3d7cfaa8"
+   "dano": "1d1cc91c3a91",
+   "defesa": "86734c02005a",
+   "saves": "fb1a0ec568d5",
+   "area": "19166f8c993e",
+   "controle": "a7cb2e03650e"
   },
   "area": {
-   "dano": "319cdec4746e",
-   "defesa": "30b62c8b62eb",
-   "saves": "35f92f9b6614",
-   "area": "ca1a1240c612",
-   "controle": "027659348ae3"
+   "dano": "f025902662d2",
+   "defesa": "86734c02005a",
+   "saves": "fb1a0ec568d5",
+   "area": "51905bcc8785",
+   "controle": "c10104db9ed7"
   },
   "combo": {
-   "dano": "319cdec4746e",
-   "defesa": "30b62c8b62eb",
-   "saves": "35f92f9b6614",
-   "area": "e9d7f0089187",
-   "controle": "7a6191c0c99c"
+   "dano": "f025902662d2",
+   "defesa": "86734c02005a",
+   "saves": "fb1a0ec568d5",
+   "area": "88e66b771bff",
+   "controle": "7fd0694e3719"
   },
   "invocacao": {
-   "dano": "b9f28b121ef6",
-   "defesa": "30b62c8b62eb",
-   "saves": "35f92f9b6614",
-   "area": "b63dc01a1755",
-   "controle": "a817f77a0dea"
+   "dano": "7fed35552449",
+   "defesa": "86734c02005a",
+   "saves": "fb1a0ec568d5",
+   "area": "4187ec908334",
+   "controle": "987b1cf67b08"
   }
  }
 }

@@ -406,30 +406,28 @@
      }
     },
     {
-     "linha": "area",
+     "linha": "principal",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
-      "espacos": {
-       "2": 2
-      }
+      "espacos": {}
      }
     }
    ],
    "sobra": {
     "espacos": {
      "1": 4,
-     "2": 1
+     "2": 3
     }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 3.1,
-     "rank": "C-",
+     "nivel_eq": 4.0,
+     "rank": "C",
      "por_categoria": {
       "np": 4.0,
-      "p": 2.6
+      "p": 4.0
      }
     },
     "defesa": {
@@ -486,29 +484,27 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "area",
+     "linha": "principal",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
-      "espacos": {
-       "2": 2
-      }
+      "espacos": {}
      }
     }
    ],
    "sobra": {
     "espacos": {
      "1": 4,
-     "2": 1
+     "2": 3
     }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 1.3,
-     "rank": "D",
+     "nivel_eq": 4.0,
+     "rank": "C",
      "por_categoria": {
-      "p": 1.3
+      "p": 4.0
      }
     },
     "defesa": {
@@ -550,13 +546,13 @@
      "nivel_eq": 4.3,
      "rank": "C",
      "por_categoria": {
-      "p": 4.3
+      "p": 4.2
      }
     }
    }
   }
  },
- "segundos": 8.9,
+ "segundos": 13.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -574,6 +570,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -842,7 +839,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -850,6 +847,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -866,8 +864,19 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -933,20 +942,20 @@
   }
  },
  "impressoes": {
-  "_planos": "deddd448aa6f",
+  "_planos": "7f03d0eac49a",
   "principal": {
-   "dano": "dfd00c631fb7",
-   "defesa": "4bdde6ccf383",
-   "saves": "526b20ef28d1",
-   "area": "f7aa77aeeaba",
-   "controle": "1ae277ad5a1b"
+   "dano": "48ef67861307",
+   "defesa": "4c9075633a14",
+   "saves": "922796bd00d5",
+   "area": "96af297d842e",
+   "controle": "6cadf123c9a6"
   },
   "area": {
-   "dano": "96782c2f2aee",
-   "defesa": "badefeb26979",
-   "saves": "ef3fd1c026f8",
-   "area": "dd4400c37e0a",
-   "controle": "ea23bd002787"
+   "dano": "1eda6c091ce6",
+   "defesa": "ab6babad30b3",
+   "saves": "6f57485ca7ea",
+   "area": "f3c730f0e26b",
+   "controle": "a93b02ca610a"
   }
  }
 }

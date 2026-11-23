@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 5,
  "build": "Bard (Lore): Meio-Elfo, For 8 Des 16 Con 14 Int 12 Sab 8 Car 17; Skill Expert (4, Car 18); Car 20 (8); couro batido",
- "impressao": "af0da35efa",
+ "impressao": "c37d558aff",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -114,12 +114,12 @@
     "areas": []
    },
    "suporte": {
-    "ofensivo": 1.59,
+    "ofensivo": 1.35,
     "defensivo": 4.61,
-    "total": 6.2,
-    "nivel_ofensivo": 0.4,
+    "total": 5.96,
+    "nivel_ofensivo": 0.3,
     "nivel_defensivo": 6.1,
-    "nivel_eq": 1.9,
+    "nivel_eq": 1.7,
     "rank": "D",
     "perfil": "Protetor",
     "fonte_principal": "Healing Word (levanta um caído)",
@@ -127,7 +127,7 @@
      {
       "nome": "Bardic Inspiration (d8)",
       "lado": "of",
-      "valor": 1.59
+      "valor": 1.35
      },
      {
       "nome": "Bardic Inspiration (d8) como Cutting Words",
@@ -332,12 +332,12 @@
     ]
    },
    "suporte": {
-    "ofensivo": 1.59,
+    "ofensivo": 1.35,
     "defensivo": 4.61,
-    "total": 6.2,
-    "nivel_ofensivo": 0.4,
+    "total": 5.96,
+    "nivel_ofensivo": 0.3,
     "nivel_defensivo": 6.1,
-    "nivel_eq": 1.9,
+    "nivel_eq": 1.7,
     "rank": "D",
     "perfil": "Protetor",
     "fonte_principal": "Healing Word (levanta um caído)",
@@ -345,7 +345,7 @@
      {
       "nome": "Bardic Inspiration (d8)",
       "lado": "of",
-      "valor": 1.59
+      "valor": 1.35
      },
      {
       "nome": "Bardic Inspiration (d8) como Cutting Words",
@@ -544,11 +544,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 1.9,
+     "nivel_eq": 1.7,
      "rank": "D",
      "por_categoria": {
-      "np": 1.9,
-      "p": 1.9
+      "np": 1.7,
+      "p": 1.7
      }
     }
    }
@@ -626,16 +626,16 @@
      }
     },
     "suporte": {
-     "nivel_eq": 1.9,
+     "nivel_eq": 1.7,
      "rank": "D",
      "por_categoria": {
-      "p": 1.9
+      "p": 1.7
      }
     }
    }
   }
  },
- "segundos": 9.1,
+ "segundos": 13.8,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -653,6 +653,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -921,7 +922,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -929,6 +930,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -945,8 +947,19 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1010,6 +1023,8 @@
     ]
    ]
   },
+  "suporte.dado_multiuso.decaimento": 0.75,
+  "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
@@ -1042,22 +1057,22 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "3a39b7278fba",
+  "_planos": "30d9dfe359b3",
   "principal": {
-   "dano": "61530244ba83",
-   "defesa": "f2a555ff6df6",
-   "saves": "96700ce85dfd",
-   "area": "bc642166a4b6",
-   "suporte": "fab411b2b354",
-   "controle": "ed28d21272f1"
+   "dano": "fa3af8ebf8fa",
+   "defesa": "c79fac6b8799",
+   "saves": "a2ec68cab544",
+   "area": "82cfabbe8923",
+   "suporte": "f998cfe73f7c",
+   "controle": "f253850f4495"
   },
   "area": {
-   "dano": "91fff51d1945",
-   "defesa": "f2a555ff6df6",
-   "saves": "96700ce85dfd",
-   "area": "9506f7242e59",
-   "suporte": "fab411b2b354",
-   "controle": "803ab6b88c19"
+   "dano": "3e2ff931ab6f",
+   "defesa": "c79fac6b8799",
+   "saves": "a2ec68cab544",
+   "area": "f98a2a149aea",
+   "suporte": "f998cfe73f7c",
+   "controle": "d33426fda7c0"
   }
  }
 }

@@ -1512,7 +1512,7 @@
    }
   }
  },
- "segundos": 25.7,
+ "segundos": 43.0,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1530,6 +1530,7 @@
    "padrao": 1.0,
    "agrupada": 1.5
   },
+  "area.crescimento_por_nivel": 1.12,
   "area.fator_round2_nao_seletiva": 0.5,
   "area.fator_round2_seletiva": 0.75,
   "area.horda2.N": 3000,
@@ -1798,7 +1799,7 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
-  "controle.atencao.skel_peso": 1.5,
+  "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
   "controle.campo.p_disengage": 0.5,
@@ -1806,6 +1807,7 @@
   "controle.campo.reach_pequeno": 0.2,
   "controle.campo.taunt_ameaca": 0.15,
   "controle.campo.taunt_summon": 0.4,
+  "controle.corpo.extrap_pontos": 0,
   "controle.corpo.referencia_unica": 1,
   "controle.marca.fator_sem_resistencia": 0.5,
   "controle.padroes.counterspell_fracao_conjurando": 0.75,
@@ -1822,8 +1824,19 @@
   "controle.referencia.frontliner.pv_base": 11,
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
+  "dano.peso_rampa_bruta": 0.5,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
+  "plano.auto.peso_eixo": {
+   "dano": 1,
+   "defesa": 1,
+   "resiliencia": 1,
+   "vontade": 1,
+   "campo": 1,
+   "corpo": 1,
+   "area": 1,
+   "suporte": 1
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1887,6 +1900,8 @@
     ]
    ]
   },
+  "suporte.dado_multiuso.decaimento": 0.75,
+  "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
   "suporte.h.ACERTO": 0.65,
   "suporte.h.ACERTOS_INIM_ROUND": 4,
@@ -1919,54 +1934,54 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "36cb24997a43",
+  "_planos": "c3dc6d9891b8",
   "principal": {
-   "dano": "e6d90962a28e",
-   "defesa": "7368a0a21821",
-   "saves": "7846d2933bbe",
-   "area": "ff7886fd0d9b",
-   "suporte": "2424a663b1b1",
-   "controle": "023a60591426"
+   "dano": "5c574c743940",
+   "defesa": "2162e58b6d5f",
+   "saves": "7d8120970457",
+   "area": "9427291419d7",
+   "suporte": "4eaf80a45cb4",
+   "controle": "3126079440cb"
   },
   "controle": {
-   "dano": "3c42b3b4a3de",
-   "defesa": "7368a0a21821",
-   "saves": "7846d2933bbe",
-   "area": "5c4b74b295f6",
-   "suporte": "2424a663b1b1",
-   "controle": "8b1e82b0c7e9"
+   "dano": "33046f0d9000",
+   "defesa": "2162e58b6d5f",
+   "saves": "7d8120970457",
+   "area": "a251a026a107",
+   "suporte": "4eaf80a45cb4",
+   "controle": "86f987d884da"
   },
   "controle-barato": {
-   "dano": "3c42b3b4a3de",
-   "defesa": "7368a0a21821",
-   "saves": "7846d2933bbe",
-   "area": "5c4b74b295f6",
-   "suporte": "2424a663b1b1",
-   "controle": "30aad94d0d16"
+   "dano": "33046f0d9000",
+   "defesa": "2162e58b6d5f",
+   "saves": "7d8120970457",
+   "area": "a251a026a107",
+   "suporte": "4eaf80a45cb4",
+   "controle": "aeff7a09feec"
   },
   "principal+simbionte": {
-   "dano": "d81f7b71e53a",
-   "defesa": "8c59ef7ae7ea",
-   "saves": "432c5926a1a6",
-   "area": "526e4e492dc5",
-   "suporte": "2424a663b1b1",
-   "controle": "a7fc5d2fbe1a"
+   "dano": "7d0a7abe283a",
+   "defesa": "b4dc133e3417",
+   "saves": "7067f3b4052a",
+   "area": "0a82af8dab1b",
+   "suporte": "4eaf80a45cb4",
+   "controle": "db935b393e15"
   },
   "controle+simbionte": {
-   "dano": "3e03b118dde0",
-   "defesa": "8c59ef7ae7ea",
-   "saves": "432c5926a1a6",
-   "area": "5e52c870c0be",
-   "suporte": "2424a663b1b1",
-   "controle": "15bf62f6d6e7"
+   "dano": "673e5209e64c",
+   "defesa": "b4dc133e3417",
+   "saves": "7067f3b4052a",
+   "area": "229f7f7c3b92",
+   "suporte": "4eaf80a45cb4",
+   "controle": "92f3516cde7d"
   },
   "controle-barato+simbionte": {
-   "dano": "3e03b118dde0",
-   "defesa": "8c59ef7ae7ea",
-   "saves": "432c5926a1a6",
-   "area": "5e52c870c0be",
-   "suporte": "2424a663b1b1",
-   "controle": "762940aeb2eb"
+   "dano": "673e5209e64c",
+   "defesa": "b4dc133e3417",
+   "saves": "7067f3b4052a",
+   "area": "229f7f7c3b92",
+   "suporte": "4eaf80a45cb4",
+   "controle": "5c3491cc8138"
   }
  }
 }

@@ -145,7 +145,7 @@ def alchemist(L, feat):
     return pos(f, 'retaguarda'), s
 
 
-NM = ["Infusões além de Enhanced Defense/Weapon/Arcane Focus", "Flash of Genius (7)", "Spell-Storing Item (11)",
+NM = ["Infusões além de Enhanced Defense/Weapon/Arcane Focus", "Spell-Storing Item (11)",
       "Faerie Fire, Grease, Haste e Cure Wounds (lista base sem entrada ou fora da régua)", "Tool Expertise e utilitários"]
 NM_FEAT = {'Skill Expert': ["Skill Expert: perícia e expertise (sem mecânica no motor; a variante só difere no atributo)"],
            'Fey Touched': ["Fey Touched: Misty Step", "Fey Touched: magia de 1º círculo grátis 1×/dia (aqui gasta espaço)"]}
@@ -183,6 +183,13 @@ if __name__ == '__main__':
             fat = {}
             for L in C.NIV:
                 f, s = fn(L, feat); f['_texto'] = f"atributos {s}"; fat[L] = f
+                if L >= 7:   # M8 (23/11): Flash of Genius: reação, +Int num teste/save de um aliado, Int usos/descanso longo
+                    ii = base(L, feat)[2]
+                    fg = {"nome": "Flash of Genius", "lado": "def", "modelo": "bonus_por_uso", "bonus": ii,
+                          "usos_luta": round(ii / 4, 3), "acao": "reacao"}
+                    for l in f['linhas']:
+                        fs = [x for x in (l.get('suporte') or {}).get('fontes', []) if x.get('nome') != 'Flash of Genius']
+                        l['suporte'] = dict(l.get('suporte') or {}, fontes=fs + [fg])
             b = build + (f"; {feat} no 4 (Int +1)" if feat else "; sem feat")
             desc = {"resumo": resumo, "nao_modelado": NM + nm + (NM_FEAT[feat] if feat else [])}
             if feat: desc["feat"] = f"{feat}: 1º feat não racial da build do RPGBot ({sub})."

@@ -218,8 +218,16 @@ seguinte. Itens que mudam premissa vão para Decisões.
   Flexible Casting põe todos os pontos em espaços.
 - [ ] **M7b Metamagia restante e sor.py** [N] — Twinned, Heightened, Bastion of Law; levar o livro-caixa de pontos às
   builds do RPGBot de Sorcerer.
-- [ ] **M8 Efeitos táticos de feats e truques** [N] — desvantagem do Vicious Mockery (41), Booming Blade secundário (31),
+- [x] **M8 Efeitos táticos de feats e truques** [N] — **feito 23/11 (parcial):** desvantagem do Vicious Mockery no
+  chassi do Bard (`desvantagem_contra`, fração = rounds de truque da linha × 0,5 de falha × 0,5 dos ataques do alvo);
+  Flash of Genius no chassi do Artificer 7+ (`bonus_por_uso` +Int, Int/4 usos por luta, reação). Suporte por linha sobe
+  (Bard Lore 7 principal 2,5 → 3,7; Alchemist 11 dia 2,5 → 3,6); o dia do Bard Lore 7 cai (4,4 → 3,3) porque o plano
+  passou a preferir controle/área + Dissonant Whispers a Greater Invisibility (troca do otimizador, olhar na
+  varredura). Booming Blade, Slasher, Telekinetic, Spell-Storing Item e as builds RPGBot de Bard/Artificer → M8b.
+  Original: — desvantagem do Vicious Mockery (41), Booming Blade secundário (31),
   Slasher (34), Telekinetic (30), Flash of Genius (40), Spell-Storing Item (40).
+- [ ] **M8b Efeitos táticos restantes** [N] — Booming Blade secundário (31), Slasher (34), Telekinetic (30),
+  Spell-Storing Item (40); levar VM/Flash of Genius ao brd.py/art.py (builds RPGBot).
 - **Fora de escopo, por decisão:** mobilidade (Misty Step 63, Step of the Wind 52, Slow Fall 52, Fast Movement 32;
   eixo retirado em nov/2026) e iniciativa (Feral Instinct 62): só registrados. Ver "Eixos futuros" abaixo.
 

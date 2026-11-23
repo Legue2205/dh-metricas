@@ -111,6 +111,17 @@ def fatia(L, c, posicao, ca, cant, sup=(), ctrl_cd=0, areas_extra=(), shat_extra
             l['suporte'] = {"fontes": l['suporte']['fontes'] + [h]}
         gg = dict(l.get('gasta', {})); e = dict(gg.get('espacos', {})); e["1"] = round(e.get("1", 0) + P_CAIDO, 3)
         gg['espacos'] = e; l['gasta'] = gg
+    # M8 (23/11): desvantagem do Vicious Mockery no próximo ataque do alvo (suporte defensivo): fração = rounds de
+    # truque da linha × falha no save (~0,5) × metade dos ataques do alvo (só o próximo)
+    sup0 = (LS[0].get('suporte') or {}).get('fontes', [])
+    for l in LS:
+        n = sum(x.get('n', 0) for x in (l.get('dano') or {}).get('com_save', []) if 'Vicious Mockery' in x.get('nota', ''))
+        if n > 0:
+            fs = list((l.get('suporte') or {}).get('fontes', sup0))
+            fs = [x for x in fs if x.get('nome') != 'Vicious Mockery (desvantagem)']
+            fs.append({"nome": "Vicious Mockery (desvantagem)", "lado": "def", "modelo": "desvantagem_contra",
+                       "alvos": 1, "fracao": round(n * 0.5 * 0.5, 3)})
+            l['suporte'] = dict(l.get('suporte') or {}, fontes=fs)
     return dict(corpo=corpo, recursos=rec, linhas=LS, _texto=f"Bard {L}; atributos {c['s']}; CA {ca}. " + texto)
 
 

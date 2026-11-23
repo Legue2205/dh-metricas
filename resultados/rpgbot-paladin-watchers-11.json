@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Paladin (Watchers), Harengon, Skill Expert 4 (For 18), For 20 8; cimitarra de duas lâminas, GWF",
- "impressao": "d8699a7c1e",
+ "impressao": "93463e850d",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1001,6 +1001,206 @@
     "nivel_absoluto": 1.15,
     "rank_absoluto": "D"
    }
+  },
+  "reacao-counterspell": {
+   "hipotese": "só armas, sem gastar espaço + Counterspell (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 50.2,
+     "CA 12": 47.7,
+     "CA 15": 40.0,
+     "CA 16": 37.4,
+     "CA 18": 32.3,
+     "CA 20": 27.2,
+     "CA 22": 22.0,
+     "CA 24": 16.9,
+     "CA 25": 14.3
+    },
+    "nivel_eq": 9.9,
+    "rank": "B+",
+    "perfil": "Bruto",
+    "nivel_bruta": 10.1,
+    "nivel_precisa": 9.7,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 92,
+    "ca": 18,
+    "blindagem": 7.51,
+    "durabilidade": 5.17,
+    "nivel_blindagem": 8.3,
+    "nivel_durabilidade": 8.3,
+    "nivel_eq": 8.3,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 11.98,
+     "rank": "A",
+     "turnos_livres": [
+      3.96,
+      3.7,
+      3.64,
+      3.33,
+      2.69,
+      2.62,
+      2.95,
+      2.83,
+      2.22,
+      1.79
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.88,
+     "rank": "A",
+     "turnos_livres": [
+      3.74,
+      2.93,
+      2.46,
+      2.4,
+      2.12,
+      1.85,
+      1.88,
+      1.61,
+      1.65,
+      1.51
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 8.1,
+    "rank": "B+",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.33,
+     "9": 3.23,
+     "10": 3.23,
+     "11": 3.62,
+     "12": 3.62,
+     "13": 4.29,
+     "14": 4.29,
+     "15": 4.29,
+     "16": 4.29,
+     "17": 4.71,
+     "18": 4.71,
+     "19": 5.61,
+     "20": 4.82
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 5.4,
+    "total": 5.4,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.6,
+    "nivel_eq": 1.1,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 1.96
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 3.44
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "saves": {
+      "3": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.71,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.75,
+    "rank_atencao": "E",
+    "vidas_total": -0.102,
+    "vidas_campo": 0.02,
+    "vidas_atencao": 0.026,
+    "corpo": {
+     "T": 0.026,
+     "S": 0.062,
+     "P": -0.035,
+     "chave": "T0S+P0",
+     "perfil": "Neutro"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      0.026
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0107
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0162
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0065
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.008
+     }
+    },
+    "nivel_absoluto": 1.03,
+    "rank_absoluto": "D"
+   }
   }
  },
  "planos": {
@@ -1015,11 +1215,11 @@
      "gasto": {
       "espacos": {
        "1": 1,
-       "2": 2
+       "3": 1
       }
      },
      "extras": [
-      "smite-2"
+      "reacao-counterspell"
      ]
     },
     {
@@ -1030,11 +1230,11 @@
      "gasto": {
       "espacos": {
        "1": 1,
-       "3": 2
+       "3": 1
       }
      },
      "extras": [
-      "smite-3"
+      "reacao-counterspell"
      ]
     },
     {
@@ -1044,9 +1244,13 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1
+       "1": 1,
+       "2": 2
       }
-     }
+     },
+     "extras": [
+      "smite-2"
+     ]
     },
     {
      "linha": "bless",
@@ -1056,25 +1260,27 @@
      "gasto": {
       "espacos": {
        "1": 1,
-       "2": 2
+       "3": 1
       }
      },
      "extras": [
-      "smite-2"
+      "reacao-counterspell"
      ]
     }
    ],
    "sobra": {
-    "espacos": {},
+    "espacos": {
+     "2": 1
+    },
     "canal": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.3,
+     "nivel_eq": 8.4,
      "rank": "B+",
      "por_categoria": {
       "np": 8.8,
-      "p": 9.5
+      "p": 8.2
      }
     },
     "defesa": {
@@ -1086,19 +1292,19 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 8.7,
-     "rank": "B+",
+     "nivel_eq": 11.4,
+     "rank": "A",
      "por_categoria": {
-      "np": 8.7,
-      "p": 8.7
+      "np": 10.4,
+      "p": 12.0
      }
     },
     "vontade": {
-     "nivel_eq": 8.7,
-     "rank": "B+",
+     "nivel_eq": 12.2,
+     "rank": "A",
      "por_categoria": {
-      "np": 8.7,
-      "p": 8.7
+      "np": 10.8,
+      "p": 12.9
      }
     },
     "campo": {
@@ -1122,7 +1328,7 @@
      "rank": "B+",
      "por_categoria": {
       "np": 4.9,
-      "p": 5.0
+      "p": 4.8
      }
     },
     "suporte": {
@@ -1146,10 +1352,11 @@
      "gasto": {
       "espacos": {
        "1": 1,
-       "3": 2
+       "3": 3
       }
      },
      "extras": [
+      "reacao-counterspell",
       "smite-3"
      ]
     }
@@ -1157,8 +1364,7 @@
    "sobra": {
     "espacos": {
      "1": 3,
-     "2": 3,
-     "3": 1
+     "2": 3
     },
     "canal": 1
    },
@@ -1178,17 +1384,17 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 8.7,
-     "rank": "B+",
+     "nivel_eq": 12.0,
+     "rank": "A",
      "por_categoria": {
-      "p": 8.7
+      "p": 12.0
      }
     },
     "vontade": {
-     "nivel_eq": 8.7,
-     "rank": "B+",
+     "nivel_eq": 12.9,
+     "rank": "A",
      "por_categoria": {
-      "p": 8.7
+      "p": 12.9
      }
     },
     "campo": {
@@ -1222,7 +1428,7 @@
    }
   }
  },
- "segundos": 3.5,
+ "segundos": 4.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1706,14 +1912,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "4e404e9b3f3c",
+  "_planos": "b3dc7d4183f1",
   "principal": {
    "dano": "203c325e4d40",
    "defesa": "c1a8c810c572",
    "saves": "234035f6b9c9",
    "area": "7fba0dab6166",
    "suporte": "703ac5c4bc1a",
-   "controle": "5e325648e0a0"
+   "controle": "c1d38921be42"
   },
   "smite-1": {
    "dano": "c509ab5586c7",
@@ -1721,7 +1927,7 @@
    "saves": "234035f6b9c9",
    "area": "7fc863d73d41",
    "suporte": "703ac5c4bc1a",
-   "controle": "affca57bca22"
+   "controle": "86174dc5049e"
   },
   "bless": {
    "dano": "88d3fe46402b",
@@ -1729,7 +1935,7 @@
    "saves": "234035f6b9c9",
    "area": "949caaee8bb2",
    "suporte": "165fa5614c72",
-   "controle": "13f5498dc2a5"
+   "controle": "91bbfc2cbe73"
   },
   "smite-2": {
    "dano": "2a2c20faa092",
@@ -1737,7 +1943,7 @@
    "saves": "234035f6b9c9",
    "area": "397fcdfbcac4",
    "suporte": "703ac5c4bc1a",
-   "controle": "4b55533c3bd7"
+   "controle": "113332874182"
   },
   "smite-3": {
    "dano": "ea27528ccc2c",
@@ -1745,7 +1951,15 @@
    "saves": "234035f6b9c9",
    "area": "3fa28dd33318",
    "suporte": "703ac5c4bc1a",
-   "controle": "257d0eb05551"
+   "controle": "b109bbf584b0"
+  },
+  "reacao-counterspell": {
+   "dano": "203c325e4d40",
+   "defesa": "c1a8c810c572",
+   "saves": "f34b8dd05712",
+   "area": "7fba0dab6166",
+   "suporte": "703ac5c4bc1a",
+   "controle": "c1d38921be42"
   }
  }
 }

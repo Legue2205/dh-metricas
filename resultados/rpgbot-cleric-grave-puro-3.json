@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 3,
  "build": "Cleric (Grave) sem multiclasse, Custom Lineage (Metamagic Adept: Quicken, Extend); Fey Touched 4; escama → meia-armadura + escudo; Sab 20 (8)",
- "impressao": "692d98b75b",
+ "impressao": "672fe193a4",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1490,6 +1490,192 @@
     "nivel_absoluto": 0.0,
     "rank_absoluto": "F"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "só truques (anel interno) + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 4.7,
+     "CA 12": 4.7,
+     "CA 15": 3.9,
+     "CA 16": 3.4,
+     "CA 18": 2.4,
+     "CA 20": 1.7,
+     "CA 22": 1.1,
+     "CA 24": 0.4,
+     "CA 25": 0.1
+    },
+    "nivel_eq": 0.6,
+    "rank": "E",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 0.6,
+    "nivel_precisa": 0.6,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 21,
+    "ca": 18,
+    "blindagem": 1.54,
+    "durabilidade": 0.94,
+    "nivel_blindagem": 1.6,
+    "nivel_durabilidade": 1.4,
+    "nivel_eq": 1.6,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 2.34,
+     "rank": "D",
+     "turnos_livres": [
+      3.46,
+      2.59,
+      2.35,
+      0.92,
+      0.92,
+      0.9,
+      0.7,
+      0.45,
+      0.44,
+      0.19
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.95,
+     "rank": "D",
+     "turnos_livres": [
+      2.13,
+      1.49,
+      1.26,
+      1.51,
+      1.05,
+      0.65,
+      0.72,
+      0.6,
+      0.59,
+      0.43
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 0.5,
+    "rank": "F",
+    "rounds": {
+     "1": 4.0,
+     "2": 4.84,
+     "3": 4.84,
+     "4": 5.56,
+     "5": 4.84,
+     "6": 4.84,
+     "7": 4.84,
+     "8": 5.7,
+     "9": 5.58,
+     "10": 5.58,
+     "11": 5.5,
+     "12": 5.5,
+     "13": 5.89,
+     "14": 5.89,
+     "15": 5.89,
+     "16": 5.89,
+     "17": 5.99,
+     "18": 5.99,
+     "19": 6.0,
+     "20": 5.97
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 2.29,
+    "total": 2.29,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 4.1,
+    "nivel_eq": 0.4,
+    "rank": "F",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 2.29
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.06,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.113,
+    "vidas_campo": 0.015,
+    "vidas_atencao": -0.027,
+    "corpo": {
+     "T": -0.027,
+     "S": 0.113,
+     "P": -0.14,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 3.0,
+    "rank_corpo": "C-",
+    "corpo_busca": [
+     [
+      3,
+      -0.027
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0046
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0057
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0117
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0046
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0061
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -1508,26 +1694,25 @@
      }
     },
     {
-     "linha": "punho",
+     "linha": "bless+arma",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5,
+       "1": 1.5,
        "2": 1
-      },
-      "canal": 1
+      }
      }
     },
     {
-     "linha": "bless",
+     "linha": "reacao-absorb-elements",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1.5
+       "1": 0.5
       }
      }
     },
@@ -1551,11 +1736,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 1.4,
+     "nivel_eq": 1.2,
      "rank": "D",
      "por_categoria": {
-      "np": 0.4,
-      "p": 2.0
+      "np": 0.5,
+      "p": 1.6
      }
     },
     "defesa": {
@@ -1567,10 +1752,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 1.7,
+     "nivel_eq": 1.8,
      "rank": "D",
      "por_categoria": {
-      "np": 1.7,
+      "np": 2.0,
       "p": 1.7
      }
     },
@@ -1602,16 +1787,16 @@
      "nivel_eq": 4.2,
      "rank": "C",
      "por_categoria": {
-      "np": 0.4,
-      "p": 3.4
+      "np": 0.5,
+      "p": 3.1
      }
     },
     "suporte": {
-     "nivel_eq": 1.4,
+     "nivel_eq": 1.8,
      "rank": "D",
      "por_categoria": {
-      "np": 3.3,
-      "p": 0.4
+      "np": 1.8,
+      "p": 1.8
      }
     }
    }
@@ -1630,7 +1815,10 @@
        "2": 2
       },
       "canal": 1
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
@@ -1655,10 +1843,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 1.7,
+     "nivel_eq": 2.3,
      "rank": "D",
      "por_categoria": {
-      "p": 1.7
+      "p": 2.3
      }
     },
     "vontade": {
@@ -1699,7 +1887,7 @@
    }
   }
  },
- "segundos": 10.2,
+ "segundos": 5.2,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2183,14 +2371,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "14d586b805c0",
+  "_planos": "73687935d6be",
   "principal": {
    "dano": "9678ed571a9f",
    "defesa": "694ae9ba3fd7",
    "saves": "87f5e2a7c51c",
    "area": "f00b92701ae6",
    "suporte": "fe2f390ee528",
-   "controle": "2e164ad514cf"
+   "controle": "085a8062ecef"
   },
   "bless": {
    "dano": "7ae7ef225804",
@@ -2198,7 +2386,7 @@
    "saves": "87f5e2a7c51c",
    "area": "a62ef6c05653",
    "suporte": "44f0d6b2835c",
-   "controle": "6577a162b63f"
+   "controle": "6262bca25fef"
   },
   "arma-espiritual": {
    "dano": "7563d02306b3",
@@ -2206,7 +2394,7 @@
    "saves": "87f5e2a7c51c",
    "area": "80372cfe128f",
    "suporte": "fe2f390ee528",
-   "controle": "24899dfacf3f"
+   "controle": "803b7120a16c"
   },
   "controle": {
    "dano": "7ae7ef225804",
@@ -2214,7 +2402,7 @@
    "saves": "87f5e2a7c51c",
    "area": "a62ef6c05653",
    "suporte": "fe2f390ee528",
-   "controle": "bc1932311d43"
+   "controle": "232b5492127c"
   },
   "punho": {
    "dano": "5d0a615ac74f",
@@ -2222,7 +2410,7 @@
    "saves": "87f5e2a7c51c",
    "area": "aa6f70d43d0c",
    "suporte": "fe2f390ee528",
-   "controle": "5af12bddbcc1"
+   "controle": "7d69b7bfd4ee"
   },
   "punho-rapido": {
    "dano": "57658f20fb30",
@@ -2230,7 +2418,7 @@
    "saves": "87f5e2a7c51c",
    "area": "99b6e0be5676",
    "suporte": "fe2f390ee528",
-   "controle": "e9b363c4b079"
+   "controle": "95318feb1611"
   },
   "bless+arma": {
    "dano": "db72a8f7a837",
@@ -2238,7 +2426,7 @@
    "saves": "87f5e2a7c51c",
    "area": "21195500d6f3",
    "suporte": "44f0d6b2835c",
-   "controle": "03b860fb49c8"
+   "controle": "2b4b27414507"
   },
   "punho+arma": {
    "dano": "e228cc4e7498",
@@ -2246,7 +2434,15 @@
    "saves": "87f5e2a7c51c",
    "area": "61d88c80efdd",
    "suporte": "fe2f390ee528",
-   "controle": "f021645ead2b"
+   "controle": "ad9e2c5c36f7"
+  },
+  "reacao-absorb-elements": {
+   "dano": "9678ed571a9f",
+   "defesa": "694ae9ba3fd7",
+   "saves": "060dba8b3387",
+   "area": "f00b92701ae6",
+   "suporte": "fe2f390ee528",
+   "controle": "085a8062ecef"
   }
  }
 }

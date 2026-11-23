@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 11,
  "build": "Ranger (Drakewarden), striker: glaive, Great Weapon Fighting, meia-armadura; Polearm Master no 4 (natural de quem luta de perto com arma de haste; a ação bônus fica com o drake)",
- "impressao": "474943ee73",
+ "impressao": "8227874624",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -368,6 +368,183 @@
     "nivel_absoluto": 0.17,
     "rank_absoluto": "F"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "glaive sem magia + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 30.3,
+     "CA 12": 28.6,
+     "CA 15": 23.5,
+     "CA 16": 21.8,
+     "CA 18": 18.4,
+     "CA 20": 15.0,
+     "CA 22": 11.6,
+     "CA 24": 8.2,
+     "CA 25": 6.5
+    },
+    "nivel_eq": 5.9,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.9,
+    "nivel_precisa": 5.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 81,
+    "ca": 17,
+    "blindagem": 6.09,
+    "durabilidade": 4.31,
+    "nivel_blindagem": 6.3,
+    "nivel_durabilidade": 6.5,
+    "nivel_eq": 6.5,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 10.82,
+     "rank": "A-",
+     "turnos_livres": [
+      3.92,
+      3.72,
+      3.65,
+      2.85,
+      2.72,
+      2.67,
+      2.7,
+      2.63,
+      2.08,
+      1.6
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.73,
+     "rank": "D",
+     "turnos_livres": [
+      2.9,
+      1.23,
+      0.88,
+      0.99,
+      0.81,
+      0.54,
+      0.87,
+      0.71,
+      0.87,
+      1.13
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.06,
+     "6": 3.06,
+     "7": 3.06,
+     "8": 4.08,
+     "9": 3.93,
+     "10": 3.93,
+     "11": 4.21,
+     "12": 4.21,
+     "13": 4.89,
+     "14": 4.89,
+     "15": 4.89,
+     "16": 4.89,
+     "17": 5.51,
+     "18": 5.51,
+     "19": 5.97,
+     "20": 5.53
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.67,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.23,
+    "vidas_campo": 0.014,
+    "vidas_atencao": -0.096,
+    "corpo": {
+     "T": -0.096,
+     "S": 0.042,
+     "P": -0.138,
+     "chave": "T0S0P-",
+     "perfil": "Neutro"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.096
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0072
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0041
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0052
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.011
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0043
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0053
+     }
+    },
+    "nivel_absoluto": 0.11,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -381,9 +558,12 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "marca",
@@ -392,9 +572,12 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "marca",
@@ -403,9 +586,12 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "marca",
@@ -414,15 +600,17 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 2.0,
-     "2": 3,
+     "2": 1.0,
      "3": 3
     }
    },
@@ -444,11 +632,11 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 9.8,
-     "rank": "B+",
+     "nivel_eq": 10.8,
+     "rank": "A-",
      "por_categoria": {
-      "np": 9.8,
-      "p": 9.8
+      "np": 10.8,
+      "p": 10.8
      }
     },
     "vontade": {
@@ -495,14 +683,17 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 3.5,
+     "1": 2.5,
      "2": 3,
      "3": 3
     }
@@ -523,10 +714,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 9.8,
-     "rank": "B+",
+     "nivel_eq": 10.8,
+     "rank": "A-",
      "por_categoria": {
-      "p": 9.8
+      "p": 10.8
      }
     },
     "vontade": {
@@ -560,7 +751,7 @@
    }
   }
  },
- "segundos": 1.9,
+ "segundos": 3.0,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1012,20 +1203,27 @@
   }
  },
  "impressoes": {
-  "_planos": "3e299e5b6fa6",
+  "_planos": "c41e21cd555a",
   "principal": {
    "dano": "3d071e1f0b39",
    "defesa": "2b80507b4e26",
    "saves": "7127434c4736",
    "area": "2cb1d9c7807d",
-   "controle": "ac6b0471e447"
+   "controle": "d010ee217dea"
   },
   "marca": {
    "dano": "8f24a62d000c",
    "defesa": "2b80507b4e26",
    "saves": "7127434c4736",
    "area": "cad33163c83d",
-   "controle": "686f50f05cca"
+   "controle": "5a2015b5346e"
+  },
+  "reacao-absorb-elements": {
+   "dano": "3d071e1f0b39",
+   "defesa": "2b80507b4e26",
+   "saves": "f3f21ac37a3c",
+   "area": "2cb1d9c7807d",
+   "controle": "d010ee217dea"
   }
  }
 }

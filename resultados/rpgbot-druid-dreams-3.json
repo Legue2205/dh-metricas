@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 3,
  "build": "Druid (Dreams), Githzerai (Shield 1/dia), gibão de peles + escudo; Chef 4 (Sab 18), Sab 20 (8)",
- "impressao": "323231c547",
+ "impressao": "a0a08b7bbb",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -837,6 +837,205 @@
     "nivel_absoluto": 1.39,
     "rank_absoluto": "D"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "só truques (anel interno) + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 3.6,
+     "CA 12": 3.4,
+     "CA 15": 2.7,
+     "CA 16": 2.5,
+     "CA 18": 2.0,
+     "CA 20": 1.6,
+     "CA 22": 1.1,
+     "CA 24": 0.7,
+     "CA 25": 0.5
+    },
+    "nivel_eq": 0.5,
+    "rank": "E",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 0.5,
+    "nivel_precisa": 0.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 27,
+    "ca": 16,
+    "blindagem": 1.87,
+    "durabilidade": 1.13,
+    "nivel_blindagem": 1.9,
+    "nivel_durabilidade": 1.6,
+    "nivel_eq": 1.9,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "shield"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 3.3,
+     "rank": "C-",
+     "turnos_livres": [
+      3.56,
+      3.07,
+      2.89,
+      1.09,
+      1.04,
+      1.0,
+      1.08,
+      0.8,
+      0.6,
+      0.45
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.27,
+     "rank": "C",
+     "turnos_livres": [
+      2.94,
+      1.89,
+      1.57,
+      1.61,
+      1.16,
+      0.66,
+      0.95,
+      0.77,
+      0.43,
+      0.49
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 0.4,
+    "rank": "F",
+    "rounds": {
+     "1": 4.1,
+     "2": 5.12,
+     "3": 5.12,
+     "4": 5.71,
+     "5": 5.04,
+     "6": 5.04,
+     "7": 5.04,
+     "8": 5.78,
+     "9": 5.68,
+     "10": 5.68,
+     "11": 5.56,
+     "12": 5.56,
+     "13": 5.91,
+     "14": 5.91,
+     "15": 5.91,
+     "16": 5.91,
+     "17": 5.99,
+     "18": 5.99,
+     "19": 6.0,
+     "20": 5.97
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 2.17,
+    "total": 2.17,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 4.1,
+    "nivel_eq": 0.4,
+    "rank": "F",
+    "perfil": "Protetor",
+    "fonte_principal": "Balm of the Summer Court (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Balm of the Summer Court (levanta um caído)",
+      "lado": "def",
+      "valor": 2.17
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "Shield (Githzerai, 1/dia)",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.75,
+    "espacos_por_eixo": {
+     "defesa": {
+      "1": 0.25
+     },
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 2.11,
+    "rank": "D",
+    "nivel_campo": 0.06,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.11,
+    "rank_atencao": "F",
+    "vidas_total": 0.313,
+    "vidas_campo": 0.015,
+    "vidas_atencao": 0.028,
+    "corpo": {
+     "T": 0.028,
+     "S": 0.39,
+     "P": -0.362,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 3.0,
+    "rank_corpo": "C-",
+    "corpo_busca": [
+     [
+      3,
+      0.028
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.07,
+     "Party de elite": 2.65,
+     "Horda + chefe": 2.03,
+     "Horda": 0.91,
+     "Dupla": 2.63,
+     "Chefe sozinho": 2.24
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0046
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0053
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0117
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0049
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0065
+     }
+    },
+    "nivel_absoluto": 0.21,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -971,14 +1170,18 @@
      "nota": "",
      "gasto": {
       "espacos": {
+       "1": 1.0,
        "2": 1
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 4,
+     "1": 3.0,
      "2": 1
     },
     "forma_selvagem": 2
@@ -999,10 +1202,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 2.5,
-     "rank": "D",
+     "nivel_eq": 3.3,
+     "rank": "C-",
      "por_categoria": {
-      "p": 2.5
+      "p": 3.3
      }
     },
     "vontade": {
@@ -1043,7 +1246,7 @@
    }
   }
  },
- "segundos": 10.4,
+ "segundos": 3.1,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1556,14 +1759,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "b8dc76b518ae",
+  "_planos": "d8ea3ffe61b7",
   "principal": {
    "dano": "e69d1cb9921a",
    "defesa": "eecdf2792f24",
    "saves": "319e6ac84f4e",
    "area": "ff57513c6b67",
    "suporte": "78feb88d877f",
-   "controle": "798fb76347e4"
+   "controle": "12afc487742f"
   },
   "controle": {
    "dano": "bc33a1cced48",
@@ -1571,7 +1774,7 @@
    "saves": "319e6ac84f4e",
    "area": "cc78efefaca2",
    "suporte": "78feb88d877f",
-   "controle": "b234d7badba2"
+   "controle": "ed066448b200"
   },
   "controle-barato": {
    "dano": "bc33a1cced48",
@@ -1579,7 +1782,7 @@
    "saves": "319e6ac84f4e",
    "area": "cc78efefaca2",
    "suporte": "78feb88d877f",
-   "controle": "cf320c5437ee"
+   "controle": "693282c0c37c"
   },
   "area": {
    "dano": "97a142345a2b",
@@ -1587,7 +1790,15 @@
    "saves": "319e6ac84f4e",
    "area": "d4f907ec118c",
    "suporte": "78feb88d877f",
-   "controle": "42589574b740"
+   "controle": "81e4707ca064"
+  },
+  "reacao-absorb-elements": {
+   "dano": "e69d1cb9921a",
+   "defesa": "eecdf2792f24",
+   "saves": "4812aa53e751",
+   "area": "ff57513c6b67",
+   "suporte": "78feb88d877f",
+   "controle": "12afc487742f"
   }
  }
 }

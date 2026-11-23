@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 11,
  "build": "Ranger (Beast Master (Primal Companion)), defensor: espada longa + escudo, Dueling, meia-armadura; sem feat",
- "impressao": "39df8bf16f",
+ "impressao": "c17ef94317",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -342,6 +342,174 @@
     "nivel_absoluto": 0.99,
     "rank_absoluto": "E"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "espada longa + escudo sem magia + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 34.4,
+     "CA 12": 32.5,
+     "CA 15": 26.7,
+     "CA 16": 24.8,
+     "CA 18": 20.9,
+     "CA 20": 17.0,
+     "CA 22": 13.1,
+     "CA 24": 9.3,
+     "CA 25": 7.3
+    },
+    "nivel_eq": 6.7,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 6.7,
+    "nivel_precisa": 6.6,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 81,
+    "ca": 19,
+    "blindagem": 7.44,
+    "durabilidade": 4.94,
+    "nivel_blindagem": 8.2,
+    "nivel_durabilidade": 7.9,
+    "nivel_eq": 8.2,
+    "rank": "B+",
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 11.35,
+     "rank": "A",
+     "turnos_livres": [
+      3.95,
+      3.77,
+      3.7,
+      2.88,
+      2.82,
+      2.81,
+      2.73,
+      2.68,
+      2.15,
+      1.64
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.73,
+     "rank": "D",
+     "turnos_livres": [
+      2.9,
+      1.23,
+      0.88,
+      0.99,
+      0.81,
+      0.54,
+      0.87,
+      0.71,
+      0.91,
+      1.15
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 3.93,
+     "9": 3.78,
+     "10": 3.78,
+     "11": 4.1,
+     "12": 4.1,
+     "13": 4.74,
+     "14": 4.74,
+     "15": 4.74,
+     "16": 4.74,
+     "17": 5.34,
+     "18": 5.34,
+     "19": 5.95,
+     "20": 5.4
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.71,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.13,
+    "rank_atencao": "F",
+    "vidas_total": -0.109,
+    "vidas_campo": 0.02,
+    "vidas_atencao": 0.02,
+    "corpo": {
+     "T": 0.02,
+     "S": 0.13,
+     "P": -0.109,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      0.02
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0107
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0078
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0163
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0063
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0074
+     }
+    },
+    "nivel_absoluto": 0.77,
+    "rank_absoluto": "E"
+   }
   }
  },
  "planos": {
@@ -355,9 +523,12 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "marca",
@@ -366,9 +537,12 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "marca",
@@ -377,9 +551,12 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "marca",
@@ -388,15 +565,17 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 2.0,
-     "2": 3,
+     "2": 1.0,
      "3": 3
     }
    },
@@ -418,11 +597,11 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 10.5,
-     "rank": "A-",
+     "nivel_eq": 11.3,
+     "rank": "A",
      "por_categoria": {
-      "np": 10.5,
-      "p": 10.5
+      "np": 11.3,
+      "p": 11.3
      }
     },
     "vontade": {
@@ -469,14 +648,17 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 3.5,
+     "1": 2.5,
      "2": 3,
      "3": 3
     }
@@ -497,10 +679,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 10.5,
-     "rank": "A-",
+     "nivel_eq": 11.3,
+     "rank": "A",
      "por_categoria": {
-      "p": 10.5
+      "p": 11.3
      }
     },
     "vontade": {
@@ -534,7 +716,7 @@
    }
   }
  },
- "segundos": 1.9,
+ "segundos": 3.0,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -986,20 +1168,27 @@
   }
  },
  "impressoes": {
-  "_planos": "e2ae7f50ad8a",
+  "_planos": "7662c913501c",
   "principal": {
    "dano": "c8ca306fdcb2",
    "defesa": "1fc49c356bb3",
    "saves": "7de145f2178f",
    "area": "e83c5f6e6449",
-   "controle": "1ed61dafb29d"
+   "controle": "0217a26f0aad"
   },
   "marca": {
    "dano": "a7985d21d08a",
    "defesa": "1fc49c356bb3",
    "saves": "7de145f2178f",
    "area": "8755c36123e4",
-   "controle": "19a02d902525"
+   "controle": "fbb95b600045"
+  },
+  "reacao-absorb-elements": {
+   "dano": "c8ca306fdcb2",
+   "defesa": "1fc49c356bb3",
+   "saves": "adfa7c3d43fe",
+   "area": "e83c5f6e6449",
+   "controle": "0217a26f0aad"
   }
  }
 }

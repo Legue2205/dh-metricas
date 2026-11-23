@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 11,
  "build": "Warlock (Hexblade), striker: Pact of the Blade, espada longa + escudo, meia-armadura; Car>Con>Des; Thirsting Blade no 5; sem feat",
- "impressao": "8e868ecb07",
+ "impressao": "b7dff50949",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1971,6 +1971,174 @@
     "nivel_absoluto": 9.0,
     "rank_absoluto": "B+"
    }
+  },
+  "reacao-counterspell": {
+   "hipotese": "só o ataque à vontade (anel interno) + Counterspell (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 22.3,
+     "CA 12": 21.1,
+     "CA 15": 17.7,
+     "CA 16": 16.5,
+     "CA 18": 14.2,
+     "CA 20": 11.9,
+     "CA 22": 9.7,
+     "CA 24": 7.3,
+     "CA 25": 6.2
+    },
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.5,
+    "nivel_precisa": 4.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 91,
+    "ca": 18,
+    "blindagem": 7.44,
+    "durabilidade": 5.1,
+    "nivel_blindagem": 8.2,
+    "nivel_durabilidade": 8.2,
+    "nivel_eq": 8.2,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 9.01,
+     "rank": "B+",
+     "turnos_livres": [
+      3.77,
+      3.57,
+      3.56,
+      3.31,
+      2.46,
+      2.23,
+      2.74,
+      2.64,
+      2.09,
+      1.67
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.5,
+     "rank": "A",
+     "turnos_livres": [
+      3.69,
+      2.71,
+      2.23,
+      2.22,
+      1.92,
+      1.63,
+      1.69,
+      1.44,
+      1.51,
+      1.34
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.84,
+     "5": 3.5,
+     "6": 3.5,
+     "7": 3.5,
+     "8": 4.51,
+     "9": 4.33,
+     "10": 4.33,
+     "11": 4.53,
+     "12": 4.53,
+     "13": 5.27,
+     "14": 5.27,
+     "15": 5.27,
+     "16": 5.27,
+     "17": 5.77,
+     "18": 5.77,
+     "19": 5.99,
+     "20": 5.73
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "3": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.71,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.8,
+    "rank_atencao": "E",
+    "vidas_total": -0.096,
+    "vidas_campo": 0.02,
+    "vidas_atencao": 0.033,
+    "corpo": {
+     "T": 0.033,
+     "S": 0.24,
+     "P": -0.207,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      0.033
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0106
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.006
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0076
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.016
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0064
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0079
+     }
+    },
+    "nivel_absoluto": 0.44,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -2164,7 +2332,7 @@
    }
   }
  },
- "segundos": 13.9,
+ "segundos": 9.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2616,83 +2784,90 @@
   }
  },
  "impressoes": {
-  "_planos": "a7f5fa03f098",
+  "_planos": "423c7f1a1b1c",
   "principal": {
    "dano": "0110961930e8",
    "defesa": "69220e98b3d6",
    "saves": "391fc8090a52",
    "area": "a5eb3ae17157",
-   "controle": "662face975ff"
+   "controle": "c9b429e1ee9b"
   },
   "hex": {
    "dano": "ac8b11aae8af",
    "defesa": "69220e98b3d6",
    "saves": "391fc8090a52",
    "area": "4ad96bf0bbda",
-   "controle": "19fc4b15cc8b"
+   "controle": "677e623d6981"
   },
   "controle": {
    "dano": "2f557cb15437",
    "defesa": "3857729916b0",
    "saves": "ee709954eb8d",
    "area": "721593a5d815",
-   "controle": "720b2db7ec29"
+   "controle": "f3db03fec8c0"
   },
   "area": {
    "dano": "b8fc1fe14d06",
    "defesa": "3857729916b0",
    "saves": "ee709954eb8d",
    "area": "5303e5b2f39d",
-   "controle": "4abdf0c844c6"
+   "controle": "c185d249367e"
   },
   "combo": {
    "dano": "b8fc1fe14d06",
    "defesa": "3857729916b0",
    "saves": "ee709954eb8d",
    "area": "2eb19d58eb90",
-   "controle": "b3f916d8a43b"
+   "controle": "3ed2358420b8"
   },
   "invocacao": {
    "dano": "fb891c692331",
    "defesa": "3857729916b0",
    "saves": "ee709954eb8d",
    "area": "594d44a08b0f",
-   "controle": "ebe066365c10"
+   "controle": "5ae0d6ec391a"
   },
   "area+hex": {
    "dano": "aff21b34951c",
    "defesa": "3857729916b0",
    "saves": "ee709954eb8d",
    "area": "4eb4eea842b9",
-   "controle": "5b360ccc9700"
+   "controle": "45048b5105c3"
   },
   "eb": {
    "dano": "b05a345c9a1a",
    "defesa": "69220e98b3d6",
    "saves": "391fc8090a52",
    "area": "8e514d2f8fcf",
-   "controle": "de0d3fe072a7"
+   "controle": "4b1cd234b364"
   },
   "eb+hex": {
    "dano": "43583a1861da",
    "defesa": "69220e98b3d6",
    "saves": "391fc8090a52",
    "area": "b39537a6474b",
-   "controle": "2eba6e1e26cd"
+   "controle": "f21b25bb066f"
   },
   "arcano": {
    "dano": "2f557cb15437",
    "defesa": "69220e98b3d6",
    "saves": "391fc8090a52",
    "area": "721593a5d815",
-   "controle": "78921f0871fb"
+   "controle": "85c508142091"
   },
   "arcano+hex": {
    "dano": "8b75ecf41cda",
    "defesa": "69220e98b3d6",
    "saves": "391fc8090a52",
    "area": "5d02ca98a564",
-   "controle": "76c016d3bd4d"
+   "controle": "0144d27d6646"
+  },
+  "reacao-counterspell": {
+   "dano": "0110961930e8",
+   "defesa": "69220e98b3d6",
+   "saves": "52a2c9999cb8",
+   "area": "a5eb3ae17157",
+   "controle": "c9b429e1ee9b"
   }
  }
 }

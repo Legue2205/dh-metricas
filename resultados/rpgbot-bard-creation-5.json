@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 5,
  "build": "Bard (Creation): Autognomo, For 8 Des 16 Con 15 Int 8 Sab 8 Car 17; Fey Touched (4, Car 18, Bless/Misty Step); Resilient Con (8)",
- "impressao": "14b427bc19",
+ "impressao": "19c4fbe09c",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -641,6 +641,207 @@
     "nivel_absoluto": 8.59,
     "rank_absoluto": "B+"
    }
+  },
+  "reacao-counterspell": {
+   "hipotese": "só truques (anel interno) + Counterspell (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 4.1,
+     "CA 12": 4.1,
+     "CA 15": 3.5,
+     "CA 16": 3.1,
+     "CA 18": 2.4,
+     "CA 20": 1.8,
+     "CA 22": 1.3,
+     "CA 24": 0.8,
+     "CA 25": 0.6
+    },
+    "nivel_eq": 0.5,
+    "rank": "E",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 0.5,
+    "nivel_precisa": 0.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 38,
+    "ca": 16,
+    "blindagem": 2.45,
+    "durabilidade": 1.81,
+    "nivel_blindagem": 2.5,
+    "nivel_durabilidade": 2.5,
+    "nivel_eq": 2.5,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.73,
+     "rank": "C+",
+     "turnos_livres": [
+      3.77,
+      3.69,
+      3.69,
+      2.89,
+      1.63,
+      1.62,
+      1.39,
+      1.25,
+      0.96,
+      0.61
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.41,
+     "rank": "C",
+     "turnos_livres": [
+      3.3,
+      1.96,
+      1.59,
+      1.58,
+      1.08,
+      0.96,
+      0.87,
+      0.65,
+      0.8,
+      0.56
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 0.4,
+    "rank": "F",
+    "rounds": {
+     "1": 4.06,
+     "2": 4.88,
+     "3": 4.88,
+     "4": 5.62,
+     "5": 4.93,
+     "6": 4.93,
+     "7": 4.93,
+     "8": 5.73,
+     "9": 5.63,
+     "10": 5.63,
+     "11": 5.5,
+     "12": 5.5,
+     "13": 5.89,
+     "14": 5.89,
+     "15": 5.89,
+     "16": 5.89,
+     "17": 5.99,
+     "18": 5.99,
+     "19": 6.0,
+     "20": 5.97
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 4.23,
+    "defensivo": 3.93,
+    "total": 8.16,
+    "nivel_ofensivo": 1.2,
+    "nivel_defensivo": 4.8,
+    "nivel_eq": 3.2,
+    "rank": "C-",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d8)",
+      "lado": "of",
+      "valor": 2.37
+     },
+     {
+      "nome": "Mote of Potential (ataque: trovão em volta do alvo)",
+      "lado": "of",
+      "valor": 1.86
+     },
+     {
+      "nome": "Mote of Potential (save: PV temporários)",
+      "lado": "def",
+      "valor": 0.7
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 3.23
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "3": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 2.5,
+    "rank": "D",
+    "nivel_campo": 0.06,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.01,
+    "rank_atencao": "F",
+    "vidas_total": 0.365,
+    "vidas_campo": 0.012,
+    "vidas_atencao": -0.001,
+    "corpo": {
+     "T": -0.001,
+     "S": 0.475,
+     "P": -0.476,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 5.0,
+    "rank_corpo": "C+",
+    "corpo_busca": [
+     [
+      5,
+      -0.001
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.46,
+     "Party de elite": 2.65,
+     "Horda + chefe": 2.53,
+     "Horda": 2.07,
+     "Dupla": 2.78,
+     "Chefe sozinho": 2.53
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0056
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0042
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0043
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0082
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0038
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0045
+     }
+    },
+    "nivel_absoluto": 1.48,
+    "rank_absoluto": "D"
+   }
   }
  },
  "planos": {
@@ -648,7 +849,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "reacao-counterspell",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -671,7 +872,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "reacao-counterspell",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -718,18 +919,18 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 4.2,
+     "nivel_eq": 4.7,
      "rank": "C",
      "por_categoria": {
-      "np": 4.2,
+      "np": 5.7,
       "p": 4.2
      }
     },
     "vontade": {
-     "nivel_eq": 1.5,
+     "nivel_eq": 2.4,
      "rank": "D",
      "por_categoria": {
-      "np": 1.5,
+      "np": 4.4,
       "p": 1.5
      }
     },
@@ -780,7 +981,10 @@
        "1": 0.5,
        "3": 1
       }
-     }
+     },
+     "extras": [
+      "reacao-counterspell"
+     ]
     }
    ],
    "sobra": {
@@ -806,17 +1010,17 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 4.2,
-     "rank": "C",
+     "nivel_eq": 5.7,
+     "rank": "C+",
      "por_categoria": {
-      "p": 4.2
+      "p": 5.7
      }
     },
     "vontade": {
-     "nivel_eq": 1.5,
-     "rank": "D",
+     "nivel_eq": 4.4,
+     "rank": "C",
      "por_categoria": {
-      "p": 1.5
+      "p": 4.4
      }
     },
     "campo": {
@@ -850,7 +1054,7 @@
    }
   }
  },
- "segundos": 3.5,
+ "segundos": 3.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1334,14 +1538,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "238a7876189f",
+  "_planos": "fd7915e5ed9c",
   "principal": {
    "dano": "06e8b811c80c",
    "defesa": "ce2aac93376e",
    "saves": "532cd7eaa64f",
    "area": "b0cfc6176f60",
    "suporte": "f61c252c9bf0",
-   "controle": "bdeba5667fcd"
+   "controle": "10e21091ebbc"
   },
   "area": {
    "dano": "6b58772565e2",
@@ -1349,7 +1553,7 @@
    "saves": "532cd7eaa64f",
    "area": "2a3b2835ffaf",
    "suporte": "f61c252c9bf0",
-   "controle": "b97898442e18"
+   "controle": "fef1465d5964"
   },
   "controle": {
    "dano": "74f07edf9d87",
@@ -1357,7 +1561,15 @@
    "saves": "532cd7eaa64f",
    "area": "0b2503775124",
    "suporte": "f61c252c9bf0",
-   "controle": "1ff17e3e9249"
+   "controle": "ac0728ee2d54"
+  },
+  "reacao-counterspell": {
+   "dano": "06e8b811c80c",
+   "defesa": "ce2aac93376e",
+   "saves": "f001cf838e6b",
+   "area": "b0cfc6176f60",
+   "suporte": "f61c252c9bf0",
+   "controle": "10e21091ebbc"
   }
  }
 }

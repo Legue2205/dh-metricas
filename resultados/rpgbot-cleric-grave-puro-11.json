@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Cleric (Grave) sem multiclasse, Custom Lineage (Metamagic Adept: Quicken, Extend); Fey Touched 4; escama → meia-armadura + escudo; Sab 20 (8)",
- "impressao": "2c37dd0848",
+ "impressao": "043315dbe0",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -2000,6 +2000,202 @@
     "nivel_absoluto": 1.09,
     "rank_absoluto": "D"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "só truques (anel interno) + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 22.7,
+     "CA 12": 22.7,
+     "CA 15": 19.6,
+     "CA 16": 17.8,
+     "CA 18": 14.1,
+     "CA 20": 11.4,
+     "CA 22": 8.9,
+     "CA 24": 6.5,
+     "CA 25": 5.3
+    },
+    "nivel_eq": 4.9,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.9,
+    "nivel_precisa": 4.9,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 69,
+    "ca": 19,
+    "blindagem": 6.91,
+    "durabilidade": 4.72,
+    "nivel_blindagem": 7.4,
+    "nivel_durabilidade": 7.4,
+    "nivel_eq": 7.4,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.04,
+     "rank": "B",
+     "turnos_livres": [
+      3.57,
+      3.45,
+      3.37,
+      2.61,
+      1.96,
+      1.8,
+      2.31,
+      1.98,
+      1.61,
+      1.24
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.66,
+     "rank": "A",
+     "turnos_livres": [
+      3.78,
+      2.54,
+      1.97,
+      2.3,
+      2.12,
+      1.54,
+      1.88,
+      1.51,
+      1.68,
+      1.34
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.83,
+     "5": 3.37,
+     "6": 3.37,
+     "7": 3.37,
+     "8": 4.37,
+     "9": 4.2,
+     "10": 4.2,
+     "11": 4.42,
+     "12": 4.42,
+     "13": 5.15,
+     "14": 5.15,
+     "15": 5.15,
+     "16": 5.15,
+     "17": 5.69,
+     "18": 5.69,
+     "19": 5.99,
+     "20": 5.69
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 6.64,
+    "total": 6.64,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 7.8,
+    "nivel_eq": 2.2,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 6.64
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.312,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.69,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.68,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.219,
+    "vidas_campo": 0.015,
+    "vidas_atencao": -0.087,
+    "corpo": {
+     "T": -0.087,
+     "S": -0.037,
+     "P": -0.05,
+     "chave": "T0S0P0",
+     "perfil": "Neutro"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.087
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0085
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0047
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0062
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0131
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0048
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0052
+     }
+    },
+    "nivel_absoluto": 0.39,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -2016,7 +2212,10 @@
        "1": 1.5,
        "2": 1
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "bless+arma",
@@ -2033,7 +2232,8 @@
       "metamagia": 1
      },
      "extras": [
-      "punho-rapido"
+      "punho-rapido",
+      "reacao-absorb-elements"
      ]
     },
     {
@@ -2046,7 +2246,10 @@
        "1": 1.5,
        "2": 1
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "bless+arma",
@@ -2058,7 +2261,10 @@
        "1": 1.5,
        "2": 1
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
@@ -2086,11 +2292,11 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 6.0,
-     "rank": "C+",
+     "nivel_eq": 7.0,
+     "rank": "B",
      "por_categoria": {
-      "np": 6.0,
-      "p": 6.0
+      "np": 7.0,
+      "p": 7.0
      }
     },
     "vontade": {
@@ -2153,7 +2359,8 @@
       "metamagia": 1
      },
      "extras": [
-      "punho-rapido"
+      "punho-rapido",
+      "reacao-absorb-elements"
      ]
     }
    ],
@@ -2183,10 +2390,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 6.0,
-     "rank": "C+",
+     "nivel_eq": 7.0,
+     "rank": "B",
      "por_categoria": {
-      "p": 6.0
+      "p": 7.0
      }
     },
     "vontade": {
@@ -2227,7 +2434,7 @@
    }
   }
  },
- "segundos": 16.6,
+ "segundos": 12.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2740,14 +2947,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "f5ba7bf46d70",
+  "_planos": "326501ff6d92",
   "principal": {
    "dano": "207380b6e8d4",
    "defesa": "54c1c292464a",
    "saves": "5ec9fcf18ba6",
    "area": "24d2d4193b45",
    "suporte": "ece47c48f5f7",
-   "controle": "53b22217a1b9"
+   "controle": "4903fe5ba8eb"
   },
   "bless": {
    "dano": "824bef09a897",
@@ -2755,7 +2962,7 @@
    "saves": "5ec9fcf18ba6",
    "area": "d856a455fe4a",
    "suporte": "e0bafac6533b",
-   "controle": "b9117e215786"
+   "controle": "9ae699688b12"
   },
   "arma-espiritual": {
    "dano": "3d3721481e5d",
@@ -2763,7 +2970,7 @@
    "saves": "5ec9fcf18ba6",
    "area": "5eac00bc0891",
    "suporte": "ece47c48f5f7",
-   "controle": "0ba07541eb00"
+   "controle": "0f4238c66ae9"
   },
   "controle": {
    "dano": "824bef09a897",
@@ -2771,7 +2978,7 @@
    "saves": "5ec9fcf18ba6",
    "area": "d856a455fe4a",
    "suporte": "ece47c48f5f7",
-   "controle": "c94c2c8b8678"
+   "controle": "f8814d6c624b"
   },
   "punho": {
    "dano": "b94dd47ed2de",
@@ -2779,7 +2986,7 @@
    "saves": "5ec9fcf18ba6",
    "area": "0b4f8c018e88",
    "suporte": "ece47c48f5f7",
-   "controle": "bde5beeb903e"
+   "controle": "1e3c24819b5f"
   },
   "punho-rapido": {
    "dano": "a9d940e3f32d",
@@ -2787,7 +2994,7 @@
    "saves": "5ec9fcf18ba6",
    "area": "17e68156e6a6",
    "suporte": "ece47c48f5f7",
-   "controle": "af63f5d3c324"
+   "controle": "d38de6b3e42d"
   },
   "bless+arma": {
    "dano": "0b6f1b09a648",
@@ -2795,7 +3002,7 @@
    "saves": "5ec9fcf18ba6",
    "area": "49f3a54c8e63",
    "suporte": "e0bafac6533b",
-   "controle": "2efa57b700cd"
+   "controle": "636e6dae9be7"
   },
   "punho+arma": {
    "dano": "b3808d91bde2",
@@ -2803,7 +3010,7 @@
    "saves": "5ec9fcf18ba6",
    "area": "c348a6f82af0",
    "suporte": "ece47c48f5f7",
-   "controle": "82f7dc0932e2"
+   "controle": "445d033f1023"
   },
   "guardioes": {
    "dano": "c175c3998be6",
@@ -2811,7 +3018,7 @@
    "saves": "5ec9fcf18ba6",
    "area": "4ef91d00595d",
    "suporte": "ece47c48f5f7",
-   "controle": "9b5342b9d43c"
+   "controle": "ea2b51527506"
   },
   "guardioes-arma": {
    "dano": "a06b70692e18",
@@ -2819,7 +3026,15 @@
    "saves": "5ec9fcf18ba6",
    "area": "026671a7b316",
    "suporte": "ece47c48f5f7",
-   "controle": "2c2cc0c53f68"
+   "controle": "736918d41105"
+  },
+  "reacao-absorb-elements": {
+   "dano": "207380b6e8d4",
+   "defesa": "54c1c292464a",
+   "saves": "b0c169903349",
+   "area": "24d2d4193b45",
+   "suporte": "ece47c48f5f7",
+   "controle": "4903fe5ba8eb"
   }
  }
 }

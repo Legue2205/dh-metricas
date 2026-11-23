@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 5,
  "build": "Paladin 3 / Sorcerer 2 (Wild Magic) / Paladin, Astral Elf, Metamagic Adept 6, GWM 10; espadão, Blessed Warrior",
- "impressao": "3fc76a9fbd",
+ "impressao": "206ac85bd6",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1179,6 +1179,201 @@
     "nivel_absoluto": 0.0,
     "rank_absoluto": "F"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "só armas, sem gastar espaço + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 14.2,
+     "CA 12": 13.3,
+     "CA 15": 10.7,
+     "CA 16": 9.8,
+     "CA 18": 8.0,
+     "CA 20": 6.2,
+     "CA 22": 4.4,
+     "CA 24": 2.6,
+     "CA 25": 1.6
+    },
+    "nivel_eq": 2.5,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 2.5,
+    "nivel_precisa": 2.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 45,
+    "ca": 16,
+    "blindagem": 2.99,
+    "durabilidade": 2.25,
+    "nivel_blindagem": 3.1,
+    "nivel_durabilidade": 3.2,
+    "nivel_eq": 3.2,
+    "rank": "C-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 4.73,
+     "rank": "C",
+     "turnos_livres": [
+      3.72,
+      3.36,
+      3.28,
+      1.7,
+      1.36,
+      1.29,
+      1.68,
+      1.28,
+      0.88,
+      0.74
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 3.14,
+     "rank": "C-",
+     "turnos_livres": [
+      3.08,
+      1.38,
+      0.99,
+      1.09,
+      1.07,
+      0.82,
+      0.92,
+      0.57,
+      0.91,
+      0.62
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.2,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 3.81,
+     "3": 3.81,
+     "4": 4.13,
+     "5": 3.93,
+     "6": 3.93,
+     "7": 3.93,
+     "8": 5.12,
+     "9": 4.91,
+     "10": 4.91,
+     "11": 5.03,
+     "12": 5.03,
+     "13": 5.66,
+     "14": 5.66,
+     "15": 5.66,
+     "16": 5.66,
+     "17": 5.94,
+     "18": 5.94,
+     "19": 6.0,
+     "20": 5.9
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 1.4,
+    "total": 1.4,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 2.3,
+    "nivel_eq": 0.3,
+    "rank": "F",
+    "perfil": "Protetor",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 1.4
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.09,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.02,
+    "rank_atencao": "F",
+    "vidas_total": -0.143,
+    "vidas_campo": 0.018,
+    "vidas_atencao": -0.006,
+    "corpo": {
+     "T": -0.006,
+     "S": 0.17,
+     "P": -0.175,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 5.0,
+    "rank_corpo": "C+",
+    "corpo_busca": [
+     [
+      5,
+      -0.006
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0084
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0063
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0064
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0124
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0058
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0069
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -1312,16 +1507,18 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 3
+       "1": 4
       },
       "canal": 1,
       "feiticaria": 2
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 1,
      "2": 2
     }
    },
@@ -1341,10 +1538,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 4.0,
-     "rank": "C-",
+     "nivel_eq": 4.7,
+     "rank": "C",
      "por_categoria": {
-      "p": 4.0
+      "p": 4.7
      }
     },
     "vontade": {
@@ -1385,7 +1582,7 @@
    }
   }
  },
- "segundos": 9.7,
+ "segundos": 3.8,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1898,14 +2095,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "6f53c67122cd",
+  "_planos": "2c920e0602de",
   "principal": {
    "dano": "f3f2ae905a1a",
    "defesa": "5e752e677b48",
    "saves": "5e8d3ccd3c5b",
    "area": "3ba7ecc6479f",
    "suporte": "c41927e6fb0d",
-   "controle": "78f1361c5c3d"
+   "controle": "a0e4ac0fdab1"
   },
   "smite-1": {
    "dano": "9cb224a8e4a5",
@@ -1913,7 +2110,7 @@
    "saves": "5e8d3ccd3c5b",
    "area": "76a3283b62f7",
    "suporte": "c41927e6fb0d",
-   "controle": "acb4d5d15d06"
+   "controle": "951a14863e29"
   },
   "bless": {
    "dano": "ff5c3ea2af3f",
@@ -1921,7 +2118,7 @@
    "saves": "5e8d3ccd3c5b",
    "area": "990bec347167",
    "suporte": "cf36aa100148",
-   "controle": "3b5afb0c97f3"
+   "controle": "e7048680c19b"
   },
   "arma-sagrada": {
    "dano": "39214c7fe3aa",
@@ -1929,7 +2126,7 @@
    "saves": "5e8d3ccd3c5b",
    "area": "c304e2cd5bf2",
    "suporte": "c41927e6fb0d",
-   "controle": "e00746c4bf05"
+   "controle": "1362dff105d6"
   },
   "arma-sagrada+smite": {
    "dano": "363c59ef24d9",
@@ -1937,7 +2134,7 @@
    "saves": "5e8d3ccd3c5b",
    "area": "5341c61d7ed5",
    "suporte": "c41927e6fb0d",
-   "controle": "6dee5d99fd3f"
+   "controle": "42f1549fed4a"
   },
   "smite-2": {
    "dano": "60b8eacb540c",
@@ -1945,7 +2142,15 @@
    "saves": "5e8d3ccd3c5b",
    "area": "c316eca17b0d",
    "suporte": "c41927e6fb0d",
-   "controle": "4f8a155da2d7"
+   "controle": "d80fcf85d2ca"
+  },
+  "reacao-absorb-elements": {
+   "dano": "f3f2ae905a1a",
+   "defesa": "5e752e677b48",
+   "saves": "9c639e84096a",
+   "area": "3ba7ecc6479f",
+   "suporte": "c41927e6fb0d",
+   "controle": "a0e4ac0fdab1"
   }
  }
 }

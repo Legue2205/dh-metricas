@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 9,
  "build": "Cleric (Grave) / Sorcerer 2 (Divine Soul, personagem 7–8), Custom Lineage (Metamagic Adept: Quicken, Extend); Fey Touched 4; escama → meia-armadura + escudo; Sab 20 (personagem 10)",
- "impressao": "c962609129",
+ "impressao": "db01e10fa5",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1984,6 +1984,202 @@
     "nivel_absoluto": 0.07,
     "rank_absoluto": "F"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "só truques (anel interno) + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 11.4,
+     "CA 12": 11.4,
+     "CA 15": 9.8,
+     "CA 16": 8.8,
+     "CA 18": 6.8,
+     "CA 20": 5.4,
+     "CA 22": 4.1,
+     "CA 24": 2.8,
+     "CA 25": 2.1
+    },
+    "nivel_eq": 2.1,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 2.1,
+    "nivel_precisa": 2.1,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 55,
+    "ca": 19,
+    "blindagem": 6.0,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "anula_critico"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.66,
+     "rank": "C+",
+     "turnos_livres": [
+      3.57,
+      3.45,
+      3.37,
+      2.3,
+      1.69,
+      1.57,
+      1.9,
+      1.64,
+      1.16,
+      0.92
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.05,
+     "rank": "A",
+     "turnos_livres": [
+      3.69,
+      2.37,
+      1.81,
+      2.11,
+      1.93,
+      1.4,
+      1.68,
+      1.27,
+      1.5,
+      1.13
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 2.8,
+    "rank": "D",
+    "rounds": {
+     "1": 2.35,
+     "2": 3.81,
+     "3": 3.81,
+     "4": 4.6,
+     "5": 4.05,
+     "6": 4.05,
+     "7": 4.05,
+     "8": 5.22,
+     "9": 5.03,
+     "10": 5.03,
+     "11": 5.1,
+     "12": 5.1,
+     "13": 5.7,
+     "14": 5.7,
+     "15": 5.7,
+     "16": 5.7,
+     "17": 5.95,
+     "18": 5.95,
+     "19": 6.0,
+     "20": 5.92
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 5.15,
+    "total": 5.15,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.5,
+    "nivel_eq": 1.0,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 5.15
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "Sentinel at Death's Door",
+      "fracao": 0.25,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.75,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.68,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.156,
+    "vidas_campo": 0.017,
+    "vidas_atencao": -0.034,
+    "corpo": {
+     "T": -0.034,
+     "S": 0.117,
+     "P": -0.151,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 9.0,
+    "rank_corpo": "B+",
+    "corpo_busca": [
+     [
+      9,
+      -0.034
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.005
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0065
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0123
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0048
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0051
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -2000,7 +2196,10 @@
        "1": 1.5,
        "2": 1
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "bless+arma",
@@ -2030,7 +2229,10 @@
        "1": 1.5,
        "2": 1
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "bless+arma",
@@ -2042,7 +2244,10 @@
        "1": 1.5,
        "2": 1
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
@@ -2070,11 +2275,11 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 4.8,
-     "rank": "C",
+     "nivel_eq": 5.4,
+     "rank": "C+",
      "por_categoria": {
-      "np": 4.8,
-      "p": 4.8
+      "np": 5.7,
+      "p": 5.2
      }
     },
     "vontade": {
@@ -2137,7 +2342,8 @@
       "metamagia": 1
      },
      "extras": [
-      "punho-rapido"
+      "punho-rapido",
+      "reacao-absorb-elements"
      ]
     }
    ],
@@ -2167,10 +2373,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 4.8,
-     "rank": "C",
+     "nivel_eq": 5.7,
+     "rank": "C+",
      "por_categoria": {
-      "p": 4.8
+      "p": 5.7
      }
     },
     "vontade": {
@@ -2211,7 +2417,7 @@
    }
   }
  },
- "segundos": 16.9,
+ "segundos": 6.4,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2724,14 +2930,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "547c9aab134d",
+  "_planos": "7598622a4e9a",
   "principal": {
    "dano": "aa29ee74d451",
    "defesa": "e55127cb9575",
    "saves": "907e7d93eeda",
    "area": "edecbeb85830",
    "suporte": "e32ae77478af",
-   "controle": "a81643d1a1b6"
+   "controle": "2b44286a2805"
   },
   "bless": {
    "dano": "a62cfc888607",
@@ -2739,7 +2945,7 @@
    "saves": "907e7d93eeda",
    "area": "7db8c69c907f",
    "suporte": "2726d2954a22",
-   "controle": "d393ea3e6eb8"
+   "controle": "531e65a78176"
   },
   "arma-espiritual": {
    "dano": "dcb4a0f259d7",
@@ -2747,7 +2953,7 @@
    "saves": "907e7d93eeda",
    "area": "f1088f422b21",
    "suporte": "e32ae77478af",
-   "controle": "e4c8f5ccf3ba"
+   "controle": "f3f84d47cdc4"
   },
   "controle": {
    "dano": "a62cfc888607",
@@ -2755,7 +2961,7 @@
    "saves": "907e7d93eeda",
    "area": "7db8c69c907f",
    "suporte": "e32ae77478af",
-   "controle": "e164d900f118"
+   "controle": "48a0e8b8c8e3"
   },
   "punho": {
    "dano": "1f546723af59",
@@ -2763,7 +2969,7 @@
    "saves": "907e7d93eeda",
    "area": "48e441291d48",
    "suporte": "e32ae77478af",
-   "controle": "35c29efa67ef"
+   "controle": "44ccc4e19d9f"
   },
   "punho-rapido": {
    "dano": "8dbefaa90731",
@@ -2771,7 +2977,7 @@
    "saves": "907e7d93eeda",
    "area": "72a829c8ee21",
    "suporte": "e32ae77478af",
-   "controle": "d83662ba2afc"
+   "controle": "387866104627"
   },
   "bless+arma": {
    "dano": "294d8fab7971",
@@ -2779,7 +2985,7 @@
    "saves": "907e7d93eeda",
    "area": "76ead8a6e119",
    "suporte": "2726d2954a22",
-   "controle": "ab07dfb9b0b5"
+   "controle": "a2ad5d4d8d67"
   },
   "punho+arma": {
    "dano": "f41af1a1870e",
@@ -2787,7 +2993,7 @@
    "saves": "907e7d93eeda",
    "area": "51a3febfed10",
    "suporte": "e32ae77478af",
-   "controle": "4decd1448ce1"
+   "controle": "81e91c6a07e8"
   },
   "guardioes": {
    "dano": "ef63991e18fc",
@@ -2795,7 +3001,7 @@
    "saves": "907e7d93eeda",
    "area": "75de7878abd5",
    "suporte": "e32ae77478af",
-   "controle": "8f202b07ea8a"
+   "controle": "7557d20ea3e2"
   },
   "guardioes-arma": {
    "dano": "bb0e94693114",
@@ -2803,7 +3009,15 @@
    "saves": "907e7d93eeda",
    "area": "5f071889b04e",
    "suporte": "e32ae77478af",
-   "controle": "fa8582584e74"
+   "controle": "76eb4154deb9"
+  },
+  "reacao-absorb-elements": {
+   "dano": "aa29ee74d451",
+   "defesa": "e55127cb9575",
+   "saves": "3f27ce73d64a",
+   "area": "edecbeb85830",
+   "suporte": "e32ae77478af",
+   "controle": "2b44286a2805"
   }
  }
 }

@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Wizard (Bladesinging), Goblin (MMoM), duas espadas curtas + Booming Blade; Piercer 4, Des/Int 18 (8)",
- "impressao": "ff6bb7e10d",
+ "impressao": "9297d12881",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1342,6 +1342,186 @@
     "nivel_absoluto": 2.73,
     "rank_absoluto": "D"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "só truques (anel interno) + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 23.5,
+     "CA 12": 22.3,
+     "CA 15": 18.5,
+     "CA 16": 17.3,
+     "CA 18": 14.8,
+     "CA 20": 12.3,
+     "CA 22": 9.8,
+     "CA 24": 7.3,
+     "CA 25": 6.1
+    },
+    "nivel_eq": 4.7,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.7,
+    "nivel_precisa": 4.7,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 68,
+    "ca": 17,
+    "blindagem": 5.16,
+    "durabilidade": 3.69,
+    "nivel_blindagem": 5.1,
+    "nivel_durabilidade": 5.3,
+    "nivel_eq": 5.3,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.76,
+     "rank": "B",
+     "turnos_livres": [
+      3.57,
+      3.53,
+      3.46,
+      2.67,
+      2.09,
+      1.93,
+      2.37,
+      2.12,
+      1.72,
+      1.3
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 5.51,
+     "rank": "C+",
+     "turnos_livres": [
+      3.31,
+      2.22,
+      1.86,
+      1.59,
+      1.24,
+      0.91,
+      1.37,
+      1.14,
+      1.11,
+      1.16
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.83,
+     "5": 3.45,
+     "6": 3.45,
+     "7": 3.45,
+     "8": 4.43,
+     "9": 4.26,
+     "10": 4.26,
+     "11": 4.47,
+     "12": 4.47,
+     "13": 5.21,
+     "14": 5.21,
+     "15": 5.21,
+     "16": 5.21,
+     "17": 5.73,
+     "18": 5.73,
+     "19": 5.99,
+     "20": 5.7
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 2.58,
+    "rank": "D",
+    "nivel_campo": 0.64,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.235,
+    "vidas_campo": 0.007,
+    "vidas_atencao": -0.178,
+    "corpo": {
+     "T": -0.178,
+     "S": 0.021,
+     "P": -0.199,
+     "chave": "T-S0P-",
+     "perfil": "Brecha"
+    },
+    "nivel_corpo": 8.52,
+    "rank_corpo": "B+",
+    "corpo_busca": [
+     [
+      11,
+      -0.178
+     ],
+     [
+      10,
+      -0.092
+     ],
+     [
+      9,
+      -0.03
+     ],
+     [
+      8,
+      0.032
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.19,
+     "Party de elite": 2.57,
+     "Horda + chefe": 2.2,
+     "Horda": 2.15,
+     "Dupla": 2.74,
+     "Chefe sozinho": 3.2
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0041
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0023
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.003
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0064
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0023
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0025
+     }
+    },
+    "nivel_absoluto": 2.75,
+    "rank_absoluto": "D"
+   }
   }
  },
  "planos": {
@@ -1372,14 +1552,15 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 2,
+       "1": 3,
        "3": 2,
        "5": 1
       },
       "bladesong": 1
      },
      "extras": [
-      "combo"
+      "combo",
+      "reacao-absorb-elements"
      ]
     },
     {
@@ -1415,9 +1596,7 @@
     }
    ],
    "sobra": {
-    "espacos": {
-     "2": 1
-    }
+    "espacos": {}
    },
    "eixos": {
     "dano": {
@@ -1437,11 +1616,11 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 6.8,
-     "rank": "B-",
+     "nivel_eq": 7.1,
+     "rank": "B",
      "por_categoria": {
       "np": 6.8,
-      "p": 6.8
+      "p": 7.3
      }
     },
     "vontade": {
@@ -1488,7 +1667,7 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1,
+       "1": 2,
        "3": 1,
        "5": 1,
        "6": 1
@@ -1496,13 +1675,14 @@
       "bladesong": 1
      },
      "extras": [
-      "combo"
+      "combo",
+      "reacao-absorb-elements"
      ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 3,
+     "1": 2,
      "2": 3,
      "3": 2,
      "4": 3,
@@ -1526,10 +1706,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 6.8,
-     "rank": "B-",
+     "nivel_eq": 7.8,
+     "rank": "B",
      "por_categoria": {
-      "p": 6.8
+      "p": 7.8
      }
     },
     "vontade": {
@@ -1563,7 +1743,7 @@
    }
   }
  },
- "segundos": 24.0,
+ "segundos": 8.2,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2044,55 +2224,62 @@
   }
  },
  "impressoes": {
-  "_planos": "6cc549a69440",
+  "_planos": "09c913dd79ed",
   "principal": {
    "dano": "8b5edd75de3a",
    "defesa": "5a145d395f4b",
    "saves": "5b4814084529",
    "area": "96d841418779",
-   "controle": "7c66822ccccb"
+   "controle": "fbe58b7dff9a"
   },
   "canto": {
    "dano": "355c34f19a9e",
    "defesa": "77211dd15c9a",
    "saves": "ff469a9bf982",
    "area": "62ca4bc7a388",
-   "controle": "94af414dfdc6"
+   "controle": "8fa41430099a"
   },
   "area": {
    "dano": "bd12fd84dd9f",
    "defesa": "05a468392f23",
    "saves": "7c2f46a8ff60",
    "area": "2d095cc6786e",
-   "controle": "7ab573ce7ba0"
+   "controle": "681f585e9402"
   },
   "canto-haste": {
    "dano": "3d2c71a717d3",
    "defesa": "2352624905f1",
    "saves": "6c94c8dfa153",
    "area": "4061b216532f",
-   "controle": "94f6e355256e"
+   "controle": "433ded9899f8"
   },
   "controle": {
    "dano": "741390890f2d",
    "defesa": "05a468392f23",
    "saves": "7c2f46a8ff60",
    "area": "fcf71f03cfa9",
-   "controle": "f8a48fef2dad"
+   "controle": "b1cf3e70fabe"
   },
   "combo": {
    "dano": "bd12fd84dd9f",
    "defesa": "05a468392f23",
    "saves": "7c2f46a8ff60",
    "area": "091f698de97a",
-   "controle": "9735587d95e1"
+   "controle": "2cfe2ffcfe17"
   },
   "canto-tenser": {
    "dano": "716785e22157",
    "defesa": "40a39d44dfa5",
    "saves": "4d93cc27ee7b",
    "area": "ce8935f85d63",
-   "controle": "92a70f6cbd04"
+   "controle": "a9ee1dcc1b5d"
+  },
+  "reacao-absorb-elements": {
+   "dano": "8b5edd75de3a",
+   "defesa": "5a145d395f4b",
+   "saves": "8140c671f70e",
+   "area": "96d841418779",
+   "controle": "fbe58b7dff9a"
   }
  }
 }

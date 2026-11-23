@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 3,
  "build": "Paladin (Redemption), Duergar, Telekinetic 4 (Car 18), Car 20 8; espada longa + escudo, Blessed Warrior",
- "impressao": "83bcf1a1f3",
+ "impressao": "e790ce379c",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -433,6 +433,216 @@
     "nivel_absoluto": 0.0,
     "rank_absoluto": "F"
    }
+  },
+  "reacao-counterspell": {
+   "hipotese": "só armas, sem gastar espaço + Counterspell (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 4.4,
+     "CA 12": 4.2,
+     "CA 15": 3.2,
+     "CA 16": 2.8,
+     "CA 18": 1.8,
+     "CA 20": 1.0,
+     "CA 22": 0.6,
+     "CA 24": 0.3,
+     "CA 25": 0.3
+    },
+    "nivel_eq": 0.5,
+    "rank": "E",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 0.5,
+    "nivel_precisa": 0.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 31,
+    "ca": 18,
+    "blindagem": 2.55,
+    "durabilidade": 1.77,
+    "nivel_blindagem": 2.6,
+    "nivel_durabilidade": 2.5,
+    "nivel_eq": 2.6,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 4.18,
+     "rank": "C",
+     "turnos_livres": [
+      3.85,
+      3.44,
+      3.35,
+      2.07,
+      1.2,
+      1.26,
+      1.18,
+      0.82,
+      0.44,
+      0.37
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 6.32,
+     "rank": "B-",
+     "turnos_livres": [
+      3.38,
+      2.15,
+      1.76,
+      1.75,
+      1.23,
+      0.99,
+      0.94,
+      0.72,
+      0.85,
+      0.56
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 0.5,
+    "rank": "F",
+    "rounds": {
+     "1": 3.63,
+     "2": 4.7,
+     "3": 4.7,
+     "4": 5.34,
+     "5": 4.72,
+     "6": 4.72,
+     "7": 4.72,
+     "8": 5.62,
+     "9": 5.51,
+     "10": 5.51,
+     "11": 5.43,
+     "12": 5.43,
+     "13": 5.87,
+     "14": 5.87,
+     "15": 5.87,
+     "16": 5.87,
+     "17": 5.99,
+     "18": 5.99,
+     "19": 6.0,
+     "20": 5.96
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 2.6,
+     "rank": "D"
+    },
+    "melhor": "Word of Radiance",
+    "areas": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 2.59,
+      "rank": "D",
+      "variacoes": {
+       "esparsa": 2.59,
+       "padrao": 2.59,
+       "agrupada": 2.59
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 0.92,
+    "total": 0.92,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 0.7,
+    "nivel_eq": 0.2,
+    "rank": "F",
+    "perfil": "Equilibrado",
+    "fonte_principal": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 0.92
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "saves": {
+      "3": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.01,
+    "rank": "F",
+    "nivel_campo": 0.1,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.26,
+    "rank_atencao": "F",
+    "vidas_total": -0.007,
+    "vidas_campo": 0.025,
+    "vidas_atencao": 0.071,
+    "corpo": {
+     "T": 0.071,
+     "S": 0.354,
+     "P": -0.283,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 3.0,
+    "rank_corpo": "C-",
+    "corpo_busca": [
+     [
+      3,
+      0.071
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.05,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.01,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0145
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0075
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0089
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0192
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.008
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0106
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -634,7 +844,7 @@
    }
   }
  },
- "segundos": 4.3,
+ "segundos": 3.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1118,14 +1328,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "57e403d586f1",
+  "_planos": "26d00cc179f4",
   "principal": {
    "dano": "a875f50d9c4c",
    "defesa": "f2cb2ec7b2c6",
    "saves": "35cab9b1a0df",
    "area": "e41dc6208f7d",
    "suporte": "401a968fe070",
-   "controle": "9ccc67e6271c"
+   "controle": "d4e0679b1628"
   },
   "bless": {
    "dano": "9b6b5c01a29d",
@@ -1133,7 +1343,15 @@
    "saves": "35cab9b1a0df",
    "area": "6b53e533a724",
    "suporte": "9e0e45e2d3fc",
-   "controle": "2792835ea014"
+   "controle": "c8e80aba998b"
+  },
+  "reacao-counterspell": {
+   "dano": "a875f50d9c4c",
+   "defesa": "f2cb2ec7b2c6",
+   "saves": "a8b4ff4bc4c3",
+   "area": "e41dc6208f7d",
+   "suporte": "401a968fe070",
+   "controle": "d4e0679b1628"
   }
  }
 }

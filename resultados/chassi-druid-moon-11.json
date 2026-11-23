@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 11,
  "build": "Druid (Moon), meia, gibão de peles + escudo, Sab > Con > Des; sem feat",
- "impressao": "72cc109529",
+ "impressao": "c5a76a4dc1",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -3126,6 +3126,192 @@
     "nivel_absoluto": 4.5,
     "rank_absoluto": "C"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "principal + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 13.5,
+     "CA 12": 12.8,
+     "CA 15": 10.8,
+     "CA 16": 10.1,
+     "CA 18": 8.8,
+     "CA 20": 7.4,
+     "CA 22": 6.1,
+     "CA 24": 4.7,
+     "CA 25": 4.0
+    },
+    "nivel_eq": 2.5,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 2.5,
+    "nivel_precisa": 2.5,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 91,
+    "ca": 15,
+    "blindagem": 5.68,
+    "durabilidade": 4.21,
+    "nivel_blindagem": 5.8,
+    "nivel_durabilidade": 6.3,
+    "nivel_eq": 6.3,
+    "rank": "B-",
+    "perfil": "Durável",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.65,
+     "rank": "B+",
+     "turnos_livres": [
+      3.57,
+      3.41,
+      3.33,
+      2.81,
+      2.22,
+      2.03,
+      2.81,
+      2.74,
+      2.17,
+      1.71
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 14.51,
+     "rank": "A+",
+     "turnos_livres": [
+      3.78,
+      3.04,
+      2.58,
+      2.5,
+      1.98,
+      1.37,
+      1.98,
+      1.81,
+      1.58,
+      1.57
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.2,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 3.81,
+     "3": 3.81,
+     "4": 4.13,
+     "5": 3.93,
+     "6": 3.93,
+     "7": 3.93,
+     "8": 5.12,
+     "9": 4.91,
+     "10": 4.91,
+     "11": 5.03,
+     "12": 5.03,
+     "13": 5.66,
+     "14": 5.66,
+     "15": 5.66,
+     "16": 5.66,
+     "17": 5.94,
+     "18": 5.94,
+     "19": 6.0,
+     "20": 5.89
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 6.47,
+    "total": 6.47,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 7.6,
+    "nivel_eq": 2.1,
+    "rank": "D",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 6.47
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 4.11,
+    "rank": "C",
+    "nivel_campo": 0.66,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.51,
+    "rank_atencao": "E",
+    "vidas_total": 0.404,
+    "vidas_campo": 0.012,
+    "vidas_atencao": -0.013,
+    "corpo": {
+     "T": -0.013,
+     "S": 0.37,
+     "P": -0.383,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.013
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.76,
+     "Party de elite": 4.19,
+     "Horda + chefe": 2.77,
+     "Horda": 2.7,
+     "Dupla": 4.2,
+     "Chefe sozinho": 6.31
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0059
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0035
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0042
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0088
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0038
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0051
+     }
+    },
+    "nivel_absoluto": 3.23,
+    "rank_absoluto": "C-"
+   }
   }
  },
  "planos": {
@@ -3143,7 +3329,10 @@
        "4": 1
       },
       "forma_selvagem": 1
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "invocacao+forma",
@@ -3156,7 +3345,10 @@
        "6": 0.5
       },
       "forma_selvagem": 1
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "controle+forma",
@@ -3169,7 +3361,10 @@
        "4": 1
       },
       "forma_selvagem": 1
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     },
     {
      "linha": "invocacao+forma",
@@ -3182,7 +3377,10 @@
        "6": 0.5
       },
       "forma_selvagem": 1
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
@@ -3212,11 +3410,11 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 10.7,
-     "rank": "A-",
+     "nivel_eq": 11.3,
+     "rank": "A",
      "por_categoria": {
-      "np": 10.7,
-      "p": 10.7
+      "np": 11.3,
+      "p": 11.3
      }
     },
     "vontade": {
@@ -3275,7 +3473,10 @@
        "6": 0.5
       },
       "forma_selvagem": 2
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
@@ -3304,10 +3505,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 12.0,
+     "nivel_eq": 12.6,
      "rank": "A",
      "por_categoria": {
-      "p": 12.0
+      "p": 12.6
      }
     },
     "vontade": {
@@ -3348,7 +3549,7 @@
    }
   }
  },
- "segundos": 17.2,
+ "segundos": 16.1,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -3832,14 +4033,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "de3dc5b32c70",
+  "_planos": "eccff45798b6",
   "principal": {
    "dano": "66531c136d3d",
    "defesa": "4cced93698ae",
    "saves": "3efdb401e9e8",
    "area": "df60eddb440e",
    "suporte": "073cdbe47f5c",
-   "controle": "faeb8ef361e1"
+   "controle": "70546281e81d"
   },
   "controle": {
    "dano": "b4b164282901",
@@ -3847,7 +4048,7 @@
    "saves": "3efdb401e9e8",
    "area": "284988a7da18",
    "suporte": "073cdbe47f5c",
-   "controle": "4e3f0dda0a6c"
+   "controle": "95febf775246"
   },
   "controle-barato": {
    "dano": "b4b164282901",
@@ -3855,7 +4056,7 @@
    "saves": "3efdb401e9e8",
    "area": "284988a7da18",
    "suporte": "073cdbe47f5c",
-   "controle": "12dea9a0901d"
+   "controle": "48d45dd0a5c0"
   },
   "area": {
    "dano": "cf6fcc5345de",
@@ -3863,7 +4064,7 @@
    "saves": "3efdb401e9e8",
    "area": "37950e7d6db4",
    "suporte": "073cdbe47f5c",
-   "controle": "689e67163991"
+   "controle": "d689f1016905"
   },
   "invocacao": {
    "dano": "a2fd33d946c7",
@@ -3871,7 +4072,7 @@
    "saves": "3efdb401e9e8",
    "area": "2b7fbd971b07",
    "suporte": "073cdbe47f5c",
-   "controle": "38db8e59c352"
+   "controle": "57771146a121"
   },
   "principal+forma": {
    "dano": "3ce1853eea44",
@@ -3879,7 +4080,7 @@
    "saves": "0d8df0aa591d",
    "area": "471a548cc572",
    "suporte": "073cdbe47f5c",
-   "controle": "250a91c9522d"
+   "controle": "5bd2c34e08a5"
   },
   "controle+forma": {
    "dano": "12be7a00b7da",
@@ -3887,7 +4088,7 @@
    "saves": "0d8df0aa591d",
    "area": "f462c2de15f4",
    "suporte": "073cdbe47f5c",
-   "controle": "5b71e0e0d95f"
+   "controle": "a2a527e97e16"
   },
   "controle-barato+forma": {
    "dano": "12be7a00b7da",
@@ -3895,7 +4096,7 @@
    "saves": "0d8df0aa591d",
    "area": "f462c2de15f4",
    "suporte": "073cdbe47f5c",
-   "controle": "6ffd5308073e"
+   "controle": "f9b13249c212"
   },
   "area+forma": {
    "dano": "12be7a00b7da",
@@ -3903,7 +4104,7 @@
    "saves": "0d8df0aa591d",
    "area": "3ce06b2cd28d",
    "suporte": "073cdbe47f5c",
-   "controle": "12cf50507cbd"
+   "controle": "d58da1256530"
   },
   "invocacao+forma": {
    "dano": "b854861d93a5",
@@ -3911,7 +4112,7 @@
    "saves": "0d8df0aa591d",
    "area": "a0300d12de79",
    "suporte": "073cdbe47f5c",
-   "controle": "8bb3951d7512"
+   "controle": "97568d945b6a"
   },
   "elemental": {
    "dano": "f647ec6ef769",
@@ -3919,7 +4120,7 @@
    "saves": "39c2022ec6d2",
    "area": "67bdc4264281",
    "suporte": "073cdbe47f5c",
-   "controle": "b3b514708124"
+   "controle": "4d7504dbfedb"
   },
   "controle+elemental": {
    "dano": "b64234dd2eb1",
@@ -3927,7 +4128,7 @@
    "saves": "39c2022ec6d2",
    "area": "6b925a75ff45",
    "suporte": "073cdbe47f5c",
-   "controle": "0c0d9540462c"
+   "controle": "13de38c3b921"
   },
   "controle-barato+elemental": {
    "dano": "b64234dd2eb1",
@@ -3935,7 +4136,7 @@
    "saves": "39c2022ec6d2",
    "area": "6b925a75ff45",
    "suporte": "073cdbe47f5c",
-   "controle": "db74883af636"
+   "controle": "d37d85878569"
   },
   "area+elemental": {
    "dano": "b64234dd2eb1",
@@ -3943,7 +4144,7 @@
    "saves": "39c2022ec6d2",
    "area": "2e1f4e33e25b",
    "suporte": "073cdbe47f5c",
-   "controle": "a68aabc99f72"
+   "controle": "1705ddca4709"
   },
   "invocacao+elemental": {
    "dano": "8a83c49a2978",
@@ -3951,7 +4152,15 @@
    "saves": "39c2022ec6d2",
    "area": "36c78b048540",
    "suporte": "073cdbe47f5c",
-   "controle": "6ce8f8a3beda"
+   "controle": "71a9d8fa4254"
+  },
+  "reacao-absorb-elements": {
+   "dano": "66531c136d3d",
+   "defesa": "4cced93698ae",
+   "saves": "e621a6edcf25",
+   "area": "df60eddb440e",
+   "suporte": "073cdbe47f5c",
+   "controle": "70546281e81d"
   }
  }
 }

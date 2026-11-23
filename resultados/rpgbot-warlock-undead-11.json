@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Warlock (Undead), humano variante; Car 16 (3), 18 (5), 20 (9); Agonizing Blast + Armor of Shadows",
- "impressao": "fef4a1c768",
+ "impressao": "5e864a0d02",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1631,6 +1631,174 @@
     "nivel_absoluto": 13.67,
     "rank_absoluto": "A+"
    }
+  },
+  "reacao-counterspell": {
+   "hipotese": "só truques (anel interno) + Counterspell (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 30.8,
+     "CA 12": 29.2,
+     "CA 15": 24.5,
+     "CA 16": 22.9,
+     "CA 18": 19.7,
+     "CA 20": 16.6,
+     "CA 22": 13.4,
+     "CA 24": 10.3,
+     "CA 25": 8.7
+    },
+    "nivel_eq": 6.2,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 6.2,
+    "nivel_precisa": 6.2,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 96.5,
+    "ca": 15,
+    "blindagem": 6.01,
+    "durabilidade": 4.43,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 6.8,
+    "nivel_eq": 6.8,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.97,
+     "rank": "B+",
+     "turnos_livres": [
+      3.8,
+      3.61,
+      3.59,
+      3.32,
+      2.38,
+      2.21,
+      2.51,
+      2.34,
+      1.86,
+      1.47
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 12.5,
+     "rank": "A",
+     "turnos_livres": [
+      3.69,
+      2.71,
+      2.23,
+      2.22,
+      1.92,
+      1.63,
+      1.69,
+      1.4,
+      1.45,
+      1.28
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 4.02,
+     "9": 3.87,
+     "10": 3.87,
+     "11": 4.18,
+     "12": 4.18,
+     "13": 4.83,
+     "14": 4.83,
+     "15": 4.83,
+     "16": 4.83,
+     "17": 5.45,
+     "18": 5.45,
+     "19": 5.96,
+     "20": 5.49
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "3": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 3.95,
+    "rank": "C-",
+    "nivel_campo": 0.67,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.36,
+    "vidas_campo": 0.014,
+    "vidas_atencao": -0.06,
+    "corpo": {
+     "T": -0.06,
+     "S": 0.158,
+     "P": -0.218,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.06
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.58,
+     "Party de elite": 4.03,
+     "Horda + chefe": 2.59,
+     "Horda": 2.52,
+     "Dupla": 4.09,
+     "Chefe sozinho": 6.19
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0069
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0041
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0049
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0103
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0044
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0059
+     }
+    },
+    "nivel_absoluto": 3.49,
+    "rank_absoluto": "C-"
+   }
   }
  },
  "planos": {
@@ -1824,7 +1992,7 @@
    }
   }
  },
- "segundos": 15.8,
+ "segundos": 5.6,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2276,69 +2444,76 @@
   }
  },
  "impressoes": {
-  "_planos": "37758c5c976c",
+  "_planos": "a7ba0a6078b6",
   "principal": {
    "dano": "2f76f5a955c4",
    "defesa": "4428a83939f0",
    "saves": "2e5d719ae6fe",
    "area": "3e64ea9ad7af",
-   "controle": "495f94261b4f"
+   "controle": "8fda8ea7b9be"
   },
   "hex": {
    "dano": "1ff9aa163e4a",
    "defesa": "4428a83939f0",
    "saves": "2e5d719ae6fe",
    "area": "04dd067b542e",
-   "controle": "f276f6d22f5e"
+   "controle": "ce7a396fa73a"
   },
   "controle": {
    "dano": "4eff1fc09c61",
    "defesa": "814e617bd3a7",
    "saves": "f8614099fda5",
    "area": "02875899fa31",
-   "controle": "a6600b080934"
+   "controle": "51722e2ac57b"
   },
   "area": {
    "dano": "95473627f46b",
    "defesa": "814e617bd3a7",
    "saves": "f8614099fda5",
    "area": "0a468dc91cfb",
-   "controle": "31ca21b28141"
+   "controle": "41e5dc98658e"
   },
   "combo": {
    "dano": "95473627f46b",
    "defesa": "814e617bd3a7",
    "saves": "f8614099fda5",
    "area": "d1811259d53a",
-   "controle": "5c87daac7b5c"
+   "controle": "c19158f92b22"
   },
   "area+hex": {
    "dano": "6410747cb70f",
    "defesa": "814e617bd3a7",
    "saves": "f8614099fda5",
    "area": "90364c7dc695",
-   "controle": "4fc471bf769c"
+   "controle": "52af7a7b69a6"
   },
   "invocacao": {
    "dano": "a6e921824606",
    "defesa": "814e617bd3a7",
    "saves": "f8614099fda5",
    "area": "5f6be6a1b2c3",
-   "controle": "ef03947f1330"
+   "controle": "19dc6dac8726"
   },
   "arcano": {
    "dano": "4eff1fc09c61",
    "defesa": "4428a83939f0",
    "saves": "2e5d719ae6fe",
    "area": "02875899fa31",
-   "controle": "3a1ccc037620"
+   "controle": "e1fe6355d229"
   },
   "arcano+hex": {
    "dano": "0ada1680abe8",
    "defesa": "4428a83939f0",
    "saves": "2e5d719ae6fe",
    "area": "18d94479f6f7",
-   "controle": "c76c37bb9562"
+   "controle": "75219de58698"
+  },
+  "reacao-counterspell": {
+   "dano": "2f76f5a955c4",
+   "defesa": "4428a83939f0",
+   "saves": "1b14b18b01a2",
+   "area": "3e64ea9ad7af",
+   "controle": "8fda8ea7b9be"
   }
  }
 }

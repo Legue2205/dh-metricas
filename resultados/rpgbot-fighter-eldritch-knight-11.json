@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Fighter (Eldritch Knight), Custom Lineage, espada grande, Great Weapon Fighting; Slasher 1, War Caster 4, Fey Touched 6, For 20 no 8",
- "impressao": "d950667beb",
+ "impressao": "12635f57ab",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -622,6 +622,216 @@
     "nivel_absoluto": 1.06,
     "rank_absoluto": "D"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "ataca com Booming Blade (o dano secundário só se o alvo se mover: não contado); Shield como reação + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 43.8,
+     "CA 12": 41.8,
+     "CA 15": 35.8,
+     "CA 16": 33.7,
+     "CA 18": 29.6,
+     "CA 20": 25.4,
+     "CA 22": 21.0,
+     "CA 24": 16.5,
+     "CA 25": 14.2
+    },
+    "nivel_eq": 8.9,
+    "rank": "B+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 8.9,
+    "nivel_precisa": 9.0,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 92,
+    "ca": 18,
+    "blindagem": 9.0,
+    "durabilidade": 6.11,
+    "nivel_blindagem": 10.2,
+    "nivel_durabilidade": 9.7,
+    "nivel_eq": 10.2,
+    "rank": "A-",
+    "perfil": "Blindado",
+    "reacoes_usadas": [
+     "shield"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 9.11,
+     "rank": "B+",
+     "turnos_livres": [
+      3.95,
+      3.44,
+      3.35,
+      2.79,
+      2.37,
+      2.26,
+      2.98,
+      2.85,
+      2.12,
+      1.76
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.17,
+     "rank": "D",
+     "turnos_livres": [
+      2.64,
+      1.14,
+      0.85,
+      0.67,
+      0.61,
+      0.47,
+      0.7,
+      0.69,
+      0.8,
+      1.05
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "rounds": {
+     "1": 2.36,
+     "2": 2.85,
+     "3": 2.85,
+     "4": 3.01,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.52,
+     "9": 3.4,
+     "10": 3.4,
+     "11": 3.77,
+     "12": 3.77,
+     "13": 4.4,
+     "14": 4.4,
+     "15": 4.4,
+     "16": 4.4,
+     "17": 4.88,
+     "18": 4.88,
+     "19": 5.73,
+     "20": 4.97
+    },
+    "usos": 1,
+    "antigo": {
+     "nivel_eq": 4.8,
+     "rank": "C"
+    },
+    "melhor": "Sword Burst",
+    "areas": [
+     {
+      "nome": "Sword Burst",
+      "tipo": "cleave_save",
+      "nivel_eq": 4.82,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.82,
+       "padrao": 4.82,
+       "agrupada": 4.82
+      }
+     },
+     {
+      "nome": "Rime's Binding Ice",
+      "tipo": "explosao",
+      "nivel_eq": 4.31,
+      "rank": "C",
+      "variacoes": {
+       "esparsa": 4.31,
+       "padrao": 4.31,
+       "agrupada": 4.31
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "defesa": {
+      "1": 1
+     },
+     "saves": {
+      "1": 1
+     },
+     "area": {
+      "2": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.71,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.75,
+    "rank_atencao": "E",
+    "vidas_total": -0.101,
+    "vidas_campo": 0.02,
+    "vidas_atencao": 0.027,
+    "corpo": {
+     "T": 0.027,
+     "S": 0.091,
+     "P": -0.065,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      0.027
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0107
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0162
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0065
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.008
+     }
+    },
+    "nivel_absoluto": 0.99,
+    "rank_absoluto": "E"
+   }
   }
  },
  "planos": {
@@ -629,7 +839,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "reacao-absorb-elements",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -652,7 +862,7 @@
      }
     },
     {
-     "linha": "principal",
+     "linha": "reacao-absorb-elements",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -698,10 +908,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 8.5,
+     "nivel_eq": 8.7,
      "rank": "B+",
      "por_categoria": {
-      "np": 8.5,
+      "np": 9.1,
       "p": 8.5
      }
     },
@@ -752,7 +962,10 @@
        "1": 1
       },
       "action_surge": 1
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
@@ -777,10 +990,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 8.5,
+     "nivel_eq": 9.1,
      "rank": "B+",
      "por_categoria": {
-      "p": 8.5
+      "p": 9.1
      }
     },
     "vontade": {
@@ -814,7 +1027,7 @@
    }
   }
  },
- "segundos": 7.1,
+ "segundos": 4.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1295,27 +1508,34 @@
   }
  },
  "impressoes": {
-  "_planos": "1e93845f0c3c",
+  "_planos": "0ac294c1e7b3",
   "principal": {
    "dano": "edaff2c6f878",
    "defesa": "8287e06cf01b",
    "saves": "c33222344ed5",
    "area": "c7f21beb2329",
-   "controle": "65dea853dada"
+   "controle": "01c3cce91bc8"
   },
   "sem-shield": {
    "dano": "edaff2c6f878",
    "defesa": "3b170189cb40",
    "saves": "4a21d5df45fe",
    "area": "c7f21beb2329",
-   "controle": "65dea853dada"
+   "controle": "01c3cce91bc8"
   },
   "surge": {
    "dano": "5dc6c92913f9",
    "defesa": "8287e06cf01b",
    "saves": "c33222344ed5",
    "area": "1d9dec48911c",
-   "controle": "572c43e7efee"
+   "controle": "c12be4dc59d4"
+  },
+  "reacao-absorb-elements": {
+   "dano": "edaff2c6f878",
+   "defesa": "8287e06cf01b",
+   "saves": "0cd74035f25b",
+   "area": "c7f21beb2329",
+   "controle": "01c3cce91bc8"
   }
  }
 }

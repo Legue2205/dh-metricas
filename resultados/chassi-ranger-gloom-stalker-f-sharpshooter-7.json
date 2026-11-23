@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 7,
  "build": "Ranger (Gloom Stalker), atirador: arco longo, Archery, couro batido; Sharpshooter no 4",
- "impressao": "9917fa5b71",
+ "impressao": "a0bfee280d",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -342,6 +342,174 @@
     "nivel_absoluto": 0.0,
     "rank_absoluto": "F"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "arco longo sem magia + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 26.9,
+     "CA 12": 24.9,
+     "CA 15": 18.8,
+     "CA 16": 16.8,
+     "CA 18": 12.7,
+     "CA 20": 8.9,
+     "CA 22": 6.9,
+     "CA 24": 5.1,
+     "CA 25": 4.2
+    },
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.8,
+    "nivel_precisa": 4.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 60,
+    "ca": 15,
+    "blindagem": 3.7,
+    "durabilidade": 2.81,
+    "nivel_blindagem": 3.9,
+    "nivel_durabilidade": 4.1,
+    "nivel_eq": 4.1,
+    "rank": "C",
+    "perfil": "Durável",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.15,
+     "rank": "B+",
+     "turnos_livres": [
+      3.81,
+      3.68,
+      3.61,
+      2.61,
+      2.25,
+      2.17,
+      2.22,
+      2.04,
+      1.54,
+      1.15
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.48,
+     "rank": "C",
+     "turnos_livres": [
+      3.27,
+      1.77,
+      1.33,
+      1.44,
+      1.13,
+      0.71,
+      1.18,
+      0.87,
+      0.94,
+      1.16
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.37,
+     "6": 3.37,
+     "7": 3.37,
+     "8": 4.37,
+     "9": 4.2,
+     "10": 4.2,
+     "11": 4.47,
+     "12": 4.47,
+     "13": 5.21,
+     "14": 5.21,
+     "15": 5.21,
+     "16": 5.21,
+     "17": 5.73,
+     "18": 5.73,
+     "19": 5.99,
+     "20": 5.73
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.05,
+    "rank": "F",
+    "nivel_campo": 0.08,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.007,
+    "vidas_campo": 0.014,
+    "vidas_atencao": -0.039,
+    "corpo": {
+     "T": -0.039,
+     "S": 0.095,
+     "P": -0.134,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 7.0,
+    "rank_corpo": "B",
+    "corpo_busca": [
+     [
+      7,
+      -0.039
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.13,
+     "Party de elite": 0.11,
+     "Horda + chefe": 0.0,
+     "Horda": 0.04,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0071
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0041
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.004
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0093
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0043
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0053
+     }
+    },
+    "nivel_absoluto": 0.03,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -468,14 +636,17 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "reacao-absorb-elements"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 3.5,
+     "1": 2.5,
      "2": 3
     }
    },
@@ -495,10 +666,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 7.2,
-     "rank": "B",
+     "nivel_eq": 8.2,
+     "rank": "B+",
      "por_categoria": {
-      "p": 7.2
+      "p": 8.2
      }
     },
     "vontade": {
@@ -532,7 +703,7 @@
    }
   }
  },
- "segundos": 3.9,
+ "segundos": 1.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -984,20 +1155,27 @@
   }
  },
  "impressoes": {
-  "_planos": "483ef009838f",
+  "_planos": "f32b88c00f04",
   "principal": {
    "dano": "ce5045056e7b",
    "defesa": "2d7663c32e6f",
    "saves": "e2e9b16c9e76",
    "area": "f81e5a263e8e",
-   "controle": "95dcf2a83523"
+   "controle": "63ac9fb6a332"
   },
   "marca": {
    "dano": "0f27e7348530",
    "defesa": "2d7663c32e6f",
    "saves": "e2e9b16c9e76",
    "area": "caaa8a619560",
-   "controle": "b55c5a1741d0"
+   "controle": "c1bf35a616f2"
+  },
+  "reacao-absorb-elements": {
+   "dano": "ce5045056e7b",
+   "defesa": "2d7663c32e6f",
+   "saves": "8cbb0236458d",
+   "area": "f81e5a263e8e",
+   "controle": "63ac9fb6a332"
   }
  }
 }

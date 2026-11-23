@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 11,
  "build": "Ranger (Gloom Stalker), atirador: arco longo, Archery, couro batido; Sharpshooter no 4",
- "impressao": "132f53f0a4",
+ "impressao": "8764a6a424",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -342,6 +342,174 @@
     "nivel_absoluto": 1.12,
     "rank_absoluto": "D"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "arco longo sem magia + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 39.7,
+     "CA 12": 37.1,
+     "CA 15": 29.3,
+     "CA 16": 26.7,
+     "CA 18": 21.5,
+     "CA 20": 16.3,
+     "CA 22": 11.7,
+     "CA 24": 9.2,
+     "CA 25": 8.0
+    },
+    "nivel_eq": 7.0,
+    "rank": "B",
+    "perfil": "Bruto",
+    "nivel_bruta": 7.1,
+    "nivel_precisa": 6.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 92,
+    "ca": 16,
+    "blindagem": 6.26,
+    "durabilidade": 4.51,
+    "nivel_blindagem": 6.5,
+    "nivel_durabilidade": 6.9,
+    "nivel_eq": 6.9,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 14.79,
+     "rank": "A+",
+     "turnos_livres": [
+      3.84,
+      3.78,
+      3.72,
+      2.93,
+      2.96,
+      2.95,
+      2.98,
+      3.04,
+      2.53,
+      1.97
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.97,
+     "rank": "C",
+     "turnos_livres": [
+      3.38,
+      1.94,
+      1.48,
+      1.6,
+      1.25,
+      0.79,
+      1.33,
+      1.13,
+      1.13,
+      1.43
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 3.84,
+     "9": 3.7,
+     "10": 3.7,
+     "11": 3.97,
+     "12": 3.97,
+     "13": 4.62,
+     "14": 4.62,
+     "15": 4.62,
+     "16": 4.62,
+     "17": 5.2,
+     "18": 5.2,
+     "19": 5.91,
+     "20": 5.3
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.07,
+    "rank": "F",
+    "nivel_campo": 0.68,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.01,
+    "vidas_campo": 0.015,
+    "vidas_atencao": -0.022,
+    "corpo": {
+     "T": -0.022,
+     "S": 0.12,
+     "P": -0.142,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.022
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.07,
+     "Party de elite": 0.22,
+     "Horda + chefe": 0.09,
+     "Horda": 0.11,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0077
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0044
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0055
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0115
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0048
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0061
+     }
+    },
+    "nivel_absoluto": 1.13,
+    "rank_absoluto": "D"
+   }
   }
  },
  "planos": {
@@ -349,54 +517,65 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "marca",
+     "linha": "reacao-absorb-elements",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "marca"
+     ]
     },
     {
-     "linha": "marca",
+     "linha": "reacao-absorb-elements",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "marca"
+     ]
     },
     {
-     "linha": "marca",
+     "linha": "reacao-absorb-elements",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "marca"
+     ]
     },
     {
-     "linha": "marca",
+     "linha": "reacao-absorb-elements",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "marca"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 2.0,
-     "2": 3,
+     "2": 1.0,
      "3": 3
     }
    },
@@ -418,11 +597,11 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 13.0,
+     "nivel_eq": 14.8,
      "rank": "A+",
      "por_categoria": {
-      "np": 13.0,
-      "p": 13.0
+      "np": 14.8,
+      "p": 14.8
      }
     },
     "vontade": {
@@ -463,20 +642,23 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "marca",
+     "linha": "reacao-absorb-elements",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "marca"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 3.5,
+     "1": 2.5,
      "2": 3,
      "3": 3
     }
@@ -497,10 +679,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 13.0,
+     "nivel_eq": 14.8,
      "rank": "A+",
      "por_categoria": {
-      "p": 13.0
+      "p": 14.8
      }
     },
     "vontade": {
@@ -534,7 +716,7 @@
    }
   }
  },
- "segundos": 1.8,
+ "segundos": 2.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -986,20 +1168,27 @@
   }
  },
  "impressoes": {
-  "_planos": "6c3aa1114398",
+  "_planos": "89cba0524d77",
   "principal": {
    "dano": "4a7b26faf2bf",
    "defesa": "0a07825d4af9",
    "saves": "1099cdf55f05",
    "area": "130067633f2e",
-   "controle": "2b05990e795c"
+   "controle": "30ba4b78a476"
   },
   "marca": {
    "dano": "560e94892c04",
    "defesa": "0a07825d4af9",
    "saves": "1099cdf55f05",
    "area": "9ee734d6e23d",
-   "controle": "579acf9c5414"
+   "controle": "ea39a0ec37b0"
+  },
+  "reacao-absorb-elements": {
+   "dano": "4a7b26faf2bf",
+   "defesa": "0a07825d4af9",
+   "saves": "e2469722471e",
+   "area": "130067633f2e",
+   "controle": "30ba4b78a476"
   }
  }
 }

@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 3,
  "build": "Cleric (Life) / Druid 2 (Stars: personagem 2 e 6), Anão da Montanha (Custom Origin); armadura pesada + escudo; Resilient Con (personagem 5), Skill Expert 10",
- "impressao": "7e4bdb9aa1",
+ "impressao": "19c7dcec61",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -840,6 +840,212 @@
     "nivel_absoluto": 0.0,
     "rank_absoluto": "F"
    }
+  },
+  "reacao-absorb-elements": {
+   "hipotese": "só truques (anel interno) + Absorb Elements (reação)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 4.7,
+     "CA 12": 4.7,
+     "CA 15": 3.9,
+     "CA 16": 3.4,
+     "CA 18": 2.4,
+     "CA 20": 1.7,
+     "CA 22": 1.1,
+     "CA 24": 0.4,
+     "CA 25": 0.1
+    },
+    "nivel_eq": 0.6,
+    "rank": "E",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 0.6,
+    "nivel_precisa": 0.6,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 27,
+    "ca": 18,
+    "blindagem": 2.16,
+    "durabilidade": 1.43,
+    "nivel_blindagem": 2.2,
+    "nivel_durabilidade": 2.0,
+    "nivel_eq": 2.2,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 3.3,
+     "rank": "C-",
+     "turnos_livres": [
+      3.7,
+      2.95,
+      2.78,
+      1.02,
+      1.04,
+      1.01,
+      1.08,
+      0.71,
+      0.55,
+      0.45
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 4.07,
+     "rank": "C",
+     "turnos_livres": [
+      2.94,
+      1.68,
+      1.32,
+      1.54,
+      1.16,
+      0.66,
+      0.87,
+      0.67,
+      0.54,
+      0.46
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 0.5,
+    "rank": "F",
+    "rounds": {
+     "1": 4.0,
+     "2": 4.83,
+     "3": 4.83,
+     "4": 5.53,
+     "5": 4.83,
+     "6": 4.83,
+     "7": 4.83,
+     "8": 5.69,
+     "9": 5.57,
+     "10": 5.57,
+     "11": 5.47,
+     "12": 5.47,
+     "13": 5.9,
+     "14": 5.9,
+     "15": 5.9,
+     "16": 5.9,
+     "17": 5.99,
+     "18": 5.99,
+     "19": 6.0,
+     "20": 5.97
+    },
+    "usos": 0,
+    "antigo": {
+     "nivel_eq": 2.6,
+     "rank": "D"
+    },
+    "melhor": "Word of Radiance",
+    "areas": [
+     {
+      "nome": "Word of Radiance",
+      "tipo": "cleave_save",
+      "nivel_eq": 2.59,
+      "rank": "D",
+      "variacoes": {
+       "esparsa": 2.59,
+       "padrao": 2.59,
+       "agrupada": 2.59
+      }
+     }
+    ]
+   },
+   "suporte": {
+    "ofensivo": 0,
+    "defensivo": 4.71,
+    "total": 4.71,
+    "nivel_ofensivo": 0.0,
+    "nivel_defensivo": 6.2,
+    "nivel_eq": 0.9,
+    "rank": "E",
+    "perfil": "Protetor",
+    "fonte_principal": "Healing Word (levanta um caído)",
+    "fontes": [
+     {
+      "nome": "Goodberry + Disciple of Life (fim do dia)",
+      "lado": "def",
+      "valor": 2.25
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "valor": 2.46
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "saves": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.0,
+    "rank": "F",
+    "nivel_campo": 0.08,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.23,
+    "rank_atencao": "F",
+    "vidas_total": -0.019,
+    "vidas_campo": 0.022,
+    "vidas_atencao": 0.061,
+    "corpo": {
+     "T": 0.061,
+     "S": 0.249,
+     "P": -0.188,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 3.0,
+    "rank_corpo": "C-",
+    "corpo_busca": [
+     [
+      3,
+      0.061
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.0,
+     "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0127
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0066
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0079
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0169
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0069
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0092
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -977,7 +1183,8 @@
       "canal": 1
      },
      "extras": [
-      "preservar"
+      "preservar",
+      "reacao-absorb-elements"
      ]
     }
    ],
@@ -1003,10 +1210,10 @@
      }
     },
     "resiliencia": {
-     "nivel_eq": 2.3,
-     "rank": "D",
+     "nivel_eq": 3.3,
+     "rank": "C-",
      "por_categoria": {
-      "p": 2.3
+      "p": 3.3
      }
     },
     "vontade": {
@@ -1047,7 +1254,7 @@
    }
   }
  },
- "segundos": 3.2,
+ "segundos": 5.8,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1531,14 +1738,14 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "f29037c33962",
+  "_planos": "3ad91f681f20",
   "principal": {
    "dano": "9678ed571a9f",
    "defesa": "373989efdd97",
    "saves": "a5bc27698e93",
    "area": "cff720f2c276",
    "suporte": "442251cedf70",
-   "controle": "ec9422f494ba"
+   "controle": "4dcadcb7209a"
   },
   "bless": {
    "dano": "7ae7ef225804",
@@ -1546,7 +1753,7 @@
    "saves": "a5bc27698e93",
    "area": "a35726b01194",
    "suporte": "b5bd08dbcc72",
-   "controle": "a5bbc24ebb03"
+   "controle": "0992350feb4b"
   },
   "controle": {
    "dano": "7ae7ef225804",
@@ -1554,7 +1761,7 @@
    "saves": "a5bc27698e93",
    "area": "a35726b01194",
    "suporte": "442251cedf70",
-   "controle": "c6ea74a90914"
+   "controle": "830b9fe4def0"
   },
   "preservar": {
    "dano": "7ae7ef225804",
@@ -1562,7 +1769,15 @@
    "saves": "a5bc27698e93",
    "area": "a35726b01194",
    "suporte": "77886bbb2c2a",
-   "controle": "a5bbc24ebb03"
+   "controle": "0992350feb4b"
+  },
+  "reacao-absorb-elements": {
+   "dano": "9678ed571a9f",
+   "defesa": "373989efdd97",
+   "saves": "15d1bbad8e99",
+   "area": "cff720f2c276",
+   "suporte": "442251cedf70",
+   "controle": "4dcadcb7209a"
   }
  }
 }

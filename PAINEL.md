@@ -105,13 +105,13 @@ chassi-cleric-war-11   11     4,4 C     7,9 B    6,1 B-    12,6 A         -   10
 chassi-cleric-war-7     7    3,7 C-    5,0 C+     4,1 C    8,4 B+         -    8,5 B+    5,4 C+
 chassi-druid-dreams-11  11    5,5 C+    6,3 B-    8,7 B+   14,5 A+         -    8,1 B+    3,1 C-
 chassi-druid-dreams-7   7    3,5 C-    3,4 C-    5,3 C+    8,8 B+         -    6,1 B-     0,9 E
-chassi-druid-land-11   11    5,8 C+    6,3 B-    8,7 B+   14,5 A+         -   10,1 A-    3,8 C-
+chassi-druid-land-11   11    5,8 C+    6,3 B-    8,7 B+   14,5 A+         -    8,1 B+    3,8 C-
 chassi-druid-land-7     7     4,9 C    3,4 C-    5,3 C+    8,8 B+         -    6,1 B-     0,8 E
 chassi-druid-moon-11   11     7,8 B   10,4 A-    11,3 A   14,5 A+         -    8,3 B+     2,1 D
 chassi-druid-moon-7     7    5,0 C+    5,9 C+    9,5 B+    12,1 A         -    6,1 B-     0,8 E
 chassi-druid-shepherd-11  11     7,7 B    6,3 B-    8,7 B+   14,5 A+         -    8,1 B+     4,3 C
 chassi-druid-shepherd-7   7     7,8 B    3,4 C-    5,0 C+    8,8 B+         -    6,1 B-     2,0 D
-chassi-druid-spores-11  11    6,7 B-    9,9 B+    8,7 B+   14,5 A+         -    8,7 B+     2,1 D
+chassi-druid-spores-11  11    6,7 B-    9,9 B+    8,7 B+   14,5 A+         -    8,1 B+     2,1 D
 chassi-druid-spores-7   7     4,7 C    5,4 C+    5,0 C+    8,8 B+         -    6,2 B-     0,8 E
 chassi-druid-stars-11  11   10,2 A-    6,3 B-    8,7 B+   14,5 A+         -    8,3 B+     2,8 D
 chassi-druid-stars-7    7    6,8 B-    3,4 C-     4,7 C    8,8 B+         -     7,0 B     0,9 E
@@ -636,11 +636,11 @@ rpgbot-druid-spores-3   3     1,1 D    3,7 C-     2,0 D     4,2 C         -     
 rpgbot-druid-spores-5   5     1,6 D    5,6 C+    3,4 C-    8,5 B+         -     4,1 C     0,6 E
 rpgbot-druid-spores-7   7     2,4 D    8,0 B+     4,5 C    8,7 B+         -     4,2 C     0,8 E
 rpgbot-druid-spores-9   9     2,6 D   10,2 A-    5,6 C+    12,8 A         -     4,2 C     1,0 D
-rpgbot-druid-stars-11  11    6,8 B-    9,3 B+    8,8 B+    12,6 A         -    8,8 B+     2,7 D
+rpgbot-druid-stars-11  11     7,0 B    9,3 B+    8,8 B+    12,6 A         -    8,0 B+     2,7 D
 rpgbot-druid-stars-3    3     2,5 D     1,9 D     2,3 D     4,5 C         -     4,2 C     0,4 F
 rpgbot-druid-stars-5    5     4,6 C    3,4 C-    3,8 C-    8,7 B+         -     4,5 C     0,6 E
 rpgbot-druid-stars-7    7     4,6 C     4,6 C     4,9 C    8,9 B+         -    5,0 C+     0,9 E
-rpgbot-druid-stars-9    9    5,3 C+     7,5 B     7,5 B    12,6 A         -    8,7 B+     1,8 D
+rpgbot-druid-stars-9    9    5,5 C+     7,5 B     7,5 B    12,6 A         -    6,1 B-     1,8 D
 rpgbot-druid-wildfire-11  11    3,8 C-    9,3 B+     8,0 B    12,3 A         -    8,8 B+     4,1 C
 rpgbot-druid-wildfire-3   3     1,0 D     2,6 D     2,2 D     4,1 C         -     4,2 C     0,4 F
 rpgbot-druid-wildfire-5   5     2,0 D     4,3 C    3,8 C-     7,6 B         -     4,3 C     0,6 E
@@ -925,12 +925,12 @@ rpgbot-sorcerer-draconic-11  11    6,9 B-     7,8 B    8,4 B+     2,9 D         
 rpgbot-sorcerer-draconic-3   3     0,5 E     1,3 D     2,4 D     0,8 E         -     0,4 F         -
 rpgbot-sorcerer-draconic-5   5     1,0 D     2,8 D     4,2 C     1,9 D         -   10,5 A-         -
 rpgbot-sorcerer-draconic-7   7     1,5 D     4,2 C    5,5 C+     2,3 D         -   10,8 A-         -
-rpgbot-sorcerer-draconic-9   9    6,6 B-    5,9 C+     7,2 B     2,8 D         -    12,8 A         -
-rpgbot-sorcerer-wild-magic-11  11     0,7 E    6,1 B-    6,7 B-     2,2 D         -    8,9 B+         -
+rpgbot-sorcerer-draconic-9   9    6,6 B-    6,7 B-     7,2 B     2,8 D         -    12,8 A         -
+rpgbot-sorcerer-wild-magic-11  11     0,9 E    6,1 B-    6,7 B-     2,2 D         -    6,3 B-         -
 rpgbot-sorcerer-wild-magic-3   3     0,3 F     1,0 D     1,8 D     0,6 E         -     0,4 F         -
 rpgbot-sorcerer-wild-magic-5   5     0,7 E     2,0 D    3,2 C-     0,9 E         -     1,4 D         -
 rpgbot-sorcerer-wild-magic-7   7     0,7 E    3,1 C-     4,4 C     1,6 D         -     1,4 D         -
-rpgbot-sorcerer-wild-magic-9   9     0,5 E     4,7 C    5,4 C+     1,9 D         -    8,9 B+         -
+rpgbot-sorcerer-wild-magic-9   9     0,6 E     4,8 C    5,4 C+     1,9 D         -    6,1 B-         -
 rpgbot-warlock-archfey-11  11    8,5 B+    5,4 C+     7,2 B    8,1 B+         -    8,2 B+         -
 rpgbot-warlock-archfey-3   3     1,0 D    3,2 C-     2,1 D     2,2 D         -     4,4 C         -
 rpgbot-warlock-archfey-5   5    3,3 C-     2,3 D     4,9 C    12,1 A         -     4,8 C         -

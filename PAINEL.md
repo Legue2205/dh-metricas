@@ -7,26 +7,26 @@ abdul-7                 7    5,6 C+   10,8 A-    6,1 B-    8,0 B+         -     
 amadeus-7               7     7,3 B    3,7 C-    6,3 B-    12,3 A         -    8,6 B+    5,0 C+
 ~aprendiz-11           11    11,7 A   15,4 A+    20,0 S    12,1 A     2,4 D    8,3 B+         -
 ~caleb-14              14   10,9 A-   13,6 A+    20,0 S    12,1 A     1,0 E    8,1 B+         -
-chassi-artificer-alchemist-11  11    3,8 C-   10,2 A-    8,8 B+     4,3 C         -     4,3 C     2,5 D
-chassi-artificer-alchemist-7   7     1,8 D    5,0 C+     4,9 C    3,9 C-         -     4,2 C     0,8 E
-chassi-artificer-alchemist-f-fey-touched-11  11    3,8 C-    9,2 B+    8,2 B+     4,3 C         -     4,3 C    9,1 B+
-chassi-artificer-alchemist-f-fey-touched-7   7     1,6 D    5,0 C+     4,7 C    3,9 C-         -     4,2 C    6,6 B-
-chassi-artificer-armorer-11  11     4,2 C   13,6 A+    8,8 B+     4,3 C         -    6,6 B-         -
-chassi-artificer-armorer-7   7     2,6 D     7,7 B     4,9 C    4,0 C-         -     4,4 C         -
-chassi-artificer-armorer-f-skill-expert-11  11     4,2 C    12,5 A    8,2 B+     4,3 C         -    6,6 B-         -
-chassi-artificer-armorer-f-skill-expert-7   7     2,6 D     7,7 B     4,9 C    4,0 C-         -     4,4 C         -
-chassi-artificer-armorer-infiltrator-11  11     4,4 C    12,5 A    8,8 B+     4,3 C         -    6,6 B-         -
-chassi-artificer-armorer-infiltrator-7   7     2,9 D    6,9 B-     4,9 C    4,0 C-         -     4,4 C         -
-chassi-artificer-armorer-infiltrator-f-skill-expert-11  11     4,4 C    11,1 A    8,2 B+     4,3 C         -    6,6 B-         -
-chassi-artificer-armorer-infiltrator-f-skill-expert-7   7     2,9 D    6,9 B-     4,9 C    4,0 C-         -     4,4 C         -
-chassi-artificer-artillerist-11  11    6,5 B-    12,0 A    8,8 B+     4,3 C         -   10,5 A-         -
-chassi-artificer-artillerist-7   7     4,3 C    5,8 C+     5,0 C    3,9 C-         -     4,7 C         -
-chassi-artificer-artillerist-f-fey-touched-11  11    6,8 B-    9,7 B+     8,0 B     4,3 C         -   10,5 A-    8,0 B+
-chassi-artificer-artillerist-f-fey-touched-7   7     4,1 C    5,0 C+     4,7 C    3,9 C-         -     4,7 C     4,7 C
-chassi-artificer-battle-smith-11  11    6,0 B-   13,6 A+    8,7 B+     4,3 C         -     4,6 C         -
-chassi-artificer-battle-smith-7   7     4,2 C     7,7 B     4,9 C    3,9 C-         -     4,5 C         -
-chassi-artificer-battle-smith-f-skill-expert-11  11    6,0 B-    12,3 A     8,0 B     4,3 C         -     4,6 C         -
-chassi-artificer-battle-smith-f-skill-expert-7   7     4,2 C     7,7 B     4,9 C    3,9 C-         -     4,5 C         -
+chassi-artificer-alchemist-11  11    3,8 C-   10,2 A-    8,8 B+     4,3 C         -     4,3 C    3,6 C-
+chassi-artificer-alchemist-7   7     1,8 D    5,0 C+     4,9 C    3,9 C-         -     4,2 C     1,2 D
+chassi-artificer-alchemist-f-fey-touched-11  11    3,8 C-    9,2 B+    8,2 B+     4,3 C         -     4,3 C   10,1 A-
+chassi-artificer-alchemist-f-fey-touched-7   7     1,6 D    5,0 C+     4,7 C    3,9 C-         -     4,2 C    6,8 B-
+chassi-artificer-armorer-11  11     4,2 C   13,6 A+    8,8 B+     4,3 C         -    6,6 B-     0,3 F
+chassi-artificer-armorer-7   7     2,6 D     7,7 B     4,9 C    4,0 C-         -     4,4 C     0,2 F
+chassi-artificer-armorer-f-skill-expert-11  11     4,2 C    12,5 A    8,2 B+     4,3 C         -    6,6 B-     0,3 F
+chassi-artificer-armorer-f-skill-expert-7   7     2,6 D     7,7 B     4,9 C    4,0 C-         -     4,4 C     0,2 F
+chassi-artificer-armorer-infiltrator-11  11     4,4 C    12,5 A    8,8 B+     4,3 C         -    6,6 B-     0,3 F
+chassi-artificer-armorer-infiltrator-7   7     2,9 D    6,9 B-     4,9 C    4,0 C-         -     4,4 C     0,2 F
+chassi-artificer-armorer-infiltrator-f-skill-expert-11  11     4,4 C    11,1 A    8,2 B+     4,3 C         -    6,6 B-     0,3 F
+chassi-artificer-armorer-infiltrator-f-skill-expert-7   7     2,9 D    6,9 B-     4,9 C    4,0 C-         -     4,4 C     0,2 F
+chassi-artificer-artillerist-11  11    6,5 B-    12,0 A    8,8 B+     4,3 C         -   10,5 A-     0,3 F
+chassi-artificer-artillerist-7   7     4,3 C    5,8 C+     5,0 C    3,9 C-         -     4,7 C     0,2 F
+chassi-artificer-artillerist-f-fey-touched-11  11    6,8 B-    9,7 B+     8,0 B     4,3 C         -   10,5 A-    8,3 B+
+chassi-artificer-artillerist-f-fey-touched-7   7     4,1 C    5,0 C+     4,7 C    3,9 C-         -     4,7 C     4,9 C
+chassi-artificer-battle-smith-11  11    6,0 B-   13,6 A+    8,7 B+     4,3 C         -     4,6 C     0,3 F
+chassi-artificer-battle-smith-7   7     4,2 C     7,7 B     4,9 C    3,9 C-         -     4,5 C     0,2 F
+chassi-artificer-battle-smith-f-skill-expert-11  11    6,0 B-    12,3 A     8,0 B     4,3 C         -     4,6 C     0,3 F
+chassi-artificer-battle-smith-f-skill-expert-7   7     4,2 C     7,7 B     4,9 C    3,9 C-         -     4,5 C     0,2 F
 chassi-barbarian-ancestral-guardian-11  11    6,9 B-    16,0 S    11,0 A     2,7 D         -     4,6 C     0,9 E
 chassi-barbarian-ancestral-guardian-7   7     4,9 C    8,6 B+    6,6 B-     2,7 D         -     4,3 C     0,6 E
 chassi-barbarian-ancestral-guardian-f-sentinel-11  11    6,7 B-   14,9 A+    9,7 B+     2,7 D         -     4,6 C     0,9 E
@@ -59,16 +59,16 @@ chassi-barbarian-zealot-11  11   10,5 A-   15,3 A+    12,2 A     4,7 C         -
 chassi-barbarian-zealot-7   7     7,9 B     7,9 B     7,8 B     4,6 C         -     4,6 C         -
 chassi-barbarian-zealot-f-great-weapon-master-11  11   10,4 A-   13,9 A+   10,8 A-     4,7 C         -    8,1 B+     0,6 E
 chassi-barbarian-zealot-f-great-weapon-master-7   7     7,4 B     7,9 B     7,8 B     4,6 C         -     4,8 C         -
-chassi-bard-creation-11  11     1,5 D     4,6 C     7,8 B    3,5 C-         -   10,5 A-    6,1 B-
-chassi-bard-creation-7   7     0,8 E     2,6 D     4,7 C     2,7 D         -     4,8 C    3,8 C-
-chassi-bard-eloquence-11  11     0,7 E     4,6 C     7,8 B    3,5 C-         -   10,5 A-     4,6 C
-chassi-bard-eloquence-7   7     0,4 F     2,6 D     4,7 C     2,7 D         -     4,8 C     2,4 D
-chassi-bard-glamour-11  11     0,7 E     4,6 C     7,8 B    3,5 C-         -   10,5 A-    12,1 A
-chassi-bard-glamour-7   7     0,4 F     2,6 D     4,7 C     2,7 D         -     4,8 C    5,6 C+
-chassi-bard-lore-11    11     0,6 E     4,6 C     7,8 B    3,5 C-         -   14,1 A+    9,1 B+
-chassi-bard-lore-7      7     0,4 F     2,6 D     4,7 C     2,7 D         -    8,9 B+     4,4 C
-chassi-bard-spirits-11  11     0,7 E     4,6 C     7,8 B    3,5 C-         -   10,6 A-    11,0 A
-chassi-bard-spirits-7   7     0,4 F     2,6 D     4,7 C     2,7 D         -    5,0 C+     4,3 C
+chassi-bard-creation-11  11     1,5 D     4,6 C     7,8 B    3,5 C-         -   10,5 A-    6,6 B-
+chassi-bard-creation-7   7     0,8 E     2,6 D     4,7 C     2,7 D         -     4,8 C     4,2 C
+chassi-bard-eloquence-11  11     0,7 E     4,6 C     7,8 B    3,5 C-         -   10,5 A-    5,3 C+
+chassi-bard-eloquence-7   7     0,4 F     2,6 D     4,7 C     2,7 D         -     4,8 C    3,3 C-
+chassi-bard-glamour-11  11     0,7 E     4,6 C     7,8 B    3,5 C-         -   10,5 A-    12,4 A
+chassi-bard-glamour-7   7     0,4 F     2,6 D     4,7 C     2,7 D         -     4,8 C    5,9 C+
+chassi-bard-lore-11    11     0,6 E     4,6 C     7,8 B    3,5 C-         -   14,1 A+    9,5 B+
+chassi-bard-lore-7      7     0,4 F     2,6 D     4,7 C     2,7 D         -    8,9 B+    3,3 C-
+chassi-bard-spirits-11  11     0,7 E     4,6 C     7,8 B    3,5 C-         -   10,6 A-    11,6 A
+chassi-bard-spirits-7   7     0,4 F     2,6 D     4,7 C     2,7 D         -    5,0 C+     4,9 C
 chassi-bard-swords-11  11    3,8 C-    5,4 C+    8,3 B+    3,5 C-         -   10,3 A-   10,5 A-
 chassi-bard-swords-7    7     2,7 D    3,2 C-    5,0 C+     2,6 D         -     4,8 C    3,2 C-
 chassi-bard-valor-11   11     1,4 D    6,8 B-     7,8 B    3,6 C-         -   10,5 A-    11,0 A
@@ -1066,26 +1066,26 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~amadeus-7              7     7,3 B    3,7 C-    6,3 B-    12,3 A     4,7 C    8,6 B+     0,5 E
 ~aprendiz-11           11    11,7 A   15,4 A+    20,0 S    12,1 A     2,4 D    8,3 B+         -
 ~caleb-14              14   10,9 A-   13,6 A+    20,0 S    12,1 A     1,0 E    8,1 B+         -
-~chassi-artificer-alchemist-11  11     4,8 C   10,2 A-    8,4 B+     4,3 C    5,0 C+     4,3 C     2,5 D
-~chassi-artificer-alchemist-7   7     2,7 D    5,0 C+     4,7 C    3,9 C-    3,0 C-     4,2 C     0,8 E
-~chassi-artificer-alchemist-f-fey-touched-11  11     4,8 C    9,2 B+     7,5 B     4,3 C     4,9 C     4,3 C     2,5 D
-~chassi-artificer-alchemist-f-fey-touched-7   7     2,7 D    5,0 C+     4,7 C    3,9 C-    3,0 C-     4,2 C     0,8 E
-~chassi-artificer-armorer-11  11    5,0 C+   13,6 A+    8,4 B+     4,3 C     4,1 C     4,6 C         -
-~chassi-artificer-armorer-7   7    3,6 C-     7,7 B     4,7 C    4,0 C-     2,7 D     4,2 C         -
-~chassi-artificer-armorer-f-skill-expert-11  11    5,0 C+    12,5 A     7,5 B     4,3 C     4,0 C     4,6 C         -
-~chassi-artificer-armorer-f-skill-expert-7   7    3,6 C-     7,7 B     4,7 C    4,0 C-     2,7 D     4,2 C         -
-~chassi-artificer-armorer-infiltrator-11  11    5,4 C+    12,5 A    8,4 B+     4,3 C     2,3 D     4,6 C         -
-~chassi-artificer-armorer-infiltrator-7   7     4,0 C    6,9 B-     4,7 C    4,0 C-     1,4 D     4,2 C         -
-~chassi-artificer-armorer-infiltrator-f-skill-expert-11  11    5,4 C+    11,1 A     7,5 B     4,3 C     2,3 D     4,6 C         -
-~chassi-artificer-armorer-infiltrator-f-skill-expert-7   7     4,0 C    6,9 B-     4,7 C    4,0 C-     1,4 D     4,2 C         -
-~chassi-artificer-artillerist-11  11     7,8 B   10,2 A-    8,4 B+     4,3 C    6,4 B-     4,8 C         -
-~chassi-artificer-artillerist-7   7     4,7 C    5,0 C+     4,7 C    3,9 C-     4,5 C     4,3 C         -
-~chassi-artificer-artillerist-f-fey-touched-11  11     7,8 B    9,2 B+     7,5 B     4,3 C    6,3 B-     4,8 C         -
-~chassi-artificer-artillerist-f-fey-touched-7   7     4,7 C    5,0 C+     4,7 C    3,9 C-     4,5 C     4,3 C         -
-~chassi-artificer-battle-smith-11  11     7,2 B    11,7 A    8,4 B+     4,3 C    3,9 C-     4,6 C         -
-~chassi-artificer-battle-smith-7   7     4,8 C    6,2 B-     4,7 C    3,9 C-     2,7 D     4,5 C         -
-~chassi-artificer-battle-smith-f-skill-expert-11  11     7,2 B   10,3 A-     7,5 B     4,3 C    3,7 C-     4,6 C         -
-~chassi-artificer-battle-smith-f-skill-expert-7   7     4,8 C    6,2 B-     4,7 C    3,9 C-     2,7 D     4,5 C         -
+~chassi-artificer-alchemist-11  11     4,8 C   10,2 A-    8,4 B+     4,3 C    5,0 C+     4,3 C    3,6 C-
+~chassi-artificer-alchemist-7   7     2,7 D    5,0 C+     4,7 C    3,9 C-    3,0 C-     4,2 C     1,2 D
+~chassi-artificer-alchemist-f-fey-touched-11  11     4,8 C    9,2 B+     7,5 B     4,3 C     4,9 C     4,3 C    3,6 C-
+~chassi-artificer-alchemist-f-fey-touched-7   7     2,7 D    5,0 C+     4,7 C    3,9 C-    3,0 C-     4,2 C     1,2 D
+~chassi-artificer-armorer-11  11    5,0 C+   13,6 A+    8,4 B+     4,3 C     4,1 C     4,6 C     0,3 F
+~chassi-artificer-armorer-7   7    3,6 C-     7,7 B     4,7 C    4,0 C-     2,7 D     4,2 C     0,2 F
+~chassi-artificer-armorer-f-skill-expert-11  11    5,0 C+    12,5 A     7,5 B     4,3 C     4,0 C     4,6 C     0,3 F
+~chassi-artificer-armorer-f-skill-expert-7   7    3,6 C-     7,7 B     4,7 C    4,0 C-     2,7 D     4,2 C     0,2 F
+~chassi-artificer-armorer-infiltrator-11  11    5,4 C+    12,5 A    8,4 B+     4,3 C     2,3 D     4,6 C     0,3 F
+~chassi-artificer-armorer-infiltrator-7   7     4,0 C    6,9 B-     4,7 C    4,0 C-     1,4 D     4,2 C     0,2 F
+~chassi-artificer-armorer-infiltrator-f-skill-expert-11  11    5,4 C+    11,1 A     7,5 B     4,3 C     2,3 D     4,6 C     0,3 F
+~chassi-artificer-armorer-infiltrator-f-skill-expert-7   7     4,0 C    6,9 B-     4,7 C    4,0 C-     1,4 D     4,2 C     0,2 F
+~chassi-artificer-artillerist-11  11     7,8 B   10,2 A-    8,4 B+     4,3 C    6,4 B-     4,8 C     0,3 F
+~chassi-artificer-artillerist-7   7     4,7 C    5,0 C+     4,7 C    3,9 C-     4,5 C     4,3 C     0,2 F
+~chassi-artificer-artillerist-f-fey-touched-11  11     7,8 B    9,2 B+     7,5 B     4,3 C    6,3 B-     4,8 C     0,3 F
+~chassi-artificer-artillerist-f-fey-touched-7   7     4,7 C    5,0 C+     4,7 C    3,9 C-     4,5 C     4,3 C     0,2 F
+~chassi-artificer-battle-smith-11  11     7,2 B    11,7 A    8,4 B+     4,3 C    3,9 C-     4,6 C     0,3 F
+~chassi-artificer-battle-smith-7   7     4,8 C    6,2 B-     4,7 C    3,9 C-     2,7 D     4,5 C     0,2 F
+~chassi-artificer-battle-smith-f-skill-expert-11  11     7,2 B   10,3 A-     7,5 B     4,3 C    3,7 C-     4,6 C     0,3 F
+~chassi-artificer-battle-smith-f-skill-expert-7   7     4,8 C    6,2 B-     4,7 C    3,9 C-     2,7 D     4,5 C     0,2 F
 ~chassi-barbarian-ancestral-guardian-11  11     4,9 C     7,0 B    11,0 A     2,7 D     0,0 F     4,3 C         -
 ~chassi-barbarian-ancestral-guardian-7   7     4,2 C    3,9 C-    6,6 B-     2,7 D     0,1 F     4,3 C         -
 ~chassi-barbarian-ancestral-guardian-f-sentinel-11  11    5,2 C+    6,1 B-    9,7 B+     2,7 D     4,4 C     4,6 C         -
@@ -1118,16 +1118,16 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~chassi-barbarian-zealot-7   7     4,9 C    3,3 C-    6,6 B-     2,7 D     0,0 F     4,3 C         -
 ~chassi-barbarian-zealot-f-great-weapon-master-11  11     7,4 B    5,4 C+    9,7 B+     2,7 D     0,0 F     4,8 C         -
 ~chassi-barbarian-zealot-f-great-weapon-master-7   7    5,6 C+    3,3 C-    6,6 B-     2,7 D     0,0 F     4,6 C         -
-~chassi-bard-creation-11  11     0,9 E     4,6 C     7,8 B    3,5 C-    3,5 C-     2,0 D    6,1 B-
-~chassi-bard-creation-7   7     0,5 E     2,6 D     4,7 C     2,7 D     2,0 D     0,4 F    3,8 C-
-~chassi-bard-eloquence-11  11     0,9 E     4,6 C     7,8 B    3,5 C-    3,5 C-     2,0 D     4,6 C
-~chassi-bard-eloquence-7   7     0,5 E     2,6 D     4,7 C     2,7 D     2,0 D     0,4 F     2,4 D
-~chassi-bard-glamour-11  11     0,9 E     4,6 C     7,8 B    3,5 C-    3,5 C-     2,0 D    6,2 B-
-~chassi-bard-glamour-7   7     0,5 E     2,6 D     4,7 C     2,7 D     2,0 D     0,4 F     4,1 C
-~chassi-bard-lore-11   11     0,9 E     4,6 C     7,8 B    3,5 C-    3,5 C-     2,0 D     4,7 C
-~chassi-bard-lore-7     7     0,5 E     2,6 D     4,7 C     2,7 D     2,0 D     0,4 F     2,5 D
-~chassi-bard-spirits-11  11     0,9 E     4,6 C     7,8 B    3,5 C-    3,5 C-     2,0 D     4,5 C
-~chassi-bard-spirits-7   7     0,5 E     2,6 D     4,7 C     2,7 D     2,0 D     0,4 F     2,3 D
+~chassi-bard-creation-11  11     0,9 E     4,6 C     7,8 B    3,5 C-    3,5 C-     2,0 D    6,8 B-
+~chassi-bard-creation-7   7     0,5 E     2,6 D     4,7 C     2,7 D     2,0 D     0,4 F     4,3 C
+~chassi-bard-eloquence-11  11     0,9 E     4,6 C     7,8 B    3,5 C-    3,5 C-     2,0 D    6,0 B-
+~chassi-bard-eloquence-7   7     0,5 E     2,6 D     4,7 C     2,7 D     2,0 D     0,4 F    3,5 C-
+~chassi-bard-glamour-11  11     0,9 E     4,6 C     7,8 B    3,5 C-    3,5 C-     2,0 D     7,0 B
+~chassi-bard-glamour-7   7     0,5 E     2,6 D     4,7 C     2,7 D     2,0 D     0,4 F     4,5 C
+~chassi-bard-lore-11   11     0,9 E     4,6 C     7,8 B    3,5 C-    3,5 C-     2,0 D    6,0 B-
+~chassi-bard-lore-7     7     0,5 E     2,6 D     4,7 C     2,7 D     2,0 D     0,4 F    3,7 C-
+~chassi-bard-spirits-11  11     0,9 E     4,6 C     7,8 B    3,5 C-    3,5 C-     2,0 D    5,1 C+
+~chassi-bard-spirits-7   7     0,5 E     2,6 D     4,7 C     2,7 D     2,0 D     0,4 F    3,5 C-
 ~chassi-bard-swords-11  11     4,8 C    5,4 C+    8,3 B+    3,5 C-     0,0 F     4,3 C    3,2 C-
 ~chassi-bard-swords-7   7    3,9 C-    3,2 C-    5,0 C+     2,6 D     0,0 F     4,2 C     0,9 E
 ~chassi-bard-valor-11  11     2,3 D    6,8 B-     7,8 B    3,6 C-     4,2 C     4,1 C     4,5 C

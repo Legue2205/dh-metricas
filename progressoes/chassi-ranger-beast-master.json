@@ -247,6 +247,60 @@
       "ca": 16
      }
     ]
+   },
+   {
+    "id": "terreno-espinhos",
+    "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d8+4+2"
+      },
+      {
+       "n": 0.75,
+       "bonus": 4,
+       "dano": "1d8+5",
+       "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "2": 1
+     }
+    },
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "area",
+       "nome": "Spike Growth",
+       "magia": "spike_growth",
+       "cd": 12
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "invocacoes": [
+     {
+      "nome": "Primal Companion (Beast of the Land)",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 16
+     }
+    ]
    }
   ],
   "planos": {
@@ -256,7 +310,7 @@
   "descricao": {
    "resumo": "Chassi do Beast Master (Primal Companion): Ranger defensor com Hunter's Mark e a feature de dano da subclasse.",
    "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
-   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Primal Companion (Beast of the Land); Exceptional Training (7) e Bestial Fury (11). Charge, Share Spells e o corpo da fera na defesa não modelados.",
+   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Primal Companion (Beast of the Land); Exceptional Training (7) e Bestial Fury (11). Charge, Share Spells e o corpo da fera na defesa não modelados.",
    "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas."
   },
   "reacoes_magicas": [
@@ -562,6 +616,114 @@
         "dano": "2d4+2",
         "vantagem": 0.8
        }
+      }
+     ]
+    },
+    {
+     "id": "terreno-espinhos",
+     "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+5+2"
+       },
+       {
+        "n": 1.5,
+        "bonus": 5,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Spike Growth",
+        "magia": "spike_growth",
+        "cd": 13
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 17
+      }
+     ]
+    },
+    {
+     "id": "terreno-plantas",
+     "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+5+2"
+       },
+       {
+        "n": 1.5,
+        "bonus": 5,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     },
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Plant Growth",
+        "magia": "plant_growth",
+        "cd": 13
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 17
       }
      ]
     }

@@ -211,31 +211,80 @@
      "1": 1
     }
    }
+  },
+  {
+   "id": "terreno-espinhos",
+   "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d6",
+      "nota": "Gathered Swarm (1×/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Spike Growth",
+      "magia": "spike_growth",
+      "cd": 13
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   }
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: enredar; prioritário: enredar. Sobra: 2×2º, 3 favored_foe.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: inimigo-favorito; prioritário: terreno-espinhos. Sobra: 4×1º, 1 favored_foe.",
    "combates": [
-    "enredar",
-    "enredar",
-    "enredar",
-    "enredar"
+    "inimigo-favorito",
+    "terreno-espinhos",
+    "inimigo-favorito",
+    "terreno-espinhos"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: inimigo-favorito. Sobra: 4×1º, 2×2º, 2 favored_foe.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: terreno-espinhos. Sobra: 4×1º, 1×2º, 3 favored_foe.",
    "combates": [
-    "inimigo-favorito"
+    "terreno-espinhos"
    ]
   }
  },
  "descricao": {
   "resumo": "Swarmkeeper: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
-  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Gathered Swarm (3; 1d8 no 11); Writhing Tide (7) e Mighty Swarm (11, derrubar) não modelados.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Gathered Swarm (3; 1d8 no 11); Writhing Tide (7) e Mighty Swarm (11, derrubar) não modelados.",
   "progressao": "Extra Attack; Des 18 (4). Gathered Swarm (3; 1d8 no 11); Writhing Tide (7) e Mighty Swarm (11, derrubar) não modelados."
  },
  "id": "rpgbot-ranger-swarmkeeper-5",

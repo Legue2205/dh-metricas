@@ -214,6 +214,55 @@
    }
   },
   {
+   "id": "terreno-espinhos",
+   "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Planar Warrior (ação bônus, 1 acerto/turno, força)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Spike Growth",
+      "magia": "spike_growth",
+      "cd": 14
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   }
+  },
+  {
    "id": "conjurar-animais",
    "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
    "dano": {
@@ -269,16 +318,65 @@
      }
     }
    ]
+  },
+  {
+   "id": "terreno-plantas",
+   "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Planar Warrior (ação bônus, 1 acerto/turno, força)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Plant Growth",
+      "magia": "plant_growth",
+      "cd": 14
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   }
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: inimigo-favorito; prioritário: conjurar-animais. Sobra: 4×1º, 3×2º, 2 favored_foe.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: terreno-espinhos; prioritário: conjurar-animais. Sobra: 4×1º, 1×2º, 4 favored_foe.",
    "combates": [
-    "inimigo-favorito",
+    "terreno-espinhos",
     "conjurar-animais",
-    "inimigo-favorito",
+    "terreno-espinhos",
     "conjurar-animais"
    ]
   },
@@ -293,7 +391,7 @@
  "descricao": {
   "resumo": "Horizon Walker: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
-  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Planar Warrior (3; 2d8 no 11); Distant Strike (11) com o 3º ataque sempre; Ethereal Step (7) não modelado.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Planar Warrior (3; 2d8 no 11); Distant Strike (11) com o 3º ataque sempre; Ethereal Step (7) não modelado.",
   "progressao": "Des 20 (8); magias de 3º. Planar Warrior (3; 2d8 no 11); Distant Strike (11) com o 3º ataque sempre; Ethereal Step (7) não modelado."
  },
  "id": "rpgbot-ranger-horizon-walker-9",

@@ -87,6 +87,14 @@ def fazer(L, sub):
                         controle=ctl, papel=papel, gasta={"espacos": {"3": 1}}))
         ls[-1]['invocacoes'] = [{"nome": "Conjure Animals (8 lobos)", "quantidade": 8, "pv": 11, "ca": 13,
                                  "ataque": {"n": 1, "bonus": 4, "dano": "2d4+2", "vantagem": 0.8}}]
+    if L >= 5:   # M6 (23/11): Spike Growth (2º, concentração); Plant Growth (3º, sem concentração) do 9
+        ls.append(linha('terreno-espinhos', "Spike Growth (1 espaço de 2º), ataques normais", dano(False), {},
+                        controle=dict(ctl, fontes=[{"tipo": "area", "nome": "Spike Growth", "magia": "spike_growth", "cd": cd}] + ctl["fontes"]),
+                        papel=papel, gasta={"espacos": {"2": 1}}))
+    if L >= 9:
+        ls.append(linha('terreno-plantas', "Plant Growth (1 espaço de 3º, sem concentração), ataques normais", dano(False), {},
+                        controle=dict(ctl, fontes=[{"tipo": "area", "nome": "Plant Growth", "magia": "plant_growth", "cd": cd}] + ctl["fontes"]),
+                        papel=papel, gasta={"espacos": {"3": 1}}))
     pet = ([{"nome": "Primal Companion (Beast of the Land)", "quantidade": 1, "pv": 5 + 5 * L, "ca": 13 + P}] if sub == 'beast-master'
            else [{"nome": "Drake Companion", "quantidade": 1, "pv": 5 + 5 * L, "ca": 14 + P}] if sub == 'drakewarden' else [])
     for l in ls:
@@ -100,7 +108,7 @@ def fazer(L, sub):
 SUBS = {'hunter': 'Hunter', 'gloom-stalker': 'Gloom Stalker', 'horizon-walker': 'Horizon Walker',
         'monster-slayer': 'Monster Slayer', 'fey-wanderer': 'Fey Wanderer', 'swarmkeeper': 'Swarmkeeper',
         'drakewarden': 'Drakewarden', 'beast-master': 'Beast Master (Primal Companion)'}
-NM = ("Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); "
+NM = ("Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; "
       "Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; ")   # M2 (23/11): o resto entrou
 for slug, nome in SUBS.items():
     fat = {L: fazer(L, slug) for L in NIV}

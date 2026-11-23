@@ -293,6 +293,74 @@
    }
   },
   {
+   "id": "terreno-espinhos",
+   "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 10,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.25,
+      "bonus": 10,
+      "dano": "1d8+4+1d8",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+     },
+     {
+      "n": 0.5,
+      "bonus": 10,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Stalker's Flurry: ataque extra após errar (≈0,5/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Spike Growth",
+      "magia": "spike_growth",
+      "cd": 13
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   }
+  },
+  {
    "id": "conjurar-animais",
    "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
    "dano": {
@@ -367,14 +435,82 @@
      }
     }
    ]
+  },
+  {
+   "id": "terreno-plantas",
+   "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 10,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.25,
+      "bonus": 10,
+      "dano": "1d8+4+1d8",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+     },
+     {
+      "n": 0.5,
+      "bonus": 10,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Stalker's Flurry: ataque extra após errar (≈0,5/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Plant Growth",
+      "magia": "plant_growth",
+      "cd": 13
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   }
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conjurar-animais, inimigo-favorito; prioritário: conjurar-animais. Sobra: 4×1º, 3×2º, 3 favored_foe.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conjurar-animais, terreno-espinhos; prioritário: conjurar-animais. Sobra: 4×1º, 2×2º, 4 favored_foe.",
    "combates": [
-    "inimigo-favorito",
+    "terreno-espinhos",
     "conjurar-animais",
     "conjurar-animais",
     "conjurar-animais"
@@ -391,7 +527,7 @@
  "descricao": {
   "resumo": "Chassi do Gloom Stalker: Ranger atirador com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
-  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Dread Ambusher (3); Iron Mind (7); Stalker's Flurry (11); Umbral Sight não modelado. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Dread Ambusher (3); Iron Mind (7); Stalker's Flurry (11); Umbral Sight não modelado. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas.",
   "progressao": "atributos {'for': 12, 'des': 19, 'con': 15, 'int': 10, 'sab': 13, 'car': 8}. Dread Ambusher (3); Iron Mind (7); Stalker's Flurry (11); Umbral Sight não modelado. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados."
  },

@@ -248,6 +248,63 @@
    ]
   },
   {
+   "id": "terreno-espinhos",
+   "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d6+4+1d6",
+      "nota": "Drake: mordida (ação bônus do ranger; round 1 vai na Hunter's Mark)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Spike Growth",
+      "magia": "spike_growth",
+      "cd": 14
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "invocacoes": [
+    {
+     "nome": "Drake Companion",
+     "quantidade": 1,
+     "pv": 60,
+     "ca": 18
+    }
+   ]
+  },
+  {
    "id": "conjurar-animais",
    "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
    "dano": {
@@ -309,14 +366,71 @@
      }
     }
    ]
+  },
+  {
+   "id": "terreno-plantas",
+   "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d6+4+1d6",
+      "nota": "Drake: mordida (ação bônus do ranger; round 1 vai na Hunter's Mark)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Plant Growth",
+      "magia": "plant_growth",
+      "cd": 14
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   },
+   "invocacoes": [
+    {
+     "nome": "Drake Companion",
+     "quantidade": 1,
+     "pv": 60,
+     "ca": 18
+    }
+   ]
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conjurar-animais, inimigo-favorito; prioritário: conjurar-animais. Sobra: 4×1º, 3×2º, 3 favored_foe.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conjurar-animais, terreno-espinhos; prioritário: conjurar-animais. Sobra: 4×1º, 2×2º, 4 favored_foe.",
    "combates": [
-    "inimigo-favorito",
+    "terreno-espinhos",
     "conjurar-animais",
     "conjurar-animais",
     "conjurar-animais"
@@ -333,7 +447,7 @@
  "descricao": {
   "resumo": "Drakewarden: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
-  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Drake Companion (3); Bond of Fang and Scale (7: +1d6 na mordida); Drake's Breath e Drake ampliado (11) não modelados.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Drake Companion (3); Bond of Fang and Scale (7: +1d6 na mordida); Drake's Breath e Drake ampliado (11) não modelados.",
   "progressao": "Drake Companion (3); Bond of Fang and Scale (7: +1d6 na mordida); Drake's Breath e Drake ampliado (11) não modelados."
  },
  "id": "rpgbot-ranger-drakewarden-11",

@@ -36,7 +36,11 @@ def base(L):
     return dict(s=s, m=m, p=p, w=w, cd=8 + p + w, atk=p + w, pv=C.hp(8, L, m['con']))
 
 
-def ctrl_base(cd): return [D['ENT'](cd), D['HP'](cd), D['POLY'](cd)]
+def ctrl_base(cd, L=1):
+    """Entangle, Hold Person, Polymorph; M6 (23/11): + Sleet Storm e Plant Growth (3º) do nível 5."""
+    out = [D['ENT'](cd), D['HP'](cd), D['POLY'](cd)]
+    if L >= 5: out += [D['U']("Sleet Storm", "sleet_storm", cd, 3, area=True), D['U']("Plant Growth", "plant_growth", cd, 3, area=True)]
+    return out
 
 
 def inv_base(L, atk, esp=None):
@@ -46,7 +50,7 @@ def inv_base(L, atk, esp=None):
 
 def montar(sub, L, b, cant, ctrl=None, areas=None, esp=None, inv=None, _t='', **kw):
     f = D['fatia'](L, b['m'], PROFS, CA, b['pv'], cant, b['cd'], b['atk'], b['w'], 'conjurador', False, (L + 1) // 2,
-                   esp=esp, ctrl=ctrl or ctrl_base(b['cd']),
+                   esp=esp, ctrl=ctrl or ctrl_base(b['cd'], L),
                    areas=areas if areas is not None else [D['ice_knife'](b['cd']), D['wall_fire'](b['cd'])],
                    inv=inv or inv_base(L, b['atk'], esp), **kw)
     for l in f['linhas']:
@@ -140,7 +144,7 @@ def spores(L, b):
         l['corpo'] = {"pvt_luta": 4 * L}
         l['controle'] = dict(l.get('controle', {}), atencao=dict(C.atencao('meia'), front=True))
         return l
-    ctrl = ctrl_base(cd) + [D['U']("Blindness/Deafness (Spores)", "blindness", cd, 2)]
+    ctrl = ctrl_base(cd, L) + [D['U']("Blindness/Deafness (Spores)", "blindness", cd, 2)]
     areas = [D['ice_knife'](cd), D['wall_fire'](cd)] + ([D['area_sp']("Cloudkill (Spores)", 3, "5d8", cd, 5)] if L >= 9 else [])
     return montar('spores', L, b, cant, ctrl=ctrl, areas=areas, forma_var=("+simbionte", simb, 1),
                   _t=f"Halo of Spores {halo}; Symbiotic Entity com bordão + Shillelagh.")

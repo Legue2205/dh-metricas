@@ -226,7 +226,7 @@
   "descricao": {
    "resumo": "Hunter: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
    "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
-   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados."
+   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados."
   }
  },
  "niveis": {
@@ -443,6 +443,55 @@
        "1": 1
       }
      }
+    },
+    {
+     "id": "terreno-espinhos",
+     "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d8",
+        "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Spike Growth",
+        "magia": "spike_growth",
+        "cd": 13
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     }
     }
    ]
   },
@@ -654,6 +703,55 @@
      "gasta": {
       "espacos": {
        "1": 1
+      }
+     }
+    },
+    {
+     "id": "terreno-espinhos",
+     "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d8",
+        "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Spike Growth",
+        "magia": "spike_growth",
+        "cd": 13
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
       }
      }
     }
@@ -927,6 +1025,104 @@
        }
       }
      ]
+    },
+    {
+     "id": "terreno-espinhos",
+     "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d8",
+        "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Spike Growth",
+        "magia": "spike_growth",
+        "cd": 14
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     }
+    },
+    {
+     "id": "terreno-plantas",
+     "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d8",
+        "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Plant Growth",
+        "magia": "plant_growth",
+        "cd": 14
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     }
     }
    ]
   },
@@ -1198,6 +1394,104 @@
        }
       }
      ]
+    },
+    {
+     "id": "terreno-espinhos",
+     "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d8",
+        "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Spike Growth",
+        "magia": "spike_growth",
+        "cd": 14
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     }
+    },
+    {
+     "id": "terreno-plantas",
+     "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d8",
+        "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Plant Growth",
+        "magia": "plant_growth",
+        "cd": 14
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     }
     }
    ]
   }

@@ -193,9 +193,16 @@ seguinte. Itens que mudam premissa vão para Decisões.
   decisão do usuário). Ligar o erro no validador fica para quando a party estiver limpa. Original: — `combo` do Sorcerer Draconic 11 (Wall of Fire) e Wild Magic 9/11
   (Insect Plague) junto do controle; áreas do Druid Land/Spores 11 (duas áreas de concentração na mesma linha);
   solaris-9 (party: só reportar). Corrigir nos geradores e depois ligar o erro no validador.
-- [ ] **M6 Magias de controle faltando e listas das réguas** [N] — ex-P2.8/P2.7: Sleep, Psychic Lance, Dissonant
+- [x] **M6 Magias de controle faltando e listas das réguas** [N] — **feito 23/11 (parcial):** no magias.json, Plant
+  Growth (3º, sem save, sem concentração, peso 0,35), Spike Growth (2º, conc., 0,3), Sleet Storm (3º, conc., Des, 0,5,
+  repete o save na área), Dissonant Whispers (1º, Sab, um turno, 0,5) e Psychic Lance (4º, Int, um turno, 1). Pesos de
+  terreno são chute (a calibrar). Listas: Druid + Sleet Storm e Plant Growth do 5; Ranger + linhas `terreno-espinhos` (5+)
+  e `terreno-plantas` (9+). Ranger 7: controle do plano 0 → 3,7 (Spike Growth em 3 lutas, dano 6,1 → 4,8); Druid: linha
+  de controle 6,75 no 11, mas o plano prefere Haste/invocação. Sleep fora (precisa de pool de PV). Falta pôr Dissonant
+  Whispers nas listas do Bard e Psychic Lance nas de Wizard/Sorcerer (→ M6b). Original: — ex-P2.8/P2.7: Sleep, Psychic Lance, Dissonant
   Whispers, Sleet Storm, Plant Growth, Spike Growth, Ensnaring Strike no `magias.json`; depois rever as listas do
   Druid/Cleric (mudança de régua: só entre passadas).
+- [ ] **M6b Listas: Dissonant Whispers (Bard), Psychic Lance (Wizard/Sorcerer)** [D] — magias já no magias.json.
 - [ ] **M7 Pontos de feitiçaria** [N] — ex-P2.6: metamagia (Quickened, Twinned, Heightened), Bastion of Law; hoje o
   Flexible Casting põe todos os pontos em espaços.
 - [ ] **M8 Efeitos táticos de feats e truques** [N] — desvantagem do Vicious Mockery (41), Booming Blade secundário (31),

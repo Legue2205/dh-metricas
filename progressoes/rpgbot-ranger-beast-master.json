@@ -260,7 +260,7 @@
   "descricao": {
    "resumo": "Beast Master (Primal Companion): arqueiro com Hunter's Mark e a feature de dano da subclasse.",
    "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
-   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Primal Companion (Tasha, Beast of the Land); Bestial Fury (11). Charge, Exceptional Training e Share Spells não modelados."
+   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Primal Companion (Tasha, Beast of the Land); Bestial Fury (11). Charge, Exceptional Training e Share Spells não modelados."
   }
  },
  "niveis": {
@@ -511,6 +511,63 @@
        "ca": 16
       }
      ]
+    },
+    {
+     "id": "terreno-espinhos",
+     "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 5,
+        "dano": "1d8+5",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Spike Growth",
+        "magia": "spike_growth",
+        "cd": 13
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 30,
+       "ca": 16
+      }
+     ]
     }
    ]
   },
@@ -748,6 +805,63 @@
      "gasta": {
       "espacos": {
        "1": 1
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 40,
+       "ca": 16
+      }
+     ]
+    },
+    {
+     "id": "terreno-espinhos",
+     "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 5,
+        "dano": "1d8+5",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Spike Growth",
+        "magia": "spike_growth",
+        "cd": 13
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
       }
      },
      "invocacoes": [
@@ -1069,6 +1183,120 @@
        }
       }
      ]
+    },
+    {
+     "id": "terreno-espinhos",
+     "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 6,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Spike Growth",
+        "magia": "spike_growth",
+        "cd": 14
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17
+      }
+     ]
+    },
+    {
+     "id": "terreno-plantas",
+     "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 6,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Plant Growth",
+        "magia": "plant_growth",
+        "cd": 14
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17
+      }
+     ]
     }
    ]
   },
@@ -1378,6 +1606,120 @@
         "dano": "2d4+2",
         "vantagem": 0.8
        }
+      }
+     ]
+    },
+    {
+     "id": "terreno-espinhos",
+     "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Spike Growth",
+        "magia": "spike_growth",
+        "cd": 14
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "2": 1
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 17
+      }
+     ]
+    },
+    {
+     "id": "terreno-plantas",
+     "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "area",
+        "nome": "Plant Growth",
+        "magia": "plant_growth",
+        "cd": 14
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 17
       }
      ]
     }

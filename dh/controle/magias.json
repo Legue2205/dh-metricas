@@ -301,10 +301,12 @@
   "alvos": 4
  },
  "psychic_lance": {
+  "conc": false,
   "nivel": 4,
   "save": "Int",
   "peso": 1,
-  "termino": "um_turno"
+  "termino": "um_turno",
+  "nota": "M6 (23/11): Raulothim's Psychic Lance (Fizban): incapacitado até o fim do próximo turno; 7d6 psíquico não entra no controle."
  },
  "command": {
   "nivel": 1,
@@ -400,5 +402,46 @@
     "absorb": 1
    }
   }
+ },
+ "plant_growth": {
+  "conc": false,
+  "nivel": 3,
+  "save": null,
+  "sem_save": true,
+  "peso": 0.35,
+  "termino": "luta",
+  "alvos": 6,
+  "regua": "area",
+  "nota": "terreno: 4 pés de movimento por pé (corpo a corpo preso; à distância segue atacando). M6 (23/11): peso chutado (terreno/movimento), parâmetro a calibrar."
+ },
+ "spike_growth": {
+  "conc": true,
+  "nivel": 2,
+  "save": null,
+  "sem_save": true,
+  "peso": 0.3,
+  "termino": "luta",
+  "alvos": 4,
+  "regua": "area",
+  "nota": "terreno difícil + 2d4 a cada 5 pés (o dano não entra na área). M6 (23/11): peso chutado (terreno/movimento), parâmetro a calibrar."
+ },
+ "sleet_storm": {
+  "conc": true,
+  "nivel": 3,
+  "save": "Des",
+  "peso": 0.5,
+  "termino": "fim_turno",
+  "alvos": 6,
+  "resave_fora": true,
+  "regua": "area",
+  "nota": "cai no chão a cada turno na área; terreno difícil, escuridão pesada e teste de concentração de conjuradores não modelados. M6 (23/11): peso chutado (terreno/movimento), parâmetro a calibrar."
+ },
+ "dissonant_whispers": {
+  "conc": false,
+  "nivel": 1,
+  "save": "Sab",
+  "peso": 0.5,
+  "termino": "um_turno",
+  "nota": "M6 (23/11): o alvo gasta a reação fugindo (provoca ataques de oportunidade); 3d6 psíquico não entra no controle."
  }
 }

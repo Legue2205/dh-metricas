@@ -128,6 +128,15 @@ def fatia(L, sub, feat=None):
               "invocacoes": [{"nome": "Conjure Animals (8 lobos)", "quantidade": 8, "pv": 11, "ca": 13,
                               "ataque": {"n": 1, "bonus": 4, "dano": "2d4+2", "vantagem": 0.8}}]}
         linhas.append(l5)
+    # M6 (23/11): terreno: Spike Growth (2º, concentração) do 5; Plant Growth (3º, sem concentração) do 9
+    if L >= 5:
+        linhas.append({"id": "terreno-espinhos", "hipotese": "Spike Growth (1 espaço de 2º), ataques normais", "dano": dano(False),
+                       "defesa": {}, "saves": {}, "gasta": {"espacos": {"2": 1}},
+                       "controle": dict(ctl, fontes=[{"tipo": "area", "nome": "Spike Growth", "magia": "spike_growth", "cd": cd}] + ctl["fontes"])})
+    if L >= 9:
+        linhas.append({"id": "terreno-plantas", "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+                       "dano": dano(False), "defesa": {}, "saves": {}, "gasta": {"espacos": {"3": 1}},
+                       "controle": dict(ctl, fontes=[{"tipo": "area", "nome": "Plant Growth", "magia": "plant_growth", "cd": cd}] + ctl["fontes"])})
     for l in linhas:
         if reac: l['reacao'] = reac
         if pet: l['invocacoes'] = pet + l.get('invocacoes', [])
@@ -136,7 +145,7 @@ def fatia(L, sub, feat=None):
             "_texto": f"atributos {s}. {txt}", "_equip": equip}
 
 
-NM = ("Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); "
+NM = ("Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; "
       "Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; ")   # M2 (23/11): o resto entrou
 for sub, (nome, pos, perto, feats) in SUBS.items():
     for feat in (None,) + feats:

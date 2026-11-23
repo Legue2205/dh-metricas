@@ -253,6 +253,64 @@
    ]
   },
   {
+   "id": "terreno-espinhos",
+   "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d10+4+0.8",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d6+4+1d6",
+      "nota": "Drake: mordida (ação bônus; round 1 vai na Hunter's Mark)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Spike Growth",
+      "magia": "spike_growth",
+      "cd": 13
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Drake Companion",
+     "quantidade": 1,
+     "pv": 60,
+     "ca": 18
+    }
+   ]
+  },
+  {
    "id": "conjurar-animais",
    "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
    "dano": {
@@ -315,14 +373,72 @@
      }
     }
    ]
+  },
+  {
+   "id": "terreno-plantas",
+   "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d10+4+0.8",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d6+4+1d6",
+      "nota": "Drake: mordida (ação bônus; round 1 vai na Hunter's Mark)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Plant Growth",
+      "magia": "plant_growth",
+      "cd": 13
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Drake Companion",
+     "quantidade": 1,
+     "pv": 60,
+     "ca": 18
+    }
+   ]
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conjurar-animais, inimigo-favorito; prioritário: conjurar-animais. Sobra: 4×1º, 3×2º, 3 favored_foe.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conjurar-animais, terreno-espinhos; prioritário: conjurar-animais. Sobra: 4×1º, 2×2º, 4 favored_foe.",
    "combates": [
-    "inimigo-favorito",
+    "terreno-espinhos",
     "conjurar-animais",
     "conjurar-animais",
     "conjurar-animais"
@@ -339,7 +455,7 @@
  "descricao": {
   "resumo": "Chassi do Drakewarden: Ranger striker com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
-  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Drake Companion (3); Bond of Fang and Scale (7: +1d6 na mordida, montaria não modelada); Drake's Breath e drake maior (11) não modelados.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Drake Companion (3); Bond of Fang and Scale (7: +1d6 na mordida, montaria não modelada); Drake's Breath e drake maior (11) não modelados.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas.",
   "progressao": "atributos {'for': 19, 'des': 15, 'con': 13, 'int': 8, 'sab': 12, 'car': 10}. Drake Companion (3); Bond of Fang and Scale (7: +1d6 na mordida, montaria não modelada); Drake's Breath e drake maior (11) não modelados."
  },

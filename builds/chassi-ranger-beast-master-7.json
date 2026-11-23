@@ -234,31 +234,85 @@
      "ca": 16
     }
    ]
+  },
+  {
+   "id": "terreno-espinhos",
+   "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d8+4+2"
+     },
+     {
+      "n": 0.75,
+      "bonus": 4,
+      "dano": "1d8+5",
+      "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Spike Growth",
+      "magia": "spike_growth",
+      "cd": 12
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "invocacoes": [
+    {
+     "nome": "Primal Companion (Beast of the Land)",
+     "quantidade": 1,
+     "pv": 40,
+     "ca": 16
+    }
+   ]
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: enredar; prioritário: enredar. Sobra: 3×2º, 3 favored_foe.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: inimigo-favorito, terreno-espinhos; prioritário: terreno-espinhos. Sobra: 4×1º, 2 favored_foe.",
    "combates": [
-    "enredar",
-    "enredar",
-    "enredar",
-    "enredar"
+    "inimigo-favorito",
+    "terreno-espinhos",
+    "terreno-espinhos",
+    "terreno-espinhos"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: inimigo-favorito. Sobra: 4×1º, 3×2º, 2 favored_foe.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: terreno-espinhos. Sobra: 4×1º, 2×2º, 3 favored_foe.",
    "combates": [
-    "inimigo-favorito"
+    "terreno-espinhos"
    ]
   }
  },
  "descricao": {
   "resumo": "Chassi do Beast Master (Primal Companion): Ranger defensor com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
-  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Primal Companion (Beast of the Land); Exceptional Training (7) e Bestial Fury (11). Charge, Share Spells e o corpo da fera na defesa não modelados.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Primal Companion (Beast of the Land); Exceptional Training (7) e Bestial Fury (11). Charge, Share Spells e o corpo da fera na defesa não modelados.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas.",
   "progressao": "atributos {'for': 19, 'des': 15, 'con': 13, 'int': 8, 'sab': 12, 'car': 10}. Primal Companion (Beast of the Land); Exceptional Training (7) e Bestial Fury (11). Charge, Share Spells e o corpo da fera na defesa não modelados."
  },

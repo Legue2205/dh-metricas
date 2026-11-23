@@ -204,7 +204,9 @@ seguinte. Itens que mudam premissa vão para Decisões.
   Ranger/Druid acima saíram com a régua deslocada; os do CI já vêm certos. Original: — ex-P2.8/P2.7: Sleep, Psychic Lance, Dissonant
   Whispers, Sleet Storm, Plant Growth, Spike Growth, Ensnaring Strike no `magias.json`; depois rever as listas do
   Druid/Cleric (mudança de régua: só entre passadas).
-- [ ] **M6b Listas: Dissonant Whispers (Bard), Psychic Lance (Wizard/Sorcerer)** [D] — magias já no magias.json.
+- [x] **M6b Listas: Dissonant Whispers (Bard), Psychic Lance (Wizard/Sorcerer)** [D] — **feito 23/11:** Bard ganha a
+  linha `sussurros` (1º, sem concentração: magia extra barata); Psychic Lance no "melhor de" do Wizard/Sorcerer do 7.
+  Bard Lore 7: controle do dia 4,7 → 6,0 (sussurros como extra nas 4 lutas).
 - [ ] **M7 Pontos de feitiçaria** [N] — ex-P2.6: metamagia (Quickened, Twinned, Heightened), Bastion of Law; hoje o
   Flexible Casting põe todos os pontos em espaços.
 - [ ] **M8 Efeitos táticos de feats e truques** [N] — desvantagem do Vicious Mockery (41), Booming Blade secundário (31),

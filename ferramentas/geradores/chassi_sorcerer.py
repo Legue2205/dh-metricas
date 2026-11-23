@@ -51,7 +51,8 @@ def montar(sub, L):
     ea = c if drac and L >= 6 else 0                                  # Elemental Affinity (fogo)
     ca = 13 + m['des']                                                # Mage Armor ou Draconic Resilience
     pv = C.hp(6, L, m['con']) + (L if drac else 0)
-    ctrl = [WEB(cd), HP_(cd), HYP(cd), POLY(cd)] + ([HM(cd), SYN(cd)] if L >= 11 else [])
+    ctrl = [WEB(cd), HP_(cd), HYP(cd), POLY(cd)] + ([U("Psychic Lance", "psychic_lance", cd, 4)] if L >= 7 else []) + \
+        ([HM(cd), SYN(cd)] if L >= 11 else [])   # M6b (23/11): Psychic Lance
     ar = [FB(cd, ea)] + ([CONE(cd)] if L >= 11 else [])
     inv = None; extra = []; top = 4 if L < 11 else 6
     if sub == 'aberrant-mind':

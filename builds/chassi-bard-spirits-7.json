@@ -92,6 +92,55 @@
    "custo": "gratuita"
   },
   {
+   "id": "sussurros",
+   "hipotese": "Dissonant Whispers (1 espaço de 1º, sem concentração)",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Dissonant Whispers",
+      "cd": 15,
+      "slots": [
+       1
+      ],
+      "magias": [
+       "dissonant_whispers"
+      ],
+      "modo": "melhor"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "1": 1.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
    "id": "controle",
    "hipotese": "melhor magia de controle",
    "dano": {
@@ -244,9 +293,9 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, principal; prioritário: area, controle. Sobra: 2×1º, 3×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, sussurros; prioritário: area, controle. Sobra: 1×1º, 3×2º.",
    "combates": [
-    "principal",
+    "sussurros",
     "controle",
     "controle",
     "area"

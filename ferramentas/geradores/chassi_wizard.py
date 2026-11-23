@@ -27,7 +27,8 @@ LPSY = lambda cd, usos=1, nome="Psychic Lance": dict(  # noqa: E731
 def base(L, ordem=ORDEM):
     s = C.atributos('wizard', L, ordem); m = C.mods(s); p = C.pb(L)
     i = m['int']; cd = 8 + p + i; a = p + i
-    ctrl = [WEB(cd), HYP(cd), BAN(cd)] + ([HM(cd), WOF(cd), SYN(cd)] if L >= 11 else [])
+    ctrl = [WEB(cd), HYP(cd), BAN(cd)] + ([U("Psychic Lance", "psychic_lance", cd, 4)] if L >= 7 else []) + \
+        ([HM(cd), WOF(cd), SYN(cd)] if L >= 11 else [])   # M6b (23/11): Psychic Lance
     areas = [area_sp("Fireball", 4, "8d6", cd, 3)] + ([area_sp("Cone of Cold", 6, "8d8", cd, 5)] if L >= 11 else [])
     top = 4 if L < 11 else 6
     return dict(s=s, m=m, p=p, i=i, cd=cd, a=a, ctrl=ctrl, barato=WEB(cd), areas=areas,

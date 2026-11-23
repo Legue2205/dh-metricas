@@ -78,6 +78,9 @@ def fatia(L, c, posicao, ca, cant, sup=(), ctrl_cd=0, areas_extra=(), shat_extra
         LS.append(l)
     ln("principal", cant(1.0), "só ataque/truque nos rounds", controle=ctl({"tipo": "ameaca", "nome": "Corpo (ameaça)"}),
        defesa={}, saves={}, area=[], invocacoes=[], suporte=S())
+    # M6b (23/11): Dissonant Whispers (1º, sem concentração) como linha própria: magia extra barata para a D9
+    ln("sussurros", cant(0.75), "Dissonant Whispers (1 espaço de 1º, sem concentração)",
+       controle=ctl(U("Dissonant Whispers", "dissonant_whispers", cd + ctrl_cd, 1)['f']), gasta={"espacos": {"1": 1}})
     ops = ([HYP(cd + ctrl_cd)] if L >= 5 else []) + ([HM(cd + ctrl_cd)] if L >= 9 else [])
     if ops:
         t = max(o['slot'] for o in ops)

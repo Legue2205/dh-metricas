@@ -1092,3 +1092,15 @@ tático. Critério de pronto do MVP: nenhuma hipótese qualitativa fora de `prem
 - Origens: Aberrant (Tentacles + Summon Aberration), Clockwork (Summon Construct + Wall of Force), Divine (Bless), Draconic (Resilience + Affinity), Lunar (Blindness), Shadow (Hound of Ill Omen como invocação); Wild e Storm = base.
 - Puro: `rpgbot-sorcerer-divine-soul-puro` sem o Cleric 1 (Mage Armor, saves de Sorcerer, Des/Sab trocadas), `puro_sorcerer.py`.
 - Pendente: metamagia e Shadow/Storm/Lunar quase sem mecânica no motor.
+
+
+## Fases (24/11, visão do usuário)
+1. **Agora — consistência de cada régua** (passadas de tasks; critério de pronto no TASKS.md).
+2. **Calibração entre réguas** (níveis equivalentes na mesma moeda) + **treino dos parâmetros** (α, β, δ, g, típicos,
+   pesos por eixo) contra os gabaritos.
+3. **Futuro — perguntas qualitativas de meta, com teste empírico:** perguntas bem específicas ("conjuradores de Summon
+   Undead/Aberration são tão fortes assim?", "neste encontro, Summon ou Hypnotic Pattern?") que hipótese atrás de
+   hipótese não responde. Ideia: um **simulador de combate** pequeno — situação inicial, movimento, escolha de ação —
+   comparando decisões alternativas da mesma build. Os motores atuais (dano, saves, controle, atenção) viram as peças
+   do simulador. Só depois da fase 2.
+4. Eixos futuros possíveis: iniciativa, mobilidade, utilidade (ver TASKS.md).

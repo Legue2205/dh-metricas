@@ -125,6 +125,33 @@ comuns resolveram a comparação entre builds; resta só a dependência do valor
 P2.10 (corpo > 20, até a D8), a P2.11 (Ranger) e a P2.12 (ex-P1.14). Ordem sugerida, depois das decisões: D8 → D5 → D7 →
 P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
 
+## Critério de pronto da fase atual (consistência de cada régua) — proposta de 24/11
+
+Ruído do τ de Kendall (erro-padrão sob H0): n = 4 → 0,49; 6 → 0,35; 8 → 0,29; 12 → 0,22; 40 → 0,11; 70 → 0,08. O τ
+**por classe** (4–6 subclasses) é quase todo ruído; o τ **global por régua** (n = 19–68) é o número confiável
+(erro 0,08–0,17).
+1. **Gate da métrica:** τ global por régua (visão misto, dentro da classe) ≥ 0,30 **e** > 2 × erro-padrão, nos níveis 7
+   e 11, para dano, def. física, controle e suporte. Área e corpo (poucas pistas): só o agrupado, ≥ 0,30.
+2. **O que conta como mudança:** só variação > 1 erro-padrão (~0,1–0,15). Por classe, só é sinal τ < −0,5 com n ≥ 6
+   que persiste em duas passadas.
+3. **Gate mecânico:** validador sem ERRO; item do `nao_modelado` em ≥ 30 builds modelado ou declarado fora de escopo;
+   nenhuma task [M] aberta com efeito esperado ≥ 1 nível num eixo.
+4. **Platô:** uma passada inteira sem mover nenhum τ global > 1 erro-padrão encerra a fase; o que sobrar fica rotulado
+   ([G] gabarito, [J] decisão, ou "aceita", uma linha cada). Depois: calibração entre réguas.
+
+Situação em 24/11 (p3): def. física 0,44/0,42 ✓; controle 0,38/0,61 ✓; **dano 0,17/0,28 ✗** (abaixo de 0,30);
+**suporte 0,37/0,26 ✗** no 11 (0,26 < 2 × 0,17). Faltam só essas duas frentes.
+
+## Passada 3 (aberta 24/11) — foco nas duas réguas fora do gate
+- [ ] **P3.1 Régua de dano** [M] — o pior gate (0,17 no 7). Juntar P2.12 (marciais no 7) e o dano do Cleric no 11
+  (0,76 → 0,38); ver o peso das invocações no dano (ligado à P3.3).
+- [ ] **P3.2 Régua de suporte no 11** [M] — P2.18 (Cleric sem ordem) e P2.14 (Mantle); Bard no 7 (−0,89) é n = 4: ruído
+  até persistir.
+- [ ] **P3.3 Invocação domina o plano no 7** [J/M] — da varredura da passada M; o usuário não vê problema por ora:
+  só investigar se a P3.1 apontar para ela.
+- Rotular e aceitar: P2.3/P2.4 [G]; Sorcerer def. física (pista do dip) [G]; M1b/M7b/M8b/P2.9 ficam como resíduo
+  "aceito" desta fase (efeito esperado < 1 nível).
+
 ## Estado geral (23/11 manhã)
 
 Infra sólida (recálculo completo em ~10 min); réguas moderadamente consistentes dentro da classe (τ 0,2–0,5: controle e

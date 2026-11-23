@@ -125,6 +125,33 @@ comuns resolveram a comparação entre builds; resta só a dependência do valor
 P2.10 (corpo > 20, até a D8), a P2.11 (Ranger) e a P2.12 (ex-P1.14). Ordem sugerida, depois das decisões: D8 → D5 → D7 →
 P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
 
+## Efeito das decisões (23/11, CI com --forcar, commit b019703)
+
+Baseline da passada 2 congelada em `calibracao/baseline/p2-chassi-{misto,externo,padrao}.json`.
+
+τ por régua (dentro da classe / agrupado entre classes), passada 1 → agora:
+| régua | externo nv11 | padrão nv11 | misto nv7 / nv11 (novo) |
+|---|---|---|---|
+| dano | 0,32 → 0,30 / 0,22 → 0,24 | 0,31 → 0,30 / **0,06 → 0,27** | 0,16 / 0,33 |
+| def. física | 0,52 (igual) | 0,46 → 0,47 / −0,07 → −0,06 | 0,47 / 0,47 |
+| controle | 0,34 → 0,65 | 0,25 → 0,24 (nv7 **0,49 → 0,23**) | 0,40 / 0,37 |
+| suporte | 0,39 (igual) | 0,33 → 0,41 / **0,23 → 0,41** | 0,35 / 0,39 |
+| área (agrup.) | 0,73 → 0,64 | 0,73 → 0,64 | 0,59 / 0,64 |
+| corpo (agrup.) | 0,25 → 0,37 | 0,39 → 0,27 | 0,49 / 0,27 |
+
+Leitura:
+- **D5 deu coerência entre classes no plano:** dano agrupado no padrão 0,06 → 0,27 e suporte 0,23 → 0,41. O preço: o
+  controle do plano caiu no nv7 (0,49 → 0,23; agrupado 0,43 → 0,06): com rendimento = soma simples dos níveis, as linhas
+  de controle perdem para dano/invocação em várias builds → P2.15.
+- **Área sem teto (D3):** Sorcerer e Wizard ~20,7–20,8 no misto (saíram do 20,0 travado); agrupado 0,73 → 0,64.
+- **Corpo (D8 + D4):** máximo agora 30,6 (Artillerist), 4 chassis > 25 (antes 14 > 20 no externo, até 42,6). Warlock
+  (19,0) e Wizard (18,3) subiram: a invocação perigosa atrai o inimigo esperto e o plano por rendimento a escolhe → P2.13.
+- **Bard suporte segue invertido** (−0,82/−0,89): Glamour e Creation lideram; D6 corrigiu só Lore × base → P2.14 + pista [G].
+- **Dano por classe ainda < 0,1:** Wizard −0,36, Warlock −0,25, Monk −0,20, Rogue/Ranger (nv7). Wizard/Warlock = invocação
+  (P2.13); marciais = P2.12.
+- **τ médio por classe** piorou no Sorcerer (nv7 0,16 → −0,46, padrão) e no Rogue (−0,25 → −0,47): olhar na varredura da
+  passada 2 (provável efeito da D5 escolhendo linhas diferentes).
+
 ## Passada 2
 (problemas novos achados durante a passada 1)
 
@@ -151,6 +178,9 @@ P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
   quando o PV dela zera).
 - [ ] **P2.14 Mantle of Inspiration e outras fontes de ação bônus** [M] — o fator de ação bônus da D6 só vale no
   `dado_multiuso`; o Mantle (Glamour), que também gasta a ação bônus e um uso de BI, não paga.
+- [ ] **P2.15 Controle some do plano com a D5** [M/J] — rendimento = soma simples dos níveis eq.; no nv7 o controle do
+  plano cai (τ 0,49 → 0,23, agrupado 0,43 → 0,06). Ver se é a escala do controle (níveis menores que os de dano na mesma
+  build) ou peso por eixo (`plano.auto.peso_eixo`); depende da calibração entre réguas.
 - [ ] **P2.1 Invocação domina o dano externo** [J → D7] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
   Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
   Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).

@@ -1146,13 +1146,13 @@
    "principal": [],
    "dano": {
     "dpr": {
-     "CA 11": 26.5,
-     "CA 12": 25.0,
-     "CA 15": 20.5,
-     "CA 16": 19.0,
-     "CA 18": 16.0,
-     "CA 20": 13.0,
-     "CA 22": 9.9,
+     "CA 11": 26.2,
+     "CA 12": 24.7,
+     "CA 15": 20.3,
+     "CA 16": 18.8,
+     "CA 18": 15.8,
+     "CA 20": 12.8,
+     "CA 22": 9.8,
      "CA 24": 6.9,
      "CA 25": 5.4
     },
@@ -1161,7 +1161,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 5.1,
     "nivel_precisa": 5.1,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 0.975
    },
    "defesa": {
     "pv_efetivo": 38,
@@ -1329,62 +1330,60 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "invocacao",
+     "linha": "controle",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "3": 0.5
+       "3": 1
       }
      }
     },
     {
-     "linha": "invocacao",
+     "linha": "controle",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "3": 0.5
+       "3": 1
       }
      }
     },
     {
-     "linha": "invocacao",
+     "linha": "controle",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "3": 0.5
+       "3": 1
       }
      }
     },
     {
-     "linha": "invocacao",
+     "linha": "controle",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "3": 0.5
+       "3": 1
       }
      }
     }
    ],
    "sobra": {
-    "espacos": {
-     "3": 1.0
-    }
+    "espacos": {}
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.1,
-     "rank": "C+",
+     "nivel_eq": 3.0,
+     "rank": "C-",
      "por_categoria": {
-      "np": 5.1,
-      "p": 5.1
+      "np": 3.0,
+      "p": 3.0
      }
     },
     "defesa": {
@@ -1412,27 +1411,27 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 6.9,
+     "rank": "B-",
      "por_categoria": {
-      "np": 0.0,
-      "p": 0.0
+      "np": 6.9,
+      "p": 6.9
      }
     },
     "corpo": {
-     "nivel_eq": 7.0,
-     "rank": "B",
+     "nivel_eq": 3.9,
+     "rank": "C-",
      "por_categoria": {
-      "np": 7.0,
-      "p": 7.0
+      "np": 3.9,
+      "p": 3.9
      }
     },
     "area": {
      "nivel_eq": 8.2,
      "rank": "B+",
      "por_categoria": {
-      "np": 4.6,
-      "p": 4.6
+      "np": 4.2,
+      "p": 4.2
      }
     }
    }
@@ -1441,28 +1440,31 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "invocacao",
+     "linha": "controle",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "3": 0.5
+       "3": 1.5
       }
-     }
+     },
+     "extras": [
+      "hex"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "3": 1.5
+     "3": 0.5
     }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.1,
-     "rank": "C+",
+     "nivel_eq": 3.9,
+     "rank": "C-",
      "por_categoria": {
-      "p": 5.1
+      "p": 3.9
      }
     },
     "defesa": {
@@ -1487,30 +1489,30 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 6.9,
+     "rank": "B-",
      "por_categoria": {
-      "p": 0.0
+      "p": 6.9
      }
     },
     "corpo": {
-     "nivel_eq": 7.0,
-     "rank": "B",
+     "nivel_eq": 3.8,
+     "rank": "C-",
      "por_categoria": {
-      "p": 7.0
+      "p": 3.8
      }
     },
     "area": {
      "nivel_eq": 8.2,
      "rank": "B+",
      "por_categoria": {
-      "p": 4.6
+      "p": 4.5
      }
     }
    }
   }
  },
- "segundos": 4.1,
+ "segundos": 9.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1835,6 +1837,65 @@
    "area": 1,
    "suporte": 1
   },
+  "plano.auto.tipico": {
+   "area": {
+    "3": 4.2,
+    "5": 4.6,
+    "7": 4.6,
+    "9": 4.8,
+    "11": 8.0,
+    "14": 16.4
+   },
+   "campo": {
+    "3": 1.82,
+    "5": 4.45,
+    "7": 5.8,
+    "9": 6.12,
+    "11": 7.32
+   },
+   "corpo": {
+    "3": 3.0,
+    "5": 5.0,
+    "7": 7.0,
+    "9": 12.35,
+    "11": 11.0
+   },
+   "dano": {
+    "3": 2.1,
+    "5": 4.8,
+    "7": 5.3,
+    "9": 6.5,
+    "11": 7.7
+   },
+   "defesa": {
+    "3": 2.2,
+    "5": 4.0,
+    "7": 5.7,
+    "9": 8.6,
+    "11": 9.4
+   },
+   "resiliencia": {
+    "3": 2.7,
+    "5": 4.52,
+    "7": 7.39,
+    "9": 8.83,
+    "11": 11.3
+   },
+   "suporte": {
+    "3": 3.2,
+    "5": 3.7,
+    "7": 3.82,
+    "9": 4.1,
+    "11": 4.5
+   },
+   "vontade": {
+    "3": 4.06,
+    "5": 8.25,
+    "7": 8.44,
+    "9": 12.19,
+    "11": 12.35
+   }
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -1897,58 +1958,61 @@
      4
     ]
    ]
+  },
+  "planos.magias_por_luta": {
+   "utilidade": 0.2
   }
  },
  "impressoes": {
-  "_planos": "fed5f81ff301",
+  "_planos": "6a6b92995780",
   "principal": {
-   "dano": "8e6f9a00a1ed",
-   "defesa": "3735da7f2a37",
-   "saves": "859bcc64a965",
-   "area": "cba4f6e55066",
-   "controle": "e628b596879c"
+   "dano": "2e1ac5a61d00",
+   "defesa": "5ba5b1592c68",
+   "saves": "b6059967e09a",
+   "area": "6b8cdf991f14",
+   "controle": "8c72dee11c15"
   },
   "hex": {
-   "dano": "0e00c1645a3f",
-   "defesa": "3735da7f2a37",
-   "saves": "859bcc64a965",
-   "area": "eb87f630ec53",
-   "controle": "a7a5f700c2f6"
+   "dano": "d463221c9bc1",
+   "defesa": "5ba5b1592c68",
+   "saves": "b6059967e09a",
+   "area": "af447b928af6",
+   "controle": "2bab77ac5744"
   },
   "controle": {
-   "dano": "354b4df92feb",
-   "defesa": "49dba54fed5a",
-   "saves": "79d50b5fbac9",
-   "area": "562b3cb80056",
-   "controle": "8178418671fc"
+   "dano": "305cd0c141ac",
+   "defesa": "f9d569e322bd",
+   "saves": "71d63f6a68a2",
+   "area": "b522a1552f4d",
+   "controle": "88e2ef508f17"
   },
   "area": {
-   "dano": "fd8772225391",
-   "defesa": "49dba54fed5a",
-   "saves": "79d50b5fbac9",
-   "area": "ecd693ec1ad6",
-   "controle": "c775c2d4d7ee"
+   "dano": "b5d34ba57e29",
+   "defesa": "f9d569e322bd",
+   "saves": "71d63f6a68a2",
+   "area": "c7946bcd8e5f",
+   "controle": "e0798861b08e"
   },
   "combo": {
-   "dano": "fd8772225391",
-   "defesa": "49dba54fed5a",
-   "saves": "79d50b5fbac9",
-   "area": "b84971d4640a",
-   "controle": "4ec52e164fae"
+   "dano": "b5d34ba57e29",
+   "defesa": "f9d569e322bd",
+   "saves": "71d63f6a68a2",
+   "area": "4db26ed3986a",
+   "controle": "6226c78b27aa"
   },
   "area+hex": {
-   "dano": "ce1a9c7e84f0",
-   "defesa": "49dba54fed5a",
-   "saves": "79d50b5fbac9",
-   "area": "a0ec71a45d36",
-   "controle": "146f2e2386ca"
+   "dano": "41266eef09c0",
+   "defesa": "f9d569e322bd",
+   "saves": "71d63f6a68a2",
+   "area": "366beeb736e2",
+   "controle": "502891538be0"
   },
   "invocacao": {
-   "dano": "a4751420484b",
-   "defesa": "49dba54fed5a",
-   "saves": "79d50b5fbac9",
-   "area": "3225599488db",
-   "controle": "407242e97886"
+   "dano": "d7462d16be93",
+   "defesa": "f9d569e322bd",
+   "saves": "71d63f6a68a2",
+   "area": "82a306de96f1",
+   "controle": "6cb221ede027"
   }
  }
 }

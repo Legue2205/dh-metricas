@@ -35,7 +35,8 @@
     "perfil": "Bruto",
     "nivel_bruta": 7.3,
     "nivel_precisa": 6.9,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 84,
@@ -287,7 +288,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 6.7,
     "nivel_precisa": 6.2,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 84,
@@ -546,7 +548,8 @@
     "perfil": "Bruto",
     "nivel_bruta": 8.8,
     "nivel_precisa": 7.6,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 84,
@@ -798,7 +801,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 6.7,
     "nivel_precisa": 6.2,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 84,
@@ -1056,7 +1060,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 7.6,
     "nivel_precisa": 7.2,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 84,
@@ -1315,7 +1320,8 @@
     "perfil": "Bruto",
     "nivel_bruta": 10.2,
     "nivel_precisa": 9.5,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 84,
@@ -1578,7 +1584,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 10.8,
     "nivel_precisa": 10.2,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 84,
@@ -1841,7 +1848,8 @@
     "perfil": "Bruto",
     "nivel_bruta": 8.4,
     "nivel_precisa": 7.4,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 84,
@@ -2086,14 +2094,38 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "manto",
+     "linha": "bless+arma",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5,
-       "3": 1
+       "1": 1.5,
+       "2": 1
+      }
+     }
+    },
+    {
+     "linha": "bless+arma",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 1.5,
+       "2": 1
+      }
+     }
+    },
+    {
+     "linha": "bless+arma",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 1.5,
+       "2": 1
       }
      }
     },
@@ -2109,47 +2141,22 @@
        "5": 1
       }
      }
-    },
-    {
-     "linha": "manto",
-     "categoria": "np",
-     "peso": 1,
-     "nota": "",
-     "gasto": {
-      "espacos": {
-       "1": 0.5,
-       "3": 1
-      }
-     }
-    },
-    {
-     "linha": "manto",
-     "categoria": "p",
-     "peso": 2,
-     "nota": "",
-     "gasto": {
-      "espacos": {
-       "1": 0.5,
-       "3": 1
-      }
-     }
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 2.0,
-     "2": 3,
+     "3": 2.0,
      "4": 2
     },
     "canal": 2
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 8.8,
+     "nivel_eq": 8.4,
      "rank": "B+",
      "por_categoria": {
-      "np": 7.9,
-      "p": 9.2
+      "np": 7.4,
+      "p": 8.9
      }
     },
     "defesa": {
@@ -2185,11 +2192,11 @@
      }
     },
     "corpo": {
-     "nivel_eq": 22.4,
+     "nivel_eq": 21.1,
      "rank": "S",
      "por_categoria": {
-      "np": 23.9,
-      "p": 21.7
+      "np": 21.9,
+      "p": 20.7
      }
     },
     "area": {
@@ -2201,11 +2208,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 5.3,
-     "rank": "C+",
+     "nivel_eq": 6.7,
+     "rank": "B-",
      "por_categoria": {
-      "np": 6.3,
-      "p": 4.8
+      "np": 8.4,
+      "p": 5.8
      }
     }
    }
@@ -2296,7 +2303,7 @@
    }
   }
  },
- "segundos": 8.8,
+ "segundos": 18.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2621,6 +2628,65 @@
    "area": 1,
    "suporte": 1
   },
+  "plano.auto.tipico": {
+   "area": {
+    "3": 4.2,
+    "5": 4.6,
+    "7": 4.6,
+    "9": 4.8,
+    "11": 8.0,
+    "14": 16.4
+   },
+   "campo": {
+    "3": 1.82,
+    "5": 4.45,
+    "7": 5.8,
+    "9": 6.12,
+    "11": 7.32
+   },
+   "corpo": {
+    "3": 3.0,
+    "5": 5.0,
+    "7": 7.0,
+    "9": 12.35,
+    "11": 11.0
+   },
+   "dano": {
+    "3": 2.1,
+    "5": 4.8,
+    "7": 5.3,
+    "9": 6.5,
+    "11": 7.7
+   },
+   "defesa": {
+    "3": 2.2,
+    "5": 4.0,
+    "7": 5.7,
+    "9": 8.6,
+    "11": 9.4
+   },
+   "resiliencia": {
+    "3": 2.7,
+    "5": 4.52,
+    "7": 7.39,
+    "9": 8.83,
+    "11": 11.3
+   },
+   "suporte": {
+    "3": 3.2,
+    "5": 3.7,
+    "7": 3.82,
+    "9": 4.1,
+    "11": 4.5
+   },
+   "vontade": {
+    "3": 4.06,
+    "5": 8.25,
+    "7": 8.44,
+    "9": 12.19,
+    "11": 12.35
+   }
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -2684,6 +2750,9 @@
     ]
    ]
   },
+  "planos.magias_por_luta": {
+   "utilidade": 0.2
+  },
   "suporte.dado_multiuso.decaimento": 0.75,
   "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
@@ -2718,70 +2787,70 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "7af795ffd7fb",
+  "_planos": "81b9b7a89749",
   "principal": {
-   "dano": "e7864f558927",
-   "defesa": "26a67df8eab6",
-   "saves": "593947ec9c88",
-   "area": "ef3601a65fe8",
-   "suporte": "2e60dd9c782b",
-   "controle": "9e02100edf49"
+   "dano": "eddfd4e84375",
+   "defesa": "a5f6237e5136",
+   "saves": "9af5d3d5bb49",
+   "area": "0db503f764bf",
+   "suporte": "a5453c7a6427",
+   "controle": "d59beddade71"
   },
   "bless": {
-   "dano": "1e96b549a4c1",
-   "defesa": "26a67df8eab6",
-   "saves": "593947ec9c88",
-   "area": "30fc1b16fb90",
-   "suporte": "d681eb9b292d",
-   "controle": "15876f277dc9"
+   "dano": "89668f1c4cc6",
+   "defesa": "a5f6237e5136",
+   "saves": "9af5d3d5bb49",
+   "area": "1c5a9499a2b9",
+   "suporte": "839af6da1bb6",
+   "controle": "7a272067d17d"
   },
   "arma-espiritual": {
-   "dano": "6665b10a991d",
-   "defesa": "26a67df8eab6",
-   "saves": "593947ec9c88",
-   "area": "ae70652a233d",
-   "suporte": "2e60dd9c782b",
-   "controle": "6af5672a98fd"
+   "dano": "be35b44dcfb3",
+   "defesa": "a5f6237e5136",
+   "saves": "9af5d3d5bb49",
+   "area": "1d46dd4190fd",
+   "suporte": "a5453c7a6427",
+   "controle": "c6033cc0c5a9"
   },
   "controle": {
-   "dano": "1e96b549a4c1",
-   "defesa": "26a67df8eab6",
-   "saves": "593947ec9c88",
-   "area": "30fc1b16fb90",
-   "suporte": "2e60dd9c782b",
-   "controle": "c6c92d3af186"
+   "dano": "89668f1c4cc6",
+   "defesa": "a5f6237e5136",
+   "saves": "9af5d3d5bb49",
+   "area": "1c5a9499a2b9",
+   "suporte": "a5453c7a6427",
+   "controle": "035860c7199c"
   },
   "bless+arma": {
-   "dano": "c67bbee34294",
-   "defesa": "26a67df8eab6",
-   "saves": "593947ec9c88",
-   "area": "285762f77d69",
-   "suporte": "d681eb9b292d",
-   "controle": "4d4fb1499790"
+   "dano": "ea09573469ef",
+   "defesa": "a5f6237e5136",
+   "saves": "9af5d3d5bb49",
+   "area": "5c69158b0cf7",
+   "suporte": "839af6da1bb6",
+   "controle": "602de809dee0"
   },
   "guardioes": {
-   "dano": "b02eafa23632",
-   "defesa": "26a67df8eab6",
-   "saves": "593947ec9c88",
-   "area": "1a3a8596549d",
-   "suporte": "2e60dd9c782b",
-   "controle": "a696ec4f8a33"
+   "dano": "544ff276d287",
+   "defesa": "a5f6237e5136",
+   "saves": "9af5d3d5bb49",
+   "area": "bc86227bd687",
+   "suporte": "a5453c7a6427",
+   "controle": "6d737ea4a83d"
   },
   "guardioes-arma": {
-   "dano": "372dc1633caa",
-   "defesa": "26a67df8eab6",
-   "saves": "593947ec9c88",
-   "area": "49cf0e6de757",
-   "suporte": "2e60dd9c782b",
-   "controle": "7b7ec8433c02"
+   "dano": "85620572b2e0",
+   "defesa": "a5f6237e5136",
+   "saves": "9af5d3d5bb49",
+   "area": "610572ab7719",
+   "suporte": "a5453c7a6427",
+   "controle": "7d4cfb96eaf1"
   },
   "manto": {
-   "dano": "fd79c5de7ec7",
-   "defesa": "26a67df8eab6",
-   "saves": "593947ec9c88",
-   "area": "7f5ba2083529",
-   "suporte": "bf8e90b8ccfa",
-   "controle": "9f61db25b710"
+   "dano": "292fefcddb3b",
+   "defesa": "a5f6237e5136",
+   "saves": "9af5d3d5bb49",
+   "area": "7ce4ea99b407",
+   "suporte": "5ceae566bf5d",
+   "controle": "94a80ee310a1"
   }
  }
 }

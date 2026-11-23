@@ -2618,9 +2618,13 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1
+       "1": 1,
+       "2": 1
       }
-     }
+     },
+     "extras": [
+      "arma-espiritual"
+     ]
     },
     {
      "linha": "bless",
@@ -2629,9 +2633,13 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1
+       "1": 1,
+       "3": 2
       }
-     }
+     },
+     "extras": [
+      "smite-3"
+     ]
     },
     {
      "linha": "bless",
@@ -2651,25 +2659,26 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1
+       "1": 3,
+       "2": 1
       }
-     }
+     },
+     "extras": [
+      "arma-espiritual+smite"
+     ]
     }
    ],
    "sobra": {
-    "espacos": {
-     "2": 3,
-     "3": 3
-    },
+    "espacos": {},
     "canal": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.3,
-     "rank": "B-",
+     "nivel_eq": 8.2,
+     "rank": "B+",
      "por_categoria": {
-      "np": 6.3,
-      "p": 6.3
+      "np": 6.7,
+      "p": 9.0
      }
     },
     "defesa": {
@@ -2717,7 +2726,7 @@
      "rank": "B+",
      "por_categoria": {
       "np": 4.6,
-      "p": 4.6
+      "p": 7.9
      }
     },
     "suporte": {
@@ -2740,32 +2749,39 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1
+       "1": 2,
+       "2": 1,
+       "3": 2
       }
-     }
+     },
+     "extras": [
+      "smite-3",
+      "arma-espiritual",
+      "agathys"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 3,
-     "2": 3,
-     "3": 3
+     "1": 2,
+     "2": 2,
+     "3": 1
     },
     "canal": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.3,
-     "rank": "B-",
+     "nivel_eq": 9.9,
+     "rank": "B+",
      "por_categoria": {
-      "p": 6.3
+      "p": 9.9
      }
     },
     "defesa": {
-     "nivel_eq": 9.4,
-     "rank": "B+",
+     "nivel_eq": 10.0,
+     "rank": "A-",
      "por_categoria": {
-      "p": 9.4
+      "p": 10.0
      }
     },
     "resiliencia": {
@@ -2800,7 +2816,7 @@
      "nivel_eq": 8.1,
      "rank": "B+",
      "por_categoria": {
-      "p": 4.6
+      "p": 7.9
      }
     },
     "suporte": {
@@ -2813,7 +2829,7 @@
    }
   }
  },
- "segundos": 7.2,
+ "segundos": 17.4,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -3167,6 +3183,65 @@
    "area": 1,
    "suporte": 1
   },
+  "plano.auto.tipico": {
+   "area": {
+    "3": 4.2,
+    "5": 4.6,
+    "7": 4.6,
+    "9": 4.8,
+    "11": 8.0,
+    "14": 16.4
+   },
+   "campo": {
+    "3": 1.82,
+    "5": 4.45,
+    "7": 5.8,
+    "9": 6.12,
+    "11": 7.32
+   },
+   "corpo": {
+    "3": 3.0,
+    "5": 5.0,
+    "7": 7.0,
+    "9": 12.35,
+    "11": 11.0
+   },
+   "dano": {
+    "3": 2.1,
+    "5": 4.8,
+    "7": 5.3,
+    "9": 6.5,
+    "11": 7.7
+   },
+   "defesa": {
+    "3": 2.2,
+    "5": 4.0,
+    "7": 5.7,
+    "9": 8.6,
+    "11": 9.4
+   },
+   "resiliencia": {
+    "3": 2.7,
+    "5": 4.52,
+    "7": 7.39,
+    "9": 8.83,
+    "11": 11.3
+   },
+   "suporte": {
+    "3": 3.2,
+    "5": 3.7,
+    "7": 3.82,
+    "9": 4.1,
+    "11": 4.5
+   },
+   "vontade": {
+    "3": 4.06,
+    "5": 8.25,
+    "7": 8.44,
+    "9": 12.19,
+    "11": 12.35
+   }
+  },
   "planos.dias": {
    "padrao": [
     [
@@ -3230,6 +3305,9 @@
     ]
    ]
   },
+  "planos.magias_por_luta": {
+   "utilidade": 0.2
+  },
   "suporte.dado_multiuso.decaimento": 0.75,
   "suporte.dado_multiuso.fator_acao_bonus": 0.85,
   "suporte.dado_multiuso.reuso_max": 2,
@@ -3264,110 +3342,110 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "c5ac39fa6b62",
+  "_planos": "6eff964a1da2",
   "principal": {
-   "dano": "737ccaa4c82c",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "a7494337c17b",
-   "suporte": "bba360667200",
-   "controle": "2573d2e86fc4"
+   "dano": "9d13f590885d",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "688366ed03e0",
+   "suporte": "703ac5c4bc1a",
+   "controle": "3fd251eb6696"
   },
   "smite-1": {
-   "dano": "8161a1df736f",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "d7015437b01e",
-   "suporte": "bba360667200",
-   "controle": "4c58b9b98a60"
+   "dano": "2187915fa4e2",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "373fde5727d3",
+   "suporte": "703ac5c4bc1a",
+   "controle": "fd6a3e746982"
   },
   "smite-2": {
-   "dano": "ed5ea40d132c",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "562b29b6277d",
-   "suporte": "bba360667200",
-   "controle": "954f6a170069"
+   "dano": "4b0f65225535",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "63f8f71b7741",
+   "suporte": "703ac5c4bc1a",
+   "controle": "0798639f6a90"
   },
   "bless": {
-   "dano": "4a06bd516263",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "2e15a9219cfe",
-   "suporte": "64ed0bb4a330",
-   "controle": "aad9480397c6"
+   "dano": "c5135cef35e5",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "a3f93bc887a0",
+   "suporte": "165fa5614c72",
+   "controle": "f8ea8d5873ca"
   },
   "conquista": {
-   "dano": "d346d0aa14e5",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "ff3360785de5",
-   "suporte": "bba360667200",
-   "controle": "145417105b7e"
+   "dano": "e1bd2bade905",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "f7aa254319ff",
+   "suporte": "703ac5c4bc1a",
+   "controle": "2564fee827b0"
   },
   "conquista+smite": {
-   "dano": "55cba1dc1a75",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "a792f0b0cc46",
-   "suporte": "bba360667200",
-   "controle": "6fecd07a5676"
+   "dano": "17a01534093a",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "3c30bf905163",
+   "suporte": "703ac5c4bc1a",
+   "controle": "faf5d4ed4a4e"
   },
   "agathys": {
-   "dano": "737ccaa4c82c",
-   "defesa": "80fee7b2522a",
-   "saves": "18b40436063d",
-   "area": "a7494337c17b",
-   "suporte": "bba360667200",
-   "controle": "2573d2e86fc4"
+   "dano": "9d13f590885d",
+   "defesa": "439a27f09cba",
+   "saves": "39703c7345fd",
+   "area": "688366ed03e0",
+   "suporte": "703ac5c4bc1a",
+   "controle": "3fd251eb6696"
   },
   "agathys+smite": {
-   "dano": "8161a1df736f",
-   "defesa": "80fee7b2522a",
-   "saves": "18b40436063d",
-   "area": "d7015437b01e",
-   "suporte": "bba360667200",
-   "controle": "4c58b9b98a60"
+   "dano": "2187915fa4e2",
+   "defesa": "439a27f09cba",
+   "saves": "39703c7345fd",
+   "area": "373fde5727d3",
+   "suporte": "703ac5c4bc1a",
+   "controle": "fd6a3e746982"
   },
   "arma-espiritual": {
-   "dano": "1a4936e0ebae",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "6f173a9d2067",
-   "suporte": "bba360667200",
-   "controle": "dbfee9ab2e83"
+   "dano": "86012016daeb",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "70cb8b22c5a0",
+   "suporte": "703ac5c4bc1a",
+   "controle": "a8d7492a7d8b"
   },
   "arma-espiritual+smite": {
-   "dano": "cce2e64f2fe4",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "9e1d900d56c3",
-   "suporte": "bba360667200",
-   "controle": "f4c39ca52cf6"
+   "dano": "4f470150e54e",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "7d25e7f1d36d",
+   "suporte": "703ac5c4bc1a",
+   "controle": "8563416caf29"
   },
   "smite-3": {
-   "dano": "f9ab3f7c6210",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "138511b76038",
-   "suporte": "bba360667200",
-   "controle": "2d06222d0724"
+   "dano": "643178499ace",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "fb4d8a725451",
+   "suporte": "703ac5c4bc1a",
+   "controle": "7e2098e5ea52"
   },
   "medo": {
-   "dano": "d346d0aa14e5",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "ff3360785de5",
-   "suporte": "bba360667200",
-   "controle": "8733a4c881bf"
+   "dano": "e1bd2bade905",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "f7aa254319ff",
+   "suporte": "703ac5c4bc1a",
+   "controle": "ac5e793633d8"
   },
   "medo+smite": {
-   "dano": "55cba1dc1a75",
-   "defesa": "b73c5ecb87d9",
-   "saves": "18b40436063d",
-   "area": "a792f0b0cc46",
-   "suporte": "bba360667200",
-   "controle": "45a2b33ce71f"
+   "dano": "17a01534093a",
+   "defesa": "3c1c3df428f7",
+   "saves": "39703c7345fd",
+   "area": "3c30bf905163",
+   "suporte": "703ac5c4bc1a",
+   "controle": "63645702d0ac"
   }
  }
 }

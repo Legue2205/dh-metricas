@@ -453,7 +453,7 @@
    "dano": {
     "ataques": [
      {
-      "n": 0.5,
+      "n": 0.75,
       "bonus": 8,
       "dano": "2d8",
       "nota": "Produce Flame"
@@ -476,23 +476,12 @@
        "cd": 16,
        "slot": 5
       }
-     ]
-    },
-    {
-     "nome": "Wall of Fire",
-     "usos": [
-      {
-       "alvos": 3,
-       "dano": "5d8",
-       "cd": 16,
-       "slot": 4
-      }
-     ]
+     ],
+     "concentracao": "wall_of_fire"
     }
    ],
    "gasta": {
     "espacos": {
-     "4": 1,
      "1": 0.5,
      "5": 1
     }
@@ -505,7 +494,7 @@
    "dano": {
     "ataques": [
      {
-      "n": 0.5,
+      "n": 0.75,
       "bonus": 8,
       "dano": "2d8",
       "nota": "Produce Flame"
@@ -534,23 +523,12 @@
        "cd": 16,
        "slot": 5
       }
-     ]
-    },
-    {
-     "nome": "Wall of Fire",
-     "usos": [
-      {
-       "alvos": 3,
-       "dano": "5d8",
-       "cd": 16,
-       "slot": 4
-      }
-     ]
+     ],
+     "concentracao": "wall_of_fire"
     }
    ],
    "gasta": {
     "espacos": {
-     "4": 1,
      "1": 0.5,
      "5": 1
     },
@@ -563,17 +541,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle+estrelas, controle-barato+estrelas; prioritário: area+estrelas, controle+estrelas. Sobra: 1×1º, 3×2º, 3×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle+estrelas; prioritário: area+estrelas, controle+estrelas. Sobra: 2×1º, 3×2º, 3×3º.",
    "combates": [
     "controle+estrelas",
     "controle+estrelas",
-    "controle-barato+estrelas",
+    "controle+estrelas",
     "area+estrelas"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area+estrelas. Sobra: 3.5×1º, 3×2º, 3×3º, 2×4º, 1 forma_selvagem.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area+estrelas. Sobra: 3.5×1º, 3×2º, 3×3º, 3×4º, 1 forma_selvagem.",
    "combates": [
     "area+estrelas"
    ]

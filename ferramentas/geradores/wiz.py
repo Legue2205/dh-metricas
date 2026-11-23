@@ -32,10 +32,20 @@ def summon(tipo,lv,atk):
 AT=lambda front=False,papel='conjurador': {"papel":papel,"front":front,"acc_m":[0.8,0.9,1.0],"conc":True,"soft":0.15,"dpr":"auto"}
 SH={"reacoes":[{"tipo":"shield","usos_luta":1}]}
 RE=[{"uso":"Shield","fracao":0.5,"eixos":["defesa"]}]
+def _conc_nome(nome):
+    """M5b (23/11): magia de concentração RAW pelo nome (lista _concentracao_nomes do magias.json) → token ou None."""
+    import re as _re
+    from pathlib import Path as _P
+    lst=json.loads((_P(__file__).resolve().parents[2]/'dh'/'controle'/'magias.json').read_text(encoding='utf-8'))['_concentracao_nomes']['nomes']
+    n=_re.sub(r'\s*\(.*','',nome).strip()
+    return _re.sub(r'[^a-z]+','_',n.lower()).strip('_') if n.lower().startswith(tuple(x.lower() for x in lst)) else None
 def area_sp(nome,alvos,dano,cd,slot,save=None,sel=False):
     u={"alvos":alvos,"dano":dano,"cd":cd,"slot":slot}
     if sel: u["seletiva"]=True
-    return {"nome":nome,"usos":[u]}
+    e={"nome":nome,"usos":[u]}
+    c=_conc_nome(nome)
+    if c: e["concentracao"]=c          # M5b: declarada (o validador passa a ver duas concentrações na mesma linha)
+    return e
 def U(nome,magia,cd,slot,alvos=None,area=False):
     """opção de controle: área da biblioteca ou alvo único (1 lançamento)."""
     if area or alvos: f={"tipo":"area","nome":nome,"magia":magia,"cd":cd}; 
@@ -64,7 +74,9 @@ def escala(a,slot):
             n,x,r=_dados(u['dano']); u['dano']=f"{n+regra[1]*up}d{x}{r}"
         else: u['alvos']=u['alvos']+regra[1]*up
     u['slot']=slot
-    return {"nome":a['nome']+(f" ({slot}º)" if regra else ""),"usos":[u]}
+    e={"nome":a['nome']+(f" ({slot}º)" if regra else ""),"usos":[u]}
+    if a.get('concentracao'): e['concentracao']=a['concentracao']   # M5b: a concentração sobrevive ao upcast
+    return e
 def _valor(a): u=a['usos'][0]; return u['alvos']*_media(u['dano'])
 def area_pico(areas,esp):
     """[(entrada escalada), ...] em ordem de dano esperado e os espaços gastos."""
@@ -73,9 +85,11 @@ def area_pico(areas,esp):
     cands=[]
     if len(areas)==1: pares=[(areas[0],areas[0])]
     else: pares=[(x,y) for x in areas for y in areas if x is not y]
+    # M5b: no pico, no máximo uma área de concentração (a 2ª derrubaria a 1ª); a mesma de concentração não repete
+    pares=[(x,y) for x,y in pares if not (x.get('concentracao') and y.get('concentracao'))] or [(x,x) for x in areas if not x.get('concentracao')] or [(areas[0],None)]
     for x,y in pares:
         if x['usos'][0]['slot']>sl[0]: continue
-        usa=[(x,sl[0])]+([(y,sl[1])] if len(sl)>1 and y['usos'][0]['slot']<=sl[1] else [])
+        usa=[(x,sl[0])]+([(y,sl[1])] if y is not None and len(sl)>1 and y['usos'][0]['slot']<=sl[1] and not (y is x and x.get('concentracao')) else [])
         e=[escala(a,s) for a,s in usa]
         cands.append((sum(_valor(z) for z in e),e,[s for _,s in usa]))
     if not cands: return [],[]
@@ -107,9 +121,10 @@ def fatia(L, cl, wl, mods, profs, ca, pv, cant, ctrl=(), barato=None, areas=(), 
     if areas:
         a=list(areas); ap,sp=area_pico(a,esp)
         ln("area",cant(0.5 if len(ap)>1 else 0.75),controle=base_ctl,area=ap,gasta=gasto(*sp),invocacoes=[],**dfs)
-        if ctrl:
-            ln("combo",cant(0.5),controle={"atencao":AT(front,papel),"fontes":[FF(controle_fonte(list(ctrl)))]+list(ctl_extra)},area=a,
-               gasta=gasto(top,*[u['slot'] for x in a for u in x['usos']]),invocacoes=[],**dfs)
+        ac=[x for x in a if not x.get('concentracao')]   # M5b: o combo já tem a concentração do controle
+        if ctrl and ac:
+            ln("combo",cant(0.5),controle={"atencao":AT(front,papel),"fontes":[FF(controle_fonte(list(ctrl)))]+list(ctl_extra)},area=ac,
+               gasta=gasto(top,*[u['slot'] for x in ac for u in x['usos']]),invocacoes=[],**dfs)
     if inv:
         ln("invocacao",cant(0.75),controle=base_ctl,invocacoes=[inv['i']],gasta=gasto(meio=inv['slot']),area=[],**dfs)
     for x in extra: linhas.append(x)

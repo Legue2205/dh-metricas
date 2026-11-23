@@ -142,7 +142,7 @@
    "dano": {
     "com_save": [
      {
-      "n": 0.5,
+      "n": 0.75,
       "cd": 16,
       "save": "Int",
       "dano": "3d6",
@@ -180,23 +180,12 @@
        "cd": 16,
        "slot": 6
       }
-     ]
-    },
-    {
-     "nome": "Insect Plague",
-     "usos": [
-      {
-       "alvos": 4,
-       "dano": "4d10",
-       "cd": 16,
-       "slot": 5
-      }
-     ]
+     ],
+     "concentracao": "insect_plague"
     }
    ],
    "gasta": {
     "espacos": {
-     "5": 1,
      "1": 1,
      "6": 1
     }
@@ -221,104 +210,22 @@
    ],
    "herda": "principal",
    "hipotese": "area"
-  },
-  {
-   "id": "combo",
-   "dano": {
-    "com_save": [
-     {
-      "n": 0.5,
-      "cd": 16,
-      "save": "Int",
-      "dano": "3d6",
-      "nota": "Mind Sliver"
-     }
-    ]
-   },
-   "controle": {
-    "atencao": {
-     "papel": "conjurador",
-     "front": false,
-     "acc_m": [
-      0.8,
-      0.9,
-      1.0
-     ],
-     "conc": true,
-     "soft": 0.15,
-     "dpr": "auto"
-    },
-    "fontes": [
-     {
-      "tipo": "alvo_unico",
-      "nome": "Polymorph",
-      "cd": 16,
-      "slots": [
-       4
-      ],
-      "magias": [
-       "polymorph"
-      ],
-      "modo": "melhor"
-     }
-    ]
-   },
-   "area": [
-    {
-     "nome": "Insect Plague",
-     "usos": [
-      {
-       "alvos": 4,
-       "dano": "4d10",
-       "cd": 16,
-       "slot": 5
-      }
-     ]
-    }
-   ],
-   "gasta": {
-    "espacos": {
-     "4": 1,
-     "5": 1,
-     "1": 1
-    }
-   },
-   "invocacoes": [],
-   "defesa": {
-    "reacoes": [
-     {
-      "tipo": "shield",
-      "usos_luta": 1
-     }
-    ]
-   },
-   "reacao": [
-    {
-     "uso": "Shield",
-     "fracao": 0.5,
-     "eixos": [
-      "defesa"
-     ]
-    }
-   ],
-   "herda": "principal",
-   "hipotese": "combo"
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: combo, controle; prioritário: area, combo. Sobra: 3×2º, 3×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: area, controle. Sobra: 3×2º, 3×3º, 3×5º.",
    "combates": [
     "controle",
-    "area",
-    "combo",
-    "combo"
+    "controle",
+    "controle",
+    "area"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 4×2º, 3×3º, 3×4º, 2×5º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 4×2º, 3×3º, 3×4º, 3×5º.",
    "combates": [
     "area"
    ]

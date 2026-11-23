@@ -119,7 +119,8 @@
        "cd": 16,
        "slot": 5
       }
-     ]
+     ],
+     "concentracao": "wall_of_fire"
     }
    ],
    "gasta": {
@@ -268,22 +269,11 @@
        "slot": 3
       }
      ]
-    },
-    {
-     "nome": "Wall of Fire",
-     "usos": [
-      {
-       "alvos": 3,
-       "dano": "5d8+4",
-       "cd": 16,
-       "slot": 4
-      }
-     ]
     }
    ],
    "gasta": {
     "espacos": {
-     "4": 2,
+     "4": 1,
      "3": 1,
      "1": 1
     }
@@ -385,19 +375,19 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: invocacao; prioritário: combo. Sobra: 1×1º, 3×2º, 1×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: combo; prioritário: area, combo. Sobra: 1×1º, 3×2º.",
    "combates": [
-    "invocacao",
     "combo",
-    "invocacao",
+    "area",
+    "combo",
     "combo"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: combo. Sobra: 4×1º, 3×2º, 2×3º, 1×4º, 2×5º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 4×1º, 3×2º, 3×3º, 3×4º.",
    "combates": [
-    "combo"
+    "area"
    ]
   }
  },

@@ -357,7 +357,7 @@
      "dano": {
       "com_save": [
        {
-        "n": 0.5,
+        "n": 0.75,
         "cd": 16,
         "save": "Int",
         "dano": "2d6",
@@ -395,104 +395,12 @@
          "cd": 16,
          "slot": 5
         }
-       ]
-      },
-      {
-       "nome": "Insect Plague",
-       "usos": [
-        {
-         "alvos": 4,
-         "dano": "4d10",
-         "cd": 16,
-         "slot": 5
-        }
-       ]
-      }
-     ],
-     "gasta": {
-      "espacos": {
-       "5": 2,
-       "1": 1
-      }
-     },
-     "invocacoes": [],
-     "defesa": {
-      "reacoes": [
-       {
-        "tipo": "shield",
-        "usos_luta": 1
-       }
-      ]
-     },
-     "reacao": [
-      {
-       "uso": "Shield",
-       "fracao": 0.5,
-       "eixos": [
-        "defesa"
-       ]
-      }
-     ],
-     "herda": "principal",
-     "hipotese": "area"
-    },
-    {
-     "id": "combo",
-     "dano": {
-      "com_save": [
-       {
-        "n": 0.5,
-        "cd": 16,
-        "save": "Int",
-        "dano": "2d6",
-        "nota": "Mind Sliver"
-       }
-      ]
-     },
-     "controle": {
-      "atencao": {
-       "papel": "conjurador",
-       "front": false,
-       "acc_m": [
-        0.8,
-        0.9,
-        1.0
        ],
-       "conc": true,
-       "soft": 0.15,
-       "dpr": "auto"
-      },
-      "fontes": [
-       {
-        "tipo": "alvo_unico",
-        "nome": "Polymorph",
-        "cd": 16,
-        "slots": [
-         4
-        ],
-        "magias": [
-         "polymorph"
-        ],
-        "modo": "melhor"
-       }
-      ]
-     },
-     "area": [
-      {
-       "nome": "Insect Plague",
-       "usos": [
-        {
-         "alvos": 4,
-         "dano": "4d10",
-         "cd": 16,
-         "slot": 5
-        }
-       ]
+       "concentracao": "insect_plague"
       }
      ],
      "gasta": {
       "espacos": {
-       "4": 1,
        "5": 1,
        "1": 1
       }
@@ -516,7 +424,7 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "combo"
+     "hipotese": "area"
     }
    ]
   },
@@ -660,7 +568,7 @@
      "dano": {
       "com_save": [
        {
-        "n": 0.5,
+        "n": 0.75,
         "cd": 16,
         "save": "Int",
         "dano": "3d6",
@@ -698,25 +606,15 @@
          "cd": 16,
          "slot": 6
         }
-       ]
-      },
-      {
-       "nome": "Insect Plague",
-       "usos": [
-        {
-         "alvos": 4,
-         "dano": "4d10",
-         "cd": 16,
-         "slot": 5
-        }
-       ]
+       ],
+       "concentracao": "insect_plague"
       }
      ],
      "gasta": {
       "espacos": {
        "6": 1,
-       "5": 1,
-       "1": 1
+       "1": 1,
+       "5": null
       }
      },
      "invocacoes": [],
@@ -739,88 +637,6 @@
      ],
      "herda": "principal",
      "hipotese": "area"
-    },
-    {
-     "id": "combo",
-     "dano": {
-      "com_save": [
-       {
-        "n": 0.5,
-        "cd": 16,
-        "save": "Int",
-        "dano": "3d6",
-        "nota": "Mind Sliver"
-       }
-      ]
-     },
-     "controle": {
-      "atencao": {
-       "papel": "conjurador",
-       "front": false,
-       "acc_m": [
-        0.8,
-        0.9,
-        1.0
-       ],
-       "conc": true,
-       "soft": 0.15,
-       "dpr": "auto"
-      },
-      "fontes": [
-       {
-        "tipo": "alvo_unico",
-        "nome": "Polymorph",
-        "cd": 16,
-        "slots": [
-         4
-        ],
-        "magias": [
-         "polymorph"
-        ],
-        "modo": "melhor"
-       }
-      ]
-     },
-     "area": [
-      {
-       "nome": "Insect Plague",
-       "usos": [
-        {
-         "alvos": 4,
-         "dano": "4d10",
-         "cd": 16,
-         "slot": 5
-        }
-       ]
-      }
-     ],
-     "gasta": {
-      "espacos": {
-       "4": 1,
-       "5": 1,
-       "1": 1
-      }
-     },
-     "invocacoes": [],
-     "defesa": {
-      "reacoes": [
-       {
-        "tipo": "shield",
-        "usos_luta": 1
-       }
-      ]
-     },
-     "reacao": [
-      {
-       "uso": "Shield",
-       "fracao": 0.5,
-       "eixos": [
-        "defesa"
-       ]
-      }
-     ],
-     "herda": "principal",
-     "hipotese": "combo"
     }
    ]
   }

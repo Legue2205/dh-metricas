@@ -187,7 +187,10 @@ seguinte. Itens que mudam premissa vão para Decisões.
   dano do dia 7,9 (igual), corpo 15,3 → 18,6; Cleric Life 11 dano 3,2 → 4,4. Original: — ex-P2.17: geradores declaram `concentracao` em área/suporte
   (Spirit Guardians, Wall of Fire, Bless…) e o `dh validar` passa a checar; ex-P2.16: linhas de blaster puro e de
   buff/cura sem concentração para Wizard/Druid/Sorcerer (para a D9 render).
-- [ ] **M5b Os 6 avisos de concentração** [D] — `combo` do Sorcerer Draconic 11 (Wall of Fire) e Wild Magic 9/11
+- [x] **M5b Os 6 avisos de concentração** [D] — **feito 23/11:** `wiz.area_sp` marca `concentracao` pelo nome (e a
+  marca sobrevive ao upcast); o pico de área não junta duas áreas de concentração; o `combo` só leva áreas sem
+  concentração. Sobrou 1 aviso: solaris-9 (party DragonHeist, área "Wall of Fire em linha" junto de outra concentração:
+  decisão do usuário). Ligar o erro no validador fica para quando a party estiver limpa. Original: — `combo` do Sorcerer Draconic 11 (Wall of Fire) e Wild Magic 9/11
   (Insect Plague) junto do controle; áreas do Druid Land/Spores 11 (duas áreas de concentração na mesma linha);
   solaris-9 (party: só reportar). Corrigir nos geradores e depois ligar o erro no validador.
 - [ ] **M6 Magias de controle faltando e listas das réguas** [N] — ex-P2.8/P2.7: Sleep, Psychic Lance, Dissonant

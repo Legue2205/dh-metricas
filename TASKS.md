@@ -199,7 +199,9 @@ seguinte. Itens que mudam premissa vão para Decisões.
   terreno são chute (a calibrar). Listas: Druid + Sleet Storm e Plant Growth do 5; Ranger + linhas `terreno-espinhos` (5+)
   e `terreno-plantas` (9+). Ranger 7: controle do plano 0 → 3,7 (Spike Growth em 3 lutas, dano 6,1 → 4,8); Druid: linha
   de controle 6,75 no 11, mas o plano prefere Haste/invocação. Sleep fora (precisa de pool de PV). Falta pôr Dissonant
-  Whispers nas listas do Bard e Psychic Lance nas de Wizard/Sorcerer (→ M6b). Original: — ex-P2.8/P2.7: Sleep, Psychic Lance, Dissonant
+  Whispers nas listas do Bard e Psychic Lance nas de Wizard/Sorcerer (→ M6b). Atenção: magia nova no magias.json **sem**
+  `regua` (as marcadas compõem o vetor de referência do controle; marcar muda o nível de todo mundo). Os números de
+  Ranger/Druid acima saíram com a régua deslocada; os do CI já vêm certos. Original: — ex-P2.8/P2.7: Sleep, Psychic Lance, Dissonant
   Whispers, Sleet Storm, Plant Growth, Spike Growth, Ensnaring Strike no `magias.json`; depois rever as listas do
   Druid/Cleric (mudança de régua: só entre passadas).
 - [ ] **M6b Listas: Dissonant Whispers (Bard), Psychic Lance (Wizard/Sorcerer)** [D] — magias já no magias.json.

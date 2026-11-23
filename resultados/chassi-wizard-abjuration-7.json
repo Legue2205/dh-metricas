@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 7,
  "build": "Wizard (Abjuration), chassi: Mage Armor + Shield, Arcane Ward; posição meia",
- "impressao": "b538309d60",
+ "impressao": "4ca8ad2d54",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1170,6 +1170,202 @@
     "rank_absoluto": "C+"
    }
   },
+  "area-barata": {
+   "hipotese": "Fireball no 3º (sem concentração; magia extra barata)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 5.4,
+     "CA 12": 5.4,
+     "CA 15": 4.6,
+     "CA 16": 4.1,
+     "CA 18": 3.1,
+     "CA 20": 2.4,
+     "CA 22": 1.7,
+     "CA 24": 1.1,
+     "CA 25": 0.7
+    },
+    "nivel_eq": 0.7,
+    "rank": "E",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 0.7,
+    "nivel_precisa": 0.7,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 62,
+    "ca": 14,
+    "blindagem": 4.15,
+    "durabilidade": 3.12,
+    "nivel_blindagem": 4.3,
+    "nivel_durabilidade": 4.5,
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "shield"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.16,
+     "rank": "C+",
+     "turnos_livres": [
+      3.57,
+      3.41,
+      3.33,
+      2.1,
+      1.57,
+      1.49,
+      1.71,
+      1.41,
+      1.09,
+      0.99
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 5.76,
+     "rank": "C+",
+     "turnos_livres": [
+      3.31,
+      2.18,
+      1.8,
+      1.57,
+      1.26,
+      0.94,
+      1.36,
+      1.09,
+      1.03,
+      1.05
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 8.0,
+    "rank": "B+",
+    "rounds": {
+     "1": 0.9,
+     "2": 1.11,
+     "3": 1.11,
+     "4": 1.56,
+     "5": 2.05,
+     "6": 2.05,
+     "7": 2.05,
+     "8": 3.36,
+     "9": 3.25,
+     "10": 3.25,
+     "11": 3.58,
+     "12": 3.58,
+     "13": 4.31,
+     "14": 4.31,
+     "15": 4.31,
+     "16": 4.31,
+     "17": 4.92,
+     "18": 4.92,
+     "19": 5.67,
+     "20": 4.99
+    },
+    "usos": 1,
+    "antigo": {
+     "nivel_eq": 8.1,
+     "rank": "B+"
+    },
+    "melhor": "Fireball",
+    "areas": [
+     {
+      "nome": "Fireball",
+      "tipo": "explosao",
+      "nivel_eq": 8.14,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 8.15,
+       "padrao": 8.14,
+       "agrupada": 8.61
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "defesa": {
+      "1": 1
+     },
+     "area": {
+      "3": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 2.63,
+    "rank": "D",
+    "nivel_campo": 0.07,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.06,
+    "rank_atencao": "F",
+    "vidas_total": 0.364,
+    "vidas_campo": 0.012,
+    "vidas_atencao": 0.008,
+    "corpo": {
+     "T": 0.008,
+     "S": 0.473,
+     "P": -0.465,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 7.0,
+    "rank_corpo": "B",
+    "corpo_busca": [
+     [
+      7,
+      0.008
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.4,
+     "Party de elite": 3.02,
+     "Horda + chefe": 2.54,
+     "Horda": 2.38,
+     "Dupla": 2.9,
+     "Chefe sozinho": 2.72
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.006
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0035
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0033
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0079
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0038
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0048
+     }
+    },
+    "nivel_absoluto": 2.69,
+    "rank_absoluto": "D"
+   }
+  },
   "reacao-counterspell": {
    "hipotese": "só truques (Toll the Dead) + Counterspell (reação)",
    "principal": [],
@@ -1524,7 +1720,7 @@
       }
      },
      "extras": [
-      "reacao-counterspell"
+      "area-barata"
      ]
     },
     {
@@ -1540,7 +1736,7 @@
       }
      },
      "extras": [
-      "reacao-counterspell"
+      "area-barata"
      ]
     },
     {
@@ -1571,7 +1767,7 @@
       }
      },
      "extras": [
-      "reacao-counterspell"
+      "area-barata"
      ]
     }
    ],
@@ -1590,27 +1786,27 @@
      }
     },
     "defesa": {
-     "nivel_eq": 4.5,
-     "rank": "C",
+     "nivel_eq": 5.0,
+     "rank": "C+",
      "por_categoria": {
-      "np": 4.5,
-      "p": 4.5
+      "np": 4.8,
+      "p": 5.1
      }
     },
     "resiliencia": {
-     "nivel_eq": 6.9,
-     "rank": "B-",
+     "nivel_eq": 5.3,
+     "rank": "C+",
      "por_categoria": {
-      "np": 6.6,
-      "p": 7.0
+      "np": 5.7,
+      "p": 5.2
      }
     },
     "vontade": {
-     "nivel_eq": 9.8,
-     "rank": "B+",
+     "nivel_eq": 5.8,
+     "rank": "C+",
      "por_categoria": {
-      "np": 8.2,
-      "p": 10.6
+      "np": 5.8,
+      "p": 5.8
      }
     },
     "campo": {
@@ -1633,8 +1829,8 @@
      "nivel_eq": 10.9,
      "rank": "A-",
      "por_categoria": {
-      "np": 4.6,
-      "p": 4.6
+      "np": 7.2,
+      "p": 9.8
      }
     }
    }
@@ -1650,11 +1846,12 @@
      "gasto": {
       "espacos": {
        "1": 1,
-       "3": 1,
+       "3": 2,
        "4": 0.5
       }
      },
      "extras": [
+      "area-barata",
       "reacao-counterspell"
      ]
     }
@@ -1663,7 +1860,7 @@
     "espacos": {
      "1": 2,
      "2": 3,
-     "3": 2,
+     "3": 1,
      "4": 1.5
     }
    },
@@ -1676,10 +1873,10 @@
      }
     },
     "defesa": {
-     "nivel_eq": 4.5,
-     "rank": "C",
+     "nivel_eq": 5.1,
+     "rank": "C+",
      "por_categoria": {
-      "p": 4.5
+      "p": 5.1
      }
     },
     "resiliencia": {
@@ -1714,13 +1911,13 @@
      "nivel_eq": 10.9,
      "rank": "A-",
      "por_categoria": {
-      "p": 4.6
+      "p": 9.8
      }
     }
    }
   }
  },
- "segundos": 17.0,
+ "segundos": 13.8,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2201,60 +2398,67 @@
   }
  },
  "impressoes": {
-  "_planos": "f08a980e206a",
+  "_planos": "1db330550f92",
   "principal": {
    "dano": "c33dd8c70e85",
-   "defesa": "cbd3a4c75c14",
-   "saves": "dc3bef80ccac",
+   "defesa": "5b20a1704294",
+   "saves": "427b80c0b264",
    "area": "4ef0fdbc6d3c",
    "controle": "a5f561efa32b"
   },
   "controle": {
    "dano": "1cdf865d850e",
-   "defesa": "669e623d3f88",
-   "saves": "6d7bde76d610",
+   "defesa": "3d9fd325188a",
+   "saves": "e7e658280b8a",
    "area": "f83fce9a0a4c",
    "controle": "af94da8debbb"
   },
   "controle-barato": {
    "dano": "1cdf865d850e",
-   "defesa": "669e623d3f88",
-   "saves": "6d7bde76d610",
+   "defesa": "3d9fd325188a",
+   "saves": "e7e658280b8a",
    "area": "f83fce9a0a4c",
    "controle": "2e0b34388384"
   },
   "area": {
    "dano": "9db5c2427abe",
-   "defesa": "669e623d3f88",
-   "saves": "6d7bde76d610",
+   "defesa": "3d9fd325188a",
+   "saves": "e7e658280b8a",
    "area": "43daca6fc77d",
    "controle": "980d85face20"
   },
   "combo": {
    "dano": "9db5c2427abe",
-   "defesa": "669e623d3f88",
-   "saves": "6d7bde76d610",
+   "defesa": "3d9fd325188a",
+   "saves": "e7e658280b8a",
    "area": "15f49f0f7302",
    "controle": "3a541af6007a"
   },
   "invocacao": {
    "dano": "b42374fec22f",
-   "defesa": "669e623d3f88",
-   "saves": "6d7bde76d610",
+   "defesa": "3d9fd325188a",
+   "saves": "e7e658280b8a",
    "area": "12e4b615c339",
    "controle": "52b8299a04cc"
   },
+  "area-barata": {
+   "dano": "9db5c2427abe",
+   "defesa": "3d9fd325188a",
+   "saves": "e7e658280b8a",
+   "area": "15f49f0f7302",
+   "controle": "980d85face20"
+  },
   "reacao-counterspell": {
    "dano": "c33dd8c70e85",
-   "defesa": "cbd3a4c75c14",
-   "saves": "c04a1f988c3c",
+   "defesa": "5b20a1704294",
+   "saves": "689d3e531b11",
    "area": "4ef0fdbc6d3c",
    "controle": "a5f561efa32b"
   },
   "reacao-absorb-elements": {
    "dano": "c33dd8c70e85",
-   "defesa": "cbd3a4c75c14",
-   "saves": "29c86c681c88",
+   "defesa": "5b20a1704294",
+   "saves": "350499474a2b",
    "area": "4ef0fdbc6d3c",
    "controle": "a5f561efa32b"
   }

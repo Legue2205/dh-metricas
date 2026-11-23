@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 11,
  "build": "Wizard (Necromancy), chassi: esqueletos com Undead Thralls + Summon Undead; retaguarda",
- "impressao": "5826d700de",
+ "impressao": "37a8f10853",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1396,6 +1396,245 @@
     "rank_absoluto": "C"
    }
   },
+  "area-barata": {
+   "hipotese": "Fireball no 3º (sem concentração; magia extra barata)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 50.0,
+     "CA 12": 47.1,
+     "CA 15": 37.4,
+     "CA 16": 33.8,
+     "CA 18": 26.6,
+     "CA 20": 19.8,
+     "CA 22": 13.2,
+     "CA 24": 6.5,
+     "CA 25": 6.0
+    },
+    "nivel_eq": 8.2,
+    "rank": "B+",
+    "perfil": "Bruto",
+    "nivel_bruta": 8.9,
+    "nivel_precisa": 7.5,
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
+   },
+   "defesa": {
+    "pv_efetivo": 79,
+    "ca": 14,
+    "blindagem": 5.5,
+    "durabilidade": 4.0,
+    "nivel_blindagem": 5.5,
+    "nivel_durabilidade": 5.9,
+    "nivel_eq": 5.9,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "shield"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.98,
+     "rank": "B-",
+     "turnos_livres": [
+      3.57,
+      3.41,
+      3.33,
+      2.61,
+      1.91,
+      1.77,
+      2.26,
+      2.03,
+      1.53,
+      1.26
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 8.47,
+     "rank": "B+",
+     "turnos_livres": [
+      3.41,
+      2.46,
+      2.1,
+      1.79,
+      1.42,
+      1.07,
+      1.55,
+      1.32,
+      1.15,
+      1.3
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 8.8,
+    "rank": "B+",
+    "rounds": {
+     "1": 2.34,
+     "2": 1.03,
+     "3": 1.03,
+     "4": 1.26,
+     "5": 1.7,
+     "6": 1.7,
+     "7": 1.7,
+     "8": 2.7,
+     "9": 2.61,
+     "10": 2.61,
+     "11": 2.92,
+     "12": 2.92,
+     "13": 3.51,
+     "14": 3.51,
+     "15": 3.51,
+     "16": 3.51,
+     "17": 3.98,
+     "18": 3.98,
+     "19": 4.8,
+     "20": 4.16
+    },
+    "usos": 1,
+    "antigo": {
+     "nivel_eq": 8.2,
+     "rank": "B+"
+    },
+    "melhor": "Fireball",
+    "areas": [
+     {
+      "nome": "Fireball",
+      "tipo": "explosao",
+      "nivel_eq": 8.23,
+      "rank": "B+",
+      "variacoes": {
+       "esparsa": 8.23,
+       "padrao": 8.23,
+       "agrupada": 9.0
+      }
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "defesa": {
+      "1": 1
+     },
+     "area": {
+      "3": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 5.59,
+    "rank": "C+",
+    "nivel_campo": 1.42,
+    "rank_campo": "D",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 3.55,
+    "rank_atencao": "C-",
+    "vidas_total": 0.815,
+    "vidas_campo": 0.129,
+    "vidas_atencao": 0.307,
+    "corpo": {
+     "T": 0.307,
+     "S": 0.415,
+     "P": -0.107,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
+    },
+    "nivel_corpo": 26.4,
+    "rank_corpo": "S",
+    "corpo_busca": [
+     [
+      11,
+      0.307
+     ],
+     [
+      12,
+      0.295
+     ],
+     [
+      13,
+      0.293
+     ],
+     [
+      14,
+      0.263
+     ],
+     [
+      15,
+      0.211
+     ],
+     [
+      16,
+      0.179
+     ],
+     [
+      17,
+      0.178
+     ],
+     [
+      18,
+      0.152
+     ],
+     [
+      19,
+      0.155
+     ],
+     [
+      20,
+      0.158
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 4.39,
+     "Party de elite": 4.77,
+     "Horda + chefe": 4.3,
+     "Horda": 4.37,
+     "Dupla": 4.94,
+     "Chefe sozinho": 8.15
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0015,
+      "Corpo (6 esqueletos (Undead Thralls))": 0.0628
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0009,
+      "Corpo (6 esqueletos (Undead Thralls))": 0.0367
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.001,
+      "Corpo (6 esqueletos (Undead Thralls))": 0.0444
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0021,
+      "Corpo (6 esqueletos (Undead Thralls))": 0.0933
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0011,
+      "Corpo (6 esqueletos (Undead Thralls))": 0.04
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0017,
+      "Corpo (6 esqueletos (Undead Thralls))": 0.0533
+     }
+    },
+    "nivel_absoluto": 4.49,
+    "rank_absoluto": "C"
+   }
+  },
   "reacao-counterspell": {
    "hipotese": "só truques (Toll the Dead) + Counterspell (reação)",
    "principal": [],
@@ -1806,13 +2045,14 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1,
+       "1": 2,
        "2": 1,
        "3": 1
       }
      },
      "extras": [
-      "reacao-counterspell"
+      "area-barata",
+      "reacao-absorb-elements"
      ]
     },
     {
@@ -1838,13 +2078,10 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 2,
+       "1": 1,
        "2": 1
       }
-     },
-     "extras": [
-      "reacao-absorb-elements"
-     ]
+     }
     },
     {
      "linha": "combo",
@@ -1876,26 +2113,26 @@
      }
     },
     "defesa": {
-     "nivel_eq": 5.9,
-     "rank": "C+",
+     "nivel_eq": 6.1,
+     "rank": "B-",
      "por_categoria": {
-      "np": 5.9,
+      "np": 6.4,
       "p": 5.9
      }
     },
     "resiliencia": {
-     "nivel_eq": 8.4,
+     "nivel_eq": 8.2,
      "rank": "B+",
      "por_categoria": {
-      "np": 8.2,
+      "np": 7.5,
       "p": 8.5
      }
     },
     "vontade": {
-     "nivel_eq": 11.8,
+     "nivel_eq": 11.2,
      "rank": "A",
      "por_categoria": {
-      "np": 10.5,
+      "np": 8.5,
       "p": 12.5
      }
     },
@@ -1908,10 +2145,10 @@
      }
     },
     "corpo": {
-     "nivel_eq": 24.5,
+     "nivel_eq": 26.1,
      "rank": "S",
      "por_categoria": {
-      "np": 20.7,
+      "np": 25.5,
       "p": 26.4
      }
     },
@@ -1919,7 +2156,7 @@
      "nivel_eq": 21.1,
      "rank": "S",
      "por_categoria": {
-      "np": 8.1,
+      "np": 8.3,
       "p": 11.0
      }
     }
@@ -1957,10 +2194,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.9,
-     "rank": "B-",
+     "nivel_eq": 8.2,
+     "rank": "B+",
      "por_categoria": {
-      "p": 6.9
+      "p": 8.2
      }
     },
     "defesa": {
@@ -2008,7 +2245,7 @@
    }
   }
  },
- "segundos": 13.0,
+ "segundos": 7.2,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2489,60 +2726,67 @@
   }
  },
  "impressoes": {
-  "_planos": "9a54a6c7158f",
+  "_planos": "1c010c234fb2",
   "principal": {
    "dano": "01ece73872f0",
-   "defesa": "45fd61bbdd8a",
-   "saves": "30f174ce5cf8",
+   "defesa": "386c4bc025be",
+   "saves": "66504a9aa37c",
    "area": "4dcb1f03a73b",
    "controle": "c89d46cb3ba3"
   },
   "controle": {
    "dano": "313a3fee3601",
-   "defesa": "1e5679139d70",
-   "saves": "7ceb3fa5f497",
+   "defesa": "643b72574071",
+   "saves": "668ea5d82347",
    "area": "fc51f72eb3dc",
    "controle": "2fbd056ba1c5"
   },
   "controle-barato": {
    "dano": "313a3fee3601",
-   "defesa": "1e5679139d70",
-   "saves": "7ceb3fa5f497",
+   "defesa": "643b72574071",
+   "saves": "668ea5d82347",
    "area": "fc51f72eb3dc",
    "controle": "49eb634ff41f"
   },
   "area": {
    "dano": "26583369ff6e",
-   "defesa": "1e5679139d70",
-   "saves": "7ceb3fa5f497",
+   "defesa": "643b72574071",
+   "saves": "668ea5d82347",
    "area": "f3973f29fac5",
    "controle": "855b7c1976fc"
   },
   "combo": {
    "dano": "26583369ff6e",
-   "defesa": "1e5679139d70",
-   "saves": "7ceb3fa5f497",
+   "defesa": "643b72574071",
+   "saves": "668ea5d82347",
    "area": "60a30532f12e",
    "controle": "c9d4f47dbe92"
   },
   "invocacao": {
    "dano": "9e18a44a1a34",
-   "defesa": "1e5679139d70",
-   "saves": "7ceb3fa5f497",
+   "defesa": "643b72574071",
+   "saves": "668ea5d82347",
    "area": "5dde3c75d49a",
    "controle": "460616f1e679"
   },
+  "area-barata": {
+   "dano": "26583369ff6e",
+   "defesa": "643b72574071",
+   "saves": "668ea5d82347",
+   "area": "2fea42cf1478",
+   "controle": "855b7c1976fc"
+  },
   "reacao-counterspell": {
    "dano": "01ece73872f0",
-   "defesa": "45fd61bbdd8a",
-   "saves": "b04ee620ad89",
+   "defesa": "386c4bc025be",
+   "saves": "40b95cbd5ee7",
    "area": "4dcb1f03a73b",
    "controle": "c89d46cb3ba3"
   },
   "reacao-absorb-elements": {
    "dano": "01ece73872f0",
-   "defesa": "45fd61bbdd8a",
-   "saves": "345a999a858b",
+   "defesa": "386c4bc025be",
+   "saves": "0c397b5e0a6e",
    "area": "4dcb1f03a73b",
    "controle": "c89d46cb3ba3"
   }

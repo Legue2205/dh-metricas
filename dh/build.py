@@ -33,6 +33,27 @@ def _magias_usadas(f):
     for op in f.get('opcoes', []): yield from _magias_usadas(op)
 
 
+def _reacoes_magicas(b, linhas):
+    """M1 (23/11): "reacoes_magicas" da build viram linhas "reacao-<magia>" = principal + os campos da reação
+    (tabela _reacoes_magicas do magias.json). Idempotente; respeita "desde" (nível mínimo)."""
+    rm = b.get('reacoes_magicas') or []
+    if not rm or not b.get('linhas'): return
+    from pathlib import Path
+    tab = json.loads((Path(__file__).parent / 'controle' / 'magias.json').read_text(encoding='utf-8')).get('_reacoes_magicas', {})
+    base = next((l for l in b['linhas'] if l.get('principal')), b['linhas'][0])
+    for r in rm:
+        m = r if isinstance(r, str) else r.get('magia')
+        if m not in tab or (isinstance(r, dict) and b.get('nivel', 99) < r.get('desde', 1)): continue
+        lid = 'reacao-' + m.replace('_', '-')
+        if lid in linhas: continue
+        nova = {k: json.loads(json.dumps(v)) for k, v in base.items() if k not in ('id', 'principal', 'hipotese', 'herdou', 'custo')}
+        for eixo, campos in tab[m].items():
+            if isinstance(campos, dict): nova[eixo] = dict(nova.get(eixo) or {}, **campos)
+        nova.update(id=lid, hipotese=f"{base.get('hipotese', base['id'])} + {tab[m].get('rotulo', m)} (reação)",
+                    herdou=base['id'])
+        b['linhas'].append(nova); linhas[lid] = nova
+
+
 def resolver(b):
     """Linhas com "herda": "<id>" recebem os eixos e campos que não declararam da linha-mãe (idempotente)."""
     linhas = {l['id']: l for l in b.get('linhas', []) if 'id' in l}
@@ -42,6 +63,7 @@ def resolver(b):
             mae = linhas[l['herda']]; visto.add(l.pop('herda')); l['herdou'] = mae['id']
             for k, v in mae.items():
                 if k not in l and k not in ('id', 'principal', 'hipotese', 'herdou'): l[k] = json.loads(json.dumps(v))
+    _reacoes_magicas(b, linhas)
     for l in b.get('linhas', []):      # "dpr": "auto" na atenção = DPR da própria linha na CA da premissa
         at = (l.get('controle') or {}).get('atencao') or {}
         if at.get('dpr') == 'auto':

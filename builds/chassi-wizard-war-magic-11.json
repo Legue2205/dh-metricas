@@ -612,11 +612,11 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: combo. Sobra: 1×2º, 1×3º, 3×4º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-counterspell; prioritário: combo. Sobra: 2×1º, 3×2º, 2×4º.",
    "combates": [
-    "controle-barato",
+    "reacao-counterspell",
     "combo",
-    "controle-barato",
+    "reacao-counterspell",
     "combo"
    ]
   },
@@ -631,9 +631,20 @@
  "descricao": {
   "resumo": "Mago de guerra do chassi: a régua comum + Durable Magic (+2 CA e saves) nas linhas com concentração.",
   "estrategia": "Régua comum do chassi do Wizard (ver gerador) + o que a tradição dá.",
-  "nao_modelado": "Arcane Deflection (reação: +2 CA/+4 save); Tactical Wit (iniciativa); Power Surge. Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Absorb Elements; Ritual Casting e utilidade; quebra de concentração.",
+  "nao_modelado": "Arcane Deflection (reação: +2 CA/+4 save); Tactical Wit (iniciativa); Power Surge. Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Ritual Casting e utilidade; quebra de concentração.",
+  "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
   "progressao": "Wizard 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 20, 'sab': 12, 'car': 10}; CD 17, ataque +9. Durable Magic: +2 CA e saves concentrando."
  },
+ "reacoes_magicas": [
+  {
+   "magia": "counterspell",
+   "desde": 5
+  },
+  {
+   "magia": "absorb_elements",
+   "desde": 1
+  }
+ ],
  "id": "chassi-wizard-war-magic-11",
  "nome": "War Magic Wizard — chassi",
  "grupo": "Chassi",

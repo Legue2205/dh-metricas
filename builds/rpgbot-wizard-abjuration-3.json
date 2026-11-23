@@ -69,28 +69,39 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: 5×1º, 2×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-absorb-elements; prioritário: reacao-absorb-elements. Sobra: 1×1º, 2×2º.",
    "combates": [
-    "principal",
-    "principal",
-    "principal",
-    "principal"
+    "reacao-absorb-elements",
+    "reacao-absorb-elements",
+    "reacao-absorb-elements",
+    "reacao-absorb-elements"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: 5×1º, 2×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: reacao-absorb-elements. Sobra: 4×1º, 2×2º.",
    "combates": [
-    "principal"
+    "reacao-absorb-elements"
    ]
   }
  },
  "descricao": {
   "resumo": "Abjurador com armadura média e escudo (dip de Artificer), Arcane Ward como PV extra, que joga de invocador (Summon Fey/Aberration).",
   "estrategia": "Toll the Dead e Shield no dia a dia; Web para controlar, Fireball em grupos, invocações de 1 hora para cobrir duas lutas.",
-  "nao_modelado": "Recarga do Arcane Ward durante a luta e Projected Ward; Counterspell e Improved Abjuration; Absorb Elements; Grease, Fog Cloud, Mind Whip, Sickening Radiance; Greater Invisibility.",
+  "nao_modelado": "Recarga do Arcane Ward durante a luta e Projected Ward; Counterspell e Improved Abjuration; Grease, Fog Cloud, Mind Whip, Sickening Radiance; Greater Invisibility.",
+  "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
   "progressao": "Artificer 1 / Wizard 2; Arcane Ward 7 somado ao PV."
  },
+ "reacoes_magicas": [
+  {
+   "magia": "counterspell",
+   "desde": 5
+  },
+  {
+   "magia": "absorb_elements",
+   "desde": 1
+  }
+ ],
  "id": "rpgbot-wizard-abjuration-3",
  "nome": "Abjuration Wizard (RPGBot: Krump Your Pointy Hat Pajama Man)",
  "grupo": "RPGBot",

@@ -153,19 +153,19 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: marca; prioritário: marca. Sobra: 2×1º, 3×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-absorb-elements; prioritário: reacao-absorb-elements. Sobra: 3×2º.",
    "combates": [
-    "marca",
-    "marca",
-    "marca",
-    "marca"
+    "reacao-absorb-elements",
+    "reacao-absorb-elements",
+    "reacao-absorb-elements",
+    "reacao-absorb-elements"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: marca. Sobra: 3.5×1º, 3×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: reacao-absorb-elements. Sobra: 3×1º, 3×2º.",
    "combates": [
-    "marca"
+    "reacao-absorb-elements"
    ]
   }
  },
@@ -173,8 +173,15 @@
   "resumo": "Chassi do Beast Master (Primal Companion): Ranger defensor com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
   "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Primal Companion (Beast of the Land); Exceptional Training (7) e Bestial Fury (11). Charge, Share Spells e o corpo da fera na defesa não modelados. Sentinel: OA em 50% dos rounds + sentinela no controle.",
+  "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas.",
   "progressao": "atributos {'for': 17, 'des': 15, 'con': 13, 'int': 8, 'sab': 12, 'car': 10}. Primal Companion (Beast of the Land); Exceptional Training (7) e Bestial Fury (11). Charge, Share Spells e o corpo da fera na defesa não modelados. Sentinel: OA em 50% dos rounds + sentinela no controle."
  },
+ "reacoes_magicas": [
+  {
+   "magia": "absorb_elements",
+   "desde": 2
+  }
+ ],
  "id": "chassi-ranger-beast-master-f-sentinel-7",
  "nome": "Beast Master Ranger — chassi + Sentinel",
  "grupo": "Chassi",

@@ -264,12 +264,12 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: area, controle-barato. Sobra: 1×1º, 3×2º, 2×3º, 2 forma_selvagem.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-absorb-elements; prioritário: area, reacao-absorb-elements. Sobra: 0.25×1º, 3×2º, 2×3º, 2 forma_selvagem.",
    "combates": [
-    "controle-barato",
-    "controle-barato",
-    "controle-barato",
-    "area"
+    "reacao-absorb-elements",
+    "area",
+    "reacao-absorb-elements",
+    "reacao-absorb-elements"
    ]
   },
   "combate_unico": {
@@ -283,9 +283,16 @@
  "descricao": {
   "resumo": "Druida curandeiro de retaguarda: Balm of the Summer Court (cura a distância como ação bônus, sem espaço) no lugar do Healing Word.",
   "estrategia": "Produce Flame e magias de controle; Balm para levantar aliados caídos; Polymorph e Wall of Fire no 7.",
-  "nao_modelado": "Hearth of Moonlight and Shadow; Hidden Paths (10); Chef; Aura of Vitality; Faerie Fire, Spike Growth, Pass Without Trace; Absorb Elements; PV temporários do Balm somados à cura.",
+  "nao_modelado": "Hearth of Moonlight and Shadow; Hidden Paths (10); Chef; Aura of Vitality; Faerie Fire, Spike Growth, Pass Without Trace; PV temporários do Balm somados à cura.",
+  "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
   "progressao": "Druid 7 (Dreams); Githzerai; Sab 18; Balm of the Summer Court 7d6/dia."
  },
+ "reacoes_magicas": [
+  {
+   "magia": "absorb_elements",
+   "desde": 1
+  }
+ ],
  "id": "rpgbot-druid-dreams-7",
  "nome": "Circle of Dreams Druid (RPGBot: Lucidity)",
  "grupo": "RPGBot",

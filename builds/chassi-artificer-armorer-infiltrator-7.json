@@ -266,11 +266,11 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: combo, controle. Sobra: 3×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-absorb-elements; prioritário: combo, controle. Sobra: 1×1º.",
    "combates": [
-    "principal",
+    "reacao-absorb-elements",
     "controle",
-    "principal",
+    "reacao-absorb-elements",
     "combo"
    ]
   },
@@ -294,8 +294,15 @@
    "Mirror Image, Magic Missile (sem entrada)",
    "Homunculus"
   ],
+  "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
   "progressao": "atributos {'for': 10, 'des': 13, 'con': 15, 'int': 19, 'sab': 12, 'car': 8}"
  },
+ "reacoes_magicas": [
+  {
+   "magia": "absorb_elements",
+   "desde": 1
+  }
+ ],
  "id": "chassi-artificer-armorer-infiltrator-7",
  "nome": "Armorer (Infiltrator) Artificer — chassi",
  "grupo": "Chassi",

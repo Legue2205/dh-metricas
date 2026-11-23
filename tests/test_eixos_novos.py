@@ -308,3 +308,21 @@ def test_dado_multiuso_volta_se_falhar():
     assert base < com <= base * P('suporte.dado_multiuso.reuso_max') + 1e-9
     so_dano = {'modelo': 'dado_multiuso', 'dado_medio': 4.5, 'usos_luta': 1, 'mix': {'dano': 1.0}}
     assert S.valor(dict(so_dano, volta_se_falhar=True), 7) == S.valor(so_dano, 7)   # dano não falha: sem reuso
+
+
+def test_reacoes_magicas_viram_linhas():
+    """M1 (23/11): "reacoes_magicas" na build → linha "reacao-<magia>" = principal + campos da reação; respeita "desde"."""
+    import json
+    from dh.build import resolver
+    from dh import orcamento
+    from dh.controle.campo import MAGIAS
+    b = {'id': 't', 'nivel': 5, 'corpo': {'pv': 30, 'ca': 13, 'saves': {}},
+         'linhas': [{'id': 'principal', 'principal': True, 'dano': {'ataques': []}, 'saves': {'adv': []}}],
+         'reacoes_magicas': [{'magia': 'counterspell', 'desde': 5}, {'magia': 'absorb_elements', 'desde': 7}]}
+    resolver(b)
+    ids = [l['id'] for l in b['linhas']]
+    assert 'reacao-counterspell' in ids and 'reacao-absorb-elements' not in ids
+    l = next(l for l in b['linhas'] if l['id'] == 'reacao-counterspell')
+    assert l['saves']['contra'] == 1 and l['saves']['adv'] == []
+    assert orcamento.espacos_gastos(l, b['corpo'], MAGIAS).get('saves') == {'3': 1}
+    resolver(b); assert [x['id'] for x in b['linhas']] == ids          # idempotente

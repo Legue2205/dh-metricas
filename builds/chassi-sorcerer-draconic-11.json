@@ -468,11 +468,11 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: combo. Sobra: 2×2º, 1×3º, 3×4º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-counterspell; prioritário: combo. Sobra: 2×1º, 4×2º, 2×4º.",
    "combates": [
-    "controle-barato",
+    "reacao-counterspell",
     "combo",
-    "controle-barato",
+    "reacao-counterspell",
     "combo"
    ]
   },
@@ -487,9 +487,20 @@
  "descricao": {
   "resumo": "Chassi do Sorcerer draconic: Draconic Resilience (CA 13+Des sem Mage Armor, +1 PV/nível) e Elemental Affinity de fogo (+Car no Fire Bolt e no Fireball a partir do 6).",
   "estrategia": "Fire Bolt nos rounds livres; Web/Hold Person/Hypnotic Pattern/Polymorph; Fireball em grupos; o plano automático escolhe.",
-  "nao_modelado": "Resistência a fogo de Elemental Affinity; Dragon Ancestor (idioma, perícias). Metamagia (Twinned, Quickened, Heightened...: os pontos viram espaços pela convenção); Counterspell; Haste; magias conhecidas além da lista base.",
+  "nao_modelado": "Resistência a fogo de Elemental Affinity; Dragon Ancestor (idioma, perícias). Metamagia (Twinned, Quickened, Heightened...: os pontos viram espaços pela convenção); Haste; magias conhecidas além da lista base.",
+  "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
   "progressao": "Sorcerer 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 10, 'sab': 12, 'car': 20}; CA 14; Elemental Affinity (+Car no fogo)."
  },
+ "reacoes_magicas": [
+  {
+   "magia": "counterspell",
+   "desde": 5
+  },
+  {
+   "magia": "absorb_elements",
+   "desde": 1
+  }
+ ],
  "id": "chassi-sorcerer-draconic-11",
  "nome": "Draconic Sorcerer — chassi",
  "grupo": "Chassi",

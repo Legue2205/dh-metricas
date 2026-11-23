@@ -288,11 +288,11 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: combo, controle. Sobra: 3×1º, 2×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-absorb-elements; prioritário: combo, controle. Sobra: 1×1º, 2×2º.",
    "combates": [
-    "principal",
+    "reacao-absorb-elements",
     "controle",
-    "principal",
+    "reacao-absorb-elements",
     "combo"
    ]
   },
@@ -317,8 +317,15 @@
    "Troca de modelo no descanso",
    "Defensive Field como ação bônus (PB/dia; aqui carga média por luta)"
   ],
+  "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
   "progressao": "atributos {'for': 10, 'des': 13, 'con': 16, 'int': 20, 'sab': 12, 'car': 8}"
  },
+ "reacoes_magicas": [
+  {
+   "magia": "absorb_elements",
+   "desde": 1
+  }
+ ],
  "id": "chassi-artificer-armorer-11",
  "nome": "Armorer Artificer — chassi",
  "grupo": "Chassi",

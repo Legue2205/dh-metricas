@@ -140,9 +140,16 @@ número = builds com o item no `nao_modelado`. Ordem = impacto (quantas builds �
 de trabalho das passadas: revalidar antes de cada item, diff contra a baseline (`p2b-*`) depois, achados novos → lista
 seguinte. Itens que mudam premissa vão para Decisões.
 
-- [ ] **M1 Reações declaradas** [D] — Counterspell (86), Absorb Elements (60), Silvery Barbs (60), Shield. O motor de
+- [x] **M1 Reações declaradas** [D] — **feito 23/11 (Counterspell e Absorb Elements):** campo genérico
+  `reacoes_magicas` na build → o `resolver` cria `reacao-<magia>` = principal + os campos da reação (tabela
+  `_reacoes_magicas` no magias.json); o orçamento cobra o espaço e o plano (D5/D9) decide quando vale. Distribuído por
+  `ferramentas/geradores/m1_reacoes.py` (chassis: lista RAW da classe; RPGBot: só se o `nao_modelado` cita) em 97
+  progressões; ligado ao `chassi.escrever`. Wizard Evocation 11: def. mental 8,5 → 12,5 com Counterspell; o plano o usa
+  como extra nas 4 lutas. Silvery Barbs (defensivo: tipo novo na defesa) → M1b. Original: — Counterspell (86), Absorb Elements (60), Silvery Barbs (60), Shield. O motor de
   saves já trata `absorb`/`contra` e o controle tem Silvery Barbs; falta declarar nas builds, respeitando uma reação por
   round (`reacao` / `dh validar`). Eixos: def. mágica, defesa, controle.
+- [ ] **M1b Silvery Barbs** [N] — reação de 1º que força a rerrolagem de um acerto/sucesso inimigo; precisa de um tipo
+  de reação na defesa (com custo de espaço no orçamento) e do `forcar_falha` no controle (60 builds).
 - [ ] **M2 Kit do Ranger** [D/N] — Hunter's Mark com concentração (74), Favored Foe/Natural Explorer (74), magias além
   da Marca (74), pet como corpo e dano (74; `invocacoes`), Ensnaring Strike e Spike Growth (controle). Ex-P2.11: hoje o
   Ranger tem controle e suporte 0,0 em todas as subclasses.
@@ -162,7 +169,20 @@ seguinte. Itens que mudam premissa vão para Decisões.
 - [ ] **M8 Efeitos táticos de feats e truques** [N] — desvantagem do Vicious Mockery (41), Booming Blade secundário (31),
   Slasher (34), Telekinetic (30), Flash of Genius (40), Spell-Storing Item (40).
 - **Fora de escopo, por decisão:** mobilidade (Misty Step 63, Step of the Wind 52, Slow Fall 52, Fast Movement 32;
-  eixo retirado em nov/2026) e iniciativa (Feral Instinct 62): só registrados.
+  eixo retirado em nov/2026) e iniciativa (Feral Instinct 62): só registrados. Ver "Eixos futuros" abaixo.
+
+### Eixos futuros (nota do usuário, 23/11) — possíveis adições, futuro distante
+Se Monks, Rogues ou conjuradores de controle com Alert aparecerem fracos, uma razão provável está aqui.
+- **Iniciativa** (a mais modelável das três): de forma grosseira, a posição no primeiro turno e quantos turnos se nega
+  ou quantos inimigos morrem antes de eles agirem. Suporte com iniciativa alta já buffa no turno 1; frontliner com
+  iniciativa alta é barreira mais confiável (se todos os inimigos agem antes, quebram a formação). Iniciativa baixa
+  custa turno: frontliner gastando Dash, druida tendo de Desengajar de posição ruim.
+- **Mobilidade:** não rende todo turno, mas quando é necessária a falta dói muito. A plataforma já capta parte (ficar
+  fora do perigo da linha de frente, skirmisher). Falta a liberdade: buscar alvos prioritários, atacar a retaguarda
+  inimiga, sair do perigo, reposicionar, achar cobertura. Ex.: Rogue com Mobile como skirmisher. Difícil de modelar
+  porque as oportunidades não surgem todo turno.
+- **Utilidade:** espaços e recursos fora de combate (~20% já reservados na D9); Rogue é quem mais se beneficia. Não se
+  sabe ainda o que o RPGBot diz sobre utilidade.
 
 Depois da passada M: varredura descritiva → **treino dos parâmetros** (α, β, δ, g, típicos, pesos por eixo) contra os
 gabaritos, como um treino iterativo.

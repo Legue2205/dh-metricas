@@ -623,11 +623,11 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: combo. Sobra: 1×2º, 1×3º, 2×4º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-counterspell; prioritário: combo. Sobra: 2×1º, 3×2º, 1×4º.",
    "combates": [
-    "controle-barato",
+    "reacao-counterspell",
     "combo",
-    "controle-barato",
+    "reacao-counterspell",
     "combo"
    ]
   },
@@ -642,9 +642,20 @@
  "descricao": {
   "resumo": "Necromante do chassi: a régua comum + uma tropa de esqueletos mantida com Animate Dead e Summon Undead como invocação.",
   "estrategia": "Régua comum do chassi do Wizard (ver gerador) + o que a tradição dá.",
-  "nao_modelado": "Grim Harvest; Inured to Undeath; esqueletos sem armadura extra (CA 13 do Monster Manual). Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Absorb Elements; Ritual Casting e utilidade; quebra de concentração.",
+  "nao_modelado": "Grim Harvest; Inured to Undeath; esqueletos sem armadura extra (CA 13 do Monster Manual). Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Ritual Casting e utilidade; quebra de concentração.",
+  "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
   "progressao": "Wizard 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 20, 'sab': 12, 'car': 10}; CD 17, ataque +9. 6 esqueletos mantidos (Animate Dead: 1 espaço de 4º por dia)."
  },
+ "reacoes_magicas": [
+  {
+   "magia": "counterspell",
+   "desde": 5
+  },
+  {
+   "magia": "absorb_elements",
+   "desde": 1
+  }
+ ],
  "id": "chassi-wizard-necromancy-11",
  "nome": "Necromancy Wizard — chassi",
  "grupo": "Chassi",

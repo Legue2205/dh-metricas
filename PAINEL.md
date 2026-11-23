@@ -243,39 +243,39 @@ chassi-paladin-watchers-11  11    8,9 B+     7,2 B    8,6 B+    12,5 A         -
 chassi-paladin-watchers-7   7     4,3 C     4,6 C    5,2 C+    8,4 B+         -     4,6 C    6,2 B-
 chassi-paladin-watchers-f-skill-expert-11  11    8,9 B+     7,2 B    8,1 B+   10,5 A-         -    8,1 B+    8,7 B+
 chassi-paladin-watchers-f-skill-expert-7   7     4,3 C     4,6 C    5,2 C+    8,4 B+         -     4,6 C    6,2 B-
-chassi-ranger-beast-master-11  11     7,7 B    8,2 B+    11,3 A     2,7 D         -     4,8 C         -
+chassi-ranger-beast-master-11  11    11,6 A    8,2 B+    11,3 A     2,7 D         -    8,3 B+         -
 chassi-ranger-beast-master-7   7    5,6 C+    5,1 C+    6,2 B-     2,5 D         -     4,6 C         -
-chassi-ranger-beast-master-f-sentinel-11  11    8,1 B+    8,2 B+   10,8 A-     2,7 D         -     4,8 C         -
+chassi-ranger-beast-master-f-sentinel-11  11    11,8 A    8,2 B+   10,8 A-     2,7 D         -    8,3 B+         -
 chassi-ranger-beast-master-f-sentinel-7   7    5,9 C+    5,1 C+    6,1 B-     2,5 D         -     4,6 C         -
-chassi-ranger-drakewarden-11  11     7,0 B    6,5 B-    11,3 A     2,7 D         -     4,6 C         -
+chassi-ranger-drakewarden-11  11    11,2 A    6,5 B-    11,3 A     2,7 D         -    8,3 B+         -
 chassi-ranger-drakewarden-7   7    5,7 C+     4,2 C    6,2 B-     2,5 D         -     4,6 C         -
-chassi-ranger-drakewarden-f-great-weapon-master-11  11    6,4 B-    6,5 B-   10,8 A-     2,7 D         -     4,6 C         -
+chassi-ranger-drakewarden-f-great-weapon-master-11  11    11,1 A    6,5 B-   10,8 A-     2,7 D         -    8,3 B+         -
 chassi-ranger-drakewarden-f-great-weapon-master-7   7     4,6 C     4,2 C     7,2 B     2,5 D         -     4,6 C         -
-chassi-ranger-drakewarden-f-polearm-master-11  11     7,3 B    6,5 B-   10,8 A-     2,7 D         -     4,8 C         -
+chassi-ranger-drakewarden-f-polearm-master-11  11    11,3 A    6,5 B-   10,8 A-     2,7 D         -    8,3 B+         -
 chassi-ranger-drakewarden-f-polearm-master-7   7    6,0 B-     4,2 C    6,1 B-     2,5 D         -     4,6 C         -
-chassi-ranger-fey-wanderer-11  11    6,9 B-    8,6 B+    20,0 S     2,6 D         -     4,6 C         -
+chassi-ranger-fey-wanderer-11  11   11,0 A-    8,6 B+    20,0 S     2,6 D         -    8,3 B+         -
 chassi-ranger-fey-wanderer-7   7    5,4 C+     4,4 C     7,6 B     2,6 D         -     4,6 C         -
-chassi-ranger-fey-wanderer-f-sharpshooter-11  11    6,8 B-    6,9 B-   14,8 A+     2,6 D         -     4,6 C         -
+chassi-ranger-fey-wanderer-f-sharpshooter-11  11    11,1 A    6,9 B-   14,8 A+     2,6 D         -    8,3 B+         -
 chassi-ranger-fey-wanderer-f-sharpshooter-7   7    5,3 C+     4,1 C     7,2 B     2,6 D         -     4,6 C         -
-chassi-ranger-gloom-stalker-11  11    8,0 B+    8,6 B+    20,0 S     5,0 C         -     4,8 C         -
+chassi-ranger-gloom-stalker-11  11    11,5 A    8,6 B+    20,0 S     5,0 C         -    8,3 B+         -
 chassi-ranger-gloom-stalker-7   7    5,6 C+     4,4 C     7,6 B     4,5 C         -     4,6 C         -
-chassi-ranger-gloom-stalker-f-sharpshooter-11  11     7,9 B    6,9 B-   14,8 A+     5,0 C         -     4,8 C         -
+chassi-ranger-gloom-stalker-f-sharpshooter-11  11    11,7 A    6,9 B-   14,8 A+     5,0 C         -    8,3 B+         -
 chassi-ranger-gloom-stalker-f-sharpshooter-7   7    5,5 C+     4,1 C     7,2 B     4,5 C         -     4,6 C         -
-chassi-ranger-horizon-walker-11  11   10,9 A-    8,6 B+    20,0 S     2,6 D         -    8,1 B+         -
+chassi-ranger-horizon-walker-11  11   13,2 A+    8,6 B+    20,0 S     2,6 D         -    8,3 B+         -
 chassi-ranger-horizon-walker-7   7    6,1 B-     4,4 C     7,6 B     2,6 D         -     4,6 C         -
-chassi-ranger-horizon-walker-f-sharpshooter-11  11   10,5 A-    6,9 B-   14,8 A+     2,6 D         -    8,3 B+         -
+chassi-ranger-horizon-walker-f-sharpshooter-11  11   13,2 A+    6,9 B-   14,8 A+     2,6 D         -    8,3 B+         -
 chassi-ranger-horizon-walker-f-sharpshooter-7   7    5,6 C+     4,1 C     7,2 B     2,6 D         -     4,6 C         -
-chassi-ranger-hunter-11  11     7,2 B    8,6 B+    20,0 S     2,6 D         -     4,6 C         -
+chassi-ranger-hunter-11  11    11,2 A    8,6 B+    20,0 S     2,6 D         -    8,3 B+         -
 chassi-ranger-hunter-7   7    6,1 B-     4,4 C     7,6 B     2,6 D         -     4,6 C         -
-chassi-ranger-hunter-f-sharpshooter-11  11     7,0 B    6,9 B-   14,8 A+     2,6 D         -     4,6 C         -
+chassi-ranger-hunter-f-sharpshooter-11  11    11,2 A    6,9 B-   14,8 A+     2,6 D         -    8,3 B+         -
 chassi-ranger-hunter-f-sharpshooter-7   7    5,6 C+     4,1 C     7,2 B     2,6 D         -     4,6 C         -
-chassi-ranger-monster-slayer-11  11    6,9 B-    8,6 B+    20,0 S     2,6 D         -     4,6 C         -
+chassi-ranger-monster-slayer-11  11   11,0 A-    8,6 B+    20,0 S     2,6 D         -    8,3 B+         -
 chassi-ranger-monster-slayer-7   7    5,7 C+     4,4 C     7,6 B     2,6 D         -     4,6 C         -
-chassi-ranger-monster-slayer-f-sharpshooter-11  11    6,8 B-    6,9 B-   14,8 A+     2,6 D         -     4,6 C         -
+chassi-ranger-monster-slayer-f-sharpshooter-11  11    11,1 A    6,9 B-   14,8 A+     2,6 D         -    8,3 B+         -
 chassi-ranger-monster-slayer-f-sharpshooter-7   7    5,4 C+     4,1 C     7,2 B     2,6 D         -     4,6 C         -
-chassi-ranger-swarmkeeper-11  11     7,2 B    8,6 B+    20,0 S     2,6 D         -     4,6 C         -
+chassi-ranger-swarmkeeper-11  11    11,2 A    8,6 B+    20,0 S     2,6 D         -    8,3 B+         -
 chassi-ranger-swarmkeeper-7   7    5,7 C+     4,4 C     7,6 B     2,6 D         -     4,6 C         -
-chassi-ranger-swarmkeeper-f-sharpshooter-11  11     7,0 B    6,9 B-   14,8 A+     2,6 D         -     4,6 C         -
+chassi-ranger-swarmkeeper-f-sharpshooter-11  11    11,2 A    6,9 B-   14,8 A+     2,6 D         -    8,3 B+         -
 chassi-ranger-swarmkeeper-f-sharpshooter-7   7    5,4 C+     4,1 C     7,2 B     2,6 D         -     4,6 C         -
 chassi-rogue-arcane-trickster-11  11     7,7 B    8,0 B+   10,9 A-     4,3 C         -     4,8 C         -
 chassi-rogue-arcane-trickster-7   7    3,8 C-    5,5 C+     7,3 B    3,6 C-         -     4,3 C         -
@@ -816,46 +816,46 @@ rpgbot-paladin-watchers-3   3    3,1 C-     1,7 D     2,3 D     1,3 D         - 
 rpgbot-paladin-watchers-5   5     4,6 C    3,1 C-    3,9 C-    3,1 C-         -     4,6 C     4,4 C
 rpgbot-paladin-watchers-7   7     4,6 C    5,1 C+    6,2 B-    8,2 B+         -     4,6 C    6,3 B-
 rpgbot-paladin-watchers-9   9    5,9 C+    6,7 B-    8,0 B+    8,6 B+         -     4,8 C     7,7 B
-rpgbot-ranger-beast-master-11  11    8,7 B+     7,6 B   14,6 A+    3,5 C-         -    8,0 B+         -
+rpgbot-ranger-beast-master-11  11    12,2 A     7,6 B   14,6 A+    3,5 C-         -    8,3 B+         -
 rpgbot-ranger-beast-master-3   3    3,1 C-     1,5 D     3,0 D     2,0 D         -     4,2 C         -
-rpgbot-ranger-beast-master-5   5    6,3 B-    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
-rpgbot-ranger-beast-master-7   7    6,3 B-     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
-rpgbot-ranger-beast-master-9   9     7,7 B    6,1 B-   10,7 A-    3,5 C-         -     4,8 C         -
-rpgbot-ranger-drakewarden-11  11     7,7 B     7,6 B   14,6 A+    3,5 C-         -     4,8 C         -
+rpgbot-ranger-beast-master-5   5    5,6 C+    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
+rpgbot-ranger-beast-master-7   7    5,6 C+     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
+rpgbot-ranger-beast-master-9   9   10,9 A-    6,1 B-   10,7 A-    3,5 C-         -    8,3 B+         -
+rpgbot-ranger-drakewarden-11  11    11,7 A     7,6 B   14,6 A+    3,5 C-         -    8,3 B+         -
 rpgbot-ranger-drakewarden-3   3     2,7 D     1,5 D     3,0 D     2,0 D         -     4,2 C         -
-rpgbot-ranger-drakewarden-5   5    6,1 B-    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
-rpgbot-ranger-drakewarden-7   7    6,4 B-     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
-rpgbot-ranger-drakewarden-9   9     7,7 B    6,1 B-   10,7 A-    3,5 C-         -     4,8 C         -
-rpgbot-ranger-fey-wanderer-11  11     7,5 B     7,6 B   14,6 A+    3,5 C-         -     4,8 C         -
+rpgbot-ranger-drakewarden-5   5    5,3 C+    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
+rpgbot-ranger-drakewarden-7   7    5,6 C+     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
+rpgbot-ranger-drakewarden-9   9   10,9 A-    6,1 B-   10,7 A-    3,5 C-         -    8,3 B+         -
+rpgbot-ranger-fey-wanderer-11  11    11,5 A     7,6 B   14,6 A+    3,5 C-         -    8,3 B+         -
 rpgbot-ranger-fey-wanderer-3   3     2,3 D     1,5 D     3,0 D     2,0 D         -     4,1 C         -
-rpgbot-ranger-fey-wanderer-5   5    5,9 C+    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
-rpgbot-ranger-fey-wanderer-7   7    5,9 C+     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
-rpgbot-ranger-fey-wanderer-9   9     7,3 B    6,1 B-   10,7 A-    3,5 C-         -     4,8 C         -
-rpgbot-ranger-gloom-stalker-11  11    9,1 B+     7,6 B   14,6 A+    8,3 B+         -    8,1 B+         -
+rpgbot-ranger-fey-wanderer-5   5    5,2 C+    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
+rpgbot-ranger-fey-wanderer-7   7    5,2 C+     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
+rpgbot-ranger-fey-wanderer-9   9   10,6 A-    6,1 B-   10,7 A-    3,5 C-         -    8,3 B+         -
+rpgbot-ranger-gloom-stalker-11  11    12,3 A     7,6 B   14,6 A+    8,3 B+         -    8,3 B+         -
 rpgbot-ranger-gloom-stalker-3   3     2,8 D     1,5 D     3,0 D     2,0 D         -     4,2 C         -
 rpgbot-ranger-gloom-stalker-5   5    6,2 B-    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
-rpgbot-ranger-gloom-stalker-7   7    6,2 B-     4,4 C     7,5 B     4,9 C         -     4,6 C         -
-rpgbot-ranger-gloom-stalker-9   9     7,6 B    6,1 B-   10,7 A-    8,2 B+         -     4,8 C         -
-rpgbot-ranger-horizon-walker-11  11    11,3 A     7,6 B   14,6 A+    3,5 C-         -    8,3 B+         -
+rpgbot-ranger-gloom-stalker-7   7    5,4 C+     4,4 C     7,5 B     4,9 C         -     4,6 C         -
+rpgbot-ranger-gloom-stalker-9   9   10,8 A-    6,1 B-   10,7 A-    8,2 B+         -    8,3 B+         -
+rpgbot-ranger-horizon-walker-11  11   13,8 A+     7,6 B   14,6 A+    3,5 C-         -    8,3 B+         -
 rpgbot-ranger-horizon-walker-3   3     2,6 D     1,5 D     3,0 D     2,0 D         -     4,2 C         -
 rpgbot-ranger-horizon-walker-5   5    6,3 B-    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
-rpgbot-ranger-horizon-walker-7   7    6,3 B-     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
-rpgbot-ranger-horizon-walker-9   9     7,6 B    6,1 B-   10,7 A-    3,5 C-         -     4,8 C         -
-rpgbot-ranger-hunter-11  11     7,6 B     7,6 B   14,6 A+    3,5 C-         -     4,8 C         -
+rpgbot-ranger-horizon-walker-7   7    5,5 C+     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
+rpgbot-ranger-horizon-walker-9   9   10,9 A-    6,1 B-   10,7 A-    3,5 C-         -    8,3 B+         -
+rpgbot-ranger-hunter-11  11    11,6 A     7,6 B   14,6 A+    3,5 C-         -    8,3 B+         -
 rpgbot-ranger-hunter-3   3     2,6 D     1,5 D     3,0 D     2,0 D         -     4,2 C         -
 rpgbot-ranger-hunter-5   5    6,3 B-    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
-rpgbot-ranger-hunter-7   7    6,3 B-     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
-rpgbot-ranger-hunter-9   9     7,6 B    6,1 B-   10,7 A-    3,5 C-         -     4,8 C         -
-rpgbot-ranger-monster-slayer-11  11     7,5 B     7,6 B   14,6 A+    3,5 C-         -     4,8 C         -
+rpgbot-ranger-hunter-7   7    5,5 C+     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
+rpgbot-ranger-hunter-9   9   10,9 A-    6,1 B-   10,7 A-    3,5 C-         -    8,3 B+         -
+rpgbot-ranger-monster-slayer-11  11    11,5 A     7,6 B   14,6 A+    3,5 C-         -    8,3 B+         -
 rpgbot-ranger-monster-slayer-3   3     2,5 D     1,5 D     3,0 D     2,0 D         -     4,2 C         -
-rpgbot-ranger-monster-slayer-5   5    6,1 B-    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
-rpgbot-ranger-monster-slayer-7   7    6,1 B-     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
-rpgbot-ranger-monster-slayer-9   9     7,5 B    6,1 B-   10,7 A-    3,5 C-         -     4,8 C         -
-rpgbot-ranger-swarmkeeper-11  11     7,6 B     7,6 B   14,6 A+    3,5 C-         -     4,8 C         -
+rpgbot-ranger-monster-slayer-5   5    5,4 C+    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
+rpgbot-ranger-monster-slayer-7   7    5,4 C+     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
+rpgbot-ranger-monster-slayer-9   9   10,8 A-    6,1 B-   10,7 A-    3,5 C-         -    8,3 B+         -
+rpgbot-ranger-swarmkeeper-11  11    11,6 A     7,6 B   14,6 A+    3,5 C-         -    8,3 B+         -
 rpgbot-ranger-swarmkeeper-3   3     2,5 D     1,5 D     3,0 D     2,0 D         -     4,2 C         -
-rpgbot-ranger-swarmkeeper-5   5    6,1 B-    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
-rpgbot-ranger-swarmkeeper-7   7    6,1 B-     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
-rpgbot-ranger-swarmkeeper-9   9     7,5 B    6,1 B-   10,7 A-    3,5 C-         -     4,8 C         -
+rpgbot-ranger-swarmkeeper-5   5    5,4 C+    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
+rpgbot-ranger-swarmkeeper-7   7    5,4 C+     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
+rpgbot-ranger-swarmkeeper-9   9   10,8 A-    6,1 B-   10,7 A-    3,5 C-         -    8,3 B+         -
 rpgbot-rogue-arcane-trickster-11  11     7,7 B    9,2 B+   14,4 A+    3,0 C-         -     4,8 C         -
 rpgbot-rogue-arcane-trickster-3   3     1,8 D     1,2 D     2,4 D     1,1 D         -     2,8 D         -
 rpgbot-rogue-arcane-trickster-5   5     4,2 C     4,4 C     4,4 C     2,6 D         -     4,3 C         -
@@ -1302,16 +1302,16 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~chassi-paladin-watchers-7   7    5,2 C+     4,6 C    5,2 C+    8,4 B+     0,0 F     4,6 C     0,6 E
 ~chassi-paladin-watchers-f-skill-expert-11  11    8,4 B+     7,2 B    8,1 B+   10,5 A-     0,0 F     4,8 C     0,9 E
 ~chassi-paladin-watchers-f-skill-expert-7   7    5,2 C+     4,6 C    5,2 C+    8,4 B+     0,0 F     4,6 C     0,6 E
-~chassi-ranger-beast-master-11  11    6,7 B-    8,2 B+   10,5 A-     2,7 D     0,0 F     4,6 C         -
-~chassi-ranger-beast-master-7   7     4,6 C    5,1 C+    6,2 B-     2,5 D     0,0 F     4,3 C         -
-~chassi-ranger-beast-master-f-sentinel-11  11    6,9 B-    8,2 B+    9,8 B+     2,7 D    3,1 C-     4,6 C         -
-~chassi-ranger-beast-master-f-sentinel-7   7     4,7 C    5,1 C+    6,1 B-     2,5 D     2,9 D     4,5 C         -
-~chassi-ranger-drakewarden-11  11    5,6 C+    6,5 B-   10,5 A-     2,7 D     0,0 F     4,6 C         -
-~chassi-ranger-drakewarden-7   7     4,6 C     4,2 C    6,2 B-     2,5 D     0,0 F     4,3 C         -
-~chassi-ranger-drakewarden-f-great-weapon-master-11  11    5,6 C+    6,5 B-    9,8 B+     2,7 D     0,0 F     4,6 C         -
-~chassi-ranger-drakewarden-f-great-weapon-master-7   7     4,6 C     4,2 C    6,1 B-     2,5 D     0,0 F     4,5 C         -
-~chassi-ranger-drakewarden-f-polearm-master-11  11    5,9 C+    6,5 B-    9,8 B+     2,7 D     0,0 F     4,6 C         -
-~chassi-ranger-drakewarden-f-polearm-master-7   7     4,7 C     4,2 C    6,1 B-     2,5 D     0,0 F     4,5 C         -
+~chassi-ranger-beast-master-11  11    6,7 B-    8,2 B+   10,5 A-     2,7 D     2,2 D     4,6 C         -
+~chassi-ranger-beast-master-7   7     4,6 C    5,1 C+    6,2 B-     2,5 D     2,2 D     4,3 C         -
+~chassi-ranger-beast-master-f-sentinel-11  11    6,9 B-    8,2 B+    9,8 B+     2,7 D    5,0 C+     4,6 C         -
+~chassi-ranger-beast-master-f-sentinel-7   7     4,7 C    5,1 C+    6,1 B-     2,5 D     4,1 C     4,5 C         -
+~chassi-ranger-drakewarden-11  11    5,6 C+    6,5 B-   10,5 A-     2,7 D     1,1 D     4,6 C         -
+~chassi-ranger-drakewarden-7   7     4,6 C     4,2 C    6,2 B-     2,5 D     1,3 D     4,3 C         -
+~chassi-ranger-drakewarden-f-great-weapon-master-11  11    5,6 C+    6,5 B-    9,8 B+     2,7 D     1,1 D     4,6 C         -
+~chassi-ranger-drakewarden-f-great-weapon-master-7   7     4,6 C     4,2 C    6,1 B-     2,5 D     1,3 D     4,5 C         -
+~chassi-ranger-drakewarden-f-polearm-master-11  11    5,9 C+    6,5 B-    9,8 B+     2,7 D     1,1 D     4,6 C         -
+~chassi-ranger-drakewarden-f-polearm-master-7   7     4,7 C     4,2 C    6,1 B-     2,5 D     1,3 D     4,5 C         -
 ~chassi-ranger-fey-wanderer-11  11    5,1 C+    8,6 B+    16,9 S     2,6 D     1,3 D     4,6 C         -
 ~chassi-ranger-fey-wanderer-7   7     4,1 C     4,4 C     7,6 B     2,6 D     0,3 F     4,3 C         -
 ~chassi-ranger-fey-wanderer-f-sharpshooter-11  11    5,8 C+    6,9 B-   13,0 A+     2,6 D     0,8 E     4,6 C         -
@@ -1875,16 +1875,16 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-paladin-watchers-5   5    5,4 C+    3,1 C-    3,9 C-    3,1 C-     0,0 F     4,6 C     0,3 F
 ~rpgbot-paladin-watchers-7   7    5,4 C+    5,1 C+    6,2 B-    8,2 B+     0,0 F     4,6 C     0,6 E
 ~rpgbot-paladin-watchers-9   9     7,0 B    6,7 B-    8,0 B+    8,6 B+     0,0 F     4,6 C     0,8 E
-~rpgbot-ranger-beast-master-11  11     7,7 B     7,6 B   14,6 A+    3,5 C-     0,7 E     4,8 C         -
-~rpgbot-ranger-beast-master-3   3     2,5 D     1,5 D     3,0 D     2,0 D     0,1 F     4,2 C         -
-~rpgbot-ranger-beast-master-5   5    5,6 C+    3,1 C-    5,5 C+    3,1 C-     0,0 F     4,6 C         -
-~rpgbot-ranger-beast-master-7   7    5,6 C+     4,4 C     7,5 B    3,5 C-     0,1 F     4,6 C         -
-~rpgbot-ranger-beast-master-9   9     7,0 B    6,1 B-   10,7 A-    3,5 C-     0,9 E     4,6 C         -
-~rpgbot-ranger-drakewarden-11  11     7,1 B     7,6 B   14,6 A+    3,5 C-     0,8 E     4,6 C         -
-~rpgbot-ranger-drakewarden-3   3     2,1 D     1,5 D     3,0 D     2,0 D     0,1 F     4,1 C         -
-~rpgbot-ranger-drakewarden-5   5    5,3 C+    3,1 C-    5,5 C+    3,1 C-     0,0 F     4,6 C         -
-~rpgbot-ranger-drakewarden-7   7    5,6 C+     4,4 C     7,5 B    3,5 C-     0,1 F     4,6 C         -
-~rpgbot-ranger-drakewarden-9   9     7,1 B    6,1 B-   10,7 A-    3,5 C-     0,9 E     4,6 C         -
+~rpgbot-ranger-beast-master-11  11     7,7 B     7,6 B   14,6 A+    3,5 C-    3,6 C-     4,8 C         -
+~rpgbot-ranger-beast-master-3   3     2,5 D     1,5 D     3,0 D     2,0 D     1,8 D     4,2 C         -
+~rpgbot-ranger-beast-master-5   5    5,6 C+    3,1 C-    5,5 C+    3,1 C-     2,4 D     4,6 C         -
+~rpgbot-ranger-beast-master-7   7    5,6 C+     4,4 C     7,5 B    3,5 C-     2,3 D     4,6 C         -
+~rpgbot-ranger-beast-master-9   9     7,0 B    6,1 B-   10,7 A-    3,5 C-    3,3 C-     4,6 C         -
+~rpgbot-ranger-drakewarden-11  11     7,1 B     7,6 B   14,6 A+    3,5 C-    3,6 C-     4,6 C         -
+~rpgbot-ranger-drakewarden-3   3     2,1 D     1,5 D     3,0 D     2,0 D     1,8 D     4,1 C         -
+~rpgbot-ranger-drakewarden-5   5    5,3 C+    3,1 C-    5,5 C+    3,1 C-     2,4 D     4,6 C         -
+~rpgbot-ranger-drakewarden-7   7    5,6 C+     4,4 C     7,5 B    3,5 C-     2,3 D     4,6 C         -
+~rpgbot-ranger-drakewarden-9   9     7,1 B    6,1 B-   10,7 A-    3,5 C-    3,3 C-     4,6 C         -
 ~rpgbot-ranger-fey-wanderer-11  11    6,6 B-     7,6 B   14,6 A+    3,5 C-     0,8 E     4,6 C         -
 ~rpgbot-ranger-fey-wanderer-3   3     1,8 D     1,5 D     3,0 D     2,0 D     0,1 F     2,8 D         -
 ~rpgbot-ranger-fey-wanderer-5   5    5,2 C+    3,1 C-    5,5 C+    3,1 C-     0,1 F     4,6 C         -

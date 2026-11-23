@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Ranger (Swarmkeeper), humano variante arqueiro, arco longo; Archery, Sharpshooter 1, Des 18 no 4, Des 20 no 8 (chassi comum)",
- "impressao": "ec03538d7a",
+ "impressao": "02ab173822",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -280,7 +280,9 @@
    "orcamento": {
     "reacao": [],
     "acao_bonus": [],
-    "concentracao": [],
+    "concentracao": [
+     "hunters_mark"
+    ],
     "reacao_livre": 1.0,
     "espacos_por_eixo": {},
     "outros": {}
@@ -342,6 +344,549 @@
     "nivel_absoluto": 1.32,
     "rank_absoluto": "D"
    }
+  },
+  "inimigo-favorito": {
+   "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 39.8,
+     "CA 12": 37.7,
+     "CA 15": 31.1,
+     "CA 16": 28.9,
+     "CA 18": 24.2,
+     "CA 20": 19.4,
+     "CA 22": 14.4,
+     "CA 24": 13.8,
+     "CA 25": 12.4
+    },
+    "nivel_eq": 7.5,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.6,
+    "nivel_precisa": 7.3,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 92,
+    "ca": 17,
+    "blindagem": 6.84,
+    "durabilidade": 4.8,
+    "nivel_blindagem": 7.3,
+    "nivel_durabilidade": 7.6,
+    "nivel_eq": 7.6,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 14.57,
+     "rank": "A+",
+     "turnos_livres": [
+      3.81,
+      3.82,
+      3.76,
+      2.94,
+      2.95,
+      2.93,
+      2.72,
+      2.78,
+      2.31,
+      1.78
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 3.52,
+     "rank": "C-",
+     "turnos_livres": [
+      3.04,
+      1.45,
+      1.06,
+      1.13,
+      0.93,
+      0.63,
+      1.01,
+      0.86,
+      0.97,
+      1.24
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.78,
+     "9": 3.64,
+     "10": 3.64,
+     "11": 3.91,
+     "12": 3.91,
+     "13": 4.53,
+     "14": 4.53,
+     "15": 4.53,
+     "16": 4.53,
+     "17": 5.09,
+     "18": 5.09,
+     "19": 5.88,
+     "20": 5.2
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "favored_foe"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.76,
+    "rank": "E",
+    "nivel_campo": 0.69,
+    "rank_campo": "E",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.02,
+    "rank_atencao": "F",
+    "vidas_total": 0.027,
+    "vidas_campo": 0.018,
+    "vidas_atencao": -0.009,
+    "corpo": {
+     "T": -0.009,
+     "S": 0.074,
+     "P": -0.083,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.009
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.15,
+     "Party de elite": 0.38,
+     "Horda + chefe": 0.15,
+     "Horda": 0.18,
+     "Dupla": 0.0,
+     "Chefe sozinho": 2.07
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0092
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0053
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0066
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0138
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0056
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0071
+     }
+    },
+    "nivel_absoluto": 1.29,
+    "rank_absoluto": "D"
+   }
+  },
+  "enredar": {
+   "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 36.2,
+     "CA 12": 34.2,
+     "CA 15": 27.9,
+     "CA 16": 25.8,
+     "CA 18": 21.5,
+     "CA 20": 17.1,
+     "CA 22": 12.6,
+     "CA 24": 11.3,
+     "CA 25": 10.1
+    },
+    "nivel_eq": 6.9,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.0,
+    "nivel_precisa": 6.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 92,
+    "ca": 17,
+    "blindagem": 6.84,
+    "durabilidade": 4.8,
+    "nivel_blindagem": 7.3,
+    "nivel_durabilidade": 7.6,
+    "nivel_eq": 7.6,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 14.57,
+     "rank": "A+",
+     "turnos_livres": [
+      3.81,
+      3.82,
+      3.76,
+      2.94,
+      2.95,
+      2.93,
+      2.72,
+      2.78,
+      2.31,
+      1.78
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 3.52,
+     "rank": "C-",
+     "turnos_livres": [
+      3.04,
+      1.45,
+      1.06,
+      1.13,
+      0.93,
+      0.63,
+      1.01,
+      0.86,
+      0.97,
+      1.24
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 3.86,
+     "9": 3.72,
+     "10": 3.72,
+     "11": 4.05,
+     "12": 4.05,
+     "13": 4.7,
+     "14": 4.7,
+     "15": 4.7,
+     "16": 4.7,
+     "17": 5.29,
+     "18": 5.29,
+     "19": 5.93,
+     "20": 5.35
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 1.31,
+    "rank": "D",
+    "nivel_campo": 1.07,
+    "rank_campo": "D",
+    "nivel_controle": 0.38,
+    "nivel_atencao": 0.04,
+    "rank_atencao": "F",
+    "vidas_total": 0.083,
+    "vidas_campo": 0.07,
+    "vidas_atencao": -0.001,
+    "corpo": {
+     "T": -0.001,
+     "S": 0.105,
+     "P": -0.107,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.001
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.54,
+     "Party de elite": 2.01,
+     "Horda + chefe": 0.67,
+     "Horda": 0.49,
+     "Dupla": 2.08,
+     "Chefe sozinho": 2.07
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Ensnaring Strike": 0.0277,
+      "Corpo (ameaça)": 0.0092
+     },
+     "Party de elite": {
+      "Ensnaring Strike": 0.0322,
+      "Corpo (ameaça)": 0.0053
+     },
+     "Horda + chefe": {
+      "Ensnaring Strike": 0.0358,
+      "Corpo (ameaça)": 0.0066
+     },
+     "Horda": {
+      "Ensnaring Strike": 0.0257,
+      "Corpo (ameaça)": 0.0138
+     },
+     "Dupla": {
+      "Ensnaring Strike": 0.0551,
+      "Corpo (ameaça)": 0.0056
+     },
+     "Chefe sozinho": {
+      "Ensnaring Strike": 0.0,
+      "Corpo (ameaça)": 0.0071
+     }
+    },
+    "nivel_absoluto": 1.95,
+    "rank_absoluto": "D"
+   }
+  },
+  "conjurar-animais": {
+   "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 87.1,
+     "CA 12": 83.1,
+     "CA 15": 69.6,
+     "CA 16": 64.6,
+     "CA 18": 54.0,
+     "CA 20": 42.3,
+     "CA 22": 29.8,
+     "CA 24": 19.5,
+     "CA 25": 18.3
+    },
+    "nivel_eq": 12.4,
+    "rank": "A",
+    "perfil": "Bruto",
+    "nivel_bruta": 13.7,
+    "nivel_precisa": 11.1,
+    "medido": false,
+    "sobrevivencia_invocacao": 0.975
+   },
+   "defesa": {
+    "pv_efetivo": 92,
+    "ca": 17,
+    "blindagem": 6.84,
+    "durabilidade": 4.8,
+    "nivel_blindagem": 7.3,
+    "nivel_durabilidade": 7.6,
+    "nivel_eq": 7.6,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 14.57,
+     "rank": "A+",
+     "turnos_livres": [
+      3.81,
+      3.82,
+      3.76,
+      2.94,
+      2.95,
+      2.93,
+      2.72,
+      2.78,
+      2.31,
+      1.78
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 3.52,
+     "rank": "C-",
+     "turnos_livres": [
+      3.04,
+      1.45,
+      1.06,
+      1.13,
+      0.93,
+      0.63,
+      1.01,
+      0.86,
+      0.97,
+      1.24
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 8.3,
+    "rank": "B+",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.08,
+     "9": 3.01,
+     "10": 3.01,
+     "11": 2.96,
+     "12": 2.96,
+     "13": 3.41,
+     "14": 3.41,
+     "15": 3.41,
+     "16": 3.41,
+     "17": 3.95,
+     "18": 3.95,
+     "19": 4.8,
+     "20": 4.25
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 5.37,
+    "rank": "C+",
+    "nivel_campo": 1.49,
+    "rank_campo": "D",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 4.94,
+    "rank_atencao": "C",
+    "vidas_total": 0.697,
+    "vidas_campo": 0.143,
+    "vidas_atencao": 0.537,
+    "corpo": {
+     "T": 0.537,
+     "S": 0.19,
+     "P": 0.347,
+     "chave": "T+S+P+≈",
+     "perfil": "Bastião"
+    },
+    "nivel_corpo": 24.09,
+    "rank_corpo": "S",
+    "corpo_busca": [
+     [
+      11,
+      0.537
+     ],
+     [
+      12,
+      0.521
+     ],
+     [
+      13,
+      0.487
+     ],
+     [
+      14,
+      0.444
+     ],
+     [
+      15,
+      0.36
+     ],
+     [
+      16,
+      0.34
+     ],
+     [
+      17,
+      0.305
+     ],
+     [
+      18,
+      0.263
+     ],
+     [
+      19,
+      0.216
+     ],
+     [
+      20,
+      0.17
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 4.31,
+     "Party de elite": 4.03,
+     "Horda + chefe": 4.18,
+     "Horda": 4.26,
+     "Dupla": 4.01,
+     "Chefe sozinho": 8.12
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0092,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.0628
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0053,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.0367
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0066,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.0444
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0138,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.0933
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0056,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.04
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0071,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.0533
+     }
+    },
+    "nivel_absoluto": 4.38,
+    "rank_absoluto": "C"
+   }
   }
  },
  "planos": {
@@ -355,58 +900,72 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "enredar"
+     ]
     },
     {
-     "linha": "marca",
+     "linha": "conjurar-animais",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1,
+       "3": 1
       }
-     }
+     },
+     "extras": [
+      "enredar"
+     ]
     },
     {
-     "linha": "marca",
+     "linha": "conjurar-animais",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1,
+       "3": 1
       }
-     }
+     },
+     "extras": [
+      "enredar"
+     ]
     },
     {
-     "linha": "marca",
+     "linha": "conjurar-animais",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1,
+       "3": 1
       }
-     }
+     },
+     "extras": [
+      "enredar"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 2.0,
-     "2": 3,
-     "3": 3
-    }
+     "2": 2.5
+    },
+    "favored_foe": 4
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.6,
-     "rank": "B",
+     "nivel_eq": 11.6,
+     "rank": "A",
      "por_categoria": {
-      "np": 7.6,
-      "p": 7.6
+      "np": 10.0,
+      "p": 12.4
      }
     },
     "defesa": {
@@ -434,27 +993,27 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 0.6,
+     "rank": "E",
      "por_categoria": {
-      "np": 0.0,
-      "p": 0.0
+      "np": 0.6,
+      "p": 0.6
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 21.9,
+     "rank": "S",
      "por_categoria": {
-      "np": 11.0,
-      "p": 11.0
+      "np": 17.5,
+      "p": 24.1
      }
     },
     "area": {
-     "nivel_eq": 4.8,
-     "rank": "C",
+     "nivel_eq": 8.3,
+     "rank": "B+",
      "por_categoria": {
-      "np": 4.8,
-      "p": 4.8
+      "np": 6.6,
+      "p": 8.3
      }
     }
    }
@@ -463,30 +1022,35 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "marca",
+     "linha": "conjurar-animais",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1,
+       "3": 1
       }
-     }
+     },
+     "extras": [
+      "enredar"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 3.5,
+     "1": 3,
      "2": 3,
-     "3": 3
-    }
+     "3": 2
+    },
+    "favored_foe": 4
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.6,
-     "rank": "B",
+     "nivel_eq": 12.4,
+     "rank": "A",
      "por_categoria": {
-      "p": 7.6
+      "p": 12.4
      }
     },
     "defesa": {
@@ -511,30 +1075,30 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 0.6,
+     "rank": "E",
      "por_categoria": {
-      "p": 0.0
+      "p": 0.6
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 24.1,
+     "rank": "S",
      "por_categoria": {
-      "p": 11.0
+      "p": 24.1
      }
     },
     "area": {
-     "nivel_eq": 4.8,
-     "rank": "C",
+     "nivel_eq": 8.3,
+     "rank": "B+",
      "por_categoria": {
-      "p": 4.8
+      "p": 8.3
      }
     }
    }
   }
  },
- "segundos": 1.3,
+ "segundos": 7.8,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -986,20 +1550,41 @@
   }
  },
  "impressoes": {
-  "_planos": "1ea5aa878ed8",
+  "_planos": "97807fde0e71",
   "principal": {
    "dano": "5b955346f434",
    "defesa": "154343131cb9",
    "saves": "c8cd0473c77e",
    "area": "f471c4f98dea",
-   "controle": "56c77e913424"
+   "controle": "de7d8b5585c8"
   },
   "marca": {
-   "dano": "052bbea7e469",
+   "dano": "c6ac5ad9d312",
    "defesa": "154343131cb9",
    "saves": "c8cd0473c77e",
-   "area": "69ac92f6ebb1",
-   "controle": "62eb8b191f89"
+   "area": "327682f8e0bc",
+   "controle": "48503336f198"
+  },
+  "inimigo-favorito": {
+   "dano": "6a7f4114358c",
+   "defesa": "154343131cb9",
+   "saves": "c8cd0473c77e",
+   "area": "42bcbe4662e7",
+   "controle": "363168e70df6"
+  },
+  "enredar": {
+   "dano": "5b955346f434",
+   "defesa": "154343131cb9",
+   "saves": "c8cd0473c77e",
+   "area": "f471c4f98dea",
+   "controle": "ab15ad306f94"
+  },
+  "conjurar-animais": {
+   "dano": "e3b5b5c7bd1c",
+   "defesa": "154343131cb9",
+   "saves": "c8cd0473c77e",
+   "area": "96d9bee34592",
+   "controle": "48837f77994d"
   }
  }
 }

@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 11,
  "build": "Ranger (Beast Master (Primal Companion)), defensor: espada longa + escudo, Dueling, meia-armadura; sem feat",
- "impressao": "c17ef94317",
+ "impressao": "99d819e449",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -35,7 +35,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 6.7,
     "nivel_precisa": 6.6,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 81,
@@ -122,61 +123,87 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "nivel_campo": 0.71,
-    "rank_campo": "E",
+    "nivel_eq": 2.21,
+    "rank": "D",
+    "nivel_campo": 1.55,
+    "rank_campo": "D",
     "nivel_controle": 0.0,
-    "nivel_atencao": 0.13,
-    "rank_atencao": "F",
-    "vidas_total": -0.109,
-    "vidas_campo": 0.02,
-    "vidas_atencao": 0.02,
+    "nivel_atencao": 2.32,
+    "rank_atencao": "D",
+    "vidas_total": 0.203,
+    "vidas_campo": 0.145,
+    "vidas_atencao": 0.211,
     "corpo": {
-     "T": 0.02,
-     "S": 0.13,
-     "P": -0.109,
-     "chave": "T0S+P-",
-     "perfil": "Redirecionador"
+     "T": 0.211,
+     "S": 0.177,
+     "P": 0.034,
+     "chave": "T+S+P0",
+     "perfil": "Resistente"
     },
-    "nivel_corpo": 11.0,
-    "rank_corpo": "A",
+    "nivel_corpo": 15.49,
+    "rank_corpo": "A+",
     "corpo_busca": [
      [
       11,
-      0.02
+      0.211
+     ],
+     [
+      12,
+      0.176
+     ],
+     [
+      13,
+      0.141
+     ],
+     [
+      14,
+      0.097
+     ],
+     [
+      15,
+      0.019
+     ],
+     [
+      16,
+      -0.02
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 0.0,
-     "Party de elite": 0.0,
-     "Horda + chefe": 0.0,
-     "Horda": 0.0,
-     "Dupla": 0.0,
-     "Chefe sozinho": 0.0
+     "Minions + minibosses": 2.19,
+     "Party de elite": 0.66,
+     "Horda + chefe": 0.55,
+     "Horda": 2.34,
+     "Dupla": 2.34,
+     "Chefe sozinho": 3.76
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Corpo (ameaça)": 0.0107
+      "Corpo (ameaça)": 0.0107,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0628
      },
      "Party de elite": {
-      "Corpo (ameaça)": 0.0061
+      "Corpo (ameaça)": 0.0061,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0367
      },
      "Horda + chefe": {
-      "Corpo (ameaça)": 0.0078
+      "Corpo (ameaça)": 0.0078,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0444
      },
      "Horda": {
-      "Corpo (ameaça)": 0.0163
+      "Corpo (ameaça)": 0.0163,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0933
      },
      "Dupla": {
-      "Corpo (ameaça)": 0.0063
+      "Corpo (ameaça)": 0.0063,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.04
      },
      "Chefe sozinho": {
-      "Corpo (ameaça)": 0.0074
+      "Corpo (ameaça)": 0.0074,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0533
      }
     },
-    "nivel_absoluto": 0.77,
-    "rank_absoluto": "E"
+    "nivel_absoluto": 2.83,
+    "rank_absoluto": "D"
    }
   },
   "marca": {
@@ -199,7 +226,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 7.8,
     "nivel_precisa": 7.6,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 81,
@@ -280,67 +308,698 @@
    "orcamento": {
     "reacao": [],
     "acao_bonus": [],
+    "concentracao": [
+     "hunters_mark"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 2.24,
+    "rank": "D",
+    "nivel_campo": 1.55,
+    "rank_campo": "D",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.35,
+    "rank_atencao": "D",
+    "vidas_total": 0.205,
+    "vidas_campo": 0.145,
+    "vidas_atencao": 0.211,
+    "corpo": {
+     "T": 0.211,
+     "S": 0.13,
+     "P": 0.081,
+     "chave": "T+S+P+≈",
+     "perfil": "Bastião"
+    },
+    "nivel_corpo": 15.01,
+    "rank_corpo": "A+",
+    "corpo_busca": [
+     [
+      11,
+      0.211
+     ],
+     [
+      12,
+      0.169
+     ],
+     [
+      13,
+      0.13
+     ],
+     [
+      14,
+      0.082
+     ],
+     [
+      15,
+      0.0
+     ],
+     [
+      16,
+      -0.042
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.2,
+     "Party de elite": 0.62,
+     "Horda + chefe": 0.53,
+     "Horda": 2.35,
+     "Dupla": 2.39,
+     "Chefe sozinho": 3.87
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0107,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0628
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0367
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0078,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0444
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0163,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0933
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0063,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.04
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0074,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0533
+     }
+    },
+    "nivel_absoluto": 2.94,
+    "rank_absoluto": "D"
+   }
+  },
+  "inimigo-favorito": {
+   "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 38.2,
+     "CA 12": 36.2,
+     "CA 15": 30.4,
+     "CA 16": 28.4,
+     "CA 18": 24.4,
+     "CA 20": 20.4,
+     "CA 22": 16.1,
+     "CA 24": 11.8,
+     "CA 25": 9.5
+    },
+    "nivel_eq": 7.5,
+    "rank": "B",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 7.5,
+    "nivel_precisa": 7.4,
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
+   },
+   "defesa": {
+    "pv_efetivo": 81,
+    "ca": 19,
+    "blindagem": 7.44,
+    "durabilidade": 4.94,
+    "nivel_blindagem": 8.2,
+    "nivel_durabilidade": 7.9,
+    "nivel_eq": 8.2,
+    "rank": "B+",
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 10.5,
+     "rank": "A-",
+     "turnos_livres": [
+      3.95,
+      3.77,
+      3.7,
+      2.83,
+      2.69,
+      2.69,
+      2.37,
+      2.32,
+      1.87,
+      1.42
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.73,
+     "rank": "D",
+     "turnos_livres": [
+      2.9,
+      1.23,
+      0.88,
+      0.99,
+      0.81,
+      0.54,
+      0.87,
+      0.71,
+      0.91,
+      1.15
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.8,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.82,
+     "9": 3.67,
+     "10": 3.67,
+     "11": 3.94,
+     "12": 3.94,
+     "13": 4.57,
+     "14": 4.57,
+     "15": 4.57,
+     "16": 4.57,
+     "17": 5.15,
+     "18": 5.15,
+     "19": 5.88,
+     "20": 5.22
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "favored_foe"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 2.23,
+    "rank": "D",
+    "nivel_campo": 1.55,
+    "rank_campo": "D",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 2.34,
+    "rank_atencao": "D",
+    "vidas_total": 0.205,
+    "vidas_campo": 0.145,
+    "vidas_atencao": 0.211,
+    "corpo": {
+     "T": 0.211,
+     "S": 0.144,
+     "P": 0.067,
+     "chave": "T+S+P+S",
+     "perfil": "Fortaleza"
+    },
+    "nivel_corpo": 15.15,
+    "rank_corpo": "A+",
+    "corpo_busca": [
+     [
+      11,
+      0.211
+     ],
+     [
+      12,
+      0.171
+     ],
+     [
+      13,
+      0.133
+     ],
+     [
+      14,
+      0.086
+     ],
+     [
+      15,
+      0.006
+     ],
+     [
+      16,
+      -0.035
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.19,
+     "Party de elite": 0.63,
+     "Horda + chefe": 0.53,
+     "Horda": 2.34,
+     "Dupla": 2.37,
+     "Chefe sozinho": 3.84
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0107,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0628
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0367
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0078,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0444
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0163,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0933
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0063,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.04
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0074,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0533
+     }
+    },
+    "nivel_absoluto": 2.9,
+    "rank_absoluto": "D"
+   }
+  },
+  "enredar": {
+   "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 34.4,
+     "CA 12": 32.5,
+     "CA 15": 26.7,
+     "CA 16": 24.8,
+     "CA 18": 20.9,
+     "CA 20": 17.0,
+     "CA 22": 13.1,
+     "CA 24": 9.3,
+     "CA 25": 7.3
+    },
+    "nivel_eq": 6.7,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 6.7,
+    "nivel_precisa": 6.6,
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
+   },
+   "defesa": {
+    "pv_efetivo": 81,
+    "ca": 19,
+    "blindagem": 7.44,
+    "durabilidade": 4.94,
+    "nivel_blindagem": 8.2,
+    "nivel_durabilidade": 7.9,
+    "nivel_eq": 8.2,
+    "rank": "B+",
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 10.5,
+     "rank": "A-",
+     "turnos_livres": [
+      3.95,
+      3.77,
+      3.7,
+      2.83,
+      2.69,
+      2.69,
+      2.37,
+      2.32,
+      1.87,
+      1.42
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.73,
+     "rank": "D",
+     "turnos_livres": [
+      2.9,
+      1.23,
+      0.88,
+      0.99,
+      0.81,
+      0.54,
+      0.87,
+      0.71,
+      0.91,
+      1.15
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 3.93,
+     "9": 3.78,
+     "10": 3.78,
+     "11": 4.1,
+     "12": 4.1,
+     "13": 4.74,
+     "14": 4.74,
+     "15": 4.74,
+     "16": 4.74,
+     "17": 5.34,
+     "18": 5.34,
+     "19": 5.95,
+     "20": 5.4
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
     "concentracao": [],
     "reacao_livre": 1.0,
     "espacos_por_eixo": {},
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "nivel_campo": 0.71,
-    "rank_campo": "E",
-    "nivel_controle": 0.0,
-    "nivel_atencao": 0.11,
-    "rank_atencao": "F",
-    "vidas_total": -0.111,
-    "vidas_campo": 0.02,
-    "vidas_atencao": 0.017,
+    "nivel_eq": 2.56,
+    "rank": "D",
+    "nivel_campo": 2.16,
+    "rank_campo": "D",
+    "nivel_controle": 0.33,
+    "nivel_atencao": 2.32,
+    "rank_atencao": "D",
+    "vidas_total": 0.244,
+    "vidas_campo": 0.187,
+    "vidas_atencao": 0.211,
     "corpo": {
-     "T": 0.017,
-     "S": 0.079,
-     "P": -0.062,
-     "chave": "T0S+P-",
-     "perfil": "Redirecionador"
+     "T": 0.211,
+     "S": 0.177,
+     "P": 0.034,
+     "chave": "T+S+P0",
+     "perfil": "Resistente"
     },
-    "nivel_corpo": 11.0,
-    "rank_corpo": "A",
+    "nivel_corpo": 15.49,
+    "rank_corpo": "A+",
     "corpo_busca": [
      [
       11,
-      0.017
+      0.211
+     ],
+     [
+      12,
+      0.176
+     ],
+     [
+      13,
+      0.141
+     ],
+     [
+      14,
+      0.097
+     ],
+     [
+      15,
+      0.019
+     ],
+     [
+      16,
+      -0.02
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 0.0,
-     "Party de elite": 0.0,
-     "Horda + chefe": 0.0,
-     "Horda": 0.0,
-     "Dupla": 0.0,
-     "Chefe sozinho": 0.0
+     "Minions + minibosses": 2.35,
+     "Party de elite": 2.05,
+     "Horda + chefe": 0.99,
+     "Horda": 2.48,
+     "Dupla": 2.76,
+     "Chefe sozinho": 3.76
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Corpo (ameaça)": 0.0107
+      "Ensnaring Strike": 0.0231,
+      "Corpo (ameaça)": 0.0107,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0628
      },
      "Party de elite": {
-      "Corpo (ameaça)": 0.0061
+      "Ensnaring Strike": 0.0269,
+      "Corpo (ameaça)": 0.0061,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0367
      },
      "Horda + chefe": {
-      "Corpo (ameaça)": 0.0078
+      "Ensnaring Strike": 0.0299,
+      "Corpo (ameaça)": 0.0078,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0444
      },
      "Horda": {
-      "Corpo (ameaça)": 0.0163
+      "Ensnaring Strike": 0.022,
+      "Corpo (ameaça)": 0.0163,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0933
      },
      "Dupla": {
-      "Corpo (ameaça)": 0.0063
+      "Ensnaring Strike": 0.0456,
+      "Corpo (ameaça)": 0.0063,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.04
      },
      "Chefe sozinho": {
-      "Corpo (ameaça)": 0.0074
+      "Ensnaring Strike": 0.0,
+      "Corpo (ameaça)": 0.0074,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0533
      }
     },
-    "nivel_absoluto": 0.99,
-    "rank_absoluto": "E"
+    "nivel_absoluto": 3.19,
+    "rank_absoluto": "C-"
+   }
+  },
+  "conjurar-animais": {
+   "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 86.6,
+     "CA 12": 82.6,
+     "CA 15": 69.4,
+     "CA 16": 64.6,
+     "CA 18": 54.2,
+     "CA 20": 42.9,
+     "CA 22": 30.8,
+     "CA 24": 17.7,
+     "CA 25": 15.8
+    },
+    "nivel_eq": 12.4,
+    "rank": "A",
+    "perfil": "Bruto",
+    "nivel_bruta": 13.7,
+    "nivel_precisa": 11.1,
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
+   },
+   "defesa": {
+    "pv_efetivo": 81,
+    "ca": 19,
+    "blindagem": 7.44,
+    "durabilidade": 4.94,
+    "nivel_blindagem": 8.2,
+    "nivel_durabilidade": 7.9,
+    "nivel_eq": 8.2,
+    "rank": "B+",
+    "perfil": "Blindado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 10.5,
+     "rank": "A-",
+     "turnos_livres": [
+      3.95,
+      3.77,
+      3.7,
+      2.83,
+      2.69,
+      2.69,
+      2.37,
+      2.32,
+      1.87,
+      1.42
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.73,
+     "rank": "D",
+     "turnos_livres": [
+      2.9,
+      1.23,
+      0.88,
+      0.99,
+      0.81,
+      0.54,
+      0.87,
+      0.71,
+      0.91,
+      1.15
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 8.3,
+    "rank": "B+",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 2.69,
+     "6": 2.69,
+     "7": 2.69,
+     "8": 3.08,
+     "9": 3.01,
+     "10": 3.01,
+     "11": 2.96,
+     "12": 2.96,
+     "13": 3.44,
+     "14": 3.44,
+     "15": 3.44,
+     "16": 3.44,
+     "17": 3.97,
+     "18": 3.97,
+     "19": 4.81,
+     "20": 4.27
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 4.75,
+    "rank": "C",
+    "nivel_campo": 2.72,
+    "rank_campo": "D",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 3.98,
+    "rank_atencao": "C-",
+    "vidas_total": 0.495,
+    "vidas_campo": 0.266,
+    "vidas_atencao": 0.404,
+    "corpo": {
+     "T": 0.404,
+     "S": 0.219,
+     "P": 0.185,
+     "chave": "T+S+P+≈",
+     "perfil": "Bastião"
+    },
+    "nivel_corpo": 20.29,
+    "rank_corpo": "S",
+    "corpo_busca": [
+     [
+      11,
+      0.404
+     ],
+     [
+      12,
+      0.366
+     ],
+     [
+      13,
+      0.335
+     ],
+     [
+      14,
+      0.287
+     ],
+     [
+      15,
+      0.208
+     ],
+     [
+      16,
+      0.162
+     ],
+     [
+      17,
+      0.131
+     ],
+     [
+      18,
+      0.093
+     ],
+     [
+      19,
+      0.067
+     ],
+     [
+      20,
+      0.031
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 3.93,
+     "Party de elite": 2.56,
+     "Horda + chefe": 2.83,
+     "Horda": 4.15,
+     "Dupla": 2.92,
+     "Chefe sozinho": 8.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0107,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0628,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.0628
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0367,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.0367
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0078,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0444,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.0444
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0163,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0933,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.0933
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0063,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.04,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.04
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0074,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0533,
+      "Corpo (8 Conjure Animals (8 lobos))": 0.0533
+     }
+    },
+    "nivel_absoluto": 4.28,
+    "rank_absoluto": "C"
    }
   },
   "reacao-absorb-elements": {
@@ -363,7 +1022,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 6.7,
     "nivel_precisa": 6.6,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 81,
@@ -454,61 +1114,87 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "nivel_campo": 0.71,
-    "rank_campo": "E",
+    "nivel_eq": 2.21,
+    "rank": "D",
+    "nivel_campo": 1.55,
+    "rank_campo": "D",
     "nivel_controle": 0.0,
-    "nivel_atencao": 0.13,
-    "rank_atencao": "F",
-    "vidas_total": -0.109,
-    "vidas_campo": 0.02,
-    "vidas_atencao": 0.02,
+    "nivel_atencao": 2.32,
+    "rank_atencao": "D",
+    "vidas_total": 0.203,
+    "vidas_campo": 0.145,
+    "vidas_atencao": 0.211,
     "corpo": {
-     "T": 0.02,
-     "S": 0.13,
-     "P": -0.109,
-     "chave": "T0S+P-",
-     "perfil": "Redirecionador"
+     "T": 0.211,
+     "S": 0.177,
+     "P": 0.034,
+     "chave": "T+S+P0",
+     "perfil": "Resistente"
     },
-    "nivel_corpo": 11.0,
-    "rank_corpo": "A",
+    "nivel_corpo": 15.49,
+    "rank_corpo": "A+",
     "corpo_busca": [
      [
       11,
-      0.02
+      0.211
+     ],
+     [
+      12,
+      0.176
+     ],
+     [
+      13,
+      0.141
+     ],
+     [
+      14,
+      0.097
+     ],
+     [
+      15,
+      0.019
+     ],
+     [
+      16,
+      -0.02
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 0.0,
-     "Party de elite": 0.0,
-     "Horda + chefe": 0.0,
-     "Horda": 0.0,
-     "Dupla": 0.0,
-     "Chefe sozinho": 0.0
+     "Minions + minibosses": 2.19,
+     "Party de elite": 0.66,
+     "Horda + chefe": 0.55,
+     "Horda": 2.34,
+     "Dupla": 2.34,
+     "Chefe sozinho": 3.76
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Corpo (ameaça)": 0.0107
+      "Corpo (ameaça)": 0.0107,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0628
      },
      "Party de elite": {
-      "Corpo (ameaça)": 0.0061
+      "Corpo (ameaça)": 0.0061,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0367
      },
      "Horda + chefe": {
-      "Corpo (ameaça)": 0.0078
+      "Corpo (ameaça)": 0.0078,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0444
      },
      "Horda": {
-      "Corpo (ameaça)": 0.0163
+      "Corpo (ameaça)": 0.0163,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0933
      },
      "Dupla": {
-      "Corpo (ameaça)": 0.0063
+      "Corpo (ameaça)": 0.0063,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.04
      },
      "Chefe sozinho": {
-      "Corpo (ameaça)": 0.0074
+      "Corpo (ameaça)": 0.0074,
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0533
      }
     },
-    "nivel_absoluto": 0.77,
-    "rank_absoluto": "E"
+    "nivel_absoluto": 2.83,
+    "rank_absoluto": "D"
    }
   }
  },
@@ -531,13 +1217,14 @@
      ]
     },
     {
-     "linha": "marca",
+     "linha": "conjurar-animais",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1.5
+       "1": 1,
+       "3": 1
       }
      },
      "extras": [
@@ -545,13 +1232,14 @@
      ]
     },
     {
-     "linha": "marca",
+     "linha": "conjurar-animais",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1.5
+       "1": 1,
+       "3": 1
       }
      },
      "extras": [
@@ -559,13 +1247,14 @@
      ]
     },
     {
-     "linha": "marca",
+     "linha": "conjurar-animais",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1.5
+       "1": 1,
+       "3": 1
       }
      },
      "extras": [
@@ -575,17 +1264,17 @@
    ],
    "sobra": {
     "espacos": {
-     "2": 1.0,
-     "3": 3
-    }
+     "2": 2.5
+    },
+    "favored_foe": 4
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.7,
-     "rank": "B",
+     "nivel_eq": 11.6,
+     "rank": "A",
      "por_categoria": {
-      "np": 7.7,
-      "p": 7.7
+      "np": 10.1,
+      "p": 12.4
      }
     },
     "defesa": {
@@ -621,19 +1310,19 @@
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 19.4,
+     "rank": "S",
      "por_categoria": {
-      "np": 11.0,
-      "p": 11.0
+      "np": 17.6,
+      "p": 20.3
      }
     },
     "area": {
-     "nivel_eq": 4.8,
-     "rank": "C",
+     "nivel_eq": 8.3,
+     "rank": "B+",
      "por_categoria": {
-      "np": 4.8,
-      "p": 4.8
+      "np": 6.6,
+      "p": 8.3
      }
     }
    }
@@ -642,33 +1331,36 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "marca",
+     "linha": "conjurar-animais",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1.5
+       "1": 2,
+       "3": 1
       }
      },
      "extras": [
-      "reacao-absorb-elements"
+      "reacao-absorb-elements",
+      "enredar"
      ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 2.5,
+     "1": 2,
      "2": 3,
-     "3": 3
-    }
+     "3": 2
+    },
+    "favored_foe": 4
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.7,
-     "rank": "B",
+     "nivel_eq": 12.4,
+     "rank": "A",
      "por_categoria": {
-      "p": 7.7
+      "p": 12.4
      }
     },
     "defesa": {
@@ -693,30 +1385,30 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 0.5,
+     "rank": "E",
      "por_categoria": {
-      "p": 0.0
+      "p": 0.5
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 20.3,
+     "rank": "S",
      "por_categoria": {
-      "p": 11.0
+      "p": 20.3
      }
     },
     "area": {
-     "nivel_eq": 4.8,
-     "rank": "C",
+     "nivel_eq": 8.3,
+     "rank": "B+",
      "por_categoria": {
-      "p": 4.8
+      "p": 8.3
      }
     }
    }
   }
  },
- "segundos": 3.0,
+ "segundos": 10.2,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1168,27 +1860,48 @@
   }
  },
  "impressoes": {
-  "_planos": "7662c913501c",
+  "_planos": "52b1adf35a71",
   "principal": {
-   "dano": "c8ca306fdcb2",
+   "dano": "61cba7cab143",
    "defesa": "1fc49c356bb3",
    "saves": "7de145f2178f",
-   "area": "e83c5f6e6449",
-   "controle": "0217a26f0aad"
+   "area": "14615d625063",
+   "controle": "e4d0e155e330"
   },
   "marca": {
-   "dano": "a7985d21d08a",
+   "dano": "47315b74eef4",
    "defesa": "1fc49c356bb3",
    "saves": "7de145f2178f",
-   "area": "8755c36123e4",
-   "controle": "fbb95b600045"
+   "area": "403b97c8951a",
+   "controle": "7c6982cf225c"
+  },
+  "inimigo-favorito": {
+   "dano": "546e5c8aa6a1",
+   "defesa": "1fc49c356bb3",
+   "saves": "7de145f2178f",
+   "area": "4662ae48d7b1",
+   "controle": "edd531a19899"
+  },
+  "enredar": {
+   "dano": "61cba7cab143",
+   "defesa": "1fc49c356bb3",
+   "saves": "7de145f2178f",
+   "area": "14615d625063",
+   "controle": "9c39d343da40"
+  },
+  "conjurar-animais": {
+   "dano": "735851038cba",
+   "defesa": "1fc49c356bb3",
+   "saves": "7de145f2178f",
+   "area": "f92a37b9da79",
+   "controle": "06aa88dcd51c"
   },
   "reacao-absorb-elements": {
-   "dano": "c8ca306fdcb2",
+   "dano": "61cba7cab143",
    "defesa": "1fc49c356bb3",
    "saves": "adfa7c3d43fe",
-   "area": "e83c5f6e6449",
-   "controle": "0217a26f0aad"
+   "area": "14615d625063",
+   "controle": "e4d0e155e330"
   }
  }
 }

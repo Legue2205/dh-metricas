@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 5,
  "build": "Ranger (Hunter), humano variante arqueiro, arco longo; Archery, Sharpshooter 1, Des 18 no 4, Des 20 no 8 (chassi comum)",
- "impressao": "6f1fd676f0",
+ "impressao": "d9dba26798",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -280,7 +280,9 @@
    "orcamento": {
     "reacao": [],
     "acao_bonus": [],
-    "concentracao": [],
+    "concentracao": [
+     "hunters_mark"
+    ],
     "reacao_livre": 1.0,
     "espacos_por_eixo": {},
     "outros": {}
@@ -342,6 +344,342 @@
     "nivel_absoluto": 0.0,
     "rank_absoluto": "F"
    }
+  },
+  "inimigo-favorito": {
+   "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 33.2,
+     "CA 12": 31.1,
+     "CA 15": 24.7,
+     "CA 16": 22.5,
+     "CA 18": 18.0,
+     "CA 20": 13.4,
+     "CA 22": 12.3,
+     "CA 24": 9.7,
+     "CA 25": 8.4
+    },
+    "nivel_eq": 5.9,
+    "rank": "C+",
+    "perfil": "Bruto",
+    "nivel_bruta": 6.1,
+    "nivel_precisa": 5.8,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 44,
+    "ca": 16,
+    "blindagem": 2.91,
+    "durabilidade": 2.19,
+    "nivel_blindagem": 3.0,
+    "nivel_durabilidade": 3.1,
+    "nivel_eq": 3.1,
+    "rank": "C-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.5,
+     "rank": "C+",
+     "turnos_livres": [
+      3.76,
+      3.7,
+      3.61,
+      1.76,
+      1.68,
+      1.7,
+      1.24,
+      1.24,
+      0.92,
+      0.57
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 3.06,
+     "rank": "C-",
+     "turnos_livres": [
+      3.04,
+      1.45,
+      1.06,
+      1.13,
+      0.91,
+      0.58,
+      0.9,
+      0.59,
+      0.81,
+      0.9
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.04,
+     "6": 3.04,
+     "7": 3.04,
+     "8": 4.02,
+     "9": 3.87,
+     "10": 3.87,
+     "11": 4.18,
+     "12": 4.18,
+     "13": 4.83,
+     "14": 4.83,
+     "15": 4.83,
+     "16": 4.83,
+     "17": 5.45,
+     "18": 5.45,
+     "19": 5.96,
+     "20": 5.49
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "favored_foe"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.03,
+    "rank": "F",
+    "nivel_campo": 0.09,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": -0.007,
+    "vidas_campo": 0.018,
+    "vidas_atencao": -0.063,
+    "corpo": {
+     "T": -0.063,
+     "S": -0.135,
+     "P": 0.072,
+     "chave": "T0S-P+",
+     "perfil": "Taunt"
+    },
+    "nivel_corpo": 5.0,
+    "rank_corpo": "C+",
+    "corpo_busca": [
+     [
+      5,
+      -0.063
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.0,
+     "Party de elite": 0.0,
+     "Horda + chefe": 0.0,
+     "Horda": 0.0,
+     "Dupla": 0.02,
+     "Chefe sozinho": 0.09
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0081
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0119
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0055
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0066
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
+  },
+  "enredar": {
+   "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 30.7,
+     "CA 12": 28.8,
+     "CA 15": 22.7,
+     "CA 16": 20.6,
+     "CA 18": 16.4,
+     "CA 20": 12.1,
+     "CA 22": 10.5,
+     "CA 24": 8.2,
+     "CA 25": 7.1
+    },
+    "nivel_eq": 5.5,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.6,
+    "nivel_precisa": 5.4,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 44,
+    "ca": 16,
+    "blindagem": 2.91,
+    "durabilidade": 2.19,
+    "nivel_blindagem": 3.0,
+    "nivel_durabilidade": 3.1,
+    "nivel_eq": 3.1,
+    "rank": "C-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 5.5,
+     "rank": "C+",
+     "turnos_livres": [
+      3.76,
+      3.7,
+      3.61,
+      1.76,
+      1.68,
+      1.7,
+      1.24,
+      1.24,
+      0.92,
+      0.57
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 3.06,
+     "rank": "C-",
+     "turnos_livres": [
+      3.04,
+      1.45,
+      1.06,
+      1.13,
+      0.91,
+      0.58,
+      0.9,
+      0.59,
+      0.81,
+      0.9
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.08,
+     "6": 3.08,
+     "7": 3.08,
+     "8": 4.14,
+     "9": 3.99,
+     "10": 3.99,
+     "11": 4.25,
+     "12": 4.25,
+     "13": 4.96,
+     "14": 4.96,
+     "15": 4.96,
+     "16": 4.96,
+     "17": 5.56,
+     "18": 5.56,
+     "19": 5.98,
+     "20": 5.57
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.96,
+    "rank": "E",
+    "nivel_campo": 1.02,
+    "rank_campo": "D",
+    "nivel_controle": 0.65,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.111,
+    "vidas_campo": 0.126,
+    "vidas_atencao": -0.055,
+    "corpo": {
+     "T": -0.055,
+     "S": -0.097,
+     "P": 0.042,
+     "chave": "T0S-P0",
+     "perfil": "Neutro"
+    },
+    "nivel_corpo": 5.0,
+    "rank_corpo": "C+",
+    "corpo_busca": [
+     [
+      5,
+      -0.055
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.3,
+     "Party de elite": 0.6,
+     "Horda + chefe": 0.39,
+     "Horda": 0.22,
+     "Dupla": 2.02,
+     "Chefe sozinho": 2.04
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Ensnaring Strike": 0.0287,
+      "Corpo (ameaça)": 0.0081
+     },
+     "Party de elite": {
+      "Ensnaring Strike": 0.0482,
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda + chefe": {
+      "Ensnaring Strike": 0.0374,
+      "Corpo (ameaça)": 0.0061
+     },
+     "Horda": {
+      "Ensnaring Strike": 0.0249,
+      "Corpo (ameaça)": 0.0119
+     },
+     "Dupla": {
+      "Ensnaring Strike": 0.0606,
+      "Corpo (ameaça)": 0.0055
+     },
+     "Chefe sozinho": {
+      "Ensnaring Strike": 0.0593,
+      "Corpo (ameaça)": 0.0066
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   }
   }
  },
  "planos": {
@@ -397,7 +735,8 @@
     "espacos": {
      "1": 2.0,
      "2": 2
-    }
+    },
+    "favored_foe": 3
    },
    "eixos": {
     "dano": {
@@ -468,16 +807,20 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "1": 1.5
       }
-     }
+     },
+     "extras": [
+      "enredar"
+     ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 3.5,
+     "1": 2.5,
      "2": 2
-    }
+    },
+    "favored_foe": 3
    },
    "eixos": {
     "dano": {
@@ -509,10 +852,10 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 1.0,
+     "rank": "E",
      "por_categoria": {
-      "p": 0.0
+      "p": 1.0
      }
     },
     "corpo": {
@@ -532,7 +875,7 @@
    }
   }
  },
- "segundos": 1.3,
+ "segundos": 5.8,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -984,20 +1327,34 @@
   }
  },
  "impressoes": {
-  "_planos": "18f1d92d37cc",
+  "_planos": "1d6823cb2ab4",
   "principal": {
    "dano": "71b0e1a7a392",
    "defesa": "8aa81e820b7d",
    "saves": "32900b6f6f8f",
    "area": "09b732a258c0",
-   "controle": "f214ec016beb"
+   "controle": "8c9602bf6be3"
   },
   "marca": {
-   "dano": "04b8b8dc561e",
+   "dano": "1af78a7dc67d",
    "defesa": "8aa81e820b7d",
    "saves": "32900b6f6f8f",
-   "area": "33c0786f34d1",
-   "controle": "a7ffcca74ac7"
+   "area": "3955b0de5d16",
+   "controle": "f32ea6655319"
+  },
+  "inimigo-favorito": {
+   "dano": "1bde4cb6cdaf",
+   "defesa": "8aa81e820b7d",
+   "saves": "32900b6f6f8f",
+   "area": "1738ed570b96",
+   "controle": "a1cf30222737"
+  },
+  "enredar": {
+   "dano": "71b0e1a7a392",
+   "defesa": "8aa81e820b7d",
+   "saves": "32900b6f6f8f",
+   "area": "09b732a258c0",
+   "controle": "db2a6a670ff6"
   }
  }
 }

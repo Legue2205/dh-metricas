@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 7,
  "build": "Ranger (Drakewarden), striker: glaive, Great Weapon Fighting, meia-armadura; Polearm Master no 4 (natural de quem luta de perto com arma de haste; a ação bônus fica com o drake)",
- "impressao": "ef05918322",
+ "impressao": "9d08163a80",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -35,7 +35,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 4.7,
     "nivel_precisa": 4.7,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 53,
@@ -131,61 +132,75 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "nivel_campo": 0.09,
-    "rank_campo": "F",
+    "nivel_eq": 1.28,
+    "rank": "D",
+    "nivel_campo": 1.15,
+    "rank_campo": "D",
     "nivel_controle": 0.0,
-    "nivel_atencao": 0.0,
-    "rank_atencao": "F",
-    "vidas_total": -0.185,
-    "vidas_campo": 0.016,
-    "vidas_atencao": -0.064,
+    "nivel_atencao": 1.14,
+    "rank_atencao": "D",
+    "vidas_total": 0.16,
+    "vidas_campo": 0.154,
+    "vidas_atencao": 0.144,
     "corpo": {
-     "T": -0.064,
-     "S": 0.007,
-     "P": -0.071,
-     "chave": "T0S0P-",
-     "perfil": "Neutro"
+     "T": 0.144,
+     "S": 0.066,
+     "P": 0.078,
+     "chave": "T+S+P+≈",
+     "perfil": "Bastião"
     },
-    "nivel_corpo": 7.0,
-    "rank_corpo": "B",
+    "nivel_corpo": 8.79,
+    "rank_corpo": "B+",
     "corpo_busca": [
      [
       7,
-      -0.064
+      0.144
+     ],
+     [
+      8,
+      0.058
+     ],
+     [
+      9,
+      -0.016
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 0.0,
-     "Party de elite": 0.0,
-     "Horda + chefe": 0.0,
-     "Horda": 0.0,
-     "Dupla": 0.0,
-     "Chefe sozinho": 0.0
+     "Minions + minibosses": 0.93,
+     "Party de elite": 0.22,
+     "Horda + chefe": 0.11,
+     "Horda": 2.06,
+     "Dupla": 2.07,
+     "Chefe sozinho": 2.3
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Corpo (ameaça)": 0.0085
+      "Corpo (ameaça)": 0.0085,
+      "Corpo (1 Drake Companion)": 0.071
      },
      "Party de elite": {
-      "Corpo (ameaça)": 0.005
+      "Corpo (ameaça)": 0.005,
+      "Corpo (1 Drake Companion)": 0.0412
      },
      "Horda + chefe": {
-      "Corpo (ameaça)": 0.0051
+      "Corpo (ameaça)": 0.0051,
+      "Corpo (1 Drake Companion)": 0.0403
      },
      "Horda": {
-      "Corpo (ameaça)": 0.0112
+      "Corpo (ameaça)": 0.0112,
+      "Corpo (1 Drake Companion)": 0.0933
      },
      "Dupla": {
-      "Corpo (ameaça)": 0.005
+      "Corpo (ameaça)": 0.005,
+      "Corpo (1 Drake Companion)": 0.0435
      },
      "Chefe sozinho": {
-      "Corpo (ameaça)": 0.0058
+      "Corpo (ameaça)": 0.0058,
+      "Corpo (1 Drake Companion)": 0.0533
      }
     },
-    "nivel_absoluto": 0.0,
-    "rank_absoluto": "F"
+    "nivel_absoluto": 1.08,
+    "rank_absoluto": "D"
    }
   },
   "marca": {
@@ -208,7 +223,8 @@
     "perfil": "Bruto",
     "nivel_bruta": 6.1,
     "nivel_precisa": 5.8,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 53,
@@ -298,67 +314,467 @@
      }
     ],
     "acao_bonus": [],
+    "concentracao": [
+     "hunters_mark"
+    ],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 1.25,
+    "rank": "D",
+    "nivel_campo": 1.15,
+    "rank_campo": "D",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 1.1,
+    "rank_atencao": "D",
+    "vidas_total": 0.155,
+    "vidas_campo": 0.154,
+    "vidas_atencao": 0.135,
+    "corpo": {
+     "T": 0.135,
+     "S": -0.023,
+     "P": 0.158,
+     "chave": "T+S0P+",
+     "perfil": "Protetor"
+    },
+    "nivel_corpo": 8.43,
+    "rank_corpo": "B+",
+    "corpo_busca": [
+     [
+      7,
+      0.135
+     ],
+     [
+      8,
+      0.037
+     ],
+     [
+      9,
+      -0.049
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.87,
+     "Party de elite": 0.12,
+     "Horda + chefe": 0.08,
+     "Horda": 2.07,
+     "Dupla": 2.09,
+     "Chefe sozinho": 2.31
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0085,
+      "Corpo (1 Drake Companion)": 0.071
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.005,
+      "Corpo (1 Drake Companion)": 0.0412
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0051,
+      "Corpo (1 Drake Companion)": 0.0403
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0112,
+      "Corpo (1 Drake Companion)": 0.0933
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.005,
+      "Corpo (1 Drake Companion)": 0.0435
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0058,
+      "Corpo (1 Drake Companion)": 0.0533
+     }
+    },
+    "nivel_absoluto": 1.04,
+    "rank_absoluto": "D"
+   }
+  },
+  "inimigo-favorito": {
+   "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 28.5,
+     "CA 12": 27.0,
+     "CA 15": 22.2,
+     "CA 16": 20.6,
+     "CA 18": 17.3,
+     "CA 20": 13.9,
+     "CA 22": 10.3,
+     "CA 24": 6.6,
+     "CA 25": 5.1
+    },
+    "nivel_eq": 5.5,
+    "rank": "C+",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 5.6,
+    "nivel_precisa": 5.5,
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
+   },
+   "defesa": {
+    "pv_efetivo": 53,
+    "ca": 17,
+    "blindagem": 4.02,
+    "durabilidade": 2.92,
+    "nivel_blindagem": 4.2,
+    "nivel_durabilidade": 4.2,
+    "nivel_eq": 4.2,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.12,
+     "rank": "B-",
+     "turnos_livres": [
+      3.87,
+      3.65,
+      3.58,
+      2.0,
+      1.82,
+      1.84,
+      1.43,
+      1.38,
+      1.01,
+      0.79
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.51,
+     "rank": "D",
+     "turnos_livres": [
+      2.9,
+      1.23,
+      0.88,
+      0.99,
+      0.8,
+      0.52,
+      0.8,
+      0.54,
+      0.78,
+      0.95
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.14,
+     "6": 3.14,
+     "7": 3.14,
+     "8": 4.24,
+     "9": 4.07,
+     "10": 4.07,
+     "11": 4.26,
+     "12": 4.26,
+     "13": 4.98,
+     "14": 4.98,
+     "15": 4.98,
+     "16": 4.98,
+     "17": 5.58,
+     "18": 5.58,
+     "19": 5.98,
+     "20": 5.57
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [
+     "favored_foe"
+    ],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 1.26,
+    "rank": "D",
+    "nivel_campo": 1.15,
+    "rank_campo": "D",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 1.11,
+    "rank_atencao": "D",
+    "vidas_total": 0.157,
+    "vidas_campo": 0.154,
+    "vidas_atencao": 0.138,
+    "corpo": {
+     "T": 0.138,
+     "S": 0.006,
+     "P": 0.132,
+     "chave": "T+S0P+",
+     "perfil": "Protetor"
+    },
+    "nivel_corpo": 8.53,
+    "rank_corpo": "B+",
+    "corpo_busca": [
+     [
+      7,
+      0.138
+     ],
+     [
+      8,
+      0.044
+     ],
+     [
+      9,
+      -0.039
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.89,
+     "Party de elite": 0.15,
+     "Horda + chefe": 0.09,
+     "Horda": 2.07,
+     "Dupla": 2.08,
+     "Chefe sozinho": 2.31
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0085,
+      "Corpo (1 Drake Companion)": 0.071
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.005,
+      "Corpo (1 Drake Companion)": 0.0412
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0051,
+      "Corpo (1 Drake Companion)": 0.0403
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0112,
+      "Corpo (1 Drake Companion)": 0.0933
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.005,
+      "Corpo (1 Drake Companion)": 0.0435
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0058,
+      "Corpo (1 Drake Companion)": 0.0533
+     }
+    },
+    "nivel_absoluto": 1.05,
+    "rank_absoluto": "D"
+   }
+  },
+  "enredar": {
+   "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 24.8,
+     "CA 12": 23.3,
+     "CA 15": 18.6,
+     "CA 16": 17.1,
+     "CA 18": 14.0,
+     "CA 20": 11.0,
+     "CA 22": 7.9,
+     "CA 24": 4.8,
+     "CA 25": 3.7
+    },
+    "nivel_eq": 4.7,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.7,
+    "nivel_precisa": 4.7,
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
+   },
+   "defesa": {
+    "pv_efetivo": 53,
+    "ca": 17,
+    "blindagem": 4.02,
+    "durabilidade": 2.92,
+    "nivel_blindagem": 4.2,
+    "nivel_durabilidade": 4.2,
+    "nivel_eq": 4.2,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.12,
+     "rank": "B-",
+     "turnos_livres": [
+      3.87,
+      3.65,
+      3.58,
+      2.0,
+      1.82,
+      1.84,
+      1.43,
+      1.38,
+      1.01,
+      0.79
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.51,
+     "rank": "D",
+     "turnos_livres": [
+      2.9,
+      1.23,
+      0.88,
+      0.99,
+      0.8,
+      0.52,
+      0.8,
+      0.54,
+      0.78,
+      0.95
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.37,
+     "6": 3.37,
+     "7": 3.37,
+     "8": 4.38,
+     "9": 4.21,
+     "10": 4.21,
+     "11": 4.47,
+     "12": 4.47,
+     "13": 5.21,
+     "14": 5.21,
+     "15": 5.21,
+     "16": 5.21,
+     "17": 5.73,
+     "18": 5.73,
+     "19": 5.99,
+     "20": 5.7
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
     "concentracao": [],
     "reacao_livre": 0.5,
     "espacos_por_eixo": {},
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "nivel_campo": 0.09,
-    "rank_campo": "F",
-    "nivel_controle": 0.0,
-    "nivel_atencao": 0.0,
-    "rank_atencao": "F",
-    "vidas_total": -0.197,
-    "vidas_campo": 0.016,
-    "vidas_atencao": -0.077,
+    "nivel_eq": 1.81,
+    "rank": "D",
+    "nivel_campo": 1.99,
+    "rank_campo": "D",
+    "nivel_controle": 0.47,
+    "nivel_atencao": 1.14,
+    "rank_atencao": "D",
+    "vidas_total": 0.228,
+    "vidas_campo": 0.222,
+    "vidas_atencao": 0.144,
     "corpo": {
-     "T": -0.077,
-     "S": -0.089,
-     "P": 0.012,
-     "chave": "T0S-P0",
-     "perfil": "Neutro"
+     "T": 0.144,
+     "S": 0.066,
+     "P": 0.078,
+     "chave": "T+S+P+≈",
+     "perfil": "Bastião"
     },
-    "nivel_corpo": 7.0,
-    "rank_corpo": "B",
+    "nivel_corpo": 8.79,
+    "rank_corpo": "B+",
     "corpo_busca": [
      [
       7,
-      -0.077
+      0.144
+     ],
+     [
+      8,
+      0.058
+     ],
+     [
+      9,
+      -0.016
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 0.0,
-     "Party de elite": 0.0,
-     "Horda + chefe": 0.0,
-     "Horda": 0.0,
-     "Dupla": 0.0,
-     "Chefe sozinho": 0.0
+     "Minions + minibosses": 2.09,
+     "Party de elite": 0.64,
+     "Horda + chefe": 0.59,
+     "Horda": 2.21,
+     "Dupla": 2.48,
+     "Chefe sozinho": 2.54
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Corpo (ameaça)": 0.0085
+      "Ensnaring Strike": 0.0199,
+      "Corpo (ameaça)": 0.0085,
+      "Corpo (1 Drake Companion)": 0.071
      },
      "Party de elite": {
-      "Corpo (ameaça)": 0.005
+      "Ensnaring Strike": 0.032,
+      "Corpo (ameaça)": 0.005,
+      "Corpo (1 Drake Companion)": 0.0412
      },
      "Horda + chefe": {
-      "Corpo (ameaça)": 0.0051
+      "Ensnaring Strike": 0.035,
+      "Corpo (ameaça)": 0.0051,
+      "Corpo (1 Drake Companion)": 0.0403
      },
      "Horda": {
-      "Corpo (ameaça)": 0.0112
+      "Ensnaring Strike": 0.0215,
+      "Corpo (ameaça)": 0.0112,
+      "Corpo (1 Drake Companion)": 0.0933
      },
      "Dupla": {
-      "Corpo (ameaça)": 0.005
+      "Ensnaring Strike": 0.0488,
+      "Corpo (ameaça)": 0.005,
+      "Corpo (1 Drake Companion)": 0.0435
      },
      "Chefe sozinho": {
-      "Corpo (ameaça)": 0.0058
+      "Ensnaring Strike": 0.0335,
+      "Corpo (ameaça)": 0.0058,
+      "Corpo (1 Drake Companion)": 0.0533
      }
     },
-    "nivel_absoluto": 0.0,
-    "rank_absoluto": "F"
+    "nivel_absoluto": 1.52,
+    "rank_absoluto": "D"
    }
   },
   "reacao-absorb-elements": {
@@ -381,7 +797,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 4.7,
     "nivel_precisa": 4.7,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 53,
@@ -481,61 +898,75 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.0,
-    "rank": "F",
-    "nivel_campo": 0.09,
-    "rank_campo": "F",
+    "nivel_eq": 1.28,
+    "rank": "D",
+    "nivel_campo": 1.15,
+    "rank_campo": "D",
     "nivel_controle": 0.0,
-    "nivel_atencao": 0.0,
-    "rank_atencao": "F",
-    "vidas_total": -0.185,
-    "vidas_campo": 0.016,
-    "vidas_atencao": -0.064,
+    "nivel_atencao": 1.14,
+    "rank_atencao": "D",
+    "vidas_total": 0.16,
+    "vidas_campo": 0.154,
+    "vidas_atencao": 0.144,
     "corpo": {
-     "T": -0.064,
-     "S": 0.007,
-     "P": -0.071,
-     "chave": "T0S0P-",
-     "perfil": "Neutro"
+     "T": 0.144,
+     "S": 0.066,
+     "P": 0.078,
+     "chave": "T+S+P+≈",
+     "perfil": "Bastião"
     },
-    "nivel_corpo": 7.0,
-    "rank_corpo": "B",
+    "nivel_corpo": 8.79,
+    "rank_corpo": "B+",
     "corpo_busca": [
      [
       7,
-      -0.064
+      0.144
+     ],
+     [
+      8,
+      0.058
+     ],
+     [
+      9,
+      -0.016
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 0.0,
-     "Party de elite": 0.0,
-     "Horda + chefe": 0.0,
-     "Horda": 0.0,
-     "Dupla": 0.0,
-     "Chefe sozinho": 0.0
+     "Minions + minibosses": 0.93,
+     "Party de elite": 0.22,
+     "Horda + chefe": 0.11,
+     "Horda": 2.06,
+     "Dupla": 2.07,
+     "Chefe sozinho": 2.3
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Corpo (ameaça)": 0.0085
+      "Corpo (ameaça)": 0.0085,
+      "Corpo (1 Drake Companion)": 0.071
      },
      "Party de elite": {
-      "Corpo (ameaça)": 0.005
+      "Corpo (ameaça)": 0.005,
+      "Corpo (1 Drake Companion)": 0.0412
      },
      "Horda + chefe": {
-      "Corpo (ameaça)": 0.0051
+      "Corpo (ameaça)": 0.0051,
+      "Corpo (1 Drake Companion)": 0.0403
      },
      "Horda": {
-      "Corpo (ameaça)": 0.0112
+      "Corpo (ameaça)": 0.0112,
+      "Corpo (1 Drake Companion)": 0.0933
      },
      "Dupla": {
-      "Corpo (ameaça)": 0.005
+      "Corpo (ameaça)": 0.005,
+      "Corpo (1 Drake Companion)": 0.0435
      },
      "Chefe sozinho": {
-      "Corpo (ameaça)": 0.0058
+      "Corpo (ameaça)": 0.0058,
+      "Corpo (1 Drake Companion)": 0.0533
      }
     },
-    "nivel_absoluto": 0.0,
-    "rank_absoluto": "F"
+    "nivel_absoluto": 1.08,
+    "rank_absoluto": "D"
    }
   }
  },
@@ -592,7 +1023,8 @@
     "espacos": {
      "1": 2.0,
      "2": 3
-    }
+    },
+    "favored_foe": 3
    },
    "eixos": {
     "dano": {
@@ -636,11 +1068,11 @@
      }
     },
     "corpo": {
-     "nivel_eq": 7.0,
-     "rank": "B",
+     "nivel_eq": 8.4,
+     "rank": "B+",
      "por_categoria": {
-      "np": 7.0,
-      "p": 7.0
+      "np": 8.4,
+      "p": 8.4
      }
     },
     "area": {
@@ -663,19 +1095,21 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1.5
+       "1": 2.5
       }
      },
      "extras": [
-      "reacao-absorb-elements"
+      "reacao-absorb-elements",
+      "enredar"
      ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 2.5,
+     "1": 1.5,
      "2": 3
-    }
+    },
+    "favored_foe": 3
    },
    "eixos": {
     "dano": {
@@ -707,17 +1141,17 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 0.7,
+     "rank": "E",
      "por_categoria": {
-      "p": 0.0
+      "p": 0.7
      }
     },
     "corpo": {
-     "nivel_eq": 7.0,
-     "rank": "B",
+     "nivel_eq": 8.4,
+     "rank": "B+",
      "por_categoria": {
-      "p": 7.0
+      "p": 8.4
      }
     },
     "area": {
@@ -730,7 +1164,7 @@
    }
   }
  },
- "segundos": 2.0,
+ "segundos": 7.8,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1182,27 +1616,41 @@
   }
  },
  "impressoes": {
-  "_planos": "d176ba3ac703",
+  "_planos": "84b8aeaf8af8",
   "principal": {
-   "dano": "88c8627a8708",
+   "dano": "1eff5ecddb67",
    "defesa": "56c69a016593",
    "saves": "071ad97279b1",
-   "area": "26ed798169ce",
-   "controle": "cf279f8f38b5"
+   "area": "dcddb8eb0959",
+   "controle": "4eab8b743c87"
   },
   "marca": {
-   "dano": "6422252a60ca",
+   "dano": "cb848843397f",
    "defesa": "56c69a016593",
    "saves": "071ad97279b1",
-   "area": "48bfb01eb2f9",
-   "controle": "42d9ff4f4904"
+   "area": "c02799194492",
+   "controle": "a66d2d495532"
+  },
+  "inimigo-favorito": {
+   "dano": "89c122ca94a1",
+   "defesa": "56c69a016593",
+   "saves": "071ad97279b1",
+   "area": "e5f764bafa5b",
+   "controle": "35dcb908afde"
+  },
+  "enredar": {
+   "dano": "1eff5ecddb67",
+   "defesa": "56c69a016593",
+   "saves": "071ad97279b1",
+   "area": "dcddb8eb0959",
+   "controle": "d0258b88c73d"
   },
   "reacao-absorb-elements": {
-   "dano": "88c8627a8708",
+   "dano": "1eff5ecddb67",
    "defesa": "56c69a016593",
    "saves": "72fd346ad618",
-   "area": "26ed798169ce",
-   "controle": "cf279f8f38b5"
+   "area": "dcddb8eb0959",
+   "controle": "4eab8b743c87"
   }
  }
 }

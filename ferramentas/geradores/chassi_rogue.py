@@ -155,8 +155,15 @@ def swashbuckler(L, feat):
     s, m, p, corpo = base(L, ('des', 'con', 'car', 'sab', 'int', 'for'), feat); d, b = m['des'], p + m['des']
     dano = {"ataques": [atq(b, '1d8', d, feat, nota="rapieira")],
             "por_turno": [sneak(L, P_RAKISH, " (Rakish Audacity ou aliado adjacente)")] + pierce(feat, 8)}
-    return fat(s, corpo, [ln('principal', 'rapieira + Sneak (Rakish Audacity); Fancy Footwork para sair', dano, L,
-                             'skirmisher')], "Fancy Footwork, Rakish Audacity; Panache (9).")
+    l1 = ln('principal', 'rapieira + Sneak (Rakish Audacity); Fancy Footwork para sair', dano, L, 'skirmisher')
+    # P3.1 (24/11): Fancy Footwork faz o papel do Disengage, então a ação bônus fica livre para a 2ª arma leve
+    # (2ª chance de Sneak no turno). No RPGBot a ação vai para o Booming Blade, que é racial e o chassi descarta.
+    l2 = ln('duas-armas', 'duas espadas curtas (2ª na ação bônus) + Sneak (Rakish Audacity); Fancy Footwork para sair',
+            {"ataques": [atq(b, '1d6', d, feat, nota="espada curta"),
+                         atq(b, '1d6', 0, feat, nota="2ª espada curta na ação bônus (sem mod)")],
+             "por_turno": [sneak(L, P_RAKISH, " (Rakish Audacity ou aliado adjacente)")] + pierce(feat, 6)}, L, 'skirmisher')
+    l2['acao_bonus'] = [{"uso": "ataque com a 2ª arma", "fracao": 1.0, "eixos": ["dano"]}]
+    return fat(s, corpo, [l1, l2], "Fancy Footwork, Rakish Audacity; Panache (9).")
 
 
 def thief(L, feat):

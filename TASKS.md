@@ -143,8 +143,29 @@ Situação em 24/11 (p3): def. física 0,44/0,42 ✓; controle 0,38/0,61 ✓; **
 **suporte 0,37/0,26 ✗** no 11 (0,26 < 2 × 0,17). Faltam só essas duas frentes.
 
 ## Passada 3 (aberta 24/11) — foco nas duas réguas fora do gate
-- [ ] **P3.1 Régua de dano** [M] — o pior gate (0,17 no 7). Juntar P2.12 (marciais no 7) e o dano do Cleric no 11
+- [x] **P3.1 Régua de dano** [M] — o pior gate (0,17 no 7). Juntar P2.12 (marciais no 7) e o dano do Cleric no 11
   (0,76 → 0,38); ver o peso das invocações no dano (ligado à P3.3).
+  **Feito 24/11 (madrugada).** Varredura de pares discordantes (pista de dano do gabarito × dano do motor, dentro da
+  classe; 94 de 268 pares no misto). Quem mais discorda: Swashbuckler 16, Fey Wanderer 9, Samurai 8, Long Death 8,
+  Kensei 7, Soulknife 7, Gloom Stalker 6, Arcane Trickster 6. Diagnóstico por grupo:
+  - **[M] Swashbuckler sem ação bônus**: o chassi descarta a raça (o Booming Blade do RPGBot é racial) e o Fancy
+    Footwork já faz o papel do Disengage, então a ação bônus ficava vazia. Linha nova `duas-armas` (espadas curtas,
+    2ª chance de Sneak). Dano 3,9 → 4,9 (nv7), 5,7 → 7,5 (nv11). Rogue nv7 −0,30 → −0,22; global nv7 0,17 → 0,18.
+  - **[J] Steady Aim em 100% dos turnos** (todos os atiradores do Rogue): é o que põe os "médio"/"básico" acima do
+    Swashbuckler "alto". Experimento numa cópia com 75%: Rogue nv7 −0,22 → −0,11, nv11 igual. → **D11**.
+  - **[J] Pico do 1º round**: Gloom Stalker (Dread Ambusher), Assassin, Grave ("alto em pico"). A régua é a média de 4
+    rounds; o RPGBot valoriza o alfa. Só 3 pistas: efeito pequeno. → **D12**.
+  - **[J/entre réguas] Plano desvia recurso do dano**: Open Hand e Mercy gastam ki em Stunning/Hand of Healing, os
+    Rangers usam Spike Growth em 3 de 4 lutas, o Hexblade (k = 1) põe o Summon Aberration nas 4 lutas porque o corpo da
+    invocação vale 21 (extrapolado). É a troca entre réguas: a visão externa dá quase o mesmo τ (0,18/0,30), então não é
+    o que segura a régua. Fica para a fase 2 (calibração entre réguas); P3.3 continua parada.
+  - **[G] Gabarito**: Fey Wanderer (Dreadful Strikes 1d4 contra 1d8 de Colossus Slayer/Planar Warrior: o motor está
+    certo no RAW), Kensei e Samurai com arco (alcance não é dano), Order of Scribes (troca de tipo = resistências, não
+    modelado), Celestial "fraco" com o mesmo EB do Fiend.
+  - Testado e descartado: régua de dano incluindo área (max(dano, área) ou dano + ½ área) não melhora de forma
+    consistente (nv7 0,18 → 0,06 ou 0,18; nv11 0,27 → 0,33 ou 0,32).
+  **Conclusão:** o que era mecânica na régua de dano foi corrigido; o resto é convenção (D11, D12), troca entre réguas
+  ou gabarito. Pelo critério de pronto, o dano fica abaixo do gate com resíduo rotulado, a menos que D11/D12 mudem.
 - [ ] **P3.2 Régua de suporte no 11** [M] — P2.18 (Cleric sem ordem) e P2.14 (Mantle); Bard no 7 (−0,89) é n = 4: ruído
   até persistir.
 - [ ] **P3.3 Invocação domina o plano no 7** [J/M] — da varredura da passada M; o usuário não vê problema por ora:
@@ -492,3 +513,11 @@ Ordem de execução: D8 → D3 → D5 → D2 → D4 → D6 → D9 → D1 (D7 fec
   os espaços médios. (a) manter (hipótese conservadora); (b) linhas com 2 magias por luta (controle + área/buff) para os
   conjuradores plenos; (c) uma premissa "magias por luta" por nível.
 - **D4 Corpo de invocações** (ver P1.9) — invocação/torreta conta como presença do personagem? Com que peso?
+
+### Decisões abertas pela passada 3 (24/11)
+- **D11 Steady Aim: fração dos turnos** — hoje os atiradores do Rogue têm vantagem em 100% dos turnos (não se mexer é
+  quase sempre possível de longe). (a) manter 1,0; (b) premissa `rogue.steady_aim.fracao` (ex.: 0,75: um turno por luta
+  gasto em reposicionar); (c) tratar como mobilidade (eixo futuro) e aceitar o resíduo. Efeito medido com 0,75: Rogue
+  nv7 −0,22 → −0,11.
+- **D12 Pico do 1º round na régua de dano** — (a) manter média de 4 rounds; (b) premissa de peso do 1º round (ex.: 1,5:
+  quem age primeiro mata antes); (c) deixar para o eixo de iniciativa (futuro). Afeta Gloom Stalker, Assassin, Grave.

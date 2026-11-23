@@ -69,6 +69,68 @@
    "saves": {},
    "principal": true,
    "custo": "gratuita"
+  },
+  {
+   "id": "duas-armas",
+   "hipotese": "duas espadas curtas (2ª na ação bônus) + Sneak (Rakish Audacity); Fancy Footwork para sair",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d6+4",
+      "nota": "espada curta"
+     },
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d6+0",
+      "nota": "2ª espada curta na ação bônus (sem mod)"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "4d6",
+      "prob": 0.9,
+      "nota": "Sneak Attack (Rakish Audacity ou aliado adjacente)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "ataque com a 2ª arma",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ]
   }
  ],
  "planos": {

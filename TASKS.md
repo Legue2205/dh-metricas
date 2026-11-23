@@ -200,16 +200,26 @@ Leitura:
 - [ ] **P2.11 Ranger sem controle nem suporte** [M] — 0,0 em todas as subclasses; Ensnaring Strike, Spike Growth e
   Conjure Animals fora da régua (junto com a P2.7/P2.8).
 - [ ] **P2.12 Dano dos marciais no nv7** [M] — ex-P1.14: Monk −0,16, Ranger −0,19, Rogue −0,30, Fighter 0,07.
-- [ ] **P2.13 Invocação: dano × corpo com o mesmo PV** [M/J] — com a D4 o inimigo esperto bate na invocação quando a
+- [x] **P2.13 Invocação: dano × corpo com o mesmo PV** [M/J] — **feito 23/11:** o dano das invocações é multiplicado
+  pela fração da luta em que elas estão vivas (`total.sobrevivencia_inv`: mesma simulação de alvo do corpo, no nível da
+  build; resultado em `dano.sobrevivencia_invocacao`). Nível 7: 0,875 (caem no último round), dano −0,4; Necromancy 1,0.
+  Original: — com a D4 o inimigo esperto bate na invocação quando a
   ameaça por PV dela é maior (Summon Aberration ≈ 0,4 × conjurador ≈ 0,2), e o corpo sobe (Necromancy 19,8 → 26,4,
   Artillerist 29,3 → 32,4; Moon 31,9 → 27,2). Mas o eixo de dano conta a invocação viva a luta inteira: o PV dela é gasto
   duas vezes. Descontar do dano da invocação a fração da luta em que ela já morreu (a `vida()` da atenção já sabe
   quando o PV dela zera).
 - [ ] **P2.14 Mantle of Inspiration e outras fontes de ação bônus** [M] — o fator de ação bônus da D6 só vale no
   `dado_multiuso`; o Mantle (Glamour), que também gasta a ação bônus e um uso de BI, não paga.
-- [ ] **P2.15 Controle some do plano com a D5** [M/J] — rendimento = soma simples dos níveis eq.; no nv7 o controle do
+- [x] **P2.15 Controle some do plano com a D5** [M/J] — **feito 23/11:** valor da linha = Σ nível ÷ nível típico do eixo
+  no nível da build (`plano.auto.tipico` = percentil 75 das linhas que fazem o eixo; `calibracao/tipico_eixos.py
+  --gravar`; a mediana caía no Healing Word de toda linha de conjurador). Original: — rendimento = soma simples dos níveis eq.; no nv7 o controle do
   plano cai (τ 0,49 → 0,23, agrupado 0,43 → 0,06). Ver se é a escala do controle (níveis menores que os de dano na mesma
   build) ou peso por eixo (`plano.auto.peso_eixo`); depende da calibração entre réguas.
+- [ ] **P2.16 Linhas sem concentração nos chassis de conjurador** [M] — para a D9 render, Wizard/Druid/Sorcerer precisam
+  de linhas de blaster puro (Fireball, Lightning Bolt) e de buff/cura sem concentração; hoje toda linha deles tem uma.
+- [ ] **P2.17 Concentração não declarada nas entradas de área/suporte** [M] — Spirit Guardians, Wall of Fire, Bless etc.
+  não declaram `concentracao`; o plano reconhece pelo nome, mas o `dh validar` não vê duas concentrações numa linha só.
+  Declarar nos geradores e ligar a checagem no validador.
 - [ ] **P2.1 Invocação domina o dano externo** [J → D7] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
   Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
   Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).
@@ -254,7 +264,16 @@ Ordem de execução: D8 → D3 → D5 → D2 → D4 → D6 → D9 → D1 (D7 fec
 - **D8 → sem teto no corpo**, prioridade consistência. **Feito 23/11:** a extrapolação acima do 20 usava só os 2 últimos
   pontos da busca (T oscila com os CRs discretos); agora é a regressão da busca inteira (`controle.corpo.extrap_pontos`
   = 0). Infiltrator 31,5 → 25,7 (pico 42,6 → 29,8); delta do feat −8,6 → −4,1 níveis; AG 25,3 → 25,6.
-- **D9 → premissa de magias por luta por nível** (derivada dos espaços, ~20% para utilidade), com ajuste por build
+- **D9 → premissa de magias por luta por nível** — **Feito 23/11** (proposta aprovada, com um ajuste): até k linhas
+  por luta, k = espaços do dia × (1 − 0,2) / combates (`planos.magias_por_luta`, entre 1 e os rounds da luta;
+  sobrescrevível com `"magias_por_luta"` na build). **Ajuste:** em vez de "rounds divididos igualmente" (média das
+  linhas: nunca supera a melhor linha sozinha, então o plano nunca escolheria duas magias), valor e gasto da luta =
+  linha 1 + Σ (extra − principal), o ganho marginal de trocar rounds de truque pela magia extra. Escolha gulosa sobre o
+  melhor plano de uma linha; sem repetir peça (ataque, fonte, área, invocação ou parte do nome) e no máximo uma
+  concentração por luta (declarada, de controle ou reconhecida pelo nome: `_concentracao_nomes` no magias.json).
+  Ex.: Cleric Life 11 = bless+arma + preservar; Paladin Vengeance 11 = haste+smite + voto. Wizard/Druid quase não
+  ganham extras: todas as linhas deles têm concentração → P2.16.
+- **D9 (texto original) → premissa de magias por luta por nível** (derivada dos espaços, ~20% para utilidade), com ajuste por build
   (blaster gasta mais). Eixo de utilidade: só nota de rodapé por enquanto. **Proposta (a confirmar):** em vez de
   reescrever as linhas, o plano do dia passa a ter até k linhas por luta (linha principal + secundárias, com os rounds
   divididos), k = `orcamento.magias_por_luta[tipo][nível]` = espaços × (1 − 0,2 utilidade) / lutas do dia, e a build

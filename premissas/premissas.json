@@ -2041,5 +2041,95 @@
         "motivo": "D6 (usuário, 23/11): BI cobra a ação bônus."
       }
     ]
+  },
+  "planos.magias_por_luta": {
+    "valor": {
+      "utilidade": 0.2
+    },
+    "eixo": "planos",
+    "desde": "2026-11-23",
+    "descricao": "D9: quantas linhas (magias) cabem numa luta do plano automático. k = espaços do dia × (1 − utilidade) / combates do dia, arredondado, entre 1 e base.rounds_por_luta; a build pode fixar \"magias_por_luta\". Linhas extras entram pelo ganho marginal sobre a linha principal (à vontade): valor e gasto = linha 1 + Σ (extra − principal); no máximo uma concentração por luta. Utilidade = fração dos espaços que não vai para combate.",
+    "historico": [
+      {
+        "data": "2026-11-23",
+        "de": null,
+        "para": {
+          "utilidade": 0.2
+        },
+        "motivo": "D9 (usuário, 23/11): premissa de magias por luta derivada dos espaços, ~20% para utilidade, sobrescrevível por build."
+      }
+    ]
+  },
+  "plano.auto.tipico": {
+    "valor": {
+      "area": {
+        "3": 4.2,
+        "5": 4.6,
+        "7": 4.6,
+        "9": 4.8,
+        "11": 8.0,
+        "14": 16.4
+      },
+      "campo": {
+        "3": 1.82,
+        "5": 4.45,
+        "7": 5.8,
+        "9": 6.12,
+        "11": 7.32
+      },
+      "corpo": {
+        "3": 3.0,
+        "5": 5.0,
+        "7": 7.0,
+        "9": 12.35,
+        "11": 11.0
+      },
+      "dano": {
+        "3": 2.1,
+        "5": 4.8,
+        "7": 5.3,
+        "9": 6.5,
+        "11": 7.7
+      },
+      "defesa": {
+        "3": 2.2,
+        "5": 4.0,
+        "7": 5.7,
+        "9": 8.6,
+        "11": 9.4
+      },
+      "resiliencia": {
+        "3": 2.7,
+        "5": 4.52,
+        "7": 7.39,
+        "9": 8.83,
+        "11": 11.3
+      },
+      "suporte": {
+        "3": 3.2,
+        "5": 3.7,
+        "7": 3.82,
+        "9": 4.1,
+        "11": 4.5
+      },
+      "vontade": {
+        "3": 4.06,
+        "5": 8.25,
+        "7": 8.44,
+        "9": 12.19,
+        "11": 12.35
+      }
+    },
+    "eixo": "plano",
+    "desde": "2026-11-23",
+    "descricao": "P2.15: nível típico de cada eixo por nível de build (percentil 75 das linhas que fazem o eixo, nota > 0,5, em todos os resultados). O rendimento do plano automático usa nível ÷ típico, para nenhum eixo ganhar só por ter uma escala maior. Gerado por calibracao/tipico_eixos.py --gravar.",
+    "historico": [
+      {
+        "data": "2026-11-23",
+        "de": null,
+        "para": "recalculado",
+        "motivo": "P2.15 (usuário, 23/11): normalizar por eixo; recalculado dos resultados."
+      }
+    ]
   }
 }

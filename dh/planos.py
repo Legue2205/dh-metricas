@@ -1,6 +1,8 @@
 """Plano de orçamento do dia: a decisão de como gastar recursos é da build, escrita no JSON.
 
-Tag = premissa diária. Cada combate do plano aponta para uma linha (hipótese) da build:
+Tag = premissa diária. Cada combate do plano aponta para uma linha (hipótese) da build, e pode levar linhas extras
+(D9, 23/11: {"linha": "controle", "extras": ["area"]} = mais de uma magia na luta; valor e gasto das extras entram
+pelo ganho marginal sobre a linha principal):
   "planos": {"padrao": {"combates": ["marcial", "caster", "marcial", {"linha": "caster", "nota": "gasta tudo"}],
                         "hypercharged": 1.5}}        # opcional: hipótese de acesso a mais recursos
 O livro-caixa desconta, combate a combate, o que cada linha gasta (espaços de magia de todos os eixos e
@@ -24,6 +26,18 @@ EIXOS = [('dano', None), ('defesa', None), ('saves', 'resiliencia'), ('saves', '
 
 
 def _entrada(c): return c if isinstance(c, dict) else {'linha': c}
+
+
+def base_id(b):
+    """Linha à vontade da build (D9: referência do ganho marginal das linhas extras de uma luta)."""
+    for l in b['linhas']:
+        if l.get('principal'): return l['id']
+    return b['linhas'][0]['id']
+
+
+def _marginal(gj, gb):
+    """Gasto marginal de uma linha extra sobre a principal (D9): o que a principal já gasta não se repete."""
+    return {k: max(0.0, v - gb.get(k, 0)) for k, v in gj.items() if v - gb.get(k, 0) > 1e-9}
 
 
 def _gasto(linha, corpo, magias, entrada):
@@ -64,6 +78,14 @@ def livro_caixa(b, tag, magias):
         if e['linha'] not in linhas:
             erros.append(f'{onde}: linha inexistente'); continue
         ge, go = _gasto(linhas[e['linha']], b['corpo'], magias, e)
+        extras = [x for x in e.get('extras', []) if x in linhas]   # D9: linhas extras da luta, pelo gasto marginal
+        if extras:
+            gbe, gbo = _gasto(linhas[base_id(b)], b['corpo'], magias, {'linha': base_id(b)})
+            ge, go = dict(ge), dict(go)
+            for x in extras:
+                xe, xo = _gasto(linhas[x], b['corpo'], magias, {'linha': x})
+                for k, v in _marginal(xe, gbe).items(): ge[k] = ge.get(k, 0) + v
+                for k, v in _marginal(xo, gbo).items(): go[k] = go.get(k, 0) + v
         for nv in sorted(ge, reverse=True):          # gasta o menor espaço disponível de nível >= nv
             falta = ge[nv]
             for k in sorted(esp):
@@ -74,8 +96,10 @@ def livro_caixa(b, tag, magias):
             if k not in out: erros.append(f'{onde}: recurso "{k}" não declarado em recursos.outros'); continue
             out[k] -= v
             if out[k] < -1e-9: erros.append(f'{onde}: faltam {-out[k]:g} de "{k}"'); out[k] = 0
-        combates.append(dict(linha=e['linha'], categoria=passo[0], peso=passo[1], nota=e.get('nota', ''),
-                             gasto=dict(espacos={str(k): v for k, v in sorted(ge.items())}, **go)))
+        c = dict(linha=e['linha'], categoria=passo[0], peso=passo[1], nota=e.get('nota', ''),
+                 gasto=dict(espacos={str(k): round(v, 3) for k, v in sorted(ge.items())}, **go))
+        if extras: c['extras'] = extras
+        combates.append(c)
     sobra = dict(espacos={str(k): round(v, 2) for k, v in sorted(esp.items()) if v > 1e-9},
                  **{k: round(v, 2) for k, v in out.items() if v > 1e-9})
     return erros, combates, sobra
@@ -116,8 +140,16 @@ def agregar(b, res_linhas, magias, letra):
     for tag in b.get('planos', {}):
         _, combates, sobra = livro_caixa(b, tag, magias)
         eixos = {}
+        bid = base_id(b)
+
+        def luta(c, eixo, sb):   # D9: linha 1 + Σ (extra − principal), nunca abaixo de 0
+            v = _nota(res_linhas[c['linha']].get(eixo), sb)
+            if not c.get('extras'): return v
+            v0 = _nota(res_linhas[bid].get(eixo), sb) or 0.0
+            tot = (v or 0.0) + sum((_nota(res_linhas[x].get(eixo), sb) or 0.0) - v0 for x in c['extras'])
+            return max(0.0, tot) if (v is not None or tot) else None
         for eixo, sub in EIXOS:
-            vals = [_nota(res_linhas[c['linha']].get(eixo), sub) for c in combates]
+            vals = [luta(c, eixo, sub) for c in combates]
             if all(v is None for v in vals): continue
             vals = [v or 0.0 for v in vals]; pesos = [c['peso'] for c in combates]
             dia = sum(p * v for p, v in zip(pesos, vals)) / sum(pesos)
@@ -125,7 +157,7 @@ def agregar(b, res_linhas, magias, letra):
                 dia = max((_nota(r.get('area'), None) or 0.0) for r in res_linhas.values())
             if sub == 'campo':   # régua de dia: média dos picos do dia contra o dia do conjurador de referência
                 from .controle.total import nivel_dia
-                picos = [_nota(res_linhas[c['linha']].get(eixo), 'campo_pico') or 0.0 for c in combates]
+                picos = [luta(c, eixo, 'campo_pico') or 0.0 for c in combates]
                 dia = nivel_dia(sum(p * v for p, v in zip(pesos, picos)) / sum(pesos))
             cats = {}
             for c, v in zip(combates, vals): cats.setdefault(c['categoria'], []).append(v)

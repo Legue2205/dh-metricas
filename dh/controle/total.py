@@ -267,3 +267,14 @@ def nivel_dia(v):
     for (l0, v0), (l1, v1) in zip(pts, pts[1:]):
         if v0 <= v <= v1 and v1 > v0: return round(l0 + (l1 - l0) * (v - v0) / (v1 - v0), 2)
     return 0.0
+
+
+def sobrevivencia_inv(ficha, L):
+    """P2.13 (23/11): fração da luta em que as invocações da build estão vivas, no nível L, ponderada pelos tipos de
+    encontro e topografias do corpo (sem controle: só a escolha de alvo). O dano delas é multiplicado por isso."""
+    s = 0.0; pt = 0.0
+    for tipo, wt in PESO_TIPO.items():
+        E = encontro(tipo, L)
+        for ti, tp in enumerate(TOPOS):
+            w = wt * TOPO[tp]['peso']; s += w * A.sobrevivencia(E, A.party_com(ficha, L), ti); pt += w
+    return s / pt if pt else 1.0

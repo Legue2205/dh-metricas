@@ -44,7 +44,19 @@ def expande_tatico(b, linha, leve=False):
 def calcular(e, b, linha, modo='rapido', regua=None):
     """Um eixo de uma linha (linha já expandida pelo motor tático, se tiver "tatico")."""
     cfg = MODOS[modo]; corpo = corpo_da(b, linha); inv = linha.get('invocacoes', [])
-    if e == 'dano': return dano.avaliar(linha['dano'], b.get('recursos', {}).get('lutas_dia', 4), inv)
+    if e == 'dano':
+        corpos = [i for i in inv if i.get('corpo', True)]
+        if corpos and (linha.get('controle') or {}).get('atencao') is not None:
+            # P2.13 (23/11): o PV da invocação não é gasto duas vezes; o que ela absorve no corpo, ela deixa de bater
+            at = dict(linha['controle']['atencao'])
+            at.update(esqueletos=True, inv_pv=sum(i['quantidade'] * i['pv'] for i in corpos), inv_ca=corpos[0]['ca'],
+                      inv_dpr=float(dano.dpr({'ataques': []}, 15, invocacoes=corpos)))
+            s = total.sobrevivencia_inv(atencao.ficha(at, corpo), b['nivel'])
+            inv = [dict(i, quantidade=i['quantidade'] * s) if i.get('corpo', True) else i for i in inv]
+            r = dano.avaliar(linha['dano'], b.get('recursos', {}).get('lutas_dia', 4), inv)
+            r['sobrevivencia_invocacao'] = round(s, 3)
+            return r
+        return dano.avaliar(linha['dano'], b.get('recursos', {}).get('lutas_dia', 4), inv)
     if e == 'defesa': return defesa.avaliar(linha['defesa'], corpo, orcamento.reacao_livre(linha))
     if e == 'saves': return saves.avaliar(linha['saves'], corpo, orcamento.reacao_livre(linha))
     if e == 'area':

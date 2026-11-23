@@ -142,7 +142,15 @@ def vida(E, party, ti, neg=None, detalhe=False, marca=None):
     return (r[0], list(r[1])) if detalhe else r
 
 
-def _vida(E, party, ti, neg=None, detalhe=False, marca=None):
+def sobrevivencia(E, party, ti):
+    """P2.13 (23/11): fração dos rounds em que as invocações começam vivas (PV > 0), na mesma simulação da vida."""
+    k = ('sobrev', _rasa(E), _rasa(party), ti)
+    r = _MEMO_VIDA.get(k)
+    if r is None: r = _MEMO_VIDA[k] = _vida(E, party, ti, inv=True)
+    return r
+
+
+def _vida(E, party, ti, neg=None, detalhe=False, marca=None, inv=False):
     """Vida perdida pela party em R rounds; cada inimigo causa (1 − negação de campo) do dano dele.
     marca = (k, vetor): marca do membro k (Ancestral Protectors, Unwavering Mark): o dano do inimigo i contra os
     OUTROS membros cai pela fração vetor[i]; contra quem marcou, não (19/11: a marca conta no Corpo)."""
@@ -154,8 +162,9 @@ def _vida(E, party, ti, neg=None, detalhe=False, marca=None):
     if fj:
         mel = [e for e in E if e['melee']]
         if mel: grap = (max(mel, key=lambda e: e['dn']), fj[0])
-    dano = np.zeros(len(party))
+    dano = np.zeros(len(party)); vivo = 0; js = [j for j, p in enumerate(party) if p.get('skel')]
     for r in range(R):
+        if js and party[js[0]]['pv'] > 0: vivo += 1
         for ie, e in enumerate(E):
             P = distribui(e, party, ti, grap)
             na = n_ataques(e['cr']); d = e['dn'] / na
@@ -166,6 +175,7 @@ def _vida(E, party, ti, neg=None, detalhe=False, marca=None):
                 if km is not None and j != km: dmg *= 1 - mv[ie]
                 dano[j] += P[j] * dmg * (1 - neg[ie])
                 if p.get('skel'): p['pv'] = max(0, p['pv0'] - dano[j])
+    if inv: return vivo / R if js else 1.0
     tot = sum(perda(dano[j] / p['pv']) for j, p in enumerate(party) if not p.get('skel'))
     if detalhe:
         return tot, [perda(dano[j] / p['pv']) for j, p in enumerate(party) if not p.get('skel')]

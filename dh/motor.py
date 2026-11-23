@@ -93,7 +93,7 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
         vals = None
         for tag, pl in list(b.get('planos', {}).items()):
             if isinstance(pl, dict) and pl.get('auto'):
-                vals = vals or plano_auto.valores_linhas(res['linhas'])
+                vals = vals or plano_auto.valores_linhas(res['linhas'], b.get('nivel'))
                 novo = plano_auto.gerar(b, tag, vals)
                 if novo: b['planos'][tag] = novo
         res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)

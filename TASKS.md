@@ -125,6 +125,35 @@ comuns resolveram a comparação entre builds; resta só a dependência do valor
 P2.10 (corpo > 20, até a D8), a P2.11 (Ranger) e a P2.12 (ex-P1.14). Ordem sugerida, depois das decisões: D8 → D5 → D7 →
 P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
 
+## Check-up de infraestrutura (23/11, prioridade antes das passadas)
+
+Medido:
+- **Onde vai o tempo de uma build** (cProfile, Druid Moon 11, 15 linhas, 64 s com o profiler): 75% na simulação de atenção do
+  corpo (`atencao.vida`: 79 mil chamadas por build; `distribui`: 1,4 milhão, com `np.mean` em vetores de 3–5 elementos).
+  Quase tudo repetido: a curva da régua (20 simulações por nível × encontro × topografia) e a party de referência são
+  as mesmas para toda linha e toda build. Saves: 13% (as linhas de uma build repetem os mesmos saves).
+- **Por que todo push recalculava tudo:** a impressão de cada resultado inclui o hash do código do motor; qualquer mudança
+  em `dh/` invalida as 1056 builds. O run do push de 22/11 já era um recálculo completo (o `--forcar` foi redundante).
+- **CI:** um job só (`dh completo` com um processo por núcleo do runner), ~1h30–2h25 por recálculo completo.
+- **Armazenamento:** repo no GitHub 12 MB (compactado); árvore: resultados 30 MB, site (docs) 22 MB, builds 8,7 MB, cache 3 MB.
+  Cada recálculo completo recomita resultados + docs (cresce alguns MB de histórico por vez). Não é gargalo hoje: o limite
+  prático do GitHub é ~1 GB; Git continua servindo como armazenamento por muitos meses.
+- **Site:** `index.html` de 3 MB com o resumo de todas as builds embutido + 1056 JSONs de ~15 KB sob demanda. Pesado no
+  celular na primeira carga (~300–400 KB com gzip).
+
+Feito:
+- Memo da `vida` (simulação determinística; 88% de acerto) e dos `saves` por entrada; resultados **idênticos** conferidos.
+  Tempo por build ~2×: Wizard 14,7 → 7,8 s, Champion 3,5 → 1,8 s, Moon 28 → 16–19 s.
+- CI em 4 jobs: `preparar` (expandir, validar, testes) → `calcular` em **8 fatias paralelas** → `juntar` (painel, site,
+  commit com `pull --rebase` antes do push) → `publicar`. Esperado: recálculo completo de ~2h para ~10–20 min.
+
+Próximos (não feitos, por ordem de ganho):
+- [ ] **I1 Fonte do Pages = GitHub Actions** (Settings → Pages, só o usuário): tira o `docs/` (22 MB) dos commits.
+- [ ] **I2 Impressão por módulo**: hoje mudar qualquer arquivo de `dh/` invalida tudo; dá para fazer o hash só dos
+  módulos que o eixo usa (o `impressoes.py` já tem `modulos`/`_imports`: conferir por que ainda invalida tudo).
+- [ ] **I3 Site:** tirar o resumo embutido do `index.html` (carregar um `resumo.json` à parte) e paginar a tabela.
+- [ ] **I4 `distribui` sem NumPy** para vetores pequenos (as simulações restantes, ~10–15%).
+
 ## Efeito das decisões (23/11, CI com --forcar, commit b019703)
 
 Baseline da passada 2 congelada em `calibracao/baseline/p2-chassi-{misto,externo,padrao}.json`.

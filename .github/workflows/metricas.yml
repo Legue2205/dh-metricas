@@ -16,33 +16,81 @@ permissions:
 concurrency:
   group: metricas
   cancel-in-progress: false
+env:
+  FATIAS: 8   # check-up 23/11: o cálculo roda em FATIAS jobs paralelos (repo público: minutos grátis, até 20 jobs)
 jobs:
-  rodar:
+  preparar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
+        with: {python-version: '3.12', cache: pip, cache-dependency-path: .github/workflows/metricas.yml}
       - run: pip install numpy pytest
       - run: python -m dh expandir
       - run: python -m dh validar 'builds/*.json'
       - run: python -m pytest -q
-      - run: python -m dh completo 'builds/*.json' ${{ inputs.forcar && '--forcar' || '' }}
+      - uses: actions/upload-artifact@v4
+        with: {name: expandidas, path: 'builds/', retention-days: 1}
+
+  calcular:
+    needs: preparar
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        fatia: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12', cache: pip, cache-dependency-path: .github/workflows/metricas.yml}
+      - run: pip install numpy
+      - uses: actions/download-artifact@v4
+        with: {name: expandidas, path: 'builds/'}
+      - name: dh completo (fatia ${{ matrix.fatia }})
+        run: |
+          ls builds/*.json | sort | awk -v i=${{ matrix.fatia }} -v n=$FATIAS '(NR - 1) % n == i' > minhas.txt
+          echo "$(wc -l < minhas.txt) builds nesta fatia"
+          python -m dh completo $(cat minhas.txt) ${{ inputs.forcar && '--forcar' || '' }}
+          mkdir -p saida/resultados saida/cache
+          for f in $(cat minhas.txt); do id=$(basename "$f" .json); cp "resultados/$id.json" saida/resultados/; done
+          git status --porcelain cache | awk '{print $2}' | while read c; do [ -f "$c" ] && cp "$c" saida/cache/; done || true
+      - uses: actions/upload-artifact@v4
+        with: {name: 'fatia-${{ matrix.fatia }}', path: saida/, retention-days: 1}
+
+  juntar:
+    needs: calcular
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12', cache: pip, cache-dependency-path: .github/workflows/metricas.yml}
+      - run: pip install numpy
+      - uses: actions/download-artifact@v4
+        with: {name: expandidas, path: 'builds/'}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'fatia-*', path: fatias/}
+      - name: juntar as fatias
+        run: |
+          for d in fatias/fatia-*; do cp -f "$d"/resultados/*.json resultados/; [ -d "$d/cache" ] && cp -f "$d"/cache/* cache/ 2>/dev/null || true; done
+          echo "$(ls resultados | wc -l) resultados"
       - run: |
           { echo '# Painel (gerado automaticamente)'; echo; echo '```'; python -m dh painel; echo; python -m dh painel dia_longo; echo '```'; } > PAINEL.md
       - run: python -m dh site
       # resultados/ e cache/ ficam na main (são o cache do motor). docs/ também, ATÉ a fonte do Pages virar
       # "GitHub Actions" (Settings → Pages); depois disso, tirar "docs" desta linha (ver ROADMAP, 19/11 noite — tarefa 3).
+      # pull --rebase antes do push: um commit que chegue durante o cálculo não derruba mais o run (falha de 23/11).
       - run: |
           git config user.name "dh-bot"; git config user.email "dh-bot@users.noreply.github.com"
           git add builds resultados cache PAINEL.md docs
-          git diff --cached --quiet || (git commit -m "resultados: atualização automática [skip ci]" && git push)
+          git diff --cached --quiet || git commit -m "resultados: atualização automática [skip ci]"
+          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && break; sleep 5; done
       - uses: actions/upload-pages-artifact@v3
         with: {path: docs}
+
   publicar:
     # Publicação pelo GitHub Actions Pages. Enquanto a fonte do Pages for a branch main (/docs), este job falha sem
     # quebrar nada (continue-on-error) e o site continua saindo do docs/ commitado acima.
-    needs: rodar
+    needs: juntar
     runs-on: ubuntu-latest
     continue-on-error: true
     environment:

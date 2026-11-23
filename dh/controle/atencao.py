@@ -106,7 +106,43 @@ def perda(F):
     return min(F, 1.0) + max(0.0, 1 - 1 / F) if F > 0 else 0.0
 
 
+_MEMO_VIDA = {}
+
+
+def _chave(x):
+    """Chave hashable e estável de dicts/listas/arrays pequenos (para o memo da vida)."""
+    if isinstance(x, dict): return tuple(sorted((k, _chave(v)) for k, v in x.items()))
+    if isinstance(x, (list, tuple)): return tuple(_chave(v) for v in x)
+    if isinstance(x, np.ndarray): return tuple(np.round(x.astype(float), 12).tolist())
+    if isinstance(x, float): return round(x, 12)
+    return x
+
+
+_ESC = (int, float, str, bool, type(None))
+
+
+def _rasa(lista):
+    """Chave barata de uma lista de dicts rasos (ordem de inserção; ordem diferente só custa uma falha de cache)."""
+    out = []
+    for d in lista:
+        it = tuple(d.items())
+        out.append(it if all(isinstance(v, _ESC) for _, v in it) else _chave(d))
+    return tuple(out)
+
+
 def vida(E, party, ti, neg=None, detalhe=False, marca=None):
+    """Memo (check-up 23/11): a simulação é determinística e a mesma entrada se repete muito (party de referência,
+    curva da régua: igual para toda linha e toda build no mesmo nível/encontro/topografia)."""
+    kn = None if neg is None else (neg.tobytes() if isinstance(neg, np.ndarray) else _chave(neg))
+    k = (_rasa(E), _rasa(party), ti, kn, detalhe, _chave(marca))
+    r = _MEMO_VIDA.get(k)
+    if r is None:
+        if len(_MEMO_VIDA) > 400_000: _MEMO_VIDA.clear()
+        r = _MEMO_VIDA[k] = _vida(E, party, ti, neg, detalhe, marca)
+    return (r[0], list(r[1])) if detalhe else r
+
+
+def _vida(E, party, ti, neg=None, detalhe=False, marca=None):
     """Vida perdida pela party em R rounds; cada inimigo causa (1 − negação de campo) do dano dele.
     marca = (k, vetor): marca do membro k (Ancestral Protectors, Unwavering Mark): o dano do inimigo i contra os
     OUTROS membros cai pela fração vetor[i]; contra quem marcou, não (19/11: a marca conta no Corpo)."""

@@ -523,7 +523,21 @@ CAMPOS = ('adv', 'evasion', 'res', 'imune', 'adv_encanto', 'adv_mental_magia', '
           'absorb', 'contra', 'contra_mod', 'contra_nivel', 'rerolagens', 'stillness', 'bonus_prob', 'cura_round', 'ataques')
 
 
+_MEMO = {}
+
+
 def avaliar(spec, corpo, reacao_livre=1.0):
+    """Memo (check-up 23/11): as linhas de uma build quase sempre repetem os mesmos saves/PV/CA."""
+    import copy
+    import json
+    k = json.dumps([spec, corpo.get('saves', {}), corpo.get('pv'), corpo.get('ca'), reacao_livre], sort_keys=True, default=str)
+    if k not in _MEMO:
+        if len(_MEMO) > 20_000: _MEMO.clear()
+        _MEMO[k] = _avaliar(spec, corpo, reacao_livre)
+    return copy.deepcopy(_MEMO[k])
+
+
+def _avaliar(spec, corpo, reacao_livre=1.0):
     """spec (linha) + corpo (build): {"sv": {for,des,con,int,sab,car}, "pv", "ca", + campos de S}.
     Absorb Elements e Counterspell são reações: sem reação livre na hipótese, não contam."""
     from .base import letra

@@ -207,8 +207,17 @@ seguinte. Itens que mudam premissa vão para Decisões.
 - [x] **M6b Listas: Dissonant Whispers (Bard), Psychic Lance (Wizard/Sorcerer)** [D] — **feito 23/11:** Bard ganha a
   linha `sussurros` (1º, sem concentração: magia extra barata); Psychic Lance no "melhor de" do Wizard/Sorcerer do 7.
   Bard Lore 7: controle do dia 4,7 → 6,0 (sussurros como extra nas 4 lutas).
-- [ ] **M7 Pontos de feitiçaria** [N] — ex-P2.6: metamagia (Quickened, Twinned, Heightened), Bastion of Law; hoje o
+- [x] **M7 Pontos de feitiçaria** [N] — **feito 23/11 (chassis):** recurso com `"converte_em_espacos": {nível: custo}`
+  no livro-caixa (paga com pontos quando falta espaço; "outros" são cobrados antes, para a conversão não usar o que a
+  metamagia da luta já gastou; o k da D9 conta ~1 espaço a cada 3 pontos). Chassi do Sorcerer: todos os pontos ficam
+  como pontos (Flexible Casting pelo livro-caixa), as linhas continuam desenhadas com os espaços convertíveis, e a linha
+  `controle-quickened` (2 pontos: magia como ação bônus + Fire Bolt). Sem premissa de reserva: a divisão entre
+  metamagia e espaços é escolha do plano. O plano quase não escolhe o Quickened (ganho = truque cheio num round). Falta:
+  `sor.py` (builds RPGBot) na convenção antiga; Twinned (precisa de "dois alvos na mesma concentração"), Heightened,
+  Bastion of Law → M7b. Original: — ex-P2.6: metamagia (Quickened, Twinned, Heightened), Bastion of Law; hoje o
   Flexible Casting põe todos os pontos em espaços.
+- [ ] **M7b Metamagia restante e sor.py** [N] — Twinned, Heightened, Bastion of Law; levar o livro-caixa de pontos às
+  builds do RPGBot de Sorcerer.
 - [ ] **M8 Efeitos táticos de feats e truques** [N] — desvantagem do Vicious Mockery (41), Booming Blade secundário (31),
   Slasher (34), Telekinetic (30), Flash of Genius (40), Spell-Storing Item (40).
 - **Fora de escopo, por decisão:** mobilidade (Misty Step 63, Step of the Wind 52, Slow Fall 52, Fast Movement 32;

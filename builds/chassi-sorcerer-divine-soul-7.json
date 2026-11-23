@@ -21,7 +21,20 @@
    "1": 3,
    "2": 3,
    "3": 3,
-   "4": 2
+   "4": 1
+  },
+  "outros": {
+   "pontos": {
+    "qtd": 7,
+    "volta": "longo",
+    "converte_em_espacos": {
+     "1": 2,
+     "2": 3,
+     "3": 5,
+     "4": 6,
+     "5": 7
+    }
+   }
   }
  },
  "linhas": [
@@ -439,6 +452,116 @@
    "hipotese": "combo"
   },
   {
+   "id": "controle-quickened",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "2d10",
+      "nota": "Fire Bolt"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Polymorph",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "polymorph"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Psychic Lance",
+        "cd": 15,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "psychic_lance"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 1
+    },
+    "pontos": 2
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle com Quickened Spell (2 pontos): magia como ação bônus + Fire Bolt no round"
+  },
+  {
    "id": "bless",
    "herda": "principal",
    "hipotese": "Bless nos aliados (lista do Cleric)",
@@ -561,7 +684,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: combo. Sobra: 1×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato; prioritário: combo. Sobra: 1×3º, 1 pontos.",
    "combates": [
     "controle-barato",
     "combo",
@@ -571,7 +694,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 3×2º, 3×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 3×2º, 3×3º, 1 pontos.",
    "combates": [
     "area"
    ]
@@ -580,7 +703,7 @@
  "descricao": {
   "resumo": "Chassi do Sorcerer divine-soul: Divine Magic: lista do Cleric; usa Bless como linha de suporte (1 magia conhecida da lista base).",
   "estrategia": "Fire Bolt nos rounds livres; Web/Hold Person/Hypnotic Pattern/Polymorph; Fireball em grupos; o plano automático escolhe.",
-  "nao_modelado": "Favored by the Gods (+2d4 num ataque/save falho); magia de afinidade; Empowered Healing; Healing Word/Cure Wounds; demais magias de Cleric. Metamagia (Twinned, Quickened, Heightened...: os pontos viram espaços pela convenção); Haste; magias conhecidas além da lista base.",
+  "nao_modelado": "Favored by the Gods (+2d4 num ataque/save falho); magia de afinidade; Empowered Healing; Healing Word/Cure Wounds; demais magias de Cleric. Metamagia além do Quickened (Twinned, Heightened…; M7: pontos convertidos em espaços pelo livro-caixa); Haste; magias conhecidas além da lista base.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
   "progressao": "Sorcerer 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 10, 'sab': 12, 'car': 19}; CA 14."
  },

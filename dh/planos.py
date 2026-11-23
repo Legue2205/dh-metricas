@@ -86,16 +86,20 @@ def livro_caixa(b, tag, magias):
                 xe, xo = _gasto(linhas[x], b['corpo'], magias, {'linha': x})
                 for k, v in _marginal(xe, gbe).items(): ge[k] = ge.get(k, 0) + v
                 for k, v in _marginal(xo, gbo).items(): go[k] = go.get(k, 0) + v
+        for k, v in go.items():                      # M7 (23/11): outros antes dos espaços (a conversão não usa
+            if k not in out: erros.append(f'{onde}: recurso "{k}" não declarado em recursos.outros'); continue
+            out[k] -= v                              # os pontos que a metamagia da mesma luta já gastou)
+            if out[k] < -1e-9: erros.append(f'{onde}: faltam {-out[k]:g} de "{k}"'); out[k] = 0
         for nv in sorted(ge, reverse=True):          # gasta o menor espaço disponível de nível >= nv
             falta = ge[nv]
             for k in sorted(esp):
                 if k >= nv and falta > 1e-9:
                     u = min(esp[k], falta); esp[k] -= u; falta -= u
+            for rk, rv in rec.get('outros', {}).items():   # M7: Flexible Casting e afins ("converte_em_espacos")
+                custo = (rv.get('converte_em_espacos') or {}).get(str(nv))
+                if falta > 1e-9 and custo and out.get(rk, 0) >= custo - 1e-9:
+                    u = min(falta, out[rk] / custo); out[rk] -= u * custo; falta -= u
             if falta > 1e-9: erros.append(f'{onde}: faltam {falta:g} espaço(s) de nível {nv}+')
-        for k, v in go.items():
-            if k not in out: erros.append(f'{onde}: recurso "{k}" não declarado em recursos.outros'); continue
-            out[k] -= v
-            if out[k] < -1e-9: erros.append(f'{onde}: faltam {-out[k]:g} de "{k}"'); out[k] = 0
         c = dict(linha=e['linha'], categoria=passo[0], peso=passo[1], nota=e.get('nota', ''),
                  gasto=dict(espacos={str(k): round(v, 3) for k, v in sorted(ge.items())}, **go))
         if extras: c['extras'] = extras

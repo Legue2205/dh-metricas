@@ -34,7 +34,20 @@
     "1": 3,
     "2": 3,
     "3": 3,
-    "4": 2
+    "4": 1
+   },
+   "outros": {
+    "pontos": {
+     "qtd": 7,
+     "volta": "longo",
+     "converte_em_espacos": {
+      "1": 2,
+      "2": 3,
+      "3": 5,
+      "4": 6,
+      "5": 7
+     }
+    }
    }
   },
   "linhas": [
@@ -476,6 +489,128 @@
     "hipotese": "combo"
    },
    {
+    "id": "controle-quickened",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 7,
+       "dano": "2d10",
+       "nota": "Fire Bolt"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Web",
+         "magia": "web",
+         "cd": 15
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Hold Person",
+         "cd": 15,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "hold_person"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "area",
+         "nome": "Hypnotic Pattern",
+         "magia": "hypnotic_pattern",
+         "cd": 15
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Polymorph",
+         "cd": 15,
+         "slots": [
+          4
+         ],
+         "magias": [
+          "polymorph"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Psychic Lance",
+         "cd": 15,
+         "slots": [
+          4
+         ],
+         "magias": [
+          "psychic_lance"
+         ],
+         "modo": "melhor"
+        },
+        {
+         "tipo": "alvo_unico",
+         "nome": "Blindness/Deafness",
+         "cd": 15,
+         "slots": [
+          2
+         ],
+         "magias": [
+          "blindness"
+         ],
+         "modo": "melhor"
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "1": 1
+     },
+     "pontos": 2
+    },
+    "area": [],
+    "invocacoes": [],
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "shield",
+       "usos_luta": 1
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "herda": "principal",
+    "hipotese": "controle com Quickened Spell (2 pontos): magia como ação bônus + Fire Bolt no round"
+   },
+   {
     "id": "area-barata",
     "dano": {
      "ataques": [
@@ -553,7 +688,7 @@
   "descricao": {
    "resumo": "Chassi do Sorcerer lunar: Lunar Embodiment: Blindness/Deafness como opção de controle (Shield já está na base; Hold Monster do 9 já está na base no 11).",
    "estrategia": "Fire Bolt nos rounds livres; Web/Hold Person/Hypnotic Pattern/Polymorph; Fireball em grupos; o plano automático escolhe.",
-   "nao_modelado": "Moon Fire (régua: Fire Bolt); Lunar Boons e Waxing and Waning (desconto de metamagia/fase); Ray of Sickness, Color Spray, Alter Self, Vampiric Touch, Phantom Steed, Confusion, Death Ward, Hallucinatory Terrain, Mislead, Rary's Telepathic Bond (fora da biblioteca ou sem efeito no motor). Metamagia (Twinned, Quickened, Heightened...: os pontos viram espaços pela convenção); Haste; magias conhecidas além da lista base.",
+   "nao_modelado": "Moon Fire (régua: Fire Bolt); Lunar Boons e Waxing and Waning (desconto de metamagia/fase); Ray of Sickness, Color Spray, Alter Self, Vampiric Touch, Phantom Steed, Confusion, Death Ward, Hallucinatory Terrain, Mislead, Rary's Telepathic Bond (fora da biblioteca ou sem efeito no motor). Metamagia além do Quickened (Twinned, Heightened…; M7: pontos convertidos em espaços pelo livro-caixa); Haste; magias conhecidas além da lista base.",
    "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas."
   },
   "reacoes_magicas": [
@@ -591,11 +726,24 @@
    "recursos": {
     "espacos": {
      "1": 3,
-     "2": 4,
+     "2": 3,
      "3": 3,
      "4": 3,
-     "5": 3,
+     "5": 2,
      "6": 1
+    },
+    "outros": {
+     "pontos": {
+      "qtd": 11,
+      "volta": "longo",
+      "converte_em_espacos": {
+       "1": 2,
+       "2": 3,
+       "3": 5,
+       "4": 6,
+       "5": 7
+      }
+     }
     }
    },
    "linhas": [
@@ -1084,6 +1232,147 @@
      ],
      "herda": "principal",
      "hipotese": "combo"
+    },
+    {
+     "id": "controle-quickened",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.0,
+        "bonus": 9,
+        "dano": "3d10",
+        "nota": "Fire Bolt"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Web",
+          "magia": "web",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Person",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "hold_person"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Polymorph",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "polymorph"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Psychic Lance",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "psychic_lance"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Hold Monster",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "hold_monster"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Synaptic Static",
+          "magia": "synaptic_static",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Blindness/Deafness",
+          "cd": 17,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "blindness"
+          ],
+          "modo": "melhor"
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "1": 1,
+       "4": null
+      },
+      "pontos": 2
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "shield",
+        "usos_luta": 1
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Shield",
+       "fracao": 0.5,
+       "eixos": [
+        "defesa"
+       ]
+      }
+     ],
+     "herda": "principal",
+     "hipotese": "controle com Quickened Spell (2 pontos): magia como ação bônus + Fire Bolt no round"
     },
     {
      "id": "area-barata",

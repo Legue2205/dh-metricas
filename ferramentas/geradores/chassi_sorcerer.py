@@ -5,6 +5,7 @@ convenção atual (TODOS os pontos viram espaços, guloso até o 5º — pendên
 Lista base (magias conhecidas): 7 = Shield, Mage Armor, Web, Hold Person, Hypnotic Pattern, Fireball, Polymorph;
 11 = + Hold Monster, Synaptic Static, Cone of Cold. A origem só acrescenta as magias/feat. que ela dá.
 """
+import json
 import sys
 sys.path.insert(0, 'ferramentas/geradores')
 import chassi as C  # noqa: E402
@@ -30,7 +31,7 @@ BLESS = {"nome": "Bless", "lado": "of", "modelo": "bonus_continuo", "alvos": 3, 
 POLY = lambda cd: U("Polymorph", "polymorph", cd, 4)
 BLIND = lambda cd: U("Blindness/Deafness", "blindness", cd, 2)
 CONE = lambda cd: area_sp("Cone of Cold", 6, "8d8", cd, 5)          # cone de 60 pés = 6 alvos (DMG)
-BASE_NM = ("Metamagia (Twinned, Quickened, Heightened...: os pontos viram espaços pela convenção); "
+BASE_NM = ("Metamagia além do Quickened (Twinned, Heightened…; M7: pontos convertidos em espaços pelo livro-caixa); "
            "Counterspell; Haste; magias conhecidas além da lista base.")
 
 
@@ -63,7 +64,20 @@ def montar(sub, L):
     if sub == 'lunar':
         ctrl.append(BLIND(cd))
     cant = (lambda n: fb(L, a, n, ea))
-    f = fatia(L, L, L, m, ('con', 'car'), ca, pv, cant, ctrl, WEB(cd), ar, inv, mage_armor=not drac)
+    # M7 (23/11): os pontos ficam como pontos; o livro-caixa os converte em espaços quando faltar (Flexible Casting)
+    # e a metamagia (Quickened) gasta 2. A divisão entre as duas é escolha do plano, não premissa.
+    reserva = L if L >= 2 else 0
+    f = fatia(L, L, L, m, ('con', 'car'), ca, pv, cant, ctrl, WEB(cd), ar, inv, mage_armor=not drac)   # linhas: com conversão
+    f['recursos']['espacos'] = esp_sor(L, 0, mage_armor=not drac)   # recursos: só os espaços de verdade (o resto é ponto)
+    if reserva >= 2:
+        f['recursos'].setdefault('outros', {})['pontos'] = {"qtd": reserva, "volta": "longo",
+                                                           "converte_em_espacos": {str(k): v for k, v in CUSTO.items()}}
+        lc = next((l for l in f['linhas'] if l['id'] == 'controle'), None)
+        if lc and L >= 3:   # Quickened Spell: a magia de controle sai como ação bônus e o truque segue cheio no round
+            q = json.loads(json.dumps(lc)); g = dict(q.get('gasta', {})); g['pontos'] = 2
+            q.update(id='controle-quickened', dano=cant(1.0), gasta=g,
+                     hipotese="controle com Quickened Spell (2 pontos): magia como ação bônus + Fire Bolt no round")
+            q.pop('principal', None); f['linhas'].append(q)
     if sub == 'divine-soul':
         f['linhas'].append(dict(id="bless", herda="principal", hipotese="Bless nos aliados (lista do Cleric)",
                                 dano=cant(0.75), suporte={"fontes": [BLESS]}, gasta={"espacos": {"1": 2}},

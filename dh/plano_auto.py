@@ -65,6 +65,8 @@ def _k(b, seq):
     rec = b.get('recursos', {}); n = len(seq)
     vezes = 1 + (sum(1 for x in seq if x == planos.SR) if rec.get('espacos_volta') == 'curto' else 0)
     esp = sum(rec.get('espacos', {}).values()) * vezes
+    for v in rec.get('outros', {}).values():   # M7: pontos conversíveis em espaços (~1 espaço a cada 3 pontos)
+        if v.get('converte_em_espacos'): esp += v.get('qtd', 0) / 3
     k = round(esp * (1 - P('planos.magias_por_luta')['utilidade']) / max(1, n))
     return int(max(1, min(P('base.rounds_por_luta'), k)))
 

@@ -231,6 +231,26 @@ seguinte. Itens que mudam premissa vão para Decisões.
 - **Fora de escopo, por decisão:** mobilidade (Misty Step 63, Step of the Wind 52, Slow Fall 52, Fast Movement 32;
   eixo retirado em nov/2026) e iniciativa (Feral Instinct 62): só registrados. Ver "Eixos futuros" abaixo.
 
+### Fechamento da passada de modelagem (23/11 tarde, CI 23e2bf7; baseline `calibracao/baseline/p3-*`)
+
+τ por régua (misto; dentro da classe), p2b → agora: dano 0,17/0,31 → 0,17/0,28; def. física 0,47/0,47 → 0,44/0,42;
+**controle 0,49/0,53 → 0,38/0,61**; **suporte 0,47 → 0,37 (nv7)**; corpo agrupado 0,49/0,27 → 0,37/0,18; área agrupada
+0,59/0,64 → 0,60/0,71. Mais realismo não subiu tudo: o gabarito mede outra coisa em parte dos eixos, e o plano mudou.
+
+Problemas moderados a grandes que restam (lista da próxima passada, ordem sugerida):
+1. **Invocação domina o plano no nv7** [J/M] — Wizard, Druid, Warlock e o Aberrant Mind põem a invocação nas 4 lutas;
+   o controle do plano zera e o τ de controle do Wizard nv7 cai 0,80 → 0,31 (só Graviturgy/Transmutation/Necromancy
+   com controle). A invocação soma dano + corpo (inimigo esperto, D4) + área de uma vez no rendimento; a sobrevivência
+   (P2.13) desconta pouco (0,875). Ver se o corpo da invocação deve entrar no rendimento do plano (ou com peso menor).
+2. **Suporte do Bard nv7 −0,41 → −0,89** [M/G] — o Vicious Mockery dá o mesmo a todos os colégios e o plano do Lore
+   trocou Greater Invisibility por controle + Dissonant Whispers.
+3. **Corpo agrupado caindo** (M4b) — lobos do Conjure Animals, pets, invocações.
+4. **Dano do Cleric nv11 0,76 → 0,38** [M] — provavelmente as extras da D9 (Spiritual Weapon) trocando a ordem dos
+   domínios.
+5. **Sorcerer def. física −0,82** [G] — pista do Divine Soul (dip) contra Draconic.
+Ganhos: controle nv11 0,53 → 0,61; Paladin controle nv11 0,0 → 0,82; Cleric nv11 τ médio 0,33 → 0,42; Fighter e
+Ranger sobem. Resíduos da passada M: M4b, M7b, M8b.
+
 ### Eixos futuros (nota do usuário, 23/11) — possíveis adições, futuro distante
 Se Monks, Rogues ou conjuradores de controle com Alert aparecerem fracos, uma razão provável está aqui.
 - **Iniciativa** (a mais modelável das três): de forma grosseira, a posição no primeiro turno e quantos turnos se nega

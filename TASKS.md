@@ -97,7 +97,7 @@ Ordem: Warlock e Bard primeiro (pedido do usuário); depois por tamanho do erro.
   já nos originais. A régua satura e não separa. Retaguarda 14 × marciais 5–8: conferir se é real.
 - [x] **P1.13 Dano no padrão colapsa por troca de linha** [J → D5] — confirmado na P1.1 (plano auto só olha gasto). Original: — estrutural: o plano escolhe linhas de controle/combo nas
   lutas prioritárias, e o dano do dia de quem tem opções cai (Hexblade 2,5 × 7,9 externo). Ligado à Decisão D2.
-- [ ] **P1.14 τ de dano levemente negativo** [M] — **adiada para a passada 2** (pequena; depende de D5/D7). Original: — Monk (−0,16/0,0), Ranger (−0,19), Rogue (−0,30 externo nv7). Pequenos,
+- [x] **P1.14 τ de dano levemente negativo** [M] — **fechada 23/11: duplicada da P2.12.** — **adiada para a passada 2** (pequena; depende de D5/D7). Original: — Monk (−0,16/0,0), Ranger (−0,19), Rogue (−0,30 externo nv7). Pequenos,
   conferir depois dos maiores.
 - [x] **P1.15 Variância zero** [M] — **revisto 22/11:** só 3 pistas de controle no Paladin (Conquest 4,1 < Redemption 4,9:
   a velocidade 0 da Aura of Conquest não está modelada → P2.9) e 1 de suporte no Fighter. Original: — Paladin controle τ 0,0 e Fighter suporte 0,0: provavelmente todos iguais (só uma
@@ -124,6 +124,48 @@ Revisão da lista da passada 2: todas seguem valendo. A P2.5 (ruído do Monte Ca
 comuns resolveram a comparação entre builds; resta só a dependência do valor absoluto em relação à semente. Entram a
 P2.10 (corpo > 20, até a D8), a P2.11 (Ranger) e a P2.12 (ex-P1.14). Ordem sugerida, depois das decisões: D8 → D5 → D7 →
 P2.7/P2.8/P2.11 (listas e magias de controle) → P2.6 → o resto.
+
+## Estado geral (23/11 manhã)
+
+Infra sólida (recálculo completo em ~10 min); réguas moderadamente consistentes dentro da classe (τ 0,2–0,5: controle e
+def. física ~0,5, dano o mais fraco 0,17–0,32); entre classes ainda não comparável (def. física agrupada ~0; def. mágica
+sem pista); ~10 premissas treináveis ainda não treinadas; **1039 das 1056 builds têm `nao_modelado`**. Decisão (usuário,
+23/11): antes de mais ajuste por classe, uma **passada de modelagem** dos itens recorrentes, como mecânica genérica;
+depois o treino dos parâmetros (treinar agora calibraria em cima de buracos).
+
+## Passada de modelagem (M) — itens recorrentes do `nao_modelado`
+
+Legenda: **[D]** declarar nos geradores (o motor já sabe) · **[N]** mecânica nova (tipo/campo genérico + teste) ·
+número = builds com o item no `nao_modelado`. Ordem = impacto (quantas builds × eixos onde hoje há buraco). Mesmo modelo
+de trabalho das passadas: revalidar antes de cada item, diff contra a baseline (`p2b-*`) depois, achados novos → lista
+seguinte. Itens que mudam premissa vão para Decisões.
+
+- [ ] **M1 Reações declaradas** [D] — Counterspell (86), Absorb Elements (60), Silvery Barbs (60), Shield. O motor de
+  saves já trata `absorb`/`contra` e o controle tem Silvery Barbs; falta declarar nas builds, respeitando uma reação por
+  round (`reacao` / `dh validar`). Eixos: def. mágica, defesa, controle.
+- [ ] **M2 Kit do Ranger** [D/N] — Hunter's Mark com concentração (74), Favored Foe/Natural Explorer (74), magias além
+  da Marca (74), pet como corpo e dano (74; `invocacoes`), Ensnaring Strike e Spike Growth (controle). Ex-P2.11: hoje o
+  Ranger tem controle e suporte 0,0 em todas as subclasses.
+- [ ] **M3 Sobrevivência marcial** [D] — Indomitable (96; `rerolagens` dos saves), Second Wind (80; cura por luta),
+  Relentless Rage (50; PV extra). Eixos: defesa, def. mágica, corpo.
+- [ ] **M4 Kit do Warlock** [D/N] — Armor of Agathys (61; PV temporários [D] + dano de retaliação [N]), Hunger of Hadar
+  (66; área/controle), Darkness + Devil's Sight (61; [N] vantagem/desvantagem), Repelling Blast e outras invocações (45;
+  empurrão no controle [N]).
+- [ ] **M5 Concentração e linhas sem concentração** [D] — ex-P2.17: geradores declaram `concentracao` em área/suporte
+  (Spirit Guardians, Wall of Fire, Bless…) e o `dh validar` passa a checar; ex-P2.16: linhas de blaster puro e de
+  buff/cura sem concentração para Wizard/Druid/Sorcerer (para a D9 render).
+- [ ] **M6 Magias de controle faltando e listas das réguas** [N] — ex-P2.8/P2.7: Sleep, Psychic Lance, Dissonant
+  Whispers, Sleet Storm, Plant Growth, Spike Growth, Ensnaring Strike no `magias.json`; depois rever as listas do
+  Druid/Cleric (mudança de régua: só entre passadas).
+- [ ] **M7 Pontos de feitiçaria** [N] — ex-P2.6: metamagia (Quickened, Twinned, Heightened), Bastion of Law; hoje o
+  Flexible Casting põe todos os pontos em espaços.
+- [ ] **M8 Efeitos táticos de feats e truques** [N] — desvantagem do Vicious Mockery (41), Booming Blade secundário (31),
+  Slasher (34), Telekinetic (30), Flash of Genius (40), Spell-Storing Item (40).
+- **Fora de escopo, por decisão:** mobilidade (Misty Step 63, Step of the Wind 52, Slow Fall 52, Fast Movement 32;
+  eixo retirado em nov/2026) e iniciativa (Feral Instinct 62): só registrados.
+
+Depois da passada M: varredura descritiva → **treino dos parâmetros** (α, β, δ, g, típicos, pesos por eixo) contra os
+gabaritos, como um treino iterativo.
 
 ## Check-up de infraestrutura (23/11, prioridade antes das passadas)
 
@@ -199,16 +241,16 @@ Leitura:
   números comuns a comparação entre builds fica justa, mas o valor absoluto ainda depende da semente. Medir o ruído
   (sementes 11/12/13 num punhado de builds) e decidir se N=8000 basta.
 
-- [ ] **P2.6 Pontos de feitiçaria** [M] — Flexible Casting põe todos os pontos em espaços; metamagia (Quickened/Twinned),
+- [x] **P2.6 Pontos de feitiçaria** [M] — **movida para a passada de modelagem (M7).** — Flexible Casting põe todos os pontos em espaços; metamagia (Quickened/Twinned),
   Bastion of Law (Clockwork) e afins sem mecânica. O dano e a defesa do Sorcerer não têm onde aparecer.
-- [ ] **P2.7 Listas das réguas de controle** [M/J] — Druid (Entangle, Hold Person, Polymorph) e Cleric (Hold Person,
+- [x] **P2.7 Listas das réguas de controle** [M/J] — **movida para a passada de modelagem (M6).** — Druid (Entangle, Hold Person, Polymorph) e Cleric (Hold Person,
   Banishment) têm listas fracas perto da do Wizard/Bard; Sleet Storm, Plant Growth e Spike Growth nem existem no
   `magias.json`. Acrescentar as magias é mecânica; mudar a lista da régua comum é decisão de régua (fazer entre passadas).
-- [ ] **P2.8 Magias de controle faltando no `magias.json`** [M] — Sleep, Psychic Lance, Dissonant Whispers, Sleet Storm,
+- [x] **P2.8 Magias de controle faltando no `magias.json`** [M] — **movida para a passada de modelagem (M6).** — Sleep, Psychic Lance, Dissonant Whispers, Sleet Storm,
   Plant Growth, Spike Growth (Whispers, Druid, Bard base).
 - [ ] **P2.9 Aura of Conquest: velocidade 0 do amedrontado** [M] — hoje só o dano psíquico entra.
-- [ ] **P2.10 Corpo > 20 em 14 chassis** [J → D8] — ver o fechamento da passada 1.
-- [ ] **P2.11 Ranger sem controle nem suporte** [M] — 0,0 em todas as subclasses; Ensnaring Strike, Spike Growth e
+- [x] **P2.10 Corpo > 20 em 14 chassis** [J → D8] — **fechada 23/11:** resolvida pela D8 (máx. 30,6; 4 > 25). — ver o fechamento da passada 1.
+- [x] **P2.11 Ranger sem controle nem suporte** [M] — **movida para a passada de modelagem (M2).** — 0,0 em todas as subclasses; Ensnaring Strike, Spike Growth e
   Conjure Animals fora da régua (junto com a P2.7/P2.8).
 - [ ] **P2.12 Dano dos marciais no nv7** [M] — ex-P1.14: Monk −0,16, Ranger −0,19, Rogue −0,30, Fighter 0,07.
 - [x] **P2.13 Invocação: dano × corpo com o mesmo PV** [M/J] — **feito 23/11:** o dano das invocações é multiplicado
@@ -226,17 +268,18 @@ Leitura:
   --gravar`; a mediana caía no Healing Word de toda linha de conjurador). Original: — rendimento = soma simples dos níveis eq.; no nv7 o controle do
   plano cai (τ 0,49 → 0,23, agrupado 0,43 → 0,06). Ver se é a escala do controle (níveis menores que os de dano na mesma
   build) ou peso por eixo (`plano.auto.peso_eixo`); depende da calibração entre réguas.
-- [ ] **P2.16 Linhas sem concentração nos chassis de conjurador** [M] — para a D9 render, Wizard/Druid/Sorcerer precisam
+- [x] **P2.16 Linhas sem concentração nos chassis de conjurador** [M] — **movida para a passada de modelagem (M5).** — para a D9 render, Wizard/Druid/Sorcerer precisam
   de linhas de blaster puro (Fireball, Lightning Bolt) e de buff/cura sem concentração; hoje toda linha deles tem uma.
-- [ ] **P2.17 Concentração não declarada nas entradas de área/suporte** [M] — Spirit Guardians, Wall of Fire, Bless etc.
+- [x] **P2.17 Concentração não declarada nas entradas de área/suporte** [M] — **movida para a passada de modelagem (M5).** — Spirit Guardians, Wall of Fire, Bless etc.
   não declaram `concentracao`; o plano reconhece pelo nome, mas o `dh validar` não vê duas concentrações numa linha só.
   Declarar nos geradores e ligar a checagem no validador.
 - [ ] **P2.18 Suporte do Cleric no nv11 sem ordem** [M] — depois da D9 o τ de suporte do Cleric no 11 foi a 0,0 (as
   extras `preservar`/`bless` entram em quase todos os domínios e igualam a classe). Ver se a pista ou a régua.
-- [ ] **P2.1 Invocação domina o dano externo** [J → D7] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
+- [x] **P2.1 Invocação domina o dano externo** [J → D7] — **fechada 23/11:** D7 fechada pela D2 + D5; a parte de
+  mecânica foi a P2.13; o que sobra no Wizard é a P2.16. — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
   Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
   Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).
-- [ ] **P2.2 Linhas grátis empatam no plano auto** [M] — sem gasto, `principal` e `eb` empatam e ganha a mais antiga
+- [x] **P2.2 Linhas grátis empatam no plano auto** [M] — **fechada 23/11:** resolvida pela D5 (rendimento). — sem gasto, `principal` e `eb` empatam e ganha a mais antiga
   (desempate por eixos declarados / menos trocas). Depende da D5.
 - [ ] **P2.3 Pista de dano que é área** [G] — Fiend "alto (blaster de fogo, Fireball)": rever pistas de dano que falam de
   magia de área, em todas as classes.

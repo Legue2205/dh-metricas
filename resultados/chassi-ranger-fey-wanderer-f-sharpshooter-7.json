@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 7,
  "build": "Ranger (Fey Wanderer), atirador: arco longo, Archery, couro batido; Sharpshooter no 4",
- "impressao": "af3e114889",
+ "impressao": "a0d2173207",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -681,6 +681,182 @@
     "rank_absoluto": "F"
    }
   },
+  "terreno-espinhos": {
+   "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 25.6,
+     "CA 12": 23.7,
+     "CA 15": 18.1,
+     "CA 16": 16.2,
+     "CA 18": 12.4,
+     "CA 20": 8.6,
+     "CA 22": 7.3,
+     "CA 24": 5.5,
+     "CA 25": 4.6
+    },
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.6,
+    "nivel_precisa": 4.6,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 60,
+    "ca": 15,
+    "blindagem": 3.7,
+    "durabilidade": 2.81,
+    "nivel_blindagem": 3.9,
+    "nivel_durabilidade": 4.1,
+    "nivel_eq": 4.1,
+    "rank": "C",
+    "perfil": "Durável",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 7.25,
+     "rank": "B",
+     "turnos_livres": [
+      3.81,
+      3.68,
+      3.61,
+      2.37,
+      2.06,
+      2.03,
+      1.73,
+      1.65,
+      1.27,
+      1.02
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 2.63,
+     "rank": "D",
+     "turnos_livres": [
+      2.9,
+      1.29,
+      0.94,
+      1.0,
+      0.8,
+      0.52,
+      0.85,
+      0.62,
+      0.75,
+      0.97
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.5,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.37,
+     "6": 3.37,
+     "7": 3.37,
+     "8": 4.38,
+     "9": 4.21,
+     "10": 4.21,
+     "11": 4.48,
+     "12": 4.48,
+     "13": 5.23,
+     "14": 5.23,
+     "15": 5.23,
+     "16": 5.23,
+     "17": 5.74,
+     "18": 5.74,
+     "19": 5.99,
+     "20": 5.74
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [],
+    "acao_bonus": [],
+    "concentracao": [
+     "spike_growth"
+    ],
+    "reacao_livre": 1.0,
+    "espacos_por_eixo": {
+     "controle": {
+      "2": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 3.13,
+    "rank": "C-",
+    "nivel_campo": 3.18,
+    "rank_campo": "C-",
+    "nivel_controle": 3.15,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 0.47,
+    "vidas_campo": 0.49,
+    "vidas_atencao": -0.036,
+    "corpo": {
+     "T": -0.036,
+     "S": 0.105,
+     "P": -0.141,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 7.0,
+    "rank_corpo": "B",
+    "corpo_busca": [
+     [
+      7,
+      -0.036
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 2.66,
+     "Party de elite": 2.72,
+     "Horda + chefe": 2.66,
+     "Horda": 2.54,
+     "Dupla": 2.72,
+     "Chefe sozinho": 4.23
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Spike Growth": 0.1561,
+      "Corpo (ameaça)": 0.0071
+     },
+     "Party de elite": {
+      "Spike Growth": 0.1401,
+      "Corpo (ameaça)": 0.0041
+     },
+     "Horda + chefe": {
+      "Spike Growth": 0.1837,
+      "Corpo (ameaça)": 0.004
+     },
+     "Horda": {
+      "Spike Growth": 0.1753,
+      "Corpo (ameaça)": 0.0093
+     },
+     "Dupla": {
+      "Spike Growth": 0.1431,
+      "Corpo (ameaça)": 0.0043
+     },
+     "Chefe sozinho": {
+      "Spike Growth": 0.2633,
+      "Corpo (ameaça)": 0.0053
+     }
+    },
+    "nivel_absoluto": 3.25,
+    "rank_absoluto": "C-"
+   }
+  },
   "reacao-absorb-elements": {
    "hipotese": "arco longo sem magia + Absorb Elements (reação)",
    "principal": [],
@@ -866,53 +1042,52 @@
      }
     },
     {
-     "linha": "marca",
+     "linha": "terreno-espinhos",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "2": 1
       }
      }
     },
     {
-     "linha": "marca",
+     "linha": "terreno-espinhos",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "2": 1
       }
      }
     },
     {
-     "linha": "marca",
+     "linha": "terreno-espinhos",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 0.5
+       "2": 1
       }
      }
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 2.0,
-     "2": 3
+     "1": 3.5
     },
     "favored_foe": 3
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.3,
-     "rank": "C+",
+     "nivel_eq": 4.7,
+     "rank": "C",
      "por_categoria": {
-      "np": 5.3,
-      "p": 5.3
+      "np": 4.9,
+      "p": 4.6
      }
     },
     "defesa": {
@@ -940,11 +1115,11 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 3.9,
+     "rank": "C-",
      "por_categoria": {
-      "np": 0.0,
-      "p": 0.0
+      "np": 2.1,
+      "p": 4.3
      }
     },
     "corpo": {
@@ -959,8 +1134,8 @@
      "nivel_eq": 4.6,
      "rank": "C",
      "por_categoria": {
-      "np": 4.6,
-      "p": 4.6
+      "np": 4.5,
+      "p": 4.5
      }
     }
    }
@@ -969,13 +1144,14 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "marca",
+     "linha": "terreno-espinhos",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 2.5
+       "1": 2,
+       "2": 1
       }
      },
      "extras": [
@@ -986,17 +1162,17 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 1.5,
-     "2": 3
+     "1": 2,
+     "2": 2
     },
     "favored_foe": 3
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.3,
-     "rank": "C+",
+     "nivel_eq": 4.6,
+     "rank": "C",
      "por_categoria": {
-      "p": 5.3
+      "p": 4.6
      }
     },
     "defesa": {
@@ -1021,10 +1197,10 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.7,
-     "rank": "E",
+     "nivel_eq": 4.6,
+     "rank": "C",
      "por_categoria": {
-      "p": 0.7
+      "p": 5.0
      }
     },
     "corpo": {
@@ -1038,13 +1214,13 @@
      "nivel_eq": 4.6,
      "rank": "C",
      "por_categoria": {
-      "p": 4.6
+      "p": 4.5
      }
     }
    }
   }
  },
- "segundos": 2.0,
+ "segundos": 6.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1496,41 +1672,48 @@
   }
  },
  "impressoes": {
-  "_planos": "a7fdf9f0bae2",
+  "_planos": "c18206201761",
   "principal": {
    "dano": "4900d1cf2ff1",
    "defesa": "b0caa412e7c3",
    "saves": "b1963b664436",
    "area": "228207309338",
-   "controle": "26864964e68e"
+   "controle": "b43ae4a40cfb"
   },
   "marca": {
    "dano": "a59395c62ec2",
    "defesa": "b0caa412e7c3",
    "saves": "b1963b664436",
    "area": "33d554b52694",
-   "controle": "01639465ed81"
+   "controle": "eef0b28eb924"
   },
   "inimigo-favorito": {
    "dano": "67d002cba8c4",
    "defesa": "b0caa412e7c3",
    "saves": "b1963b664436",
    "area": "3afb78aaf33b",
-   "controle": "4d5125bf3397"
+   "controle": "90f120814b6d"
   },
   "enredar": {
    "dano": "4900d1cf2ff1",
    "defesa": "b0caa412e7c3",
    "saves": "b1963b664436",
    "area": "228207309338",
-   "controle": "a25ce6642cdf"
+   "controle": "120966268675"
+  },
+  "terreno-espinhos": {
+   "dano": "4900d1cf2ff1",
+   "defesa": "b0caa412e7c3",
+   "saves": "b1963b664436",
+   "area": "228207309338",
+   "controle": "5cfb0e663b90"
   },
   "reacao-absorb-elements": {
    "dano": "4900d1cf2ff1",
    "defesa": "b0caa412e7c3",
    "saves": "d1a1c9644394",
    "area": "228207309338",
-   "controle": "26864964e68e"
+   "controle": "b43ae4a40cfb"
   }
  }
 }

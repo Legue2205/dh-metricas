@@ -151,6 +151,21 @@ def agregar(b, res_linhas, magias, letra):
             # Fireball extra não troca rounds de truque contra o chefe. O ganho total segue decidindo a escolha.
             v = _nota(res_linhas[c['linha']].get(eixo), sb)
             if not c.get('extras'): return v
+            if eixo == 'suporte':   # P3.2 (24/11): soma na unidade bruta (dano equivalente) e converte no fim: a régua
+                from . import suporte as S   # de nível não é linear, e somar níveis favorece quem parte de baixo
+                tb = lambda i: (res_linhas[i].get('suporte') or {}).get('total')
+                if tb(c['linha']) is not None:
+                    t0 = tb(bid) or 0.0
+                    raw = tb(c['linha']) + sum(max(0.0, (tb(x) or 0.0) - t0) for x in c['extras'])
+                    return S._nivel(raw, S.REGUAS[2])
+            if eixo == 'dano':      # idem no DPR, CA a CA (smite extra em cima de Bless soma DPR, não níveis)
+                from . import dano as D
+                dp = lambda i: (res_linhas[i].get('dano') or {}).get('dpr')
+                if dp(c['linha']):
+                    z = {k: 0.0 for k in dp(c['linha'])}; d0 = dp(bid) or z
+                    lst = [dp(c['linha'])[f'CA {ca}'] + sum(max(0.0, (dp(x) or z)[f'CA {ca}'] - d0.get(f'CA {ca}', 0.0))
+                                                         for x in c['extras']) for ca in D.CAS]
+                    return D.nivel_equivalente(lst)[0]
             v0 = _nota(res_linhas[bid].get(eixo), sb) or 0.0
             tot = (v or 0.0) + sum(max(0.0, (_nota(res_linhas[x].get(eixo), sb) or 0.0) - v0) for x in c['extras'])
             return max(0.0, tot) if (v is not None or tot) else None

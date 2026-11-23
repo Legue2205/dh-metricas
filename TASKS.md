@@ -166,8 +166,16 @@ Situação em 24/11 (p3): def. física 0,44/0,42 ✓; controle 0,38/0,61 ✓; **
     consistente (nv7 0,18 → 0,06 ou 0,18; nv11 0,27 → 0,33 ou 0,32).
   **Conclusão:** o que era mecânica na régua de dano foi corrigido; o resto é convenção (D11, D12), troca entre réguas
   ou gabarito. Pelo critério de pronto, o dano fica abaixo do gate com resíduo rotulado, a menos que D11/D12 mudem.
-- [ ] **P3.2 Régua de suporte no 11** [M] — P2.18 (Cleric sem ordem) e P2.14 (Mantle); Bard no 7 (−0,89) é n = 4: ruído
+- [x] **P3.2 Régua de suporte no 11** [M] — P2.18 (Cleric sem ordem) e P2.14 (Mantle); Bard no 7 (−0,89) é n = 4: ruído
   até persistir.
+  **Feito 24/11.** Causa: a agregação D10 somava os ganhos das magias extras em **níveis**, e a régua de nível não é
+  linear (degraus de 1–2 de dano equivalente no começo, ~7 no meio). Quem parte de uma linha base baixa ganha níveis
+  baratos: Life (base 2,3) + Bless + Preserve Life dava 13,7, a soma bruta dá 11,9; o Peace, que já tem o Emboldening
+  Bond na base, ficava atrás. Agora suporte soma o dano equivalente (`total`) e dano soma o DPR CA a CA, e só no fim
+  converte para nível (conferido: `nivel_eq` gravado = régua(total/DPR) nas 2634/5795 linhas). Medido reagregando os
+  resultados: suporte nv11 0,26 → **0,38** (Cleric 0,00 → 0,45); dano sem mudança; nada piorou. Teste novo em
+  `test_eixos_novos.py`. Área e controle ainda somam níveis (régua própria; efeito esperado pequeno) → resíduo.
+  P2.14 (Mantle) e Bard (Glamour acima de Lore/Eloquence, n = 4) ficam como ruído até persistirem.
 - [ ] **P3.3 Invocação domina o plano no 7** [J/M] — da varredura da passada M; o usuário não vê problema por ora:
   só investigar se a P3.1 apontar para ela.
 - Rotular e aceitar: P2.3/P2.4 [G]; Sorcerer def. física (pista do dip) [G]; M1b/M7b/M8b/P2.9 ficam como resíduo

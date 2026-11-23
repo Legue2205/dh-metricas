@@ -340,3 +340,19 @@ def test_patches_linhas_somam_e_filtram_por_gasto():
     p, f = b['linhas']
     assert p['saves']['rerolagens'] == 1.25 and f['saves']['rerolagens'] == 1.25   # soma ao que o corpo já tinha
     assert 'golpes_extras_a_0pv' not in p['defesa'] and f['defesa']['golpes_extras_a_0pv'] == 2.0
+
+
+def test_extras_somam_na_unidade_bruta():
+    """P3.2 (24/11): extra de suporte soma dano equivalente (não níveis) e converte na régua no fim; idem DPR no dano."""
+    from dh import planos, suporte as S, dano as D
+    from dh.base import letra
+    sup = lambda t: {'suporte': {'total': t, 'nivel_eq': S._nivel(t, S.REGUAS[2])}}
+    res = {'principal': sup(6.81), 'bless': sup(29.53), 'preservar': sup(19.19)}
+    b = {'id': 't', 'corpo': {}, 'recursos': {'espacos': {}, 'outros': {}},
+         'linhas': [{'id': i} for i in res],
+         'planos': {'padrao': {'combates': [{'linha': 'bless', 'extras': ['preservar']}] * 4}}}
+    out = planos.agregar(b, res, {}, letra)
+    esperado = S._nivel(29.53 + (19.19 - 6.81), S.REGUAS[2])
+    soma_niveis = 9.0 + (7.0 - 2.3)
+    v = out['padrao']['eixos']['suporte']['nivel_eq']
+    assert abs(v - esperado) < 0.11 and v < soma_niveis - 1

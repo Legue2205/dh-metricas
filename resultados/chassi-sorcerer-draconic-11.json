@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 11,
  "build": "Sorcerer (draconic), retaguarda, Car > Con > Des, Fire Bolt, Draconic Resilience, Shield; sem feat",
- "impressao": "db3047219a",
+ "impressao": "7c2deacc2a",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -966,6 +966,189 @@
     "rank_absoluto": "A+"
    }
   },
+  "controle-quickened": {
+   "hipotese": "controle com Quickened Spell (2 pontos): magia como ação bônus + Fire Bolt no round",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 21.2,
+     "CA 12": 20.2,
+     "CA 15": 16.9,
+     "CA 16": 15.9,
+     "CA 18": 13.7,
+     "CA 20": 11.6,
+     "CA 22": 9.4,
+     "CA 24": 7.3,
+     "CA 25": 6.2
+    },
+    "nivel_eq": 4.4,
+    "rank": "C",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 4.4,
+    "nivel_precisa": 4.4,
+    "medido": false
+   },
+   "defesa": {
+    "pv_efetivo": 90,
+    "ca": 14,
+    "blindagem": 6.0,
+    "durabilidade": 4.5,
+    "nivel_blindagem": 6.2,
+    "nivel_durabilidade": 6.9,
+    "nivel_eq": 6.9,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": [
+     "shield"
+    ]
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 8.24,
+     "rank": "B+",
+     "turnos_livres": [
+      3.57,
+      3.41,
+      3.33,
+      2.78,
+      2.08,
+      1.91,
+      2.72,
+      2.59,
+      1.92,
+      1.61
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 3.94,
+     "rank": "C-",
+     "turnos_livres": [
+      2.95,
+      1.29,
+      0.94,
+      0.97,
+      1.09,
+      0.96,
+      0.97,
+      0.78,
+      1.02,
+      0.87
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.3,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.84,
+     "5": 3.5,
+     "6": 3.5,
+     "7": 3.5,
+     "8": 4.54,
+     "9": 4.36,
+     "10": 4.36,
+     "11": 4.59,
+     "12": 4.59,
+     "13": 5.34,
+     "14": 5.34,
+     "15": 5.34,
+     "16": 5.34,
+     "17": 5.81,
+     "18": 5.81,
+     "19": 5.99,
+     "20": 5.76
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [
+     "hold_monster|hold_person|hypnotic_pattern|polymorph|web"
+    ],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {
+     "controle": {
+      "5": 1
+     },
+     "defesa": {
+      "1": 1
+     }
+    },
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 14.28,
+    "rank": "A+",
+    "nivel_campo": 9.33,
+    "rank_campo": "B+",
+    "nivel_controle": 9.33,
+    "nivel_atencao": 0.0,
+    "rank_atencao": "F",
+    "vidas_total": 1.376,
+    "vidas_campo": 1.165,
+    "vidas_atencao": -0.093,
+    "corpo": {
+     "T": -0.093,
+     "S": 0.21,
+     "P": -0.303,
+     "chave": "T0S+P-",
+     "perfil": "Redirecionador"
+    },
+    "nivel_corpo": 11.0,
+    "rank_corpo": "A",
+    "corpo_busca": [
+     [
+      11,
+      -0.093
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 16.88,
+     "Party de elite": 18.15,
+     "Horda + chefe": 16.37,
+     "Horda": 16.03,
+     "Dupla": 17.15,
+     "Chefe sozinho": 8.07
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Magia de controle (a melhor da lista)": 0.6159
+     },
+     "Party de elite": {
+      "Magia de controle (a melhor da lista)": 0.3519
+     },
+     "Horda + chefe": {
+      "Magia de controle (a melhor da lista)": 0.6599
+     },
+     "Horda": {
+      "Magia de controle (a melhor da lista)": 0.7456
+     },
+     "Dupla": {
+      "Magia de controle (a melhor da lista)": 0.3305
+     },
+     "Chefe sozinho": {
+      "Magia de controle (a melhor da lista)": 0.1743
+     }
+    },
+    "nivel_absoluto": 13.47,
+    "rank_absoluto": "A+"
+   }
+  },
   "area-barata": {
    "hipotese": "Fireball no 3º (sem concentração; magia extra barata)",
    "principal": [],
@@ -1570,8 +1753,9 @@
    ],
    "sobra": {
     "espacos": {
-     "2": 2
-    }
+     "2": 1
+    },
+    "pontos": 4
    },
    "eixos": {
     "dano": {
@@ -1657,10 +1841,11 @@
    "sobra": {
     "espacos": {
      "1": 2,
-     "2": 4,
+     "2": 3,
      "3": 1,
      "4": 3
-    }
+    },
+    "pontos": 4
    },
    "eixos": {
     "dano": {
@@ -1715,7 +1900,7 @@
    }
   }
  },
- "segundos": 8.1,
+ "segundos": 5.8,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2196,7 +2381,7 @@
   }
  },
  "impressoes": {
-  "_planos": "babf50f233b9",
+  "_planos": "0f57b87acfa0",
   "principal": {
    "dano": "8173de7b1517",
    "defesa": "80983529a4ff",
@@ -2231,6 +2416,13 @@
    "saves": "943cb7fcc56d",
    "area": "fd5a1246bf6b",
    "controle": "bd96628c6a40"
+  },
+  "controle-quickened": {
+   "dano": "8173de7b1517",
+   "defesa": "ebdc3d7bd8b7",
+   "saves": "943cb7fcc56d",
+   "area": "bda935aa9ebc",
+   "controle": "199146d1af3d"
   },
   "area-barata": {
    "dano": "8b8efda486c7",

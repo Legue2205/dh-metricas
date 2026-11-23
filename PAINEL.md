@@ -331,17 +331,17 @@ chassi-rogue-thief-f-piercer-11  11    8,8 B+   10,4 A-   15,2 A+    4,0 C-     
 chassi-rogue-thief-f-piercer-7   7    6,2 B-    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 chassi-rogue-thief-f-sharpshooter-11  11     7,7 B   10,4 A-   15,2 A+    4,0 C-         -     4,8 C         -
 chassi-rogue-thief-f-sharpshooter-7   7    5,0 C+    5,9 C+     7,8 B    3,2 C-         -     4,6 C         -
-chassi-sorcerer-aberrant-mind-11  11    6,5 B-    6,7 B-    8,5 B+    6,7 B-         -    20,6 S         -
-chassi-sorcerer-aberrant-mind-7   7     4,8 C    3,6 C-     4,2 C     2,7 D         -   10,9 A-         -
-chassi-sorcerer-clockwork-soul-11  11     7,4 B    6,7 B-    8,5 B+    6,7 B-         -    20,6 S         -
-chassi-sorcerer-clockwork-soul-7   7    5,3 C+    3,6 C-     4,2 C     2,7 D         -   10,9 A-         -
+chassi-sorcerer-aberrant-mind-11  11    5,2 C+    6,6 B-    8,5 B+    6,7 B-         -    20,6 S         -
+chassi-sorcerer-aberrant-mind-7   7     4,1 C    3,6 C-     4,2 C     2,7 D         -   10,9 A-         -
+chassi-sorcerer-clockwork-soul-11  11    5,9 C+    6,6 B-    8,5 B+    6,7 B-         -    20,6 S         -
+chassi-sorcerer-clockwork-soul-7   7     4,5 C    3,6 C-     4,2 C     2,7 D         -   10,9 A-         -
 chassi-sorcerer-divine-soul-11  11     1,4 D    6,2 B-    8,3 B+    6,7 B-         -    20,6 S     2,7 D
 chassi-sorcerer-divine-soul-7   7     0,7 E    3,2 C-     4,1 C     2,7 D         -   10,9 A-     0,8 E
 chassi-sorcerer-draconic-11  11     2,2 D    6,9 B-    9,5 B+    8,2 B+         -    21,0 S         -
 chassi-sorcerer-draconic-7   7     0,9 E     4,0 C     4,9 C     2,8 D         -   14,0 A+         -
 chassi-sorcerer-lunar-11  11     1,4 D    6,2 B-    8,3 B+    6,7 B-         -    20,6 S         -
 chassi-sorcerer-lunar-7   7     0,7 E    3,2 C-     4,1 C     2,7 D         -   10,9 A-         -
-chassi-sorcerer-shadow-11  11    3,1 C-    6,6 B-     7,8 B    5,2 C+         -    20,6 S         -
+chassi-sorcerer-shadow-11  11    3,1 C-    6,6 B-    8,2 B+    6,7 B-         -    20,6 S         -
 chassi-sorcerer-shadow-7   7     1,6 D    3,1 C-     4,4 C    4,0 C-         -   10,9 A-         -
 chassi-sorcerer-storm-11  11     1,4 D    6,2 B-    8,3 B+    6,7 B-         -    20,6 S         -
 chassi-sorcerer-storm-7   7     0,7 E    3,2 C-     4,1 C     2,7 D         -   10,9 A-         -

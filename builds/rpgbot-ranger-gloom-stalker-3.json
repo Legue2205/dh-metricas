@@ -19,7 +19,12 @@
   "espacos": {
    "1": 3
   },
-  "outros": {}
+  "outros": {
+   "favored_foe": {
+    "qtd": 2,
+    "volta": "longo"
+   }
+  }
  },
  "linhas": [
   {
@@ -90,7 +95,8 @@
       ],
       "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
      }
-    ]
+    ],
+    "concentracao": "hunters_mark"
    },
    "defesa": {},
    "controle": {
@@ -112,31 +118,140 @@
      "1": 0.5
     }
    }
+  },
+  {
+   "id": "inimigo-favorito",
+   "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+3",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.25,
+      "bonus": 7,
+      "dano": "1d8+3+1d8",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d4",
+      "nota": "Favored Foe (1×/turno)"
+     }
+    ],
+    "concentracao": "favored_foe"
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "favored_foe": 1
+   }
+  },
+  {
+   "id": "enredar",
+   "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d8+3",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.25,
+      "bonus": 7,
+      "dano": "1d8+3+1d8",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Ensnaring Strike",
+      "efeito": "ensnaring_strike",
+      "cd": 12,
+      "bonus": [
+       7
+      ],
+      "usos": 1
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   }
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: marca; prioritário: marca. Sobra: 1×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: enredar, inimigo-favorito; prioritário: enredar, inimigo-favorito. Sobra: 1×1º.",
    "combates": [
-    "marca",
-    "marca",
-    "marca",
-    "marca"
+    "inimigo-favorito",
+    "inimigo-favorito",
+    "enredar",
+    "enredar"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: marca. Sobra: 2.5×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: inimigo-favorito. Sobra: 3×1º, 1 favored_foe.",
    "combates": [
-    "marca"
+    "inimigo-favorito"
    ]
   }
  },
  "descricao": {
   "resumo": "Gloom Stalker: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
-  "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Dread Ambusher (3); Iron Mind (7: save de Sab); Stalker's Flurry (11: +0,5 ataque/turno); Umbral Sight não modelado.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Dread Ambusher (3); Iron Mind (7: save de Sab); Stalker's Flurry (11: +0,5 ataque/turno); Umbral Sight não modelado.",
   "progressao": "Arqueiro: Archery, Sharpshooter (1), Des 16. Dread Ambusher (3); Iron Mind (7: save de Sab); Stalker's Flurry (11: +0,5 ataque/turno); Umbral Sight não modelado."
  },
  "id": "rpgbot-ranger-gloom-stalker-3",

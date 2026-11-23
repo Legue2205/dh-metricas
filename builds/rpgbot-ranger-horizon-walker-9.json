@@ -21,7 +21,12 @@
    "2": 3,
    "3": 2
   },
-  "outros": {}
+  "outros": {
+   "favored_foe": {
+    "qtd": 4,
+    "volta": "longo"
+   }
+  }
  },
  "linhas": [
   {
@@ -84,7 +89,8 @@
       "dano": "1d8",
       "nota": "Planar Warrior (ação bônus, 1 acerto/turno, força)"
      }
-    ]
+    ],
+    "concentracao": "hunters_mark"
    },
    "defesa": {},
    "controle": {
@@ -106,31 +112,188 @@
      "1": 0.5
     }
    }
+  },
+  {
+   "id": "inimigo-favorito",
+   "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Planar Warrior (ação bônus, 1 acerto/turno, força)"
+     },
+     {
+      "dano": "1d6",
+      "nota": "Favored Foe (1×/turno)"
+     }
+    ],
+    "concentracao": "favored_foe"
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "favored_foe": 1
+   }
+  },
+  {
+   "id": "enredar",
+   "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Planar Warrior (ação bônus, 1 acerto/turno, força)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Ensnaring Strike",
+      "efeito": "ensnaring_strike",
+      "cd": 14,
+      "bonus": [
+       11,
+       11
+      ],
+      "usos": 1
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   }
+  },
+  {
+   "id": "conjurar-animais",
+   "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Planar Warrior (ação bônus, 1 acerto/turno, força)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   },
+   "invocacoes": [
+    {
+     "nome": "Conjure Animals (8 lobos)",
+     "quantidade": 8,
+     "pv": 11,
+     "ca": 13,
+     "ataque": {
+      "n": 1,
+      "bonus": 4,
+      "dano": "2d4+2",
+      "vantagem": 0.8
+     }
+    }
+   ]
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: marca; prioritário: marca. Sobra: 2×1º, 3×2º, 2×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: inimigo-favorito; prioritário: conjurar-animais. Sobra: 4×1º, 3×2º, 2 favored_foe.",
    "combates": [
-    "marca",
-    "marca",
-    "marca",
-    "marca"
+    "inimigo-favorito",
+    "conjurar-animais",
+    "inimigo-favorito",
+    "conjurar-animais"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: marca. Sobra: 3.5×1º, 3×2º, 2×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: conjurar-animais. Sobra: 4×1º, 3×2º, 1×3º, 4 favored_foe.",
    "combates": [
-    "marca"
+    "conjurar-animais"
    ]
   }
  },
  "descricao": {
   "resumo": "Horizon Walker: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
-  "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Planar Warrior (3; 2d8 no 11); Distant Strike (11) com o 3º ataque sempre; Ethereal Step (7) não modelado.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Planar Warrior (3; 2d8 no 11); Distant Strike (11) com o 3º ataque sempre; Ethereal Step (7) não modelado.",
   "progressao": "Des 20 (8); magias de 3º. Planar Warrior (3; 2d8 no 11); Distant Strike (11) com o 3º ataque sempre; Ethereal Step (7) não modelado."
  },
  "id": "rpgbot-ranger-horizon-walker-9",

@@ -34,7 +34,12 @@
     "1": 4,
     "2": 3
    },
-   "outros": {}
+   "outros": {
+    "favored_foe": {
+     "qtd": 3,
+     "volta": "longo"
+    }
+   }
   },
   "linhas": [
    {
@@ -71,6 +76,14 @@
      ]
     },
     "saves": {},
+    "invocacoes": [
+     {
+      "nome": "Drake Companion",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 17
+     }
+    ],
     "principal": true,
     "custo": "gratuita"
    },
@@ -90,7 +103,8 @@
        "dano": "1d6+3+1d6",
        "nota": "Drake: mordida (ação bônus; round 1 vai na Hunter's Mark)"
       }
-     ]
+     ],
+     "concentracao": "hunters_mark"
     },
     "defesa": {},
     "controle": {
@@ -112,7 +126,127 @@
      "espacos": {
       "1": 0.5
      }
-    }
+    },
+    "invocacoes": [
+     {
+      "nome": "Drake Companion",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 17
+     }
+    ]
+   },
+   {
+    "id": "inimigo-favorito",
+    "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d10+4+0.8"
+      },
+      {
+       "n": 0.75,
+       "bonus": 4,
+       "dano": "1d6+3+1d6",
+       "nota": "Drake: mordida (ação bônus; round 1 vai na Hunter's Mark)"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1d6",
+       "nota": "Favored Foe (1×/turno)"
+      }
+     ],
+     "concentracao": "favored_foe"
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "favored_foe": 1
+    },
+    "invocacoes": [
+     {
+      "nome": "Drake Companion",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 17
+     }
+    ]
+   },
+   {
+    "id": "enredar",
+    "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 7,
+       "dano": "1d10+4+0.8"
+      },
+      {
+       "n": 0.75,
+       "bonus": 4,
+       "dano": "1d6+3+1d6",
+       "nota": "Drake: mordida (ação bônus; round 1 vai na Hunter's Mark)"
+      }
+     ]
+    },
+    "defesa": {},
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 1
+     }
+    },
+    "controle": {
+     "atencao": {
+      "papel": "striker",
+      "front": true,
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "condicao_no_acerto",
+       "nome": "Ensnaring Strike",
+       "efeito": "ensnaring_strike",
+       "cd": 12,
+       "bonus": [
+        7,
+        7
+       ],
+       "usos": 1
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "invocacoes": [
+     {
+      "nome": "Drake Companion",
+      "quantidade": 1,
+      "pv": 40,
+      "ca": 17
+     }
+    ]
    }
   ],
   "planos": {
@@ -122,7 +256,7 @@
   "descricao": {
    "resumo": "Chassi do Drakewarden: Ranger striker com Hunter's Mark e a feature de dano da subclasse.",
    "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
-   "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Drake Companion (3); Bond of Fang and Scale (7: +1d6 na mordida, montaria não modelada); Drake's Breath e drake maior (11) não modelados.",
+   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Drake Companion (3); Bond of Fang and Scale (7: +1d6 na mordida, montaria não modelada); Drake's Breath e drake maior (11) não modelados.",
    "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas."
   },
   "reacoes_magicas": [
@@ -159,7 +293,12 @@
      "2": 3,
      "3": 3
     },
-    "outros": {}
+    "outros": {
+     "favored_foe": {
+      "qtd": 4,
+      "volta": "longo"
+     }
+    }
    },
    "linhas": [
     {
@@ -195,7 +334,15 @@
        }
       ]
      },
-     "saves": {}
+     "saves": {},
+     "invocacoes": [
+      {
+       "nome": "Drake Companion",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 18
+      }
+     ]
     },
     {
      "id": "marca",
@@ -206,6 +353,167 @@
         "n": 2,
         "bonus": 9,
         "dano": "1d10+5+0.8+1d6"
+       },
+       {
+        "n": 0.75,
+        "bonus": 5,
+        "dano": "1d6+4+1d6",
+        "nota": "Drake: mordida (ação bônus; round 1 vai na Hunter's Mark)"
+       }
+      ],
+      "concentracao": "hunters_mark"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Drake Companion",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 18
+      }
+     ]
+    },
+    {
+     "id": "inimigo-favorito",
+     "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d10+5+0.8"
+       },
+       {
+        "n": 0.75,
+        "bonus": 5,
+        "dano": "1d6+4+1d6",
+        "nota": "Drake: mordida (ação bônus; round 1 vai na Hunter's Mark)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d6",
+        "nota": "Favored Foe (1×/turno)"
+       }
+      ],
+      "concentracao": "favored_foe"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "favored_foe": 1
+     },
+     "invocacoes": [
+      {
+       "nome": "Drake Companion",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 18
+      }
+     ]
+    },
+    {
+     "id": "enredar",
+     "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d10+5+0.8"
+       },
+       {
+        "n": 0.75,
+        "bonus": 5,
+        "dano": "1d6+4+1d6",
+        "nota": "Drake: mordida (ação bônus; round 1 vai na Hunter's Mark)"
+       }
+      ]
+     },
+     "defesa": {},
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "controle": {
+      "atencao": {
+       "papel": "striker",
+       "front": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Ensnaring Strike",
+        "efeito": "ensnaring_strike",
+        "cd": 13,
+        "bonus": [
+         9,
+         9
+        ],
+        "usos": 1
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "invocacoes": [
+      {
+       "nome": "Drake Companion",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 18
+      }
+     ]
+    },
+    {
+     "id": "conjurar-animais",
+     "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d10+5+0.8"
        },
        {
         "n": 0.75,
@@ -233,9 +541,29 @@
      "saves": {},
      "gasta": {
       "espacos": {
-       "1": 0.5
+       "3": 1
       }
-     }
+     },
+     "invocacoes": [
+      {
+       "nome": "Drake Companion",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 18
+      },
+      {
+       "nome": "Conjure Animals (8 lobos)",
+       "quantidade": 8,
+       "pv": 11,
+       "ca": 13,
+       "ataque": {
+        "n": 1,
+        "bonus": 4,
+        "dano": "2d4+2",
+        "vantagem": 0.8
+       }
+      }
+     ]
     }
    ]
   }

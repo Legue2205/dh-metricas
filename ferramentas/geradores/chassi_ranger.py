@@ -103,17 +103,41 @@ def fatia(L, sub, feat=None):
         return x
     ctl = {"atencao": C.atencao(pos, **aten), "fontes": fontes}
     arm = equip.split(',')[0]
+    cd = 8 + P + m['sab']
+    # M2 (23/11): pet como corpo (o ataque dele já está no dano); Primal Companion CA 13+PB, Drake CA 14+PB, PV 5+5×nível
+    pet = ([{"nome": "Primal Companion (Beast of the Land)", "quantidade": 1, "pv": 5 + 5 * L, "ca": 13 + P}] if sub == 'beast-master'
+           else [{"nome": "Drake Companion", "quantidade": 1, "pv": 5 + 5 * L, "ca": 14 + P}] if sub == 'drakewarden' else [])
     l1 = {"id": "principal", "hipotese": f"{arm} sem magia", "dano": dano(False), "defesa": {}, "controle": ctl, "saves": {}}
-    l2 = {"id": "marca", "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)", "dano": dano(True), "defesa": {},
+    dm = dict(dano(True), concentracao="hunters_mark")                      # M2: a Marca é concentração
+    l2 = {"id": "marca", "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)", "dano": dm, "defesa": {},
           "controle": ctl, "saves": {}, "gasta": HM}
-    if reac: l1['reacao'] = reac; l2['reacao'] = reac
+    # M2: Favored Foe (Tasha's): 1d4 (1d6 do 6) uma vez por turno no alvo marcado; concentração; PB usos/descanso longo
+    ff = dano(False); ff["por_turno"] = ff.get("por_turno", []) + [{"dano": "1d4" if L < 6 else "1d6", "nota": "Favored Foe (1×/turno)"}]
+    ff["concentracao"] = "favored_foe"
+    l3 = {"id": "inimigo-favorito", "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+          "dano": ff, "defesa": {}, "controle": ctl, "saves": {}, "gasta": {"favored_foe": 1}}
+    # M2: Ensnaring Strike (1º, concentração): contido no acerto, save de For
+    l4 = {"id": "enredar", "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+          "dano": dano(False), "defesa": {}, "saves": {}, "gasta": {"espacos": {"1": 1}},
+          "controle": dict(ctl, fontes=[{"tipo": "condicao_no_acerto", "nome": "Ensnaring Strike", "efeito": "ensnaring_strike",
+                                          "cd": cd, "bonus": [b] * n, "usos": 1}] + ctl["fontes"])}
+    linhas = [l1, l2, l3, l4]
+    if L >= 9:   # M2: Conjure Animals (3º, concentração): 8 lobos (CR 1/4), Pack Tactics ≈ vantagem em 80% dos ataques
+        l5 = {"id": "conjurar-animais", "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+              "dano": dano(False), "defesa": {}, "controle": ctl, "saves": {}, "gasta": {"espacos": {"3": 1}},
+              "invocacoes": [{"nome": "Conjure Animals (8 lobos)", "quantidade": 8, "pv": 11, "ca": 13,
+                              "ataque": {"n": 1, "bonus": 4, "dano": "2d4+2", "vantagem": 0.8}}]}
+        linhas.append(l5)
+    for l in linhas:
+        if reac: l['reacao'] = reac
+        if pet: l['invocacoes'] = pet + l.get('invocacoes', [])
     corpo = {"ca": ca, "pv": C.hp(10, L, m['con']), "saves": {"sv": saves, "ataques": n}}
-    return {"corpo": corpo, "recursos": {"espacos": dict(SL[L]), "outros": {}}, "linhas": [l1, l2],
+    return {"corpo": corpo, "recursos": {"espacos": dict(SL[L]), "outros": {"favored_foe": {"qtd": P, "volta": "longo"}}}, "linhas": linhas,
             "_texto": f"atributos {s}. {txt}", "_equip": equip}
 
 
-NM = ("Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, "
-      "Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; ")
+NM = ("Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); "
+      "Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; ")   # M2 (23/11): o resto entrou
 for sub, (nome, pos, perto, feats) in SUBS.items():
     for feat in (None,) + feats:
         fat = {L: fatia(L, sub, feat) for L in C.NIV}

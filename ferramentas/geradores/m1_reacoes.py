@@ -63,10 +63,11 @@ def aplicar(prog):
     chassi = prog.get('id', '').startswith('chassi-')
     txt = ' '.join(d['nao_modelado'] for d in _textos_nm(prog))
     lista = []
+    ja = {r['magia']: r for r in prog['base'].get('reacoes_magicas', [])}   # idempotente: a menção já saiu do texto
     for m, nome in NOMES.items():
         d = _desde(m, c, s)
         if chassi and d: lista.append({'magia': m, 'desde': d})
-        elif not chassi and nome.lower() in txt.lower(): lista.append({'magia': m, 'desde': d or 1})
+        elif not chassi and (m in ja or nome.lower() in txt.lower()): lista.append(ja.get(m) or {'magia': m, 'desde': d or 1})
     antes = json.dumps(prog, sort_keys=True)
     if lista: prog['base']['reacoes_magicas'] = lista
     else: prog['base'].pop('reacoes_magicas', None)

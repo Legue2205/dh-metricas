@@ -150,7 +150,13 @@ seguinte. Itens que mudam premissa vão para Decisões.
   round (`reacao` / `dh validar`). Eixos: def. mágica, defesa, controle.
 - [ ] **M1b Silvery Barbs** [N] — reação de 1º que força a rerrolagem de um acerto/sucesso inimigo; precisa de um tipo
   de reação na defesa (com custo de espaço no orçamento) e do `forcar_falha` no controle (60 builds).
-- [ ] **M2 Kit do Ranger** [D/N] — Hunter's Mark com concentração (74), Favored Foe/Natural Explorer (74), magias além
+- [x] **M2 Kit do Ranger** [D/N] — **feito 23/11** (chassi_ranger.py e ran.py): Hunter's Mark com concentração declarada;
+  linha Favored Foe (1d4/1d6 por turno, concentração, PB usos/descanso longo); linha Ensnaring Strike (novo
+  `ensnaring_strike` no magias.json, `condicao_no_acerto`); linha Conjure Animals no 9+ (8 lobos, Pack Tactics ≈ 80% de
+  vantagem; o dano já sai pela sobrevivência da P2.13); pet do Beast Master/Drakewarden como corpo. Ranger 11 (padrão):
+  dano 7,2 → 11,2 (Hunter), corpo 11 → 28 (lobos atraem o inimigo esperto); controle do plano segue 0 (Ensnaring rende
+  1,5–2,6 e perde para a Marca: honesto para o Ranger 2014); nível 7 sem mudança. Spike Growth → M6. Também: o
+  `m1_reacoes.py` ficou idempotente (a 2ª passada apagava as reações das builds do RPGBot). Original: — Hunter's Mark com concentração (74), Favored Foe/Natural Explorer (74), magias além
   da Marca (74), pet como corpo e dano (74; `invocacoes`), Ensnaring Strike e Spike Growth (controle). Ex-P2.11: hoje o
   Ranger tem controle e suporte 0,0 em todas as subclasses.
 - [ ] **M3 Sobrevivência marcial** [D] — Indomitable (96; `rerolagens` dos saves), Second Wind (80; cura por luta),

@@ -21,7 +21,12 @@
    "1": 4,
    "2": 3
   },
-  "outros": {}
+  "outros": {
+   "favored_foe": {
+    "qtd": 3,
+    "volta": "longo"
+   }
+  }
  },
  "linhas": [
   {
@@ -82,6 +87,14 @@
      ]
     }
    ],
+   "invocacoes": [
+    {
+     "nome": "Primal Companion (Beast of the Land)",
+     "quantidade": 1,
+     "pv": 40,
+     "ca": 16
+    }
+   ],
    "principal": true,
    "custo": "gratuita"
   },
@@ -107,7 +120,8 @@
       "dano": "1d8+3+2+1d6",
       "nota": "ataque de oportunidade (Sentinel), reação em 50% dos rounds"
      }
-    ]
+    ],
+    "concentracao": "hunters_mark"
    },
    "defesa": {},
    "controle": {
@@ -147,32 +161,200 @@
       "controle"
      ]
     }
+   ],
+   "invocacoes": [
+    {
+     "nome": "Primal Companion (Beast of the Land)",
+     "quantidade": 1,
+     "pv": 40,
+     "ca": 16
+    }
+   ]
+  },
+  {
+   "id": "inimigo-favorito",
+   "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d8+3+2"
+     },
+     {
+      "n": 0.75,
+      "bonus": 4,
+      "dano": "1d8+5",
+      "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d8+3+2",
+      "nota": "ataque de oportunidade (Sentinel), reação em 50% dos rounds"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d6",
+      "nota": "Favored Foe (1×/turno)"
+     }
+    ],
+    "concentracao": "favored_foe"
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto",
+     "hard": {
+      "sentinela": 6
+     }
+    },
+    "fontes": [
+     {
+      "tipo": "sentinela",
+      "nome": "Corpo (Sentinel)",
+      "bonus": 6
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "favored_foe": 1
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade (Sentinel)",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ],
+   "invocacoes": [
+    {
+     "nome": "Primal Companion (Beast of the Land)",
+     "quantidade": 1,
+     "pv": 40,
+     "ca": 16
+    }
+   ]
+  },
+  {
+   "id": "enredar",
+   "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d8+3+2"
+     },
+     {
+      "n": 0.75,
+      "bonus": 4,
+      "dano": "1d8+5",
+      "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d8+3+2",
+      "nota": "ataque de oportunidade (Sentinel), reação em 50% dos rounds"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto",
+     "hard": {
+      "sentinela": 6
+     }
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Ensnaring Strike",
+      "efeito": "ensnaring_strike",
+      "cd": 12,
+      "bonus": [
+       6,
+       6
+      ],
+      "usos": 1
+     },
+     {
+      "tipo": "sentinela",
+      "nome": "Corpo (Sentinel)",
+      "bonus": 6
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade (Sentinel)",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ],
+   "invocacoes": [
+    {
+     "nome": "Primal Companion (Beast of the Land)",
+     "quantidade": 1,
+     "pv": 40,
+     "ca": 16
+    }
    ]
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-absorb-elements; prioritário: reacao-absorb-elements. Sobra: 3×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: enredar; prioritário: enredar. Sobra: 3×2º, 3 favored_foe.",
    "combates": [
-    "reacao-absorb-elements",
-    "reacao-absorb-elements",
-    "reacao-absorb-elements",
-    "reacao-absorb-elements"
+    "enredar",
+    "enredar",
+    "enredar",
+    "enredar"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: reacao-absorb-elements. Sobra: 3×1º, 3×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: inimigo-favorito. Sobra: 4×1º, 3×2º, 2 favored_foe.",
    "combates": [
-    "reacao-absorb-elements"
+    "inimigo-favorito"
    ]
   }
  },
  "descricao": {
   "resumo": "Chassi do Beast Master (Primal Companion): Ranger defensor com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
-  "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Primal Companion (Beast of the Land); Exceptional Training (7) e Bestial Fury (11). Charge, Share Spells e o corpo da fera na defesa não modelados. Sentinel: OA em 50% dos rounds + sentinela no controle.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Primal Companion (Beast of the Land); Exceptional Training (7) e Bestial Fury (11). Charge, Share Spells e o corpo da fera na defesa não modelados. Sentinel: OA em 50% dos rounds + sentinela no controle.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas.",
   "progressao": "atributos {'for': 17, 'des': 15, 'con': 13, 'int': 8, 'sab': 12, 'car': 10}. Primal Companion (Beast of the Land); Exceptional Training (7) e Bestial Fury (11). Charge, Share Spells e o corpo da fera na defesa não modelados. Sentinel: OA em 50% dos rounds + sentinela no controle."
  },

@@ -22,7 +22,12 @@
    "2": 3,
    "3": 3
   },
-  "outros": {}
+  "outros": {
+   "favored_foe": {
+    "qtd": 4,
+    "volta": "longo"
+   }
+  }
  },
  "linhas": [
   {
@@ -118,7 +123,8 @@
       ],
       "nota": "Stalker's Flurry: ataque extra após errar (≈0,5/turno)"
      }
-    ]
+    ],
+    "concentracao": "hunters_mark"
    },
    "defesa": {},
    "controle": {
@@ -145,31 +151,247 @@
      "1": 0.5
     }
    }
+  },
+  {
+   "id": "inimigo-favorito",
+   "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 10,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.25,
+      "bonus": 10,
+      "dano": "1d8+4+1d8",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+     },
+     {
+      "n": 0.5,
+      "bonus": 10,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Stalker's Flurry: ataque extra após errar (≈0,5/turno)"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d6",
+      "nota": "Favored Foe (1×/turno)"
+     }
+    ],
+    "concentracao": "favored_foe"
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "favored_foe": 1
+   }
+  },
+  {
+   "id": "enredar",
+   "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 10,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.25,
+      "bonus": 10,
+      "dano": "1d8+4+1d8",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+     },
+     {
+      "n": 0.5,
+      "bonus": 10,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Stalker's Flurry: ataque extra após errar (≈0,5/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Ensnaring Strike",
+      "efeito": "ensnaring_strike",
+      "cd": 13,
+      "bonus": [
+       10,
+       10
+      ],
+      "usos": 1
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "conjurar-animais",
+   "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 10,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.25,
+      "bonus": 10,
+      "dano": "1d8+4+1d8",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Dread Ambusher: ataque extra +1d8 no 1º round"
+     },
+     {
+      "n": 0.5,
+      "bonus": 10,
+      "dano": "1d8+4",
+      "poder": [
+       -5,
+       10
+      ],
+      "nota": "Stalker's Flurry: ataque extra após errar (≈0,5/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   },
+   "invocacoes": [
+    {
+     "nome": "Conjure Animals (8 lobos)",
+     "quantidade": 8,
+     "pv": 11,
+     "ca": 13,
+     "ataque": {
+      "n": 1,
+      "bonus": 4,
+      "dano": "2d4+2",
+      "vantagem": 0.8
+     }
+    }
+   ]
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-absorb-elements; prioritário: reacao-absorb-elements. Sobra: 3×2º, 3×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conjurar-animais, inimigo-favorito; prioritário: conjurar-animais. Sobra: 4×1º, 3×2º, 3 favored_foe.",
    "combates": [
-    "reacao-absorb-elements",
-    "reacao-absorb-elements",
-    "reacao-absorb-elements",
-    "reacao-absorb-elements"
+    "inimigo-favorito",
+    "conjurar-animais",
+    "conjurar-animais",
+    "conjurar-animais"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: reacao-absorb-elements. Sobra: 3×1º, 3×2º, 3×3º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: conjurar-animais. Sobra: 4×1º, 3×2º, 2×3º, 4 favored_foe.",
    "combates": [
-    "reacao-absorb-elements"
+    "conjurar-animais"
    ]
   }
  },
  "descricao": {
   "resumo": "Chassi do Gloom Stalker: Ranger atirador com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
-  "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Dread Ambusher (3); Iron Mind (7); Stalker's Flurry (11); Umbral Sight não modelado. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Dread Ambusher (3); Iron Mind (7); Stalker's Flurry (11); Umbral Sight não modelado. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas.",
   "progressao": "atributos {'for': 12, 'des': 19, 'con': 15, 'int': 10, 'sab': 13, 'car': 8}. Dread Ambusher (3); Iron Mind (7); Stalker's Flurry (11); Umbral Sight não modelado. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados."
  },

@@ -27,7 +27,12 @@
    "espacos": {
     "1": 3
    },
-   "outros": {}
+   "outros": {
+    "favored_foe": {
+     "qtd": 2,
+     "volta": "longo"
+    }
+   }
   },
   "linhas": [
    {
@@ -90,7 +95,8 @@
        "dano": "1d4",
        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
       }
-     ]
+     ],
+     "concentracao": "hunters_mark"
     },
     "defesa": {},
     "controle": {
@@ -112,6 +118,105 @@
       "1": 0.5
      }
     }
+   },
+   {
+    "id": "inimigo-favorito",
+    "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3",
+       "poder": [
+        -5,
+        10
+       ]
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1d4",
+       "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+      },
+      {
+       "dano": "1d4",
+       "nota": "Favored Foe (1×/turno)"
+      }
+     ],
+     "concentracao": "favored_foe"
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "favored_foe": 1
+    }
+   },
+   {
+    "id": "enredar",
+    "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3",
+       "poder": [
+        -5,
+        10
+       ]
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1d4",
+       "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "condicao_no_acerto",
+       "nome": "Ensnaring Strike",
+       "efeito": "ensnaring_strike",
+       "cd": 12,
+       "bonus": [
+        7
+       ],
+       "usos": 1
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 1
+     }
+    }
    }
   ],
   "planos": {
@@ -121,7 +226,7 @@
   "descricao": {
    "resumo": "Fey Wanderer: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
    "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
-   "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Dreadful Strikes (3; 1d6 no 11); Otherworldly Glamour; Beguiling Twist (7) e Fey Reinforcements (11) não modelados."
+   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Dreadful Strikes (3; 1d6 no 11); Otherworldly Glamour; Beguiling Twist (7) e Fey Reinforcements (11) não modelados."
   }
  },
  "niveis": {
@@ -149,7 +254,12 @@
      "1": 4,
      "2": 2
     },
-    "outros": {}
+    "outros": {
+     "favored_foe": {
+      "qtd": 3,
+      "volta": "longo"
+     }
+    }
    },
    "linhas": [
     {
@@ -210,7 +320,8 @@
         "dano": "1d4",
         "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
        }
-      ]
+      ],
+      "concentracao": "hunters_mark"
      },
      "defesa": {},
      "controle": {
@@ -230,6 +341,106 @@
      "gasta": {
       "espacos": {
        "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "inimigo-favorito",
+     "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d4",
+        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+       },
+       {
+        "dano": "1d4",
+        "nota": "Favored Foe (1×/turno)"
+       }
+      ],
+      "concentracao": "favored_foe"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "favored_foe": 1
+     }
+    },
+    {
+     "id": "enredar",
+     "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d4",
+        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Ensnaring Strike",
+        "efeito": "ensnaring_strike",
+        "cd": 13,
+        "bonus": [
+         9,
+         9
+        ],
+        "usos": 1
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
       }
      }
     }
@@ -256,7 +467,12 @@
      "1": 4,
      "2": 3
     },
-    "outros": {}
+    "outros": {
+     "favored_foe": {
+      "qtd": 3,
+      "volta": "longo"
+     }
+    }
    },
    "linhas": [
     {
@@ -317,7 +533,8 @@
         "dano": "1d4",
         "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
        }
-      ]
+      ],
+      "concentracao": "hunters_mark"
      },
      "defesa": {},
      "controle": {
@@ -337,6 +554,106 @@
      "gasta": {
       "espacos": {
        "1": 0.5
+      }
+     }
+    },
+    {
+     "id": "inimigo-favorito",
+     "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d4",
+        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+       },
+       {
+        "dano": "1d6",
+        "nota": "Favored Foe (1×/turno)"
+       }
+      ],
+      "concentracao": "favored_foe"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "favored_foe": 1
+     }
+    },
+    {
+     "id": "enredar",
+     "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d4",
+        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Ensnaring Strike",
+        "efeito": "ensnaring_strike",
+        "cd": 13,
+        "bonus": [
+         9,
+         9
+        ],
+        "usos": 1
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
       }
      }
     }
@@ -364,7 +681,12 @@
      "2": 3,
      "3": 2
     },
-    "outros": {}
+    "outros": {
+     "favored_foe": {
+      "qtd": 4,
+      "volta": "longo"
+     }
+    }
    },
    "linhas": [
     {
@@ -425,7 +747,8 @@
         "dano": "1d4",
         "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
        }
-      ]
+      ],
+      "concentracao": "hunters_mark"
      },
      "defesa": {},
      "controle": {
@@ -447,6 +770,163 @@
        "1": 0.5
       }
      }
+    },
+    {
+     "id": "inimigo-favorito",
+     "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d4",
+        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+       },
+       {
+        "dano": "1d6",
+        "nota": "Favored Foe (1×/turno)"
+       }
+      ],
+      "concentracao": "favored_foe"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "favored_foe": 1
+     }
+    },
+    {
+     "id": "enredar",
+     "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d4",
+        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Ensnaring Strike",
+        "efeito": "ensnaring_strike",
+        "cd": 14,
+        "bonus": [
+         11,
+         11
+        ],
+        "usos": 1
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     }
+    },
+    {
+     "id": "conjurar-animais",
+     "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d4",
+        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Conjure Animals (8 lobos)",
+       "quantidade": 8,
+       "pv": 11,
+       "ca": 13,
+       "ataque": {
+        "n": 1,
+        "bonus": 4,
+        "dano": "2d4+2",
+        "vantagem": 0.8
+       }
+      }
+     ]
     }
    ]
   },
@@ -472,7 +952,12 @@
      "2": 3,
      "3": 3
     },
-    "outros": {}
+    "outros": {
+     "favored_foe": {
+      "qtd": 4,
+      "volta": "longo"
+     }
+    }
    },
    "linhas": [
     {
@@ -533,7 +1018,8 @@
         "dano": "1d6",
         "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
        }
-      ]
+      ],
+      "concentracao": "hunters_mark"
      },
      "defesa": {},
      "controle": {
@@ -555,6 +1041,163 @@
        "1": 0.5
       }
      }
+    },
+    {
+     "id": "inimigo-favorito",
+     "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d6",
+        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+       },
+       {
+        "dano": "1d6",
+        "nota": "Favored Foe (1×/turno)"
+       }
+      ],
+      "concentracao": "favored_foe"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "favored_foe": 1
+     }
+    },
+    {
+     "id": "enredar",
+     "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d6",
+        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Ensnaring Strike",
+        "efeito": "ensnaring_strike",
+        "cd": 14,
+        "bonus": [
+         11,
+         11
+        ],
+        "usos": 1
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     }
+    },
+    {
+     "id": "conjurar-animais",
+     "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d6",
+        "nota": "Dreadful Strikes (psíquico, 1×/turno por alvo)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Conjure Animals (8 lobos)",
+       "quantidade": 8,
+       "pv": 11,
+       "ca": 13,
+       "ataque": {
+        "n": 1,
+        "bonus": 4,
+        "dano": "2d4+2",
+        "vantagem": 0.8
+       }
+      }
+     ]
     }
    ]
   }

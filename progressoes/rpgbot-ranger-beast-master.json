@@ -27,7 +27,12 @@
    "espacos": {
     "1": 3
    },
-   "outros": {}
+   "outros": {
+    "favored_foe": {
+     "qtd": 2,
+     "volta": "longo"
+    }
+   }
   },
   "linhas": [
    {
@@ -67,6 +72,14 @@
      ]
     },
     "saves": {},
+    "invocacoes": [
+     {
+      "nome": "Primal Companion (Beast of the Land)",
+      "quantidade": 1,
+      "pv": 20,
+      "ca": 15
+     }
+    ],
     "principal": true,
     "custo": "gratuita"
    },
@@ -90,7 +103,8 @@
        "dano": "1d8+4",
        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
       }
-     ]
+     ],
+     "concentracao": "hunters_mark"
     },
     "defesa": {},
     "controle": {
@@ -111,7 +125,132 @@
      "espacos": {
       "1": 0.5
      }
-    }
+    },
+    "invocacoes": [
+     {
+      "nome": "Primal Companion (Beast of the Land)",
+      "quantidade": 1,
+      "pv": 20,
+      "ca": 15
+     }
+    ]
+   },
+   {
+    "id": "inimigo-favorito",
+    "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3",
+       "poder": [
+        -5,
+        10
+       ]
+      },
+      {
+       "n": 0.75,
+       "bonus": 4,
+       "dano": "1d8+4",
+       "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1d4",
+       "nota": "Favored Foe (1×/turno)"
+      }
+     ],
+     "concentracao": "favored_foe"
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "favored_foe": 1
+    },
+    "invocacoes": [
+     {
+      "nome": "Primal Companion (Beast of the Land)",
+      "quantidade": 1,
+      "pv": 20,
+      "ca": 15
+     }
+    ]
+   },
+   {
+    "id": "enredar",
+    "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1,
+       "bonus": 7,
+       "dano": "1d8+3",
+       "poder": [
+        -5,
+        10
+       ]
+      },
+      {
+       "n": 0.75,
+       "bonus": 4,
+       "dano": "1d8+4",
+       "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "condicao_no_acerto",
+       "nome": "Ensnaring Strike",
+       "efeito": "ensnaring_strike",
+       "cd": 12,
+       "bonus": [
+        7
+       ],
+       "usos": 1
+      },
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 1
+     }
+    },
+    "invocacoes": [
+     {
+      "nome": "Primal Companion (Beast of the Land)",
+      "quantidade": 1,
+      "pv": 20,
+      "ca": 15
+     }
+    ]
    }
   ],
   "planos": {
@@ -121,7 +260,7 @@
   "descricao": {
    "resumo": "Beast Master (Primal Companion): arqueiro com Hunter's Mark e a feature de dano da subclasse.",
    "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
-   "nao_modelado": "Concentração na Hunter's Mark (troca de alvo com ação bônus); magias além da Hunter's Mark (Spike Growth, Conjure Animals, Pass without Trace etc.); pet como corpo extra na defesa; Favored Foe/Natural Explorer; Primal Companion (Tasha, Beast of the Land); Bestial Fury (11). Charge, Exceptional Training e Share Spells não modelados."
+   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); Spike Growth e magias utilitárias (Pass without Trace etc.); Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Primal Companion (Tasha, Beast of the Land); Bestial Fury (11). Charge, Exceptional Training e Share Spells não modelados."
   }
  },
  "niveis": {
@@ -149,7 +288,12 @@
      "1": 4,
      "2": 2
     },
-    "outros": {}
+    "outros": {
+     "favored_foe": {
+      "qtd": 3,
+      "volta": "longo"
+     }
+    }
    },
    "linhas": [
     {
@@ -188,7 +332,15 @@
        }
       ]
      },
-     "saves": {}
+     "saves": {},
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 30,
+       "ca": 16
+      }
+     ]
     },
     {
      "id": "marca",
@@ -199,6 +351,114 @@
         "n": 2,
         "bonus": 9,
         "dano": "1d8+4+1d6",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 5,
+        "dano": "1d8+5",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ],
+      "concentracao": "hunters_mark"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 30,
+       "ca": 16
+      }
+     ]
+    },
+    {
+     "id": "inimigo-favorito",
+     "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 5,
+        "dano": "1d8+5",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d4",
+        "nota": "Favored Foe (1×/turno)"
+       }
+      ],
+      "concentracao": "favored_foe"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "favored_foe": 1
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 30,
+       "ca": 16
+      }
+     ]
+    },
+    {
+     "id": "enredar",
+     "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
         "poder": [
          -5,
          10
@@ -221,6 +481,17 @@
       },
       "fontes": [
        {
+        "tipo": "condicao_no_acerto",
+        "nome": "Ensnaring Strike",
+        "efeito": "ensnaring_strike",
+        "cd": 13,
+        "bonus": [
+         9,
+         9
+        ],
+        "usos": 1
+       },
+       {
         "tipo": "ameaca",
         "nome": "Corpo (ameaça)"
        }
@@ -229,9 +500,17 @@
      "saves": {},
      "gasta": {
       "espacos": {
-       "1": 0.5
+       "1": 1
       }
-     }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 30,
+       "ca": 16
+      }
+     ]
     }
    ]
   },
@@ -256,7 +535,12 @@
      "1": 4,
      "2": 3
     },
-    "outros": {}
+    "outros": {
+     "favored_foe": {
+      "qtd": 3,
+      "volta": "longo"
+     }
+    }
    },
    "linhas": [
     {
@@ -295,7 +579,15 @@
        }
       ]
      },
-     "saves": {}
+     "saves": {},
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 40,
+       "ca": 16
+      }
+     ]
     },
     {
      "id": "marca",
@@ -306,6 +598,114 @@
         "n": 2,
         "bonus": 9,
         "dano": "1d8+4+1d6",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 5,
+        "dano": "1d8+5",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ],
+      "concentracao": "hunters_mark"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 40,
+       "ca": 16
+      }
+     ]
+    },
+    {
+     "id": "inimigo-favorito",
+     "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 5,
+        "dano": "1d8+5",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d6",
+        "nota": "Favored Foe (1×/turno)"
+       }
+      ],
+      "concentracao": "favored_foe"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "favored_foe": 1
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 40,
+       "ca": 16
+      }
+     ]
+    },
+    {
+     "id": "enredar",
+     "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d8+4",
         "poder": [
          -5,
          10
@@ -328,6 +728,17 @@
       },
       "fontes": [
        {
+        "tipo": "condicao_no_acerto",
+        "nome": "Ensnaring Strike",
+        "efeito": "ensnaring_strike",
+        "cd": 13,
+        "bonus": [
+         9,
+         9
+        ],
+        "usos": 1
+       },
+       {
         "tipo": "ameaca",
         "nome": "Corpo (ameaça)"
        }
@@ -336,9 +747,17 @@
      "saves": {},
      "gasta": {
       "espacos": {
-       "1": 0.5
+       "1": 1
       }
-     }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 40,
+       "ca": 16
+      }
+     ]
     }
    ]
   },
@@ -364,7 +783,12 @@
      "2": 3,
      "3": 2
     },
-    "outros": {}
+    "outros": {
+     "favored_foe": {
+      "qtd": 4,
+      "volta": "longo"
+     }
+    }
    },
    "linhas": [
     {
@@ -403,7 +827,15 @@
        }
       ]
      },
-     "saves": {}
+     "saves": {},
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17
+      }
+     ]
     },
     {
      "id": "marca",
@@ -414,6 +846,176 @@
         "n": 2,
         "bonus": 11,
         "dano": "1d8+5+1d6",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 6,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ],
+      "concentracao": "hunters_mark"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17
+      }
+     ]
+    },
+    {
+     "id": "inimigo-favorito",
+     "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 6,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d6",
+        "nota": "Favored Foe (1×/turno)"
+       }
+      ],
+      "concentracao": "favored_foe"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "favored_foe": 1
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17
+      }
+     ]
+    },
+    {
+     "id": "enredar",
+     "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.75,
+        "bonus": 6,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Ensnaring Strike",
+        "efeito": "ensnaring_strike",
+        "cd": 14,
+        "bonus": [
+         11,
+         11
+        ],
+        "usos": 1
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17
+      }
+     ]
+    },
+    {
+     "id": "conjurar-animais",
+     "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
         "poder": [
          -5,
          10
@@ -444,9 +1046,29 @@
      "saves": {},
      "gasta": {
       "espacos": {
-       "1": 0.5
+       "3": 1
       }
-     }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 50,
+       "ca": 17
+      },
+      {
+       "nome": "Conjure Animals (8 lobos)",
+       "quantidade": 8,
+       "pv": 11,
+       "ca": 13,
+       "ataque": {
+        "n": 1,
+        "bonus": 4,
+        "dano": "2d4+2",
+        "vantagem": 0.8
+       }
+      }
+     ]
     }
    ]
   },
@@ -472,7 +1094,12 @@
      "2": 3,
      "3": 3
     },
-    "outros": {}
+    "outros": {
+     "favored_foe": {
+      "qtd": 4,
+      "volta": "longo"
+     }
+    }
    },
    "linhas": [
     {
@@ -511,7 +1138,15 @@
        }
       ]
      },
-     "saves": {}
+     "saves": {},
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 17
+      }
+     ]
     },
     {
      "id": "marca",
@@ -522,6 +1157,176 @@
         "n": 2,
         "bonus": 11,
         "dano": "1d8+5+1d6",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ],
+      "concentracao": "hunters_mark"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 0.5
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 17
+      }
+     ]
+    },
+    {
+     "id": "inimigo-favorito",
+     "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1d6",
+        "nota": "Favored Foe (1×/turno)"
+       }
+      ],
+      "concentracao": "favored_foe"
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "favored_foe": 1
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 17
+      }
+     ]
+    },
+    {
+     "id": "enredar",
+     "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "1d8+6",
+        "nota": "Primal Companion (Beast of the Land; ação bônus; 2 ataques no 11)"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "condicao_no_acerto",
+        "nome": "Ensnaring Strike",
+        "efeito": "ensnaring_strike",
+        "cd": 14,
+        "bonus": [
+         11,
+         11
+        ],
+        "usos": 1
+       },
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 1
+      }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 17
+      }
+     ]
+    },
+    {
+     "id": "conjurar-animais",
+     "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d8+5",
         "poder": [
          -5,
          10
@@ -552,9 +1357,29 @@
      "saves": {},
      "gasta": {
       "espacos": {
-       "1": 0.5
+       "3": 1
       }
-     }
+     },
+     "invocacoes": [
+      {
+       "nome": "Primal Companion (Beast of the Land)",
+       "quantidade": 1,
+       "pv": 60,
+       "ca": 17
+      },
+      {
+       "nome": "Conjure Animals (8 lobos)",
+       "quantidade": 8,
+       "pv": 11,
+       "ca": 13,
+       "ataque": {
+        "n": 1,
+        "bonus": 4,
+        "dano": "2d4+2",
+        "vantagem": 0.8
+       }
+      }
+     ]
     }
    ]
   }

@@ -115,12 +115,22 @@
   },
   "descricao": {
    "resumo": "Chassi do Champion: o Fighter base de espadão com Improved Critical.",
-   "nao_modelado": "Remarkable Athlete; Second Wind; Indomitable."
+   "nao_modelado": "Remarkable Athlete"
   }
  },
  "niveis": {
   "7": {
-   "_texto": "atributos {'for': 19, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}"
+   "_texto": "atributos {'for': 19, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}",
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 6.25
+      }
+     }
+    }
+   ]
   },
   "11": {
    "_texto": "atributos {'for': 20, 'des': 13, 'con': 16, 'int': 8, 'sab': 12, 'car': 10}",
@@ -214,6 +224,24 @@
      },
      "gasta": {
       "action_surge": 1
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 8.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
      }
     }
    ]

@@ -169,11 +169,13 @@ def avaliar(spec, corpo, reacao_livre=1.0):
     Attack do Steel Defender, e não gasta a reação da build) | {"tipo": "anula_critico", "usos_luta": 1} (Sentinel at
     Death's Door) | {"tipo": "bloqueio", "dado": 8} ou {"valor": 2} (+CA contra UM ataque depois de acertar: cauda do
     Beast, Arcane Deflection, Defensive Duelist)]}; o que faltar vem do corpo.
+    Autocura na luta: "cura_luta" (PV médios curados por luta, somados ao PV; ex.: Second Wind; M3, 23/11).
     PV temporários próprios: "pvt_luta" (carga que ele já tem no começo da luta, somada ao PV; ex.: Touch of Death)
     e "pvt_round" (renova todo round e absorve o 1º dano do round; ex.: Reckless Abandon). Na linha ou no corpo.
     reacao_livre: fração dos rounds em que a reação NÃO foi gasta em outro eixo da mesma hipótese."""
     pv = spec.get('pv_efetivo', corpo['pv']); ac = spec.get('ca', corpo['ca'])
     pv += spec.get('pvt_luta', corpo.get('pvt_luta', 0)); pvr = spec.get('pvt_round', corpo.get('pvt_round', 0))
+    pv += spec.get('cura_luta', corpo.get('cura_luta', 0))   # M3 (23/11): autocura na luta (Second Wind…), média por luta
     adv = spec.get('adv', 0); resist = spec.get('resist', False); red = spec.get('red', corpo.get('red', 0))
     if 'medido' in spec:  # linhas cuja mecânica o motor ainda não modela (Shield, Absorb Elements, "barrado"…)
         bl, du = spec['medido']['blindagem'], spec['medido']['durabilidade']

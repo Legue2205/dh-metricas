@@ -326,3 +326,17 @@ def test_reacoes_magicas_viram_linhas():
     assert l['saves']['contra'] == 1 and l['saves']['adv'] == []
     assert orcamento.espacos_gastos(l, b['corpo'], MAGIAS).get('saves') == {'3': 1}
     resolver(b); assert [x['id'] for x in b['linhas']] == ids          # idempotente
+
+
+def test_patches_linhas_somam_e_filtram_por_gasto():
+    """M3 (23/11): features de várias linhas (Second Wind, Indomitable, Relentless Rage) via "patches_linhas"."""
+    from dh.build import resolver
+    b = {'id': 't', 'nivel': 11, 'corpo': {'pv': 90, 'ca': 16, 'saves': {'rerolagens': 1}},
+         'linhas': [{'id': 'principal', 'principal': True, 'defesa': {}, 'saves': {}},
+                    {'id': 'furia', 'defesa': {'golpes_extras_a_0pv': 0.5}, 'saves': {}, 'gasta': {'furia': 1}}],
+         'patches_linhas': [{'origem': 'Indomitable', 'eixos': {'saves': {'rerolagens': 0.25}}},
+                            {'origem': 'Relentless Rage', 'quando_gasta': 'furia', 'eixos': {'defesa': {'golpes_extras_a_0pv': 1.5}}}]}
+    resolver(b); resolver(b)                                            # idempotente
+    p, f = b['linhas']
+    assert p['saves']['rerolagens'] == 1.25 and f['saves']['rerolagens'] == 1.25   # soma ao que o corpo já tinha
+    assert 'golpes_extras_a_0pv' not in p['defesa'] and f['defesa']['golpes_extras_a_0pv'] == 2.0

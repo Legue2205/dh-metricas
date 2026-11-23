@@ -144,7 +144,7 @@
   "descricao": {
    "resumo": "Eldritch Knight de espada grande que usa truques de lâmina, Shield e Absorb Elements; defensor que pune quem foge.",
    "estrategia": "Fica entre o inimigo e a retaguarda; Booming Blade + ataque bônus (War Magic) a partir do 7; Sword Burst quando cercado.",
-   "nao_modelado": "Dano secundário do Booming Blade (só se o alvo se mover); Slasher (redução de deslocamento); Silvery Barbs e Misty Step (Fey Touched); Eldritch Strike; Indomitable; Second Wind; controle do Rime's Binding Ice.",
+   "nao_modelado": "Dano secundário do Booming Blade (só se o alvo se mover); Slasher (redução de deslocamento); Silvery Barbs e Misty Step (Fey Touched); Eldritch Strike; controle do Rime's Binding Ice.",
    "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 3); o plano decide quando gastar o espaço nelas."
   },
   "reacoes_magicas": [
@@ -156,7 +156,17 @@
  },
  "niveis": {
   "3": {
-   "_texto": "Eldritch Knight: Booming Blade, Sword Burst, Shield, Absorb Elements."
+   "_texto": "Eldritch Knight: Booming Blade, Sword Burst, Shield, Absorb Elements.",
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 4.25
+      }
+     }
+    }
+   ]
   },
   "5": {
    "_texto": "Extra Attack; War Caster.",
@@ -260,6 +270,16 @@
        ]
       }
      ]
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 5.25
+      }
+     }
     }
    ]
   },
@@ -385,6 +405,16 @@
       }
      ]
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 6.25
+      }
+     }
+    }
    ]
   },
   "9": {
@@ -505,6 +535,24 @@
        ]
       }
      ]
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 7.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
+     }
     }
    ]
   },
@@ -644,6 +692,24 @@
        ]
       }
      ]
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 8.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
+     }
     }
    ]
   }

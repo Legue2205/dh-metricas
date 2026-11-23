@@ -96,6 +96,7 @@ def escrever(classe, sub, posicao, fat, build, desc, feat=None, url=None):
              variante='feat' if feat else 'sem-feat', base=base, niveis=niv)
     assert posicao in POSICOES, posicao
     import m1_reacoes; m1_reacoes.aplicar(P)   # M1 (23/11): reações mágicas da lista da classe
+    import m3_sobrevivencia; m3_sobrevivencia.aplicar(P)   # M3 (23/11): Second Wind, Indomitable, Relentless Rage
     with open(OUT + id_ + '.json', 'w') as fh: json.dump(P, fh, ensure_ascii=False, indent=1)
     print('ok', id_)
     return id_

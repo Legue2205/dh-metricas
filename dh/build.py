@@ -54,6 +54,23 @@ def _reacoes_magicas(b, linhas):
         b['linhas'].append(nova); linhas[lid] = nova
 
 
+def _patches_linhas(b):
+    """M3 (23/11): "patches_linhas" da build = features que valem em várias linhas (Second Wind, Indomitable, Relentless
+    Rage…): [{"origem": texto, "quando_gasta": "furia" (opcional), "eixos": {"defesa": {"cura_luta": 7}}}]. Número soma
+    ao que a linha (ou, nos saves, o corpo) já tem; o resto substitui. Idempotente (marca as origens já aplicadas)."""
+    for p in b.get('patches_linhas') or []:
+        for l in b.get('linhas', []):
+            if p.get('origem') in l.get('_patches', []): continue
+            if p.get('quando_gasta') and p['quando_gasta'] not in (l.get('gasta') or {}): continue
+            for eixo, campos in p.get('eixos', {}).items():
+                atual = dict(l.get(eixo) or {})
+                for k, v in campos.items():
+                    base = atual.get(k, (b.get('corpo', {}).get('saves', {}) if eixo == 'saves' else {}).get(k, 0))
+                    atual[k] = round(base + v, 4) if isinstance(v, (int, float)) and isinstance(base, (int, float)) else v
+                l[eixo] = atual
+            l.setdefault('_patches', []).append(p.get('origem'))
+
+
 def resolver(b):
     """Linhas com "herda": "<id>" recebem os eixos e campos que não declararam da linha-mãe (idempotente)."""
     linhas = {l['id']: l for l in b.get('linhas', []) if 'id' in l}
@@ -64,6 +81,7 @@ def resolver(b):
             for k, v in mae.items():
                 if k not in l and k not in ('id', 'principal', 'hipotese', 'herdou'): l[k] = json.loads(json.dumps(v))
     _reacoes_magicas(b, linhas)
+    _patches_linhas(b)
     for l in b.get('linhas', []):      # "dpr": "auto" na atenção = DPR da própria linha na CA da premissa
         at = (l.get('controle') or {}).get('atencao') or {}
         if at.get('dpr') == 'auto':

@@ -178,12 +178,22 @@
   "descricao": {
    "resumo": "Purple Dragon Knight atirador com dip de Warlock (Undead): Eldritch Blast + Hex, sopro de dragão e cura em grupo pelo Second Wind.",
    "estrategia": "Fica atrás disparando Eldritch Blast; Breath Weapon ou Dragon Fear quando os inimigos se juntam; Action Surge com Eldritch Blast nas lutas importantes.",
-   "nao_modelado": "Repelling Blast; PV temporários do Form of Dread; Second Wind próprio; Indomitable; Royal Envoy; o gasto de ação bônus do Hex no 1º round."
+   "nao_modelado": "Repelling Blast; PV temporários do Form of Dread; Second Wind próprio; Royal Envoy; o gasto de ação bônus do Hex no 1º round."
   }
  },
  "niveis": {
   "3": {
-   "_texto": "Rallying Cry; sopro 1d10, PB/dia."
+   "_texto": "Rallying Cry; sopro 1d10, PB/dia.",
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 4.25
+      }
+     }
+    }
+   ]
   },
   "5": {
    "_texto": "F4 Dragon Fear (Car 16); Warlock 1: Eldritch Blast (2 raios) + Hex; sopro 2d10; meia-armadura (CA 17).",
@@ -410,6 +420,16 @@
       }
      }
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 5.25
+      }
+     }
+    }
    ]
   },
   "7": {
@@ -600,6 +620,16 @@
         "_p2": true
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 6.25
+      }
      }
     }
    ]
@@ -797,6 +827,24 @@
       ]
      }
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 7.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
+     }
+    }
    ]
   },
   "11": {
@@ -984,6 +1032,24 @@
         "_p2": true
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 8.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
      }
     }
    ]

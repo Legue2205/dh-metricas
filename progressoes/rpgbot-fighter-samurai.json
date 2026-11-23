@@ -122,12 +122,22 @@
   "descricao": {
    "resumo": "Samurai pistoleiro (Kobold) que liga vantagem quando precisa; mosquete com Gunner, proficiente em Des, Con e Sab.",
    "estrategia": "Atira de perto ou de longe; Fighting Spirit no round de maior impacto, junto com o Action Surge nas lutas importantes.",
-   "nao_modelado": "Draconic Cry (vantagem para a party contra inimigos a 10 pés: depende de posição); PV temporários do Fighting Spirit; Blade Ward; Indomitable; Second Wind; Elegant Courtier fora dos saves."
+   "nao_modelado": "Draconic Cry (vantagem para a party contra inimigos a 10 pés: depende de posição); PV temporários do Fighting Spirit; Blade Ward; Elegant Courtier fora dos saves."
   }
  },
  "niveis": {
   "3": {
-   "_texto": "Fighting Spirit 3/dia; besta leve 1d8."
+   "_texto": "Fighting Spirit 3/dia; besta leve 1d8.",
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 4.25
+      }
+     }
+    }
+   ]
   },
   "5": {
    "_texto": "Gunner (Des 18): mosquete 1d12; Extra Attack; meia-armadura (CA 17).",
@@ -190,6 +200,16 @@
         "vantagem": 0.25
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 5.25
+      }
      }
     }
    ]
@@ -255,6 +275,16 @@
         "vantagem": 0.25
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 6.25
+      }
      }
     }
    ]
@@ -352,6 +382,24 @@
       ]
      }
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 7.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
+     }
+    }
    ]
   },
   "11": {
@@ -445,6 +493,24 @@
         "gatilho": "critico"
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 8.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
      }
     }
    ]

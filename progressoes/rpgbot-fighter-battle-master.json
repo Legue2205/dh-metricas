@@ -119,12 +119,22 @@
   "descricao": {
    "resumo": "Battle Master atirador com besta de mão e escudo (Thri-kreen), manobras de rede, medo e empurrão para apoiar a party.",
    "estrategia": "Atira de longe; usa os dados de superioridade nas manobras e o Action Surge nas lutas importantes.",
-   "nao_modelado": "Rede (Quick Toss), Pushing Attack, Rally, Commander's Strike; Indomitable; Second Wind."
+   "nao_modelado": "Rede (Quick Toss), Pushing Attack, Rally, Commander's Strike"
   }
  },
  "niveis": {
   "3": {
-   "_texto": "Battle Master: 4 dados d8 por descanso."
+   "_texto": "Battle Master: 4 dados d8 por descanso.",
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 4.25
+      }
+     }
+    }
+   ]
   },
   "5": {
    "_texto": "Extra Attack; Sharpshooter; arco longo sem escudo (CA 16).",
@@ -223,6 +233,16 @@
         "nota": "dado de superioridade somado no acerto (Menacing/Pushing/Quick Toss)"
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 5.25
+      }
      }
     }
    ]
@@ -345,6 +365,16 @@
         "nota": "dado de superioridade somado no acerto (Menacing/Pushing/Quick Toss)"
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 6.25
+      }
      }
     }
    ]
@@ -484,6 +514,24 @@
       ]
      }
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 7.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
+     }
+    }
    ]
   },
   "11": {
@@ -619,6 +667,24 @@
         "gatilho": "critico"
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 8.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
      }
     }
    ]

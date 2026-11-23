@@ -126,7 +126,7 @@
   "descricao": {
    "resumo": "Bárbaro agarrador de armadura de espinhos: agarra, bate com a arma e com os espinhos como ação bônus.",
    "estrategia": "Fúria em toda luta, agarra a ameaça principal e mantém o agarrão (Atletismo com expertise e vantagem).",
-   "nao_modelado": "Vantagem de Força no teste de agarrão (o motor usa só o bônus); derrubar após agarrar (combo agarrar+empurrar custa ataque); versão Owlin voadora (soltar do alto); Battlerager Charge; Spiked Retribution (14); resistência a veneno do anão; Relentless Rage."
+   "nao_modelado": "Vantagem de Força no teste de agarrão (o motor usa só o bônus); derrubar após agarrar (combo agarrar+empurrar custa ataque); versão Owlin voadora (soltar do alto); Battlerager Charge; Spiked Retribution (14); resistência a veneno do anão"
   }
  },
  "niveis": {
@@ -585,6 +585,17 @@
      "saves": {},
      "gasta": {
       "furia": 1
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Relentless Rage",
+     "quando_gasta": "furia",
+     "eixos": {
+      "defesa": {
+       "golpes_extras_a_0pv": 1.5
+      }
      }
     }
    ]

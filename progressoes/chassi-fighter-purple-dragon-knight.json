@@ -117,12 +117,22 @@
   "descricao": {
    "resumo": "Purple Dragon Knight (Banneret) arqueiro: cura em grupo no Second Wind e ataque de aliado no Action Surge (10).",
    "estrategia": "Posição atirador; feat da subclasse: Sharpshooter (6) da extensão pura da build do RPGBot (a build original só tem Dragon Fear, racial).",
-   "nao_modelado": "Royal Envoy; Bulwark (15); o Second Wind próprio; Second Wind; Indomitable (9)."
+   "nao_modelado": "Royal Envoy; Bulwark (15); o Second Wind próprio; Indomitable (9)."
   }
  },
  "niveis": {
   "7": {
-   "_texto": "atributos {'for': 10, 'des': 20, 'con': 16, 'int': 8, 'sab': 13, 'car': 12}"
+   "_texto": "atributos {'for': 10, 'des': 20, 'con': 16, 'int': 8, 'sab': 13, 'car': 12}",
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 6.25
+      }
+     }
+    }
+   ]
   },
   "11": {
    "_texto": "atributos {'for': 10, 'des': 20, 'con': 18, 'int': 8, 'sab': 13, 'car': 12}",
@@ -224,6 +234,24 @@
      },
      "gasta": {
       "action_surge": 1
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 8.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
      }
     }
    ]

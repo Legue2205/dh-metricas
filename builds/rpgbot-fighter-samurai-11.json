@@ -159,9 +159,27 @@
  "descricao": {
   "resumo": "Samurai pistoleiro (Kobold) que liga vantagem quando precisa; mosquete com Gunner, proficiente em Des, Con e Sab.",
   "estrategia": "Atira de perto ou de longe; Fighting Spirit no round de maior impacto, junto com o Action Surge nas lutas importantes.",
-  "nao_modelado": "Draconic Cry (vantagem para a party contra inimigos a 10 pés: depende de posição); PV temporários do Fighting Spirit; Blade Ward; Indomitable; Second Wind; Elegant Courtier fora dos saves.",
+  "nao_modelado": "Draconic Cry (vantagem para a party contra inimigos a 10 pés: depende de posição); PV temporários do Fighting Spirit; Blade Ward; Elegant Courtier fora dos saves.",
   "progressao": "Tireless Spirit (10): 1 Fighting Spirit garantido por luta; terceiro ataque."
  },
+ "patches_linhas": [
+  {
+   "origem": "Second Wind",
+   "eixos": {
+    "defesa": {
+     "cura_luta": 8.25
+    }
+   }
+  },
+  {
+   "origem": "Indomitable",
+   "eixos": {
+    "saves": {
+     "rerolagens": 0.25
+    }
+   }
+  }
+ ],
  "id": "rpgbot-fighter-samurai-11",
  "nome": "Samurai Fighter (RPGBot: A Fistful of Advantage)",
  "grupo": "RPGBot",

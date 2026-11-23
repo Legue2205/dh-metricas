@@ -100,12 +100,22 @@
   "descricao": {
    "resumo": "Fighter Champion de Destreza com rapieira e escudo, crítico em 19, buscando Elven Accuracy sem multiclasse.",
    "estrategia": "Linha de frente leve: ataca todo round; Action Surge nas lutas importantes.",
-   "nao_modelado": "Elven Accuracy sem fonte de vantagem (Inspiração não entra); Remarkable Athlete (iniciativa); Indomitable; Second Wind; resistência necrótica do Shadar-Kai."
+   "nao_modelado": "Elven Accuracy sem fonte de vantagem (Inspiração não entra); Remarkable Athlete (iniciativa); resistência necrótica do Shadar-Kai."
   }
  },
  "niveis": {
   "3": {
-   "_texto": "Improved Critical (19)."
+   "_texto": "Improved Critical (19).",
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 4.25
+      }
+     }
+    }
+   ]
   },
   "5": {
    "_texto": "Extra Attack; Elven Accuracy (Des 18).",
@@ -158,6 +168,16 @@
         "elven_accuracy": true
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 5.25
+      }
      }
     }
    ]
@@ -237,6 +257,16 @@
       ]
      }
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 6.25
+      }
+     }
+    }
    ]
   },
   "9": {
@@ -314,6 +344,24 @@
       ]
      }
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 7.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
+     }
+    }
    ]
   },
   "11": {
@@ -389,6 +437,24 @@
         "nota": "Piercer: dado extra no crítico"
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 8.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
      }
     }
    ]

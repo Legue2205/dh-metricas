@@ -233,12 +233,22 @@
   "descricao": {
    "resumo": "Rune Knight agarrador (Tabaxi): cresce com Giant's Might, agarra e derruba o alvo prioritário; runas de Fogo e Pedra para prender e encantar.",
    "estrategia": "Na frente, agarra e derruba quem ameaça a party; Giant's Might nas lutas que pedem; Hill Rune contra dano físico.",
-   "nao_modelado": "Storm e Cloud Rune, Runic Shield; dano do Unarmed Fighting no agarrado e da Fire Rune; derrubar (shove) e a vantagem que dá; vantagem do Giant's Might no agarrão; Indomitable; Second Wind."
+   "nao_modelado": "Storm e Cloud Rune, Runic Shield; dano do Unarmed Fighting no agarrado e da Fire Rune; derrubar (shove) e a vantagem que dá; vantagem do Giant's Might no agarrão"
   }
  },
  "niveis": {
   "3": {
-   "_texto": "Giant's Might (PB/dia); runas de Fogo e Pedra; agarrar custa 1 ataque no 1º round."
+   "_texto": "Giant's Might (PB/dia); runas de Fogo e Pedra; agarrar custa 1 ataque no 1º round.",
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 4.25
+      }
+     }
+    }
+   ]
   },
   "5": {
    "_texto": "Skill Expert (For 18, expertise em Atletismo); Extra Attack.",
@@ -434,6 +444,16 @@
         "_p2": true
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 5.25
+      }
      }
     }
    ]
@@ -654,6 +674,16 @@
      },
      "hipotese": "Giant's Might + Hill Rune + Action Surge"
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 6.25
+      }
+     }
+    }
    ]
   },
   "9": {
@@ -872,6 +902,24 @@
      },
      "hipotese": "Giant's Might + Hill Rune + Action Surge"
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 7.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
+     }
+    }
    ]
   },
   "11": {
@@ -1084,6 +1132,24 @@
       "action_surge": 1
      },
      "hipotese": "Giant's Might + Hill Rune + Action Surge"
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 8.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
+     }
     }
    ]
   }

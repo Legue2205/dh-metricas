@@ -66,6 +66,8 @@ def calcular(e, b, linha, modo='rapido', regua=None):
     if e == 'suporte': return suporte.avaliar(linha['suporte'], b['nivel'])
     if e == 'orcamento': return orcamento.resumo(linha, b, campo.MAGIAS)
     if e == 'controle':
+        cl = (linha.get('defesa') or {}).get('cura_luta', 0)
+        if cl: corpo = dict(corpo, pv=corpo['pv'] + cl)   # M3 (23/11): a autocura da defesa também segura o corpo
         campo.configurar(cfg['N'], 11)
         c = linha['controle']
         corpos = [i for i in inv if i.get('corpo', True)]   # invocações que ocupam espaço e atraem ataques

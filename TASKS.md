@@ -159,7 +159,12 @@ seguinte. Itens que mudam premissa vão para Decisões.
   `m1_reacoes.py` ficou idempotente (a 2ª passada apagava as reações das builds do RPGBot). Original: — Hunter's Mark com concentração (74), Favored Foe/Natural Explorer (74), magias além
   da Marca (74), pet como corpo e dano (74; `invocacoes`), Ensnaring Strike e Spike Growth (controle). Ex-P2.11: hoje o
   Ranger tem controle e suporte 0,0 em todas as subclasses.
-- [ ] **M3 Sobrevivência marcial** [D] — Indomitable (96; `rerolagens` dos saves), Second Wind (80; cura por luta),
+- [x] **M3 Sobrevivência marcial** [D] — **feito 23/11:** mecânica genérica `patches_linhas` (feature que vale em
+  várias linhas; número soma, filtro `quando_gasta`), `defesa.cura_luta` (autocura média por luta, também no PV da
+  atenção do corpo) e `rerolagens` fracionário nos saves (determinístico). `m3_sobrevivencia.py` (ligado ao
+  chassi/marcial.escrever, 60 progressões): Second Wind 0,5 × (1d10 + nível) por luta; Indomitable 1/2/3 por descanso
+  longo ÷ 4 lutas; Relentless Rage ≈ 1,5 golpe extra nas linhas de fúria do 11. Champion 11: defesa 10,3 → 10,7,
+  def. mental 2,6 → 3,2, corpo 14,5 → 15,1; Berserker 11: defesa 13,5 → 15,3. Original: — Indomitable (96; `rerolagens` dos saves), Second Wind (80; cura por luta),
   Relentless Rage (50; PV extra). Eixos: defesa, def. mágica, corpo.
 - [ ] **M4 Kit do Warlock** [D/N] — Armor of Agathys (61; PV temporários [D] + dano de retaliação [N]), Hunger of Hadar
   (66; área/controle), Darkness + Devil's Sight (61; [N] vantagem/desvantagem), Repelling Blast e outras invocações (45;

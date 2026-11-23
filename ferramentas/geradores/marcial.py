@@ -68,6 +68,7 @@ def escrever(id_, slug, nome, build, desc, fat, grupo="RPGBot", fonte=None):
     fonte = fonte or {"tipo": "rpgbot", "url": f"https://rpgbot.net/dnd5/characters/classes/{CLASSE}/subclasses/{slug}/",
                       "nota": NOTA}
     P = dict(id=id_, nome=nome, grupo=grupo, fonte=fonte, base=base, niveis=niv)
+    import m1_reacoes, m3_sobrevivencia; m1_reacoes.aplicar(P); m3_sobrevivencia.aplicar(P)   # M1/M3 (23/11)
     with open(OUT + id_ + '.json', 'w') as fh: json.dump(P, fh, ensure_ascii=False, indent=1)
     print('ok', id_)
 

@@ -114,12 +114,22 @@
   "descricao": {
    "resumo": "Cavalier montado com lança e escudo: defensor que marca inimigos e, no 10, segura todos no lugar.",
    "estrategia": "Na frente, montado; marca o que acerta para atrair os ataques; Hold the Line a partir do 10.",
-   "nao_modelado": "Vantagem do Mounted Combatant contra criaturas menores que a montaria e a montaria em si; ataque bônus do Unwavering Mark só no dano espalhado; Warding Maneuver; Indomitable; Second Wind."
+   "nao_modelado": "Vantagem do Mounted Combatant contra criaturas menores que a montaria e a montaria em si; ataque bônus do Unwavering Mark só no dano espalhado; Warding Maneuver"
   }
  },
  "niveis": {
   "3": {
-   "_texto": "Cavalier: Unwavering Mark (For 3/dia)."
+   "_texto": "Cavalier: Unwavering Mark (For 3/dia).",
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 4.25
+      }
+     }
+    }
+   ]
   },
   "5": {
    "_texto": "Extra Attack; Piercer (For 18).",
@@ -218,6 +228,16 @@
         "gatilho": "critico"
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 5.25
+      }
      }
     }
    ]
@@ -321,6 +341,16 @@
       ]
      }
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 6.25
+      }
+     }
+    }
    ]
   },
   "9": {
@@ -420,6 +450,24 @@
         "gatilho": "critico"
        }
       ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 7.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
      }
     }
    ]
@@ -590,6 +638,24 @@
        ]
       }
      ]
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Second Wind",
+     "eixos": {
+      "defesa": {
+       "cura_luta": 8.25
+      }
+     }
+    },
+    {
+     "origem": "Indomitable",
+     "eixos": {
+      "saves": {
+       "rerolagens": 0.25
+      }
+     }
     }
    ]
   }

@@ -133,9 +133,27 @@
  "descricao": {
   "resumo": "Samurai atirador: Fighting Spirit dá vantagem num turno; Tireless Spirit garante 1 por luta no 10.",
   "estrategia": "Posição atirador; feat da subclasse: Gunner (4) da build do RPGBot, meio-feat em Des; troca o arco pelo mosquete (armas de fogo da DMG).",
-  "nao_modelado": "PV temporários do Fighting Spirit; Elegant Courtier fora dos saves; Second Wind; Indomitable (9).",
+  "nao_modelado": "PV temporários do Fighting Spirit; Elegant Courtier fora dos saves; Indomitable (9).",
   "progressao": "atributos {'for': 12, 'des': 20, 'con': 18, 'int': 10, 'sab': 13, 'car': 8}"
  },
+ "patches_linhas": [
+  {
+   "origem": "Second Wind",
+   "eixos": {
+    "defesa": {
+     "cura_luta": 8.25
+    }
+   }
+  },
+  {
+   "origem": "Indomitable",
+   "eixos": {
+    "saves": {
+     "rerolagens": 0.25
+    }
+   }
+  }
+ ],
  "id": "chassi-fighter-samurai-11",
  "nome": "Samurai Fighter — chassi",
  "grupo": "Chassi",

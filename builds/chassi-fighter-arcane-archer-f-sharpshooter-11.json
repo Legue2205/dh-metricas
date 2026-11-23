@@ -165,9 +165,27 @@
  "descricao": {
   "resumo": "Arcane Archer: Shadow Arrow 1×/luta (dano e cegueira) e Curving Shot para não perder o erro.",
   "estrategia": "Posição atirador; feat da subclasse: Sharpshooter (6) da build do RPGBot (Elven Accuracy no 4 é racial).",
-  "nao_modelado": "Vantagem da cegueira para a party; Magic Arrow; as outras flechas; Second Wind; Indomitable (9).",
+  "nao_modelado": "Vantagem da cegueira para a party; Magic Arrow; as outras flechas; Indomitable (9).",
   "progressao": "atributos {'for': 10, 'des': 20, 'con': 16, 'int': 13, 'sab': 12, 'car': 8}"
  },
+ "patches_linhas": [
+  {
+   "origem": "Second Wind",
+   "eixos": {
+    "defesa": {
+     "cura_luta": 8.25
+    }
+   }
+  },
+  {
+   "origem": "Indomitable",
+   "eixos": {
+    "saves": {
+     "rerolagens": 0.25
+    }
+   }
+  }
+ ],
  "id": "chassi-fighter-arcane-archer-f-sharpshooter-11",
  "nome": "Arcane Archer Fighter — chassi + Sharpshooter",
  "grupo": "Chassi",

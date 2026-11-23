@@ -111,6 +111,13 @@ _SLOW, _SLOW_M, _MOCK = _p('saves.peso.slow_conjurador'), _p('saves.peso.slow_ma
 _MOD_INIM = _p('saves.conjurador_inimigo.mod_por_nivel')
 
 
+def _frac(x):
+    """Usos por luta, fracionário ok (M3, 23/11: ex.: Indomitable 1/descanso longo ÷ 4 lutas = 0,25): a parte inteira
+    em toda amostra e a fração numa parte fixa das amostras (determinístico: não gasta sorteio)."""
+    x = float(x); k = np.floor(x)
+    return np.full(N, k) + (np.arange(N) < round((x - k) * N))
+
+
 @dataclass
 class S:
     nome: str
@@ -181,8 +188,8 @@ class Luta:
         self.allsp = lista + cantrips
         self.ic = len(lista)                       # índices dos cantrips: ic, ic+1
         self.hp = np.full(N, float(d.pv)); self.zh = np.zeros(N); self.down = np.zeros(N, bool)
-        self.absorb = np.full(N, float(d.absorb)); self.contra = np.full(N, float(d.contra))
-        self.reroll = np.full(N, float(d.rerolagens)); self.ptr = np.zeros(N, int)
+        self.absorb = _frac(d.absorb); self.contra = _frac(d.contra)
+        self.reroll = _frac(d.rerolagens); self.ptr = np.zeros(N, int)
         self.conc = np.full(N, -1)                 # magia de concentração ativa
         self.ctrl = np.zeros(N, bool)              # controle da concentração ativo no alvo
         self.luta_w = np.zeros(N)                  # efeitos sem concentração que duram a luta

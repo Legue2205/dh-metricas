@@ -231,7 +231,7 @@
  "descricao": {
   "resumo": "Eldritch Knight de espadão: War Magic com Booming Blade no 7, Shield como reação, Sword Burst e Rime's Binding Ice para área.",
   "estrategia": "Posição striker; feat da subclasse: Slasher (1, via Custom Lineage) da build do RPGBot, meio-feat em For.",
-  "nao_modelado": "Dano secundário do Booming Blade; Slasher (redução de deslocamento e desvantagem no crítico); Eldritch Strike (10); controle do Rime's Binding Ice; Second Wind; Indomitable (9).",
+  "nao_modelado": "Dano secundário do Booming Blade; Slasher (redução de deslocamento e desvantagem no crítico); Eldritch Strike (10); controle do Rime's Binding Ice; Indomitable (9).",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 13), Absorb Elements (desde o 3); o plano decide quando gastar o espaço nelas.",
   "progressao": "atributos {'for': 20, 'des': 12, 'con': 17, 'int': 13, 'sab': 10, 'car': 8}"
  },
@@ -243,6 +243,24 @@
   {
    "magia": "absorb_elements",
    "desde": 3
+  }
+ ],
+ "patches_linhas": [
+  {
+   "origem": "Second Wind",
+   "eixos": {
+    "defesa": {
+     "cura_luta": 8.25
+    }
+   }
+  },
+  {
+   "origem": "Indomitable",
+   "eixos": {
+    "saves": {
+     "rerolagens": 0.25
+    }
+   }
   }
  ],
  "id": "chassi-fighter-eldritch-knight-f-slasher-11",

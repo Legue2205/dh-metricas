@@ -45,6 +45,33 @@ def ajusta(f,L):
         g=l.get('gasta',{}).get('espacos')
         if g: l['gasta']['espacos']={pl:round(sum(g.values()),3)}
     return f
+def kit_m4(f, L, cd, front=False):
+    """M4 (23/11): Armor of Agathys, Darkness + Devil's Sight e Hunger of Hadar como linhas-opção (espaço do pacto).
+    - Agathys: PV temporários = 5 × nível do pacto; retaliação de frio (mesmo valor) uma vez por luta, só se atacado
+      corpo a corpo (1,0 na linha de frente, 0,4 na retaguarda), espalhada pelos rounds; sem concentração.
+    - Darkness + Devil's Sight (supõe a invocação): vantagem em ~75% dos ataques dele, desvantagem contra ele;
+      concentração. Aliados dentro da escuridão não modelados.
+    - Hunger of Hadar (5+): área de 20 pés por ~2 rounds (2d6 frio sem save + 2d6 ácido com save de Des por round
+      ≈ 6d6 com save); concentração. Cegueira e terreno difícil ainda não entram no controle."""
+    from dh.premissas import P
+    pn = PACTO[L][1]; pl = str(pn); R = P('base.rounds_por_luta'); p0 = f['linhas'][0]
+    d0 = json.loads(json.dumps(p0['dano'])); df0 = dict(p0.get('defesa') or {})
+    ret = 5 * pn * (1.0 if front else 0.4) / R
+    da = dict(d0, por_turno=d0.get('por_turno', []) + [{"dano": f"{ret:.2f}", "nota": "Armor of Agathys: retaliação (1×/luta)"}])
+    f['linhas'].append(dict(id="agathys", herda="principal", hipotese=f"Armor of Agathys ({pn}º: {5 * pn} PV temporários + retaliação)",
+                            dano=da, defesa=dict(df0, pvt_luta=df0.get('pvt_luta', 0) + 5 * pn), gasta={"espacos": {pl: 1}}))
+    if L >= 3:
+        dt = dict(d0, ataques=[dict(x, vantagem=0.75) for x in d0['ataques']], concentracao="darkness")
+        f['linhas'].append(dict(id="trevas", herda="principal", hipotese="Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+                                dano=dt, defesa=dict(df0, adv=-1), gasta={"espacos": {pl: 1}}))
+    if L >= 5:
+        f['linhas'].append(dict(id="hadar", herda="principal", hipotese="Hunger of Hadar (≈2 rounds de dano na área)",
+                                area=[{"nome": "Hunger of Hadar", "concentracao": "hunger_of_hadar",
+                                       "usos": [{"alvos": 3, "dano": "6d6", "cd": cd, "slot": pn}]}],
+                                gasta={"espacos": {pl: 1}}))
+    return f
+
+
 CHA={3:3,5:4,7:4,9:5,11:5}
 def gera(id_,slug,nome,build,desc,sub):
     F={}
@@ -74,6 +101,7 @@ def gera(id_,slug,nome,build,desc,sub):
                 g.setdefault('espacos',{}); g['espacos']['9']=0.5   # 9 = marcador; ajusta() junta no nível do pacto
                 f['linhas'].append(dict(l,id=l['id']+'+hex',hipotese=l.get('hipotese',l['id'])+' + Hex',
                     dano=o.get('cant_hex',lambda n: eb(L,a,c,n,True))(fr),gasta=g))
+        kit_m4(f, L, cd, o.get('front', False))   # M4 (23/11)
         for kk,v in o.get('corpo',{}).items(): f['corpo'][kk]=v
         if o.get('outros'): f['recursos']['outros']=o['outros']
         for l in f['linhas']:
@@ -111,7 +139,7 @@ def sub_cfg(sub,L,c,cd,a):
     return o
 FONTE_=lambda slug: {"tipo":"rpgbot","url":f"https://rpgbot.net/dnd5/characters/classes/warlock/subclasses/","nota":"Chassi do handbook por subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."}
 wiz.FONTE=FONTE_; import wiz as _w
-NM="Agonizing Blast; Repelling Blast e outras invocações; Hunger of Hadar; Armor of Agathys; Counterspell; Misty Step; Darkness+Devil's Sight"
+NM="Repelling Blast e outras invocações; cegueira e terreno difícil do Hunger of Hadar; aliados dentro do Darkness; Counterspell; Misty Step"   # M4 (23/11)
 SUBS=[
  ('archfey','Archfey Warlock',"Fey Presence, Misty Escape, Beguiling Defenses"),
  ('celestial','Celestial Warlock',"Radiant Soul (EB é força), Celestial Resilience, Flaming Sphere"),

@@ -471,6 +471,84 @@
      "4": 0.5
     }
    }
+  },
+  {
+   "id": "agathys",
+   "herda": "principal",
+   "hipotese": "Armor of Agathys (4º: 20 PV temporários + retaliação)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 7,
+      "dano": "1d8+4+1.5",
+      "nota": "espada longa do pacto + Thirsting Blade + Hexblade's Curse"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "5.00",
+      "nota": "Armor of Agathys: retaliação (1×/luta)"
+     }
+    ]
+   },
+   "defesa": {
+    "pvt_luta": 20
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   }
+  },
+  {
+   "id": "trevas",
+   "herda": "principal",
+   "hipotese": "Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 7,
+      "dano": "1d8+4+1.5",
+      "nota": "espada longa do pacto + Thirsting Blade + Hexblade's Curse",
+      "vantagem": 0.75
+     }
+    ],
+    "concentracao": "darkness"
+   },
+   "defesa": {
+    "adv": -1
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   }
+  },
+  {
+   "id": "hadar",
+   "herda": "principal",
+   "hipotese": "Hunger of Hadar (≈2 rounds de dano na área)",
+   "area": [
+    {
+     "nome": "Hunger of Hadar",
+     "concentracao": "hunger_of_hadar",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "6d6",
+       "cd": 15,
+       "slot": 4
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   }
   }
  ],
  "planos": {
@@ -495,7 +573,7 @@
  "descricao": {
   "resumo": "Chassi do Hexblade: espada do pacto com Carisma, Hexblade's Curse e Hex no alvo principal, na linha de frente.",
   "estrategia": "Hex no início do dia (cobre ~2 lutas); controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster, Synaptic Static), área ou invocação no espaço de pacto; Mass Suggestion no 11.",
-  "nao_modelado": "Hex Warrior (já no Carisma na arma), Accursed Specter, Armor of Hexes; crítico em 19 do Curse; Shield/Wrathful Smite da lista; Pact of the Blade (troca de arma); crítico em 19 do Hexblade's Curse; Devil's Sight; Misty Step",
+  "nao_modelado": "Hex Warrior (já no Carisma na arma), Accursed Specter, Armor of Hexes; crítico em 19 do Curse; Shield/Wrathful Smite da lista; Pact of the Blade (troca de arma); crítico em 19 do Hexblade's Curse; aliados dentro do Darkness; Misty Step",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5); o plano decide quando gastar o espaço nelas.",
   "progressao": "Warlock 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 10, 'sab': 12, 'car': 19}; pacto 2×4º; CA 18."
  },

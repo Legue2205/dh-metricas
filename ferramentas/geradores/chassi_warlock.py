@@ -64,6 +64,7 @@ def fatia_ch(L, sub):
         f['linhas'].append(dict(id="eb+hex", herda="principal", dano=W.eb(L, a, c, 1.0, True, cu), _pos='atirador', controle=json.loads(json.dumps(ctl)),
                                 hipotese="Eldritch Blast + Agonizing + Hex + Hexblade's Curse, à distância",
                                 gasta={"espacos": {pl: 0.5}}))
+    W.kit_m4(f, L, cd, front=(pos == 'striker'))   # M4 (23/11): Agathys, Darkness + Devil's Sight, Hunger of Hadar
     for kk, v in o.get('corpo', {}).items(): f['corpo'][kk] = v
     if o.get('outros'): f['recursos']['outros'] = o['outros']
     for l in f['linhas']:
@@ -80,9 +81,9 @@ def fatia_ch(L, sub):
     return pos, f
 
 
-NM_BASE = ("Pact of the Tome (Book of Shadows: truques extras); Repelling Blast, Devil's Sight e a invocação do 9; "
-           "Hunger of Hadar; Armor of Agathys; Counterspell; Misty Step; Darkness+Devil's Sight")
-NM_BLADE = ("Pact of the Blade (troca de arma); crítico em 19 do Hexblade's Curse; Devil's Sight; "
+NM_BASE = ("Pact of the Tome (Book of Shadows: truques extras); Repelling Blast e a invocação do 9; "
+           "cegueira e terreno difícil do Hunger of Hadar; aliados dentro do Darkness; Counterspell; Misty Step")   # M4 (23/11)
+NM_BLADE = ("Pact of the Blade (troca de arma); crítico em 19 do Hexblade's Curse; aliados dentro do Darkness; "
             "Counterspell; Misty Step")
 SUBS = {
     'archfey': ("Archfey", "Fey Presence, Misty Escape, Beguiling Defenses; Faerie Fire/Sleep/Dominate Person da lista"),

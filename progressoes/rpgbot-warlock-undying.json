@@ -340,6 +340,60 @@
     "reacao": [],
     "herda": "principal",
     "hipotese": "area + Hex"
+   },
+   {
+    "id": "agathys",
+    "herda": "principal",
+    "hipotese": "Armor of Agathys (2º: 10 PV temporários + retaliação)",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d10+3",
+       "nota": "Eldritch Blast + Agonizing Blast"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1.00",
+       "nota": "Armor of Agathys: retaliação (1×/luta)"
+      }
+     ]
+    },
+    "defesa": {
+     "pvt_luta": 10
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1
+     }
+    }
+   },
+   {
+    "id": "trevas",
+    "herda": "principal",
+    "hipotese": "Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+    "dano": {
+     "ataques": [
+      {
+       "n": 1.0,
+       "bonus": 5,
+       "dano": "1d10+3",
+       "nota": "Eldritch Blast + Agonizing Blast",
+       "vantagem": 0.75
+      }
+     ],
+     "concentracao": "darkness"
+    },
+    "defesa": {
+     "adv": -1
+    },
+    "gasta": {
+     "espacos": {
+      "2": 1
+     }
+    }
    }
   ],
   "planos": {
@@ -349,7 +403,7 @@
   "descricao": {
    "resumo": "Undying Warlock: Eldritch Blast com Agonizing Blast e Hex; espaços de pacto voltam no descanso curto.",
    "estrategia": "Hex no início do dia (cobre ~2 lutas), controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster) ou invocação no espaço de pacto.",
-   "nao_modelado": "Among the Dead, Defy Death, Undying Nature; Agonizing Blast; Repelling Blast e outras invocações; Hunger of Hadar; Armor of Agathys; Misty Step; Darkness+Devil's Sight",
+   "nao_modelado": "Among the Dead, Defy Death, Undying Nature; Repelling Blast e outras invocações; cegueira e terreno difícil do Hunger of Hadar; aliados dentro do Darkness; Misty Step",
    "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5); o plano decide quando gastar o espaço nelas."
   },
   "reacoes_magicas": [
@@ -779,6 +833,86 @@
      "reacao": [],
      "herda": "principal",
      "hipotese": "area + Hex"
+    },
+    {
+     "id": "agathys",
+     "herda": "principal",
+     "hipotese": "Armor of Agathys (3º: 15 PV temporários + retaliação)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1.50",
+        "nota": "Armor of Agathys: retaliação (1×/luta)"
+       }
+      ]
+     },
+     "defesa": {
+      "pvt_luta": 15
+     },
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "2": null
+      }
+     }
+    },
+    {
+     "id": "trevas",
+     "herda": "principal",
+     "hipotese": "Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast",
+        "vantagem": 0.75
+       }
+      ],
+      "concentracao": "darkness"
+     },
+     "defesa": {
+      "adv": -1
+     },
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "2": null
+      }
+     }
+    },
+    {
+     "id": "hadar",
+     "herda": "principal",
+     "hipotese": "Hunger of Hadar (≈2 rounds de dano na área)",
+     "area": [
+      {
+       "nome": "Hunger of Hadar",
+       "concentracao": "hunger_of_hadar",
+       "usos": [
+        {
+         "alvos": 3,
+         "dano": "6d6",
+         "cd": 15,
+         "slot": 3
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "3": 1
+      }
+     }
     }
    ]
   },
@@ -1223,6 +1357,87 @@
      "reacao": [],
      "herda": "principal",
      "hipotese": "area + Hex"
+    },
+    {
+     "id": "agathys",
+     "herda": "principal",
+     "hipotese": "Armor of Agathys (4º: 20 PV temporários + retaliação)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "2.00",
+        "nota": "Armor of Agathys: retaliação (1×/luta)"
+       }
+      ]
+     },
+     "defesa": {
+      "pvt_luta": 20
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "3": null
+      }
+     }
+    },
+    {
+     "id": "trevas",
+     "herda": "principal",
+     "hipotese": "Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 7,
+        "dano": "1d10+4",
+        "nota": "Eldritch Blast + Agonizing Blast",
+        "vantagem": 0.75
+       }
+      ],
+      "concentracao": "darkness"
+     },
+     "defesa": {
+      "adv": -1
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "3": null
+      }
+     }
+    },
+    {
+     "id": "hadar",
+     "herda": "principal",
+     "hipotese": "Hunger of Hadar (≈2 rounds de dano na área)",
+     "area": [
+      {
+       "nome": "Hunger of Hadar",
+       "concentracao": "hunger_of_hadar",
+       "usos": [
+        {
+         "alvos": 3,
+         "dano": "6d6",
+         "cd": 15,
+         "slot": 4
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "3": null
+      }
+     }
     }
    ]
   },
@@ -1691,6 +1906,87 @@
      "reacao": [],
      "herda": "principal",
      "hipotese": "area + Hex"
+    },
+    {
+     "id": "agathys",
+     "herda": "principal",
+     "hipotese": "Armor of Agathys (5º: 25 PV temporários + retaliação)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "2.50",
+        "nota": "Armor of Agathys: retaliação (1×/luta)"
+       }
+      ]
+     },
+     "defesa": {
+      "pvt_luta": 25
+     },
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "4": null
+      }
+     }
+    },
+    {
+     "id": "trevas",
+     "herda": "principal",
+     "hipotese": "Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2.0,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast",
+        "vantagem": 0.75
+       }
+      ],
+      "concentracao": "darkness"
+     },
+     "defesa": {
+      "adv": -1
+     },
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "4": null
+      }
+     }
+    },
+    {
+     "id": "hadar",
+     "herda": "principal",
+     "hipotese": "Hunger of Hadar (≈2 rounds de dano na área)",
+     "area": [
+      {
+       "nome": "Hunger of Hadar",
+       "concentracao": "hunger_of_hadar",
+       "usos": [
+        {
+         "alvos": 3,
+         "dano": "6d6",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1,
+       "4": null
+      }
+     }
     }
    ]
   },
@@ -2251,6 +2547,84 @@
       "arcano": 1,
       "espacos": {
        "5": 0.5
+      }
+     }
+    },
+    {
+     "id": "agathys",
+     "herda": "principal",
+     "hipotese": "Armor of Agathys (5º: 25 PV temporários + retaliação)",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3.0,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "2.50",
+        "nota": "Armor of Agathys: retaliação (1×/luta)"
+       }
+      ]
+     },
+     "defesa": {
+      "pvt_luta": 25
+     },
+     "gasta": {
+      "espacos": {
+       "5": 1
+      }
+     }
+    },
+    {
+     "id": "trevas",
+     "herda": "principal",
+     "hipotese": "Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3.0,
+        "bonus": 9,
+        "dano": "1d10+5",
+        "nota": "Eldritch Blast + Agonizing Blast",
+        "vantagem": 0.75
+       }
+      ],
+      "concentracao": "darkness"
+     },
+     "defesa": {
+      "adv": -1
+     },
+     "gasta": {
+      "espacos": {
+       "5": 1
+      }
+     }
+    },
+    {
+     "id": "hadar",
+     "herda": "principal",
+     "hipotese": "Hunger of Hadar (≈2 rounds de dano na área)",
+     "area": [
+      {
+       "nome": "Hunger of Hadar",
+       "concentracao": "hunger_of_hadar",
+       "usos": [
+        {
+         "alvos": 3,
+         "dano": "6d6",
+         "cd": 17,
+         "slot": 5
+        }
+       ]
+      }
+     ],
+     "gasta": {
+      "espacos": {
+       "5": 1
       }
      }
     }

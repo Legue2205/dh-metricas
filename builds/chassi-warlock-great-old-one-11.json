@@ -560,6 +560,92 @@
    "hipotese": "area + Hex"
   },
   {
+   "id": "agathys",
+   "herda": "principal",
+   "hipotese": "Armor of Agathys (5º: 25 PV temporários + retaliação)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3.0,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "2.50",
+      "nota": "Armor of Agathys: retaliação (1×/luta)"
+     }
+    ]
+   },
+   "defesa": {
+    "pvt_luta": 25
+   },
+   "gasta": {
+    "espacos": {
+     "5": 1
+    }
+   }
+  },
+  {
+   "id": "trevas",
+   "herda": "principal",
+   "hipotese": "Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3.0,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "nota": "Eldritch Blast + Agonizing Blast",
+      "vantagem": 0.75
+     }
+    ],
+    "concentracao": "darkness"
+   },
+   "defesa": {
+    "adv": -1
+   },
+   "gasta": {
+    "espacos": {
+     "5": 1
+    }
+   }
+  },
+  {
+   "id": "hadar",
+   "herda": "principal",
+   "hipotese": "Hunger of Hadar (≈2 rounds de dano na área)",
+   "area": [
+    {
+     "nome": "Hunger of Hadar",
+     "concentracao": "hunger_of_hadar",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "6d6",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "5": 1
+    }
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "desvantagem",
+      "usos_luta": 0.5
+     }
+    ]
+   }
+  },
+  {
    "id": "arcano",
    "herda": "principal",
    "hipotese": "Mystic Arcanum: Mass Suggestion no pico",
@@ -679,7 +765,7 @@
  "descricao": {
   "resumo": "Chassi do Great Old One: Eldritch Blast com Agonizing Blast e Hex, espaços de pacto; muda só o que o patrono dá.",
   "estrategia": "Hex no início do dia (cobre ~2 lutas); controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster, Synaptic Static), área ou invocação no espaço de pacto; Mass Suggestion no 11.",
-  "nao_modelado": "Awakened Mind, Thought Shield; Entropic Ward como desvantagem 1/descanso curto (a vantagem seguinte não modelada); Pact of the Tome (Book of Shadows: truques extras); Repelling Blast, Devil's Sight e a invocação do 9; Hunger of Hadar; Armor of Agathys; Misty Step; Darkness+Devil's Sight",
+  "nao_modelado": "Awakened Mind, Thought Shield; Entropic Ward como desvantagem 1/descanso curto (a vantagem seguinte não modelada); Pact of the Tome (Book of Shadows: truques extras); Repelling Blast e a invocação do 9; cegueira e terreno difícil do Hunger of Hadar; aliados dentro do Darkness; Misty Step",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5); o plano decide quando gastar o espaço nelas.",
   "progressao": "Warlock 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 10, 'sab': 12, 'car': 20}; pacto 3×5º; CA 14."
  },

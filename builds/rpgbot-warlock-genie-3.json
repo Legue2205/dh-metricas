@@ -368,6 +368,70 @@
    "reacao": [],
    "herda": "principal",
    "hipotese": "area + Hex"
+  },
+  {
+   "id": "agathys",
+   "herda": "principal",
+   "hipotese": "Armor of Agathys (2º: 10 PV temporários + retaliação)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "2",
+      "nota": "Genie's Wrath (1×/turno)"
+     },
+     {
+      "dano": "1.00",
+      "nota": "Armor of Agathys: retaliação (1×/luta)"
+     }
+    ]
+   },
+   "defesa": {
+    "pvt_luta": 10
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   }
+  },
+  {
+   "id": "trevas",
+   "herda": "principal",
+   "hipotese": "Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "nota": "Eldritch Blast + Agonizing Blast",
+      "vantagem": 0.75
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "2",
+      "nota": "Genie's Wrath (1×/turno)"
+     }
+    ],
+    "concentracao": "darkness"
+   },
+   "defesa": {
+    "adv": -1
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   }
   }
  ],
  "planos": {
@@ -392,7 +456,7 @@
  "descricao": {
   "resumo": "Genie Warlock (Efreeti): Eldritch Blast com Agonizing Blast e Hex; espaços de pacto voltam no descanso curto.",
   "estrategia": "Hex no início do dia (cobre ~2 lutas), controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster) ou invocação no espaço de pacto.",
-  "nao_modelado": "Bottled Respite, Elemental Gift (voo), lista Dao/Djinni/Marid; Agonizing Blast; Repelling Blast e outras invocações; Hunger of Hadar; Armor of Agathys; Misty Step; Darkness+Devil's Sight",
+  "nao_modelado": "Bottled Respite, Elemental Gift (voo), lista Dao/Djinni/Marid; Repelling Blast e outras invocações; cegueira e terreno difícil do Hunger of Hadar; aliados dentro do Darkness; Misty Step",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5); o plano decide quando gastar o espaço nelas.",
   "progressao": "Warlock 3; Car 16; pacto 2×2º."
  },

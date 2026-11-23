@@ -478,6 +478,84 @@
    }
   },
   {
+   "id": "agathys",
+   "herda": "principal",
+   "hipotese": "Armor of Agathys (5º: 25 PV temporários + retaliação)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "2.50",
+      "nota": "Armor of Agathys: retaliação (1×/luta)"
+     }
+    ]
+   },
+   "defesa": {
+    "pvt_luta": 25
+   },
+   "gasta": {
+    "espacos": {
+     "5": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Light (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "usos_luta": 1,
+      "pv": 17.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "trevas",
+   "herda": "principal",
+   "hipotese": "Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2.0,
+      "bonus": 9,
+      "dano": "1d10+5",
+      "nota": "Eldritch Blast + Agonizing Blast",
+      "vantagem": 0.75
+     }
+    ],
+    "concentracao": "darkness"
+   },
+   "defesa": {
+    "adv": -1
+   },
+   "gasta": {
+    "espacos": {
+     "5": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Light (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "usos_luta": 1,
+      "pv": 17.5
+     }
+    ]
+   }
+  },
+  {
    "id": "invocacao",
    "dano": {
     "ataques": [
@@ -544,6 +622,42 @@
     ]
    },
    "hipotese": "invocacao"
+  },
+  {
+   "id": "hadar",
+   "herda": "principal",
+   "hipotese": "Hunger of Hadar (≈2 rounds de dano na área)",
+   "area": [
+    {
+     "nome": "Hunger of Hadar",
+     "concentracao": "hunger_of_hadar",
+     "usos": [
+      {
+       "alvos": 3,
+       "dano": "6d6",
+       "cd": 17,
+       "slot": 5
+      }
+     ]
+    }
+   ],
+   "gasta": {
+    "espacos": {
+     "5": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Healing Light (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "usos_luta": 1,
+      "pv": 17.5
+     }
+    ]
+   }
   }
  ],
  "planos": {
@@ -568,7 +682,7 @@
  "descricao": {
   "resumo": "Celestial Warlock: Eldritch Blast com Agonizing Blast e Hex; espaços de pacto voltam no descanso curto.",
   "estrategia": "Hex no início do dia (cobre ~2 lutas), controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster) ou invocação no espaço de pacto.",
-  "nao_modelado": "Radiant Soul (EB é força), Celestial Resilience, Flaming Sphere; Agonizing Blast; Repelling Blast e outras invocações; Hunger of Hadar; Armor of Agathys; Misty Step; Darkness+Devil's Sight",
+  "nao_modelado": "Radiant Soul (EB é força), Celestial Resilience, Flaming Sphere; Repelling Blast e outras invocações; cegueira e terreno difícil do Hunger of Hadar; aliados dentro do Darkness; Misty Step",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5); o plano decide quando gastar o espaço nelas.",
   "progressao": "Warlock 9; Car 20; pacto 2×5º."
  },

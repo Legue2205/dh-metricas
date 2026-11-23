@@ -166,9 +166,16 @@ seguinte. Itens que mudam premissa vão para Decisões.
   longo ÷ 4 lutas; Relentless Rage ≈ 1,5 golpe extra nas linhas de fúria do 11. Champion 11: defesa 10,3 → 10,7,
   def. mental 2,6 → 3,2, corpo 14,5 → 15,1; Berserker 11: defesa 13,5 → 15,3. Original: — Indomitable (96; `rerolagens` dos saves), Second Wind (80; cura por luta),
   Relentless Rage (50; PV extra). Eixos: defesa, def. mágica, corpo.
-- [ ] **M4 Kit do Warlock** [D/N] — Armor of Agathys (61; PV temporários [D] + dano de retaliação [N]), Hunger of Hadar
+- [x] **M4 Kit do Warlock** [D/N] — **feito 23/11** (`wlk.kit_m4`, usado no chassi e nas builds do RPGBot): linhas
+  Armor of Agathys (PV temporários 5 × nível do pacto + retaliação 1×/luta, 1,0 na frente / 0,4 atrás; sem
+  concentração), Darkness + Devil's Sight (vantagem em 75% dos ataques, desvantagem contra ele; concentração) e Hunger
+  of Hadar no 5+ (≈ 6d6 com save em 3 alvos; concentração). Hexblade 11: defesa da linha 8,2 → 14,8 (trevas) / 10,4
+  (Agathys). O plano do dia não muda (k = 1 no Warlock e a invocação rende mais); entra pelo anel externo do misto.
+  Cegueira/terreno do Hadar e Repelling Blast → M8. Original: — Armor of Agathys (61; PV temporários [D] + dano de retaliação [N]), Hunger of Hadar
   (66; área/controle), Darkness + Devil's Sight (61; [N] vantagem/desvantagem), Repelling Blast e outras invocações (45;
   empurrão no controle [N]).
+- [ ] **M4b Corpo agrupado caiu com o M2** [M] — corpo agrupado entre classes 0,27 → 0,18 (nv11) e 0,49 → 0,37 (nv7)
+  depois dos lobos do Conjure Animals (Ranger 11 corpo 28). Ver se é o outlier ou a régua.
 - [ ] **M5 Concentração e linhas sem concentração** [D] — ex-P2.17: geradores declaram `concentracao` em área/suporte
   (Spirit Guardians, Wall of Fire, Bless…) e o `dh validar` passa a checar; ex-P2.16: linhas de blaster puro e de
   buff/cura sem concentração para Wizard/Druid/Sorcerer (para a D9 render).

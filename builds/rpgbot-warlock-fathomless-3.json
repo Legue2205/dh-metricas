@@ -368,6 +368,73 @@
    "reacao": [],
    "herda": "principal",
    "hipotese": "area + Hex"
+  },
+  {
+   "id": "agathys",
+   "herda": "principal",
+   "hipotese": "Armor of Agathys (2º: 10 PV temporários + retaliação)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     },
+     {
+      "n": 0.5,
+      "bonus": 5,
+      "dano": "1d8",
+      "nota": "Tentacle of the Deeps (PB/dia ÷ 4 lutas)"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1.00",
+      "nota": "Armor of Agathys: retaliação (1×/luta)"
+     }
+    ]
+   },
+   "defesa": {
+    "pvt_luta": 10
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   }
+  },
+  {
+   "id": "trevas",
+   "herda": "principal",
+   "hipotese": "Darkness + Devil's Sight: vantagem nos ataques, desvantagem contra ele",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.0,
+      "bonus": 5,
+      "dano": "1d10+3",
+      "nota": "Eldritch Blast + Agonizing Blast",
+      "vantagem": 0.75
+     },
+     {
+      "n": 0.5,
+      "bonus": 5,
+      "dano": "1d8",
+      "nota": "Tentacle of the Deeps (PB/dia ÷ 4 lutas)",
+      "vantagem": 0.75
+     }
+    ],
+    "concentracao": "darkness"
+   },
+   "defesa": {
+    "adv": -1
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   }
   }
  ],
  "planos": {
@@ -392,7 +459,7 @@
  "descricao": {
   "resumo": "Fathomless Warlock: Eldritch Blast com Agonizing Blast e Hex; espaços de pacto voltam no descanso curto.",
   "estrategia": "Hex no início do dia (cobre ~2 lutas), controle (Hold Person, Hypnotic Pattern, Banishment, Hold Monster) ou invocação no espaço de pacto.",
-  "nao_modelado": "Gift of the Sea, Oceanic Soul, Fathomless Plunge; Guardian Coil modelado como reduz_dano 4,5; Agonizing Blast; Repelling Blast e outras invocações; Hunger of Hadar; Armor of Agathys; Misty Step; Darkness+Devil's Sight",
+  "nao_modelado": "Gift of the Sea, Oceanic Soul, Fathomless Plunge; Guardian Coil modelado como reduz_dano 4,5; Repelling Blast e outras invocações; cegueira e terreno difícil do Hunger of Hadar; aliados dentro do Darkness; Misty Step",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5); o plano decide quando gastar o espaço nelas.",
   "progressao": "Warlock 3; Car 16; pacto 2×2º."
  },

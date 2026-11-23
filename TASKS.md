@@ -181,6 +181,17 @@ Leitura:
 - **τ médio por classe** piorou no Sorcerer (nv7 0,16 → −0,46, padrão) e no Rogue (−0,25 → −0,47): olhar na varredura da
   passada 2 (provável efeito da D5 escolhendo linhas diferentes).
 
+## Efeito de D9 + P2.15 + P2.13 (23/11 madrugada, CI em fatias, 10 min)
+
+τ por régua dentro da classe, baseline p2 → agora (misto | padrão):
+- **controle** nv7 0,40 → 0,49 | 0,23 → 0,40; nv11 0,37 → 0,53 | 0,24 → **0,51** (a normalização da P2.15 devolveu o
+  controle ao plano; agrupado no padrão nv7 0,06 → 0,20).
+- **suporte** nv7 0,35 → 0,47 | 0,36 → 0,47; nv11 0,39 → **0,26** | 0,41 → 0,26 (piora: Cleric nv11 vai a 0,0 → P2.18).
+- **dano** ≈ igual (0,17/0,31 | 0,20/0,32); def. física igual.
+- Bard suporte −0,82 → −0,41; τ médio Bard nv11 0,17 → 0,59/0,68, Paladin nv11 0,31 → 0,65, Cleric nv11 0,0 → 0,32.
+- Wizard piora (τ médio nv11 0,0 → −0,21; dano −0,36): segue sendo invocação comum + linhas todas com concentração
+  (P2.16) — é a próxima frente do Wizard.
+
 ## Passada 2
 (problemas novos achados durante a passada 1)
 
@@ -220,6 +231,8 @@ Leitura:
 - [ ] **P2.17 Concentração não declarada nas entradas de área/suporte** [M] — Spirit Guardians, Wall of Fire, Bless etc.
   não declaram `concentracao`; o plano reconhece pelo nome, mas o `dh validar` não vê duas concentrações numa linha só.
   Declarar nos geradores e ligar a checagem no validador.
+- [ ] **P2.18 Suporte do Cleric no nv11 sem ordem** [M] — depois da D9 o τ de suporte do Cleric no 11 foi a 0,0 (as
+  extras `preservar`/`bless` entram em quase todos os domínios e igualam a classe). Ver se a pista ou a régua.
 - [ ] **P2.1 Invocação domina o dano externo** [J → D7] — Summon Aberration (9,4 no 11) é o máximo de dano de todos os
   Warlocks no anel externo e iguala a classe; provavelmente o mesmo no Wizard (P1.5) e nos outros conjuradores com summon.
   Conferir o dano da invocação e se ela devia entrar no eixo dano do personagem (ou num eixo/rótulo à parte).

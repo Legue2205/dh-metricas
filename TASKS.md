@@ -577,3 +577,21 @@ Ordem de execução: D8 → D3 → D5 → D2 → D4 → D6 → D9 → D1 (D7 fec
   normalizados: dano constante não muda). Vale para ataques marcados `round1` (Dread Ambusher) e para o dano por luta
   (smites e afins, gastos nos primeiros acertos: 1 uso ×1,18, 2 usos ×1,06, 4+ usos ×1,0). O DPR mostrado continua
   puro (conferência com as planilhas intacta); o nível usa `dpr_regua`. Efeito: depois do CI.
+
+### Depois do CI de D11–D13 (24/11, commit c3cc28e)
+Dano 0,25 (nv7) / **0,31** (nv11) ✓; Ranger nv7 −0,19 → 0,00 (D12, Dread Ambusher); corpo agrupado 0,33 / 0,25.
+- [x] **P3.6 Mercy sem linha só de dano** [M] — Hand of Harm só existia junto com Hand of Healing. Linha `mao-dano`
+  (Flurry + Hand of Harm, 4 ki). Rende 5,6 no 7 (< rajada-mira 6,4: 2 usos de 1d6+3 por luta somam pouco); o plano
+  continua escolhendo a cura. Correta, mas não move o τ: Mercy "alto" no 7 é gabarito.
+- **Investigação nova do dano no 7** (44 de 134 pares discordantes): Monk −0,30, Fighter +0,14, Ranger 0,00. Padrão
+  comum: quem luta corpo a corpo com arma de duas mãos (GWF) vence os atiradores (Fighter de arco, Samurai, Arcane
+  Archer, Kensei), e no Monk as subclasses sem feature de dano ficam iguais ao Monk base enquanto as outras gastam ki
+  fora do dano. A régua não cobra do corpo a corpo o tempo para chegar ao alvo (round 1 andando, inimigo voando ou
+  recuando, alcance). Teste de sensibilidade (penalidade no nível de dano das builds com a linha principal na frente):
+  0,4 nível → 0,33/0,35; 0,8 → 0,35/0,38; 1,2 → 0,34/0,41 (Fighter 0,14 → 0,25–0,33, Ranger 0,00 → 0,19–0,39,
+  Monk −0,30 → −0,06–0,24; Warlock 0,25 → 0,00). → **D14**. Ressalva: é um número ajustado olhando o gabarito; a
+  marcação "front" é grosseira (a maioria dos Monks está como skirmisher, sem front).
+- **D14 Tempo em alcance do corpo a corpo** — (a) premissa `dano.alcance_corpo_a_corpo` (fração dos rounds em que o
+  ataque corpo a corpo alcança o alvo, ex.: 0,9), com campo genérico `"alcance": "corpo"` nos ataques e os geradores
+  marcando armas corpo a corpo (custo: passar por todos os geradores marciais); (b) só marcar pela posição/front
+  (rápido, grosseiro); (c) não modelar e aceitar o dano no 7 abaixo do gate.

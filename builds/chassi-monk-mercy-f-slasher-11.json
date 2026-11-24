@@ -372,6 +372,66 @@
      }
     ]
    }
+  },
+  {
+   "id": "mao-dano",
+   "hipotese": "Flurry todo round com Hand of Harm grátis (4 ki)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5"
+     },
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d8+5",
+      "nota": "ação bônus (Flurry todo round)"
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8+2",
+      "nota": "Hand of Harm (1 ki, 1× por turno num golpe desarmado)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Physician's Touch (envenenado, sem save)",
+      "efeito": "cond_envenenado_um_turno",
+      "cd": 99,
+      "bonus": [
+       9,
+       9,
+       9
+      ],
+      "usos": 4
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
   }
  ],
  "planos": {

@@ -5,6 +5,7 @@ Régua comum: lança (1d8, duas mãos) + golpe desarmado na ação bônus; linha
 rajada-mira (6 ki). Atributos Des > Sab > Con (Astral Self: Sab > Des > Con). Features das subclasses = mon.py.
 Feat da subclasse = 1º feat não racial da build do RPGBot (progressoes/rpgbot-monk-<sub>.json), no nível 4.
 """
+import json
 import sys
 sys.path.insert(0, 'ferramentas/geradores')
 import chassi as C  # noqa: E402
@@ -116,6 +117,15 @@ def mercy(L, feat, pos):
     fontes = [{"tipo": "condicao_no_acerto", "nome": "Physician's Touch (envenenado, sem save)", "efeito": "cond_envenenado_um_turno",
                "cd": 99, "bonus": [b] * (n + 1), "usos": usos_p}]
     ls.append(linha('mao-da-morte', hip, dano, {}, controle=ctrl(pos, fontes), gasta={"ki": 4}, suporte=[cura]))
+    # P3.6 (24/11): a mesma luta sem trocar o golpe do Flurry por cura (só dano; o plano escolhe entre as duas)
+    if L < 11:
+        dano2 = {"ataques": [A(n, b, '1d8', d), U(1.5, b, d, L, nota="ação bônus (Flurry em 2 rounds)")],
+                 "por_luta": [dict(harm, usos=2)]}
+        hip2 = 'Flurry em 2 rounds + Hand of Harm em 2 acertos (4 ki)'
+    else:
+        dano2 = {"ataques": [A(n, b, '1d8', d), U(2, b, d, L, nota="ação bônus (Flurry todo round)")], "por_turno": [harm]}
+        hip2 = 'Flurry todo round com Hand of Harm grátis (4 ki)'
+    ls.append(linha('mao-dano', hip2, dano2, {}, controle=ctrl(pos, json.loads(json.dumps(fontes))), gasta={"ki": 4}))
     return fim(k, "Hand of Healing/Harm; Physician's Touch (6)" + ("; Flurry of Healing and Harm (11)." if L >= 11 else "."), ls)
 
 

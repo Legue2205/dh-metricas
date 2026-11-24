@@ -4,7 +4,7 @@
 Plano do dia: padrao. Builds marcadas com ~ ainda não têm esse plano (mostra a linha principal).
 ID                     nv      Dano    Defesa    Resil.   Vontade  Controle      Área   Suporte
 abdul-7                 7    5,8 C+   10,8 A-    6,1 B-    8,0 B+         -     4,6 C     0,5 E
-amadeus-7               7     0,9 E    3,7 C-    6,3 B-    12,3 A         -    8,3 B+    5,0 C+
+amadeus-7               7     7,3 B    3,7 C-    6,3 B-    12,3 A         -    8,6 B+    5,0 C+
 ~aprendiz-11           11    11,7 A   15,4 A+    20,0 S    12,1 A     2,4 D    8,3 B+         -
 ~caleb-14              14   10,9 A-   13,6 A+    20,0 S    12,1 A     1,0 E    8,1 B+         -
 chassi-artificer-alchemist-11  11    3,8 C-   10,2 A-    8,8 B+     4,3 C         -     4,3 C    3,6 C-
@@ -1183,7 +1183,7 @@ tinbin-7                7     7,5 B    6,1 B-    6,3 B-     4,5 C         -     
 Plano do dia: dia_longo. Builds marcadas com ~ ainda não têm esse plano (mostra a linha principal).
 ID                     nv      Dano    Defesa    Resil.   Vontade  Controle      Área   Suporte
 ~abdul-7                7    5,9 C+   10,8 A-    6,1 B-    8,0 B+    5,3 C+     4,6 C     0,5 E
-~amadeus-7              7     0,9 E    3,7 C-    6,3 B-    12,3 A     4,2 C    8,1 B+     0,5 E
+~amadeus-7              7     7,3 B    3,7 C-    6,3 B-    12,3 A     4,7 C    8,6 B+     0,5 E
 ~aprendiz-11           11    11,7 A   15,4 A+    20,0 S    12,1 A     2,4 D    8,3 B+         -
 ~caleb-14              14   10,9 A-   13,6 A+    20,0 S    12,1 A     1,0 E    8,1 B+         -
 ~chassi-artificer-alchemist-11  11     4,8 C   10,2 A-    8,4 B+     4,3 C    5,0 C+     4,3 C    3,6 C-

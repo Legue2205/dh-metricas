@@ -698,3 +698,22 @@ nível (Fighter 2; demais 1 no 7 e 2 no 11), tirando primeiro dos ASIs do atribu
 que vale por acerto no 1º ataque de arma da linha (fúria, Hunter's Mark, Improved Divine Smite). Frações do ataque
 bônus do piloto: Barbarian 0,75, Ranger 0,9, Paladin 0,9. `teto_subclasse.py` ganhou a fonte **pacote** = máximo entre
 o piso e o pacote. Resultado: ver abaixo depois do CI.
+
+#### Resultado do piloto A3 (CI e3b962e, 120 builds: 60 com ASI, 60 Variant Human)
+τ dano (misto, n = 67), nv7 / nv11: piso 0,28 / 0,32 · pacote (feats nos ASIs) 0,24 / 0,41 · **pacote_vh (1º feat no
+nível 1) 0,32 / 0,40** · chassi 0,27 / 0,36 · RPGBot 0,31 / 0,34 · teto 0,32 / 0,32.
+- Sem o feat de graça o pacote **custa** no 7 (o atributo cai 2 pontos; PAM+GWM perde para o espadão em EK, Echo,
+  Champion e Berserker). Com Variant Human ele passa o piso em **27/30 (nv7) e 24/30 (nv11)**, +1,0 / +1,35 nível em
+  média — como o 2014 de fato é jogado. Só os Rogues pioram (o ataque do CBE toma a ação bônus do Steady Aim e o SS
+  num ataque só sem vantagem não compensa — coerente com a comunidade).
+- Por classe (vh): Ranger 0,00 / 0,19 → 0,15 / **0,57**; Fighter 0,14 / 0,24 → 0,53 / 0,52; Barbarian 0,62 / 0,85 →
+  0,51 / 0,69; Paladin e Rogue sem mudança relevante.
+- Topo com os pacotes: nv7 Zealot PAM+GWM (8,7), Vengeance PAM+GWM (7,9), Storm Herald, Samurai/BM/Psi/AA com CBE+SS;
+  nv11 **Samurai CBE+SS (11,9)**, Transmutation (11,7, Polymorph — próximo a investigar), Psi Warrior, Zealot, BM,
+  Vengeance. Gloom Stalker 6,7 → 9,5 no 11, mas o plano continua gastando tudo em Spike Growth.
+- Ganho ≈ 0,5–1 erro-padrão, mas a variante é de princípio (é o meta da comunidade), não ajuste ao gabarito.
+**Decisão pendente (usuário):** adotar "valor da subclasse marcial = melhor entre o piso e o pacote_vh" no teste de
+régua do dano (com esse valor o nv7 passa o gate: 0,32)? Se sim: mover os pacotes para o gerador de chassi
+(`ferramentas/geradores/chassi.py`, variante "pacote") em vez do pós-processamento, e decidir se Variant Human vira regra
+do chassi só para os marciais. Pendências que sobram no dano: plano desviando recurso (Ranger/Spike Growth,
+Paladin/Bless) e Transmutation/Polymorph no topo do 11.

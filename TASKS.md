@@ -656,3 +656,26 @@ Cuidado: o máximo favorece quem tem mais variantes → mesmo catálogo para tod
 `regra.shield_banido`, `regra.armadura_exige_classe_da_magia` (sem armor dip; feats de armadura liberam),
 `regra.ataque_poderoso_universal` (−5/+10 em todo ataque com arma; cuidado: favorece espada e escudo). O usuário quer
 talvez adotar a regra de armadura na mesa; o teste natural é ver se a distância teto × piso das subclasses encolhe.
+
+### Efeito de D15 no CI (commit 4713a6a → resultados 262f357)
+τ dano (misto, dentro da classe): **0,29 / 0,33** (era 0,25 / 0,31) — igual ao experimento. Nível 7 continua 0,01 abaixo
+do gate (dentro do ruído, erro ~0,08). Outras réguas sem mudança relevante.
+
+### A2 (24/11) — o teto da subclasse explica o τ baixo? (`calibracao/teto_subclasse.py`)
+τ dano por fonte do valor da subclasse (n = 67, depois de D15), nv7 / nv11:
+piso (chassi sem feat) 0,28 / 0,32 · melhor variante de chassi 0,27 / **0,36** · melhor build RPGBot (original ou
+-puro) 0,31 / 0,34 · teto (máximo de tudo) **0,25 / 0,29**.
+**Resultado: o teto por máximo NÃO melhora o τ global** (piora ~0,03, dentro do ruído). A hipótese "comparamos teto com
+build típica" não se confirma como explicação geral. Por classe é heterogêneo (n 4–9, quase tudo ruído, mas dois sinais
+grandes): **Fighter** piso 0,14 / 0,24 → melhor variante de chassi **0,62 / 0,79** (n = 9: as variantes com feat — SS no
+Arcane Archer, Gunner no Samurai, GWM no Champion — ordenam as subclasses como o RPGBot); **Rogue** e **Barbarian**
+pioram com o máximo; as builds do RPGBot ajudam Monk, Paladin e Ranger e pioram Wizard e Rogue.
+Lista "teto − piso > 1 nível" (`--lista`): no 11 são 25 subclasses; boa parte é **o chassi sem mecânica que a build
+do RPGBot tem**, não otimização (Draconic: chassi só Fire Bolt, RPGBot com Summon Draconic Spirit; Valor: chassi de
+rapieira sem estilo de luta, RPGBot de arco com Elven Accuracy e Holy Weapon; Gloom Stalker e Rangers em geral).
+**Recomendação para A3 (pacotes de otimização): não construir o catálogo inteiro agora.** O dado só apoia para
+marciais com feat de poder (Fighter); para o resto o máximo adiciona ruído. Opções para o usuário:
+(a) piloto só nos marciais (SS+CBE, GWM+PAM, Elven Accuracy) e medir de novo; (b) usar a lista do `--lista` como
+fila de mecânica faltando nos chassis (ex.: Valor, Draconic) — mais barato e alinhado ao gate mecânico;
+(c) trocar "máximo" por "variante que a subclasse escolheria" (o que o chassi já tenta) e aceitar o resíduo.
+Lembrete: decidir olhando esse mesmo gabarito é ajuste ao gabarito (ver crítica do critério acima).

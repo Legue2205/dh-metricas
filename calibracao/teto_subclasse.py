@@ -4,6 +4,7 @@ Para cada subclasse com pista de dano no gabarito, compara quatro valores do eix
   piso   = chassi sem feat (o que o teste de régua usa hoje)
   chassi = melhor variante de chassi (com ou sem feat)
   pacote = melhor entre o piso e o pacote clássico de feats (piloto A3, calibracao/pacotes.py; sem pacote → piso)
+  pacote_vh = idem com Variant Human (1º feat no nível 1)
   rpgbot = melhor build original do RPGBot (original ou -puro; muitas com multiclasse)
   teto   = máximo de todos
 e calcula o τ por régua (pista × valor, dentro da classe, ponderado por n — mesmo método de comparar_chassi.tau_eixos)
@@ -22,7 +23,7 @@ from comparar_chassi import pista, PISTA_EIXO  # noqa: E402
 from comparar_rpgbot import tau_b, CLASSES  # noqa: E402
 
 RAIZ = os.path.join(os.path.dirname(__file__), '..')
-FONTES = ('piso', 'chassi', 'pacote', 'rpgbot', 'teto')
+FONTES = ('piso', 'chassi', 'pacote', 'pacote_vh', 'rpgbot', 'teto')
 
 
 def comparar(grupo, visao):
@@ -54,10 +55,11 @@ def candidatos(eixo, nv, visao):
         for bid in (f'rpgbot-{cl}-{sub}', f'rpgbot-{cl}-{sub}-puro'):
             v = dr.get(bid, {}).get(str(nv))
             if v is not None and v > c.get('rpgbot', (-1, ''))[0]: c['rpgbot'] = (v, bid)
-        for pac in ('cbe-ss', 'pam-gwm'):                     # piloto A3: melhor entre o piso e o pacote clássico
+        for pac in ('cbe-ss', 'pam-gwm', 'cbe-ss-vh', 'pam-gwm-vh'):                     # piloto A3: melhor entre o piso e o pacote clássico
             v = dp.get(f'pacote-{cl}-{sub}-{pac}', {}).get(str(nv))
-            if v is not None and 'piso' in c: c['pacote'] = max(c['piso'], (v, f'pacote-{cl}-{sub}-{pac}'), key=lambda x: x[0])
-        c['teto'] = max((c[k] for k in ('chassi', 'pacote', 'rpgbot') if k in c), key=lambda x: x[0])
+            k = 'pacote_vh' if pac.endswith('-vh') else 'pacote'
+            if v is not None and 'piso' in c: c[k] = max(c['piso'], (v, f'pacote-{cl}-{sub}-{pac}'), key=lambda x: x[0])
+        c['teto'] = max((c[k] for k in ('chassi', 'pacote', 'pacote_vh', 'rpgbot') if k in c), key=lambda x: x[0])
     return out
 
 

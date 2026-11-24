@@ -14,6 +14,9 @@ do principal (o modificador perdido sai do acerto, do dano fixo e, à distância
 Frações do ataque bônus (premissas do piloto, só aqui): Barbarian 0,75 (1º round vai na fúria), Ranger 0,9 (Hunter's
 Mark), Paladin 0,9, demais 1.
 
+Variante -vh: Variant Human / Custom Lineage (como os otimizadores e as builds do RPGBot): o 1º feat vem de graça no
+nível 1 e o atributo principal começa em 16 (+1) em vez de 17 (+2).
+
 Uso (da raiz): python calibracao/pacotes.py  → escreve builds/pacote-<classe>-<sub>-<pacote>-<nv>.json (grupo "Pacote").
 Depois: dh validar → commit (o CI calcula) → python calibracao/teto_subclasse.py (fonte "pacote").
 """
@@ -34,7 +37,7 @@ NAO_ARMA = re.compile(r'spiritual|bolt|drake|companion|psychic|blast|companheiro
 def asis(classe, nv): return (2 if nv >= 6 else 1) + (1 if nv >= 8 else 0) if classe == 'fighter' else (1 if nv < 8 else 2)
 
 
-def n_feats(classe, nv): return min(2, asis(classe, nv))
+def n_feats(classe, nv, vh=False): return min(2, asis(classe, nv) + (1 if vh else 0))
 
 
 def atributos(classe, sub, nv):
@@ -49,8 +52,10 @@ def atributos(classe, sub, nv):
 def mod(x): return (x - 10) // 2
 
 
-def delta_mod(classe, nv, main, k):
-    """Modificador perdido no atributo principal ao trocar k ASIs por feats (os ASIs do secundário saem primeiro)."""
+def delta_mod(classe, nv, main, k, vh=False):
+    """Modificador perdido no atributo principal ao trocar k ASIs por feats (os ASIs do secundário saem primeiro).
+    vh: Variant Human / Custom Lineage — 1º feat de graça no nível 1, atributo base 16 em vez de 17."""
+    if vh: return mod(min(20, 16 + 2 * (asis(classe, nv) - (k - 1)))) - mod(main)
     no_main = math.ceil(max(0, main - 17) / 2)
     do_main = max(0, k - (asis(classe, nv) - no_main))
     return mod(max(17, main - 2 * do_main)) - mod(main)
@@ -77,12 +82,12 @@ def troca(a, novo, dm, gwf):
     return a
 
 
-def aplicar(b, classe, nv, pac):
+def aplicar(b, classe, nv, pac, vh=False):
     s = atributos(classe, b['subclasse'], nv)
     main = s['des'] if pac == 'cbe-ss' else s['for']
-    k = n_feats(classe, nv)
+    k = n_feats(classe, nv, vh)
     feats = (['Crossbow Expert', 'Sharpshooter'] if pac == 'cbe-ss' else ['Polearm Master', 'Great Weapon Master'])[:k]
-    dm = delta_mod(classe, nv, main, k)
+    dm = delta_mod(classe, nv, main, k, vh)
     poder = (pac == 'cbe-ss' and 'Sharpshooter' in feats) or (pac == 'pam-gwm' and 'Great Weapon Master' in feats)
     novo, bonus_die = ('1d6', '1d6') if pac == 'cbe-ss' else ('1d10', '1d4')
     gwf = '+1.33' in b['linhas'][0]['dano']['ataques'][0]['dano']
@@ -113,10 +118,11 @@ def aplicar(b, classe, nv, pac):
     if pac == 'cbe-ss' and dm:
         b['corpo']['ca'] = b['corpo']['ca'] + dm
     base = b['id'].rsplit('-', 1)[0].replace('chassi-', 'pacote-', 1)
-    b.update(id=f'{base}-{pac}-{nv}', nome=f"{b['nome']} — pacote {'+'.join(feats)}", grupo='Pacote',
+    pac_id = pac + ('-vh' if vh else '')
+    b.update(id=f'{base}-{pac_id}-{nv}', nome=f"{b['nome']} — pacote {'+'.join(feats)}", grupo='Pacote',
              feat='+'.join(feats), variante='pacote', gerado_de=None)
     b['descricao'] = dict(b.get('descricao') or {}, pacote=(
-        f"Piloto A3 (24/11): chassi sem feat + {'+'.join(feats)} (calibracao/pacotes.py); modificador {dm:+d} no atributo "
+        f"Piloto A3 (24/11): chassi sem feat + {'+'.join(feats)}{' (Variant Human: 1º feat no nível 1)' if vh else ''} (calibracao/pacotes.py); modificador {dm:+d} no atributo "
         f"principal pelos ASIs trocados; arma {novo} + ataque bônus {bonus_die}."))
     b.pop('gerado_de', None)
     return b
@@ -130,10 +136,11 @@ def main():
         pac = pacote_de(b)
         if not pac: continue
         nv = b['nivel']
-        out = aplicar(b, b['classe'], nv, pac)
-        open(os.path.join(RAIZ, 'builds', out['id'] + '.json'), 'w', encoding='utf-8').write(
-            json.dumps(out, ensure_ascii=False, indent=1) + '\n')
-        feitos += 1
+        for vh in (False, True):
+            out = aplicar(b, b['classe'], nv, pac, vh)
+            open(os.path.join(RAIZ, 'builds', out['id'] + '.json'), 'w', encoding='utf-8').write(
+                json.dumps(out, ensure_ascii=False, indent=1) + '\n')
+            feitos += 1
     print(feitos, 'builds de pacote')
 
 

@@ -1,0 +1,196 @@
+{
+ "build": "Fighter (Purple Dragon Knight), atirador de arco longo, couro batido/meia-armadura, Archery; sem feat",
+ "corpo": {
+  "ca": 17,
+  "pv": 114,
+  "saves": {
+   "sv": {
+    "for": 4,
+    "des": 5,
+    "con": 8,
+    "int": -1,
+    "sab": 1,
+    "car": 1
+   },
+   "ataques": 3
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco longo todo round; Rallying Cry junto do Second Wind",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 11,
+      "dano": "1d6+5",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1.0,
+      "bonus": 11,
+      "dano": "1d6+5",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Rallying Cry (Second Wind)",
+      "lado": "def",
+      "modelo": "cura",
+      "usos_descanso_curto": 1,
+      "pv": 33,
+      "nota": "3 aliados × nível de Fighter"
+     },
+     {
+      "nome": "Inspiring Surge (aliado ataca no Action Surge)",
+      "lado": "of",
+      "modelo": "ataque_extra",
+      "alvos": 0.125,
+      "nota": "0,5 Action Surge por luta ÷ 4 rounds"
+     }
+    ]
+   },
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 11,
+      "dano": "1d6+5",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 11,
+      "dano": "1d6+5",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1.0,
+      "bonus": 11,
+      "dano": "1d6+5",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "action_surge": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Purple Dragon Knight (Banneret) arqueiro: cura em grupo no Second Wind e ataque de aliado no Action Surge (10).",
+  "estrategia": "Posição atirador; feat da subclasse: Sharpshooter (6) da extensão pura da build do RPGBot (a build original só tem Dragon Fear, racial).",
+  "nao_modelado": "Royal Envoy; Bulwark (15); o Second Wind próprio; Indomitable (9).",
+  "progressao": "atributos {'for': 10, 'des': 20, 'con': 18, 'int': 8, 'sab': 13, 'car': 12}",
+  "pacote": "Piloto A3 (24/11): chassi sem feat + Crossbow Expert+Sharpshooter (Variant Human: 1º feat no nível 1) (calibracao/pacotes.py); modificador +0 no atributo principal pelos ASIs trocados; arma 1d6 + ataque bônus 1d6."
+ },
+ "patches_linhas": [
+  {
+   "origem": "Second Wind",
+   "eixos": {
+    "defesa": {
+     "cura_luta": 8.25
+    }
+   }
+  },
+  {
+   "origem": "Indomitable",
+   "eixos": {
+    "saves": {
+     "rerolagens": 0.25
+    }
+   }
+  }
+ ],
+ "id": "pacote-fighter-purple-dragon-knight-cbe-ss-vh-11",
+ "nome": "Purple Dragon Knight Fighter — chassi — pacote Crossbow Expert+Sharpshooter",
+ "grupo": "Pacote",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/purple-dragon-knight/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "purple-dragon-knight",
+ "posicao": "atirador",
+ "feat": "Crossbow Expert+Sharpshooter",
+ "variante": "pacote"
+}

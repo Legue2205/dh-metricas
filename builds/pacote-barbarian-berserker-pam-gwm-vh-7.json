@@ -1,0 +1,239 @@
+{
+ "build": "Barbarian (berserker), striker, machado grande, meia-armadura; For > Con > Des; sem feat",
+ "corpo": {
+  "ca": 16,
+  "pv": 68,
+  "saves": {
+   "sv": {
+    "for": 7,
+    "des": 1,
+    "con": 5,
+    "int": -1,
+    "sab": 1,
+    "car": 0
+   },
+   "ataques": 2,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 4,
+    "volta": "longo"
+   },
+   "frenesi": {
+    "qtd": 1,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: machado grande, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+3",
+      "vantagem": 1.0,
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d4+3",
+      "nota": "Polearm Master (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ],
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia",
+   "hipotese": "fúria sem Frenzy, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+5",
+      "vantagem": 1.0,
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d4+5",
+      "nota": "Polearm Master (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ],
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {
+    "imune": [
+     "encanto",
+     "medo"
+    ]
+   },
+   "gasta": {
+    "furia": 1
+   }
+  },
+  {
+   "id": "furia-frenesi",
+   "hipotese": "fúria com Frenzy: ataque extra na ação bônus dos rounds 2–4 (exaustão no fim)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+5",
+      "vantagem": 1.0,
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d10+5",
+      "vantagem": 1.0,
+      "nota": "Frenzy (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {
+    "imune": [
+     "encanto",
+     "medo"
+    ]
+   },
+   "gasta": {
+    "furia": 1,
+    "frenesi": 1
+   },
+   "plano": "prioritaria"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia; prioritário: furia, furia-frenesi. Sobra: nada.",
+   "combates": [
+    "furia",
+    "furia",
+    "furia",
+    "furia-frenesi"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia-frenesi. Sobra: 3 furia.",
+   "combates": [
+    "furia-frenesi"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Berserker RAW com machado grande e um Frenzy por dia (exaustão só sai no descanso longo).",
+  "estrategia": "Fúria nas lutas que o plano automático escolher; Reckless Attack sempre.",
+  "nao_modelado": "Exaustão (o plano limita o frenesi a 1/dia); Intimidating Presence (10). Feat: sem build no RPGBot; GWM, o natural de machado grande (o mesmo do nosso Berserker). Relentless Rage; Feral Instinct; Fast Movement; Primal Path 14 (fora das fatias).",
+  "progressao": "atributos {'for': 19, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}; meia-armadura (16)",
+  "pacote": "Piloto A3 (24/11): chassi sem feat + Polearm Master+Great Weapon Master (Variant Human: 1º feat no nível 1) (calibracao/pacotes.py); modificador -1 no atributo principal pelos ASIs trocados; arma 1d10 + ataque bônus 1d4."
+ },
+ "id": "pacote-barbarian-berserker-pam-gwm-vh-7",
+ "nome": "Berserker Barbarian — chassi — pacote Polearm Master+Great Weapon Master",
+ "grupo": "Pacote",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/berserker/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "barbarian",
+ "subclasse": "berserker",
+ "posicao": "striker",
+ "feat": "Polearm Master+Great Weapon Master",
+ "variante": "pacote"
+}

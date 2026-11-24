@@ -1,0 +1,193 @@
+{
+ "build": "Fighter (Echo Knight), striker de espadão, placas, GWF, atacando pelo eco; sem feat",
+ "corpo": {
+  "ca": 18,
+  "pv": 114,
+  "saves": {
+   "sv": {
+    "for": 9,
+    "des": 1,
+    "con": 8,
+    "int": -1,
+    "sab": 1,
+    "car": 0
+   },
+   "ataques": 3
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "action_surge": {
+    "qtd": 1,
+    "volta": "curto"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "espadão com GWF, atacando pelo eco; Unleash Incarnation espalhado pelo dia",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d10+5+0.8",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.25,
+      "bonus": 9,
+      "dano": "1d10+5+0.8",
+      "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "1d4+5+0.5",
+      "nota": "Polearm Master (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "surge",
+   "herda": "principal",
+   "plano": "prioritaria",
+   "hipotese": "Action Surge num round",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d10+5+0.8",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.25,
+      "bonus": 9,
+      "dano": "1d10+5+0.8",
+      "nota": "Unleash Incarnation (Con/dia ÷ 4 lutas ÷ 4 rounds)",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 9,
+      "dano": "1d10+5+0.8",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "1d4+5+0.5",
+      "nota": "Polearm Master (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "action_surge": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "combates": [
+    "principal",
+    "surge",
+    "principal",
+    "surge"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: surge. Sobra: nada.",
+   "combates": [
+    "surge"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Echo Knight de espadão: ataca pelo eco e ganha ataques extras com Unleash Incarnation; com Sentinel segura a linha pelo eco.",
+  "estrategia": "Posição striker; feat da subclasse: Sentinel (1, via Custom Lineage) da build do RPGBot.",
+  "nao_modelado": "O eco como segundo ponto de ameaça e teleporte; Shadow Martyr; Reclaim Potential (PV temporários); Indomitable (9).",
+  "progressao": "atributos {'for': 20, 'des': 13, 'con': 18, 'int': 8, 'sab': 12, 'car': 10}",
+  "pacote": "Piloto A3 (24/11): chassi sem feat + Polearm Master+Great Weapon Master (Variant Human: 1º feat no nível 1) (calibracao/pacotes.py); modificador +0 no atributo principal pelos ASIs trocados; arma 1d10 + ataque bônus 1d4."
+ },
+ "patches_linhas": [
+  {
+   "origem": "Second Wind",
+   "eixos": {
+    "defesa": {
+     "cura_luta": 8.25
+    }
+   }
+  },
+  {
+   "origem": "Indomitable",
+   "eixos": {
+    "saves": {
+     "rerolagens": 0.25
+    }
+   }
+  }
+ ],
+ "id": "pacote-fighter-echo-knight-pam-gwm-vh-11",
+ "nome": "Echo Knight Fighter — chassi — pacote Polearm Master+Great Weapon Master",
+ "grupo": "Pacote",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/echo-knight/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "fighter",
+ "subclasse": "echo-knight",
+ "posicao": "striker",
+ "feat": "Polearm Master+Great Weapon Master",
+ "variante": "pacote"
+}

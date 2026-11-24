@@ -1,0 +1,219 @@
+{
+ "build": "Rogue (Thief), atirador, besta leve, couro batido; sem feat",
+ "corpo": {
+  "ca": 16,
+  "pv": 102,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 9,
+    "con": 4,
+    "int": 5,
+    "sab": 1,
+    "car": 0
+   },
+   "evasion": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "besta leve com Steady Aim/Hide + Sneak",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "vantagem": 0.0,
+      "nota": "besta leve (Steady Aim ou Hide)",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1.0,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ],
+      "vantagem": 0.0
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "6d6",
+      "prob": {
+       "ou": [
+        {
+         "$p": "rogue.vantagem.atirador"
+        },
+        0.75
+       ]
+      },
+      "nota": "Sneak Attack (vantagem ou aliado adjacente)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Steady Aim",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "fast-hands",
+   "hipotese": "besta leve + Sneak (aliado adjacente); Fast Hands: frasco de ácido na ação bônus",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1,
+      "bonus": 5,
+      "dano": "2d6+5",
+      "nota": "ácido (improvisada, sem proficiência)"
+     },
+     {
+      "n": 1.0,
+      "bonus": 8,
+      "dano": "1d6+4",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "6d6",
+      "prob": 0.75,
+      "nota": "Sneak Attack"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Fast Hands (Use an Object)",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ]
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Ladrão: Fast Hands transforma a ação bônus em itens (ácido).",
+  "nao_modelado": "Estrepes/armadilhas por item, Second-Story Work, Supreme Sneak (9), Use Magic Device (13).",
+  "progressao": "Fast Hands, Second-Story Work; Supreme Sneak (9). atributos {'for': 8, 'des': 20, 'con': 18, 'int': 12, 'sab': 13, 'car': 10}",
+  "pacote": "Piloto A3 (24/11): chassi sem feat + Crossbow Expert+Sharpshooter (Variant Human: 1º feat no nível 1) (calibracao/pacotes.py); modificador -1 no atributo principal pelos ASIs trocados; arma 1d6 + ataque bônus 1d6."
+ },
+ "id": "pacote-rogue-thief-cbe-ss-vh-11",
+ "nome": "Thief Rogue — chassi — pacote Crossbow Expert+Sharpshooter",
+ "grupo": "Pacote",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/thief/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "rogue",
+ "subclasse": "thief",
+ "posicao": "atirador",
+ "feat": "Crossbow Expert+Sharpshooter",
+ "variante": "pacote"
+}

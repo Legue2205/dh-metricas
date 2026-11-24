@@ -1,0 +1,233 @@
+{
+ "build": "Barbarian (wild-magic), striker, malho, meia-armadura; For > Con > Des; sem feat",
+ "corpo": {
+  "ca": 16,
+  "pv": 68,
+  "saves": {
+   "sv": {
+    "for": 7,
+    "des": 1,
+    "con": 5,
+    "int": -1,
+    "sab": 1,
+    "car": 0
+   },
+   "ataques": 2,
+   "adv": [
+    "Des"
+   ]
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {
+   "furia": {
+    "qtd": 4,
+    "volta": "longo"
+   },
+   "bolstering": {
+    "qtd": 3,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "sem fúria: malho, Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+3",
+      "vantagem": 1.0,
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d4+3",
+      "nota": "Polearm Master (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ],
+      "vantagem": 1.0
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "furia",
+   "hipotese": "fúria com Wild Surge (valor esperado das opções de dano 4 e 8), Reckless Attack",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 6,
+      "dano": "1d10+5+0.44",
+      "vantagem": 1.0,
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.75,
+      "bonus": 6,
+      "dano": "1d4+5+0.44",
+      "nota": "Polearm Master (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ],
+      "vantagem": 1.0
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.094,
+      "cd": 13,
+      "save": "Con",
+      "dano": "1d6",
+      "meio": false,
+      "nota": "Wild Surge 8 (raio de luz na ação bônus, rounds 2–4, 1/8 das fúrias)"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1
+   }
+  },
+  {
+   "id": "furia-bolstering",
+   "hipotese": "fúria + Bolstering Magic em si (+1d3 nos ataques por 10 minutos)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "2d6+6+0.44",
+      "vantagem": 1.0
+     }
+    ],
+    "com_save": [
+     {
+      "n": 0.094,
+      "cd": 13,
+      "save": "Con",
+      "dano": "1d6",
+      "meio": false,
+      "nota": "Wild Surge 8 (raio de luz na ação bônus, rounds 2–4, 1/8 das fúrias)"
+     }
+    ]
+   },
+   "defesa": {
+    "adv": 1,
+    "resist": true
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "furia": 1,
+    "bolstering": 1
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: furia, furia-bolstering; prioritário: furia-bolstering. Sobra: nada.",
+   "combates": [
+    "furia",
+    "furia-bolstering",
+    "furia-bolstering",
+    "furia-bolstering"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: furia-bolstering. Sobra: 3 furia, 2 bolstering.",
+   "combates": [
+    "furia-bolstering"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Bárbaro da Magia Selvagem: um efeito aleatório a cada fúria e Bolstering Magic para acertar mais.",
+  "estrategia": "Fúria nas lutas que o plano automático escolher; Reckless Attack sempre.",
+  "nao_modelado": "Wild Surge além das opções 4 e 8; Magic Awareness; restaurar espaços com Bolstering Magic; Unstable Backlash (10); empurrão do Crusher. Relentless Rage; Feral Instinct; Fast Movement; Primal Path 14 (fora das fatias).",
+  "progressao": "atributos {'for': 19, 'des': 13, 'con': 15, 'int': 8, 'sab': 12, 'car': 10}; meia-armadura (16)",
+  "pacote": "Piloto A3 (24/11): chassi sem feat + Polearm Master+Great Weapon Master (Variant Human: 1º feat no nível 1) (calibracao/pacotes.py); modificador -1 no atributo principal pelos ASIs trocados; arma 1d10 + ataque bônus 1d4."
+ },
+ "id": "pacote-barbarian-wild-magic-pam-gwm-vh-7",
+ "nome": "Wild Magic Barbarian — chassi — pacote Polearm Master+Great Weapon Master",
+ "grupo": "Pacote",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/barbarian/subclasses/wild-magic/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "barbarian",
+ "subclasse": "wild-magic",
+ "posicao": "striker",
+ "feat": "Polearm Master+Great Weapon Master",
+ "variante": "pacote"
+}

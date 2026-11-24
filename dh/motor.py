@@ -45,8 +45,15 @@ def _sem_segundos(r):
     return {k: v for k, v in r.items() if k != 'segundos' and not k.startswith('_')}
 
 
+def _imp_planos():
+    """Impressão das regras de escolha dos planos (premissas plano.auto.* e moeda.*): mudou → refaz só os planos."""
+    from .premissas import hash_prefixos
+    return hash_prefixos('plano.auto', 'moeda.') + '-focos1'
+
+
 def _planos(b, res):
     """Reescolhe os planos automáticos pelo rendimento das linhas e agrega todos os planos (in place em b e res)."""
+    res['impressao_planos'] = _imp_planos()
     from . import plano_auto                      # D5 (23/11): plano auto reescolhido pelo rendimento das linhas
     vals = None
     for tag, pl in list(b.get('planos', {}).items()):
@@ -94,8 +101,8 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
                 if (velho.get('impressoes') == I.da_build(b, m, imp) and velho.get('impressao') == imp
                         and premissas.atuais(pv) == pv):
                     pp = b.get('planos', {}).get('padrao')
-                    if isinstance(pp, dict) and pp.get('auto') and 'foco_dano' not in velho.get('planos', {}):
-                        _planos(b, velho)      # 24/11: resultado de antes dos planos de foco — só refaz os planos
+                    if isinstance(pp, dict) and pp.get('auto') and velho.get('impressao_planos') != _imp_planos():
+                        _planos(b, velho)      # 24/11: regra de plano mudou (focos, moeda DE) — só refaz os planos
                         from .arquivos import gravar
                         gravar(arq, json.dumps({k: v for k, v in velho.items() if not k.startswith('_')}, ensure_ascii=False, indent=1))
                     velho['_cache'] = True

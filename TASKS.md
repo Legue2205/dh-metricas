@@ -764,3 +764,12 @@ vence (DE 203 × marca 195), Spike Growth quase empata. τ do plano padrão (atu
 medindo cada régua, a moeda DE já não muda o τ por régua; ela importa para o **ranking geral / plano equilibrado** e
 para responder "o que essa build deveria conjurar". Decisão do usuário: adotar a moeda DE no plano padrão (vira
 premissas `moeda.*`), e com qual peso da área.
+
+### Decisões do usuário (24/11, 22h48): moeda DE no plano padrão e pacote_vh no gate do dano
+- **D16 — plano padrão automático em dano equivalente:** `plano.auto.moeda = "de"` (dh/moeda.py, conversões de
+  moeda_de.py como premissas `moeda.peso` {dano 1, suporte 1, controle 1, área 0,5}, `moeda.ca_ref_*`). Planos de
+  foco seguem no nível do próprio eixo. Resultado em cache com regra de plano diferente (`impressao_planos`) refaz só
+  os planos. Afeta o plano padrão e o combate único de todas as builds com plano automático (ranks do plano equilibrado
+  mudam; ex.: Vengeance nv7 passa de Bless ×4 para marca / voto+smite).
+- **D17 — gate do dano com pacote:** `comparar_chassi.py` usa, no eixo de dano, o melhor entre a variante sem feat e o
+  pacote_vh da subclasse (`--sem-pacote` desliga). Próximo passo dos pacotes: levá-los ao gerador de chassi.

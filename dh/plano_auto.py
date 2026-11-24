@@ -38,9 +38,13 @@ def _valor(b, ge, go):
 def valores_linhas(res_linhas, nivel=None, so=None):
     """Valor de cada linha para o rendimento (D5): soma, por eixo, do nível eq. (nota do plano) ÷ nível típico daquele
     eixo no nível da build (P2.15: plano.auto.tipico; sem nível ou sem típico, divide por 1) × peso por eixo.
-    so = chave de um eixo ('dano', 'campo', 'area', 'suporte'…): rendimento só desse eixo (planos de foco, 24/11)."""
+    so = chave de um eixo ('dano', 'campo', 'area', 'suporte'…): rendimento só desse eixo (planos de foco, 24/11).
+    Sem so e com plano.auto.moeda = 'de' (24/11, Etapa B): rendimento em dano equivalente por luta (dh/moeda.py)."""
     import json
     from .premissas import P
+    if not so and nivel and P('plano.auto.moeda') == 'de':
+        from . import moeda
+        return {lid: moeda.de_linha(x, nivel)['total'] for lid, x in res_linhas.items()}
     w = P('plano.auto.peso_eixo'); r = json.loads(json.dumps(res_linhas))
     tip = P('plano.auto.tipico') if nivel else {}
 

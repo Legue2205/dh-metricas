@@ -2222,5 +2222,38 @@
     "desde": "2026-11-24",
     "descricao": "Peso dos companheiros de feature de subclasse (Drake, Primal Companion, Steel Defender, Eldritch Cannon, Wildfire Spirit…): contam inteiros (usuário, 24/11).",
     "historico": []
+  },
+  "plano.auto.moeda": {
+    "valor": "de",
+    "eixo": "plano",
+    "desde": "2026-11-24",
+    "descricao": "Como o plano padrão automático soma as linhas: 'de' = dano equivalente por luta (dh/moeda.py; adotado pelo usuário em 24/11, Etapa B — evita somar níveis de réguas descalibradas entre si, ex.: Bless × smite do Paladin) ou 'niveis' = soma de nível eq. ÷ típico × peso (D5, antes de 24/11). Planos de foco usam sempre o nível do próprio eixo.",
+    "historico": []
+  },
+  "moeda.peso": {
+    "valor": {
+      "dano": 1.0,
+      "suporte": 1.0,
+      "controle": 1.0,
+      "area": 0.5
+    },
+    "eixo": "plano",
+    "desde": "2026-11-24",
+    "descricao": "Peso de cada parcela do dano equivalente no plano padrão. Área 0,5 = parcela das lutas que são horda (provisório, usuário 24/11). Dano causado = dano evitado (1:1).",
+    "historico": []
+  },
+  "moeda.ca_ref_base": {
+    "valor": 14,
+    "eixo": "plano",
+    "desde": "2026-11-24",
+    "descricao": "CA de referência do DPR na moeda DE: base + nível ÷ moeda.ca_ref_niveis_por_ponto (15 no 7, 16 no 11).",
+    "historico": []
+  },
+  "moeda.ca_ref_niveis_por_ponto": {
+    "valor": 4,
+    "eixo": "plano",
+    "desde": "2026-11-24",
+    "descricao": "Níveis por ponto de CA na CA de referência da moeda DE.",
+    "historico": []
   }
 }

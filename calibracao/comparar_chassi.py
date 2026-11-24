@@ -4,7 +4,7 @@
   2. Por posição: média de cada eixo das variantes sem feat, agrupadas pela posição que a subclasse escolheu.
   3. Feat: (com feat − sem feat) por eixo, por subclasse = sinergia daquela subclasse com aquele feat.
 
-Uso (da raiz): python calibracao/comparar_chassi.py [--nivel 11] [--classe rogue] [--visao misto|padrao|externo|interno] (padrão: misto, D2) [--json]
+Uso (da raiz): python calibracao/comparar_chassi.py [--nivel 11] [--classe rogue] [--visao misto|padrao|externo|interno] (padrão: misto, D2) [--json] [--sem-pacote] (dano: melhor entre sem feat e pacote_vh, 24/11)
 Lê resultados via `python -m dh comparar --grupo Chassi --json` e os rótulos (classe/subclasse/posicao/feat) de builds/.
 """
 import glob
@@ -22,9 +22,23 @@ EIXOS = ('dano', 'deff', 'defm', 'controle', 'area', 'suporte', 'corpo')
 EIXOS5 = EIXOS[:5]
 
 
-def dados(visao='padrao'):
-    cmd = [sys.executable, '-m', 'dh', 'comparar', '--grupo', 'Chassi', '--json', '--visao', visao]
-    return json.loads(subprocess.run(cmd, cwd=RAIZ, capture_output=True, text=True, check=True).stdout)
+def dados(visao='padrao', pacote=True):
+    """Valores do grupo Chassi. pacote=True (decisão do usuário, 24/11): no eixo de DANO, a variante sem feat de cada
+    subclasse marcial vale o melhor entre ela e o pacote clássico com Variant Human (calibracao/pacotes.py, sufixo -vh)."""
+    def cmp(g):
+        cmd = [sys.executable, '-m', 'dh', 'comparar', '--grupo', g, '--json', '--visao', visao]
+        return json.loads(subprocess.run(cmd, cwd=RAIZ, capture_output=True, text=True, check=True).stdout)
+    d = cmp('Chassi')
+    if pacote:
+        dp = cmp('Pacote').get('dano', {})
+        for pid, vs in dp.items():
+            if not pid.endswith('-vh'): continue
+            base = 'chassi-' + pid[len('pacote-'):-len('-vh')].rsplit('-', 2)[0]
+            alvo = d.get('dano', {}).get(base)
+            if alvo is None: continue
+            for nv, v in vs.items():
+                if v is not None and (alvo.get(nv) is None or v > alvo[nv]): alvo[nv] = v
+    return d
 
 
 def rotulos():
@@ -86,7 +100,7 @@ def main():
     nvs = [int(a[a.index('--nivel') + 1])] if '--nivel' in a else [7, 11]
     so = a[a.index('--classe') + 1] if '--classe' in a else None
     visao = a[a.index('--visao') + 1] if '--visao' in a else 'misto'
-    d, rot = dados(visao), rotulos()
+    d, rot = dados(visao, '--sem-pacote' not in a), rotulos()
     res = {'tau': {}, 'tau_eixos': {}, 'posicao': {}, 'feat': []}
     classes = sorted({r['classe'] for r in rot.values() if r['classe'] and (not so or r['classe'] == so)})
     gabs = {}

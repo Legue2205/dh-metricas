@@ -187,7 +187,7 @@ chassi-monk-long-death-f-piercer-11  11    8,6 B+     7,7 B    16,1 S    5,5 C+ 
 chassi-monk-long-death-f-piercer-7   7    6,1 B-     4,0 C   10,7 A-     4,9 C         -     4,6 C         -
 chassi-monk-mercy-11   11    9,0 B+    6,0 B-    16,1 S    8,2 B+         -     4,8 C     0,7 E
 chassi-monk-mercy-7     7    5,1 C+    3,2 C-   10,7 A-     4,9 C         -     4,6 C     0,3 F
-chassi-monk-mercy-f-mobile-11  11     7,5 B     4,9 C    16,1 S    5,1 C+         -     4,6 C     0,7 E
+chassi-monk-mercy-f-mobile-11  11     7,5 B     4,9 C    16,1 S    5,1 C+         -     4,8 C     0,7 E
 chassi-monk-mercy-f-mobile-7   7     4,4 C     2,9 D   10,1 A-     4,9 C         -     4,6 C     0,3 F
 chassi-monk-mercy-f-slasher-11  11    8,7 B+    5,4 C+    16,1 S    5,5 C+         -     4,8 C     0,7 E
 chassi-monk-mercy-f-slasher-7   7    5,1 C+    3,2 C-   10,7 A-     4,9 C         -     4,6 C     0,3 F

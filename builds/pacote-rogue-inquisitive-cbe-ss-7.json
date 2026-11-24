@@ -1,0 +1,136 @@
+{
+ "build": "Rogue (Inquisitive), atirador, besta leve, couro batido; sem feat",
+ "corpo": {
+  "ca": 15,
+  "pv": 52,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 7,
+    "con": 2,
+    "int": 4,
+    "sab": 1,
+    "car": 0
+   },
+   "evasion": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "besta leve com Steady Aim (ou Insightful Fighting) + Sneak",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 6,
+      "dano": "1d6+3",
+      "vantagem": 0.0,
+      "nota": "besta leve (Steady Aim ou Hide)"
+     },
+     {
+      "n": 1.0,
+      "bonus": 6,
+      "dano": "1d6+3",
+      "nota": "Crossbow Expert (ação bônus)",
+      "vantagem": 0.0
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "4d6",
+      "prob": {
+       "ou": [
+        {
+         "$p": "rogue.vantagem.atirador"
+        },
+        0.75
+       ]
+      },
+      "nota": "Sneak Attack (vantagem ou aliado adjacente)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Steady Aim",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Investigador: percepção e intuição; em combate é o ladino básico de Steady Aim.",
+  "nao_modelado": "Ear for Deceit, Eye for Detail, Insightful Fighting (redundante com Steady Aim), Steady Eye (9).",
+  "progressao": "Insightful Fighting (redundante com Steady Aim). atributos {'for': 8, 'des': 19, 'con': 15, 'int': 12, 'sab': 13, 'car': 10}",
+  "pacote": "Piloto A3 (24/11): chassi sem feat + Crossbow Expert (calibracao/pacotes.py); modificador -1 no atributo principal pelos ASIs trocados; arma 1d6 + ataque bônus 1d6."
+ },
+ "id": "pacote-rogue-inquisitive-cbe-ss-7",
+ "nome": "Inquisitive Rogue — chassi — pacote Crossbow Expert",
+ "grupo": "Pacote",
+ "nivel": 7,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/inquisitive/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "rogue",
+ "subclasse": "inquisitive",
+ "posicao": "atirador",
+ "feat": "Crossbow Expert",
+ "variante": "pacote"
+}

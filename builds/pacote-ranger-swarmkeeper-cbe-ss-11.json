@@ -1,0 +1,524 @@
+{
+ "build": "Ranger (Swarmkeeper), atirador: arco longo, Archery, couro batido; sem feat",
+ "corpo": {
+  "ca": 15,
+  "pv": 103,
+  "saves": {
+   "sv": {
+    "for": 5,
+    "des": 9,
+    "con": 3,
+    "int": 0,
+    "sab": 1,
+    "car": -1
+   },
+   "ataques": 2
+  }
+ },
+ "recursos": {
+  "espacos": {
+   "1": 4,
+   "2": 3,
+   "3": 3
+  },
+  "outros": {
+   "favored_foe": {
+    "qtd": 4,
+    "volta": "longo"
+   }
+  }
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "arco longo sem magia",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.9,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Gathered Swarm (1×/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "principal": true,
+   "custo": "gratuita"
+  },
+  {
+   "id": "marca",
+   "hipotese": "Hunter's Mark (1 hora: 0,5 espaço de 1º por luta)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+3+1d6",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.9,
+      "bonus": 9,
+      "dano": "1d6+3+1d6",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Gathered Swarm (1×/turno)"
+     }
+    ],
+    "concentracao": "hunters_mark"
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 0.5
+    }
+   }
+  },
+  {
+   "id": "inimigo-favorito",
+   "hipotese": "Favored Foe (sem espaço: PB usos por descanso longo, 1 por luta)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.9,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Gathered Swarm (1×/turno)"
+     },
+     {
+      "dano": "1d6",
+      "nota": "Favored Foe (1×/turno)"
+     }
+    ],
+    "concentracao": "favored_foe"
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "favored_foe": 1
+   }
+  },
+  {
+   "id": "enredar",
+   "hipotese": "Ensnaring Strike no 1º acerto (1 espaço de 1º), depois ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.9,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Gathered Swarm (1×/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 1
+    }
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Ensnaring Strike",
+      "efeito": "ensnaring_strike",
+      "cd": 13,
+      "bonus": [
+       11,
+       11
+      ],
+      "usos": 1
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "terreno-espinhos",
+   "hipotese": "Spike Growth (1 espaço de 2º), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.9,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Gathered Swarm (1×/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Spike Growth",
+      "magia": "spike_growth",
+      "cd": 13
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "conjurar-animais",
+   "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.9,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Gathered Swarm (1×/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   },
+   "invocacoes": [
+    {
+     "nome": "Conjure Animals (8 lobos)",
+     "quantidade": 8,
+     "pv": 11,
+     "ca": 13,
+     "ataque": {
+      "n": 1,
+      "bonus": 4,
+      "dano": "2d4+2",
+      "vantagem": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "id": "terreno-plantas",
+   "hipotese": "Plant Growth (1 espaço de 3º, sem concentração), ataques normais",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.9,
+      "bonus": 9,
+      "dano": "1d6+3",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "1d8",
+      "nota": "Gathered Swarm (1×/turno)"
+     }
+    ]
+   },
+   "defesa": {},
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "3": 1
+    }
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Plant Growth",
+      "magia": "plant_growth",
+      "cd": 13
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   }
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conjurar-animais, terreno-espinhos; prioritário: conjurar-animais. Sobra: 4×1º, 2×2º, 4 favored_foe.",
+   "combates": [
+    "terreno-espinhos",
+    "conjurar-animais",
+    "conjurar-animais",
+    "conjurar-animais"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: conjurar-animais. Sobra: 4×1º, 3×2º, 2×3º, 4 favored_foe.",
+   "combates": [
+    "conjurar-animais"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi do Swarmkeeper: Ranger atirador com Hunter's Mark e a feature de dano da subclasse.",
+  "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Gathered Swarm (3; 1d8 no 11); empurrão do enxame, Writhing Tide (7) e Mighty Swarm (11) não modelados.",
+  "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas.",
+  "progressao": "atributos {'for': 12, 'des': 20, 'con': 16, 'int': 10, 'sab': 13, 'car': 8}. Gathered Swarm (3; 1d8 no 11); empurrão do enxame, Writhing Tide (7) e Mighty Swarm (11) não modelados.",
+  "pacote": "Piloto A3 (24/11): chassi sem feat + Crossbow Expert+Sharpshooter (calibracao/pacotes.py); modificador -2 no atributo principal pelos ASIs trocados; arma 1d6 + ataque bônus 1d6."
+ },
+ "reacoes_magicas": [
+  {
+   "magia": "absorb_elements",
+   "desde": 2
+  }
+ ],
+ "id": "pacote-ranger-swarmkeeper-cbe-ss-11",
+ "nome": "Swarmkeeper Ranger — chassi — pacote Crossbow Expert+Sharpshooter",
+ "grupo": "Pacote",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/ranger/subclasses/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "ranger",
+ "subclasse": "swarmkeeper",
+ "posicao": "atirador",
+ "feat": "Crossbow Expert+Sharpshooter",
+ "variante": "pacote"
+}

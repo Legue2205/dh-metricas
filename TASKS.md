@@ -679,3 +679,22 @@ marciais com feat de poder (Fighter); para o resto o máximo adiciona ruído. Op
 fila de mecânica faltando nos chassis (ex.: Valor, Draconic) — mais barato e alinhado ao gate mecânico;
 (c) trocar "máximo" por "variante que a subclasse escolheria" (o que o chassi já tenta) e aceitar o resíduo.
 Lembrete: decidir olhando esse mesmo gabarito é ajuste ao gabarito (ver crítica do critério acima).
+
+### (b) Fila de mecânica faltando nos chassis (24/11) — resultado: quase vazia
+Revisei as 25 subclasses com teto − piso > 1 no nv11 (linha a linha, chassi × RPGBot). Quase toda a diferença é
+**escolha de build que o chassi exclui por regra** (chassi.py: sem raça, sem multiclasse, 1 feat por variante), não
+feature de subclasse faltando: −5/+10 (SS/GWM) e CBE nos atiradores (Gloom Stalker, Hunter, Kensei, BM, Arcane Archer),
+arma de duas mãos com GWM onde o chassi escolheu arma de uma mão (Psi Warrior, Samurai, Cavalier), Elven Accuracy
+(Valor, Phantom, Arcane Archer), multiclasse (PDK com Eldritch Blast/Hex, Echo Knight com fúria) e magias de lista
+geral (Summon Draconic Spirit no Draconic, Holy Weapon por Magical Secrets no Valor). Candidatos a mecânica de
+subclasse de fato, deixados como nota (efeito pequeno ou condicional): Invoke Duplicity do Trickery (o chassi é de
+retaguarda), Shadow Step do Shadow Monk (vantagem no 1º ataque após teleporte; a linha de Darkness do RPGBot depende de
+Devil's Sight racial). Conclusão: o caminho é o (a).
+
+### (a) Piloto A3 — pacotes clássicos nos marciais (`calibracao/pacotes.py`, grupo "Pacote", 60 builds)
+Regras no docstring: atirador de arco/besta → CBE+SS (besta de mão, ataque bônus 1d6); arma de duas mãos → PAM+GWM
+(glaive, ataque bônus 1d4); fora: espada e escudo, Rune Knight, Soulknife, Drakewarden, Beast, Monk. Feats = ASIs do
+nível (Fighter 2; demais 1 no 7 e 2 no 11), tirando primeiro dos ASIs do atributo secundário; o ataque bônus herda o
+que vale por acerto no 1º ataque de arma da linha (fúria, Hunter's Mark, Improved Divine Smite). Frações do ataque
+bônus do piloto: Barbarian 0,75, Ranger 0,9, Paladin 0,9. `teto_subclasse.py` ganhou a fonte **pacote** = máximo entre
+o piso e o pacote. Resultado: ver abaixo depois do CI.

@@ -1,0 +1,151 @@
+{
+ "build": "Rogue (Scout), atirador, besta leve, couro batido; sem feat",
+ "corpo": {
+  "ca": 15,
+  "pv": 102,
+  "saves": {
+   "sv": {
+    "for": -1,
+    "des": 9,
+    "con": 4,
+    "int": 5,
+    "sab": 1,
+    "car": 0
+   },
+   "evasion": true
+  }
+ },
+ "recursos": {
+  "espacos": {},
+  "outros": {}
+ },
+ "linhas": [
+  {
+   "id": "principal",
+   "hipotese": "besta leve com Steady Aim/Hide + Sneak; Skirmisher na reação",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d6+3",
+      "vantagem": 0.0,
+      "nota": "besta leve (Steady Aim ou Hide)",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 1.0,
+      "bonus": 7,
+      "dano": "1d6+3",
+      "nota": "Crossbow Expert (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ],
+      "vantagem": 0.0
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "6d6",
+      "prob": {
+       "ou": [
+        {
+         "soma": [
+          {
+           "$p": "rogue.vantagem.atirador"
+          },
+          {
+           "$p": "rogue.vantagem.ajuste_scout"
+          }
+         ]
+        },
+        0.75
+       ]
+      },
+      "nota": "Sneak Attack (vantagem ou aliado adjacente)"
+     }
+    ]
+   },
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "uncanny_dodge"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "acao_bonus": [
+    {
+     "uso": "Steady Aim",
+     "fracao": 1.0,
+     "eixos": [
+      "dano"
+     ]
+    }
+   ],
+   "principal": true,
+   "custo": "gratuita"
+  }
+ ],
+ "planos": {
+  "padrao": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal",
+    "principal",
+    "principal",
+    "principal"
+   ]
+  },
+  "combate_unico": {
+   "auto": true,
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: principal. Sobra: nada.",
+   "combates": [
+    "principal"
+   ]
+  }
+ },
+ "descricao": {
+  "resumo": "Chassi: Batedor: luta de longe e sai do corpo a corpo com a reação (Skirmisher).",
+  "nao_modelado": "Skirmisher (reação; conflita com Uncanny Dodge), Survivalist, Superior Mobility (9), Ambush Master (13).",
+  "progressao": "Skirmisher, Survivalist; Superior Mobility (9). atributos {'for': 8, 'des': 20, 'con': 18, 'int': 12, 'sab': 13, 'car': 10}",
+  "pacote": "Piloto A3 (24/11): chassi sem feat + Crossbow Expert+Sharpshooter (calibracao/pacotes.py); modificador -2 no atributo principal pelos ASIs trocados; arma 1d6 + ataque bônus 1d6."
+ },
+ "id": "pacote-rogue-scout-cbe-ss-11",
+ "nome": "Scout Rogue — chassi — pacote Crossbow Expert+Sharpshooter",
+ "grupo": "Pacote",
+ "nivel": 11,
+ "fonte": {
+  "tipo": "chassi",
+  "url": "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/scout/",
+  "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."
+ },
+ "classe": "rogue",
+ "subclasse": "scout",
+ "posicao": "atirador",
+ "feat": "Crossbow Expert+Sharpshooter",
+ "variante": "pacote"
+}

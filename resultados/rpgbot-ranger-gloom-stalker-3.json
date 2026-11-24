@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 3,
  "build": "Ranger (Gloom Stalker), humano variante arqueiro, arco longo; Archery, Sharpshooter 1, Des 18 no 4, Des 20 no 8 (chassi comum)",
- "impressao": "49a48a0ea4",
+ "impressao": "21a1c7996a",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -30,12 +30,23 @@
      "CA 24": 2.4,
      "CA 25": 1.9
     },
-    "nivel_eq": 2.2,
+    "nivel_eq": 2.3,
     "rank": "D",
     "perfil": "Equilibrado",
-    "nivel_bruta": 2.2,
-    "nivel_precisa": 2.2,
-    "medido": false
+    "nivel_bruta": 2.3,
+    "nivel_precisa": 2.3,
+    "medido": false,
+    "dpr_regua": {
+     "CA 11": 14.7,
+     "CA 12": 13.5,
+     "CA 15": 9.9,
+     "CA 16": 8.7,
+     "CA 18": 6.5,
+     "CA 20": 4.8,
+     "CA 22": 3.7,
+     "CA 24": 2.6,
+     "CA 25": 2.0
+    }
    },
    "defesa": {
     "pv_efetivo": 28,
@@ -194,12 +205,23 @@
      "CA 24": 3.5,
      "CA 25": 2.8
     },
-    "nivel_eq": 2.8,
-    "rank": "D",
+    "nivel_eq": 3.0,
+    "rank": "C-",
     "perfil": "Equilibrado",
-    "nivel_bruta": 2.8,
-    "nivel_precisa": 2.8,
-    "medido": false
+    "nivel_bruta": 3.0,
+    "nivel_precisa": 3.0,
+    "medido": false,
+    "dpr_regua": {
+     "CA 11": 17.7,
+     "CA 12": 16.3,
+     "CA 15": 12.0,
+     "CA 16": 10.7,
+     "CA 18": 8.4,
+     "CA 20": 6.8,
+     "CA 22": 5.3,
+     "CA 24": 3.7,
+     "CA 25": 2.9
+    }
    },
    "defesa": {
     "pv_efetivo": 28,
@@ -360,12 +382,23 @@
      "CA 24": 3.2,
      "CA 25": 2.5
     },
-    "nivel_eq": 2.6,
+    "nivel_eq": 2.8,
     "rank": "D",
     "perfil": "Equilibrado",
-    "nivel_bruta": 2.6,
-    "nivel_precisa": 2.6,
-    "medido": false
+    "nivel_bruta": 2.8,
+    "nivel_precisa": 2.8,
+    "medido": false,
+    "dpr_regua": {
+     "CA 11": 16.6,
+     "CA 12": 15.3,
+     "CA 15": 11.3,
+     "CA 16": 9.9,
+     "CA 18": 7.6,
+     "CA 20": 6.1,
+     "CA 22": 4.7,
+     "CA 24": 3.3,
+     "CA 25": 2.6
+    }
    },
    "defesa": {
     "pv_efetivo": 28,
@@ -526,12 +559,23 @@
      "CA 24": 2.4,
      "CA 25": 1.9
     },
-    "nivel_eq": 2.2,
+    "nivel_eq": 2.3,
     "rank": "D",
     "perfil": "Equilibrado",
-    "nivel_bruta": 2.2,
-    "nivel_precisa": 2.2,
-    "medido": false
+    "nivel_bruta": 2.3,
+    "nivel_precisa": 2.3,
+    "medido": false,
+    "dpr_regua": {
+     "CA 11": 14.7,
+     "CA 12": 13.5,
+     "CA 15": 9.9,
+     "CA 16": 8.7,
+     "CA 18": 6.5,
+     "CA 20": 4.8,
+     "CA 22": 3.7,
+     "CA 24": 2.6,
+     "CA 25": 2.0
+    }
    },
    "defesa": {
     "pv_efetivo": 28,
@@ -739,11 +783,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 2.8,
-     "rank": "D",
+     "nivel_eq": 3.0,
+     "rank": "C-",
      "por_categoria": {
-      "np": 2.8,
-      "p": 2.8
+      "np": 3.0,
+      "p": 3.0
      }
     },
     "defesa": {
@@ -822,10 +866,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 2.8,
-     "rank": "D",
+     "nivel_eq": 3.0,
+     "rank": "C-",
      "por_categoria": {
-      "p": 2.8
+      "p": 3.0
      }
     },
     "defesa": {
@@ -873,7 +917,7 @@
    }
   }
  },
- "segundos": 0.0,
+ "segundos": 3.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1160,6 +1204,8 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.redireciona.adjacente": 0.15,
+  "controle.atencao.redireciona.aura": 0.25,
   "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
@@ -1186,6 +1232,7 @@
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
   "dano.peso_rampa_bruta": 0.5,
+  "dano.peso_round1": 1.25,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
   "plano.auto.peso_eixo": {
@@ -1325,34 +1372,34 @@
   }
  },
  "impressoes": {
-  "_planos": "847d3949b441",
+  "_planos": "e14adcd1da68",
   "principal": {
-   "dano": "1e22333c58de",
+   "dano": "ddaf4ed6dece",
    "defesa": "612cfff2e20d",
    "saves": "1a68b6b2f8af",
-   "area": "932bc9449451",
-   "controle": "1a78160daec2"
+   "area": "17b9347f53c5",
+   "controle": "658e2515abb7"
   },
   "marca": {
-   "dano": "a7080563450d",
+   "dano": "d4ec71c31de1",
    "defesa": "612cfff2e20d",
    "saves": "1a68b6b2f8af",
-   "area": "7ad76c8a877c",
-   "controle": "22a3d096c7b1"
+   "area": "a1487e6304a1",
+   "controle": "d5a68209cd73"
   },
   "inimigo-favorito": {
-   "dano": "839b194f48ce",
+   "dano": "334503d1f707",
    "defesa": "612cfff2e20d",
    "saves": "1a68b6b2f8af",
-   "area": "cad47d61d814",
-   "controle": "520bc8a4c16d"
+   "area": "35b4c57d80b2",
+   "controle": "dff2a0645ae0"
   },
   "enredar": {
-   "dano": "1e22333c58de",
+   "dano": "ddaf4ed6dece",
    "defesa": "612cfff2e20d",
    "saves": "1a68b6b2f8af",
-   "area": "932bc9449451",
-   "controle": "5cc2cc845a4b"
+   "area": "17b9347f53c5",
+   "controle": "512581705667"
   }
  }
 }

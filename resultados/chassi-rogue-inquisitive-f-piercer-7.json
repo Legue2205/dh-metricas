@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 7,
  "build": "Rogue (Inquisitive), atirador, besta leve, couro batido; Piercer no 4 — RPGBot (PF2 Investigator): Piercer no 4",
- "impressao": "c32b463cfc",
+ "impressao": "4a38f6d7df",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -20,21 +20,21 @@
    ],
    "dano": {
     "dpr": {
-     "CA 11": 25.2,
-     "CA 12": 24.8,
-     "CA 15": 22.9,
-     "CA 16": 22.0,
-     "CA 18": 19.9,
-     "CA 20": 17.3,
-     "CA 22": 14.2,
-     "CA 24": 10.7,
-     "CA 25": 8.8
+     "CA 11": 23.7,
+     "CA 12": 23.1,
+     "CA 15": 20.9,
+     "CA 16": 20.0,
+     "CA 18": 17.9,
+     "CA 20": 15.5,
+     "CA 22": 12.6,
+     "CA 24": 9.4,
+     "CA 25": 7.7
     },
-    "nivel_eq": 6.2,
-    "rank": "B-",
+    "nivel_eq": 5.4,
+    "rank": "C+",
     "perfil": "Equilibrado",
-    "nivel_bruta": 6.0,
-    "nivel_precisa": 6.3,
+    "nivel_bruta": 5.3,
+    "nivel_precisa": 5.4,
     "medido": false
    },
    "defesa": {
@@ -93,22 +93,22 @@
      "2": 2.83,
      "3": 2.83,
      "4": 3.0,
-     "5": 3.14,
-     "6": 3.14,
-     "7": 3.14,
-     "8": 4.24,
-     "9": 4.07,
-     "10": 4.07,
-     "11": 4.25,
-     "12": 4.25,
-     "13": 4.96,
-     "14": 4.96,
-     "15": 4.96,
-     "16": 4.96,
-     "17": 5.56,
-     "18": 5.56,
-     "19": 5.97,
-     "20": 5.5
+     "5": 3.28,
+     "6": 3.28,
+     "7": 3.28,
+     "8": 4.33,
+     "9": 4.16,
+     "10": 4.16,
+     "11": 4.36,
+     "12": 4.36,
+     "13": 5.09,
+     "14": 5.09,
+     "15": 5.09,
+     "16": 5.09,
+     "17": 5.65,
+     "18": 5.65,
+     "19": 5.98,
+     "20": 5.59
     },
     "usos": 0,
     "antigo": null,
@@ -139,14 +139,14 @@
     "nivel_controle": 0.0,
     "nivel_atencao": 0.0,
     "rank_atencao": "F",
-    "vidas_total": -0.061,
+    "vidas_total": -0.05,
     "vidas_campo": 0.012,
-    "vidas_atencao": -0.106,
+    "vidas_atencao": -0.095,
     "corpo": {
-     "T": -0.106,
-     "S": -0.07,
-     "P": -0.036,
-     "chave": "T0S-P0",
+     "T": -0.095,
+     "S": -0.033,
+     "P": -0.062,
+     "chave": "T0S0P-",
      "perfil": "Neutro"
     },
     "nivel_corpo": 7.0,
@@ -154,7 +154,7 @@
     "corpo_busca": [
      [
       7,
-      -0.106
+      -0.095
      ]
     ],
     "por_tipo": {
@@ -236,11 +236,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.2,
-     "rank": "B-",
+     "nivel_eq": 5.4,
+     "rank": "C+",
      "por_categoria": {
-      "np": 6.2,
-      "p": 6.2
+      "np": 5.4,
+      "p": 5.4
      }
     },
     "defesa": {
@@ -311,10 +311,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.2,
-     "rank": "B-",
+     "nivel_eq": 5.4,
+     "rank": "C+",
      "por_categoria": {
-      "p": 6.2
+      "p": 5.4
      }
     },
     "defesa": {
@@ -362,7 +362,7 @@
    }
   }
  },
- "segundos": 0.0,
+ "segundos": 1.0,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -649,6 +649,8 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.redireciona.adjacente": 0.15,
+  "controle.atencao.redireciona.aura": 0.25,
   "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
@@ -675,6 +677,7 @@
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
   "dano.peso_rampa_bruta": 0.5,
+  "dano.peso_round1": 1.25,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -840,16 +843,17 @@
   },
   "planos.magias_por_luta": {
    "utilidade": 0.2
-  }
+  },
+  "rogue.vantagem.atirador": 0.8
  },
  "impressoes": {
-  "_planos": "bb021f116b7b",
+  "_planos": "3b18bafd01d8",
   "principal": {
-   "dano": "f1144ab77da9",
+   "dano": "1e657cf77567",
    "defesa": "38b6576be8a9",
    "saves": "ebb1d5c18677",
-   "area": "7dd45bca5085",
-   "controle": "e78348ae32c2"
+   "area": "2106fec6b1f1",
+   "controle": "5cb87cdffb94"
   }
  }
 }

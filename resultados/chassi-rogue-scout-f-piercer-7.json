@@ -4,12 +4,12 @@
  "grupo": "Chassi",
  "nivel": 7,
  "build": "Rogue (Scout), atirador, besta leve, couro batido; Piercer no 4 — RPGBot (Field Scholar): Piercer no 4",
- "impressao": "6504d25ab5",
+ "impressao": "9092d76858",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
   "principal": {
-   "hipotese": "besta leve com Steady Aim + Sneak",
+   "hipotese": "besta leve com Steady Aim/Hide + Sneak; Skirmisher na reação",
    "principal": [
     "dano",
     "defesa",
@@ -20,21 +20,21 @@
    ],
    "dano": {
     "dpr": {
-     "CA 11": 25.2,
-     "CA 12": 24.8,
-     "CA 15": 22.9,
-     "CA 16": 22.0,
-     "CA 18": 19.9,
-     "CA 20": 17.3,
-     "CA 22": 14.2,
-     "CA 24": 10.7,
-     "CA 25": 8.8
+     "CA 11": 24.4,
+     "CA 12": 24.0,
+     "CA 15": 21.9,
+     "CA 16": 21.0,
+     "CA 18": 18.9,
+     "CA 20": 16.4,
+     "CA 22": 13.4,
+     "CA 24": 10.1,
+     "CA 25": 8.2
     },
-    "nivel_eq": 6.2,
-    "rank": "B-",
+    "nivel_eq": 5.8,
+    "rank": "C+",
     "perfil": "Equilibrado",
-    "nivel_bruta": 6.0,
-    "nivel_precisa": 6.3,
+    "nivel_bruta": 5.6,
+    "nivel_precisa": 5.9,
     "medido": false
    },
    "defesa": {
@@ -93,22 +93,22 @@
      "2": 2.83,
      "3": 2.83,
      "4": 3.0,
-     "5": 3.14,
-     "6": 3.14,
-     "7": 3.14,
-     "8": 4.24,
-     "9": 4.07,
-     "10": 4.07,
-     "11": 4.25,
-     "12": 4.25,
-     "13": 4.96,
-     "14": 4.96,
-     "15": 4.96,
-     "16": 4.96,
-     "17": 5.56,
-     "18": 5.56,
+     "5": 3.2,
+     "6": 3.2,
+     "7": 3.2,
+     "8": 4.28,
+     "9": 4.12,
+     "10": 4.12,
+     "11": 4.3,
+     "12": 4.3,
+     "13": 5.02,
+     "14": 5.02,
+     "15": 5.02,
+     "16": 5.02,
+     "17": 5.61,
+     "18": 5.61,
      "19": 5.97,
-     "20": 5.5
+     "20": 5.54
     },
     "usos": 0,
     "antigo": null,
@@ -139,13 +139,13 @@
     "nivel_controle": 0.0,
     "nivel_atencao": 0.0,
     "rank_atencao": "F",
-    "vidas_total": -0.061,
+    "vidas_total": -0.056,
     "vidas_campo": 0.012,
-    "vidas_atencao": -0.106,
+    "vidas_atencao": -0.101,
     "corpo": {
-     "T": -0.106,
-     "S": -0.07,
-     "P": -0.036,
+     "T": -0.101,
+     "S": -0.052,
+     "P": -0.049,
      "chave": "T0S-P0",
      "perfil": "Neutro"
     },
@@ -154,7 +154,7 @@
     "corpo_busca": [
      [
       7,
-      -0.106
+      -0.101
      ]
     ],
     "por_tipo": {
@@ -236,11 +236,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.2,
-     "rank": "B-",
+     "nivel_eq": 5.8,
+     "rank": "C+",
      "por_categoria": {
-      "np": 6.2,
-      "p": 6.2
+      "np": 5.8,
+      "p": 5.8
      }
     },
     "defesa": {
@@ -311,10 +311,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.2,
-     "rank": "B-",
+     "nivel_eq": 5.8,
+     "rank": "C+",
      "por_categoria": {
-      "p": 6.2
+      "p": 5.8
      }
     },
     "defesa": {
@@ -362,7 +362,7 @@
    }
   }
  },
- "segundos": 0.0,
+ "segundos": 1.1,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -649,6 +649,8 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.redireciona.adjacente": 0.15,
+  "controle.atencao.redireciona.aura": 0.25,
   "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
@@ -675,6 +677,7 @@
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
   "dano.peso_rampa_bruta": 0.5,
+  "dano.peso_round1": 1.25,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -840,16 +843,18 @@
   },
   "planos.magias_por_luta": {
    "utilidade": 0.2
-  }
+  },
+  "rogue.vantagem.ajuste_scout": 0.1,
+  "rogue.vantagem.atirador": 0.8
  },
  "impressoes": {
-  "_planos": "fa47c1de4b7c",
+  "_planos": "554a81c306e8",
   "principal": {
-   "dano": "f1144ab77da9",
+   "dano": "6f45cd96dc5f",
    "defesa": "38b6576be8a9",
    "saves": "ebb1d5c18677",
-   "area": "7dd45bca5085",
-   "controle": "e78348ae32c2"
+   "area": "83f80e378b00",
+   "controle": "a94841247877"
   }
  }
 }

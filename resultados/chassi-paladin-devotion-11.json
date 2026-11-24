@@ -231,7 +231,18 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 10.1,
     "nivel_precisa": 10.1,
-    "medido": false
+    "medido": false,
+    "dpr_regua": {
+     "CA 11": 48.8,
+     "CA 12": 46.6,
+     "CA 15": 40.0,
+     "CA 16": 37.7,
+     "CA 18": 33.3,
+     "CA 20": 28.9,
+     "CA 22": 24.5,
+     "CA 24": 19.9,
+     "CA 25": 17.5
+    }
    },
    "defesa": {
     "pv_efetivo": 81,
@@ -422,12 +433,23 @@
      "CA 24": 22.0,
      "CA 25": 19.5
     },
-    "nivel_eq": 10.4,
+    "nivel_eq": 10.5,
     "rank": "A-",
     "perfil": "Equilibrado",
     "nivel_bruta": 10.4,
-    "nivel_precisa": 10.5,
-    "medido": false
+    "nivel_precisa": 10.6,
+    "medido": false,
+    "dpr_regua": {
+     "CA 11": 51.3,
+     "CA 12": 49.1,
+     "CA 15": 42.5,
+     "CA 16": 40.3,
+     "CA 18": 35.9,
+     "CA 20": 31.5,
+     "CA 22": 27.1,
+     "CA 24": 22.5,
+     "CA 25": 20.0
+    }
    },
    "defesa": {
     "pv_efetivo": 81,
@@ -1017,12 +1039,23 @@
      "CA 24": 20.6,
      "CA 25": 18.7
     },
-    "nivel_eq": 9.6,
+    "nivel_eq": 9.7,
     "rank": "B+",
-    "perfil": "Equilibrado",
-    "nivel_bruta": 9.3,
-    "nivel_precisa": 9.9,
-    "medido": false
+    "perfil": "Preciso",
+    "nivel_bruta": 9.4,
+    "nivel_precisa": 10.0,
+    "medido": false,
+    "dpr_regua": {
+     "CA 11": 40.0,
+     "CA 12": 39.6,
+     "CA 15": 36.9,
+     "CA 16": 35.2,
+     "CA 18": 31.7,
+     "CA 20": 28.1,
+     "CA 22": 24.6,
+     "CA 24": 20.9,
+     "CA 25": 19.1
+    }
    },
    "defesa": {
     "pv_efetivo": 81,
@@ -1213,12 +1246,23 @@
      "CA 24": 24.4,
      "CA 25": 21.8
     },
-    "nivel_eq": 10.8,
-    "rank": "A-",
+    "nivel_eq": 11.0,
+    "rank": "A",
     "perfil": "Preciso",
     "nivel_bruta": 10.7,
-    "nivel_precisa": 11.0,
-    "medido": false
+    "nivel_precisa": 11.2,
+    "medido": false,
+    "dpr_regua": {
+     "CA 11": 53.8,
+     "CA 12": 51.6,
+     "CA 15": 45.0,
+     "CA 16": 42.8,
+     "CA 18": 38.5,
+     "CA 20": 34.2,
+     "CA 22": 29.7,
+     "CA 24": 25.1,
+     "CA 25": 22.5
+    }
    },
    "defesa": {
     "pv_efetivo": 81,
@@ -1462,11 +1506,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.0,
+     "nivel_eq": 9.1,
      "rank": "B+",
      "por_categoria": {
       "np": 8.1,
-      "p": 9.5
+      "p": 9.6
      }
     },
     "defesa": {
@@ -1556,10 +1600,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.9,
-     "rank": "B+",
+     "nivel_eq": 10.0,
+     "rank": "A-",
      "por_categoria": {
-      "p": 9.9
+      "p": 10.0
      }
     },
     "defesa": {
@@ -1614,7 +1658,7 @@
    }
   }
  },
- "segundos": 0.2,
+ "segundos": 6.9,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1901,6 +1945,8 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.redireciona.adjacente": 0.15,
+  "controle.atencao.redireciona.aura": 0.25,
   "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
@@ -1927,6 +1973,7 @@
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
   "dano.peso_rampa_bruta": 0.5,
+  "dano.peso_round1": 1.25,
   "eixos.def_fisica.peso_resiliencia": 0.3333333333333333,
   "eixos.def_magica.peso_resiliencia": 0.3333333333333333,
   "plano.auto.peso_eixo": {
@@ -2098,62 +2145,62 @@
   "suporte.padroes.resgate_p_save": 0.45
  },
  "impressoes": {
-  "_planos": "3d84a1bb41fc",
+  "_planos": "f04cbb3cc68c",
   "principal": {
-   "dano": "2e1253080f0d",
+   "dano": "11de18ff2343",
    "defesa": "6d5681bec4db",
    "saves": "305fe677e29e",
-   "area": "156c3fc45af4",
+   "area": "5765a899d303",
    "suporte": "01e67cb417a1",
-   "controle": "43d6d37b2563"
+   "controle": "8f0ede4c1913"
   },
   "smite-1": {
-   "dano": "ca8b9d3a1202",
+   "dano": "979e3774c160",
    "defesa": "6d5681bec4db",
    "saves": "305fe677e29e",
-   "area": "946ac333915d",
+   "area": "b2873425bd03",
    "suporte": "01e67cb417a1",
-   "controle": "d3ffeabc0a48"
+   "controle": "703b488a8e82"
   },
   "smite-2": {
-   "dano": "2ee4b461a7a3",
+   "dano": "b13af0ff2360",
    "defesa": "6d5681bec4db",
    "saves": "305fe677e29e",
-   "area": "b19ae0bef6dd",
+   "area": "e5a3054a434b",
    "suporte": "01e67cb417a1",
-   "controle": "47d6ccc17082"
+   "controle": "8ea47ad49451"
   },
   "bless": {
-   "dano": "de954affa332",
+   "dano": "4cb3a1321db0",
    "defesa": "6d5681bec4db",
    "saves": "305fe677e29e",
-   "area": "7c0edf343630",
+   "area": "96c24d10cd31",
    "suporte": "bb1ecead42ec",
-   "controle": "5bc0a0c3ca3a"
+   "controle": "9acc2ea559d1"
   },
   "arma-sagrada": {
-   "dano": "0850839c1bfb",
+   "dano": "f10020b0217a",
    "defesa": "6d5681bec4db",
    "saves": "305fe677e29e",
-   "area": "9cc29ea1dbeb",
+   "area": "0f05401453b9",
    "suporte": "01e67cb417a1",
-   "controle": "dc36cff15864"
+   "controle": "fde90397f090"
   },
   "arma-sagrada+smite": {
-   "dano": "4d855cd1373f",
+   "dano": "f1f30c9c7eed",
    "defesa": "6d5681bec4db",
    "saves": "305fe677e29e",
-   "area": "779faf74c7ac",
+   "area": "00b4e1a813a1",
    "suporte": "01e67cb417a1",
-   "controle": "4699be542c6e"
+   "controle": "2e448a52bf1b"
   },
   "smite-3": {
-   "dano": "6683ad3c9515",
+   "dano": "78cbacfdb7ec",
    "defesa": "6d5681bec4db",
    "saves": "305fe677e29e",
-   "area": "e0f829741f46",
+   "area": "7817563d9e4b",
    "suporte": "01e67cb417a1",
-   "controle": "dfe23087a259"
+   "controle": "e1a44856bfe7"
   }
  }
 }

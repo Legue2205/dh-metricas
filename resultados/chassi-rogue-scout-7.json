@@ -4,12 +4,12 @@
  "grupo": "Chassi",
  "nivel": 7,
  "build": "Rogue (Scout), atirador, besta leve, couro batido; sem feat",
- "impressao": "74e09bd31a",
+ "impressao": "054f8e9431",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
   "principal": {
-   "hipotese": "besta leve com Steady Aim + Sneak",
+   "hipotese": "besta leve com Steady Aim/Hide + Sneak; Skirmisher na reação",
    "principal": [
     "dano",
     "defesa",
@@ -20,21 +20,21 @@
    ],
    "dano": {
     "dpr": {
-     "CA 11": 23.8,
-     "CA 12": 23.4,
-     "CA 15": 21.5,
-     "CA 16": 20.7,
-     "CA 18": 18.7,
-     "CA 20": 16.2,
-     "CA 22": 13.3,
-     "CA 24": 9.9,
-     "CA 25": 8.0
+     "CA 11": 23.1,
+     "CA 12": 22.6,
+     "CA 15": 20.6,
+     "CA 16": 19.8,
+     "CA 18": 17.7,
+     "CA 20": 15.3,
+     "CA 22": 12.5,
+     "CA 24": 9.3,
+     "CA 25": 7.5
     },
-    "nivel_eq": 5.7,
+    "nivel_eq": 5.2,
     "rank": "C+",
     "perfil": "Equilibrado",
-    "nivel_bruta": 5.5,
-    "nivel_precisa": 5.8,
+    "nivel_bruta": 5.2,
+    "nivel_precisa": 5.3,
     "medido": false
    },
    "defesa": {
@@ -93,22 +93,22 @@
      "2": 2.83,
      "3": 2.83,
      "4": 3.0,
-     "5": 3.2,
-     "6": 3.2,
-     "7": 3.2,
-     "8": 4.29,
-     "9": 4.12,
-     "10": 4.12,
-     "11": 4.3,
-     "12": 4.3,
-     "13": 5.02,
-     "14": 5.02,
-     "15": 5.02,
-     "16": 5.02,
-     "17": 5.61,
-     "18": 5.61,
+     "5": 3.28,
+     "6": 3.28,
+     "7": 3.28,
+     "8": 4.33,
+     "9": 4.17,
+     "10": 4.17,
+     "11": 4.36,
+     "12": 4.36,
+     "13": 5.09,
+     "14": 5.09,
+     "15": 5.09,
+     "16": 5.09,
+     "17": 5.65,
+     "18": 5.65,
      "19": 5.98,
-     "20": 5.57
+     "20": 5.61
     },
     "usos": 0,
     "antigo": null,
@@ -139,13 +139,13 @@
     "nivel_controle": 0.0,
     "nivel_atencao": 0.0,
     "rank_atencao": "F",
-    "vidas_total": -0.054,
+    "vidas_total": -0.049,
     "vidas_campo": 0.012,
-    "vidas_atencao": -0.099,
+    "vidas_atencao": -0.094,
     "corpo": {
-     "T": -0.099,
-     "S": -0.046,
-     "P": -0.053,
+     "T": -0.094,
+     "S": -0.03,
+     "P": -0.064,
      "chave": "T0S0P-",
      "perfil": "Neutro"
     },
@@ -154,7 +154,7 @@
     "corpo_busca": [
      [
       7,
-      -0.099
+      -0.094
      ]
     ],
     "por_tipo": {
@@ -236,11 +236,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.7,
+     "nivel_eq": 5.2,
      "rank": "C+",
      "por_categoria": {
-      "np": 5.7,
-      "p": 5.7
+      "np": 5.2,
+      "p": 5.2
      }
     },
     "defesa": {
@@ -311,10 +311,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.7,
+     "nivel_eq": 5.2,
      "rank": "C+",
      "por_categoria": {
-      "p": 5.7
+      "p": 5.2
      }
     },
     "defesa": {
@@ -362,7 +362,7 @@
    }
   }
  },
- "segundos": 0.0,
+ "segundos": 0.8,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -649,6 +649,8 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.redireciona.adjacente": 0.15,
+  "controle.atencao.redireciona.aura": 0.25,
   "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
@@ -675,6 +677,7 @@
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
   "dano.peso_rampa_bruta": 0.5,
+  "dano.peso_round1": 1.25,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -840,16 +843,18 @@
   },
   "planos.magias_por_luta": {
    "utilidade": 0.2
-  }
+  },
+  "rogue.vantagem.ajuste_scout": 0.1,
+  "rogue.vantagem.atirador": 0.8
  },
  "impressoes": {
-  "_planos": "0409246db382",
+  "_planos": "e776f1104a89",
   "principal": {
-   "dano": "f1dbc95cc90f",
+   "dano": "9ba2059f245b",
    "defesa": "38b6576be8a9",
    "saves": "ebb1d5c18677",
-   "area": "fc32d7075f84",
-   "controle": "a35447dd820c"
+   "area": "4aeba271491b",
+   "controle": "4ceaea669812"
   }
  }
 }

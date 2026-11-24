@@ -4,12 +4,12 @@
  "grupo": "Chassi",
  "nivel": 11,
  "build": "Rogue (Assassin), atirador, besta leve, couro batido; Alert no 4 — RPGBot (Killer Rabbit): Alert no 4",
- "impressao": "3577e5c4f5",
+ "impressao": "f0d94595cb",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
   "principal": {
-   "hipotese": "besta leve com Steady Aim + Sneak",
+   "hipotese": "besta leve com Steady Aim/Hide + Sneak; Assassinate dá vantagem no round 1",
    "principal": [
     "dano",
     "defesa",
@@ -20,21 +20,21 @@
    ],
    "dano": {
     "dpr": {
-     "CA 11": 32.9,
-     "CA 12": 32.7,
-     "CA 15": 31.1,
-     "CA 16": 30.2,
-     "CA 18": 28.1,
-     "CA 20": 25.4,
-     "CA 22": 22.0,
-     "CA 24": 18.0,
-     "CA 25": 15.8
+     "CA 11": 31.6,
+     "CA 12": 31.2,
+     "CA 15": 29.1,
+     "CA 16": 28.2,
+     "CA 18": 26.0,
+     "CA 20": 23.3,
+     "CA 22": 20.1,
+     "CA 24": 16.3,
+     "CA 25": 14.3
     },
-    "nivel_eq": 8.4,
-    "rank": "B+",
+    "nivel_eq": 7.8,
+    "rank": "B",
     "perfil": "Preciso",
-    "nivel_bruta": 7.8,
-    "nivel_precisa": 9.0,
+    "nivel_bruta": 7.4,
+    "nivel_precisa": 8.1,
     "medido": false
    },
    "defesa": {
@@ -96,19 +96,19 @@
      "5": 3.04,
      "6": 3.04,
      "7": 3.04,
-     "8": 3.84,
-     "9": 3.7,
-     "10": 3.7,
-     "11": 3.91,
-     "12": 3.91,
-     "13": 4.53,
-     "14": 4.53,
-     "15": 4.53,
-     "16": 4.53,
-     "17": 5.09,
-     "18": 5.09,
-     "19": 5.84,
-     "20": 5.12
+     "8": 3.89,
+     "9": 3.75,
+     "10": 3.75,
+     "11": 3.97,
+     "12": 3.97,
+     "13": 4.62,
+     "14": 4.62,
+     "15": 4.62,
+     "16": 4.62,
+     "17": 5.2,
+     "18": 5.2,
+     "19": 5.88,
+     "20": 5.22
     },
     "usos": 0,
     "antigo": null,
@@ -132,20 +132,20 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.78,
+    "nivel_eq": 0.81,
     "rank": "E",
     "nivel_campo": 0.69,
     "rank_campo": "E",
     "nivel_controle": 0.0,
-    "nivel_atencao": 0.02,
+    "nivel_atencao": 0.04,
     "rank_atencao": "F",
-    "vidas_total": 0.031,
+    "vidas_total": 0.035,
     "vidas_campo": 0.017,
-    "vidas_atencao": -0.003,
+    "vidas_atencao": 0.001,
     "corpo": {
-     "T": -0.003,
-     "S": 0.113,
-     "P": -0.117,
+     "T": 0.001,
+     "S": 0.131,
+     "P": -0.13,
      "chave": "T0S+P-",
      "perfil": "Redirecionador"
     },
@@ -154,15 +154,15 @@
     "corpo_busca": [
      [
       11,
-      -0.003
+      0.001
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 0.2,
-     "Party de elite": 0.38,
-     "Horda + chefe": 0.2,
-     "Horda": 0.24,
-     "Dupla": 0.01,
+     "Minions + minibosses": 0.23,
+     "Party de elite": 0.45,
+     "Horda + chefe": 0.24,
+     "Horda": 0.27,
+     "Dupla": 0.02,
      "Chefe sozinho": 2.06
     },
     "negacao_por_fonte": {
@@ -402,11 +402,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 8.4,
-     "rank": "B+",
+     "nivel_eq": 7.8,
+     "rank": "B",
      "por_categoria": {
-      "np": 8.4,
-      "p": 8.4
+      "np": 7.8,
+      "p": 7.8
      }
     },
     "defesa": {
@@ -477,10 +477,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 8.4,
-     "rank": "B+",
+     "nivel_eq": 7.8,
+     "rank": "B",
      "por_categoria": {
-      "p": 8.4
+      "p": 7.8
      }
     },
     "defesa": {
@@ -528,7 +528,7 @@
    }
   }
  },
- "segundos": 0.0,
+ "segundos": 2.0,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -815,6 +815,8 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.redireciona.adjacente": 0.15,
+  "controle.atencao.redireciona.aura": 0.25,
   "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
@@ -841,6 +843,7 @@
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
   "dano.peso_rampa_bruta": 0.5,
+  "dano.peso_round1": 1.25,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -1006,23 +1009,24 @@
   },
   "planos.magias_por_luta": {
    "utilidade": 0.2
-  }
+  },
+  "rogue.vantagem.atirador": 0.8
  },
  "impressoes": {
-  "_planos": "75dc50d9270d",
+  "_planos": "75e8e5480010",
   "principal": {
-   "dano": "70fd4bbe931a",
+   "dano": "bee4982a5191",
    "defesa": "494b19602bcd",
    "saves": "2e29073a6571",
-   "area": "0be579ac18d0",
-   "controle": "c08de349cd19"
+   "area": "8038133fe4aa",
+   "controle": "6104f120dc27"
   },
   "assassinate": {
-   "dano": "e7859cdf6c45",
+   "dano": "569b80e15e74",
    "defesa": "494b19602bcd",
    "saves": "2e29073a6571",
-   "area": "771b6642900f",
-   "controle": "a9c750cb59a1"
+   "area": "503c47655806",
+   "controle": "1ef321d09200"
   }
  }
 }

@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 7,
  "build": "Rogue (Phantom), atirador, besta leve, couro batido; sem feat",
- "impressao": "1c985f3959",
+ "impressao": "4eb9294e5f",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -20,22 +20,33 @@
    ],
    "dano": {
     "dpr": {
-     "CA 11": 25.2,
-     "CA 12": 24.8,
-     "CA 15": 23.0,
-     "CA 16": 22.2,
-     "CA 18": 20.2,
-     "CA 20": 17.7,
-     "CA 22": 14.8,
-     "CA 24": 11.3,
-     "CA 25": 9.3
+     "CA 11": 23.8,
+     "CA 12": 23.2,
+     "CA 15": 21.2,
+     "CA 16": 20.3,
+     "CA 18": 18.3,
+     "CA 20": 15.9,
+     "CA 22": 13.2,
+     "CA 24": 10.0,
+     "CA 25": 8.3
     },
-    "nivel_eq": 6.2,
-    "rank": "B-",
+    "nivel_eq": 5.6,
+    "rank": "C+",
     "perfil": "Equilibrado",
-    "nivel_bruta": 6.0,
-    "nivel_precisa": 6.4,
-    "medido": false
+    "nivel_bruta": 5.5,
+    "nivel_precisa": 5.8,
+    "medido": false,
+    "dpr_regua": {
+     "CA 11": 24.0,
+     "CA 12": 23.5,
+     "CA 15": 21.4,
+     "CA 16": 20.5,
+     "CA 18": 18.6,
+     "CA 20": 16.2,
+     "CA 22": 13.5,
+     "CA 24": 10.3,
+     "CA 25": 8.5
+    }
    },
    "defesa": {
     "pv_efetivo": 52,
@@ -93,22 +104,22 @@
      "2": 2.83,
      "3": 2.83,
      "4": 3.0,
-     "5": 3.14,
-     "6": 3.14,
-     "7": 3.14,
-     "8": 4.24,
-     "9": 4.07,
-     "10": 4.07,
-     "11": 4.22,
-     "12": 4.22,
-     "13": 4.91,
-     "14": 4.91,
-     "15": 4.91,
-     "16": 4.91,
-     "17": 5.53,
-     "18": 5.53,
-     "19": 5.97,
-     "20": 5.5
+     "5": 3.28,
+     "6": 3.28,
+     "7": 3.28,
+     "8": 4.33,
+     "9": 4.16,
+     "10": 4.16,
+     "11": 4.32,
+     "12": 4.32,
+     "13": 5.04,
+     "14": 5.04,
+     "15": 5.04,
+     "16": 5.04,
+     "17": 5.62,
+     "18": 5.62,
+     "19": 5.98,
+     "20": 5.59
     },
     "usos": 0,
     "antigo": null,
@@ -139,14 +150,14 @@
     "nivel_controle": 0.0,
     "nivel_atencao": 0.0,
     "rank_atencao": "F",
-    "vidas_total": -0.062,
+    "vidas_total": -0.052,
     "vidas_campo": 0.012,
-    "vidas_atencao": -0.107,
+    "vidas_atencao": -0.097,
     "corpo": {
-     "T": -0.107,
-     "S": -0.074,
-     "P": -0.034,
-     "chave": "T0S-P0",
+     "T": -0.097,
+     "S": -0.039,
+     "P": -0.058,
+     "chave": "T0S0P-",
      "perfil": "Neutro"
     },
     "nivel_corpo": 7.0,
@@ -154,7 +165,7 @@
     "corpo_busca": [
      [
       7,
-      -0.107
+      -0.097
      ]
     ],
     "por_tipo": {
@@ -236,11 +247,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.2,
-     "rank": "B-",
+     "nivel_eq": 5.6,
+     "rank": "C+",
      "por_categoria": {
-      "np": 6.2,
-      "p": 6.2
+      "np": 5.6,
+      "p": 5.6
      }
     },
     "defesa": {
@@ -311,10 +322,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 6.2,
-     "rank": "B-",
+     "nivel_eq": 5.6,
+     "rank": "C+",
      "por_categoria": {
-      "p": 6.2
+      "p": 5.6
      }
     },
     "defesa": {
@@ -362,7 +373,7 @@
    }
   }
  },
- "segundos": 0.0,
+ "segundos": 1.0,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -649,6 +660,8 @@
   "controle.atencao.near_back": 0.25,
   "controle.atencao.reach_grande": 0.5,
   "controle.atencao.reach_pequeno": 0.2,
+  "controle.atencao.redireciona.adjacente": 0.15,
+  "controle.atencao.redireciona.aura": 0.25,
   "controle.atencao.skel_peso": 1.0,
   "controle.atencao.skel_pv": 133,
   "controle.campo.golpes_party": 2,
@@ -675,6 +688,7 @@
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
   "dano.peso_rampa_bruta": 0.5,
+  "dano.peso_round1": 1.25,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -840,16 +854,17 @@
   },
   "planos.magias_por_luta": {
    "utilidade": 0.2
-  }
+  },
+  "rogue.vantagem.atirador": 0.8
  },
  "impressoes": {
-  "_planos": "15c782e6c7ed",
+  "_planos": "af0e8ddf41d1",
   "principal": {
-   "dano": "1ae6ead37e3a",
+   "dano": "7c1c017e94bb",
    "defesa": "38b6576be8a9",
    "saves": "ebb1d5c18677",
-   "area": "034e3d1f694e",
-   "controle": "e26dbea87633"
+   "area": "97b3f76580e9",
+   "controle": "970dc105ef65"
   }
  }
 }

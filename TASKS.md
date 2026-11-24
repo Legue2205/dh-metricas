@@ -595,3 +595,18 @@ Dano 0,25 (nv7) / **0,31** (nv11) ✓; Ranger nv7 −0,19 → 0,00 (D12, Dread A
   ataque corpo a corpo alcança o alvo, ex.: 0,9), com campo genérico `"alcance": "corpo"` nos ataques e os geradores
   marcando armas corpo a corpo (custo: passar por todos os geradores marciais); (b) só marcar pela posição/front
   (rápido, grosseiro); (c) não modelar e aceitar o dano no 7 abaixo do gate.
+
+### Respostas do usuário (24/11, 02h) e ponto de partida da próxima sessão
+- **Corpo: aceito como resíduo, com asterisco.** É métrica nossa (mede tank e invocação juntos, coisa que os
+  otimizadores não medem), então é natural ter poucas pistas e algum desacordo com o gabarito; mas esse argumento não
+  pode virar desculpa para não melhorar a régua quando aparecer mecânica que falte. Corpo agrupado: 0,33 (nv7) / 0,25 (nv11).
+- **D14 (alcance do corpo a corpo): não aceita como está.** O sinal veio olhando o gabarito, e os otimizadores quase
+  nunca contam isso; o arqueiro também perde turnos (cobertura, reposicionar). A perda existe, mas talvez seja pequena.
+  Fica em aberto como hipótese, não como premissa.
+- **Próximo passo: sessão nova só sobre a régua de dano** (bloqueio da fase 1: 0,25 no nível 7; 0,31 no 11 ✓). O usuário
+  tem ideias de análise de dados para trazer. Para começar, leia nesta ordem: o "Critério de pronto" e a "Passada 3"
+  deste arquivo (incluindo P3.1, D11–D14 e esta seção), depois `calibracao/comparar_chassi.py` e
+  `calibracao/diff_baseline.py` (baseline atual: `calibracao/baseline/p4-chassi-misto.json`; as medições da passada 3
+  usam a visão misto). Ferramentas de análise usadas nesta sessão (não versionadas, fáceis de refazer): tabela por
+  classe de pista × dano do motor; contagem de pares discordantes por subclasse; τ por visão (padrao/misto/externo:
+  0,24/0,25/0,30 no 7); sensibilidade a deslocar o nível de um grupo de builds.

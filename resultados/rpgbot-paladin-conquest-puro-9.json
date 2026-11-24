@@ -667,6 +667,13 @@
     },
     "nivel_absoluto": 0.61,
     "rank_absoluto": "E"
+   },
+   "concentracao": {
+    "f": 0.843,
+    "p_save": 0.85,
+    "acertos": 0.8,
+    "grupo": "meio",
+    "forma": false
    }
   },
   "conquista": {
@@ -2654,6 +2661,13 @@
     },
     "nivel_absoluto": 3.82,
     "rank_absoluto": "C-"
+   },
+   "concentracao": {
+    "f": 0.843,
+    "p_save": 0.85,
+    "acertos": 0.8,
+    "grupo": "meio",
+    "forma": false
    }
   },
   "medo+smite": {
@@ -2889,6 +2903,13 @@
     },
     "nivel_absoluto": 3.99,
     "rank_absoluto": "C-"
+   },
+   "concentracao": {
+    "f": 0.843,
+    "p_save": 0.85,
+    "acertos": 0.8,
+    "grupo": "meio",
+    "forma": false
    }
   }
  },
@@ -2897,65 +2918,63 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "bless",
+     "linha": "conquista+smite",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1
-      }
+       "1": 2
+      },
+      "canal": 1
      }
     },
     {
-     "linha": "medo+smite",
+     "linha": "smite-3",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 2,
-       "3": 1
+       "3": 2
       }
      }
     },
     {
-     "linha": "bless",
+     "linha": "arma-espiritual+smite",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1
+       "1": 2,
+       "2": 1
       }
      }
     },
     {
-     "linha": "medo+smite",
+     "linha": "conquista+smite",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 2,
-       "3": 1
-      }
+       "1": 2
+      },
+      "canal": 1
      }
     }
    ],
    "sobra": {
-    "espacos": {
-     "2": 1
-    },
-    "canal": 1
+    "espacos": {}
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.2,
-     "rank": "C+",
+     "nivel_eq": 6.7,
+     "rank": "B-",
      "por_categoria": {
-      "np": 4.0,
-      "p": 5.8
+      "np": 6.5,
+      "p": 6.8
      }
     },
     "defesa": {
@@ -2983,34 +3002,34 @@
      }
     },
     "campo": {
-     "nivel_eq": 2.8,
+     "nivel_eq": 2.3,
      "rank": "D",
      "por_categoria": {
-      "np": 0.0,
-      "p": 4.2
+      "np": 1.9,
+      "p": 1.9
      }
     },
     "corpo": {
-     "nivel_eq": 12.5,
+     "nivel_eq": 12.2,
      "rank": "A",
      "por_categoria": {
-      "np": 12.9,
-      "p": 12.4
+      "np": 12.2,
+      "p": 12.2
      }
     },
     "area": {
      "nivel_eq": 4.6,
      "rank": "C",
      "por_categoria": {
-      "np": 4.3,
+      "np": 4.6,
       "p": 4.6
      }
     },
     "suporte": {
-     "nivel_eq": 3.2,
-     "rank": "C-",
+     "nivel_eq": 0.9,
+     "rank": "E",
      "por_categoria": {
-      "np": 7.9,
+      "np": 0.9,
       "p": 0.9
      }
     }
@@ -3020,15 +3039,14 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "medo+smite",
+     "linha": "smite-3",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 2,
        "2": 1,
-       "3": 1
+       "3": 2
       },
       "canal": 1
      },
@@ -3040,17 +3058,16 @@
    ],
    "sobra": {
     "espacos": {
-     "1": 2,
-     "2": 2,
-     "3": 1
+     "1": 4,
+     "2": 2
     }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.0,
-     "rank": "B",
+     "nivel_eq": 8.8,
+     "rank": "B+",
      "por_categoria": {
-      "p": 7.0
+      "p": 8.8
      }
     },
     "defesa": {
@@ -3075,17 +3092,17 @@
      }
     },
     "campo": {
-     "nivel_eq": 6.9,
-     "rank": "B-",
+     "nivel_eq": 3.7,
+     "rank": "C-",
      "por_categoria": {
-      "p": 7.9
+      "p": 3.7
      }
     },
     "corpo": {
-     "nivel_eq": 12.5,
+     "nivel_eq": 12.2,
      "rank": "A",
      "por_categoria": {
-      "p": 12.5
+      "p": 12.2
      }
     },
     "area": {
@@ -3228,31 +3245,20 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "conquista",
+     "linha": "medo",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
-      "espacos": {},
-      "canal": 1
-     }
-    },
-    {
-     "linha": "medo+smite",
-     "categoria": "p",
-     "peso": 2,
-     "nota": "",
-     "gasto": {
       "espacos": {
-       "1": 2,
        "3": 1
       }
      }
     },
     {
      "linha": "conquista+smite",
-     "categoria": "np",
-     "peso": 1,
+     "categoria": "p",
+     "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
@@ -3263,14 +3269,26 @@
     },
     {
      "linha": "medo+smite",
-     "categoria": "p",
-     "peso": 2,
+     "categoria": "np",
+     "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 2,
        "3": 1
       }
+     }
+    },
+    {
+     "linha": "conquista+smite",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 2
+      },
+      "canal": 1
      }
     }
    ],
@@ -3284,7 +3302,7 @@
      "nivel_eq": 5.6,
      "rank": "C+",
      "por_categoria": {
-      "np": 5.2,
+      "np": 5.1,
       "p": 5.8
      }
     },
@@ -3313,11 +3331,11 @@
      }
     },
     "campo": {
-     "nivel_eq": 4.1,
-     "rank": "C",
+     "nivel_eq": 3.7,
+     "rank": "C-",
      "por_categoria": {
-      "np": 3.7,
-      "p": 4.2
+      "np": 3.6,
+      "p": 3.7
      }
     },
     "corpo": {
@@ -3580,11 +3598,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 7.9,
-     "rank": "B",
+     "nivel_eq": 6.8,
+     "rank": "B-",
      "por_categoria": {
-      "np": 7.9,
-      "p": 7.9
+      "np": 6.8,
+      "p": 6.8
      }
     }
    }
@@ -4212,5 +4230,5 @@
    "controle": "07a20ab808a8"
   }
  },
- "impressao_planos": "df9e9d4a-focos1"
+ "impressao_planos": "3d4c1ce2-b02a574f"
 }

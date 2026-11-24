@@ -6,7 +6,8 @@ Cada item de "invocacoes" numa linha pode declarar "tipo"; sem ele, o tipo vem d
   summon      — magias "Summon X" (Tasha): uma criatura com bloco que escala com o espaço — já vieram balanceadas
   companheiro — feature de subclasse (Drake, Primal Companion, Steel Defender, Eldritch Cannon, Wildfire Spirit…)
 
-Premissa invocacao.peso.<tipo> (0–1) multiplica a "quantidade". Peso 0 tira a criatura; se isso esvazia uma linha que
+Premissa invocacao.peso.<tipo> (0–1) multiplica a "quantidade"; a build pode fixar o seu com
+"pesos_invocacao": {"<tipo>": peso} (ex.: personagens da party, que jogam com as criaturas de verdade). Peso 0 tira a criatura; se isso esvazia uma linha que
 só existe para invocar (a criatura não está na linha principal), a linha sai do plano e dos anéis.
 """
 import re
@@ -36,7 +37,8 @@ def aplicar(b):
         if not invs: continue
         novas = []
         for i in invs:
-            p = P(f'invocacao.peso.{tipo(i)}')
+            t = tipo(i)
+            p = (b.get('pesos_invocacao') or {}).get(t, P(f'invocacao.peso.{t}'))
             if p <= 0: continue
             if p < 1: i = dict(i, quantidade=i.get('quantidade', 1) * p)
             novas.append(i)

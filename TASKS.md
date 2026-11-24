@@ -717,3 +717,29 @@ régua do dano (com esse valor o nv7 passa o gate: 0,32)? Se sim: mover os pacot
 (`ferramentas/geradores/chassi.py`, variante "pacote") em vez do pós-processamento, e decidir se Variant Human vira regra
 do chassi só para os marciais. Pendências que sobram no dano: plano desviando recurso (Ranger/Spike Growth,
 Paladin/Bless) e Transmutation/Polymorph no topo do 11.
+
+## Etapas A–D (24/11 noite, aprovadas pelo usuário) — orçamento dos casters e moeda comum
+Diagnóstico: o plano automático escolhe as linhas pela SOMA dos eixos (níveis ÷ típico) e as réguas não estão
+calibradas entre si → o erro entre réguas vaza para dentro de cada régua pelo plano (Vengeance nv7: bless = dano 4,3 /
+suporte 6,2 vence voto+smite = dano 8,5 / suporte 0,6). Full casters sofrem menos porque o dano deles vem de truque;
+o dano do half caster vem dos espaços.
+- **A — planos de foco automáticos (feito, 24/11):** builds com plano padrão automático ganham `foco_dano`,
+  `foco_controle`, `foco_area`, `foco_suporte` (melhor dia DENTRO do orçamento só para aquele eixo;
+  `plano_auto.valores_linhas(..., so=)`). Eles já viram o anel externo (aneis.py: externo = melhor dia de foco, em vez
+  da melhor linha em todas as lutas), então **o misto muda para todo mundo**. Visão nova `--visao foco` (cada eixo no
+  seu dia de foco). Resultado em cache ganha os focos sem recalcular as linhas. Vengeance nv7: foco_dano 8,0
+  (marca / voto+smite) vs padrão 4,3.
+- **B — moeda provisória "dano equivalente" só para o plano escolher:** dano causado = dano evitado (1:1, premissa
+  treinável `moeda.*`); suporte convertido pelo que rende na party de referência (Bless vale menos numa party que já
+  tem vantagem); temporário, recalibra quando as réguas mudarem. Casos-teste: Paladin Bless × smite com GWM (e com
+  Aura of Protection segurando a concentração) em parties diferentes.
+- **C — concentração genérica:** chance de quebrar por round (quanto apanha × bônus do save, Aura incluída) para
+  Bless, Hunter's Mark, Polymorph, Spirit Guardians…; tag **"forma"** (Polymorph e afins, peso como a numerosa).
+- **D — valor de abate (adiantar fase 2):** matar nega os turnos futuros, por tipo de luta (horda, boss, party
+  inimiga — tipos do motor de controle). **Focus fire como alavanca com três modos** (usuário): perfeito (a party
+  foca um alvo por vez), uniforme (dano espalhado) e aleatório-até-morrer (escolhe um alvo ao acaso e bate até cair).
+  Pergunta do usuário: o ranking de dano se inverte conforme a malícia da party? (subclasses que brilham com focus
+  fire × as que se sobressaem numa party desorganizada) — é um output esperado da análise.
+- Amadeus (party): mantém a tag numerosa nos esqueletos mas **não é descartado** — campo de build
+  `"pesos_invocacao": {"numerosa": 1}` (vale para personagens de mesa).
+- Ainda pendente do usuário: adotar o pacote_vh no teste de régua do dano.

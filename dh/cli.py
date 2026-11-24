@@ -160,7 +160,7 @@ def main(argv=None):
     ap.add_argument('--md', action='store_true', help='premissas: escreve HIPOTESES.md')
     ap.add_argument('--motivo', default='', help='premissa: por que o valor mudou (vai para o histórico)')
     ap.add_argument('--registrar', metavar='ROTULO', help='calibrar: grava a rodada em calibracao/historico.jsonl')
-    ap.add_argument('--visao', default='padrao', help='comparar: padrao | combate_unico | dia_longo | externo | interno | misto (D2: plano + α·(externo − plano))')
+    ap.add_argument('--visao', default='padrao', help='comparar: padrao | combate_unico | dia_longo | externo | interno | misto (D2: plano + α·(externo − plano)) | foco (cada eixo no seu plano foco_<eixo>, 24/11)')
     ap.add_argument('--grupo', action='append', help='comparar: só estes grupos')
     ap.add_argument('--w', type=float, action='append', help='tatico: razão de piscinas, valor de 1 PV dentro do orçamento (padrão 1)')
     ap.add_argument('--comp', action='append', help='tatico: composição (padrão: as três)')

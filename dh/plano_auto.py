@@ -22,6 +22,7 @@ from itertools import product
 from . import planos
 from .controle.campo import MAGIAS
 
+FOCOS = {'dano': 'dano', 'controle': 'campo', 'area': 'area', 'suporte': 'suporte'}   # eixo do anel → chave do rendimento
 LIMITE = 60000   # combinações avaliadas no máximo (10 linhas × 4 combates = 10 000)
 
 
@@ -34,9 +35,10 @@ def _valor(b, ge, go):
     return sum(int(k) * v for k, v in ge.items()) + sum(v * outros.get(k, {}).get('valor', 1) for k, v in go.items())
 
 
-def valores_linhas(res_linhas, nivel=None):
+def valores_linhas(res_linhas, nivel=None, so=None):
     """Valor de cada linha para o rendimento (D5): soma, por eixo, do nível eq. (nota do plano) ÷ nível típico daquele
-    eixo no nível da build (P2.15: plano.auto.tipico; sem nível ou sem típico, divide por 1) × peso por eixo."""
+    eixo no nível da build (P2.15: plano.auto.tipico; sem nível ou sem típico, divide por 1) × peso por eixo.
+    so = chave de um eixo ('dano', 'campo', 'area', 'suporte'…): rendimento só desse eixo (planos de foco, 24/11)."""
     import json
     from .premissas import P
     w = P('plano.auto.peso_eixo'); r = json.loads(json.dumps(res_linhas))
@@ -53,7 +55,9 @@ def valores_linhas(res_linhas, nivel=None):
         for eixo, sub in planos.EIXOS:
             sub_n = 'campo_pico' if sub == 'campo' else sub
             n = planos._nota(x.get(eixo), sub_n)
-            v += w.get(sub or eixo, 1) * (n or 0.0) / t(sub or eixo)
+            k = sub or eixo
+            if so and k != so: continue
+            v += (1 if so else w.get(k, 1)) * (n or 0.0) / t(k)
         out[lid] = v
     return out
 

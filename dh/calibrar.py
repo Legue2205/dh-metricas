@@ -17,7 +17,8 @@ Um gabarito = um arquivo `calibracao/<nome>.json`:
 
 Eixos: dano, deff, defm, controle, corpo, area, suporte (os do painel).
 Visão: as abas de plano usam a média do dia daquele plano (sem plano → linha principal, marcado com ~);
-externo/interno usam os anéis (máximo/mínimo entre as linhas-opção).
+externo/interno usam os anéis (máximo/mínimo entre as linhas-opção, ou entre os dias de foco quando existem);
+foco = cada eixo no seu plano foco_<eixo> (melhor dia dentro do orçamento para aquele eixo).
 
 Saída: por eixo, pares concordantes × invertidos (tau de Kendall), as inversões com os números e as faixas violadas.
 """
@@ -37,6 +38,16 @@ POS = {r: i for i, r in enumerate(base.ORDEM)}
 def valores(dados, visao='padrao'):
     """{build_id: ({eixo: n}, marca)} a partir de site.dados(). marca '~' = sem o plano pedido (linha principal)."""
     out = {}
+    if visao == 'foco':          # 24/11: cada eixo no seu melhor dia dentro do orçamento (planos foco_<eixo>)
+        for bid, b in dados['builds'].items():
+            an = b.get('aneis')
+            if not an or not an.get('equilibrado'): continue
+            d = {k: v['n'] for k, v in an['equilibrado'].items()}
+            for t, f in (an.get('focos') or {}).items():
+                k = t[len('foco_'):]
+                if k in f: d[k] = f[k]['n']
+            out[bid] = (d, '')
+        return out
     if visao in ('externo', 'interno', 'misto'):
         for bid, b in dados['builds'].items():
             an = b.get('aneis')

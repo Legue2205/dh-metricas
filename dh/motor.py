@@ -45,6 +45,26 @@ def _sem_segundos(r):
     return {k: v for k, v in r.items() if k != 'segundos' and not k.startswith('_')}
 
 
+def _planos(b, res):
+    """Reescolhe os planos automáticos pelo rendimento das linhas e agrega todos os planos (in place em b e res)."""
+    from . import plano_auto                      # D5 (23/11): plano auto reescolhido pelo rendimento das linhas
+    vals = None
+    for tag, pl in list(b.get('planos', {}).items()):
+        if isinstance(pl, dict) and pl.get('auto'):
+            vals = vals or plano_auto.valores_linhas(res['linhas'], b.get('nivel'))
+            novo = plano_auto.gerar(b, tag, vals)
+            if novo: b['planos'][tag] = novo
+    pp = b.get('planos', {}).get('padrao')
+    if isinstance(pp, dict) and pp.get('auto'):
+        # Planos de foco automáticos (24/11, Etapa A): o melhor dia DENTRO do orçamento para cada eixo ativo, sem
+        # somar eixos descalibrados entre si. Viram o anel externo (aneis.py) e a visão "foco" da calibração.
+        for eixo, chave in plano_auto.FOCOS.items():
+            if f'foco_{eixo}' in b['planos']: continue
+            novo = plano_auto.gerar(b, f'foco_{eixo}', plano_auto.valores_linhas(res['linhas'], b.get('nivel'), so=chave))
+            if novo: b['planos'][f'foco_{eixo}'] = dict(novo, descricao=('Foco em ' + eixo + '. ' + novo['descricao'])[:600])
+    res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
+
+
 def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
     """Avalia uma build e grava resultados/<id>.json. Sem forcar, reaproveita do resultado antigo cada eixo cuja impressão
     digital (dh/impressoes.py) não mudou; VERSAO diferente recalcula tudo. eixos/linhas = cálculo parcial, sem cache e sem
@@ -73,6 +93,11 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
             for m in ([vm] if vm == 'completo' and modo == 'rapido' else []) + [modo]:
                 if (velho.get('impressoes') == I.da_build(b, m, imp) and velho.get('impressao') == imp
                         and premissas.atuais(pv) == pv):
+                    pp = b.get('planos', {}).get('padrao')
+                    if isinstance(pp, dict) and pp.get('auto') and 'foco_dano' not in velho.get('planos', {}):
+                        _planos(b, velho)      # 24/11: resultado de antes dos planos de foco — só refaz os planos
+                        from .arquivos import gravar
+                        gravar(arq, json.dumps({k: v for k, v in velho.items() if not k.startswith('_')}, ensure_ascii=False, indent=1))
                     velho['_cache'] = True
                     return b, velho
     regua = total.Regua(); t0 = time.time()
@@ -88,15 +113,7 @@ def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):
         res['linhas'][l['id']] = dict(hipotese=l.get('hipotese', ''), principal=pr,
                                       **avaliar_linha(b, l, modo, regua, eixos, vlinhas.get(l['id']), imps.get(l['id']),
                                                       vimps.get(l['id']), feitos[l['id']]))
-    if not parcial:
-        from . import plano_auto                      # D5 (23/11): plano auto reescolhido pelo rendimento das linhas
-        vals = None
-        for tag, pl in list(b.get('planos', {}).items()):
-            if isinstance(pl, dict) and pl.get('auto'):
-                vals = vals or plano_auto.valores_linhas(res['linhas'], b.get('nivel'))
-                novo = plano_auto.gerar(b, tag, vals)
-                if novo: b['planos'][tag] = novo
-        res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
+    if not parcial: _planos(b, res)
     res['segundos'] = round(time.time() - t0, 1)
     eixos_b = {e for l in b['linhas'] for e in ('dano', 'defesa', 'saves', 'controle', 'area', 'suporte', 'tatico') if l.get(e)}
     if any(l.get('dano') for l in b['linhas']): eixos_b.add('area')

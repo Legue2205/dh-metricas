@@ -46,19 +46,32 @@ def _sem_segundos(r):
 
 
 def _imp_planos():
-    """Impressão das regras de escolha dos planos (premissas plano.auto.* e moeda.*): mudou → refaz só os planos."""
+    """Impressão das regras dos planos (premissas plano.auto.*, moeda.*, concentracao.* e o código desses módulos):
+    mudou → refaz só os planos (e o ajuste de concentração)."""
+    import hashlib
+    from pathlib import Path
     from .premissas import hash_prefixos
-    return hash_prefixos('plano.auto', 'moeda.') + '-focos1'
+    h = hashlib.sha1()
+    for m in ('plano_auto.py', 'planos.py', 'moeda.py', 'concentracao.py', 'aneis.py'):
+        h.update((Path(__file__).parent / m).read_bytes())
+    return hash_prefixos('plano.auto', 'moeda.', 'concentracao.') + '-' + h.hexdigest()[:8]
 
 
 def _planos(b, res):
     """Reescolhe os planos automáticos pelo rendimento das linhas e agrega todos os planos (in place em b e res)."""
     res['impressao_planos'] = _imp_planos()
+    from . import concentracao              # Etapa C (24/11): concentração cai com o dano recebido — os planos usam
+    Lc, infos = concentracao.ajustar(b, res['linhas'])   # a cópia ajustada; as linhas gravadas ficam brutas
+    for lid, x in res['linhas'].items():
+        x.pop('concentracao', None); x.pop('tags', None)
+        if lid in infos:
+            x['concentracao'] = infos[lid]
+            if infos[lid]['forma']: x['tags'] = ['forma']
     from . import plano_auto                      # D5 (23/11): plano auto reescolhido pelo rendimento das linhas
     vals = None
     for tag, pl in list(b.get('planos', {}).items()):
         if isinstance(pl, dict) and pl.get('auto'):
-            vals = vals or plano_auto.valores_linhas(res['linhas'], b.get('nivel'))
+            vals = vals or plano_auto.valores_linhas(Lc, b.get('nivel'))
             novo = plano_auto.gerar(b, tag, vals)
             if novo: b['planos'][tag] = novo
     pp = b.get('planos', {}).get('padrao')
@@ -67,9 +80,9 @@ def _planos(b, res):
         # somar eixos descalibrados entre si. Viram o anel externo (aneis.py) e a visão "foco" da calibração.
         for eixo, chave in plano_auto.FOCOS.items():
             if f'foco_{eixo}' in b['planos']: continue
-            novo = plano_auto.gerar(b, f'foco_{eixo}', plano_auto.valores_linhas(res['linhas'], b.get('nivel'), so=chave))
+            novo = plano_auto.gerar(b, f'foco_{eixo}', plano_auto.valores_linhas(Lc, b.get('nivel'), so=chave))
             if novo: b['planos'][f'foco_{eixo}'] = dict(novo, descricao=('Foco em ' + eixo + '. ' + novo['descricao'])[:600])
-    res['planos'] = planos.agregar(b, res['linhas'], campo.MAGIAS, base.letra)
+    res['planos'] = planos.agregar(b, Lc, campo.MAGIAS, base.letra)
 
 
 def avaliar(caminho, modo='rapido', forcar=False, eixos=None, linhas=None):

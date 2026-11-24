@@ -59,6 +59,10 @@ Cada premissa é um "peso" do modelo. Mudar: `python -m dh premissa <nome> <valo
 | `base.rounds_por_luta` | 4 | 2026-11-18 | 1176 | Rounds por luta em todos os eixos (duração típica de um combate). |
 | `base.save_tipo` | {'For': 1, 'Con': 1, 'Des': 0.5, 'Int': 0, 'Sab': 0, 'Car': 0} | 2026-11-18 | 1176 | Quanto cada atributo de save puxa para o save forte do monstro (1 = forte, 0 = fraco). For/Con fortes, mentais fracos. |
 | `base.topologias` | {'Campo aberto': {'peso': 0.25, 'area': 0.8, 'cruza': 0.3, 'alc_corpo_a_corpo_atras': 0.1, 'pg': 1.0, 'wall': 1.0}, 'Ruínas ou cidade': {'peso': 0.35, 'area': 1.0, 'cruza': 0.6, 'alc_corpo_a_corpo_atras': 0.15, 'pg': 1.0, 'wall': 1.0}, 'Sala de dungeon': {'peso': 0.4, 'area': 1.2, 'cruza': 0.9, 'alc_corpo_a_corpo_atras': 0.6, 'pg': 0.5, 'wall': 1.5}} | 2026-11-18 | 1176 | Terrenos e seus pesos no dia, multiplicador de alvos em área, fração que cruza o alcance do tanque, alcance de quem fica atrás, eficácia do Plant Growth e do Wall of Force. |
+| `concentracao.acertos_por_round` | {'front': 1.5, 'meio': 0.8, 'tras': 0.5} | 2026-11-24 | 0 | Acertos recebidos por round pela build, pela posição (front = defensor/striker ou linha com atenção de linha de frente; meio = skirmisher/meia distância; trás = atirador/retaguarda). Provisório, candidato a treino; idealmente sai do motor de atenção. |
+| `concentracao.ativa` | 1 | 2026-11-24 | 0 | Liga o ajuste de concentração genérico (dh/concentracao.py, Etapa C, 24/11): a magia de concentração da linha vale só a fração dos rounds em que se espera que ela fique de pé. |
+| `concentracao.foco_inimigo` | 1.0 | 2026-11-24 | 0 | Multiplicador dos acertos em quem concentra (inimigos espertos miram o conjurador concentrando; 1 = sem foco extra). |
+| `concentracao.forma_con` | 3 | 2026-11-24 | 0 | Bônus de save de CON de uma forma (Polymorph/Shapechange/Animal Shapes): usa o da besta (ex.: T-Rex +3), não o do conjurador. |
 
 ## controle
 

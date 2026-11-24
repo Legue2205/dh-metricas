@@ -773,3 +773,15 @@ premissas `moeda.*`), e com qual peso da área.
   mudam; ex.: Vengeance nv7 passa de Bless ×4 para marca / voto+smite).
 - **D17 — gate do dano com pacote:** `comparar_chassi.py` usa, no eixo de dano, o melhor entre a variante sem feat e o
   pacote_vh da subclasse (`--sem-pacote` desliga). Próximo passo dos pacotes: levá-los ao gerador de chassi.
+
+### Etapa C (24/11) — concentração genérica e tag "forma" (`dh/concentracao.py`)
+Linha com concentração (orcamento.concentracoes ou controle.atencao.conc) vale, nos planos, base + f·(linha − base),
+com base = linha principal e f = fração média dos rounds em que a magia fica de pé: s = exp(−acertos·(1 − p)),
+acertos por round pela posição (`concentracao.acertos_por_round` front 1,5 / meio 0,8 / trás 0,5; linha com atenção
+de linha de frente = front), p = save de CON contra CD 10 (vantagem com War Caster). **Só o ganho sobre a base cai**
+(a ação gasta para conjurar não volta). Linha de **forma** (Polymorph, Shapechange, Animal Shapes) ganha a tag
+`forma`, fica na frente e usa o CON da forma (`concentracao.forma_con` = 3). As linhas gravadas ficam brutas (com
+`linha.concentracao` = f, p_save, acertos); planos, anéis e visões usam a cópia ajustada. Exemplos: Bless do
+Vengeance nv7 f = 0,58 (CON +3 na frente); Hunter's Mark do Gloom Stalker f = 0,81; Polymorph em T-Rex do
+Transmutation nv11 f = 0,58 → dano do dia de foco 12,4 → ~10. Lacuna: a própria principal com concentração não é
+ajustada; Aura of Protection ainda não entra no CON do save (o sv da build não a inclui — conferir).

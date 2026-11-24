@@ -19,7 +19,8 @@ class ErroBuild(ValueError):
 
 def carregar(caminho):
     from .premissas import resolver as _premissas
-    b = _premissas(json.loads(Path(caminho).read_text(encoding='utf-8')))
+    from .invocacoes import aplicar as _invocacoes
+    b = _invocacoes(_premissas(json.loads(Path(caminho).read_text(encoding='utf-8'))))
     erros = validar(b)
     if erros: raise ErroBuild(f'{caminho}:\n  - ' + '\n  - '.join(erros))
     return b

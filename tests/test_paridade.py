@@ -76,6 +76,9 @@ def test_controle(arq, total, campo, aten, monkeypatch):
     # paridade com as planilhas: Corpo com a referência da própria vaga (antes da referência única de 19/11)
     from dh.controle import atencao
     monkeypatch.setattr(atencao, 'ref_padrao', atencao.ref)
+    from dh import premissas
+    orig = premissas.P                       # D15 (24/11): a planilha conta as invocações numerosas (esqueletos do Amadeus)
+    monkeypatch.setattr(premissas, 'P', lambda n, padrao=None: 1.0 if n == 'invocacao.peso.numerosa' else orig(n, padrao))
     arq, _, lid = arq.partition(':'); lid = lid or 'principal'
     _, r = motor.avaliar(B / arq, 'rapido', forcar=True, eixos=['controle'], linhas=[lid])
     c = r['linhas'][lid]['controle']

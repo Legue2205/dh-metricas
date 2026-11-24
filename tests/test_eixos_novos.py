@@ -122,6 +122,9 @@ def test_descanso_curto_devolve():
 def test_invocacoes(monkeypatch):
     from dh.controle import atencao
     monkeypatch.setattr(atencao, 'ref_padrao', atencao.ref)   # paridade com a referência da vaga (antes de 19/11)
+    from dh import premissas
+    orig = premissas.P                                         # D15 (24/11): paridade do motor com a numerosa contando
+    monkeypatch.setattr(premissas, 'P', lambda n, padrao=None: 1.0 if n == 'invocacao.peso.numerosa' else orig(n, padrao))
     from dh.dano import avaliar
     spec = {"ataques": [{"n": 1, "bonus": 6, "dano": "2d8"}]}
     inv = [{"nome": "esqueletos", "quantidade": 7, "pv": 19, "ca": 16, "ataque": {"bonus": 4, "dano": "1d6+5"}}]

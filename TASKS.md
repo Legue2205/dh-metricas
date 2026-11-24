@@ -610,3 +610,49 @@ Dano 0,25 (nv7) / **0,31** (nv11) ✓; Ranger nv7 −0,19 → 0,00 (D12, Dread A
   usam a visão misto). Ferramentas de análise usadas nesta sessão (não versionadas, fáceis de refazer): tabela por
   classe de pista × dano do motor; contagem de pares discordantes por subclasse; τ por visão (padrao/misto/externo:
   0,24/0,25/0,30 no 7); sensibilidade a deslocar o nível de um grupo de builds.
+
+## Sessão da régua de dano (24/11) — análises e decisões
+
+### Crítica do critério de pronto (conversa de 24/11, 02h50)
+O gate τ ≥ 0,30 é **leniente**: τ 0,30 ≈ r 0,45 (≈ 65% dos pares na ordem certa); o "> 2 × erro-padrão" é contra H0
+(τ = 0) e o gate olha o valor pontual (com erro 0,08 o intervalo vai de ~0,15 a ~0,45). Assume sem testar: gabarito =
+verdade, ausência de overfitting (D11/D12 foram ajustados olhando o mesmo gabarito), e que bater τ > 0 já é valor.
+Usuário: as fontes (RPGBot, Treant Monk, D4) concordam no geral (forte é forte, fraco é fraco; discordam nos médios);
+teto chutado de τ ~0,7–0,8 contra o RPGBot. Adicionar outras fontes agora custa caro (D4 só tem vídeo). **Estratégia:
+dano como coluna dorsal** (eixo mais estudado e com menos hipóteses) e depois usar o dano para fortalecer os outros
+eixos; talvez mover o critério de pronto para frente depois.
+
+### Ranking de dano (`calibracao/ranking_dano.py`)
+`python calibracao/ranking_dano.py [--nivel 7] [--top 20] [--sem-feat] [--csv f.csv]`: nível de dano (misto / plano /
+externo), melhor linha, DPR na CA de referência, linhas do plano e pistas do RPGBot por build de chassi.
+Achados (antes de D15): nv7 dominado por Barbarians (Reckless) e invocadores; nv11 = 17 dos 18 primeiros são Rangers
+com Conjure Animals (subclasses empatadas). Metade das subclasses (57/116 no 7) empata com outra da mesma classe no dano
+— pares empatados não contam no τ. Paladin: o plano gasta tudo em Bless (linha de smite 8,5 → plano 4,3 no 7).
+Ancients Paladin com 11,5 de DPR no 7 (suspeita de bug). GWM no Berserker sobe o DPR (31,9 → 35,9 na CA 15) mas o nível
+cai (7,1 → 6,8) — investigar (ASI perdido nas CAs altas?).
+
+### D15 (24/11, decidida pelo usuário) — tipos de invocação
+`dh/invocacoes.py`: cada invocação tem tipo (campo `"tipo"`, ou inferido do nome): **numerosa** (modelo antigo:
+Conjure Animals/Elemental/…, Animate Dead, ciclo do necromante), **summon** (Summon X do Tasha) e **companheiro**
+(feature de subclasse). Premissas `invocacao.peso.<tipo>` multiplicam a quantidade: numerosa **0**, summon 1,
+companheiro 1. Peso 0 tira a criatura; se a linha só existia para invocar (criatura fora da linha principal), a linha
+sai do plano e dos anéis. Motivo (usuário): economia de ação quebra o jogo, e o modelo não cobre concentração caindo nem
+Fireball no bando; o Tasha's migrou para os Summons justamente para balancear. Peso numerosa = candidato a parâmetro
+treinável. Experimento antes de virar premissa (cópias do repo, só builds afetadas recalculadas): τ dano
+0,25/0,31 → **0,29/0,33** sem numerosa (ganho < 1 erro-padrão; quase todo do Wizard/Necromancy); tirar também os Summons
+não ajuda (0,29/0,30). Sem numerosa o topo do 11 vira Fighters (7 no top 20), Barbarians (5) e Paladins Vengeance.
+Afeta também builds da party: **Amadeus perde os esqueletos** (os testes de paridade com a planilha forçam peso 1) —
+confirmar com o usuário se builds de mesa ficam isentas.
+
+### Diagnóstico estrutural (usuário, 24/11 13h): uma build por subclasse
+O RPGBot avalia o **teto** da subclasse bem construída; o chassi mede **uma** build (pura, um feat, arquétipo genérico).
+Subclasses permitem arquétipos diferentes (ex.: Gloom Stalker e Samurai com SS+CBE+Elven Accuracy; Gloom Stalker 5 /
+Fighter 2 / Assassin 3), então comparamos teto com build típica. Plano: (A2) comparar chassi × builds originais do
+RPGBot (já no repo, muitas com multiclasse) e medir o τ com o **máximo por subclasse**; (A3) catálogo de **pacotes de
+otimização** aplicados a todo chassi compatível (SS+CBE, GWM+PAM, Elven Accuracy + vantagem, dips Fighter 2 /
+Assassin 3 / Hexblade 1 / Paladin 2, armor dip), valor da subclasse = melhor pacote legal; chassi-puro fica como piso.
+Cuidado: o máximo favorece quem tem mais variantes → mesmo catálogo para todos e pacote só se couber nos ASIs do nível.
+**Regras de mesa (futuro, depois da calibração RAW):** homebrew do Treant Monk como premissas ligáveis —
+`regra.shield_banido`, `regra.armadura_exige_classe_da_magia` (sem armor dip; feats de armadura liberam),
+`regra.ataque_poderoso_universal` (−5/+10 em todo ataque com arma; cuidado: favorece espada e escudo). O usuário quer
+talvez adotar a regra de armadura na mesa; o teste natural é ver se a distância teto × piso das subclasses encolhe.

@@ -160,7 +160,7 @@ def agregar(b, res_linhas, magias, letra):
                     return S._nivel(raw, S.REGUAS[2])
             if eixo == 'dano':      # idem no DPR, CA a CA (smite extra em cima de Bless soma DPR, não níveis)
                 from . import dano as D
-                dp = lambda i: (res_linhas[i].get('dano') or {}).get('dpr')
+                dp = lambda i: (lambda d: d.get('dpr_regua') or d.get('dpr'))(res_linhas[i].get('dano') or {})   # D12: com peso
                 if dp(c['linha']):
                     z = {k: 0.0 for k in dp(c['linha'])}; d0 = dp(bid) or z
                     lst = [dp(c['linha'])[f'CA {ca}'] + sum(max(0.0, (dp(x) or z)[f'CA {ca}'] - d0.get(f'CA {ca}', 0.0))

@@ -56,7 +56,7 @@ def ficha(spec, corpo):
              dpr=spec['dpr'])
     for k in ('res', 'adv', 'red'):
         if corpo.get(k): f[k] = corpo[k]
-    for k in ('soft', 'conc', 'esqueletos', 'agarra', 'inv_pv', 'inv_ca', 'inv_dpr', 'oculto'):
+    for k in ('soft', 'conc', 'esqueletos', 'agarra', 'inv_pv', 'inv_ca', 'inv_dpr', 'oculto', 'redireciona'):
         if k in spec: f[k] = spec[k]
     for k in ('acc_m', 'acc_r'):
         if k in spec: f[k] = tuple(spec[k])
@@ -95,6 +95,12 @@ def distribui(e, party, ti, grap=None):
             mov = sum(P[j] * b for j, b in back) * stop
             for j, b in back: P[j] *= (1 - stop * b)
             P[k] += mov
+    for k, p in enumerate(party):   # D13 (24/11): puxa para si o dano mirado nos aliados (Aura of the Guardian, Divine
+        r = p.get('redireciona')      # Allegiance, Protective Bond): fração dos turnos contra os outros vira contra ele
+        if not r: continue            # (melee e à distância; a reação e o alcance já estão na fração). Como um taunt
+        for j, q in enumerate(party): # forte: só vale se a build aguenta (CA e PV dela entram na vida).
+            if j == k or q.get('skel'): continue
+            mov = P[j] * r; P[j] -= mov; P[k] += mov
     if grap is not None and e is grap[0]:  # agarrão: o agarrado só alcança quem o agarra
         k = grap[1]; reach = H['reach_grande'] if e['cr'] >= 5 else H['reach_pequeno']
         P = (1 - reach) * P + reach * np.eye(len(party))[k]

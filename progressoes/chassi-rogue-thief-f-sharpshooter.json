@@ -36,15 +36,17 @@
   "linhas": [
    {
     "id": "principal",
-    "hipotese": "besta leve com Steady Aim + Sneak",
+    "hipotese": "besta leve com Steady Aim/Hide + Sneak",
     "dano": {
      "ataques": [
       {
        "n": 1,
        "bonus": 6,
        "dano": "1d8+3",
-       "vantagem": 1.0,
-       "nota": "besta leve (Steady Aim)",
+       "vantagem": {
+        "$p": "rogue.vantagem.atirador"
+       },
+       "nota": "besta leve (Steady Aim ou Hide)",
        "poder": [
         -5,
         10
@@ -54,8 +56,15 @@
      "por_turno": [
       {
        "dano": "4d6",
-       "prob": 1.0,
-       "nota": "Sneak Attack (Steady Aim)"
+       "prob": {
+        "ou": [
+         {
+          "$p": "rogue.vantagem.atirador"
+         },
+         0.75
+        ]
+       },
+       "nota": "Sneak Attack (vantagem ou aliado adjacente)"
       }
      ]
     },
@@ -200,15 +209,17 @@
    "linhas": [
     {
      "id": "principal",
-     "hipotese": "besta leve com Steady Aim + Sneak",
+     "hipotese": "besta leve com Steady Aim/Hide + Sneak",
      "dano": {
       "ataques": [
        {
         "n": 1,
         "bonus": 9,
         "dano": "1d8+5",
-        "vantagem": 1.0,
-        "nota": "besta leve (Steady Aim)",
+        "vantagem": {
+         "$p": "rogue.vantagem.atirador"
+        },
+        "nota": "besta leve (Steady Aim ou Hide)",
         "poder": [
          -5,
          10
@@ -218,8 +229,15 @@
       "por_turno": [
        {
         "dano": "6d6",
-        "prob": 1.0,
-        "nota": "Sneak Attack (Steady Aim)"
+        "prob": {
+         "ou": [
+          {
+           "$p": "rogue.vantagem.atirador"
+          },
+          0.75
+         ]
+        },
+        "nota": "Sneak Attack (vantagem ou aliado adjacente)"
        }
       ]
      },

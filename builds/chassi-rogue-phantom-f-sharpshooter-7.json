@@ -30,8 +30,10 @@
       "n": 1,
       "bonus": 6,
       "dano": "1d8+3",
-      "vantagem": 1.0,
-      "nota": "besta leve (Steady Aim)",
+      "vantagem": {
+       "$p": "rogue.vantagem.atirador"
+      },
+      "nota": "besta leve (Steady Aim ou Hide)",
       "poder": [
        -5,
        10
@@ -41,8 +43,15 @@
     "por_turno": [
      {
       "dano": "4d6",
-      "prob": 1.0,
-      "nota": "Sneak Attack (Steady Aim)"
+      "prob": {
+       "ou": [
+        {
+         "$p": "rogue.vantagem.atirador"
+        },
+        0.75
+       ]
+      },
+      "nota": "Sneak Attack (vantagem ou aliado adjacente)"
      }
     ],
     "por_luta": [

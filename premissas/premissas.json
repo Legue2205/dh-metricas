@@ -2131,5 +2131,75 @@
         "motivo": "P2.15 (usuário, 23/11): normalizar por eixo; recalculado dos resultados."
       }
     ]
+  },
+  "rogue.vantagem.atirador": {
+    "valor": 0.8,
+    "eixo": "dano",
+    "desde": "2026-11-24",
+    "descricao": "D11: chance de o Rogue atirador ter vantagem no ataque do turno, combinando Steady Aim (quando não precisa andar) e Hide (quando há onde se esconder e passa na percepção passiva). Não é produto: as fontes cobrem os turnos uma da outra. Turno 1 costuma ser de posicionamento. Antes: 1,0 (Steady Aim em todo turno). Treinável.",
+    "historico": [
+      {
+        "data": "2026-11-24",
+        "de": null,
+        "para": 0.8,
+        "motivo": "D11 (usuário, 24/11): uma chance global de vantagem ~0,75–0,85, ajustável por subclasse."
+      }
+    ]
+  },
+  "rogue.vantagem.ajuste_scout": {
+    "valor": 0.1,
+    "eixo": "dano",
+    "desde": "2026-11-24",
+    "descricao": "D11: o Scout tem Steady Aim mais confiável (Skirmisher: anda na reação, fora do próprio turno, então não perde o Steady Aim) e é feito para isso. Soma à rogue.vantagem.atirador. Treinável.",
+    "historico": [
+      {
+        "data": "2026-11-24",
+        "de": null,
+        "para": 0.1,
+        "motivo": "D11 (usuário, 24/11): Scout justifica vantagem maior pelo movimento de reação."
+      }
+    ]
+  },
+  "controle.atencao.redireciona.aura": {
+    "valor": 0.25,
+    "eixo": "controle",
+    "desde": "2026-11-24",
+    "descricao": "D13: fração dos turnos inimigos contra aliados que a build puxa para si com alcance de aura (Aura of the Guardian, 10 pés; Protective Bond, teleporte de 30 pés). Limitada pela reação (1 por round contra ~3–4 turnos inimigos em aliados) e pelo alcance. Treinável.",
+    "historico": [
+      {
+        "data": "2026-11-24",
+        "de": null,
+        "para": 0.25,
+        "motivo": "D13 (usuário, 24/11): puxar o dano de um aliado para si entra no corpo, como um taunt forte; só vale se aguentar o dano."
+      }
+    ]
+  },
+  "controle.atencao.redireciona.adjacente": {
+    "valor": 0.15,
+    "eixo": "controle",
+    "desde": "2026-11-24",
+    "descricao": "D13: idem, só aliado adjacente (Divine Allegiance, 5 pés): o alcance corta a fração. Treinável.",
+    "historico": [
+      {
+        "data": "2026-11-24",
+        "de": null,
+        "para": 0.15,
+        "motivo": "D13 (usuário, 24/11): puxar o dano de um aliado para si entra no corpo, como um taunt forte; só vale se aguentar o dano."
+      }
+    ]
+  },
+  "dano.peso_round1": {
+    "valor": 1.25,
+    "eixo": "dano",
+    "desde": "2026-11-24",
+    "descricao": "D12: peso do 1º round na régua de dano (rounds pesam [w, 1, 1, 1], normalizados: o dano constante não muda). Vale para ataques marcados round1 (Dread Ambusher) e para o dano por luta (smites e afins), gasto nos primeiros acertos. Quem age antes tira inimigo da luta mais cedo; peso moderado para não favorecer demais o burst (contra chefe importa menos). Treinável; poderia variar por tipo de encontro.",
+    "historico": [
+      {
+        "data": "2026-11-24",
+        "de": null,
+        "para": 1.25,
+        "motivo": "D12 (usuário, 24/11): peso extra no 1º round, mas não alto."
+      }
+    ]
   }
 }

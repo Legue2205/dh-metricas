@@ -604,7 +604,21 @@
  },
  "niveis": {
   "7": {
-   "_texto": "Cleric 7; atributos {'for': 12, 'des': 15, 'con': 13, 'int': 8, 'sab': 19, 'car': 10}; CA 19 (meia-armadura + escudo)."
+   "_texto": "Cleric 7; atributos {'for': 12, 'des': 15, 'con': 13, 'int': 8, 'sab': 19, 'car': 10}; CA 19 (meia-armadura + escudo).",
+   "patches_linhas": [
+    {
+     "origem": "Protective Bond",
+     "eixos": {
+      "controle": {
+       "atencao": {
+        "redireciona": {
+         "$p": "controle.atencao.redireciona.aura"
+        }
+       }
+      }
+     }
+    }
+   ]
   },
   "11": {
    "_texto": "Cleric 11; atributos {'for': 12, 'des': 16, 'con': 13, 'int': 8, 'sab': 20, 'car': 10}; CA 19 (meia-armadura + escudo); Potent Spellcasting.",
@@ -1186,6 +1200,20 @@
       }
      },
      "herda": "principal"
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Protective Bond",
+     "eixos": {
+      "controle": {
+       "atencao": {
+        "redireciona": {
+         "$p": "controle.atencao.redireciona.aura"
+        }
+       }
+      }
+     }
     }
    ]
   }

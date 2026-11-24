@@ -3,7 +3,7 @@
 Dois jeitos de informar o dano de uma linha:
   - "medido": lista com os 9 DPRs já calculados (migração das linhas antigas, que não tinham motor salvo);
   - "ataques"/"por_turno"/"por_luta"/"automatico"/"com_save": o motor calcula em fórmula fechada (valor esperado).
-Campos de "ataques": n (fracionário ok), bonus, dano, crit_em, dados_crit, vantagem (0–1), elven_accuracy,
+Campos de "ataques": n (fracionário ok), bonus, dano, crit_em, dados_crit, vantagem (0–1 ou prob combinada), round1 (D12), elven_accuracy,
 poder [-5, 10] (GWM/Sharpshooter: usa o modo que rende mais em cada CA).
 "por_turno": 1× por turno no 1º acerto (Sneak Attack; prob = chance de ter o gatilho). "por_luta": smites (usos ou usos_dia).
 "com_save": [{"n", "cd", "save": "Sab", "dano", "meio": false}] — truques/magias de alvo único com save.
@@ -44,6 +44,21 @@ def nivel_equivalente(dpr):
     return round(beta * nb + (1 - beta) * np_, 1), perfil
 
 
+def prob(x):
+    """Probabilidade de julgamento (D11, 24/11): número, ou combinação de fontes (premissas entram como {"$p": nome},
+    resolvidas ao carregar a build): {"ou": [p1, p2, …]} = chance de ao menos uma valer (1 − Π(1 − pᵢ));
+    {"soma": [p, ajuste, …]} = soma limitada a [0, 1] (ajuste de subclasse)."""
+    if isinstance(x, (int, float)): return x
+    if 'ou' in x:
+        r = 1.0
+        for y in x['ou']: r *= 1 - prob(y)
+        return 1 - r
+    return max(0.0, min(1.0, sum(prob(y) for y in x.get('soma', []))))
+
+
+def vantagem(a): return prob(a.get('vantagem', 0.0))
+
+
 # ---------------- DPR em fórmula fechada ----------------
 _DADO = re.compile(r'(\d*)d(\d+)')
 
@@ -66,7 +81,7 @@ def dados(expr):
 def _ataque1(a, ca, bonus, fixo):
     avg, dad = dados(a['dano'])
     if 'dados_crit' in a: dad = dados(a['dados_crit'])[1]
-    c0 = (21 - a.get('crit_em', 20)) / 20; v = a.get('vantagem', 0.0)
+    c0 = (21 - a.get('crit_em', 20)) / 20; v = vantagem(a)
     k = 3 if a.get('elven_accuracy') else 2            # dados rolados quando há vantagem
     p0 = p_acerto(bonus, ca)
     p = (1 - v) * p0 + v * (1 - (1 - p0) ** k)
@@ -97,14 +112,14 @@ def _dado_no_erro(f, ataques, por_turno, ca):
     """Valor esperado por round de somar 1dD a um último ataque errado (sem acerto antes no turno); usos U por luta."""
     D = f['dado']; U = f.get('usos', 0)
     if U <= 0 or not ataques: return 0.0
-    a = ataques[-1]; b = a['bonus']; v = a.get('vantagem', 0.0); k = 3 if a.get('elven_accuracy') else 2
+    a = ataques[-1]; b = a['bonus']; v = vantagem(a); k = 3 if a.get('elven_accuracy') else 2
     pr = {r: (1 - v) / 20 + v * ((r / 20) ** k - ((r - 1) / 20) ** k) for r in range(1, 21)}
     conv = sum(pr[r] * sum(1 for j in range(1, D + 1) if r + b + j >= ca) / D
                for r in range(2, 20) if r + b < ca)        # nat 1 não converte; nat 20 já acerta
     outros = 1.0
     for x in ataques[:-1]: outros *= (1 - _ataque(x, ca)[0]) ** x.get('n', 1)
     if a.get('n', 1) > 1: outros *= (1 - _ataque(a, ca)[0]) ** (a['n'] - 1)
-    val = dados(a['dano'])[0] + sum(x.get('prob', 1.0) * dados(x['dano'])[0] for x in por_turno if x.get('gatilho') != 'critico')
+    val = dados(a['dano'])[0] + sum(prob(x.get('prob', 1.0)) * dados(x['dano'])[0] for x in por_turno if x.get('gatilho') != 'critico')
     return min(conv * outros, U / R) * val
 
 
@@ -146,23 +161,35 @@ def _com_save(x, ca):
     return x.get('n', 1) * avg * (falha + (1 - falha) * (0.5 if x.get('meio') else 0.0))
 
 
-def dpr(spec, ca, lutas_dia=4, invocacoes=()):
+def _peso_inicio(u):
+    """D12 (24/11): rounds pesam [w, 1, 1, …] (w = dano.peso_round1), normalizados para o dano constante não mudar.
+    Fator do dano que sai nos primeiros acertos da luta: u usos gastos nos u primeiros rounds (u ≤ 1: só no 1º)."""
+    from .premissas import P
+    w = P('dano.peso_round1'); k = min(max(u, 1.0), R)
+    return R / (w + R - 1) * (w + k - 1) / k
+
+
+def dpr(spec, ca, lutas_dia=4, invocacoes=(), regua=False):
+    """DPR esperado na CA. regua=True: com o peso do 1º round (D12), só para o nível da régua; o DPR mostrado é o puro."""
     if 'medido' in spec: return spec['medido'][CAS.index(ca)]
+    pi = _peso_inicio if regua else (lambda u: 1.0)
     total = 0.0; nenhum = 1.0; sem_crit = 1.0; pc = []
     for a in spec.get('ataques', []):          # n pode ser fracionário (ex.: Action Surge = 2 ataques ÷ 4 rounds)
         n = a.get('n', 1); p, c, e = _ataque(a, ca)
-        total += n * e; nenhum *= (1 - p) ** n; sem_crit *= (1 - c) ** n; pc.append((n * p, n * c))
+        total += n * e * (pi(1) if a.get('round1') else 1.0)   # D12: ataque só do 1º round (Dread Ambusher)
+        nenhum *= (1 - p) ** n; sem_crit *= (1 - c) ** n; pc.append((n * p, n * c))
     algum = 1 - nenhum
     crit_rel = (sum(c for _, c in pc) / sum(p for p, _ in pc)) if pc and sum(p for p, _ in pc) else 0.0
     for x in spec.get('por_turno', []):        # Sneak Attack e afins: 1× por turno no 1º acerto
         avg, dad = dados(x['dano'])
         if x.get('gatilho') == 'critico':      # ex.: Piercer, dado extra no 1º crítico do turno (não dobra)
-            total += x.get('prob', 1.0) * (1 - sem_crit) * avg; continue
-        total += x.get('prob', 1.0) * algum * (avg + crit_rel * dad)
+            total += prob(x.get('prob', 1.0)) * (1 - sem_crit) * avg; continue
+        total += prob(x.get('prob', 1.0)) * algum * (avg + crit_rel * dad)
     for x in spec.get('por_luta', []):         # smites e afins: usos por luta espalhados nos R rounds
         avg, dad = dados(x['dano'])
         usos = x['usos'] if 'usos' in x else x['usos_dia'] / lutas_dia   # recurso diário repartido pelas lutas
-        total += _usados(usos, pc, sum(a.get('n', 1) for a in spec.get('ataques', []))) / R * (avg + crit_rel * dad)
+        u = _usados(usos, pc, sum(a.get('n', 1) for a in spec.get('ataques', [])))
+        total += u / R * (avg + crit_rel * dad) * pi(u)   # D12: gasto nos primeiros acertos
     if 'automatico' in spec: total += dados(spec['automatico'])[0]
     for x in spec.get('com_save', []): total += _com_save(x, ca)
     if 'focused_aim' in spec: total += _focused(spec['focused_aim'], spec.get('ataques', []), ca)
@@ -174,8 +201,11 @@ def dpr(spec, ca, lutas_dia=4, invocacoes=()):
 
 def avaliar(spec, lutas_dia=4, invocacoes=()):
     """invocacoes só somam quando o dano é calculado; em 'medido' já estão dentro do número."""
-    lista = [dpr(spec, ca, lutas_dia, invocacoes) for ca in CAS]
+    bruto = [dpr(spec, ca, lutas_dia, invocacoes) for ca in CAS]
+    lista = [dpr(spec, ca, lutas_dia, invocacoes, regua=True) for ca in CAS]   # D12: o nível usa o DPR com peso do 1º round
     nv, perfil = nivel_equivalente(lista)
-    return dict(dpr={f'CA {ca}': v for ca, v in zip(CAS, lista)}, nivel_eq=nv, rank=letra(nv), perfil=perfil,
-                nivel_bruta=round(_degraus(lista, BRUTA), 1), nivel_precisa=round(_degraus(lista, PRECISA), 1),
-                medido='medido' in spec)
+    out = dict(dpr={f'CA {ca}': v for ca, v in zip(CAS, bruto)}, nivel_eq=nv, rank=letra(nv), perfil=perfil,
+               nivel_bruta=round(_degraus(lista, BRUTA), 1), nivel_precisa=round(_degraus(lista, PRECISA), 1),
+               medido='medido' in spec)
+    if lista != bruto: out['dpr_regua'] = {f'CA {ca}': v for ca, v in zip(CAS, lista)}
+    return out

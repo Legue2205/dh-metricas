@@ -59,7 +59,7 @@ def fatia(L, sub, feat=None):
         pt = [{"dano": "1d8", "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"}]
         txt = "Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados."
     elif sub == 'gloom-stalker':
-        extra_at = [lambda mc: atk(0.25, mc, '+1d8', nota="Dread Ambusher: ataque extra +1d8 no 1º round")]
+        extra_at = [lambda mc: atk(0.25, mc, '+1d8', nota="Dread Ambusher: ataque extra +1d8 no 1º round", round1=True)]
         if L >= 7: saves['sab'] = m['sab'] + P                                   # Iron Mind
         if L >= 11: extra_at.append(lambda mc: atk(0.5, mc, nota="Stalker's Flurry: ataque extra após errar (≈0,5/turno)"))
         txt = "Dread Ambusher (3); Iron Mind (7); Stalker's Flurry (11); Umbral Sight não modelado."

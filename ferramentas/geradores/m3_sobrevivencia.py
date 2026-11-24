@@ -13,7 +13,12 @@ import re
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
-ORIGENS = ('Second Wind', 'Indomitable', 'Relentless Rage')
+ORIGENS = ('Second Wind', 'Indomitable', 'Relentless Rage', 'Divine Allegiance', 'Aura of the Guardian', 'Protective Bond')
+# D13 (24/11): puxar para si o dano mirado num aliado = taunt forte no corpo (controle.atencao.redireciona; premissas
+# controle.atencao.redireciona.*: fração dos turnos contra aliados que passa para a build). (classe, sub): (nível, origem, premissa)
+REDIRECIONA = {('paladin', 'crown'): (7, 'Divine Allegiance', 'adjacente'),
+               ('paladin', 'redemption'): (7, 'Aura of the Guardian', 'aura'),
+               ('cleric', 'peace'): (6, 'Protective Bond', 'aura')}
 
 
 def _classe(prog):
@@ -22,8 +27,19 @@ def _classe(prog):
     return m.group(1) if m else ''
 
 
-def patches(classe, L):
+def _sub(prog):
+    if prog.get('subclasse'): return prog['subclasse']
+    c = _classe(prog)
+    for (cl, sb) in REDIRECIONA:
+        if cl == c and re.match(rf'(?:rpgbot|chassi)-{cl}-{sb}(?:-|$)', prog.get('id', '')): return sb
+    return ''
+
+
+def patches(classe, L, sub=''):
     out = []
+    r = REDIRECIONA.get((classe, sub))
+    if r and L >= r[0]:
+        out.append({"origem": r[1], "eixos": {"controle": {"atencao": {"redireciona": {"$p": f"controle.atencao.redireciona.{r[2]}"}}}}})
     if classe == 'fighter':
         out.append({"origem": "Second Wind", "eixos": {"defesa": {"cura_luta": round(0.5 * (5.5 + L), 2)}}})
         if L >= 9:
@@ -41,12 +57,12 @@ def _so_ela(item):
 
 
 def aplicar(prog):
-    c = _classe(prog); antes = json.dumps(prog, sort_keys=True)
+    c = _classe(prog); sb = _sub(prog); antes = json.dumps(prog, sort_keys=True)
     for nv, patch in prog.get('niveis', {}).items():
-        ps = patches(c, int(nv))
+        ps = patches(c, int(nv), sb)
         if ps: patch['patches_linhas'] = ps
         else: patch.pop('patches_linhas', None)
-    if c in ('fighter', 'barbarian'):
+    if c in ('fighter', 'barbarian') or (c, sb) in REDIRECIONA:
         for d in [prog.get('base', {})] + list(prog.get('niveis', {}).values()):
             desc = d.get('descricao') if isinstance(d, dict) else None
             if isinstance(desc, dict) and isinstance(desc.get('nao_modelado'), str):

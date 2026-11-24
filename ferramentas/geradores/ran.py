@@ -38,7 +38,7 @@ def fazer(L, sub):
         pt = [{"dano": "1d8", "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"}]
         txt = "Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados."
     elif sub == 'gloom-stalker':
-        extra_at = [lambda marca: arco(0.25, b, d, marca, '+1d8', nota="Dread Ambusher: ataque extra +1d8 no 1º round")]
+        extra_at = [lambda marca: arco(0.25, b, d, marca, '+1d8', nota="Dread Ambusher: ataque extra +1d8 no 1º round", round1=True)]
         if L >= 7: ss['sv']['sab'] = m['sab'] + P                       # Iron Mind
         if L >= 11:   # Stalker's Flurry: 1×/turno, errou → ataque extra. P(≥1 erro em 2 ataques com SS) ≈ 0,5 (passada 2)
             extra_at.append(lambda marca: arco(0.5, b, d, marca, nota="Stalker's Flurry: ataque extra após errar (≈0,5/turno)"))

@@ -3,7 +3,7 @@
 Rodar da raiz: python ferramentas/geradores/chassi_rogue.py && python -m dh expandir
 Features das subclasses reaproveitadas de rog.py; raça, multiclasse, feats e atributos do RPGBot descartados.
 Régua comum: Sneak Attack com os gatilhos das convenções do Rogue (aliado 0,75; Rakish 0,9; fonte própria 1,0);
-couro batido (12 + Des); Uncanny Dodge (5+), Evasion (7+). Atirador = besta leve (1d8, simples) + Steady Aim;
+couro batido (12 + Des); Uncanny Dodge (5+), Evasion (7+). Atirador = besta leve (1d8, simples) + Steady Aim/Hide (vantagem = premissa rogue.vantagem.atirador, D11);
 skirmisher = rapieira + Cunning Action (Disengage), sem Steady Aim (Steady Aim prende no lugar)."""
 import math
 import sys
@@ -58,10 +58,20 @@ def atq(b, arma, d, feat, extra='', **k):
 def pierce(feat, f): return piercer(f) if feat == 'Piercer' else []
 
 
-def mira_linha(L, b, d, feat, hip='besta leve com Steady Aim + Sneak', arma='1d8', f=8, nota='besta leve (Steady Aim)',
-               pos='atirador'):
-    dano = {"ataques": [atq(b, arma, d, feat, vantagem=1.0, nota=nota)],
-            "por_turno": [sneak(L, P_PROPRIA, " (Steady Aim)")] + pierce(feat, f)}
+V_ATIR = {"$p": "rogue.vantagem.atirador"}   # D11 (24/11): Steady Aim + Hide combinados, não 100% dos turnos
+
+
+def v_mira(extra=None):
+    """Chance de vantagem do atirador; extra = outra fonte independente (ex.: Assassinate) ou ajuste {"soma": …}."""
+    if extra is None: return V_ATIR
+    return extra if isinstance(extra, dict) else {"ou": [V_ATIR, extra]}
+
+
+def mira_linha(L, b, d, feat, hip='besta leve com Steady Aim/Hide + Sneak', arma='1d8', f=8,
+               nota='besta leve (Steady Aim ou Hide)', pos='atirador', v=None):
+    v = v_mira(v)
+    dano = {"ataques": [atq(b, arma, d, feat, vantagem=v, nota=nota)],
+            "por_turno": [sneak(L, {"ou": [v, P_ALIADO]}, " (vantagem ou aliado adjacente)")] + pierce(feat, f)}
     l = ln('principal', hip, dano, L, pos); l['acao_bonus'] = AB_MIRA
     return l
 
@@ -97,7 +107,8 @@ def assassin(L, feat):   # atirador; Assassinate se sobrepõe ao Steady Aim
     l2 = ln('assassinate', 'besta leve sem Steady Aim (ação bônus livre); Sneak por aliado ou Assassinate no round 1',
             {"ataques": [atq(b, '1d8', d, feat, vantagem=v, nota="vantagem do Assassinate no round 1")],
              "por_turno": [sneak(L, prob, " (aliado adjacente ou Assassinate)")] + pierce(feat, 8)}, L, 'atirador')
-    return fat(s, corpo, [mira_linha(L, b, d, feat), l2], f"Assassinate (iniciativa vencida {p_ini}).")
+    l1 = mira_linha(L, b, d, feat, 'besta leve com Steady Aim/Hide + Sneak; Assassinate dá vantagem no round 1', v=v)
+    return fat(s, corpo, [l1, l2], f"Assassinate (iniciativa vencida {p_ini}).")
 
 
 def inquisitive(L, feat):
@@ -133,14 +144,17 @@ def phantom(L, feat):
 
 def scout(L, feat):
     s, m, p, corpo = base(L, ORD_PAD, feat); d, b = m['des'], p + m['des']
-    return fat(s, corpo, [mira_linha(L, b, d, feat)], "Skirmisher, Survivalist; Superior Mobility (9).")
+    # D11: Skirmisher anda na reação (fora do próprio turno), então o Steady Aim falha menos
+    v = {"soma": [V_ATIR, {"$p": "rogue.vantagem.ajuste_scout"}]}
+    return fat(s, corpo, [mira_linha(L, b, d, feat, 'besta leve com Steady Aim/Hide + Sneak; Skirmisher na reação', v=v)],
+               "Skirmisher, Survivalist; Superior Mobility (9).")
 
 
 def soulknife(L, feat):
     s, m, p, corpo = base(L, ('des', 'con', 'int', 'sab', 'car', 'for'), feat); d, b = m['des'], p + m['des']
     l1 = mira_linha(L, b, d, feat, 'Psychic Blade arremessada com Steady Aim + Sneak', arma='1d6', f=6,
                     nota='Psychic Blade (60 pés) com Steady Aim')
-    l1['dano']['por_turno'] = [sneak(L, P_PROPRIA, " (Steady Aim)")]   # dano psíquico: Piercer não vale
+    l1['dano']['por_turno'] = [sneak(L, {"ou": [V_ATIR, P_ALIADO]}, " (vantagem ou aliado adjacente)")]   # psíquico: sem Piercer
     l2 = ln('duas-laminas', 'duas Psychic Blades (ação bônus) + Sneak (aliado adjacente)',
             {"ataques": [atq(b, '1d6', d, feat), atq(b, '1d4', d, feat, nota="2ª lâmina na ação bônus")],
              "por_turno": [sneak(L, P_ALIADO)]}, L, 'atirador')

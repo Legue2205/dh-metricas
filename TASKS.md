@@ -556,3 +556,24 @@ Ordem de execução: D8 → D3 → D5 → D2 → D4 → D6 → D9 → D1 (D7 fec
   (a) no corpo: o personagem vira o corpo que absorve uma fração do dano mirado nos aliados (campo genérico
   `atencao.redireciona`: fração por round, limitada pela reação); (b) no suporte defensivo, como dano evitado nos
   aliados (só que o dano não some, muda de alvo); (c) não modelar agora e aceitar o corpo abaixo do gate.
+
+### Respostas do usuário (24/11, 01h) para D11–D13 e o que foi feito
+- **D11 → uma chance global de vantagem do atirador (~0,75–0,85), treinável, ajustável por subclasse.** Hide e Steady
+  Aim se cobrem (não é produto: as fontes não são independentes); turno 1 costuma ser de posicionamento; Rogue de corpo
+  a corpo quase nunca tem Steady Aim. **Feito:** premissa `rogue.vantagem.atirador` = 0,8 (antes 1,0 fixo);
+  `rogue.vantagem.ajuste_scout` = +0,1 (Skirmisher anda na reação, fora do turno); Assassin = {"ou": [atirador,
+  Assassinate no round 1]}; Sneak = {"ou": [vantagem, aliado adjacente 0,75]}. Mecanismo genérico novo em `dano.prob`:
+  número, {"ou": […]} ou {"soma": […]}, com premissas via {"$p"}. Skirmishers (Swashbuckler, Arcane Trickster) sem
+  Steady Aim, como antes. Arcane Trickster: a vantagem do Mage Hand (Versatile Trickster) é do nível 13 no 2014, fora
+  dos níveis 7/11. Efeito (local): Rogue nv7 −0,22 → +0,17, nv11 +0,07 → +0,33; dano global nv7 0,18 → 0,23, nv11
+  0,28 → **0,31**.
+- **D13 → puxar dano de um aliado entra no corpo, como um taunt forte (só vale se aguentar).** **Feito:** campo genérico
+  `controle.atencao.redireciona` (fração dos turnos inimigos contra os aliados que passa para a build, em
+  `atencao.distribui`); premissas `controle.atencao.redireciona.aura` = 0,25 (Aura of the Guardian, Protective Bond) e
+  `.adjacente` = 0,15 (Divine Allegiance); aplicado por `patches_linhas` (via `m3_sobrevivencia.py`, que agora mescla
+  sub-dicts). Corpo nv11: Redemption 11,0 → 13,0; Crown 11,0 → 11,1; Peace 10,8 → 10,1 (Cleric com menos CA/PV paga o
+  dano que puxa: o efeito pedido). Corpo agrupado nv11 0,18 → 0,25, nv7 0,37 → 0,33.
+- **D12 → peso extra no 1º round, moderado.** **Feito:** premissa `dano.peso_round1` = 1,25 (rounds pesam [w, 1, 1, 1],
+  normalizados: dano constante não muda). Vale para ataques marcados `round1` (Dread Ambusher) e para o dano por luta
+  (smites e afins, gastos nos primeiros acertos: 1 uso ×1,18, 2 usos ×1,06, 4+ usos ×1,0). O DPR mostrado continua
+  puro (conferência com as planilhas intacta); o nível usa `dpr_regua`. Efeito: depois do CI.

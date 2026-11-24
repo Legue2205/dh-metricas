@@ -23,15 +23,24 @@
  "linhas": [
   {
    "id": "principal",
-   "hipotese": "besta leve com Steady Aim + Sneak",
+   "hipotese": "besta leve com Steady Aim/Hide + Sneak; Skirmisher na reação",
    "dano": {
     "ataques": [
      {
       "n": 1,
       "bonus": 6,
       "dano": "1d8+3",
-      "vantagem": 1.0,
-      "nota": "besta leve (Steady Aim)",
+      "vantagem": {
+       "soma": [
+        {
+         "$p": "rogue.vantagem.atirador"
+        },
+        {
+         "$p": "rogue.vantagem.ajuste_scout"
+        }
+       ]
+      },
+      "nota": "besta leve (Steady Aim ou Hide)",
       "poder": [
        -5,
        10
@@ -41,8 +50,22 @@
     "por_turno": [
      {
       "dano": "4d6",
-      "prob": 1.0,
-      "nota": "Sneak Attack (Steady Aim)"
+      "prob": {
+       "ou": [
+        {
+         "soma": [
+          {
+           "$p": "rogue.vantagem.atirador"
+          },
+          {
+           "$p": "rogue.vantagem.ajuste_scout"
+          }
+         ]
+        },
+        0.75
+       ]
+      },
+      "nota": "Sneak Attack (vantagem ou aliado adjacente)"
      }
     ]
    },

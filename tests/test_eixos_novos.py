@@ -356,3 +356,47 @@ def test_extras_somam_na_unidade_bruta():
     soma_niveis = 9.0 + (7.0 - 2.3)
     v = out['padrao']['eixos']['suporte']['nivel_eq']
     assert abs(v - esperado) < 0.11 and v < soma_niveis - 1
+
+
+def test_prob_combinada_d11():
+    """D11 (24/11): vantagem/gatilho como combinação de fontes ({"ou"}: ao menos uma; {"soma"}: ajuste de subclasse)."""
+    from dh.dano import prob
+    assert abs(prob({"ou": [0.8, 0.75]}) - 0.95) < 1e-9
+    assert abs(prob({"soma": [0.8, 0.1]}) - 0.9) < 1e-9 and prob({"soma": [0.8, 0.5]}) == 1.0
+    assert prob(0.3) == 0.3
+
+
+def test_peso_round1_d12():
+    """D12: dano constante não muda; o que sai só no 1º round pesa mais; o DPR mostrado continua puro."""
+    from dh import dano
+    from dh.base import R
+    from dh.premissas import P
+    w = P('dano.peso_round1')
+    assert abs(dano._peso_inicio(R) - 1.0) < 1e-9
+    assert abs(dano._peso_inicio(1) - R * w / (w + R - 1)) < 1e-9
+    spec = {"ataques": [{"n": 2, "bonus": 7, "dano": "1d8+4"}, {"n": 0.25, "bonus": 7, "dano": "1d8+4", "round1": True}]}
+    r = dano.avaliar(spec)
+    assert r['dpr_regua']['CA 15'] > r['dpr']['CA 15']
+    assert 'dpr_regua' not in dano.avaliar({"ataques": [{"n": 2, "bonus": 7, "dano": "1d8+4"}]})
+
+
+def test_patch_mescla_atencao_d13():
+    """D13: patches_linhas mescla num sub-dict que a linha já tem (controle.atencao) e não cria onde não há."""
+    from dh.build import _patches_linhas
+    b = {"patches_linhas": [{"origem": "Aura of the Guardian", "eixos": {"controle": {"atencao": {"redireciona": 0.25}}}}],
+         "linhas": [{"id": "a", "controle": {"atencao": {"papel": "tank"}, "fontes": []}}, {"id": "b", "controle": {"fontes": []}}]}
+    _patches_linhas(b)
+    assert b['linhas'][0]['controle']['atencao'] == {"papel": "tank", "redireciona": 0.25}
+    assert 'atencao' not in b['linhas'][1]['controle']
+
+
+def test_redireciona_puxa_alvo_d13():
+    """D13: quem redireciona recebe parte dos turnos que iam para os aliados."""
+    from dh.controle import atencao as A
+    e = dict(melee=True, mal=0, cr=3, ca=15)
+    party = [dict(papel='tank', ca=18, pv=60, front=True, dpr=10), dict(papel='atirador', ca=15, pv=40, front=False, dpr=12),
+             dict(papel='conjurador', ca=13, pv=30, front=False, dpr=10)]
+    p0 = A.distribui(e, party, 1)
+    party[0]['redireciona'] = 0.25
+    p1 = A.distribui(e, party, 1)
+    assert p1[0] > p0[0] and abs(sum(p1) - 1) < 1e-9 and abs(p1[1] - 0.75 * p0[1]) < 1e-9

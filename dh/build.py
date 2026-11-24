@@ -57,7 +57,7 @@ def _reacoes_magicas(b, linhas):
 def _patches_linhas(b):
     """M3 (23/11): "patches_linhas" da build = features que valem em várias linhas (Second Wind, Indomitable, Relentless
     Rage…): [{"origem": texto, "quando_gasta": "furia" (opcional), "eixos": {"defesa": {"cura_luta": 7}}}]. Número soma
-    ao que a linha (ou, nos saves, o corpo) já tem; o resto substitui. Idempotente (marca as origens já aplicadas)."""
+    ao que a linha (ou, nos saves, o corpo) já tem; dict mescla num sub-dict que a linha já tem; o resto substitui. Idempotente (marca as origens já aplicadas)."""
     for p in b.get('patches_linhas') or []:
         for l in b.get('linhas', []):
             if p.get('origem') in l.get('_patches', []): continue
@@ -65,6 +65,9 @@ def _patches_linhas(b):
             for eixo, campos in p.get('eixos', {}).items():
                 atual = dict(l.get(eixo) or {})
                 for k, v in campos.items():
+                    if isinstance(v, dict):   # D13 (24/11): sub-dict existente é mesclado (controle.atencao.redireciona)
+                        if isinstance(atual.get(k), dict): atual[k] = {**atual[k], **v}
+                        continue                # sem o sub-dict na linha (ex.: linha sem atenção): não cria
                     base = atual.get(k, (b.get('corpo', {}).get('saves', {}) if eixo == 'saves' else {}).get(k, 0))
                     atual[k] = round(base + v, 4) if isinstance(v, (int, float)) and isinstance(base, (int, float)) else v
                 l[eixo] = atual

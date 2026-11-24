@@ -743,3 +743,24 @@ o dano do half caster vem dos espaços.
 - Amadeus (party): mantém a tag numerosa nos esqueletos mas **não é descartado** — campo de build
   `"pesos_invocacao": {"numerosa": 1}` (vale para personagens de mesa).
 - Ainda pendente do usuário: adotar o pacote_vh no teste de régua do dano.
+
+### Resultado da Etapa A (CI 0ad9dfd)
+τ pista (chassi sem feat; misto = plano + 0,2·(externo − plano), agora com externo = melhor dia de foco):
+| régua | padrão 7 / 11 | **misto 7 / 11** | foco 7 / 11 |
+| dano | 0,28 / 0,34 | **0,30 / 0,36** | 0,28 / 0,39 |
+| controle | 0,21 / 0,56 | **0,36 / 0,61** | 0,55 / 0,68 |
+| suporte | 0,37 / 0,32 | 0,37 / 0,39 | 0,38 / 0,34 |
+Com o pacote_vh (teto_subclasse): dano misto **0,33 / 0,43**, foco 0,27 / 0,44. O dano no 7 passa o gate (0,30)
+mesmo sem pacote. **Controle foi a régua mais distorcida pela soma de eixos** (0,21 → 0,55 no foco do nv7). Paladin
+no foco do 11: 0,2 → 1,0 (n = 4).
+
+### Etapa B, simulação offline (`calibracao/moeda_de.py`, sem mexer no motor)
+Plano padrão refeito com o rendimento em dano equivalente por luta (conversões provisórias no docstring: DPR na CA de
+referência × rounds; suporte.total × rounds; vidas poupadas × PV do membro padrão; área = 0,5 × fração da horda × PV da
+horda). Muda o plano de 38/116 chassis por nível. Vengeance nv7: Bless (DE 148) perde para voto+smite (166) → plano
+vira marca / voto+smite (dano 4,3 → 8,0), como a mesa do usuário joga. Ranger Gloom Stalker nv11: Plant Growth ainda
+vence (DE 203 × marca 195), Spike Growth quase empata. τ do plano padrão (atual → DE), 7 / 11: dano 0,27 → 0,27 /
+0,34 → 0,35; controle 0,21 → 0,30 / 0,57 → 0,35; suporte 0,31 → 0,33 / 0,24 → 0,35 — **ruído**: com os planos de foco
+medindo cada régua, a moeda DE já não muda o τ por régua; ela importa para o **ranking geral / plano equilibrado** e
+para responder "o que essa build deveria conjurar". Decisão do usuário: adotar a moeda DE no plano padrão (vira
+premissas `moeda.*`), e com qual peso da área.

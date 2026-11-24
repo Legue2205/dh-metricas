@@ -401,64 +401,124 @@ marcus-7                7     2,7 D    3,9 C-    5,9 C+     4,3 C         -    8
 ~miau-8                 8         -    6,6 B-    6,8 B-     2,5 D     4,4 C         -         -
 pacote-barbarian-berserker-pam-gwm-11  11    8,7 B+   15,3 A+    11,0 A    8,7 B+         -    8,1 B+         -
 pacote-barbarian-berserker-pam-gwm-7   7    6,4 B-     7,9 B    6,6 B-    8,5 B+         -     4,6 C         -
+pacote-barbarian-berserker-pam-gwm-vh-11  11    9,8 B+   15,3 A+    11,0 A    8,7 B+         -    8,3 B+         -
+pacote-barbarian-berserker-pam-gwm-vh-7   7     7,2 B     7,9 B    6,6 B-    8,5 B+         -     4,8 C         -
 pacote-barbarian-storm-herald-pam-gwm-11  11    9,6 B+   15,3 A+    11,0 A     2,7 D         -    8,5 B+         -
 pacote-barbarian-storm-herald-pam-gwm-7   7     7,0 B     7,9 B    6,6 B-     2,7 D         -     4,9 C         -
+pacote-barbarian-storm-herald-pam-gwm-vh-11  11   10,6 A-   15,3 A+    11,0 A     2,7 D         -    8,7 B+         -
+pacote-barbarian-storm-herald-pam-gwm-vh-7   7     7,8 B     7,9 B    6,6 B-     2,7 D         -    8,2 B+         -
 pacote-barbarian-totem-warrior-pam-gwm-11  11    8,6 B+   15,3 A+   15,9 A+     2,7 D         -    8,1 B+         -
 pacote-barbarian-totem-warrior-pam-gwm-7   7    6,2 B-     7,9 B    11,8 A     2,7 D         -     4,6 C         -
+pacote-barbarian-totem-warrior-pam-gwm-vh-11  11    9,7 B+   15,3 A+   15,9 A+     2,7 D         -    8,1 B+         -
+pacote-barbarian-totem-warrior-pam-gwm-vh-7   7     7,1 B     7,9 B    11,8 A     2,7 D         -     4,8 C         -
 pacote-barbarian-wild-magic-pam-gwm-11  11    8,8 B+   15,3 A+    11,0 A     2,7 D         -    8,1 B+         -
 pacote-barbarian-wild-magic-pam-gwm-7   7     7,2 B     7,9 B    6,6 B-     2,7 D         -     4,6 C         -
+pacote-barbarian-wild-magic-pam-gwm-vh-11  11    9,9 B+   15,3 A+    11,0 A     2,7 D         -    8,1 B+         -
+pacote-barbarian-wild-magic-pam-gwm-vh-7   7     7,3 B     7,9 B    6,6 B-     2,7 D         -     4,8 C         -
 pacote-barbarian-zealot-pam-gwm-11  11   10,6 A-   15,3 A+    12,2 A     4,7 C         -    8,3 B+     0,6 E
 pacote-barbarian-zealot-pam-gwm-7   7     7,9 B     7,9 B     7,8 B     4,6 C         -     4,6 C         -
+pacote-barbarian-zealot-pam-gwm-vh-11  11    11,3 A   15,3 A+    12,2 A     4,7 C         -    8,3 B+     0,6 E
+pacote-barbarian-zealot-pam-gwm-vh-7   7    8,7 B+     7,9 B     7,8 B     4,6 C         -    8,1 B+         -
 pacote-fighter-arcane-archer-cbe-ss-11  11   10,1 A-    9,6 B+   13,0 A+    3,4 C-         -    8,4 B+         -
 pacote-fighter-arcane-archer-cbe-ss-7   7    6,4 B-     4,9 C     7,8 B     2,8 D         -     4,7 C         -
+pacote-fighter-arcane-archer-cbe-ss-vh-11  11   11,0 A-   10,2 A-   13,0 A+    3,4 C-         -    8,4 B+         -
+pacote-fighter-arcane-archer-cbe-ss-vh-7   7     7,4 B    5,3 C+     7,8 B     2,8 D         -     4,9 C         -
 pacote-fighter-battle-master-cbe-ss-11  11   10,4 A-    9,6 B+   13,4 A+    3,1 C-         -    8,3 B+         -
 pacote-fighter-battle-master-cbe-ss-7   7    6,7 B-     4,9 C     7,8 B     2,6 D         -     4,8 C         -
+pacote-fighter-battle-master-cbe-ss-vh-11  11    11,1 A   10,2 A-   13,4 A+    3,1 C-         -    8,3 B+         -
+pacote-fighter-battle-master-cbe-ss-vh-7   7     7,6 B    5,3 C+     7,8 B     2,6 D         -     4,8 C         -
 pacote-fighter-champion-pam-gwm-11  11    8,8 B+   10,7 A-    11,4 A    3,2 C-         -    8,1 B+         -
 pacote-fighter-champion-pam-gwm-7   7    5,4 C+    6,4 B-    6,6 B-     2,7 D         -     4,6 C         -
+pacote-fighter-champion-pam-gwm-vh-11  11   10,1 A-   10,7 A-    11,4 A    3,2 C-         -    8,3 B+         -
+pacote-fighter-champion-pam-gwm-vh-7   7    6,2 B-    6,4 B-    6,6 B-     2,7 D         -     4,8 C         -
 pacote-fighter-echo-knight-pam-gwm-11  11    9,0 B+   10,7 A-    11,4 A    3,2 C-         -    8,3 B+         -
 pacote-fighter-echo-knight-pam-gwm-7   7    5,5 C+    6,4 B-    6,6 B-     2,7 D         -     4,6 C         -
+pacote-fighter-echo-knight-pam-gwm-vh-11  11   10,3 A-   10,7 A-    11,4 A    3,2 C-         -    8,3 B+         -
+pacote-fighter-echo-knight-pam-gwm-vh-7   7    6,3 B-    6,4 B-    6,6 B-     2,7 D         -     4,8 C         -
 pacote-fighter-eldritch-knight-pam-gwm-11  11    8,6 B+    12,8 A    11,8 A     2,8 D         -    8,1 B+         -
 pacote-fighter-eldritch-knight-pam-gwm-7   7    5,6 C+    8,2 B+     7,7 B     2,4 D         -     4,6 C         -
+pacote-fighter-eldritch-knight-pam-gwm-vh-11  11    9,9 B+    12,8 A    11,8 A     2,8 D         -    8,3 B+         -
+pacote-fighter-eldritch-knight-pam-gwm-vh-7   7     7,0 B    8,2 B+    7,0 B-     2,4 D         -     4,8 C         -
 pacote-fighter-psi-warrior-cbe-ss-11  11   10,4 A-    9,6 B+   13,0 A+    3,4 C-         -    8,3 B+         -
 pacote-fighter-psi-warrior-cbe-ss-7   7    6,7 B-     4,9 C     7,8 B     2,8 D         -     4,8 C         -
+pacote-fighter-psi-warrior-cbe-ss-vh-11  11    11,2 A   10,2 A-   13,0 A+    3,4 C-         -    8,3 B+         -
+pacote-fighter-psi-warrior-cbe-ss-vh-7   7     7,5 B    5,3 C+     7,8 B     2,8 D         -     4,8 C         -
 pacote-fighter-purple-dragon-knight-cbe-ss-11  11    9,5 B+    9,6 B+   13,0 A+    3,4 C-         -    8,3 B+     1,1 D
 pacote-fighter-purple-dragon-knight-cbe-ss-7   7    5,9 C+     4,9 C     7,8 B     2,9 D         -     4,6 C     0,4 F
+pacote-fighter-purple-dragon-knight-cbe-ss-vh-11  11   10,6 A-   10,2 A-   13,0 A+    3,4 C-         -    8,3 B+     1,1 D
+pacote-fighter-purple-dragon-knight-cbe-ss-vh-7   7    6,9 B-    5,3 C+     7,8 B     2,9 D         -     4,8 C     0,4 F
 pacote-fighter-samurai-cbe-ss-11  11   10,9 A-    9,6 B+   13,4 A+    8,2 B+         -    8,3 B+         -
 pacote-fighter-samurai-cbe-ss-7   7    6,6 B-     4,9 C     7,8 B     4,5 C         -     4,8 C         -
+pacote-fighter-samurai-cbe-ss-vh-11  11    11,8 A   10,2 A-   13,4 A+    8,2 B+         -    8,3 B+         -
+pacote-fighter-samurai-cbe-ss-vh-7   7     7,5 B    5,3 C+     7,8 B     4,5 C         -     4,8 C         -
 pacote-paladin-ancients-cbe-ss-11  11     4,3 C    6,0 B-   10,7 A-    12,5 A         -     4,6 C    8,8 B+
 pacote-paladin-ancients-cbe-ss-7   7     2,2 D    3,9 C-    6,2 B-    8,4 B+         -     4,2 C    6,2 B-
+pacote-paladin-ancients-cbe-ss-vh-11  11     4,9 C    6,5 B-   10,7 A-    12,5 A         -     4,6 C    8,8 B+
+pacote-paladin-ancients-cbe-ss-vh-7   7    3,8 C-    3,9 C-    6,2 B-    8,4 B+         -     4,5 C    6,2 B-
 pacote-paladin-devotion-pam-gwm-11  11    9,1 B+     7,2 B    8,6 B+    12,5 A         -    8,1 B+    8,8 B+
 pacote-paladin-devotion-pam-gwm-7   7     4,0 C     4,6 C    5,2 C+    8,4 B+         -     4,6 C    6,2 B-
+pacote-paladin-devotion-pam-gwm-vh-11  11    9,7 B+     7,2 B    8,6 B+    12,5 A         -    8,3 B+    8,8 B+
+pacote-paladin-devotion-pam-gwm-vh-7   7     4,8 C     4,6 C    5,2 C+    8,4 B+         -     4,8 C    6,2 B-
 pacote-paladin-glory-pam-gwm-11  11     7,9 B     7,2 B    8,6 B+    12,5 A         -    8,1 B+    9,7 B+
 pacote-paladin-glory-pam-gwm-7   7     4,0 C     4,6 C    5,2 C+    8,4 B+         -     4,6 C    6,2 B-
+pacote-paladin-glory-pam-gwm-vh-11  11    9,1 B+     7,2 B    8,6 B+    12,5 A         -    8,3 B+    9,7 B+
+pacote-paladin-glory-pam-gwm-vh-7   7     4,8 C     4,6 C    5,2 C+    8,4 B+         -     4,8 C    6,2 B-
 pacote-paladin-vengeance-pam-gwm-11  11    9,9 B+     7,2 B    8,6 B+    12,5 A         -    8,3 B+    8,8 B+
 pacote-paladin-vengeance-pam-gwm-7   7     4,0 C     4,6 C    5,2 C+    8,4 B+         -     4,6 C    6,2 B-
+pacote-paladin-vengeance-pam-gwm-vh-11  11   10,8 A-     7,2 B    8,6 B+    12,5 A         -    8,3 B+    8,8 B+
+pacote-paladin-vengeance-pam-gwm-vh-7   7     7,6 B     4,6 C    5,2 C+    8,4 B+         -    8,1 B+     2,5 D
 pacote-paladin-watchers-pam-gwm-11  11    8,5 B+     7,2 B    8,6 B+    12,5 A         -    8,1 B+    8,8 B+
 pacote-paladin-watchers-pam-gwm-7   7     4,0 C     4,6 C    5,2 C+    8,4 B+         -     4,6 C    6,2 B-
+pacote-paladin-watchers-pam-gwm-vh-11  11    9,6 B+     7,2 B    8,6 B+    12,5 A         -    8,3 B+    8,8 B+
+pacote-paladin-watchers-pam-gwm-vh-7   7     4,8 C     4,6 C    5,2 C+    8,4 B+         -     4,8 C    6,2 B-
 pacote-ranger-fey-wanderer-cbe-ss-11  11    6,6 B-     7,3 B    20,0 S     2,6 D         -     4,8 C         -
 pacote-ranger-fey-wanderer-cbe-ss-7   7     4,6 C     4,1 C     7,6 B     2,6 D         -     4,6 C         -
+pacote-ranger-fey-wanderer-cbe-ss-vh-11  11    8,3 B+     7,9 B    17,4 S     2,6 D         -    8,0 B+         -
+pacote-ranger-fey-wanderer-cbe-ss-vh-7   7    6,0 C+     4,1 C     7,6 B     2,6 D         -     4,8 C         -
 pacote-ranger-gloom-stalker-cbe-ss-11  11    8,3 B+     7,3 B    17,4 S     5,0 C         -    8,1 B+         -
 pacote-ranger-gloom-stalker-cbe-ss-7   7     4,5 C     4,1 C     7,6 B     4,5 C         -     4,6 C         -
+pacote-ranger-gloom-stalker-cbe-ss-vh-11  11    9,5 B+     7,9 B    17,4 S     5,0 C         -    8,1 B+         -
+pacote-ranger-gloom-stalker-cbe-ss-vh-7   7    6,0 C+     4,1 C     7,6 B     4,5 C         -     4,8 C         -
 pacote-ranger-horizon-walker-cbe-ss-11  11    9,3 B+     7,3 B    20,0 S     2,6 D         -    8,3 B+         -
 pacote-ranger-horizon-walker-cbe-ss-7   7    5,0 C+     4,1 C     7,6 B     2,6 D         -     4,6 C         -
+pacote-ranger-horizon-walker-cbe-ss-vh-11  11   10,5 A-     7,9 B    20,0 S     2,6 D         -    8,3 B+         -
+pacote-ranger-horizon-walker-cbe-ss-vh-7   7    6,3 B-     4,1 C     7,6 B     2,6 D         -     4,8 C         -
 pacote-ranger-hunter-cbe-ss-11  11    6,8 B-     7,3 B    20,0 S     2,6 D         -     4,8 C         -
 pacote-ranger-hunter-cbe-ss-7   7    5,0 C+     4,1 C     7,6 B     2,6 D         -     4,6 C         -
+pacote-ranger-hunter-cbe-ss-vh-11  11    8,6 B+     7,9 B    17,4 S     2,6 D         -    8,1 B+         -
+pacote-ranger-hunter-cbe-ss-vh-7   7    6,3 B-     4,1 C     7,6 B     2,6 D         -     4,8 C         -
 pacote-ranger-monster-slayer-cbe-ss-11  11    6,6 B-     7,3 B    20,0 S     2,6 D         -     4,8 C         -
 pacote-ranger-monster-slayer-cbe-ss-7   7     4,8 C     4,1 C     7,6 B     2,6 D         -     4,6 C         -
+pacote-ranger-monster-slayer-cbe-ss-vh-11  11    8,3 B+     7,9 B    17,4 S     2,6 D         -    8,0 B+         -
+pacote-ranger-monster-slayer-cbe-ss-vh-7   7    6,1 B-     4,1 C     7,6 B     2,6 D         -     4,8 C         -
 pacote-ranger-swarmkeeper-cbe-ss-11  11    6,8 B-     7,3 B    20,0 S     2,6 D         -     4,8 C         -
 pacote-ranger-swarmkeeper-cbe-ss-7   7     4,8 C     4,1 C     7,6 B     2,6 D         -     4,6 C         -
+pacote-ranger-swarmkeeper-cbe-ss-vh-11  11    8,6 B+     7,9 B    17,4 S     2,6 D         -    8,1 B+         -
+pacote-ranger-swarmkeeper-cbe-ss-vh-7   7    6,1 B-     4,1 C     7,6 B     2,6 D         -     4,8 C         -
 pacote-rogue-assassin-cbe-ss-11  11    6,4 B-   10,0 A-    16,2 S    4,0 C-         -     4,6 C         -
 pacote-rogue-assassin-cbe-ss-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
+pacote-rogue-assassin-cbe-ss-vh-11  11     7,3 B   10,6 A-    16,2 S    4,0 C-         -     4,8 C         -
+pacote-rogue-assassin-cbe-ss-vh-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 pacote-rogue-inquisitive-cbe-ss-11  11    6,4 B-   10,0 A-    16,2 S    4,0 C-         -     4,6 C         -
 pacote-rogue-inquisitive-cbe-ss-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
+pacote-rogue-inquisitive-cbe-ss-vh-11  11     7,3 B   10,6 A-    16,2 S    4,0 C-         -     4,8 C         -
+pacote-rogue-inquisitive-cbe-ss-vh-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 pacote-rogue-mastermind-cbe-ss-11  11    6,4 B-   10,0 A-    16,2 S    3,4 C-         -     4,6 C         -
 pacote-rogue-mastermind-cbe-ss-7   7    5,1 C+    5,9 C+    8,0 B+    3,1 C-         -     4,6 C         -
+pacote-rogue-mastermind-cbe-ss-vh-11  11     7,3 B   10,6 A-    16,2 S    3,4 C-         -     4,8 C         -
+pacote-rogue-mastermind-cbe-ss-vh-7   7     4,8 C    5,9 C+    8,0 B+    3,1 C-         -     4,6 C     0,3 F
 pacote-rogue-phantom-cbe-ss-11  11    8,6 B+    9,2 B+    16,6 S    4,0 C-         -     4,8 C         -
 pacote-rogue-phantom-cbe-ss-7   7    5,6 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
+pacote-rogue-phantom-cbe-ss-vh-11  11    8,5 B+   10,0 A-    16,6 S    4,0 C-         -    8,0 B+         -
+pacote-rogue-phantom-cbe-ss-vh-7   7    5,4 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 pacote-rogue-scout-cbe-ss-11  11    6,5 B-   10,0 A-    16,2 S    4,0 C-         -     4,6 C         -
 pacote-rogue-scout-cbe-ss-7   7    5,2 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
+pacote-rogue-scout-cbe-ss-vh-11  11     7,4 B   10,6 A-    16,2 S    4,0 C-         -     4,8 C         -
+pacote-rogue-scout-cbe-ss-vh-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 pacote-rogue-thief-cbe-ss-11  11    8,2 B+   10,0 A-    16,2 S    4,0 C-         -     4,8 C         -
 pacote-rogue-thief-cbe-ss-7   7    6,3 B-    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
+pacote-rogue-thief-cbe-ss-vh-11  11    8,6 B+   10,6 A-    16,2 S    4,0 C-         -    8,0 B+         -
+pacote-rogue-thief-cbe-ss-vh-7   7    6,2 B-    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 ~pyotr-14              14    8,3 B+    3,5 C-   13,3 A+    16,9 S     2,9 D    12,7 A         -
 ravin-7                 7    6,2 B-    9,9 B+    16,4 S    12,6 A         -   10,1 A-     0,0 F
 rpgbot-artificer-alchemist-11  11     1,6 D    6,4 B-     7,9 B    3,8 C-         -     4,2 C    9,1 B+
@@ -1520,64 +1580,124 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~miau-8                 8         -    6,6 B-    6,8 B-     2,5 D     4,4 C         -         -
 ~pacote-barbarian-berserker-pam-gwm-11  11     7,5 B    6,2 B-    11,0 A     2,7 D     0,0 F     4,8 C         -
 ~pacote-barbarian-berserker-pam-gwm-7   7     4,8 C    3,3 C-    6,6 B-     2,7 D     0,0 F     4,3 C         -
+~pacote-barbarian-berserker-pam-gwm-vh-11  11    8,6 B+    6,2 B-    11,0 A     2,7 D     0,0 F    8,0 B+         -
+~pacote-barbarian-berserker-pam-gwm-vh-7   7    6,5 B-    3,3 C-    6,6 B-     2,7 D     0,0 F     4,8 C         -
 ~pacote-barbarian-storm-herald-pam-gwm-11  11     7,5 B    6,2 B-    11,0 A     2,7 D     0,0 F     4,8 C         -
 ~pacote-barbarian-storm-herald-pam-gwm-7   7     4,8 C    3,3 C-    6,6 B-     2,7 D     0,0 F     4,3 C         -
+~pacote-barbarian-storm-herald-pam-gwm-vh-11  11    8,6 B+    6,2 B-    11,0 A     2,7 D     0,0 F    8,0 B+         -
+~pacote-barbarian-storm-herald-pam-gwm-vh-7   7    6,5 B-    3,3 C-    6,6 B-     2,7 D     0,0 F     4,8 C         -
 ~pacote-barbarian-totem-warrior-pam-gwm-11  11     7,5 B    6,2 B-    11,0 A     2,7 D     0,0 F     4,8 C         -
 ~pacote-barbarian-totem-warrior-pam-gwm-7   7     4,8 C    3,3 C-    6,6 B-     2,7 D     0,0 F     4,3 C         -
+~pacote-barbarian-totem-warrior-pam-gwm-vh-11  11    8,6 B+    6,2 B-    11,0 A     2,7 D     0,0 F    8,0 B+         -
+~pacote-barbarian-totem-warrior-pam-gwm-vh-7   7    6,5 B-    3,3 C-    6,6 B-     2,7 D     0,0 F     4,8 C         -
 ~pacote-barbarian-wild-magic-pam-gwm-11  11     7,5 B    6,2 B-    11,0 A     2,7 D     0,0 F     4,8 C         -
 ~pacote-barbarian-wild-magic-pam-gwm-7   7     4,8 C    3,3 C-    6,6 B-     2,7 D     0,0 F     4,3 C         -
+~pacote-barbarian-wild-magic-pam-gwm-vh-11  11    8,6 B+    6,2 B-    11,0 A     2,7 D     0,0 F    8,0 B+         -
+~pacote-barbarian-wild-magic-pam-gwm-vh-7   7    6,5 B-    3,3 C-    6,6 B-     2,7 D     0,0 F     4,8 C         -
 ~pacote-barbarian-zealot-pam-gwm-11  11     7,5 B    6,2 B-    11,0 A     2,7 D     0,0 F     4,8 C         -
 ~pacote-barbarian-zealot-pam-gwm-7   7     4,8 C    3,3 C-    6,6 B-     2,7 D     0,0 F     4,3 C         -
+~pacote-barbarian-zealot-pam-gwm-vh-11  11    8,6 B+    6,2 B-    11,0 A     2,7 D     0,0 F    8,0 B+         -
+~pacote-barbarian-zealot-pam-gwm-vh-7   7    6,5 B-    3,3 C-    6,6 B-     2,7 D     0,0 F     4,8 C         -
 ~pacote-fighter-arcane-archer-cbe-ss-11  11    9,3 B+    9,6 B+   13,0 A+    3,4 C-     1,5 D    8,2 B+         -
 ~pacote-fighter-arcane-archer-cbe-ss-7   7    5,9 C+     4,9 C     7,8 B     2,8 D     1,1 D     4,7 C         -
+~pacote-fighter-arcane-archer-cbe-ss-vh-11  11   10,5 A-   10,2 A-   13,0 A+    3,4 C-     1,7 D    8,4 B+         -
+~pacote-fighter-arcane-archer-cbe-ss-vh-7   7    6,9 B-    5,3 C+     7,8 B     2,8 D     1,4 D     4,7 C         -
 ~pacote-fighter-battle-master-cbe-ss-11  11    9,7 B+    9,6 B+   13,4 A+    3,1 C-     2,2 D    8,1 B+         -
 ~pacote-fighter-battle-master-cbe-ss-7   7    6,1 B-     4,9 C     7,8 B     2,6 D     1,8 D     4,6 C         -
+~pacote-fighter-battle-master-cbe-ss-vh-11  11   10,6 A-   10,2 A-   13,4 A+    3,1 C-     2,5 D    8,3 B+         -
+~pacote-fighter-battle-master-cbe-ss-vh-7   7     7,1 B    5,3 C+     7,8 B     2,6 D     1,9 D     4,8 C         -
 ~pacote-fighter-champion-pam-gwm-11  11    8,0 B+   10,7 A-    11,4 A    3,2 C-     0,8 E    8,0 B+         -
 ~pacote-fighter-champion-pam-gwm-7   7    5,0 C+    6,4 B-    6,6 B-     2,7 D     0,3 F     4,6 C         -
+~pacote-fighter-champion-pam-gwm-vh-11  11    9,1 B+   10,7 A-    11,4 A    3,2 C-     0,8 E    8,1 B+         -
+~pacote-fighter-champion-pam-gwm-vh-7   7    5,7 C+    6,4 B-    6,6 B-     2,7 D     0,3 F     4,6 C         -
 ~pacote-fighter-echo-knight-pam-gwm-11  11    8,3 B+   10,7 A-    11,4 A    3,2 C-     0,8 E    8,1 B+         -
 ~pacote-fighter-echo-knight-pam-gwm-7   7    5,2 C+    6,4 B-    6,6 B-     2,7 D     0,3 F     4,6 C         -
+~pacote-fighter-echo-knight-pam-gwm-vh-11  11    9,4 B+   10,7 A-    11,4 A    3,2 C-     0,8 E    8,3 B+         -
+~pacote-fighter-echo-knight-pam-gwm-vh-7   7    5,8 C+    6,4 B-    6,6 B-     2,7 D     0,3 F     4,6 C         -
 ~pacote-fighter-eldritch-knight-pam-gwm-11  11     7,8 B    12,8 A    11,4 A     2,8 D     0,8 E    8,0 B+         -
 ~pacote-fighter-eldritch-knight-pam-gwm-7   7    5,6 C+    8,2 B+    6,6 B-     2,4 D     0,3 F     4,6 C         -
+~pacote-fighter-eldritch-knight-pam-gwm-vh-11  11    9,0 B+    12,8 A    11,4 A     2,8 D     0,8 E    8,1 B+         -
+~pacote-fighter-eldritch-knight-pam-gwm-vh-7   7    6,4 B-    8,2 B+    6,6 B-     2,4 D     0,4 F     4,6 C         -
 ~pacote-fighter-psi-warrior-cbe-ss-11  11    9,9 B+    9,6 B+   13,0 A+    3,4 C-     1,5 D    8,1 B+         -
 ~pacote-fighter-psi-warrior-cbe-ss-7   7    6,1 B-     4,9 C     7,8 B     2,8 D     0,7 E     4,6 C         -
+~pacote-fighter-psi-warrior-cbe-ss-vh-11  11   10,7 A-   10,2 A-   13,0 A+    3,4 C-     1,7 D    8,3 B+         -
+~pacote-fighter-psi-warrior-cbe-ss-vh-7   7     7,1 B    5,3 C+     7,8 B     2,8 D     1,1 D     4,8 C         -
 ~pacote-fighter-purple-dragon-knight-cbe-ss-11  11    8,7 B+    9,6 B+   13,0 A+    3,4 C-     1,4 D    8,1 B+     1,1 D
 ~pacote-fighter-purple-dragon-knight-cbe-ss-7   7    5,5 C+     4,9 C     7,8 B     2,9 D     0,5 F     4,6 C     0,4 F
+~pacote-fighter-purple-dragon-knight-cbe-ss-vh-11  11   10,0 A-   10,2 A-   13,0 A+    3,4 C-     1,5 D    8,1 B+     1,1 D
+~pacote-fighter-purple-dragon-knight-cbe-ss-vh-7   7    6,3 B-    5,3 C+     7,8 B     2,9 D     0,7 E     4,6 C     0,4 F
 ~pacote-fighter-samurai-cbe-ss-11  11    9,7 B+    9,6 B+   13,4 A+    8,2 B+     1,4 D    8,1 B+         -
 ~pacote-fighter-samurai-cbe-ss-7   7    5,5 C+     4,9 C     7,8 B     4,5 C     0,5 F     4,6 C         -
+~pacote-fighter-samurai-cbe-ss-vh-11  11   10,7 A-   10,2 A-   13,4 A+    8,2 B+     1,5 D    8,3 B+         -
+~pacote-fighter-samurai-cbe-ss-vh-7   7    6,3 B-    5,3 C+     7,8 B     4,5 C     0,7 E     4,6 C         -
 ~pacote-paladin-ancients-cbe-ss-11  11     4,9 C    6,0 B-   10,7 A-    12,5 A     0,0 F     4,6 C     1,1 D
 ~pacote-paladin-ancients-cbe-ss-7   7     2,9 D    3,9 C-    6,2 B-    8,4 B+     0,1 F     4,2 C     0,6 E
+~pacote-paladin-ancients-cbe-ss-vh-11  11    5,6 C+    6,5 B-   10,7 A-    12,5 A     0,1 F     4,6 C     1,1 D
+~pacote-paladin-ancients-cbe-ss-vh-7   7     4,5 C    3,9 C-    6,2 B-    8,4 B+     0,0 F     4,5 C     0,6 E
 ~pacote-paladin-devotion-pam-gwm-11  11     7,4 B     7,2 B    8,6 B+    12,5 A     0,0 F     4,8 C     1,1 D
 ~pacote-paladin-devotion-pam-gwm-7   7     4,6 C     4,6 C    5,2 C+    8,4 B+     0,0 F     4,3 C     0,6 E
+~pacote-paladin-devotion-pam-gwm-vh-11  11    8,5 B+     7,2 B    8,6 B+    12,5 A     0,0 F    8,1 B+     1,1 D
+~pacote-paladin-devotion-pam-gwm-vh-7   7    5,4 C+     4,6 C    5,2 C+    8,4 B+     0,0 F     4,6 C     0,6 E
 ~pacote-paladin-glory-pam-gwm-11  11     7,4 B     7,2 B    8,6 B+    12,5 A     0,0 F     4,8 C     1,1 D
 ~pacote-paladin-glory-pam-gwm-7   7     4,6 C     4,6 C    5,2 C+    8,4 B+     0,0 F     4,3 C     0,6 E
+~pacote-paladin-glory-pam-gwm-vh-11  11    8,5 B+     7,2 B    8,6 B+    12,5 A     0,0 F    8,1 B+     1,1 D
+~pacote-paladin-glory-pam-gwm-vh-7   7    5,4 C+     4,6 C    5,2 C+    8,4 B+     0,0 F     4,6 C     0,6 E
 ~pacote-paladin-vengeance-pam-gwm-11  11     7,4 B     7,2 B    8,6 B+    12,5 A     0,0 F     4,8 C     1,1 D
 ~pacote-paladin-vengeance-pam-gwm-7   7     4,6 C     4,6 C    5,2 C+    8,4 B+     0,0 F     4,3 C     0,6 E
+~pacote-paladin-vengeance-pam-gwm-vh-11  11    8,5 B+     7,2 B    8,6 B+    12,5 A     0,0 F    8,1 B+     1,1 D
+~pacote-paladin-vengeance-pam-gwm-vh-7   7    5,4 C+     4,6 C    5,2 C+    8,4 B+     0,0 F     4,6 C     0,6 E
 ~pacote-paladin-watchers-pam-gwm-11  11     7,4 B     7,2 B    8,6 B+    12,5 A     0,0 F     4,8 C     1,1 D
 ~pacote-paladin-watchers-pam-gwm-7   7     4,6 C     4,6 C    5,2 C+    8,4 B+     0,0 F     4,3 C     0,6 E
+~pacote-paladin-watchers-pam-gwm-vh-11  11    8,5 B+     7,2 B    8,6 B+    12,5 A     0,0 F    8,1 B+     1,1 D
+~pacote-paladin-watchers-pam-gwm-vh-7   7    5,4 C+     4,6 C    5,2 C+    8,4 B+     0,0 F     4,6 C     0,6 E
 ~pacote-ranger-fey-wanderer-cbe-ss-11  11    6,6 B-     7,3 B    16,9 S     2,6 D     0,8 E     4,6 C         -
 ~pacote-ranger-fey-wanderer-cbe-ss-7   7     4,3 C     4,1 C     7,6 B     2,6 D     0,1 F     4,3 C         -
+~pacote-ranger-fey-wanderer-cbe-ss-vh-11  11     7,4 B     7,9 B    16,9 S     2,6 D     0,9 E     4,8 C         -
+~pacote-ranger-fey-wanderer-cbe-ss-vh-7   7    5,8 C+     4,1 C     7,6 B     2,6 D     0,0 F     4,6 C         -
 ~pacote-ranger-gloom-stalker-cbe-ss-11  11     7,3 B     7,3 B    16,9 S     5,0 C     0,8 E     4,8 C         -
 ~pacote-ranger-gloom-stalker-cbe-ss-7   7     4,2 C     4,1 C     7,6 B     4,5 C     0,1 F     4,3 C         -
+~pacote-ranger-gloom-stalker-cbe-ss-vh-11  11    8,3 B+     7,9 B    16,9 S     5,0 C     0,9 E     4,8 C         -
+~pacote-ranger-gloom-stalker-cbe-ss-vh-7   7    5,8 C+     4,1 C     7,6 B     4,5 C     0,0 F     4,6 C         -
 ~pacote-ranger-horizon-walker-cbe-ss-11  11    9,3 B+     7,3 B    16,9 S     2,6 D     0,6 E    8,1 B+         -
 ~pacote-ranger-horizon-walker-cbe-ss-7   7     4,7 C     4,1 C     7,6 B     2,6 D     0,0 F     4,3 C         -
+~pacote-ranger-horizon-walker-cbe-ss-vh-11  11   10,5 A-     7,9 B    16,9 S     2,6 D     0,8 E    8,3 B+         -
+~pacote-ranger-horizon-walker-cbe-ss-vh-7   7    6,1 B-     4,1 C     7,6 B     2,6 D     0,0 F     4,6 C         -
 ~pacote-ranger-hunter-cbe-ss-11  11    6,8 B-     7,3 B    16,9 S     2,6 D     0,8 E     4,6 C         -
 ~pacote-ranger-hunter-cbe-ss-7   7     4,7 C     4,1 C     7,6 B     2,6 D     0,0 F     4,3 C         -
+~pacote-ranger-hunter-cbe-ss-vh-11  11     7,6 B     7,9 B    16,9 S     2,6 D     0,9 E     4,8 C         -
+~pacote-ranger-hunter-cbe-ss-vh-7   7    6,1 B-     4,1 C     7,6 B     2,6 D     0,0 F     4,6 C         -
 ~pacote-ranger-monster-slayer-cbe-ss-11  11    6,6 B-     7,3 B    16,9 S     2,6 D     0,8 E     4,6 C         -
 ~pacote-ranger-monster-slayer-cbe-ss-7   7     4,5 C     4,1 C     7,6 B     2,6 D     0,1 F     4,3 C         -
+~pacote-ranger-monster-slayer-cbe-ss-vh-11  11     7,4 B     7,9 B    16,9 S     2,6 D     0,9 E     4,8 C         -
+~pacote-ranger-monster-slayer-cbe-ss-vh-7   7    5,9 C+     4,1 C     7,6 B     2,6 D     0,0 F     4,6 C         -
 ~pacote-ranger-swarmkeeper-cbe-ss-11  11    6,8 B-     7,3 B    16,9 S     2,6 D     0,8 E     4,6 C         -
 ~pacote-ranger-swarmkeeper-cbe-ss-7   7     4,5 C     4,1 C     7,6 B     2,6 D     0,1 F     4,3 C         -
+~pacote-ranger-swarmkeeper-cbe-ss-vh-11  11     7,6 B     7,9 B    16,9 S     2,6 D     0,9 E     4,8 C         -
+~pacote-ranger-swarmkeeper-cbe-ss-vh-7   7    5,9 C+     4,1 C     7,6 B     2,6 D     0,0 F     4,6 C         -
 ~pacote-rogue-assassin-cbe-ss-11  11    6,4 B-   10,0 A-    16,2 S    4,0 C-     0,8 E     4,6 C         -
 ~pacote-rogue-assassin-cbe-ss-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
+~pacote-rogue-assassin-cbe-ss-vh-11  11     7,3 B   10,6 A-    16,2 S    4,0 C-     0,9 E     4,8 C         -
+~pacote-rogue-assassin-cbe-ss-vh-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
 ~pacote-rogue-inquisitive-cbe-ss-11  11    6,4 B-   10,0 A-    16,2 S    4,0 C-     0,8 E     4,6 C         -
 ~pacote-rogue-inquisitive-cbe-ss-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
+~pacote-rogue-inquisitive-cbe-ss-vh-11  11     7,3 B   10,6 A-    16,2 S    4,0 C-     0,9 E     4,8 C         -
+~pacote-rogue-inquisitive-cbe-ss-vh-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
 ~pacote-rogue-mastermind-cbe-ss-11  11    6,4 B-   10,0 A-    16,2 S    3,4 C-     0,8 E     4,6 C         -
 ~pacote-rogue-mastermind-cbe-ss-7   7    5,1 C+    5,9 C+    8,0 B+    3,1 C-     0,0 F     4,6 C         -
+~pacote-rogue-mastermind-cbe-ss-vh-11  11     7,3 B   10,6 A-    16,2 S    3,4 C-     0,9 E     4,8 C         -
+~pacote-rogue-mastermind-cbe-ss-vh-7   7    5,1 C+    5,9 C+    8,0 B+    3,1 C-     0,0 F     4,6 C         -
 ~pacote-rogue-phantom-cbe-ss-11  11    8,6 B+    9,2 B+    16,6 S    4,0 C-     0,7 E     4,8 C         -
 ~pacote-rogue-phantom-cbe-ss-7   7    5,6 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
+~pacote-rogue-phantom-cbe-ss-vh-11  11    8,5 B+   10,0 A-    16,6 S    4,0 C-     0,8 E    8,0 B+         -
+~pacote-rogue-phantom-cbe-ss-vh-7   7    5,4 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
 ~pacote-rogue-scout-cbe-ss-11  11    6,5 B-   10,0 A-    16,2 S    4,0 C-     0,8 E     4,6 C         -
 ~pacote-rogue-scout-cbe-ss-7   7    5,2 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
+~pacote-rogue-scout-cbe-ss-vh-11  11     7,4 B   10,6 A-    16,2 S    4,0 C-     0,9 E     4,8 C         -
+~pacote-rogue-scout-cbe-ss-vh-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
 ~pacote-rogue-thief-cbe-ss-11  11    6,4 B-   10,0 A-    16,2 S    4,0 C-     0,8 E     4,6 C         -
 ~pacote-rogue-thief-cbe-ss-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
+~pacote-rogue-thief-cbe-ss-vh-11  11     7,3 B   10,6 A-    16,2 S    4,0 C-     0,9 E     4,8 C         -
+~pacote-rogue-thief-cbe-ss-vh-7   7    5,1 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
 ~pyotr-14              14    8,3 B+    3,5 C-   13,3 A+    16,9 S     2,9 D    12,7 A         -
 ~ravin-7                7    5,3 C+   10,6 A-    16,4 S    12,6 A    6,3 B-   10,0 A-         -
 ~rpgbot-artificer-alchemist-11  11     2,7 D    6,4 B-     7,9 B    3,8 C-     4,1 C     4,2 C     2,5 D

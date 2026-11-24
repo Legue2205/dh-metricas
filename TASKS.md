@@ -142,6 +142,11 @@ Ruído do τ de Kendall (erro-padrão sob H0): n = 4 → 0,49; 6 → 0,35; 8 →
 Situação em 24/11 (p3): def. física 0,44/0,42 ✓; controle 0,38/0,61 ✓; **dano 0,17/0,28 ✗** (abaixo de 0,30);
 **suporte 0,37/0,26 ✗** no 11 (0,26 < 2 × 0,17). Faltam só essas duas frentes.
 
+Situação em 24/11 madrugada (p4, CI do commit 7851e81): def. física 0,44/0,42 ✓; controle 0,38/0,61 ✓; suporte
+0,37/**0,38** ✓; área agrupada 0,60/0,71 ✓; **dano 0,18/0,28 ✗** (o que era mecânica foi corrigido; o resto depende de
+D11/D12 ou é gabarito); **corpo agrupado 0,37/0,18 ✗** no 11 (depende de D13; gate frágil, 13 pistas). Critério 3 ✓
+(P3.4). A passada 3 moveu o suporte em > 1 erro-padrão, então ainda não é platô; os bloqueios que sobram são decisões.
+
 ## Passada 3 (aberta 24/11) — foco nas duas réguas fora do gate
 - [x] **P3.1 Régua de dano** [M] — o pior gate (0,17 no 7). Juntar P2.12 (marciais no 7) e o dano do Cleric no 11
   (0,76 → 0,38); ver o peso das invocações no dano (ligado à P3.3).
@@ -178,6 +183,24 @@ Situação em 24/11 (p3): def. física 0,44/0,42 ✓; controle 0,38/0,61 ✓; **
   P2.14 (Mantle) e Bard (Glamour acima de Lore/Eloquence, n = 4) ficam como ruído até persistirem.
 - [ ] **P3.3 Invocação domina o plano no 7** [J/M] — da varredura da passada M; o usuário não vê problema por ora:
   só investigar se a P3.1 apontar para ela.
+- [x] **P3.4 Gate mecânico (critério 3): itens do `nao_modelado` em ≥ 30 builds** — 23 itens (contagem nos níveis 7/11,
+  654 builds). Classificação (24/11):
+  - **Fora de escopo da fase 1 (valem igual para a classe inteira, não mexem na ordem dentro da classe → fase 2):**
+    Faerie Fire (74; todo Bard/Druid/Artificer), Deflect Missiles (56, Monk), Aura of Courage / Find Steed / smite
+    guardado para o crítico (54, Paladin), Feral Instinct / Relentless Rage / Fast Movement / Primal Path 14 (Barbarian),
+    Slow Fall / Patient Defense / Step of the Wind (Monk), Natural Explorer / troca de alvo da Hunter's Mark / dano do
+    Spike Growth (Ranger), Silvery Barbs (Wizard/Bard; = M1b), quebra de concentração (todo Cleric/Wizard), Indomitable.
+  - **Fora de escopo do motor (utilidade, fora de luta, mobilidade, iniciativa):** curas fora de luta, magias
+    utilitárias, Misty Step, Mass Suggestion, penalidade de deslocamento, Song of Rest fora de luta.
+  - **Texto velho (já modelado):** Counterspell (reações M1), Dissonant Whispers (passada M), Sleep onde há a linha.
+  - **Específico de subclasse (resíduo pequeno):** Faerie Fire do Light/Twilight Cleric e do Archfey (3 subclasses).
+  → Critério 3 atendido com esta classificação. Limpar os textos velhos do `nao_modelado` fica para quando os
+  geradores forem rodados de novo.
+- [ ] **P3.5 Régua de corpo no 11 (agrupado 0,18 < 0,30)** [J/M] — os "alto" que ficam embaixo são os protetores que
+  puxam o dano de um aliado para si: Aura of the Guardian (Redemption), Divine Allegiance (Crown), Protective Bond
+  (Peace). Hoje marcam só o próprio corpo (≈ 11), como se a feature não existisse; Ancestral Protectors, Moon e as
+  invocações ficam acima. É mecânica nova e de julgamento → **D13**. São só 13 pistas e agrupadas entre classes:
+  o gate de corpo é frágil (erro ≈ 0,2).
 - Rotular e aceitar: P2.3/P2.4 [G]; Sorcerer def. física (pista do dip) [G]; M1b/M7b/M8b/P2.9 ficam como resíduo
   "aceito" desta fase (efeito esperado < 1 nível).
 
@@ -529,3 +552,7 @@ Ordem de execução: D8 → D3 → D5 → D2 → D4 → D6 → D9 → D1 (D7 fec
   nv7 −0,22 → −0,11.
 - **D12 Pico do 1º round na régua de dano** — (a) manter média de 4 rounds; (b) premissa de peso do 1º round (ex.: 1,5:
   quem age primeiro mata antes); (c) deixar para o eixo de iniciativa (futuro). Afeta Gloom Stalker, Assassin, Grave.
+- **D13 Redirecionar dano para si** (Aura of the Guardian, Divine Allegiance, Protective Bond; P3.5) — onde conta?
+  (a) no corpo: o personagem vira o corpo que absorve uma fração do dano mirado nos aliados (campo genérico
+  `atencao.redireciona`: fração por round, limitada pela reação); (b) no suporte defensivo, como dano evitado nos
+  aliados (só que o dano não some, muda de alvo); (c) não modelar agora e aceitar o corpo abaixo do gate.

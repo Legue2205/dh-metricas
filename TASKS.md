@@ -785,3 +785,25 @@ de linha de frente = front), p = save de CON contra CD 10 (vantagem com War Cast
 Vengeance nv7 f = 0,58 (CON +3 na frente); Hunter's Mark do Gloom Stalker f = 0,81; Polymorph em T-Rex do
 Transmutation nv11 f = 0,58 → dano do dia de foco 12,4 → ~10. Lacuna: a própria principal com concentração não é
 ajustada; Aura of Protection ainda não entra no CON do save (o sv da build não a inclui — conferir).
+
+### Efeito de D16 + C no gate (CI 5bde156)
+τ pista (misto; dano com pacote_vh), nv7 / nv11: **dano 0,31 / 0,38** (sem pacote 0,32 / 0,34) · controle 0,53 / 0,50 ·
+suporte 0,32 / 0,33. Gate do dano passa nos dois níveis. O ganho do pacote no nv7 sumiu depois da moeda DE (estava
++0,03, dentro do ruído); no nv11 segue +0,04.
+
+### Etapa D, protótipo (`calibracao/abate.py`, resultados em `calibracao/abate-24nov.csv`)
+Monte Carlo da party (build + 3 aliados de referência) contra os 6 encontros do motor de controle; valor de abate =
+dano inimigo negado (turnos que o inimigo deixa de agir) com a build − com um aliado de referência no lugar; três modos
+de focus fire (perfeito, uniforme, aleatório-até-morrer). Achados:
+- **O ranking quase não se inverte com a malícia da party:** τ entre os modos 0,83–0,89 nos dois níveis. O topo é o
+  mesmo (Vengeance PAM+GWM, Samurai CBE+SS, Zealot, Storm Herald no 7; Samurai, Vengeance, Horizon Walker no 11).
+- Quem se mexe: com focus fire perfeito sobem as builds de **muitos ataques** (Glory PAM+GWM 3,4 atq, Long Death e
+  Shadow Monk, Moon Druid no 11); sem focus fire (uniforme) sobem as de **um acerto grande** (Rogues de sneak attack,
+  casters de truque, Tempest/Arcana) — granularidade do overkill.
+- Valor de abate × DPR: τ 0,82–0,84 (quase o mesmo eixo). Contra a pista de dano do RPGBot: nv7 0,28–0,31 (= DPR 0,30);
+  **nv11 0,45–0,50 contra 0,42 do DPR** (+0,08 no uniforme, ~1 erro-padrão).
+- Limitações: DPR médio (sem perfil de burst do round 1 — o Assassin contra caster ainda não aparece), sem área e sem
+  controle; aliados de referência com DPR fixo; acerto do inimigo 0,6.
+Próximo passo se o usuário quiser seguir: perfil de dano por round no motor de dano (round 1 × demais) para o burst
+contar, e área no abate da horda; depois decidir se o valor de abate entra no eixo de dano (por tipo de luta) e com
+qual modo de focus fire como padrão.

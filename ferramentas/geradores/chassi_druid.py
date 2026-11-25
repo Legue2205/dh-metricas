@@ -123,9 +123,9 @@ def shepherd(L, b):
                     "ataque": {"n": 2, "bonus": 8, "dano": "2d8+5"}}, 5
     inv = inv_base(L, b['atk'])
     extras = [dict(id="conjurar", hipotese=f"{cj['nome']} (1 hora) + truques", dano=cant(0.75), invocacoes=[cj],
-                   gasta={"espacos": {str(sl): 0.5}}),
+                   gasta={"espacos": {str(sl): 1}}),
               dict(id="totem-urso", hipotese="Spirit Totem (Bear) no lugar do Hawk + Summon Beast", dano=cant(0.75),
-                   invocacoes=[inv['i']], suporte={"fontes": [bear]}, gasta={"espacos": {str(inv['slot']): 0.5}})]
+                   invocacoes=[inv['i']], suporte={"fontes": [bear]}, gasta={"espacos": {str(inv['slot']): 1}})]
     return montar('shepherd', L, b, cant, sup=[hawk], inv=inv, extras=extras, _t=f"Mighty Summoner; {cj['nome']}.")
 
 

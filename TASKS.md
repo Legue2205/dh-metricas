@@ -877,3 +877,18 @@ ex.: Life/Nature/Order/Tempest) — investigar (linha que perde atenção/corpo?
   por luta o Summon já vence o melhor controle em DE (Wizard nv7 156 × 135; Warlock Fiend nv7 175 × 141) — Summon de 4º
   ≈ 20 de DPR + corpo de ~50 PV que atrai ataques — e ainda custa meio espaço. Gate: dano 0,32 / 0,38; controle
   0,53 / 0,57; suporte 0,32 / 0,33. Decisão do usuário pendente: o Summon cobre 2 lutas por espaço? (hoje 0,5).
+
+### 25/11 (13h) — moeda com conversão por abate, Summon realista (usuário)
+Pergunta do usuário: o Summon dá 81 de dano por luta e o melhor controle nega 46% do dano inimigo — 2 Summons
+"apagariam" a luta inteira? Conferido: nos encontros do motor o inimigo tem ≈ o mesmo PV total que o dano que causa
+na luta (k ≈ 0,9–1,1), então **dano causado não vale 1:1 dano evitado**: só o dano que mata cedo nega rounds.
+- **D18 — conversão por abate na moeda** (`moeda.conversao = "abate"`): o dano do round r vale (R − r + 0,5)/R ×
+  `moeda.k_abate` (1,0); constante vale ~metade, burst vale mais (usa dano.por_round). Suporte ofensivo converte igual;
+  suporte defensivo e controle já são dano evitado. Área só nas lutas de horda e sem somar com o alvo único (vale o
+  maior), com fator de tempo `moeda.tempo_area` 0,75 (magias de área saem cedo). '1:1' mantém o D16 original.
+- **Summon:** 1 espaço por luta (wiz.py e dru.py; antes 0,5 = 2 lutas sem dividir a vida) e `invocacao.fracao_viva`
+  0,9 no dano (a criatura morre/some às vezes antes do fim; o Summon de 4º no 7 tem ~40 PV e absorve ~36 por luta).
+  O "área" que aparecia no Summon era o dano de alvo único contando na régua de área (dupla contagem — corrigida).
+- Prévia (resultados antigos, moeda nova): Wizard nv7 combo 115 / controle 109 / controle de 3º 102 / Summon 88;
+  Warlock Fiend nv7 combo 112 / controle 107 / Summon 100; Cleric War nv7 controle 73 ≈ bless+arma 71 ≈ Spirit
+  Guardians+arma 69.

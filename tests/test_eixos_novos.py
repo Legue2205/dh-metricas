@@ -138,10 +138,12 @@ def test_invocacoes(monkeypatch):
 
 
 @pytest.mark.parametrize('arq,tol', [('john-7', 0.03), ('tinbin-7', 0.045), ('abdul-7', 0.08), ('marcus-7', 0.01), ('amadeus-7', 0.01)])
-def test_dano_calculado_bate_com_o_medido(arq, tol):
+def test_dano_calculado_bate_com_o_medido(arq, tol, monkeypatch):
     """O dano saiu de 'medido' para 'ataques'; os 9 DPRs antigos ficam em 'conferencia'. (John: só até CA 22;
     acima disso o motor desliga o Sharpshooter, que rende mais, e a planilha não desligava.)"""
-    from dh import dano
+    from dh import dano, premissas
+    orig = premissas.P                       # 25/11: a planilha contava a invocação viva a luta toda
+    monkeypatch.setattr(premissas, 'P', lambda n, padrao=None: 1.0 if n == 'invocacao.fracao_viva' else orig(n, padrao))
     b = json.loads((B / f'{arq}.json').read_text(encoding='utf-8')); l = b['linhas'][0]
     v = list(dano.avaliar(l['dano'], 4, l.get('invocacoes', []))['dpr'].values()); c = l['dano']['conferencia']
     n = 7 if arq == 'john-7' else 9

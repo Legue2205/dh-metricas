@@ -79,7 +79,7 @@ def fatia(L, mods, profs, ca, pv, cant, cd, atk, wis, papel, front, nm, esp=None
             for x in sp: g[str(x)] = g.get(str(x), 0) + 1
             ln("area", cant(0.5 if len(ap) > 1 else 0.75), area=ap + list(livres), gasta={"espacos": g})
     if inv:
-        ln("invocacao", cant(0.75), invocacoes=[inv['i']], gasta={"espacos": {str(inv['slot']): 0.5}})   # 1 hora = 2 lutas
+        ln("invocacao", cant(0.75), invocacoes=[inv['i']], gasta={"espacos": {str(inv["slot"]): 1}})   # 25/11: 1 espaço por luta (a vida da criatura não se divide entre 2 lutas)
     for x in extras:
         x = dict(x); x.setdefault('herda', 'principal'); L_.append(x)
     if forma_var:

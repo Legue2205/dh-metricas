@@ -134,7 +134,8 @@ def fatia(L, cl, wl, mods, profs, ca, pv, cant, ctrl=(), barato=None, areas=(), 
             ln("combo",cant(0.5),controle={"atencao":AT(front,papel),"fontes":[FF(controle_fonte(list(ctrl)))]+list(ctl_extra)},area=ac,
                gasta=gasto(top,*[u['slot'] for x in ac for u in x['usos']]),invocacoes=[],**dfs)
     if inv:
-        ln("invocacao",cant(0.75),controle=base_ctl,invocacoes=[inv['i']],gasta=gasto(meio=inv['slot']),area=[],**dfs)
+        # 25/11 (usuário): um espaço por luta — se cobrisse 2 lutas, a vida da criatura teria de ser dividida entre elas
+        ln("invocacao",cant(0.75),controle=base_ctl,invocacoes=[inv['i']],gasta=gasto(inv['slot']),area=[],**dfs)
     for x in extra: linhas.append(x)
     for l in linhas:
         if l['id']!='principal': l.setdefault('herda','principal')

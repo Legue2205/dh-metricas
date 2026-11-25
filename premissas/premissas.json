@@ -2293,5 +2293,33 @@
     "desde": "2026-11-24",
     "descricao": "Bônus de save de CON de uma forma (Polymorph/Shapechange/Animal Shapes): usa o da besta (ex.: T-Rex +3), não o do conjurador.",
     "historico": []
+  },
+  "moeda.conversao": {
+    "valor": "abate",
+    "eixo": "plano",
+    "desde": "2026-11-25",
+    "descricao": "Como o dano causado entra no dano equivalente: 'abate' (25/11, usuário: dano causado não vale 1:1 dano evitado — o dano do round r nega a fração (R − r + 0,5)/R dos rounds restantes do inimigo × moeda.k_abate; dano cedo vale mais) ou '1:1' (D16 original).",
+    "historico": []
+  },
+  "moeda.k_abate": {
+    "valor": 1.0,
+    "eixo": "plano",
+    "desde": "2026-11-25",
+    "descricao": "Dano que o inimigo causa por luta ÷ PV total dele (nos encontros do motor ≈ 0,9–1,1 no 7 e no 11): quanto de dano evitado cada ponto de dano causado compra se matar logo.",
+    "historico": []
+  },
+  "moeda.tempo_area": {
+    "valor": 0.75,
+    "eixo": "plano",
+    "desde": "2026-11-25",
+    "descricao": "Fator de tempo da área na moeda: magias de área saem cedo (round 1–2), valem mais que dano espalhado (0,5).",
+    "historico": []
+  },
+  "invocacao.fracao_viva": {
+    "valor": 0.9,
+    "eixo": "dano",
+    "desde": "2026-11-25",
+    "descricao": "Fração dos rounds em que a invocação está viva para atacar (25/11): o Summon de 4º no 7 tem ~40 PV e o motor de atenção dá a ele ~36 de dano absorvido por luta — sobrevive à luta quase sempre se cobrir UMA luta. Candidato a sair do motor de atenção.",
+    "historico": []
   }
 }

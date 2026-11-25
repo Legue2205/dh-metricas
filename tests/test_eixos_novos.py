@@ -379,7 +379,8 @@ def test_peso_round1_d12():
     assert abs(dano._peso_inicio(1) - R * w / (w + R - 1)) < 1e-9
     spec = {"ataques": [{"n": 2, "bonus": 7, "dano": "1d8+4"}, {"n": 0.25, "bonus": 7, "dano": "1d8+4", "round1": True}]}
     r = dano.avaliar(spec)
-    assert r['dpr_regua']['CA 15'] > r['dpr']['CA 15']
+    if w > 1: assert r['dpr_regua']['CA 15'] > r['dpr']['CA 15']
+    else: assert 'dpr_regua' not in r          # 25/11: D12 revogada (peso 1,0) — a régua usa o DPR puro
     assert 'dpr_regua' not in dano.avaliar({"ataques": [{"n": 2, "bonus": 7, "dano": "1d8+4"}]})
 
 

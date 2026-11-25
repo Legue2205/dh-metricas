@@ -807,3 +807,18 @@ de focus fire (perfeito, uniforme, aleatório-até-morrer). Achados:
 Próximo passo se o usuário quiser seguir: perfil de dano por round no motor de dano (round 1 × demais) para o burst
 contar, e área no abate da horda; depois decidir se o valor de abate entra no eixo de dano (por tipo de luta) e com
 qual modo de focus fire como padrão.
+
+### Etapa D, rodada 2 (25/11) — dano por round no motor + área no abate (`calibracao/abate-25nov.csv`)
+- **Motor de dano:** `dano.por_round` (por CA, R rounds) quando o dano não é constante: ataques de 1º round e usos por
+  luta (smite etc.) saem nos primeiros rounds; média = DPR. 67 chassis têm perfil não constante. **Lacuna achada:** o
+  Assassinate do Assassin está modelado como vantagem média (0,15) e não como ataque de 1º round com vantagem e
+  crítico automático — por isso o burst dele ainda não aparece (corrigir no gerador de chassi do Rogue).
+- **Modo padrão sugerido: aleatório-até-morrer** (cada um escolhe um alvo e segura até cair): é o meio-termo entre os
+  modos (τ 0,84 / 0,93 com o perfeito e 0,76 / 0,89 com o uniforme, nv7 / nv11) e o mais realista para mesa;
+  perfeito e uniforme ficam como faixa de sensibilidade.
+- Com a **área** nas lutas de horda, os conjuradores de Fireball empatam no topo do 7 (todos os Wizards ≈ 10) e o
+  Tempest lidera o 11 (18). τ com a pista de DANO do RPGBot (aleatório): nv7 0,30 (= DPR 0,30), nv11 0,35 (DPR 0,42;
+  sem área era 0,48) — **a área mistura o eixo de dano com o de área**, que já existe separado.
+- **Recomendação:** o valor de abate não entra no eixo de dano como está. Opções: (a) abate só nas lutas sem horda
+  (chefe, dupla, party de elite) como complemento do dano; (b) abate como métrica própria de "fechar luta" (usa dano +
+  área + burst), para a fase 2 (calibração entre réguas), onde a moeda comum é justamente dano negado.

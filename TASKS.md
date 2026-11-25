@@ -872,3 +872,8 @@ ex.: Life/Nature/Order/Tempest) — investigar (linha que perde atenção/corpo?
   do MESMO papel (inclui o corpo); para escolher linhas só a diferença importa.
 - Pendente: o Summon cobrir 2 lutas por 0,5 espaço é generoso (concentração por 1 hora entre lutas) — candidato a
   premissa.
+- **Resultado (CI 6d5e3df):** Sorcerers passam a usar o controle de 3º (Hypnotic Pattern / Slow / Fear) no 7 (10 de
+  32 lutas) e de 4º no 11; Paladins nv11 fazem `bless+smite` em 20 de 32 lutas. Wizards e Warlocks seguem no Summon:
+  por luta o Summon já vence o melhor controle em DE (Wizard nv7 156 × 135; Warlock Fiend nv7 175 × 141) — Summon de 4º
+  ≈ 20 de DPR + corpo de ~50 PV que atrai ataques — e ainda custa meio espaço. Gate: dano 0,32 / 0,38; controle
+  0,53 / 0,57; suporte 0,32 / 0,33. Decisão do usuário pendente: o Summon cobre 2 lutas por espaço? (hoje 0,5).

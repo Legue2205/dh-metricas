@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 7,
  "build": "Paladin (Vengeance), Variant Human, Polearm Master 1, For 18 4, Resilient Con 8; lança + escudo, Dueling",
- "impressao": "a202c85eee",
+ "impressao": "405ee89a9c",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -711,6 +711,288 @@
      }
     },
     "nivel_absoluto": 0.29,
+    "rank_absoluto": "F"
+   },
+   "concentracao": {
+    "f": 0.799,
+    "p_save": 0.8,
+    "acertos": 0.8,
+    "grupo": "meio",
+    "forma": false
+   }
+  },
+  "bless+smite": {
+   "hipotese": "Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 28.6,
+     "CA 12": 27.3,
+     "CA 15": 23.2,
+     "CA 16": 21.8,
+     "CA 18": 19.2,
+     "CA 20": 16.5,
+     "CA 22": 13.7,
+     "CA 24": 10.6,
+     "CA 25": 8.8
+    },
+    "nivel_eq": 6.0,
+    "rank": "B-",
+    "perfil": "Preciso",
+    "nivel_bruta": 5.9,
+    "nivel_precisa": 6.1,
+    "medido": false,
+    "por_round": {
+     "CA 11": [
+      33.4,
+      33.4,
+      23.9,
+      23.9
+     ],
+     "CA 12": [
+      32.0,
+      32.0,
+      22.5,
+      22.5
+     ],
+     "CA 15": [
+      28.0,
+      28.0,
+      18.3,
+      18.3
+     ],
+     "CA 16": [
+      26.7,
+      26.7,
+      17.0,
+      17.0
+     ],
+     "CA 18": [
+      24.1,
+      24.1,
+      14.2,
+      14.2
+     ],
+     "CA 20": [
+      21.6,
+      21.4,
+      11.5,
+      11.5
+     ],
+     "CA 22": [
+      19.2,
+      18.2,
+      8.7,
+      8.7
+     ],
+     "CA 24": [
+      17.2,
+      13.4,
+      6.0,
+      6.0
+     ],
+     "CA 25": [
+      16.6,
+      9.6,
+      4.6,
+      4.6
+     ]
+    }
+   },
+   "defesa": {
+    "pv_efetivo": 60,
+    "ca": 20,
+    "blindagem": 6.48,
+    "durabilidade": 4.19,
+    "nivel_blindagem": 6.8,
+    "nivel_durabilidade": 6.3,
+    "nivel_eq": 6.8,
+    "rank": "B-",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 6.21,
+     "rank": "B-",
+     "turnos_livres": [
+      3.9,
+      3.54,
+      3.46,
+      2.11,
+      1.8,
+      1.79,
+      1.91,
+      1.55,
+      1.14,
+      1.04
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 8.18,
+     "rank": "B+",
+     "turnos_livres": [
+      3.41,
+      2.1,
+      1.64,
+      1.63,
+      1.66,
+      1.39,
+      1.49,
+      1.05,
+      1.35,
+      1.08
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.6,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 2.83,
+     "3": 2.83,
+     "4": 3.0,
+     "5": 3.08,
+     "6": 3.08,
+     "7": 3.08,
+     "8": 4.14,
+     "9": 3.99,
+     "10": 3.99,
+     "11": 4.22,
+     "12": 4.22,
+     "13": 4.91,
+     "14": 4.91,
+     "15": 4.91,
+     "16": 4.91,
+     "17": 5.53,
+     "18": 5.53,
+     "19": 5.97,
+     "20": 5.53
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 13.12,
+    "defensivo": 3.4,
+    "total": 16.52,
+    "nivel_ofensivo": 7.0,
+    "nivel_defensivo": 4.6,
+    "nivel_eq": 6.3,
+    "rank": "B-",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "valor": 1.37
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 2.03
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 13.12
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.59,
+    "rank": "E",
+    "nivel_campo": 0.17,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 1.85,
+    "rank_atencao": "D",
+    "vidas_total": 0.101,
+    "vidas_campo": 0.03,
+    "vidas_atencao": 0.211,
+    "corpo": {
+     "T": 0.211,
+     "S": 0.247,
+     "P": -0.036,
+     "chave": "T+S+P0",
+     "perfil": "Resistente"
+    },
+    "nivel_corpo": 10.2,
+    "rank_corpo": "A-",
+    "corpo_busca": [
+     [
+      7,
+      0.211
+     ],
+     [
+      8,
+      0.147
+     ],
+     [
+      9,
+      0.088
+     ],
+     [
+      10,
+      0.023
+     ],
+     [
+      11,
+      -0.093
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.6,
+     "Party de elite": 0.57,
+     "Horda + chefe": 0.4,
+     "Horda": 0.49,
+     "Dupla": 0.64,
+     "Chefe sozinho": 0.7
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.016
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0093
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0096
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.021
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0093
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0106
+     }
+    },
+    "nivel_absoluto": 0.41,
     "rank_absoluto": "F"
    },
    "concentracao": {
@@ -3068,30 +3350,30 @@
      }
     },
     {
-     "linha": "bless",
+     "linha": "bless+smite",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1
+       "1": 3
       }
      }
     }
    ],
    "sobra": {
     "espacos": {
-     "2": 3
+     "2": 1
     },
     "canal": 1
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 4.7,
-     "rank": "C",
+     "nivel_eq": 5.1,
+     "rank": "C+",
      "por_categoria": {
       "np": 4.7,
-      "p": 4.7
+      "p": 5.3
      }
     },
     "defesa": {
@@ -3139,7 +3421,7 @@
      "rank": "C",
      "por_categoria": {
       "np": 4.3,
-      "p": 4.3
+      "p": 4.4
      }
     },
     "suporte": {
@@ -3153,7 +3435,7 @@
    }
   }
  },
- "segundos": 6.9,
+ "segundos": 9.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -3656,14 +3938,14 @@
   }
  },
  "impressoes": {
-  "_planos": "6f0e6c98e9c6",
+  "_planos": "611f926bc16c",
   "principal": {
    "dano": "204ba031a7ba",
    "defesa": "4f39222e0054",
    "saves": "b677dc53c026",
    "area": "e008dadc8ce2",
    "suporte": "7227f641d987",
-   "controle": "a0d6ea40d4c0"
+   "controle": "c418d0c9b4ce"
   },
   "smite-1": {
    "dano": "29dff71abb43",
@@ -3671,7 +3953,7 @@
    "saves": "b677dc53c026",
    "area": "a509a53144f1",
    "suporte": "7227f641d987",
-   "controle": "8c2bc3b8fdf5"
+   "controle": "dadb80a9251e"
   },
   "bless": {
    "dano": "adaf18a9c38a",
@@ -3679,7 +3961,15 @@
    "saves": "b677dc53c026",
    "area": "360ecd76b245",
    "suporte": "32286634ce16",
-   "controle": "2003dce59c3d"
+   "controle": "478950fde1cd"
+  },
+  "bless+smite": {
+   "dano": "df3a4327c062",
+   "defesa": "4f39222e0054",
+   "saves": "b677dc53c026",
+   "area": "d086f556b85a",
+   "suporte": "32286634ce16",
+   "controle": "6f761518ee72"
   },
   "voto": {
    "dano": "26ca908017e1",
@@ -3687,7 +3977,7 @@
    "saves": "b677dc53c026",
    "area": "0a3753dc40d6",
    "suporte": "7227f641d987",
-   "controle": "0ef50501747a"
+   "controle": "ec068d4d94a6"
   },
   "voto+smite": {
    "dano": "abd7c502a2a1",
@@ -3695,7 +3985,7 @@
    "saves": "b677dc53c026",
    "area": "def2895b86b6",
    "suporte": "7227f641d987",
-   "controle": "156887d63883"
+   "controle": "e7c41a9e3e85"
   },
   "marca": {
    "dano": "6967bce262ef",
@@ -3703,7 +3993,7 @@
    "saves": "b677dc53c026",
    "area": "dcaddbac7924",
    "suporte": "7227f641d987",
-   "controle": "713e2ebfd008"
+   "controle": "20e2a3a886a5"
   },
   "marca+smite": {
    "dano": "3b7cb9e514c1",
@@ -3711,7 +4001,7 @@
    "saves": "b677dc53c026",
    "area": "52d9767b23b5",
    "suporte": "7227f641d987",
-   "controle": "430e1d2fe7b4"
+   "controle": "cd0e3e1463a9"
   },
   "smite-2": {
    "dano": "52d4eb1758d2",
@@ -3719,7 +4009,7 @@
    "saves": "b677dc53c026",
    "area": "0bbdeb0c9551",
    "suporte": "7227f641d987",
-   "controle": "9bfbd062d2a9"
+   "controle": "65c5badae5ea"
   },
   "controle": {
    "dano": "adaf18a9c38a",
@@ -3727,7 +4017,7 @@
    "saves": "b677dc53c026",
    "area": "360ecd76b245",
    "suporte": "7227f641d987",
-   "controle": "77936e3a8763"
+   "controle": "dbeccad874bd"
   },
   "controle+smite": {
    "dano": "df3a4327c062",
@@ -3735,7 +4025,7 @@
    "saves": "b677dc53c026",
    "area": "d086f556b85a",
    "suporte": "7227f641d987",
-   "controle": "faa45c39872c"
+   "controle": "f646e8d0a87d"
   }
  }
 }

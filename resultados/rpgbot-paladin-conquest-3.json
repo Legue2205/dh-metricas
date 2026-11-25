@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 3,
  "build": "Paladin 8 / Warlock 2 (Undead), Variant Human, Shield Master 1, For 18 4, Car 18 8; espada longa + escudo, Dueling",
- "impressao": "e3cf077c34",
+ "impressao": "6282726538",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -630,6 +630,271 @@
      "Horda": 0.03,
      "Dupla": 0.0,
      "Chefe sozinho": 0.0
+    },
+    "negacao_por_fonte": {
+     "Minions + minibosses": {
+      "Corpo (ameaça)": 0.0132
+     },
+     "Party de elite": {
+      "Corpo (ameaça)": 0.0069
+     },
+     "Horda + chefe": {
+      "Corpo (ameaça)": 0.0082
+     },
+     "Horda": {
+      "Corpo (ameaça)": 0.0175
+     },
+     "Dupla": {
+      "Corpo (ameaça)": 0.0072
+     },
+     "Chefe sozinho": {
+      "Corpo (ameaça)": 0.0096
+     }
+    },
+    "nivel_absoluto": 0.0,
+    "rank_absoluto": "F"
+   },
+   "concentracao": {
+    "f": 0.69,
+    "p_save": 0.65,
+    "acertos": 0.8,
+    "grupo": "meio",
+    "forma": false
+   }
+  },
+  "bless+smite": {
+   "hipotese": "Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4",
+   "principal": [],
+   "dano": {
+    "dpr": {
+     "CA 11": 13.9,
+     "CA 12": 13.3,
+     "CA 15": 11.4,
+     "CA 16": 10.6,
+     "CA 18": 9.0,
+     "CA 20": 7.3,
+     "CA 22": 5.3,
+     "CA 24": 3.1,
+     "CA 25": 2.0
+    },
+    "nivel_eq": 2.8,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "nivel_bruta": 2.8,
+    "nivel_precisa": 2.8,
+    "medido": false,
+    "por_round": {
+     "CA 11": [
+      18.8,
+      18.6,
+      9.2,
+      9.2
+     ],
+     "CA 12": [
+      18.2,
+      17.9,
+      8.6,
+      8.6
+     ],
+     "CA 15": [
+      16.6,
+      15.2,
+      6.8,
+      6.8
+     ],
+     "CA 16": [
+      16.1,
+      14.0,
+      6.2,
+      6.2
+     ],
+     "CA 18": [
+      15.2,
+      11.0,
+      5.0,
+      5.0
+     ],
+     "CA 20": [
+      14.3,
+      7.0,
+      3.8,
+      3.8
+     ],
+     "CA 22": [
+      13.2,
+      2.7,
+      2.7,
+      2.7
+     ],
+     "CA 24": [
+      8.1,
+      1.5,
+      1.5,
+      1.5
+     ],
+     "CA 25": [
+      5.4,
+      0.9,
+      0.9,
+      0.9
+     ]
+    }
+   },
+   "defesa": {
+    "pv_efetivo": 28,
+    "ca": 18,
+    "blindagem": 2.26,
+    "durabilidade": 1.51,
+    "nivel_blindagem": 2.3,
+    "nivel_durabilidade": 2.1,
+    "nivel_eq": 2.3,
+    "rank": "D",
+    "perfil": "Equilibrado",
+    "reacoes_usadas": []
+   },
+   "saves": {
+    "resiliencia": {
+     "nivel_eq": 2.41,
+     "rank": "D",
+     "turnos_livres": [
+      3.69,
+      2.65,
+      2.43,
+      0.63,
+      0.87,
+      0.9,
+      0.75,
+      0.41,
+      0.16,
+      0.18
+     ]
+    },
+    "vontade": {
+     "nivel_eq": 1.3,
+     "rank": "D",
+     "turnos_livres": [
+      2.59,
+      1.11,
+      0.83,
+      0.93,
+      0.85,
+      0.61,
+      0.55,
+      0.38,
+      0.52,
+      0.29
+     ]
+    }
+   },
+   "area": {
+    "nivel_eq": 4.2,
+    "rank": "C",
+    "rounds": {
+     "1": 2.35,
+     "2": 3.8,
+     "3": 3.8,
+     "4": 4.03,
+     "5": 3.86,
+     "6": 3.86,
+     "7": 3.86,
+     "8": 5.04,
+     "9": 4.83,
+     "10": 4.83,
+     "11": 4.98,
+     "12": 4.98,
+     "13": 5.63,
+     "14": 5.63,
+     "15": 5.63,
+     "16": 5.63,
+     "17": 5.93,
+     "18": 5.93,
+     "19": 6.0,
+     "20": 5.88
+    },
+    "usos": 0,
+    "antigo": null,
+    "melhor": "dano de alvo único",
+    "areas": []
+   },
+   "suporte": {
+    "ofensivo": 6.06,
+    "defensivo": 0.92,
+    "total": 6.98,
+    "nivel_ofensivo": 3.0,
+    "nivel_defensivo": 0.7,
+    "nivel_eq": 2.4,
+    "rank": "D",
+    "perfil": "Amplificador",
+    "fonte_principal": "Bless",
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "valor": 0.92
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "valor": 6.06
+     }
+    ]
+   },
+   "orcamento": {
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ],
+    "acao_bonus": [],
+    "concentracao": [
+     "bless"
+    ],
+    "reacao_livre": 0.5,
+    "espacos_por_eixo": {},
+    "outros": {}
+   },
+   "controle": {
+    "nivel_eq": 0.15,
+    "rank": "F",
+    "nivel_campo": 0.09,
+    "rank_campo": "F",
+    "nivel_controle": 0.0,
+    "nivel_atencao": 0.46,
+    "rank_atencao": "F",
+    "vidas_total": 0.038,
+    "vidas_campo": 0.023,
+    "vidas_atencao": 0.117,
+    "corpo": {
+     "T": 0.117,
+     "S": 0.144,
+     "P": -0.026,
+     "chave": "T+S+P0",
+     "perfil": "Resistente"
+    },
+    "nivel_corpo": 3.92,
+    "rank_corpo": "C-",
+    "corpo_busca": [
+     [
+      3,
+      0.117
+     ],
+     [
+      4,
+      -0.011
+     ]
+    ],
+    "por_tipo": {
+     "Minions + minibosses": 0.15,
+     "Party de elite": 0.1,
+     "Horda + chefe": 0.09,
+     "Horda": 0.16,
+     "Dupla": 0.2,
+     "Chefe sozinho": 0.19
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
@@ -1681,29 +1946,30 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "conquista+smite",
+     "linha": "bless+smite",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 2
+       "1": 3
       },
       "canal": 1
-     }
+     },
+     "extras": [
+      "conquista"
+     ]
     }
    ],
    "sobra": {
-    "espacos": {
-     "1": 1
-    }
+    "espacos": {}
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 2.8,
+     "nivel_eq": 2.4,
      "rank": "D",
      "por_categoria": {
-      "p": 2.8
+      "p": 2.4
      }
     },
     "defesa": {
@@ -1745,14 +2011,14 @@
      "nivel_eq": 4.2,
      "rank": "C",
      "por_categoria": {
-      "p": 4.2
+      "p": 3.8
      }
     },
     "suporte": {
-     "nivel_eq": 0.2,
-     "rank": "F",
+     "nivel_eq": 1.0,
+     "rank": "D",
      "por_categoria": {
-      "p": 0.2
+      "p": 1.0
      }
     }
    }
@@ -2219,7 +2485,7 @@
    }
   }
  },
- "segundos": 1.1,
+ "segundos": 9.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2751,14 +3017,14 @@
   }
  },
  "impressoes": {
-  "_planos": "b2abe2d7ee32",
+  "_planos": "6e760e0309bb",
   "principal": {
    "dano": "2ac3f6eb6bb0",
    "defesa": "7c04e83fc234",
    "saves": "669ac51b9a84",
    "area": "6ce69be4158c",
    "suporte": "8e51bb418f29",
-   "controle": "17cb5ee4ea9c"
+   "controle": "f59016281107"
   },
   "smite-1": {
    "dano": "4b1211d81bc9",
@@ -2766,7 +3032,7 @@
    "saves": "669ac51b9a84",
    "area": "f89d58290f52",
    "suporte": "8e51bb418f29",
-   "controle": "1dd9f792a020"
+   "controle": "97f78808573c"
   },
   "bless": {
    "dano": "a4927cce67ad",
@@ -2774,7 +3040,15 @@
    "saves": "669ac51b9a84",
    "area": "fa5968f6cc6e",
    "suporte": "9832397e4c78",
-   "controle": "305a7e9ea8f0"
+   "controle": "d22c6d75badf"
+  },
+  "bless+smite": {
+   "dano": "2889f8282bfb",
+   "defesa": "7c04e83fc234",
+   "saves": "669ac51b9a84",
+   "area": "f00a7654aeff",
+   "suporte": "9832397e4c78",
+   "controle": "535cbd85ecf1"
   },
   "conquista": {
    "dano": "a4927cce67ad",
@@ -2782,7 +3056,7 @@
    "saves": "669ac51b9a84",
    "area": "fa5968f6cc6e",
    "suporte": "8e51bb418f29",
-   "controle": "d367a0ef8aaf"
+   "controle": "2d2a55e2a9b5"
   },
   "conquista+smite": {
    "dano": "2889f8282bfb",
@@ -2790,7 +3064,7 @@
    "saves": "669ac51b9a84",
    "area": "f00a7654aeff",
    "suporte": "8e51bb418f29",
-   "controle": "1f173b024c39"
+   "controle": "e4d74345c8ac"
   },
   "agathys": {
    "dano": "2ac3f6eb6bb0",
@@ -2798,7 +3072,7 @@
    "saves": "669ac51b9a84",
    "area": "6ce69be4158c",
    "suporte": "8e51bb418f29",
-   "controle": "17cb5ee4ea9c"
+   "controle": "f59016281107"
   },
   "agathys+smite": {
    "dano": "4b1211d81bc9",
@@ -2806,7 +3080,7 @@
    "saves": "669ac51b9a84",
    "area": "f89d58290f52",
    "suporte": "8e51bb418f29",
-   "controle": "1dd9f792a020"
+   "controle": "97f78808573c"
   }
  }
 }

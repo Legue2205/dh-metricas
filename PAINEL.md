@@ -4,7 +4,7 @@
 Plano do dia: padrao. Builds marcadas com ~ ainda não têm esse plano (mostra a linha principal).
 ID                     nv      Dano    Defesa    Resil.   Vontade  Controle      Área   Suporte
 abdul-7                 7    5,8 C+   10,8 A-    6,1 B-    8,0 B+         -     4,6 C     0,5 E
-amadeus-7               7     7,3 B    3,7 C-    6,3 B-    12,3 A         -    8,6 B+    5,0 C+
+amadeus-7               7     7,3 B    3,7 C-    6,3 B-    12,3 A         -    8,6 B+    3,6 C-
 ~aprendiz-11           11    11,7 A   15,4 A+    20,0 S    12,1 A     2,4 D    8,3 B+         -
 ~caleb-14              14   10,9 A-   13,6 A+    20,0 S    12,1 A     1,0 E    8,1 B+         -
 chassi-artificer-alchemist-11  11    3,8 C-   10,2 A-    8,4 B+     4,3 C         -     4,3 C    3,6 C-
@@ -394,10 +394,10 @@ chassi-wizard-war-magic-7   7     4,6 C    3,6 C-    3,9 C-     4,9 C         - 
 ~exemplo-guerreiro-5    5     4,6 C    5,5 C+         -         -     0,8 E     4,3 C         -
 ~fjord-9                9         -   13,4 A+    11,2 A    3,7 C-    5,8 C+         -         -
 ~jamal-9                9         -   10,7 A-         -         -     1,4 D         -         -
-john-7                  7    8,2 B+    3,3 C-    5,7 C+     4,4 C         -    8,3 B+     1,4 D
+john-7                  7    8,1 B+    3,3 C-    5,7 C+     4,4 C         -    8,3 B+     1,4 D
 kael-7                  7     7,2 B    6,3 B-   10,1 A-    8,2 B+         -     4,8 C    3,8 C-
 lucius-15              15    18,4 S   14,5 A+    20,0 S    20,0 S         -    8,3 B+         -
-marcus-7                7     2,7 D    3,9 C-    5,9 C+     4,3 C         -    8,4 B+     7,0 B
+marcus-7                7     2,5 D    3,9 C-    5,9 C+     4,3 C         -     7,0 B     4,5 C
 ~miau-8                 8         -    6,6 B-    6,8 B-     2,5 D     4,4 C         -         -
 pacote-barbarian-berserker-pam-gwm-11  11    8,7 B+   15,3 A+    11,0 A    8,7 B+         -    8,1 B+         -
 pacote-barbarian-berserker-pam-gwm-7   7    6,4 B-     7,9 B    6,6 B-    8,5 B+         -     4,6 C         -
@@ -520,7 +520,7 @@ pacote-rogue-thief-cbe-ss-7   7    6,3 B-    5,9 C+    8,0 B+    3,2 C-         
 pacote-rogue-thief-cbe-ss-vh-11  11    8,6 B+   10,6 A-    16,2 S    4,0 C-         -    8,0 B+         -
 pacote-rogue-thief-cbe-ss-vh-7   7    6,2 B-    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 ~pyotr-14              14    8,3 B+    3,5 C-   13,3 A+    16,9 S     2,9 D    12,7 A         -
-ravin-7                 7    6,2 B-    9,9 B+    16,4 S    12,6 A         -   10,1 A-     0,0 F
+ravin-7                 7    5,9 C+    9,9 B+    16,4 S    12,6 A         -   10,1 A-     0,0 F
 rpgbot-artificer-alchemist-11  11     1,6 D    6,4 B-     7,9 B    3,8 C-         -     4,2 C    8,1 B+
 rpgbot-artificer-alchemist-3   3     0,3 F     1,6 D     2,2 D     1,0 D         -     0,4 F     0,4 F
 rpgbot-artificer-alchemist-5   5     0,8 E     2,9 D    3,9 C-     2,7 D         -     2,7 D     4,1 C

@@ -203,6 +203,18 @@
          "hold_monster"
         ],
         "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Confusion",
+        "magia": "confusion",
+        "cd": 15
        }
       ]
      }
@@ -212,6 +224,54 @@
     "espacos": {
      "1": 0.5,
      "5": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "controle-barato",
+   "hipotese": "controle mais barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+7",
+      "nota": "rapieira (Dueling)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 0.75,
+      "dano": "1d10",
+      "nota": "Blade Flourish (metade dos dados)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Hypnotic Pattern",
+      "magia": "hypnotic_pattern",
+      "cd": 15
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -326,54 +386,6 @@
    "gasta": {
     "espacos": {
      "4": 1,
-     "1": 0.5
-    }
-   },
-   "herda": "principal"
-  },
-  {
-   "id": "controle-barato",
-   "hipotese": "controle mais barato",
-   "dano": {
-    "ataques": [
-     {
-      "n": 1.5,
-      "bonus": 9,
-      "dano": "1d8+7",
-      "nota": "rapieira (Dueling)"
-     }
-    ],
-    "por_luta": [
-     {
-      "usos": 0.75,
-      "dano": "1d10",
-      "nota": "Blade Flourish (metade dos dados)"
-     }
-    ]
-   },
-   "controle": {
-    "atencao": {
-     "papel": "striker",
-     "front": false,
-     "acc_m": [
-      0.9,
-      0.95,
-      1.0
-     ],
-     "dpr": "auto"
-    },
-    "fontes": [
-     {
-      "tipo": "area",
-      "nome": "Hypnotic Pattern",
-      "magia": "hypnotic_pattern",
-      "cd": 15
-     }
-    ]
-   },
-   "gasta": {
-    "espacos": {
-     "3": 1,
      "1": 0.5
     }
    },

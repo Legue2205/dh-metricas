@@ -331,16 +331,74 @@
      }
     ]
    }
+  },
+  {
+   "id": "controle-2",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 11,
+      "dano": "1d8+7",
+      "nota": "Thunder Gauntlets (Int, Enhanced Weapon)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Web",
+      "magia": "web",
+      "cd": 17
+     },
+     {
+      "tipo": "ancestral_protectors",
+      "nome": "Thunder Gauntlets (desvantagem contra outros)",
+      "bonus": 11,
+      "resistencia": false
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "2": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle-2",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Flash of Genius",
+      "lado": "def",
+      "modelo": "bonus_por_uso",
+      "bonus": 5,
+      "usos_luta": 1.25,
+      "acao": "reacao"
+     }
+    ]
+   }
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-absorb-elements; prioritário: combo, controle. Sobra: 1×1º, 2×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-2; prioritário: combo, controle. Sobra: 3×1º.",
    "combates": [
-    "reacao-absorb-elements",
+    "controle-2",
     "controle",
-    "reacao-absorb-elements",
+    "controle-2",
     "combo"
    ]
   },

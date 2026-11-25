@@ -247,6 +247,18 @@
          "hold_monster"
         ],
         "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Confusion",
+        "magia": "confusion",
+        "cd": 17
        }
       ]
      }
@@ -256,6 +268,88 @@
     "espacos": {
      "1": 0.5,
      "5": 1
+    }
+   },
+   "herda": "principal",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Bardic Inspiration (d10)",
+      "lado": "of",
+      "modelo": "dado_multiuso",
+      "dado_medio": 5.5,
+      "usos_luta": 1.25
+     },
+     {
+      "nome": "Bardic Inspiration (d10) como Cutting Words",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "dado_medio": 5.5,
+      "usos_luta": 1.25,
+      "mix": {
+       "ca": 1.0
+      },
+      "acao": "reacao"
+     },
+     {
+      "nome": "Healing Word (levanta um caído)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "distancia",
+      "acao": "bonus",
+      "usos_luta": 1,
+      "pv": 7.5
+     },
+     {
+      "nome": "Vicious Mockery (desvantagem)",
+      "lado": "def",
+      "modelo": "desvantagem_contra",
+      "alvos": 1,
+      "fracao": 0.188
+     }
+    ]
+   }
+  },
+  {
+   "id": "controle-barato",
+   "hipotese": "controle mais barato",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 17,
+      "save": "Sab",
+      "dano": "3d4",
+      "meio": false,
+      "nota": "Vicious Mockery"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Hypnotic Pattern",
+      "magia": "hypnotic_pattern",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 0.5
     }
    },
    "herda": "principal",
@@ -458,88 +552,6 @@
     }
    },
    "herda": "principal"
-  },
-  {
-   "id": "controle-barato",
-   "hipotese": "controle mais barato",
-   "dano": {
-    "com_save": [
-     {
-      "n": 0.75,
-      "cd": 17,
-      "save": "Sab",
-      "dano": "3d4",
-      "meio": false,
-      "nota": "Vicious Mockery"
-     }
-    ]
-   },
-   "controle": {
-    "atencao": {
-     "papel": "conjurador",
-     "front": false,
-     "acc_m": [
-      0.8,
-      0.9,
-      1.0
-     ],
-     "conc": true,
-     "dpr": "auto"
-    },
-    "fontes": [
-     {
-      "tipo": "area",
-      "nome": "Hypnotic Pattern",
-      "magia": "hypnotic_pattern",
-      "cd": 17
-     }
-    ]
-   },
-   "gasta": {
-    "espacos": {
-     "3": 1,
-     "1": 0.5
-    }
-   },
-   "herda": "principal",
-   "suporte": {
-    "fontes": [
-     {
-      "nome": "Bardic Inspiration (d10)",
-      "lado": "of",
-      "modelo": "dado_multiuso",
-      "dado_medio": 5.5,
-      "usos_luta": 1.25
-     },
-     {
-      "nome": "Bardic Inspiration (d10) como Cutting Words",
-      "lado": "def",
-      "modelo": "dado_multiuso",
-      "dado_medio": 5.5,
-      "usos_luta": 1.25,
-      "mix": {
-       "ca": 1.0
-      },
-      "acao": "reacao"
-     },
-     {
-      "nome": "Healing Word (levanta um caído)",
-      "lado": "def",
-      "modelo": "cura_na_luta",
-      "alcance": "distancia",
-      "acao": "bonus",
-      "usos_luta": 1,
-      "pv": 7.5
-     },
-     {
-      "nome": "Vicious Mockery (desvantagem)",
-      "lado": "def",
-      "modelo": "desvantagem_contra",
-      "alvos": 1,
-      "fracao": 0.188
-     }
-    ]
-   }
   }
  ],
  "planos": {

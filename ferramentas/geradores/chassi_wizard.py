@@ -14,6 +14,7 @@ import sys
 sys.path.insert(0, 'ferramentas/geradores')
 import chassi as C  # noqa: E402
 from wiz import (fatia as wfatia, toll, summon, area_sp, U, WEB, HYP, BAN, HM, WOF, SYN, PF, EBT, HP_, AT, SH, RE)  # noqa: E402,F401
+import wiz as W  # noqa: E402
 
 ORDEM = ('int', 'con', 'des', 'sab', 'car', 'for')
 ORDEM_BS = ('int', 'des', 'con', 'sab', 'car', 'for')
@@ -29,6 +30,8 @@ def base(L, ordem=ORDEM):
     i = m['int']; cd = 8 + p + i; a = p + i
     ctrl = [WEB(cd), HYP(cd), BAN(cd)] + ([U("Psychic Lance", "psychic_lance", cd, 4)] if L >= 7 else []) + \
         ([HM(cd), WOF(cd), SYN(cd)] if L >= 11 else [])   # M6b (23/11): Psychic Lance
+    ctrl += ([W.SLOW(cd), W.FEAR(cd)] if L >= 5 else []) + ([W.CONF(cd)] if L >= 7 else []) + \
+        ([W.WOS(cd), W.TK(cd)] if L >= 11 else [])        # 25/11: clássicos que faltavam
     areas = [area_sp("Fireball", 4, "8d6", cd, 3)] + ([area_sp("Cone of Cold", 6, "8d8", cd, 5)] if L >= 11 else [])
     top = 4 if L < 11 else 6
     return dict(s=s, m=m, p=p, i=i, cd=cd, a=a, ctrl=ctrl, barato=WEB(cd), areas=areas,

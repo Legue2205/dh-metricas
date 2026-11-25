@@ -40,6 +40,8 @@ def ctrl_base(cd, L=1):
     """Entangle, Hold Person, Polymorph; M6 (23/11): + Sleet Storm e Plant Growth (3º) do nível 5."""
     out = [D['ENT'](cd), D['HP'](cd), D['POLY'](cd)]
     if L >= 5: out += [D['U']("Sleet Storm", "sleet_storm", cd, 3, area=True), D['U']("Plant Growth", "plant_growth", cd, 3, area=True)]
+    if L >= 7: out += [D['U']("Confusion", "confusion", cd, 4, area=True)]                     # 25/11
+    if L >= 11: out += [D['U']("Wall of Stone", "wall_of_stone", cd, 5), D['U']("Maelstrom", "maelstrom", cd, 5, area=True)]
     return out
 
 

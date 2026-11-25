@@ -54,6 +54,8 @@ def montar(sub, L):
     pv = C.hp(6, L, m['con']) + (L if drac else 0)
     ctrl = [WEB(cd), HP_(cd), HYP(cd), POLY(cd)] + ([U("Psychic Lance", "psychic_lance", cd, 4)] if L >= 7 else []) + \
         ([HM(cd), SYN(cd)] if L >= 11 else [])   # M6b (23/11): Psychic Lance
+    ctrl += ([W.SLOW(cd), W.FEAR(cd)] if L >= 5 else []) + ([W.CONF(cd)] if L >= 7 else []) + \
+        ([W.WOS(cd), W.TK(cd)] if L >= 11 else [])        # 25/11: clássicos que faltavam
     ar = [FB(cd, ea)] + ([CONE(cd)] if L >= 11 else [])
     inv = None; extra = []; top = 4 if L < 11 else 6
     if sub == 'aberrant-mind':

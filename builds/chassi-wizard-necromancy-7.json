@@ -145,6 +145,24 @@
          "psychic_lance"
         ],
         "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Slow",
+        "magia": "slow",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Confusion",
+        "magia": "confusion",
+        "cd": 15
        }
       ]
      }
@@ -264,6 +282,105 @@
    ],
    "herda": "principal",
    "hipotese": "controle-barato"
+  },
+  {
+   "id": "controle-3",
+   "dano": {
+    "com_save": [
+     {
+      "n": 0.75,
+      "cd": 15,
+      "save": "Sab",
+      "dano": "2d12",
+      "meio": false,
+      "nota": "Toll the Dead (alvo ferido)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Web",
+        "magia": "web",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Slow",
+        "magia": "slow",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 15
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [
+    {
+     "nome": "esqueletos (Undead Thralls)",
+     "quantidade": 4,
+     "pv": 20,
+     "ca": 13,
+     "ataque": {
+      "bonus": 4,
+      "dano": "1d6+5"
+     },
+     "nota": "arco curto; +PB de dano e +nível de PV (Undead Thralls)"
+    }
+   ],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "shield",
+      "usos_luta": 1
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Shield",
+     "fracao": 0.5,
+     "eixos": [
+      "defesa"
+     ]
+    }
+   ],
+   "herda": "principal",
+   "hipotese": "controle-3"
   },
   {
    "id": "area",
@@ -427,6 +544,24 @@
          "psychic_lance"
         ],
         "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Slow",
+        "magia": "slow",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Confusion",
+        "magia": "confusion",
+        "cd": 15
        }
       ]
      }

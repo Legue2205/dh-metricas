@@ -206,6 +206,18 @@
          "hold_monster"
         ],
         "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Confusion",
+        "magia": "confusion",
+        "cd": 17
        }
       ]
      }
@@ -215,6 +227,55 @@
     "espacos": {
      "1": 0.5,
      "5": 1
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "controle-barato",
+   "hipotese": "controle mais barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 7,
+      "dano": "1d8+3",
+      "nota": "besta leve"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 1.25,
+      "dano": "5d6",
+      "nota": "Psychic Blades (metade dos dados)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "area",
+      "nome": "Hypnotic Pattern",
+      "magia": "hypnotic_pattern",
+      "cd": 17
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "3": 1,
+     "1": 0.5
     }
    },
    "herda": "principal"
@@ -329,55 +390,6 @@
    "gasta": {
     "espacos": {
      "4": 1,
-     "1": 0.5
-    }
-   },
-   "herda": "principal"
-  },
-  {
-   "id": "controle-barato",
-   "hipotese": "controle mais barato",
-   "dano": {
-    "ataques": [
-     {
-      "n": 0.75,
-      "bonus": 7,
-      "dano": "1d8+3",
-      "nota": "besta leve"
-     }
-    ],
-    "por_luta": [
-     {
-      "usos": 1.25,
-      "dano": "5d6",
-      "nota": "Psychic Blades (metade dos dados)"
-     }
-    ]
-   },
-   "controle": {
-    "atencao": {
-     "papel": "conjurador",
-     "front": false,
-     "acc_m": [
-      0.8,
-      0.9,
-      1.0
-     ],
-     "conc": true,
-     "dpr": "auto"
-    },
-    "fontes": [
-     {
-      "tipo": "area",
-      "nome": "Hypnotic Pattern",
-      "magia": "hypnotic_pattern",
-      "cd": 17
-     }
-    ]
-   },
-   "gasta": {
-    "espacos": {
-     "3": 1,
      "1": 0.5
     }
    },

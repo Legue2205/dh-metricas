@@ -145,6 +145,18 @@
         "cd": 15
        },
        {
+        "tipo": "area",
+        "nome": "Hunger of Hadar",
+        "magia": "hunger_of_hadar",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 15
+       },
+       {
         "tipo": "alvo_unico",
         "nome": "Banishment",
         "cd": 15,
@@ -196,6 +208,234 @@
    "reacao": [],
    "herda": "principal",
    "hipotese": "controle"
+  },
+  {
+   "id": "controle-1",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d10+4",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Tasha's Hideous Laughter",
+      "cd": 15,
+      "slots": [
+       1
+      ],
+      "magias": [
+       "tashas_hideous_laughter"
+      ],
+      "modo": "melhor"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "desvantagem",
+      "usos_luta": 0.5
+     }
+    ]
+   },
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle-1"
+  },
+  {
+   "id": "controle-2",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d10+4",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Tasha's Hideous Laughter",
+        "cd": 15,
+        "slots": [
+         1
+        ],
+        "magias": [
+         "tashas_hideous_laughter"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "desvantagem",
+      "usos_luta": 0.5
+     }
+    ]
+   },
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle-2"
+  },
+  {
+   "id": "controle-3",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d10+4",
+      "nota": "Eldritch Blast + Agonizing Blast"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "conjurador",
+     "front": false,
+     "acc_m": [
+      0.8,
+      0.9,
+      1.0
+     ],
+     "conc": true,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 15,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Hunger of Hadar",
+        "magia": "hunger_of_hadar",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 15
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Tasha's Hideous Laughter",
+        "cd": 15,
+        "slots": [
+         1
+        ],
+        "magias": [
+         "tashas_hideous_laughter"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {
+    "reacoes": [
+     {
+      "tipo": "desvantagem",
+      "usos_luta": 0.5
+     }
+    ]
+   },
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle-3"
   },
   {
    "id": "area",
@@ -315,6 +555,18 @@
         "tipo": "area",
         "nome": "Hypnotic Pattern",
         "magia": "hypnotic_pattern",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Hunger of Hadar",
+        "magia": "hunger_of_hadar",
+        "cd": 15
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
         "cd": 15
        },
        {

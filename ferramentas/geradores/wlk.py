@@ -28,7 +28,7 @@ LBOL=lambda cd: area_sp("Lightning Bolt",3,"8d6",cd,3)
 CONE=lambda cd: area_sp("Cone of Cold",4,"8d8",cd,5)
 def ctrl_pad(L,cd,extra=()):
     o=[HOLD(cd)]
-    if L>=5: o.append(HYPN(cd))
+    if L>=5: o+= [HYPN(cd), U("Hunger of Hadar","hunger_of_hadar",cd,3,area=True), U("Fear","fear",cd,3,area=True)]   # 25/11
     if L>=7: o.append(BANI(cd))
     if L>=9: o.append(HMON(cd))
     if L>=11: o.append(SYNS(cd))

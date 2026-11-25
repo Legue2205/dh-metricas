@@ -181,6 +181,72 @@
     },
     "fontes": [
      {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 13
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 13
+       },
+       {
+        "tipo": "area",
+        "nome": "Confusion",
+        "magia": "confusion",
+        "cd": 13
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "4": 1,
+     "1": 0.5
+    }
+   },
+   "herda": "principal"
+  },
+  {
+   "id": "controle-barato",
+   "hipotese": "controle mais barato",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d8+6",
+      "nota": "rapieira (Dueling)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 0.5,
+      "dano": "1d8",
+      "nota": "Blade Flourish (metade dos dados)"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
       "tipo": "area",
       "nome": "Hypnotic Pattern",
       "magia": "hypnotic_pattern",
@@ -315,11 +381,11 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle, sussurros; prioritário: area, controle. Sobra: 1×1º, 3×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-barato, sussurros; prioritário: area, controle-barato. Sobra: 1×1º, 3×2º.",
    "combates": [
     "sussurros",
-    "controle",
-    "controle",
+    "controle-barato",
+    "controle-barato",
     "area"
    ]
   },

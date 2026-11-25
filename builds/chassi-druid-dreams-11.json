@@ -155,6 +155,30 @@
         "nome": "Plant Growth",
         "magia": "plant_growth",
         "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Confusion",
+        "magia": "confusion",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Wall of Stone",
+        "cd": 17,
+        "slots": [
+         5
+        ],
+        "magias": [
+         "wall_of_stone"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Maelstrom",
+        "magia": "maelstrom",
+        "cd": 17
        }
       ]
      }
@@ -162,7 +186,7 @@
    },
    "gasta": {
     "espacos": {
-     "4": 1
+     "5": 1
     }
    },
    "herda": "principal",
@@ -325,11 +349,11 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle; prioritário: area, controle. Sobra: 4×1º, 3×2º, 3×3º, 1×5º, 2 forma_selvagem.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: area-barata; prioritário: area, controle. Sobra: 4×1º, 3×2º, 3×3º, 1×4º, 2 forma_selvagem.",
    "combates": [
+    "area-barata",
     "controle",
-    "controle",
-    "controle",
+    "area-barata",
     "area"
    ]
   },

@@ -118,6 +118,14 @@ def fatia(L, cl, wl, mods, profs, ca, pv, cant, ctrl=(), barato=None, areas=(), 
         ln("controle",cant(0.75),controle={"atencao":AT(front,papel),"fontes":[FF(controle_fonte(list(ctrl)))]+list(ctl_extra)},gasta=gasto(top),area=[],invocacoes=[],**dfs)
         if barato:
             ln("controle-barato",cant(0.75),controle={"atencao":AT(front,papel),"fontes":[FF(barato['f'])]+list(ctl_extra)},gasta=gasto(barato['slot']),area=[],invocacoes=[],**dfs)
+        # 25/11: a linha "controle" paga o maior espaço da lista mesmo quando a melhor opção é de círculo menor (ex.:
+        # Hypnotic Pattern de 3º numa lista que vai até o 5º) — o plano via o controle caro demais. Uma linha por
+        # círculo intermediário: a melhor magia da lista até aquele círculo, pagando aquele espaço.
+        bs=barato['slot'] if barato else None
+        for t in sorted({o['slot'] for o in ctrl}):
+            if t>=top or t==bs: continue
+            sub=[o for o in ctrl if o['slot']<=t]
+            ln(f"controle-{t}",cant(0.75),controle={"atencao":AT(front,papel),"fontes":[FF(controle_fonte(sub))]+list(ctl_extra)},gasta=gasto(t),area=[],invocacoes=[],**dfs)
     if areas:
         a=list(areas); ap,sp=area_pico(a,esp)
         ln("area",cant(0.5 if len(ap)>1 else 0.75),controle=base_ctl,area=ap,gasta=gasto(*sp),invocacoes=[],**dfs)
@@ -175,6 +183,14 @@ HP_=lambda cd: U("Hold Person","hold_person",cd,2)
 BAN=lambda cd: U("Banishment","banishment",cd,4)
 WOF=lambda cd: U("Wall of Force","wall_of_force",cd,5)
 SYN=lambda cd: U("Synaptic Static","synaptic_static",cd,5,area=True)
+# 25/11 (usuário): clássicos de controle que faltavam nas listas
+SLOW=lambda cd: U("Slow","slow",cd,3,area=True)
+FEAR=lambda cd: U("Fear","fear",cd,3,area=True)
+CONF=lambda cd: U("Confusion","confusion",cd,4,area=True)
+WOS=lambda cd: U("Wall of Stone","wall_of_stone",cd,5)
+TK=lambda cd: U("Telekinesis","telekinesis",cd,5)
+HUNG=lambda cd: U("Hunger of Hadar","hunger_of_hadar",cd,3,area=True)
+MAEL=lambda cd: U("Maelstrom","maelstrom",cd,5,area=True)
 PF=lambda cd: U("Phantasmal Force","phantasmal_force",cd,2)
 EG=lambda cd: U("Earthen Grasp","earthen_grasp",cd,2)
 FB=lambda cd,extra=0,sel=False: area_sp("Fireball",4,"8d6"+(f"+{extra}" if extra else ""),cd,3,sel=sel)

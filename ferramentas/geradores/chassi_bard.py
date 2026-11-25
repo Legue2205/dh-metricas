@@ -82,6 +82,8 @@ def fatia(L, c, posicao, ca, cant, sup=(), ctrl_cd=0, areas_extra=(), shat_extra
     ln("sussurros", cant(0.75), "Dissonant Whispers (1 espaço de 1º, sem concentração)",
        controle=ctl(U("Dissonant Whispers", "dissonant_whispers", cd + ctrl_cd, 1)['f']), gasta={"espacos": {"1": 1}})
     ops = ([HYP(cd + ctrl_cd)] if L >= 5 else []) + ([HM(cd + ctrl_cd)] if L >= 9 else [])
+    ops += ([U("Fear", "fear", cd + ctrl_cd, 3, area=True)] if L >= 5 else []) + \
+        ([U("Confusion", "confusion", cd + ctrl_cd, 4, area=True)] if L >= 7 else [])   # 25/11
     if ops:
         t = max(o['slot'] for o in ops)
         ln("controle", cant(0.75), "melhor magia de controle", controle=ctl(controle_fonte(ops)), gasta={"espacos": {str(t): 1}})

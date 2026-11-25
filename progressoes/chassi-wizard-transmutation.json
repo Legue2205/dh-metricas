@@ -146,6 +146,24 @@
           "psychic_lance"
          ],
          "modo": "melhor"
+        },
+        {
+         "tipo": "area",
+         "nome": "Slow",
+         "magia": "slow",
+         "cd": 15
+        },
+        {
+         "tipo": "area",
+         "nome": "Fear",
+         "magia": "fear",
+         "cd": 15
+        },
+        {
+         "tipo": "area",
+         "nome": "Confusion",
+         "magia": "confusion",
+         "cd": 15
         }
        ]
       }
@@ -241,6 +259,93 @@
     ],
     "herda": "principal",
     "hipotese": "controle-barato"
+   },
+   {
+    "id": "controle-3",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 15,
+       "save": "Sab",
+       "dano": "2d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Web",
+         "magia": "web",
+         "cd": 15
+        },
+        {
+         "tipo": "area",
+         "nome": "Hypnotic Pattern",
+         "magia": "hypnotic_pattern",
+         "cd": 15
+        },
+        {
+         "tipo": "area",
+         "nome": "Slow",
+         "magia": "slow",
+         "cd": 15
+        },
+        {
+         "tipo": "area",
+         "nome": "Fear",
+         "magia": "fear",
+         "cd": 15
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "3": 1,
+      "1": 1
+     }
+    },
+    "area": [],
+    "invocacoes": [],
+    "defesa": {
+     "reacoes": [
+      {
+       "tipo": "shield",
+       "usos_luta": 1
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "Shield",
+      "fracao": 0.5,
+      "eixos": [
+       "defesa"
+      ]
+     }
+    ],
+    "herda": "principal",
+    "hipotese": "controle-3"
    },
    {
     "id": "area",
@@ -392,6 +497,24 @@
           "psychic_lance"
          ],
          "modo": "melhor"
+        },
+        {
+         "tipo": "area",
+         "nome": "Slow",
+         "magia": "slow",
+         "cd": 15
+        },
+        {
+         "tipo": "area",
+         "nome": "Fear",
+         "magia": "fear",
+         "cd": 15
+        },
+        {
+         "tipo": "area",
+         "nome": "Confusion",
+         "magia": "confusion",
+         "cd": 15
         }
        ]
       }
@@ -816,6 +939,48 @@
           "nome": "Synaptic Static",
           "magia": "synaptic_static",
           "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Slow",
+          "magia": "slow",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Fear",
+          "magia": "fear",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Confusion",
+          "magia": "confusion",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Wall of Stone",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "wall_of_stone"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Telekinesis",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "telekinesis"
+          ],
+          "modo": "melhor"
          }
         ]
        }
@@ -912,6 +1077,210 @@
      ],
      "herda": "principal",
      "hipotese": "controle-barato"
+    },
+    {
+     "id": "controle-3",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Web",
+          "magia": "web",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Slow",
+          "magia": "slow",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Fear",
+          "magia": "fear",
+          "cd": 17
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "3": 1,
+       "1": 1
+      }
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "shield",
+        "usos_luta": 1
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Shield",
+       "fracao": 0.5,
+       "eixos": [
+        "defesa"
+       ]
+      }
+     ],
+     "herda": "principal",
+     "hipotese": "controle-3"
+    },
+    {
+     "id": "controle-4",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.75,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Web",
+          "magia": "web",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Hypnotic Pattern",
+          "magia": "hypnotic_pattern",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Banishment",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "banishment"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Psychic Lance",
+          "cd": 17,
+          "slots": [
+           4
+          ],
+          "magias": [
+           "psychic_lance"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Slow",
+          "magia": "slow",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Fear",
+          "magia": "fear",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Confusion",
+          "magia": "confusion",
+          "cd": 17
+         }
+        ]
+       }
+      ]
+     },
+     "gasta": {
+      "espacos": {
+       "4": 1,
+       "1": 1
+      }
+     },
+     "area": [],
+     "invocacoes": [],
+     "defesa": {
+      "reacoes": [
+       {
+        "tipo": "shield",
+        "usos_luta": 1
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Shield",
+       "fracao": 0.5,
+       "eixos": [
+        "defesa"
+       ]
+      }
+     ],
+     "herda": "principal",
+     "hipotese": "controle-4"
     },
     {
      "id": "area",
@@ -1095,6 +1464,48 @@
           "nome": "Synaptic Static",
           "magia": "synaptic_static",
           "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Slow",
+          "magia": "slow",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Fear",
+          "magia": "fear",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Confusion",
+          "magia": "confusion",
+          "cd": 17
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Wall of Stone",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "wall_of_stone"
+          ],
+          "modo": "melhor"
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Telekinesis",
+          "cd": 17,
+          "slots": [
+           5
+          ],
+          "magias": [
+           "telekinesis"
+          ],
+          "modo": "melhor"
          }
         ]
        }

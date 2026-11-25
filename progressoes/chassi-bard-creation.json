@@ -244,6 +244,109 @@
      },
      "fontes": [
       {
+       "tipo": "melhor_de",
+       "nome": "Magia de controle (a melhor da lista)",
+       "opcoes": [
+        {
+         "tipo": "area",
+         "nome": "Hypnotic Pattern",
+         "magia": "hypnotic_pattern",
+         "cd": 15
+        },
+        {
+         "tipo": "area",
+         "nome": "Fear",
+         "magia": "fear",
+         "cd": 15
+        },
+        {
+         "tipo": "area",
+         "nome": "Confusion",
+         "magia": "confusion",
+         "cd": 15
+        }
+       ]
+      }
+     ]
+    },
+    "gasta": {
+     "espacos": {
+      "4": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal",
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Bardic Inspiration (d8)",
+       "lado": "of",
+       "modelo": "dado_multiuso",
+       "dado_medio": 4.5,
+       "usos_luta": 2.0
+      },
+      {
+       "nome": "Mote of Potential (ataque: trovão em volta do alvo)",
+       "lado": "of",
+       "modelo": "valor_por_luta",
+       "usos_luta": 1.1,
+       "valor": 6.75
+      },
+      {
+       "nome": "Mote of Potential (save: PV temporários)",
+       "lado": "def",
+       "modelo": "pv_temporario",
+       "usos_luta": 0.44,
+       "pv": 8.5
+      },
+      {
+       "nome": "Healing Word (levanta um caído)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "distancia",
+       "acao": "bonus",
+       "usos_luta": 1,
+       "pv": 6.5
+      },
+      {
+       "nome": "Vicious Mockery (desvantagem)",
+       "lado": "def",
+       "modelo": "desvantagem_contra",
+       "alvos": 1,
+       "fracao": 0.188
+      }
+     ]
+    }
+   },
+   {
+    "id": "controle-barato",
+    "hipotese": "controle mais barato",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.75,
+       "cd": 15,
+       "save": "Sab",
+       "dano": "2d4",
+       "meio": false,
+       "nota": "Vicious Mockery"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": false,
+      "acc_m": [
+       0.8,
+       0.9,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
        "tipo": "area",
        "nome": "Hypnotic Pattern",
        "magia": "hypnotic_pattern",
@@ -810,6 +913,18 @@
            "hold_monster"
           ],
           "modo": "melhor"
+         },
+         {
+          "tipo": "area",
+          "nome": "Fear",
+          "magia": "fear",
+          "cd": 17
+         },
+         {
+          "tipo": "area",
+          "nome": "Confusion",
+          "magia": "confusion",
+          "cd": 17
          }
         ]
        }
@@ -819,7 +934,7 @@
       "espacos": {
        "5": 1,
        "1": 0.5,
-       "3": null
+       "4": null
       }
      },
      "herda": "principal",

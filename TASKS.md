@@ -851,3 +851,24 @@ empate — Spirit Guardians parece subvalorizado: área com peso 0,5 e o "atrasa
 fazem Bless no 11 (13 de 32 lutas); Bards nv11 = Greater Invisibility em todas; Rangers nv11 = Plant Growth (sem
 concentração, quarta parte do deslocamento). **Valores de controle negativos** em algumas linhas (vidas_total < 0,
 ex.: Life/Nature/Order/Tempest) — investigar (linha que perde atenção/corpo?).
+
+### 25/11 (tarde) — Paladin Bless, controle subvalorizado no plano, magias clássicas
+- **Paladin Bless conferido:** a concentração já usa a Aura of Protection no save de CON (saves_pal soma o CAR) e a
+  posição de frente (1,5 acertos/round): Vengeance nv7 p = 0,70, f = 0,58; nv11 p = 0,75, f = 0,62. O turno 1 gasto
+  conjurando já custa: linha bless com 75% dos ataques (DPR 19,4 → 15,5 na CA 16 no nv7). **Faltava a linha
+  `bless+smite`** (Bless no round 1 + 2 smites de 1º nos rounds 2–4): o paladino de mesa faz os dois. Adicionada em
+  `pal.py` (chassi e RPGBot).
+- **Controle caro demais no plano (achado):** a linha `controle` (melhor magia da lista) pagava o MAIOR espaço da lista
+  mesmo quando a melhor opção era de 3º (Hypnotic Pattern numa lista que vai ao 4º/5º), enquanto o Summon paga 0,5
+  espaço (dura 1 hora, cobre 2 lutas). Agora `wiz.fatia` gera `controle-<círculo>` para cada círculo intermediário
+  (a melhor magia até aquele círculo, pagando aquele espaço). Valor de referência: a melhor linha de controle do
+  Wizard nv7 nega ~1,6 vidas ≈ 88 de DE, ~46% do dano inimigo de uma luta média (192) — perto do "quase metade" do
+  usuário; o Summon nv7 dá 156 de DE (81 de dano + 46 de corpos/atenção + área) por meio espaço.
+- **Magias clássicas que faltavam** (magias.json, sem entrar na régua de referência): Confusion, Hunger of Hadar,
+  Maelstrom, Wall of Stone, Telekinesis (pesos e notas no arquivo). Listas: Wizard e Sorcerer + Slow, Fear (5+),
+  Confusion (7+), Wall of Stone, Telekinesis (11); Druid + Confusion (7+), Wall of Stone, Maelstrom (11); Warlock +
+  Hunger of Hadar, Fear (5+); Bard + Fear (5+), Confusion (7+). Wall of Fire fica como área (já existe).
+- Valores de controle negativos (ex.: Life) não são bug: `vidas_total` é relativo à party com o membro de referência
+  do MESMO papel (inclui o corpo); para escolher linhas só a diferença importa.
+- Pendente: o Summon cobrir 2 lutas por 0,5 espaço é generoso (concentração por 1 hora entre lutas) — candidato a
+  premissa.

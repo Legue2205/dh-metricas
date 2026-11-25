@@ -181,6 +181,30 @@
         "cd": 17
        },
        {
+        "tipo": "area",
+        "nome": "Confusion",
+        "magia": "confusion",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Wall of Stone",
+        "cd": 17,
+        "slots": [
+         5
+        ],
+        "magias": [
+         "wall_of_stone"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Maelstrom",
+        "magia": "maelstrom",
+        "cd": 17
+       },
+       {
         "tipo": "alvo_unico",
         "nome": "Blindness/Deafness (Spores)",
         "cd": 17,
@@ -198,8 +222,8 @@
    },
    "gasta": {
     "espacos": {
-     "4": 1,
-     "1": 0.5
+     "1": 0.5,
+     "5": 1
     }
    },
    "herda": "principal",
@@ -509,6 +533,30 @@
         "cd": 17
        },
        {
+        "tipo": "area",
+        "nome": "Confusion",
+        "magia": "confusion",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Wall of Stone",
+        "cd": 17,
+        "slots": [
+         5
+        ],
+        "magias": [
+         "wall_of_stone"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Maelstrom",
+        "magia": "maelstrom",
+        "cd": 17
+       },
+       {
         "tipo": "alvo_unico",
         "nome": "Blindness/Deafness (Spores)",
         "cd": 17,
@@ -526,8 +574,8 @@
    },
    "gasta": {
     "espacos": {
-     "4": 1,
-     "1": 0.5
+     "1": 0.5,
+     "5": 1
     },
     "forma_selvagem": 1
    },
@@ -774,11 +822,11 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle+simbionte; prioritário: area+simbionte, controle+simbionte. Sobra: 2×1º, 3×2º, 3×3º, 1×5º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: area-barata; prioritário: area+simbionte, controle+simbionte. Sobra: 3×1º, 3×2º, 3×3º, 1×4º, 1 forma_selvagem.",
    "combates": [
+    "area-barata",
     "controle+simbionte",
-    "controle+simbionte",
-    "controle+simbionte",
+    "area-barata",
     "area+simbionte"
    ]
   },

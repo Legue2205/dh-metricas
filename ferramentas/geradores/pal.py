@@ -62,6 +62,11 @@ def montar(L, pal, atk, corpo, esp, cha, papel='tank', smite=True, extras=(), ou
     if bless and esp:
         L_.append(mk('bless', 'Bless no round 1 (ação), ataques nos rounds 2–4', atk(frac=0.75),
                      gasta={"espacos": {"1": 1}}, suporte=[BLESS()]))
+        # 25/11 (usuário): o paladino de mesa conjura Bless E continua dando smite com o resto dos espaços
+        if smite and esp.get("1", 0) >= 3:
+            d = atk(frac=0.75); d['por_luta'] = [{"usos": 2, "dano": smite_d(1), "nota": "Divine Smite (1º) ×2"}]
+            L_.append(mk('bless+smite', 'Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4', d,
+                         gasta={"espacos": {"1": 3}}, suporte=[BLESS()]))
     for x in extras:
         x = dict(x); g = x.pop('gasta', None)
         l = mk(x.pop('id'), x.pop('hip'), x.pop('dano'), gasta=g, **x); L_.append(l)

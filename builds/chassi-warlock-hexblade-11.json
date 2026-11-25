@@ -126,6 +126,18 @@
         "cd": 17
        },
        {
+        "tipo": "area",
+        "nome": "Hunger of Hadar",
+        "magia": "hunger_of_hadar",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 17
+       },
+       {
         "tipo": "alvo_unico",
         "nome": "Banishment",
         "cd": 17,
@@ -170,6 +182,122 @@
    "reacao": [],
    "herda": "principal",
    "hipotese": "controle"
+  },
+  {
+   "id": "controle-2",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5+2",
+      "nota": "espada longa do pacto + Thirsting Blade + Hexblade's Curse"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "alvo_unico",
+      "nome": "Hold Person",
+      "cd": 17,
+      "slots": [
+       2
+      ],
+      "magias": [
+       "hold_person"
+      ],
+      "modo": "melhor"
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "5": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle-2"
+  },
+  {
+   "id": "controle-3",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5+2",
+      "nota": "espada longa do pacto + Thirsting Blade + Hexblade's Curse"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Hunger of Hadar",
+        "magia": "hunger_of_hadar",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 17
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "5": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle-3"
   },
   {
    "id": "area",
@@ -272,6 +400,18 @@
         "tipo": "area",
         "nome": "Hypnotic Pattern",
         "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Hunger of Hadar",
+        "magia": "hunger_of_hadar",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
         "cd": 17
        },
        {
@@ -604,6 +744,88 @@
    }
   },
   {
+   "id": "controle-4",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 9,
+      "dano": "1d8+5+2",
+      "nota": "espada longa do pacto + Thirsting Blade + Hexblade's Curse"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "melhor_de",
+      "nome": "Magia de controle (a melhor da lista)",
+      "opcoes": [
+       {
+        "tipo": "alvo_unico",
+        "nome": "Hold Person",
+        "cd": 17,
+        "slots": [
+         2
+        ],
+        "magias": [
+         "hold_person"
+        ],
+        "modo": "melhor"
+       },
+       {
+        "tipo": "area",
+        "nome": "Hypnotic Pattern",
+        "magia": "hypnotic_pattern",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Hunger of Hadar",
+        "magia": "hunger_of_hadar",
+        "cd": 17
+       },
+       {
+        "tipo": "area",
+        "nome": "Fear",
+        "magia": "fear",
+        "cd": 17
+       },
+       {
+        "tipo": "alvo_unico",
+        "nome": "Banishment",
+        "cd": 17,
+        "slots": [
+         4
+        ],
+        "magias": [
+         "banishment"
+        ],
+        "modo": "melhor"
+       }
+      ]
+     }
+    ]
+   },
+   "gasta": {
+    "espacos": {
+     "5": 1
+    }
+   },
+   "area": [],
+   "invocacoes": [],
+   "defesa": {},
+   "reacao": [],
+   "herda": "principal",
+   "hipotese": "controle-4"
+  },
+  {
    "id": "arcano",
    "herda": "principal",
    "hipotese": "Mystic Arcanum: Mass Suggestion no pico",
@@ -678,12 +900,12 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: arcano, principal; prioritário: combo. Sobra: nada.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: arcano+hex, hex; prioritário: area+hex. Sobra: nada.",
    "combates": [
-    "principal",
-    "combo",
-    "arcano",
-    "combo"
+    "arcano+hex",
+    "area+hex",
+    "hex",
+    "area+hex"
    ]
   },
   "combate_unico": {

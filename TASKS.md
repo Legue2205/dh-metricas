@@ -831,3 +831,23 @@ qual modo de focus fire como padrão.
 - **Assassinate (gerador do Rogue):** vira ataques de 1º round — vantagem certa quando age antes do alvo (0,6; 0,8
   com Alert), crítico automático só nas lutas com surpresa (`SURPRESA` = 0,25 ≈ 1 luta por dia; usuário: "às vezes até
   menos"); rounds 2–4 sem vantagem. Assassin nv7 CA 16: 19,8 no round 1, 12,3 nos demais.
+
+### Análises de 25/11 (depois de D12 revogada; CI c288b78)
+Gate (misto, dano com pacote_vh), nv7 / nv11: dano 0,30 / 0,38 · controle 0,53 / 0,50 · suporte 0,32 / 0,33 ·
+defesa física 0,40 / 0,44 (área e corpo sem pistas suficientes dentro da classe: n = 12 / 13).
+**Empates (`calibracao/empates.py`).** No dano, as subclasses em grupos empatados cujas pistas do RPGBot discordam são
+27 (nv7) e 20 (nv11); metade tem a linha IDÊNTICA (a subclasse não muda nada no dano do motor):
+- Warlocks (6 subclasses, 7 e 11): o dia de foco em dano é o Summon (linha `invocacao`), igual para todos; o RPGBot
+  separa Fiend (alto: Fireball na lista expandida) de Celestial (fraco) — isso é lista de magias/área, não dano de
+  alvo único. Mecânica faltando: lista expandida de magias por patrono.
+- Monks (5–6 subclasses): mesma linha; o RPGBot separa pouco (médio × baixo do Long Death) — empate quase legítimo.
+- Wizards nv11: o foco em dano cai na linha de reação (dano = truque da principal) para 6 escolas — desempate
+  arbitrário entre linhas de dano igual.
+- Os empates de spec DIFERENTE são coincidência de valor (BM / Psi / Samurai no 7; Hunter × Horizon Walker).
+No controle há mais empates com pistas discordantes (34 no 7, 35 no 11), quase todos de spec diferente.
+**Escolhas dos casters (`calibracao/escolhas_casters.py`, plano padrão em DE):** Wizards, Warlocks e Druids vivem de
+Summon (Tasha) no plano; Clerics fazem Bless+arma em 3 de 4 lutas e Spirit Guardians em 1 (DE 154 × 161: quase
+empate — Spirit Guardians parece subvalorizado: área com peso 0,5 e o "atrasa inimigos" não entra); Paladins ainda
+fazem Bless no 11 (13 de 32 lutas); Bards nv11 = Greater Invisibility em todas; Rangers nv11 = Plant Growth (sem
+concentração, quarta parte do deslocamento). **Valores de controle negativos** em algumas linhas (vidas_total < 0,
+ex.: Life/Nature/Order/Tempest) — investigar (linha que perde atenção/corpo?).

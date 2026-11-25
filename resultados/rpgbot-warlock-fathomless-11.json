@@ -1617,21 +1617,21 @@
    "principal": [],
    "dano": {
     "dpr": {
-     "CA 11": 53.2,
-     "CA 12": 50.5,
-     "CA 15": 42.3,
-     "CA 16": 39.6,
-     "CA 18": 34.2,
-     "CA 20": 28.7,
-     "CA 22": 23.3,
-     "CA 24": 17.8,
-     "CA 25": 15.1
+     "CA 11": 51.1,
+     "CA 12": 48.5,
+     "CA 15": 40.7,
+     "CA 16": 38.0,
+     "CA 18": 32.8,
+     "CA 20": 27.6,
+     "CA 22": 22.3,
+     "CA 24": 17.1,
+     "CA 25": 14.5
     },
-    "nivel_eq": 10.2,
+    "nivel_eq": 10.0,
     "rank": "A-",
-    "perfil": "Equilibrado",
-    "nivel_bruta": 10.3,
-    "nivel_precisa": 10.1,
+    "perfil": "Bruto",
+    "nivel_bruta": 10.1,
+    "nivel_precisa": 9.8,
     "medido": false,
     "sobrevivencia_invocacao": 0.875
    },
@@ -1697,16 +1697,16 @@
      "8": 3.33,
      "9": 3.23,
      "10": 3.23,
-     "11": 3.46,
-     "12": 3.46,
-     "13": 4.18,
-     "14": 4.18,
-     "15": 4.18,
-     "16": 4.18,
-     "17": 4.61,
-     "18": 4.61,
-     "19": 5.42,
-     "20": 4.68
+     "11": 3.54,
+     "12": 3.54,
+     "13": 4.24,
+     "14": 4.24,
+     "15": 4.24,
+     "16": 4.24,
+     "17": 4.67,
+     "18": 4.67,
+     "19": 5.48,
+     "20": 4.72
     },
     "usos": 0,
     "antigo": null,
@@ -2582,7 +2582,7 @@
    }
   }
  },
- "impressao_planos": "3d4c1ce2-b02a574f",
+ "impressao_planos": "c8414c95-862d2eaf",
  "planos": {
   "padrao": {
    "hypercharged": 1,
@@ -2621,30 +2621,30 @@
      }
     },
     {
-     "linha": "invocacao",
+     "linha": "arcano+hex",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
        "5": 0.5
-      }
+      },
+      "arcano": 1
      }
     }
    ],
    "sobra": {
     "espacos": {
      "5": 2.0
-    },
-    "arcano": 1
+    }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.4,
+     "nivel_eq": 8.8,
      "rank": "B+",
      "por_categoria": {
-      "np": 9.4,
-      "p": 9.4
+      "np": 9.3,
+      "p": 8.5
      }
     },
     "defesa": {
@@ -2672,19 +2672,19 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 2.6,
+     "rank": "D",
      "por_categoria": {
       "np": 0.0,
-      "p": 0.0
+      "p": 3.2
      }
     },
     "corpo": {
-     "nivel_eq": 14.7,
-     "rank": "A+",
+     "nivel_eq": 12.5,
+     "rank": "A",
      "por_categoria": {
       "np": 14.7,
-      "p": 14.7
+      "p": 11.4
      }
     },
     "area": {
@@ -2692,7 +2692,7 @@
      "rank": "A",
      "por_categoria": {
       "np": 7.1,
-      "p": 7.1
+      "p": 5.9
      }
     }
    }
@@ -2701,7 +2701,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "invocacao",
+     "linha": "arcano+hex",
      "categoria": "p",
      "peso": 1,
      "nota": "",
@@ -2712,7 +2712,7 @@
       "arcano": 1
      },
      "extras": [
-      "arcano+hex"
+      "invocacao"
      ]
     }
    ],
@@ -2723,10 +2723,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.7,
+     "nivel_eq": 9.3,
      "rank": "B+",
      "por_categoria": {
-      "p": 9.7
+      "p": 9.3
      }
     },
     "defesa": {
@@ -3222,7 +3222,7 @@
    }
   }
  },
- "segundos": 18.0,
+ "segundos": 14.2,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -3712,107 +3712,111 @@
   },
   "concentracao.ativa": 1,
   "concentracao.foco_inimigo": 1.0,
+  "invocacao.fracao_viva": 0.9,
   "invocacao.peso.summon": 1.0,
   "moeda.ca_ref_base": 14,
   "moeda.ca_ref_niveis_por_ponto": 4,
+  "moeda.conversao": "abate",
+  "moeda.k_abate": 1.0,
   "moeda.peso": {
    "dano": 1.0,
    "suporte": 1.0,
    "controle": 1.0,
    "area": 0.5
-  }
+  },
+  "moeda.tempo_area": 0.75
  },
  "impressoes": {
-  "_planos": "b768d8d1db7b",
+  "_planos": "fa969aecd501",
   "principal": {
-   "dano": "dd307a7c9b42",
+   "dano": "c1dd3661c421",
    "defesa": "8850155da508",
    "saves": "4e6dd4265462",
-   "area": "7585261f6265",
+   "area": "ad3f2c2a6787",
    "controle": "c8f8712b5ca9"
   },
   "hex": {
-   "dano": "6f462b7a006b",
+   "dano": "a9efba7b394f",
    "defesa": "8850155da508",
    "saves": "4e6dd4265462",
-   "area": "fd1354935986",
+   "area": "dd3de05e0735",
    "controle": "2df2b306aa2a"
   },
   "controle": {
-   "dano": "73c5bbded49b",
+   "dano": "3bfb8e82cd26",
    "defesa": "32ccdd867f96",
    "saves": "353258f1e903",
-   "area": "23974ad58ad5",
+   "area": "4c6a2289ab5a",
    "controle": "cacc68f363b7"
   },
   "area": {
-   "dano": "7e5d83c21b35",
+   "dano": "35283c18dc9b",
    "defesa": "32ccdd867f96",
    "saves": "353258f1e903",
-   "area": "497e2e7ec842",
+   "area": "b843ef7373d2",
    "controle": "2b17618c7f77"
   },
   "combo": {
-   "dano": "7e5d83c21b35",
+   "dano": "35283c18dc9b",
    "defesa": "32ccdd867f96",
    "saves": "353258f1e903",
-   "area": "252453784e25",
+   "area": "b6e21c8a55c5",
    "controle": "99749eacba41"
   },
   "area+hex": {
-   "dano": "727fe848cca9",
+   "dano": "aa8866475b3c",
    "defesa": "32ccdd867f96",
    "saves": "353258f1e903",
-   "area": "d7d8c447f33f",
+   "area": "e4d208f75374",
    "controle": "a69559642b14"
   },
   "agathys": {
-   "dano": "e79635d856fc",
+   "dano": "e6c4b07a40d0",
    "defesa": "ab4e21e4c103",
    "saves": "4e6dd4265462",
-   "area": "a68a56f05971",
+   "area": "4e05b642719c",
    "controle": "16d39d8b9e11"
   },
   "trevas": {
-   "dano": "f368859ca859",
+   "dano": "88af214c2666",
    "defesa": "36b0094abe04",
    "saves": "4e6dd4265462",
-   "area": "98767487724e",
+   "area": "bcc75a3a2fc4",
    "controle": "4b100f9b3325"
   },
   "invocacao": {
-   "dano": "12fc1bb53a55",
+   "dano": "40a543e327d0",
    "defesa": "32ccdd867f96",
    "saves": "353258f1e903",
-   "area": "a36a2df474ea",
+   "area": "34eb014ddecd",
    "controle": "4965ca870f68"
   },
   "hadar": {
-   "dano": "dd307a7c9b42",
+   "dano": "c1dd3661c421",
    "defesa": "8850155da508",
    "saves": "4e6dd4265462",
-   "area": "6a1f38970ec7",
+   "area": "318f8d29c733",
    "controle": "c8f8712b5ca9"
   },
   "arcano": {
-   "dano": "73c5bbded49b",
+   "dano": "3bfb8e82cd26",
    "defesa": "8850155da508",
    "saves": "4e6dd4265462",
-   "area": "23974ad58ad5",
+   "area": "4c6a2289ab5a",
    "controle": "7c31b4ccf4db"
   },
   "arcano+hex": {
-   "dano": "737e8fd2d452",
+   "dano": "98594fdb2d29",
    "defesa": "8850155da508",
    "saves": "4e6dd4265462",
-   "area": "4710e2f46937",
+   "area": "debbd0fbe99d",
    "controle": "340df60978ea"
   },
   "reacao-counterspell": {
-   "dano": "dd307a7c9b42",
+   "dano": "c1dd3661c421",
    "defesa": "8850155da508",
    "saves": "94a0545a3edf",
-   "area": "7585261f6265",
+   "area": "ad3f2c2a6787",
    "controle": "c8f8712b5ca9"
   }
  }

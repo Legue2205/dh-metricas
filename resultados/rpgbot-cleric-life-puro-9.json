@@ -2093,61 +2093,30 @@
    }
   }
  },
- "impressao_planos": "3d4c1ce2-b02a574f",
+ "impressao_planos": "c8414c95-862d2eaf",
  "planos": {
   "padrao": {
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "bless+arma",
+     "linha": "preservar+arma",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1.5,
-       "2": 1
+       "1": 0.5,
+       "2": 1,
+       "4": 1
       },
       "canal": 1
      },
      "extras": [
-      "preservar"
+      "controle"
      ]
     },
     {
-     "linha": "bless+arma",
-     "categoria": "p",
-     "peso": 2,
-     "nota": "",
-     "gasto": {
-      "espacos": {
-       "1": 1.5,
-       "2": 1
-      },
-      "canal": 1
-     },
-     "extras": [
-      "preservar"
-     ]
-    },
-    {
-     "linha": "bless+arma",
-     "categoria": "np",
-     "peso": 1,
-     "nota": "",
-     "gasto": {
-      "espacos": {
-       "1": 1.5,
-       "2": 1
-      },
-      "canal": 1
-     },
-     "extras": [
-      "preservar"
-     ]
-    },
-    {
-     "linha": "guardioes-arma",
+     "linha": "preservar+arma",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -2160,23 +2129,57 @@
       "canal": 1
      },
      "extras": [
-      "preservar"
+      "guardioes"
+     ]
+    },
+    {
+     "linha": "preservar+arma",
+     "categoria": "np",
+     "peso": 1,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 0.5,
+       "2": 1,
+       "4": 1
+      },
+      "canal": 1
+     },
+     "extras": [
+      "controle"
+     ]
+    },
+    {
+     "linha": "preservar+arma",
+     "categoria": "p",
+     "peso": 2,
+     "nota": "",
+     "gasto": {
+      "espacos": {
+       "1": 0.5,
+       "2": 1,
+       "4": 1
+      },
+      "canal": 1
+     },
+     "extras": [
+      "controle"
      ]
     }
    ],
    "sobra": {
     "espacos": {
-     "3": 1.0,
-     "4": 3
+     "1": 2.0,
+     "3": 2
     }
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 4.9,
+     "nivel_eq": 4.6,
      "rank": "C",
      "por_categoria": {
       "np": 3.8,
-      "p": 5.4
+      "p": 5.0
      }
     },
     "defesa": {
@@ -2204,19 +2207,19 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 2.3,
+     "rank": "D",
      "por_categoria": {
-      "np": 0.0,
-      "p": 0.0
+      "np": 2.8,
+      "p": 1.4
      }
     },
     "corpo": {
-     "nivel_eq": 13.9,
+     "nivel_eq": 14.1,
      "rank": "A+",
      "por_categoria": {
       "np": 14.1,
-      "p": 13.8
+      "p": 14.0
      }
     },
     "area": {
@@ -2228,11 +2231,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 7.7,
-     "rank": "B",
+     "nivel_eq": 5.0,
+     "rank": "C+",
      "por_categoria": {
-      "np": 9.1,
-      "p": 7.0
+      "np": 5.0,
+      "p": 5.0
      }
     }
    }
@@ -2241,7 +2244,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "guardioes-arma",
+     "linha": "preservar+arma",
      "categoria": "p",
      "peso": 1,
      "nota": "",
@@ -2254,7 +2257,7 @@
       "canal": 1
      },
      "extras": [
-      "preservar"
+      "guardioes"
      ]
     }
    ],
@@ -2269,10 +2272,10 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.0,
-     "rank": "B",
+     "nivel_eq": 6.3,
+     "rank": "B-",
      "por_categoria": {
-      "p": 7.0
+      "p": 6.3
      }
     },
     "defesa": {
@@ -2304,17 +2307,17 @@
      }
     },
     "corpo": {
-     "nivel_eq": 13.4,
+     "nivel_eq": 13.9,
      "rank": "A+",
      "por_categoria": {
-      "p": 13.4
+      "p": 13.9
      }
     },
     "area": {
      "nivel_eq": 8.4,
      "rank": "B+",
      "por_categoria": {
-      "p": 8.4
+      "p": 8.3
      }
     },
     "suporte": {
@@ -2851,7 +2854,7 @@
    }
   }
  },
- "segundos": 6.2,
+ "segundos": 8.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -3346,84 +3349,87 @@
   "concentracao.foco_inimigo": 1.0,
   "moeda.ca_ref_base": 14,
   "moeda.ca_ref_niveis_por_ponto": 4,
+  "moeda.conversao": "abate",
+  "moeda.k_abate": 1.0,
   "moeda.peso": {
    "dano": 1.0,
    "suporte": 1.0,
    "controle": 1.0,
    "area": 0.5
-  }
+  },
+  "moeda.tempo_area": 0.75
  },
  "impressoes": {
-  "_planos": "45fc081fd72e",
+  "_planos": "ccbceb2aa6bc",
   "principal": {
-   "dano": "275d81cd09d2",
+   "dano": "50b14a35f2b0",
    "defesa": "189f0768de8a",
    "saves": "657e82fe16ef",
-   "area": "0ebe8c1853d3",
+   "area": "959e1c2102df",
    "suporte": "9098782a0a4c",
    "controle": "59e75122d1f6"
   },
   "bless": {
-   "dano": "aceb700b0adc",
+   "dano": "53004527a062",
    "defesa": "189f0768de8a",
    "saves": "657e82fe16ef",
-   "area": "44f123bd0b3a",
+   "area": "ae80c76bf787",
    "suporte": "969edba748ae",
    "controle": "0c85f69e52d0"
   },
   "arma-espiritual": {
-   "dano": "c4c9fc1b1e19",
+   "dano": "a62779368f1e",
    "defesa": "189f0768de8a",
    "saves": "657e82fe16ef",
-   "area": "45c9748fb290",
+   "area": "bd9c72730e4d",
    "suporte": "9098782a0a4c",
    "controle": "50dcc05526d9"
   },
   "controle": {
-   "dano": "aceb700b0adc",
+   "dano": "53004527a062",
    "defesa": "189f0768de8a",
    "saves": "657e82fe16ef",
-   "area": "44f123bd0b3a",
+   "area": "ae80c76bf787",
    "suporte": "9098782a0a4c",
    "controle": "6417d365d3ea"
   },
   "preservar": {
-   "dano": "aceb700b0adc",
+   "dano": "53004527a062",
    "defesa": "189f0768de8a",
    "saves": "657e82fe16ef",
-   "area": "44f123bd0b3a",
+   "area": "ae80c76bf787",
    "suporte": "c5b50b016440",
    "controle": "0c85f69e52d0"
   },
   "bless+arma": {
-   "dano": "08650d6aff46",
+   "dano": "cffe49eab95a",
    "defesa": "189f0768de8a",
    "saves": "657e82fe16ef",
-   "area": "7a12e244bd0a",
+   "area": "45af8a43b906",
    "suporte": "969edba748ae",
    "controle": "e2ed5099eb82"
   },
   "preservar+arma": {
-   "dano": "08650d6aff46",
+   "dano": "cffe49eab95a",
    "defesa": "189f0768de8a",
    "saves": "657e82fe16ef",
-   "area": "7a12e244bd0a",
+   "area": "45af8a43b906",
    "suporte": "c5b50b016440",
    "controle": "e2ed5099eb82"
   },
   "guardioes": {
-   "dano": "bc958ca0fc82",
+   "dano": "a2dc8863cc03",
    "defesa": "189f0768de8a",
    "saves": "657e82fe16ef",
-   "area": "17c65366db79",
+   "area": "d89b764aa738",
    "suporte": "9098782a0a4c",
    "controle": "63b5eddf8769"
   },
   "guardioes-arma": {
-   "dano": "16bc7979ea49",
+   "dano": "d7fe43b285a4",
    "defesa": "189f0768de8a",
    "saves": "657e82fe16ef",
-   "area": "7d834d062c21",
+   "area": "b7ff05473e68",
    "suporte": "9098782a0a4c",
    "controle": "94ef49ff1377"
   }

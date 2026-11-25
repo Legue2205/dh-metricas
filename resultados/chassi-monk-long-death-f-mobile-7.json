@@ -1224,47 +1224,49 @@
    }
   }
  },
- "impressao_planos": "3d4c1ce2-b02a574f",
+ "impressao_planos": "c8414c95-862d2eaf",
  "planos": {
   "padrao": {
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "principal",
+     "linha": "meia-rajada",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
-      "espacos": {}
+      "espacos": {},
+      "ki": 2
      }
     },
     {
-     "linha": "rajada-mira",
+     "linha": "atordoar",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 6
+      "ki": 4
      }
     },
     {
-     "linha": "principal",
+     "linha": "meia-rajada",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
-      "espacos": {}
+      "espacos": {},
+      "ki": 2
      }
     },
     {
-     "linha": "rajada-mira",
+     "linha": "atordoar",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 6
+      "ki": 4
      }
     }
    ],
@@ -1274,11 +1276,11 @@
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 4.6,
+     "nivel_eq": 4.1,
      "rank": "C",
      "por_categoria": {
-      "np": 3.5,
-      "p": 5.2
+      "np": 4.1,
+      "p": 4.1
      }
     },
     "defesa": {
@@ -1306,27 +1308,27 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 2.0,
+     "rank": "D",
      "por_categoria": {
       "np": 0.0,
-      "p": 0.0
+      "p": 2.3
      }
     },
     "corpo": {
      "nivel_eq": 5.3,
      "rank": "C+",
      "por_categoria": {
-      "np": 5.4,
-      "p": 5.2
+      "np": 5.3,
+      "p": 5.3
      }
     },
     "area": {
      "nivel_eq": 4.6,
      "rank": "C",
      "por_categoria": {
-      "np": 4.2,
-      "p": 4.6
+      "np": 4.3,
+      "p": 4.3
      }
     }
    }
@@ -1335,26 +1337,26 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "rajada-mira",
+     "linha": "atordoar",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {},
-      "ki": 6
+      "ki": 4
      }
     }
    ],
    "sobra": {
     "espacos": {},
-    "ki": 1
+    "ki": 3
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 5.2,
-     "rank": "C+",
+     "nivel_eq": 4.1,
+     "rank": "C",
      "por_categoria": {
-      "p": 5.2
+      "p": 4.1
      }
     },
     "defesa": {
@@ -1379,24 +1381,24 @@
      }
     },
     "campo": {
-     "nivel_eq": 0.0,
-     "rank": "F",
+     "nivel_eq": 2.3,
+     "rank": "D",
      "por_categoria": {
-      "p": 0.0
+      "p": 2.3
      }
     },
     "corpo": {
-     "nivel_eq": 5.2,
+     "nivel_eq": 5.3,
      "rank": "C+",
      "por_categoria": {
-      "p": 5.2
+      "p": 5.3
      }
     },
     "area": {
      "nivel_eq": 4.6,
      "rank": "C",
      "por_categoria": {
-      "p": 4.6
+      "p": 4.3
      }
     }
    }
@@ -1820,7 +1822,7 @@
    }
   }
  },
- "segundos": 5.0,
+ "segundos": 2.3,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2277,62 +2279,65 @@
   "concentracao.ativa": 1,
   "moeda.ca_ref_base": 14,
   "moeda.ca_ref_niveis_por_ponto": 4,
+  "moeda.conversao": "abate",
+  "moeda.k_abate": 1.0,
   "moeda.peso": {
    "dano": 1.0,
    "suporte": 1.0,
    "controle": 1.0,
    "area": 0.5
-  }
+  },
+  "moeda.tempo_area": 0.75
  },
  "impressoes": {
-  "_planos": "699e11ca927c",
+  "_planos": "1d71e12aafe8",
   "principal": {
-   "dano": "f4c846c9b6a7",
+   "dano": "26f12112b93c",
    "defesa": "9b5a4c72fdab",
    "saves": "c2af23ef9065",
-   "area": "aa9b7575cc23",
+   "area": "f055822b83bd",
    "controle": "ca9ddfe17290"
   },
   "meia-rajada": {
-   "dano": "58a9a927d14b",
+   "dano": "6f196aaa2ba6",
    "defesa": "9b5a4c72fdab",
    "saves": "c2af23ef9065",
-   "area": "1889356747ed",
+   "area": "ac69e253d24f",
    "controle": "ce9f5fbac7f2"
   },
   "rajada": {
-   "dano": "a2a5d9f012e4",
+   "dano": "bdf5c7c0e4a9",
    "defesa": "9b5a4c72fdab",
    "saves": "c2af23ef9065",
-   "area": "9353d9e30925",
+   "area": "52d6cc322c38",
    "controle": "77caf4cd7527"
   },
   "atordoar": {
-   "dano": "58a9a927d14b",
+   "dano": "6f196aaa2ba6",
    "defesa": "9b5a4c72fdab",
    "saves": "c2af23ef9065",
-   "area": "1889356747ed",
+   "area": "ac69e253d24f",
    "controle": "a086929eb3a0"
   },
   "mira": {
-   "dano": "ef0f68f5b9df",
+   "dano": "31fb43a532b8",
    "defesa": "9b5a4c72fdab",
    "saves": "c2af23ef9065",
-   "area": "0c2758cbf1f6",
+   "area": "d638630b6050",
    "controle": "0ea721f1e224"
   },
   "rajada-mira": {
-   "dano": "2d344374cf39",
+   "dano": "21476518614d",
    "defesa": "9b5a4c72fdab",
    "saves": "c2af23ef9065",
-   "area": "9507d40322dd",
+   "area": "1fea5590e5ad",
    "controle": "6b0b962051f3"
   },
   "ceifa": {
-   "dano": "378f014a6324",
+   "dano": "d423800207e2",
    "defesa": "9b5a4c72fdab",
    "saves": "c2af23ef9065",
-   "area": "8b01f35b67f0",
+   "area": "b82cd0d7ee64",
    "controle": "752845593232"
   }
  }

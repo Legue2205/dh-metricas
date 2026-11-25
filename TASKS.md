@@ -892,3 +892,8 @@ na luta (k ≈ 0,9–1,1), então **dano causado não vale 1:1 dano evitado**: s
 - Prévia (resultados antigos, moeda nova): Wizard nv7 combo 115 / controle 109 / controle de 3º 102 / Summon 88;
   Warlock Fiend nv7 combo 112 / controle 107 / Summon 100; Cleric War nv7 controle 73 ≈ bless+arma 71 ≈ Spirit
   Guardians+arma 69.
+- **Resultado de D18 (CI 482b077):** os conjuradores viram controladores — Wizard nv7 tira 78% do valor do controle
+  (controle de 3º em 25 de 52 lutas; Summon some do plano), Warlock controla em 32 de 36 lutas, Bard e Druid idem;
+  Cleric segue Bless+arma; Paladin nv11 bless+smite 16 de 32; Ranger nv7 Spike Growth. **Gate: dano 0,34 / 0,40 ·
+  controle 0,68 / 0,65 (era 0,53 / 0,57) · suporte 0,32 / 0,31.** Atenção ao pêndulo: o Summon quase não aparece mais
+  (a comunidade o considera forte) — ver se k_abate / tempo da área precisam de ajuste quando houver mais pistas.

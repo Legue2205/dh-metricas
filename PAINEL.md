@@ -3,7 +3,7 @@
 ```
 Plano do dia: padrao. Builds marcadas com ~ ainda não têm esse plano (mostra a linha principal).
 ID                     nv      Dano    Defesa    Resil.   Vontade  Controle      Área   Suporte
-abdul-7                 7    5,8 C+   10,8 A-    6,1 B-    8,0 B+         -     4,6 C     0,5 E
+abdul-7                 7    5,6 C+   10,8 A-    6,1 B-    8,0 B+         -     4,6 C     0,5 E
 amadeus-7               7     7,3 B    3,7 C-    6,3 B-    12,3 A         -    8,6 B+    3,6 C-
 ~aprendiz-11           11    11,7 A   15,4 A+    20,0 S    12,1 A     2,4 D    8,3 B+         -
 ~caleb-14              14   10,9 A-   13,6 A+    20,0 S    12,1 A     1,0 E    8,1 B+         -
@@ -69,12 +69,12 @@ chassi-bard-lore-11    11     0,7 E     4,6 C     7,8 B    3,5 C-         -    1
 chassi-bard-lore-7      7     0,4 F     2,6 D     4,7 C     2,7 D         -    6,9 B-     4,7 C
 chassi-bard-spirits-11  11     0,7 E     4,6 C     7,8 B    3,5 C-         -    8,5 B+   10,2 A-
 chassi-bard-spirits-7   7     0,4 F     2,6 D     4,7 C     2,7 D         -    3,9 C-     4,5 C
-chassi-bard-swords-11  11    3,9 C-    5,4 C+    8,3 B+    3,5 C-         -   10,3 A-    8,2 B+
+chassi-bard-swords-11  11    3,8 C-    5,4 C+    8,3 B+    3,5 C-         -   10,3 A-    8,2 B+
 chassi-bard-swords-7    7     2,7 D    3,2 C-    5,0 C+     2,6 D         -     4,8 C     2,4 D
 chassi-bard-valor-11   11     1,4 D    6,8 B-     7,8 B    3,6 C-         -    8,3 B+    8,9 B+
 chassi-bard-valor-7     7     0,9 E     4,5 C     4,7 C     2,7 D         -     4,1 C    3,6 C-
-chassi-bard-whispers-11  11     2,2 D     4,6 C     7,8 B    3,5 C-         -    9,0 B+    9,1 B+
-chassi-bard-whispers-7   7     0,9 E     2,6 D     4,7 C     2,7 D         -     4,1 C     1,3 D
+chassi-bard-whispers-11  11     1,8 D     4,6 C     7,8 B    3,5 C-         -    9,0 B+    9,1 B+
+chassi-bard-whispers-7   7     0,8 E     2,6 D     4,7 C     2,7 D         -     4,1 C     1,3 D
 chassi-cleric-arcana-11  11     5,0 C    6,8 B-    6,1 B-    12,6 A         -     7,3 B     7,3 B
 chassi-cleric-arcana-7   7     2,5 D     4,5 C     4,3 C    8,4 B+         -    5,7 C+    5,0 C+
 chassi-cleric-death-11  11     4,3 C    6,8 B-    6,1 B-    12,6 A         -     7,6 B    6,6 B-
@@ -117,11 +117,11 @@ chassi-druid-stars-11  11    9,4 B+    6,3 B-    8,0 B+   14,5 A+         -     
 chassi-druid-stars-7    7    6,0 B-    3,4 C-     4,5 C    8,8 B+         -    6,4 B-     0,9 E
 chassi-druid-wildfire-11  11     8,0 B    6,3 B-    8,0 B+   14,5 A+         -     7,6 B     4,2 C
 chassi-druid-wildfire-7   7     4,5 C    3,4 C-     4,5 C    8,8 B+         -    6,8 B-     0,9 E
-chassi-fighter-arcane-archer-11  11     8,0 B   10,2 A-   13,0 A+    3,4 C-         -    5,0 C+         -
-chassi-fighter-arcane-archer-7   7    5,3 C+    5,8 C+     7,8 B     2,8 D         -     4,7 C         -
-chassi-fighter-arcane-archer-f-sharpshooter-11  11    9,9 B+    9,4 B+    12,4 A    3,4 C-         -    8,4 B+         -
-chassi-fighter-arcane-archer-f-sharpshooter-7   7    5,9 C+    5,1 C+    6,5 B-     2,8 D         -     4,7 C         -
-chassi-fighter-battle-master-11  11    8,5 B+   10,2 A-   13,4 A+    3,1 C-         -     4,8 C         -
+chassi-fighter-arcane-archer-11  11     7,9 B   10,2 A-   13,0 A+    3,4 C-         -    5,0 C+         -
+chassi-fighter-arcane-archer-7   7    5,2 C+    5,8 C+     7,8 B     2,8 D         -     4,7 C         -
+chassi-fighter-arcane-archer-f-sharpshooter-11  11    9,8 B+    9,4 B+    12,4 A    3,4 C-         -    8,4 B+         -
+chassi-fighter-arcane-archer-f-sharpshooter-7   7    5,8 C+    5,1 C+    6,5 B-     2,8 D         -     4,7 C         -
+chassi-fighter-battle-master-11  11    8,4 B+   10,2 A-   13,4 A+    3,1 C-         -     4,8 C         -
 chassi-fighter-battle-master-7   7    5,5 C+    5,8 C+     7,8 B     2,6 D         -     4,6 C         -
 chassi-fighter-battle-master-f-sharpshooter-11  11   10,2 A-    9,4 B+    12,6 A    3,1 C-         -    8,3 B+         -
 chassi-fighter-battle-master-f-sharpshooter-7   7    6,1 B-    5,1 C+    6,6 B-     2,6 D         -     4,6 C         -
@@ -174,9 +174,9 @@ chassi-monk-four-elements-7   7    5,7 C+    3,2 C-   10,7 A-     4,9 C         
 chassi-monk-four-elements-f-mobile-11  11    6,6 B-     4,9 C    16,1 S    5,1 C+         -    8,4 B+         -
 chassi-monk-four-elements-f-mobile-7   7     4,6 C     2,9 D   10,1 A-     4,9 C         -     4,6 C         -
 chassi-monk-kensei-11  11     7,2 B    6,0 B-    16,1 S    8,2 B+         -     4,6 C         -
-chassi-monk-kensei-7    7     4,9 C    3,2 C-   10,7 A-     4,9 C         -     4,6 C         -
+chassi-monk-kensei-7    7     4,8 C    3,2 C-   10,7 A-     4,9 C         -     4,6 C         -
 chassi-monk-kensei-f-crossbow-expert-11  11     7,5 B     4,9 C    16,1 S    5,1 C+         -     4,6 C         -
-chassi-monk-kensei-f-crossbow-expert-7   7    4,0 C-     2,9 D   10,1 A-     4,9 C         -     4,3 C         -
+chassi-monk-kensei-f-crossbow-expert-7   7    3,9 C-     2,9 D   10,1 A-     4,9 C         -     4,3 C         -
 chassi-monk-kensei-f-mobile-11  11    6,4 B-     4,9 C    16,1 S    5,1 C+         -     4,6 C         -
 chassi-monk-kensei-f-mobile-7   7     4,1 C     2,9 D   10,1 A-     4,9 C         -     4,3 C         -
 chassi-monk-long-death-11  11    8,1 B+    8,6 B+    16,1 S    8,2 B+         -     4,8 C         -
@@ -213,36 +213,36 @@ chassi-paladin-ancients-11  11     2,6 D     7,2 B   10,7 A-    12,5 A         -
 chassi-paladin-ancients-7   7     1,8 D     4,2 C    6,2 B-    8,4 B+         -     4,2 C    5,1 C+
 chassi-paladin-ancients-f-fighting-initiate-11  11     2,4 D    6,5 B-    8,7 B+   10,5 A-         -     4,2 C     7,2 B
 chassi-paladin-ancients-f-fighting-initiate-7   7     1,6 D    3,9 C-    5,9 C+    8,4 B+         -     4,2 C    5,1 C+
-chassi-paladin-conquest-11  11    9,4 B+    9,4 B+    8,6 B+    12,5 A         -    8,1 B+     1,1 D
-chassi-paladin-conquest-7   7    5,7 C+    6,0 B-    5,2 C+    8,4 B+         -     4,6 C     0,6 E
-chassi-paladin-conquest-f-shield-master-11  11    9,2 B+    9,4 B+     8,0 B   10,5 A-         -     4,8 C     0,9 E
+chassi-paladin-conquest-11  11    9,3 B+    9,4 B+    8,6 B+    12,5 A         -    8,1 B+     1,1 D
+chassi-paladin-conquest-7   7    5,6 C+    6,0 B-    5,2 C+    8,4 B+         -     4,6 C     0,6 E
+chassi-paladin-conquest-f-shield-master-11  11    9,0 B+    9,4 B+     8,0 B   10,5 A-         -     4,8 C     0,9 E
 chassi-paladin-conquest-f-shield-master-7   7    5,2 C+    6,0 B-    5,1 C+    8,4 B+         -     4,6 C     0,6 E
-chassi-paladin-crown-11  11    9,4 B+    9,4 B+    8,6 B+    12,5 A         -    8,4 B+     1,9 D
-chassi-paladin-crown-7   7    5,8 C+    6,0 B-    5,2 C+    8,4 B+         -     4,6 C     1,1 D
-chassi-paladin-crown-f-resilient-11  11     7,5 B   10,3 A-    9,1 B+   10,7 A-         -    8,4 B+    8,3 B+
+chassi-paladin-crown-11  11    9,3 B+    9,4 B+    8,6 B+    12,5 A         -    8,4 B+     1,9 D
+chassi-paladin-crown-7   7    5,7 C+    6,0 B-    5,2 C+    8,4 B+         -     4,6 C     1,1 D
+chassi-paladin-crown-f-resilient-11  11     7,4 B   10,3 A-    9,1 B+   10,7 A-         -    8,4 B+    8,3 B+
 chassi-paladin-crown-f-resilient-7   7    3,9 C-    6,8 B-    6,1 B-    8,5 B+         -     4,6 C    3,6 C-
-chassi-paladin-devotion-11  11    9,4 B+     7,2 B    8,6 B+    12,5 A         -    8,1 B+     4,9 C
-chassi-paladin-devotion-7   7    6,5 B-     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,1 D
-chassi-paladin-devotion-f-great-weapon-master-11  11    9,7 B+     7,2 B     8,0 B   10,5 A-         -    8,1 B+     1,8 D
-chassi-paladin-devotion-f-great-weapon-master-7   7    5,9 C+     4,6 C    5,1 C+    8,4 B+         -     4,6 C     1,1 D
-chassi-paladin-devotion-f-metamagic-adept-11  11    8,6 B+     7,2 B     8,0 B   10,5 A-         -    8,1 B+     4,5 C
-chassi-paladin-devotion-f-metamagic-adept-7   7    5,8 C+     4,6 C    5,1 C+    8,4 B+         -     4,6 C     1,1 D
-chassi-paladin-glory-11  11   10,2 A-     7,9 B    8,6 B+    12,5 A         -    8,1 B+    3,6 C-
+chassi-paladin-devotion-11  11    9,3 B+     7,2 B    8,6 B+    12,5 A         -    8,1 B+     4,9 C
+chassi-paladin-devotion-7   7    6,4 B-     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,1 D
+chassi-paladin-devotion-f-great-weapon-master-11  11    9,6 B+     7,2 B     8,0 B   10,5 A-         -    8,1 B+     1,8 D
+chassi-paladin-devotion-f-great-weapon-master-7   7    5,8 C+     4,6 C    5,1 C+    8,4 B+         -     4,6 C     1,1 D
+chassi-paladin-devotion-f-metamagic-adept-11  11    8,5 B+     7,2 B     8,0 B   10,5 A-         -    8,1 B+     4,5 C
+chassi-paladin-devotion-f-metamagic-adept-7   7    5,7 C+     4,6 C    5,1 C+    8,4 B+         -     4,6 C     1,1 D
+chassi-paladin-glory-11  11   10,1 A-     7,9 B    8,6 B+    12,5 A         -    8,1 B+    3,6 C-
 chassi-paladin-glory-7   7    6,5 B-     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,9 D
-chassi-paladin-glory-f-resilient-11  11     7,6 B    8,3 B+    9,1 B+   10,7 A-         -    8,1 B+    8,6 B+
-chassi-paladin-glory-f-resilient-7   7    6,0 B-    5,1 C+    6,1 B-    8,5 B+         -     4,6 C     1,9 D
+chassi-paladin-glory-f-resilient-11  11     7,5 B    8,3 B+    9,1 B+   10,7 A-         -    8,1 B+    8,6 B+
+chassi-paladin-glory-f-resilient-7   7    5,9 C+    5,1 C+    6,1 B-    8,5 B+         -     4,6 C     1,9 D
 chassi-paladin-redemption-11  11     7,4 B    9,4 B+    8,6 B+    12,5 A         -    8,1 B+     1,9 D
-chassi-paladin-redemption-7   7    5,8 C+    6,0 B-    5,2 C+    8,4 B+         -     4,6 C     1,1 D
+chassi-paladin-redemption-7   7    5,7 C+    6,0 B-    5,2 C+    8,4 B+         -     4,6 C     1,1 D
 chassi-paladin-redemption-f-telekinetic-11  11    6,7 B-    9,4 B+    8,6 B+    12,5 A         -     4,8 C     1,9 D
-chassi-paladin-redemption-f-telekinetic-7   7     5,0 C    6,0 B-    5,6 C+    12,1 A         -     4,6 C     1,2 D
+chassi-paladin-redemption-f-telekinetic-7   7     4,9 C    6,0 B-    5,6 C+    12,1 A         -     4,6 C     1,2 D
 chassi-paladin-vengeance-11  11    11,9 A     7,2 B    8,6 B+    12,5 A         -    8,1 B+     1,1 D
-chassi-paladin-vengeance-7   7    8,0 B+     4,6 C    5,2 C+    8,4 B+         -     4,8 C     0,6 E
+chassi-paladin-vengeance-7   7     7,9 B     4,6 C    5,2 C+    8,4 B+         -     4,8 C     0,6 E
 chassi-paladin-vengeance-f-polearm-master-11  11    11,2 A     7,2 B     8,0 B   10,5 A-         -    8,3 B+     2,8 D
 chassi-paladin-vengeance-f-polearm-master-7   7     7,2 B     4,6 C    5,1 C+    8,4 B+         -     4,6 C     0,6 E
-chassi-paladin-watchers-11  11    9,4 B+     7,2 B    8,6 B+    12,5 A         -    8,1 B+     4,9 C
-chassi-paladin-watchers-7   7    6,5 B-     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,1 D
-chassi-paladin-watchers-f-skill-expert-11  11   10,3 A-     7,2 B    8,1 B+   10,5 A-         -    8,1 B+     1,8 D
-chassi-paladin-watchers-f-skill-expert-7   7    6,5 B-     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,1 D
+chassi-paladin-watchers-11  11    9,3 B+     7,2 B    8,6 B+    12,5 A         -    8,1 B+     4,9 C
+chassi-paladin-watchers-7   7    6,4 B-     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,1 D
+chassi-paladin-watchers-f-skill-expert-11  11   10,2 A-     7,2 B    8,1 B+   10,5 A-         -    8,1 B+     1,8 D
+chassi-paladin-watchers-f-skill-expert-7   7    6,4 B-     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,1 D
 chassi-ranger-beast-master-11  11     7,1 B    8,2 B+   10,5 A-     2,7 D         -     4,7 C         -
 chassi-ranger-beast-master-7   7    5,1 C+    5,1 C+    6,2 B-     2,5 D         -     4,5 C         -
 chassi-ranger-beast-master-f-sentinel-11  11     7,5 B    8,2 B+    9,8 B+     2,7 D         -     4,7 C         -
@@ -257,9 +257,9 @@ chassi-ranger-fey-wanderer-11  11    6,4 B-    8,6 B+    16,9 S     2,6 D       
 chassi-ranger-fey-wanderer-7   7    5,1 C+     4,4 C     7,6 B     2,6 D         -     4,5 C         -
 chassi-ranger-fey-wanderer-f-sharpshooter-11  11    6,5 B-    6,9 B-   13,0 A+     2,6 D         -     4,6 C         -
 chassi-ranger-fey-wanderer-f-sharpshooter-7   7     4,7 C     4,1 C     7,2 B     2,6 D         -     4,6 C         -
-chassi-ranger-gloom-stalker-11  11     7,8 B    8,6 B+    16,9 S     5,0 C         -     4,8 C         -
-chassi-ranger-gloom-stalker-7   7    5,5 C+     4,4 C     7,6 B     4,5 C         -     4,5 C         -
-chassi-ranger-gloom-stalker-f-sharpshooter-11  11     7,7 B    6,9 B-   13,0 A+     5,0 C         -     4,8 C         -
+chassi-ranger-gloom-stalker-11  11     7,7 B    8,6 B+    16,9 S     5,0 C         -     4,8 C         -
+chassi-ranger-gloom-stalker-7   7    5,3 C+     4,4 C     7,6 B     4,5 C         -     4,5 C         -
+chassi-ranger-gloom-stalker-f-sharpshooter-11  11     7,6 B    6,9 B-   13,0 A+     5,0 C         -     4,8 C         -
 chassi-ranger-gloom-stalker-f-sharpshooter-7   7     4,9 C     4,1 C     7,2 B     4,5 C         -     4,6 C         -
 chassi-ranger-horizon-walker-11  11   10,6 A-    8,6 B+    16,9 S     2,6 D         -     7,5 B         -
 chassi-ranger-horizon-walker-7   7    5,8 C+     4,4 C     7,6 B     2,6 D         -     4,5 C         -
@@ -302,11 +302,11 @@ chassi-rogue-mastermind-f-sharpshooter-7   7     4,6 C    5,9 C+     7,8 B    3,
 chassi-rogue-mastermind-f-skill-expert-11  11     7,6 B   10,4 A-   15,2 A+    3,4 C-         -     4,6 C         -
 chassi-rogue-mastermind-f-skill-expert-7   7     4,9 C    5,9 C+    8,0 B+    3,1 C-         -     4,3 C         -
 chassi-rogue-phantom-11  11    9,5 B+   10,6 A-    16,6 S    4,0 C-         -     4,8 C         -
-chassi-rogue-phantom-7   7    5,6 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
-chassi-rogue-phantom-f-sharpshooter-11  11    8,4 B+    9,7 B+    16,2 S    4,0 C-         -     4,8 C         -
+chassi-rogue-phantom-7   7    5,5 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
+chassi-rogue-phantom-f-sharpshooter-11  11    8,3 B+    9,7 B+    16,2 S    4,0 C-         -     4,8 C         -
 chassi-rogue-phantom-f-sharpshooter-7   7     4,9 C    5,9 C+     7,8 B    3,2 C-         -     4,6 C         -
 chassi-rogue-phantom-f-slasher-11  11    9,5 B+    9,7 B+    16,2 S    4,0 C-         -     4,8 C         -
-chassi-rogue-phantom-f-slasher-7   7    5,6 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
+chassi-rogue-phantom-f-slasher-7   7    5,5 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 chassi-rogue-scout-11  11    8,0 B+    11,6 A    16,2 S    4,0 C-         -     4,6 C         -
 chassi-rogue-scout-7    7    5,2 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 chassi-rogue-scout-f-piercer-11  11    8,4 B+   10,4 A-   15,2 A+    4,0 C-         -     4,8 C         -
@@ -419,14 +419,14 @@ pacote-barbarian-zealot-pam-gwm-11  11   10,6 A-   15,3 A+    12,2 A     4,7 C  
 pacote-barbarian-zealot-pam-gwm-7   7     7,9 B     7,9 B     7,8 B     4,6 C         -     4,6 C         -
 pacote-barbarian-zealot-pam-gwm-vh-11  11    11,3 A   15,3 A+    12,2 A     4,7 C         -    8,3 B+     0,6 E
 pacote-barbarian-zealot-pam-gwm-vh-7   7    8,7 B+     7,9 B     7,8 B     4,6 C         -    8,1 B+         -
-pacote-fighter-arcane-archer-cbe-ss-11  11   10,1 A-    9,6 B+   13,0 A+    3,4 C-         -    8,4 B+         -
+pacote-fighter-arcane-archer-cbe-ss-11  11   10,0 A-    9,6 B+   13,0 A+    3,4 C-         -    8,4 B+         -
 pacote-fighter-arcane-archer-cbe-ss-7   7    6,4 B-     4,9 C     7,8 B     2,8 D         -     4,7 C         -
-pacote-fighter-arcane-archer-cbe-ss-vh-11  11   11,0 A-   10,2 A-   13,0 A+    3,4 C-         -    8,4 B+         -
-pacote-fighter-arcane-archer-cbe-ss-vh-7   7     7,4 B    5,3 C+     7,8 B     2,8 D         -     4,9 C         -
-pacote-fighter-battle-master-cbe-ss-11  11   10,4 A-    9,6 B+   13,4 A+    3,1 C-         -    8,3 B+         -
-pacote-fighter-battle-master-cbe-ss-7   7    6,7 B-     4,9 C     7,8 B     2,6 D         -     4,8 C         -
+pacote-fighter-arcane-archer-cbe-ss-vh-11  11   10,9 A-   10,2 A-   13,0 A+    3,4 C-         -    8,4 B+         -
+pacote-fighter-arcane-archer-cbe-ss-vh-7   7     7,3 B    5,3 C+     7,8 B     2,8 D         -     4,9 C         -
+pacote-fighter-battle-master-cbe-ss-11  11   10,3 A-    9,6 B+   13,4 A+    3,1 C-         -    8,3 B+         -
+pacote-fighter-battle-master-cbe-ss-7   7    6,6 B-     4,9 C     7,8 B     2,6 D         -     4,8 C         -
 pacote-fighter-battle-master-cbe-ss-vh-11  11    11,1 A   10,2 A-   13,4 A+    3,1 C-         -    8,3 B+         -
-pacote-fighter-battle-master-cbe-ss-vh-7   7     7,6 B    5,3 C+     7,8 B     2,6 D         -     4,8 C         -
+pacote-fighter-battle-master-cbe-ss-vh-7   7     7,5 B    5,3 C+     7,8 B     2,6 D         -     4,8 C         -
 pacote-fighter-champion-pam-gwm-11  11    8,8 B+   10,7 A-    11,4 A    3,2 C-         -    8,1 B+         -
 pacote-fighter-champion-pam-gwm-7   7    5,4 C+    6,4 B-    6,6 B-     2,7 D         -     4,6 C         -
 pacote-fighter-champion-pam-gwm-vh-11  11   10,1 A-   10,7 A-    11,4 A    3,2 C-         -    8,3 B+         -
@@ -440,7 +440,7 @@ pacote-fighter-eldritch-knight-pam-gwm-7   7    6,0 B-    8,2 B+    6,6 B-     2
 pacote-fighter-eldritch-knight-pam-gwm-vh-11  11    9,9 B+    12,1 A    11,4 A     2,8 D         -    8,3 B+         -
 pacote-fighter-eldritch-knight-pam-gwm-vh-7   7     7,0 B    8,2 B+    6,6 B-     2,4 D         -     4,8 C         -
 pacote-fighter-psi-warrior-cbe-ss-11  11   10,4 A-    9,6 B+   13,0 A+    3,4 C-         -    8,3 B+         -
-pacote-fighter-psi-warrior-cbe-ss-7   7    6,7 B-     4,9 C     7,8 B     2,8 D         -     4,8 C         -
+pacote-fighter-psi-warrior-cbe-ss-7   7    6,6 B-     4,9 C     7,8 B     2,8 D         -     4,8 C         -
 pacote-fighter-psi-warrior-cbe-ss-vh-11  11    11,2 A   10,2 A-   13,0 A+    3,4 C-         -    8,3 B+         -
 pacote-fighter-psi-warrior-cbe-ss-vh-7   7     7,5 B    5,3 C+     7,8 B     2,8 D         -     4,8 C         -
 pacote-fighter-purple-dragon-knight-cbe-ss-11  11    9,5 B+    9,6 B+   13,0 A+    3,4 C-         -    8,3 B+     1,1 D
@@ -455,29 +455,29 @@ pacote-paladin-ancients-cbe-ss-11  11     4,3 C    6,0 B-   10,7 A-    12,5 A   
 pacote-paladin-ancients-cbe-ss-7   7     2,2 D    3,9 C-    6,2 B-    8,4 B+         -     4,2 C    5,1 C+
 pacote-paladin-ancients-cbe-ss-vh-11  11     4,9 C    6,5 B-   10,7 A-    12,5 A         -     4,6 C     7,5 B
 pacote-paladin-ancients-cbe-ss-vh-7   7    3,8 C-    3,9 C-    6,2 B-    8,4 B+         -     4,5 C    5,1 C+
-pacote-paladin-devotion-pam-gwm-11  11   10,1 A-     7,2 B    8,6 B+    12,5 A         -    8,1 B+     2,1 D
+pacote-paladin-devotion-pam-gwm-11  11   10,0 A-     7,2 B    8,6 B+    12,5 A         -    8,1 B+     2,1 D
 pacote-paladin-devotion-pam-gwm-7   7    6,2 B-     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,1 D
-pacote-paladin-devotion-pam-gwm-vh-11  11   10,1 A-     7,2 B    8,6 B+    12,5 A         -    8,3 B+     4,9 C
+pacote-paladin-devotion-pam-gwm-vh-11  11    9,9 B+     7,2 B    8,6 B+    12,5 A         -    8,3 B+     4,9 C
 pacote-paladin-devotion-pam-gwm-vh-7   7    6,7 B-     4,6 C    5,2 C+    8,4 B+         -     4,8 C     1,1 D
-pacote-paladin-glory-pam-gwm-11  11    9,5 B+     7,9 B    8,6 B+    12,5 A         -    8,1 B+    3,6 C-
-pacote-paladin-glory-pam-gwm-7   7    6,0 B-     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,7 D
+pacote-paladin-glory-pam-gwm-11  11    9,4 B+     7,9 B    8,6 B+    12,5 A         -    8,1 B+    3,6 C-
+pacote-paladin-glory-pam-gwm-7   7    5,9 C+     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,7 D
 pacote-paladin-glory-pam-gwm-vh-11  11   10,2 A-     7,9 B    8,6 B+    12,5 A         -    8,3 B+    3,6 C-
-pacote-paladin-glory-pam-gwm-vh-7   7    6,6 B-     4,6 C    5,2 C+    8,4 B+         -     4,8 C     1,9 D
+pacote-paladin-glory-pam-gwm-vh-7   7    6,4 B-     4,6 C    5,2 C+    8,4 B+         -     4,8 C     1,9 D
 pacote-paladin-vengeance-pam-gwm-11  11    11,5 A     7,2 B    8,6 B+    12,5 A         -    8,3 B+     1,1 D
-pacote-paladin-vengeance-pam-gwm-7   7     7,3 B     4,6 C    5,2 C+    8,4 B+         -     4,6 C     0,6 E
+pacote-paladin-vengeance-pam-gwm-7   7     7,2 B     4,6 C    5,2 C+    8,4 B+         -     4,6 C     0,6 E
 pacote-paladin-vengeance-pam-gwm-vh-11  11    12,4 A     7,2 B    8,6 B+    12,5 A         -    8,3 B+     1,1 D
-pacote-paladin-vengeance-pam-gwm-vh-7   7    8,3 B+     4,6 C    5,2 C+    8,4 B+         -    8,1 B+     0,6 E
-pacote-paladin-watchers-pam-gwm-11  11    8,8 B+     7,2 B    8,6 B+    12,5 A         -    8,1 B+     4,9 C
-pacote-paladin-watchers-pam-gwm-7   7    5,9 C+     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,1 D
-pacote-paladin-watchers-pam-gwm-vh-11  11    9,8 B+     7,2 B    8,6 B+    12,5 A         -    8,3 B+     4,9 C
-pacote-paladin-watchers-pam-gwm-vh-7   7    6,5 B-     4,6 C    5,2 C+    8,4 B+         -     4,8 C     1,1 D
+pacote-paladin-vengeance-pam-gwm-vh-7   7    8,2 B+     4,6 C    5,2 C+    8,4 B+         -    8,1 B+     0,6 E
+pacote-paladin-watchers-pam-gwm-11  11    8,6 B+     7,2 B    8,6 B+    12,5 A         -    8,1 B+     4,9 C
+pacote-paladin-watchers-pam-gwm-7   7    5,8 C+     4,6 C    5,2 C+    8,4 B+         -     4,6 C     1,1 D
+pacote-paladin-watchers-pam-gwm-vh-11  11    9,7 B+     7,2 B    8,6 B+    12,5 A         -    8,3 B+     4,9 C
+pacote-paladin-watchers-pam-gwm-vh-7   7    6,4 B-     4,6 C    5,2 C+    8,4 B+         -     4,8 C     1,1 D
 pacote-ranger-fey-wanderer-cbe-ss-11  11     7,3 B     7,3 B    16,9 S     2,6 D         -     4,8 C         -
 pacote-ranger-fey-wanderer-cbe-ss-7   7    5,7 C+     4,1 C     7,6 B     2,6 D         -     4,5 C         -
 pacote-ranger-fey-wanderer-cbe-ss-vh-11  11    8,2 B+     7,9 B    16,9 S     2,6 D         -     7,4 B         -
 pacote-ranger-fey-wanderer-cbe-ss-vh-7   7    5,9 C+     4,1 C     7,6 B     2,6 D         -     4,8 C         -
-pacote-ranger-gloom-stalker-cbe-ss-11  11    8,1 B+     7,3 B    16,9 S     5,0 C         -     7,5 B         -
-pacote-ranger-gloom-stalker-cbe-ss-7   7    5,8 C+     4,1 C     7,6 B     4,5 C         -     4,5 C         -
-pacote-ranger-gloom-stalker-cbe-ss-vh-11  11    9,2 B+     7,9 B    16,9 S     5,0 C         -     7,5 B         -
+pacote-ranger-gloom-stalker-cbe-ss-11  11     7,9 B     7,3 B    16,9 S     5,0 C         -     7,5 B         -
+pacote-ranger-gloom-stalker-cbe-ss-7   7    5,7 C+     4,1 C     7,6 B     4,5 C         -     4,5 C         -
+pacote-ranger-gloom-stalker-cbe-ss-vh-11  11    9,1 B+     7,9 B    16,9 S     5,0 C         -     7,5 B         -
 pacote-ranger-gloom-stalker-cbe-ss-vh-7   7    5,9 C+     4,1 C     7,6 B     4,5 C         -     4,8 C         -
 pacote-ranger-horizon-walker-cbe-ss-11  11   10,3 A-     7,3 B    16,9 S     2,6 D         -    8,3 B+         -
 pacote-ranger-horizon-walker-cbe-ss-7   7    6,3 B-     4,1 C     7,6 B     2,6 D         -     4,5 C         -
@@ -507,10 +507,10 @@ pacote-rogue-mastermind-cbe-ss-11  11    6,4 B-   10,0 A-    16,2 S    3,4 C-   
 pacote-rogue-mastermind-cbe-ss-7   7    5,1 C+    5,9 C+    8,0 B+    3,1 C-         -     4,6 C         -
 pacote-rogue-mastermind-cbe-ss-vh-11  11     7,3 B   10,6 A-    16,2 S    3,4 C-         -     4,8 C         -
 pacote-rogue-mastermind-cbe-ss-vh-7   7    5,1 C+    5,9 C+    8,0 B+    3,1 C-         -     4,6 C         -
-pacote-rogue-phantom-cbe-ss-11  11    8,6 B+    9,2 B+    16,6 S    4,0 C-         -     4,8 C         -
+pacote-rogue-phantom-cbe-ss-11  11    8,4 B+    9,2 B+    16,6 S    4,0 C-         -     4,8 C         -
 pacote-rogue-phantom-cbe-ss-7   7    5,6 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
-pacote-rogue-phantom-cbe-ss-vh-11  11    8,5 B+   10,0 A-    16,6 S    4,0 C-         -    8,0 B+         -
-pacote-rogue-phantom-cbe-ss-vh-7   7    5,4 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
+pacote-rogue-phantom-cbe-ss-vh-11  11    8,4 B+   10,0 A-    16,6 S    4,0 C-         -    8,0 B+         -
+pacote-rogue-phantom-cbe-ss-vh-7   7    5,3 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 pacote-rogue-scout-cbe-ss-11  11    6,5 B-   10,0 A-    16,2 S    4,0 C-         -     4,6 C         -
 pacote-rogue-scout-cbe-ss-7   7    5,2 C+    5,9 C+    8,0 B+    3,2 C-         -     4,6 C         -
 pacote-rogue-scout-cbe-ss-vh-11  11     7,4 B   10,6 A-    16,2 S    4,0 C-         -     4,8 C         -
@@ -626,31 +626,31 @@ rpgbot-bard-spirits-3   3     0,2 F     1,2 D     2,4 D     0,8 E         -    3
 rpgbot-bard-spirits-5   5     0,4 F     2,3 D     4,2 C     1,9 D         -    3,4 C-     1,3 D
 rpgbot-bard-spirits-7   7     0,4 F    3,4 C-    5,6 C+     2,4 D         -    3,6 C-    3,7 C-
 rpgbot-bard-spirits-9   9     0,4 F     4,5 C     7,5 B     2,8 D         -     7,2 B     7,6 B
-rpgbot-bard-swords-11  11     2,9 D    5,9 C+    8,8 B+     3,0 D         -    8,5 B+    8,7 B+
+rpgbot-bard-swords-11  11     2,8 D    5,9 C+    8,8 B+     3,0 D         -    8,5 B+    8,7 B+
 rpgbot-bard-swords-3    3     0,9 E     1,4 D     2,4 D     0,8 E         -    3,7 C-     0,5 E
-rpgbot-bard-swords-5    5     1,0 D     2,5 D     4,2 C     1,9 D         -     4,1 C     0,9 E
-rpgbot-bard-swords-7    7     2,4 D    3,8 C-    5,6 C+     2,4 D         -     4,7 C     2,8 D
+rpgbot-bard-swords-5    5     0,9 E     2,5 D     4,2 C     1,9 D         -     4,1 C     0,9 E
+rpgbot-bard-swords-7    7     2,3 D    3,8 C-    5,6 C+     2,4 D         -     4,7 C     2,8 D
 rpgbot-bard-swords-9    9     2,7 D     4,8 C     7,5 B     2,8 D         -    8,3 B+    7,0 B-
 rpgbot-bard-valor-11   11     4,8 C    8,2 B+   10,2 A-     2,5 D         -    8,7 B+    9,4 B+
 rpgbot-bard-valor-3     3     0,7 E     2,2 D     2,8 D     0,7 E         -    3,6 C-     0,5 E
 rpgbot-bard-valor-5     5     0,6 E    3,9 C-     4,8 C     1,6 D         -    3,9 C-     1,3 D
 rpgbot-bard-valor-7     7     1,2 D    5,0 C+    6,5 B-     1,8 D         -     4,7 C    3,7 C-
 rpgbot-bard-valor-9     9     1,8 D    6,6 B-    8,5 B+     2,4 D         -    8,4 B+     7,4 B
-rpgbot-bard-whispers-11  11     2,4 D     4,6 C     7,8 B    3,3 C-         -     2,8 D     0,5 E
+rpgbot-bard-whispers-11  11     2,1 D     4,6 C     7,8 B    3,3 C-         -     2,8 D     0,5 E
 rpgbot-bard-whispers-3   3     0,8 E     1,0 D     2,0 D     0,8 E         -     1,7 D     0,1 F
-rpgbot-bard-whispers-5   5     1,4 D     1,8 D    3,7 C-     1,9 D         -     2,7 D     0,3 F
-rpgbot-bard-whispers-7   7     1,4 D     2,9 D     4,9 C     2,5 D         -     2,7 D     0,3 F
-rpgbot-bard-whispers-9   9     1,5 D    3,9 C-    6,3 B-     2,9 D         -     2,8 D     0,4 F
+rpgbot-bard-whispers-5   5     1,2 D     1,8 D    3,7 C-     1,9 D         -     2,7 D     0,3 F
+rpgbot-bard-whispers-7   7     1,2 D     2,9 D     4,9 C     2,5 D         -     2,7 D     0,3 F
+rpgbot-bard-whispers-9   9     1,4 D    3,9 C-    6,3 B-     2,9 D         -     2,8 D     0,4 F
 rpgbot-cleric-arcana-11  11    5,4 C+    8,0 B+     7,1 B    12,3 A         -    8,9 B+    5,6 C+
 rpgbot-cleric-arcana-3   3     0,9 E     1,9 D     2,1 D     4,1 C         -     2,5 D     1,8 D
 rpgbot-cleric-arcana-5   5    3,4 C-     4,0 C    3,5 C-    8,6 B+         -    6,9 B-     1,7 D
 rpgbot-cleric-arcana-7   7    3,3 C-    5,0 C+     4,6 C    8,6 B+         -     7,2 B    3,7 C-
 rpgbot-cleric-arcana-9   9    3,5 C-    6,5 B-    5,8 C+    12,3 A         -     7,9 B    6,3 B-
-rpgbot-cleric-death-11  11    6,2 B-    9,3 B+    8,4 B+    12,6 A         -    8,1 B+    6,0 B-
-rpgbot-cleric-death-3   3     1,2 D     2,2 D     2,6 D     4,1 C         -    3,4 C-     1,5 D
-rpgbot-cleric-death-5   5    3,3 C-     4,3 C     4,2 C    8,4 B+         -    6,6 B-     1,4 D
-rpgbot-cleric-death-7   7     4,4 C    5,7 C+    5,5 C+    8,6 B+         -    6,9 B-     3,0 D
-rpgbot-cleric-death-9   9    5,8 C+     7,5 B     7,0 B    12,6 A         -     7,1 B    3,7 C-
+rpgbot-cleric-death-11  11    5,8 C+    9,3 B+    8,4 B+    12,6 A         -    8,1 B+    6,0 B-
+rpgbot-cleric-death-3   3     1,1 D     2,2 D     2,6 D     4,1 C         -    3,4 C-     1,5 D
+rpgbot-cleric-death-5   5    3,2 C-     4,3 C     4,2 C    8,4 B+         -    6,6 B-     1,4 D
+rpgbot-cleric-death-7   7     4,1 C    5,7 C+    5,5 C+    8,6 B+         -    6,9 B-     3,0 D
+rpgbot-cleric-death-9   9    5,6 C+     7,5 B     7,0 B    12,6 A         -     7,1 B    3,7 C-
 rpgbot-cleric-forge-11  11    5,6 C+   10,9 A-    8,0 B+    8,8 B+         -    9,1 B+    5,8 C+
 rpgbot-cleric-forge-3   3     0,9 E     2,2 D     2,2 D     4,1 C         -     2,6 D     1,9 D
 rpgbot-cleric-forge-5   5    3,5 C-    3,9 C-    3,9 C-     7,2 B         -     7,4 B     1,7 D
@@ -771,15 +771,15 @@ rpgbot-druid-wildfire-puro-3   3     0,7 E     2,6 D     2,2 D     4,1 C        
 rpgbot-druid-wildfire-puro-5   5     1,6 D     4,3 C    3,8 C-     7,6 B         -    3,9 C-     0,6 E
 rpgbot-druid-wildfire-puro-7   7     2,4 D    5,7 C+    5,0 C+    8,2 B+         -    6,3 B-     0,8 E
 rpgbot-druid-wildfire-puro-9   9    3,9 C-     7,5 B    6,5 B-    12,3 A         -     8,0 B     1,2 D
-rpgbot-fighter-arcane-archer-11  11    9,1 B+    8,3 B+   10,0 A-    3,1 C-         -    8,2 B+         -
-rpgbot-fighter-arcane-archer-3   3     1,5 D     1,8 D     2,8 D     1,3 D         -     2,8 D         -
+rpgbot-fighter-arcane-archer-11  11    9,0 B+    8,3 B+   10,0 A-    3,1 C-         -    8,2 B+         -
+rpgbot-fighter-arcane-archer-3   3     1,3 D     1,8 D     2,8 D     1,3 D         -     2,8 D         -
 rpgbot-fighter-arcane-archer-5   5     4,5 C    3,6 C-     4,7 C     2,4 D         -     4,3 C         -
-rpgbot-fighter-arcane-archer-7   7    5,9 C+     4,8 C    6,5 B-     2,7 D         -     4,7 C         -
-rpgbot-fighter-arcane-archer-9   9    6,8 B-    6,7 B-    8,5 B+    3,0 C-         -     4,7 C         -
-rpgbot-fighter-battle-master-11  11   10,6 A-   10,7 A-    11,5 A     2,6 D         -    8,3 B+         -
+rpgbot-fighter-arcane-archer-7   7    5,8 C+     4,8 C    6,5 B-     2,7 D         -     4,7 C         -
+rpgbot-fighter-arcane-archer-9   9    6,7 B-    6,7 B-    8,5 B+    3,0 C-         -     4,7 C         -
+rpgbot-fighter-battle-master-11  11   10,5 A-   10,7 A-    11,5 A     2,6 D         -    8,3 B+         -
 rpgbot-fighter-battle-master-3   3     1,3 D    3,0 C-    3,2 C-     1,1 D         -     2,8 D         -
-rpgbot-fighter-battle-master-5   5    5,3 C+     4,0 C    5,0 C+     1,5 D         -     4,6 C         -
-rpgbot-fighter-battle-master-7   7    6,7 B-    6,4 B-     7,1 B     2,1 D         -     4,8 C         -
+rpgbot-fighter-battle-master-5   5    5,2 C+     4,0 C    5,0 C+     1,5 D         -     4,6 C         -
+rpgbot-fighter-battle-master-7   7    6,6 B-    6,4 B-     7,1 B     2,1 D         -     4,8 C         -
 rpgbot-fighter-battle-master-9   9    8,5 B+    9,4 B+    9,3 B+     2,6 D         -    8,0 B+         -
 rpgbot-fighter-cavalier-11  11    11,0 A    11,6 A   10,0 B+    4,0 C-         -    8,3 B+         -
 rpgbot-fighter-cavalier-3   3     2,0 D     2,7 D     2,6 D     1,8 D         -     4,1 C         -
@@ -806,11 +806,11 @@ rpgbot-fighter-eldritch-knight-3   3     2,0 D     2,6 D     2,4 D     0,9 E    
 rpgbot-fighter-eldritch-knight-5   5     4,9 C     4,2 C     4,1 C     1,3 D         -     4,6 C         -
 rpgbot-fighter-eldritch-knight-7   7    6,1 B-     7,2 B    5,5 C+     2,2 D         -     4,6 C         -
 rpgbot-fighter-eldritch-knight-9   9     7,2 B    9,9 B+     7,3 B     2,6 D         -     4,8 C         -
-rpgbot-fighter-psi-warrior-11  11    11,8 A    8,3 B+   10,9 A-     2,7 D         -    8,3 B+         -
-rpgbot-fighter-psi-warrior-3   3     2,1 D     1,8 D     2,8 D     0,9 E         -     4,1 C         -
-rpgbot-fighter-psi-warrior-5   5    6,9 B-    3,6 C-     4,8 C     1,8 D         -     4,6 C         -
+rpgbot-fighter-psi-warrior-11  11    11,7 A    8,3 B+   10,9 A-     2,7 D         -    8,3 B+         -
+rpgbot-fighter-psi-warrior-3   3     2,0 D     1,8 D     2,8 D     0,9 E         -     4,1 C         -
+rpgbot-fighter-psi-warrior-5   5    6,8 B-    3,6 C-     4,8 C     1,8 D         -     4,6 C         -
 rpgbot-fighter-psi-warrior-7   7     7,4 B     4,8 C    6,5 B-     2,2 D         -     4,8 C         -
-rpgbot-fighter-psi-warrior-9   9    9,4 B+    6,7 B-    8,9 B+     2,6 D         -    8,1 B+         -
+rpgbot-fighter-psi-warrior-9   9    9,3 B+    6,7 B-    8,9 B+     2,6 D         -    8,1 B+         -
 rpgbot-fighter-purple-dragon-knight-11  11    9,4 B+    9,2 B+   10,3 A-    3,0 C-         -    8,1 B+     0,6 E
 rpgbot-fighter-purple-dragon-knight-3   3     0,9 E     2,3 D    3,2 C-     1,7 D         -     2,4 D     0,2 F
 rpgbot-fighter-purple-dragon-knight-5   5    3,6 C-     4,2 C     4,9 C     2,4 D         -     4,3 C     0,3 F
@@ -870,7 +870,7 @@ rpgbot-monk-mercy-11   11    9,0 B+    8,2 B+    17,1 S    8,2 B+         -     
 rpgbot-monk-mercy-3     3     1,3 D     1,6 D     2,9 D     2,3 D         -     4,1 C         -
 rpgbot-monk-mercy-5     5     4,7 C    3,4 C-    5,3 C+    3,4 C-         -     4,6 C     0,3 F
 rpgbot-monk-mercy-7     7     4,8 C     4,6 C    8,8 B+     8,0 B         -     4,6 C     0,3 F
-rpgbot-monk-mercy-9     9    6,5 B-    6,6 B-    16,1 S    8,1 B+         -     4,6 C     0,6 E
+rpgbot-monk-mercy-9     9    6,4 B-    6,6 B-    16,1 S    8,1 B+         -     4,6 C     0,6 E
 rpgbot-monk-open-hand-11  11    8,0 B+    8,2 B+    17,1 S    8,2 B+         -     4,8 C    3,5 C-
 rpgbot-monk-open-hand-3   3     1,8 D     1,6 D     2,9 D     2,3 D         -     4,2 C     0,3 F
 rpgbot-monk-open-hand-5   5    5,2 C+    3,4 C-    5,3 C+    3,4 C-         -     4,6 C     0,7 E
@@ -891,50 +891,50 @@ rpgbot-paladin-ancients-3   3     0,6 E     1,5 D     2,7 D     1,3 D         - 
 rpgbot-paladin-ancients-5   5     2,4 D     2,8 D     4,4 C    3,1 C-         -     4,2 C    3,1 C-
 rpgbot-paladin-ancients-7   7     2,4 D     4,1 C     7,3 B    8,2 B+         -     4,2 C    5,2 C+
 rpgbot-paladin-ancients-9   9     4,0 C    5,0 C+    9,0 B+    8,6 B+         -     4,6 C    6,3 B-
-rpgbot-paladin-conquest-11  11    6,7 B-   10,0 B+    9,1 B+    12,2 A         -     4,8 C    3,7 C-
+rpgbot-paladin-conquest-11  11    6,6 B-   10,0 B+    9,1 B+    12,2 A         -     4,8 C    3,7 C-
 rpgbot-paladin-conquest-3   3     1,8 D     2,3 D     2,4 D     1,3 D         -     4,2 C     0,7 E
-rpgbot-paladin-conquest-5   5    5,8 C+     4,0 C     4,0 C    3,1 C-         -     4,6 C     0,3 F
-rpgbot-paladin-conquest-7   7    5,2 C+    6,8 B-    6,5 B-    8,2 B+         -     4,6 C     1,4 D
-rpgbot-paladin-conquest-9   9    6,6 B-    9,1 B+    8,4 B+    12,2 A         -     4,6 C     1,9 D
+rpgbot-paladin-conquest-5   5    5,7 C+     4,0 C     4,0 C    3,1 C-         -     4,6 C     0,3 F
+rpgbot-paladin-conquest-7   7    5,1 C+    6,8 B-    6,5 B-    8,2 B+         -     4,6 C     1,4 D
+rpgbot-paladin-conquest-9   9    6,5 B-    9,1 B+    8,4 B+    12,2 A         -     4,6 C     1,9 D
 rpgbot-paladin-conquest-puro-11  11     7,4 B   10,3 A-   10,3 A-    12,2 A         -     4,8 C    8,4 B+
 rpgbot-paladin-conquest-puro-3   3     1,8 D     2,3 D     2,4 D     1,3 D         -     4,2 C     0,7 E
-rpgbot-paladin-conquest-puro-5   5    5,8 C+     4,0 C     4,0 C    3,1 C-         -     4,6 C     0,3 F
-rpgbot-paladin-conquest-puro-7   7    5,2 C+    6,8 B-    6,5 B-    8,2 B+         -     4,6 C     1,4 D
-rpgbot-paladin-conquest-puro-9   9    6,7 B-    8,8 B+    8,5 B+    12,2 A         -     4,6 C     0,9 E
+rpgbot-paladin-conquest-puro-5   5    5,7 C+     4,0 C     4,0 C    3,1 C-         -     4,6 C     0,3 F
+rpgbot-paladin-conquest-puro-7   7    5,1 C+    6,8 B-    6,5 B-    8,2 B+         -     4,6 C     1,4 D
+rpgbot-paladin-conquest-puro-9   9    6,6 B-    8,8 B+    8,5 B+    12,2 A         -     4,6 C     0,9 E
 rpgbot-paladin-crown-11  11    3,8 C-    11,9 A    12,3 A    12,2 A         -    8,3 B+    8,9 B+
 rpgbot-paladin-crown-3   3     0,7 E     2,6 D     2,7 D     1,7 D         -     2,0 D     1,5 D
 rpgbot-paladin-crown-5   5     1,8 D     4,3 C     4,2 C    3,2 C-         -     4,1 C    3,3 C-
 rpgbot-paladin-crown-7   7     1,8 D     7,7 B     7,3 B    8,8 B+         -     4,1 C    5,8 C+
 rpgbot-paladin-crown-9   9     2,0 D   10,4 A-   10,2 A-    12,2 A         -    8,1 B+     7,9 B
-rpgbot-paladin-devotion-11  11    5,4 C+    9,7 B+    9,4 B+    8,7 B+         -     4,6 C    8,2 B+
+rpgbot-paladin-devotion-11  11    5,3 C+    9,7 B+    9,4 B+    8,7 B+         -     4,6 C    8,2 B+
 rpgbot-paladin-devotion-3   3     1,8 D     1,9 D     2,7 D     1,7 D         -     4,2 C     0,7 E
 rpgbot-paladin-devotion-5   5     2,7 D    3,2 C-    4,0 C-    3,1 C-         -     4,3 C     2,3 D
-rpgbot-paladin-devotion-7   7     4,3 C    5,8 C+    5,3 C+    3,8 C-         -     4,6 C     1,6 D
-rpgbot-paladin-devotion-9   9     4,1 C     7,2 B    8,2 B+    8,6 B+         -     4,6 C     4,7 C
-rpgbot-paladin-devotion-puro-11  11    6,5 B-    9,4 B+    9,8 B+    8,7 B+         -     4,8 C    8,3 B+
+rpgbot-paladin-devotion-7   7     4,2 C    5,8 C+    5,3 C+    3,8 C-         -     4,6 C     1,6 D
+rpgbot-paladin-devotion-9   9     4,0 C     7,2 B    8,2 B+    8,6 B+         -     4,6 C     4,7 C
+rpgbot-paladin-devotion-puro-11  11    6,4 B-    9,4 B+    9,8 B+    8,7 B+         -     4,8 C    8,3 B+
 rpgbot-paladin-devotion-puro-3   3     1,8 D     1,9 D     2,7 D     1,7 D         -     4,2 C     0,7 E
-rpgbot-paladin-devotion-puro-5   5     4,2 C    3,6 C-     4,2 C    3,2 C-         -     4,6 C     1,3 D
-rpgbot-paladin-devotion-puro-7   7    3,5 C-    5,8 C+    6,8 B-    8,2 B+         -     4,6 C    3,8 C-
+rpgbot-paladin-devotion-puro-5   5     4,1 C    3,6 C-     4,2 C    3,2 C-         -     4,6 C     1,3 D
+rpgbot-paladin-devotion-puro-7   7    3,4 C-    5,8 C+    6,8 B-    8,2 B+         -     4,6 C    3,8 C-
 rpgbot-paladin-devotion-puro-9   9     4,7 C     7,6 B    8,4 B+    8,7 B+         -     4,6 C     4,7 C
-rpgbot-paladin-glory-11  11    9,0 B+   10,8 A-   10,6 A-    8,7 B+         -    8,1 B+    9,7 B+
-rpgbot-paladin-glory-3   3     2,2 D     2,6 D     2,7 D     1,7 D         -     4,3 C     0,8 E
-rpgbot-paladin-glory-5   5    6,1 B-     4,3 C     4,3 C    3,2 C-         -     4,6 C     0,6 E
-rpgbot-paladin-glory-7   7    5,7 C+     7,7 B     7,5 B    8,2 B+         -     4,6 C    3,0 C-
+rpgbot-paladin-glory-11  11    8,8 B+   10,8 A-   10,6 A-    8,7 B+         -    8,1 B+    9,7 B+
+rpgbot-paladin-glory-3   3     2,1 D     2,6 D     2,7 D     1,7 D         -     4,3 C     0,8 E
+rpgbot-paladin-glory-5   5    6,0 C+     4,3 C     4,3 C    3,2 C-         -     4,6 C     0,6 E
+rpgbot-paladin-glory-7   7    5,6 C+     7,7 B     7,5 B    8,2 B+         -     4,6 C    3,0 C-
 rpgbot-paladin-glory-9   9     4,9 C    9,8 B+    8,8 B+    8,7 B+         -     4,8 C     7,7 B
 rpgbot-paladin-redemption-11  11     4,6 C   10,8 A-    11,7 A    12,8 A         -     4,6 C    3,4 C-
 rpgbot-paladin-redemption-3   3     0,5 E     2,6 D     2,7 D     1,7 D         -     0,5 E     1,5 D
-rpgbot-paladin-redemption-5   5    3,3 C-     4,3 C     4,2 C    3,2 C-         -     4,3 C     1,3 D
+rpgbot-paladin-redemption-5   5    3,2 C-     4,3 C     4,2 C    3,2 C-         -     4,3 C     1,3 D
 rpgbot-paladin-redemption-7   7     1,4 D     7,7 B     7,3 B    8,8 B+         -     4,3 C    5,8 C+
 rpgbot-paladin-redemption-9   9     2,8 D    9,8 B+    9,4 B+    12,8 A         -     4,5 C    3,3 C-
-rpgbot-paladin-vengeance-11  11   10,1 A-   10,8 A-   10,6 A-    8,7 B+         -    8,1 B+    8,8 B+
-rpgbot-paladin-vengeance-3   3     4,3 C     2,3 D     2,3 D     1,3 D         -     4,6 C     0,2 F
+rpgbot-paladin-vengeance-11  11   10,0 A-   10,8 A-   10,6 A-    8,7 B+         -    8,1 B+    8,8 B+
+rpgbot-paladin-vengeance-3   3     4,2 C     2,3 D     2,3 D     1,3 D         -     4,6 C     0,2 F
 rpgbot-paladin-vengeance-5   5     7,7 B     4,0 C    3,9 C-    3,1 C-         -     4,8 C     0,3 F
 rpgbot-paladin-vengeance-7   7     7,9 B    6,8 B-    6,2 B-    8,2 B+         -     4,8 C     0,6 E
 rpgbot-paladin-vengeance-9   9     4,9 C    9,8 B+    8,8 B+    8,7 B+         -     4,8 C     7,7 B
-rpgbot-paladin-watchers-11  11   10,2 A-    8,3 B+    8,7 B+    8,7 B+         -    8,3 B+    8,0 B+
+rpgbot-paladin-watchers-11  11   10,1 A-    8,3 B+    8,7 B+    8,7 B+         -    8,3 B+    8,0 B+
 rpgbot-paladin-watchers-3   3    3,1 C-     1,7 D     2,3 D     1,3 D         -     4,3 C     0,7 E
-rpgbot-paladin-watchers-5   5    6,9 B-    3,1 C-    3,9 C-    3,1 C-         -     4,6 C     0,3 F
-rpgbot-paladin-watchers-7   7    5,6 C+    5,1 C+    6,2 B-    8,2 B+         -     4,6 C    3,6 C-
+rpgbot-paladin-watchers-5   5    6,8 B-    3,1 C-    3,9 C-    3,1 C-         -     4,6 C     0,3 F
+rpgbot-paladin-watchers-7   7    5,5 C+    5,1 C+    6,2 B-    8,2 B+         -     4,6 C    3,6 C-
 rpgbot-paladin-watchers-9   9     7,2 B    6,7 B-    8,0 B+    8,6 B+         -     4,8 C     4,5 C
 rpgbot-ranger-beast-master-11  11    8,4 B+     7,6 B   14,6 A+    3,5 C-         -     7,0 B         -
 rpgbot-ranger-beast-master-3   3     2,9 D     1,5 D     3,0 D     2,0 D         -     4,2 C         -
@@ -951,11 +951,11 @@ rpgbot-ranger-fey-wanderer-3   3     2,1 D     1,5 D     3,0 D     2,0 D        
 rpgbot-ranger-fey-wanderer-5   5    5,4 C+    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
 rpgbot-ranger-fey-wanderer-7   7    5,3 C+     4,4 C     7,5 B    3,5 C-         -     4,6 C         -
 rpgbot-ranger-fey-wanderer-9   9    6,4 B-    6,1 B-   10,7 A-    3,5 C-         -     4,7 C         -
-rpgbot-ranger-gloom-stalker-11  11    8,8 B+     7,6 B   14,6 A+    8,3 B+         -     7,1 B         -
-rpgbot-ranger-gloom-stalker-3   3     2,8 D     1,5 D     3,0 D     2,0 D         -     4,2 C         -
-rpgbot-ranger-gloom-stalker-5   5    5,7 C+    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
-rpgbot-ranger-gloom-stalker-7   7    5,6 C+     4,4 C     7,5 B     4,9 C         -     4,6 C         -
-rpgbot-ranger-gloom-stalker-9   9    6,9 B-    6,1 B-   10,7 A-    8,2 B+         -     4,7 C         -
+rpgbot-ranger-gloom-stalker-11  11    8,6 B+     7,6 B   14,6 A+    8,3 B+         -     7,1 B         -
+rpgbot-ranger-gloom-stalker-3   3     2,6 D     1,5 D     3,0 D     2,0 D         -     4,2 C         -
+rpgbot-ranger-gloom-stalker-5   5    5,6 C+    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
+rpgbot-ranger-gloom-stalker-7   7    5,5 C+     4,4 C     7,5 B     4,9 C         -     4,6 C         -
+rpgbot-ranger-gloom-stalker-9   9    6,7 B-    6,1 B-   10,7 A-    8,2 B+         -     4,7 C         -
 rpgbot-ranger-horizon-walker-11  11   10,8 A-     7,6 B   14,6 A+    3,5 C-         -    8,2 B+         -
 rpgbot-ranger-horizon-walker-3   3     2,4 D     1,5 D     3,0 D     2,0 D         -     4,2 C         -
 rpgbot-ranger-horizon-walker-5   5    5,7 C+    3,1 C-    5,5 C+    3,1 C-         -     4,6 C         -
@@ -996,11 +996,11 @@ rpgbot-rogue-mastermind-3   3    3,5 C-     1,2 D     2,4 D     1,1 D         - 
 rpgbot-rogue-mastermind-5   5     4,8 C     4,4 C     4,4 C     2,7 D         -     4,3 C         -
 rpgbot-rogue-mastermind-7   7    6,0 B-    5,9 C+    8,0 B+    3,0 C-         -     4,6 C         -
 rpgbot-rogue-mastermind-9   9     7,6 B     7,2 B    9,9 B+    3,3 C-         -     4,6 C         -
-rpgbot-rogue-phantom-11  11    11,1 A    8,4 B+   14,9 A+     4,3 C         -     4,8 C         -
+rpgbot-rogue-phantom-11  11    11,0 A    8,4 B+   14,9 A+     4,3 C         -     4,8 C         -
 rpgbot-rogue-phantom-3   3     2,8 D     1,2 D     2,4 D     2,0 D         -     4,2 C         -
-rpgbot-rogue-phantom-5   5    5,0 C+     4,4 C     4,4 C    3,5 C-         -     4,3 C         -
-rpgbot-rogue-phantom-7   7    6,7 B-    5,9 C+    8,0 B+     4,1 C         -     4,6 C         -
-rpgbot-rogue-phantom-9   9    9,4 B+    6,2 B-   10,8 A-     4,3 C         -     4,8 C         -
+rpgbot-rogue-phantom-5   5     4,9 C     4,4 C     4,4 C    3,5 C-         -     4,3 C         -
+rpgbot-rogue-phantom-7   7    6,6 B-    5,9 C+    8,0 B+     4,1 C         -     4,6 C         -
+rpgbot-rogue-phantom-9   9    9,3 B+    6,2 B-   10,8 A-     4,3 C         -     4,8 C         -
 rpgbot-rogue-scout-11  11    5,9 C+    9,2 B+   14,4 A+    3,9 C-         -     4,6 C         -
 rpgbot-rogue-scout-3    3     1,2 D     1,2 D     2,4 D     1,4 D         -     2,7 D         -
 rpgbot-rogue-scout-5    5     2,7 D     4,4 C     4,4 C     2,9 D         -     4,2 C         -
@@ -1106,11 +1106,11 @@ rpgbot-wizard-abjuration-puro-3   3     0,4 F     2,8 D    3,1 C-     2,7 D     
 rpgbot-wizard-abjuration-puro-5   5     0,9 E     4,3 C     4,8 C     4,3 C         -    8,4 B+         -
 rpgbot-wizard-abjuration-puro-7   7     4,2 C    6,2 B-    6,5 B-     4,4 C         -    8,7 B+         -
 rpgbot-wizard-abjuration-puro-9   9    5,1 C+    8,0 B+    8,2 B+     4,9 C         -    11,8 A         -
-rpgbot-wizard-bladesinging-11  11    6,1 B-    12,9 A    6,8 B-    6,7 B-         -    12,5 A         -
+rpgbot-wizard-bladesinging-11  11    5,5 C+    12,9 A    6,8 B-    6,7 B-         -    12,5 A         -
 rpgbot-wizard-bladesinging-3   3     0,7 E     1,0 D     2,3 D     2,1 D         -     1,8 D         -
 rpgbot-wizard-bladesinging-5   5     2,3 D    5,5 C+    3,2 C-     4,2 C         -    8,1 B+         -
 rpgbot-wizard-bladesinging-7   7     1,8 D     4,6 C     4,4 C     4,5 C         -    8,8 B+         -
-rpgbot-wizard-bladesinging-9   9     4,5 C   14,0 A+    5,5 C+    6,1 B-         -    11,2 A         -
+rpgbot-wizard-bladesinging-9   9    3,7 C-   14,0 A+    5,5 C+    6,1 B-         -    11,2 A         -
 rpgbot-wizard-chronurgy-11  11     2,2 D     7,9 B    6,2 B-    8,7 B+         -     4,2 C         -
 rpgbot-wizard-chronurgy-3   3     0,5 E     1,7 D     1,9 D    4,0 C-         -     0,4 F         -
 rpgbot-wizard-chronurgy-5   5     0,9 E     4,0 C    3,1 C-    8,1 B+         -     2,8 D         -
@@ -1182,7 +1182,7 @@ tinbin-7                7     7,5 B    6,1 B-    6,3 B-     4,5 C         -     
 
 Plano do dia: dia_longo. Builds marcadas com ~ ainda não têm esse plano (mostra a linha principal).
 ID                     nv      Dano    Defesa    Resil.   Vontade  Controle      Área   Suporte
-~abdul-7                7    5,9 C+   10,8 A-    6,1 B-    8,0 B+    5,3 C+     4,6 C     0,5 E
+~abdul-7                7    5,5 C+   10,8 A-    6,1 B-    8,0 B+    5,3 C+     4,6 C     0,5 E
 ~amadeus-7              7     7,3 B    3,7 C-    6,3 B-    12,3 A     4,7 C    8,6 B+     0,5 E
 ~aprendiz-11           11    11,7 A   15,4 A+    20,0 S    12,1 A     2,4 D    8,3 B+         -
 ~caleb-14              14   10,9 A-   13,6 A+    20,0 S    12,1 A     1,0 E    8,1 B+         -
@@ -1252,7 +1252,7 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~chassi-bard-swords-7   7    3,9 C-    3,2 C-    5,0 C+     2,6 D     0,0 F     4,2 C     0,9 E
 ~chassi-bard-valor-11  11     2,3 D    6,8 B-     7,8 B    3,6 C-     4,2 C     4,1 C     4,5 C
 ~chassi-bard-valor-7    7     1,4 D     4,5 C     4,7 C     2,7 D     2,8 D     2,8 D     2,3 D
-~chassi-bard-whispers-11  11     2,8 D     4,6 C     7,8 B    3,5 C-     2,7 D     4,1 C     4,0 C
+~chassi-bard-whispers-11  11     2,5 D     4,6 C     7,8 B    3,5 C-     2,7 D     4,1 C     4,0 C
 ~chassi-bard-whispers-7   7     1,0 D     2,6 D     4,7 C     2,7 D     1,2 D     2,1 D     1,3 D
 ~chassi-cleric-arcana-11  11     4,9 C    6,8 B-    6,1 B-    12,6 A     4,0 C     4,3 C     2,1 D
 ~chassi-cleric-arcana-7   7     1,9 D     4,5 C     4,3 C    8,4 B+     2,8 D     2,8 D     0,8 E
@@ -1296,13 +1296,13 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~chassi-druid-stars-7   7    3,6 C-    3,4 C-     4,5 C    8,8 B+     1,7 D     4,2 C     0,9 E
 ~chassi-druid-wildfire-11  11    3,8 C-    6,3 B-    8,0 B+   14,5 A+     4,0 C     4,2 C     4,2 C
 ~chassi-druid-wildfire-7   7     2,1 D    3,4 C-     4,5 C    8,8 B+     2,0 D     4,1 C     0,9 E
-~chassi-fighter-arcane-archer-11  11     7,1 B   10,2 A-   13,0 A+    3,4 C-     1,8 D     4,7 C         -
-~chassi-fighter-arcane-archer-7   7     4,6 C    5,8 C+     7,8 B     2,8 D     1,5 D     4,4 C         -
-~chassi-fighter-arcane-archer-f-sharpshooter-11  11    8,8 B+    9,4 B+    12,4 A    3,4 C-     1,5 D    8,1 B+         -
-~chassi-fighter-arcane-archer-f-sharpshooter-7   7    5,3 C+    5,1 C+    6,5 B-     2,8 D     1,4 D     4,7 C         -
+~chassi-fighter-arcane-archer-11  11     7,0 B   10,2 A-   13,0 A+    3,4 C-     1,8 D     4,7 C         -
+~chassi-fighter-arcane-archer-7   7     4,5 C    5,8 C+     7,8 B     2,8 D     1,5 D     4,4 C         -
+~chassi-fighter-arcane-archer-f-sharpshooter-11  11    8,7 B+    9,4 B+    12,4 A    3,4 C-     1,5 D    8,1 B+         -
+~chassi-fighter-arcane-archer-f-sharpshooter-7   7    5,2 C+    5,1 C+    6,5 B-     2,8 D     1,4 D     4,7 C         -
 ~chassi-fighter-battle-master-11  11     7,4 B   10,2 A-   13,4 A+    3,1 C-     2,4 D     4,6 C         -
 ~chassi-fighter-battle-master-7   7     4,7 C    5,8 C+     7,8 B     2,6 D     2,3 D     4,3 C         -
-~chassi-fighter-battle-master-f-sharpshooter-11  11    9,4 B+    9,4 B+    12,6 A    3,1 C-     2,2 D    8,1 B+         -
+~chassi-fighter-battle-master-f-sharpshooter-11  11    9,3 B+    9,4 B+    12,6 A    3,1 C-     2,2 D    8,1 B+         -
 ~chassi-fighter-battle-master-f-sharpshooter-7   7    5,4 C+    5,1 C+    6,6 B-     2,6 D     1,9 D     4,6 C         -
 ~chassi-fighter-cavalier-11  11    8,4 B+    12,7 A    11,4 A    3,2 C-    5,8 C+     4,8 C         -
 ~chassi-fighter-cavalier-7   7    5,0 C+    8,4 B+    6,6 B-     2,7 D     4,5 C     4,6 C         -
@@ -1436,9 +1436,9 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~chassi-ranger-fey-wanderer-7   7     4,1 C     4,4 C     7,6 B     2,6 D     0,3 F     4,3 C         -
 ~chassi-ranger-fey-wanderer-f-sharpshooter-11  11    5,8 C+    6,9 B-   13,0 A+     2,6 D     0,8 E     4,6 C         -
 ~chassi-ranger-fey-wanderer-f-sharpshooter-7   7     4,6 C     4,1 C     7,2 B     2,6 D     0,1 F     4,5 C         -
-~chassi-ranger-gloom-stalker-11  11    6,3 B-    8,6 B+    16,9 S     5,0 C     1,3 D     4,6 C         -
+~chassi-ranger-gloom-stalker-11  11    6,2 B-    8,6 B+    16,9 S     5,0 C     1,3 D     4,6 C         -
 ~chassi-ranger-gloom-stalker-7   7     4,2 C     4,4 C     7,6 B     4,5 C     0,3 F     4,3 C         -
-~chassi-ranger-gloom-stalker-f-sharpshooter-11  11     7,1 B    6,9 B-   13,0 A+     5,0 C     0,1 F     4,6 C         -
+~chassi-ranger-gloom-stalker-f-sharpshooter-11  11     7,0 B    6,9 B-   13,0 A+     5,0 C     0,1 F     4,6 C         -
 ~chassi-ranger-gloom-stalker-f-sharpshooter-7   7     4,8 C     4,1 C     7,2 B     4,5 C     0,1 F     4,5 C         -
 ~chassi-ranger-horizon-walker-11  11    9,1 B+    8,6 B+    16,9 S     2,6 D     1,1 D     4,8 C         -
 ~chassi-ranger-horizon-walker-7   7     4,5 C     4,4 C     7,6 B     2,6 D     0,2 F     4,3 C         -
@@ -1481,11 +1481,11 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~chassi-rogue-mastermind-f-skill-expert-11  11     7,6 B   10,4 A-   15,2 A+    3,4 C-     0,8 E     4,6 C         -
 ~chassi-rogue-mastermind-f-skill-expert-7   7     4,9 C    5,9 C+    8,0 B+    3,1 C-     0,0 F     4,3 C         -
 ~chassi-rogue-phantom-11  11    9,5 B+   10,6 A-    16,6 S    4,0 C-     1,0 D     4,8 C         -
-~chassi-rogue-phantom-7   7    5,6 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
-~chassi-rogue-phantom-f-sharpshooter-11  11    8,4 B+    9,7 B+    16,2 S    4,0 C-     0,7 E     4,8 C         -
+~chassi-rogue-phantom-7   7    5,5 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
+~chassi-rogue-phantom-f-sharpshooter-11  11    8,3 B+    9,7 B+    16,2 S    4,0 C-     0,7 E     4,8 C         -
 ~chassi-rogue-phantom-f-sharpshooter-7   7     4,9 C    5,9 C+     7,8 B    3,2 C-     0,0 F     4,6 C         -
 ~chassi-rogue-phantom-f-slasher-11  11    9,5 B+    9,7 B+    16,2 S    4,0 C-     0,7 E     4,8 C         -
-~chassi-rogue-phantom-f-slasher-7   7    5,6 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
+~chassi-rogue-phantom-f-slasher-7   7    5,5 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
 ~chassi-rogue-scout-11  11    8,0 B+    11,6 A    16,2 S    4,0 C-     1,1 D     4,6 C         -
 ~chassi-rogue-scout-7   7    5,2 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
 ~chassi-rogue-scout-f-piercer-11  11    8,4 B+   10,4 A-   15,2 A+    4,0 C-     0,8 E     4,8 C         -
@@ -1598,10 +1598,10 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~pacote-barbarian-zealot-pam-gwm-7   7     4,8 C    3,3 C-    6,6 B-     2,7 D     0,0 F     4,3 C         -
 ~pacote-barbarian-zealot-pam-gwm-vh-11  11    8,6 B+    6,2 B-    11,0 A     2,7 D     0,0 F    8,0 B+         -
 ~pacote-barbarian-zealot-pam-gwm-vh-7   7    6,5 B-    3,3 C-    6,6 B-     2,7 D     0,0 F     4,8 C         -
-~pacote-fighter-arcane-archer-cbe-ss-11  11    9,3 B+    9,6 B+   13,0 A+    3,4 C-     1,5 D    8,2 B+         -
+~pacote-fighter-arcane-archer-cbe-ss-11  11    9,2 B+    9,6 B+   13,0 A+    3,4 C-     1,5 D    8,2 B+         -
 ~pacote-fighter-arcane-archer-cbe-ss-7   7    5,9 C+     4,9 C     7,8 B     2,8 D     1,1 D     4,7 C         -
-~pacote-fighter-arcane-archer-cbe-ss-vh-11  11   10,5 A-   10,2 A-   13,0 A+    3,4 C-     1,7 D    8,4 B+         -
-~pacote-fighter-arcane-archer-cbe-ss-vh-7   7    6,9 B-    5,3 C+     7,8 B     2,8 D     1,4 D     4,7 C         -
+~pacote-fighter-arcane-archer-cbe-ss-vh-11  11   10,4 A-   10,2 A-   13,0 A+    3,4 C-     1,7 D    8,4 B+         -
+~pacote-fighter-arcane-archer-cbe-ss-vh-7   7    6,8 B-    5,3 C+     7,8 B     2,8 D     1,4 D     4,7 C         -
 ~pacote-fighter-battle-master-cbe-ss-11  11    9,7 B+    9,6 B+   13,4 A+    3,1 C-     2,2 D    8,1 B+         -
 ~pacote-fighter-battle-master-cbe-ss-7   7    6,1 B-     4,9 C     7,8 B     2,6 D     1,8 D     4,6 C         -
 ~pacote-fighter-battle-master-cbe-ss-vh-11  11   10,6 A-   10,2 A-   13,4 A+    3,1 C-     2,5 D    8,3 B+         -
@@ -1618,7 +1618,7 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~pacote-fighter-eldritch-knight-pam-gwm-7   7    5,6 C+    8,2 B+    6,6 B-     2,4 D     0,3 F     4,6 C         -
 ~pacote-fighter-eldritch-knight-pam-gwm-vh-11  11    9,0 B+    12,8 A    11,4 A     2,8 D     0,8 E    8,1 B+         -
 ~pacote-fighter-eldritch-knight-pam-gwm-vh-7   7    6,4 B-    8,2 B+    6,6 B-     2,4 D     0,4 F     4,6 C         -
-~pacote-fighter-psi-warrior-cbe-ss-11  11    9,9 B+    9,6 B+   13,0 A+    3,4 C-     1,5 D    8,1 B+         -
+~pacote-fighter-psi-warrior-cbe-ss-11  11    9,8 B+    9,6 B+   13,0 A+    3,4 C-     1,5 D    8,1 B+         -
 ~pacote-fighter-psi-warrior-cbe-ss-7   7    6,1 B-     4,9 C     7,8 B     2,8 D     0,7 E     4,6 C         -
 ~pacote-fighter-psi-warrior-cbe-ss-vh-11  11   10,7 A-   10,2 A-   13,0 A+    3,4 C-     1,7 D    8,3 B+         -
 ~pacote-fighter-psi-warrior-cbe-ss-vh-7   7     7,1 B    5,3 C+     7,8 B     2,8 D     1,1 D     4,8 C         -
@@ -1654,9 +1654,9 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~pacote-ranger-fey-wanderer-cbe-ss-7   7     4,3 C     4,1 C     7,6 B     2,6 D     0,1 F     4,3 C         -
 ~pacote-ranger-fey-wanderer-cbe-ss-vh-11  11     7,4 B     7,9 B    16,9 S     2,6 D     0,9 E     4,8 C         -
 ~pacote-ranger-fey-wanderer-cbe-ss-vh-7   7    5,8 C+     4,1 C     7,6 B     2,6 D     0,0 F     4,6 C         -
-~pacote-ranger-gloom-stalker-cbe-ss-11  11     7,3 B     7,3 B    16,9 S     5,0 C     0,8 E     4,8 C         -
-~pacote-ranger-gloom-stalker-cbe-ss-7   7     4,2 C     4,1 C     7,6 B     4,5 C     0,1 F     4,3 C         -
-~pacote-ranger-gloom-stalker-cbe-ss-vh-11  11    8,3 B+     7,9 B    16,9 S     5,0 C     0,9 E     4,8 C         -
+~pacote-ranger-gloom-stalker-cbe-ss-11  11     7,2 B     7,3 B    16,9 S     5,0 C     0,8 E     4,8 C         -
+~pacote-ranger-gloom-stalker-cbe-ss-7   7     4,1 C     4,1 C     7,6 B     4,5 C     0,1 F     4,3 C         -
+~pacote-ranger-gloom-stalker-cbe-ss-vh-11  11    8,1 B+     7,9 B    16,9 S     5,0 C     0,9 E     4,8 C         -
 ~pacote-ranger-gloom-stalker-cbe-ss-vh-7   7    5,8 C+     4,1 C     7,6 B     4,5 C     0,0 F     4,6 C         -
 ~pacote-ranger-horizon-walker-cbe-ss-11  11    9,3 B+     7,3 B    16,9 S     2,6 D     0,6 E    8,1 B+         -
 ~pacote-ranger-horizon-walker-cbe-ss-7   7     4,7 C     4,1 C     7,6 B     2,6 D     0,0 F     4,3 C         -
@@ -1686,10 +1686,10 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~pacote-rogue-mastermind-cbe-ss-7   7    5,1 C+    5,9 C+    8,0 B+    3,1 C-     0,0 F     4,6 C         -
 ~pacote-rogue-mastermind-cbe-ss-vh-11  11     7,3 B   10,6 A-    16,2 S    3,4 C-     0,9 E     4,8 C         -
 ~pacote-rogue-mastermind-cbe-ss-vh-7   7    5,1 C+    5,9 C+    8,0 B+    3,1 C-     0,0 F     4,6 C         -
-~pacote-rogue-phantom-cbe-ss-11  11    8,6 B+    9,2 B+    16,6 S    4,0 C-     0,7 E     4,8 C         -
+~pacote-rogue-phantom-cbe-ss-11  11    8,4 B+    9,2 B+    16,6 S    4,0 C-     0,7 E     4,8 C         -
 ~pacote-rogue-phantom-cbe-ss-7   7    5,6 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
-~pacote-rogue-phantom-cbe-ss-vh-11  11    8,5 B+   10,0 A-    16,6 S    4,0 C-     0,8 E    8,0 B+         -
-~pacote-rogue-phantom-cbe-ss-vh-7   7    5,4 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
+~pacote-rogue-phantom-cbe-ss-vh-11  11    8,4 B+   10,0 A-    16,6 S    4,0 C-     0,8 E    8,0 B+         -
+~pacote-rogue-phantom-cbe-ss-vh-7   7    5,3 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
 ~pacote-rogue-scout-cbe-ss-11  11    6,5 B-   10,0 A-    16,2 S    4,0 C-     0,8 E     4,6 C         -
 ~pacote-rogue-scout-cbe-ss-7   7    5,2 C+    5,9 C+    8,0 B+    3,2 C-     0,0 F     4,6 C         -
 ~pacote-rogue-scout-cbe-ss-vh-11  11     7,4 B   10,6 A-    16,2 S    4,0 C-     0,9 E     4,8 C         -
@@ -1805,7 +1805,7 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-bard-spirits-5   5     0,5 E     2,3 D     4,2 C     1,9 D     2,3 D     0,4 F     1,3 D
 ~rpgbot-bard-spirits-7   7     0,5 E    3,4 C-    5,6 C+     2,4 D     2,5 D     0,4 F     2,3 D
 ~rpgbot-bard-spirits-9   9     0,6 E     4,5 C     7,5 B     2,8 D     3,0 D     0,5 F    3,7 C-
-~rpgbot-bard-swords-11  11     4,0 C    5,9 C+    8,8 B+     3,0 D    3,6 C-     4,2 C     4,0 C
+~rpgbot-bard-swords-11  11    3,9 C-    5,9 C+    8,8 B+     3,0 D    3,6 C-     4,2 C     4,0 C
 ~rpgbot-bard-swords-3   3     0,9 E     1,4 D     2,4 D     0,8 E     1,2 D     2,0 D     0,5 E
 ~rpgbot-bard-swords-5   5     1,2 D     2,5 D     4,2 C     1,9 D     2,2 D     2,7 D     0,9 E
 ~rpgbot-bard-swords-7   7    3,4 C-    3,8 C-    5,6 C+     2,4 D     2,0 D     4,2 C     1,3 D
@@ -1815,21 +1815,21 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-bard-valor-5    5     0,7 E    3,9 C-     4,8 C     1,6 D     2,9 D     1,7 D     1,3 D
 ~rpgbot-bard-valor-7    7     2,1 D    5,0 C+    6,5 B-     1,8 D    3,0 C-     4,1 C     2,3 D
 ~rpgbot-bard-valor-9    9     2,9 D    6,6 B-    8,5 B+     2,4 D     4,0 C     4,2 C    3,3 C-
-~rpgbot-bard-whispers-11  11     2,4 D     4,6 C     7,8 B    3,3 C-     2,7 D     2,8 D     0,5 E
+~rpgbot-bard-whispers-11  11     2,1 D     4,6 C     7,8 B    3,3 C-     2,7 D     2,8 D     0,5 E
 ~rpgbot-bard-whispers-3   3     0,8 E     1,0 D     2,0 D     0,8 E     0,4 F     1,7 D     0,1 F
-~rpgbot-bard-whispers-5   5     1,4 D     1,8 D    3,7 C-     1,9 D     0,6 E     2,7 D     0,3 F
-~rpgbot-bard-whispers-7   7     1,4 D     2,9 D     4,9 C     2,5 D     1,4 D     2,7 D     0,3 F
-~rpgbot-bard-whispers-9   9     1,5 D    3,9 C-    6,3 B-     2,9 D     1,7 D     2,8 D     0,4 F
+~rpgbot-bard-whispers-5   5     1,2 D     1,8 D    3,7 C-     1,9 D     0,6 E     2,7 D     0,3 F
+~rpgbot-bard-whispers-7   7     1,2 D     2,9 D     4,9 C     2,5 D     1,4 D     2,7 D     0,3 F
+~rpgbot-bard-whispers-9   9     1,4 D    3,9 C-    6,3 B-     2,9 D     1,7 D     2,8 D     0,4 F
 ~rpgbot-cleric-arcana-11  11     4,1 C    8,0 B+     7,1 B    12,3 A     0,0 F     4,6 C     2,0 D
 ~rpgbot-cleric-arcana-3   3     0,7 E     1,9 D     2,1 D     4,1 C     0,0 F     1,4 D     0,4 F
 ~rpgbot-cleric-arcana-5   5     1,9 D     4,0 C    3,5 C-    8,6 B+     0,0 F     2,8 D     0,6 E
 ~rpgbot-cleric-arcana-7   7     1,9 D    5,0 C+     4,6 C    8,6 B+     0,0 F     2,8 D     0,8 E
 ~rpgbot-cleric-arcana-9   9    3,1 C-    6,5 B-    5,8 C+    12,3 A     0,0 F     4,4 C     0,9 E
-~rpgbot-cleric-death-11  11    5,8 C+    9,3 B+    8,4 B+    12,6 A     0,0 F     5,0 C     2,1 D
+~rpgbot-cleric-death-11  11    5,4 C+    9,3 B+    8,4 B+    12,6 A     0,0 F     5,0 C     2,1 D
 ~rpgbot-cleric-death-3   3     0,9 E     2,2 D     2,6 D     4,1 C     0,0 F     2,5 D     0,4 F
-~rpgbot-cleric-death-5   5     2,2 D     4,3 C     4,2 C    8,4 B+     0,1 F     4,5 C     0,6 E
-~rpgbot-cleric-death-7   7    3,4 C-    5,7 C+    5,5 C+    8,6 B+     0,1 F     4,5 C     0,8 E
-~rpgbot-cleric-death-9   9     4,6 C     7,5 B     7,0 B    12,6 A     0,7 E     4,6 C     1,0 D
+~rpgbot-cleric-death-5   5     2,1 D     4,3 C     4,2 C    8,4 B+     0,1 F     4,5 C     0,6 E
+~rpgbot-cleric-death-7   7    3,1 C-    5,7 C+    5,5 C+    8,6 B+     0,1 F     4,5 C     0,8 E
+~rpgbot-cleric-death-9   9     4,4 C     7,5 B     7,0 B    12,6 A     0,7 E     4,6 C     1,0 D
 ~rpgbot-cleric-forge-11  11     4,5 C   10,9 A-    8,0 B+    8,8 B+     0,9 E     4,3 C     2,0 D
 ~rpgbot-cleric-forge-3   3     0,7 E     2,2 D     2,2 D     4,1 C     0,0 F     1,4 D     0,4 F
 ~rpgbot-cleric-forge-5   5     2,1 D    3,9 C-    3,9 C-     7,2 B     0,0 F     4,1 C     0,6 E
@@ -1950,14 +1950,14 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-druid-wildfire-puro-5   5     0,9 E     4,3 C    3,8 C-     7,6 B     0,1 F     2,0 D     0,6 E
 ~rpgbot-druid-wildfire-puro-7   7     1,8 D    5,7 C+    5,0 C+    8,2 B+     0,1 F     2,8 D     0,8 E
 ~rpgbot-druid-wildfire-puro-9   9     2,3 D     7,5 B    6,5 B-    12,3 A     0,1 F     4,1 C     1,2 D
-~rpgbot-fighter-arcane-archer-11  11    8,0 B+    8,3 B+   10,0 A-    3,1 C-     1,2 D    8,0 B+         -
-~rpgbot-fighter-arcane-archer-3   3     1,1 D     1,8 D     2,8 D     1,3 D     0,6 E     2,7 D         -
-~rpgbot-fighter-arcane-archer-5   5     4,1 C    3,6 C-     4,7 C     2,4 D     1,2 D     4,2 C         -
-~rpgbot-fighter-arcane-archer-7   7    5,3 C+     4,8 C    6,5 B-     2,7 D     1,1 D     4,7 C         -
-~rpgbot-fighter-arcane-archer-9   9    6,0 B-    6,7 B-    8,5 B+    3,0 C-     1,5 D     4,7 C         -
-~rpgbot-fighter-battle-master-11  11   10,1 A-   10,7 A-    11,5 A     2,6 D     2,6 D    8,1 B+         -
+~rpgbot-fighter-arcane-archer-11  11     7,9 B    8,3 B+   10,0 A-    3,1 C-     1,2 D    8,0 B+         -
+~rpgbot-fighter-arcane-archer-3   3     1,0 D     1,8 D     2,8 D     1,3 D     0,6 E     2,7 D         -
+~rpgbot-fighter-arcane-archer-5   5     4,0 C    3,6 C-     4,7 C     2,4 D     1,2 D     4,2 C         -
+~rpgbot-fighter-arcane-archer-7   7    5,2 C+     4,8 C    6,5 B-     2,7 D     1,1 D     4,7 C         -
+~rpgbot-fighter-arcane-archer-9   9    5,9 C+    6,7 B-    8,5 B+    3,0 C-     1,5 D     4,7 C         -
+~rpgbot-fighter-battle-master-11  11   10,0 A-   10,7 A-    11,5 A     2,6 D     2,6 D    8,1 B+         -
 ~rpgbot-fighter-battle-master-3   3     1,0 D    3,0 C-    3,2 C-     1,1 D     1,3 D     2,5 D         -
-~rpgbot-fighter-battle-master-5   5     4,8 C     4,0 C    5,0 C+     1,5 D     1,6 D     4,5 C         -
+~rpgbot-fighter-battle-master-5   5     4,7 C     4,0 C    5,0 C+     1,5 D     1,6 D     4,5 C         -
 ~rpgbot-fighter-battle-master-7   7    6,1 B-    6,4 B-     7,1 B     2,1 D     2,5 D     4,6 C         -
 ~rpgbot-fighter-battle-master-9   9     7,8 B    9,4 B+    9,3 B+     2,6 D     2,6 D     4,8 C         -
 ~rpgbot-fighter-cavalier-11  11   10,4 A-    11,6 A   10,0 B+    4,0 C-    5,6 C+    8,1 B+         -
@@ -1985,11 +1985,11 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-fighter-eldritch-knight-5   5     4,3 C     4,3 C     4,1 C     1,3 D     0,0 F     4,3 C         -
 ~rpgbot-fighter-eldritch-knight-7   7    5,3 C+     7,2 B    5,5 C+     2,2 D     0,1 F     4,6 C         -
 ~rpgbot-fighter-eldritch-knight-9   9    6,5 B-    9,9 B+     7,3 B     2,6 D     0,6 E     4,6 C         -
-~rpgbot-fighter-psi-warrior-11  11   10,9 A-    8,3 B+   10,9 A-     2,7 D     1,1 D    8,3 B+         -
-~rpgbot-fighter-psi-warrior-3   3     1,7 D     1,8 D     2,8 D     0,9 E     0,3 F     2,8 D         -
-~rpgbot-fighter-psi-warrior-5   5    6,2 B-    3,6 C-     4,8 C     1,8 D     0,4 F     4,6 C         -
-~rpgbot-fighter-psi-warrior-7   7    6,8 B-     4,8 C    6,5 B-     2,2 D     1,0 E     4,6 C         -
-~rpgbot-fighter-psi-warrior-9   9    8,2 B+    6,7 B-    8,9 B+     2,6 D     1,5 D     4,8 C         -
+~rpgbot-fighter-psi-warrior-11  11   10,8 A-    8,3 B+   10,9 A-     2,7 D     1,1 D    8,3 B+         -
+~rpgbot-fighter-psi-warrior-3   3     1,6 D     1,8 D     2,8 D     0,9 E     0,3 F     2,8 D         -
+~rpgbot-fighter-psi-warrior-5   5    6,1 B-    3,6 C-     4,8 C     1,8 D     0,4 F     4,6 C         -
+~rpgbot-fighter-psi-warrior-7   7    6,7 B-     4,8 C    6,5 B-     2,2 D     1,0 E     4,6 C         -
+~rpgbot-fighter-psi-warrior-9   9    8,1 B+    6,7 B-    8,9 B+     2,6 D     1,5 D     4,8 C         -
 ~rpgbot-fighter-purple-dragon-knight-11  11     7,9 B    9,2 B+   10,3 A-    3,0 C-    3,0 C-     4,8 C     0,6 E
 ~rpgbot-fighter-purple-dragon-knight-3   3     0,8 E     2,3 D    3,2 C-     1,7 D     0,4 F     1,7 D     0,2 F
 ~rpgbot-fighter-purple-dragon-knight-5   5     2,9 D     4,2 C     4,9 C     2,4 D     2,4 D     4,2 C     0,3 F
@@ -2130,11 +2130,11 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-ranger-fey-wanderer-5   5    5,2 C+    3,1 C-    5,5 C+    3,1 C-     0,1 F     4,6 C         -
 ~rpgbot-ranger-fey-wanderer-7   7    5,2 C+     4,4 C     7,5 B    3,5 C-     0,1 F     4,6 C         -
 ~rpgbot-ranger-fey-wanderer-9   9    6,4 B-    6,1 B-   10,7 A-    3,5 C-     0,9 E     4,6 C         -
-~rpgbot-ranger-gloom-stalker-11  11     7,8 B     7,6 B   14,6 A+    8,3 B+     0,7 E     4,8 C         -
-~rpgbot-ranger-gloom-stalker-3   3     2,3 D     1,5 D     3,0 D     2,0 D     0,1 F     4,1 C         -
-~rpgbot-ranger-gloom-stalker-5   5    5,5 C+    3,1 C-    5,5 C+    3,1 C-     0,0 F     4,6 C         -
-~rpgbot-ranger-gloom-stalker-7   7    5,5 C+     4,4 C     7,5 B     4,9 C     0,1 F     4,6 C         -
-~rpgbot-ranger-gloom-stalker-9   9    6,9 B-    6,1 B-   10,7 A-    8,2 B+     0,9 E     4,6 C         -
+~rpgbot-ranger-gloom-stalker-11  11     7,7 B     7,6 B   14,6 A+    8,3 B+     0,7 E     4,8 C         -
+~rpgbot-ranger-gloom-stalker-3   3     2,2 D     1,5 D     3,0 D     2,0 D     0,1 F     4,1 C         -
+~rpgbot-ranger-gloom-stalker-5   5    5,4 C+    3,1 C-    5,5 C+    3,1 C-     0,0 F     4,6 C         -
+~rpgbot-ranger-gloom-stalker-7   7    5,4 C+     4,4 C     7,5 B     4,9 C     0,1 F     4,6 C         -
+~rpgbot-ranger-gloom-stalker-9   9    6,7 B-    6,1 B-   10,7 A-    8,2 B+     0,9 E     4,6 C         -
 ~rpgbot-ranger-horizon-walker-11  11   10,3 A-     7,6 B   14,6 A+    3,5 C-     0,6 E    8,1 B+         -
 ~rpgbot-ranger-horizon-walker-3   3     2,1 D     1,5 D     3,0 D     2,0 D     0,1 F     4,1 C         -
 ~rpgbot-ranger-horizon-walker-5   5    5,5 C+    3,1 C-    5,5 C+    3,1 C-     0,0 F     4,6 C         -
@@ -2175,11 +2175,11 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-rogue-mastermind-5   5     4,8 C     4,4 C     4,4 C     2,7 D     0,0 F     4,3 C         -
 ~rpgbot-rogue-mastermind-7   7    6,0 B-    5,9 C+    8,0 B+    3,0 C-     0,0 F     4,6 C         -
 ~rpgbot-rogue-mastermind-9   9     7,6 B     7,2 B    9,9 B+    3,3 C-     0,0 F     4,6 C         -
-~rpgbot-rogue-phantom-11  11    11,1 A    8,4 B+   14,9 A+     4,3 C     0,0 F     4,8 C         -
+~rpgbot-rogue-phantom-11  11    11,0 A    8,4 B+   14,9 A+     4,3 C     0,0 F     4,8 C         -
 ~rpgbot-rogue-phantom-3   3     2,8 D     1,2 D     2,4 D     2,0 D     0,0 F     4,2 C         -
-~rpgbot-rogue-phantom-5   5    5,0 C+     4,4 C     4,4 C    3,5 C-     0,0 F     4,3 C         -
-~rpgbot-rogue-phantom-7   7    6,7 B-    5,9 C+    8,0 B+     4,1 C     0,0 F     4,6 C         -
-~rpgbot-rogue-phantom-9   9    9,4 B+    6,2 B-   10,8 A-     4,3 C     0,0 F     4,8 C         -
+~rpgbot-rogue-phantom-5   5     4,9 C     4,4 C     4,4 C    3,5 C-     0,0 F     4,3 C         -
+~rpgbot-rogue-phantom-7   7    6,6 B-    5,9 C+    8,0 B+     4,1 C     0,0 F     4,6 C         -
+~rpgbot-rogue-phantom-9   9    9,3 B+    6,2 B-   10,8 A-     4,3 C     0,0 F     4,8 C         -
 ~rpgbot-rogue-scout-11  11    5,9 C+    9,2 B+   14,4 A+    3,9 C-     0,0 F     4,6 C         -
 ~rpgbot-rogue-scout-3   3     1,2 D     1,2 D     2,4 D     1,4 D     0,0 F     2,7 D         -
 ~rpgbot-rogue-scout-5   5     2,7 D     4,4 C     4,4 C     2,9 D     0,0 F     4,2 C         -

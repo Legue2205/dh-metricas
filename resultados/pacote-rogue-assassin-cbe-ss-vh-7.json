@@ -4,7 +4,7 @@
  "grupo": "Pacote",
  "nivel": 7,
  "build": "Rogue (Assassin), atirador, besta leve, couro batido; sem feat",
- "impressao": "dfa9c2622a",
+ "impressao": "63fd050914",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -198,26 +198,82 @@
    }
   },
   "assassinate": {
-   "hipotese": "besta leve sem Steady Aim (ação bônus livre); Sneak por aliado ou Assassinate no round 1",
+   "hipotese": "besta leve sem Steady Aim (ação bônus livre); Assassinate no round 1 (vantagem se agir antes; crítico automático em 25% das lutas, com surpresa); Sneak por aliado ou Assassinate",
    "principal": [],
    "dano": {
     "dpr": {
-     "CA 11": 29.8,
-     "CA 12": 27.7,
-     "CA 15": 20.9,
-     "CA 16": 18.5,
-     "CA 18": 13.3,
-     "CA 20": 13.2,
-     "CA 22": 10.4,
-     "CA 24": 7.2,
-     "CA 25": 4.7
+     "CA 11": 29.5,
+     "CA 12": 27.4,
+     "CA 15": 20.5,
+     "CA 16": 18.0,
+     "CA 18": 12.8,
+     "CA 20": 13.1,
+     "CA 22": 10.2,
+     "CA 24": 6.9,
+     "CA 25": 4.4
     },
     "nivel_eq": 5.1,
     "rank": "C+",
     "perfil": "Equilibrado",
-    "nivel_bruta": 5.2,
-    "nivel_precisa": 5.1,
-    "medido": false
+    "nivel_bruta": 5.1,
+    "nivel_precisa": 5.0,
+    "medido": false,
+    "por_round": {
+     "CA 11": [
+      38.8,
+      26.4,
+      26.4,
+      26.4
+     ],
+     "CA 12": [
+      36.0,
+      24.5,
+      24.5,
+      24.5
+     ],
+     "CA 15": [
+      27.0,
+      18.3,
+      18.3,
+      18.3
+     ],
+     "CA 16": [
+      23.7,
+      16.1,
+      16.1,
+      16.1
+     ],
+     "CA 18": [
+      16.9,
+      11.5,
+      11.5,
+      11.5
+     ],
+     "CA 20": [
+      16.0,
+      12.2,
+      12.2,
+      12.2
+     ],
+     "CA 22": [
+      12.4,
+      9.5,
+      9.5,
+      9.5
+     ],
+     "CA 24": [
+      8.4,
+      6.5,
+      6.5,
+      6.5
+     ],
+     "CA 25": [
+      5.6,
+      4.0,
+      4.0,
+      4.0
+     ]
+    }
    },
    "defesa": {
     "pv_efetivo": 52,
@@ -275,12 +331,12 @@
      "2": 2.83,
      "3": 2.83,
      "4": 3.0,
-     "5": 3.14,
-     "6": 3.14,
-     "7": 3.14,
-     "8": 4.24,
-     "9": 4.07,
-     "10": 4.07,
+     "5": 3.2,
+     "6": 3.2,
+     "7": 3.2,
+     "8": 4.28,
+     "9": 4.12,
+     "10": 4.12,
      "11": 4.36,
      "12": 4.36,
      "13": 5.09,
@@ -290,7 +346,7 @@
      "17": 5.65,
      "18": 5.65,
      "19": 5.99,
-     "20": 5.65
+     "20": 5.67
     },
     "usos": 0,
     "antigo": null,
@@ -313,30 +369,30 @@
     "nivel_controle": 0.0,
     "nivel_atencao": 0.0,
     "rank_atencao": "F",
-    "vidas_total": -0.091,
+    "vidas_total": -0.087,
     "vidas_campo": 0.008,
-    "vidas_atencao": -0.132,
+    "vidas_atencao": -0.128,
     "corpo": {
-     "T": -0.132,
-     "S": -0.051,
-     "P": -0.081,
-     "chave": "T-S-P-≈",
-     "perfil": "Desastre"
+     "T": -0.128,
+     "S": -0.041,
+     "P": -0.088,
+     "chave": "T-S0P-",
+     "perfil": "Brecha"
     },
-    "nivel_corpo": 5.25,
+    "nivel_corpo": 5.27,
     "rank_corpo": "C+",
     "corpo_busca": [
      [
       7,
-      -0.132
+      -0.128
      ],
      [
       6,
-      -0.064
+      -0.061
      ],
      [
       5,
-      0.021
+      0.023
      ]
     ],
     "por_tipo": {
@@ -378,7 +434,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "assassinate",
+     "linha": "principal",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -387,7 +443,7 @@
      }
     },
     {
-     "linha": "assassinate",
+     "linha": "principal",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -396,7 +452,7 @@
      }
     },
     {
-     "linha": "assassinate",
+     "linha": "principal",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -405,7 +461,7 @@
      }
     },
     {
-     "linha": "assassinate",
+     "linha": "principal",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -459,11 +515,11 @@
      }
     },
     "corpo": {
-     "nivel_eq": 5.2,
+     "nivel_eq": 5.3,
      "rank": "C+",
      "por_categoria": {
-      "np": 5.2,
-      "p": 5.2
+      "np": 5.3,
+      "p": 5.3
      }
     },
     "area": {
@@ -480,7 +536,7 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "assassinate",
+     "linha": "principal",
      "categoria": "p",
      "peso": 1,
      "nota": "",
@@ -529,10 +585,10 @@
      }
     },
     "corpo": {
-     "nivel_eq": 5.2,
+     "nivel_eq": 5.3,
      "rank": "C+",
      "por_categoria": {
-      "p": 5.2
+      "p": 5.3
      }
     },
     "area": {
@@ -953,7 +1009,7 @@
    }
   }
  },
- "segundos": 0.3,
+ "segundos": 1.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1268,7 +1324,7 @@
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
   "dano.peso_rampa_bruta": 0.5,
-  "dano.peso_round1": 1.25,
+  "dano.peso_round1": 1.0,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -1448,20 +1504,20 @@
   "rogue.vantagem.atirador": 0.8
  },
  "impressoes": {
-  "_planos": "923e048abbd5",
+  "_planos": "bb3f308fa914",
   "principal": {
-   "dano": "348b6035074a",
+   "dano": "e7b8e6a14dbc",
    "defesa": "9c41a40bdd33",
    "saves": "8098740f019a",
-   "area": "bd8fa3f7dda0",
+   "area": "5728169ee50c",
    "controle": "a7fb58d43dfc"
   },
   "assassinate": {
-   "dano": "5a57a66871fe",
+   "dano": "3f5b99716182",
    "defesa": "9c41a40bdd33",
    "saves": "8098740f019a",
-   "area": "db421333f081",
-   "controle": "8cf7d6035545"
+   "area": "761b6ffb004b",
+   "controle": "73470339d7c4"
   }
  }
 }

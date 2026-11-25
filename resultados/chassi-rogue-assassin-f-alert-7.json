@@ -4,7 +4,7 @@
  "grupo": "Chassi",
  "nivel": 7,
  "build": "Rogue (Assassin), atirador, besta leve, couro batido; Alert no 4 — RPGBot (Killer Rabbit): Alert no 4",
- "impressao": "ea706b983f",
+ "impressao": "4b9d4dbbbc",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -198,26 +198,82 @@
    }
   },
   "assassinate": {
-   "hipotese": "besta leve sem Steady Aim (ação bônus livre); Sneak por aliado ou Assassinate no round 1",
+   "hipotese": "besta leve sem Steady Aim (ação bônus livre); Assassinate no round 1 (vantagem se agir antes; crítico automático em 25% das lutas, com surpresa); Sneak por aliado ou Assassinate",
    "principal": [],
    "dano": {
     "dpr": {
-     "CA 11": 16.5,
-     "CA 12": 15.7,
-     "CA 15": 13.1,
-     "CA 16": 12.1,
-     "CA 18": 10.3,
-     "CA 20": 8.3,
-     "CA 22": 6.3,
-     "CA 24": 4.2,
-     "CA 25": 3.1
+     "CA 11": 17.6,
+     "CA 12": 16.8,
+     "CA 15": 14.0,
+     "CA 16": 13.0,
+     "CA 18": 11.0,
+     "CA 20": 8.9,
+     "CA 22": 6.7,
+     "CA 24": 4.4,
+     "CA 25": 3.2
     },
-    "nivel_eq": 3.4,
+    "nivel_eq": 3.7,
     "rank": "C-",
     "perfil": "Equilibrado",
-    "nivel_bruta": 3.4,
-    "nivel_precisa": 3.4,
-    "medido": false
+    "nivel_bruta": 3.7,
+    "nivel_precisa": 3.7,
+    "medido": false,
+    "por_round": {
+     "CA 11": [
+      23.9,
+      15.5,
+      15.5,
+      15.5
+     ],
+     "CA 12": [
+      22.8,
+      14.8,
+      14.8,
+      14.8
+     ],
+     "CA 15": [
+      19.4,
+      12.2,
+      12.2,
+      12.2
+     ],
+     "CA 16": [
+      18.1,
+      11.4,
+      11.4,
+      11.4
+     ],
+     "CA 18": [
+      15.5,
+      9.5,
+      9.5,
+      9.5
+     ],
+     "CA 20": [
+      12.6,
+      7.7,
+      7.7,
+      7.7
+     ],
+     "CA 22": [
+      9.5,
+      5.8,
+      5.8,
+      5.8
+     ],
+     "CA 24": [
+      6.3,
+      3.8,
+      3.8,
+      3.8
+     ],
+     "CA 25": [
+      4.6,
+      2.8,
+      2.8,
+      2.8
+     ]
+    }
    },
    "defesa": {
     "pv_efetivo": 52,
@@ -274,23 +330,23 @@
      "1": 2.35,
      "2": 2.83,
      "3": 2.83,
-     "4": 3.88,
-     "5": 3.78,
-     "6": 3.78,
-     "7": 3.78,
-     "8": 4.89,
-     "9": 4.69,
-     "10": 4.69,
-     "11": 4.83,
-     "12": 4.83,
-     "13": 5.53,
-     "14": 5.53,
-     "15": 5.53,
-     "16": 5.53,
-     "17": 5.89,
-     "18": 5.89,
+     "4": 3.85,
+     "5": 3.71,
+     "6": 3.71,
+     "7": 3.71,
+     "8": 4.75,
+     "9": 4.55,
+     "10": 4.55,
+     "11": 4.76,
+     "12": 4.76,
+     "13": 5.47,
+     "14": 5.47,
+     "15": 5.47,
+     "16": 5.47,
+     "17": 5.87,
+     "18": 5.87,
      "19": 6.0,
-     "20": 5.84
+     "20": 5.82
     },
     "usos": 0,
     "antigo": null,
@@ -313,13 +369,13 @@
     "nivel_controle": 0.0,
     "nivel_atencao": 0.0,
     "rank_atencao": "F",
-    "vidas_total": -0.035,
+    "vidas_total": -0.044,
     "vidas_campo": 0.008,
-    "vidas_atencao": -0.076,
+    "vidas_atencao": -0.085,
     "corpo": {
-     "T": -0.076,
-     "S": 0.092,
-     "P": -0.167,
+     "T": -0.085,
+     "S": 0.07,
+     "P": -0.155,
      "chave": "T0S+P-",
      "perfil": "Redirecionador"
     },
@@ -328,7 +384,7 @@
     "corpo_busca": [
      [
       7,
-      -0.076
+      -0.085
      ]
     ],
     "por_tipo": {
@@ -945,7 +1001,7 @@
    }
   }
  },
- "segundos": 0.5,
+ "segundos": 4.0,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -1260,7 +1316,7 @@
   "controle.referencia.frontliner.pv_por_nivel": 8,
   "controle.referencia.frontliner.soft": 0.15,
   "dano.peso_rampa_bruta": 0.5,
-  "dano.peso_round1": 1.25,
+  "dano.peso_round1": 1.0,
   "defesa.chefe.acerto_extra": 3,
   "defesa.chefe.ataques_por_cr": [
    [
@@ -1440,20 +1496,20 @@
   "rogue.vantagem.atirador": 0.8
  },
  "impressoes": {
-  "_planos": "1583a4dc65ba",
+  "_planos": "6dbba1eb3181",
   "principal": {
-   "dano": "c56779833e23",
+   "dano": "216e537695d5",
    "defesa": "806acb044ebf",
    "saves": "6409859e6b45",
-   "area": "287aebf1f146",
+   "area": "b8258d718678",
    "controle": "073a528b4af5"
   },
   "assassinate": {
-   "dano": "6e4455f84457",
+   "dano": "0cc37f6f2f4c",
    "defesa": "806acb044ebf",
    "saves": "6409859e6b45",
-   "area": "f3e6e501282c",
-   "controle": "aa36c1d50b05"
+   "area": "67467851a44d",
+   "controle": "8eb2c1646f2f"
   }
  }
 }

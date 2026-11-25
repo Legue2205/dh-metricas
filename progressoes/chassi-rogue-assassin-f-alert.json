@@ -114,15 +114,38 @@
    },
    {
     "id": "assassinate",
-    "hipotese": "besta leve sem Steady Aim (ação bônus livre); Sneak por aliado ou Assassinate no round 1",
+    "hipotese": "besta leve sem Steady Aim (ação bônus livre); Assassinate no round 1 (vantagem se agir antes; crítico automático em 25% das lutas, com surpresa); Sneak por aliado ou Assassinate",
     "dano": {
      "ataques": [
       {
-       "n": 1,
+       "n": 0.75,
        "bonus": 6,
        "dano": "1d8+3",
-       "vantagem": 0.2,
-       "nota": "vantagem do Assassinate no round 1"
+       "nota": "rounds 2–4: besta leve sem Steady Aim"
+      },
+      {
+       "n": 0.062,
+       "bonus": 6,
+       "dano": "1d8+3",
+       "vantagem": 1.0,
+       "nota": "round 1, alvo surpreso: vantagem e todo acerto é crítico",
+       "round1": true,
+       "crit_em": 2
+      },
+      {
+       "n": 0.138,
+       "bonus": 6,
+       "dano": "1d8+3",
+       "vantagem": 1.0,
+       "nota": "round 1, agiu antes do alvo: vantagem",
+       "round1": true
+      },
+      {
+       "n": 0.05,
+       "bonus": 6,
+       "dano": "1d8+3",
+       "nota": "round 1, agiu depois do alvo",
+       "round1": true
       }
      ],
      "por_turno": [
@@ -172,10 +195,10 @@
  },
  "niveis": {
   "7": {
-   "_texto": "Assassinate (iniciativa vencida 0.8). atributos {'for': 8, 'des': 17, 'con': 15, 'int': 12, 'sab': 13, 'car': 10}"
+   "_texto": "Assassinate (iniciativa vencida 0.8; surpresa 0.25). atributos {'for': 8, 'des': 17, 'con': 15, 'int': 12, 'sab': 13, 'car': 10}"
   },
   "11": {
-   "_texto": "Assassinate (iniciativa vencida 0.8). atributos {'for': 8, 'des': 20, 'con': 16, 'int': 12, 'sab': 13, 'car': 10}",
+   "_texto": "Assassinate (iniciativa vencida 0.8; surpresa 0.25). atributos {'for': 8, 'des': 20, 'con': 16, 'int': 12, 'sab': 13, 'car': 10}",
    "corpo": {
     "ca": 17,
     "pv": 91,
@@ -274,15 +297,38 @@
     },
     {
      "id": "assassinate",
-     "hipotese": "besta leve sem Steady Aim (ação bônus livre); Sneak por aliado ou Assassinate no round 1",
+     "hipotese": "besta leve sem Steady Aim (ação bônus livre); Assassinate no round 1 (vantagem se agir antes; crítico automático em 25% das lutas, com surpresa); Sneak por aliado ou Assassinate",
      "dano": {
       "ataques": [
        {
-        "n": 1,
+        "n": 0.75,
         "bonus": 9,
         "dano": "1d8+5",
-        "vantagem": 0.2,
-        "nota": "vantagem do Assassinate no round 1"
+        "nota": "rounds 2–4: besta leve sem Steady Aim"
+       },
+       {
+        "n": 0.062,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "vantagem": 1.0,
+        "nota": "round 1, alvo surpreso: vantagem e todo acerto é crítico",
+        "round1": true,
+        "crit_em": 2
+       },
+       {
+        "n": 0.138,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "vantagem": 1.0,
+        "nota": "round 1, agiu antes do alvo: vantagem",
+        "round1": true
+       },
+       {
+        "n": 0.05,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "round 1, agiu depois do alvo",
+        "round1": true
        }
       ],
       "por_turno": [

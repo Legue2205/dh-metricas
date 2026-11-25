@@ -822,3 +822,12 @@ qual modo de focus fire como padrão.
 - **Recomendação:** o valor de abate não entra no eixo de dano como está. Opções: (a) abate só nas lutas sem horda
   (chefe, dupla, party de elite) como complemento do dano; (b) abate como métrica própria de "fechar luta" (usa dano +
   área + burst), para a fase 2 (calibração entre réguas), onde a moeda comum é justamente dano negado.
+
+### 25/11 (usuário): opção (b) para o abate, fim do peso do 1º round, Assassinate
+- **Abate = métrica própria de "fechar luta" para a fase 2** (não entra no eixo de dano).
+- **D12 revogada:** `dano.peso_round1` 1,25 → **1,0**. O valor de agir antes/burst agora é medido explicitamente
+  (dano.por_round e abate), então o peso fixo deixa de ser necessário. Afeta o nível de dano de toda build com ataque
+  de 1º round ou dano por luta (smite, Dread Ambusher, Action Surge, Assassinate…): elas descem um pouco.
+- **Assassinate (gerador do Rogue):** vira ataques de 1º round — vantagem certa quando age antes do alvo (0,6; 0,8
+  com Alert), crítico automático só nas lutas com surpresa (`SURPRESA` = 0,25 ≈ 1 luta por dia; usuário: "às vezes até
+  menos"); rounds 2–4 sem vantagem. Assassin nv7 CA 16: 19,8 no round 1, 12,3 nos demais.

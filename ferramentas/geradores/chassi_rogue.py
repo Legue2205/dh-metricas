@@ -12,6 +12,7 @@ import chassi as C  # noqa: E402
 import marcial as Mc  # noqa: E402
 
 P_ALIADO, P_RAKISH, P_PROPRIA = 0.75, 0.9, 1.0
+SURPRESA = 0.25   # fração das lutas em que o Assassin pega o alvo surpreso (25/11, usuário: ~1 por dia ou menos)
 URL = "https://rpgbot.net/dnd5/characters/classes/rogue/subclasses/"
 MEIO = {'Skill Expert': 'des', 'Piercer': 'des', 'Slasher': 'des'}   # meio-feats: +1 Des
 ORD_PAD = ('des', 'con', 'sab', 'int', 'car', 'for')
@@ -101,14 +102,25 @@ def arcane_trickster(L, feat):   # skirmisher: rapieira + Booming Blade, familia
 
 
 def assassin(L, feat):   # atirador; Assassinate se sobrepõe ao Steady Aim
+    # 25/11 (usuário): a vantagem do Assassinate no round 1 é certa quando se age antes do alvo (p_ini); o crítico
+    # automático (alvo surpreso) é situacional: SURPRESA = fração das lutas com surpresa (~1 por dia de 4 ou menos).
+    # Vira ataque de 1º round (dano.por_round mostra o burst) em vez de vantagem média espalhada nos rounds.
     s, m, p, corpo = base(L, ORD_PAD, feat); d, b = m['des'], p + m['des']
     p_ini = 0.8 if feat == 'Alert' else 0.6
     v = round(0.25 * p_ini, 3); prob = round(1 - (1 - P_ALIADO) * (1 - v), 3)
-    l2 = ln('assassinate', 'besta leve sem Steady Aim (ação bônus livre); Sneak por aliado ou Assassinate no round 1',
-            {"ataques": [atq(b, '1d8', d, feat, vantagem=v, nota="vantagem do Assassinate no round 1")],
+    sur = SURPRESA; R = 4
+    a_resto = atq(b, '1d8', d, feat, nota="rounds 2–4: besta leve sem Steady Aim"); a_resto['n'] = round((R - 1) / R, 3)
+    a_sur = atq(b, '1d8', d, feat, vantagem=1.0, nota="round 1, alvo surpreso: vantagem e todo acerto é crítico")
+    a_sur.update(n=round(sur / R, 3), round1=True, crit_em=2)
+    a_ant = atq(b, '1d8', d, feat, vantagem=1.0, nota="round 1, agiu antes do alvo: vantagem")
+    a_ant.update(n=round((p_ini - sur) / R, 3), round1=True)
+    a_dep = atq(b, '1d8', d, feat, nota="round 1, agiu depois do alvo"); a_dep.update(n=round((1 - p_ini) / R, 3), round1=True)
+    l2 = ln('assassinate', 'besta leve sem Steady Aim (ação bônus livre); Assassinate no round 1 (vantagem se agir antes; '
+            f'crítico automático em {sur:.0%} das lutas, com surpresa); Sneak por aliado ou Assassinate',
+            {"ataques": [a_resto, a_sur, a_ant, a_dep],
              "por_turno": [sneak(L, prob, " (aliado adjacente ou Assassinate)")] + pierce(feat, 8)}, L, 'atirador')
     l1 = mira_linha(L, b, d, feat, 'besta leve com Steady Aim/Hide + Sneak; Assassinate dá vantagem no round 1', v=v)
-    return fat(s, corpo, [l1, l2], f"Assassinate (iniciativa vencida {p_ini}).")
+    return fat(s, corpo, [l1, l2], f"Assassinate (iniciativa vencida {p_ini}; surpresa {SURPRESA}).")
 
 
 def inquisitive(L, feat):

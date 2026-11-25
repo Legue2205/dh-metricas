@@ -2189,9 +2189,9 @@
     ]
   },
   "dano.peso_round1": {
-    "valor": 1.25,
+    "valor": 1.0,
     "eixo": "dano",
-    "desde": "2026-11-24",
+    "desde": "2026-11-25",
     "descricao": "D12: peso do 1º round na régua de dano (rounds pesam [w, 1, 1, 1], normalizados: o dano constante não muda). Vale para ataques marcados round1 (Dread Ambusher) e para o dano por luta (smites e afins), gasto nos primeiros acertos. Quem age antes tira inimigo da luta mais cedo; peso moderado para não favorecer demais o burst (contra chefe importa menos). Treinável; poderia variar por tipo de encontro.",
     "historico": [
       {
@@ -2199,6 +2199,12 @@
         "de": null,
         "para": 1.25,
         "motivo": "D12 (usuário, 24/11): peso extra no 1º round, mas não alto."
+      },
+      {
+        "de": 1.25,
+        "para": 1.0,
+        "data": "2026-11-25",
+        "motivo": "25/11 (usuário): o valor de agir antes/burst passa a ser medido explicitamente (dano.por_round e valor de abate, Etapa D, opção b — métrica própria de fechar luta na fase 2); o peso fixo de 1,25 no 1º round deixa de ser necessário"
       }
     ]
   },

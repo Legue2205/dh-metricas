@@ -101,15 +101,38 @@
   },
   {
    "id": "assassinate",
-   "hipotese": "besta leve sem Steady Aim (ação bônus livre); Sneak por aliado ou Assassinate no round 1",
+   "hipotese": "besta leve sem Steady Aim (ação bônus livre); Assassinate no round 1 (vantagem se agir antes; crítico automático em 25% das lutas, com surpresa); Sneak por aliado ou Assassinate",
    "dano": {
     "ataques": [
      {
-      "n": 1,
+      "n": 0.75,
       "bonus": 7,
       "dano": "1d8+4",
-      "vantagem": 0.15,
-      "nota": "vantagem do Assassinate no round 1"
+      "nota": "rounds 2–4: besta leve sem Steady Aim"
+     },
+     {
+      "n": 0.062,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "vantagem": 1.0,
+      "nota": "round 1, alvo surpreso: vantagem e todo acerto é crítico",
+      "round1": true,
+      "crit_em": 2
+     },
+     {
+      "n": 0.087,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "vantagem": 1.0,
+      "nota": "round 1, agiu antes do alvo: vantagem",
+      "round1": true
+     },
+     {
+      "n": 0.1,
+      "bonus": 7,
+      "dano": "1d8+4",
+      "nota": "round 1, agiu depois do alvo",
+      "round1": true
      }
     ],
     "por_turno": [
@@ -170,7 +193,7 @@
  "descricao": {
   "resumo": "Chassi: Assassino: Assassinate dá vantagem no round 1, mas se sobrepõe ao Steady Aim da régua comum.",
   "nao_modelado": "Críticos automáticos da surpresa, Infiltration Expertise (9), Impostor (13).",
-  "progressao": "Assassinate (iniciativa vencida 0.6). atributos {'for': 8, 'des': 19, 'con': 15, 'int': 12, 'sab': 13, 'car': 10}"
+  "progressao": "Assassinate (iniciativa vencida 0.6; surpresa 0.25). atributos {'for': 8, 'des': 19, 'con': 15, 'int': 12, 'sab': 13, 'car': 10}"
  },
  "id": "chassi-rogue-assassin-7",
  "nome": "Assassin Rogue — chassi",

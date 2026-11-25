@@ -169,10 +169,20 @@ def _peso_inicio(u):
     return R / (w + R - 1) * (w + k - 1) / k
 
 
-def dpr(spec, ca, lutas_dia=4, invocacoes=(), regua=False):
-    """DPR esperado na CA. regua=True: com o peso do 1º round (D12), só para o nível da régua; o DPR mostrado é o puro."""
+def _peso_round(r):
+    """Peso do round r (1..R) para o que sai nos primeiros acertos da luta (u usos nos k = min(max(u, 1), R) primeiros
+    rounds, por igual): soma R sobre os rounds, então a média dos rounds é o DPR puro."""
+    def pi(u):
+        k = min(max(u, 1.0), R)
+        return R / k * min(1.0, max(0.0, k - (r - 1)))
+    return pi
+
+
+def dpr(spec, ca, lutas_dia=4, invocacoes=(), regua=False, peso=None):
+    """DPR esperado na CA. regua=True: com o peso do 1º round (D12), só para o nível da régua; o DPR mostrado é o puro.
+    peso: função u → fator do que sai nos primeiros acertos (perfil por round, Etapa D)."""
     if 'medido' in spec: return spec['medido'][CAS.index(ca)]
-    pi = _peso_inicio if regua else (lambda u: 1.0)
+    pi = peso or (_peso_inicio if regua else (lambda u: 1.0))
     total = 0.0; nenhum = 1.0; sem_crit = 1.0; pc = []
     for a in spec.get('ataques', []):          # n pode ser fracionário (ex.: Action Surge = 2 ataques ÷ 4 rounds)
         n = a.get('n', 1); p, c, e = _ataque(a, ca)
@@ -208,4 +218,7 @@ def avaliar(spec, lutas_dia=4, invocacoes=()):
                nivel_bruta=round(_degraus(lista, BRUTA), 1), nivel_precisa=round(_degraus(lista, PRECISA), 1),
                medido='medido' in spec)
     if lista != bruto: out['dpr_regua'] = {f'CA {ca}': v for ca, v in zip(CAS, lista)}
+    if 'medido' not in spec:   # Etapa D (25/11): dano por round (burst do 1º round × demais), só quando não é constante
+        pr = {f'CA {ca}': [dpr(spec, ca, lutas_dia, invocacoes, peso=_peso_round(r)) for r in range(1, R + 1)] for ca in CAS}
+        if any(len(set(v)) > 1 for v in pr.values()): out['por_round'] = pr
     return out

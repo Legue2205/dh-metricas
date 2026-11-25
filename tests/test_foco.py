@@ -36,3 +36,13 @@ def test_concentracao_so_o_ganho_cai():
     from dh import concentracao
     assert concentracao._mistura(5.0, 9.0, 0.5) == 7.0      # ganho sobre a base cai pela metade
     assert concentracao._mistura(5.0, 4.0, 0.5) == 4.0      # abaixo da base: não muda
+
+
+def test_dano_por_round():
+    """Etapa D (25/11): o perfil por round concentra no início o que é de 1º round e os usos por luta; média = DPR."""
+    from dh import dano
+    spec = {'ataques': [{'n': 2, 'bonus': 7, 'dano': '1d8+4'}, {'n': 0.25, 'bonus': 7, 'dano': '1d8+4', 'round1': True}],
+            'por_luta': [{'dano': '2d8', 'usos': 2}]}
+    o = dano.avaliar(spec); pr = o['por_round']['CA 15']
+    assert pr[0] > pr[1] > pr[2] == pr[3] and abs(sum(pr) / len(pr) - o['dpr']['CA 15']) < 0.15
+    assert 'por_round' not in dano.avaliar({'ataques': [{'n': 2, 'bonus': 7, 'dano': '1d8+4'}]})

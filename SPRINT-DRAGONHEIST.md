@@ -13,6 +13,8 @@ inconsistência → diagnosticar o problema estrutural → corrigir de forma gen
 - **Os gates estão congelados (pré-registro, 26/11).** Mudar um gate só com decisão do usuário registrada aqui.
 - Uma correção não pode derrubar outro gate que já passa em mais de 1 erro-padrão (~0,08 com n ≈ 70; ~0,15 com n ≈ 20).
 - Descoberta que não move nenhum gate vai para "depois do sprint".
+- **Não mudar o gabarito** (usuário, 27/11). Discordância motor × RPGBot = suspeita de problema estrutural: levar ao
+  usuário com a hipótese ("por nada consigo deixar X forte, apesar do RPGBot"), discutir, e só então modelar.
 - **Holdout congelado:** Artificer, Rogue e Sorcerer NÃO são olhados para decidir mudanças a partir de 26/11 (os
   scripts de análise devem aceitar `--sem-holdout`); só entram na medição final do G6.
 - Medição oficial: `python calibracao/comparar_chassi.py --nivel 7|11` (visão misto; dano com pacote_vh).
@@ -31,7 +33,8 @@ inconsistência → diagnosticar o problema estrutural → corrigir de forma gen
 
 ## Decisões do usuário — 26/11, noite
 1. G3: regra simétrica (topo e fundo). Listas e inclusão da defesa mental: aguardando o "ok".
-2. Bard no suporte: preferência por (b) reler a pista na página bruta; (a) aceitável — suporte e controle jogam a
+2. Bard no suporte: (b) relida em 26/11, **revisão do gabarito recusada em 27/11** — Lore é alto pela versatilidade
+   de build (Magical Secrets no 6); o problema é estrutural (o chassi fixa uma escolha). Antes: (b) reler; (a) aceitável — suporte e controle jogam a
    mesma moeda (dano equivalente); a fronteira buff-no-aliado × debuff-no-inimigo é convenção nossa de leitura.
 3. Animate Dead: peso de corpo separado do dano (`invocacao.peso_corpo.numerosa` = 0,5; D15 segue no dano).
 4. Pista com "só no N" respeita o nível: fica.

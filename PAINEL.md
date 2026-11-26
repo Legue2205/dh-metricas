@@ -701,7 +701,7 @@ rpgbot-cleric-order-puro-3   3     0,8 E     2,2 D     2,2 D     4,3 C         -
 rpgbot-cleric-order-puro-5   5    3,3 C-    3,9 C-    3,6 C-    8,6 B+         -    6,6 B-     1,9 D
 rpgbot-cleric-order-puro-7   7    3,2 C-    6,7 B-     4,7 C    8,8 B+         -    6,9 B-    3,9 C-
 rpgbot-cleric-order-puro-9   9     4,1 C    8,6 B+    6,2 B-    12,8 A         -     7,6 B     7,7 B
-rpgbot-cleric-peace-11  11    6,3 B-    8,0 B+     7,1 B    12,6 A         -    9,6 B+   10,4 A-
+rpgbot-cleric-peace-11  11    5,0 C+    8,0 B+     7,1 B    12,6 A         -    9,6 B+    11,7 A
 rpgbot-cleric-peace-3   3     0,8 E     1,9 D     2,1 D    3,6 C-         -     2,5 D    3,5 C-
 rpgbot-cleric-peace-5   5    3,7 C-     4,0 C    3,5 C-    8,3 B+         -     7,4 B     4,3 C
 rpgbot-cleric-peace-7   7     2,6 D    5,0 C+     4,6 C    8,5 B+         -     7,7 B    8,5 B+
@@ -1055,12 +1055,12 @@ rpgbot-warlock-archfey-11  11     7,1 B    5,4 C+     7,2 B    8,1 B+         - 
 rpgbot-warlock-archfey-3   3     0,6 E     1,2 D     2,1 D     2,2 D         -    3,6 C-         -
 rpgbot-warlock-archfey-5   5     2,2 D     2,3 D    3,6 C-     4,5 C         -     4,6 C         -
 rpgbot-warlock-archfey-7   7     2,2 D    3,4 C-     4,7 C     4,7 C         -    5,6 C+         -
-rpgbot-warlock-archfey-9   9    6,2 B-     4,5 C    5,8 C+     7,4 B         -    7,0 B-         -
+rpgbot-warlock-archfey-9   9    3,1 C-     4,5 C    5,8 C+     7,4 B         -    7,0 B-         -
 rpgbot-warlock-celestial-11  11     7,1 B    5,4 C+     7,2 B    8,1 B+         -     7,1 B     2,8 D
 rpgbot-warlock-celestial-3   3     0,6 E     1,2 D     2,1 D     2,2 D         -    3,6 C-     0,5 E
 rpgbot-warlock-celestial-5   5     2,2 D     2,3 D    3,6 C-     4,5 C         -     4,6 C     0,8 E
 rpgbot-warlock-celestial-7   7     2,2 D    3,4 C-     4,7 C     4,7 C         -    5,6 C+     0,9 E
-rpgbot-warlock-celestial-9   9    6,2 B-     4,5 C    5,8 C+     7,4 B         -    7,0 B-     1,9 D
+rpgbot-warlock-celestial-9   9    3,1 C-     4,5 C    5,8 C+     7,4 B         -    7,0 B-     1,9 D
 rpgbot-warlock-fathomless-11  11    8,8 B+    5,9 C+     7,2 B    8,1 B+         -    11,4 A         -
 rpgbot-warlock-fathomless-3   3     0,8 E     1,2 D     2,1 D     2,2 D         -    3,8 C-         -
 rpgbot-warlock-fathomless-5   5    3,0 C-     2,3 D    3,6 C-     4,5 C         -    7,0 B-         -
@@ -1085,7 +1085,7 @@ rpgbot-warlock-hexblade-11  11     2,5 D     7,1 B    6,9 B-    8,1 B+         -
 rpgbot-warlock-hexblade-3   3     1,0 D     1,6 D     2,0 D     2,2 D         -    3,1 C-         -
 rpgbot-warlock-hexblade-5   5     2,3 D    3,3 C-    3,4 C-     4,5 C         -     4,6 C         -
 rpgbot-warlock-hexblade-7   7     2,3 D     4,5 C     4,5 C     4,7 C         -    5,3 C+         -
-rpgbot-warlock-hexblade-9   9    6,1 B-    5,7 C+    5,6 C+     7,4 B         -     7,8 B         -
+rpgbot-warlock-hexblade-9   9    3,4 C-    5,7 C+    5,6 C+     7,4 B         -     7,8 B         -
 rpgbot-warlock-undead-11  11     7,1 B    6,8 B-     7,2 B    8,1 B+         -     7,1 B         -
 rpgbot-warlock-undead-3   3     1,1 D     1,5 D     2,1 D     2,2 D         -    3,6 C-         -
 rpgbot-warlock-undead-5   5     2,2 D     2,9 D    3,6 C-     4,5 C         -     4,6 C         -
@@ -1095,7 +1095,7 @@ rpgbot-warlock-undying-11  11     7,1 B    5,4 C+     7,2 B    8,1 B+         - 
 rpgbot-warlock-undying-3   3     0,6 E     1,2 D     2,1 D     2,2 D         -    3,6 C-         -
 rpgbot-warlock-undying-5   5     2,2 D     2,3 D    3,6 C-     4,5 C         -     4,6 C         -
 rpgbot-warlock-undying-7   7     2,2 D    3,4 C-     4,7 C     4,7 C         -    5,6 C+         -
-rpgbot-warlock-undying-9   9    6,2 B-     4,5 C    5,8 C+     7,4 B         -    7,0 B-         -
+rpgbot-warlock-undying-9   9    3,1 C-     4,5 C    5,8 C+     7,4 B         -    7,0 B-         -
 rpgbot-wizard-abjuration-11  11    5,9 C+   10,8 A-    9,9 B+     2,7 D         -   15,2 A+         -
 rpgbot-wizard-abjuration-3   3     0,6 E     2,7 D     4,1 C     1,2 D         -     0,5 E         -
 rpgbot-wizard-abjuration-5   5     1,0 D    6,0 B-     4,9 C     2,5 D         -     4,4 C         -
@@ -1202,10 +1202,10 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~chassi-artificer-artillerist-7   7     4,5 C    5,0 C+     4,7 C    3,9 C-     4,5 C     4,3 C     0,2 F
 ~chassi-artificer-artillerist-f-fey-touched-11  11     7,5 B    9,2 B+     7,5 B     4,3 C    6,3 B-     4,6 C     0,3 F
 ~chassi-artificer-artillerist-f-fey-touched-7   7     4,5 C    5,0 C+     4,7 C    3,9 C-     4,5 C     4,3 C     0,2 F
-~chassi-artificer-battle-smith-11  11     7,1 B    11,7 A    8,4 B+     4,3 C    3,9 C-     4,6 C     0,3 F
-~chassi-artificer-battle-smith-7   7     4,7 C    6,2 B-     4,7 C    3,9 C-     2,7 D     4,3 C     0,2 F
-~chassi-artificer-battle-smith-f-skill-expert-11  11     7,1 B   10,3 A-     7,5 B     4,3 C    3,7 C-     4,6 C     0,3 F
-~chassi-artificer-battle-smith-f-skill-expert-7   7     4,7 C    6,2 B-     4,7 C    3,9 C-     2,7 D     4,3 C     0,2 F
+~chassi-artificer-battle-smith-11  11     7,1 B    11,7 A    8,4 B+     4,3 C    3,8 C-     4,6 C     0,3 F
+~chassi-artificer-battle-smith-7   7     4,7 C    6,2 B-     4,7 C    3,9 C-     2,6 D     4,3 C     0,2 F
+~chassi-artificer-battle-smith-f-skill-expert-11  11     7,1 B   10,3 A-     7,5 B     4,3 C    3,6 C-     4,6 C     0,3 F
+~chassi-artificer-battle-smith-f-skill-expert-7   7     4,7 C    6,2 B-     4,7 C    3,9 C-     2,6 D     4,3 C     0,2 F
 ~chassi-barbarian-ancestral-guardian-11  11     4,9 C     7,0 B    11,0 A     2,7 D     0,0 F     4,3 C         -
 ~chassi-barbarian-ancestral-guardian-7   7     4,2 C    3,9 C-    6,6 B-     2,7 D     0,1 F     4,3 C         -
 ~chassi-barbarian-ancestral-guardian-f-sentinel-11  11    5,2 C+    6,1 B-    9,7 B+     2,7 D     4,4 C     4,6 C         -
@@ -1272,8 +1272,8 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~chassi-cleric-nature-7   7     1,9 D    5,0 C+     4,1 C    8,4 B+     0,0 F     2,8 D     0,8 E
 ~chassi-cleric-order-11  11     4,1 C     7,9 B    6,1 B-    12,6 A     0,0 F     4,3 C     2,1 D
 ~chassi-cleric-order-7   7     1,9 D    5,0 C+     4,1 C    8,4 B+     0,0 F     2,8 D     0,8 E
-~chassi-cleric-peace-11  11     4,9 C    6,8 B-    6,1 B-    12,6 A     2,6 D     4,3 C    6,3 B-
-~chassi-cleric-peace-7   7     1,9 D     4,5 C     4,3 C    8,4 B+     2,4 D     2,8 D     4,2 C
+~chassi-cleric-peace-11  11     4,9 C    6,8 B-    6,1 B-    12,6 A     4,5 C     4,3 C    6,3 B-
+~chassi-cleric-peace-7   7     1,9 D     4,5 C     4,3 C    8,4 B+    3,1 C-     2,8 D     4,2 C
 ~chassi-cleric-tempest-11  11     4,6 C     7,9 B    6,1 B-    12,6 A     0,0 F     4,3 C     2,1 D
 ~chassi-cleric-tempest-7   7     2,6 D    5,0 C+     4,1 C    8,4 B+     0,0 F     4,1 C     0,8 E
 ~chassi-cleric-trickery-11  11     4,1 C    6,8 B-    6,1 B-    12,6 A     4,1 C     4,3 C     2,1 D
@@ -1716,10 +1716,10 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-artificer-artillerist-7   7    3,4 C-    5,7 C+    5,5 C+     3,0 D     4,6 C     4,2 C         -
 ~rpgbot-artificer-artillerist-9   9     4,7 C     7,5 B     7,3 B    3,7 C-    5,8 C+     4,3 C         -
 ~rpgbot-artificer-battle-smith-11  11    5,5 C+   13,3 A+    8,5 B+    3,6 C-     4,1 C     4,6 C         -
-~rpgbot-artificer-battle-smith-3   3     1,8 D     4,3 C     2,5 D     1,4 D    3,2 C-     2,8 D         -
-~rpgbot-artificer-battle-smith-5   5     4,7 C    6,2 B-     4,2 C     2,8 D    3,6 C-     4,3 C         -
-~rpgbot-artificer-battle-smith-7   7     4,7 C    8,2 B+    5,5 C+     3,0 D    3,6 C-     4,3 C         -
-~rpgbot-artificer-battle-smith-9   9    5,5 C+   10,2 A-     7,3 B    3,6 C-     4,4 C     4,6 C         -
+~rpgbot-artificer-battle-smith-3   3     1,8 D     4,3 C     2,5 D     1,4 D    3,1 C-     2,8 D         -
+~rpgbot-artificer-battle-smith-5   5     4,7 C    6,2 B-     4,2 C     2,8 D    3,5 C-     4,3 C         -
+~rpgbot-artificer-battle-smith-7   7     4,7 C    8,2 B+    5,5 C+     3,0 D    3,5 C-     4,3 C         -
+~rpgbot-artificer-battle-smith-9   9    5,5 C+   10,2 A-     7,3 B    3,6 C-     4,3 C     4,6 C         -
 ~rpgbot-barbarian-ancestral-guardian-11  11     4,7 C   10,5 A-    11,9 A     2,0 D     0,7 E     4,3 C         -
 ~rpgbot-barbarian-ancestral-guardian-3   3     0,7 E    3,0 C-    3,7 C-     1,2 D     0,1 F     1,4 D         -
 ~rpgbot-barbarian-ancestral-guardian-5   5     1,0 D     4,5 C    5,4 C+     1,6 D     0,1 F     2,7 D         -
@@ -1880,11 +1880,11 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-cleric-order-puro-5   5     1,9 D    3,9 C-    3,6 C-    8,6 B+     2,9 D     2,8 D     0,6 E
 ~rpgbot-cleric-order-puro-7   7     1,9 D    6,7 B-     4,7 C    8,8 B+    3,4 C-     2,8 D     0,8 E
 ~rpgbot-cleric-order-puro-9   9    3,7 C-    8,6 B+    6,2 B-    12,8 A     4,6 C     4,2 C     1,0 D
-~rpgbot-cleric-peace-11  11     4,9 C    8,0 B+     7,1 B    12,6 A     4,0 C     4,8 C    6,3 B-
+~rpgbot-cleric-peace-11  11     4,9 C    8,0 B+     7,1 B    12,6 A     5,0 C     4,8 C    6,3 B-
 ~rpgbot-cleric-peace-3   3     0,6 E     1,9 D     2,1 D    3,6 C-     2,4 D     0,5 F     0,9 E
 ~rpgbot-cleric-peace-5   5     1,9 D     4,0 C    3,5 C-    8,3 B+     2,9 D     2,8 D    3,3 C-
-~rpgbot-cleric-peace-7   7     1,9 D    5,0 C+     4,6 C    8,5 B+     3,0 D     2,8 D     4,2 C
-~rpgbot-cleric-peace-9   9    3,8 C-    6,5 B-    5,8 C+    12,6 A    3,5 C-     4,5 C    6,2 B-
+~rpgbot-cleric-peace-7   7     1,9 D    5,0 C+     4,6 C    8,5 B+    3,4 C-     2,8 D     4,2 C
+~rpgbot-cleric-peace-9   9    3,8 C-    6,5 B-    5,8 C+    12,6 A     4,3 C     4,5 C    6,2 B-
 ~rpgbot-cleric-tempest-11  11    3,0 C-   10,2 A-     7,9 B    12,2 A     0,0 F     4,4 C     2,0 D
 ~rpgbot-cleric-tempest-3   3     0,6 E     2,2 D     2,2 D     4,1 C     0,0 F     0,5 F     0,4 F
 ~rpgbot-cleric-tempest-5   5     1,5 D    3,9 C-    3,8 C-    8,3 B+     0,0 F     4,1 C     0,6 E

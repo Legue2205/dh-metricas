@@ -912,3 +912,38 @@ na luta (k ≈ 0,9–1,1), então **dano causado não vale 1:1 dano evitado**: s
 - Medidor: `calibracao/meta_consenso.py` (`--com-holdout`, `--mostrar`); teste em `tests/test_meta_consenso.py`.
   **Não rodado sobre os resultados** — fica para depois da aprovação.
 - Testes: 138 ok; `test_site_navegador` falha como antes (só roda com Playwright, fora do CI; G7).
+
+### Medição de base sem holdout (26/11, `comparar_chassi.py --sem-holdout`, resultados do CI 4e8c005)
+τ pista dentro da classe (misto; dano com pacote_vh), nv7 / nv11: dano 0,36 / 0,39 · controle 0,66 / 0,61 ·
+**suporte 0,32 / 0,31** (n = 19) · defesa física 0,60 / 0,58 (n = 19); agrupado: área 0,52 / 0,58 ·
+**corpo 0,10 / 0,02** (n = 12). Novo: `calibracao/diag_eixo.py --eixo <régua> --nivel N --sem-holdout` (pista ×
+valor por classe, pares discordantes e o agrupado).
+
+### G1 suporte — ciclo 1 (diagnóstico)
+- Por classe (nv7): barbarian 1,0 (n 3) · **bard −0,82 (n 4)** · cleric 0,67 (5) · druid 0,77 (4) · fighter 0,0 (3).
+- **Leitura da pista com nível (correção da medição, não do gate):** "alto só no 15 (Bulwark)" do Psi Warrior era lido
+  como alto no 7 e no 11. `pista(txt, nivel)` ignora pista com "só no N"/"só a partir do N" abaixo de N (só esse caso
+  nos gabaritos fora do holdout). Fighter sai do suporte (n 2). **Suporte 0,32 → 0,38 / 0,31 → 0,37.** Usuário pode
+  vetar (mexe no que a régua conta).
+- **Bard (o que mais pesa):** Lore/Eloquence (alto) < Glamour/Creation (médio) nos dois níveis. Conferido por dado:
+  Mantle of Inspiration = 1 dado → 3 × 8 PV temporários (4,5/round no 7) contra Cutting Words 1,5 e BI 1,6; Creation
+  soma os Motes ao mesmo dado; Eloquence gasta 1 dos 2 dados no Unsettling Words (vai para o controle, CD +4) e o
+  resto rende ×2 com Unfailing. **Não achei mecânica faltando**: a diferença é de ontologia — a pista do RPGBot conta
+  Cutting Words/Unsettling Words (debuff) como suporte, o motor conta no controle/defesa do aliado (regra de não contar
+  um recurso em dois eixos). Decisão do usuário: (a) aceitar e o G1 de suporte depende de clerics/druids; (b) reler a
+  pista do Bard; (c) Lore com Counterspell (Magical Secrets no 6, hoje não modelado — mecânica genérica que falta para
+  Wizard/Bard/Warlock, entraria no controle).
+- Cleric: Order (alto) 3,2 < Grave (médio) 3,6 — Order's Wrath (8) não modelado (só pesa no 11). Druid: Wildfire
+  (médio-alto) empata com Dreams/Stars (0,9: as três só têm Healing Word/Balm no plano).
+- Depois do sprint: Protective Field do Psi Warrior (reação que reduz dano de aliado; não move gate com a pista lida
+  certo), Chalice do Stars, Order's Wrath.
+
+### G2 corpo — ciclo 1
+- Agrupado nv7 (12 pistas, todas médio/alto): discordâncias principais Peace (alto, 7,0) e Necromancy (alto, 5,1) no
+  fundo; Spores, Beast Master e Beast (médio) no topo.
+- **Protective Bond redirecionava o dano para o próprio clérigo** (mesmo modelo da Divine Allegiance). Na regra, quem
+  teleporta e leva o golpe é qualquer criatura ligada — na mesa, o aliado mais resistente. Genérico:
+  `controle.atencao.redireciona_para: "mais_resistente"` (PV ÷ chance de acerto do inimigo ÷ fator de resistência; o
+  dano contra a própria build também pode ser desviado). Só o Protective Bond usa (m3_sobrevivencia.PARA_RESISTENTE).
+  Teste em `tests/test_redireciona.py`. Peace corpo 7,0 → 9,8 (nv7), 10,0 → 11,0 (nv11).
+  **Corpo agrupado 0,10 → 0,19 / 0,02 → 0,08**; nenhum outro gate mexe (medido local nas 2 builds; CI recalcula tudo).

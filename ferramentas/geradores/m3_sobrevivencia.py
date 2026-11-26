@@ -19,6 +19,8 @@ ORIGENS = ('Second Wind', 'Indomitable', 'Relentless Rage', 'Divine Allegiance',
 REDIRECIONA = {('paladin', 'crown'): (7, 'Divine Allegiance', 'adjacente'),
                ('paladin', 'redemption'): (7, 'Aura of the Guardian', 'aura'),
                ('cleric', 'peace'): (6, 'Protective Bond', 'aura')}
+# 26/11 (G2): no Protective Bond quem teleporta e leva o dano é o aliado ligado mais resistente, não necessariamente o clérigo
+PARA_RESISTENTE = {'Protective Bond'}
 
 
 def _classe(prog):
@@ -39,7 +41,9 @@ def patches(classe, L, sub=''):
     out = []
     r = REDIRECIONA.get((classe, sub))
     if r and L >= r[0]:
-        out.append({"origem": r[1], "eixos": {"controle": {"atencao": {"redireciona": {"$p": f"controle.atencao.redireciona.{r[2]}"}}}}})
+        at = {"redireciona": {"$p": f"controle.atencao.redireciona.{r[2]}"}}
+        if r[1] in PARA_RESISTENTE: at["redireciona_para"] = "mais_resistente"
+        out.append({"origem": r[1], "eixos": {"controle": {"atencao": at}}})
     if classe == 'fighter':
         out.append({"origem": "Second Wind", "eixos": {"defesa": {"cura_luta": round(0.5 * (5.5 + L), 2)}}})
         if L >= 9:

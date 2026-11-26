@@ -5,6 +5,7 @@
   3. Feat: (com feat − sem feat) por eixo, por subclasse = sinergia daquela subclasse com aquele feat.
 
 Uso (da raiz): python calibracao/comparar_chassi.py [--nivel 11] [--classe rogue] [--visao misto|padrao|externo|interno] (padrão: misto, D2) [--json] [--sem-pacote] (dano: melhor entre sem feat e pacote_vh, 24/11)
+  [--sem-holdout] (sprint 26/11: tira Artificer, Rogue e Sorcerer — holdout congelado até o G6)
 Lê resultados via `python -m dh comparar --grupo Chassi --json` e os rótulos (classe/subclasse/posicao/feat) de builds/.
 """
 import glob
@@ -20,6 +21,7 @@ from comparar_rpgbot import tau_b  # noqa: E402
 RAIZ = os.path.join(os.path.dirname(__file__), '..')
 EIXOS = ('dano', 'deff', 'defm', 'controle', 'area', 'suporte', 'corpo')
 EIXOS5 = EIXOS[:5]
+HOLDOUT = ('artificer', 'rogue', 'sorcerer')   # SPRINT-DRAGONHEIST.md: não olhar para decidir mudanças até o G6
 
 
 def dados(visao='padrao', pacote=True):
@@ -41,11 +43,12 @@ def dados(visao='padrao', pacote=True):
     return d
 
 
-def rotulos():
+def rotulos(sem_holdout=False):
     out = {}
     for f in glob.glob(os.path.join(RAIZ, 'builds', 'chassi-*.json')):
         b = json.load(open(f, encoding='utf-8'))
         base = b['id'].rsplit('-', 1)[0]
+        if sem_holdout and b.get('classe') in HOLDOUT: continue
         out[base] = {k: b.get(k) for k in ('classe', 'subclasse', 'posicao', 'feat', 'variante')}
     return out
 
@@ -59,8 +62,11 @@ ESCALA = {'nenhum': 0, 'fraco': 1, 'baixo': 1, 'básico': 1, 'baixo-médio': 1.5
 PISTA_EIXO = {'dano': 'dano', 'defesa': 'deff', 'controle': 'controle', 'area': 'area', 'suporte': 'suporte', 'corpo': 'corpo'}
 
 
-def pista(txt):
+def pista(txt, nivel=None):
+    """26/11: pista com 'só no N' / 'só a partir do N' não vale abaixo do nível N (ex.: Psi Warrior 'alto só no 15')."""
     import re
+    m = re.search(r'só (?:no|a partir do) (\d+)', txt.lower())
+    if m and nivel is not None and nivel < int(m.group(1)): return None
     return ESCALA.get(re.split(r'[ (,;]', txt.strip().lower())[0])
 
 
@@ -72,7 +78,7 @@ def tau_eixos(d, rot, gabs, nv):
     for ge, me in PISTA_EIXO.items():
         por_cl, pesos, tot_n, todos = {}, 0, 0, []
         for cl, gab in gabs.items():
-            xs = [(pista(gab[r['subclasse']]['eixos'][ge]), val(d, me, b, nv) or 0, r['subclasse'])
+            xs = [(pista(gab[r['subclasse']]['eixos'][ge], nv), val(d, me, b, nv) or 0, r['subclasse'])
                   for b, r in rot.items() if r['classe'] == cl and r['variante'] == 'sem-feat' and r['subclasse'] in gab
                   and ge in (gab[r['subclasse']].get('eixos') or {}) and val(d, 'dano', b, nv) is not None]
             xs = [x for x in xs if x[0] is not None]
@@ -100,7 +106,7 @@ def main():
     nvs = [int(a[a.index('--nivel') + 1])] if '--nivel' in a else [7, 11]
     so = a[a.index('--classe') + 1] if '--classe' in a else None
     visao = a[a.index('--visao') + 1] if '--visao' in a else 'misto'
-    d, rot = dados(visao, '--sem-pacote' not in a), rotulos()
+    d, rot = dados(visao, '--sem-pacote' not in a), rotulos('--sem-holdout' in a)
     res = {'tau': {}, 'tau_eixos': {}, 'posicao': {}, 'feat': []}
     classes = sorted({r['classe'] for r in rot.values() if r['classe'] and (not so or r['classe'] == so)})
     gabs = {}

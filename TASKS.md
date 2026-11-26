@@ -958,3 +958,13 @@ valor por classe, pares discordantes e o agrupado).
     legítimo (o Moon cai depois do 5 no consenso); a pista "alto (PV das formas)" é de nível baixo.
   - Pistas de corpo são 12, só médio/alto: τ agrupado anda em passos de ~0,05 por subclasse. Chegar a 0,35 sem
     overfitting depende de mais pistas (ou da decisão do Animate Dead).
+
+## >>> Resumo para a manhã de 27/11 (sessão autônoma de 26/11) <<<
+1. **G3 — aprovar `calibracao/meta-consenso.json`** (rascunho; nada medido contra ele). Perguntas no `_meta`:
+   regra simétrica do fundo-10? incluir `defm` no G3? e as listas em si. Depois: `python calibracao/meta_consenso.py`.
+2. **G1 suporte 0,32 → 0,38 / 0,31 → 0,37** (alvo 0,45; só pela leitura certa da pista "só no 15" do Psi Warrior —
+   pode vetar). O que falta é o Bard (τ −0,82): Lore/Eloquence × Glamour/Creation é ontologia (debuff no controle ×
+   suporte), não mecânica faltando. Decidir (a)/(b)/(c) da seção do ciclo 1.
+3. **G2 corpo 0,10 → 0,19 / 0,02 → 0,08** (alvo 0,35) com o Protective Bond indo para o aliado mais resistente.
+   Próximo passo depende de decisão sua: peso de corpo do Animate Dead separado de D15.
+4. Holdout e party não foram olhados. Testes: 139 ok (+ o `test_site_navegador`, que já falhava fora do CI).

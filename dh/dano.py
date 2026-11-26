@@ -208,7 +208,8 @@ def dpr(spec, ca, lutas_dia=4, invocacoes=(), regua=False, peso=None):
         from .premissas import P
         viva = P('invocacao.fracao_viva')      # 25/11: a criatura morre/some antes do fim da luta às vezes
     for inv in invocacoes:                     # criaturas invocadas atacam por conta própria
-        if 'ataque' in inv: total += viva * inv['quantidade'] * inv['ataque'].get('n', 1) * _ataque(inv['ataque'], ca)[2]
+        if 'ataque' in inv: total += (viva * inv['quantidade'] * inv.get('peso_dano', 1) * inv['ataque'].get('n', 1)
+                                      * _ataque(inv['ataque'], ca)[2])
     return round(total, 1)
 
 

@@ -22,7 +22,10 @@ def test_tipos():
     assert invocacoes.tipo({'nome': 'Conjure Animals', 'tipo': 'summon'}) == 'summon'   # campo explícito vence
 
 
-def test_peso_zero_tira_numerosa():
+def test_peso_zero_tira_numerosa(monkeypatch):
+    from dh import premissas   # 26/11: com o corpo também em 0 (o padrão agora é 0,5 no corpo)
+    orig = premissas.P
+    monkeypatch.setattr(premissas, 'P', lambda n, padrao=None: 0.0 if n == 'invocacao.peso_corpo.numerosa' else orig(n, padrao))
     b = invocacoes.aplicar(_b()); L = {l['id']: l for l in b['linhas']}
     assert L['conjurar'].get('plano') is False and L['conjurar'].get('aneis') is False and 'invocacoes' not in L['conjurar']
     # criatura persistente (também na principal): só sai a criatura, a linha fica
@@ -37,3 +40,22 @@ def test_peso_fracionario(monkeypatch):
     monkeypatch.setattr(premissas, 'P', lambda n, padrao=None: 0.5 if n == 'invocacao.peso.numerosa' else orig(n, padrao))
     b = invocacoes.aplicar(_b()); L = {l['id']: l for l in b['linhas']}
     assert L['conjurar']['invocacoes'][0]['quantidade'] == 4
+
+
+def test_peso_corpo_separado_do_dano():
+    """26/11: numerosa com dano 0 e corpo 0,5 fica na linha com metade da quantidade e sem dano."""
+    from dh import invocacoes
+    from dh.dano import dpr
+    b = {'linhas': [{'id': 'principal', 'principal': True, 'dano': {'ataques': []},
+                     'invocacoes': [{'nome': 'esqueletos (Animate Dead)', 'quantidade': 4, 'pv': 20, 'ca': 13,
+                                     'ataque': {'bonus': 4, 'dano': '1d6+2'}}]}],
+         'pesos_invocacao': None}
+    b.pop('pesos_invocacao')
+    invocacoes.aplicar(b)
+    inv = b['linhas'][0]['invocacoes'][0]
+    assert inv['quantidade'] == 2 and inv['peso_dano'] == 0
+    assert dpr({'ataques': []}, 15, invocacoes=[inv]) == 0
+    b2 = {'pesos_invocacao': {'numerosa': 1.0}, 'linhas': [{'id': 'p', 'principal': True, 'invocacoes': [
+        {'nome': 'Conjure Animals', 'quantidade': 8, 'pv': 13, 'ca': 11}]}]}
+    invocacoes.aplicar(b2)
+    assert b2['linhas'][0]['invocacoes'][0]['quantidade'] == 8 and 'peso_dano' not in b2['linhas'][0]['invocacoes'][0]

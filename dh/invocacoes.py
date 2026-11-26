@@ -6,7 +6,8 @@ Cada item de "invocacoes" numa linha pode declarar "tipo"; sem ele, o tipo vem d
   summon      — magias "Summon X" (Tasha): uma criatura com bloco que escala com o espaço — já vieram balanceadas
   companheiro — feature de subclasse (Drake, Primal Companion, Steel Defender, Eldritch Cannon, Wildfire Spirit…)
 
-Premissa invocacao.peso.<tipo> (0–1) multiplica a "quantidade"; a build pode fixar o seu com
+Premissa invocacao.peso.<tipo> (0–1) multiplica a "quantidade" no dano; invocacao.peso_corpo.<tipo> (26/11) no corpo
+(PV que atrai ataques) — quando o corpo pesa mais, a criatura entra com o peso do corpo e "peso_dano" desconta o dano; a build pode fixar o seu com
 "pesos_invocacao": {"<tipo>": peso} (ex.: personagens da party, que jogam com as criaturas de verdade). Peso 0 tira a criatura; se isso esvazia uma linha que
 só existe para invocar (a criatura não está na linha principal), a linha sai do plano e dos anéis.
 """
@@ -38,9 +39,16 @@ def aplicar(b):
         novas = []
         for i in invs:
             t = tipo(i)
-            p = (b.get('pesos_invocacao') or {}).get(t, P(f'invocacao.peso.{t}'))
-            if p <= 0: continue
-            if p < 1: i = dict(i, quantidade=i.get('quantidade', 1) * p)
+            pb = (b.get('pesos_invocacao') or {}).get(t)
+            pd = pb if pb is not None else P(f'invocacao.peso.{t}')
+            # 26/11 (usuário): peso do corpo separado do dano — Animate Dead não conta no dano (D15) mas os corpos
+            # ainda atraem ataques. A build que fixa pesos_invocacao fixa os dois, salvo pesos_invocacao_corpo.
+            pc = (b.get('pesos_invocacao_corpo') or {}).get(t, pb if pb is not None else P(f'invocacao.peso_corpo.{t}'))
+            if i.get('corpo', True) is False: pc = pd
+            q = max(pd, pc)
+            if q <= 0: continue
+            if q < 1: i = dict(i, quantidade=i.get('quantidade', 1) * q)
+            if pd < q: i = dict(i, peso_dano=pd / q)   # o dano da criatura conta só pd (dano.dpr lê peso_dano)
             novas.append(i)
         if len(novas) == len(invs) and all(n is o for n, o in zip(novas, invs)): continue
         if novas: l['invocacoes'] = novas

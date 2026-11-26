@@ -20,13 +20,23 @@ inconsistência → diagnosticar o problema estrutural → corrigir de forma gen
 ## Estrela do norte — gates (valores de 26/11 → alvo; nv7 / nv11)
 | gate | métrica | hoje | alvo |
 |---|---|---|---|
-| **G1 réguas com pista** | τ pista dentro da classe | dano 0,34 / 0,40 · controle 0,68 / 0,65 · suporte 0,32 / 0,31 · defesa física 0,45 / 0,44 | dano ≥ 0,40 · controle ≥ 0,60 · **suporte ≥ 0,45** · defesa física ≥ 0,45 (nos dois níveis) |
+| **G1 réguas com pista** | τ pista dentro da classe | dano 0,34 / 0,40 · controle 0,68 / 0,65 · suporte 0,32 / 0,31 · defesa física 0,45 / 0,44 | **dano ≥ 0,50** (era 0,40; usuário, 26/11) · controle ≥ 0,60 · **suporte ≥ 0,45** · defesa física ≥ 0,45 (nos dois níveis) |
+| **G1b precisão do DPR** (novo, usuário 26/11) | DPR do motor × DPR calculado pelo RPGBot (DPR Calculator: baselines do Fundamental Math e builds de exemplo com número), mesma CA e nível (`calibracao/dpr-rpgbot.json`) | — | todo caso com diferença ≤ 10%; diferença > 0 mas pequena → investigar a causa (crítico, arredondamento, premissa); > 10% → investigar de verdade e corrigir ou documentar |
 | **G2 réguas sem pista suficiente** | τ agrupado (entre classes) | área 0,47 / 0,61 · corpo 0,16 / 0,07 · defesa mental — | área ≥ 0,45 · **corpo ≥ 0,35** · defesa mental medida |
-| **G3 meta faz sentido** | top-10 / fundo-10 de cada eixo contra a lista de consenso (`calibracao/meta-consenso.json`, rascunho do Claude aprovado pelo usuário ANTES de olhar os resultados) | — | ≥ 7 dos 10 primeiros na lista "forte" e 0 na lista "fraco", em cada eixo e nos dois níveis |
+| **G3 meta faz sentido** | top-10 / fundo-10 de cada eixo contra a lista de consenso (`calibracao/meta-consenso.json`, rascunho do Claude aprovado pelo usuário ANTES de olhar os resultados) | — | ≥ 7 dos 10 primeiros na lista "forte" e 0 na lista "fraco" **e, simétrico, ≥ 7 dos 10 últimos na "fraco" e 0 na "forte"** (usuário, 26/11), em cada eixo e nos dois níveis |
 | **G4 global** | τ da nota geral do RPGBot × valor total em dano equivalente (P3), dentro da classe | 0,13 no nv7 (média de 5 eixos iguais, a referência atual) | **≥ 0,40** nos dois níveis e agrupado ≥ 0,30 |
 | **G5 robustez** | τ entre os rankings nos extremos da faixa das premissas provisórias (k_abate, tempo da área, fração viva, acertos por posição, modo de focus fire) | — | ≥ 0,85 por eixo e no global; nenhum top-10 troca mais de 3 builds |
 | **G6 generalização** | holdout (Artificer, Rogue, Sorcerer) e baseline ingênuo (só DPR; média de eixos iguais) | — | holdout ≥ τ do treino − 1 erro-padrão; global ganha dos dois baselines por ≥ 0,08 |
 | **G7 engenharia** | testes; empates inexplicados; o Kael rodando sem nada estimado à mão | site já falhava | testes verdes; ≤ 10% das subclasses em empate com pistas discordantes por eixo; fumaça do Kael com `nao_modelado` vazio nos itens que afetam eixos |
+
+## Decisões do usuário — 26/11, noite
+1. G3: regra simétrica (topo e fundo). Listas e inclusão da defesa mental: aguardando o "ok".
+2. Bard no suporte: preferência por (b) reler a pista na página bruta; (a) aceitável — suporte e controle jogam a
+   mesma moeda (dano equivalente); a fronteira buff-no-aliado × debuff-no-inimigo é convenção nossa de leitura.
+3. Animate Dead: peso de corpo separado do dano (`invocacao.peso_corpo.numerosa` = 0,5; D15 segue no dano).
+4. Pista com "só no N" respeita o nível: fica.
+5. Gate de dano: τ pista ≥ 0,50 + G1b (precisão do DPR contra as contas do RPGBot). Teto do τ do dano com motor
+   perfeito = 0,82 (empates nas pistas); com erro de meio degrau no gabarito ≈ 0,64.
 
 ## Calendário (plataforma até 30/11; party e Kael em dezembro)
 Decisão do usuário (26/11): **fechar a plataforma primeiro, sem olhar a party**; a análise do Kael em dezembro.

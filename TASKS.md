@@ -972,3 +972,13 @@ valor por classe, pares discordantes e o agrupado).
 3. **G2 corpo 0,10 → 0,19 / 0,02 → 0,08** (alvo 0,35) com o Protective Bond indo para o aliado mais resistente.
    Próximo passo depende de decisão sua: peso de corpo do Animate Dead separado de D15.
 4. CI de 2359297 verde e medição oficial idêntica à local (nenhum gate caiu). Holdout e party não foram olhados. Testes: 139 ok (+ o `test_site_navegador`, que já falhava fora do CI).
+
+## 26/11 noite — decisões do usuário (registradas no SPRINT-DRAGONHEIST.md) e ciclo 3
+- Decisões: G3 simétrico · Bard (b) reler a pista, (a) aceitável · Animate Dead com peso de corpo próprio · "só no N"
+  fica · dano ≥ 0,50 + **G1b precisão do DPR** contra as contas do RPGBot.
+- **G2 corpo — `invocacao.peso_corpo.<tipo>`** (numerosa 0,5; summon/companheiro 1,0). `invocacoes.aplicar` usa
+  max(peso dano, peso corpo) na quantidade e marca `peso_dano` (lido em `dano.dpr`); build com `pesos_invocacao`
+  fixa os dois, salvo `pesos_invocacao_corpo`. Teste em `tests/test_invocacoes.py`. Afeta 21 chassis (Necromancy,
+  Druids e Rangers com Conjure Animals); as linhas de conjuração que tinham saído do plano por peso 0 voltam com o
+  corpo. Medido local (21 builds recalculadas): **corpo agr. 0,19 → 0,19 / 0,08 → 0,21**; Necromancy 5,1 → 7,5 (nv7)
+  e 10,0 → 15,6 (nv11); dano nv11 0,39 → 0,38 (dentro do erro: plano dos Druids/Rangers mudou), resto igual.

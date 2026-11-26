@@ -899,3 +899,16 @@ na luta (k ≈ 0,9–1,1), então **dano causado não vale 1:1 dano evitado**: s
   (a comunidade o considera forte) — ver se k_abate / tempo da área precisam de ajuste quando houver mais pistas.
 
 ## >>> Ponto de partida das próximas sessões (26/11): ler `SPRINT-DRAGONHEIST.md` (plataforma P1–P4 até 30/11, party K1–K2 em dezembro) <<<
+
+## 26/11 (sessão autônoma do Claude) — gates do calendário 26–27/11
+### G3 — rascunho da lista de consenso (`calibracao/meta-consenso.json`) — **aguarda aprovação do usuário**
+- Escrita a partir do consenso 5e 2014 (RPGBot, Treantmonk, tier lists) sem rodar nenhum ranking de eixo e sem usar os
+  gabaritos `rpgbot-*.json`. Contaminação declarada no `_meta`: o fim deste TASKS.md (lido antes) cita alguns
+  resultados de abate/plano; nenhuma lista foi ajustada por eles.
+- 7 eixos × nv7/nv11, listas `forte`/`fraco` (12–17 fortes e 11–25 fracos por eixo, de 94 subclasses fora do holdout);
+  o holdout (Artificer, Rogue, Sorcerer) já tem `forte_holdout`/`fraco_holdout` escritos, usados só no G6.
+- Regra escrita no arquivo, para confirmar: top-10 com ≥ 7 forte e 0 fraco **e** (leitura simétrica minha) fundo-10
+  com ≥ 7 fraco e 0 forte. Pendente: incluir `defm` no G3 enquanto não estiver medido?
+- Medidor: `calibracao/meta_consenso.py` (`--com-holdout`, `--mostrar`); teste em `tests/test_meta_consenso.py`.
+  **Não rodado sobre os resultados** — fica para depois da aprovação.
+- Testes: 138 ok; `test_site_navegador` falha como antes (só roda com Playwright, fora do CI; G7).

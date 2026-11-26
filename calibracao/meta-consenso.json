@@ -1,0 +1,792 @@
+{
+ "_meta": {
+  "status": "RASCUNHO — aguardando aprovação do usuário (G3 pré-registrado). Não mudar depois de olhar os rankings.",
+  "criado": "2026-11-26",
+  "autor": "Claude (sessão autônoma de 26/11), sem olhar os rankings atuais dos eixos",
+  "fontes": "consenso de comunidade 5e 2014 (RPGBot, Treantmonk, tier lists de subclasse) na memória do Claude; não deriva dos gabaritos calibracao/rpgbot-*.json nem de resultados/.",
+  "contaminacao": "Antes de escrever, o Claude leu o fim do TASKS.md (pedido do usuário), que cita alguns resultados de abate/plano (ex.: Vengeance e Samurai no topo do abate; casters viram controladores depois de D18). Nenhuma lista foi ajustada a partir disso; as listas seguem o consenso, inclusive onde ele coincide com esses números.",
+  "unidade": "subclasse = \"<classe>-<subclasse>\" (builds/chassi-<id>-*.json, variante sem-feat; dano com o pacote_vh, como em comparar_chassi.py). Ranking agrupado entre classes, visão misto, por nível.",
+  "regra_gate": "Para cada eixo e nível, ranking SEM o holdout: (a) top-10 com ≥ 7 em \"forte\" e 0 em \"fraco\"; (b) fundo-10 com ≥ 7 em \"fraco\" e 0 em \"forte\" (leitura simétrica do Claude de \"top-10 / fundo-10\" — confirmar). Empates na fronteira do 10º: conta a ordem estável por id. Subclasse fora das duas listas = neutra (não conta a favor nem contra).",
+  "holdout": "As entradas forte_holdout/fraco_holdout (Artificer, Rogue, Sorcerer) ficam escritas já, para não serem decididas depois, mas só entram na medição final do G6 (calibracao/meta_consenso.py --com-holdout).",
+  "pendente_usuario": [
+   "aprovar ou editar as listas",
+   "confirmar a regra (b) do fundo-10",
+   "incluir ou não o eixo defm no G3 enquanto não estiver medido"
+  ]
+ },
+ "holdout": [
+  "artificer",
+  "rogue",
+  "sorcerer"
+ ],
+ "eixos": {
+  "dano": {
+   "nota": "DPR em alvo único sustentado (com o pacote GWM/PAM ou CBE/SS quando há). Consenso: Paladin com smite e Fighter com Action Surge/manobras no topo; Barbarian Zealot/Berserker e Gloom Stalker/Horizon Walker logo atrás; Hexblade forte no 7 (cai para médio no 11); no 11 o 3º ataque do Fighter e o Improved Divine Smite puxam todos os Fighters e Paladins. Fraco = conjuradores sem ferramenta de dano em alvo único (Wizard fora de Bladesinging/Evocation/War, Clerics sem Divine Strike forte, Bards fora de Swords/Valor, Druids de retaguarda).",
+   "forte": {
+    "7": [
+     "barbarian-berserker",
+     "barbarian-zealot",
+     "fighter-battle-master",
+     "fighter-echo-knight",
+     "fighter-samurai",
+     "paladin-conquest",
+     "paladin-devotion",
+     "paladin-glory",
+     "paladin-vengeance",
+     "ranger-gloom-stalker",
+     "ranger-horizon-walker",
+     "warlock-hexblade"
+    ],
+    "11": [
+     "barbarian-berserker",
+     "barbarian-zealot",
+     "fighter-battle-master",
+     "fighter-champion",
+     "fighter-echo-knight",
+     "fighter-psi-warrior",
+     "fighter-rune-knight",
+     "fighter-samurai",
+     "paladin-conquest",
+     "paladin-devotion",
+     "paladin-glory",
+     "paladin-vengeance",
+     "paladin-watchers",
+     "ranger-gloom-stalker",
+     "ranger-horizon-walker"
+    ]
+   },
+   "fraco": {
+    "7": [
+     "bard-eloquence",
+     "bard-glamour",
+     "bard-lore",
+     "bard-whispers",
+     "cleric-knowledge",
+     "cleric-life",
+     "cleric-light",
+     "cleric-peace",
+     "druid-dreams",
+     "druid-land",
+     "druid-stars",
+     "wizard-abjuration",
+     "wizard-chronurgy",
+     "wizard-conjuration",
+     "wizard-divination",
+     "wizard-enchantment",
+     "wizard-graviturgy",
+     "wizard-illusion",
+     "wizard-order-of-scribes"
+    ],
+    "11": [
+     "bard-eloquence",
+     "bard-glamour",
+     "bard-lore",
+     "bard-whispers",
+     "cleric-knowledge",
+     "cleric-life",
+     "cleric-light",
+     "cleric-peace",
+     "druid-dreams",
+     "druid-land",
+     "druid-stars",
+     "wizard-abjuration",
+     "wizard-chronurgy",
+     "wizard-conjuration",
+     "wizard-divination",
+     "wizard-enchantment",
+     "wizard-graviturgy",
+     "wizard-illusion",
+     "wizard-order-of-scribes"
+    ]
+   },
+   "forte_holdout": {
+    "7": [
+     "rogue-assassin"
+    ],
+    "11": [
+     "rogue-assassin"
+    ]
+   },
+   "fraco_holdout": {
+    "7": [
+     "artificer-alchemist",
+     "sorcerer-aberrant-mind",
+     "sorcerer-clockwork-soul"
+    ],
+    "11": [
+     "artificer-alchemist",
+     "sorcerer-aberrant-mind",
+     "sorcerer-clockwork-soul"
+    ]
+   }
+  },
+  "deff": {
+   "nota": "Durabilidade contra ataques (PV efetivo × CA × resistência × reações). Consenso: Barbarians (resistência na fúria; Bear/Ancestral Guardian acima), Fighters de armadura pesada com ferramenta defensiva (Cavalier, Rune Knight), Clerics de armadura pesada (Forge com a CA mais alta), Paladins de placa e escudo com aura de proteção pessoal, Abjuration (Arcane Ward) e Bladesinging (CA + Shield). Fraco = d6/d8 de armadura leve sem ferramenta defensiva.",
+   "forte": {
+    "7": [
+     "barbarian-ancestral-guardian",
+     "barbarian-battlerager",
+     "barbarian-beast",
+     "barbarian-berserker",
+     "barbarian-storm-herald",
+     "barbarian-totem-warrior",
+     "barbarian-wild-magic",
+     "barbarian-zealot",
+     "cleric-forge",
+     "cleric-twilight",
+     "fighter-cavalier",
+     "fighter-rune-knight",
+     "paladin-crown",
+     "paladin-devotion",
+     "paladin-redemption",
+     "wizard-abjuration",
+     "wizard-bladesinging"
+    ],
+    "11": [
+     "barbarian-ancestral-guardian",
+     "barbarian-battlerager",
+     "barbarian-beast",
+     "barbarian-berserker",
+     "barbarian-storm-herald",
+     "barbarian-totem-warrior",
+     "barbarian-wild-magic",
+     "barbarian-zealot",
+     "cleric-forge",
+     "cleric-twilight",
+     "fighter-cavalier",
+     "fighter-rune-knight",
+     "paladin-crown",
+     "paladin-devotion",
+     "paladin-redemption",
+     "wizard-abjuration",
+     "wizard-bladesinging"
+    ]
+   },
+   "fraco": {
+    "7": [
+     "bard-creation",
+     "bard-eloquence",
+     "bard-glamour",
+     "bard-lore",
+     "bard-whispers",
+     "warlock-archfey",
+     "warlock-celestial",
+     "warlock-fathomless",
+     "warlock-genie",
+     "warlock-great-old-one",
+     "wizard-chronurgy",
+     "wizard-conjuration",
+     "wizard-divination",
+     "wizard-enchantment",
+     "wizard-evocation",
+     "wizard-graviturgy",
+     "wizard-illusion",
+     "wizard-necromancy",
+     "wizard-order-of-scribes",
+     "wizard-transmutation"
+    ],
+    "11": [
+     "bard-creation",
+     "bard-eloquence",
+     "bard-glamour",
+     "bard-lore",
+     "bard-whispers",
+     "warlock-archfey",
+     "warlock-celestial",
+     "warlock-fathomless",
+     "warlock-genie",
+     "warlock-great-old-one",
+     "wizard-chronurgy",
+     "wizard-conjuration",
+     "wizard-divination",
+     "wizard-enchantment",
+     "wizard-evocation",
+     "wizard-graviturgy",
+     "wizard-illusion",
+     "wizard-necromancy",
+     "wizard-order-of-scribes",
+     "wizard-transmutation"
+    ]
+   },
+   "forte_holdout": {
+    "7": [
+     "artificer-armorer",
+     "sorcerer-draconic"
+    ],
+    "11": [
+     "artificer-armorer",
+     "sorcerer-draconic"
+    ]
+   },
+   "fraco_holdout": {
+    "7": [
+     "sorcerer-aberrant-mind",
+     "sorcerer-shadow",
+     "sorcerer-wild-magic"
+    ],
+    "11": [
+     "sorcerer-aberrant-mind",
+     "sorcerer-shadow",
+     "sorcerer-wild-magic"
+    ]
+   }
+  },
+  "defm": {
+   "nota": "Saves de WIS/INT/CHA. Consenso: Paladins (Aura of Protection + proficiência em WIS/CHA; Devotion e Ancients ainda com aura contra encantamento/magia) e Clerics (proficiência em WIS e CHA com WIS alta); Portent do Diviner; Samurai ganha proficiência em WIS no 7. Fraco = proficiências STR/CON ou STR/DEX com WIS baixa e sem ferramenta (Berserker, Zealot, Gloom Stalker, Fey Wanderer e Monster Slayer ficam de fora por Mindless Rage, Fanatical Focus, Iron Mind, Beguiling Twist e Supernatural Defense). Fighters saem do fraco no 11 (Indomitable no 9).",
+   "forte": {
+    "7": [
+     "cleric-knowledge",
+     "cleric-life",
+     "cleric-order",
+     "cleric-peace",
+     "cleric-twilight",
+     "fighter-samurai",
+     "paladin-ancients",
+     "paladin-conquest",
+     "paladin-crown",
+     "paladin-devotion",
+     "paladin-glory",
+     "paladin-redemption",
+     "paladin-vengeance",
+     "paladin-watchers",
+     "wizard-divination"
+    ],
+    "11": [
+     "cleric-knowledge",
+     "cleric-life",
+     "cleric-order",
+     "cleric-peace",
+     "cleric-twilight",
+     "paladin-ancients",
+     "paladin-conquest",
+     "paladin-crown",
+     "paladin-devotion",
+     "paladin-glory",
+     "paladin-redemption",
+     "paladin-vengeance",
+     "paladin-watchers",
+     "wizard-divination"
+    ]
+   },
+   "fraco": {
+    "7": [
+     "barbarian-ancestral-guardian",
+     "barbarian-battlerager",
+     "barbarian-beast",
+     "barbarian-storm-herald",
+     "barbarian-totem-warrior",
+     "barbarian-wild-magic",
+     "fighter-arcane-archer",
+     "fighter-battle-master",
+     "fighter-cavalier",
+     "fighter-champion",
+     "fighter-echo-knight",
+     "fighter-eldritch-knight",
+     "fighter-psi-warrior",
+     "fighter-purple-dragon-knight",
+     "fighter-rune-knight",
+     "ranger-beast-master",
+     "ranger-drakewarden",
+     "ranger-horizon-walker",
+     "ranger-hunter",
+     "ranger-swarmkeeper"
+    ],
+    "11": [
+     "barbarian-ancestral-guardian",
+     "barbarian-battlerager",
+     "barbarian-beast",
+     "barbarian-storm-herald",
+     "barbarian-totem-warrior",
+     "barbarian-wild-magic",
+     "ranger-beast-master",
+     "ranger-drakewarden",
+     "ranger-horizon-walker",
+     "ranger-hunter",
+     "ranger-swarmkeeper"
+    ]
+   },
+   "forte_holdout": {
+    "7": [
+     "sorcerer-divine-soul"
+    ],
+    "11": [
+     "sorcerer-divine-soul"
+    ]
+   },
+   "fraco_holdout": {
+    "7": [
+     "rogue-assassin",
+     "rogue-scout",
+     "rogue-swashbuckler",
+     "rogue-thief"
+    ],
+    "11": [
+     "rogue-assassin",
+     "rogue-scout",
+     "rogue-swashbuckler",
+     "rogue-thief"
+    ]
+   }
+  },
+  "controle": {
+   "nota": "Inimigos neutralizados (Hypnotic Pattern, Web, Slow, Polymorph, Banishment, Wall…). Consenso: Wizards no topo em qualquer escola (Chronurgy/Graviturgy/Enchantment/Divination reforçam o save falho), Bards de lista cheia (Lore com Magical Secrets, Eloquence com Unsettling Words, Glamour), Druids de lista (Land, Dreams). Fraco = marciais sem magia e sem manobra de controle (Battle Master, Rune Knight, Cavalier e Monks de Stunning Strike ficam neutros).",
+   "forte": {
+    "7": [
+     "bard-eloquence",
+     "bard-glamour",
+     "bard-lore",
+     "druid-dreams",
+     "druid-land",
+     "wizard-abjuration",
+     "wizard-chronurgy",
+     "wizard-conjuration",
+     "wizard-divination",
+     "wizard-enchantment",
+     "wizard-evocation",
+     "wizard-graviturgy",
+     "wizard-illusion",
+     "wizard-necromancy",
+     "wizard-order-of-scribes",
+     "wizard-transmutation",
+     "wizard-war-magic"
+    ],
+    "11": [
+     "bard-eloquence",
+     "bard-glamour",
+     "bard-lore",
+     "druid-dreams",
+     "druid-land",
+     "wizard-abjuration",
+     "wizard-chronurgy",
+     "wizard-conjuration",
+     "wizard-divination",
+     "wizard-enchantment",
+     "wizard-evocation",
+     "wizard-graviturgy",
+     "wizard-illusion",
+     "wizard-necromancy",
+     "wizard-order-of-scribes",
+     "wizard-transmutation",
+     "wizard-war-magic"
+    ]
+   },
+   "fraco": {
+    "7": [
+     "barbarian-battlerager",
+     "barbarian-beast",
+     "barbarian-berserker",
+     "barbarian-storm-herald",
+     "barbarian-totem-warrior",
+     "barbarian-wild-magic",
+     "barbarian-zealot",
+     "fighter-champion",
+     "fighter-echo-knight",
+     "fighter-purple-dragon-knight",
+     "fighter-samurai",
+     "monk-kensei",
+     "paladin-glory",
+     "paladin-watchers"
+    ],
+    "11": [
+     "barbarian-battlerager",
+     "barbarian-beast",
+     "barbarian-berserker",
+     "barbarian-storm-herald",
+     "barbarian-totem-warrior",
+     "barbarian-wild-magic",
+     "barbarian-zealot",
+     "fighter-champion",
+     "fighter-echo-knight",
+     "fighter-purple-dragon-knight",
+     "fighter-samurai",
+     "monk-kensei",
+     "paladin-glory",
+     "paladin-watchers"
+    ]
+   },
+   "forte_holdout": {
+    "7": [
+     "rogue-arcane-trickster",
+     "sorcerer-aberrant-mind",
+     "sorcerer-clockwork-soul",
+     "sorcerer-shadow"
+    ],
+    "11": [
+     "rogue-arcane-trickster",
+     "sorcerer-aberrant-mind",
+     "sorcerer-clockwork-soul",
+     "sorcerer-shadow"
+    ]
+   },
+   "fraco_holdout": {
+    "7": [
+     "artificer-battle-smith",
+     "rogue-scout",
+     "rogue-swashbuckler",
+     "rogue-thief"
+    ],
+    "11": [
+     "artificer-battle-smith",
+     "rogue-scout",
+     "rogue-swashbuckler",
+     "rogue-thief"
+    ]
+   }
+  },
+  "area": {
+   "nota": "Dano em hordas (Fireball, Spirit Guardians, Call Lightning…). Consenso: Evocation e os demais Wizards com lista completa (Fireball no 5); Light (Radiance of the Dawn, Fireball de domínio) e Tempest (Destructive Wrath) entre os Clerics; Wildfire entre os Druids; Fiend entre os Warlocks; no 11, Hunter (Volley/Whirlwind) e Land. Abjuration, Divination e Bladesinging ficam neutros (mesma lista, mas o consenso as usa menos para área). Fraco = marciais sem ataque em área.",
+   "forte": {
+    "7": [
+     "cleric-light",
+     "cleric-tempest",
+     "druid-wildfire",
+     "warlock-fiend",
+     "wizard-chronurgy",
+     "wizard-conjuration",
+     "wizard-enchantment",
+     "wizard-evocation",
+     "wizard-graviturgy",
+     "wizard-illusion",
+     "wizard-necromancy",
+     "wizard-order-of-scribes",
+     "wizard-transmutation",
+     "wizard-war-magic"
+    ],
+    "11": [
+     "cleric-light",
+     "cleric-tempest",
+     "druid-land",
+     "druid-wildfire",
+     "ranger-hunter",
+     "warlock-fiend",
+     "wizard-chronurgy",
+     "wizard-conjuration",
+     "wizard-enchantment",
+     "wizard-evocation",
+     "wizard-graviturgy",
+     "wizard-illusion",
+     "wizard-necromancy",
+     "wizard-order-of-scribes",
+     "wizard-transmutation",
+     "wizard-war-magic"
+    ]
+   },
+   "fraco": {
+    "7": [
+     "barbarian-ancestral-guardian",
+     "barbarian-battlerager",
+     "barbarian-beast",
+     "barbarian-berserker",
+     "barbarian-totem-warrior",
+     "bard-swords",
+     "bard-valor",
+     "fighter-cavalier",
+     "fighter-champion",
+     "fighter-echo-knight",
+     "fighter-purple-dragon-knight",
+     "fighter-samurai",
+     "monk-astral-self",
+     "monk-drunken-master",
+     "monk-kensei",
+     "monk-mercy",
+     "monk-open-hand",
+     "monk-shadow",
+     "paladin-crown",
+     "paladin-devotion",
+     "paladin-glory",
+     "paladin-redemption",
+     "paladin-vengeance",
+     "paladin-watchers",
+     "ranger-gloom-stalker"
+    ],
+    "11": [
+     "barbarian-ancestral-guardian",
+     "barbarian-battlerager",
+     "barbarian-beast",
+     "barbarian-berserker",
+     "barbarian-totem-warrior",
+     "bard-swords",
+     "bard-valor",
+     "fighter-cavalier",
+     "fighter-champion",
+     "fighter-echo-knight",
+     "fighter-purple-dragon-knight",
+     "fighter-samurai",
+     "monk-astral-self",
+     "monk-drunken-master",
+     "monk-kensei",
+     "monk-mercy",
+     "monk-open-hand",
+     "monk-shadow",
+     "paladin-crown",
+     "paladin-devotion",
+     "paladin-glory",
+     "paladin-redemption",
+     "paladin-vengeance",
+     "paladin-watchers",
+     "ranger-gloom-stalker"
+    ]
+   },
+   "forte_holdout": {
+    "7": [
+     "sorcerer-draconic",
+     "sorcerer-storm",
+     "sorcerer-wild-magic"
+    ],
+    "11": [
+     "sorcerer-draconic",
+     "sorcerer-storm",
+     "sorcerer-wild-magic"
+    ]
+   },
+   "fraco_holdout": {
+    "7": [
+     "rogue-assassin",
+     "rogue-inquisitive",
+     "rogue-mastermind",
+     "rogue-swashbuckler",
+     "rogue-thief"
+    ],
+    "11": [
+     "rogue-assassin",
+     "rogue-inquisitive",
+     "rogue-mastermind",
+     "rogue-swashbuckler",
+     "rogue-thief"
+    ]
+   }
+  },
+  "suporte": {
+   "nota": "Cura, buff e mitigação dada aos aliados. Consenso: Twilight e Peace no topo absoluto; Life e Order; Shepherd (espíritos de unicórnio/urso), Dreams e Stars; Bards (Eloquence, Glamour, Creation, Lore); Mercy; Ancients (Aura of Warding) e Redemption (Aura of the Guardian) no 7; Purple Dragon Knight; Celestial. Fraco = marciais e Monks sem nada para os aliados (Ancestral Guardian, Storm Herald, Wild Magic, Battle Master e os demais Paladins ficam neutros).",
+   "forte": {
+    "7": [
+     "bard-creation",
+     "bard-eloquence",
+     "bard-glamour",
+     "bard-lore",
+     "cleric-life",
+     "cleric-order",
+     "cleric-peace",
+     "cleric-twilight",
+     "druid-dreams",
+     "druid-shepherd",
+     "druid-stars",
+     "fighter-purple-dragon-knight",
+     "monk-mercy",
+     "paladin-ancients",
+     "paladin-redemption",
+     "warlock-celestial"
+    ],
+    "11": [
+     "bard-creation",
+     "bard-eloquence",
+     "bard-glamour",
+     "bard-lore",
+     "cleric-life",
+     "cleric-order",
+     "cleric-peace",
+     "cleric-twilight",
+     "druid-dreams",
+     "druid-shepherd",
+     "druid-stars",
+     "fighter-purple-dragon-knight",
+     "monk-mercy",
+     "paladin-ancients",
+     "paladin-redemption",
+     "warlock-celestial"
+    ]
+   },
+   "fraco": {
+    "7": [
+     "barbarian-battlerager",
+     "barbarian-beast",
+     "barbarian-berserker",
+     "barbarian-totem-warrior",
+     "barbarian-zealot",
+     "fighter-arcane-archer",
+     "fighter-champion",
+     "fighter-echo-knight",
+     "fighter-eldritch-knight",
+     "fighter-samurai",
+     "monk-astral-self",
+     "monk-drunken-master",
+     "monk-four-elements",
+     "monk-kensei",
+     "monk-open-hand",
+     "monk-shadow",
+     "monk-sun-soul",
+     "ranger-gloom-stalker",
+     "ranger-horizon-walker",
+     "ranger-hunter",
+     "warlock-genie",
+     "warlock-hexblade",
+     "wizard-evocation"
+    ],
+    "11": [
+     "barbarian-battlerager",
+     "barbarian-beast",
+     "barbarian-berserker",
+     "barbarian-totem-warrior",
+     "barbarian-zealot",
+     "fighter-arcane-archer",
+     "fighter-champion",
+     "fighter-echo-knight",
+     "fighter-eldritch-knight",
+     "fighter-samurai",
+     "monk-astral-self",
+     "monk-drunken-master",
+     "monk-four-elements",
+     "monk-kensei",
+     "monk-open-hand",
+     "monk-shadow",
+     "monk-sun-soul",
+     "ranger-gloom-stalker",
+     "ranger-horizon-walker",
+     "ranger-hunter",
+     "warlock-genie",
+     "warlock-hexblade",
+     "wizard-evocation"
+    ]
+   },
+   "forte_holdout": {
+    "7": [
+     "artificer-alchemist",
+     "sorcerer-divine-soul"
+    ],
+    "11": [
+     "artificer-alchemist",
+     "sorcerer-divine-soul"
+    ]
+   },
+   "fraco_holdout": {
+    "7": [
+     "rogue-assassin",
+     "rogue-scout",
+     "rogue-swashbuckler",
+     "rogue-thief",
+     "sorcerer-draconic",
+     "sorcerer-storm"
+    ],
+    "11": [
+     "rogue-assassin",
+     "rogue-scout",
+     "rogue-swashbuckler",
+     "rogue-thief",
+     "sorcerer-draconic",
+     "sorcerer-storm"
+    ]
+   }
+  },
+  "corpo": {
+   "nota": "Vidas que o corpo poupa ao atrair ataques (tanque, marca, invocações que viram alvo). Consenso: Ancestral Guardian, Bear e Zealot; Cavalier (marca), Rune Knight (gigante) e Echo Knight (o eco absorve ataques); Crown (Divine Allegiance) e Redemption; Forge; Moon (PV da forma); Shepherd e Necromancy (corpos invocados); Beast Master e Drakewarden (companheiro). Fraco = retaguarda sem corpo extra e sem razão para ser o alvo.",
+   "forte": {
+    "7": [
+     "barbarian-ancestral-guardian",
+     "barbarian-totem-warrior",
+     "barbarian-zealot",
+     "cleric-forge",
+     "druid-moon",
+     "druid-shepherd",
+     "fighter-cavalier",
+     "fighter-echo-knight",
+     "fighter-rune-knight",
+     "paladin-crown",
+     "paladin-redemption",
+     "ranger-beast-master",
+     "ranger-drakewarden",
+     "wizard-necromancy"
+    ],
+    "11": [
+     "barbarian-ancestral-guardian",
+     "barbarian-totem-warrior",
+     "barbarian-zealot",
+     "cleric-forge",
+     "druid-moon",
+     "druid-shepherd",
+     "fighter-cavalier",
+     "fighter-echo-knight",
+     "fighter-rune-knight",
+     "paladin-crown",
+     "paladin-redemption",
+     "ranger-beast-master",
+     "ranger-drakewarden",
+     "wizard-necromancy"
+    ]
+   },
+   "fraco": {
+    "7": [
+     "bard-eloquence",
+     "bard-glamour",
+     "bard-lore",
+     "bard-whispers",
+     "cleric-knowledge",
+     "cleric-light",
+     "cleric-peace",
+     "druid-dreams",
+     "druid-stars",
+     "warlock-archfey",
+     "warlock-celestial",
+     "warlock-genie",
+     "warlock-great-old-one",
+     "wizard-chronurgy",
+     "wizard-divination",
+     "wizard-enchantment",
+     "wizard-evocation",
+     "wizard-graviturgy",
+     "wizard-illusion",
+     "wizard-order-of-scribes",
+     "wizard-war-magic"
+    ],
+    "11": [
+     "bard-eloquence",
+     "bard-glamour",
+     "bard-lore",
+     "bard-whispers",
+     "cleric-knowledge",
+     "cleric-light",
+     "cleric-peace",
+     "druid-dreams",
+     "druid-stars",
+     "warlock-archfey",
+     "warlock-celestial",
+     "warlock-genie",
+     "warlock-great-old-one",
+     "wizard-chronurgy",
+     "wizard-divination",
+     "wizard-enchantment",
+     "wizard-evocation",
+     "wizard-graviturgy",
+     "wizard-illusion",
+     "wizard-order-of-scribes",
+     "wizard-war-magic"
+    ]
+   },
+   "forte_holdout": {
+    "7": [
+     "artificer-armorer",
+     "artificer-battle-smith"
+    ],
+    "11": [
+     "artificer-armorer",
+     "artificer-battle-smith"
+    ]
+   },
+   "fraco_holdout": {
+    "7": [
+     "rogue-inquisitive",
+     "rogue-mastermind",
+     "sorcerer-aberrant-mind",
+     "sorcerer-clockwork-soul",
+     "sorcerer-draconic"
+    ],
+    "11": [
+     "rogue-inquisitive",
+     "rogue-mastermind",
+     "sorcerer-aberrant-mind",
+     "sorcerer-clockwork-soul",
+     "sorcerer-draconic"
+    ]
+   }
+  }
+ }
+}

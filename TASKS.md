@@ -947,3 +947,14 @@ valor por classe, pares discordantes e o agrupado).
   dano contra a própria build também pode ser desviado). Só o Protective Bond usa (m3_sobrevivencia.PARA_RESISTENTE).
   Teste em `tests/test_redireciona.py`. Peace corpo 7,0 → 9,8 (nv7), 10,0 → 11,0 (nv11).
   **Corpo agrupado 0,10 → 0,19 / 0,02 → 0,08**; nenhum outro gate mexe (medido local nas 2 builds; CI recalcula tudo).
+- **Ciclo 2 (diagnóstico, sem mudança):**
+  - **Necromancy (alto) no fundo:** os esqueletos do Animate Dead têm tipo `numerosa` e D15 (24/11) zerou
+    `invocacao.peso.numerosa` → a linha principal do necromante dá o MESMO corpo do Diviner (4,26). Os motivos de D15
+    (economia de ação, concentração caindo, área matando o bando) são de dano; Animate Dead nem tem concentração.
+    Proposta para o usuário: peso separado para o corpo (`invocacao.peso_corpo.<tipo>`, p. ex. 0,5 para numerosa),
+    mantendo D15 no dano. Não mexi: é revisar uma decisão sua.
+  - **Moon (alto) no meio:** as linhas `+forma` (CA 12, 104 PV, frente) ficam neutras (corpo = 7,0 no nv7, = nível):
+    no 7 a forma de CR 2 aguenta mais ou menos o membro padrão. O corpo do Moon vem do Summon, como o do Spores. Parece
+    legítimo (o Moon cai depois do 5 no consenso); a pista "alto (PV das formas)" é de nível baixo.
+  - Pistas de corpo são 12, só médio/alto: τ agrupado anda em passos de ~0,05 por subclasse. Chegar a 0,35 sem
+    overfitting depende de mais pistas (ou da decisão do Animate Dead).

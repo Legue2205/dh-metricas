@@ -982,3 +982,16 @@ valor por classe, pares discordantes e o agrupado).
   Druids e Rangers com Conjure Animals); as linhas de conjuração que tinham saído do plano por peso 0 voltam com o
   corpo. Medido local (21 builds recalculadas): **corpo agr. 0,19 → 0,19 / 0,08 → 0,21**; Necromancy 5,1 → 7,5 (nv7)
   e 10,0 → 15,6 (nv11); dano nv11 0,39 → 0,38 (dentro do erro: plano dos Druids/Rangers mudou), resto igual.
+- **G1b precisão do DPR — base montada.** `calibracao/dpr-rpgbot.json` (casos com fonte, nível, CA, spec e DPR do
+  RPGBot) + `calibracao/comparar_dpr.py` (igual ≤ 0,05 · pequena ≤ 10% · grande) + `tests/test_comparar_dpr.py`.
+  Primeiro lote: baseline Warlock do Fundamental Math (EB + Hex + Agonizing), nv 5/7/11/17 → **4/4 iguais** (17,8 ·
+  17,8 · 28,6 × 28,65 = arredondamento do motor a 0,1 · 38,2). O RPGBot conta o crítico (dados dobrados a 5%), como o
+  motor. O baseline do Rogue TWF fica guardado para o G6 (holdout).
+  Próximo: ~60 páginas brutas do Drive citam DPR/"damage per round"; as com número de DPR Calculator são as builds de
+  exemplo (classe-* e build-*). Lote de ~5 páginas por conversa (15–30k tokens cada).
+- **Bard — página bruta relida (opção b).** Sem as cores, o texto diz: Glamour é "a" subclasse para papel de suporte
+  (Mantle reposiciona a party e dá PV temporários); Eloquence reforça o BI (Unfailing) e o Unsettling Words é debuff
+  em save (controle na nossa convenção); Lore = Cutting Words (protege aliado de ataque que mal acerta) + versatilidade
+  de Magical Secrets; Creation = riders "por cima" do BI e um pet. A pista atual (Lore/Eloquence alto, Glamour/
+  Creation médio) não sai do texto. Proposta (aguarda ok, é revisão pós-resultado): Glamour alto · Eloquence alto ·
+  Lore médio-alto · Creation médio.

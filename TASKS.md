@@ -959,6 +959,10 @@ valor por classe, pares discordantes e o agrupado).
   - Pistas de corpo são 12, só médio/alto: τ agrupado anda em passos de ~0,05 por subclasse. Chegar a 0,35 sem
     overfitting depende de mais pistas (ou da decisão do Animate Dead).
 
+### Medição oficial do CI (5aaccfd, run 45813902704 verde, 26/11 12h40)
+`comparar_chassi.py --sem-holdout`, nv7 / nv11: dano 0,36 / 0,39 · controle 0,66 / 0,61 · defesa física 0,60 / 0,58 ·
+**suporte 0,38 / 0,37** · área agr. 0,52 / 0,58 · **corpo agr. 0,19 / 0,08** — idêntica à medição local; nenhum gate caiu.
+
 ## >>> Resumo para a manhã de 27/11 (sessão autônoma de 26/11) <<<
 1. **G3 — aprovar `calibracao/meta-consenso.json`** (rascunho; nada medido contra ele). Perguntas no `_meta`:
    regra simétrica do fundo-10? incluir `defm` no G3? e as listas em si. Depois: `python calibracao/meta_consenso.py`.
@@ -967,4 +971,4 @@ valor por classe, pares discordantes e o agrupado).
    suporte), não mecânica faltando. Decidir (a)/(b)/(c) da seção do ciclo 1.
 3. **G2 corpo 0,10 → 0,19 / 0,02 → 0,08** (alvo 0,35) com o Protective Bond indo para o aliado mais resistente.
    Próximo passo depende de decisão sua: peso de corpo do Animate Dead separado de D15.
-4. Holdout e party não foram olhados. Testes: 139 ok (+ o `test_site_navegador`, que já falhava fora do CI).
+4. CI de 2359297 verde e medição oficial idêntica à local (nenhum gate caiu). Holdout e party não foram olhados. Testes: 139 ok (+ o `test_site_navegador`, que já falhava fora do CI).

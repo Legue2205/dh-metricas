@@ -898,4 +898,4 @@ na luta (k ≈ 0,9–1,1), então **dano causado não vale 1:1 dano evitado**: s
   controle 0,68 / 0,65 (era 0,53 / 0,57) · suporte 0,32 / 0,31.** Atenção ao pêndulo: o Summon quase não aparece mais
   (a comunidade o considera forte) — ver se k_abate / tempo da área precisam de ajuste quando houver mais pistas.
 
-## >>> Ponto de partida das próximas sessões (26/11): ler `SPRINT-DRAGONHEIST.md` (marcos M1–M5 até 30/11) <<<
+## >>> Ponto de partida das próximas sessões (26/11): ler `SPRINT-DRAGONHEIST.md` (plataforma P1–P4 até 30/11, party K1–K2 em dezembro) <<<

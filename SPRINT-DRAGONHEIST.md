@@ -1,4 +1,4 @@
-# Sprint DragonHeist — até a sessão de 8/12 (meta: pronto em 30/11, folga de 1 a 7/12)
+# Sprint DragonHeist — até a sessão de 8/12 (plataforma pronta em 30/11; party e Kael de 1 a 7/12)
 
 Pergunta que a plataforma precisa responder com segurança: **"o Kael (Blood Monk, homebrew) está equilibrado com a
 party da DragonHeist em dano, cura/sobrevivência e no geral — e que ajuste no homebrew o deixaria no alvo?"**
@@ -21,33 +21,38 @@ defesa física ~0,40 / 0,44. Testes: `python -m pytest -q --deselect tests/test_
 falhava antes do sprint).
 
 ## Marcos
-**M1 — Blood Monk no motor (26–27/11).** A mecânica do Kael simulada, não estimada à mão: autocura com limiar de vida
-(Blood Eating, 75–80%), Blood Rage como recurso (3 por dia, como fúria) curando acima do limiar, 3 Blood Dice (1 volta no
-descanso curto), combo que escala durante a luta ("bônus que escala", ROADMAP item 5) — tudo como **tipos de campo
-genéricos** (servem para Barbarian, Paladin, Fighter), nada com nome de personagem em `dh/`. Aplicar a versão NOVA do
-homebrew (pedir/ler no Drive). Saída: linhas do Kael calculadas pelo motor; paridade com a planilha/impressão do
-usuário explicada; testes.
+Decisão do usuário (26/11, 01h49): **fechar a plataforma primeiro (até 30/11) sem olhar a party**; a análise do Kael
+fica para dezembro, com o produto final. A party só aparece antes disso num teste de fumaça (P4).
 
-**M2 — Party no pipeline atual (27–28/11).** As builds da DragonHeist (Kael, John, Tin Bin, Abdul, Marcus, Amadeus,
-Ravin) com plano automático + dias de foco + concentração + moeda DE; revisar as hipóteses abertas (Stunning Strike do
-Kael, Amadeus com `pesos_invocacao`). Saída: painel da party regenerado e um resumo de 1 linha por personagem "o que o
-plano manda fazer" para o usuário conferir se faz sentido de mesa.
+### Plataforma (26–30/11)
+**P1 — Mecânicas genéricas que faltam (26–27/11).** Tipos de campo genéricos (nada com nome de personagem em `dh/`):
+autocura com limiar de vida (cura só abaixo/acima de X% do PV), recurso tipo fúria com usos por dia e efeito
+enquanto ativo, dados de recurso que voltam no descanso curto, bônus que escala durante a luta (ROADMAP item 5).
+Validar em builds de referência que já usam isso de verdade (Barbarian, Fighter Second Wind, Paladin Lay on Hands,
+Monk). Saída: testes + 2–3 builds de referência usando os campos novos.
 
-**M3 — Réguas que a pergunta usa (28–29/11).** As réguas de dano, defesa/sobrevivência (incluindo autocura) e corpo
-coerentes para a comparação do Kael: Monks diferenciados (hoje empatam no dano; τ do Monk fraco), autocura comparável
-entre classes (Kael × Second Wind × Lay on Hands × fúria). Saída: τ do Monk ≥ 0 sem empate inexplicado; defesa física
-≥ 0,40 nos dois níveis; tabela de autocura por classe que o usuário reconheça.
+**P2 — Réguas de sobrevivência e suporte (27–28/11).** Defesa física/mental, corpo e suporte coerentes como o dano e
+o controle ficaram: autocura comparável entre classes, Monks diferenciados (hoje empatam no dano; τ do Monk fraco),
+suporte fora do platô de 0,32. Saída: defesa física ≥ 0,40 e suporte ≥ 0,35 nos dois níveis (ou a explicação de por
+que a pista do RPGBot não mede isso), τ do Monk ≥ 0 sem empate inexplicado.
 
-**M4 — Comparação geral mínima (29/11).** Fase 2 só no que a pergunta precisa: valor total por luta em dano
-equivalente (dano convertido + dano evitado + corpo + cura) para cada personagem da party, com faixa de incerteza
-(variar `moeda.k_abate`, `moeda.tempo_area`, `invocacao.fracao_viva`, `concentracao.acertos_por_round`, modo de focus
-fire). Saída: ranking da party com faixa; conclusões só valem se se mantêm em toda a faixa.
+**P3 — Comparação geral mínima (fase 2, 28–29/11).** Valor total por luta em dano equivalente (dano convertido + dano
+evitado + corpo + cura + controle) para qualquer build, com **faixa de incerteza** (variar `moeda.k_abate`,
+`moeda.tempo_area`, `invocacao.fracao_viva`, `concentracao.acertos_por_round`, modo de focus fire). Saída: comando que
+dá o total com a faixa; checagem de sanidade nos chassis (o topo e o fundo fazem sentido de mesa).
 
-**M5 — Experimentos no homebrew (30/11).** Variantes do Kael (cura ±, dano ±, usos de Blood Rage, limiar) varridas no
-motor; alvo de equilíbrio definido com o usuário (ex.: dentro de ±1 nível da média da party em cada eixo e no total em
-DE). Saída: relatório curto com a recomendação, as alternativas e o quanto cada uma move cada eixo.
+**P4 — Validação e fumaça (29–30/11).** Holdout (classes que não foram usadas para ajustar premissas) e baseline
+ingênuo (ex.: só DPR, ou só "tem Extra Attack") — a plataforma tem de ganhar dos dois. **Teste de fumaça com o Kael:**
+rodar a build dele como está, sem ajustar nada, só para ver se a plataforma consegue responder a pergunta (se faltar
+mecânica, volta para P1 antes de 30/11, não em dezembro). Saída: relatório "plataforma pronta" com os gates.
 
-**Folga (1–7/12):** revisão do usuário, imprevistos, descobertas de última hora, preparação da sessão.
+### Party e Kael (1–7/12)
+**K1 — Party no pipeline (1–2/12).** As builds da DragonHeist (Kael, John, Tin Bin, Abdul, Marcus, Amadeus, Ravin)
+com plano automático + dias de foco + concentração + moeda; versão NOVA do homebrew do Kael (pedir o texto); revisar
+Stunning Strike. Saída: 1 linha por personagem "o que o plano manda fazer" para o usuário conferir.
+**K2 — Análise e experimentos (3–5/12).** Comparação geral da party com faixa; variantes do Kael (cura ±, dano ±,
+usos de Blood Rage, limiar) contra o alvo que o usuário definir. Saída: relatório com a recomendação.
+**Folga (6–7/12).**
 
 ## Depois do sprint
 - Pacotes para casters (blaster × controlador, Hexblade), lista expandida dos Warlocks, holdout + baseline ingênuo.

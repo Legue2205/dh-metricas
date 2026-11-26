@@ -4,7 +4,7 @@
  "grupo": "Pacote",
  "nivel": 11,
  "build": "Ranger (Gloom Stalker), atirador: arco longo, Archery, couro batido; sem feat",
- "impressao": "5d863d8d65",
+ "impressao": "a93f70db38",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1159,7 +1159,7 @@
    }
   },
   "conjurar-animais": {
-   "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais [fora: invocação com peso 0]",
+   "hipotese": "Conjure Animals (8 lobos; 1 espaço de 3º), ataques normais",
    "principal": [],
    "dano": {
     "dpr": {
@@ -1234,7 +1234,8 @@
       8.2,
       8.2
      ]
-    }
+    },
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 103,
@@ -1321,61 +1322,95 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 0.86,
-    "rank": "E",
-    "nivel_campo": 0.7,
-    "rank_campo": "E",
+    "nivel_eq": 3.65,
+    "rank": "C-",
+    "nivel_campo": 1.49,
+    "rank_campo": "D",
     "nivel_controle": 0.0,
-    "nivel_atencao": 0.66,
-    "rank_atencao": "E",
-    "vidas_total": 0.045,
-    "vidas_campo": 0.018,
-    "vidas_atencao": 0.01,
+    "nivel_atencao": 1.93,
+    "rank_atencao": "D",
+    "vidas_total": 0.329,
+    "vidas_campo": 0.144,
+    "vidas_atencao": 0.182,
     "corpo": {
-     "T": 0.01,
-     "S": 0.132,
-     "P": -0.123,
-     "chave": "T0S+P-",
-     "perfil": "Redirecionador"
+     "T": 0.182,
+     "S": 0.157,
+     "P": 0.025,
+     "chave": "T+S+P0",
+     "perfil": "Resistente"
     },
-    "nivel_corpo": 11.0,
-    "rank_corpo": "A",
+    "nivel_corpo": 17.75,
+    "rank_corpo": "S",
     "corpo_busca": [
      [
       11,
-      0.01
+      0.182
+     ],
+     [
+      12,
+      0.169
+     ],
+     [
+      13,
+      0.153
+     ],
+     [
+      14,
+      0.127
+     ],
+     [
+      15,
+      0.073
+     ],
+     [
+      16,
+      0.051
+     ],
+     [
+      17,
+      0.022
+     ],
+     [
+      18,
+      -0.007
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 0.26,
-     "Party de elite": 0.51,
-     "Horda + chefe": 0.27,
-     "Horda": 0.29,
-     "Dupla": 0.13,
-     "Chefe sozinho": 2.15
+     "Minions + minibosses": 2.64,
+     "Party de elite": 2.48,
+     "Horda + chefe": 2.16,
+     "Horda": 2.73,
+     "Dupla": 2.88,
+     "Chefe sozinho": 6.25
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Corpo (ameaça)": 0.0094
+      "Corpo (ameaça)": 0.0094,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.0628
      },
      "Party de elite": {
-      "Corpo (ameaça)": 0.0054
+      "Corpo (ameaça)": 0.0054,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.0367
      },
      "Horda + chefe": {
-      "Corpo (ameaça)": 0.0067
+      "Corpo (ameaça)": 0.0067,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.0444
      },
      "Horda": {
-      "Corpo (ameaça)": 0.014
+      "Corpo (ameaça)": 0.014,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.0933
      },
      "Dupla": {
-      "Corpo (ameaça)": 0.0059
+      "Corpo (ameaça)": 0.0059,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.04
      },
      "Chefe sozinho": {
-      "Corpo (ameaça)": 0.0076
+      "Corpo (ameaça)": 0.0076,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.0533
      }
     },
-    "nivel_absoluto": 1.35,
-    "rank_absoluto": "D"
+    "nivel_absoluto": 3.53,
+    "rank_absoluto": "C-"
    }
   },
   "terreno-plantas": {
@@ -1975,30 +2010,30 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1.5,
-       "3": 1
+       "1": 1,
+       "3": 2
       }
      },
      "extras": [
-      "marca",
+      "conjurar-animais",
       "enredar"
      ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 2.5,
+     "1": 3,
      "2": 3,
-     "3": 2
+     "3": 1
     },
     "favored_foe": 4
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 9.3,
+     "nivel_eq": 8.1,
      "rank": "B+",
      "por_categoria": {
-      "p": 9.3
+      "p": 8.1
      }
     },
     "defesa": {
@@ -2030,17 +2065,17 @@
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 17.8,
+     "rank": "S",
      "por_categoria": {
-      "p": 11.0
+      "p": 17.8
      }
     },
     "area": {
      "nivel_eq": 7.5,
      "rank": "B",
      "por_categoria": {
-      "p": 7.5
+      "p": 4.8
      }
     }
    }
@@ -2414,7 +2449,7 @@
      }
     },
     {
-     "linha": "terreno-plantas",
+     "linha": "conjurar-animais",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -2425,7 +2460,7 @@
      }
     },
     {
-     "linha": "terreno-plantas",
+     "linha": "conjurar-animais",
      "categoria": "np",
      "peso": 1,
      "nota": "",
@@ -2436,7 +2471,7 @@
      }
     },
     {
-     "linha": "terreno-plantas",
+     "linha": "conjurar-animais",
      "categoria": "p",
      "peso": 2,
      "nota": "",
@@ -2488,19 +2523,19 @@
      }
     },
     "campo": {
-     "nivel_eq": 6.3,
-     "rank": "B-",
+     "nivel_eq": 0.9,
+     "rank": "E",
      "por_categoria": {
-      "np": 5.5,
-      "p": 6.6
+      "np": 2.3,
+      "p": 0.0
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 16.6,
+     "rank": "S",
      "por_categoria": {
-      "np": 11.0,
-      "p": 11.0
+      "np": 14.4,
+      "p": 17.8
      }
     },
     "area": {
@@ -2514,7 +2549,7 @@
    }
   }
  },
- "segundos": 7.0,
+ "segundos": 4.7,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2975,7 +3010,9 @@
   },
   "concentracao.ativa": 1,
   "concentracao.foco_inimigo": 1.0,
+  "invocacao.fracao_viva": 0.9,
   "invocacao.peso.numerosa": 0.0,
+  "invocacao.peso_corpo.numerosa": 0.5,
   "moeda.ca_ref_base": 14,
   "moeda.ca_ref_niveis_por_ponto": 4,
   "moeda.conversao": "abate",
@@ -2989,61 +3026,61 @@
   "moeda.tempo_area": 0.75
  },
  "impressoes": {
-  "_planos": "8b82aecac8ef",
+  "_planos": "5383e1a694b1",
   "principal": {
-   "dano": "1f3793ef2c83",
+   "dano": "9aea152a61a5",
    "defesa": "89b82ee6edb5",
    "saves": "a4db6a966b17",
-   "area": "fb97bd4523f5",
+   "area": "cd6635e1fd42",
    "controle": "2c0116d66bfd"
   },
   "marca": {
-   "dano": "b40b1cbbad7c",
+   "dano": "08e17719bf4a",
    "defesa": "89b82ee6edb5",
    "saves": "a4db6a966b17",
-   "area": "9e89a464f8d5",
+   "area": "e7f59b4ec504",
    "controle": "88e3bc9e1449"
   },
   "inimigo-favorito": {
-   "dano": "ea4dfe8107b7",
+   "dano": "1911b905ec45",
    "defesa": "89b82ee6edb5",
    "saves": "a4db6a966b17",
-   "area": "0afd8b22f699",
+   "area": "86bc59114f15",
    "controle": "63b4ee61c7f9"
   },
   "enredar": {
-   "dano": "1f3793ef2c83",
+   "dano": "9aea152a61a5",
    "defesa": "89b82ee6edb5",
    "saves": "a4db6a966b17",
-   "area": "fb97bd4523f5",
+   "area": "cd6635e1fd42",
    "controle": "1893501cb087"
   },
   "terreno-espinhos": {
-   "dano": "1f3793ef2c83",
+   "dano": "9aea152a61a5",
    "defesa": "89b82ee6edb5",
    "saves": "a4db6a966b17",
-   "area": "fb97bd4523f5",
+   "area": "cd6635e1fd42",
    "controle": "e02d853292bf"
   },
   "conjurar-animais": {
-   "dano": "1f3793ef2c83",
+   "dano": "c1c1e2b82f47",
    "defesa": "89b82ee6edb5",
    "saves": "a4db6a966b17",
-   "area": "fb97bd4523f5",
-   "controle": "2c0116d66bfd"
+   "area": "7f81a39d1bad",
+   "controle": "680bd0028f74"
   },
   "terreno-plantas": {
-   "dano": "1f3793ef2c83",
+   "dano": "9aea152a61a5",
    "defesa": "89b82ee6edb5",
    "saves": "a4db6a966b17",
-   "area": "fb97bd4523f5",
+   "area": "cd6635e1fd42",
    "controle": "27294332d72b"
   },
   "reacao-absorb-elements": {
-   "dano": "1f3793ef2c83",
+   "dano": "9aea152a61a5",
    "defesa": "89b82ee6edb5",
    "saves": "7d0b74d11bf1",
-   "area": "fb97bd4523f5",
+   "area": "cd6635e1fd42",
    "controle": "2c0116d66bfd"
   }
  }

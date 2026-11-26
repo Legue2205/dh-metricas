@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 9,
  "build": "Ranger (Beast Master (Primal Companion)), humano variante arqueiro, arco longo; Archery, Sharpshooter 1, Des 18 no 4, Des 20 no 8 (chassi comum)",
- "impressao": "03df62fb4d",
+ "impressao": "4373a897c7",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -1113,15 +1113,15 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 3.33,
-    "rank": "C-",
-    "nivel_campo": 1.45,
+    "nivel_eq": 4.41,
+    "rank": "C",
+    "nivel_campo": 2.6,
     "rank_campo": "D",
     "nivel_controle": 0.0,
     "nivel_atencao": 1.83,
     "rank_atencao": "D",
-    "vidas_total": 0.381,
-    "vidas_campo": 0.162,
+    "vidas_total": 0.503,
+    "vidas_campo": 0.296,
     "vidas_atencao": 0.202,
     "corpo": {
      "T": 0.202,
@@ -1159,41 +1159,47 @@
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 2.73,
-     "Party de elite": 2.5,
-     "Horda + chefe": 2.32,
-     "Horda": 2.8,
-     "Dupla": 3.0,
-     "Chefe sozinho": 4.98
+     "Minions + minibosses": 4.02,
+     "Party de elite": 2.83,
+     "Horda + chefe": 2.63,
+     "Horda": 4.08,
+     "Dupla": 4.12,
+     "Chefe sozinho": 6.57
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
       "Corpo (ameaça)": 0.01,
-      "Corpo (1 Primal Companion (Beast of the Land))": 0.0668
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0668,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.0668
      },
      "Party de elite": {
       "Corpo (ameaça)": 0.0059,
-      "Corpo (1 Primal Companion (Beast of the Land))": 0.0406
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0406,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.0406
      },
      "Horda + chefe": {
       "Corpo (ameaça)": 0.0073,
-      "Corpo (1 Primal Companion (Beast of the Land))": 0.0489
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0489,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.0489
      },
      "Horda": {
       "Corpo (ameaça)": 0.0139,
-      "Corpo (1 Primal Companion (Beast of the Land))": 0.0933
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0933,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.0933
      },
      "Dupla": {
       "Corpo (ameaça)": 0.0061,
-      "Corpo (1 Primal Companion (Beast of the Land))": 0.043
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.043,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.043
      },
      "Chefe sozinho": {
       "Corpo (ameaça)": 0.0072,
-      "Corpo (1 Primal Companion (Beast of the Land))": 0.0533
+      "Corpo (1 Primal Companion (Beast of the Land))": 0.0533,
+      "Corpo (4.0 Conjure Animals (8 lobos))": 0.0533
      }
     },
-    "nivel_absoluto": 2.89,
-    "rank_absoluto": "D"
+    "nivel_absoluto": 3.78,
+    "rank_absoluto": "C-"
    }
   },
   "terreno-plantas": {
@@ -1524,30 +1530,29 @@
      "nota": "",
      "gasto": {
       "espacos": {
-       "1": 1.5,
-       "3": 1
+       "1": 1,
+       "3": 2
       }
      },
      "extras": [
-      "marca",
+      "conjurar-animais",
       "enredar"
      ]
     }
    ],
    "sobra": {
     "espacos": {
-     "1": 2.5,
-     "2": 3,
-     "3": 1
+     "1": 3,
+     "2": 3
     },
     "favored_foe": 4
    },
    "eixos": {
     "dano": {
-     "nivel_eq": 7.5,
+     "nivel_eq": 7.0,
      "rank": "B",
      "por_categoria": {
-      "p": 7.5
+      "p": 7.0
      }
     },
     "defesa": {
@@ -1589,7 +1594,7 @@
      "nivel_eq": 4.7,
      "rank": "C",
      "por_categoria": {
-      "p": 4.7
+      "p": 4.6
      }
     }
    }
@@ -2048,7 +2053,7 @@
    }
   }
  },
- "segundos": 4.4,
+ "segundos": 2.1,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2512,6 +2517,8 @@
   "invocacao.fracao_viva": 0.9,
   "invocacao.peso.companheiro": 1.0,
   "invocacao.peso.numerosa": 0.0,
+  "invocacao.peso_corpo.companheiro": 1.0,
+  "invocacao.peso_corpo.numerosa": 0.5,
   "moeda.ca_ref_base": 14,
   "moeda.ca_ref_niveis_por_ponto": 4,
   "moeda.conversao": "abate",
@@ -2525,54 +2532,54 @@
   "moeda.tempo_area": 0.75
  },
  "impressoes": {
-  "_planos": "2dea31460a99",
+  "_planos": "95827f5c5437",
   "principal": {
-   "dano": "f3881e36b93f",
+   "dano": "bee558bf023f",
    "defesa": "7286d1efc5d4",
    "saves": "bf59fb2cb38a",
-   "area": "e30fdaf29355",
+   "area": "2f2ceac5f9a8",
    "controle": "50c23d350308"
   },
   "marca": {
-   "dano": "40f597076448",
+   "dano": "4f66e7d29df2",
    "defesa": "7286d1efc5d4",
    "saves": "bf59fb2cb38a",
-   "area": "c614aca26134",
+   "area": "f6966cc6834b",
    "controle": "b37c99842172"
   },
   "inimigo-favorito": {
-   "dano": "4b43fe005dba",
+   "dano": "8243039997c3",
    "defesa": "7286d1efc5d4",
    "saves": "bf59fb2cb38a",
-   "area": "40c5a9a246b6",
+   "area": "9cbc23b8d7e4",
    "controle": "6984247a2436"
   },
   "enredar": {
-   "dano": "f3881e36b93f",
+   "dano": "bee558bf023f",
    "defesa": "7286d1efc5d4",
    "saves": "bf59fb2cb38a",
-   "area": "e30fdaf29355",
+   "area": "2f2ceac5f9a8",
    "controle": "b126c3ec1973"
   },
   "terreno-espinhos": {
-   "dano": "f3881e36b93f",
+   "dano": "bee558bf023f",
    "defesa": "7286d1efc5d4",
    "saves": "bf59fb2cb38a",
-   "area": "e30fdaf29355",
+   "area": "2f2ceac5f9a8",
    "controle": "87f1f17f1390"
   },
   "conjurar-animais": {
-   "dano": "f3881e36b93f",
+   "dano": "3b1a85782064",
    "defesa": "7286d1efc5d4",
    "saves": "bf59fb2cb38a",
-   "area": "e30fdaf29355",
-   "controle": "50c23d350308"
+   "area": "d968fd520267",
+   "controle": "4baf9bee5c19"
   },
   "terreno-plantas": {
-   "dano": "f3881e36b93f",
+   "dano": "bee558bf023f",
    "defesa": "7286d1efc5d4",
    "saves": "bf59fb2cb38a",
-   "area": "e30fdaf29355",
+   "area": "2f2ceac5f9a8",
    "controle": "d79af262a674"
   }
  }

@@ -4,7 +4,7 @@
  "grupo": "RPGBot",
  "nivel": 11,
  "build": "Druid (Shepherd), Sátiro, couro + escudo; Fey Touched 4 (Sab 18), Sab 20 (8)",
- "impressao": "f9fe784b6c",
+ "impressao": "fcd07f5607",
  "versao": "0.9.0",
  "modo": "completo",
  "linhas": {
@@ -603,7 +603,7 @@
    }
   },
   "invocacao": {
-   "hipotese": "invocacao [fora: invocação com peso 0]",
+   "hipotese": "invocacao",
    "principal": [],
    "dano": {
     "dpr": {
@@ -622,7 +622,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 0.9,
     "nivel_precisa": 0.9,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 80,
@@ -732,61 +733,103 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 4.15,
-    "rank": "C",
-    "nivel_campo": 0.65,
-    "rank_campo": "E",
+    "nivel_eq": 5.48,
+    "rank": "C+",
+    "nivel_campo": 1.45,
+    "rank_campo": "D",
     "nivel_controle": 0.0,
-    "nivel_atencao": 0.63,
-    "rank_atencao": "E",
-    "vidas_total": 0.418,
-    "vidas_campo": 0.01,
-    "vidas_atencao": 0.002,
+    "nivel_atencao": 1.87,
+    "rank_atencao": "D",
+    "vidas_total": 0.702,
+    "vidas_campo": 0.136,
+    "vidas_atencao": 0.177,
     "corpo": {
-     "T": 0.002,
-     "S": 0.442,
-     "P": -0.439,
-     "chave": "T0S+P-",
-     "perfil": "Redirecionador"
+     "T": 0.177,
+     "S": 0.463,
+     "P": -0.286,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
     },
-    "nivel_corpo": 11.0,
-    "rank_corpo": "A",
+    "nivel_corpo": 20.55,
+    "rank_corpo": "S",
     "corpo_busca": [
      [
       11,
-      0.002
+      0.177
+     ],
+     [
+      12,
+      0.169
+     ],
+     [
+      13,
+      0.159
+     ],
+     [
+      14,
+      0.139
+     ],
+     [
+      15,
+      0.103
+     ],
+     [
+      16,
+      0.083
+     ],
+     [
+      17,
+      0.069
+     ],
+     [
+      18,
+      0.046
+     ],
+     [
+      19,
+      0.033
+     ],
+     [
+      20,
+      0.012
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 2.82,
-     "Party de elite": 4.24,
-     "Horda + chefe": 2.85,
-     "Horda": 2.76,
-     "Dupla": 4.22,
-     "Chefe sozinho": 6.32
+     "Minions + minibosses": 4.29,
+     "Party de elite": 4.71,
+     "Horda + chefe": 4.11,
+     "Horda": 4.24,
+     "Dupla": 4.98,
+     "Chefe sozinho": 8.06
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Corpo (ameaça)": 0.0053
+      "Corpo (ameaça)": 0.0053,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.0628
      },
      "Party de elite": {
-      "Corpo (ameaça)": 0.003
+      "Corpo (ameaça)": 0.003,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.0367
      },
      "Horda + chefe": {
-      "Corpo (ameaça)": 0.0038
+      "Corpo (ameaça)": 0.0038,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.0444
      },
      "Horda": {
-      "Corpo (ameaça)": 0.008
+      "Corpo (ameaça)": 0.008,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.0933
      },
      "Dupla": {
-      "Corpo (ameaça)": 0.0032
+      "Corpo (ameaça)": 0.0032,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.04
      },
      "Chefe sozinho": {
-      "Corpo (ameaça)": 0.0041
+      "Corpo (ameaça)": 0.0041,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.0533
      }
     },
-    "nivel_absoluto": 3.11,
-    "rank_absoluto": "C-"
+    "nivel_absoluto": 4.31,
+    "rank_absoluto": "C"
    },
    "concentracao": {
     "f": 0.69,
@@ -797,7 +840,7 @@
    }
   },
   "totem-urso": {
-   "hipotese": "Spirit Totem (Bear) no lugar do Hawk + invocação [fora: invocação com peso 0]",
+   "hipotese": "Spirit Totem (Bear) no lugar do Hawk + invocação",
    "principal": [],
    "dano": {
     "dpr": {
@@ -816,7 +859,8 @@
     "perfil": "Equilibrado",
     "nivel_bruta": 0.9,
     "nivel_precisa": 0.9,
-    "medido": false
+    "medido": false,
+    "sobrevivencia_invocacao": 1.0
    },
    "defesa": {
     "pv_efetivo": 80,
@@ -926,61 +970,103 @@
     "outros": {}
    },
    "controle": {
-    "nivel_eq": 4.15,
-    "rank": "C",
-    "nivel_campo": 0.65,
-    "rank_campo": "E",
+    "nivel_eq": 5.48,
+    "rank": "C+",
+    "nivel_campo": 1.45,
+    "rank_campo": "D",
     "nivel_controle": 0.0,
-    "nivel_atencao": 0.63,
-    "rank_atencao": "E",
-    "vidas_total": 0.418,
-    "vidas_campo": 0.01,
-    "vidas_atencao": 0.002,
+    "nivel_atencao": 1.87,
+    "rank_atencao": "D",
+    "vidas_total": 0.702,
+    "vidas_campo": 0.136,
+    "vidas_atencao": 0.177,
     "corpo": {
-     "T": 0.002,
-     "S": 0.442,
-     "P": -0.439,
-     "chave": "T0S+P-",
-     "perfil": "Redirecionador"
+     "T": 0.177,
+     "S": 0.463,
+     "P": -0.286,
+     "chave": "T+S+P-",
+     "perfil": "Esquiva Tática"
     },
-    "nivel_corpo": 11.0,
-    "rank_corpo": "A",
+    "nivel_corpo": 20.55,
+    "rank_corpo": "S",
     "corpo_busca": [
      [
       11,
-      0.002
+      0.177
+     ],
+     [
+      12,
+      0.169
+     ],
+     [
+      13,
+      0.159
+     ],
+     [
+      14,
+      0.139
+     ],
+     [
+      15,
+      0.103
+     ],
+     [
+      16,
+      0.083
+     ],
+     [
+      17,
+      0.069
+     ],
+     [
+      18,
+      0.046
+     ],
+     [
+      19,
+      0.033
+     ],
+     [
+      20,
+      0.012
      ]
     ],
     "por_tipo": {
-     "Minions + minibosses": 2.82,
-     "Party de elite": 4.24,
-     "Horda + chefe": 2.85,
-     "Horda": 2.76,
-     "Dupla": 4.22,
-     "Chefe sozinho": 6.32
+     "Minions + minibosses": 4.29,
+     "Party de elite": 4.71,
+     "Horda + chefe": 4.11,
+     "Horda": 4.24,
+     "Dupla": 4.98,
+     "Chefe sozinho": 8.06
     },
     "negacao_por_fonte": {
      "Minions + minibosses": {
-      "Corpo (ameaça)": 0.0053
+      "Corpo (ameaça)": 0.0053,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.0628
      },
      "Party de elite": {
-      "Corpo (ameaça)": 0.003
+      "Corpo (ameaça)": 0.003,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.0367
      },
      "Horda + chefe": {
-      "Corpo (ameaça)": 0.0038
+      "Corpo (ameaça)": 0.0038,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.0444
      },
      "Horda": {
-      "Corpo (ameaça)": 0.008
+      "Corpo (ameaça)": 0.008,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.0933
      },
      "Dupla": {
-      "Corpo (ameaça)": 0.0032
+      "Corpo (ameaça)": 0.0032,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.04
      },
      "Chefe sozinho": {
-      "Corpo (ameaça)": 0.0041
+      "Corpo (ameaça)": 0.0041,
+      "Corpo (0.5 Conjure Elemental (Earth Elemental))": 0.0533
      }
     },
-    "nivel_absoluto": 3.11,
-    "rank_absoluto": "C-"
+    "nivel_absoluto": 4.31,
+    "rank_absoluto": "C"
    },
    "concentracao": {
     "f": 0.69,
@@ -997,50 +1083,50 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "controle",
+     "linha": "totem-urso",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 0.5,
-       "2": 1
+       "5": 0.5
       }
      }
     },
     {
-     "linha": "controle",
+     "linha": "totem-urso",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 0.5,
-       "2": 1
+       "5": 0.5
       }
      }
     },
     {
-     "linha": "controle",
+     "linha": "totem-urso",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 0.5,
-       "2": 1
+       "5": 0.5
       }
      }
     },
     {
-     "linha": "controle",
+     "linha": "totem-urso",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 0.5,
-       "2": 1
+       "5": 0.5
       }
      }
     }
@@ -1048,9 +1134,9 @@
    "sobra": {
     "espacos": {
      "1": 2.0,
-     "3": 2,
+     "2": 3,
+     "3": 3,
      "4": 3,
-     "5": 2,
      "6": 1
     },
     "forma_selvagem": 2
@@ -1089,19 +1175,19 @@
      }
     },
     "campo": {
-     "nivel_eq": 2.4,
-     "rank": "D",
+     "nivel_eq": 0.0,
+     "rank": "F",
      "por_categoria": {
-      "np": 2.4,
-      "p": 2.4
+      "np": 0.0,
+      "p": 0.0
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 20.6,
+     "rank": "S",
      "por_categoria": {
-      "np": 11.0,
-      "p": 11.0
+      "np": 20.6,
+      "p": 20.6
      }
     },
     "area": {
@@ -1113,11 +1199,11 @@
      }
     },
     "suporte": {
-     "nivel_eq": 4.2,
+     "nivel_eq": 4.3,
      "rank": "C",
      "por_categoria": {
-      "np": 4.2,
-      "p": 4.2
+      "np": 4.3,
+      "p": 4.3
      }
     }
    }
@@ -1126,14 +1212,14 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "controle",
+     "linha": "totem-urso",
      "categoria": "p",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 0.5,
-       "2": 1
+       "5": 0.5
       }
      }
     }
@@ -1141,10 +1227,10 @@
    "sobra": {
     "espacos": {
      "1": 3.5,
-     "2": 2,
+     "2": 3,
      "3": 3,
      "4": 3,
-     "5": 2,
+     "5": 1.5,
      "6": 1
     },
     "forma_selvagem": 2
@@ -1179,17 +1265,17 @@
      }
     },
     "campo": {
-     "nivel_eq": 2.4,
-     "rank": "D",
+     "nivel_eq": 0.0,
+     "rank": "F",
      "por_categoria": {
-      "p": 2.4
+      "p": 0.0
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 20.6,
+     "rank": "S",
      "por_categoria": {
-      "p": 11.0
+      "p": 20.6
      }
     },
     "area": {
@@ -1200,10 +1286,10 @@
      }
     },
     "suporte": {
-     "nivel_eq": 4.2,
+     "nivel_eq": 4.3,
      "rank": "C",
      "por_categoria": {
-      "p": 4.2
+      "p": 4.3
      }
     }
    }
@@ -1593,50 +1679,50 @@
    "hypercharged": 1,
    "combates": [
     {
-     "linha": "controle",
+     "linha": "totem-urso",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 0.5,
-       "2": 1
+       "5": 0.5
       }
      }
     },
     {
-     "linha": "controle",
+     "linha": "totem-urso",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 0.5,
-       "2": 1
+       "5": 0.5
       }
      }
     },
     {
-     "linha": "controle",
+     "linha": "totem-urso",
      "categoria": "np",
      "peso": 1,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 0.5,
-       "2": 1
+       "5": 0.5
       }
      }
     },
     {
-     "linha": "controle",
+     "linha": "totem-urso",
      "categoria": "p",
      "peso": 2,
      "nota": "",
      "gasto": {
       "espacos": {
        "1": 0.5,
-       "2": 1
+       "5": 0.5
       }
      }
     }
@@ -1644,9 +1730,9 @@
    "sobra": {
     "espacos": {
      "1": 2.0,
-     "3": 2,
+     "2": 3,
+     "3": 3,
      "4": 3,
-     "5": 2,
      "6": 1
     },
     "forma_selvagem": 2
@@ -1685,19 +1771,19 @@
      }
     },
     "campo": {
-     "nivel_eq": 2.4,
-     "rank": "D",
+     "nivel_eq": 0.0,
+     "rank": "F",
      "por_categoria": {
-      "np": 2.4,
-      "p": 2.4
+      "np": 0.0,
+      "p": 0.0
      }
     },
     "corpo": {
-     "nivel_eq": 11.0,
-     "rank": "A",
+     "nivel_eq": 20.6,
+     "rank": "S",
      "por_categoria": {
-      "np": 11.0,
-      "p": 11.0
+      "np": 20.6,
+      "p": 20.6
      }
     },
     "area": {
@@ -1709,17 +1795,17 @@
      }
     },
     "suporte": {
-     "nivel_eq": 4.2,
+     "nivel_eq": 4.3,
      "rank": "C",
      "por_categoria": {
-      "np": 4.2,
-      "p": 4.2
+      "np": 4.3,
+      "p": 4.3
      }
     }
    }
   }
  },
- "segundos": 4.7,
+ "segundos": 3.6,
  "premissas": {
   "area.alvos_referencia_por_circulo": [
    2,
@@ -2212,7 +2298,9 @@
   },
   "concentracao.ativa": 1,
   "concentracao.foco_inimigo": 1.0,
+  "invocacao.fracao_viva": 0.9,
   "invocacao.peso.numerosa": 0.0,
+  "invocacao.peso_corpo.numerosa": 0.5,
   "moeda.ca_ref_base": 14,
   "moeda.ca_ref_niveis_por_ponto": 4,
   "moeda.conversao": "abate",
@@ -2226,46 +2314,46 @@
   "moeda.tempo_area": 0.75
  },
  "impressoes": {
-  "_planos": "10977c0ef2fb",
+  "_planos": "081d693c86e1",
   "principal": {
-   "dano": "65c2183d2532",
+   "dano": "82f0fd449389",
    "defesa": "b1989590b80e",
    "saves": "81ee045e4176",
-   "area": "462995570b04",
+   "area": "900e0ef58456",
    "suporte": "e6e529c25c43",
    "controle": "0ca6dd0e80c9"
   },
   "controle": {
-   "dano": "4ff9e1dcd8a1",
+   "dano": "7953007c8253",
    "defesa": "b1989590b80e",
    "saves": "81ee045e4176",
-   "area": "7ae7b1280118",
+   "area": "d4b7d667dad2",
    "suporte": "e6e529c25c43",
    "controle": "e9ccd16132ea"
   },
   "controle-barato": {
-   "dano": "4ff9e1dcd8a1",
+   "dano": "7953007c8253",
    "defesa": "b1989590b80e",
    "saves": "81ee045e4176",
-   "area": "7ae7b1280118",
+   "area": "d4b7d667dad2",
    "suporte": "e6e529c25c43",
    "controle": "0aad2664fa98"
   },
   "invocacao": {
-   "dano": "4ff9e1dcd8a1",
+   "dano": "b211cd054ce5",
    "defesa": "b1989590b80e",
    "saves": "81ee045e4176",
-   "area": "7ae7b1280118",
+   "area": "01688d647899",
    "suporte": "e6e529c25c43",
-   "controle": "1008ac37c4ea"
+   "controle": "d51767888387"
   },
   "totem-urso": {
-   "dano": "4ff9e1dcd8a1",
+   "dano": "b211cd054ce5",
    "defesa": "b1989590b80e",
    "saves": "81ee045e4176",
-   "area": "7ae7b1280118",
+   "area": "01688d647899",
    "suporte": "bf8aeb8eeb98",
-   "controle": "1008ac37c4ea"
+   "controle": "d51767888387"
   }
  }
 }

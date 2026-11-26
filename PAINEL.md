@@ -384,7 +384,7 @@ chassi-wizard-graviturgy-7   7     0,9 E    3,1 C-    3,9 C-     4,9 C         -
 chassi-wizard-illusion-11  11     1,8 D    6,2 B-    7,0 B-    8,5 B+         -    17,5 S         -
 chassi-wizard-illusion-7   7     0,9 E    3,1 C-    3,9 C-     4,9 C         -    9,2 B+         -
 chassi-wizard-necromancy-11  11     1,8 D    6,1 B-    7,0 B-    8,5 B+         -    17,5 S         -
-chassi-wizard-necromancy-7   7     1,0 D    3,1 C-    3,9 C-     4,9 C         -    9,2 B+         -
+chassi-wizard-necromancy-7   7     0,8 E    3,1 C-    3,9 C-     4,9 C         -    9,2 B+         -
 chassi-wizard-order-of-scribes-11  11     1,8 D    6,2 B-    7,0 B-    8,5 B+         -    17,5 S         -
 chassi-wizard-order-of-scribes-7   7     0,9 E    3,1 C-    3,9 C-     4,9 C         -    9,2 B+         -
 chassi-wizard-transmutation-11  11    3,5 C-    8,9 B+    8,9 B+    8,5 B+         -    19,4 S         -
@@ -730,7 +730,7 @@ rpgbot-cleric-war-11   11    5,9 C+   10,8 A-    8,7 B+    12,2 A         -    9
 rpgbot-cleric-war-3     3     0,8 E     2,2 D     2,2 D     4,1 C         -     1,8 D     1,7 D
 rpgbot-cleric-war-5     5     2,6 D     4,3 C     4,3 C     7,4 B         -     7,1 B     2,8 D
 rpgbot-cleric-war-7     7     2,9 D     7,6 B    5,9 C+    8,3 B+         -     7,3 B     4,8 C
-rpgbot-cleric-war-9     9    3,8 C-    9,7 B+     7,9 B    12,2 A         -    8,4 B+     7,9 B
+rpgbot-cleric-war-9     9     4,8 C    9,7 B+     7,9 B    12,2 A         -    8,4 B+    6,3 B-
 rpgbot-druid-dreams-11  11     1,5 D     7,8 B    8,2 B+    12,9 A         -     4,8 C    3,1 C-
 rpgbot-druid-dreams-3   3     0,3 F     1,9 D     2,5 D     4,3 C         -    3,0 C-     0,4 F
 rpgbot-druid-dreams-5   5     0,7 E    3,3 C-     4,1 C    8,6 B+         -    3,5 C-     0,7 E
@@ -746,11 +746,11 @@ rpgbot-druid-moon-3     3     0,5 E    3,1 C-     4,3 C    6,4 B-         -     
 rpgbot-druid-moon-5     5     0,7 E     2,5 D    3,5 C-    8,5 B+         -    3,3 C-     0,6 E
 rpgbot-druid-moon-7     7     0,7 E    3,8 C-     4,6 C    8,7 B+         -    4,0 C-     0,8 E
 rpgbot-druid-moon-9     9     0,8 E     4,8 C    5,8 C+    12,8 A         -     4,2 C     1,0 D
-rpgbot-druid-shepherd-11  11     0,9 E    5,9 C+     7,4 B    12,8 A         -     2,8 D     4,2 C
+rpgbot-druid-shepherd-11  11     0,9 E    5,9 C+     7,4 B    12,8 A         -     2,8 D     4,3 C
 rpgbot-druid-shepherd-3   3     0,9 E     1,4 D     2,2 D    4,0 C-         -     2,0 D     0,7 E
-rpgbot-druid-shepherd-5   5     0,6 E     2,5 D    3,7 C-    8,5 B+         -     1,7 D     0,9 E
-rpgbot-druid-shepherd-7   7     0,6 E    3,8 C-     4,8 C    8,7 B+         -     1,7 D     2,0 D
-rpgbot-druid-shepherd-9   9     0,6 E     4,8 C    6,0 B-    12,7 A         -     1,7 D    3,1 C-
+rpgbot-druid-shepherd-5   5     0,6 E     2,5 D    3,7 C-    8,5 B+         -     1,7 D     1,5 D
+rpgbot-druid-shepherd-7   7     0,6 E    3,8 C-     4,8 C    8,7 B+         -     1,7 D     2,5 D
+rpgbot-druid-shepherd-9   9     0,6 E     4,8 C    6,0 B-    12,7 A         -     1,7 D    3,4 C-
 rpgbot-druid-spores-11  11     2,6 D    11,5 A    6,9 B-    12,9 A         -     4,4 C     2,1 D
 rpgbot-druid-spores-3   3     1,0 E    3,7 C-     2,0 D     4,2 C         -     2,3 D     0,4 F
 rpgbot-druid-spores-5   5     1,4 D    5,6 C+    3,4 C-    8,5 B+         -     4,1 C     0,6 E
@@ -1154,7 +1154,7 @@ rpgbot-wizard-illusion-9   9     0,6 E     4,4 C     4,9 C     4,8 C         -  
 rpgbot-wizard-necromancy-11  11     1,0 D     4,9 C    5,1 C+     4,9 C         -    12,3 A         -
 rpgbot-wizard-necromancy-3   3     0,5 E     1,1 D     1,4 D     1,2 D         -     1,4 D         -
 rpgbot-wizard-necromancy-5   5     0,7 E     2,2 D     2,5 D     3,0 D         -     7,9 B         -
-rpgbot-wizard-necromancy-7   7    3,2 C-    3,2 C-    3,6 C-     4,1 C         -    8,1 B+         -
+rpgbot-wizard-necromancy-7   7    3,8 C-    3,2 C-    3,6 C-     4,1 C         -    8,1 B+         -
 rpgbot-wizard-necromancy-9   9     0,8 E     4,3 C     4,5 C     4,8 C         -   10,6 A-         -
 rpgbot-wizard-order-of-scribes-11  11     1,0 D    6,1 B-    6,0 C+    8,4 B+         -    12,7 A         -
 rpgbot-wizard-order-of-scribes-3   3     0,4 F     1,4 D     1,6 D     2,6 D         -     0,4 F         -
@@ -1562,8 +1562,8 @@ ID                     nv      Dano    Defesa    Resil.   Vontade  Controle     
 ~chassi-wizard-graviturgy-7   7     1,9 D     2,5 D    3,9 C-     4,9 C     0,5 F     2,8 D         -
 ~chassi-wizard-illusion-11  11     4,1 C     4,9 C    7,0 B-    8,5 B+     2,7 D     4,3 C         -
 ~chassi-wizard-illusion-7   7     1,9 D     2,5 D    3,9 C-     4,9 C     0,5 F     2,8 D         -
-~chassi-wizard-necromancy-11  11     4,1 C     4,9 C    7,0 B-    8,5 B+     2,7 D     4,3 C         -
-~chassi-wizard-necromancy-7   7     1,9 D     2,5 D    3,9 C-     4,9 C     0,5 F     2,8 D         -
+~chassi-wizard-necromancy-11  11     4,1 C     4,9 C    7,0 B-    8,5 B+    5,1 C+     4,3 C         -
+~chassi-wizard-necromancy-7   7     1,9 D     2,5 D    3,9 C-     4,9 C     2,8 D     2,8 D         -
 ~chassi-wizard-order-of-scribes-11  11     4,1 C     4,9 C    7,0 B-    8,5 B+     2,7 D     4,3 C         -
 ~chassi-wizard-order-of-scribes-7   7     1,9 D     2,5 D    3,9 C-     4,9 C     0,5 F     2,8 D         -
 ~chassi-wizard-transmutation-11  11     4,1 C     4,9 C     7,3 B    8,5 B+     2,7 D     4,3 C         -
@@ -1905,11 +1905,11 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-cleric-twilight-5   5     1,9 D    3,9 C-    3,8 C-    8,3 B+     0,0 F     2,8 D     0,6 E
 ~rpgbot-cleric-twilight-7   7     1,9 D    6,7 B-     4,9 C    8,6 B+     0,3 F     2,8 D     0,8 E
 ~rpgbot-cleric-twilight-9   9    3,7 C-    8,6 B+    6,5 B-    12,6 A     0,9 E     4,2 C     1,0 D
-~rpgbot-cleric-war-11  11     4,6 C   10,8 A-    8,7 B+    12,2 A     0,8 E     4,6 C    3,8 C-
+~rpgbot-cleric-war-11  11     4,6 C   10,8 A-    8,7 B+    12,2 A    3,6 C-     4,6 C    3,8 C-
 ~rpgbot-cleric-war-3    3     0,7 E     2,2 D     2,2 D     4,1 C     0,0 F     0,5 F     0,4 F
-~rpgbot-cleric-war-5    5     1,7 D     4,3 C     4,3 C     7,4 B     0,0 F     2,8 D     0,6 E
-~rpgbot-cleric-war-7    7     1,7 D     7,6 B    5,9 C+    8,3 B+     0,5 F     2,8 D     2,1 D
-~rpgbot-cleric-war-9    9    3,4 C-    9,7 B+     7,9 B    12,2 A     1,1 D     4,4 C    3,2 C-
+~rpgbot-cleric-war-5    5     1,7 D     4,3 C     4,3 C     7,4 B     2,2 D     2,8 D     0,6 E
+~rpgbot-cleric-war-7    7     1,7 D     7,6 B    5,9 C+    8,3 B+     2,6 D     2,8 D     2,1 D
+~rpgbot-cleric-war-9    9    3,4 C-    9,7 B+     7,9 B    12,2 A    3,8 C-     4,4 C    3,2 C-
 ~rpgbot-druid-dreams-11  11     2,5 D     7,8 B    8,2 B+    12,9 A     4,2 C     4,2 C    3,1 C-
 ~rpgbot-druid-dreams-3   3     0,5 E     1,9 D     2,5 D     4,3 C     2,1 D     0,4 F     0,4 F
 ~rpgbot-druid-dreams-5   5     1,0 D    3,3 C-     4,1 C    8,6 B+     2,5 D     2,1 D     0,7 E
@@ -2330,11 +2330,11 @@ lucius-15              15    18,2 S   14,5 A+    20,0 S    20,0 S         -    8
 ~rpgbot-wizard-illusion-5   5     0,7 E     1,8 D     2,9 D    3,8 C-     1,2 D     1,4 D         -
 ~rpgbot-wizard-illusion-7   7     0,7 E     2,8 D     4,1 C     4,3 C     1,8 D     1,4 D         -
 ~rpgbot-wizard-illusion-9   9     0,8 E    3,8 C-     4,9 C     4,8 C     2,4 D     1,7 D         -
-~rpgbot-wizard-necromancy-11  11    3,4 C-     4,2 C    5,1 C+     4,9 C     1,0 E     4,2 C         -
+~rpgbot-wizard-necromancy-11  11    3,4 C-     4,2 C    5,1 C+     4,9 C    4,0 C-     4,2 C         -
 ~rpgbot-wizard-necromancy-3   3     0,7 E     0,8 E     1,4 D     1,2 D     0,1 F     1,4 D         -
 ~rpgbot-wizard-necromancy-5   5     1,4 D     1,6 D     2,5 D     3,0 D     0,0 F     2,8 D         -
-~rpgbot-wizard-necromancy-7   7     1,4 D     2,4 D    3,6 C-     4,1 C     0,3 F     2,8 D         -
-~rpgbot-wizard-necromancy-9   9     1,8 D    3,4 C-     4,5 C     4,8 C     0,9 E     2,8 D         -
+~rpgbot-wizard-necromancy-7   7     1,4 D     2,4 D    3,6 C-     4,1 C     2,7 D     2,8 D         -
+~rpgbot-wizard-necromancy-9   9     1,8 D    3,4 C-     4,5 C     4,8 C    3,9 C-     2,8 D         -
 ~rpgbot-wizard-order-of-scribes-11  11    3,4 C-     4,9 C    6,0 C+    8,4 B+     2,6 D     4,2 C         -
 ~rpgbot-wizard-order-of-scribes-3   3     0,5 E     1,0 D     1,6 D     2,6 D     0,8 E     0,4 F         -
 ~rpgbot-wizard-order-of-scribes-5   5     1,4 D     2,0 D     2,9 D     4,6 C     1,1 D     2,8 D         -

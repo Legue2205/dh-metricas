@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/rpgbot-paladin-conquest-puro.json",
+ "gerado_de": "rpgbot-paladin-conquest-puro.json",
  "build": "Paladin (Conquest) sem multiclasse, Variant Human, Shield Master 1, For 18 4, Car 18 8; espada longa + escudo, Dueling",
  "corpo": {
   "ca": 18,
@@ -200,6 +200,85 @@
    "gasta": {
     "espacos": {
      "1": 1
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 3.75
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bless+smite",
+   "hipotese": "Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4",
+   "dano": {
+    "ataques": [
+     {
+      "n": 0.75,
+      "bonus": 5,
+      "dano": "1d8+5",
+      "vantagem": 0.0,
+      "nota": "espada longa (Dueling)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 5,
+      "dano": "1d8+5",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 2,
+      "dano": "2d8",
+      "nota": "Divine Smite (1º) ×2"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "tank",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 3
     }
    },
    "suporte": {
@@ -525,26 +604,26 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conquista, principal; prioritário: agathys+smite, conquista. Sobra: nada.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: conquista, principal; prioritário: bless+smite, conquista. Sobra: nada.",
    "combates": [
     "principal",
     "conquista",
     "conquista",
-    "agathys+smite"
+    "bless+smite"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: conquista+smite. Sobra: 1×1º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: bless+smite. Sobra: 1 canal.",
    "combates": [
-    "conquista+smite"
+    "bless+smite"
    ]
   }
  },
  "descricao": {
   "resumo": "A build de Conquest sem o dip de Warlock: Conquering Presence, Aura of Conquest, Fear no 9 e Improved Divine Smite no 11.",
   "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis adiantados, atributos e feats remendados); a build original continua como referência.",
-  "nao_modelado": "Shield Master (derrubar), Guided Strike, Bestow Curse, retorno do Armor of Agathys, Scornful Rebuke. Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico.",
+  "nao_modelado": "Shield Master (derrubar), Guided Strike, Bestow Curse, retorno do Armor of Agathys, Scornful Rebuke. Comum: Find Steed, curas fora de luta, smite guardado para o crítico.",
   "progressao": "Variant Human (Shield Master); espada longa + escudo, Dueling; cota de malha + escudo (18)."
  },
  "id": "rpgbot-paladin-conquest-puro-3",

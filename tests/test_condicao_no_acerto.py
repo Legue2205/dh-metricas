@@ -38,3 +38,15 @@ def test_forcar_falha_aumenta_controle():
     base = float(efeitos._avalia_fonte(f, E, 'Campo aberto', None)['Hold'].sum())
     com = float(efeitos._avalia_fonte(dict(f, forcar_falha=0.5), E, 'Campo aberto', None)['Hold'].sum())
     assert com > base
+
+
+def test_um_turno_lr_exata_nao_zera():
+    """Sprint D: 2 tentativas de um efeito de um turno contra 1 Legendary Resistance. E[X] = 0,5 ≤ lr, mas a 2ª falha
+    passa: E[max(0, X − 1)] = P(X = 2) = 0,0625 (antes o valor esperado menos lr dava 0)."""
+    from dh.controle.efeitos import _lr_gastas
+    assert abs(_lr_gastas(1.0, 0.25, 2, 1.0, 1) - (1 - 0.75 ** 2)) < 1e-12
+    assert abs(_lr_gastas(1.0, 0.25, 1, 1.0, 1) - 0.25) < 1e-12      # 1 uso: a LR come tudo
+    C.configurar(4000)
+    f = dict(efeito='cond_atordoado_um_turno', cd=14, bonus=[7, 7], usos=2)
+    com, sem, um = _v(lr=1, **f), _v(**f), _v(lr=1, **dict(f, usos=1))
+    assert 0 < com < sem and um < 1e-3   # 1 uso: a LR come quase tudo (resto = chance de errar os 4 turnos)

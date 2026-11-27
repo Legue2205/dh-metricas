@@ -119,7 +119,8 @@ def _condicao_no_acerto(f, E, topo, t):
         pf = float((~C.passa(mod, cd)).mean())
         if m['termino'] == 'um_turno':
             turnos = min(float(R), u / p if p else 0.0) * p            # turnos com tentativa
-            sucesso = turnos * pf; sucesso = max(0.0, sucesso - min(sucesso, c['lr']))
+            sucesso = turnos * pf
+            if c['lr']: sucesso = max(0.0, sucesso - _lr_gastas(p, pf, k, fr, c['lr']))
             return sucesso * m['peso'] * (R - 0.5) / R / R
         estado = {0: 1.0}; v = 0.0                                     # usos gastos -> prob. (ainda sem sucesso)
         for r in range(R):
@@ -135,6 +136,26 @@ def _condicao_no_acerto(f, E, topo, t):
             estado = novo
         return v
     return C.unico(E, g)
+
+
+def _lr_gastas(p, pf, k, fr, lr):
+    """E[min(X, lr)]: Legendary Resistances que o alvo gasta num efeito de um turno com k usos por luta (o último só
+    numa fração fr) e chance p de acerto por turno e pf de falha no save. X = falhas no save ao longo dos R turnos.
+    Sprint D (27/11): antes subtraía lr do valor ESPERADO de X (max(0, E[X] − lr)), o que zera o efeito sempre que
+    E[X] ≤ lr, mesmo quando há chance de X > lr (ex.: 2 tentativas de Stunning Strike contra 1 LR: E[X] = 0,5 → 0,
+    mas P(X = 2) = 0,06 > 0). Agora: E[max(0, X − lr)] = E[X] − E[min(X, lr)], exato por programação dinâmica."""
+    lr = int(lr); estado = {(0, 0): 1.0}                             # (usos gastos, falhas até lr) -> prob.
+    for _ in range(R):
+        novo = {}
+        for (gm, x), pr in estado.items():
+            a = 0.0 if gm >= k else (1.0 if gm < k - 1 else fr)
+            t = pr * p * a                                           # acerta e gasta um uso
+            novo[(gm, x)] = novo.get((gm, x), 0) + pr - t
+            if t:
+                kf = (gm + 1, min(lr, x + 1)); ks = (gm + 1, x)
+                novo[kf] = novo.get(kf, 0) + t * pf; novo[ks] = novo.get(ks, 0) + t * (1 - pf)
+        estado = novo
+    return float(sum(pr * x for (_, x), pr in estado.items()))
 
 
 # ---------------- casos especiais registrados ----------------

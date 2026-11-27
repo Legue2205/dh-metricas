@@ -40,7 +40,7 @@ def conquest(L):
         ext.append(dict(id='medo', hip='Fear (3º) no round 1 (ação), ataques nos rounds 2–4', dano=com(atk(frac=0.75)),
                         gasta={"espacos": {"3": 1}},
                         controle=ctrl('tank', [{"tipo": "area", "nome": "Fear", "magia": "fear", "cd": cd}])))
-    fat = pal.montar(L, L, atk, dict(ca=ca, pv=hp([10] * L, con), saves=pal.saves_pal(L, m, L, cha, ataques=n)),
+    fat = pal.montar(L, L, atk, dict(ca=ca, pv=hp([10] * L, con), saves=pal.saves_pal(L, m, L, cha, sub='conquest', ataques=n)),
                      pal.esp_pal(L), cha, extras=ext, outros=pal.canal(L, P))
     fat['_texto'] = {3: "Variant Human (Shield Master); espada longa + escudo, Dueling; cota de malha + escudo (18).",
                      5: "For 18 (4); Extra Attack; Spiritual Weapon/Hold Person.", 7: "Placas (20); Aura of Conquest.",
@@ -60,7 +60,7 @@ def devotion(L):
                             A(0.5, b, '2d6', s, ex, nota="ataque de oportunidade (reação em 50%)", **pw)]}
     ext = [dict(id='arma-sagrada', hip='Sacred Weapon (ação no round 1: +Car no acerto a luta toda)',
                 dano=atk(bonus=cha, frac=0.75), gasta={"canal": 1})]
-    fat = pal.montar(L, L, atk, dict(ca=ca, pv=hp([10] * L, con), saves=pal.saves_pal(L, m, L, cha, ataques=n)),
+    fat = pal.montar(L, L, atk, dict(ca=ca, pv=hp([10] * L, con), saves=pal.saves_pal(L, m, L, cha, sub='devotion', ataques=n)),
                      pal.esp_pal(L), cha, extras=ext, outros=pal.canal(L, P))
     fat['_texto'] = {3: "Paladin 3: Sacred Weapon; espadão, Blessed Warrior; cota de malha (16).",
                      5: "Metamagic Adept (4; sem truque de Sorcerer: sem uso modelado); Extra Attack.",
@@ -69,7 +69,7 @@ def devotion(L):
     return fat
 
 
-COMUM = " Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico."
+COMUM = " Comum: Find Steed, curas fora de luta, smite guardado para o crítico."
 B = [
     ('rpgbot-paladin-conquest-puro', 'oath-of-conquest', 'Oath of Conquest Paladin puro (extensão da build do RPGBot)',
      'Paladin (Conquest) sem multiclasse, Variant Human, Shield Master 1, For 18 4, Car 18 8; espada longa + escudo, Dueling', conquest,
@@ -80,7 +80,7 @@ B = [
      'Paladin (Devotion) sem multiclasse, Astral Elf, Metamagic Adept 4, GWM 8; espadão, Blessed Warrior', devotion,
      {"resumo": "A build Curseedge sem o dip de Sorcerer: Sacred Weapon, espadão e GWM no 8; sem Booming Blade nem Shield.",
       "estrategia": PURO,
-      "nao_modelado": "Metamagic Adept (sem magia de Sorcerer para acelerar), Blessed Warrior (truques), Aura of Devotion, "
+      "nao_modelado": "Metamagic Adept (sem magia de Sorcerer para acelerar), Blessed Warrior (truques), "
                       "Astral Elf (Astral Trance etc.)." + COMUM}),
 ]
 

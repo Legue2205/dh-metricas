@@ -530,6 +530,7 @@ CAMPOS = ('adv', 'evasion', 'res', 'imune', 'adv_encanto', 'adv_mental_magia', '
           'absorb', 'contra', 'contra_mod', 'contra_nivel', 'rerolagens', 'stillness', 'bonus_prob', 'cura_round', 'ataques')
 
 
+LISTAS = ('adv', 'res', 'imune')
 _MEMO = {}
 
 
@@ -549,6 +550,9 @@ def _avaliar(spec, corpo, reacao_livre=1.0):
     Absorb Elements e Counterspell são reações: sem reação livre na hipótese, não contam."""
     from .base import letra
     d = dict(corpo.get('saves', {})); d.update(spec)
+    for c in LISTAS:   # Sprint D (27/11): imunidade/resistência/vantagem do corpo (Aura of Courage) somam às da linha (fúria)
+        if isinstance(corpo.get('saves', {}).get(c), list) and isinstance(spec.get(c), list):
+            d[c] = list(dict.fromkeys(corpo['saves'][c] + spec[c]))
     if 'sv' not in d: raise ValueError('saves: faltam os bônus de save ("sv") no corpo ou na linha')
     k = {c: (tuple(d[c]) if isinstance(d[c], list) else d[c]) for c in CAMPOS if c in d}
     if reacao_livre <= 0: k['absorb'] = 0; k['contra'] = 0

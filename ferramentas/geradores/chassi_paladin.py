@@ -115,7 +115,7 @@ def fatia(sub, L, feat=None):
                             controle=ctrl('tank', [{"tipo": "area", "nome": "Hypnotic Pattern", "magia": "hypnotic_pattern", "cd": cd}])))
     profs = ('sab', 'car') + (('con',) if feat == 'Resilient' else ())
     nat = n + (1 if pam else 0)
-    corpo = dict(ca=ca, pv=C.hp(10, L, con), saves=pal.saves_pal(L, m, L, cha, profs, ataques=nat))
+    corpo = dict(ca=ca, pv=C.hp(10, L, con), saves=pal.saves_pal(L, m, L, cha, profs, sub=sub, ataques=nat))
     fat = pal.montar(L, L, atk, corpo, pal.esp_pal(L), cha, papel=PAPEL[pos], smite=arma != 'arco', extras=ext,
                      outros=pal.canal(L, P), area=area)
     att = C.atencao(pos)
@@ -130,9 +130,9 @@ ARMA_TXT = {'espadao': 'espadão, GWF, placas', 'longa': 'espada longa + escudo,
             'arco': 'arco longo, Defense, couro batido'}
 NM = {
     'vengeance': "Relentless Avenger, Abjure Enemy, Misty Step.",
-    'devotion': "Aura of Devotion, Purity of Spirit, Turn the Unholy, Protection from Evil, Sanctuary.",
+    'devotion': "Purity of Spirit, Turn the Unholy, Protection from Evil, Sanctuary.",
     'conquest': "Guided Strike, Bestow Curse, Scornful Rebuke; retorno do Armor of Agathys.",
-    'ancients': "Aura of Warding (resistência a dano de magia), Nature's Wrath, Turn the Faithless, Moonbeam, Misty Step; "
+    'ancients': "Nature's Wrath, Turn the Faithless, Moonbeam, Misty Step; "
                 "Improved Divine Smite sem uso à distância; Harness Divine Power (opcional) não usado na régua.",
     'crown': "Divine Allegiance, Champion Challenge, Turn the Tide, Compelled Duel, Warding Bond, Command.",
     'glory': "Peerless Athlete (agarrar/empurrar), Aura of Alacrity, Protection from Energy.",
@@ -148,7 +148,7 @@ NM_FEAT = {
     'Telekinetic': " Telekinetic: +1 Car; empurrão na ação bônus não modelado.",
     'Skill Expert': " Skill Expert: só o +1 de For conta.",
 }
-COMUM = " Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico, upcast de Bless."
+COMUM = " Comum: Find Steed, curas fora de luta, smite guardado para o crítico, upcast de Bless."
 
 if __name__ == '__main__':
     for sub, (pos, arma, feats) in SUBS.items():

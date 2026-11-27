@@ -360,17 +360,110 @@
      ]
     }
    ]
+  },
+  {
+   "id": "bless+smite",
+   "hipotese": "Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 6,
+      "dano": "1d10+3+0.8",
+      "vantagem": 0.0,
+      "nota": "espadão (GWF)"
+     },
+     {
+      "n": 0.5,
+      "bonus": 6,
+      "dano": "1d10+3+0.8",
+      "nota": "ataque de oportunidade (reação em 50%)"
+     },
+     {
+      "n": 0.9,
+      "bonus": 6,
+      "dano": "1d4+3+0.5",
+      "nota": "Polearm Master (ação bônus)",
+      "vantagem": 0.0
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 2,
+      "dano": "2d8",
+      "nota": "Divine Smite (1º) ×2"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 3
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "modelo": "aura_saves",
+      "bonus": 2
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 8.75
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless, smite-1; prioritário: smite-1, smite-2. Sobra: 1 canal.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: bless; prioritário: bless+smite, smite-2. Sobra: 1 canal.",
    "combates": [
-    "smite-1",
-    "smite-1",
     "bless",
-    "smite-2"
+    "smite-2",
+    "bless",
+    "bless+smite"
    ]
   },
   "combate_unico": {
@@ -383,7 +476,7 @@
  },
  "descricao": {
   "resumo": "Chassi do Oath of Watchers: régua comum do Paladin + features do juramento (striker). Feat da subclasse = 1º feat não racial da build do RPGBot.",
-  "nao_modelado": "Watcher's Will (vantagem em saves mentais), Aura of the Sentinel (iniciativa), Abjure the Extraplanar, Moonbeam, Counterspell. Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico, upcast de Bless.",
+  "nao_modelado": "Watcher's Will (vantagem em saves mentais), Aura of the Sentinel (iniciativa), Abjure the Extraplanar, Moonbeam, Counterspell. Comum: Find Steed, curas fora de luta, smite guardado para o crítico, upcast de Bless.",
   "progressao": "atributos {'for': 19, 'des': 10, 'con': 13, 'int': 8, 'sab': 12, 'car': 15}; CA 18",
   "pacote": "Piloto A3 (24/11): chassi sem feat + Polearm Master (calibracao/pacotes.py); modificador -1 no atributo principal pelos ASIs trocados; arma 1d10 + ataque bônus 1d4."
  },

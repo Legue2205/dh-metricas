@@ -243,6 +243,85 @@
     ]
    },
    {
+    "id": "bless+smite",
+    "hipotese": "Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4",
+    "dano": {
+     "ataques": [
+      {
+       "n": 0.75,
+       "bonus": 4,
+       "dano": "2d6+2",
+       "vantagem": 0.0,
+       "nota": "espadão"
+      },
+      {
+       "n": 0.5,
+       "bonus": 4,
+       "dano": "2d6+2",
+       "nota": "ataque de oportunidade (reação em 50%)"
+      }
+     ],
+     "por_luta": [
+      {
+       "usos": 2,
+       "dano": "2d8",
+       "nota": "Divine Smite (1º) ×2"
+      }
+     ]
+    },
+    "defesa": {},
+    "controle": {
+     "atencao": {
+      "papel": "tank",
+      "soft": 0.15,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "saves": {},
+    "gasta": {
+     "espacos": {
+      "1": 3
+     }
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+       "lado": "def",
+       "modelo": "cura_na_luta",
+       "alcance": "toque",
+       "acao": "acao",
+       "usos_luta": 1,
+       "pv": 3.75
+      },
+      {
+       "nome": "Bless",
+       "lado": "of",
+       "modelo": "bonus_continuo",
+       "alvos": 3,
+       "bonus": 2.5,
+       "concentracao": "bless"
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "ataque de oportunidade",
+      "fracao": 0.5,
+      "eixos": [
+       "dano",
+       "controle"
+      ]
+     }
+    ]
+   },
+   {
     "id": "arma-sagrada",
     "hipotese": "Sacred Weapon (ação no round 1: +Car no acerto a luta toda)",
     "dano": {
@@ -384,7 +463,7 @@
   "descricao": {
    "resumo": "A build Curseedge sem o dip de Sorcerer: Sacred Weapon, espadão e GWM no 8; sem Booming Blade nem Shield.",
    "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis adiantados, atributos e feats remendados); a build original continua como referência.",
-   "nao_modelado": "Metamagic Adept (sem magia de Sorcerer para acelerar), Blessed Warrior (truques), Aura of Devotion, Astral Elf (Astral Trance etc.). Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico."
+   "nao_modelado": "Metamagic Adept (sem magia de Sorcerer para acelerar), Blessed Warrior (truques), Astral Elf (Astral Trance etc.). Comum: Find Steed, curas fora de luta, smite guardado para o crítico."
   }
  },
  "niveis": {
@@ -697,6 +776,85 @@
      ]
     },
     {
+     "id": "bless+smite",
+     "hipotese": "Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 5,
+        "dano": "2d6+2",
+        "vantagem": 0.0,
+        "nota": "espadão"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "2d6+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 3
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 6.25
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
      "id": "arma-sagrada",
      "hipotese": "Sacred Weapon (ação no round 1: +Car no acerto a luta toda)",
      "dano": {
@@ -847,6 +1005,9 @@
       "car": 9
      },
      "conjurador": true,
+     "imune": [
+      "encanto"
+     ],
      "ataques": 2
     }
    },
@@ -1162,6 +1323,91 @@
      ]
     },
     {
+     "id": "bless+smite",
+     "hipotese": "Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 5,
+        "dano": "2d6+2",
+        "vantagem": 0.0,
+        "nota": "espadão"
+       },
+       {
+        "n": 0.5,
+        "bonus": 5,
+        "dano": "2d6+2",
+        "nota": "ataque de oportunidade (reação em 50%)"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 3
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 8.75
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
      "id": "arma-sagrada",
      "hipotese": "Sacred Weapon (ação no round 1: +Car no acerto a luta toda)",
      "dano": {
@@ -1324,6 +1570,9 @@
       "car": 10
      },
      "conjurador": true,
+     "imune": [
+      "encanto"
+     ],
      "ataques": 2
     }
    },
@@ -1757,6 +2006,99 @@
      ]
     },
     {
+     "id": "bless+smite",
+     "hipotese": "Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "2d6+2",
+        "vantagem": 0.0,
+        "nota": "espadão",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "2d6+2",
+        "nota": "ataque de oportunidade (reação em 50%)",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 3
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 11.25
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
      "id": "arma-sagrada",
      "hipotese": "Sacred Weapon (ação no round 1: +Car no acerto a luta toda)",
      "dano": {
@@ -1935,6 +2277,10 @@
       "car": 10
      },
      "conjurador": true,
+     "imune": [
+      "encanto",
+      "medo"
+     ],
      "ataques": 2
     }
    },
@@ -2327,6 +2673,99 @@
      "gasta": {
       "espacos": {
        "1": 1
+      }
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Aura of Protection",
+        "lado": "def",
+        "modelo": "aura_saves",
+        "bonus": 3
+       },
+       {
+        "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "toque",
+        "acao": "acao",
+        "usos_luta": 1,
+        "pv": 13.75
+       },
+       {
+        "nome": "Bless",
+        "lado": "of",
+        "modelo": "bonus_continuo",
+        "alvos": 3,
+        "bonus": 2.5,
+        "concentracao": "bless"
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "ataque de oportunidade",
+       "fracao": 0.5,
+       "eixos": [
+        "dano",
+        "controle"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bless+smite",
+     "hipotese": "Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1.5,
+        "bonus": 6,
+        "dano": "2d6+2+1d8",
+        "vantagem": 0.0,
+        "nota": "espadão",
+        "poder": [
+         -5,
+         10
+        ]
+       },
+       {
+        "n": 0.5,
+        "bonus": 6,
+        "dano": "2d6+2+1d8",
+        "nota": "ataque de oportunidade (reação em 50%)",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos": 2,
+        "dano": "2d8",
+        "nota": "Divine Smite (1º) ×2"
+       }
+      ]
+     },
+     "defesa": {},
+     "controle": {
+      "atencao": {
+       "papel": "tank",
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "saves": {},
+     "gasta": {
+      "espacos": {
+       "1": 3
       }
      },
      "suporte": {

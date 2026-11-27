@@ -30,10 +30,25 @@ def sup_base(pal, cha):
     return s
 
 
-def saves_pal(L, m, pal, cha, profs=('sab', 'car'), **kw):
+# Sprint D (27/11): auras do Paladin que mexem nos próprios saves (defesa mental). Imunidade = campo genérico "imune";
+# Aura of Warding = resistência ao dano de magia (todo dano do repertório de saves é de magia).
+DANO_MAGIA = ["fogo", "frio", "eletrico", "trovao", "acido", "radiante", "necrotico", "forca", "veneno", "psiquico", "fisico"]
+
+
+def auras_saves(pal, sub=None):
+    """Campos de saves das auras do Paladin no nível de paladino `pal` (sub = juramento)."""
+    imune, out = [], {}
+    if sub == 'devotion' and pal >= 7: imune.append('encanto')      # Aura of Devotion
+    if pal >= 10: imune.append('medo')                               # Aura of Courage
+    if imune: out['imune'] = imune
+    if sub == 'ancients' and pal >= 7: out['res'] = list(DANO_MAGIA)  # Aura of Warding
+    return out
+
+
+def saves_pal(L, m, pal, cha, profs=('sab', 'car'), sub=None, **kw):
     s = sv(L, m, profs)
     if pal >= 6: s = {kk: v + max(cha, 1) for kk, v in s.items()}       # Aura of Protection em si mesmo
-    return dict(sv=s, conjurador=True, **kw)
+    return dict(sv=s, conjurador=True, **auras_saves(pal, sub), **kw)
 
 
 def BLESS(): return {"nome": "Bless", "lado": "of", "modelo": "bonus_continuo", "alvos": 3, "bonus": 2.5, "concentracao": "bless"}
@@ -110,7 +125,7 @@ def vengeance(L):
                                           for i, a in enumerate(atk()['ataques'])]},
                         defesa={"ca": ca + 2}, gasta={"espacos": {"3": 1}}))
     esp = esp_pal(pal)
-    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, profs, ataques=n + 1)),
+    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, profs, sub='vengeance', ataques=n + 1)),
                  esp, cha, extras=ext, outros=canal(pal, P))
     fat['_texto'] = {3: "Variant Human (Polearm Master); lança + escudo, Dueling; cota de malha + escudo (18).",
                      5: "For 18 (4); Extra Attack; Hold Person/Misty Step.", 7: "Placas (20); Relentless Avenger.",
@@ -144,7 +159,7 @@ def devotion(L):
     if pontos: out["feiticaria"] = {"qtd": pontos, "volta": "longo"}
     esp = esp_pal(pal, extra_cl=so)
     pv = hp([10] * pal + [6] * so, con) if so == 0 else hp([10] * 3 + [6] * 2 + [10] * (pal - 3), con)
-    fat = montar(L, pal, atk, dict(ca=ca, pv=pv, saves=saves_pal(L, m, pal, cha, ataques=n)), esp, cha,
+    fat = montar(L, pal, atk, dict(ca=ca, pv=pv, saves=saves_pal(L, m, pal, cha, sub='devotion', ataques=n)), esp, cha,
                  extras=ext, outros=out)
     fat['_texto'] = {3: "Paladin 3: Sacred Weapon; espadão, Blessed Warrior; cota de malha (16).",
                      5: "Paladin 3 / Sorcerer 2 (Wild Magic): Booming Blade, Shield, Silvery Barbs, 2 pontos de feitiçaria.",
@@ -190,7 +205,7 @@ def conquest(L):
                                                 "efeito": "cond_amedrontado", "cd": cd, "bonus": [b] * n, "usos": 4}])))
     esp = esp_pal(pal, extra_cl=0) if not wl else dict(FULL[pal // 2])
     pv = hp([10] * pal + [8] * wl, con)
-    fat = montar(L, pal, atk, dict(ca=ca, pv=pv, saves=saves_pal(L, m, pal, cha, ataques=n, **({"adv": ["Des"]} if False else {}))),
+    fat = montar(L, pal, atk, dict(ca=ca, pv=pv, saves=saves_pal(L, m, pal, cha, sub='conquest', ataques=n, **({"adv": ["Des"]} if False else {}))),
                  esp, cha, extras=ext, outros=out)
     fat['_texto'] = {3: "Variant Human (Shield Master); espada longa + escudo, Dueling; cota de malha + escudo (18).",
                      5: "For 18 (4); Extra Attack; Spiritual Weapon/Hold Person.", 7: "Placas (20); Aura of Conquest.",
@@ -216,7 +231,7 @@ def ancients(L):
                 dano=atk(), gasta={"espacos": {"1": 1}},
                 controle=ctrl('atirador', [{"tipo": "alvo_unico", "nome": "Ensnaring Strike", "cd": cd, "slots": [1],
                                             "magias": ["ensnaring_strike"], "modo": "melhor"}]))]
-    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, ataques=n)),
+    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, sub='ancients', ataques=n)),
                  esp, cha, papel='atirador', smite=False, extras=ext)
     fat['_texto'] = {3: "Giff; besta pesada, Protection; couro batido (15); Harness Divine Power 1/dia.",
                      5: "Fighting Initiate (Archery) (4); Extra Attack; mosquete.", 7: "Aura of Warding; Harness 2/dia.",
@@ -242,7 +257,7 @@ def crown(L):
         ext[-1]['dano']['com_save'] = ext[-1]['dano']['com_save'] + [{"n": 0.75, "cd": cd, "save": "Sab", "dano": "3d8",
                                                                      "meio": True, "nota": "Spirit Guardians no alvo"}]
     esp = esp_pal(pal)
-    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, profs, ataques=1)),
+    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, profs, sub='crown', ataques=1)),
                  esp, cha, smite=False, extras=ext, outros=canal(pal, P))
     for l in fat['linhas']:
         if l['id'] != 'guardioes': l['area'] = [wor]
@@ -272,7 +287,7 @@ def glory(L):
         ext.append(dict(id='haste', hip='Haste em si (3º) no round 1 (ação): +1 ataque e +2 de CA nos rounds 2–4',
                         dano=atk(frac=0.75, extra_n=0.75), defesa={"ca": ca + 2}, gasta={"espacos": {"3": 1}}))
     esp = esp_pal(pal)
-    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, ('sab', 'car', 'con'), ataques=n)),
+    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, ('sab', 'car', 'con'), sub='glory', ataques=n)),
                  esp, cha, extras=ext, outros=canal(pal, P))
     fat['_texto'] = {3: "Custom Lineage (Resilient Con); espada longa + escudo, Dueling; cota de malha + escudo (18).",
                      5: "For 18 / Car 16 (4); Extra Attack.", 7: "Placas (20); Aura of Alacrity.",
@@ -302,7 +317,7 @@ def redemption(L):
                         dano=atk(frac=0.75), gasta={"espacos": {"3": 1}},
                         controle=ctrl('tank', [{"tipo": "area", "nome": "Hypnotic Pattern", "magia": "hypnotic_pattern", "cd": cd}])))
     esp = esp_pal(pal)
-    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, ataques=1 if L < 5 else 2)),
+    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, sub='redemption', ataques=1 if L < 5 else 2)),
                  esp, cha, extras=ext, outros=canal(pal, P), smite=L >= 5)
     for l in fat['linhas']: l['area'] = [wor]
     fat['_texto'] = {3: "Duergar; Blessed Warrior (Word of Radiance); espada longa + escudo; cota de malha + escudo (18).",
@@ -322,7 +337,7 @@ def watchers(L):
                             A(1.0, b + bonus, '1d4', s, '+0.5' + ex + de, vantagem=vant, nota="outra lâmina (ação bônus)"),
                             A(0.5, b, '2d4', s, '+1.0' + ex, nota="ataque de oportunidade (reação em 50%)")]}
     esp = esp_pal(pal)
-    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, ataques=n + 1)),
+    fat = montar(L, pal, atk, dict(ca=ca, pv=hp([10] * L, con), saves=saves_pal(L, m, pal, cha, sub='watchers', ataques=n + 1)),
                  esp, cha, outros=canal(pal, P))
     fat['_texto'] = {3: "Harengon; cimitarra de duas lâminas, Great Weapon Fighting; cota de malha (16).",
                      5: "Skill Expert (For 18) (4); Extra Attack.", 7: "Placas (18); Aura of the Sentinel.",
@@ -330,7 +345,7 @@ def watchers(L):
     return fat
 
 
-DESC_COMUM = "Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico."
+DESC_COMUM = "Comum: Find Steed, curas fora de luta, smite guardado para o crítico."
 B = [
     ('vengeance', 'oath-of-vengeance', 'Oath of Vengeance Paladin (RPGBot: Deep Striker)',
      'Paladin (Vengeance), Variant Human, Polearm Master 1, For 18 4, Resilient Con 8; lança + escudo, Dueling', vengeance,
@@ -341,7 +356,7 @@ B = [
      'Paladin 3 / Sorcerer 2 (Wild Magic) / Paladin, Astral Elf, Metamagic Adept 6, GWM 10; espadão, Blessed Warrior', devotion,
      {"resumo": "Paladino de Sacred Weapon (+Car no acerto) com dip de Sorcerer para Booming Blade acelerado.",
       "estrategia": "Sacred Weapon no round 1 com Booming Blade acelerado; GWM a partir do 10.",
-      "nao_modelado": "Shield, Silvery Barbs, Tides of Chaos (vantagem), Absorb Elements, Aura of Devotion, efeito secundário do Booming Blade. " + DESC_COMUM}),
+      "nao_modelado": "Shield, Silvery Barbs, Tides of Chaos (vantagem), Absorb Elements, efeito secundário do Booming Blade. " + DESC_COMUM}),
     ('conquest', 'oath-of-conquest', 'Oath of Conquest Paladin (RPGBot: Variant Human Paladin)',
      'Paladin 8 / Warlock 2 (Undead), Variant Human, Shield Master 1, For 18 4, Car 18 8; espada longa + escudo, Dueling', conquest,
      {"resumo": "Tanque do medo: Conquering Presence, Form of Dread e Aura of Conquest; Shield Master para derrubar.",
@@ -351,7 +366,7 @@ B = [
      'Paladin (Ancients), Giff, Fighting Initiate Archery 4, Sharpshooter 8; besta pesada → mosquete, Protection', ancients,
      {"resumo": "Paladino atirador: Ensnaring Strike à distância e auras para a retaguarda.",
       "estrategia": "Ensnaring Strike no primeiro acerto; Harness Divine Power converte o Channel em espaço.",
-      "nao_modelado": "Protection (estilo), Aura of Warding (resistência a magia), Hippo Build/empurrão, Misty Step, Branding Smite, recarga do mosquete. " + DESC_COMUM}),
+      "nao_modelado": "Protection (estilo), Hippo Build/empurrão, Misty Step, Branding Smite, recarga do mosquete. " + DESC_COMUM}),
     ('crown', 'oath-of-the-crown', 'Oath of the Crown Paladin (RPGBot: The Bodyguard)',
      'Paladin (Crown), Orc, Con/Car 4, Resilient Con 8; truques com Blessed Warrior', crown,
      {"resumo": "Guarda-costas: Toll the Dead e Word of Radiance, Divine Allegiance e Champion Challenge.",

@@ -13,6 +13,10 @@
     "car": 10
    },
    "conjurador": true,
+   "imune": [
+    "encanto",
+    "medo"
+   ],
    "ataques": 2
   }
  },
@@ -411,6 +415,111 @@
    ]
   },
   {
+   "id": "bless+smite",
+   "hipotese": "Bless no round 1 (ação) + 2 Divine Smites de 1º nos rounds 2–4",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1.5,
+      "bonus": 7,
+      "dano": "1d10+3+0.8+1d8",
+      "vantagem": 0.0,
+      "nota": "espadão (GWF)",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.5,
+      "bonus": 7,
+      "dano": "1d10+3+0.8+1d8",
+      "nota": "ataque de oportunidade (reação em 50%)",
+      "poder": [
+       -5,
+       10
+      ]
+     },
+     {
+      "n": 0.9,
+      "bonus": 7,
+      "dano": "1d4+3+0.5+1d8",
+      "nota": "Polearm Master (ação bônus)",
+      "poder": [
+       -5,
+       10
+      ],
+      "vantagem": 0.0
+     }
+    ],
+    "por_luta": [
+     {
+      "usos": 2,
+      "dano": "2d8",
+      "nota": "Divine Smite (1º) ×2"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": true,
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "espacos": {
+     "1": 3
+    }
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Aura of Protection",
+      "lado": "def",
+      "modelo": "aura_saves",
+      "bonus": 3
+     },
+     {
+      "nome": "Lay on Hands (levanta um caído; pool ÷ 4 lutas)",
+      "lado": "def",
+      "modelo": "cura_na_luta",
+      "alcance": "toque",
+      "acao": "acao",
+      "usos_luta": 1,
+      "pv": 13.75
+     },
+     {
+      "nome": "Bless",
+      "lado": "of",
+      "modelo": "bonus_continuo",
+      "alvos": 3,
+      "bonus": 2.5,
+      "concentracao": "bless"
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "ataque de oportunidade",
+     "fracao": 0.5,
+     "eixos": [
+      "dano",
+      "controle"
+     ]
+    }
+   ]
+  },
+  {
    "id": "arma-sagrada",
    "hipotese": "Sacred Weapon (ação no round 1: +Car no acerto a luta toda)",
    "dano": {
@@ -705,7 +814,7 @@
  },
  "descricao": {
   "resumo": "Chassi do Oath of Devotion: régua comum do Paladin + features do juramento (striker). Feat da subclasse = 1º feat não racial da build do RPGBot.",
-  "nao_modelado": "Aura of Devotion, Purity of Spirit, Turn the Unholy, Protection from Evil, Sanctuary. Comum: Aura of Courage, Find Steed, curas fora de luta, smite guardado para o crítico, upcast de Bless.",
+  "nao_modelado": "Purity of Spirit, Turn the Unholy, Protection from Evil, Sanctuary. Comum: Find Steed, curas fora de luta, smite guardado para o crítico, upcast de Bless.",
   "progressao": "atributos {'for': 20, 'des': 10, 'con': 13, 'int': 8, 'sab': 12, 'car': 16}; CA 18",
   "pacote": "Piloto A3 (24/11): chassi sem feat + Polearm Master+Great Weapon Master (calibracao/pacotes.py); modificador -2 no atributo principal pelos ASIs trocados; arma 1d10 + ataque bônus 1d4."
  },

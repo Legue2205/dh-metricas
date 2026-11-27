@@ -1034,3 +1034,11 @@ Counterspell genérico e lotes do G1b.
   - Fiend e Astral Self: sem número de DPR.
   Leitura: em 23 casos o motor nunca errou a conta; toda diferença acima do arredondamento veio da fonte (coluna
   deslocada, acerto sem dano, arredondamento), salvo o Hexblade (±1,6%, causa aberta).
+
+## 27/11 tarde — raio-x das builds do RPGBot (painel)
+- `ferramentas/raiox_rpgbot.py` gera o JSON do painel "Raio-x das builds do RPGBot" (110 builds fora do holdout × nv
+  3–11 × 7 eixos, pistas, nota por cor, chassi da mesma subclasse, deltas entre níveis).
+- Achados: 36 passagens de nível com queda > 1 nível-eq (24 no controle: Warlocks caem no 9, Valor no 11; 7 no
+  corpo; 4 no dano: Wizards no 9); τ nota RPGBot × média dos 6 eixos = 0,20 / 0,17 agrupado (referência do G4);
+  build do RPGBot − chassi: corpo +1,3/+1,5 e defesa +0,7/+0,6 em média, controle e área −0,6/−1,2 (o chassi é
+  mais caster-controlador que a build de exemplo).

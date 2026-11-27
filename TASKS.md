@@ -995,3 +995,9 @@ valor por classe, pares discordantes e o agrupado).
   de Magical Secrets; Creation = riders "por cima" do BI e um pet. A pista atual (Lore/Eloquence alto, Glamour/
   Creation médio) não sai do texto. Proposta (aguarda ok, é revisão pós-resultado): Glamour alto · Eloquence alto ·
   Lore médio-alto · Creation médio.
+
+### 27/11 manhã — medição oficial do CI (b17ae4b, runs de 38a311f e 6ded7df verdes)
+nv7 / nv11 sem holdout: dano 0,36 / 0,38 · controle 0,66 / 0,61 · defesa física 0,60 / 0,58 · suporte 0,38 / 0,37 ·
+área agr. 0,52 / 0,58 · **corpo agr. 0,19 / 0,21** · G1b 4/4 iguais. Idêntica à medição local.
+Aguardando o usuário: ok das listas do G3 (+ defm), e o "vai" para variantes de escolha de build (Lore, Totem Lobo),
+Counterspell genérico e lotes do G1b.

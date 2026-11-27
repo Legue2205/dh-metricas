@@ -151,7 +151,7 @@ def _em_paralelo(arquivos, modo, a):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(prog='dh', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua', 'site', 'tatico', 'calibrar', 'expandir', 'plano-auto', 'premissas', 'premissa', 'comparar'])
+    ap.add_argument('comando', choices=['validar', 'rapido', 'completo', 'linhas', 'painel', 'regua', 'site', 'tatico', 'calibrar', 'expandir', 'plano-auto', 'premissas', 'premissa', 'comparar', 'valor'])
     ap.add_argument('alvos', nargs='*')
     ap.add_argument('--forcar', action='store_true')
     ap.add_argument('--eixo', action='append')
@@ -238,6 +238,23 @@ def main(argv=None):
         if a.comando == 'premissas' and not a.md:
             for n, v in premissas._dados().items():
                 if not n.startswith('_'): print(f"{n:45s} {str(v['valor']):>6s}  {len(uso.get(n, [])):3d} builds  {v.get('descricao', '')[:70]}")
+        return 0
+
+    if a.comando == 'valor':   # P3 v0 (27/11): valor total do dia em dano equivalente
+        import pathlib
+        from . import valor as V
+        vs = []
+        for f in arquivos:
+            bid = json.load(open(f, encoding='utf-8')).get('id') or pathlib.Path(f).stem
+            v = V.valor_id(bid)
+            if v is None: print(f'SEM RESULTADO  {f} (rode dh completo antes)'); continue
+            s = V.situar(v, V.referencia(v['nivel'])) if not bid.startswith('chassi-') else None
+            if s: v['situacao'] = s
+            vs.append(v)
+            if not a.json:
+                print(V.texto(v))
+                if s: print(f"   percentil {s['percentil']} entre {s['n']} chassis do nível (mediana {s['mediana']:.0f}); valor parecido com: {', '.join(s['parecidos'])}")
+        if a.json: print(json.dumps(vs, ensure_ascii=False, indent=1))
         return 0
 
     if a.comando == 'comparar':

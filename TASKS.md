@@ -1042,3 +1042,18 @@ Counterspell genérico e lotes do G1b.
   corpo; 4 no dano: Wizards no 9); τ nota RPGBot × média dos 6 eixos = 0,20 / 0,17 agrupado (referência do G4);
   build do RPGBot − chassi: corpo +1,3/+1,5 e defesa +0,7/+0,6 em média, controle e área −0,6/−1,2 (o chassi é
   mais caster-controlador que a build de exemplo).
+
+## 27/11 noite — diagnóstico do raio-x, sprint paralela, P3 v0
+- `DIAGNOSTICO-RAIOX.md`: as 36 quedas caso a caso (29 trocas de plano com a melhor linha intacta — o pêndulo
+  invocação ↔ controle —, 6 regressões reais, 1 no mesmo plano), outras divergências e o ranking de 9 problemas.
+- Sprint paralela em 4 clones (branches `sprint/a-plano-corpo`, `sprint/b-dano`, `sprint/c-mecanicas`,
+  `sprint/d-regressoes-defm`), cada um com relatório `sprint/<pacote>.md`; o merge e a medição conjunta são do
+  Claude principal.
+- **P3 v0 — `dh/valor.py` + `python -m dh valor`:** valor do dia em DE (soma do DE da linha de cada luta do plano,
+  com peso), parcelas, luta única, percentil entre os chassis do nível e vizinhos. Teste em `tests/test_valor.py`.
+- **Primeira medição do G4** (`calibracao/comparar_global.py`, chassi sem feat, sem holdout): τ dentro da classe
+  **0,32 / 0,21** (alvo 0,40) contra a média dos eixos 0,29 / 0,12 e só dano −0,05 / −0,03; agrupado 0,01 / 0,03.
+  O agrupado baixo é esperado: a nota por cor do RPGBot é relativa dentro da classe (o gate agrupado ≥ 0,30 talvez
+  não faça sentido — levar ao usuário). Melhores: Wizard 0,64, Bard 0,68 (nv7), Paladin 0,47; piores: Barbarian,
+  Warlock, Druid perto de 0.
+- Fluxo de NPC: `prompts/npc-rapido.md`.

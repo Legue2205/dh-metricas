@@ -442,6 +442,57 @@
     "herda": "principal"
    },
    {
+    "id": "punho-barato",
+    "hipotese": "Path to the Grave e Inflict Wounds (3º) no round seguinte",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.5,
+       "cd": 15,
+       "save": "Sab",
+       "dano": "2d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ],
+     "ataques": [
+      {
+       "n": 0.25,
+       "bonus": 7,
+       "dano": "10d10",
+       "nota": "Inflict Wounds (3º) no alvo vulnerável (Path to the Grave)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": true,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "gasta": {
+     "canal": 1,
+     "espacos": {
+      "3": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal"
+   },
+   {
     "id": "bless+arma",
     "dano": {
      "com_save": [
@@ -545,6 +596,64 @@
      "canal": 1,
      "espacos": {
       "4": 1,
+      "2": 1,
+      "1": 0.5
+     }
+    },
+    "herda": "principal"
+   },
+   {
+    "id": "punho-barato+arma",
+    "hipotese": "Path to the Grave e Inflict Wounds (3º) no round seguinte + Spiritual Weapon (ação bônus, do round 2 em diante)",
+    "dano": {
+     "com_save": [
+      {
+       "n": 0.5,
+       "cd": 15,
+       "save": "Sab",
+       "dano": "2d12",
+       "meio": false,
+       "nota": "Toll the Dead (alvo ferido)"
+      }
+     ],
+     "ataques": [
+      {
+       "n": 0.25,
+       "bonus": 7,
+       "dano": "10d10",
+       "nota": "Inflict Wounds (3º) no alvo vulnerável (Path to the Grave)"
+      },
+      {
+       "n": 0.75,
+       "bonus": 7,
+       "dano": "1d8+4",
+       "nota": "Spiritual Weapon (2º)"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "conjurador",
+      "front": true,
+      "acc_m": [
+       0.9,
+       0.95,
+       1.0
+      ],
+      "conc": true,
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "gasta": {
+     "canal": 1,
+     "espacos": {
+      "3": 1,
       "2": 1,
       "1": 0.5
      }
@@ -999,6 +1108,58 @@
      "herda": "principal"
     },
     {
+     "id": "punho-barato",
+     "hipotese": "Path to the Grave e Inflict Wounds (5º) no round seguinte",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.5,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+5",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.25,
+        "bonus": 9,
+        "dano": "14d10",
+        "nota": "Inflict Wounds (5º) no alvo vulnerável (Path to the Grave)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": true,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "5": 1,
+       "1": 0.5,
+       "3": null
+      }
+     },
+     "herda": "principal"
+    },
+    {
      "id": "bless+arma",
      "dano": {
       "com_save": [
@@ -1105,6 +1266,65 @@
        "2": 1,
        "1": 0.5,
        "4": null
+      }
+     },
+     "herda": "principal"
+    },
+    {
+     "id": "punho-barato+arma",
+     "hipotese": "Path to the Grave e Inflict Wounds (5º) no round seguinte + Spiritual Weapon (ação bônus, do round 2 em diante)",
+     "dano": {
+      "com_save": [
+       {
+        "n": 0.5,
+        "cd": 17,
+        "save": "Sab",
+        "dano": "3d12+5",
+        "meio": false,
+        "nota": "Toll the Dead (alvo ferido)"
+       }
+      ],
+      "ataques": [
+       {
+        "n": 0.25,
+        "bonus": 9,
+        "dano": "14d10",
+        "nota": "Inflict Wounds (5º) no alvo vulnerável (Path to the Grave)"
+       },
+       {
+        "n": 0.75,
+        "bonus": 9,
+        "dano": "1d8+5",
+        "nota": "Spiritual Weapon (2º)"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": true,
+       "acc_m": [
+        0.9,
+        0.95,
+        1.0
+       ],
+       "conc": true,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "gasta": {
+      "canal": 1,
+      "espacos": {
+       "5": 1,
+       "2": 1,
+       "1": 0.5,
+       "3": null
       }
      },
      "herda": "principal"

@@ -158,6 +158,323 @@
    }
   },
   {
+   "id": "cac",
+   "hipotese": "sem ki: ataque + golpe desarmado na ação bônus (Kensei corpo a corpo: lança como arma kensei)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {}
+  },
+  {
+   "id": "cac-meia-rajada",
+   "hipotese": "Flurry of Blows em 2 dos 4 rounds (2 ki) (Kensei corpo a corpo: lança como arma kensei)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 1.5,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 2
+   }
+  },
+  {
+   "id": "cac-rajada",
+   "hipotese": "Flurry of Blows todo round (4 ki) (Kensei corpo a corpo: lança como arma kensei)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "cac-atordoar",
+   "hipotese": "Flurry em 2 rounds + 2 tentativas de Stunning Strike (4 ki) (Kensei corpo a corpo: lança como arma kensei)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 1.5,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "condicao_no_acerto",
+      "nome": "Stunning Strike (ki)",
+      "efeito": "cond_atordoado_um_turno",
+      "cd": 14,
+      "bonus": [
+       8,
+       8,
+       8,
+       8
+      ],
+      "usos": 2
+     },
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "cac-mira",
+   "hipotese": "Flurry em 2 rounds + Focused Aim com 2 ki (4 ki) (Kensei corpo a corpo: lança como arma kensei)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 1.5,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
+   "id": "cac-rajada-mira",
+   "hipotese": "Flurry todo round + Focused Aim com 2 ki (6 ki) (Kensei corpo a corpo: lança como arma kensei)",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry of Blows)"
+     }
+    ],
+    "focused_aim": {
+     "ki": 2
+    }
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 6
+   }
+  },
+  {
+   "id": "cac-deft",
+   "hipotese": "Flurry em 2 rounds + Deft Strike em 2 acertos (4 ki), corpo a corpo",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "1d8+4"
+     },
+     {
+      "n": 1.5,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts / Flurry em 2 rounds)"
+     }
+    ],
+    "por_luta": [
+     {
+      "dano": "1d8",
+      "nota": "Deft Strike (1 ki, 1× por turno)",
+      "usos": 2
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   }
+  },
+  {
    "id": "afiar",
    "hipotese": "Sharpen the Blade (3 ki: +3 no acerto e no dano, 1 minuto = 1 luta) + arco longo com Kensei's Shot",
    "dano": {
@@ -193,31 +510,73 @@
    "gasta": {
     "ki": 3
    }
+  },
+  {
+   "id": "cac-afiar",
+   "hipotese": "Sharpen the Blade (3 ki) na lança kensei + golpe desarmado na ação bônus",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 11,
+      "dano": "1d8+7"
+     },
+     {
+      "n": 1,
+      "bonus": 8,
+      "dano": "1d8+4",
+      "nota": "ação bônus (Martial Arts; o +3 é só da arma kensei)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "front": false,
+     "acc_m": [
+      0.9,
+      0.95,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 3
+   }
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: deft; prioritário: deft. Sobra: 3 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: deft; prioritário: cac-rajada-mira. Sobra: 1 ki.",
    "combates": [
     "deft",
+    "cac-rajada-mira",
     "deft",
-    "deft",
-    "deft"
+    "cac-rajada-mira"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: deft. Sobra: 7 ki.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: cac-rajada-mira. Sobra: 5 ki.",
    "combates": [
-    "deft"
+    "cac-rajada-mira"
    ]
   }
  },
  "descricao": {
   "resumo": "Chassi do Monk Kensei atirador: arco longo com Kensei's Shot, Deft Strike e Sharpen the Blade.",
   "estrategia": "Régua comum do monge (lança + Martial Arts, Flurry, Stunning Strike, Focused Aim) + o que a tradição dá.",
-  "nao_modelado": "Flurry/Stunning Strike (exigem corpo a corpo: as linhas de ki do Kensei são Deft Strike e Focused Aim); Agile Parry; Deflect Missiles. Mobile (+10 pés, sem ataque de oportunidade de quem atacou): sem mecânica no motor, diferença zero de propósito. Deflect Missiles; Slow Fall; Patient Defense/Step of the Wind.",
+  "nao_modelado": "Agile Parry (+2 CA ao golpear desarmado na ação de ataque, nas linhas corpo a corpo); Deflect Missiles. Mobile (+10 pés, sem ataque de oportunidade de quem atacou): sem mecânica no motor, diferença zero de propósito. Deflect Missiles; Slow Fall; Patient Defense/Step of the Wind.",
   "progressao": "Path of the Kensei, Agile Parry, Kensei's Shot; One with the Blade (6); Sharpen the Blade (11). Atributos {'for': 12, 'des': 19, 'con': 13, 'int': 10, 'sab': 15, 'car': 8}."
  },
  "id": "chassi-monk-kensei-f-mobile-11",

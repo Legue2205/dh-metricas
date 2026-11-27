@@ -113,6 +113,12 @@ def fat(sub, L):
         def soco(n, s): return {"ataques": [{"n": n, "bonus": atk, "dano": f"{2 * (s + 2)}d10", "nota": f"Inflict Wounds ({s}º) no alvo vulnerável (Path to the Grave)"}]}
         extras.append(dict(id="punho", hipotese="Path to the Grave (ação) e Inflict Wounds no maior espaço no round seguinte",
                            dano=merge(cant(0.5), soco(0.25, top)), controle=front_ctl, gasta={"canal": 1, "espacos": {str(top): 1}}))
+        # Sprint B (27/11): o Path to the Grave vale com o Inflict Wounds em qualquer espaço; o 2º Channel Divinity do
+        # descanso curto usa o espaço logo abaixo do maior (como a "area-barata"), senão o plano só tem um pico no dia.
+        s2 = maior({k: v for k, v in esp.items() if int(k) < top and v})
+        extras.append(dict(id="punho-barato", hipotese=f"Path to the Grave e Inflict Wounds ({s2}º) no round seguinte",
+                           dano=merge(cant(0.5), soco(0.25, s2)), controle=json.loads(json.dumps(front_ctl)),
+                           gasta={"canal": 1, "espacos": {str(s2): 1}}))
         kw.update(reac=("Sentinel at Death's Door", "anula_critico", w / 4), cura_extra=1.5)
     elif sub == 'life':
         extras.append(dict(id="preservar", hipotese="Preserve Life na luta (Channel Divinity, ação) + truques", dano=cant(0.75),

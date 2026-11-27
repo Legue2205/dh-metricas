@@ -83,14 +83,14 @@ for L in C.NIV:
                  controle={"atencao": dict(AT(True, 'striker'), dpr="auto"), "fontes": [{"tipo": "ameaca", "nome": "Corpo (ameaça)"}]},
                  defesa=SH, reacao=RE, gasta={"bladesong": 1, "espacos": {"1": 1}}, area=[], invocacoes=[])
     hz = dict(canto, id="canto-haste", hipotese="Bladesong + Haste em si mesmo", corpo={"ca": song + 2},
-              dano={"ataques": mel + [{"n": 0.75, "bonus": ab, "dano": f"1d6+{dx}", "nota": "ataque do Haste"}]},
+              dano={"ataques": mel + [{"n": 0.75, "bonus": ab, "dano": f"1d6+{dx}", "nota": "ataque do Haste"}], "concentracao": "haste"},
               gasta={"bladesong": 1, "espacos": {"1": 1, "3": 1}}, plano="prioritaria")
     ex = [canto, hz]
     if L >= 11:
         t = [{"n": 2, "bonus": ab, "dano": f"1d6+{dx}+2d12", "vantagem": 1.0},
              {"n": 1, "bonus": ab, "dano": "1d6+2d12", "vantagem": 1.0, "nota": "mão inábil"}]
         ex.append(dict(canto, id="canto-tenser", hipotese="Bladesong + Tenser's Transformation (1/dia, sem magias)",
-                       dano={"ataques": t}, defesa={}, reacao=[], gasta={"bladesong": 1, "espacos": {"6": 1}}, plano="prioritaria"))
+                       dano={"ataques": t, "concentracao": "tensers_transformation"}, defesa={}, reacao=[], gasta={"bladesong": 1, "espacos": {"6": 1}}, plano="prioritaria"))
     f = monta(L, b, 'meia', extra=ex)
     f['recursos']['outros'] = {"bladesong": {"qtd": p, "volta": "longo"}}
     f['_texto'] += f" Bladesong {p}/dia (CA {song})."

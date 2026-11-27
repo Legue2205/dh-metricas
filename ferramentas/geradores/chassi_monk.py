@@ -241,6 +241,20 @@ def kensei(L, feat, pos):
     if L >= 11:
         ls.append(linha('afiar', f'Sharpen the Blade (3 ki: +3 no acerto e no dano, 1 minuto = 1 luta) + {arma}',
                         {"ataques": at(3)}, {}, controle=c, gasta={"ki": 3}))
+    # Sprint B (27/11): o Kensei escolhe uma arma kensei corpo a corpo e uma à distância (3º nível); nas lutas em que
+    # fica na frente, faz a régua comum do monge (lança + Martial Arts/Flurry/Stunning Strike) + Deft Strike. Antes o
+    # chassi só tinha o arco, e o plano não podia escolher o corpo a corpo que o RAW permite.
+    cac = base(k, 'skirmisher', sufixo=' (Kensei corpo a corpo: lança como arma kensei)')
+    for l in cac: l['id'] = 'cac' if l['id'] == 'principal' else 'cac-' + l['id']
+    dd = {"ataques": [A(n, b, '1d8', d), U(1.5, b, d, L, nota="ação bônus (Martial Arts / Flurry em 2 rounds)")],
+          "por_luta": [dict(deft, usos=2)]}
+    cac.append(linha('cac-deft', 'Flurry em 2 rounds + Deft Strike em 2 acertos (4 ki), corpo a corpo', dd, {},
+                     controle=ctrl('skirmisher'), gasta={"ki": 4}))
+    if L >= 11:
+        da = {"ataques": [A(n, b + 3, '1d8', d + 3), U(1, b, d, L, nota="ação bônus (Martial Arts; o +3 é só da arma kensei)")]}
+        cac.append(linha('cac-afiar', 'Sharpen the Blade (3 ki) na lança kensei + golpe desarmado na ação bônus', da, {},
+                         controle=ctrl('skirmisher'), gasta={"ki": 3}))
+    ls += cac
     return fim(k, "Path of the Kensei, Agile Parry, Kensei's Shot; One with the Blade (6)" +
                ("; Sharpen the Blade (11)." if L >= 11 else "."), ls)
 
@@ -263,7 +277,7 @@ SUBS = {   # sub: (função, posição, feat(s) do RPGBot, resumo, nao_modelado 
     'sun-soul': (sun, 'skirmisher', ['Gunner'], "Alma Solar: raios radiantes a 30 pés, Burning Hands na ação bônus e explosão grátis no 11.",
                  "Mosquete do Gunner (o feat só dá +1 Des aqui); upcast do Searing Sunburst; Sun Shield."),
     'kensei': (kensei, 'atirador', ['Crossbow Expert'], "Kensei atirador: arco longo com Kensei's Shot, Deft Strike e Sharpen the Blade.",
-               "Flurry/Stunning Strike (exigem corpo a corpo: as linhas de ki do Kensei são Deft Strike e Focused Aim); Agile Parry; Deflect Missiles."),
+               "Agile Parry (+2 CA ao golpear desarmado na ação de ataque, nas linhas corpo a corpo); Deflect Missiles."),
 }
 NM_FEAT = {'Mobile': "Mobile (+10 pés, sem ataque de oportunidade de quem atacou): sem mecânica no motor, diferença zero de propósito.",
            'Slasher': "Slasher (redução de deslocamento, desvantagem no crítico): só o +1 Des entra.",

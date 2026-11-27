@@ -1,6 +1,6 @@
 """Concentração genérica (Etapa C, 24/11): a magia de concentração de uma linha cai com o dano que a build recebe.
 
-Para cada linha com concentração (orcamento.concentracoes, ou controle.atencao.conc), fração média dos rounds em que a
+Para cada linha com concentração (_tem_conc: declarada, nome RAW, forma ou atencao.conc próprio da linha), fração média dos rounds em que a
 magia ainda está de pé numa luta de R rounds:   f = (1/R) · Σ_{r=1..R} s^(r−1),   s = exp(−acertos · (1 − p)),
   acertos = acertos recebidos por round (premissa concentracao.acertos_por_round, pela posição; "front" se a linha
             declara controle.atencao.front) × concentracao.foco_inimigo
@@ -28,9 +28,36 @@ POS = {'defensor': 'front', 'striker': 'front', 'skirmisher': 'meio', 'meia': 'm
        'retaguarda': 'tras'}
 
 
-def _tem_conc(l, magias):
-    from .orcamento import concentracoes
-    return bool(concentracoes(l, magias)) or bool(((l.get('controle') or {}).get('atencao') or {}).get('conc'))
+def _conc_no_dano(l):
+    """Sprint B (27/11): magias de concentração RAW (lista _concentracao_nomes do magias.json) citadas no nome/nota das
+    entradas de dano ("Eldritch Blast + Agonizing Blast + Hex", "Flaming Sphere (ação bônus)"). Peça a peça (separadas
+    por "+", ";" ou ","), sem o que vem entre parênteses; o nome tem de acabar ali ("Hex" não pega "Hexblade's Curse")."""
+    from .orcamento import _NOMES_CONC
+    nomes = [n.lower() for n in _NOMES_CONC()]
+    d = l.get('dano') if isinstance(l.get('dano'), dict) else {}
+    out = set()
+    for v in d.values():
+        for x in (v if isinstance(v, list) else []):
+            if not isinstance(x, dict): continue
+            for t in (x.get('nome', ''), x.get('nota', '')):
+                for p in re.split(r'\s*\+\s*|;\s*|,\s*', str(t)):
+                    p = re.sub(r'\s*\(.*', '', p).strip().lower()
+                    out |= {n for n in nomes if re.match(re.escape(n) + r"(?![a-z])", p)}
+    return out
+
+
+def _tem_conc(l, magias, principal=None):
+    """A linha mantém concentração? Declarada (orcamento.concentracoes), reconhecida pelo nome RAW (área, suporte,
+    invocação: orcamento.concentracao_por_nome; dano: _conc_no_dano), forma de Polymorph/Shapechange/Animal Shapes, ou
+    controle.atencao.conc declarado NA LINHA. Sprint B (27/11): o atencao.conc que a linha só repete da principal é a
+    postura da build (posição de conjurador que costuma concentrar, usada pela atenção dos inimigos), não prova de que
+    aquela linha concentra; antes ele derrubava o ganho de linhas sem concentração (Inflict Wounds, Wild Shape, Fireball)
+    e as magias RAW sem o campo "concentracao" (Spirit Guardians, Conjure/Summon, Hex) passavam sem ajuste."""
+    from .orcamento import concentracoes, concentracao_por_nome
+    if concentracoes(l, magias) or concentracao_por_nome(l, magias) or _conc_no_dano(l): return True
+    if FORMA.search(l.get('hipotese', '') + ' ' + l.get('id', '')): return True
+    at = lambda x: bool((((x or {}).get('controle') or {}).get('atencao') or {}).get('conc'))
+    return at(l) and not at(principal)
 
 
 def fator(b, l, R=None):
@@ -68,7 +95,7 @@ def ajustar(b, linhas):
     xb = L[principal['id']]
     for lid, x in L.items():
         l = por_id.get(lid)
-        if not l or lid == principal['id'] or not _tem_conc(l, campo.MAGIAS): continue
+        if not l or lid == principal['id'] or not _tem_conc(l, campo.MAGIAS, principal): continue
         info = fator(b, l)
         for eixo, campos in CAMPOS.items():
             d, db = x.get(eixo), xb.get(eixo)

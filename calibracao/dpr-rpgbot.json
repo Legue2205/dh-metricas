@@ -7,7 +7,15 @@
    "contexto-fundamental-math",
    "build-warlock-hexblade",
    "build-cleric-tempest (sem número de DPR)",
-   "build-monk-kensei"
+   "build-monk-kensei",
+   "build-ranger-gloom-stalker",
+   "build-wizard-evocation",
+   "build-warlock-fiend (sem DPR)",
+   "build-monk-astral-self (sem DPR)"
+  ],
+  "nao_comparaveis": [
+   "Gloom Stalker nv3–5: a fonte soma as médias de dano como se tudo acertasse (34, 55, 72), sem acerto nem crítico — não é DPR esperado.",
+   "Fiend: dano médio por acerto do imp × Eldritch Blast, sem chance de acerto."
   ]
  },
  "casos": [
@@ -382,6 +390,113 @@
     ]
    },
    "investigacao": "Diferenças pequenas e de sinal oposto (−0,8 sem GWM, +1,1 com GWM): não é um fator sistemático. Hipóteses testadas sem fechar os dois números: Eldritch Smite por ataque (dá 56,9), vantagem dupla em vez de tripla, Curse sem 19–20. A fonte descreve o cálculo só em prosa; fica registrado como \"pequena, causa não identificada\"."
+  },
+  {
+   "id": "gloom-pg-8-ss",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/ranger/subclasses/gloom-stalker/",
+   "descricao": "Gloom Stalker do exemplo (Bugbear MotM), nível 8, TURNO DE EMBOSCADA (round 1): 2 ataques + Dread Ambusher + CBE, com vantagem, SS sempre ligado",
+   "nivel": 8,
+   "ca": 16,
+   "dpr_rpgbot": 78.0,
+   "spec": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 3,
+      "dano": "4d6+13",
+      "vantagem": 1.0,
+      "nota": "mão-besta + Hunter's Mark + Surprise Attack do Bugbear (MotM)"
+     },
+     {
+      "n": 1,
+      "bonus": 3,
+      "dano": "4d6+1d8+13",
+      "vantagem": 1.0,
+      "nota": "ataque extra do Dread Ambusher (+1d8)"
+     }
+    ]
+   },
+   "explicacao": "A fonte dá o número arredondado para inteiro (78); o motor dá 77,9."
+  },
+  {
+   "id": "gloom-pg-8-des",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/ranger/subclasses/gloom-stalker/",
+   "descricao": "idem, sem Sharpshooter e com Des +4 no lugar do feat",
+   "nivel": 8,
+   "ca": 16,
+   "dpr_rpgbot": 72.0,
+   "spec": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 9,
+      "dano": "4d6+4",
+      "vantagem": 1.0,
+      "nota": "mão-besta + Hunter's Mark + Surprise Attack do Bugbear (MotM)"
+     },
+     {
+      "n": 1,
+      "bonus": 9,
+      "dano": "4d6+1d8+4",
+      "vantagem": 1.0,
+      "nota": "ataque extra do Dread Ambusher (+1d8)"
+     }
+    ]
+   },
+   "explicacao": "O 72 da fonte só fecha subindo o acerto (+1) sem subir o dano (+3): com acerto +9 e dano +3 o motor dá 71,9. Com Des +4 de verdade (acerto e dano) o motor dá 75,5 — provável omissão da fonte."
+  },
+  {
+   "id": "evoker-pg-6-toll-60",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/wizard/subclasses/evoker/",
+   "descricao": "Toll the Dead (2d12) com Potent Cantrip, 60% de falha no save",
+   "nivel": 6,
+   "ca": 15,
+   "dpr_rpgbot": 10.4,
+   "spec": {
+    "com_save": [
+     {
+      "dano": "2d12",
+      "cd": 12.9667,
+      "save": "Sab",
+      "meio": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "evoker-pg-6-toll-50",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/wizard/subclasses/evoker/",
+   "descricao": "idem, 50% de falha",
+   "nivel": 6,
+   "ca": 15,
+   "dpr_rpgbot": 9.75,
+   "spec": {
+    "com_save": [
+     {
+      "dano": "2d12",
+      "cd": 10.9667,
+      "save": "Sab",
+      "meio": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "evoker-pg-6-firebolt",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/wizard/subclasses/evoker/",
+   "descricao": "Fire Bolt (2d10) \"na matemática esperada\" (65% de acerto)",
+   "nivel": 6,
+   "ca": 15,
+   "dpr_rpgbot": 7.7,
+   "spec": {
+    "ataques": [
+     {
+      "bonus": 7,
+      "dano": "2d10"
+     }
+    ]
+   },
+   "nota": "A fonte usa os 65% do Fundamental Math; com o +6 real da build no 6 (Int 16) o motor dá 7,1."
   }
  ],
  "holdout": [

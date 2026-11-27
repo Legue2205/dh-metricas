@@ -1024,3 +1024,13 @@ Counterspell genérico e lotes do G1b.
   - Hexblade nv8 (alvo amaldiçoado, Elven Accuracy, Eldritch Smite no crítico): 53,6 × 54,4 e 64,1 × 63,0 — pequenas, de
     sinal oposto, sem hipótese simples que feche as duas (registrado no caso).
   - Tempest: só prosa (Shatter maximizado), nenhum DPR.
+- **G1b lote 2** (gloom-stalker, evocation, fiend, astral-self; genie fica para o lote 3): +5 casos → **23 casos:
+  18 iguais, 4 pequenas (2 explicadas), 1 grande explicada** → passa.
+  - Gloom Stalker nv8, turno de emboscada (Bugbear MotM, Dread Ambusher, CBE, vantagem, SS): 77,9 × 78 (fonte arredonda).
+    "Des +4 em vez do feat": 75,5 × 72 — o 72 só fecha subindo o acerto sem subir o dano (71,9): omissão da fonte.
+    Os números do nv3–5 são soma de médias sem acerto: não comparáveis (anotado no `_meta`).
+  - Evocation nv6: Toll the Dead com Potent Cantrip (60%/50% de falha) e Fire Bolt a 65% — batem; a fonte usa os 65%
+    do Fundamental Math, não o +6 real da build (com ele, 7,1).
+  - Fiend e Astral Self: sem número de DPR.
+  Leitura: em 23 casos o motor nunca errou a conta; toda diferença acima do arredondamento veio da fonte (coluna
+  deslocada, acerto sem dano, arredondamento), salvo o Hexblade (±1,6%, causa aberta).

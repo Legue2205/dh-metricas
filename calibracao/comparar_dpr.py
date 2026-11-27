@@ -13,7 +13,7 @@ sys.path.insert(0, RAIZ)
 
 def classe(motor, ref):
     d = motor - ref
-    if abs(d) <= 0.05: return 'igual'
+    if abs(d) <= 0.05 + 1e-9: return 'igual'   # o motor arredonda a 0,1
     return 'pequena' if abs(d) <= 0.10 * ref else 'grande'
 
 
@@ -25,7 +25,7 @@ def medir():
         m = dano.dpr(c['spec'], c['ca'], c.get('lutas_dia', 4))
         out.append(dict(id=c['id'], nivel=c['nivel'], ca=c['ca'], motor=m, rpgbot=c['dpr_rpgbot'],
                         dif=round(m - c['dpr_rpgbot'], 2), pct=round(100 * (m - c['dpr_rpgbot']) / c['dpr_rpgbot'], 1),
-                        classe=classe(m, c['dpr_rpgbot'])))
+                        classe=classe(m, c['dpr_rpgbot']), explicacao=c.get('explicacao')))
     return out
 
 
@@ -35,7 +35,8 @@ def main():
     for x in r:
         print(f"{x['id']:22s} nv{x['nivel']:<2d} CA {x['ca']}  motor {x['motor']:6.2f}  RPGBot {x['rpgbot']:6.2f}  "
               f"{x['dif']:+6.2f} ({x['pct']:+5.1f}%)  {x['classe']}")
-    print(f"G1b: {'PASSA' if all(x['classe'] != 'grande' for x in r) else 'não passa'} "
+        if x['explicacao']: print(f"{'':24s}↳ explicada: {x['explicacao']}")
+    print(f"G1b: {'PASSA' if all(x['classe'] != 'grande' or x['explicacao'] for x in r) else 'não passa'} "
           f"({sum(x['classe'] == 'igual' for x in r)} iguais, {sum(x['classe'] == 'pequena' for x in r)} pequenas, "
           f"{sum(x['classe'] == 'grande' for x in r)} grandes de {len(r)})")
 

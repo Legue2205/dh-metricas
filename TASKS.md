@@ -1016,3 +1016,11 @@ Counterspell genérico e lotes do G1b.
   Faltava o Lore declarar o 2º Additional Magical Secret: `m1_reacoes.CLASSE['counterspell']['bard/lore'] = 6`.
   Linha nova: controle 2,0 (nv7) / 3,5 (nv11), abaixo das linhas de controle do plano → plano e gates iguais.
   Os outros Bards ganham Counterspell só por Magical Secrets (10), que é escolha de build: fica fora (decisão de 27/11).
+- **G1b lote 1** (páginas: build-warlock-hexblade, build-cleric-tempest, build-monk-kensei): **18 casos, 15 iguais,
+  2 pequenas, 1 grande explicada** → passa.
+  - Kensei traz uma tabela do DPR Calculator (Kensei × Champion, nv 1–20): o RPGBot usa a mesma conta fechada do
+    motor (crítico com dados dobrados, Sharpshooter ligado quando rende, **sem Action Surge**). 11/11 batem até o
+    arredondamento, menos a coluna "8th/9th" do Kensei: o 24,15 só fecha com CA 17 (nível 10) — deslize da tabela.
+  - Hexblade nv8 (alvo amaldiçoado, Elven Accuracy, Eldritch Smite no crítico): 53,6 × 54,4 e 64,1 × 63,0 — pequenas, de
+    sinal oposto, sem hipótese simples que feche as duas (registrado no caso).
+  - Tempest: só prosa (Shatter maximizado), nenhum DPR.

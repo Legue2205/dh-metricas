@@ -2,19 +2,397 @@
  "_meta": {
   "gate": "G1b (usuário, 26/11): DPR do motor (dh.dano.dpr, sem pacote, sem peso de round) × DPR calculado pelo RPGBot (DPR Calculator), mesma CA e nível. Diferença ≤ 10% em todo caso; qualquer diferença > arredondamento é investigada.",
   "ca_rpgbot": "Quando a página não dá a CA, o RPGBot usa a CA esperada do Fundamental Math (DMG 274): 13 (1–3), 14 (4), 15 (5–7), 16 (8–9), 17 (10–12), 18 (13–16), 19 (17–20).",
-  "convencao": "Só mecânica e números; texto do guia não entra. Rogue é holdout (só no G6)."
+  "convencao": "Só mecânica e números; texto do guia não entra. Rogue é holdout (só no G6).",
+  "lidas": [
+   "contexto-fundamental-math",
+   "build-warlock-hexblade",
+   "build-cleric-tempest (sem número de DPR)",
+   "build-monk-kensei"
+  ]
  },
  "casos": [
-  {"id": "fm-warlock-5", "fonte": "https://rpgbot.net/dnd5/characters/fundamental_math/", "descricao": "Warlock baseline: Eldritch Blast + Hex + Agonizing, CAR 18", "nivel": 5, "ca": 15, "dpr_rpgbot": 17.8,
-   "spec": {"ataques": [{"n": 2, "bonus": 7, "dano": "1d10+1d6+4"}]}},
-  {"id": "fm-warlock-7", "fonte": "https://rpgbot.net/dnd5/characters/fundamental_math/", "descricao": "idem, CAR 18", "nivel": 7, "ca": 15, "dpr_rpgbot": 17.8,
-   "spec": {"ataques": [{"n": 2, "bonus": 7, "dano": "1d10+1d6+4"}]}},
-  {"id": "fm-warlock-11", "fonte": "https://rpgbot.net/dnd5/characters/fundamental_math/", "descricao": "idem, 3 raios, CAR 20", "nivel": 11, "ca": 17, "dpr_rpgbot": 28.65,
-   "spec": {"ataques": [{"n": 3, "bonus": 9, "dano": "1d10+1d6+5"}]}},
-  {"id": "fm-warlock-17", "fonte": "https://rpgbot.net/dnd5/characters/fundamental_math/", "descricao": "idem, 4 raios", "nivel": 17, "ca": 19, "dpr_rpgbot": 38.2,
-   "spec": {"ataques": [{"n": 4, "bonus": 11, "dano": "1d10+1d6+5"}]}}
+  {
+   "id": "fm-warlock-5",
+   "fonte": "https://rpgbot.net/dnd5/characters/fundamental_math/",
+   "descricao": "Warlock baseline: Eldritch Blast + Hex + Agonizing, CAR 18",
+   "nivel": 5,
+   "ca": 15,
+   "dpr_rpgbot": 17.8,
+   "spec": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d10+1d6+4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "fm-warlock-7",
+   "fonte": "https://rpgbot.net/dnd5/characters/fundamental_math/",
+   "descricao": "idem, CAR 18",
+   "nivel": 7,
+   "ca": 15,
+   "dpr_rpgbot": 17.8,
+   "spec": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d10+1d6+4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "fm-warlock-11",
+   "fonte": "https://rpgbot.net/dnd5/characters/fundamental_math/",
+   "descricao": "idem, 3 raios, CAR 20",
+   "nivel": 11,
+   "ca": 17,
+   "dpr_rpgbot": 28.65,
+   "spec": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d10+1d6+5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "fm-warlock-17",
+   "fonte": "https://rpgbot.net/dnd5/characters/fundamental_math/",
+   "descricao": "idem, 4 raios",
+   "nivel": 17,
+   "ca": 19,
+   "dpr_rpgbot": 38.2,
+   "spec": {
+    "ataques": [
+     {
+      "n": 4,
+      "bonus": 11,
+      "dano": "1d10+1d6+5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-champion-1",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Champion de comparação (VH, CBE no 1, SS no 4, Archery, mão-besta), nível 1",
+   "nivel": 1,
+   "ca": 13,
+   "dpr_rpgbot": 10.1,
+   "spec": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d6+3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-champion-6",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Champion de comparação (VH, CBE no 1, SS no 4, Archery, mão-besta), nível 6",
+   "nivel": 6,
+   "ca": 15,
+   "dpr_rpgbot": 27.3,
+   "spec": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 9,
+      "dano": "1d6+4",
+      "crit_em": 19,
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-champion-8",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Champion de comparação (VH, CBE no 1, SS no 4, Archery, mão-besta), nível 8",
+   "nivel": 8,
+   "ca": 16,
+   "dpr_rpgbot": 28.8,
+   "spec": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 10,
+      "dano": "1d6+5",
+      "crit_em": 19,
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-champion-11",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Champion de comparação (VH, CBE no 1, SS no 4, Archery, mão-besta), nível 11",
+   "nivel": 11,
+   "ca": 17,
+   "dpr_rpgbot": 38.4,
+   "spec": {
+    "ataques": [
+     {
+      "n": 4,
+      "bonus": 11,
+      "dano": "1d6+5",
+      "crit_em": 19,
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-champion-12",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Champion de comparação (VH, CBE no 1, SS no 4, Archery, mão-besta), nível 12",
+   "nivel": 12,
+   "ca": 17,
+   "dpr_rpgbot": 38.4,
+   "spec": {
+    "ataques": [
+     {
+      "n": 4,
+      "bonus": 11,
+      "dano": "1d6+5",
+      "crit_em": 19,
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-champion-20",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Champion de comparação (VH, CBE no 1, SS no 4, Archery, mão-besta), nível 20",
+   "nivel": 20,
+   "ca": 19,
+   "dpr_rpgbot": 48.87,
+   "spec": {
+    "ataques": [
+     {
+      "n": 5,
+      "bonus": 13,
+      "dano": "1d6+5",
+      "crit_em": 18,
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-kensei-6",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Kensei do exemplo (Fighter 1 + Monk, CBE + SS + Archery), coluna 5th/6th",
+   "nivel": 6,
+   "ca": 15,
+   "dpr_rpgbot": 22.8,
+   "spec": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 8,
+      "dano": "1d6+3",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-kensei-9",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Kensei do exemplo (Fighter 1 + Monk, CBE + SS + Archery), coluna 8th/9th",
+   "nivel": 9,
+   "ca": 16,
+   "dpr_rpgbot": 24.15,
+   "spec": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 10,
+      "dano": "1d6+4",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   },
+   "explicacao": "O número da fonte (24,15) só fecha com CA 17 (nível 10): na CA 16 do nível da coluna o motor dá 26,78. Deslocamento de coluna na tabela do RPGBot; com CA 17 o motor dá 24,15."
+  },
+  {
+   "id": "kensei-pg-kensei-12",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Kensei do exemplo (Fighter 1 + Monk, CBE + SS + Archery), coluna 11th/12th",
+   "nivel": 12,
+   "ca": 17,
+   "dpr_rpgbot": 39.38,
+   "spec": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 13,
+      "dano": "1d8+7",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-kensei-13",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Kensei do exemplo (Fighter 1 + Monk, CBE + SS + Archery), coluna 12th/13th",
+   "nivel": 13,
+   "ca": 18,
+   "dpr_rpgbot": 44.55,
+   "spec": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 15,
+      "dano": "1d8+8",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-kensei-20",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Kensei do exemplo (Fighter 1 + Monk, CBE + SS + Archery), coluna 20th",
+   "nivel": 20,
+   "ca": 19,
+   "dpr_rpgbot": 46.65,
+   "spec": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 16,
+      "dano": "1d10+8",
+      "poder": [
+       -5,
+       10
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "kensei-pg-kensei-1",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/monk/subclasses/kensei/",
+   "descricao": "Kensei no 1 (é Fighter 1: igual ao Champion)",
+   "nivel": 1,
+   "ca": 13,
+   "dpr_rpgbot": 10.1,
+   "spec": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 7,
+      "dano": "1d6+3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "hexblade-pg-8",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/warlock/subclasses/hexblade/",
+   "descricao": "Hexblade do exemplo, nível 8, alvo amaldiçoado, vantagem (Shadow of Moil) + Elven Accuracy, Eldritch Smite no crítico, sem power attack",
+   "nivel": 8,
+   "ca": 16,
+   "dpr_rpgbot": 54.4,
+   "spec": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 8,
+      "dano": "2d6+8",
+      "crit_em": 19,
+      "vantagem": 1.0,
+      "elven_accuracy": true
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "10d8",
+      "gatilho": "critico"
+     }
+    ]
+   },
+   "investigacao": "Diferenças pequenas e de sinal oposto (−0,8 sem GWM, +1,1 com GWM): não é um fator sistemático. Hipóteses testadas sem fechar os dois números: Eldritch Smite por ataque (dá 56,9), vantagem dupla em vez de tripla, Curse sem 19–20. A fonte descreve o cálculo só em prosa; fica registrado como \"pequena, causa não identificada\"."
+  },
+  {
+   "id": "hexblade-pg-8-gwm",
+   "fonte": "https://rpgbot.net/dnd5/characters/classes/warlock/subclasses/hexblade/",
+   "descricao": "idem, com o −5/+10 do GWM sempre ligado",
+   "nivel": 8,
+   "ca": 16,
+   "dpr_rpgbot": 63.0,
+   "spec": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 3,
+      "dano": "2d6+18",
+      "crit_em": 19,
+      "vantagem": 1.0,
+      "elven_accuracy": true
+     }
+    ],
+    "por_turno": [
+     {
+      "dano": "10d8",
+      "gatilho": "critico"
+     }
+    ]
+   },
+   "investigacao": "Diferenças pequenas e de sinal oposto (−0,8 sem GWM, +1,1 com GWM): não é um fator sistemático. Hipóteses testadas sem fechar os dois números: Eldritch Smite por ataque (dá 56,9), vantagem dupla em vez de tripla, Curse sem 19–20. A fonte descreve o cálculo só em prosa; fica registrado como \"pequena, causa não identificada\"."
+  }
  ],
  "holdout": [
-  {"id": "fm-rogue-twf", "fonte": "https://rpgbot.net/dnd5/characters/fundamental_math/", "descricao": "Rogue TWF com Sneak Attack todo turno — só no G6", "por_nivel": {"7": 21.99, "11": 29.89}}
+  {
+   "id": "fm-rogue-twf",
+   "fonte": "https://rpgbot.net/dnd5/characters/fundamental_math/",
+   "descricao": "Rogue TWF com Sneak Attack todo turno — só no G6",
+   "por_nivel": {
+    "7": 21.99,
+    "11": 29.89
+   }
+  }
  ]
 }

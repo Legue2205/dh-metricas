@@ -63,28 +63,39 @@ def combate(L, usos, dpr_alvo, cleaves=(), livres=(), N=None, auras=()):
     pf = lambda cd: min(1.0, max(0.0, (cd - sv - 1) / 20))
 
     def esperado(u, r):
-        alvos, sel, ger, cd, metade = u
+        alvos, sel, ger, cd, metade = u[:5]
         f = 1.0 if r == 0 else (c['f_sel'] if sel else c['f_nao'])
         vivos_c = (hp[:, corpo] > 0).sum(1).mean(); vivos_d = (hp[:, dist] > 0).sum(1).mean()
         k = max(min(alvos * f, vivos_c), min(alvos, vivos_d))
+        if len(u) > 5:                              # ataque_area: uma jogada de ataque por alvo (sem save)
+            atq = u[5]; x = A.ataque(atq['bonus'], ac, lambda m: A.rola(atq['dano'], m)); med = float(np.mean(x))
+            ex = float(np.mean(A.rola(atq['extra_um_alvo']))) * (1 - (1 - float(np.mean(x > 0))) ** k) if atq.get('extra_um_alvo') else 0.0
+            return k * min(med, hp0) + ex
         x = ger(); med = float(np.mean(x[0] if isinstance(x, tuple) else x))
         p = pf(cd); return k * min(med, hp0) * (p + (1 - p) * (0.5 if metade else 0))
 
     def lanca(u, r):
         nonlocal tot
-        alvos, sel, ger, cd, metade = u
+        alvos, sel, ger, cd, metade = u[:5]
+        atq = u[5] if len(u) > 5 else None
         f = 1.0 if r == 0 else (c['f_sel'] if sel else c['f_nao'])
         vc = (hp[:, corpo] > 0).sum(1); vd = (hp[:, dist] > 0).sum(1)
         kc = np.minimum(alvos * f, vc); kd = np.minimum(alvos, vd)
         usa_c = kc >= kd; x = np.where(usa_c, kc, kd)
         k = np.floor(x) + (rng.random(N) < x - np.floor(x))
-        base = ger(); base, extra = base if isinstance(base, tuple) else (base, 0)
+        base = ger() if atq is None else 0; base, extra = base if isinstance(base, tuple) else (base, 0)
+        ja = np.zeros(N, bool)
         for grupo, mascara in ((corpo, usa_c), (dist, ~usa_c)):
             vivos = hp[:, grupo] > 0; ordem = np.cumsum(vivos, 1) - 1
             for jj, j in enumerate(grupo):
                 alvo = mascara & vivos[:, jj] & (ordem[:, jj] < k)
-                ok = rng.integers(1, 21, N) + sv >= cd
-                d = np.where(ok, base // 2 if metade else 0, base) + extra
+                if atq is not None:                 # ataque_area: acerto e dano rolados por alvo (crítico dobra os dados)
+                    d = A.ataque(atq['bonus'], ac, lambda m: A.rola(atq['dano'], m))
+                    if atq.get('extra_um_alvo'):    # ex.: Colossus Slayer, 1×/turno: no 1º alvo atingido
+                        prim = alvo & (d > 0) & ~ja; d = d + np.where(prim, A.rola(atq['extra_um_alvo']), 0); ja |= prim
+                else:
+                    ok = rng.integers(1, 21, N) + sv >= cd
+                    d = np.where(ok, base // 2 if metade else 0, base) + extra
                 real = np.where(alvo, np.minimum(d, hp[:, j]), 0); hp[:, j] -= real; tot = tot + real
 
     for r in range(c['rmax']):
@@ -161,6 +172,13 @@ def avaliar(linha):
             livres.append((al, True, A._gerador(dict(dano=a['dano'])), a['cd'], a.get('metade', False)))
         elif t == 'cleave_ataque':
             cleaves.append(a)
+        elif t == 'ataque_area':
+            # 27/11 (pacote C): ação que faz um ataque contra cada criatura numa área (Volley, Whirlwind Attack), sem
+            # limite de usos: entra como opção "livre" do round (no lugar do dano de alvo único quando rende mais).
+            # "alvos" pela tabela de alvos em área do DMG (esfera de raio 10 = 2); "seletiva" = escolhe os alvos.
+            ex = a.get('extra_um_alvo')
+            livres.append((a['alvos'], a.get('seletiva', True), None, 0, False,
+                           dict(bonus=a['bonus'], dano=a['dano'], extra_um_alvo=ex)))
         elif t == 'aura':
             auras.append((a['alvos'], True, A._gerador(dict(dano=a['dano'])), a['cd'], a.get('metade', True)))
     ref = _regua_ref(); fr = {}; rounds = {}

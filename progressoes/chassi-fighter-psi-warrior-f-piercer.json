@@ -143,6 +143,69 @@
     "gasta": {
      "action_surge": 1
     }
+   },
+   {
+    "id": "campo-protetor",
+    "herda": "principal",
+    "hipotese": "dados psiônicos da luta no Protective Field (reação), sem Psionic Strike",
+    "dano": {
+     "ataques": [
+      {
+       "n": 2,
+       "bonus": 10,
+       "dano": "1d8+5"
+      }
+     ],
+     "por_turno": [
+      {
+       "dano": "1",
+       "nota": "Piercer: rerrolar o d8"
+      },
+      {
+       "dano": "1d8",
+       "gatilho": "critico",
+       "nota": "Piercer: dado extra no crítico"
+      }
+     ]
+    },
+    "controle": {
+     "atencao": {
+      "papel": "atirador",
+      "front": false,
+      "acc_m": [
+       0.7,
+       0.8,
+       1.0
+      ],
+      "dpr": "auto"
+     },
+     "fontes": [
+      {
+       "tipo": "ameaca",
+       "nome": "Corpo (ameaça)"
+      }
+     ]
+    },
+    "suporte": {
+     "fontes": [
+      {
+       "nome": "Protective Field (reduz o dano de um aliado)",
+       "lado": "def",
+       "modelo": "pv_temporario",
+       "pv": 5.5,
+       "usos_luta": 2.0
+      }
+     ]
+    },
+    "reacao": [
+     {
+      "uso": "Protective Field",
+      "fracao": 0.5,
+      "eixos": [
+       "suporte"
+      ]
+     }
+    ]
    }
   ],
   "planos": {
@@ -152,7 +215,7 @@
   "descricao": {
    "resumo": "Psi Warrior arqueiro: dados psiônicos no Psionic Strike, com Telekinetic Thrust para derrubar.",
    "estrategia": "Posição atirador; feat da subclasse: Piercer (4) da build do RPGBot, meio-feat em Des.",
-   "nao_modelado": "Protective Field; Telekinetic Movement; Psi-Powered Leap; Telekinetic Adept fora do Thrust; Guarded Mind; Indomitable (9)."
+   "nao_modelado": "Telekinetic Movement; Psi-Powered Leap; Telekinetic Adept fora do Thrust; Guarded Mind; Indomitable (9)."
   }
  },
  "niveis": {
@@ -299,6 +362,69 @@
      "gasta": {
       "action_surge": 1
      }
+    },
+    {
+     "id": "campo-protetor",
+     "herda": "principal",
+     "hipotese": "dados psiônicos da luta no Protective Field (reação), sem Psionic Strike",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 11,
+        "dano": "1d8+5"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1",
+        "nota": "Piercer: rerrolar o d8"
+       },
+       {
+        "dano": "1d8",
+        "gatilho": "critico",
+        "nota": "Piercer: dado extra no crítico"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "front": false,
+       "acc_m": [
+        0.7,
+        0.8,
+        1.0
+       ],
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Protective Field (reduz o dano de um aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 6.5,
+        "usos_luta": 2.5
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Protective Field",
+       "fracao": 0.625,
+       "eixos": [
+        "suporte"
+       ]
+      }
+     ]
     }
    ],
    "patches_linhas": [

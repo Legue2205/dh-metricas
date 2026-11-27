@@ -1,5 +1,5 @@
 import json, math
-OUT='/home/claude/dh-metricas/progressoes/'
+OUT='progressoes/'   # 27/11: relativo à raiz (era o caminho absoluto de um clone)
 SL={1:{"1":2},2:{"1":3},3:{"1":4,"2":2},4:{"1":4,"2":3},5:{"1":4,"2":3,"3":2},6:{"1":4,"2":3,"3":3},7:{"1":4,"2":3,"3":3,"4":1},
     8:{"1":4,"2":3,"3":3,"4":2},9:{"1":4,"2":3,"3":3,"4":3,"5":1},10:{"1":4,"2":3,"3":3,"4":3,"5":2},11:{"1":4,"2":3,"3":3,"4":3,"5":2,"6":1}}
 def prof(L): return 2+(L-1)//4
@@ -171,8 +171,9 @@ def escrever(id_,slug,nome,build,desc,fatias):
             else: l.setdefault('hipotese',l['id'])
         cur=json.loads(json.dumps(dict(corpo=f['corpo'],recursos=f['recursos'],linhas=f['linhas'])))
         niv[str(L)]=dict(_texto=f.get('_texto',''),**_anula(ant,json.loads(json.dumps(cur))))
+        if f.get('patches_linhas') or fatias[3].get('patches_linhas'): niv[str(L)]['patches_linhas']=f.get('patches_linhas',[])  # 27/11
         ant=cur
-    niv={'3':{"_texto":fatias[3].get('_texto','')},**niv}
+    niv={'3':dict({"_texto":fatias[3].get('_texto','')},**({'patches_linhas':fatias[3]['patches_linhas']} if fatias[3].get('patches_linhas') else {})),**niv}
     P=dict(id=id_,nome=nome,grupo="RPGBot",fonte=FONTE(slug),base=base,niveis=niv)
     json.dump(P,open(OUT+id_+'.json','w'),ensure_ascii=False,indent=1); print('ok',id_)
 def M(f,d,c,i,w,ch): return {"for":f,"des":d,"con":c,"int":i,"sab":w,"car":ch}

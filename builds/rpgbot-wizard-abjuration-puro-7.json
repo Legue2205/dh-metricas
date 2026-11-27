@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/rpgbot-wizard-abjuration-puro.json",
+ "gerado_de": "rpgbot-wizard-abjuration-puro.json",
  "build": "Wizard (Abjuration) sem multiclasse, Orc (MMoM), Mage Armor; Int 18 (4), Int 20 (8), Resilient Con no 12 no lugar do Medium Armor Master",
  "corpo": {
   "ca": 16,
@@ -390,7 +390,7 @@
  "descricao": {
   "resumo": "A build Krump Your Pointy Hat Pajama Man sem o nível de Artificer: Mage Armor e Shield no lugar de armadura e escudo, magias um nível antes.",
   "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis adiantados, atributos e feats remendados); a build original continua como referência.",
-  "nao_modelado": "Recarga do Arcane Ward durante a luta e Projected Ward; Counterspell e Improved Abjuration; sem proficiência em Con até o 12.",
+  "nao_modelado": "Recarga do Arcane Ward durante a luta; Counterspell e Improved Abjuration; sem proficiência em Con até o 12.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
   "progressao": "Wizard 7 (sem Artificer): Mage Armor + Shield; Arcane Ward 18."
  },
@@ -402,6 +402,40 @@
   {
    "magia": "absorb_elements",
    "desde": 1
+  }
+ ],
+ "patches_linhas": [
+  {
+   "origem": "Projected Ward",
+   "fator": {
+    "$p": "suporte.padroes.ward_projetado_fracao"
+   },
+   "corpo": {
+    "pv": -18
+   },
+   "reacao": {
+    "uso": "Projected Ward",
+    "fracao": {
+     "$p": "suporte.padroes.ward_projetado_reacao"
+    },
+    "eixos": [
+     "suporte"
+    ]
+   },
+   "anexar": {
+    "suporte.fontes": [
+     {
+      "nome": "Projected Ward (Arcane Ward num aliado)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "pv": 18,
+      "usos_luta": 1,
+      "fator": {
+       "$p": "suporte.padroes.ward_projetado_fracao"
+      }
+     }
+    ]
+   }
   }
  ],
  "id": "rpgbot-wizard-abjuration-puro-7",

@@ -59,11 +59,14 @@ def escrever(id_, slug, nome, build, desc, fat, grupo="RPGBot", fonte=None):
     base = dict(build=build, corpo=b['corpo'], recursos=b['recursos'], linhas=b['linhas'],
                 planos={"padrao": "auto", "combate_unico": "auto"}, descricao=desc)
     niv = {'3': {"_texto": b.get('_texto', '')}}
+    if b.get('patches_linhas'): niv['3']['patches_linhas'] = b['patches_linhas']   # 27/11: features em várias linhas
     ant = json.loads(json.dumps(dict(corpo=base['corpo'], recursos=base['recursos'], linhas=base['linhas'])))
+    tem = bool(b.get('patches_linhas'))
     for L in NIV[1:]:
         f = fat[L]
         cur = json.loads(json.dumps(dict(corpo=f['corpo'], recursos=f['recursos'], linhas=f['linhas'])))
         niv[str(L)] = dict(_texto=f.get('_texto', ''), **_anula(ant, json.loads(json.dumps(cur))))
+        if f.get('patches_linhas') or tem: niv[str(L)]['patches_linhas'] = f.get('patches_linhas', []); tem = True
         ant = cur
     fonte = fonte or {"tipo": "rpgbot", "url": f"https://rpgbot.net/dnd5/characters/classes/{CLASSE}/subclasses/{slug}/",
                       "nota": NOTA}
@@ -73,3 +76,15 @@ def escrever(id_, slug, nome, build, desc, fat, grupo="RPGBot", fonte=None):
     print('ok', id_)
 
 
+def MAO_CURA(usos, pv, L):
+    """Mercy: Hand of Healing usos vezes na luta (toque, no Flurry). Até suporte.h.P_CAIDO usos levantam um caído
+    (cura_na_luta); o resto cura um aliado de pé ("cura" com o acesso do toque). Physician's Touch (6): a mesma mão tira
+    uma condição (resgate sem save)."""
+    import sys; sys.path.insert(0, '.'); from dh.premissas import P  # noqa: E402
+    pc = P('suporte.h.P_CAIDO'); base = {"lado": "def", "alcance": "toque", "pv": pv}
+    out = [dict(base, nome="Hand of Healing (levanta um caído)", modelo="cura_na_luta", acao="bonus", usos_luta=usos),
+           dict(base, nome="Hand of Healing (aliado de pé)", modelo="cura", usos_luta=round(max(0.0, usos - pc), 3))]
+    if L >= 6:
+        out.append({"nome": "Physician's Touch (tira a condição na Hand of Healing)", "lado": "def", "modelo": "resgate_condicao",
+                    "p_save": 1.0, "vantagem": False})
+    return out

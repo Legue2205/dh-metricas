@@ -714,7 +714,7 @@
   "descricao": {
    "resumo": "Abjurador do chassi: a régua comum com o Arcane Ward como PV extra, um pouco mais perto da frente.",
    "estrategia": "Régua comum do chassi do Wizard (ver gerador) + o que a tradição dá.",
-   "nao_modelado": "Recarga do Arcane Ward na luta e Projected Ward; Improved Abjuration; Spell Resistance (14). Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Ritual Casting e utilidade; quebra de concentração.",
+   "nao_modelado": "Recarga do Arcane Ward na luta; Improved Abjuration; Spell Resistance (14). Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Ritual Casting e utilidade; quebra de concentração.",
    "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas."
   },
   "reacoes_magicas": [
@@ -730,10 +730,44 @@
  },
  "niveis": {
   "7": {
-   "_texto": "Wizard 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 19, 'sab': 12, 'car': 10}; CD 15, ataque +7. Arcane Ward 18 somado ao PV."
+   "_texto": "Wizard 7; atributos {'for': 8, 'des': 13, 'con': 15, 'int': 19, 'sab': 12, 'car': 10}; CD 15, ataque +7. Arcane Ward 18 somado ao PV. Projected Ward: parte do ward vai para os aliados.",
+   "patches_linhas": [
+    {
+     "origem": "Projected Ward",
+     "fator": {
+      "$p": "suporte.padroes.ward_projetado_fracao"
+     },
+     "corpo": {
+      "pv": -18
+     },
+     "reacao": {
+      "uso": "Projected Ward",
+      "fracao": {
+       "$p": "suporte.padroes.ward_projetado_reacao"
+      },
+      "eixos": [
+       "suporte"
+      ]
+     },
+     "anexar": {
+      "suporte.fontes": [
+       {
+        "nome": "Projected Ward (Arcane Ward num aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 18,
+        "usos_luta": 1,
+        "fator": {
+         "$p": "suporte.padroes.ward_projetado_fracao"
+        }
+       }
+      ]
+     }
+    }
+   ]
   },
   "11": {
-   "_texto": "Wizard 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 20, 'sab': 12, 'car': 10}; CD 17, ataque +9. Arcane Ward 27 somado ao PV.",
+   "_texto": "Wizard 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 20, 'sab': 12, 'car': 10}; CD 17, ataque +9. Arcane Ward 27 somado ao PV. Projected Ward: parte do ward vai para os aliados.",
    "corpo": {
     "ca": 14,
     "pv": 106,
@@ -1666,6 +1700,40 @@
      ],
      "herda": "principal",
      "hipotese": "Fireball no 3º (sem concentração; magia extra barata)"
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Projected Ward",
+     "fator": {
+      "$p": "suporte.padroes.ward_projetado_fracao"
+     },
+     "corpo": {
+      "pv": -27
+     },
+     "reacao": {
+      "uso": "Projected Ward",
+      "fracao": {
+       "$p": "suporte.padroes.ward_projetado_reacao"
+      },
+      "eixos": [
+       "suporte"
+      ]
+     },
+     "anexar": {
+      "suporte.fontes": [
+       {
+        "nome": "Projected Ward (Arcane Ward num aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 27,
+        "usos_luta": 1,
+        "fator": {
+         "$p": "suporte.padroes.ward_projetado_fracao"
+        }
+       }
+      ]
+     }
     }
    ]
   }

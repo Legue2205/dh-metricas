@@ -196,6 +196,14 @@ def cleave_save(L, dano, dc, k, metade=False, custo=None):
     return tot / (NH * hp)
 
 
+def ataque_area(L, bonus, dano, k):
+    """Ataque contra cada criatura de uma área (Volley, Whirlwind Attack) todo round em k alvos; 4 rounds (área v1)."""
+    hp, ac, sv = CR[HORDA[L]]; tot = 0.0
+    for _ in range(4):
+        tot += np.minimum(ataque(bonus, ac, lambda m: rola(dano, m)), hp).mean() * min(k * S, NH)
+    return tot / (NH * hp)
+
+
 _REGUA = {}
 
 
@@ -229,6 +237,7 @@ def avaliar(spec, modo='rapido'):
       {"nome", "tipo": "explosao" | "prioritaria", "usos": [{"alvos", "seletiva", "dano", "cd", "metade"}...]}
       {"nome", "tipo": "cleave_ataque", "bonus", "dano", "p": [esparsa, padrão, agrupada] | "erro", "n_erro"}
       {"nome", "tipo": "cleave_save", "dano", "cd", "alvos": [..3..], "metade", "custo_ataque": {"bonus", "dano"}}
+      {"nome", "tipo": "ataque_area", "alvos", "bonus", "dano", "seletiva", "extra_um_alvo"} (27/11: Volley/Whirlwind)
     Nível da linha = a melhor área na horda padrão."""
     from .base import letra
     global S, N, rng
@@ -245,6 +254,8 @@ def avaliar(spec, modo='rapido'):
             elif t == 'cleave_ataque':
                 fr = {L: cleave_ataque(L, a['bonus'], a['dano'], a['p'] if a['p'] == 'erro' else _por_cenario(a['p'], i),
                                        a.get('n_erro')) for L in range(1, 21)}
+            elif t == 'ataque_area':
+                fr = {L: ataque_area(L, a['bonus'], a['dano'], a['alvos']) for L in range(1, 21)}
             elif t == 'aura':             # área v1 (só referência): aura como um cleave de save que não gasta ataque
                 fr = {L: cleave_save(L, a['dano'], a['cd'], a['alvos'], a.get('metade', True)) for L in range(1, 21)}
             elif t == 'cleave_save':

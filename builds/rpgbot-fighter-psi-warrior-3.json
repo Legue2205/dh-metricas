@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/rpgbot-fighter-psi-warrior.json",
+ "gerado_de": "rpgbot-fighter-psi-warrior.json",
  "build": "Fighter (Psi Warrior), Giff, besta pesada → mosquete, Archery; Piercer 4, Sharpshooter 6, Des 20 8",
  "corpo": {
   "ca": 15,
@@ -103,16 +103,71 @@
    "gasta": {
     "action_surge": 1
    }
+  },
+  {
+   "id": "campo-protetor",
+   "herda": "principal",
+   "hipotese": "dados psiônicos da luta no Protective Field (reação), sem Psionic Strike",
+   "dano": {
+    "ataques": [
+     {
+      "n": 1,
+      "bonus": 7,
+      "dano": "1d10+3"
+     }
+    ],
+    "por_luta": [
+     {
+      "usos_dia": 2,
+      "dano": "2",
+      "nota": "Astral Spark (Giff): PB/dia, +PB de força num acerto"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "soft": 0.15,
+     "dpr": "auto",
+     "front": false
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Protective Field (reduz o dano de um aliado)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "pv": 6.5,
+      "usos_luta": 1.5
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Protective Field",
+     "fracao": 0.375,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ]
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: campo-protetor; prioritário: surge. Sobra: nada.",
    "combates": [
-    "principal",
+    "campo-protetor",
     "surge",
-    "principal",
+    "campo-protetor",
     "surge"
    ]
   },
@@ -127,7 +182,7 @@
  "descricao": {
   "resumo": "Psi Warrior atirador (Giff) com mosquete; dados psiônicos para dano extra, proteção e empurrão telecinético.",
   "estrategia": "Atira de longe e gasta os dados psiônicos com parcimônia ao longo do dia, no Psionic Strike para finalizar alvos.",
-  "nao_modelado": "Protective Field (todos os dados foram para o Psionic Strike); empurrão de 10 pés do Telekinetic Thrust (só o derrubar conta); Telekinetic Movement; Psi-Powered Leap; Guarded Mind; vantagem do Giff em testes de For.",
+  "nao_modelado": "empurrão de 10 pés do Telekinetic Thrust (só o derrubar conta); Telekinetic Movement; Psi-Powered Leap; Guarded Mind; vantagem do Giff em testes de For.",
   "progressao": "Psionic Power: 4 dados d6 + 1 por descanso curto."
  },
  "patches_linhas": [

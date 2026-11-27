@@ -308,7 +308,7 @@
   "descricao": {
    "resumo": "Chassi do Hunter: Ranger atirador com Hunter's Mark e a feature de dano da subclasse.",
    "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
-   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados.",
+   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados.",
    "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas."
   },
   "reacoes_magicas": [
@@ -320,10 +320,10 @@
  },
  "niveis": {
   "7": {
-   "_texto": "atributos {'for': 12, 'des': 17, 'con': 15, 'int': 10, 'sab': 13, 'car': 8}. Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados."
+   "_texto": "atributos {'for': 12, 'des': 17, 'con': 15, 'int': 10, 'sab': 13, 'car': 8}. Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados."
   },
   "11": {
-   "_texto": "atributos {'for': 12, 'des': 19, 'con': 15, 'int': 10, 'sab': 13, 'car': 8}. Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados.",
+   "_texto": "atributos {'for': 12, 'des': 19, 'con': 15, 'int': 10, 'sab': 13, 'car': 8}. Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados. Sharpshooter: −5/+10 escolhido pelo motor; ignorar cobertura e alcance não modelados.",
    "corpo": {
     "ca": 16,
     "pv": 92,
@@ -721,6 +721,25 @@
        {
         "tipo": "ameaca",
         "nome": "Corpo (ameaça)"
+       }
+      ]
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Volley",
+     "desde_linha_com": "dano",
+     "anexar": {
+      "area": [
+       {
+        "nome": "Volley (Multiattack)",
+        "tipo": "ataque_area",
+        "alvos": 2,
+        "seletiva": true,
+        "bonus": 10,
+        "dano": "1d8+4",
+        "extra_um_alvo": "1d8"
        }
       ]
      }

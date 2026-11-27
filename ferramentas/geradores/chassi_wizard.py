@@ -60,14 +60,27 @@ def sai(sub, pos, F, build, resumo, nm, slug=None):
                url=URL.format(slug or sub))
 
 
+def PROJECTED_WARD(ward):
+    """27/11 (pacote C), Abjuration 6: reação que põe o Arcane Ward entre o golpe e um aliado. Em todas as linhas: a parte
+    suporte.padroes.ward_projetado_fracao do ward sai do PV do abjurador e vira PV poupado de um aliado (pv_temporario);
+    gasta a reação em suporte.padroes.ward_projetado_reacao dos rounds (com reação parcial, tudo cai na mesma proporção)."""
+    fr = {"$p": "suporte.padroes.ward_projetado_fracao"}
+    return {"origem": "Projected Ward", "fator": fr, "corpo": {"pv": -ward},
+            "reacao": {"uso": "Projected Ward", "fracao": {"$p": "suporte.padroes.ward_projetado_reacao"}, "eixos": ["suporte"]},
+            "anexar": {"suporte.fontes": [{"nome": "Projected Ward (Arcane Ward num aliado)", "lado": "def", "modelo": "pv_temporario",
+                                           "pv": ward, "usos_luta": 1, "fator": fr}]}}
+
+
 # ---------- Abjuration: Arcane Ward somado ao PV; meia ----------
 F = {}
 for L in C.NIV:
     b = base(L); ward = 2 * L + b['i']; b['pv'] += ward
     F[L] = monta(L, b, 'meia'); F[L]['_texto'] += f" Arcane Ward {ward} somado ao PV."
+    if L >= 6:
+        F[L]['patches_linhas'] = [PROJECTED_WARD(ward)]; F[L]['_texto'] += " Projected Ward: parte do ward vai para os aliados."
 sai('abjuration', 'meia', F, "Wizard (Abjuration), chassi: Mage Armor + Shield, Arcane Ward; posição meia",
     "Abjurador do chassi: a régua comum com o Arcane Ward como PV extra, um pouco mais perto da frente.",
-    "Recarga do Arcane Ward na luta e Projected Ward; Improved Abjuration; Spell Resistance (14).")
+    "Recarga do Arcane Ward na luta; Improved Abjuration; Spell Resistance (14).")
 
 # ---------- Bladesinging: Bladesong + corpo a corpo; meia ----------
 F = {}
@@ -78,26 +91,27 @@ for L in C.NIV:
     mel = [{"n": 1, "bonus": ab, "dano": bb, "nota": "Booming Blade (espada curta)"},
            {"n": 1, "bonus": ab, "dano": f"1d6+{dx}", "nota": "Extra Attack"},
            {"n": 1, "bonus": ab, "dano": "1d6", "nota": "espada curta na mão inábil (ação bônus)"}]
-    canto = dict(id="canto", herda="principal", hipotese="Bladesong + corpo a corpo (Booming Blade + Extra Attack)",
-                 corpo={"ca": song}, dano={"ataques": mel},
+    # 27/11 (pacote C): o Bladesong vale em todas as linhas (patches_linhas com cobertura PB/dia ÷ lutas), não só nas "canto"
+    canto = dict(id="canto", herda="principal", hipotese="corpo a corpo (Booming Blade + Extra Attack), com o Bladesong das outras linhas",
+                 dano={"ataques": mel},
                  controle={"atencao": dict(AT(True, 'striker'), dpr="auto"), "fontes": [{"tipo": "ameaca", "nome": "Corpo (ameaça)"}]},
-                 defesa=SH, reacao=RE, gasta={"bladesong": 1, "espacos": {"1": 1}}, area=[], invocacoes=[])
-    hz = dict(canto, id="canto-haste", hipotese="Bladesong + Haste em si mesmo", corpo={"ca": song + 2},
+                 defesa=SH, reacao=RE, gasta={"espacos": {"1": 1}}, area=[], invocacoes=[])
+    hz = dict(canto, id="canto-haste", hipotese="corpo a corpo + Haste em si mesmo", corpo={"ca": b['ca'] + 2},
               dano={"ataques": mel + [{"n": 0.75, "bonus": ab, "dano": f"1d6+{dx}", "nota": "ataque do Haste"}]},
-              gasta={"bladesong": 1, "espacos": {"1": 1, "3": 1}}, plano="prioritaria")
+              gasta={"espacos": {"1": 1, "3": 1}}, plano="prioritaria")
     ex = [canto, hz]
     if L >= 11:
         t = [{"n": 2, "bonus": ab, "dano": f"1d6+{dx}+2d12", "vantagem": 1.0},
              {"n": 1, "bonus": ab, "dano": "1d6+2d12", "vantagem": 1.0, "nota": "mão inábil"}]
-        ex.append(dict(canto, id="canto-tenser", hipotese="Bladesong + Tenser's Transformation (1/dia, sem magias)",
-                       dano={"ataques": t}, defesa={}, reacao=[], gasta={"bladesong": 1, "espacos": {"6": 1}}, plano="prioritaria"))
+        ex.append(dict(canto, id="canto-tenser", hipotese="Tenser's Transformation (1/dia, sem magias)",
+                       dano={"ataques": t}, defesa={}, reacao=[], gasta={"espacos": {"6": 1}}, plano="prioritaria"))
     f = monta(L, b, 'meia', extra=ex)
-    f['recursos']['outros'] = {"bladesong": {"qtd": p, "volta": "longo"}}
-    f['_texto'] += f" Bladesong {p}/dia (CA {song})."
+    f['patches_linhas'] = [{"origem": "Bladesong", "cobertura": {"usos": p, "volta": "longo"}, "corpo": {"ca": b['i']}}]
+    f['_texto'] += f" Bladesong {p}/dia (CA {song}) em todas as linhas, coberto em min(1, {p}/4) das lutas."
     F[L] = f
 sai('bladesinging', 'meia', F, "Wizard (Bladesinging), chassi: Int > Des, duas espadas curtas + Booming Blade, Mage Armor + Shield; meia",
     "Bladesinger do chassi: a régua comum de mago e, nas lutas em que entra no corpo a corpo, Bladesong com Booming Blade, Haste e (11) Tenser's.",
-    "Dano secundário do Booming Blade; Song of Defense; Bladesong na concentração; Shadow Blade.")
+    "Dano secundário do Booming Blade; Song of Defense; Bladesong na concentração e a ação bônus de ligá-lo no 1º round; Shadow Blade.")
 
 # ---------- Chronurgy: Chronal Shift (forcar_falha 0,5) + Momentary Stasis ----------
 F = {}
@@ -121,13 +135,31 @@ sai('conjuration', 'retaguarda', F, "Wizard (Conjuration), chassi: Summon Shadow
     "Conjurador do chassi: a régua comum, com Summon Shadowspawn (a invocação que a escola favorece) no maior espaço.",
     "Minor Conjuration; Benign Transposition; Focused Conjuration (concentração não modelada); Durable Summons (14).")
 
+def portent(f, dados):
+    """27/11 (pacote C): os dados do Portent do dia (dados ÷ 4 lutas) se dividem sem contar duas vezes. Linha com magia de
+    controle: a parte suporte.padroes.portent_fracao_controle força falha no save (forcar_falha_fator) e o resto vai para o
+    suporte; linha sem controle: tudo no suporte. Suporte = dado_multiuso com "vira" (o d20 guardado substitui uma rolagem),
+    sem ação, mix suporte.padroes.portent_mix (ataque de aliado, ataque inimigo, save de aliado)."""
+    fr = {"$p": "suporte.padroes.portent_fracao_controle"}
+    for l in f['linhas']:
+        fs = (l.get('controle') or {}).get('fontes', [])
+        com = [x for x in fs if x.get('forcar_falha')]
+        for x in com: x['forcar_falha_fator'] = fr
+        fonte = {"nome": "Portent (rolagens de aliados e inimigos)", "lado": "def", "modelo": "dado_multiuso",
+                 "vira": {"$p": "suporte.padroes.portent_vira"}, "mix": {"$p": "suporte.padroes.portent_mix"},
+                 "acao": "nenhuma", "usos_luta": round(dados / 4, 3)}
+        if com: fonte.update(fator=fr, complemento=True)
+        sp = l.setdefault('suporte', {}); sp.setdefault('fontes', []).append(fonte)
+    return f
+
+
 # ---------- Divination: Portent (forcar_falha 0,5) ----------
 F = {}
 for L in C.NIV:
-    b = base(L); F[L] = monta(L, b, 'retaguarda', ff=0.5); F[L]['_texto'] += " Portent 2/dia."
+    b = base(L); F[L] = portent(monta(L, b, 'retaguarda', ff=0.5), 2); F[L]['_texto'] += " Portent 2/dia (controle e suporte)."
 sai('divination', 'retaguarda', F, "Wizard (Divination), chassi: Mage Armor + Shield; retaguarda",
-    "Adivinho do chassi: a régua comum com Portent forçando falha no save das magias de controle.",
-    "Portent em aliados e ataques inimigos; Expert Divination; The Third Eye.")
+    "Adivinho do chassi: a régua comum com Portent dividido entre forçar falha no save do controle e as rolagens de aliados e inimigos.",
+    "Expert Divination; The Third Eye.")
 
 # ---------- Enchantment: Hold Person, Hypnotic Gaze; Split Enchantment no 10 ----------
 F = {}

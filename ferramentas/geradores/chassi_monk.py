@@ -9,7 +9,7 @@ import json
 import sys
 sys.path.insert(0, 'ferramentas/geradores')
 import chassi as C  # noqa: E402
-from marcial import A, linha  # noqa: E402
+from marcial import A, linha, MAO_CURA  # noqa: E402
 
 ORDEM = ('des', 'sab', 'con', 'for', 'int', 'car')
 ORDEM_SAB = ('sab', 'des', 'con', 'for', 'int', 'car')
@@ -126,6 +126,12 @@ def mercy(L, feat, pos):
         dano2 = {"ataques": [A(n, b, '1d8', d), U(2, b, d, L, nota="ação bônus (Flurry todo round)")], "por_turno": [harm]}
         hip2 = 'Flurry todo round com Hand of Harm grátis (4 ki)'
     ls.append(linha('mao-dano', hip2, dano2, {}, controle=ctrl(pos, json.loads(json.dumps(fontes))), gasta={"ki": 4}))
+    # 27/11 (pacote C): Hand of Healing todo round (Flurry nos 4 rounds, um golpe vira cura), em vez de 1 por luta
+    d3 = {"ataques": [A(n, b, '1d8', d), U(1.0, b, d, L, nota="ação bônus (Flurry todo round, o outro golpe vira Hand of Healing)")]}
+    if L >= 11: d3["por_turno"] = [harm]
+    ls.append(linha('mao-cura', 'Flurry todo round (4 ki) com um golpe trocado por Hand of Healing' + (' + Hand of Harm grátis' if L >= 11 else ''),
+                    d3, {}, controle=ctrl(pos, json.loads(json.dumps(fontes)) if L >= 11 else []), gasta={"ki": 4},
+                    suporte=MAO_CURA(4, cura['pv'], L)))
     return fim(k, "Hand of Healing/Harm; Physician's Touch (6)" + ("; Flurry of Healing and Harm (11)." if L >= 11 else "."), ls)
 
 

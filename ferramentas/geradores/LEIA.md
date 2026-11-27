@@ -11,3 +11,4 @@ Scripts que escreveram `progressoes/rpgbot-*.json` (rodar da raiz do repo; depoi
 - `cle2.py`: Cleric lote 2: Arcana, Forge, Knowledge, Order, Tempest, Trickery, Twilight, War (reemite o lote 1, idêntico).
 - `marcial.py` (biblioteca dos marciais) + `bar.py`: Barbarian (8 subclasses do RPGBot + Berserker RAW e homebrew).
 - `mon.py`: Monk (10 subclasses do RPGBot).
+- `c_mecanicas.py` (pacote C, 27/11): mecânicas de subclasse nas progressões rpgbot-* cujos geradores ficaram para trás (wiz_builds.py, fighter_lote2.py não reproduzem mais o arquivo: não rode esses dois por cima das progressões). Idempotente.

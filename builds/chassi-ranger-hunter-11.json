@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/chassi-ranger-hunter.json",
+ "gerado_de": "chassi-ranger-hunter.json",
  "build": "Ranger (Hunter), atirador: arco longo, Archery, couro batido; sem feat",
  "corpo": {
   "ca": 17,
@@ -399,14 +399,33 @@
  "descricao": {
   "resumo": "Chassi do Hunter: Ranger atirador com Hunter's Mark e a feature de dano da subclasse.",
   "estrategia": "Ataca todo round; Hunter's Mark nas lutas que o plano escolher.",
-  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados.",
+  "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Absorb Elements (desde o 2); o plano decide quando gastar o espaço nelas.",
-  "progressao": "atributos {'for': 12, 'des': 20, 'con': 16, 'int': 10, 'sab': 13, 'car': 8}. Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados."
+  "progressao": "atributos {'for': 12, 'des': 20, 'con': 16, 'int': 10, 'sab': 13, 'car': 8}. Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados."
  },
  "reacoes_magicas": [
   {
    "magia": "absorb_elements",
    "desde": 2
+  }
+ ],
+ "patches_linhas": [
+  {
+   "origem": "Volley",
+   "desde_linha_com": "dano",
+   "anexar": {
+    "area": [
+     {
+      "nome": "Volley (Multiattack)",
+      "tipo": "ataque_area",
+      "alvos": 2,
+      "seletiva": true,
+      "bonus": 11,
+      "dano": "1d8+5",
+      "extra_um_alvo": "1d8"
+     }
+    ]
+   }
   }
  ],
  "id": "chassi-ranger-hunter-11",

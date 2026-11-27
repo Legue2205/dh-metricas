@@ -479,7 +479,7 @@
   "descricao": {
    "resumo": "Chassi do Order: Defensor de placas de suporte: Voice of Authority (Bless e Healing Word dão ataque a aliados), Slow, Divine Strike.",
    "estrategia": "Régua comum do chassi (Toll the Dead, Bless, Spiritual Weapon, Spirit Guardians, Hold Person/Banishment, Healing Word) + o que o domínio dá; o plano automático escolhe.",
-   "nao_modelado": "Order's Demand; Embodiment of Law; Command e Silvery Barbs com Voice of Authority; Heroism, Zone of Truth, Compulsion, Dominate Person; Mass Healing Word. Comum: cura além do Healing Word; utilitárias; quebra de concentração; penalidade de deslocamento ignorada."
+   "nao_modelado": "Order's Wrath fora da linha de maça (o gatilho é o Divine Strike); Order's Demand; Embodiment of Law; Command e Silvery Barbs com Voice of Authority; Heroism, Zone of Truth, Compulsion, Dominate Person; Mass Healing Word. Comum: cura além do Healing Word; utilitárias; quebra de concentração; penalidade de deslocamento ignorada."
   }
  },
  "niveis": {
@@ -789,6 +789,27 @@
        {
         "tipo": "ameaca",
         "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Order's Wrath (+2d8 no próximo acerto de aliado)",
+        "lado": "of",
+        "modelo": "dano_por_acerto",
+        "por_round": true,
+        "alvos": 1,
+        "dano_extra": 9
+       },
+       {
+        "nome": "Healing Word (levanta um caído)",
+        "lado": "def",
+        "modelo": "cura_na_luta",
+        "alcance": "distancia",
+        "acao": "bonus",
+        "usos_luta": 1,
+        "pv": 7.5
        }
       ]
      },

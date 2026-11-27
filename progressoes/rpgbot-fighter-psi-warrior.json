@@ -120,7 +120,7 @@
   "descricao": {
    "resumo": "Psi Warrior atirador (Giff) com mosquete; dados psiônicos para dano extra, proteção e empurrão telecinético.",
    "estrategia": "Atira de longe e gasta os dados psiônicos com parcimônia ao longo do dia, no Psionic Strike para finalizar alvos.",
-   "nao_modelado": "Protective Field (todos os dados foram para o Psionic Strike); empurrão de 10 pés do Telekinetic Thrust (só o derrubar conta); Telekinetic Movement; Psi-Powered Leap; Guarded Mind; vantagem do Giff em testes de For."
+   "nao_modelado": "empurrão de 10 pés do Telekinetic Thrust (só o derrubar conta); Telekinetic Movement; Psi-Powered Leap; Guarded Mind; vantagem do Giff em testes de For."
   }
  },
  "niveis": {
@@ -134,6 +134,63 @@
        "cura_luta": 4.25
       }
      }
+    }
+   ],
+   "linhas": [
+    {
+     "id": "campo-protetor",
+     "herda": "principal",
+     "hipotese": "dados psiônicos da luta no Protective Field (reação), sem Psionic Strike",
+     "dano": {
+      "ataques": [
+       {
+        "n": 1,
+        "bonus": 7,
+        "dano": "1d10+3"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos_dia": 2,
+        "dano": "2",
+        "nota": "Astral Spark (Giff): PB/dia, +PB de força num acerto"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto",
+       "front": false
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Protective Field (reduz o dano de um aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 6.5,
+        "usos_luta": 1.5
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Protective Field",
+       "fracao": 0.375,
+       "eixos": [
+        "suporte"
+       ]
+      }
+     ]
     }
    ]
   },
@@ -227,6 +284,71 @@
        }
       ]
      }
+    },
+    {
+     "id": "campo-protetor",
+     "herda": "principal",
+     "hipotese": "dados psiônicos da luta no Protective Field (reação), sem Psionic Strike",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d12+4"
+       }
+      ],
+      "por_luta": [
+       {
+        "usos_dia": 3,
+        "dano": "3",
+        "nota": "Astral Spark (Giff): PB/dia, +PB de força num acerto"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1.5",
+        "nota": "Piercer: rerrolar d12"
+       },
+       {
+        "dano": "1d12",
+        "gatilho": "critico"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto",
+       "front": false
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Protective Field (reduz o dano de um aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 7.5,
+        "usos_luta": 2.0
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Protective Field",
+       "fracao": 0.5,
+       "eixos": [
+        "suporte"
+       ]
+      }
+     ]
     }
    ],
    "patches_linhas": [
@@ -368,6 +490,75 @@
        }
       ]
      }
+    },
+    {
+     "id": "campo-protetor",
+     "herda": "principal",
+     "hipotese": "dados psiônicos da luta no Protective Field (reação), sem Psionic Strike",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 9,
+        "dano": "1d12+4",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos_dia": 3,
+        "dano": "3",
+        "nota": "Astral Spark (Giff): PB/dia, +PB de força num acerto"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1.5",
+        "nota": "Piercer: rerrolar d12"
+       },
+       {
+        "dano": "1d12",
+        "gatilho": "critico"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto",
+       "front": false
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Protective Field (reduz o dano de um aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 7.5,
+        "usos_luta": 2.0
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Protective Field",
+       "fracao": 0.5,
+       "eixos": [
+        "suporte"
+       ]
+      }
+     ]
     }
    ],
    "patches_linhas": [
@@ -509,6 +700,75 @@
        }
       ]
      }
+    },
+    {
+     "id": "campo-protetor",
+     "herda": "principal",
+     "hipotese": "dados psiônicos da luta no Protective Field (reação), sem Psionic Strike",
+     "dano": {
+      "ataques": [
+       {
+        "n": 2,
+        "bonus": 11,
+        "dano": "1d12+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos_dia": 4,
+        "dano": "4",
+        "nota": "Astral Spark (Giff): PB/dia, +PB de força num acerto"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1.5",
+        "nota": "Piercer: rerrolar d12"
+       },
+       {
+        "dano": "1d12",
+        "gatilho": "critico"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto",
+       "front": false
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Protective Field (reduz o dano de um aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 7.5,
+        "usos_luta": 2.5
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Protective Field",
+       "fracao": 0.625,
+       "eixos": [
+        "suporte"
+       ]
+      }
+     ]
     }
    ],
    "patches_linhas": [
@@ -659,6 +919,75 @@
        }
       ]
      }
+    },
+    {
+     "id": "campo-protetor",
+     "herda": "principal",
+     "hipotese": "dados psiônicos da luta no Protective Field (reação), sem Psionic Strike",
+     "dano": {
+      "ataques": [
+       {
+        "n": 3,
+        "bonus": 11,
+        "dano": "1d12+5",
+        "poder": [
+         -5,
+         10
+        ]
+       }
+      ],
+      "por_luta": [
+       {
+        "usos_dia": 4,
+        "dano": "4",
+        "nota": "Astral Spark (Giff): PB/dia, +PB de força num acerto"
+       }
+      ],
+      "por_turno": [
+       {
+        "dano": "1.5",
+        "nota": "Piercer: rerrolar d12"
+       },
+       {
+        "dano": "1d12",
+        "gatilho": "critico"
+       }
+      ]
+     },
+     "controle": {
+      "atencao": {
+       "papel": "atirador",
+       "soft": 0.15,
+       "dpr": "auto",
+       "front": false
+      },
+      "fontes": [
+       {
+        "tipo": "ameaca",
+        "nome": "Corpo (ameaça)"
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Protective Field (reduz o dano de um aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 8.5,
+        "usos_luta": 2.5
+       }
+      ]
+     },
+     "reacao": [
+      {
+       "uso": "Protective Field",
+       "fracao": 0.625,
+       "eixos": [
+        "suporte"
+       ]
+      }
+     ]
     }
    ],
    "patches_linhas": [

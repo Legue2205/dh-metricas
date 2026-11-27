@@ -57,7 +57,7 @@ def fatia(L, sub, feat=None):
     saves = C.sv(L, m, ('for', 'des'))
     if sub == 'hunter':
         pt = [{"dano": "1d8", "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"}]
-        txt = "Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados."
+        txt = "Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados."
     elif sub == 'gloom-stalker':
         extra_at = [lambda mc: atk(0.25, mc, '+1d8', nota="Dread Ambusher: ataque extra +1d8 no 1º round", round1=True)]
         if L >= 7: saves['sab'] = m['sab'] + P                                   # Iron Mind
@@ -141,8 +141,19 @@ def fatia(L, sub, feat=None):
         if reac: l['reacao'] = reac
         if pet: l['invocacoes'] = pet + l.get('invocacoes', [])
     corpo = {"ca": ca, "pv": C.hp(10, L, m['con']), "saves": {"sv": saves, "ataques": n}}
-    return {"corpo": corpo, "recursos": {"espacos": dict(SL[L]), "outros": {"favored_foe": {"qtd": P, "volta": "longo"}}}, "linhas": linhas,
-            "_texto": f"atributos {s}. {txt}", "_equip": equip}
+    out = {"corpo": corpo, "recursos": {"espacos": dict(SL[L]), "outros": {"favored_foe": {"qtd": P, "volta": "longo"}}}, "linhas": linhas,
+           "_texto": f"atributos {s}. {txt}", "_equip": equip}
+    if sub == 'hunter' and L >= 11:   # 27/11 (pacote C): Volley = ação de ataque em área, opção de qualquer linha
+        out["patches_linhas"] = [VOLLEY(b, arma)]
+    return out
+
+
+def VOLLEY(b, arma):
+    """Hunter 11 (Multiattack: Volley): um ataque à distância contra cada criatura num raio de 10 pés (2 alvos pela tabela
+    do DMG), no lugar da ação de Ataque; Colossus Slayer no 1º alvo atingido. Entra na Área (horda) de todas as linhas."""
+    return {"origem": "Volley", "desde_linha_com": "dano",
+            "anexar": {"area": [{"nome": "Volley (Multiattack)", "tipo": "ataque_area", "alvos": 2, "seletiva": True,
+                                 "bonus": b, "dano": f"{arma[0]}+{arma[1]}", "extra_um_alvo": "1d8"}]}}
 
 
 NM = ("Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; "

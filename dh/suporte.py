@@ -64,20 +64,37 @@ def _usos(f):
 
 
 def valor(f, nivel):
+    """Dano equivalente por round da fonte. 27/11 (pacote C): "fator" (opcional) multiplica o valor — parte de um recurso
+    dividido entre eixos (Portent) ou reação parcial (patches_linhas); "complemento": true usa 1 − fator."""
+    fa = f.get('fator', 1.0)
+    if isinstance(fa, dict): fa = _p(fa['$p'])
+    if f.get('complemento'): fa = 1.0 - fa
+    return _valor(f, nivel) * fa
+
+
+def _valor(f, nivel):
     dpr, atq, inim, _, _ = REGUA[nivel]; dpa = dpr / (atq * H['ACERTO']); m = f['modelo']
     al = f.get('alvos', 1); u = _usos(f)
     if m == 'vantagem': return al * dpr * H['VANT'] * f['fracao']
     if m == 'bonus_continuo': return al * dpr * (f['bonus'] * 0.05 / H['ACERTO']) * H['ATIVO']
     if m == 'bonus_por_uso': return u / R * f['bonus'] * 0.05 * dpa
     if m == 'ataque_extra': return al * dpr / atq * H['ATIVO']
-    if m == 'dano_por_acerto': return u * al * atq * H['ACERTO'] * f['dano_extra'] * H['ATIVO']
-    if m == 'cura': return u * f['pv'] * H['EF_CURA'] / R
+    if m == 'dano_por_acerto':
+        if f.get('por_round'):   # 27/11: só o 1º acerto do round no alvo (Order's Wrath): P(≥1 acerto) × gatilho
+            pg = f.get('p_gatilho', H['ACERTO'])
+            return u * al * pg * (1 - (1 - H['ACERTO']) ** atq) * f['dano_extra'] * H['ATIVO']
+        return u * al * atq * H['ACERTO'] * f['dano_extra'] * H['ATIVO']
+    if m == 'cura':   # 27/11: "alcance": "toque" paga o acesso ao aliado (como em cura_na_luta)
+        return u * f['pv'] * H['EF_CURA'] / R * (H['ACESSO_TOQUE'] if f.get('alcance') == 'toque' else 1)
     if m == 'pv_temporario': return u * al * f['pv'] * H['EF_PVT'] / R
     if m == 'aura_saves': return inim * H['F_SAVE'] * H['F_AURA'] * f['bonus'] * 0.05 * H['CUSTO_SAVE']
     if m == 'valor_por_luta': return u * f['valor'] / R
     if m == 'dado_multiuso':
         # Dado gasto a critério do jogador (Bardic Inspiration): mistura de usos; cada uso em dano equivalente.
-        d = f['dado_medio']; vira = min(1.0, 0.05 * d * H['ESCOLHA'])
+        # 27/11: "vira" (opcional) = chance de o uso virar o resultado quando não é um dado somado (Portent: o d20
+        # já rolado substitui uma rolagem); "dado_medio" segue valendo para o uso "dano".
+        d = f.get('dado_medio', 0); vira = f['vira'] if 'vira' in f else min(1.0, 0.05 * d * H['ESCOLHA'])
+        if isinstance(vira, dict): vira = _p(vira['$p'])
         golpe_inim = inim / H['ACERTOS_INIM_ROUND']; critico = H['TURNOS_CONDICAO'] * dpr
         v = dict(dano=d, acerto=vira * dpa, ca=vira * golpe_inim, save_dano=vira * golpe_inim,
                  save_critico=vira * critico, counterspell=vira * critico)

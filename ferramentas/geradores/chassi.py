@@ -98,11 +98,13 @@ def escrever(classe, sub, posicao, fat, build, desc, feat=None, url=None):
     base = dict(build=build, corpo=b['corpo'], recursos=b['recursos'], linhas=b['linhas'],
                 planos={"padrao": "auto", "combate_unico": "auto"}, descricao=desc)
     niv = {str(NIV[0]): {"_texto": b.get('_texto', '')}}
+    if b.get('patches_linhas'): niv[str(NIV[0])]['patches_linhas'] = b['patches_linhas']   # 27/11: features em várias linhas
     ant = json.loads(json.dumps(dict(corpo=base['corpo'], recursos=base['recursos'], linhas=base['linhas'])))
     for L in NIV[1:]:
         f = fat[L]
         cur = json.loads(json.dumps(dict(corpo=f['corpo'], recursos=f['recursos'], linhas=f['linhas'])))
         niv[str(L)] = dict(_texto=f.get('_texto', ''), **_anula(ant, json.loads(json.dumps(cur))))
+        if f.get('patches_linhas') or b.get('patches_linhas'): niv[str(L)]['patches_linhas'] = f.get('patches_linhas', [])
         ant = cur
     fonte = {"tipo": "chassi", "url": url or f"https://rpgbot.net/dnd5/characters/classes/{classe}/subclasses/",
              "nota": "Chassi comum (22/11): sem multiclasse, sem raça, a subclasse escolhe posição/equipamento/feat."}

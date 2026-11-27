@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/chassi-wizard-bladesinging.json",
+ "gerado_de": "chassi-wizard-bladesinging.json",
  "build": "Wizard (Bladesinging), chassi: Int > Des, duas espadas curtas + Booming Blade, Mage Armor + Shield; meia",
  "corpo": {
   "ca": 15,
@@ -23,12 +23,6 @@
    "2": 3,
    "3": 3,
    "4": 2
-  },
-  "outros": {
-   "bladesong": {
-    "qtd": 3,
-    "volta": "longo"
-   }
   }
  },
  "linhas": [
@@ -630,10 +624,7 @@
   {
    "id": "canto",
    "herda": "principal",
-   "hipotese": "Bladesong + corpo a corpo (Booming Blade + Extra Attack)",
-   "corpo": {
-    "ca": 19
-   },
+   "hipotese": "corpo a corpo (Booming Blade + Extra Attack), com o Bladesong das outras linhas",
    "dano": {
     "ataques": [
      {
@@ -694,7 +685,6 @@
     }
    ],
    "gasta": {
-    "bladesong": 1,
     "espacos": {
      "1": 1
     }
@@ -705,10 +695,7 @@
   {
    "id": "canto-haste",
    "herda": "principal",
-   "hipotese": "Bladesong + Haste em si mesmo",
-   "corpo": {
-    "ca": 21
-   },
+   "hipotese": "corpo a corpo + Haste em si mesmo",
    "dano": {
     "ataques": [
      {
@@ -775,7 +762,6 @@
     }
    ],
    "gasta": {
-    "bladesong": 1,
     "espacos": {
      "1": 1,
      "3": 1
@@ -783,6 +769,9 @@
    },
    "area": [],
    "invocacoes": [],
+   "corpo": {
+    "ca": 17
+   },
    "plano": "prioritaria"
   },
   {
@@ -861,17 +850,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: canto-haste, controle-barato; prioritário: combo. Sobra: 1×2º, 2 bladesong.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: controle-3, controle-barato; prioritário: combo. Sobra: 1×2º.",
    "combates": [
     "controle-barato",
     "combo",
-    "canto-haste",
+    "controle-3",
     "combo"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 3×2º, 3×3º, 3 bladesong.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 3×2º, 3×3º.",
    "combates": [
     "area"
    ]
@@ -880,9 +869,9 @@
  "descricao": {
   "resumo": "Bladesinger do chassi: a régua comum de mago e, nas lutas em que entra no corpo a corpo, Bladesong com Booming Blade, Haste e (11) Tenser's.",
   "estrategia": "Régua comum do chassi do Wizard (ver gerador) + o que a tradição dá.",
-  "nao_modelado": "Dano secundário do Booming Blade; Song of Defense; Bladesong na concentração; Shadow Blade. Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Ritual Casting e utilidade; quebra de concentração.",
+  "nao_modelado": "Dano secundário do Booming Blade; Song of Defense; Bladesong na concentração e a ação bônus de ligá-lo no 1º round; Shadow Blade. Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Ritual Casting e utilidade; quebra de concentração.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
-  "progressao": "Wizard 7; atributos {'for': 8, 'des': 15, 'con': 13, 'int': 19, 'sab': 12, 'car': 10}; CD 15, ataque +7. Bladesong 3/dia (CA 19)."
+  "progressao": "Wizard 7; atributos {'for': 8, 'des': 15, 'con': 13, 'int': 19, 'sab': 12, 'car': 10}; CD 15, ataque +7. Bladesong 3/dia (CA 19) em todas as linhas, coberto em min(1, 3/4) das lutas."
  },
  "reacoes_magicas": [
   {
@@ -892,6 +881,18 @@
   {
    "magia": "absorb_elements",
    "desde": 1
+  }
+ ],
+ "patches_linhas": [
+  {
+   "origem": "Bladesong",
+   "cobertura": {
+    "usos": 3,
+    "volta": "longo"
+   },
+   "corpo": {
+    "ca": 4
+   }
   }
  ],
  "id": "chassi-wizard-bladesinging-7",

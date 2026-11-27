@@ -81,7 +81,7 @@
   "descricao": {
    "resumo": "Abjurador com armadura média e escudo (dip de Artificer), Arcane Ward como PV extra, que joga de invocador (Summon Fey/Aberration).",
    "estrategia": "Toll the Dead e Shield no dia a dia; Web para controlar, Fireball em grupos, invocações de 1 hora para cobrir duas lutas.",
-   "nao_modelado": "Recarga do Arcane Ward durante a luta e Projected Ward; Counterspell e Improved Abjuration; Grease, Fog Cloud, Mind Whip, Sickening Radiance; Greater Invisibility.",
+   "nao_modelado": "Recarga do Arcane Ward durante a luta; Counterspell e Improved Abjuration; Grease, Fog Cloud, Mind Whip, Sickening Radiance; Greater Invisibility.",
    "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas."
   },
   "reacoes_magicas": [
@@ -756,6 +756,40 @@
      "herda": "principal",
      "hipotese": "invocacao"
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Projected Ward",
+     "fator": {
+      "$p": "suporte.padroes.ward_projetado_fracao"
+     },
+     "corpo": {
+      "pv": -16
+     },
+     "reacao": {
+      "uso": "Projected Ward",
+      "fracao": {
+       "$p": "suporte.padroes.ward_projetado_reacao"
+      },
+      "eixos": [
+       "suporte"
+      ]
+     },
+     "anexar": {
+      "suporte.fontes": [
+       {
+        "nome": "Projected Ward (Arcane Ward num aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 16,
+        "usos_luta": 1,
+        "fator": {
+         "$p": "suporte.padroes.ward_projetado_fracao"
+        }
+       }
+      ]
+     }
+    }
    ]
   },
   "9": {
@@ -1126,6 +1160,40 @@
      ],
      "herda": "principal",
      "hipotese": "invocacao"
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Projected Ward",
+     "fator": {
+      "$p": "suporte.padroes.ward_projetado_fracao"
+     },
+     "corpo": {
+      "pv": -21
+     },
+     "reacao": {
+      "uso": "Projected Ward",
+      "fracao": {
+       "$p": "suporte.padroes.ward_projetado_reacao"
+      },
+      "eixos": [
+       "suporte"
+      ]
+     },
+     "anexar": {
+      "suporte.fontes": [
+       {
+        "nome": "Projected Ward (Arcane Ward num aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 21,
+        "usos_luta": 1,
+        "fator": {
+         "$p": "suporte.padroes.ward_projetado_fracao"
+        }
+       }
+      ]
+     }
     }
    ]
   },
@@ -1624,6 +1692,40 @@
      ],
      "herda": "principal",
      "hipotese": "invocacao"
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Projected Ward",
+     "fator": {
+      "$p": "suporte.padroes.ward_projetado_fracao"
+     },
+     "corpo": {
+      "pv": -25
+     },
+     "reacao": {
+      "uso": "Projected Ward",
+      "fracao": {
+       "$p": "suporte.padroes.ward_projetado_reacao"
+      },
+      "eixos": [
+       "suporte"
+      ]
+     },
+     "anexar": {
+      "suporte.fontes": [
+       {
+        "nome": "Projected Ward (Arcane Ward num aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 25,
+        "usos_luta": 1,
+        "fator": {
+         "$p": "suporte.padroes.ward_projetado_fracao"
+        }
+       }
+      ]
+     }
     }
    ]
   }

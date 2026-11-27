@@ -226,15 +226,15 @@
   "descricao": {
    "resumo": "Hunter: arqueiro com Hunter's Mark e a feature de dano da subclasse.",
    "estrategia": "Atira todo round; Hunter's Mark no 1º round das lutas que o plano escolher.",
-   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados."
+   "nao_modelado": "Troca de alvo da Hunter's Mark (ação bônus); magias utilitárias (Pass without Trace etc.); dano do Spike Growth; Natural Explorer; vantagem de criaturas Grandes contra o Ensnaring Strike; Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados."
   }
  },
  "niveis": {
   "3": {
-   "_texto": "Arqueiro: Archery, Sharpshooter (1), Des 16. Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados."
+   "_texto": "Arqueiro: Archery, Sharpshooter (1), Des 16. Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados."
   },
   "5": {
-   "_texto": "Extra Attack; Des 18 (4). Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados.",
+   "_texto": "Extra Attack; Des 18 (4). Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados.",
    "corpo": {
     "ca": 16,
     "pv": 44,
@@ -496,7 +496,7 @@
    ]
   },
   "7": {
-   "_texto": "Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados.",
+   "_texto": "Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados.",
    "corpo": {
     "ca": 16,
     "pv": 60,
@@ -758,7 +758,7 @@
    ]
   },
   "9": {
-   "_texto": "Des 20 (8); magias de 3º. Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados.",
+   "_texto": "Des 20 (8); magias de 3º. Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados.",
    "corpo": {
     "ca": 17,
     "pv": 76,
@@ -1127,7 +1127,7 @@
    ]
   },
   "11": {
-   "_texto": "Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados.",
+   "_texto": "Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados.",
    "corpo": {
     "ca": 17,
     "pv": 92,
@@ -1491,6 +1491,25 @@
       "espacos": {
        "3": 1
       }
+     }
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Volley",
+     "desde_linha_com": "dano",
+     "anexar": {
+      "area": [
+       {
+        "nome": "Volley (Multiattack)",
+        "tipo": "ataque_area",
+        "alvos": 2,
+        "seletiva": true,
+        "bonus": 11,
+        "dano": "1d8+5",
+        "extra_um_alvo": "1d8"
+       }
+      ]
      }
     }
    ]

@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/rpgbot-wizard-bladesinging.json",
+ "gerado_de": "rpgbot-wizard-bladesinging.json",
  "build": "Wizard (Bladesinging), Goblin (MMoM), duas espadas curtas + Booming Blade; Piercer 4, Des/Int 18 (8)",
  "corpo": {
   "ca": 16,
@@ -21,12 +21,7 @@
    "1": 3,
    "2": 3
   },
-  "outros": {
-   "bladesong": {
-    "qtd": 2,
-    "volta": "longo"
-   }
-  }
+  "outros": {}
  },
  "linhas": [
   {
@@ -72,10 +67,7 @@
   {
    "id": "canto",
    "herda": "principal",
-   "hipotese": "Bladesong + corpo a corpo (Booming Blade)",
-   "corpo": {
-    "ca": 19
-   },
+   "hipotese": "corpo a corpo (Booming Blade)",
    "dano": {
     "ataques": [
      {
@@ -137,7 +129,6 @@
     }
    ],
    "gasta": {
-    "bladesong": 1,
     "espacos": {
      "1": 1
     }
@@ -149,17 +140,17 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: reacao-absorb-elements; prioritário: canto. Sobra: 2×2º.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: canto; prioritário: canto. Sobra: 2×2º.",
    "combates": [
-    "reacao-absorb-elements",
     "canto",
-    "reacao-absorb-elements",
+    "canto",
+    "canto",
     "canto"
    ]
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: canto. Sobra: 2×1º, 3×2º, 1 bladesong.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: canto. Sobra: 2×1º, 3×2º.",
    "combates": [
     "canto"
    ]
@@ -176,6 +167,18 @@
   {
    "magia": "absorb_elements",
    "desde": 1
+  }
+ ],
+ "patches_linhas": [
+  {
+   "origem": "Bladesong",
+   "cobertura": {
+    "usos": 2,
+    "volta": "longo"
+   },
+   "corpo": {
+    "ca": 3
+   }
   }
  ],
  "id": "rpgbot-wizard-bladesinging-3",

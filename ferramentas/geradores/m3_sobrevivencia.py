@@ -63,7 +63,9 @@ def _so_ela(item):
 def aplicar(prog):
     c = _classe(prog); sb = _sub(prog); antes = json.dumps(prog, sort_keys=True)
     for nv, patch in prog.get('niveis', {}).items():
-        ps = patches(c, int(nv), sb)
+        # 27/11 (pacote C): patches de outras origens (features de subclasse escritas pelo gerador) ficam
+        outros = [x for x in patch.get('patches_linhas', []) if x.get('origem') not in ORIGENS]
+        ps = outros + patches(c, int(nv), sb)
         if ps: patch['patches_linhas'] = ps
         else: patch.pop('patches_linhas', None)
     if c in ('fighter', 'barbarian') or (c, sb) in REDIRECIONA:

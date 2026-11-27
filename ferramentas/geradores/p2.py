@@ -1,5 +1,5 @@
 import json,math
-R='/home/claude/dh-metricas/'
+R=''   # 27/11: relativo à raiz (era o caminho absoluto de um clone)
 def prof(L): return 2+(L-1)//4
 def built(slug,L): return json.load(open(f'{R}builds/rpgbot-fighter-{slug}-{L}.json'))
 def bon(b):

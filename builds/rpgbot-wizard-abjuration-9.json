@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/rpgbot-wizard-abjuration.json",
+ "gerado_de": "rpgbot-wizard-abjuration.json",
  "build": "Artificer 1 / Wizard (Abjuration), Orc (MMoM), armadura média + escudo; Int 18 (personagem 5), Int 20 (9)",
  "corpo": {
   "ca": 18,
@@ -392,7 +392,7 @@
  "descricao": {
   "resumo": "Abjurador com armadura média e escudo (dip de Artificer), Arcane Ward como PV extra, que joga de invocador (Summon Fey/Aberration).",
   "estrategia": "Toll the Dead e Shield no dia a dia; Web para controlar, Fireball em grupos, invocações de 1 hora para cobrir duas lutas.",
-  "nao_modelado": "Recarga do Arcane Ward durante a luta e Projected Ward; Counterspell e Improved Abjuration; Grease, Fog Cloud, Mind Whip, Sickening Radiance; Greater Invisibility.",
+  "nao_modelado": "Recarga do Arcane Ward durante a luta; Counterspell e Improved Abjuration; Grease, Fog Cloud, Mind Whip, Sickening Radiance; Greater Invisibility.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
   "progressao": "Artificer 1 / Wizard 8; Arcane Ward 21 somado ao PV."
  },
@@ -404,6 +404,40 @@
   {
    "magia": "absorb_elements",
    "desde": 1
+  }
+ ],
+ "patches_linhas": [
+  {
+   "origem": "Projected Ward",
+   "fator": {
+    "$p": "suporte.padroes.ward_projetado_fracao"
+   },
+   "corpo": {
+    "pv": -21
+   },
+   "reacao": {
+    "uso": "Projected Ward",
+    "fracao": {
+     "$p": "suporte.padroes.ward_projetado_reacao"
+    },
+    "eixos": [
+     "suporte"
+    ]
+   },
+   "anexar": {
+    "suporte.fontes": [
+     {
+      "nome": "Projected Ward (Arcane Ward num aliado)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "pv": 21,
+      "usos_luta": 1,
+      "fator": {
+       "$p": "suporte.padroes.ward_projetado_fracao"
+      }
+     }
+    ]
+   }
   }
  ],
  "id": "rpgbot-wizard-abjuration-9",

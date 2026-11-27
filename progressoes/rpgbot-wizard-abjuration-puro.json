@@ -306,7 +306,7 @@
   "descricao": {
    "resumo": "A build Krump Your Pointy Hat Pajama Man sem o nível de Artificer: Mage Armor e Shield no lugar de armadura e escudo, magias um nível antes.",
    "estrategia": "Extensão simples da build do RPGBot sem a multiclasse (níveis adiantados, atributos e feats remendados); a build original continua como referência.",
-   "nao_modelado": "Recarga do Arcane Ward durante a luta e Projected Ward; Counterspell e Improved Abjuration; sem proficiência em Con até o 12.",
+   "nao_modelado": "Recarga do Arcane Ward durante a luta; Counterspell e Improved Abjuration; sem proficiência em Con até o 12.",
    "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas."
   },
   "reacoes_magicas": [
@@ -983,6 +983,40 @@
      "herda": "principal",
      "hipotese": "invocacao"
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Projected Ward",
+     "fator": {
+      "$p": "suporte.padroes.ward_projetado_fracao"
+     },
+     "corpo": {
+      "pv": -18
+     },
+     "reacao": {
+      "uso": "Projected Ward",
+      "fracao": {
+       "$p": "suporte.padroes.ward_projetado_reacao"
+      },
+      "eixos": [
+       "suporte"
+      ]
+     },
+     "anexar": {
+      "suporte.fontes": [
+       {
+        "nome": "Projected Ward (Arcane Ward num aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 18,
+        "usos_luta": 1,
+        "fator": {
+         "$p": "suporte.padroes.ward_projetado_fracao"
+        }
+       }
+      ]
+     }
+    }
    ]
   },
   "9": {
@@ -1479,6 +1513,40 @@
      "herda": "principal",
      "hipotese": "invocacao"
     }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Projected Ward",
+     "fator": {
+      "$p": "suporte.padroes.ward_projetado_fracao"
+     },
+     "corpo": {
+      "pv": -23
+     },
+     "reacao": {
+      "uso": "Projected Ward",
+      "fracao": {
+       "$p": "suporte.padroes.ward_projetado_reacao"
+      },
+      "eixos": [
+       "suporte"
+      ]
+     },
+     "anexar": {
+      "suporte.fontes": [
+       {
+        "nome": "Projected Ward (Arcane Ward num aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 23,
+        "usos_luta": 1,
+        "fator": {
+         "$p": "suporte.padroes.ward_projetado_fracao"
+        }
+       }
+      ]
+     }
+    }
    ]
   },
   "11": {
@@ -1973,6 +2041,40 @@
      ],
      "herda": "principal",
      "hipotese": "invocacao"
+    }
+   ],
+   "patches_linhas": [
+    {
+     "origem": "Projected Ward",
+     "fator": {
+      "$p": "suporte.padroes.ward_projetado_fracao"
+     },
+     "corpo": {
+      "pv": -27
+     },
+     "reacao": {
+      "uso": "Projected Ward",
+      "fracao": {
+       "$p": "suporte.padroes.ward_projetado_reacao"
+      },
+      "eixos": [
+       "suporte"
+      ]
+     },
+     "anexar": {
+      "suporte.fontes": [
+       {
+        "nome": "Projected Ward (Arcane Ward num aliado)",
+        "lado": "def",
+        "modelo": "pv_temporario",
+        "pv": 27,
+        "usos_luta": 1,
+        "fator": {
+         "$p": "suporte.padroes.ward_projetado_fracao"
+        }
+       }
+      ]
+     }
     }
    ]
   }

@@ -36,7 +36,7 @@ def fazer(L, sub):
     papel = 'atirador'
     if sub == 'hunter':
         pt = [{"dano": "1d8", "nota": "Colossus Slayer (alvo já ferido, 1×/turno)"}]
-        txt = "Colossus Slayer (3); Multiattack Defense/Escape the Horde (7) e Volley (11) não modelados."
+        txt = "Colossus Slayer (3); Volley (11) na Área de todas as linhas; Multiattack Defense/Escape the Horde (7) não modelados."
     elif sub == 'gloom-stalker':
         extra_at = [lambda marca: arco(0.25, b, d, marca, '+1d8', nota="Dread Ambusher: ataque extra +1d8 no 1º round", round1=True)]
         if L >= 7: ss['sv']['sab'] = m['sab'] + P                       # Iron Mind
@@ -102,7 +102,12 @@ def fazer(L, sub):
     rec = {"espacos": dict(SL[L]), "outros": {"favored_foe": {"qtd": P, "volta": "longo"}}}
     base_txt = {3: "Arqueiro: Archery, Sharpshooter (1), Des 16.", 5: "Extra Attack; Des 18 (4).", 7: "",
                 9: "Des 20 (8); magias de 3º.", 11: ""}[L]
-    return dict(_texto=(base_txt + ' ' + txt).strip(), corpo=dict(ca=ca, pv=hp([10] * L, 2), saves=ss), recursos=rec, linhas=ls)
+    out = dict(_texto=(base_txt + ' ' + txt).strip(), corpo=dict(ca=ca, pv=hp([10] * L, 2), saves=ss), recursos=rec, linhas=ls)
+    if sub == 'hunter' and L >= 11:   # 27/11 (pacote C): Volley na Área de todas as linhas (ver chassi_ranger.VOLLEY)
+        out['patches_linhas'] = [{"origem": "Volley", "desde_linha_com": "dano",
+                                  "anexar": {"area": [{"nome": "Volley (Multiattack)", "tipo": "ataque_area", "alvos": 2,
+                                                       "seletiva": True, "bonus": b, "dano": f"1d8+{d}", "extra_um_alvo": "1d8"}]}}]
+    return out
 
 
 SUBS = {'hunter': 'Hunter', 'gloom-stalker': 'Gloom Stalker', 'horizon-walker': 'Horizon Walker',

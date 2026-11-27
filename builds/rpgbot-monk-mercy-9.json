@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/rpgbot-monk-mercy.json",
+ "gerado_de": "rpgbot-monk-mercy.json",
  "build": "Monk (Mercy), meio-elfo da floresta, chicote como arma dedicada; Slasher 4, Des 20 8, Sab 18 12",
  "corpo": {
   "ca": 18,
@@ -207,6 +207,71 @@
    }
   },
   {
+   "id": "mao-cura",
+   "hipotese": "Flurry todo round (4 ki) com um golpe trocado por Hand of Healing",
+   "dano": {
+    "ataques": [
+     {
+      "n": 2,
+      "bonus": 9,
+      "dano": "1d6+5"
+     },
+     {
+      "n": 1.0,
+      "bonus": 9,
+      "dano": "1d6+5",
+      "nota": "ação bônus (Flurry todo round, o outro golpe vira Hand of Healing)"
+     }
+    ]
+   },
+   "defesa": {},
+   "controle": {
+    "atencao": {
+     "papel": "striker",
+     "soft": 0.15,
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "saves": {},
+   "gasta": {
+    "ki": 4
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "lado": "def",
+      "alcance": "toque",
+      "pv": 6.5,
+      "nome": "Hand of Healing (levanta um caído)",
+      "modelo": "cura_na_luta",
+      "acao": "bonus",
+      "usos_luta": 4
+     },
+     {
+      "lado": "def",
+      "alcance": "toque",
+      "pv": 6.5,
+      "nome": "Hand of Healing (aliado de pé)",
+      "modelo": "cura",
+      "usos_luta": 3.5
+     },
+     {
+      "nome": "Physician's Touch (tira a condição na Hand of Healing)",
+      "lado": "def",
+      "modelo": "resgate_condicao",
+      "p_save": 1.0,
+      "vantagem": false
+     }
+    ]
+   }
+  },
+  {
    "id": "atordoar",
    "hipotese": "Flurry em 2 rounds + 2 tentativas de Stunning Strike (4 ki) (chicote com o dado de Martial Arts)",
    "dano": {
@@ -359,7 +424,7 @@
  "descricao": {
   "resumo": "Monge da Misericórdia: Hand of Harm para dano necrótico e veneno sem save, Hand of Healing para levantar aliados.",
   "estrategia": "Ataca com o chicote, gasta ki em Flurry com Hand of Harm; troca um golpe do Flurry por cura quando alguém cai.",
-  "nao_modelado": "Alcance do chicote e Slasher; remoção de condições (Physician's Touch na cura); cura fora de luta com o ki que sobra; Deflect Missiles; Hand of Ultimate Mercy (17); vantagem do atordoado para os aliados.",
+  "nao_modelado": "Alcance do chicote e Slasher; cura fora de luta com o ki que sobra; Deflect Missiles; Hand of Ultimate Mercy (17); vantagem do atordoado para os aliados.",
   "progressao": "Des 20 (8)."
  },
  "id": "rpgbot-monk-mercy-9",

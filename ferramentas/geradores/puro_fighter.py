@@ -1,5 +1,5 @@
 import json
-OUT='/home/claude/dh-metricas/progressoes/'
+OUT='progressoes/'   # 27/11: relativo à raiz (era o caminho absoluto de um clone)
 def prof(L): return 2+(L-1)//4
 def M(f,d,c,i,w,ch): return {"for":f,"des":d,"con":c,"int":i,"sab":w,"car":ch}
 def corpo(ca,pv,L,m,n,profs=('for','con')): return dict(ca=ca,pv=pv,saves=dict(sv={k:m[k]+(prof(L) if k in profs else 0) for k in m},ataques=n))

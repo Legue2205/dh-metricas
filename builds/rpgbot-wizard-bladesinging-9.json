@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/rpgbot-wizard-bladesinging.json",
+ "gerado_de": "rpgbot-wizard-bladesinging.json",
  "build": "Wizard (Bladesinging), Goblin (MMoM), duas espadas curtas + Booming Blade; Piercer 4, Des/Int 18 (8)",
  "corpo": {
   "ca": 17,
@@ -24,12 +24,7 @@
    "4": 3,
    "5": 2
   },
-  "outros": {
-   "bladesong": {
-    "qtd": 4,
-    "volta": "longo"
-   }
-  }
+  "outros": {}
  },
  "linhas": [
   {
@@ -81,10 +76,7 @@
   {
    "id": "canto",
    "herda": "principal",
-   "hipotese": "Bladesong + corpo a corpo (Booming Blade)",
-   "corpo": {
-    "ca": 21
-   },
+   "hipotese": "corpo a corpo (Booming Blade)",
    "dano": {
     "ataques": [
      {
@@ -162,7 +154,6 @@
     }
    ],
    "gasta": {
-    "bladesong": 1,
     "espacos": {
      "1": 1
     }
@@ -262,9 +253,9 @@
   {
    "id": "canto-haste",
    "herda": "principal",
-   "hipotese": "Bladesong + Haste em si mesmo",
+   "hipotese": "Haste em si mesmo",
    "corpo": {
-    "ca": 23
+    "ca": 19
    },
    "dano": {
     "ataques": [
@@ -349,7 +340,6 @@
     }
    ],
    "gasta": {
-    "bladesong": 1,
     "espacos": {
      "1": 1,
      "3": 1
@@ -560,7 +550,7 @@
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: canto-haste; prioritário: combo. Sobra: 2×2º, 2×4º, 2 bladesong.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: canto-haste; prioritário: combo. Sobra: 2×2º, 2×4º.",
    "combates": [
     "canto-haste",
     "combo",
@@ -570,7 +560,7 @@
   },
   "combate_unico": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 3×2º, 3×3º, 3×4º, 4 bladesong.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). prioritário: area. Sobra: 2×1º, 3×2º, 3×3º, 3×4º.",
    "combates": [
     "area"
    ]
@@ -587,6 +577,18 @@
   {
    "magia": "absorb_elements",
    "desde": 1
+  }
+ ],
+ "patches_linhas": [
+  {
+   "origem": "Bladesong",
+   "cobertura": {
+    "usos": 4,
+    "volta": "longo"
+   },
+   "corpo": {
+    "ca": 4
+   }
   }
  ],
  "id": "rpgbot-wizard-bladesinging-9",

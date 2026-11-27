@@ -1,5 +1,5 @@
 import json
-OUT='/home/claude/dh-metricas/progressoes/'
+OUT='progressoes/'   # 27/11: relativo à raiz (era o caminho absoluto de um clone)
 def FONTE(slug): return {"tipo":"rpgbot","url":f"https://rpgbot.net/dnd5/characters/classes/fighter/subclasses/{slug}/","nota":"Build exemplo do guia de subclasse (2014). Passada 1 cega: só mecânica; premissas congeladas."}
 def prof(L): return 2+(L-1)//4
 def mods(f,d,c,i,w,ch): return {"for":f,"des":d,"con":c,"int":i,"sab":w,"car":ch}

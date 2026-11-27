@@ -55,23 +55,71 @@ def _reacoes_magicas(b, linhas):
         b['linhas'].append(nova); linhas[lid] = nova
 
 
+def _cobertura(b, c):
+    """Fração das lutas do dia que um recurso de usos por dia cobre (27/11, pacote C): min(1, usos do dia ÷ lutas).
+    c = {"usos": n, "volta": "longo" | "curto"}; "curto" conta uma recarga por descanso curto do dia padrão."""
+    from .premissas import P
+    if isinstance(c, (int, float)): return float(c)
+    lutas = b.get('recursos', {}).get('lutas_dia') or P('suporte.lutas_dia')
+    vezes = 1 + (int(round(lutas / P('suporte.lutas_por_descanso_curto'))) - 1 if c.get('volta') == 'curto' else 0)
+    return min(1.0, c['usos'] * vezes / lutas)
+
+
 def _patches_linhas(b):
     """M3 (23/11): "patches_linhas" da build = features que valem em várias linhas (Second Wind, Indomitable, Relentless
     Rage…): [{"origem": texto, "quando_gasta": "furia" (opcional), "eixos": {"defesa": {"cura_luta": 7}}}]. Número soma
-    ao que a linha (ou, nos saves, o corpo) já tem; dict mescla num sub-dict que a linha já tem; o resto substitui. Idempotente (marca as origens já aplicadas)."""
-    for p in b.get('patches_linhas') or []:
+    ao que a linha (ou, nos saves, o corpo) já tem; dict mescla num sub-dict que a linha já tem; o resto substitui. Idempotente (marca as origens já aplicadas).
+    27/11 (pacote C), campos opcionais para features que acompanham qualquer ação da luta (reação, ação bônus, passiva):
+      "so" / "exceto": ids de linhas; "desde_linha_com": eixo que a linha precisa ter (ex.: "dano");
+      "corpo": {"ca": 4, "pv": -13} soma ao corpo efetivo da linha (o da linha, senão o da build);
+      "cobertura": {"usos": PB, "volta": "longo"} = buff de usos por dia espalhado pelas lutas (Bladesong): os números de
+        "corpo" e "eixos" valem × min(1, usos do dia ÷ lutas). O recurso fica fora de recursos.outros (é gasto aqui);
+      "fator": multiplica os números de "corpo" e "eixos" (aceita {"$p": premissa});
+      "reacao": {"uso", "fracao", "eixos"} = a feature gasta a reação: entra limitada pela reação livre da linha; com
+        reação parcial, "fator" das fontes anexadas cai na mesma proporção; sem reação livre, o patch não entra;
+      "anexar": {"area": [...], "reacao": [...], "suporte.fontes": [...]} acrescenta às listas da linha."""
+    from .premissas import resolver as _prem
+    import copy
+    for p0 in b.get('patches_linhas') or []:
+        p = _prem(copy.deepcopy(p0))
         for l in b.get('linhas', []):
             if p.get('origem') in l.get('_patches', []): continue
             if p.get('quando_gasta') and p['quando_gasta'] not in (l.get('gasta') or {}): continue
+            if 'so' in p and l.get('id') not in p['so']: continue
+            if l.get('id') in p.get('exceto', []): continue
+            if p.get('desde_linha_com') and p['desde_linha_com'] not in l: continue
+            k = float(p.get('fator', 1.0))
+            if 'cobertura' in p: k *= _cobertura(b, p['cobertura'])
+            kr = 1.0
+            if p.get('reacao'):
+                livre = max(0.0, 1.0 - sum(u.get('fracao', 1.0) for u in l.get('reacao', [])))
+                quer = float(p['reacao'].get('fracao', 1.0))
+                if livre <= 1e-9 or quer <= 0: continue
+                usa = min(quer, livre); kr = usa / quer; k *= kr
+                l['reacao'] = list(l.get('reacao', [])) + [dict(p['reacao'], fracao=round(usa, 4))]
             for eixo, campos in p.get('eixos', {}).items():
                 atual = dict(l.get(eixo) or {})
-                for k, v in campos.items():
+                for kk, v in campos.items():
                     if isinstance(v, dict):   # D13 (24/11): sub-dict existente é mesclado (controle.atencao.redireciona)
-                        if isinstance(atual.get(k), dict): atual[k] = {**atual[k], **v}
+                        if isinstance(atual.get(kk), dict): atual[kk] = {**atual[kk], **v}
                         continue                # sem o sub-dict na linha (ex.: linha sem atenção): não cria
-                    base = atual.get(k, (b.get('corpo', {}).get('saves', {}) if eixo == 'saves' else {}).get(k, 0))
-                    atual[k] = round(base + v, 4) if isinstance(v, (int, float)) and isinstance(base, (int, float)) else v
+                    base = atual.get(kk, (b.get('corpo', {}).get('saves', {}) if eixo == 'saves' else {}).get(kk, 0))
+                    num = isinstance(v, (int, float)) and isinstance(base, (int, float))
+                    atual[kk] = round(base + v * k, 4) if num else v
                 l[eixo] = atual
+            if p.get('corpo'):
+                c = dict(l.get('corpo') or {})
+                for kk, v in p['corpo'].items():
+                    c[kk] = round(c.get(kk, b.get('corpo', {}).get(kk, 0)) + v * k, 4)
+                l['corpo'] = c
+            for alvo, itens in (p.get('anexar') or {}).items():
+                itens = copy.deepcopy(itens)
+                if alvo == 'suporte.fontes':
+                    for f in itens:
+                        if kr < 1: f['fator'] = round(float(f.get('fator', 1.0)) * kr, 4)
+                    sp = dict(l.get('suporte') or {}); sp['fontes'] = list(sp.get('fontes', [])) + itens; l['suporte'] = sp
+                else:
+                    l[alvo] = list(l.get(alvo) or []) + itens
             l.setdefault('_patches', []).append(p.get('origem'))
 
 

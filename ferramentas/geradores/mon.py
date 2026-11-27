@@ -84,6 +84,12 @@ def mercy(L):
         fontes = [{"tipo": "condicao_no_acerto", "nome": "Physician's Touch (envenenado, sem save)", "efeito": "cond_envenenado_um_turno",
                    "cd": 99, "bonus": [b] * (n + 1), "usos": usos_p}]
     ls.append(linha('mao-da-morte', hip, dano, {}, saves=ss, controle=ctrl('striker', fontes), gasta={"ki": gasto}, suporte=[cura]))
+    # 27/11 (pacote C): Hand of Healing todo round (Flurry nos 4 rounds, um golpe vira cura), em vez de 1 por luta
+    d3 = {"ataques": [U(n, b, d, L), U(1.0, b, d, L, nota="ação bônus (Flurry todo round, o outro golpe vira Hand of Healing)")]}
+    if L >= 11: d3["por_turno"] = [harm]
+    ls.append(linha('mao-cura', 'Flurry todo round (4 ki) com um golpe trocado por Hand of Healing' + (' + Hand of Harm grátis' if L >= 11 else ''),
+                    d3, {}, saves=ss, controle=ctrl('striker', json.loads(json.dumps(fontes)) if L >= 11 else []), gasta={"ki": 4},
+                    suporte=MAO_CURA(4, cura['pv'], L)))
     for l in ls: l['saves'] = {}
     txt = {3: "Hand of Healing e Hand of Harm; chicote como arma dedicada (dado de Martial Arts, alcance).",
            5: "Extra Attack, Stunning Strike; Slasher (Des 18, 4); Martial Arts d6.",
@@ -96,7 +102,7 @@ escrever('rpgbot-monk-mercy', 'way-of-mercy', 'Mercy Monk (RPGBot: Stuck Halfway
          'Monk (Mercy), meio-elfo da floresta, chicote como arma dedicada; Slasher 4, Des 20 8, Sab 18 12',
          {"resumo": "Monge da Misericórdia: Hand of Harm para dano necrótico e veneno sem save, Hand of Healing para levantar aliados.",
           "estrategia": "Ataca com o chicote, gasta ki em Flurry com Hand of Harm; troca um golpe do Flurry por cura quando alguém cai.",
-          "nao_modelado": "Alcance do chicote e Slasher; remoção de condições (Physician's Touch na cura); cura fora de luta com o ki que sobra; Deflect Missiles; Hand of Ultimate Mercy (17); vantagem do atordoado para os aliados."},
+          "nao_modelado": "Alcance do chicote e Slasher; cura fora de luta com o ki que sobra; Deflect Missiles; Hand of Ultimate Mercy (17); vantagem do atordoado para os aliados."},
          {L: mercy(L) for L in NIV})
 
 # ---------------------------------------------------------------- Long Death (Vulture)

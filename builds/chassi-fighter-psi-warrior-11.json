@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/chassi-fighter-psi-warrior.json",
+ "gerado_de": "chassi-fighter-psi-warrior.json",
  "build": "Fighter (Psi Warrior), atirador de arco longo, couro batido/meia-armadura, Archery; sem feat",
  "corpo": {
   "ca": 17,
@@ -109,16 +109,68 @@
    "gasta": {
     "action_surge": 1
    }
+  },
+  {
+   "id": "campo-protetor",
+   "herda": "principal",
+   "hipotese": "dados psiônicos da luta no Protective Field (reação), sem Psionic Strike",
+   "dano": {
+    "ataques": [
+     {
+      "n": 3,
+      "bonus": 11,
+      "dano": "1d8+5"
+     }
+    ]
+   },
+   "controle": {
+    "atencao": {
+     "papel": "atirador",
+     "front": false,
+     "acc_m": [
+      0.7,
+      0.8,
+      1.0
+     ],
+     "dpr": "auto"
+    },
+    "fontes": [
+     {
+      "tipo": "ameaca",
+      "nome": "Corpo (ameaça)"
+     }
+    ]
+   },
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Protective Field (reduz o dano de um aliado)",
+      "lado": "def",
+      "modelo": "pv_temporario",
+      "pv": 6.5,
+      "usos_luta": 2.5
+     }
+    ]
+   },
+   "reacao": [
+    {
+     "uso": "Protective Field",
+     "fracao": 0.625,
+     "eixos": [
+      "suporte"
+     ]
+    }
+   ]
   }
  ],
  "planos": {
   "padrao": {
    "auto": true,
-   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: principal; prioritário: surge. Sobra: nada.",
+   "descricao": "Plano automático (maior gasto ponderado que cabe no dia; prioritário pesa 2). não prioritário: campo-protetor; prioritário: surge. Sobra: nada.",
    "combates": [
-    "principal",
+    "campo-protetor",
     "surge",
-    "principal",
+    "campo-protetor",
     "surge"
    ]
   },
@@ -133,7 +185,7 @@
  "descricao": {
   "resumo": "Psi Warrior arqueiro: dados psiônicos no Psionic Strike, com Telekinetic Thrust para derrubar.",
   "estrategia": "Posição atirador; feat da subclasse: Piercer (4) da build do RPGBot, meio-feat em Des.",
-  "nao_modelado": "Protective Field; Telekinetic Movement; Psi-Powered Leap; Telekinetic Adept fora do Thrust; Guarded Mind; Indomitable (9).",
+  "nao_modelado": "Telekinetic Movement; Psi-Powered Leap; Telekinetic Adept fora do Thrust; Guarded Mind; Indomitable (9).",
   "progressao": "atributos {'for': 10, 'des': 20, 'con': 18, 'int': 13, 'sab': 12, 'car': 8}; 10 dados d10/dia"
  },
  "patches_linhas": [

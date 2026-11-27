@@ -50,7 +50,7 @@ NM = {  # nao_modelado por domínio (além do comum)
     'life': "Blessed Healer; Beacon of Hope, Mass Cure Wounds, Guardian of Faith, Death Ward; cura fora de luta.",
     'light': "Improved Flare (Warding Flare em aliados); Faerie Fire, Scorching Ray, Wall of Fire, Flame Strike, Guardian of Faith; fogo da esfera em quem termina o turno ao lado.",
     'nature': "Acolyte of Nature (truque de druida); Charm Animals and Plants; Dampen Elements; Barkskin, Spike Growth, Plant Growth, Wind Wall, Grasping Vine.",
-    'order': "Order's Demand; Embodiment of Law; Command e Silvery Barbs com Voice of Authority; Heroism, Zone of Truth, Compulsion, Dominate Person; Mass Healing Word.",
+    'order': "Order's Wrath fora da linha de maça (o gatilho é o Divine Strike); Order's Demand; Embodiment of Law; Command e Silvery Barbs com Voice of Authority; Heroism, Zone of Truth, Compulsion, Dominate Person; Mass Healing Word.",
     'peace': "Protective Bond (teleporte e redistribuição de dano); 1d4 em testes; Sanctuary, Aid, Warding Bond, Otiluke's Resilient Sphere.",
     'tempest': "Thunderbolt Strike (empurrão); Stormborn; Fog Cloud, Thunderwave, Call Lightning, Sleet Storm, Ice Storm.",
     'trickery': "Invoke Duplicity (vantagem só em ataque e magias lançadas da ilusão; o chassi usa truque de save e fica atrás); Divine Strike (sem linha de arma: armas simples e Des de retaguarda); Blessing of the Trickster; Cloak of Shadows; Charm Person, Pass without Trace, Mirror Image, Blink, Dimension Door, Polymorph.",
@@ -103,6 +103,9 @@ def fat(sub, L):
             dn["por_luta"] = [{"usos": 1.0, "dano": str(5 + 2 * L), "nota": "Touch of Death (Channel Divinity ÷ 2 lutas)"}]
         extras.append(dict(id="arma", hipotese=f"{nome} todo round" + (" com Divine Strike" if ds else ""), dano=dn,
                            controle=front_ctl))
+        if sub == 'order' and L >= 8:   # 27/11 (pacote C): Order's Wrath, 1×/turno no acerto com Divine Strike
+            extras[-1]['suporte'] = {"fontes": [{"nome": "Order's Wrath (+2d8 no próximo acerto de aliado)", "lado": "of",
+                                                 "modelo": "dano_por_acerto", "por_round": True, "alvos": 1, "dano_extra": 9}]}
     # ---- features e magias de domínio ----
     if sub == 'death':
         livres.append({"nome": "Reaper (Toll the Dead em 2 alvos)", "tipo": "cleave_save", "dano": f"{k(L)}d12", "cd": cd, "save": "Sab", "alvos": [1, 2, 2]})

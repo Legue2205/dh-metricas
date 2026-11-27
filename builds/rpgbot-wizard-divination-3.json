@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/rpgbot-wizard-divination.json",
+ "gerado_de": "rpgbot-wizard-divination.json",
  "build": "Wizard (Divination), Halfling, Int 17 até o 11; Bountiful Luck 4, Lucky 8, Fey Touched 12",
  "corpo": {
   "ca": 15,
@@ -62,7 +62,24 @@
    "invocacoes": [],
    "principal": true,
    "custo": "gratuita",
-   "hipotese": "só truques (anel interno)"
+   "hipotese": "só truques (anel interno)",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5
+     }
+    ]
+   }
   },
   {
    "id": "controle",
@@ -114,7 +131,10 @@
         "modo": "melhor"
        }
       ],
-      "forcar_falha": 0.5
+      "forcar_falha": 0.5,
+      "forcar_falha_fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      }
      }
     ]
    },
@@ -144,7 +164,28 @@
     }
    ],
    "herda": "principal",
-   "hipotese": "controle"
+   "hipotese": "controle",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5,
+      "fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      },
+      "complemento": true
+     }
+    ]
+   }
   }
  ],
  "planos": {
@@ -169,7 +210,7 @@
  "descricao": {
   "resumo": "Adivinho que manipula os dados: Portent, Lucky e Silvery Barbs garantem os saves das magias de controle; evita rolar ataques.",
   "estrategia": "Mind Sliver antes do save; Web, Hypnotic Pattern, Banishment e Psychic Lance escolhidos pelo save fraco do alvo.",
-  "nao_modelado": "Portent nos aliados (ataques e saves) e nos ataques inimigos (só entra forçando falha no save das magias); Lucky, Bountiful Luck e Silvery Barbs; Expert Divination; Create Bonfire; Dragon's Breath no familiar; Mind Spike.",
+  "nao_modelado": "Lucky, Bountiful Luck e Silvery Barbs; Expert Divination; Create Bonfire; Dragon's Breath no familiar; Mind Spike.",
   "progressao": "Wizard 3; Portent 2/dia; Int 17 (Bountiful Luck 4, Lucky 8)."
  },
  "id": "rpgbot-wizard-divination-3",

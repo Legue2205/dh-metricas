@@ -156,9 +156,24 @@ def psi_warrior(L, feat=None):
     cf = [{"tipo": "condicao_no_acerto", "nome": "Telekinetic Thrust (Psionic Strike)", "efeito": "cond_derrubado",
            "cd": 8 + p + m['int'], "bonus": [b] * n, "usos": dia / 4}]
     d = D(atq, **k)
+    # 27/11 (pacote C): Protective Field = a mesma luta com os dados psiônicos dela na reação que reduz o dano de um aliado
+    # (dado + Int) em vez do Psionic Strike; uma linha = uma hipótese, o plano escolhe por luta.
+    campo = {"id": "campo-protetor", "herda": "principal", "hipotese": "dados psiônicos da luta no Protective Field (reação), sem Psionic Strike",
+             "dano": D(atq, **({'por_turno': k['por_turno']} if 'por_turno' in k else {})), "controle": ctl('atirador'),
+             **PROTECTIVE_FIELD(dia, dpsi, m['int'])}
     return fim({"corpo": corpo(ca_des(m), n), "recursos": {"espacos": {}, "outros": {"action_surge": AS}},
                 "linhas": [linha0("arco longo; dados psiônicos no Psionic Strike (com Telekinetic Thrust), espalhados pelo dia", d, ctl('atirador', cf)),
-                           surge(d)], "_texto": f"atributos {s}; {dia} dados {dpsi[1:]}/dia"})
+                           surge(d), campo], "_texto": f"atributos {s}; {dia} dados {dpsi[1:]}/dia"})
+
+
+def PROTECTIVE_FIELD(dia, dado, mod_int):
+    """Psi Warrior 3: reação, um aliado a 30 pés reduz o dano de um golpe em 1 dado psiônico + Int (pv_temporario de 1
+    golpe). Usos da luta = dados do dia ÷ 4 lutas; a reação vai para isso em usos ÷ rounds da luta."""
+    sys.path.insert(0, "."); from dh.premissas import P  # noqa: E402
+    u = round(dia / 4, 3); faces = int(dado.split('d')[1])
+    return {"suporte": {"fontes": [{"nome": "Protective Field (reduz o dano de um aliado)", "lado": "def", "modelo": "pv_temporario",
+                                    "pv": round((faces + 1) / 2 + mod_int, 2), "usos_luta": u}]},
+            "reacao": [{"uso": "Protective Field", "fracao": round(min(1.0, u / P('base.rounds_por_luta')), 3), "eixos": ["suporte"]}]}
 
 
 # ---------------- Purple Dragon Knight (Banneret): atirador ----------------
@@ -258,7 +273,7 @@ SUBS = {
                     "Sentinel (1, via Custom Lineage) da build do RPGBot"),
     'psi-warrior': (psi_warrior, 'atirador', "atirador de arco longo, couro batido/meia-armadura, Archery", ['Piercer'],
                     "Psi Warrior arqueiro: dados psiônicos no Psionic Strike, com Telekinetic Thrust para derrubar.",
-                    "Protective Field; Telekinetic Movement; Psi-Powered Leap; Telekinetic Adept fora do Thrust; Guarded Mind; " + SEMPRE + ".",
+                    "Telekinetic Movement; Psi-Powered Leap; Telekinetic Adept fora do Thrust; Guarded Mind; " + SEMPRE + ".",
                     "Piercer (4) da build do RPGBot, meio-feat em Des"),
     'purple-dragon-knight': (pdk, 'atirador', "atirador de arco longo, couro batido/meia-armadura, Archery", ['Sharpshooter'],
                              "Purple Dragon Knight (Banneret) arqueiro: cura em grupo no Second Wind e ataque de aliado no Action Surge (10).",

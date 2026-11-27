@@ -162,12 +162,102 @@
   "descricao": {
    "resumo": "Adivinho que manipula os dados: Portent, Lucky e Silvery Barbs garantem os saves das magias de controle; evita rolar ataques.",
    "estrategia": "Mind Sliver antes do save; Web, Hypnotic Pattern, Banishment e Psychic Lance escolhidos pelo save fraco do alvo.",
-   "nao_modelado": "Portent nos aliados (ataques e saves) e nos ataques inimigos (só entra forçando falha no save das magias); Lucky, Bountiful Luck e Silvery Barbs; Expert Divination; Create Bonfire; Dragon's Breath no familiar; Mind Spike."
+   "nao_modelado": "Lucky, Bountiful Luck e Silvery Barbs; Expert Divination; Create Bonfire; Dragon's Breath no familiar; Mind Spike."
   }
  },
  "niveis": {
   "3": {
-   "_texto": "Wizard 3; Portent 2/dia; Int 17 (Bountiful Luck 4, Lucky 8)."
+   "_texto": "Wizard 3; Portent 2/dia; Int 17 (Bountiful Luck 4, Lucky 8).",
+   "linhas": [
+    {
+     "id": "principal",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5
+       }
+      ]
+     }
+    },
+    {
+     "id": "controle",
+     "controle": {
+      "atencao": {
+       "papel": "conjurador",
+       "front": false,
+       "acc_m": [
+        0.8,
+        0.9,
+        1.0
+       ],
+       "conc": true,
+       "soft": 0.15,
+       "dpr": "auto"
+      },
+      "fontes": [
+       {
+        "tipo": "melhor_de",
+        "nome": "Magia de controle (a melhor da lista)",
+        "opcoes": [
+         {
+          "tipo": "area",
+          "nome": "Web",
+          "magia": "web",
+          "cd": 13
+         },
+         {
+          "tipo": "alvo_unico",
+          "nome": "Suggestion",
+          "cd": 13,
+          "slots": [
+           2
+          ],
+          "magias": [
+           "suggestion"
+          ],
+          "modo": "melhor"
+         }
+        ],
+        "forcar_falha": 0.5,
+        "forcar_falha_fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        }
+       }
+      ]
+     },
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5,
+        "fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        },
+        "complemento": true
+       }
+      ]
+     }
+    }
+   ]
   },
   "5": {
    "_texto": "Wizard 5; Portent 2/dia; Int 17 (Bountiful Luck 4, Lucky 8).",
@@ -230,7 +320,24 @@
      "defesa": {},
      "saves": {},
      "area": [],
-     "invocacoes": []
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5
+       }
+      ]
+     }
     },
     {
      "id": "controle",
@@ -288,7 +395,10 @@
           "cd": 14
          }
         ],
-        "forcar_falha": 0.5
+        "forcar_falha": 0.5,
+        "forcar_falha_fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        }
        }
       ]
      },
@@ -319,7 +429,28 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "controle"
+     "hipotese": "controle",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5,
+        "fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        },
+        "complemento": true
+       }
+      ]
+     }
     },
     {
      "id": "controle-barato",
@@ -353,7 +484,10 @@
         "nome": "Web",
         "magia": "web",
         "cd": 14,
-        "forcar_falha": 0.5
+        "forcar_falha": 0.5,
+        "forcar_falha_fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        }
        }
       ]
      },
@@ -383,7 +517,28 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "controle-barato"
+     "hipotese": "controle-barato",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5,
+        "fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        },
+        "complemento": true
+       }
+      ]
+     }
     },
     {
      "id": "invocacao",
@@ -456,7 +611,24 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "invocacao"
+     "hipotese": "invocacao",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5
+       }
+      ]
+     }
     }
    ]
   },
@@ -522,7 +694,24 @@
      "defesa": {},
      "saves": {},
      "area": [],
-     "invocacoes": []
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5
+       }
+      ]
+     }
     },
     {
      "id": "controle",
@@ -580,7 +769,10 @@
           "cd": 14
          }
         ],
-        "forcar_falha": 0.5
+        "forcar_falha": 0.5,
+        "forcar_falha_fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        }
        }
       ]
      },
@@ -610,7 +802,28 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "controle"
+     "hipotese": "controle",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5,
+        "fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        },
+        "complemento": true
+       }
+      ]
+     }
     },
     {
      "id": "controle-barato",
@@ -644,7 +857,10 @@
         "nome": "Web",
         "magia": "web",
         "cd": 14,
-        "forcar_falha": 0.5
+        "forcar_falha": 0.5,
+        "forcar_falha_fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        }
        }
       ]
      },
@@ -674,7 +890,28 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "controle-barato"
+     "hipotese": "controle-barato",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5,
+        "fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        },
+        "complemento": true
+       }
+      ]
+     }
     },
     {
      "id": "invocacao",
@@ -748,7 +985,24 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "invocacao"
+     "hipotese": "invocacao",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5
+       }
+      ]
+     }
     }
    ]
   },
@@ -815,7 +1069,24 @@
      "defesa": {},
      "saves": {},
      "area": [],
-     "invocacoes": []
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5
+       }
+      ]
+     }
     },
     {
      "id": "controle",
@@ -905,7 +1176,10 @@
           "modo": "melhor"
          }
         ],
-        "forcar_falha": 0.5
+        "forcar_falha": 0.5,
+        "forcar_falha_fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        }
        }
       ]
      },
@@ -936,7 +1210,28 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "controle"
+     "hipotese": "controle",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5,
+        "fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        },
+        "complemento": true
+       }
+      ]
+     }
     },
     {
      "id": "controle-barato",
@@ -970,7 +1265,10 @@
         "nome": "Web",
         "magia": "web",
         "cd": 15,
-        "forcar_falha": 0.5
+        "forcar_falha": 0.5,
+        "forcar_falha_fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        }
        }
       ]
      },
@@ -1000,7 +1298,28 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "controle-barato"
+     "hipotese": "controle-barato",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5,
+        "fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        },
+        "complemento": true
+       }
+      ]
+     }
     },
     {
      "id": "invocacao",
@@ -1074,7 +1393,24 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "invocacao"
+     "hipotese": "invocacao",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5
+       }
+      ]
+     }
     }
    ]
   },
@@ -1142,7 +1478,24 @@
      "defesa": {},
      "saves": {},
      "area": [],
-     "invocacoes": []
+     "invocacoes": [],
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5
+       }
+      ]
+     }
     },
     {
      "id": "controle",
@@ -1250,7 +1603,10 @@
           "cd": 15
          }
         ],
-        "forcar_falha": 0.5
+        "forcar_falha": 0.5,
+        "forcar_falha_fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        }
        }
       ]
      },
@@ -1280,7 +1636,28 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "controle"
+     "hipotese": "controle",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5,
+        "fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        },
+        "complemento": true
+       }
+      ]
+     }
     },
     {
      "id": "controle-barato",
@@ -1314,7 +1691,10 @@
         "nome": "Web",
         "magia": "web",
         "cd": 15,
-        "forcar_falha": 0.5
+        "forcar_falha": 0.5,
+        "forcar_falha_fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        }
        }
       ]
      },
@@ -1344,7 +1724,28 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "controle-barato"
+     "hipotese": "controle-barato",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5,
+        "fator": {
+         "$p": "suporte.padroes.portent_fracao_controle"
+        },
+        "complemento": true
+       }
+      ]
+     }
     },
     {
      "id": "invocacao",
@@ -1418,7 +1819,24 @@
       }
      ],
      "herda": "principal",
-     "hipotese": "invocacao"
+     "hipotese": "invocacao",
+     "suporte": {
+      "fontes": [
+       {
+        "nome": "Portent (rolagens de aliados e inimigos)",
+        "lado": "def",
+        "modelo": "dado_multiuso",
+        "vira": {
+         "$p": "suporte.padroes.portent_vira"
+        },
+        "mix": {
+         "$p": "suporte.padroes.portent_mix"
+        },
+        "acao": "nenhuma",
+        "usos_luta": 0.5
+       }
+      ]
+     }
     }
    ]
   }

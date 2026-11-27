@@ -851,6 +851,45 @@
     "descricao": "Chance por round de surgir uma condição que vale resgatar.",
     "historico": []
   },
+  "suporte.padroes.portent_vira": {
+    "valor": 0.5,
+    "eixo": "suporte",
+    "desde": "2026-11-27",
+    "descricao": "Portent (27/11, pacote C): chance de o d20 guardado virar o resultado da rolagem que ele substitui (ataque de aliado, ataque inimigo, save de aliado). Chute inicial: o adivinho só gasta o dado onde ele decide.",
+    "historico": []
+  },
+  "suporte.padroes.portent_mix": {
+    "valor": {
+      "acerto": 0.35,
+      "ca": 0.35,
+      "save_critico": 0.3
+    },
+    "eixo": "suporte",
+    "desde": "2026-11-27",
+    "descricao": "Portent (27/11, pacote C): onde vão os dados que não forçam falha no save das magias: ataque de aliado (acerto), ataque inimigo que erra (ca), save de aliado contra condição (save_critico). Soma 1.",
+    "historico": []
+  },
+  "suporte.padroes.portent_fracao_controle": {
+    "valor": 0.5,
+    "eixo": "suporte",
+    "desde": "2026-11-27",
+    "descricao": "Portent (27/11, pacote C): nas linhas com magia de controle, parte dos dados do dia que força falha no save (forcar_falha_fator); o resto (1 − fração) vai para o suporte. Linhas sem controle põem tudo no suporte. Evita contar o mesmo dado nos dois eixos.",
+    "historico": []
+  },
+  "suporte.padroes.ward_projetado_fracao": {
+    "valor": 0.5,
+    "eixo": "suporte",
+    "desde": "2026-11-27",
+    "descricao": "Projected Ward (27/11, pacote C): parte do Arcane Ward de cada luta gasta em aliados (sai do PV do abjurador e vira PV poupado dos aliados). Chute inicial.",
+    "historico": []
+  },
+  "suporte.padroes.ward_projetado_reacao": {
+    "valor": 0.25,
+    "eixo": "suporte",
+    "desde": "2026-11-27",
+    "descricao": "Projected Ward (27/11, pacote C): fração dos rounds em que a reação vai para o Projected Ward (≈ 1 uso por luta de 4 rounds); compete com Shield e Counterspell.",
+    "historico": []
+  },
   "suporte.dado_multiuso.reuso_max": {
     "valor": 2,
     "eixo": "suporte",

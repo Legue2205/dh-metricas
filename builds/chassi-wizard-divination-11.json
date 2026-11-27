@@ -1,5 +1,5 @@
 {
- "gerado_de": "progressoes/chassi-wizard-divination.json",
+ "gerado_de": "chassi-wizard-divination.json",
  "build": "Wizard (Divination), chassi: Mage Armor + Shield; retaguarda",
  "corpo": {
   "ca": 14,
@@ -66,6 +66,23 @@
    "area": [],
    "invocacoes": [],
    "hipotese": "só truques (Toll the Dead)",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5
+     }
+    ]
+   },
    "principal": true,
    "custo": "gratuita"
   },
@@ -209,7 +226,10 @@
         "modo": "melhor"
        }
       ],
-      "forcar_falha": 0.5
+      "forcar_falha": 0.5,
+      "forcar_falha_fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      }
      }
     ]
    },
@@ -239,7 +259,28 @@
     }
    ],
    "herda": "principal",
-   "hipotese": "controle"
+   "hipotese": "controle",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5,
+      "fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      },
+      "complemento": true
+     }
+    ]
+   }
   },
   {
    "id": "controle-barato",
@@ -273,7 +314,10 @@
       "nome": "Web",
       "magia": "web",
       "cd": 17,
-      "forcar_falha": 0.5
+      "forcar_falha": 0.5,
+      "forcar_falha_fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      }
      }
     ]
    },
@@ -303,7 +347,28 @@
     }
    ],
    "herda": "principal",
-   "hipotese": "controle-barato"
+   "hipotese": "controle-barato",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5,
+      "fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      },
+      "complemento": true
+     }
+    ]
+   }
   },
   {
    "id": "controle-3",
@@ -361,7 +426,10 @@
         "cd": 17
        }
       ],
-      "forcar_falha": 0.5
+      "forcar_falha": 0.5,
+      "forcar_falha_fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      }
      }
     ]
    },
@@ -391,7 +459,28 @@
     }
    ],
    "herda": "principal",
-   "hipotese": "controle-3"
+   "hipotese": "controle-3",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5,
+      "fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      },
+      "complemento": true
+     }
+    ]
+   }
   },
   {
    "id": "area",
@@ -476,7 +565,24 @@
     }
    ],
    "herda": "principal",
-   "hipotese": "area"
+   "hipotese": "area",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5
+     }
+    ]
+   }
   },
   {
    "id": "combo",
@@ -618,7 +724,10 @@
         "modo": "melhor"
        }
       ],
-      "forcar_falha": 0.5
+      "forcar_falha": 0.5,
+      "forcar_falha_fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      }
      }
     ]
    },
@@ -672,7 +781,28 @@
     }
    ],
    "herda": "principal",
-   "hipotese": "combo"
+   "hipotese": "combo",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5,
+      "fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      },
+      "complemento": true
+     }
+    ]
+   }
   },
   {
    "id": "invocacao",
@@ -745,7 +875,24 @@
     }
    ],
    "herda": "principal",
-   "hipotese": "invocacao"
+   "hipotese": "invocacao",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5
+     }
+    ]
+   }
   },
   {
    "id": "area-barata",
@@ -817,7 +964,24 @@
     }
    ],
    "herda": "principal",
-   "hipotese": "Fireball no 3º (sem concentração; magia extra barata)"
+   "hipotese": "Fireball no 3º (sem concentração; magia extra barata)",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5
+     }
+    ]
+   }
   },
   {
    "id": "controle-4",
@@ -905,7 +1069,10 @@
         "cd": 17
        }
       ],
-      "forcar_falha": 0.5
+      "forcar_falha": 0.5,
+      "forcar_falha_fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      }
      }
     ]
    },
@@ -935,7 +1102,28 @@
     }
    ],
    "herda": "principal",
-   "hipotese": "controle-4"
+   "hipotese": "controle-4",
+   "suporte": {
+    "fontes": [
+     {
+      "nome": "Portent (rolagens de aliados e inimigos)",
+      "lado": "def",
+      "modelo": "dado_multiuso",
+      "vira": {
+       "$p": "suporte.padroes.portent_vira"
+      },
+      "mix": {
+       "$p": "suporte.padroes.portent_mix"
+      },
+      "acao": "nenhuma",
+      "usos_luta": 0.5,
+      "fator": {
+       "$p": "suporte.padroes.portent_fracao_controle"
+      },
+      "complemento": true
+     }
+    ]
+   }
   }
  ],
  "planos": {
@@ -958,11 +1146,11 @@
   }
  },
  "descricao": {
-  "resumo": "Adivinho do chassi: a régua comum com Portent forçando falha no save das magias de controle.",
+  "resumo": "Adivinho do chassi: a régua comum com Portent dividido entre forçar falha no save do controle e as rolagens de aliados e inimigos.",
   "estrategia": "Régua comum do chassi do Wizard (ver gerador) + o que a tradição dá.",
-  "nao_modelado": "Portent em aliados e ataques inimigos; Expert Divination; The Third Eye. Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Ritual Casting e utilidade; quebra de concentração.",
+  "nao_modelado": "Expert Divination; The Third Eye. Portent/Lucky/Silvery Barbs, iniciativa e Counterspell (igual para todos); Ritual Casting e utilidade; quebra de concentração.",
   "reacoes_modeladas": "Reações modeladas (M1, 23/11): Counterspell (desde o 5), Absorb Elements (desde o 1); o plano decide quando gastar o espaço nelas.",
-  "progressao": "Wizard 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 20, 'sab': 12, 'car': 10}; CD 17, ataque +9. Portent 2/dia."
+  "progressao": "Wizard 11; atributos {'for': 8, 'des': 13, 'con': 16, 'int': 20, 'sab': 12, 'car': 10}; CD 17, ataque +9. Portent 2/dia (controle e suporte)."
  },
  "reacoes_magicas": [
   {

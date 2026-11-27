@@ -1001,3 +1001,14 @@ nv7 / nv11 sem holdout: dano 0,36 / 0,38 · controle 0,66 / 0,61 · defesa físi
 área agr. 0,52 / 0,58 · **corpo agr. 0,19 / 0,21** · G1b 4/4 iguais. Idêntica à medição local.
 Aguardando o usuário: ok das listas do G3 (+ defm), e o "vai" para variantes de escolha de build (Lore, Totem Lobo),
 Counterspell genérico e lotes do G1b.
+
+## 27/11 tarde — G3 aprovado e medido pela primeira vez
+- Usuário: listas aprovadas, regra simétrica, `defm` fora do G3 (ainda não medida); **recusou "cada eixo usa a melhor
+  variante de build"** (favorece versatilidade de montagem, que não existe na mesa; o Wizard troca de linha no dia, o
+  Lore/Totem não). Counterspell genérico: ok. Lotes do G1b: ok.
+- G3 (`meta_consenso.py`, sem holdout), topo forte/fraco · fundo fraco/forte:
+  nv7 — dano 5/0 · 5/0 ✗ | deff 9/0 · 8/0 ✓ | controle 6/0 · 7/0 ✗ | área 9/0 · 2/0 ✗ | suporte 6/0 · 1/0 ✗ | corpo 5/0 · 2/0 ✗
+  nv11 — dano 7/0 · 6/0 ✗ | deff 10/0 · 7/1 ✗ | controle 10/0 · 7/0 ✓ | área 9/0 · 4/1 ✗ | suporte 5/0 · 1/0 ✗ | corpo 5/0 · 2/0 ✗
+  **Nenhum fraco no topo em nenhum eixo** (o topo é sólido); quem falha é o fundo. Muitos fundos são **empates**
+  (todos os Wizards com suporte 0, todos os Bards juntos no dano e na defesa): o desempate por id decide quem entra.
+  defm (fora do gate, só olhando): Druids todos no topo, Paladins quase ausentes — régua imatura.

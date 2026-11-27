@@ -1,17 +1,20 @@
 {
  "_meta": {
-  "status": "RASCUNHO — aguardando aprovação do usuário (G3 pré-registrado). Não mudar depois de olhar os rankings.",
+  "status": "APROVADO pelo usuário em 27/11 (listas como estão, regra simétrica, defm fora do G3 até ser medida). Não editar.",
   "criado": "2026-11-26",
   "autor": "Claude (sessão autônoma de 26/11), sem olhar os rankings atuais dos eixos",
   "fontes": "consenso de comunidade 5e 2014 (RPGBot, Treantmonk, tier lists de subclasse) na memória do Claude; não deriva dos gabaritos calibracao/rpgbot-*.json nem de resultados/.",
   "contaminacao": "Antes de escrever, o Claude leu o fim do TASKS.md (pedido do usuário), que cita alguns resultados de abate/plano (ex.: Vengeance e Samurai no topo do abate; casters viram controladores depois de D18). Nenhuma lista foi ajustada a partir disso; as listas seguem o consenso, inclusive onde ele coincide com esses números.",
   "unidade": "subclasse = \"<classe>-<subclasse>\" (builds/chassi-<id>-*.json, variante sem-feat; dano com o pacote_vh, como em comparar_chassi.py). Ranking agrupado entre classes, visão misto, por nível.",
-  "regra_gate": "Para cada eixo e nível, ranking SEM o holdout: (a) top-10 com ≥ 7 em \"forte\" e 0 em \"fraco\"; (b) fundo-10 com ≥ 7 em \"fraco\" e 0 em \"forte\" (leitura simétrica do Claude de \"top-10 / fundo-10\" — confirmar). Empates na fronteira do 10º: conta a ordem estável por id. Subclasse fora das duas listas = neutra (não conta a favor nem contra).",
+  "regra_gate": "Para cada eixo e nível, ranking SEM o holdout: (a) top-10 com ≥ 7 em \"forte\" e 0 em \"fraco\"; (b) fundo-10 com ≥ 7 em \"fraco\" e 0 em \"forte\" (simétrico, aprovado 27/11). Empates na fronteira do 10º: conta a ordem estável por id. Subclasse fora das duas listas = neutra (não conta a favor nem contra).",
   "holdout": "As entradas forte_holdout/fraco_holdout (Artificer, Rogue, Sorcerer) ficam escritas já, para não serem decididas depois, mas só entram na medição final do G6 (calibracao/meta_consenso.py --com-holdout).",
-  "pendente_usuario": [
-   "aprovar ou editar as listas",
-   "confirmar a regra (b) do fundo-10",
-   "incluir ou não o eixo defm no G3 enquanto não estiver medido"
+  "eixos_no_gate": [
+   "dano",
+   "deff",
+   "controle",
+   "area",
+   "suporte",
+   "corpo"
   ]
  },
  "holdout": [

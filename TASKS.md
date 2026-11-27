@@ -1012,3 +1012,7 @@ Counterspell genérico e lotes do G1b.
   **Nenhum fraco no topo em nenhum eixo** (o topo é sólido); quem falha é o fundo. Muitos fundos são **empates**
   (todos os Wizards com suporte 0, todos os Bards juntos no dano e na defesa): o desempate por id decide quem entra.
   defm (fora do gate, só olhando): Druids todos no topo, Paladins quase ausentes — régua imatura.
+- **Counterspell:** já era genérico (M1, 23/11: `reacoes_magicas` → linha `reacao-counterspell`, o plano decide).
+  Faltava o Lore declarar o 2º Additional Magical Secret: `m1_reacoes.CLASSE['counterspell']['bard/lore'] = 6`.
+  Linha nova: controle 2,0 (nv7) / 3,5 (nv11), abaixo das linhas de controle do plano → plano e gates iguais.
+  Os outros Bards ganham Counterspell só por Magical Secrets (10), que é escolha de build: fica fora (decisão de 27/11).

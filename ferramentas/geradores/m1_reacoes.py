@@ -17,7 +17,8 @@ RAIZ = Path(__file__).resolve().parents[2]
 NOMES = {'counterspell': 'Counterspell', 'absorb_elements': 'Absorb Elements'}
 # desde = nível de personagem em que a magia entra na lista (RAW 5e 2014)
 CLASSE = {
-    'counterspell': {'wizard': 5, 'sorcerer': 5, 'warlock': 5, 'fighter/eldritch-knight': 13},
+    # bard/lore (27/11): o chassi escolhe Counterspell como 2º Additional Magical Secret no 6
+    'counterspell': {'wizard': 5, 'sorcerer': 5, 'warlock': 5, 'fighter/eldritch-knight': 13, 'bard/lore': 6},
     'absorb_elements': {'wizard': 1, 'sorcerer': 1, 'druid': 1, 'artificer': 1, 'ranger': 2, 'fighter/eldritch-knight': 3},
 }
 

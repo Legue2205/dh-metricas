@@ -135,7 +135,7 @@ def emitir(sub, posicao, build, desc, fat):
     C.escrever('bard', sub, posicao, {L: fat(L) for L in C.NIV}, build=build, desc=desc, url=URL[sub])
 
 
-# ---------- Lore: Cutting Words (metade dos dados), Additional Magical Secrets (6): Fireball (+ Counterspell, não modelado)
+# ---------- Lore: Cutting Words (metade dos dados), Additional Magical Secrets (6): Fireball + Counterspell (M1, reacoes_magicas)
 def lore(L):
     c = base(L, ORDEM_CAR); u = usos_bi(L, c['car'])
     sup = [BI(L, u / 2), BI(L, u / 2, ' como Cutting Words', mix={"ca": 1.0})]
@@ -218,7 +218,7 @@ def spirits(L):
 BLD = "Bard ({}) chassi: Car 17/Des 15/Con 13 (+2/+1), Car 19 (4), Car 20 + Des 16 (8); couro batido; Vicious Mockery; sem feat"
 emitir('lore', 'retaguarda', BLD.format('Lore') + "; Fireball/Counterspell no 6",
        {"resumo": "Bardo base de retaguarda com Cutting Words e Fireball por Additional Magical Secrets.",
-        "nao_modelado": "Counterspell (2º segredo), Peerless Skill, perícias extras."}, lore)
+        "nao_modelado": "Peerless Skill, perícias extras."}, lore)
 emitir('valor', 'meia', "Bard (Valor) chassi: Car 17/Des 15/Con 13, Car 19 (4), Car 20 (8); meia-armadura + escudo (CA 19); "
        "rapieira com Extra Attack; sem feat",
        {"resumo": "Bardo de linha média: armadura média e escudo, rapieira com Extra Attack, magias da lista base.",
